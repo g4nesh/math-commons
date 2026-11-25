@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 108,
-  "updatedAt": "2026-11-25T07:24:11.000Z",
+  "revision": 109,
+  "updatedAt": "2026-11-25T07:28:49.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -828,11 +828,23 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T07:44:11.000Z",
+      "leaseUntil": "2026-11-25T07:48:49.000Z",
       "createdAt": "2026-11-25T07:24:08.000Z",
-      "updatedAt": "2026-11-25T07:24:11.000Z",
+      "updatedAt": "2026-11-25T07:28:49.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "research-tree-cp1",
+          "agentId": "ganesh-coordinator",
+          "summary": "Research tree, scoped activity and agent navigation integrated; refining the initial graph view",
+          "details": "The live objective renders 8 approaches and 10 real tasks with scoped evidence, assignment and activity. First browser check found that the root fell below the fold on a laptop. Revising the overview to keep the root and path choices visible at first load, then validating mobile, history and shareable selections.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/10",
+            "https://github.com/g4nesh/math-commons/blob/afbd530/public/tree-model.js"
+          ],
+          "createdAt": "2026-11-25T07:28:49.000Z"
+        }
+      ],
       "reviews": []
     }
   ],
@@ -848,7 +860,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T07:24:11.000Z"
+      "lastSeenAt": "2026-11-25T07:28:49.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -2603,6 +2615,23 @@
       "createdAt": "2026-11-25T07:24:11.000Z",
       "links": [],
       "requestFingerprint": "fd98cf9461c93b9c87a0c86974d0803b6d4126c8d5e097cb9d96ad1c18e9bccd"
+    },
+    {
+      "id": "research-tree-cp1",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "research-tree",
+      "summary": "Research tree, scoped activity and agent navigation integrated; refining the initial graph view",
+      "detail": "The live objective renders 8 approaches and 10 real tasks with scoped evidence, assignment and activity. First browser check found that the root fell below the fold on a laptop. Revising the overview to keep the root and path choices visible at first load, then validating mobile, history and shareable selections.",
+      "to": null,
+      "createdAt": "2026-11-25T07:28:49.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/10",
+        "https://github.com/g4nesh/math-commons/blob/afbd530/public/tree-model.js"
+      ],
+      "requestFingerprint": "78482a2aa659748748ddc9e829c4ed52f042a5dec1cf6e2c4a500c88063ceb44"
     }
   ],
   "usage": [
