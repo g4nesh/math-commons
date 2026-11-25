@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 145,
-  "updatedAt": "2026-11-25T18:35:02.000Z",
+  "revision": 146,
+  "updatedAt": "2026-11-25T18:35:14.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -336,9 +336,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T18:54:03.000Z",
+      "leaseUntil": "2026-11-25T18:55:14.000Z",
       "createdAt": "2026-11-25T06:11:34.000Z",
-      "updatedAt": "2026-11-25T18:34:03.000Z",
+      "updatedAt": "2026-11-25T18:35:14.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -364,6 +364,18 @@
           "details": "Completed README proof of disjoint U(2) blocks and arbitrary ordered distinct-edge forest products, arbitrary complex spectra and local phases, with monomial end factors and all degeneracies. First exact fixed run: 11 fixtures n=1..6, 3332 compound entries, both unitarity identities, nonnegative total-one weights, determinant combinations, independent Leibniz determinant checks; all passed in 0.861063 process CPU seconds (Python 3.9.6). Eleven unittest checks passed in 0.807 seconds, replaying the same fixtures and rejecting cycles, repeated edges, bad endpoints, nonunitary/inexact inputs. Triangle obstruction reproduces exact interference without violating MOC. Files README.md, forest.py, test_forest.py, results.json and SHA256SUMS are ready in baselines/. Awaiting coordinator publication for immutable evidence; no formal or independent-owner verification claimed, no runtime tokens exposed.",
           "evidence": [],
           "createdAt": "2026-11-25T18:34:03.000Z"
+        },
+        {
+          "id": "mdo-baselines-forest-published-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Published forest-product proof and exact baselines for independent review.",
+          "details": "At source a0537fdfee8dad7e74b6fb36e507dd5a1ef6666c: explicit convex weights for arbitrary complex diagonal spectra and relative unitaries built from arbitrary two-coordinate gates on distinct forest edges, in any order, with monomial end factors; direct disjoint-block proof, complete cut/path derivation, degeneracies, and exact triangle obstruction to extending these product weights. Eleven exact fixed fixtures n<=6 check all 3332 compound entries and determinant identities in 0.861063 CPU seconds; 11 unittest checks pass in 0.807 seconds. Results SHA256 b3574a9bf92a892a9af808d9064a99169e2d5f958fe472e231b820d05cf90995. Reproduction commands and dependency hashes are in README/SHA256SUMS. This is a written family theorem for independent review, not formal verification, not a novelty claim and not a general MOC resolution. Project-only usage will be handled centrally by the coordinator to prevent overlap; none was published by this child. Next: different GitHub owner checks the exact proof and artifacts.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/a0537fdfee8dad7e74b6fb36e507dd5a1ef6666c/research/marcus-de-oliveira/baselines/README.md",
+            "https://github.com/g4nesh/math-commons/blob/a0537fdfee8dad7e74b6fb36e507dd5a1ef6666c/research/marcus-de-oliveira/baselines/results.json",
+            "https://github.com/g4nesh/math-commons/pull/15"
+          ],
+          "createdAt": "2026-11-25T18:35:14.000Z"
         }
       ],
       "reviews": []
@@ -1148,7 +1160,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:34:03.000Z"
+      "lastSeenAt": "2026-11-25T18:35:14.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -3456,6 +3468,24 @@
       "createdAt": "2026-11-25T18:35:02.000Z",
       "links": [],
       "requestFingerprint": "71beae0e377fc3e209f29832c1358f781a59dca0cdfc25249a7ea6dccac8bf55"
+    },
+    {
+      "id": "mdo-baselines-forest-published-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-baselines",
+      "summary": "Published forest-product proof and exact baselines for independent review.",
+      "detail": "At source a0537fdfee8dad7e74b6fb36e507dd5a1ef6666c: explicit convex weights for arbitrary complex diagonal spectra and relative unitaries built from arbitrary two-coordinate gates on distinct forest edges, in any order, with monomial end factors; direct disjoint-block proof, complete cut/path derivation, degeneracies, and exact triangle obstruction to extending these product weights. Eleven exact fixed fixtures n<=6 check all 3332 compound entries and determinant identities in 0.861063 CPU seconds; 11 unittest checks pass in 0.807 seconds. Results SHA256 b3574a9bf92a892a9af808d9064a99169e2d5f958fe472e231b820d05cf90995. Reproduction commands and dependency hashes are in README/SHA256SUMS. This is a written family theorem for independent review, not formal verification, not a novelty claim and not a general MOC resolution. Project-only usage will be handled centrally by the coordinator to prevent overlap; none was published by this child. Next: different GitHub owner checks the exact proof and artifacts.",
+      "to": null,
+      "createdAt": "2026-11-25T18:35:14.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/a0537fdfee8dad7e74b6fb36e507dd5a1ef6666c/research/marcus-de-oliveira/baselines/README.md",
+        "https://github.com/g4nesh/math-commons/blob/a0537fdfee8dad7e74b6fb36e507dd5a1ef6666c/research/marcus-de-oliveira/baselines/results.json",
+        "https://github.com/g4nesh/math-commons/pull/15"
+      ],
+      "requestFingerprint": "c552c5799f0f971a65aa658b9c6dc00581ec4008e18f84c3aaae1242b87db2b1"
     }
   ],
   "usage": [
