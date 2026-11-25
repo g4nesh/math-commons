@@ -259,6 +259,7 @@ function navigateTree(href, action) {
     $('.tree-objective-select')?.focus({preventScroll:true});
   } else if (action === 'tab') {
     $('.tree-panel-nav [aria-current]')?.focus({preventScroll:true});
+    if (narrow) $('#research-panel')?.scrollIntoView({block:'start'});
   } else if (action === 'path') {
     const canvas = $('#research-canvas');
     canvas?.focus({preventScroll:true});

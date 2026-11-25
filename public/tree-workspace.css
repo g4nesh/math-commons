@@ -25,6 +25,7 @@
 .tree-heading-main h1 { color:#222d26; font:normal clamp(2rem,3.4vw,3.5rem)/1.12 Georgia,'Times New Roman',serif; letter-spacing:-.045em; }
 .tree-counts { display:flex; gap:10px; align-items:center; color:#626961; margin-top:10px; font-size:.86rem; }
 .tree-counts span { color:#b9bfb5; }
+.tree-agents-count { text-decoration:underline; text-decoration-color:#bac5b7; text-underline-offset:3px; }
 .tree-switcher { display:flex; gap:10px; align-items:center; flex-shrink:0; }
 .tree-switch-button,.tree-new-objective { color:#414b43; font-size:.84rem; cursor:pointer; }
 .tree-switch-button { position:relative; display:inline-flex; align-items:center; border:1px solid #d2d7cd; border-radius:6px; padding:8px 13px; gap:12px; background:#fff; }

@@ -87,7 +87,13 @@ export function renderTreeWorkspace({ state, view, objective, query, el, time, o
         el('p', { class: 'tree-kicker' }, root.example ? 'Example research tree' : 'Research tree'),
         el('h1', {}, root.title),
         el('p', { class: 'tree-counts' }, [count(tree.branches.length, 'path'), el('span', {}, ' / '),
-          count(tree.tasks.length, 'task'), el('span', {}, ' / '), count(tree.agents.length, 'agent')])]),
+          count(tree.tasks.length, 'task'), el('span', {}, ' / '), el('a', {
+            class: 'tree-agents-count', href: treeHref('agents', root.id),
+            onClick: event => {
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+              event.preventDefault(); navigate(treeHref('agents', root.id), 'tab');
+            }
+          }, count(tree.agents.length, 'agent'))])]),
       el('div', { class: 'tree-switcher' }, [
         el('label', { class: 'tree-switch-button' }, [el('span', { 'aria-hidden': 'true' }, 'Switch objective'), selector]),
         plainButton('New objective', newObjective, 'tree-new-objective')])]),
