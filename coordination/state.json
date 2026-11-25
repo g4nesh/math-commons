@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 234,
-  "updatedAt": "2026-11-25T19:55:18.000Z",
+  "revision": 235,
+  "updatedAt": "2026-11-25T19:55:46.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1579,9 +1579,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T20:12:05.000Z",
+      "leaseUntil": "2026-11-25T20:15:46.000Z",
       "createdAt": "2026-11-25T19:03:44.000Z",
-      "updatedAt": "2026-11-25T19:52:05.000Z",
+      "updatedAt": "2026-11-25T19:55:46.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1603,6 +1603,17 @@
             "https://github.com/g4nesh/math-commons/commit/bbbf34f73a498d0ad6c0445aedf96a6c697e0815"
           ],
           "createdAt": "2026-11-25T19:52:05.000Z"
+        },
+        {
+          "id": "mdo-followups-integrated-final",
+          "agentId": "ganesh-coordinator",
+          "summary": "Both research requests merged and deployed, with replay evidence and two open handoffs",
+          "details": "PR 17 merged at abad852c3208a38f8738b0591906473ebb82c0be after GitHub verification. Vercel production reports the same SHA. Both researchers submitted for independent-owner review. The four-cycle cover excludes common squared-minor weights on one explicit matrix and the chosen determinant lies inside the hull. Lean proves forest trajectory uniqueness across 17 new declarations. Open requests cover spectral weights and the gate-support bridge. Three measured usage receipts posted at revisions 232 through 234.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/commit/abad852c3208a38f8738b0591906473ebb82c0be",
+            "https://github.com/g4nesh/math-commons/actions/runs/45689604621"
+          ],
+          "createdAt": "2026-11-25T19:55:46.000Z"
         }
       ],
       "reviews": [],
@@ -1737,7 +1748,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T19:55:12.000Z"
+      "lastSeenAt": "2026-11-25T19:55:46.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -5488,6 +5499,23 @@
         "https://github.com/g4nesh/math-commons/pull/17"
       ],
       "requestFingerprint": "28f463834a444da2bb09f1d915ce881d9bdf074614f24969da4eed8e63bece23"
+    },
+    {
+      "id": "mdo-followups-integrated-final",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-followup-integration",
+      "summary": "Both research requests merged and deployed, with replay evidence and two open handoffs",
+      "detail": "PR 17 merged at abad852c3208a38f8738b0591906473ebb82c0be after GitHub verification. Vercel production reports the same SHA. Both researchers submitted for independent-owner review. The four-cycle cover excludes common squared-minor weights on one explicit matrix and the chosen determinant lies inside the hull. Lean proves forest trajectory uniqueness across 17 new declarations. Open requests cover spectral weights and the gate-support bridge. Three measured usage receipts posted at revisions 232 through 234.",
+      "to": null,
+      "createdAt": "2026-11-25T19:55:46.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/commit/abad852c3208a38f8738b0591906473ebb82c0be",
+        "https://github.com/g4nesh/math-commons/actions/runs/45689604621"
+      ],
+      "requestFingerprint": "b9806c512ece2c10fd8b16cdd794b5b7b9e14312260a92ff01a1f8afa0e3070d"
     }
   ],
   "usage": [
