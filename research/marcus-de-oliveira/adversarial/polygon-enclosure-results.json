@@ -1,0 +1,90 @@
+[
+  {
+    "name": "goyal-2026",
+    "unitary": true,
+    "det": [
+      "2/3",
+      "2/9"
+    ],
+    "insideHull": true,
+    "minFacetSlack": "2",
+    "onGraph": false,
+    "avoidingRay": [
+      "-1",
+      "-1"
+    ],
+    "outerWalk": [
+      [
+        "0",
+        "-1"
+      ],
+      [
+        "2",
+        "-2"
+      ],
+      [
+        "6",
+        "-2"
+      ],
+      [
+        "2",
+        "1"
+      ],
+      [
+        "0",
+        "2"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "winding": 0,
+    "refutesConjecture7": true,
+    "refutesMOC": false
+  },
+  {
+    "name": "zhang-ma-2026",
+    "unitary": true,
+    "det": [
+      "2864/49",
+      "1840/49"
+    ],
+    "insideHull": true,
+    "minFacetSlack": "85872/49",
+    "onGraph": false,
+    "avoidingRay": [
+      "0",
+      "-1"
+    ],
+    "outerWalk": [
+      [
+        "-130",
+        "10"
+      ],
+      [
+        "-28",
+        "-56"
+      ],
+      [
+        "24",
+        "-20"
+      ],
+      [
+        "7672/155",
+        "4424/155"
+      ],
+      [
+        "280",
+        "280"
+      ],
+      [
+        "232",
+        "376"
+      ]
+    ],
+    "winding": 0,
+    "refutesConjecture7": true,
+    "refutesMOC": false
+  }
+]
