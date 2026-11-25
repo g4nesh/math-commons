@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 9,
-  "updatedAt": "2026-11-25T06:11:35.000Z",
+  "revision": 10,
+  "updatedAt": "2026-11-25T06:11:37.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -193,6 +193,22 @@
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "mdo-certificates",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Build an independent exact witness verifier",
+      "description": "Specify and implement exact or rigorous interval certificates for normality/unitarity, spectra and convex-hull membership or separation. Cover repeated points, point/segment hulls, singular sums and roundoff. Do not classify a numerical gap as a counterexample. Own research/marcus-de-oliveira/certificates/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+      "approach": "verification",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:11:37.000Z",
+      "updatedAt": "2026-11-25T06:11:37.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -207,7 +223,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:11:35.000Z"
+      "lastSeenAt": "2026-11-25T06:11:37.000Z"
     }
   ],
   "events": [
@@ -336,6 +352,20 @@
       "createdAt": "2026-11-25T06:11:35.000Z",
       "links": [],
       "requestFingerprint": "8eed5edd62a68c986e6260cac4fcafb2c5a490c8ec7115d30b5100d2757901ec"
+    },
+    {
+      "id": "mdo-initial-20261124-mdo-certificates",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-certificates",
+      "summary": "Proposed verification task: Build an independent exact witness verifier",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:11:37.000Z",
+      "links": [],
+      "requestFingerprint": "7fe26834356d7e05c55baa78af5838bf094480d18f64f6343d8daa0234ae99a8"
     }
   ]
 }
