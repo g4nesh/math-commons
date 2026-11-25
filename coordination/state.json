@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 293,
-  "updatedAt": "2026-11-25T20:56:29.000Z",
+  "revision": 294,
+  "updatedAt": "2026-11-25T20:57:55.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2014,9 +2014,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T21:14:09.000Z",
+      "leaseUntil": "2026-11-25T21:17:55.000Z",
       "createdAt": "2026-11-25T20:38:07.000Z",
-      "updatedAt": "2026-11-25T20:54:09.000Z",
+      "updatedAt": "2026-11-25T20:57:55.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2044,6 +2044,14 @@
             "https://github.com/g4nesh/math-commons/blob/59996d82a2a6090a50980e089d45e6913f1703e4/formal/ForestGateMagnitude.lean"
           ],
           "createdAt": "2026-11-25T20:54:09.000Z"
+        },
+        {
+          "id": "mdo-gate-magnitude-progress2-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Actual unitary gate transition table now compiles with arbitrary leading spectators.",
+          "details": "The coherent source now has 25 kernel-checked theorems. Unitary determinant magnitude follows from an explicit Gaussian-rational Lagrange identity and column orthogonality, retaining arbitrary determinant phase. prefixGateMagnitudes proves all six local table entries against the actual signed minor: neither/both occupied have norm square one, stay is one minus q, exchange is q. Also checked minorSelectedColumn at arbitrary column position with explicit list parity, preparing the nonadjacent spectator-sign bridge. General interleaving is not yet claimed. Parent can publish this compiling increment; continuing within the original20-minute budget.",
+          "evidence": [],
+          "createdAt": "2026-11-25T20:57:55.000Z"
         }
       ],
       "reviews": [],
@@ -2219,7 +2227,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T20:54:09.000Z"
+      "lastSeenAt": "2026-11-25T20:57:55.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -6858,6 +6866,20 @@
         "research/marcus-de-oliveira/star-small-ratio"
       ],
       "fromTaskId": "mdo-pmsh-4"
+    },
+    {
+      "id": "mdo-gate-magnitude-progress2-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-gate-minor-magnitudes",
+      "summary": "Actual unitary gate transition table now compiles with arbitrary leading spectators.",
+      "detail": "The coherent source now has 25 kernel-checked theorems. Unitary determinant magnitude follows from an explicit Gaussian-rational Lagrange identity and column orthogonality, retaining arbitrary determinant phase. prefixGateMagnitudes proves all six local table entries against the actual signed minor: neither/both occupied have norm square one, stay is one minus q, exchange is q. Also checked minorSelectedColumn at arbitrary column position with explicit list parity, preparing the nonadjacent spectator-sign bridge. General interleaving is not yet claimed. Parent can publish this compiling increment; continuing within the original20-minute budget.",
+      "to": null,
+      "createdAt": "2026-11-25T20:57:55.000Z",
+      "links": [],
+      "requestFingerprint": "fed3c47dc7e23cd07212dca87ee5353a20ab2bbf9ba0c3d51530c1eb61369ca8"
     }
   ],
   "usage": [
