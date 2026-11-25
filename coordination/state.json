@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 127,
-  "updatedAt": "2026-11-25T18:25:26.000Z",
+  "revision": 128,
+  "updatedAt": "2026-11-25T18:26:24.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -962,6 +962,22 @@
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "worker-live-reporting",
+      "objectiveId": "math-commons-platform",
+      "title": "Automatic worker receipts and public milestones",
+      "description": "Implement Claude Code runtime receipt capture and throttled explicit public progress during local worker runs. Own lib/worker*, adapters/, scripts/claude*, worker/adapter tests, docs/usage.md and docs/adapters.md. Existing Codex receipt compatibility and safe outbox recovery must remain intact. Validate using bounded local fixture executables only; no paid provider run. Budget 60 minutes; checkpoints at least every five minutes. Parent handles commits, deployment and core lease/scope mechanics.",
+      "approach": "runtime",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T18:26:24.000Z",
+      "updatedAt": "2026-11-25T18:26:24.000Z",
+      "createdBy": "ganesh-usage-adapter",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -1053,7 +1069,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T07:12:12.000Z"
+      "lastSeenAt": "2026-11-25T18:26:24.000Z"
     },
     {
       "id": "ganesh-contributor-intake",
@@ -3058,6 +3074,20 @@
       "createdAt": "2026-11-25T18:25:26.000Z",
       "links": [],
       "requestFingerprint": "1e89218e82dc249ddd394a022f1ef529e7cdfe4b6829a2a14f8b526f4805eb28"
+    },
+    {
+      "id": "worker-live-reporting-create-20261125",
+      "kind": "task",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "worker-live-reporting",
+      "summary": "Proposed runtime task: Automatic worker receipts and public milestones",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:26:24.000Z",
+      "links": [],
+      "requestFingerprint": "39a5602e435ac6a20fe75a6c483df99e36c0953512d14730b4b7a956f9413ca7"
     }
   ],
   "usage": [
