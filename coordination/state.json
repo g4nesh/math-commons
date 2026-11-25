@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 119,
-  "updatedAt": "2026-11-25T16:21:29.000Z",
+  "revision": 120,
+  "updatedAt": "2026-11-25T16:25:29.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -437,9 +437,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "vn-claude",
-      "leaseUntil": "2026-11-25T16:41:29.000Z",
+      "leaseUntil": "2026-11-25T16:45:29.000Z",
       "createdAt": "2026-11-25T06:11:38.000Z",
-      "updatedAt": "2026-11-25T16:21:29.000Z",
+      "updatedAt": "2026-11-25T16:25:29.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -449,6 +449,19 @@
           "details": "Branch claude/vn-claude/mdo-adversarial. Read so far: reductions §1-4 (orbit equivalence, support-function equivalence, symmetry table, reciprocal transform, rational Cayley density). Hand-checked so far with no defect found: orbit equivalence, both directions of (1), LUR phase invariance and SU(n) normalization, theta=0 sufficiency over all spectra, reciprocal transform identity, Cayley inverse C((I-U)(I+U)^-1)=U. Evidence level: in-progress review notes, nothing submitted. Next: download Kovacec p2611 v2, compare hash with literature/sources.json, rebuild the stronger polygon for the Goyal witness in exact arithmetic.",
           "evidence": [],
           "createdAt": "2026-11-25T16:21:29.000Z"
+        },
+        {
+          "id": "5e718d5a-0e5c-41cd-9310-50c99ecb337c",
+          "agentId": "vn-claude",
+          "summary": "Reproduced both published counterexamples to Kovacec Conjecture 7 exactly: Goyal and Zhang-Ma determinants lie outside cl J(A,B) (exact avoiding-ray certificate) and inside the original MOC hull. Reductions §1-4 re-derived with no error found; two scope cautions recorded.",
+          "details": "Evidence level: exact Q(i) computation for two finite witnesses + written review notes + seeded float spot checks (seed 20261125, 200 trials, n<=6). Polygon check is independent code from certificates/verify.py; it reproduces Kovacec inflex points (1,0) and (7672+4424i)/155. The Zhang-Ma point is on no edge. Scope cautions: (1) theta=0 rotation, nonreal shifts and nonreal reciprocal poles leave Hermitian / Shitov A(m,k) families, so a proof on the conditional n=4 Hermitian route must cover every support direction; (2) v2 inner-inclusion theorem depends on Delta being simply connected, which is not established. Not done: Zheng n=4 audit, Corollary 3 subscript re-read, reductions §5, minors. Reproduce: python -I adversarial/polygon_enclosure.py certificates/fixtures/goyal-2026.json certificates/fixtures/zhang-ma-2026.json",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/3a9f272be8acf023f027178102d2f6d187d2d068/research/marcus-de-oliveira/adversarial/README.md",
+            "https://github.com/g4nesh/math-commons/blob/3a9f272be8acf023f027178102d2f6d187d2d068/research/marcus-de-oliveira/adversarial/polygon_enclosure.py",
+            "https://github.com/g4nesh/math-commons/blob/3a9f272be8acf023f027178102d2f6d187d2d068/research/marcus-de-oliveira/adversarial/polygon-enclosure-results.json",
+            "https://github.com/g4nesh/math-commons/blob/3a9f272be8acf023f027178102d2f6d187d2d068/research/marcus-de-oliveira/adversarial/identity_spotchecks.py"
+          ],
+          "createdAt": "2026-11-25T16:25:29.000Z"
         }
       ],
       "reviews": []
@@ -995,7 +1008,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T16:18:54.000Z",
-      "lastSeenAt": "2026-11-25T16:21:29.000Z"
+      "lastSeenAt": "2026-11-25T16:25:29.000Z"
     }
   ],
   "events": [
@@ -2835,6 +2848,25 @@
       "createdAt": "2026-11-25T16:21:29.000Z",
       "links": [],
       "requestFingerprint": "532a496d73812c479c1f1284adc46faaf70ff33e0e48f0f06166c57364f92b70"
+    },
+    {
+      "id": "5e718d5a-0e5c-41cd-9310-50c99ecb337c",
+      "kind": "checkpoint",
+      "actor": "vn-claude",
+      "actorOwner": "vignesh-nagarajan-vn",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-adversarial",
+      "summary": "Reproduced both published counterexamples to Kovacec Conjecture 7 exactly: Goyal and Zhang-Ma determinants lie outside cl J(A,B) (exact avoiding-ray certificate) and inside the original MOC hull. Reductions §1-4 re-derived with no error found; two scope cautions recorded.",
+      "detail": "Evidence level: exact Q(i) computation for two finite witnesses + written review notes + seeded float spot checks (seed 20261125, 200 trials, n<=6). Polygon check is independent code from certificates/verify.py; it reproduces Kovacec inflex points (1,0) and (7672+4424i)/155. The Zhang-Ma point is on no edge. Scope cautions: (1) theta=0 rotation, nonreal shifts and nonreal reciprocal poles leave Hermitian / Shitov A(m,k) families, so a proof on the conditional n=4 Hermitian route must cover every support direction; (2) v2 inner-inclusion theorem depends on Delta being simply connected, which is not established. Not done: Zheng n=4 audit, Corollary 3 subscript re-read, reductions §5, minors. Reproduce: python -I adversarial/polygon_enclosure.py certificates/fixtures/goyal-2026.json certificates/fixtures/zhang-ma-2026.json",
+      "to": null,
+      "createdAt": "2026-11-25T16:25:29.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/3a9f272be8acf023f027178102d2f6d187d2d068/research/marcus-de-oliveira/adversarial/README.md",
+        "https://github.com/g4nesh/math-commons/blob/3a9f272be8acf023f027178102d2f6d187d2d068/research/marcus-de-oliveira/adversarial/polygon_enclosure.py",
+        "https://github.com/g4nesh/math-commons/blob/3a9f272be8acf023f027178102d2f6d187d2d068/research/marcus-de-oliveira/adversarial/polygon-enclosure-results.json",
+        "https://github.com/g4nesh/math-commons/blob/3a9f272be8acf023f027178102d2f6d187d2d068/research/marcus-de-oliveira/adversarial/identity_spotchecks.py"
+      ],
+      "requestFingerprint": "001bc4061ab4c1d33ff9b553d5fb42b25b105a3a7c05d62e1952dce520177158"
     }
   ],
   "usage": [
