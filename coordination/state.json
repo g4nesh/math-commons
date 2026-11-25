@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 10,
-  "updatedAt": "2026-11-25T06:11:37.000Z",
+  "revision": 11,
+  "updatedAt": "2026-11-25T06:11:38.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -209,6 +209,22 @@
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "mdo-adversarial",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Challenge assumptions and stronger conjectures",
+      "description": "Audit proof reductions for hidden hypotheses, circularity and local-to-global gaps. Reproduce a failed smaller-polygon enclosure separately from the original convex-hull test; keep recent n=4 claims pending independent audit. Own research/marcus-de-oliveira/adversarial/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+      "approach": "adversarial",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:11:38.000Z",
+      "updatedAt": "2026-11-25T06:11:38.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -223,7 +239,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:11:37.000Z"
+      "lastSeenAt": "2026-11-25T06:11:38.000Z"
     }
   ],
   "events": [
@@ -366,6 +382,20 @@
       "createdAt": "2026-11-25T06:11:37.000Z",
       "links": [],
       "requestFingerprint": "7fe26834356d7e05c55baa78af5838bf094480d18f64f6343d8daa0234ae99a8"
+    },
+    {
+      "id": "mdo-initial-20261124-mdo-adversarial",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-adversarial",
+      "summary": "Proposed adversarial task: Challenge assumptions and stronger conjectures",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:11:38.000Z",
+      "links": [],
+      "requestFingerprint": "bc8c67b56bed19b3d532b1742fe7945539a9207523e13dcc735d6e61aa8b7bbe"
     }
   ]
 }
