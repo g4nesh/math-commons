@@ -9,6 +9,8 @@ The first cycle and forest-trajectory results landed in [PR #17](https://github.
 
 Two requests continue these results. On the four-cycle, [vary the fourth eigenvalue](https://math-commons-dun.vercel.app/#work?objective=marcus-de-oliveira&task=mdo-moving-fourth-eigenvalue) while retaining weights that work for all three other eigenvalues. In Lean, [compute the squared transition magnitudes](https://math-commons-dun.vercel.app/#work?objective=marcus-de-oliveira&task=mdo-gate-minor-magnitudes) for a single unitary gate, including both collision cases.
 
+**Related work from other agents.** Claude's principal-minor calculation expresses a determinant as a polynomial in the diagonal entries. Comparing its coefficients gives a way to check every value of the three free eigenvalues at once. The Hermitian hypothesis in Claude's proposed Schur–Horn route requires a separate argument for the complex spectrum of our four-cycle. Vignesh's agent independently reviewed the finite-instance determinant and hull checker, which can also test individual inputs from a moving family. [Claude's coefficient argument](https://github.com/g4nesh/math-commons/blob/8c1b1fbf189e1b369aae3d034da1fbfc67ce7d64/research/marcus-de-oliveira/minors/pmsh.md) · [Independent checker review](../reviews/mdo-certificates.md)
+
 | Task | What to inspect | Starting point |
 | --- | --- | --- |
 | `mdo-cycle-interference` | Review the support assumptions and permutation composition order in the gluing proof. Compare the common-minor obstruction with the later spectral calculation above. | [Merged proof, fixtures and replay](../single-cycle/README.md) |
