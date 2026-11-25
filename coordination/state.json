@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 345,
-  "updatedAt": "2026-11-25T21:24:25.000Z",
+  "revision": 346,
+  "updatedAt": "2026-11-25T21:24:27.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1953,12 +1953,12 @@
       "title": "Find spectrum-dependent weights for the certified four-cycle",
       "description": "Use the explicit four-edge matrix and stored spectral hull witness in single-cycle/results.json. Select a nontrivial one-real-parameter deformation of one complex eigenvalue through the fixture. Try to certify an explicit positive-length interval using rational barycentric weights or an exact support inequality. State where the chosen triangle degenerates or a weight changes sign and keep every claim tied to that interval. Budget one 20-minute pass including rational endpoint checks. A failed triangle is not a disproof of the full hull bound.",
       "approach": "constructive",
-      "status": "review",
+      "status": "verified",
       "dependsOn": [],
       "assignee": "ganesh-search",
       "leaseUntil": null,
       "createdAt": "2026-11-25T19:53:53.000Z",
-      "updatedAt": "2026-11-25T20:40:56.000Z",
+      "updatedAt": "2026-11-25T21:24:27.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2002,7 +2002,20 @@
           "createdAt": "2026-11-25T20:40:51.000Z"
         }
       ],
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "1e66e893-8675-4080-a090-43fb1627cda7",
+          "agentId": "ishaan-air",
+          "verdict": "pass",
+          "summary": "Exact independent recheck at fa8b4ea: interval weights on [-40,1], sign range, 5-mass (a0 in C), 12-mass (C^3 at a3=1-i) and the C^4 separator (gap 11201152/15625) all hold; 12 tests rerun. Pass. Scope: fixed U and b only, not a formal proof.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/mdo-four-cycle-spectral-weights.md",
+            "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_four_cycle_spectral_weights_ishaan.py"
+          ],
+          "checkpointId": "mdo-four-cycle-spectral-final-20261125",
+          "createdAt": "2026-11-25T21:24:27.000Z"
+        }
+      ],
       "scopePaths": [
         "research/marcus-de-oliveira/four-cycle-spectral"
       ],
@@ -2666,7 +2679,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T19:25:34.000Z",
-      "lastSeenAt": "2026-11-25T21:24:25.000Z"
+      "lastSeenAt": "2026-11-25T21:24:27.000Z"
     },
     {
       "id": "ganesh-context-navigation",
@@ -8076,6 +8089,23 @@
         "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_forest_gate_support_ishaan.py"
       ],
       "requestFingerprint": "b55885fd2641039338b05a806f05e958e680faefb31c39b8986d2085d1ca5281"
+    },
+    {
+      "id": "1e66e893-8675-4080-a090-43fb1627cda7",
+      "kind": "review",
+      "actor": "ishaan-air",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-four-cycle-spectral-weights",
+      "summary": "Independent review passed: Exact independent recheck at fa8b4ea: interval weights on [-40,1], sign range, 5-mass (a0 in C), 12-mass (C^3 at a3=1-i) and the C^4 separator (gap 11201152/15625) all hold; 12 tests rerun. Pass. Scope: fixed U and b only, not a formal proof.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:24:27.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/mdo-four-cycle-spectral-weights.md",
+        "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_four_cycle_spectral_weights_ishaan.py"
+      ],
+      "requestFingerprint": "bb31284f77e35938d55ea3b870a2875a595e07f8ff88a67885af22b520b791a5"
     }
   ],
   "usage": [
