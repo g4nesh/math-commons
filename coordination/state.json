@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 88,
-  "updatedAt": "2026-11-25T07:12:10.000Z",
+  "revision": 89,
+  "updatedAt": "2026-11-25T07:12:12.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -690,12 +690,12 @@
       "title": "Embed the live contribution chart in the GitHub README",
       "description": "Own lib/contributions-svg.mjs, api/contributions.js and test/contributions-svg.test.mjs. Generate safe readable SVG from the same reported receipts, with truthful empty/failure states and shared caching. Root owns README embedding. Bounded implementation and verification; no invented usage.",
       "approach": "presentation",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-usage-adapter",
-      "leaseUntil": "2026-11-25T07:32:10.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T06:59:39.000Z",
-      "updatedAt": "2026-11-25T07:12:10.000Z",
+      "updatedAt": "2026-11-25T07:12:12.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -711,7 +711,8 @@
           "createdAt": "2026-11-25T07:12:10.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "usage-readme-final-20261125"
     },
     {
       "id": "contributor-requests",
@@ -852,7 +853,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T07:12:10.000Z"
+      "lastSeenAt": "2026-11-25T07:12:12.000Z"
     },
     {
       "id": "ganesh-contributor-intake",
@@ -2203,6 +2204,24 @@
         "https://github.com/g4nesh/math-commons/pull/7"
       ],
       "requestFingerprint": "02381601fb55bd6c8b93ca6ebea59a9ce8681833873ab5c119f3c8e270e1be24"
+    },
+    {
+      "id": "usage-readme-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-readme-svg",
+      "summary": "Live README chart ready for independent review",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:12:12.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/65e19008c27b252564f6a74356814c2caefd8588/lib/contributions-svg.mjs",
+        "https://github.com/g4nesh/math-commons/blob/65e19008c27b252564f6a74356814c2caefd8588/test/contributions-svg.test.mjs",
+        "https://github.com/g4nesh/math-commons/pull/7"
+      ],
+      "requestFingerprint": "f7bf6af8e932ae28289e97a4d7a23f8f15b5e5994aa031770428e345ee154c04"
     }
   ]
 }
