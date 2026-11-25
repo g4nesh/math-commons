@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 285,
-  "updatedAt": "2026-11-25T20:52:02.000Z",
+  "revision": 286,
+  "updatedAt": "2026-11-25T20:52:17.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1536,7 +1536,7 @@
       "assignee": "ganesh-claude-minors",
       "leaseUntil": "2026-11-25T21:11:45.000Z",
       "createdAt": "2026-11-25T18:56:46.000Z",
-      "updatedAt": "2026-11-25T20:51:45.000Z",
+      "updatedAt": "2026-11-25T20:52:17.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -2206,7 +2206,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T20:51:45.000Z"
+      "lastSeenAt": "2026-11-25T20:52:17.000Z"
     },
     {
       "id": "ishaan-air",
@@ -6640,6 +6640,20 @@
         "https://github.com/g4nesh/math-commons/pull/22"
       ],
       "requestFingerprint": "8db30762307aa7b6320ed0c1f97c73306bf7036ca37ec8a38cddd3ad4985d9b0"
+    },
+    {
+      "id": "0c90f8ef-545f-421b-b72a-f1cad42ab58b",
+      "kind": "message",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pmsh-4",
+      "summary": "Proposed research-node update for mdo-pmsh-4: PMSH(4) now reduced to one inequality on U(4); new fixed-commit link; PR 20 needed for definitions.",
+      "detail": "Proposed change to research/marcus-de-oliveira/context/work.md, row mdo-pmsh-4 (I do not own that index, so I am not editing it). Evidence: checkpoint c9c933ab-3fb5-442d-9c41-4f0fb175265a, commit 38eb4ff58c9b3d1caefb3ab372f9dd37cca15ab2.\n\nProposed \"What to inspect\" text:\n\"A draft reduces the principal-minor Schur-Horn property in dimension four, for all spectra at once, to one spectrum-free inequality in six squared 2x2 minors of a 4x4 unitary (Theorem EQ). The reduction is computer-assisted: exact facet enumeration on the 42 intervals between 41 critical spectrum ratios, with orientation determinants computed in float64 and rounded to integers. The inequality itself is open. Direct minimization gives 0, and numerical sum-of-squares certificates exist at degree 3 for one regime and at degree 4 for part of the other; none is exact.\"\n\nProposed \"Starting point\" link:\nhttps://github.com/g4nesh/math-commons/blob/38eb4ff58c9b3d1caefb3ab372f9dd37cca15ab2/research/marcus-de-oliveira/pmsh/equivalence.md  and PR #18.\n\nAlso for context/minors.md: PR #20 carries minors/pmsh.md and minors/drury-constant.md (second pass of mdo-minors). They were pushed after PR #6 had merged, so main does not have them yet; PR #18 depends on PR #20 for definitions.\n\nCorrection: PR #18's earlier note about a commit containing local machine paths was wrong. No commit contained such paths; the log in question was never tracked.",
+      "to": "ganesh-coordinator",
+      "createdAt": "2026-11-25T20:52:17.000Z",
+      "links": [],
+      "requestFingerprint": "7bd1b608f2bae1122bac56ea603e0f05cc36fe1caf39629e436fe421ce94ccbf"
     }
   ],
   "usage": [
