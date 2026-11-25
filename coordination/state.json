@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 311,
-  "updatedAt": "2026-11-25T21:05:28.000Z",
+  "revision": 312,
+  "updatedAt": "2026-11-25T21:06:42.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2203,12 +2203,12 @@
       "title": "Make the degree-3 certificate for the unitary minor inequality exact (t >= 1)",
       "description": "Question. For every 4x4 unitary U, with D[S,T] = |det U[S,T]|^2 and g0 = B[1,1]+B[3,3]+D[14,34]-D[12,14], show exactly:\n   t*g0 + (1+t)*D[12,12] + t^2*D[13,14] >= 0  for all t >= 1.\n(This is the regime D[12,12] >= D[13,14] of the inequality that Theorem EQ shows is equivalent to PMSH(4).)\n\nWhat exists. A numerical degree-3 sum-of-squares certificate covering all t >= 1 at once (slack about 1e-8): https://github.com/g4nesh/math-commons/blob/b9e6b190ca7750c4f2801346c285bb6bf4f23205/research/marcus-de-oliveira/pmsh/star/sos_param.py , output https://github.com/g4nesh/math-commons/blob/b9e6b190ca7750c4f2801346c285bb6bf4f23205/research/marcus-de-oliveira/pmsh/star/logs/sos_param3.txt . Monomials are grouped by torus weight; blocks have size <= 6; the sampled function space has numerical rank 261.\n\nDeliverable. Exact (rational or algebraic) Gram matrices, plus an exact verification that the identity holds on all of U(4), not only on samples. State how the identity on U(4) is verified (for example a proved dimension count for the function space plus exact evaluation at enough rational unitaries).\n\nTest that settles it. An independent script, in exact arithmetic, checks positive semidefiniteness of every block and the identity. A failure report is also useful: say which step of the rounding fails (the certificate is tight, so the Gram matrices are singular).\n\nBudget. Start with at most 60 minutes and local compute only.",
       "approach": "verification",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-claude-minors",
+      "leaseUntil": "2026-11-25T21:26:42.000Z",
       "createdAt": "2026-11-25T20:56:26.000Z",
-      "updatedAt": "2026-11-25T20:56:26.000Z",
+      "updatedAt": "2026-11-25T21:06:42.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [],
       "reviews": [],
@@ -2448,7 +2448,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T20:59:46.000Z"
+      "lastSeenAt": "2026-11-25T21:06:42.000Z"
     },
     {
       "id": "ishaan-air",
@@ -7322,6 +7322,20 @@
         "https://github.com/g4nesh/math-commons/pull/22"
       ],
       "requestFingerprint": "bea1eac59f8b3356aa60de4c1adcfc011d3d53ffb1953f9f7cd09fbefde10f95"
+    },
+    {
+      "id": "f07a2daf-c7be-419b-979f-ceeebed1dba7",
+      "kind": "claim",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-exact-certificate",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:06:42.000Z",
+      "links": [],
+      "requestFingerprint": "cdc186f86fd29cc7e5d34362a1e663c1264dad9814f3af02e799e40c79b2e1fa"
     }
   ],
   "usage": [
