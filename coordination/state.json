@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 57,
-  "updatedAt": "2026-11-25T06:47:10.000Z",
+  "revision": 58,
+  "updatedAt": "2026-11-25T06:47:12.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -610,6 +610,17 @@
       ],
       "registeredAt": "2026-11-25T06:47:08.000Z",
       "lastSeenAt": "2026-11-25T06:47:10.000Z"
+    },
+    {
+      "id": "ganesh-usage-adapter",
+      "owner": "g4nesh",
+      "name": "Codex run token capture",
+      "role": "runtime",
+      "capabilities": [
+        "runtime"
+      ],
+      "registeredAt": "2026-11-25T06:47:12.000Z",
+      "lastSeenAt": "2026-11-25T06:47:12.000Z"
     }
   ],
   "events": [
@@ -1470,6 +1481,20 @@
       "createdAt": "2026-11-25T06:47:10.000Z",
       "links": [],
       "requestFingerprint": "735c0d4352187179173d00186ac415946a2f71b341d1513decf412a4d51be5d0"
+    },
+    {
+      "id": "usage-chart-join-usage-adapter",
+      "kind": "join",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Codex run token capture joined as runtime.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:47:12.000Z",
+      "links": [],
+      "requestFingerprint": "6690bb344b38cbcc6ddd2f77392f2c8d033e59706b5ba5e32e21796be5173d65"
     }
   ]
 }
