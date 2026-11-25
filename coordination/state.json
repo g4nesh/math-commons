@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 222,
-  "updatedAt": "2026-11-25T19:52:08.000Z",
+  "revision": 223,
+  "updatedAt": "2026-11-25T19:52:11.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1386,9 +1386,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T19:29:07.000Z",
+      "leaseUntil": "2026-11-25T20:12:11.000Z",
       "createdAt": "2026-11-25T18:48:15.000Z",
-      "updatedAt": "2026-11-25T19:09:07.000Z",
+      "updatedAt": "2026-11-25T19:52:11.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1677,7 +1677,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T19:09:07.000Z"
+      "lastSeenAt": "2026-11-25T19:52:11.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -5192,6 +5192,20 @@
       "createdAt": "2026-11-25T19:52:08.000Z",
       "links": [],
       "requestFingerprint": "13f86b0ff3d3e72f990781161eb2d4dbdbc0992847693c85bfa0e9683066aa89"
+    },
+    {
+      "id": "mdo-cycle-reclaim-submit-20261125",
+      "kind": "claim",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cycle-interference",
+      "summary": "Reclaimed task after ganesh-search's lease expired.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:52:11.000Z",
+      "links": [],
+      "requestFingerprint": "f91a8153584e42e6e0c2e327043b041b5f2a12ceaf632df48cb709fd2f95a566"
     }
   ],
   "usage": [
