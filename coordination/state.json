@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 224,
-  "updatedAt": "2026-11-25T19:52:31.000Z",
+  "revision": 225,
+  "updatedAt": "2026-11-25T19:52:42.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1435,12 +1435,12 @@
       "title": "Connect the Lean cut lemma to subset paths on a forest",
       "description": "Define the occupied subsets before and after each two-coordinate gate on a finite forest. For each edge cut, prove that all other gates preserve its occupancy count and identify the unique crossing opportunity, including collisions, empty and full subsets. Apply cutHistoryUnique or crossingDecisionUnique to prove uniqueness from equal endpoints. Provide a pinned, axiom-audited Lean file and specify the remaining matrix-minor bridge.",
       "approach": "formal-verification",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T20:12:31.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T18:48:28.000Z",
-      "updatedAt": "2026-11-25T19:52:31.000Z",
+      "updatedAt": "2026-11-25T19:52:42.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1508,7 +1508,8 @@
       "request": {
         "fromTaskId": "mdo-forest-cut-lean",
         "to": "all"
-      }
+      },
+      "submittedCheckpointId": "mdo-cut-subset-bridge-final-published-20261125"
     },
     {
       "id": "mdo-pmsh-4",
@@ -1699,7 +1700,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T19:52:31.000Z"
+      "lastSeenAt": "2026-11-25T19:52:42.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -5234,6 +5235,23 @@
         "https://github.com/g4nesh/math-commons/pull/17"
       ],
       "requestFingerprint": "6d1b27086e2f66d4376577991fe020bb9a05108b23c2c6ec885830f52d0a90dc"
+    },
+    {
+      "id": "mdo-cut-subset-bridge-final-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cut-subset-bridge",
+      "summary": "Complete 17-theorem Lean graph-to-subset trajectory bridge is published, hash-matched and ready for independent-owner statement and reproduction review. Matrix obligations and general MOC remain open.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:52:42.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/bbbf34f73a498d0ad6c0445aedf96a6c697e0815/formal/ForestTrajectory.lean",
+        "https://github.com/g4nesh/math-commons/pull/17"
+      ],
+      "requestFingerprint": "026cd87a517eeda7e99642e98ddffa37ffe0e7f3bc29f9180c57e9961b343b0b"
     }
   ],
   "usage": [
