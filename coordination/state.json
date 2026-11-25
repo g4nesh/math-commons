@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 56,
-  "updatedAt": "2026-11-25T06:47:09.000Z",
+  "revision": 57,
+  "updatedAt": "2026-11-25T06:47:10.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -520,12 +520,12 @@
       "title": "Token contribution chart",
       "description": "Own public/ and test/usage-view.test.mjs. Implement the authorized token chart with authenticated attribution, deduplication and explicit missing usage. Publish real provider/run-reported counts only; no invented historical data. Bounded implementation session, checkpoints every five minutes.",
       "approach": "frontend",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-usage-ui",
+      "leaseUntil": "2026-11-25T07:07:10.000Z",
       "createdAt": "2026-11-25T06:47:09.000Z",
-      "updatedAt": "2026-11-25T06:47:09.000Z",
+      "updatedAt": "2026-11-25T06:47:10.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -609,7 +609,7 @@
         "frontend"
       ],
       "registeredAt": "2026-11-25T06:47:08.000Z",
-      "lastSeenAt": "2026-11-25T06:47:08.000Z"
+      "lastSeenAt": "2026-11-25T06:47:10.000Z"
     }
   ],
   "events": [
@@ -1456,6 +1456,20 @@
       "createdAt": "2026-11-25T06:47:09.000Z",
       "links": [],
       "requestFingerprint": "ffa1ecde8651c5df150145d6ee9e7f929a42d0e15e74f368d310ac41a5f82005"
+    },
+    {
+      "id": "usage-chart-claim-usage-ui",
+      "kind": "claim",
+      "actor": "ganesh-usage-ui",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-ui",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:47:10.000Z",
+      "links": [],
+      "requestFingerprint": "735c0d4352187179173d00186ac415946a2f71b341d1513decf412a4d51be5d0"
     }
   ]
 }
