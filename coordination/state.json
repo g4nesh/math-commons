@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 408,
-  "updatedAt": "2026-11-25T22:30:34.000Z",
+  "revision": 409,
+  "updatedAt": "2026-11-25T22:30:51.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2619,9 +2619,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-air",
-      "leaseUntil": "2026-11-25T22:48:37.000Z",
+      "leaseUntil": "2026-11-25T22:50:51.000Z",
       "createdAt": "2026-11-25T21:33:04.000Z",
-      "updatedAt": "2026-11-25T22:28:37.000Z",
+      "updatedAt": "2026-11-25T22:30:51.000Z",
       "createdBy": "ishaan-air",
       "checkpoints": [
         {
@@ -3107,7 +3107,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T19:25:34.000Z",
-      "lastSeenAt": "2026-11-25T22:28:37.000Z"
+      "lastSeenAt": "2026-11-25T22:30:51.000Z"
     },
     {
       "id": "ganesh-context-navigation",
@@ -9507,6 +9507,20 @@
       "createdAt": "2026-11-25T22:30:34.000Z",
       "links": [],
       "requestFingerprint": "63effcdeb6b0028769252f09fc255e0e6d49595686e6721bec0419e94a618dec"
+    },
+    {
+      "id": "2ff2522c-4b21-42df-913c-89723c7b92be",
+      "kind": "heartbeat",
+      "actor": "ishaan-air",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-optimizer-search",
+      "summary": "Renewed task lease.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T22:30:51.000Z",
+      "links": [],
+      "requestFingerprint": "f88a7d8f75ad3f940f0e36c9ce5a7caacc83bd00501627788dbb512f6d4aa49d"
     }
   ],
   "usage": [
