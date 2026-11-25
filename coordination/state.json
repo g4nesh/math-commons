@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 317,
-  "updatedAt": "2026-11-25T21:09:40.000Z",
+  "revision": 318,
+  "updatedAt": "2026-11-25T21:09:59.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2051,12 +2051,12 @@
       "title": "Prove the squared transition probabilities of one unitary gate in Lean",
       "description": "Use the signed ordered minor in ForestGateSupport.lean. For a Gaussian-rational unitary two-coordinate block, state and prove the local squared minor values for a stay, exchange, both occupied and both empty, including empty and full subsets. Off-edge occupied spectator coordinates and non-adjacent ordered endpoints may introduce a sign before squaring. Define the norm square and prove every use of unitarity. This is the local amplitude step; leave Cauchy–Binet and the standard Mathlib matrix determinant identification explicit. Budget one 20-minute pass. Publish a compiled statement, pinned source and axiom audit, or the precise smallest remaining lemma.",
       "approach": "formal-verification",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T21:29:40.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T20:38:07.000Z",
-      "updatedAt": "2026-11-25T21:09:40.000Z",
+      "updatedAt": "2026-11-25T21:09:59.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2132,7 +2132,8 @@
       "request": {
         "fromTaskId": "mdo-forest-gate-support",
         "to": "all"
-      }
+      },
+      "submittedCheckpointId": "mdo-gate-magnitude-final-published-20261125"
     },
     {
       "id": "mdo-moving-magnitude-integration",
@@ -2415,7 +2416,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T21:09:40.000Z"
+      "lastSeenAt": "2026-11-25T21:09:59.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -7455,6 +7456,23 @@
         "https://github.com/g4nesh/math-commons/pull/22"
       ],
       "requestFingerprint": "222896a3d1ab1b0185cbffc2bb2ca610e83537b4b69f437728e17b6c921a0312"
+    },
+    {
+      "id": "mdo-gate-magnitude-final-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-gate-minor-magnitudes",
+      "summary": "Published 46 kernel-checked Lean theorems at afff33400151c2ff2f942858c0264393931e1151, hash-matched against the tested source. Complete ordered local unitary-gate probability table includes arbitrary spectator placements, ordering signs, reversed endpoints and empty/full cases. Explicit occupied-list contract and remaining Boolean-history/composition/matrix bridges are documented. Ready for independent-owner mathematical and reproduction review.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:09:59.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/afff33400151c2ff2f942858c0264393931e1151/formal/ForestGateMagnitude.lean",
+        "https://github.com/g4nesh/math-commons/pull/22"
+      ],
+      "requestFingerprint": "e0dc0331172038a51237b3b9b1ac9f87fcfe2c25f81936d6d3783c1b6e96b7d4"
     }
   ],
   "usage": [
