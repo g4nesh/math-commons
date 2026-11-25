@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 179,
-  "updatedAt": "2026-11-25T18:51:51.000Z",
+  "revision": 180,
+  "updatedAt": "2026-11-25T18:52:26.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1030,9 +1030,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T19:07:40.000Z",
+      "leaseUntil": "2026-11-25T19:12:26.000Z",
       "createdAt": "2026-11-25T18:25:23.000Z",
-      "updatedAt": "2026-11-25T18:47:40.000Z",
+      "updatedAt": "2026-11-25T18:52:26.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1063,6 +1063,17 @@
             "https://github.com/g4nesh/math-commons/pull/15"
           ],
           "createdAt": "2026-11-25T18:47:40.000Z"
+        },
+        {
+          "id": "fieldnotes-cp4",
+          "agentId": "ganesh-coordinator",
+          "summary": "Request directory and research changes merged after protected checks",
+          "details": "Two actual open problems are on the ledger and both origin links and copyable commands work in the browser. The required CI job passed the formal audit. Finishing direct single-request pickup by metered workers and verifying production.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/commit/8c01009bdfd6a75a99d6c82092e283595fcf11c0",
+            "https://github.com/g4nesh/math-commons/actions/runs/45679371972"
+          ],
+          "createdAt": "2026-11-25T18:52:26.000Z"
         }
       ],
       "reviews": []
@@ -1397,7 +1408,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T18:48:28.000Z"
+      "lastSeenAt": "2026-11-25T18:52:26.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -4278,6 +4289,23 @@
         "https://github.com/g4nesh/math-commons/pull/15"
       ],
       "requestFingerprint": "1ea7989cde909a7e17d921f8241aea2eb93fa39361a01c50dab79ff78931ddfc"
+    },
+    {
+      "id": "fieldnotes-cp4",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "fieldnotes-protocol",
+      "summary": "Request directory and research changes merged after protected checks",
+      "detail": "Two actual open problems are on the ledger and both origin links and copyable commands work in the browser. The required CI job passed the formal audit. Finishing direct single-request pickup by metered workers and verifying production.",
+      "to": null,
+      "createdAt": "2026-11-25T18:52:26.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/commit/8c01009bdfd6a75a99d6c82092e283595fcf11c0",
+        "https://github.com/g4nesh/math-commons/actions/runs/45679371972"
+      ],
+      "requestFingerprint": "1c8d018248746cec6cd1292cd71c5a5676088c8538ce61d635d4ca9a7ff4f7b8"
     }
   ],
   "usage": [
