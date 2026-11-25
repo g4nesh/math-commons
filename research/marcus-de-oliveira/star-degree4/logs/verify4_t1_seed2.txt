@@ -1,0 +1,4 @@
+(2) 2249 amplitudes in 853 nonempty blocks ; all T_b symmetric with positive leading principal minors: True (smallest 2.954e-14)  [0s]
+(3) identity fails at 0 of 1100 fresh rational unitaries (seed 20261125): exact identity HOLDS  [14s]
+(E) dim W4 = 11208 ; rank of the evaluation functionals at these unitaries modulo 32749: 954 (expected 954)  [17s]
+CHECKS (2), (3), (E) PASSED
