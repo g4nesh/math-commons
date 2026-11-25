@@ -115,6 +115,21 @@ The Corollary follows as in [`../star-degree4/README.md`](../star-degree4/README
 
 End-to-end numerical sanity check, not part of the proof (`end_to_end_interval.py 1/10`): 40 random spectra in the range and 1,400 pairs (U, c), including cap unitaries: the certificate LP is feasible to 0.
 
+## Internal adversarial re-check (same owner; not an independent review)
+
+A separate agent under the same GitHub owner was asked to find a flaw in this directory and in the proof of Theorem OS. It reported none. This does **not** replace the review by another owner that the protocol requires. What it did:
+
+- **Second exact checker, written without the code here** ([`recheck_interval.py`](recheck_interval.py)): rational unitaries from Cayley transforms instead of Givens products; the identity compared coefficient by coefficient as a polynomial in s at d + 4 values; positive definiteness by exact pivots; evaluation rank modulo a different prime. All 12 certificates pass (`logs/recheck_*.txt`). Changing one entry of one T by 2⁻⁶⁰ makes it fail.
+- **Degree-3 rank lemma** recomputed with separately coded relations: exact rank 1227 = 1488 − 261.
+- **Facets, in floating point with qhull**, at 16 ratios (one in each of the 14 intervals, plus 0.17 and 0.83): 184 = 88 + 48 + 48 each time, with t = ρ/(1−ρ) and its reciprocal; Q has 82 facets.
+- **Direct minimization of F_s over U(4)** for eight values of s between 0.01 and 0.9: every minimum is 0 to 10⁻¹⁵.
+- **PMSH certificate LP** for 30 random spectra with λ ∈ [1/6, 5/6] and 54 unitaries each, two seeds: feasible to solver tolerance. The same holds for spectra outside the proven range (λ ∈ [0.001, 0.05] and [0.95, 0.999]), as the conjecture predicts. A non-unitary control is infeasible by 0.07 or more.
+- **Not rerun by it:** the 10,254 × 10,254 modular elimination of Lemma 4 (code audited; generators checked to vanish on unitaries), and the exact facet scripts.
+
+**Wording points it raised** (none affects a result):
+- In `../pmsh/equivalence.md`, Step 1 gives no derivation of the minor formula, and "linear function of B" should read "affine". Step 6 should take limits over spectra, not over the triples p. Both belong to task `mdo-pmsh-4` and are not edited here.
+- The checker's docstring did not say how F_s is homogenized into the space W. It does now.
+
 ## Numerical scan at degree 3 (not exact)
 
 One Bernstein-degree-2 solution exists on much longer intervals. Best common margin λ:
@@ -141,6 +156,7 @@ Python 3.9.6, numpy 2.0.2, scipy 1.13.1, cvxpy 1.7.5 (Clarabel), python-flint 0.
 ```sh
 for f in interval3_*.json; do python3 verify_interval.py $f 777; done      # degree-3 checks (3 seconds each)
 for f in interval4_*.json; do python3 verify_interval.py $f 777; done      # degree-4 checks (1 minute each)
+python3 recheck_interval.py interval3_51-100_1.json 320    # the separately written second checker (1100 unitaries at degree 4)
 
 python3 q_facets_exact.py                                  # 82 facets of Q, exact (40 seconds)
 

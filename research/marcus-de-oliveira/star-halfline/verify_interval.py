@@ -19,7 +19,10 @@ Checks, all in exact arithmetic:
 Why this proves the claim.  The relation space K (unitarity relations times monomial pairs) lies in the kernel of every
 evaluation and has rank >= dim W - r_E (deg 3: exact rank 1227 of 1488, ../star-exact/exact_space.py; deg 4: rank >= 10254
 of 11208, ../star-degree4/lemma4.py).  So an element of W that vanishes at the unitaries of (E) vanishes on U(4).  For a
-fixed node s, both sides of the identity restrict on U(4) to elements of W; by (I) their difference vanishes on U(4).
+fixed node s, both sides of the identity restrict on U(4) to elements of W: the right side is in W as it stands (integer
+amplitudes within one weight block, real symmetric T); the left side F_s equals on U(4) the element of W obtained by
+multiplying its B-terms by the (deg-1)-th power and its D-terms by the (deg-2)-th power of a squared row norm, which is 1
+on U(4).  By (I) their difference vanishes on U(4).
 For a fixed U in U(4) both sides are polynomials in s of degree <= d+2 that agree at d+3 nodes; so they agree for all s."""
 import sys, json, random, time
 from fractions import Fraction as Fr
