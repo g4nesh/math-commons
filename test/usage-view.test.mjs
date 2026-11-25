@@ -13,6 +13,20 @@ test('cached input is a subset and never added twice', () => {
   const data = aggregateUsage([receipt()], { now });
   assert.equal(data.total, 120); assert.equal(data.input, 100); assert.equal(data.cachedInput, 50);
 });
+test('provider subtotals share receipt deduplication, case folding, window and owner filters', () => {
+  const codex = receipt({ provider: 'codex' });
+  const records = [codex, codex,
+    receipt({ id: 'r2', runId: 'run2', provider: 'CODEX', inputTokens: 50, outputTokens: 10 }),
+    receipt({ id: 'r3', runId: 'run3', provider: 'claude', owner: 'bob', inputTokens: 30, outputTokens: 5, cachedInputTokens: 20 }),
+    receipt({ id: 'old', runId: 'old', provider: 'claude', startedAt: '2026-10-01T00:00:00Z', finishedAt: '2026-10-01T01:00:00Z' })];
+  const data = aggregateUsage(records, { period: '7d', now });
+  assert.deepEqual(data.providers.map(row => [row.provider, row.total, row.cachedInput]), [['claude', 35, 20], ['codex', 180, 100]]);
+  assert.equal(data.providers.reduce((sum, row) => sum + row.total, 0), data.total);
+  const alice = aggregateUsage(records, { period: '7d', owners: ['alice'], now });
+  assert.deepEqual(alice.providers.map(row => [row.provider, row.total]), [['codex', 180]]);
+  assert.deepEqual(aggregateUsage(records, { owners: [], now }).providers, []);
+  assert.deepEqual(aggregateUsage(undefined, { now }).providers, []);
+});
 test('duplicate IDs and replayed owner/provider run identities count once', () => {
   const data = normalizeReceipts([receipt(), receipt(), receipt({ id: 'other-id', owner: 'alice' }), receipt({ id: 'r2', runId: 'run2' })], now);
   assert.equal(data.receipts.length, 2); assert.equal(data.duplicateCount, 2);

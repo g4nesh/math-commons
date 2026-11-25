@@ -24,10 +24,11 @@ function response() {
 test('SVG uses exact recorded totals and never adds cached tokens twice', () => {
   const svg = renderContributionsSvg(snapshot([receipt(), receipt({
     id: 'r-2', runId: 'second-run', owner: 'bob', inputTokens: 80, outputTokens: 20,
-    cachedInputTokens: 10, source: 'manual'
+    cachedInputTokens: 10, source: 'manual', provider: 'claude'
   })]), { now });
   assert.match(svg, /250 recorded tokens/);
   assert.match(svg, /200 input \+ 50 output · 90 cached input \(included\)/);
+  assert.match(svg, />Claude 100 · Codex 150<\/text>/);
   assert.match(svg, /1 runtime \/ 1 manual/);
   assert.match(svg, /Last recorded: 2026-11-24 00:06:00 UTC/);
   assert.match(svg, /2026-11-24/);
@@ -97,7 +98,29 @@ test('long histories retain final endpoints with at most 800 plotted points per 
   })]), { now });
   const path = svg.match(/data-owner-line="0" d="([^"]+)"/)[1];
   assert.ok(path.split(' ').length <= 800);
-  assert.match(path, /L844\.00,132\.00$/);
+  assert.match(path, /L844\.00,154\.00$/);
+});
+
+test('one-day receipts retain a visible centered point and provider totals', () => {
+  const svg = renderContributionsSvg(snapshot([receipt({
+    startedAt: '2026-11-25T00:00:00Z', finishedAt: '2026-11-25T00:05:00Z',
+    recordedAt: '2026-11-25T00:06:00Z'
+  })]), { now });
+  assert.match(svg, />Codex 150<\/text>/);
+  assert.match(svg, /<circle cx="458\.00" cy="154\.00" r="3"/);
+  assert.equal((svg.match(/>2026-11-25<\/text>/g) || []).length, 1);
+  assert.doesNotMatch(svg, /NaN|Infinity/);
+});
+
+test('provider labels are escaped and many providers remain bounded without losing total', () => {
+  const providers = ['codex', 'claude', 'constructor', '<script>'];
+  const svg = renderContributionsSvg(snapshot(providers.map((provider, index) => receipt({
+    provider, id: 'provider-' + index, inputTokens: 100 + index, outputTokens: 0, cachedInputTokens: 0
+  }))), { now });
+  assert.match(svg, /406 recorded tokens/);
+  assert.match(svg, /Other providers 201/);
+  assert.match(svg, /&lt;script&gt;/);
+  assert.doesNotMatch(svg, /<script>|undefined|function Object/);
 });
 
 test('explicit demo is prominently synthetic and live rendering never falls back to it', () => {

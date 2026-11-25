@@ -2,6 +2,7 @@
 const DAY = 86_400_000;
 export const dayKey = (millis) => new Date(millis).toISOString().slice(0, 10);
 export const dayStart = (millis) => Math.floor(millis / DAY) * DAY;
+export const providerLabel = (provider) => provider === 'codex' ? 'Codex' : provider === 'claude' ? 'Claude' : provider;
 const count = (value) => Number.isSafeInteger(value) && value >= 0;
 const safeAdd = (left, right) => {
   const value = left + right;
@@ -78,15 +79,20 @@ export function aggregateUsage(receipts, { period = '30d', owners = null, now = 
   const dayMap = new Map(days.map((day) => [day.date, day]));
   const seriesMap = new Map(availableOwners.filter((owner) => selected === null || selected.has(owner)).map((owner) => [owner, { owner, ...empty(), days: dates.map((date) => ({ date, ...empty(), cumulative: 0 })) }]));
   const ownerDays = new Map([...seriesMap].map(([owner, series]) => [owner, new Map(series.days.map((day) => [day.date, day]))]));
+  const providerMap = new Map();
   for (const receipt of eligible) {
     add(totals, receipt); add(dayMap.get(receipt.day), receipt);
     add(seriesMap.get(receipt.owner), receipt); add(ownerDays.get(receipt.owner).get(receipt.day), receipt);
+    const provider = receipt.provider.toLowerCase();
+    if (!providerMap.has(provider)) providerMap.set(provider, { provider, ...empty() });
+    add(providerMap.get(provider), receipt);
   }
   for (const collection of [days, ...[...seriesMap.values()].map((series) => series.days)]) {
     let running = 0;
     for (const day of collection) { running = safeAdd(running, day.total || 0); day.cumulative = running; }
   }
   return { ...totals, period, startDay: dayKey(start), endDay: dayKey(end), days, series: [...seriesMap.values()], receipts: eligible,
+    providers: [...providerMap.values()].sort((a, b) => a.provider.localeCompare(b.provider)),
     availableOwners, pendingCount: normalized.pendingCount, allReceiptCount: normalized.receipts.length, invalidCount: normalized.invalidCount, duplicateCount: normalized.duplicateCount,
     lastRecordedAt: eligible.length ? new Date(Math.max(...eligible.map((receipt) => receipt.recorded))).toISOString() : null };
 }
