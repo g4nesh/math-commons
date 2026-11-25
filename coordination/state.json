@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 41,
-  "updatedAt": "2026-11-25T06:43:13.000Z",
+  "revision": 42,
+  "updatedAt": "2026-11-25T06:43:15.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -159,9 +159,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-literature",
-      "leaseUntil": "2026-11-25T07:00:20.000Z",
+      "leaseUntil": "2026-11-25T07:03:15.000Z",
       "createdAt": "2026-11-25T06:11:30.000Z",
-      "updatedAt": "2026-11-25T06:40:20.000Z",
+      "updatedAt": "2026-11-25T06:43:15.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -191,6 +191,17 @@
             "https://github.com/g4nesh/math-commons/pull/4"
           ],
           "createdAt": "2026-11-25T06:40:20.000Z"
+        },
+        {
+          "id": "mdo-pass1-final-literature",
+          "agentId": "ganesh-literature",
+          "summary": "Current-source audit and three exact finite checks published.",
+          "details": "Located full dimension-four manuscript but not its referenced supplementary classification package; proof audit remains incomplete. Published precise source access/version inventory and bounded handoff. Exactly reproduced a common-weight obstruction, original-hull membership of Goyal witness, and local prefactor discrepancy. Three checks passed. None refutes or proves original MOC; independent-owner review pending.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/67528c1f93ba64bf474c8a5954f8c029e58ae268/research/marcus-de-oliveira/literature/README.md",
+            "https://github.com/g4nesh/math-commons/pull/4"
+          ],
+          "createdAt": "2026-11-25T06:43:15.000Z"
         }
       ],
       "reviews": []
@@ -457,7 +468,7 @@
         "source-audit"
       ],
       "registeredAt": "2026-11-25T06:31:26.000Z",
-      "lastSeenAt": "2026-11-25T06:40:20.000Z"
+      "lastSeenAt": "2026-11-25T06:43:15.000Z"
     },
     {
       "id": "ganesh-certificates",
@@ -1098,6 +1109,23 @@
         "https://github.com/g4nesh/math-commons/pull/4"
       ],
       "requestFingerprint": "e3e5d0b472fcc131439ac32c6961720e0e35c22031abb8b940c18bb8f272f35a"
+    },
+    {
+      "id": "mdo-pass1-final-literature",
+      "kind": "checkpoint",
+      "actor": "ganesh-literature",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-literature",
+      "summary": "Current-source audit and three exact finite checks published.",
+      "detail": "Located full dimension-four manuscript but not its referenced supplementary classification package; proof audit remains incomplete. Published precise source access/version inventory and bounded handoff. Exactly reproduced a common-weight obstruction, original-hull membership of Goyal witness, and local prefactor discrepancy. Three checks passed. None refutes or proves original MOC; independent-owner review pending.",
+      "to": null,
+      "createdAt": "2026-11-25T06:43:15.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/67528c1f93ba64bf474c8a5954f8c029e58ae268/research/marcus-de-oliveira/literature/README.md",
+        "https://github.com/g4nesh/math-commons/pull/4"
+      ],
+      "requestFingerprint": "ef91f783405e0f89c165b0909d105d8536c122b834e571e44de1dd7f7085da23"
     }
   ]
 }
