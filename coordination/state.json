@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 334,
-  "updatedAt": "2026-11-25T21:21:04.000Z",
+  "revision": 335,
+  "updatedAt": "2026-11-25T21:21:40.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2319,9 +2319,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-moc",
-      "leaseUntil": "2026-11-25T21:41:04.000Z",
+      "leaseUntil": "2026-11-25T21:41:40.000Z",
       "createdAt": "2026-11-25T20:59:14.000Z",
-      "updatedAt": "2026-11-25T21:21:04.000Z",
+      "updatedAt": "2026-11-25T21:21:40.000Z",
       "createdBy": "ishaan-moc",
       "checkpoints": [
         {
@@ -2342,6 +2342,17 @@
             "https://github.com/g4nesh/math-commons/pull/24"
           ],
           "createdAt": "2026-11-25T21:12:40.000Z"
+        },
+        {
+          "id": "cc3ebe4f-545a-4988-9db7-53b2236a0d33",
+          "agentId": "ishaan-moc",
+          "summary": "Reduction to the ninety contact inequalities re-derived: no logical gap, finite identities replayed exactly by two independent implementations; case proofs and Theorem 1.2 not yet judged.",
+          "details": "Evidence levels are stated per item. Nothing here is a verdict on the ninety case proofs or on Theorem 1.2.\n\nResult. The implication\n  [Corollary 2.2] + [Proposition 4.3 for T_1..T_90] + [Proposition 4.1 and the orbit classification] => MOC(4)\nis correct as written in the paper's Sections 3, 4.2-4.3 and 6, modulo classical citations. Two independent readings (PROOF-READ) found no logical gap, and two independent own-code implementations replayed the finite identities (EXACT).\n\nEXACT (own code, integers/rationals/symbolic; lib/test_moc4lib.py, 77 checks; reduction/check_section3.py):\n- P (24x14) from Pluecker straightening of the 14 noncrossing matchings, proved as a polynomial identity; rank 14; the Appendix A minor has determinant 1; P kappa = 1. The two implementations give the same P.\n- grad C vanishes identically on matching vectors, so X is inside {grad C = 0}; Hess C(kappa) as in (3.10), rank 4, kernel = entry subspace E; polarization (3.12); dim X = 6 by an exact Jacobian rank plus ten independent group directions.\n- (3.5), (3.7), (3.8), (4.2) for all 52 index pairs, (4.3) = 4/49, 512/2401, -158/2401, covariance (4.7) for all 1152 group elements, and all seven rows of the paper's Table 3.\n- The 82 vectors of Appendix D are 34 minor vectors and 48 non-minor vectors with the stated value profiles; the six-subsets fall into 214 orbits, 124 minor-only and 90 not, and T_1..T_90 are one representative of each of those 90. (A second, independent replay of the facet completeness is still running.)\n\nObservations (not gaps):\n- Only the inclusion X in {grad C = 0} is used in Section 3; the cited equality X = Sing(C) is not needed.\n- The statement that every nonzero point of X is the matching vector of finite spectra with alpha != 0 carries real weight in Theorem 3.6 and is not proved in the paper. It is the closedness of the image of the matching map (surjectivity of the GIT quotient plus degree-one generation). Recorded as CITED.\n- Eq. (4.7) as printed fits sigma -> rho sigma rho'^{-1}; with (gO)_{ij} = O_{rho'(i), rho^{-1}(j)} it fits the stated action. Harmless.\n- (3.8) needs det O = +1; the paper uses it only on SO(4).\n- The cone of T_85 has two non-minor generators (f_28 and f_35); Section 5 covers both through its sign cases and the transposition symmetry.\n\nNot yet examined: Theorem 1.2, Appendices B and C, and all supplementary case proofs. Per-document audits of the 208 proof PDFs have started (first eight batches).\nNext action: review the first batch reports, then run the remaining batches with a second pass on every reported gap.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/79a1b1a75baed4cb6f52dc1d9b4b2d6eb4293d0d/research/marcus-de-oliveira/zheng-n4-audit/reduction/contact-reduction.md",
+            "https://github.com/g4nesh/math-commons/blob/79a1b1a75baed4cb6f52dc1d9b4b2d6eb4293d0d/research/marcus-de-oliveira/zheng-n4-audit/lib/README.md"
+          ],
+          "createdAt": "2026-11-25T21:21:40.000Z"
         }
       ],
       "reviews": [],
@@ -2565,7 +2576,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T21:21:04.000Z"
+      "lastSeenAt": "2026-11-25T21:21:40.000Z"
     }
   ],
   "events": [
@@ -7764,6 +7775,23 @@
       "createdAt": "2026-11-25T21:21:04.000Z",
       "links": [],
       "requestFingerprint": "193f40ac07b32c6b425d0040a4a2e5f183cf557400fcd30858f8c6ddb74ae8cb"
+    },
+    {
+      "id": "cc3ebe4f-545a-4988-9db7-53b2236a0d33",
+      "kind": "checkpoint",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-n4-audit",
+      "summary": "Reduction to the ninety contact inequalities re-derived: no logical gap, finite identities replayed exactly by two independent implementations; case proofs and Theorem 1.2 not yet judged.",
+      "detail": "Evidence levels are stated per item. Nothing here is a verdict on the ninety case proofs or on Theorem 1.2.\n\nResult. The implication\n  [Corollary 2.2] + [Proposition 4.3 for T_1..T_90] + [Proposition 4.1 and the orbit classification] => MOC(4)\nis correct as written in the paper's Sections 3, 4.2-4.3 and 6, modulo classical citations. Two independent readings (PROOF-READ) found no logical gap, and two independent own-code implementations replayed the finite identities (EXACT).\n\nEXACT (own code, integers/rationals/symbolic; lib/test_moc4lib.py, 77 checks; reduction/check_section3.py):\n- P (24x14) from Pluecker straightening of the 14 noncrossing matchings, proved as a polynomial identity; rank 14; the Appendix A minor has determinant 1; P kappa = 1. The two implementations give the same P.\n- grad C vanishes identically on matching vectors, so X is inside {grad C = 0}; Hess C(kappa) as in (3.10), rank 4, kernel = entry subspace E; polarization (3.12); dim X = 6 by an exact Jacobian rank plus ten independent group directions.\n- (3.5), (3.7), (3.8), (4.2) for all 52 index pairs, (4.3) = 4/49, 512/2401, -158/2401, covariance (4.7) for all 1152 group elements, and all seven rows of the paper's Table 3.\n- The 82 vectors of Appendix D are 34 minor vectors and 48 non-minor vectors with the stated value profiles; the six-subsets fall into 214 orbits, 124 minor-only and 90 not, and T_1..T_90 are one representative of each of those 90. (A second, independent replay of the facet completeness is still running.)\n\nObservations (not gaps):\n- Only the inclusion X in {grad C = 0} is used in Section 3; the cited equality X = Sing(C) is not needed.\n- The statement that every nonzero point of X is the matching vector of finite spectra with alpha != 0 carries real weight in Theorem 3.6 and is not proved in the paper. It is the closedness of the image of the matching map (surjectivity of the GIT quotient plus degree-one generation). Recorded as CITED.\n- Eq. (4.7) as printed fits sigma -> rho sigma rho'^{-1}; with (gO)_{ij} = O_{rho'(i), rho^{-1}(j)} it fits the stated action. Harmless.\n- (3.8) needs det O = +1; the paper uses it only on SO(4).\n- The cone of T_85 has two non-minor generators (f_28 and f_35); Section 5 covers both through its sign cases and the transposition symmetry.\n\nNot yet examined: Theorem 1.2, Appendices B and C, and all supplementary case proofs. Per-document audits of the 208 proof PDFs have started (first eight batches).\nNext action: review the first batch reports, then run the remaining batches with a second pass on every reported gap.",
+      "to": null,
+      "createdAt": "2026-11-25T21:21:40.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/79a1b1a75baed4cb6f52dc1d9b4b2d6eb4293d0d/research/marcus-de-oliveira/zheng-n4-audit/reduction/contact-reduction.md",
+        "https://github.com/g4nesh/math-commons/blob/79a1b1a75baed4cb6f52dc1d9b4b2d6eb4293d0d/research/marcus-de-oliveira/zheng-n4-audit/lib/README.md"
+      ],
+      "requestFingerprint": "930a33370ca34245d46d80b4c677af5f7b5b9ae5cd10cb3c8f6d03fd46a317cd"
     }
   ],
   "usage": [
