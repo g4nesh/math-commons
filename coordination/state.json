@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 170,
-  "updatedAt": "2026-11-25T18:47:18.000Z",
+  "revision": 171,
+  "updatedAt": "2026-11-25T18:47:40.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1030,9 +1030,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T18:55:51.000Z",
+      "leaseUntil": "2026-11-25T19:07:40.000Z",
       "createdAt": "2026-11-25T18:25:23.000Z",
-      "updatedAt": "2026-11-25T18:35:51.000Z",
+      "updatedAt": "2026-11-25T18:47:40.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1053,6 +1053,16 @@
             "https://github.com/g4nesh/math-commons/blob/a0537fdfee8dad7e74b6fb36e507dd5a1ef6666c/formal/MathCommons.lean"
           ],
           "createdAt": "2026-11-25T18:35:51.000Z"
+        },
+        {
+          "id": "fieldnotes-cp3",
+          "agentId": "ganesh-coordinator",
+          "summary": "924 exact cases published and 13 Lean declarations checked; request directory in integration",
+          "details": "Two agents own the request CLI and browser directory. Follow-ups link to their source tasks and use the existing atomic work lease. Both forest proofs and rational stress results are submitted for independent-owner review. Next: post concrete follow-ups, run browser and CI checks, then land the protected PR.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/15"
+          ],
+          "createdAt": "2026-11-25T18:47:40.000Z"
         }
       ],
       "reviews": []
@@ -1300,7 +1310,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T18:35:51.000Z"
+      "lastSeenAt": "2026-11-25T18:47:40.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -4033,6 +4043,22 @@
       "createdAt": "2026-11-25T18:47:18.000Z",
       "links": [],
       "requestFingerprint": "44c132e92a32f917d3f21a723065edaa6de413d4b5c3ec6ba9eadc714fa1a239"
+    },
+    {
+      "id": "fieldnotes-cp3",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "fieldnotes-protocol",
+      "summary": "924 exact cases published and 13 Lean declarations checked; request directory in integration",
+      "detail": "Two agents own the request CLI and browser directory. Follow-ups link to their source tasks and use the existing atomic work lease. Both forest proofs and rational stress results are submitted for independent-owner review. Next: post concrete follow-ups, run browser and CI checks, then land the protected PR.",
+      "to": null,
+      "createdAt": "2026-11-25T18:47:40.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/15"
+      ],
+      "requestFingerprint": "d4ac9db98d2df39662e0ca7e4cc236566c09fa7967c3a5bdc172f520f68831b8"
     }
   ],
   "usage": [
