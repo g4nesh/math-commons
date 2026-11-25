@@ -80,7 +80,7 @@ So degree 4 looks exact-feasible for t from about 0.1 upward and is clearly infe
 
 ## Theorem HQ: harmonic spectra
 
-**Definition.** Four distinct real numbers c₁,…,c₄ form a *harmonic quadruple* if their cross-ratio (c₁−c₂)(c₃−c₄) / ((c₁−c₃)(c₂−c₄)) equals −1, 1/2 or 2 (the value depends on the labelling; the three values are the same condition). Equivalently, the three numbers c₁c₂+c₃c₄, c₁c₃+c₂c₄, c₁c₄+c₂c₃ are in arithmetic progression. The condition is invariant under c ↦ αc + β. Examples: (0, 2, 3, 6), (1, 5, 7, 13), (−3, −1, 0, 3).
+**Definition.** Four distinct real numbers c₁,…,c₄ form a *harmonic quadruple* if their cross-ratio (c₁−c₂)(c₃−c₄) / ((c₁−c₃)(c₂−c₄)) equals −1, 1/2 or 2 (the value depends on the labelling; the three values are the same condition). Equivalently, the three numbers c₁c₂+c₃c₄, c₁c₃+c₂c₄, c₁c₄+c₂c₃ are in arithmetic progression in some order. The condition is invariant under c ↦ αc + β. Examples: (0, 2, 3, 6), (1, 5, 7, 13), (−3, −1, 0, 3).
 
 > **Theorem HQ.** Let H be a 4×4 Hermitian matrix whose eigenvalues form a harmonic quadruple. Then the vector of all principal minors of H lies in the convex hull of the vectors (∏_{t∈T} c_{π(t)})_T, π ∈ S₄. That is, PMSH holds for H.
 >
@@ -88,21 +88,28 @@ So degree 4 looks exact-feasible for t from about 0.1 upward and is clearly infe
 
 *Proof of Theorem HQ.*
 1. **Certificates are points of a polytope.** Write H = U D_c U*. By Steps 1–2 of Theorem EQ in [`../pmsh/equivalence.md`](../pmsh/equivalence.md), a PMSH certificate exists iff the projected point π_p(x(U)) lies in P_p = conv{π_p(x(P_π))}, where p is the vector of the three matching sums. After an affine normalization p = (1, ρ, 0), and ρ is the cross-ratio above.
-2. **Facets at the harmonic ratios (`ratio_half.py`, exact).** For ρ ∈ {1/2, 2, −1} the polytope P_p has exactly 184 facets: 88 whose vertex set lies in no exotic facet of the compound polytope, and 96 of the form g_F + 2·D_a + D_b ≥ 0 with (F, a, b) a symmetric image of (g0, D[12,12], D[13,14]). Nothing else.
-3. **The 88.** By LP duality each is a nonnegative combination of the coordinates B[s,j] and D[S,T] on the affine span, so it holds at x(U) for every unitary.
-4. **The 96.** Each is Theorem S4 applied to P_α U P_β or its transpose.
-5. So π_p(x(U)) satisfies every facet inequality and lies in the affine span of P_p. Hence it lies in P_p. ∎
+2. **Coordinates.** On aff(Q), π_p(x) is an affine image of y(x) := (B[s,j] for s, j ≤ 3; n₁₁ + ρ n₁₂; n₂₁ + ρ n₂₂) ∈ ℝ¹¹, because B and the pairing matrix have row and column sums 1. The polytope conv{y(x(P_π))} is full-dimensional (exact rank 12 in homogeneous coordinates). Every x(U) lies in aff(Q) (R1 in [`../pmsh/README.md`](../pmsh/README.md)).
+3. **All facets at the harmonic ratios, each with its own certificate (`harmonic_facets.py`, exact).** For ρ ∈ {1/2, 2, −1} the polytope has exactly 184 facets. For each facet the script computes the affine functional h (zero on the facet, ≥ 0 at all 24 vertices) and shows, by an exact identity on the 24 vertices, one of:
+   - **88 facets:** h∘y = Σᵢ λᵢ xᵢ with rational λᵢ ≥ 0 and xᵢ among the coordinates B[s,j], D[S,T]. These are ≥ 0 at x(U).
+   - **96 facets:** h∘y = c·(g0 + 2·D[12,12] + D[13,14])∘γ with c > 0 and γ a row and column permutation, possibly with transposition. This is ≥ 0 at x(U) by Theorem S4 applied to the permuted (or permuted and transposed) unitary.
 
-*Proof of the Corollary.* Theorem H1 of [`../minors/pmsh.md`](../minors/pmsh.md): PMSH for H = V*BV gives the inclusion for every normal A, after rotating and translating so that B is Hermitian. ∎
+   Two affine functions that agree on the 24 vertices agree on aff(Q). The certificates are in [`harmonic_facets.json`](harmonic_facets.json).
+4. **The facet list is complete.** An 11-subset of the 24 points spans a facet iff the other 13 lie weakly on one side and not all on its hyperplane. The script decides this for all 2,496,144 subsets from the signs of the 2,704,156 orientation determinants. These are integer quadratics in ρ, and `chiro_exact.py` recomputes them in exact integer arithmetic (0 differences from the stored values).
+5. So y(x(U)) satisfies every facet inequality of a full-dimensional polytope. Hence it lies in the polytope, and a certificate exists. ∎
+
+The proof does not use the facet list of the compound polytope Q. A second classification, by which exotic facet of Q contains each facet, gives the same 88 + 96 split (`ratio_half.py`).
+
+*Proof of the Corollary.* Rotate and translate so that B is Hermitian; its spectrum stays harmonic. Write A = W D_a W*, B = V D_c V* and U = W*V, so det(A+B) = det(D_a + U D_c U*). The proof of Theorem H1 in [`../minors/pmsh.md`](../minors/pmsh.md) uses PMSH only for the matrix U D_c U* at hand: its weights λ_π give det(D_a + U D_c U*) = Σ_π λ_π ∏ᵢ(aᵢ + c_π(i)) for every a. ∎
 
 **Evidence level.** Computer-assisted, not independently reviewed.
-- Exact rational/integer arithmetic: positive definiteness, the identity at 2,200 rational unitaries (two seeds), the classification at the harmonic ratios.
+- Exact rational/integer arithmetic: positive definiteness; the identity at 2,200 rational unitaries (two seeds); all orientation determinants; every facet functional and its certificate.
 - Modular arithmetic (valid lower bounds over ℚ): the two ranks in Lemma 4.
-- Floating point rounded to integers: the orientation determinants behind step 2 (all are integers of size ≤ 64; deviation ≤ 4·10⁻¹⁴) and the 82 facets of the compound polytope (same method).
-- Written arguments: Steps 1–2 of Theorem EQ, LP duality, Theorem H1.
+- Floating point: only as a search aid (the LP that proposes each λ, the semidefinite solves behind the certificate). Every proposed object is then checked exactly.
+- Written arguments: Steps 1–2 of Theorem EQ and R1 (same author, not yet reviewed); Theorem H1 (checked by an independent reviewer in [`../reviews/mdo-minors.md`](../reviews/mdo-minors.md)).
 
 **Novelty and limits.**
-- To my knowledge this case is not covered by earlier results: Shitov (2025) needs the non-Hermitian matrix to have a real eigenvalue when n = 4; Drury (2006) and Bebiano–Kovačec–da Providência (1994) need both spectra on lines or circles. Here the second matrix is an arbitrary normal matrix. **The literature was not searched exhaustively**; Kovačec, LAA 289 (1999), was not read.
+- **Zheng's October 2026 preprint claims the full normal 4×4 case** ([`../literature/README.md`](../literature/README.md); not audited there or here). If that proof is correct, the Corollary is a special case of it. Theorem HQ says more than the inclusion: one weight vector serves every A at once.
+- Among published results, to my knowledge this case is not covered: Shitov (2025) needs the non-Hermitian matrix to have a real eigenvalue when n = 4; Drury (2006) and Bebiano–Kovačec–da Providência (1994) need both spectra on lines or circles. Here the second matrix is an arbitrary normal matrix. **The literature was not searched exhaustively**; Kovačec, LAA 289 (1999), was not read.
 - Only harmonic spectra are covered. A spectrum with cross-ratio ρ needs f_t at t = ρ/(1−ρ) and at 1/t.
 - End-to-end numerical sanity check, not part of the proof (`end_to_end.py`): for three harmonic spectra and 624 unitaries, including the deepest cap unitaries, the certificate LP is feasible to 0, and the same weights reproduce det(D_a + H) for random complex a to 2·10⁻¹³.
 
@@ -114,7 +121,10 @@ Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0, cvxpy 1.7.5 (Clarabel), p
 # checks only (about 5 minutes in total):
 python3 verify4.py certificate4_t1.json 777        # exact PD, exact identity at 1100 fresh rational unitaries, evaluation rank 954
 python3 lemma4.py 10254 1                          # rank K4 >= 10254 (about 4 minutes, 3 GB of memory)
-(cd ../pmsh/star && python3 chiro.py) && python3 ratio_half.py 1/2 2 -1    # facets at the harmonic ratios
+(cd ../pmsh/star && python3 chiro.py)              # orientation quadratics (floating point, 8 seconds), then:
+python3 chiro_exact.py                             # ... recomputed in exact integer arithmetic (1 minute)
+python3 harmonic_facets.py 1/2 2 -1                # all facets at the harmonic ratios, each certified exactly
+python3 ratio_half.py 1/2 2 -1                     # optional: the same split via the exotic facets of Q
 
 # construction (needs the zeros produced by ../star-exact: zeros.py, zero_walk.py):
 python3 zeros4.py && python3 complement4.py
@@ -126,6 +136,6 @@ Outputs of the runs reported here are in [`logs/`](logs/).
 
 ## Next steps
 
-5. Independent review by another GitHub owner: rerun the three checks above; read the proof of Theorem HQ and the lemma's argument.
-6. More spectra: degree 4 is feasible for t between about 0.1 and 10, so pairs (t, 1/t) of exact certificates would cover more cross-ratios one at a time. A continuum needs certificates that are rational in t.
+5. Independent review by another GitHub owner: rerun the checks above; read the proof of Theorem HQ and the lemma's argument.
+6. More spectra: degree 4 looks feasible for t from about 0.1 upward (tested up to 5), so pairs (t, 1/t) of exact certificates would cover more cross-ratios one at a time. A continuum needs certificates that are rational in t.
 7. A literature check for Theorem HQ (Kovačec 1999 in particular).
