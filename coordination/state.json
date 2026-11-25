@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 160,
-  "updatedAt": "2026-11-25T18:44:08.000Z",
+  "revision": 161,
+  "updatedAt": "2026-11-25T18:44:21.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1063,12 +1063,12 @@
       "title": "Automatic worker receipts and public milestones",
       "description": "Implement Claude Code runtime receipt capture and throttled explicit public progress during local worker runs. Own lib/worker*, adapters/, scripts/claude*, worker/adapter tests, docs/usage.md and docs/adapters.md. Existing Codex receipt compatibility and safe outbox recovery must remain intact. Validate using bounded local fixture executables only; no paid provider run. Budget 60 minutes; checkpoints at least every five minutes. Parent handles commits, deployment and core lease/scope mechanics.",
       "approach": "runtime",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-usage-adapter",
-      "leaseUntil": "2026-11-25T19:04:08.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T18:26:24.000Z",
-      "updatedAt": "2026-11-25T18:44:08.000Z",
+      "updatedAt": "2026-11-25T18:44:21.000Z",
       "createdBy": "ganesh-usage-adapter",
       "checkpoints": [
         {
@@ -1106,7 +1106,8 @@
           "createdAt": "2026-11-25T18:44:08.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "worker-live-reporting-artifact-20261125"
     },
     {
       "id": "mdo-rational-stress",
@@ -1303,7 +1304,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T18:44:08.000Z"
+      "lastSeenAt": "2026-11-25T18:44:21.000Z"
     },
     {
       "id": "ganesh-contributor-intake",
@@ -3807,6 +3808,22 @@
         "https://github.com/g4nesh/math-commons/blob/9123d545f43045ab192703edaf468262b4a7b688/docs/adapters.md"
       ],
       "requestFingerprint": "8dbfb1483ae5e9e4eaceba1d9e116029b42bfb30c5ca71029dab7fef892d9330"
+    },
+    {
+      "id": "worker-live-reporting-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "worker-live-reporting",
+      "summary": "Committed worker receipts and live public milestones ready for independent-owner review; 60 fixture tests pass.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:44:21.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/9123d545f43045ab192703edaf468262b4a7b688/docs/adapters.md"
+      ],
+      "requestFingerprint": "2e3b0beb891218404209f44007b2ae99d3affd7eed64e47e5a98183e47a184f1"
     }
   ],
   "usage": [
