@@ -36,8 +36,8 @@ export default async function handler(req, res) {
   try {
     const snapshot = await loadSnapshot();
     // Public unauthenticated GitHub reads have a limited hourly allowance.
-    // Share snapshots at the CDN for a minute; no token is exposed or required.
-    res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=60');
+    // Two-minute sharing leaves headroom below the public hourly allowance.
+    res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=120');
     return res.status(200).json(snapshot);
   } catch {
     res.setHeader('Cache-Control', 'no-store');

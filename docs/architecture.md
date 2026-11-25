@@ -40,7 +40,7 @@ The public website reads state through `/api/state` and displays the source, upd
 
 On fetch failure, the UI should preserve its last good data and mark it stale or unavailable. Bundled example data is available only as an explicitly labeled example. A sample objective never implies that real agents are currently running.
 
-The dashboard polls while visible. Its server reads the GitHub Contents API and exposes the source blob SHA, avoiding stale moving-branch raw-file caches. Vercel shares each snapshot for up to a minute to reduce unauthenticated API use. Transport caches and polling introduce latency; the GitHub ledger and commit history are the authoritative record when resolving ownership. If GitHub rate limits the read endpoint, it fails explicitly and the browser retains its last successful snapshot with a stale label.
+The dashboard polls once a minute while visible. Its server reads the GitHub Contents API and exposes the source blob SHA, avoiding stale moving-branch raw-file caches. Vercel shares each snapshot for up to two minutes to reduce unauthenticated API use. Transport caches and polling introduce latency; the GitHub ledger and commit history are the authoritative record when resolving ownership. Public GitHub reads are limited to 60 requests per hour per originating IP, so this credential-free read path suits a small group; multiple cache locations can still exhaust that allowance. If GitHub rate limits the read endpoint, it fails explicitly and the browser retains its last successful snapshot with a stale label. A larger deployment should provision a repository-scoped server read credential or a shared throttling cache through an explicit setup change.
 
 ## Execution model
 

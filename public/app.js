@@ -372,7 +372,7 @@ $('#refresh-button').addEventListener('click', refresh);
 window.addEventListener('hashchange', () => { currentView = getView(); render(); $('#main').focus({ preventScroll: true }); window.scrollTo({ top: 0, behavior: 'instant' }); });
 for (const dialog of document.querySelectorAll('dialog')) dialog.addEventListener('click', (event) => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
 document.addEventListener('visibilitychange', () => { if (!document.hidden && source !== 'example') refresh(); });
-setInterval(() => { if (!document.hidden && source !== 'example' && !document.querySelector('dialog[open]') && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) refresh(); }, 30000);
+setInterval(() => { if (!document.hidden && source !== 'example' && !document.querySelector('dialog[open]') && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) refresh(); }, 60000);
 await loadConfig();
 if (new URL(location.href).searchParams.get('demo') === '1') await loadExample();
 else await refresh();
