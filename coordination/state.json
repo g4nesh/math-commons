@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 33,
-  "updatedAt": "2026-11-25T06:36:16.000Z",
+  "revision": 34,
+  "updatedAt": "2026-11-25T06:37:01.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -270,9 +270,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T06:56:16.000Z",
+      "leaseUntil": "2026-11-25T06:57:01.000Z",
       "createdAt": "2026-11-25T06:11:35.000Z",
-      "updatedAt": "2026-11-25T06:36:16.000Z",
+      "updatedAt": "2026-11-25T06:37:01.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -290,6 +290,14 @@
           "details": "Dependency-free complex QR, independent LU/Leibniz determinants, exact integer hull orientation of stored binary64 values, and point/segment handling are implemented locally under research/marcus-de-oliveira/search/. The planned single run is 200 samples across n=2..6 with generic, near-monomial, clustered, repeated, and structured-control families. These approximate samples will not be treated as exact Gaussian-rational witnesses. Root will publish the shared research PR.",
           "evidence": [],
           "createdAt": "2026-11-25T06:36:16.000Z"
+        },
+        {
+          "id": "mdo-pass1-search-results",
+          "agentId": "ganesh-search",
+          "summary": "Completed 200 bounded numerical trials; no gap exceeded the heuristic screening allowance.",
+          "details": "Dimensions 2 through 6, 40 samples each across five declared families. Run used about 0.209 CPU seconds. Classifications: 95 numerically inside and 105 near boundary. Raw stored-float geometry labels 86 outside, preserved as numerical ambiguities; none is a certified counterexample. Every approximate witness is saved, with unitarity/normality residuals and two determinant implementations. Eleven fixture tests passed. Documentation and reproducibility review are in progress.",
+          "evidence": [],
+          "createdAt": "2026-11-25T06:37:01.000Z"
         }
       ],
       "reviews": []
@@ -413,7 +421,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T06:36:16.000Z"
+      "lastSeenAt": "2026-11-25T06:37:01.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -908,6 +916,20 @@
       "createdAt": "2026-11-25T06:36:16.000Z",
       "links": [],
       "requestFingerprint": "1ae527be779c9671af71278b3796c3d2e52d7f2c8fcce70718007f7032ebd5f1"
+    },
+    {
+      "id": "mdo-pass1-search-results",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-search",
+      "summary": "Completed 200 bounded numerical trials; no gap exceeded the heuristic screening allowance.",
+      "detail": "Dimensions 2 through 6, 40 samples each across five declared families. Run used about 0.209 CPU seconds. Classifications: 95 numerically inside and 105 near boundary. Raw stored-float geometry labels 86 outside, preserved as numerical ambiguities; none is a certified counterexample. Every approximate witness is saved, with unitarity/normality residuals and two determinant implementations. Eleven fixture tests passed. Documentation and reproducibility review are in progress.",
+      "to": null,
+      "createdAt": "2026-11-25T06:37:01.000Z",
+      "links": [],
+      "requestFingerprint": "f5937215188614e80edf615f054c94a8c912dfd5917ef44fe19437f08fa887c3"
     }
   ]
 }
