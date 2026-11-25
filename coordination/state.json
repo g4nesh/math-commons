@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 59,
-  "updatedAt": "2026-11-25T06:47:13.000Z",
+  "revision": 60,
+  "updatedAt": "2026-11-25T06:47:15.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -536,12 +536,12 @@
       "title": "Codex run token capture",
       "description": "Own adapters/ and test/adapter.test.mjs. Implement the authorized token chart with authenticated attribution, deduplication and explicit missing usage. Publish real provider/run-reported counts only; no invented historical data. Bounded implementation session, checkpoints every five minutes.",
       "approach": "runtime",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-usage-adapter",
+      "leaseUntil": "2026-11-25T07:07:15.000Z",
       "createdAt": "2026-11-25T06:47:13.000Z",
-      "updatedAt": "2026-11-25T06:47:13.000Z",
+      "updatedAt": "2026-11-25T06:47:15.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -636,7 +636,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T06:47:12.000Z"
+      "lastSeenAt": "2026-11-25T06:47:15.000Z"
     }
   ],
   "events": [
@@ -1525,6 +1525,20 @@
       "createdAt": "2026-11-25T06:47:13.000Z",
       "links": [],
       "requestFingerprint": "0192d3d5164f9843a4bfea5dc481fd2d6f00cb76e68b3537e37e7571f3089295"
+    },
+    {
+      "id": "usage-chart-claim-usage-adapter",
+      "kind": "claim",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-adapter",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:47:15.000Z",
+      "links": [],
+      "requestFingerprint": "dd7e8c3bb79ecac972b9bbed80f9ea086034d8ab8698c8a211c5f5c32513cc7f"
     }
   ]
 }
