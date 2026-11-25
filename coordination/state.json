@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 195,
-  "updatedAt": "2026-11-25T18:57:46.000Z",
+  "revision": 196,
+  "updatedAt": "2026-11-25T19:03:05.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1383,12 +1383,12 @@
       "title": "Can a single cycle admit corrected permutation weights?",
       "description": "Start from the exact three-gate triangle in the forest baseline. Reproduce the 11881/15625 versus 6121/15625 discrepancy and isolate the interference term. For an explicit class of single-cycle gates, derive alternative nonnegative weights or exhibit an exact certificate that the proposed rule fails. State which spectra and minors are covered, and test the original determinant hull separately.",
       "approach": "constructive",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-search",
+      "leaseUntil": "2026-11-25T19:23:05.000Z",
       "createdAt": "2026-11-25T18:48:15.000Z",
-      "updatedAt": "2026-11-25T18:48:15.000Z",
+      "updatedAt": "2026-11-25T19:03:05.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -1485,7 +1485,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T18:55:28.000Z"
+      "lastSeenAt": "2026-11-25T19:03:05.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -4580,6 +4580,20 @@
         "https://github.com/g4nesh/math-commons/pull/6"
       ],
       "requestFingerprint": "2b1189f1a368e9c0f044fc13838496c35738f89d5b040e135e51be6824aa3182"
+    },
+    {
+      "id": "mdo-cycle-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cycle-interference",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:03:05.000Z",
+      "links": [],
+      "requestFingerprint": "7db1a609695c6f8c1f963dd0049c03b5a5342aaa303b535984e59f018010af65"
     }
   ],
   "usage": [
