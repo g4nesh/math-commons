@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 249,
-  "updatedAt": "2026-11-25T20:30:17.000Z",
+  "revision": 250,
+  "updatedAt": "2026-11-25T20:30:20.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1795,11 +1795,22 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T20:50:17.000Z",
+      "leaseUntil": "2026-11-25T20:50:20.000Z",
       "createdAt": "2026-11-25T20:30:14.000Z",
-      "updatedAt": "2026-11-25T20:30:17.000Z",
+      "updatedAt": "2026-11-25T20:30:20.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "spectral-gate-integration-start",
+          "agentId": "ganesh-coordinator",
+          "summary": "Integrating two separate research requests from current main after checking the live queue and related PRs",
+          "details": "Starting at main e380f33. Scope is research navigation, CI, replay, metering and production checks. The four-cycle and gate-minor researchers have separate artifact paths. Open PRs 18 and 20 cover PMSH on separate paths. Publish exact evidence on the selected research branch as it is ready.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/commit/e380f33"
+          ],
+          "createdAt": "2026-11-25T20:30:20.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         ".github/workflows/ci.yml",
@@ -1824,7 +1835,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T20:30:17.000Z"
+      "lastSeenAt": "2026-11-25T20:30:20.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -5803,6 +5814,22 @@
       "createdAt": "2026-11-25T20:30:17.000Z",
       "links": [],
       "requestFingerprint": "be27b89844c3cd0eaef07748efdd2b3326e39e932b3550fd3411a05b8aa53693"
+    },
+    {
+      "id": "spectral-gate-integration-start",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-spectral-gate-integration",
+      "summary": "Integrating two separate research requests from current main after checking the live queue and related PRs",
+      "detail": "Starting at main e380f33. Scope is research navigation, CI, replay, metering and production checks. The four-cycle and gate-minor researchers have separate artifact paths. Open PRs 18 and 20 cover PMSH on separate paths. Publish exact evidence on the selected research branch as it is ready.",
+      "to": null,
+      "createdAt": "2026-11-25T20:30:20.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/commit/e380f33"
+      ],
+      "requestFingerprint": "5b42f30328e9151d226f0a58add8f8dcf85dcf687cdec1e044febffb1c7a58bb"
     }
   ],
   "usage": [
