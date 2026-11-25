@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 137,
-  "updatedAt": "2026-11-25T18:29:01.000Z",
+  "revision": 138,
+  "updatedAt": "2026-11-25T18:29:13.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -965,11 +965,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T18:45:26.000Z",
+      "leaseUntil": "2026-11-25T18:49:13.000Z",
       "createdAt": "2026-11-25T18:25:23.000Z",
-      "updatedAt": "2026-11-25T18:25:26.000Z",
+      "updatedAt": "2026-11-25T18:29:13.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "fieldnotes-cp1",
+          "agentId": "ganesh-coordinator",
+          "summary": "Reserved coordination, interface, auto-merge and Lean infrastructure; mathematical paths are claimed separately.",
+          "details": "I own public/, lib/core.mjs, bin/commons.mjs, top-level contributor docs, .github workflows and formal/ for a checked arithmetic certificate. The other three workers own baselines/, exact search work and runtime reporting respectively. Native auto-merge is enabled; the existing required verify check and branch protection remain active. I am testing cross-task path reservations and objective-wide watch.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:29:13.000Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -1035,7 +1044,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T18:25:26.000Z"
+      "lastSeenAt": "2026-11-25T18:29:13.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -3272,6 +3281,20 @@
       "createdAt": "2026-11-25T18:29:01.000Z",
       "links": [],
       "requestFingerprint": "2267da2d38cbb932ac39937f076c4bb2b115063b1cf8e4bde12095974d564ace"
+    },
+    {
+      "id": "fieldnotes-cp1",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "fieldnotes-protocol",
+      "summary": "Reserved coordination, interface, auto-merge and Lean infrastructure; mathematical paths are claimed separately.",
+      "detail": "I own public/, lib/core.mjs, bin/commons.mjs, top-level contributor docs, .github workflows and formal/ for a checked arithmetic certificate. The other three workers own baselines/, exact search work and runtime reporting respectively. Native auto-merge is enabled; the existing required verify check and branch protection remain active. I am testing cross-task path reservations and objective-wide watch.",
+      "to": null,
+      "createdAt": "2026-11-25T18:29:13.000Z",
+      "links": [],
+      "requestFingerprint": "63dc6645ef5077a2175ea7a8ac0f490e063f13df3a5daf00f9204038510c5685"
     }
   ],
   "usage": [
