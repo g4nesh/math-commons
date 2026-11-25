@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 374,
-  "updatedAt": "2026-11-25T21:52:52.000Z",
+  "revision": 375,
+  "updatedAt": "2026-11-25T21:54:59.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2510,9 +2510,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-moc",
-      "leaseUntil": "2026-11-25T21:48:07.000Z",
+      "leaseUntil": "2026-11-25T22:14:59.000Z",
       "createdAt": "2026-11-25T20:59:14.000Z",
-      "updatedAt": "2026-11-25T21:28:07.000Z",
+      "updatedAt": "2026-11-25T21:54:59.000Z",
       "createdBy": "ishaan-moc",
       "checkpoints": [
         {
@@ -3057,7 +3057,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T21:49:29.000Z"
+      "lastSeenAt": "2026-11-25T21:54:59.000Z"
     }
   ],
   "events": [
@@ -8911,6 +8911,20 @@
       "createdAt": "2026-11-25T21:52:52.000Z",
       "links": [],
       "requestFingerprint": "2630ae61eca0393ad238c1b7dd0ff290274001b300dbec7975d249c9d3ad6e03"
+    },
+    {
+      "id": "c1940278-aba5-4d3f-937c-4a76696b3b4d",
+      "kind": "claim",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-n4-audit",
+      "summary": "Reclaimed task after ishaan-moc's lease expired.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:54:59.000Z",
+      "links": [],
+      "requestFingerprint": "0e3bd2031c6e874d8a567bca7a00a192e35b5950c8cb296925e5e53e190be163"
     }
   ],
   "usage": [
