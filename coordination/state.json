@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 256,
-  "updatedAt": "2026-11-25T20:35:10.000Z",
+  "revision": 257,
+  "updatedAt": "2026-11-25T20:35:48.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1740,9 +1740,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T20:51:30.000Z",
+      "leaseUntil": "2026-11-25T20:55:48.000Z",
       "createdAt": "2026-11-25T19:53:50.000Z",
-      "updatedAt": "2026-11-25T20:31:30.000Z",
+      "updatedAt": "2026-11-25T20:35:48.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1752,6 +1752,14 @@
           "details": "Read current overview, exact task/context and open PRs18/20; neither overlaps formal/ForestGateSupport.lean. Scope is only that file. One 20-minute pass with bounded local Lean4.24.0 checks and private imported oleans. Plan: define an actual signed Laplace expansion, derive a nonzero matching term and row/column support, then prove outside-edge subset membership agrees and equal cardinality forces ForestTrajectory.Step. Target arbitrary finite subset size, collision/empty/full cases, with a precise scalar zero-arithmetic interface and concrete rational instantiation if possible. No assumption that the determinant is nonzero only on legal steps; that implication must be proved. Matrix-library equality, unitarity magnitudes and Cauchy-Binet composition remain explicit obligations unless actually closed. Parent handles source pushes, CI/docs and usage.",
           "evidence": [],
           "createdAt": "2026-11-25T20:31:30.000Z"
+        },
+        {
+          "id": "mdo-forest-gate-support-first-proof-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Lean proves nonzero concrete single-gate minors induce legal subset steps.",
+          "details": "First coherent formal/ForestGateSupport.lean compiles on Lean4.24.0 with warnings fatal and 12 public axiom reports, only propext/Classical.choice/Quot.sound. A concrete alternating Laplace expansion recursively enumerates column choices. Nonzero expansion gives a nonzero matching term, hence row/column support and equal cardinality. For matrix entries supported on one two-coordinate block plus diagonal, subsets agree away from that edge; cardinality then yields ForestTrajectory.Step. The concrete twoCoordinateGate constructor has an arbitrary four-scalar block and identity elsewhere. Includes collision result, no unitarity assumption. ZeroArithmetic explicitly states only zero laws and has a Rat instance. Coordinator may publish this compiling source; extending privately with Gaussian-rational instantiation, explicit empty/full cases and the short forest composition corollary. Standard complex-matrix determinant correspondence, magnitudes and Cauchy-Binet remain unproved.",
+          "evidence": [],
+          "createdAt": "2026-11-25T20:35:48.000Z"
         }
       ],
       "reviews": [],
@@ -1917,7 +1925,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T20:31:30.000Z"
+      "lastSeenAt": "2026-11-25T20:35:48.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -5957,6 +5965,20 @@
         "https://github.com/g4nesh/math-commons/blob/526823b10e2b9bbf0620d2bb5c59df4e2014fa99/research/marcus-de-oliveira/four-cycle-spectral/fiber_certificate.json"
       ],
       "requestFingerprint": "06fa46e4d846984cc5ecb4559056e407815a8db55b0eb6383f3081c46c30f99e"
+    },
+    {
+      "id": "mdo-forest-gate-support-first-proof-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-gate-support",
+      "summary": "Lean proves nonzero concrete single-gate minors induce legal subset steps.",
+      "detail": "First coherent formal/ForestGateSupport.lean compiles on Lean4.24.0 with warnings fatal and 12 public axiom reports, only propext/Classical.choice/Quot.sound. A concrete alternating Laplace expansion recursively enumerates column choices. Nonzero expansion gives a nonzero matching term, hence row/column support and equal cardinality. For matrix entries supported on one two-coordinate block plus diagonal, subsets agree away from that edge; cardinality then yields ForestTrajectory.Step. The concrete twoCoordinateGate constructor has an arbitrary four-scalar block and identity elsewhere. Includes collision result, no unitarity assumption. ZeroArithmetic explicitly states only zero laws and has a Rat instance. Coordinator may publish this compiling source; extending privately with Gaussian-rational instantiation, explicit empty/full cases and the short forest composition corollary. Standard complex-matrix determinant correspondence, magnitudes and Cauchy-Binet remain unproved.",
+      "to": null,
+      "createdAt": "2026-11-25T20:35:48.000Z",
+      "links": [],
+      "requestFingerprint": "23b69d1d0d271dd9502a01e2cd2dd2341350b0def88894bb31567fa68a8240a6"
     }
   ],
   "usage": [
