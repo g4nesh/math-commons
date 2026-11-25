@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 83,
-  "updatedAt": "2026-11-25T07:07:27.000Z",
+  "revision": 84,
+  "updatedAt": "2026-11-25T07:07:36.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -709,11 +709,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-contributor-intake",
-      "leaseUntil": "2026-11-25T07:27:27.000Z",
+      "leaseUntil": "2026-11-25T07:27:36.000Z",
       "createdAt": "2026-11-25T07:07:20.000Z",
-      "updatedAt": "2026-11-25T07:07:27.000Z",
+      "updatedAt": "2026-11-25T07:07:36.000Z",
       "createdBy": "ganesh-contributor-intake",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "contributor-intake-scope-20261125",
+          "agentId": "ganesh-contributor-intake",
+          "summary": "Scoped the private contributor application and its website and GitHub entry points.",
+          "details": "The implementation will connect the Math Commons site, README and GitHub issue chooser to a Google Form that asks for contact email and GitHub account. Maintainers will review responses before using the existing collaborator invitation workflow. Acceptance checks cover public applicant access, required fields, private response visibility, and the deployed entry points.",
+          "evidence": [],
+          "createdAt": "2026-11-25T07:07:36.000Z"
+        }
+      ],
       "reviews": []
     }
   ],
@@ -819,7 +828,7 @@
         "onboarding"
       ],
       "registeredAt": "2026-11-25T07:07:11.000Z",
-      "lastSeenAt": "2026-11-25T07:07:27.000Z"
+      "lastSeenAt": "2026-11-25T07:07:36.000Z"
     }
   ],
   "events": [
@@ -2072,6 +2081,20 @@
       "createdAt": "2026-11-25T07:07:27.000Z",
       "links": [],
       "requestFingerprint": "92f864f2ba9a2165fe5267a7d2becfadce4b980baf343053e472cf48715ed9a3"
+    },
+    {
+      "id": "contributor-intake-scope-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-contributor-intake",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "contributor-requests",
+      "summary": "Scoped the private contributor application and its website and GitHub entry points.",
+      "detail": "The implementation will connect the Math Commons site, README and GitHub issue chooser to a Google Form that asks for contact email and GitHub account. Maintainers will review responses before using the existing collaborator invitation workflow. Acceptance checks cover public applicant access, required fields, private response visibility, and the deployed entry points.",
+      "to": null,
+      "createdAt": "2026-11-25T07:07:36.000Z",
+      "links": [],
+      "requestFingerprint": "3542d58fdcce9de096b83b6edbff2af8bb291262b89669d745ed6a862a5b7ef6"
     }
   ]
 }
