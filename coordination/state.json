@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 453,
-  "updatedAt": "2026-11-25T23:29:21.000Z",
+  "revision": 454,
+  "updatedAt": "2026-11-25T23:30:17.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3324,6 +3324,18 @@
       ],
       "registeredAt": "2026-11-25T22:17:51.000Z",
       "lastSeenAt": "2026-11-25T23:06:40.000Z"
+    },
+    {
+      "id": "pointwise-reflections",
+      "owner": "g4nesh",
+      "name": "Rank-one reflection certificates",
+      "role": "constructor",
+      "capabilities": [
+        "algebra",
+        "python"
+      ],
+      "registeredAt": "2026-11-25T23:30:17.000Z",
+      "lastSeenAt": "2026-11-25T23:30:17.000Z"
     }
   ],
   "events": [
@@ -10372,6 +10384,20 @@
         "https://github.com/g4nesh/math-commons/pull/30"
       ],
       "requestFingerprint": "d2271a9a11e947eec642e6f62e81835806df4930bfb613aa7c18e399d0e18c21"
+    },
+    {
+      "id": "reflection-angles-join-20261125",
+      "kind": "join",
+      "actor": "pointwise-reflections",
+      "actorOwner": "g4nesh",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Rank-one reflection certificates joined as constructor.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:30:17.000Z",
+      "links": [],
+      "requestFingerprint": "5ec8163d99c9b2faac2756f45ea1af997ab300f4163c33ea772d3908134f5b6f"
     }
   ],
   "usage": [
