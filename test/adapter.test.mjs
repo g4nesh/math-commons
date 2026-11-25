@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, writeFile, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { spawn } from 'node:child_process';
@@ -27,6 +27,7 @@ async function runAdapter(fixture) {
       "let prompt = ''; process.stdin.on('data', chunk => prompt += chunk);",
       "process.stdin.on('end', async () => {",
       " if (!prompt.includes('task-a') || !prompt.includes('untrusted data')) process.exit(3);",
+      " if (fixture.progressFile) require('node:child_process').execFileSync(process.execPath, ['adapters/progress.mjs', '--summary', 'Codex public milestone', '--details', 'A bounded check completed'], { stdio: 'ignore' });",
       " if (fixture.oversizedAnswer) fixture.answer.details = 'x'.repeat(150000);",
       " if (fixture.escapedAnswer) fixture.answer.evidence = Array.from({length:30}, () => 'https://example.test/' + '\\u0000'.repeat(1900));",
       " const final = fixture.largeAnswer ? 'x'.repeat(512001) : fixture.invalidAnswer ? 'invalid secret answer' : JSON.stringify(fixture.answer);",
@@ -41,6 +42,7 @@ async function runAdapter(fixture) {
     return await new Promise((resolve, reject) => {
       const child = spawn(process.execPath, ['adapters/codex.mjs'], {
         env: { ...process.env, COMMONS_CODEX_BIN: executable,
+          MATH_COMMONS_PROGRESS_FILE: fixture.progressFile || '',
           COMMONS_ADAPTER_FIXTURE: JSON.stringify({ answer, ...fixture }) },
         stdio: ['pipe', 'pipe', 'pipe']
       });
@@ -75,6 +77,18 @@ test('Codex adapter captures runtime counts, hashes identity, and publishes no e
   assert.ok(Date.parse(run.result.usage.startedAt) <= Date.parse(run.result.usage.finishedAt));
   assert.doesNotMatch(run.stdout + run.stderr, /SECRET|runtime-thread-secret-id|999999/);
   assert.equal(run.stderr, '');
+});
+
+test('Codex tool subprocess can enqueue an explicit public milestone without a special descriptor', async () => {
+  const directory = await mkdtemp(join(tmpdir(), 'codex-progress-test-'));
+  try {
+    const progressFile = join(directory, 'milestones.jsonl'); await writeFile(progressFile, '');
+    const run = await runAdapter({ progressFile, stream: jsonl([...started, completed]) });
+    assert.equal(run.result.usage.inputTokens, 123);
+    const frame = JSON.parse(await readFile(progressFile, 'utf8'));
+    assert.equal(frame.type, 'checkpoint'); assert.equal(frame.summary, 'Codex public milestone');
+    assert.doesNotMatch(run.stdout + run.stderr, /SECRET/);
+  } finally { await rm(directory, { recursive: true, force: true }); }
 });
 
 test('missing events and all-zero fallback produce visible missing status, never invented zeros', async () => {

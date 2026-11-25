@@ -2,8 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { EventEmitter } from 'node:events';
 import { PassThrough } from 'node:stream';
+import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { runAdapter, work } from '../lib/worker.mjs';
 import { applyOperation } from '../lib/core.mjs';
+import { publishMilestone } from '../adapters/progress.mjs';
 
 const packet = { agent: { id: 'worker' }, repository: 'owner/repo' };
 function mockStore() {
@@ -205,4 +209,60 @@ test('an empty explicit objective cannot bypass a configured default', async () 
   const store = await withRealObjective();
   await assert.rejects(work(store, { agent: 'worker', command: 'adapter', objective: '' }), /valid objective ID/);
   assert.equal(store.state.events.some(event => event.kind === 'claim'), false);
+});
+
+test('worker exposes objective-scoped progress and publishes before the local adapter finishes', async () => {
+  const store = await mockStore(), progress = [];
+  const directory = await mkdtemp(join(tmpdir(), 'commons-live-worker-'));
+  try {
+    store.state.tasks[0].scopePaths = ['research/p'];
+    store.state.events.push({ id: 'foreign-event', objectiveId: 'foreign', taskId: 'foreign-task', to: 'all', summary: 'DO NOT INCLUDE', kind: 'message' });
+    store.state.events.push({ id: 'global-broadcast', objectiveId: null, taskId: null, to: 'all', summary: 'Workspace notice', kind: 'message' });
+    store.state.events.push({ id: 'direct-message', objectiveId: null, taskId: null, to: 'worker', summary: 'Agent notice', kind: 'message' });
+    const result = await work(store, { agent: 'worker', command: 'fixture', progressDirectory: directory, progressPollMs: 5, onProgress: event => progress.push(event),
+      run: async (_command, _args, packet, options) => {
+        assert.equal(packet.progress.path, options.progressFile);
+        assert.match(packet.instructions, /immutable owned paths/);
+        assert.deepEqual(packet.task.scopePaths, ['research/p']);
+        assert.ok(!packet.recentEvents.some(event => event.id === 'foreign-event'));
+        assert.ok(packet.recentEvents.some(event => event.id === 'global-broadcast'));
+        assert.ok(packet.recentEvents.some(event => event.id === 'direct-message'));
+        await publishMilestone({ summary: 'Bounded test completed', details: 'Explicit public notes', id: 'first' }, options.progressFile);
+        for (let i = 0; i < 100 && !store.state.tasks[0].checkpoints.length; i++) await new Promise(resolve => setTimeout(resolve, 10));
+        assert.equal(store.state.tasks[0].checkpoints[0].summary, 'Bounded test completed');
+        assert.equal(store.state.tasks[0].status, 'active');
+        return { status: 'release', summary: 'Handed off after public checkpoint' };
+      }
+    });
+    assert.equal(result[0].status, 'release'); assert.ok(progress.some(event => event.kind === 'checkpoint'));
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});
+
+test('lost lease during progress aborts the run and preserves the exact pending operation', async () => {
+  const store = await mockStore(), original = store.mutate, progress = [];
+  const directory = await mkdtemp(join(tmpdir(), 'commons-lost-lease-'));
+  let abortSeen = false;
+  store.mutate = async operation => {
+    if (operation.kind === 'checkpoint') { const error = new Error('PRIVATE lease detail'); error.code = 'LEASE_REQUIRED'; throw error; }
+    return original(operation);
+  };
+  try {
+    await assert.rejects(work(store, { agent: 'worker', command: 'fixture', progressDirectory: directory, progressPollMs: 5,
+      onProgress: event => progress.push(event), run: async (_command, _args, _packet, options) => {
+        await publishMilestone({ summary: 'A deliberate update', details: 'Public facts', id: 'first' }, options.progressFile);
+        await new Promise((resolve, reject) => {
+          const timer = setTimeout(() => reject(new Error('Lease failure did not abort the fixture')), 1000);
+          options.signal.addEventListener('abort', () => { clearTimeout(timer); abortSeen = true; resolve(); }, { once: true });
+        });
+        return { status: 'release', summary: 'Must not release an unowned task', usage: { provider: 'fixture', model: 'fixture-model', runId: 'fixture-run', inputTokens: 30, outputTokens: 5, cachedInputTokens: 10, source: 'runtime', startedAt: '2026-11-25T00:00:00Z', finishedAt: '2026-11-25T00:00:00Z' } };
+      }
+    }), error => error.code === 'PROGRESS_FAILED');
+    assert.equal(abortSeen, true); assert.equal(store.state.tasks[0].status, 'active');
+    assert.equal(store.state.events.some(event => ['release', 'block', 'submit'].includes(event.kind)), false);
+    assert.equal(store.state.usage[0].totalTokens, 35);
+    const warning = progress.find(event => event.kind === 'progress-warning');
+    const saved = JSON.parse(await readFile(warning.recoveryFile, 'utf8'));
+    assert.equal(saved.operation.kind, 'checkpoint'); assert.match(saved.operation.id, /^progress-/);
+    assert.doesNotMatch(JSON.stringify(progress), /PRIVATE/);
+  } finally { await rm(directory, { recursive: true, force: true }); }
 });
