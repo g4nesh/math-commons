@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 66,
-  "updatedAt": "2026-11-25T06:50:40.000Z",
+  "revision": 67,
+  "updatedAt": "2026-11-25T06:56:55.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -507,9 +507,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-usage-core",
-      "leaseUntil": "2026-11-25T07:10:35.000Z",
+      "leaseUntil": "2026-11-25T07:16:55.000Z",
       "createdAt": "2026-11-25T06:47:05.000Z",
-      "updatedAt": "2026-11-25T06:50:35.000Z",
+      "updatedAt": "2026-11-25T06:56:55.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -519,6 +519,16 @@
           "details": "Receipts bind owner/agent/task, use safe integer input+output totals, treat cached input as a subset, and preserve pending uploads for retry. Existing state remains readable without usage receipts.",
           "evidence": [],
           "createdAt": "2026-11-25T06:50:35.000Z"
+        },
+        {
+          "id": "usage-chart-cp2-usage-core",
+          "agentId": "ganesh-usage-core",
+          "summary": "Ledger and recovery tests pass; final cross-review fixes in progress.",
+          "details": "Authenticated receipts, retry deduplication and private pending files are implemented. Cross-review is preserving captured counts on invalid adapter handoffs and requiring explicit cache counts rather than guessing zeros.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/5"
+          ],
+          "createdAt": "2026-11-25T06:56:55.000Z"
         }
       ],
       "reviews": []
@@ -666,7 +676,7 @@
         "backend"
       ],
       "registeredAt": "2026-11-25T06:47:03.000Z",
-      "lastSeenAt": "2026-11-25T06:50:35.000Z"
+      "lastSeenAt": "2026-11-25T06:56:55.000Z"
     },
     {
       "id": "ganesh-usage-ui",
@@ -1675,6 +1685,22 @@
       "createdAt": "2026-11-25T06:50:40.000Z",
       "links": [],
       "requestFingerprint": "bdfe373e7000ee9d548e521bf1fd89e79363e3608014fcd62766ff2ea7e713a2"
+    },
+    {
+      "id": "usage-chart-cp2-usage-core",
+      "kind": "checkpoint",
+      "actor": "ganesh-usage-core",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-core",
+      "summary": "Ledger and recovery tests pass; final cross-review fixes in progress.",
+      "detail": "Authenticated receipts, retry deduplication and private pending files are implemented. Cross-review is preserving captured counts on invalid adapter handoffs and requiring explicit cache counts rather than guessing zeros.",
+      "to": null,
+      "createdAt": "2026-11-25T06:56:55.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/5"
+      ],
+      "requestFingerprint": "38a1b4aaf39366c76c73a04f37ea43b0d5891be6c44188a334f08552b3dee8d1"
     }
   ]
 }
