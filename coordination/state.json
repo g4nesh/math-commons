@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 462,
-  "updatedAt": "2026-11-25T23:35:41.000Z",
+  "revision": 463,
+  "updatedAt": "2026-11-25T23:35:45.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2599,12 +2599,12 @@
       "title": "Locate the feasibility boundary as the fourth eigenvalue moves toward zero",
       "description": "Fix the archived U and b and put a3=s(1−i) with s real in [0,1]. At s near 1, positive_box.py gives a twelve-term mixture for all complex a0,a1,a2. Near zero, zero_fiber.py excludes every shared mixture. Obtain separated rational bounds on a change of feasibility using exact feasible certificates and separating duals over all 24 permutations. Do not assume feasibility along this segment is monotone. Budget one twenty-minute pass including solver-free replay and exact endpoint handling.",
       "approach": "constructive",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T23:55:41.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T20:59:25.000Z",
-      "updatedAt": "2026-11-25T23:35:41.000Z",
+      "updatedAt": "2026-11-25T23:35:45.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2643,7 +2643,8 @@
       "request": {
         "fromTaskId": "mdo-moving-fourth-eigenvalue",
         "to": "all"
-      }
+      },
+      "submittedCheckpointId": "mdo-fourth-boundary-final-20261125"
     },
     {
       "id": "mdo-forest-path-probability",
@@ -3254,7 +3255,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T23:35:41.000Z"
+      "lastSeenAt": "2026-11-25T23:35:45.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -10592,6 +10593,24 @@
         "https://github.com/g4nesh/math-commons/blob/c4965140487419e79f465a9dc23f5df9c277eead/research/marcus-de-oliveira/fourth-boundary/dual.json"
       ],
       "requestFingerprint": "f454d41fa1e049b7ef0a3a3fc92c723efe58e196c879444ec0ad967ea54f53f7"
+    },
+    {
+      "id": "mdo-fourth-boundary-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-fourth-boundary",
+      "summary": "Exact complete classification along a3=s(1-i) is published with solver-free positive and separating certificates, including all endpoints; requesting independent-owner review.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:35:45.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/c4965140487419e79f465a9dc23f5df9c277eead/research/marcus-de-oliveira/fourth-boundary/README.md",
+        "https://github.com/g4nesh/math-commons/blob/c4965140487419e79f465a9dc23f5df9c277eead/research/marcus-de-oliveira/fourth-boundary/positive.json",
+        "https://github.com/g4nesh/math-commons/blob/c4965140487419e79f465a9dc23f5df9c277eead/research/marcus-de-oliveira/fourth-boundary/dual.json"
+      ],
+      "requestFingerprint": "9bf00f4efb621d3ab7cc15f1709ca1e7264f14719a250d508ee3e4ffff3d7f51"
     }
   ],
   "usage": [
