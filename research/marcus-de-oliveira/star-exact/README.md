@@ -2,7 +2,7 @@
 
 - **Task:** `mdo-star-exact-certificate` (request from `mdo-pmsh-4`). Agent `ganesh-claude-minors` (Claude Code, model `claude-fable-5-2`), GitHub owner `g4nesh`. November 25, 2026.
 - **Status:** in progress.
-  - **Exact result (Step 4):** for every U ∈ U(4), 2·g0 + 3·D[12,12] + 4·D[13,14] ≥ 0. This is the case t = 2, with an exact rational sum-of-squares certificate and an independent exact check.
+  - **Exact results (Steps 4–5):** for every U ∈ U(4), t·g0 + (1+t)·D[12,12] + t²·D[13,14] ≥ 0 at **t = 3/2, 2, 3 and 5**. Each has an exact rational sum-of-squares certificate and passes an independent exact check.
   - **Negative result (Step 2):** at t = 1 no exact degree-3 certificate exists (numerical evidence with controls).
   - The full target (all t ≥ 1 at once) is **not** done.
 - **Evidence levels:** marked per item. Nothing here is independently reviewed.
@@ -103,19 +103,45 @@ Why step 3 suffices: both sides restrict to elements of the 261-dimensional spac
 Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0, cvxpy 1.7.5 (Clarabel), python-flint 0.6.0. Run from this directory.
 
 ```sh
-# exact check only (about 25 seconds):
-python3 verify_cert.py certificate_t2.json 777
+# exact check only (about 25 seconds each):
+for c in certificate_t1.5.json certificate_t2.json certificate_t3.json certificate_t5.json; do python3 verify_cert.py $c 777; done
 
 # full construction at t = 2:
 python3 zeros.py 1 700 1 && python3 zero_walk.py 1 5 120 && python3 polish.py 1 zeros_walk_t1.pkl
 python3 reduce.py 1                      # complement_t1.json (integer bases)
 python3 center.py 2 && python3 second_reduction.py 2 && python3 reduced2.py 2
 python3 exact_cert.py 2                  # certificate_t2.json
+
+# the same steps for other values of t, in one command:
+python3 pipeline.py 3/2 3 5
+python3 t_dependence.py 3/2 2 3 5
 ```
 
 Outputs of the runs reported here are in [`logs/`](logs/). Intermediate `.pkl` files are not committed.
 
+## Step 5 (done, exact): certificates at t = 3/2, 3, 5, and how the amplitudes depend on t
+
+**More exact certificates (`pipeline.py 3/2 3 5`).** Same pipeline, about a minute each. All three pass `verify_cert.py` with seed 777.
+
+| t | inequality proved for every U ∈ U(4) | strict-feasibility margin λ | smallest leading minor | checker |
+| --- | --- | --- | --- | --- |
+| 3/2 | 6·g0 + 10·D[12,12] + 9·D[13,14] ≥ 0 | 0.017 | 3.2·10⁻⁵ | VALID |
+| 2 | 2·g0 + 3·D[12,12] + 4·D[13,14] ≥ 0 | 0.034 | 2.2·10⁻⁴ | VALID |
+| 3 | 3·g0 + 4·D[12,12] + 9·D[13,14] ≥ 0 | 0.064 | 1.4·10⁻³ | VALID |
+| 5 | 5·g0 + 6·D[12,12] + 25·D[13,14] ≥ 0 | 0.120 | 9.1·10⁻³ | VALID |
+
+Certificates: `certificate_t1.5.json`, `certificate_t2.json`, `certificate_t3.json`, `certificate_t5.json`.
+
+**Dependence on t (`t_dependence.py`, observed at these four values).** The 20 extra kernel directions have the same pattern for every t:
+- 12 are independent of t (a single complement polynomial is dropped).
+- 8 involve exactly one number, **r = t/(1+t)**: two complement polynomials p, p′ survive only in the combination (1+t)·p − t·p′.
+
+So the amplitude spaces are explicit for all t: they are linear in t.
+
+**What remains for a whole half-line t ≥ t₀.** The linear system for the Gram blocks then has coefficients that are quadratic polynomials in t. One needs a solution T_b(t), rational in t, with all leading minors positive on [t₀, ∞). That is exact linear algebra over ℚ(t) plus Sturm-type positivity checks. **Not done here.** The margin λ grows with t in the table, and the reduced problem is feasible for t ≥ 1.05, so t₀ slightly above 1 looks reachable; t₀ = 1 is not (Step 2).
+
 ## Next steps
 
-8. Certificates at other rational t ≥ 1.05, and the dependence of the amplitudes on t; then one certificate for a whole half-line.
-9. Degree 4 at t = 1 and below.
+8. One certificate for a half-line t ≥ t₀ > 1 (see above).
+9. Degree 4 at t = 1 and below, with the same facial-reduction test.
+10. Review: rerun `verify_cert.py` on the four certificates; check Lemma 1's argument.
