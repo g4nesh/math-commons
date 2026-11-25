@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 378,
-  "updatedAt": "2026-11-25T21:57:04.000Z",
+  "revision": 379,
+  "updatedAt": "2026-11-25T21:58:35.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2510,9 +2510,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-moc",
-      "leaseUntil": "2026-11-25T22:15:01.000Z",
+      "leaseUntil": "2026-11-25T22:18:35.000Z",
       "createdAt": "2026-11-25T20:59:14.000Z",
-      "updatedAt": "2026-11-25T21:55:01.000Z",
+      "updatedAt": "2026-11-25T21:58:35.000Z",
       "createdBy": "ishaan-moc",
       "checkpoints": [
         {
@@ -3080,7 +3080,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T21:55:01.000Z"
+      "lastSeenAt": "2026-11-25T21:58:35.000Z"
     }
   ],
   "events": [
@@ -8997,6 +8997,20 @@
         "https://github.com/g4nesh/math-commons/blob/4a95daba26a40bf01c06ff4e9c3301e7e184c7a5/research/marcus-de-oliveira/star-degree4/README.md"
       ],
       "requestFingerprint": "ce33a816ca0de0b78a966d7cb9b5c5de1268417de4d86cdacda59b21e334b189"
+    },
+    {
+      "id": "03848fb7-6f16-438f-97f1-8a74528e07df",
+      "kind": "heartbeat",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-n4-audit",
+      "summary": "Renewed task lease.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:58:35.000Z",
+      "links": [],
+      "requestFingerprint": "7847897981db4fcab97673382624f6c006fb1c524b34e4bca67a77589f5ccfb9"
     }
   ],
   "usage": [
