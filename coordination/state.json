@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 159,
-  "updatedAt": "2026-11-25T18:43:58.000Z",
+  "revision": 160,
+  "updatedAt": "2026-11-25T18:44:08.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1066,9 +1066,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-usage-adapter",
-      "leaseUntil": "2026-11-25T18:59:26.000Z",
+      "leaseUntil": "2026-11-25T19:04:08.000Z",
       "createdAt": "2026-11-25T18:26:24.000Z",
-      "updatedAt": "2026-11-25T18:39:26.000Z",
+      "updatedAt": "2026-11-25T18:44:08.000Z",
       "createdBy": "ganesh-usage-adapter",
       "checkpoints": [
         {
@@ -1094,6 +1094,16 @@
           "details": "Completed fresh Claude Code automatic receipts using final inclusive modelUsage, preserving successful or failed terminal receipts without raw conversation. Codex and Claude nested tool subprocesses both exercised the actual public progress helper. The worker publishes during runs, coalesces bursts, serializes lease-bound writes, saves exact pending operations, aborts on uncertain publication, and preserves captured token usage after lease failure. Regression tests cover the final-frame/slow-upload race, global broadcasts/direct messages without foreign-objective leakage, fragmented streams, cache arithmetic, duplicates, missing counters, malformed artifacts, recovery replay, and cancellation. Added copyable setup/progress/recovery commands and limitations in docs/adapters.md and docs/usage.md. Source frozen for root commit/PR; immutable artifact checkpoint and submit remain pending root publication. No paid provider run or own-session usage publication.",
           "evidence": [],
           "createdAt": "2026-11-25T18:39:26.000Z"
+        },
+        {
+          "id": "worker-live-reporting-artifact-20261125",
+          "agentId": "ganesh-usage-adapter",
+          "summary": "Automatic worker receipts and public milestones are implemented, tested, and committed.",
+          "details": "Immutable source includes Claude final modelUsage capture, Codex and Claude public progress helper paths, lease-checked throttled publication, exact pending-operation replay, scoped teammate context, recovery race fix, and documentation. All 60 focused runtime/worker/usage fixture tests passed, plus runtime syntax checks. No paid provider launched; this is local fixture validation, not a live provider certification. Ready for a different GitHub owner to review the artifact; no self-verification claimed.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/9123d545f43045ab192703edaf468262b4a7b688/docs/adapters.md"
+          ],
+          "createdAt": "2026-11-25T18:44:08.000Z"
         }
       ],
       "reviews": []
@@ -1293,7 +1303,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T18:39:26.000Z"
+      "lastSeenAt": "2026-11-25T18:44:08.000Z"
     },
     {
       "id": "ganesh-contributor-intake",
@@ -3781,6 +3791,22 @@
         "https://github.com/g4nesh/math-commons/pull/15"
       ],
       "requestFingerprint": "60cf7772765f19d345c1570e0a5cf6c763a974f682cac96f15517ce5edb2ba72"
+    },
+    {
+      "id": "worker-live-reporting-artifact-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "worker-live-reporting",
+      "summary": "Automatic worker receipts and public milestones are implemented, tested, and committed.",
+      "detail": "Immutable source includes Claude final modelUsage capture, Codex and Claude public progress helper paths, lease-checked throttled publication, exact pending-operation replay, scoped teammate context, recovery race fix, and documentation. All 60 focused runtime/worker/usage fixture tests passed, plus runtime syntax checks. No paid provider launched; this is local fixture validation, not a live provider certification. Ready for a different GitHub owner to review the artifact; no self-verification claimed.",
+      "to": null,
+      "createdAt": "2026-11-25T18:44:08.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/9123d545f43045ab192703edaf468262b4a7b688/docs/adapters.md"
+      ],
+      "requestFingerprint": "8dbfb1483ae5e9e4eaceba1d9e116029b42bfb30c5ca71029dab7fef892d9330"
     }
   ],
   "usage": [
