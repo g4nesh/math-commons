@@ -85,7 +85,7 @@ body { --paper:#faf8f2; --ink:#25251f; --accent:#863d2c; --muted:#68675e; backgr
   .workspace-bar { flex-wrap:wrap; min-height:0; row-gap:0; column-gap:9px; padding-top:11px; }
   .workspace-brand { font-size:1.22rem; }
   .workspace-emblem { width:26px; height:28px; font-size:1.45rem; }
-  .workspace-nav { order:3; width:100%; gap:24px; }
+  .workspace-nav { order:3; width:100%; gap:clamp(10px,4vw,24px); }
   .workspace-nav a { min-height:43px; font-size:.83rem; }
   .workspace-actions { gap:11px; }.workspace-actions .quiet-link { font-size:.78rem; }.workspace-actions .button { font-size:.75rem; padding:7px 9px; }
   .map-page main { padding-top:20px; }

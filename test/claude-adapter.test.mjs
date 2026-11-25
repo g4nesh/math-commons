@@ -61,10 +61,12 @@ async function runFixture(fixture = {}) {
   const directory = await mkdtemp(join(tmpdir(), 'commons-claude-test-'));
   try {
     const executable = join(directory, 'fake-claude'), progressFile = join(directory, 'progress.jsonl');
+    const fixtureFile = join(directory, 'fixture.json');
+    await writeFile(fixtureFile, JSON.stringify({ events: [terminal()], ...fixture }), { mode: 0o600 });
     await writeFile(progressFile, '');
     await writeFile(executable, `#!/usr/bin/env node
 const fs = require('node:fs'); const cp = require('node:child_process');
-const args = process.argv.slice(2), fixture = JSON.parse(process.env.CLAUDE_FIXTURE);
+const args = process.argv.slice(2), fixture = JSON.parse(fs.readFileSync(process.env.CLAUDE_FIXTURE_FILE, 'utf8'));
 if (!args.includes('-p') || args[args.indexOf('--output-format')+1] !== 'stream-json' || !args.includes('--verbose') || args[args.indexOf('--permission-mode')+1] !== 'default' || !args.includes('--no-session-persistence') || args.includes('--resume') || args.some(x=>x.includes('skip-permissions'))) process.exit(9);
 const session = args[args.indexOf('--session-id')+1];
 let prompt=''; process.stdin.on('data',x=>prompt+=x); process.stdin.on('end',async()=>{
@@ -76,7 +78,7 @@ let prompt=''; process.stdin.on('data',x=>prompt+=x); process.stdin.on('end',asy
 });\n`, { mode: 0o700 });
     const result = await new Promise((resolve, reject) => {
       const child = spawn(process.execPath, ['adapters/claude.mjs'], { env: { ...process.env, COMMONS_CLAUDE_BIN: executable,
-        MATH_COMMONS_PROGRESS_FILE: progressFile, CLAUDE_FIXTURE: JSON.stringify({ events: [terminal()], ...fixture }) }, stdio: ['pipe', 'pipe', 'pipe'] });
+        MATH_COMMONS_PROGRESS_FILE: progressFile, CLAUDE_FIXTURE_FILE: fixtureFile }, stdio: ['pipe', 'pipe', 'pipe'] });
       let stdout = '', stderr = '';
       const timer = setTimeout(() => { child.kill('SIGKILL'); reject(new Error('Fixture timed out')); }, 5000);
       child.stdout.on('data', x => { stdout += x; }); child.stderr.on('data', x => { stderr += x; }); child.on('error', reject);

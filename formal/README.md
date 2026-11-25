@@ -26,6 +26,12 @@ Write the spectra as $a=(0,1,i)$ and $b=(-1-i,1,-1+i)$. The relative eigenbasis 
 
 The rational coordinates embed in the real plane. Addition, multiplication and nonnegative rational interpolation have their usual meaning under this embedding. The code formalizes the rational operations and interpolation predicate directly. The bridge to Mathlib's complex matrices, spectral theorem, determinant and real convex hull is still a separate formalization task. The [independent arithmetic implementation](../research/marcus-de-oliveira/literature/check_source_examples.py) reproduces the example.
 
+## An unbounded cut-history lemma
+
+[ForestCut.lean](ForestCut.lean) also proves the arithmetic step behind the forest rotation proof. For any finite number of steps, if the integer count on one side of a cut can change at only one step, its signed change is fixed by the endpoint counts. Two histories with the same endpoints have identical counts throughout that cut. If a crossing decision is encoded as stay, enter or leave, the signed change also determines the decision. The checked declarations include `cutHistoryUnique` and `crossingDecisionUnique`.
+
+The hypotheses describe histories of counts. Proving that actual exterior-power trajectories on a forest satisfy those hypotheses, and that their squared amplitudes yield a single permutation distribution, is still a written argument. It is an explicit follow-up for formalization.
+
 ## Contributing a theorem
 
 1. Claim the specific lemma or translation in the live ledger. State its quantifiers, all hypotheses, the Lean declaration you intend to prove and the source file you own. Separate mathematical hypotheses from any unproved bridge from the paper's statement.

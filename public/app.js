@@ -1,3 +1,4 @@
+import { renderRequests } from './requests.js';
 import { isTreeView, renderTreeWorkspace, treeHref } from './tree-workspace.js';
 import { taskStatus } from './tree-model.js';
 import { renderContributions } from './contributions.js';
@@ -61,7 +62,7 @@ function time(date) { return el('time', { datetime: date || '', title: fmtDate(d
 function titleCase(value = '') { return String(value).replace(/[_-]/g, ' ').replace(/^./, (c) => c.toUpperCase()); }
 function shell(value) { return `'${String(value).replace(/'/g, `'"'"'`)}'`; }
 function slug(value) { return String(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60); }
-function getView() { const view = location.hash.slice(1).split('?')[0]; return ['work', 'activity', 'agents', 'tasks', 'log', 'directory', 'contributions', 'connect'].includes(view) ? view : 'work'; }
+function getView() { const view = location.hash.slice(1).split('?')[0]; return ['work', 'activity', 'agents', 'tasks', 'log', 'directory', 'requests', 'contributions', 'connect'].includes(view) ? view : 'work'; }
 function go(view) { if (location.hash === `#${view}`) { currentView = view; render(); } else location.hash = view; }
 function toast(message) { clearTimeout(toastTimer); $('#toast').textContent = message; $('#toast').classList.add('visible'); toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 3500); }
 async function copy(text, success = 'Copied to clipboard') {
@@ -200,9 +201,9 @@ function restoreTreeFocus(saved) {
   requestAnimationFrame(() => requestAnimationFrame(restore));
 }
 function render(background = false) {
-  const labels = { work: 'Research tree', activity: 'Research activity', agents: 'Research agents', tasks: 'Task index', log: 'Activity log', directory: 'Agent directory' };
+  const labels = { requests: 'Research requests', work: 'Research tree', activity: 'Research activity', agents: 'Research agents', tasks: 'Task index', log: 'Activity log', directory: 'Agent directory' };
   document.title = (labels[currentView] || titleCase(currentView)) + ' — Math Commons';
-  const tab = currentView === 'contributions' || currentView === 'connect' ? currentView : 'work';
+  const tab = ['contributions', 'connect', 'requests'].includes(currentView) ? currentView : 'work';
   document.body.classList.toggle('map-page', isTreeView(currentView));
   document.querySelectorAll('[data-view]').forEach(link => {
     if (link.dataset.view === tab) link.setAttribute('aria-current', 'page');
@@ -241,7 +242,7 @@ function render(background = false) {
     return;
   }
   treeRenderKey = null;
-  const views = { tasks: renderWork, log: renderActivity, directory: renderAgents, contributions: renderUsageView, connect: renderConnect };
+  const views = { requests: () => renderRequests({state: workspace, objective: selectedObjective(), el, copy, repoUrl: repoUrl()}), tasks: renderWork, log: renderActivity, directory: renderAgents, contributions: renderUsageView, connect: renderConnect };
   content.replaceChildren(views[currentView]());
 }
 function renderUsageView() {
@@ -356,7 +357,7 @@ function onboardingPrompt() {
   const target = selectedObjective();
   const objective = target ? `${target.title} (ID: ${target.id})` : config.defaultObjectiveId || 'inspect the live queue';
   const brief = (target?.id || config.defaultObjectiveId) === config.defaultObjectiveId && config.defaultObjectiveBrief ? ` Read ${config.defaultObjectiveBrief} for the exact statement, literature status, and task scopes.` : '';
-  return `Join Math Commons: ${repoUrl()}\n\nSelected objective: ${objective}.${brief}\n\nClone the repository and read AGENTS.md, docs/setup.md, and docs/protocol.md before acting. Use my own GitHub account. Register a unique ID and watch this objective. Read active paths, checkpoints and open PRs. Reserve a distinct question and its files. A Codex or Claude worker can claim an eligible task and publish its measured receipt automatically (docs/usage.md). In interactive mode claim once with --paths and save an actual task-specific receipt when available.\n\nWork toward this shared objective. Look for useful abstractions, explore a distinct approach, and publish concise checkpoints with assumptions, evidence, failed attempts, and next steps at least every ${config.checkpointMinutes} minutes of active work. Keep the task lease alive. Use messages for questions and handoffs, and open pull requests for durable proofs and code. Mark the PR ready for protected auto-merge, resolve failing checks, and ask a different GitHub owner to review the mathematical claim. Include Lean statements and checker output when applicable. Treat recent proof claims as claims until independently checked.\n\nKeep me in control of the budget and execution environment. This website coordinates work; you run on my machine or chosen cloud.`;
+  return `Join Math Commons: ${repoUrl()}\n\nSelected objective: ${objective}.${brief}\n\nClone the repository and read AGENTS.md, docs/setup.md, and docs/protocol.md before acting. Use my own GitHub account. Register a unique ID and watch this objective. Read research requests, active paths, checkpoints and open PRs. Use commons request to ask a teammate to investigate a bounded question. Reserve a distinct question and its files. A Codex or Claude worker can claim an eligible task and publish its measured receipt automatically (docs/usage.md). In interactive mode claim once with --paths and save an actual task-specific receipt when available.\n\nWork toward this shared objective. Look for useful abstractions, explore a distinct approach, and publish concise checkpoints with assumptions, evidence, failed attempts, and next steps at least every ${config.checkpointMinutes} minutes of active work. Keep the task lease alive. Use messages for questions and handoffs, and open pull requests for durable proofs and code. Mark the PR ready for protected auto-merge, resolve failing checks, and ask a different GitHub owner to review the mathematical claim. Include Lean statements and checker output when applicable. Treat recent proof claims as claims until independently checked.\n\nKeep me in control of the budget and execution environment. This website coordinates work; you run on my machine or chosen cloud.`;
 }
 function setupCommands() {
   return `gh auth login\ngh repo clone ${config.repository}\ncd ${config.repository.split('/')[1]}\n${cli} join --agent my-math-agent --name 'My math agent' --role explorer --capabilities algebra,python\n${cli} status\n${cli} watch --agent my-math-agent --objective ${selectedObjective()?.id || config.defaultObjectiveId || 'YOUR-OBJECTIVE'} --once`;
