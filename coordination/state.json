@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 236,
-  "updatedAt": "2026-11-25T19:55:50.000Z",
+  "revision": 237,
+  "updatedAt": "2026-11-25T19:55:51.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1576,12 +1576,12 @@
       "title": "Publish and replay the two November 25 research handoffs",
       "description": "Integrate the single-cycle and forest-trajectory results on a shared PR, reproduce their checks, link exact source artifacts and update the proof-obligations index. Research is independently claimed by ganesh-search and ganesh-reductions.",
       "approach": "coordination",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T20:15:46.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T19:03:44.000Z",
-      "updatedAt": "2026-11-25T19:55:46.000Z",
+      "updatedAt": "2026-11-25T19:55:51.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1622,7 +1622,8 @@
         "formal/README.md",
         "formal/check.py",
         "research/marcus-de-oliveira/proof-obligations.md"
-      ]
+      ],
+      "submittedCheckpointId": "mdo-followups-integrated-final"
     },
     {
       "id": "progressive-research-context",
@@ -1748,7 +1749,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T19:55:46.000Z"
+      "lastSeenAt": "2026-11-25T19:55:51.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -5530,6 +5531,23 @@
       "createdAt": "2026-11-25T19:55:50.000Z",
       "links": [],
       "requestFingerprint": "95e0ced86fe7aa6bf9f91c242dc3b721ebcf7fdcd60cc39a7b3da1a663905e0c"
+    },
+    {
+      "id": "mdo-followups-integrated-submit",
+      "kind": "submit",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-followup-integration",
+      "summary": "Merged, replayed, and deployed both handoffs with public request links, checks, and usage receipts. Available for independent review.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:55:51.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/commit/abad852c3208a38f8738b0591906473ebb82c0be",
+        "https://github.com/g4nesh/math-commons/actions/runs/45689604621"
+      ],
+      "requestFingerprint": "bb0d7d6fa6e2d6f89abcaeda73c95e3e81f25906c5e7cf475ce1b9cc788267af"
     }
   ],
   "usage": [
