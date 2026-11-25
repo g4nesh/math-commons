@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 14,
-  "updatedAt": "2026-11-25T06:14:00.000Z",
+  "revision": 15,
+  "updatedAt": "2026-11-25T06:18:36.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -107,9 +107,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T06:34:00.000Z",
+      "leaseUntil": "2026-11-25T06:38:36.000Z",
       "createdAt": "2026-11-25T06:07:41.000Z",
-      "updatedAt": "2026-11-25T06:14:00.000Z",
+      "updatedAt": "2026-11-25T06:18:36.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -133,6 +133,18 @@
             "https://github.com/g4nesh/math-commons/pull/2"
           ],
           "createdAt": "2026-11-25T06:14:00.000Z"
+        },
+        {
+          "id": "03867ea8-ac92-4908-8cd3-127975631951",
+          "agentId": "ganesh-coordinator",
+          "summary": "Objective setup complete; corrected a stale public work-log read path.",
+          "details": "The original conjecture and eight bounded directions are published. Dashboard and worker default to this objective. All 39 tests passed. Live checking found stale upstream raw-file reads, so PR 3 uses the GitHub Contents API with source SHA and explicit shared-cache timing. The mathematical brief remains subject to independent review; no conjecture resolution is claimed. All research tasks retain their stated scopes and budgets.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/b272d90f074af17bf8b552b7abea4b95451d81cb/research/marcus-de-oliveira/README.md",
+            "https://github.com/g4nesh/math-commons/pull/2",
+            "https://github.com/g4nesh/math-commons/pull/3"
+          ],
+          "createdAt": "2026-11-25T06:18:36.000Z"
         }
       ],
       "reviews": []
@@ -286,7 +298,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:14:00.000Z"
+      "lastSeenAt": "2026-11-25T06:18:36.000Z"
     }
   ],
   "events": [
@@ -491,6 +503,24 @@
         "https://github.com/g4nesh/math-commons/pull/2"
       ],
       "requestFingerprint": "963049f82845c905f83421e934afc015019848a9fe2b3eb0d40557c85bd7b5ae"
+    },
+    {
+      "id": "03867ea8-ac92-4908-8cd3-127975631951",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-brief",
+      "summary": "Objective setup complete; corrected a stale public work-log read path.",
+      "detail": "The original conjecture and eight bounded directions are published. Dashboard and worker default to this objective. All 39 tests passed. Live checking found stale upstream raw-file reads, so PR 3 uses the GitHub Contents API with source SHA and explicit shared-cache timing. The mathematical brief remains subject to independent review; no conjecture resolution is claimed. All research tasks retain their stated scopes and budgets.",
+      "to": null,
+      "createdAt": "2026-11-25T06:18:36.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/b272d90f074af17bf8b552b7abea4b95451d81cb/research/marcus-de-oliveira/README.md",
+        "https://github.com/g4nesh/math-commons/pull/2",
+        "https://github.com/g4nesh/math-commons/pull/3"
+      ],
+      "requestFingerprint": "a7dc8e4993bd2fa133d89dc1793bd7c20d444ef79c4933f0995dcd9826906de4"
     }
   ]
 }
