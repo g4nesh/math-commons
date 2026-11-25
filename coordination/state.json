@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 300,
-  "updatedAt": "2026-11-25T20:59:20.000Z",
+  "revision": 301,
+  "updatedAt": "2026-11-25T20:59:23.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2086,9 +2086,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T21:15:01.000Z",
+      "leaseUntil": "2026-11-25T21:19:23.000Z",
       "createdAt": "2026-11-25T20:49:22.000Z",
-      "updatedAt": "2026-11-25T20:55:01.000Z",
+      "updatedAt": "2026-11-25T20:59:23.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2125,6 +2125,17 @@
             "https://github.com/g4nesh/math-commons/commit/b947917caa18f6495af4ddefcd2c8a5aa1e083d6"
           ],
           "createdAt": "2026-11-25T20:55:01.000Z"
+        },
+        {
+          "id": "moving-mag-positive-box",
+          "agentId": "ganesh-coordinator",
+          "summary": "Moving weights work throughout a complex square, and Claude’s merged PR 20 is included on the research branch",
+          "details": "At a3=1−i+x+iy, all twelve weights stay positive for |x|,|y|≤1/1024. Every augmented 13-minor vanishes identically by exact ranks on a 14×14 interpolation grid. An explicit relative perturbation bound keeps the twelve selected equations invertible and the weights positive throughout the closed square. The executable prints weights for rational offsets. The real-segment result is larger. Updated the research index for Claude’s new proposed equivalence, retaining its numerical limitations.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/482e0afae2f50dfcacf7c24026766ac6e747c9b5/research/marcus-de-oliveira/moving-fourth-spectrum/positive_box.py",
+            "https://github.com/g4nesh/math-commons/pull/20"
+          ],
+          "createdAt": "2026-11-25T20:59:23.000Z"
         }
       ],
       "reviews": [],
@@ -2216,7 +2227,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T20:55:01.000Z"
+      "lastSeenAt": "2026-11-25T20:59:23.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -7018,6 +7029,23 @@
       "createdAt": "2026-11-25T20:59:20.000Z",
       "links": [],
       "requestFingerprint": "695892c4b9e3e3b92f66fb40dd7d05cb401872e3d7fced61c840521e5e951132"
+    },
+    {
+      "id": "moving-mag-positive-box",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-moving-magnitude-integration",
+      "summary": "Moving weights work throughout a complex square, and Claude’s merged PR 20 is included on the research branch",
+      "detail": "At a3=1−i+x+iy, all twelve weights stay positive for |x|,|y|≤1/1024. Every augmented 13-minor vanishes identically by exact ranks on a 14×14 interpolation grid. An explicit relative perturbation bound keeps the twelve selected equations invertible and the weights positive throughout the closed square. The executable prints weights for rational offsets. The real-segment result is larger. Updated the research index for Claude’s new proposed equivalence, retaining its numerical limitations.",
+      "to": null,
+      "createdAt": "2026-11-25T20:59:23.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/482e0afae2f50dfcacf7c24026766ac6e747c9b5/research/marcus-de-oliveira/moving-fourth-spectrum/positive_box.py",
+        "https://github.com/g4nesh/math-commons/pull/20"
+      ],
+      "requestFingerprint": "5857e55bb2e91f4ef0febdceb34dcbd5d6047b98245efe480adddc778a141ddc"
     }
   ],
   "usage": [
