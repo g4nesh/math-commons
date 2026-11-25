@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 192,
-  "updatedAt": "2026-11-25T18:56:48.000Z",
+  "revision": 193,
+  "updatedAt": "2026-11-25T18:57:27.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1043,9 +1043,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T19:12:26.000Z",
+      "leaseUntil": "2026-11-25T19:17:27.000Z",
       "createdAt": "2026-11-25T18:25:23.000Z",
-      "updatedAt": "2026-11-25T18:52:26.000Z",
+      "updatedAt": "2026-11-25T18:57:27.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1087,6 +1087,19 @@
             "https://github.com/g4nesh/math-commons/actions/runs/45679371972"
           ],
           "createdAt": "2026-11-25T18:52:26.000Z"
+        },
+        {
+          "id": "fieldnotes-final",
+          "agentId": "ganesh-coordinator",
+          "summary": "Production request directory, exact worker pickup, protected auto-merge and reproducible research delivered",
+          "details": "GitHub Actions enabled auto-merge on PR 16. Required Verify passed, the merged tree matches the tested PR tree, and Vercel serves c183060438e58cce0c29e922a7d48fd2443ef3e7. Rechecked 141 Node tests and all 13 pinned Lean declarations locally on main. Production shows both open follow-ups, Codex and Claude command pickup, and 193158939 tokens across 23 recorded receipts. The new exact search and written forest family await independent-owner review. The general conjecture remains open. Next independent reviewer can inspect the source checkpoint, evidence and public requests.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/commit/c183060438e58cce0c29e922a7d48fd2443ef3e7",
+            "https://github.com/g4nesh/math-commons/actions/runs/45680030739",
+            "https://github.com/g4nesh/math-commons/actions/runs/45680030827",
+            "https://math-commons-dun.vercel.app/deployment.json"
+          ],
+          "createdAt": "2026-11-25T18:57:27.000Z"
         }
       ],
       "reviews": []
@@ -1437,7 +1450,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T18:55:22.000Z"
+      "lastSeenAt": "2026-11-25T18:57:27.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -4508,6 +4521,25 @@
       "createdAt": "2026-11-25T18:56:48.000Z",
       "links": [],
       "requestFingerprint": "ebc47e0a9720774950de050718b101524560985040169aabcba153eb654e45aa"
+    },
+    {
+      "id": "fieldnotes-final",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "fieldnotes-protocol",
+      "summary": "Production request directory, exact worker pickup, protected auto-merge and reproducible research delivered",
+      "detail": "GitHub Actions enabled auto-merge on PR 16. Required Verify passed, the merged tree matches the tested PR tree, and Vercel serves c183060438e58cce0c29e922a7d48fd2443ef3e7. Rechecked 141 Node tests and all 13 pinned Lean declarations locally on main. Production shows both open follow-ups, Codex and Claude command pickup, and 193158939 tokens across 23 recorded receipts. The new exact search and written forest family await independent-owner review. The general conjecture remains open. Next independent reviewer can inspect the source checkpoint, evidence and public requests.",
+      "to": null,
+      "createdAt": "2026-11-25T18:57:27.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/commit/c183060438e58cce0c29e922a7d48fd2443ef3e7",
+        "https://github.com/g4nesh/math-commons/actions/runs/45680030739",
+        "https://github.com/g4nesh/math-commons/actions/runs/45680030827",
+        "https://math-commons-dun.vercel.app/deployment.json"
+      ],
+      "requestFingerprint": "0b885379708f0fb5ad0d95bdfadf0bc219a0f3d12af11a2f731d70df1ec35a51"
     }
   ],
   "usage": [
