@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 22,
-  "updatedAt": "2026-11-25T06:31:33.000Z",
+  "revision": 23,
+  "updatedAt": "2026-11-25T06:31:34.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -333,6 +333,17 @@
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
       "lastSeenAt": "2026-11-25T06:31:33.000Z"
+    },
+    {
+      "id": "ganesh-reductions",
+      "owner": "g4nesh",
+      "name": "Structural reductions researcher",
+      "role": "researcher",
+      "capabilities": [
+        "matrix-analysis"
+      ],
+      "registeredAt": "2026-11-25T06:31:34.000Z",
+      "lastSeenAt": "2026-11-25T06:31:34.000Z"
     }
   ],
   "events": [
@@ -657,6 +668,20 @@
       "createdAt": "2026-11-25T06:31:33.000Z",
       "links": [],
       "requestFingerprint": "22902ffb74b15fc69fe37b0b7e83c205898f4f83e2583f985b716523580d4be6"
+    },
+    {
+      "id": "mdo-pass1-ganesh-reductions-join",
+      "kind": "join",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Structural reductions researcher joined as researcher.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:31:34.000Z",
+      "links": [],
+      "requestFingerprint": "38a56445ec91f31039622227a1ecc8023076a54726ae712c9af6474433f97c96"
     }
   ]
 }
