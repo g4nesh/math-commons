@@ -211,16 +211,24 @@ def convex_hull(points):
     return lower[:-1] + upper[:-1]
 
 
+def exact_scalar(value, label="coordinate"):
+    if not isinstance(value, (int, Fraction)) or isinstance(value, bool):
+        raise TypeError(f"{label} must be an exact integer or Fraction")
+    return Fraction(value)
+
+
+def exact_point(point, label="point"):
+    if not isinstance(point, (tuple, list)) or len(point) != 2:
+        raise TypeError(f"{label} must have two exact coordinates")
+    return tuple(exact_scalar(value, label) for value in point)
+
+
 def certify_hull(points, target):
     """Return exact sparse weights or a strict separating linear functional.
 
     Result weights refer to unique coordinate pairs, not permutation indices.
     A separate direct check below verifies the certificate against ALL points.
     """
-    def exact_point(point):
-        if len(point) != 2 or any(not isinstance(value, (int, Fraction)) or isinstance(value, bool) for value in point):
-            raise TypeError("Hull coordinates must be exact integers or Fractions")
-        return tuple(Fraction(value) for value in point)
     unique = sorted({exact_point(point) for point in points})
     target = exact_point(target)
     if not unique:
@@ -281,21 +289,42 @@ def certify_hull(points, target):
 
 
 def check_hull_certificate(points, target, certificate):
-    """Verify the certificate directly; does not invoke hull construction."""
-    if certificate["membership"] == "inside":
-        weights = certificate["weights"]
-        if not weights or len(weights) > 3 or any(point not in points or weight < 0 for point, weight in weights):
+    """Verify directly over exact scalar inputs; never accept float/bool values.
+
+    This helper is callable separately from the generator. Every scalar used in
+    its arithmetic is validated here, so approximate inputs cannot smuggle in a
+    floating-point equality through a supplied certificate.
+    """
+    points = [exact_point(point, "hull point") for point in points]
+    target = exact_point(target, "target")
+    if not points or not isinstance(certificate, dict):
+        raise ArithmeticError("A certificate needs a nonempty point set")
+    if certificate.get("membership") == "inside":
+        supplied_weights = certificate.get("weights")
+        if not isinstance(supplied_weights, (list, tuple)) or not 1 <= len(supplied_weights) <= 3:
+            raise ArithmeticError("Invalid convex-combination support")
+        weights = []
+        for entry in supplied_weights:
+            if not isinstance(entry, (tuple, list)) or len(entry) != 2:
+                raise ArithmeticError("Invalid convex-combination entry")
+            weights.append((exact_point(entry[0], "support point"), exact_scalar(entry[1], "weight")))
+        if any(point not in points or weight < 0 for point, weight in weights):
             raise ArithmeticError("Invalid convex-combination support")
         if sum(weight for _, weight in weights) != 1:
             raise ArithmeticError("Convex weights do not sum to one")
         reconstructed = tuple(sum(point[coordinate] * weight for point, weight in weights) for coordinate in (0, 1))
         if reconstructed != target:
             raise ArithmeticError("Convex combination does not equal the determinant")
-    elif certificate["membership"] == "outside":
-        normal, bound = certificate["normal"], certificate["bound"]
+    elif certificate.get("membership") == "outside":
+        normal = exact_point(certificate.get("normal"), "separating normal")
+        bound = exact_scalar(certificate.get("bound"), "separating bound")
+        gap = exact_scalar(certificate.get("gap"), "separation gap")
+        target_value = dot(normal, target)
+        if "targetValue" in certificate and exact_scalar(certificate["targetValue"], "target value") != target_value:
+            raise ArithmeticError("Claimed target functional value is incorrect")
         if normal == (0, 0) or any(dot(normal, point) > bound for point in points):
             raise ArithmeticError("Invalid separating bound")
-        if dot(normal, target) <= bound or certificate["gap"] != dot(normal, target) - bound:
+        if target_value <= bound or gap != target_value - bound:
             raise ArithmeticError("Separation gap is not strictly positive and exact")
     else:
         raise ArithmeticError("Unknown membership certificate")

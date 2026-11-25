@@ -106,6 +106,39 @@ class HullTests(unittest.TestCase):
         with self.assertRaises(TypeError):
             certify_hull(points, (0.1, 0.2))
 
+    def test_direct_checker_rejects_float_rounding_and_all_nonexact_scalar_fields(self):
+        # A float weight rounds 2**53+3 up to 2**53+4 in ordinary Python arithmetic.
+        # These are different exact singleton points; accepting that equality is unsound.
+        point, target = (2**53 + 3, 0), (2**53 + 4, 0)
+        with self.assertRaises(TypeError):
+            check_hull_certificate([point], target, {'membership': 'inside', 'weights': [(point, 1.0)]})
+        with self.assertRaises(ArithmeticError):
+            check_hull_certificate([point], target, {'membership': 'inside', 'weights': [(point, F(1))]})
+        valid_inside = {'membership': 'inside', 'weights': [((0, 0), F(1))]}
+        for invalid in (0.0, False):
+            with self.assertRaises(TypeError):
+                check_hull_certificate([(invalid, 0)], (0, 0), valid_inside)
+            with self.assertRaises(TypeError):
+                check_hull_certificate([(0, 0)], (invalid, 0), valid_inside)
+            with self.assertRaises(TypeError):
+                check_hull_certificate([(0, 0)], (0, 0), {'membership': 'inside', 'weights': [((invalid, 0), F(1))]})
+        for invalid_weight in (1.0, True):
+            with self.assertRaises(TypeError):
+                check_hull_certificate([(0, 0)], (0, 0), {'membership': 'inside', 'weights': [((0, 0), invalid_weight)]})
+        outside = certify_hull([(0, 0)], (1, 0))
+        for field in ('bound', 'gap', 'targetValue'):
+            for value in (float(outside[field]), True):
+                corrupted = deepcopy(outside); corrupted[field] = value
+                with self.assertRaises(TypeError):
+                    check_hull_certificate([(0, 0)], (1, 0), corrupted)
+        for value in (1.0, True):
+            corrupted = deepcopy(outside); corrupted['normal'] = (value, 0)
+            with self.assertRaises(TypeError):
+                check_hull_certificate([(0, 0)], (1, 0), corrupted)
+        corrupted = deepcopy(outside); corrupted['targetValue'] = F(99)
+        with self.assertRaises(ArithmeticError):
+            check_hull_certificate([(0, 0)], (1, 0), corrupted)
+
     def test_deterministic_exact_grid_against_square_characterization(self):
         points = [(-2, -2), (2, -2), (2, 2), (-2, 2)]
         for x in range(-6, 7):

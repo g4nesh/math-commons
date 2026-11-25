@@ -4,10 +4,10 @@ This directory verifies **one specified instance** of the original Marcus–de O
 
 For input spectra `a,b` and a unitary `U`, the program constructs
 
-\[
+$$
 A=\operatorname{diag}(a),\quad B=U\operatorname{diag}(b)U^*,\quad d=\det(A+B),
 \qquad z_\sigma=\prod_i(a_i+b_{\sigma(i)}).
-\]
+$$
 
 It checks both `U U* = I` and `U* U = I` exactly, constructs `B`, verifies both matrices' normality, and computes `d` by exact Gaussian elimination. It enumerates **all** `n!` permutation points. Membership certificates contain at most three nonnegative rational weights summing to one. Outside certificates contain a rational real linear functional whose value at `d` exceeds its value at every permutation point by a strictly positive rational gap.
 
@@ -55,17 +55,17 @@ The first two fixtures transcribe spectra and matrices from Section 4 of [Kovace
 
 Two compact certificates from this implementation are
 
-\[
+$$
 \frac23+\frac29i
 =\frac{13}{27}(-i)+\frac13(2+i)+\frac5{27}(2i),
-\]
+$$
 
 and
 
-\[
+$$
 \frac{2864+1840i}{49}
 =\frac4{49}(-130+10i)+\frac{36}{49}(24-20i)+\frac9{49}(280+280i).
-\]
+$$
 
 Each point on the right is one of the fully enumerated permutation points in its result file. The n=4 fixture is a constructed regression case: `v=(1,i,1+i,2−i)` has `v* v=9`, and `U=I−2vv*/9`. Its genuinely complex off-diagonal entries test conjugation, not only real orthogonal arithmetic. No novel general case is established by this finite example.
 
@@ -79,13 +79,13 @@ The normality and spectrum hypotheses follow from the construction once exact un
 
 ## Validation and limitations
 
-The 15 regression tests cover:
+The 16 regression tests cover:
 
 - Gaussian-rational arithmetic and exact conjugation; elimination against a separately implemented Leibniz determinant on 32 deterministic complex matrices of dimensions 1–4.
 - Both published n=3 instances, including their complete permutation-point sets, and the genuinely complex n=4 instance.
 - Singular sums, repeated spectra, point hulls, segment hulls, vertices, boundary points, and strict outside synthetic points.
 - A 169-point rational grid against an independently known square-membership condition; an outside gap as small as `1/10^30` in its coordinate.
-- Rejection of corrupted convex weights/separation gaps and malformed, nonunitary, or unsupported witness inputs.
+- Rejection of corrupted convex weights/separation gaps and malformed, nonunitary, or unsupported witness inputs. The separately callable direct checker rejects floats and booleans in every scalar field; a regression covers a false singleton equality caused by rounding beyond `2^53`.
 - Dimension six with all 720 permutations.
 
 The **outside geometry tests are synthetic hull tests**, not MDO counterexamples. All three committed matrix fixtures certify inside. The tool supports `Q(i)` inputs only. It neither encloses arbitrary real/complex inputs with intervals nor proves the correctness of decimal approximations. In particular, the sibling numerical search's stored binary64 matrices cannot be converted into exact witnesses by merely spelling the rounded entries as fractions: exact unitarity will generally fail. Use an exact rational unitary construction or a separate rigorous interval argument.
