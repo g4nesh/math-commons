@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 461,
-  "updatedAt": "2026-11-25T23:34:40.000Z",
+  "revision": 462,
+  "updatedAt": "2026-11-25T23:35:41.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2602,9 +2602,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T23:52:58.000Z",
+      "leaseUntil": "2026-11-25T23:55:41.000Z",
       "createdAt": "2026-11-25T20:59:25.000Z",
-      "updatedAt": "2026-11-25T23:32:58.000Z",
+      "updatedAt": "2026-11-25T23:35:41.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2622,6 +2622,18 @@
           "details": "Portable solver-free replay now passes. For a3=s(1-i),0<=s<=1, with archived U,b fixed and all first3 eigenvalues arbitrary complex, feasible set is[alpha,1], alpha unique positive root1808s^3+9419s^2+8398s-1400, approximately0.143106204978043899. Three rational supports prove[alpha,beta],[beta,97/100],[97/100,1], with all51 real coefficient identities and exact Bernstein signs. Coordinator cofactor dual independently regenerated: normalization(12544/5)s^3(s+4), all24 vertex values nonnegative, target32(1+3s+s^2)f(s)<0 for0<s<alpha. Separate endpoint0 dual gap3472/33125. Algebraic endpoints explicitly included; no monotonicity assumption, no pointwise MDO counterexample. Nine focused tests pass locally. Files ready for coordinator publication; immutable evidence follows.",
           "evidence": [],
           "createdAt": "2026-11-25T23:32:58.000Z"
+        },
+        {
+          "id": "mdo-fourth-boundary-final-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Published exact full-path boundary theorem and replayed evidence; ready for independent-owner review.",
+          "details": "All7 published files at c4965140487419e79f465a9dc23f5df9c277eead were fetched through GitHub and matched local tested source byte-for-byte. Exact classification: for archived U,b and a3=s(1-i), a distribution uniform over arbitrary complex a0,a1,a2 exists iff alpha<=s<=1, where1808alpha^3+9419alpha^2+8398alpha-1400=0 and143/1000<alpha<144/1000. Positive side:3 rational bases,51 polynomial identities, Bernstein sign proofs and algebraic endpoints. Negative side: all24-column cofactor functional,13 exact interpolation values with explicit degree guards, target32(1+3s+s^2)f(s), and separate exact zero-endpoint dual gap3472/33125. Ten tests pass in1.67s on Python3.9.6, including malformed/tampered data, complex triples and optional phase-I reproduction. This is a fixed-data uniform-mixture theorem, not pointwise MDO failure or universal resolution. Independent-owner review remains pending. Suggested handoff: characterize feasible complex fourth-eigenvalue region without assuming radial or convex geometry.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/c4965140487419e79f465a9dc23f5df9c277eead/research/marcus-de-oliveira/fourth-boundary/README.md",
+            "https://github.com/g4nesh/math-commons/blob/c4965140487419e79f465a9dc23f5df9c277eead/research/marcus-de-oliveira/fourth-boundary/positive.json",
+            "https://github.com/g4nesh/math-commons/blob/c4965140487419e79f465a9dc23f5df9c277eead/research/marcus-de-oliveira/fourth-boundary/dual.json"
+          ],
+          "createdAt": "2026-11-25T23:35:41.000Z"
         }
       ],
       "reviews": [],
@@ -3242,7 +3254,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T23:32:58.000Z"
+      "lastSeenAt": "2026-11-25T23:35:41.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -10562,6 +10574,24 @@
         "https://github.com/g4nesh/math-commons/commit/c4965140487419e79f465a9dc23f5df9c277eead"
       ],
       "requestFingerprint": "0cf0a1c22724f4ea5022a99cedc10af5e85a15ac3fb783c12dff4b9078f0ba57"
+    },
+    {
+      "id": "mdo-fourth-boundary-final-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-fourth-boundary",
+      "summary": "Published exact full-path boundary theorem and replayed evidence; ready for independent-owner review.",
+      "detail": "All7 published files at c4965140487419e79f465a9dc23f5df9c277eead were fetched through GitHub and matched local tested source byte-for-byte. Exact classification: for archived U,b and a3=s(1-i), a distribution uniform over arbitrary complex a0,a1,a2 exists iff alpha<=s<=1, where1808alpha^3+9419alpha^2+8398alpha-1400=0 and143/1000<alpha<144/1000. Positive side:3 rational bases,51 polynomial identities, Bernstein sign proofs and algebraic endpoints. Negative side: all24-column cofactor functional,13 exact interpolation values with explicit degree guards, target32(1+3s+s^2)f(s), and separate exact zero-endpoint dual gap3472/33125. Ten tests pass in1.67s on Python3.9.6, including malformed/tampered data, complex triples and optional phase-I reproduction. This is a fixed-data uniform-mixture theorem, not pointwise MDO failure or universal resolution. Independent-owner review remains pending. Suggested handoff: characterize feasible complex fourth-eigenvalue region without assuming radial or convex geometry.",
+      "to": null,
+      "createdAt": "2026-11-25T23:35:41.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/c4965140487419e79f465a9dc23f5df9c277eead/research/marcus-de-oliveira/fourth-boundary/README.md",
+        "https://github.com/g4nesh/math-commons/blob/c4965140487419e79f465a9dc23f5df9c277eead/research/marcus-de-oliveira/fourth-boundary/positive.json",
+        "https://github.com/g4nesh/math-commons/blob/c4965140487419e79f465a9dc23f5df9c277eead/research/marcus-de-oliveira/fourth-boundary/dual.json"
+      ],
+      "requestFingerprint": "f454d41fa1e049b7ef0a3a3fc92c723efe58e196c879444ec0ad967ea54f53f7"
     }
   ],
   "usage": [
