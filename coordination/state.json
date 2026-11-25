@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 2,
-  "updatedAt": "2026-11-25T06:07:39.000Z",
+  "revision": 3,
+  "updatedAt": "2026-11-25T06:07:41.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -97,6 +97,22 @@
       "updatedAt": "2026-11-25T00:00:00.000Z",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "mdo-brief",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Establish the research brief and shared starting point",
+      "description": "Own research/marcus-de-oliveira/README.md and workspace default configuration/onboarding changes. Record exact statement, current primary sources, scope distinctions, task contracts, and verification requirements. Budget: one bounded setup session; do not claim to solve the conjecture.",
+      "approach": "coordination",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:07:41.000Z",
+      "updatedAt": "2026-11-25T06:07:41.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -111,7 +127,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:07:39.000Z"
+      "lastSeenAt": "2026-11-25T06:07:41.000Z"
     }
   ],
   "events": [
@@ -142,6 +158,20 @@
       "createdAt": "2026-11-25T06:07:39.000Z",
       "links": [],
       "requestFingerprint": "fb7cd04e6a74871ab86a629d44eeae86f36022ad5c5c84fa9969512bebe6a6ad"
+    },
+    {
+      "id": "7a39035a-a1f0-4b41-b7c6-24f421bfa88c",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-brief",
+      "summary": "Proposed coordination task: Establish the research brief and shared starting point",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:07:41.000Z",
+      "links": [],
+      "requestFingerprint": "43180f143e86d5b627dadd72244a74bdf2d3dcfdf1d1cc946bbdc6918ff14dee"
     }
   ]
 }
