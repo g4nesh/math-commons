@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 126,
-  "updatedAt": "2026-11-25T18:25:23.000Z",
+  "revision": 127,
+  "updatedAt": "2026-11-25T18:25:26.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -953,12 +953,12 @@
       "title": "Edit the research notebook and reserve work across agents",
       "description": "Own the public interface, core claim scope enforcement and top-level contributor instructions. Publish verifiable research milestones and integrate the separate mathematical paths and runtime changes through a checked PR. Budget one bounded development pass.",
       "approach": "coordination",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-coordinator",
+      "leaseUntil": "2026-11-25T18:45:26.000Z",
       "createdAt": "2026-11-25T18:25:23.000Z",
-      "updatedAt": "2026-11-25T18:25:23.000Z",
+      "updatedAt": "2026-11-25T18:25:26.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -976,7 +976,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T18:25:23.000Z"
+      "lastSeenAt": "2026-11-25T18:25:26.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -3044,6 +3044,20 @@
       "createdAt": "2026-11-25T18:25:23.000Z",
       "links": [],
       "requestFingerprint": "ba6ff3af47fc2014413157fc8c623e1bee631c7ff0a60e3c94cd29a34d764512"
+    },
+    {
+      "id": "fieldnotes-claim-v1",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "fieldnotes-protocol",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:25:26.000Z",
+      "links": [],
+      "requestFingerprint": "1e89218e82dc249ddd394a022f1ef529e7cdfe4b6829a2a14f8b526f4805eb28"
     }
   ],
   "usage": [
