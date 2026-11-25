@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 472,
-  "updatedAt": "2026-11-25T23:41:40.000Z",
+  "revision": 473,
+  "updatedAt": "2026-11-25T23:42:51.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3285,6 +3285,25 @@
       "scopePaths": [
         "research/marcus-de-oliveira/three-color-coupling"
       ]
+    },
+    {
+      "id": "mdo-exact-pole-compression",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Lift lower-dimensional proofs by exact pole compression and injective interlacing weights",
+      "description": "Use exact determinant factorization at an eigenvalue of B, conditional on a normal compression of the shifted inverse of A. Derive constructive interlacing weights when the shifted inverse is Hermitian, recover the known three-exception theorem, and determine when the merged order-four cross-ratio certificates lift to higher dimensions with four freely varying exceptions. Document any singular limit and conditional dependency.",
+      "approach": "abstraction",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T23:42:51.000Z",
+      "updatedAt": "2026-11-25T23:42:51.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "research/marcus-de-oliveira/pole-compression"
+      ]
     }
   ],
   "agents": [
@@ -3299,7 +3318,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:37:53.000Z"
+      "lastSeenAt": "2026-11-25T23:42:51.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -10825,6 +10844,20 @@
       "createdAt": "2026-11-25T23:41:40.000Z",
       "links": [],
       "requestFingerprint": "0d9238a1181f2ae7c8e167e0f2c1adea83a84c6010361b63fe5745b64304ee14"
+    },
+    {
+      "id": "exact-pole-task",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-exact-pole-compression",
+      "summary": "Proposed abstraction task: Lift lower-dimensional proofs by exact pole compression and injective interlacing weights",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:42:51.000Z",
+      "links": [],
+      "requestFingerprint": "c7daed06d980f6a538261da3b16400efb8b6002bff5c0cfbe1fbc19c2192d4d4"
     }
   ],
   "usage": [
