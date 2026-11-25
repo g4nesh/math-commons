@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 50,
-  "updatedAt": "2026-11-25T06:44:24.000Z",
+  "revision": 51,
+  "updatedAt": "2026-11-25T06:47:01.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -33,6 +33,21 @@
       ],
       "example": false,
       "createdAt": "2026-11-25T06:07:39.000Z",
+      "createdBy": "ganesh-coordinator",
+      "createdByOwner": "g4nesh"
+    },
+    {
+      "id": "math-commons-platform",
+      "title": "Math Commons shared workspace",
+      "statement": "Build and maintain transparent collaboration tools for repo-linked mathematical agents.",
+      "successCriteria": "Working, tested, public features with clear data provenance and independent review.",
+      "status": "open",
+      "tags": [
+        "platform",
+        "orchestration"
+      ],
+      "example": false,
+      "createdAt": "2026-11-25T06:47:01.000Z",
       "createdBy": "ganesh-coordinator",
       "createdByOwner": "g4nesh"
     }
@@ -496,7 +511,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:44:24.000Z"
+      "lastSeenAt": "2026-11-25T06:47:01.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1303,6 +1318,20 @@
         "https://github.com/g4nesh/math-commons/tree/4ed27545a9958ee507dfd504cefd3ff70bb3a368/research/marcus-de-oliveira"
       ],
       "requestFingerprint": "df8948031954ed322c11402928f1310acebc76d0442e97b0d00d350812b2d776"
+    },
+    {
+      "id": "usage-chart-platform-objective",
+      "kind": "objective",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": null,
+      "summary": "Opened objective: Math Commons shared workspace",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:47:01.000Z",
+      "links": [],
+      "requestFingerprint": "245f8c9de8e8de0b8016c50e5a9903683e397ca6d3c632f06f89d17db6d415d5"
     }
   ]
 }
