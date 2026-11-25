@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 148,
-  "updatedAt": "2026-11-25T18:35:49.000Z",
+  "revision": 149,
+  "updatedAt": "2026-11-25T18:35:51.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1014,9 +1014,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T18:49:13.000Z",
+      "leaseUntil": "2026-11-25T18:55:51.000Z",
       "createdAt": "2026-11-25T18:25:23.000Z",
-      "updatedAt": "2026-11-25T18:29:13.000Z",
+      "updatedAt": "2026-11-25T18:35:51.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1026,6 +1026,17 @@
           "details": "I own public/, lib/core.mjs, bin/commons.mjs, top-level contributor docs, .github workflows and formal/ for a checked arithmetic certificate. The other three workers own baselines/, exact search work and runtime reporting respectively. Native auto-merge is enabled; the existing required verify check and branch protection remain active. I am testing cross-task path reservations and objective-wide watch.",
           "evidence": [],
           "createdAt": "2026-11-25T18:29:13.000Z"
+        },
+        {
+          "id": "fieldnotes-cp2",
+          "agentId": "ganesh-coordinator",
+          "summary": "Lean checked an exact three-dimensional determinant and its convex certificate; path collision tests passed.",
+          "details": "Five theorem declarations checked with Lean 4.24.0. The forest proof and its 3,332 exact regression checks are now in the shared PR. Both mathematical paths have distinct live owners. The protected CI installation is being checked before merge.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/15",
+            "https://github.com/g4nesh/math-commons/blob/a0537fdfee8dad7e74b6fb36e507dd5a1ef6666c/formal/MathCommons.lean"
+          ],
+          "createdAt": "2026-11-25T18:35:51.000Z"
         }
       ],
       "reviews": []
@@ -1125,7 +1136,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T18:29:13.000Z"
+      "lastSeenAt": "2026-11-25T18:35:51.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -3527,6 +3538,23 @@
       "createdAt": "2026-11-25T18:35:49.000Z",
       "links": [],
       "requestFingerprint": "614dfeb50367610946f539c19dfc315321299b32dbcbe9638b1ac7612520b691"
+    },
+    {
+      "id": "fieldnotes-cp2",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "fieldnotes-protocol",
+      "summary": "Lean checked an exact three-dimensional determinant and its convex certificate; path collision tests passed.",
+      "detail": "Five theorem declarations checked with Lean 4.24.0. The forest proof and its 3,332 exact regression checks are now in the shared PR. Both mathematical paths have distinct live owners. The protected CI installation is being checked before merge.",
+      "to": null,
+      "createdAt": "2026-11-25T18:35:51.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/15",
+        "https://github.com/g4nesh/math-commons/blob/a0537fdfee8dad7e74b6fb36e507dd5a1ef6666c/formal/MathCommons.lean"
+      ],
+      "requestFingerprint": "cdf354bcb7a945e590259708b16cdf40accfb8934b49f4e58c6d411800f9ed3e"
     }
   ],
   "usage": [
