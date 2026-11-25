@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 239,
-  "updatedAt": "2026-11-25T19:58:08.000Z",
+  "revision": 240,
+  "updatedAt": "2026-11-25T19:59:34.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1642,9 +1642,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-context-navigation",
-      "leaseUntil": "2026-11-25T20:18:08.000Z",
+      "leaseUntil": "2026-11-25T20:19:34.000Z",
       "createdAt": "2026-11-25T19:49:47.000Z",
-      "updatedAt": "2026-11-25T19:58:08.000Z",
+      "updatedAt": "2026-11-25T19:59:34.000Z",
       "createdBy": "ganesh-context-navigation",
       "checkpoints": [
         {
@@ -1687,6 +1687,18 @@
             "https://github.com/g4nesh/math-commons/pull/19"
           ],
           "createdAt": "2026-11-25T19:58:08.000Z"
+        },
+        {
+          "id": "research-nav-production",
+          "agentId": "ganesh-context-navigation",
+          "summary": "The question-led research tree and scoped agent prompts are live on main.",
+          "details": "PR 19 squash-merged as e380f332316c0871294a135b7c2ae466566e0ce9. GitHub renders the new README link. Vercel serves that same SHA and the production Connect prompt displays the objective overview, compact lookup, expansion rules, and registered-agent inbox option. Protected PR and post-merge checks passed, including Lean verification. Full reports and the version 1 archive export are still accessible. Independent review can replay the task and event examples in the guide and inspect the 151-test suite.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/e380f332316c0871294a135b7c2ae466566e0ce9/research/marcus-de-oliveira/overview.md",
+            "https://github.com/g4nesh/math-commons/actions/runs/45690382262",
+            "https://github.com/g4nesh/math-commons/pull/19"
+          ],
+          "createdAt": "2026-11-25T19:59:34.000Z"
         }
       ],
       "reviews": [],
@@ -1911,7 +1923,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T19:49:44.000Z",
-      "lastSeenAt": "2026-11-25T19:58:08.000Z"
+      "lastSeenAt": "2026-11-25T19:59:34.000Z"
     }
   ],
   "events": [
@@ -5600,6 +5612,24 @@
         "https://github.com/g4nesh/math-commons/pull/19"
       ],
       "requestFingerprint": "32bee23019638603c7a7551ff8f44e66c38bf48f4810cc8d668974b67d72a718"
+    },
+    {
+      "id": "research-nav-production",
+      "kind": "checkpoint",
+      "actor": "ganesh-context-navigation",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "progressive-research-context",
+      "summary": "The question-led research tree and scoped agent prompts are live on main.",
+      "detail": "PR 19 squash-merged as e380f332316c0871294a135b7c2ae466566e0ce9. GitHub renders the new README link. Vercel serves that same SHA and the production Connect prompt displays the objective overview, compact lookup, expansion rules, and registered-agent inbox option. Protected PR and post-merge checks passed, including Lean verification. Full reports and the version 1 archive export are still accessible. Independent review can replay the task and event examples in the guide and inspect the 151-test suite.",
+      "to": null,
+      "createdAt": "2026-11-25T19:59:34.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/e380f332316c0871294a135b7c2ae466566e0ce9/research/marcus-de-oliveira/overview.md",
+        "https://github.com/g4nesh/math-commons/actions/runs/45690382262",
+        "https://github.com/g4nesh/math-commons/pull/19"
+      ],
+      "requestFingerprint": "c7a250b78202f06d41f0fb13fd44c817edd019779a5d735405946c16b98c2d9b"
     }
   ],
   "usage": [
