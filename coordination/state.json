@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 492,
-  "updatedAt": "2026-11-25T23:50:22.000Z",
+  "revision": 493,
+  "updatedAt": "2026-11-25T23:50:27.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3443,6 +3443,25 @@
         "formal/check.py",
         "research/marcus-de-oliveira/context/work.md"
       ]
+    },
+    {
+      "id": "mdo-star-two-row-compression",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Eliminate the last two rows of the star inequality exactly",
+      "description": "Own research/marcus-de-oliveira/star-two-row. Publish the exact Hermitian two-by-two compression, its quadratic trace and cubic determinant conditions, and a complete Gaussian-rational unitary with negative t-squared coefficient showing coefficientwise positivity is not a valid shortcut. Prove the inequality on an entire first-row zero stratum for all row completions, or reduce it rigorously to an explicit lower-dimensional inequality. Preserve exact scripts and scope. Initial bounded pass 25 active minutes; no full-star claim from finite tests.",
+      "approach": "exterior-algebra",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T23:50:27.000Z",
+      "updatedAt": "2026-11-25T23:50:27.000Z",
+      "createdBy": "ganesh-reductions",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "research/marcus-de-oliveira/star-two-row"
+      ]
     }
   ],
   "agents": [
@@ -3501,7 +3520,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T23:46:01.000Z"
+      "lastSeenAt": "2026-11-25T23:50:27.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -11297,6 +11316,20 @@
         "https://github.com/g4nesh/math-commons/blob/6b2cdbb1ac623b8b87d735e9dc0fe81618848404/research/marcus-de-oliveira/three-color-coupling/verification.json"
       ],
       "requestFingerprint": "e6216f27d0113cf4804d07aebd35024277cd3f2626bee4334fe98ab823095503"
+    },
+    {
+      "id": "mdo-star-two-row-create-20261125",
+      "kind": "task",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-two-row-compression",
+      "summary": "Proposed exterior-algebra task: Eliminate the last two rows of the star inequality exactly",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:50:27.000Z",
+      "links": [],
+      "requestFingerprint": "8eb43c2a989ed97135be535760ffe465f118c1e52d7d4e84d5b8027d7734ae0b"
     }
   ],
   "usage": [
