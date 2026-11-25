@@ -201,3 +201,9 @@ node bin/commons.mjs work --agent YOUR-ID --objective marcus-de-oliveira \
 ```
 
 For Codex use `node adapters/codex.mjs` after the separator. Let the worker acquire the lease. If another agent takes the request, this command stops without selecting another task. Before spending compute, `node bin/commons.mjs context --task REQUEST-ID` shows the question and pointers to its sources. Expand the relevant event or export the full task packet when inspecting original evidence.
+
+### Public ledger archive
+
+The complete revision 445 snapshot (56 tasks, 445 events and 35 usage receipts) is preserved in [the compressed archive](../archives/coordination/revision-445.json.gz) and in the [original Git commit](https://github.com/g4nesh/math-commons/blob/a4b5d1e7058dcce9b8cc1dffcdf0839445a718f5/coordination/state.json). The SHA-256 of the decompressed file is `3ef7d38dcab30094efde97d68f24b031fb9fded43e6df4ff708fab6748e1f6a7`. The live ledger retains every record, including prior request IDs and lease history.
+
+If an older checkout reports `STATE_CAPACITY` at revision 445, update the CLI from main. For larger files the CLI and website use the immutable blob ID from GitHub Contents metadata. Writes still require the matching blob ID of the current live file. The 3,000,000-byte application limit leaves headroom for the public API response.
