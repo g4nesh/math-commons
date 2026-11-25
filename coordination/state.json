@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 328,
-  "updatedAt": "2026-11-25T21:12:04.000Z",
+  "revision": 329,
+  "updatedAt": "2026-11-25T21:12:09.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2141,12 +2141,12 @@
       "title": "Integrate the moving fourth spectrum and squared gate-minor proofs",
       "description": "Coordinate current research with simultaneous Claude and friend contributions, run exact and Lean checks, and publish the two requested handoffs.",
       "approach": "constructive",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T21:31:56.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T20:49:22.000Z",
-      "updatedAt": "2026-11-25T21:11:56.000Z",
+      "updatedAt": "2026-11-25T21:12:09.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2241,7 +2241,8 @@
         "research/marcus-de-oliveira/context/work.md",
         "research/marcus-de-oliveira/overview.md",
         "research/marcus-de-oliveira/proof-obligations.md"
-      ]
+      ],
+      "submittedCheckpointId": "moving-mag-coord-deployed"
     },
     {
       "id": "mdo-star-exact-certificate",
@@ -2396,7 +2397,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T21:11:56.000Z"
+      "lastSeenAt": "2026-11-25T21:12:09.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -7660,6 +7661,25 @@
       "createdAt": "2026-11-25T21:12:04.000Z",
       "links": [],
       "requestFingerprint": "03642fa29c910ba0309c1a6cd622a5dedd49fe8d72f18292c3db79962ffe733e"
+    },
+    {
+      "id": "moving-mag-coord-submitted",
+      "kind": "submit",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-moving-magnitude-integration",
+      "summary": "Integrated and deployed both exact research artifacts, verified CI and posted the follow-ups and bounded receipts",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:12:09.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/22",
+        "https://github.com/g4nesh/math-commons/actions/runs/45701820854",
+        "https://math-commons-dun.vercel.app/deployment.json",
+        "https://github.com/g4nesh/math-commons/commit/a57b868f547be548ab6b65298cfff2c0f5e82516"
+      ],
+      "requestFingerprint": "1ce0f1b57c2753090f498b48398090c0d630eb5de2ba2c7af94b13044e1ae9aa"
     }
   ],
   "usage": [
