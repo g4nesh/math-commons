@@ -53,26 +53,28 @@ if __name__ == '__main__':
     assert bad == 0
     # numerical point -> exact solution
     st = pickle.load(open('strict4_t%g.pkl' % t, 'rb')); xnum = st['x']; assert len(xnum) == N
-    x = [None] * N
-    DEN = 2**20                                                   # one common denominator keeps the pivot values short
-    for c in free: x[c] = Fr(round(float(xnum[c]) * DEN), DEN)
-    for r, c in enumerate(pivs):
-        ent = rows[r]; val = ent.get(N, Fr(0))
-        for fc, q in ent.items():
-            if fc != N: val -= q * x[fc]
-        x[c] = val
-    dev = max(abs(float(x[k]) - float(xnum[k])) for k in range(N))
-    print("exact solution: max deviation from the numerical point %.2e  [%.0fs]" % (dev, time.time() - t0), flush=True)
-    # blocks and exact positive definiteness
-    T = [[[None] * len(a) for _ in a] for a in amp]
-    for k, (bi, i, j) in enumerate(idx): T[bi][i][j] = x[k]; T[bi][j][i] = x[k]
-    ok = True; minpm = None
-    for Tb in T:
-        r = len(Tb)
-        for k in range(1, r + 1):
-            d = flint.fmpq_mat(k, k, [flint.fmpq(Tb[i][j].numerator, Tb[i][j].denominator) for i in range(k) for j in range(k)]).det(); d = Fr(int(d.p), int(d.q))
-            ok &= d > 0; minpm = d if minpm is None else min(minpm, d)
-    print("all leading principal minors positive: %s ; smallest %.3e  [%.0fs]" % (ok, float(minpm), time.time() - t0))
+    for bits in (20, 30, 40):                                     # one common denominator keeps the pivot values short
+        x = [None] * N; DEN = 2**bits
+        for c in free: x[c] = Fr(round(float(xnum[c]) * DEN), DEN)
+        for r, c in enumerate(pivs):
+            ent = rows[r]; val = ent.get(N, Fr(0))
+            for fc, q in ent.items():
+                if fc != N: val -= q * x[fc]
+            x[c] = val
+        dev = max(abs(float(x[k]) - float(xnum[k])) for k in range(N))
+        print("free unknowns rounded to denominator 2^%d: max deviation of the exact solution from the numerical point %.2e  [%.0fs]" % (bits, dev, time.time() - t0), flush=True)
+        # blocks and exact positive definiteness
+        T = [[[None] * len(a) for _ in a] for a in amp]
+        for k, (bi, i, j) in enumerate(idx): T[bi][i][j] = x[k]; T[bi][j][i] = x[k]
+        ok = True; minpm = None
+        for Tb in T:
+            r = len(Tb)
+            for k in range(1, r + 1):
+                d = flint.fmpq_mat(k, k, [flint.fmpq(Tb[i][j].numerator, Tb[i][j].denominator) for i in range(k) for j in range(k)]).det(); d = Fr(int(d.p), int(d.q))
+                ok &= d > 0; minpm = d if minpm is None else min(minpm, d)
+        print("all leading principal minors positive: %s ; smallest %.3e  [%.0fs]" % (ok, float(minpm), time.time() - t0), flush=True)
+        if ok: break
+    if not ok: sys.exit("no positive definite exact solution found; no certificate written")
     json.dump({'t': str(tq), 'degree': 4, 'statement': 't*g0 + (1+t)*D[12,12] + t^2*D[13,14] = sum_b (A_b m_b)^* T_b (A_b m_b) on U(4)',
                'amplitudes': amp, 'T': [[[str(q) for q in row] for row in Tb] for Tb in T]}, open('certificate4_t%g.json' % t, 'w'))
-    print("certificate written: certificate4_t%g.json (positive definite: %s)" % (t, ok))
+    print("certificate written: certificate4_t%g.json" % t)

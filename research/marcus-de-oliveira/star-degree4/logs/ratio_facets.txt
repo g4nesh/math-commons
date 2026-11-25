@@ -1,0 +1,6 @@
+affine dimension of the 24 vertices x(P_pi): 13 (exact)
+rho = 1/3: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'1/2': 48, '2': 48} ; uncertified: 0  [5s]
+rho = 1/4: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'1/3': 48, '3': 48} ; uncertified: 0  [6s]
+rho = 2/5: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'2/3': 48, '3/2': 48} ; uncertified: 0  [7s]
+rho = 1/6: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'1/5': 48, '5': 48} ; uncertified: 0  [8s]
+EVERY FACET AT THESE RATIOS IS REDUCED EXACTLY TO COORDINATES OR TO THE FAMILY
