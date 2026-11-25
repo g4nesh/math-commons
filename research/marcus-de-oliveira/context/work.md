@@ -1,6 +1,11 @@
 # MDO-WORK · Where can I pick up a specific question?
 
-At the [indexed main revision](../overview.md), the first two investigations had landed through [PR #17](https://github.com/g4nesh/math-commons/pull/17) and their ledger tasks awaited independent review. The third was a separate draft. Check the current task and exact evidence before claiming or reviewing one.
+The first cycle and forest-trajectory results landed in [PR #17](https://github.com/g4nesh/math-commons/pull/17). Each led to a separately claimable research request. The two task pages below show who holds the lease, the latest evidence and the review status.
+
+| Follow-up | Starting question | Live record |
+| --- | --- | --- |
+| Four-cycle spectral weights | For the [fixed four-cycle](../single-cycle/README.md#5-a-four-cycle-with-no-common-minor-certificate), can an explicit convex combination follow the determinant as an eigenvalue moves? | [Task and checkpoints](https://math-commons-dun.vercel.app/#work?objective=marcus-de-oliveira&task=mdo-four-cycle-spectral-weights) |
+| Gate minors in Lean | For a single two-coordinate gate, does a nonzero minor force one of the legal steps in [`ForestTrajectory`](../../../formal/ForestTrajectory.lean)? | [Task and checkpoints](https://math-commons-dun.vercel.app/#work?objective=marcus-de-oliveira&task=mdo-forest-gate-support) |
 
 | Task | What to inspect | Starting point |
 | --- | --- | --- |
