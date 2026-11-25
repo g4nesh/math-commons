@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 28,
-  "updatedAt": "2026-11-25T06:33:10.000Z",
+  "revision": 29,
+  "updatedAt": "2026-11-25T06:34:45.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -184,9 +184,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T06:53:10.000Z",
+      "leaseUntil": "2026-11-25T06:54:45.000Z",
       "createdAt": "2026-11-25T06:11:31.000Z",
-      "updatedAt": "2026-11-25T06:33:10.000Z",
+      "updatedAt": "2026-11-25T06:34:45.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -196,6 +196,14 @@
           "details": "The planned proof shows rational complex Cayley unitaries are dense and a strict violation survives rational perturbation of spectra and separating functional. This would justify exact rational witness searches without claiming that a finite search proves MOC.",
           "evidence": [],
           "createdAt": "2026-11-25T06:33:10.000Z"
+        },
+        {
+          "id": "mdo-pass1-reductions-proof",
+          "agentId": "ganesh-reductions",
+          "summary": "Proof draft: every genuine violation admits an exact rational witness.",
+          "details": "Derived the orbit equivalence, full support-separation criterion, reversible symmetries and rational Cayley-unitary density. A strict outside gap persists under rational perturbations of spectra, unitary chart and separating functional, yielding exact rational certificates if any counterexample exists. This gives no denominator or runtime bound and proves neither MOC nor existence of a counterexample. Draft now written; algebra and boundary cases under review.",
+          "evidence": [],
+          "createdAt": "2026-11-25T06:34:45.000Z"
         }
       ],
       "reviews": []
@@ -379,7 +387,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T06:33:10.000Z"
+      "lastSeenAt": "2026-11-25T06:34:45.000Z"
     }
   ],
   "events": [
@@ -788,6 +796,20 @@
       "createdAt": "2026-11-25T06:33:10.000Z",
       "links": [],
       "requestFingerprint": "64e837a4f6b802651518e10da4c18b1e2b1f3958103dcfe19c075e50a015b74e"
+    },
+    {
+      "id": "mdo-pass1-reductions-proof",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-reductions",
+      "summary": "Proof draft: every genuine violation admits an exact rational witness.",
+      "detail": "Derived the orbit equivalence, full support-separation criterion, reversible symmetries and rational Cayley-unitary density. A strict outside gap persists under rational perturbations of spectra, unitary chart and separating functional, yielding exact rational certificates if any counterexample exists. This gives no denominator or runtime bound and proves neither MOC nor existence of a counterexample. Draft now written; algebra and boundary cases under review.",
+      "to": null,
+      "createdAt": "2026-11-25T06:34:45.000Z",
+      "links": [],
+      "requestFingerprint": "8e219719683b4293d51e6a745dc4b26bf5d84b1d8937ab7c79ec6ff8039aba03"
     }
   ]
 }
