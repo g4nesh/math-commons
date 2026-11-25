@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 246,
-  "updatedAt": "2026-11-25T20:29:56.000Z",
+  "revision": 247,
+  "updatedAt": "2026-11-25T20:30:02.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1763,11 +1763,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T20:49:56.000Z",
+      "leaseUntil": "2026-11-25T20:50:02.000Z",
       "createdAt": "2026-11-25T19:53:53.000Z",
-      "updatedAt": "2026-11-25T20:29:56.000Z",
+      "updatedAt": "2026-11-25T20:30:02.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-four-cycle-spectral-start-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Started exact spectrum-dependent interval certificate for the fixed four-cycle.",
+          "details": "Own research/marcus-de-oliveira/four-cycle-spectral only. Budget one20-minute research pass, exact standard-library rational arithmetic and at most60 CPU seconds per test run. Deform the real or imaginary part of one eigenvalue through the stored complex fixture while holding its four-cycle unitary fixed; use the existing three supporting permutations first. Acceptance: explicit nonconstant rational barycentric weights, a positive-length closed interval with a proof covering every real parameter and its endpoints, exact determinants and polynomial identities, and clear triangle-degeneracy/sign-change limits. Failure of this support triangle outside the certified interval will not be called a hull violation. Parent handles all Git, PR, integration and actual nonoverlapping usage.",
+          "evidence": [],
+          "createdAt": "2026-11-25T20:30:02.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/four-cycle-spectral"
@@ -1823,7 +1832,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T20:29:56.000Z"
+      "lastSeenAt": "2026-11-25T20:30:02.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -5727,6 +5736,20 @@
       "createdAt": "2026-11-25T20:29:56.000Z",
       "links": [],
       "requestFingerprint": "0228cfd37f5e327d5eb8c93dd74bca8d4b81b44e3fe96d1ab11a80e985b8600e"
+    },
+    {
+      "id": "mdo-four-cycle-spectral-start-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-four-cycle-spectral-weights",
+      "summary": "Started exact spectrum-dependent interval certificate for the fixed four-cycle.",
+      "detail": "Own research/marcus-de-oliveira/four-cycle-spectral only. Budget one20-minute research pass, exact standard-library rational arithmetic and at most60 CPU seconds per test run. Deform the real or imaginary part of one eigenvalue through the stored complex fixture while holding its four-cycle unitary fixed; use the existing three supporting permutations first. Acceptance: explicit nonconstant rational barycentric weights, a positive-length closed interval with a proof covering every real parameter and its endpoints, exact determinants and polynomial identities, and clear triangle-degeneracy/sign-change limits. Failure of this support triangle outside the certified interval will not be called a hull violation. Parent handles all Git, PR, integration and actual nonoverlapping usage.",
+      "to": null,
+      "createdAt": "2026-11-25T20:30:02.000Z",
+      "links": [],
+      "requestFingerprint": "a8f64fb6eaba7b550823373043346f72b9cfcd3628b5267b164477ba82d638b7"
     }
   ],
   "usage": [
