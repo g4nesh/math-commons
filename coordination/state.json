@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 207,
-  "updatedAt": "2026-11-25T19:07:14.000Z",
+  "revision": 208,
+  "updatedAt": "2026-11-25T19:09:07.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1386,9 +1386,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T19:25:48.000Z",
+      "leaseUntil": "2026-11-25T19:29:07.000Z",
       "createdAt": "2026-11-25T18:48:15.000Z",
-      "updatedAt": "2026-11-25T19:05:48.000Z",
+      "updatedAt": "2026-11-25T19:09:07.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1408,6 +1408,16 @@
             "https://github.com/g4nesh/math-commons/pull/17"
           ],
           "createdAt": "2026-11-25T19:05:48.000Z"
+        },
+        {
+          "id": "mdo-cycle-no-common-certificate-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Exact four-cycle obstruction: no common distribution can match all squared minors.",
+          "details": "Coordinator supplied a rational separating cover for the same four-edge rotation product R14 R34 R23 R12, c=3/5,s=4/5. I independently checked it with a new standalone Python Fraction implementation, using no optimizer and none of the baseline or certificate arithmetic modules. The cover has13 coordinates (4 singleton,9 size2); exhaustive enumeration verifies all24 permutations hit at least one, so every common distribution must have cover sum>=1. Direct exact matrix multiplication, both orthogonality checks, and13 direct minor calculations give cover sum14953/15625, strictly below1 by672/15625. Hence this single-cycle unitary admits no common squared-minor permutation certificate, not merely failure of the greedy rule. The original determinant for the separately stored complex spectra remains inside its permutation hull with explicit exact3-point weights. This does not refute MOC or claim a new general obstruction theorem. Artifacts single-cycle/cover_certificate.py and four-cycle-obstruction.json reproduce the finite proof; README will include all13 coordinates and complete separating-inequality logic.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/17"
+          ],
+          "createdAt": "2026-11-25T19:09:07.000Z"
         }
       ],
       "reviews": [],
@@ -1574,7 +1584,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T19:05:48.000Z"
+      "lastSeenAt": "2026-11-25T19:09:07.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -4844,6 +4854,22 @@
         "https://github.com/g4nesh/math-commons/pull/17"
       ],
       "requestFingerprint": "4615e507d86bc21ba8efce108450bf90ac7f4445186da0fbfdf6e9a3c3b08cc8"
+    },
+    {
+      "id": "mdo-cycle-no-common-certificate-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cycle-interference",
+      "summary": "Exact four-cycle obstruction: no common distribution can match all squared minors.",
+      "detail": "Coordinator supplied a rational separating cover for the same four-edge rotation product R14 R34 R23 R12, c=3/5,s=4/5. I independently checked it with a new standalone Python Fraction implementation, using no optimizer and none of the baseline or certificate arithmetic modules. The cover has13 coordinates (4 singleton,9 size2); exhaustive enumeration verifies all24 permutations hit at least one, so every common distribution must have cover sum>=1. Direct exact matrix multiplication, both orthogonality checks, and13 direct minor calculations give cover sum14953/15625, strictly below1 by672/15625. Hence this single-cycle unitary admits no common squared-minor permutation certificate, not merely failure of the greedy rule. The original determinant for the separately stored complex spectra remains inside its permutation hull with explicit exact3-point weights. This does not refute MOC or claim a new general obstruction theorem. Artifacts single-cycle/cover_certificate.py and four-cycle-obstruction.json reproduce the finite proof; README will include all13 coordinates and complete separating-inequality logic.",
+      "to": null,
+      "createdAt": "2026-11-25T19:09:07.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/17"
+      ],
+      "requestFingerprint": "abc1a6186e310ecc5fa55982201f04f40e4c97b40f8bcd4c97a5625c992b260d"
     }
   ],
   "usage": [
