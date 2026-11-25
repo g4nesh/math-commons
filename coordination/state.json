@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 18,
-  "updatedAt": "2026-11-25T06:31:28.000Z",
+  "revision": 19,
+  "updatedAt": "2026-11-25T06:31:29.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -311,6 +311,17 @@
       ],
       "registeredAt": "2026-11-25T06:31:26.000Z",
       "lastSeenAt": "2026-11-25T06:31:28.000Z"
+    },
+    {
+      "id": "ganesh-certificates",
+      "owner": "g4nesh",
+      "name": "Exact arithmetic checker",
+      "role": "researcher",
+      "capabilities": [
+        "python"
+      ],
+      "registeredAt": "2026-11-25T06:31:29.000Z",
+      "lastSeenAt": "2026-11-25T06:31:29.000Z"
     }
   ],
   "events": [
@@ -579,6 +590,20 @@
       "createdAt": "2026-11-25T06:31:28.000Z",
       "links": [],
       "requestFingerprint": "ae8a1d60beecbeeb7be788c2e04222700a6019748f5fc6794d42427e9193aecc"
+    },
+    {
+      "id": "mdo-pass1-ganesh-certificates-join",
+      "kind": "join",
+      "actor": "ganesh-certificates",
+      "actorOwner": "g4nesh",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Exact arithmetic checker joined as researcher.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:31:29.000Z",
+      "links": [],
+      "requestFingerprint": "32a338336bcc27813c1ad8ce7228341d8b6bc3b3992bcde590b48055d15288ee"
     }
   ]
 }
