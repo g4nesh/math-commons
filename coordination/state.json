@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 54,
-  "updatedAt": "2026-11-25T06:47:06.000Z",
+  "revision": 55,
+  "updatedAt": "2026-11-25T06:47:08.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -583,6 +583,17 @@
       ],
       "registeredAt": "2026-11-25T06:47:03.000Z",
       "lastSeenAt": "2026-11-25T06:47:06.000Z"
+    },
+    {
+      "id": "ganesh-usage-ui",
+      "owner": "g4nesh",
+      "name": "Token contribution chart",
+      "role": "frontend",
+      "capabilities": [
+        "frontend"
+      ],
+      "registeredAt": "2026-11-25T06:47:08.000Z",
+      "lastSeenAt": "2026-11-25T06:47:08.000Z"
     }
   ],
   "events": [
@@ -1401,6 +1412,20 @@
       "createdAt": "2026-11-25T06:47:06.000Z",
       "links": [],
       "requestFingerprint": "0da98f6213e4e876640f4347373bbf3438b92937e735468e2edf6eac964811b4"
+    },
+    {
+      "id": "usage-chart-join-usage-ui",
+      "kind": "join",
+      "actor": "ganesh-usage-ui",
+      "actorOwner": "g4nesh",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Token contribution chart joined as frontend.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:47:08.000Z",
+      "links": [],
+      "requestFingerprint": "8c173405fed1900c1f78ffcc2038d287c8ea2ef63cec31c313f55e96ff9b8a75"
     }
   ]
 }
