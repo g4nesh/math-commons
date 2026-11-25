@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 74,
-  "updatedAt": "2026-11-25T06:59:39.000Z",
+  "revision": 75,
+  "updatedAt": "2026-11-25T06:59:41.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -656,12 +656,12 @@
       "title": "Embed the live contribution chart in the GitHub README",
       "description": "Own lib/contributions-svg.mjs, api/contributions.js and test/contributions-svg.test.mjs. Generate safe readable SVG from the same reported receipts, with truthful empty/failure states and shared caching. Root owns README embedding. Bounded implementation and verification; no invented usage.",
       "approach": "presentation",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-usage-adapter",
+      "leaseUntil": "2026-11-25T07:19:41.000Z",
       "createdAt": "2026-11-25T06:59:39.000Z",
-      "updatedAt": "2026-11-25T06:59:39.000Z",
+      "updatedAt": "2026-11-25T06:59:41.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -756,7 +756,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T06:59:37.000Z"
+      "lastSeenAt": "2026-11-25T06:59:41.000Z"
     }
   ],
   "events": [
@@ -1869,6 +1869,20 @@
       "createdAt": "2026-11-25T06:59:39.000Z",
       "links": [],
       "requestFingerprint": "1698658a6794af34343a36a8f8d250a5832cbba799004a96d5f33bffd6dacb20"
+    },
+    {
+      "id": "usage-readme-svg-claim",
+      "kind": "claim",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-readme-svg",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:59:41.000Z",
+      "links": [],
+      "requestFingerprint": "55a7a58015a8c79477457e2c055ccf6284c4ce08a5db087e34afce28d112602f"
     }
   ]
 }
