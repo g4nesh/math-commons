@@ -13,6 +13,12 @@ theorems = {
     'ForestCut.lean': {'MathCommons.ForestCut.' + n for n in (
         'telescoping', 'constantOnInterval', 'singleCutChange', 'totalChangeAtOpportunity',
         'sameEndpointsSameCrossing', 'cutHistoryUnique', 'crossingDeltaInjective', 'crossingDecisionUnique')},
+    'ForestTrajectory.lean': {'MathCommons.ForestTrajectory.' + n for n in (
+        'swapAtLeft', 'swapAtRight', 'swapCollision', 'swapEmpty', 'swapFull',
+        'countSplit', 'restCountSwap', 'swapPreservesNoncrossingCut', 'stepPreservesNoncrossingCut',
+        'equalCountSwapCollision', 'nextSubsetUnique', 'trajectoryPreservesCardinality',
+        'subsetCountsSingleOpportunity', 'trajectoryUnique', 'edgeSideSeparates',
+        'survivingEdgeSameSide', 'forestTrajectoryUnique')},
 }
 allowed = {'propext', 'Classical.choice', 'Quot.sound'}
 lean = sys.argv[1] if len(sys.argv) == 2 else 'lean'
@@ -20,6 +26,8 @@ version = (root / 'lean-toolchain').read_text().strip().split(':v')[1]
 output = subprocess.check_output([lean, '--version'], cwd=root, text=True)
 if not re.search(r'\bversion ' + re.escape(version) + r'[, )]', output):
     sys.exit(f'Expected Lean {version}, found {output.strip()}')
+
+
 def check_module(source, expected, build_dir):
     output_file = Path(build_dir, Path(source).stem + '.olean')
     run = subprocess.run([lean, '-DwarningAsError=true', '-o', str(output_file), source],

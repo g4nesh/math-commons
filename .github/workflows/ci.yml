@@ -35,6 +35,12 @@ jobs:
         run: |
           sha256sum --check --quiet SHA256SUMS
           python3 -I -B -m unittest discover -p 'test_*.py' -v
+      - name: Replay single-cycle weights and the four-cycle obstruction
+        working-directory: research/marcus-de-oliveira/single-cycle
+        run: |
+          sha256sum --check --quiet SHA256SUMS
+          python3 -B cover_certificate.py --check four-cycle-obstruction.json
+          python3 -B -m unittest discover -p 'test_*.py' -v
       - name: Install the pinned Lean toolchain
         uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
         with:
