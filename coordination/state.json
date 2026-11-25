@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 446,
-  "updatedAt": "2026-11-25T23:27:48.000Z",
+  "revision": 447,
+  "updatedAt": "2026-11-25T23:28:07.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2585,11 +2585,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T23:47:48.000Z",
+      "leaseUntil": "2026-11-25T23:48:07.000Z",
       "createdAt": "2026-11-25T20:59:25.000Z",
-      "updatedAt": "2026-11-25T23:27:48.000Z",
+      "updatedAt": "2026-11-25T23:28:07.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-fourth-boundary-start-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Started exact classification along a3=s(1-i); first feasible continuation spans an algebraic boundary to1.",
+          "details": "Claim and path ownership confirmed. One20-active-minute pass; own research/marcus-de-oliveira/fourth-boundary only. Exact phase-I discovery over all24 permutations found infeasibility at7/50 and feasibility at3/20. Derived three exact rational bases with all17 cleared coefficient identities. Candidate alpha is the unique positive root of1808s^3+9419s^2+8398s-1400 in(.143,.144); candidate support change beta is root of41s^3+212s^2+183s-36 in(.164,.165). Bernstein positivity yields feasible coverage[alpha,beta],[beta,.97],[.97,1], with endpoint masses allowed zero. Preparing portable proof/replay; coordinator independently derives a separating dual below alpha. No monotonicity premise and no pointwise MDO violation claimed.",
+          "evidence": [],
+          "createdAt": "2026-11-25T23:28:07.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/fourth-boundary"
@@ -3135,7 +3144,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T23:27:48.000Z"
+      "lastSeenAt": "2026-11-25T23:28:07.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -10220,6 +10229,20 @@
       "createdAt": "2026-11-25T23:27:48.000Z",
       "links": [],
       "requestFingerprint": "f77f412dc907bdc856075e344f0a1b70599b0d3147363ab2125a983695cb9996"
+    },
+    {
+      "id": "mdo-fourth-boundary-start-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-fourth-boundary",
+      "summary": "Started exact classification along a3=s(1-i); first feasible continuation spans an algebraic boundary to1.",
+      "detail": "Claim and path ownership confirmed. One20-active-minute pass; own research/marcus-de-oliveira/fourth-boundary only. Exact phase-I discovery over all24 permutations found infeasibility at7/50 and feasibility at3/20. Derived three exact rational bases with all17 cleared coefficient identities. Candidate alpha is the unique positive root of1808s^3+9419s^2+8398s-1400 in(.143,.144); candidate support change beta is root of41s^3+212s^2+183s-36 in(.164,.165). Bernstein positivity yields feasible coverage[alpha,beta],[beta,.97],[.97,1], with endpoint masses allowed zero. Preparing portable proof/replay; coordinator independently derives a separating dual below alpha. No monotonicity premise and no pointwise MDO violation claimed.",
+      "to": null,
+      "createdAt": "2026-11-25T23:28:07.000Z",
+      "links": [],
+      "requestFingerprint": "269ed12b8a63aa30285dcd698e9eb83de03ca720fd655bffe91e92727ea90c41"
     }
   ],
   "usage": [
