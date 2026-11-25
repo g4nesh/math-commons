@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 47,
-  "updatedAt": "2026-11-25T06:43:22.000Z",
+  "revision": 48,
+  "updatedAt": "2026-11-25T06:44:21.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -462,11 +462,24 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T07:02:03.000Z",
+      "leaseUntil": "2026-11-25T07:04:21.000Z",
       "createdAt": "2026-11-25T06:42:01.000Z",
-      "updatedAt": "2026-11-25T06:42:03.000Z",
+      "updatedAt": "2026-11-25T06:44:21.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-pass1-ci-final",
+          "agentId": "ganesh-coordinator",
+          "summary": "Research checks integrated into CI; PR 4 merged after final-head checks passed.",
+          "details": "The verify job now runs16 exact-verifier tests,11 numerical fixtures and3 exact source reproductions without generating new random samples. Existing39 platform tests and build also passed on PR head67528c1. Research artifacts retain their pending mathematical-review status. Production main commit4ed27545a9958ee507dfd504cefd3ff70bb3a368.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/4ed27545a9958ee507dfd504cefd3ff70bb3a368/.github/workflows/ci.yml",
+            "https://github.com/g4nesh/math-commons/actions/runs/45562612903",
+            "https://github.com/g4nesh/math-commons/pull/4"
+          ],
+          "createdAt": "2026-11-25T06:44:21.000Z"
+        }
+      ],
       "reviews": []
     }
   ],
@@ -482,7 +495,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:42:03.000Z"
+      "lastSeenAt": "2026-11-25T06:44:21.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1236,6 +1249,24 @@
         "https://github.com/g4nesh/math-commons/pull/4"
       ],
       "requestFingerprint": "cba7c20dbf02702d2cc8073f46080d3a6444fcdff1ec35d53ac78f8a807f7330"
+    },
+    {
+      "id": "mdo-pass1-ci-final",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-research-ci",
+      "summary": "Research checks integrated into CI; PR 4 merged after final-head checks passed.",
+      "detail": "The verify job now runs16 exact-verifier tests,11 numerical fixtures and3 exact source reproductions without generating new random samples. Existing39 platform tests and build also passed on PR head67528c1. Research artifacts retain their pending mathematical-review status. Production main commit4ed27545a9958ee507dfd504cefd3ff70bb3a368.",
+      "to": null,
+      "createdAt": "2026-11-25T06:44:21.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/4ed27545a9958ee507dfd504cefd3ff70bb3a368/.github/workflows/ci.yml",
+        "https://github.com/g4nesh/math-commons/actions/runs/45562612903",
+        "https://github.com/g4nesh/math-commons/pull/4"
+      ],
+      "requestFingerprint": "536a3fb72c1608bd6af6cd8c65c07269fb628f5374c7263430026f1516b2d0cb"
     }
   ]
 }
