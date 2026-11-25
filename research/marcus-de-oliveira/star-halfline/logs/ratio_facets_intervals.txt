@@ -1,0 +1,16 @@
+affine dimension of the 24 vertices x(P_pi): 13 (exact)
+rho = 1/10: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'1/9': 48, '9': 48} ; uncertified: 0  [6s]
+rho = 11/50: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'11/39': 48, '39/11': 48} ; uncertified: 0  [8s]
+rho = 27/100: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'27/73': 48, '73/27': 48} ; uncertified: 0  [9s]
+rho = 31/100: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'31/69': 48, '69/31': 48} ; uncertified: 0  [10s]
+rho = 9/25: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'9/16': 48, '16/9': 48} ; uncertified: 0  [12s]
+rho = 2/5: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'2/3': 48, '3/2': 48} ; uncertified: 0  [13s]
+rho = 9/20: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'9/11': 48, '11/9': 48} ; uncertified: 0  [14s]
+rho = 11/20: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'9/11': 48, '11/9': 48} ; uncertified: 0  [15s]
+rho = 3/5: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'2/3': 48, '3/2': 48} ; uncertified: 0  [17s]
+rho = 16/25: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'9/16': 48, '16/9': 48} ; uncertified: 0  [18s]
+rho = 69/100: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'31/69': 48, '69/31': 48} ; uncertified: 0  [19s]
+rho = 73/100: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'27/73': 48, '73/27': 48} ; uncertified: 0  [21s]
+rho = 77/100: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'23/77': 48, '77/23': 48} ; uncertified: 0  [22s]
+rho = 9/10: 184 facets ; nonnegative coordinates: 88 ; family L_t: 96 with t in {'1/9': 48, '9': 48} ; uncertified: 0  [23s]
+EVERY FACET AT THESE RATIOS IS REDUCED EXACTLY TO COORDINATES OR TO THE FAMILY
