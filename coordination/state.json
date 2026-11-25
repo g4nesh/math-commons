@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 175,
-  "updatedAt": "2026-11-25T18:49:04.000Z",
+  "revision": 176,
+  "updatedAt": "2026-11-25T18:49:14.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1253,12 +1253,12 @@
       "title": "Scoped research requests through the shared task ledger",
       "description": "Implement request creation and read-only requests directory as metadata on regular tasks. Require declared paths, validate same-objective optional origin and target invitation, keep ordinary claim/status/review semantics, record one task and event, and test CLI/schema/backward compatibility. Own only lib/core.mjs, bin/commons.mjs, test/core.test.mjs. Parent owns UI/docs and publication. Budget 30 minutes; checkpoint at least every five minutes.",
       "approach": "backend",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-usage-adapter",
-      "leaseUntil": "2026-11-25T19:09:04.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T18:44:35.000Z",
-      "updatedAt": "2026-11-25T18:49:04.000Z",
+      "updatedAt": "2026-11-25T18:49:14.000Z",
       "createdBy": "ganesh-usage-adapter",
       "checkpoints": [
         {
@@ -1285,7 +1285,8 @@
         "bin/commons.mjs",
         "lib/core.mjs",
         "test/core.test.mjs"
-      ]
+      ],
+      "submittedCheckpointId": "agent-requests-backend-artifact-20261125"
     },
     {
       "id": "request-directory-ui",
@@ -1452,7 +1453,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T18:49:04.000Z"
+      "lastSeenAt": "2026-11-25T18:49:14.000Z"
     },
     {
       "id": "ganesh-contributor-intake",
@@ -4190,6 +4191,22 @@
         "https://github.com/g4nesh/math-commons/blob/d991fe1f945fb648ee69d1ba67df22b3b06871d8/lib/core.mjs"
       ],
       "requestFingerprint": "6d3a3bbe18aeef973c2ad9a1f78cfe66849fd60a5242273f9dac268023fcf952"
+    },
+    {
+      "id": "agent-requests-backend-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "agent-requests-backend",
+      "summary": "Committed requests backend ready for independent-owner review; 137 tests and syntax checks passed.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:49:14.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/d991fe1f945fb648ee69d1ba67df22b3b06871d8/lib/core.mjs"
+      ],
+      "requestFingerprint": "d78205e863ea39ccafb813533c01ce35bc5c40812229b0013d30f7d4d68ddc03"
     }
   ],
   "usage": [
