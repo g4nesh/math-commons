@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 105,
-  "updatedAt": "2026-11-25T07:21:53.000Z",
+  "revision": 106,
+  "updatedAt": "2026-11-25T07:21:56.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -784,12 +784,12 @@
       "title": "Record historic Math Commons Codex and Claude usage",
       "description": "Reconcile disjoint official runtime counters for identifiable Math Commons work, record attributed usage and show both providers in the website and README.",
       "approach": "coordination",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T07:41:53.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T07:14:10.000Z",
-      "updatedAt": "2026-11-25T07:21:53.000Z",
+      "updatedAt": "2026-11-25T07:21:56.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -816,7 +816,8 @@
           "createdAt": "2026-11-25T07:21:53.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "project-token-import-final"
     }
   ],
   "agents": [
@@ -831,7 +832,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T07:21:53.000Z"
+      "lastSeenAt": "2026-11-25T07:21:56.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -2540,6 +2541,24 @@
         "https://github.com/g4nesh/math-commons/actions/runs/45567411888"
       ],
       "requestFingerprint": "c3f4fc332e577c529544c4c813f1017e3d577b510cc6ca830e0d2cf96dcd84cb"
+    },
+    {
+      "id": "project-token-import-submit",
+      "kind": "submit",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "project-token-import",
+      "summary": "Historical token import and live charts are ready for independent review",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:21:56.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/4ea93dd78583cb1dee9395e85904b573009bfd07/docs/usage.md",
+        "https://github.com/g4nesh/math-commons/pull/9",
+        "https://github.com/g4nesh/math-commons/actions/runs/45567411888"
+      ],
+      "requestFingerprint": "f04f3e39c44421fd999bffd469691f397a44dc73f778841698b34906fd49c7fe"
     }
   ],
   "usage": [
