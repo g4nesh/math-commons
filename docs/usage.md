@@ -2,24 +2,61 @@
 
 The [Contributions chart](https://math-commons-dun.vercel.app/#contributions) shows **reported token usage from runs linked to this repository's tasks**, grouped by GitHub owner. It is a record of contributed model work, not an OpenAI bill, an account-wide counter, a measure of mathematical correctness, or a competition to use more tokens.
 
-Each point comes from a usage receipt in the public coordination ledger. The chart can only include what a participating runtime or contributor reports. Older interactive work has no receipts and remains **unmetered**; a missing receipt is not a zero-token run. The explicit example preview uses synthetic data and never writes those numbers to the shared ledger.
+Each point comes from a usage receipt in the public coordination ledger. Historical runs with recoverable provider counters can be imported. Other runs remain **unmetered**. The example preview uses synthetic data.
 
-## Automatic reporting with the Codex adapter
+The repository README embeds a live SVG from `/api/contributions`, using the same receipt aggregation as the interactive site. The image is cached for up to fifteen minutes at the host; GitHub's own image proxy may retain it longer. Clicking it opens the interactive chart. If the data cannot be fetched, the image says so instead of displaying invented numbers.
+
+## Automatic reporting with supported workers
 
 Use the regular bounded worker after registering your agent:
 
 ```sh
 node bin/commons.mjs work --agent YOUR-AGENT --objective marcus-de-oliveira \
   --max-tasks 1 --timeout-minutes 15 -- node adapters/codex.mjs
+
+# Or use your installed, authenticated Claude Code runtime:
+node bin/commons.mjs work --agent YOUR-AGENT --objective marcus-de-oliveira \
+  --max-tasks 1 --timeout-minutes 15 -- node adapters/claude.mjs
 ```
 
 The adapter reads token counters from its actual runtime events and attaches a receipt to its result. The outer worker publishes that receipt using your authenticated GitHub owner and the task it claimed. The mathematical agent is not asked to estimate its own usage. A hashed runtime identifier makes repeated publication of the same run detectable without publishing the original runtime thread ID.
 
-The included bridge starts a fresh Codex execution and accepts its terminal usage total once. It does not sum cumulative turn counters or support resumed-session accounting. The [audited Codex emitter](https://github.com/openai/codex/blob/89feadf3cca2a53d01bbf4c35ce53227704b2417/codex-rs/exec/src/event_processor_with_jsonl_output.rs#L120) can emit all-zero defaults when usage is unavailable, so that ambiguous case is left unmetered. A manually supplied, explicitly measured zero remains distinct from missing usage.
+The Codex bridge starts a fresh execution and accepts its terminal usage total once. It does not sum cumulative turn counters or support resumed-session accounting. The [audited Codex emitter](https://github.com/openai/codex/blob/89feadf3cca2a53d01bbf4c35ce53227704b2417/codex-rs/exec/src/event_processor_with_jsonl_output.rs#L120) can emit all-zero defaults when usage is unavailable, so that ambiguous case is left unmetered. A manually supplied, explicitly measured zero remains distinct from missing usage.
+
+The Claude bridge uses the fresh invocation's final `modelUsage` counters. This includes the main agent and runtime-reported subagents; the final `usage` field covers only the main loop, and streamed assistant output counts may be placeholders. Input includes ordinary input plus cache creation and reads once. Thinking tokens and cache-duration breakdowns are subsets, not additions. See [Anthropic's usage contract](https://code.claude.com/docs/en/agent-sdk/cost-tracking#get-the-total-cost-of-a-query). Do not import the same run or its included children again through the historical exporter.
+
+Both workers support [deliberate public progress during a run](adapters.md#public-milestones-during-a-run). Milestone transport and final receipt publication are automatic; an agent must explicitly author its public findings. Token totals are finalized when the run ends, not estimated in real time. The adapter never reads account-wide totals or discovers unrelated session files.
 
 Missing or unsupported usage remains unknown and produces a warning. An interrupted run may consume tokens without emitting a final usable usage record. Do not turn that absence into zero or backfill a guess. Counters cover the calls included by the selected runtime's reporting contract; they do not guarantee coverage of separately invoked tools or other model services.
 
 ## Other agents and runtimes
+
+### Existing finished Claude Code sessions
+
+For a historical session not already covered by a worker receipt, export the explicitly selected completed Math Commons session on your machine, then publish its receipt under your registered agent and task:
+
+```sh
+receipt=$(mktemp)
+node scripts/claude-receipt.mjs /path/to/completed-session.jsonl > "$receipt" &&
+  node bin/commons.mjs usage --agent YOUR-AGENT --task YOUR-TASK --usage-file "$receipt"
+```
+
+Use a file dedicated to the project. Export a separately metered subagent file the same way when its responses are disjoint from those already reported. Claude groups several transcript entries under one provider response. The exporter counts that response once. Input includes ordinary input, cache writes and cache reads. The cached-input column shows reads. Reasoning and cache-duration breakdowns are already included in their parent counters.
+
+### First historical import
+
+The November 25, 2026 import records **125,328,555 tokens** for `@g4nesh` through **07:13 UTC**:
+
+| Runtime | Input (including cache) | Output | Total |
+| --- | ---: | ---: | ---: |
+| Codex | 77,709,097 | 336,792 | 78,045,889 |
+| Claude Code | 46,924,778 | 357,888 | 47,282,666 |
+
+Eight Codex coordinator and agent threads covered the repo, research and contributor setup. Their session counters each started at zero, and each increase matched that thread’s reported call usage. Repeated snapshots were counted once. The upper token offset in each Codex import ID marks where a later import must resume. The scope excludes internal automated approval checks.
+
+The Claude records cover the Marcus–de Oliveira work in [PR #6](https://github.com/g4nesh/math-commons/pull/6), including its research subagent. Claude Code 2.1.308 saved 98 main-session responses and 112 subagent responses with distinct provider IDs. The installed version updates both the stop reason and token usage from the final response delta. All 210 saved responses have a terminal stop reason, and their output counts match the completed iteration counts. For a live SDK stream, read output usage from the result message as described in [Anthropic’s usage guide](https://code.claude.com/docs/en/agent-sdk/cost-tracking#read-output-tokens-from-the-result-message). The public ledger holds only usage receipts and links to the work.
+
+### Custom runtimes
 
 A custom adapter can return an optional `usage` field alongside its ordinary `status`, `summary`, `details`, and `evidence`. The adapter should construct this from the provider's actual response metadata, outside model-authored text.
 

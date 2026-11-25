@@ -1,4 +1,4 @@
-import { aggregateUsage, normalizeReceipts, ownerActivity, exampleUsage } from './usage.js';
+import { aggregateUsage, normalizeReceipts, ownerActivity, exampleUsage, providerLabel } from './usage.js';
 const settings = { period: '30d', mode: 'cumulative', owners: null };
 let mountedView = null, resizeTimer;
 window.addEventListener('resize', () => {
@@ -45,32 +45,32 @@ export function renderContributions(context) {
     const data = dataFor(state, example, { now: referenceTime });
     const hasAny = all.allReceiptCount > 0;
     const activity = example ? [] : ownerActivity(state);
-    const heading = el('div', { class: 'usage-heading' }, [
-      el('div', {}, [el('p', { class: 'eyebrow' }, 'The contribution notebook'), el('h1', {}, ['Big questions.', el('br'), el('span', { class: 'usage-underlined' }, 'A little from everyone.')]), el('p', { class: 'usage-intro' }, 'A shared record of the tokens your agents put into the work. Each line belongs to a person. Every number starts with a receipt.')]),
-      el('div', { class: 'usage-heading-note' }, [doodle(), el('span', { class: 'usage-handnote' }, 'show your work.')])
-    ]);
+    const heading = el('div', { class: 'usage-heading' }, el('div', {}, [
+      el('h1', {}, 'Token contributions'),
+      el('p', { class: 'usage-intro' }, 'Tokens recorded by each contributor’s agents, grouped by the day a run finished.')
+    ]));
     const controls = el('div', { class: 'usage-controls' }, [
       el('div', { class: 'usage-window-label' }, [el('span', { class: 'usage-small-title' }, 'Recorded contributions'), el('span', { class: 'meta' }, `${dateLabel(data.startDay)} – ${dateLabel(data.endDay)} · UTC`)]),
       el('div', { class: 'usage-control-groups' }, [segmented([['7d', '7 days'], ['30d', '30 days'], ['all', 'All time']], settings.period, 'Date window', (value) => { settings.period = value; draw(); }), segmented([['cumulative', 'Cumulative'], ['daily', 'Daily']], settings.mode, 'Chart mode', (value) => { settings.mode = value; draw(); })])
     ]);
     const stats = el('div', { class: 'usage-stats' }, [
-      metric(data.total === null ? (hasAny ? 'No receipts' : 'Not metered yet') : compact(data.total), 'Recorded tokens', data.total === null ? 'Historical usage is unknown' : `${whole(data.total)} input + output tokens`, 'usage-total'),
+      metric(data.total === null ? (hasAny ? 'No receipts' : 'Not metered yet') : compact(data.total), 'Recorded tokens', data.total === null ? 'Historical usage is unknown' : `${whole(data.total)} input + output tokens`, 'usage-total', data.providers),
       metric(data.input === null ? '—' : compact(data.input), 'Input tokens', data.cachedInput === null ? 'No input receipts in this window' : `${whole(data.cachedInput)} cached · included in input`),
-      metric(data.output === null ? '—' : compact(data.output), 'Output tokens', data.receiptCount ? `${whole(data.receiptCount)} run receipts in this window` : 'Receipts make a zero meaningful'),
+      metric(data.output === null ? '—' : compact(data.output), 'Output tokens', data.receiptCount ? `${whole(data.receiptCount)} run receipts in this window` : 'No output receipts in this window'),
       metric(data.series.filter((row) => row.receiptCount).length || '—', 'Metered contributors', example ? 'Synthetic example identities' : 'Grouped by GitHub owner')
     ]);
     const chartPanel = el('section', { class: 'usage-chart-panel', 'aria-labelledby': 'usage-chart-title' }, [
-      el('div', { class: 'usage-chart-title-row' }, [el('div', {}, [el('h2', { id: 'usage-chart-title' }, settings.mode === 'cumulative' ? 'It adds up.' : 'One day at a time.'), el('p', {}, settings.mode === 'cumulative' ? 'Cumulative recorded tokens within the selected window.' : 'Recorded tokens by finish date. Blank days have no receipts.')]), el('span', { class: 'usage-stamp' }, example ? 'SYNTHETIC EXAMPLE' : 'RECEIPTS, NOT ESTIMATES')]),
+      el('div', { class: 'usage-chart-title-row' }, [el('div', {}, [el('h2', { id: 'usage-chart-title' }, settings.mode === 'cumulative' ? 'Cumulative tokens' : 'Daily tokens'), el('p', {}, settings.mode === 'cumulative' ? 'Cumulative recorded tokens within the selected window.' : 'Recorded tokens by finish date. Blank days have no receipts.')]), example ? el('span', { class: 'usage-stamp' }, 'Synthetic example') : null]),
       hasAny ? ownerControls(all.availableOwners, data.availableOwners) : null,
       data.receiptCount ? chart(data, all.availableOwners) : emptyChart(hasAny),
-      el('div', { class: 'usage-chart-foot' }, [el('span', {}, 'Input + output. Cached input is counted once.'), el('span', {}, 'Token volume is not mathematical quality.')])
+      el('div', { class: 'usage-chart-foot' }, [el('span', {}, 'Input + output. Cached input is counted once.'), externalLink('Receipt format', `${repoUrl}/blob/main/docs/usage.md`, 'quiet-link inline-link')])
     ]);
     replace(root, heading,
       example ? el('div', { class: 'usage-example-banner', role: 'status' }, [el('div', {}, [el('strong', {}, 'Example chart · synthetic data'), el('p', {}, 'These fictional contributors and receipts illustrate the chart. They are not workspace usage.')]), button('Return to live data', () => { settings.owners = null; onLive(); }, 'button button-secondary button-small')]) : null,
       controls, data.pendingCount ? el('p', { class: 'usage-pending', role: 'status' }, `${data.pendingCount} receipt${data.pendingCount === 1 ? '' : 's'} awaiting the recorded completion time (up to five minutes of clock skew). Counts join the chart after that time.`) : null, data.invalidCount || data.duplicateCount ? el('p', { class: 'usage-pending', role: 'status' }, `${data.invalidCount} invalid or conflicting records excluded; ${data.duplicateCount} duplicate receipts ignored. See provenance below.`) : null, stats, chartPanel, heatmap(data), contributors(all, activity), provenance(data));
   }
-  function metric(value, label, detail, className = '') {
-    return el('div', { class: `usage-stat ${className}` }, [el('span', { class: 'usage-stat-label' }, label), el('strong', {}, value), el('p', {}, detail)]);
+  function metric(value, label, detail, className = '', providers = []) {
+    return el('div', { class: `usage-stat ${className}` }, [el('span', { class: 'usage-stat-label' }, label), el('strong', {}, value), el('p', {}, detail), ...providers.map(row => el('p', { class: 'usage-provider-total' }, `${providerLabel(row.provider)} · ${whole(row.total)}`))]);
   }
   function segmented(options, value, label, onChange) {
     return el('div', { class: 'usage-segmented', role: 'group', 'aria-label': label }, options.map(([key, text]) => el('button', { type: 'button', class: key === value ? 'is-selected' : '', 'aria-pressed': key === value ? 'true' : 'false', onClick: () => onChange(key) }, text)));
@@ -86,7 +86,7 @@ export function renderContributions(context) {
   function emptyChart(filtered) {
     return el('div', { class: 'usage-empty-chart' }, [
       el('div', { class: 'usage-empty-axis', 'aria-hidden': 'true' }),
-      el('div', { class: 'usage-empty-note' }, [el('span', { class: 'usage-handnote' }, filtered ? 'nothing recorded here (yet)' : 'first receipt goes here'), el('h3', {}, filtered ? 'No receipts in this selection.' : 'The work is real. The meter is next.'), el('p', {}, filtered ? 'Choose another date window or show everyone. A blank chart means missing receipts, not zero historical usage.' : 'Agents have already been contributing. Earlier runs were not metered, so we’re leaving their token totals unknown.'), el('div', { class: 'usage-empty-actions' }, [filtered ? button('Show all recorded work', () => { settings.period = 'all'; settings.owners = null; draw(); }, 'button button-secondary') : button('Preview example chart', () => { settings.owners = null; settings.period = 'all'; onPreview(); }, 'button usage-coral-button'), externalLink('How receipts work', `${repoUrl}/blob/main/docs/usage.md`, 'quiet-link inline-link')])]),
+      el('div', { class: 'usage-empty-note' }, [el('h3', {}, filtered ? 'No receipts in this selection.' : 'No token receipts yet.'), el('p', {}, filtered ? 'Choose another date window or show everyone. A blank chart means missing receipts, not zero historical usage.' : 'Agents have already been contributing. Earlier runs were not metered, so we’re leaving their token totals unknown.'), el('div', { class: 'usage-empty-actions' }, [filtered ? button('Show all recorded work', () => { settings.period = 'all'; settings.owners = null; draw(); }, 'button button-secondary') : button('Preview example chart', () => { settings.owners = null; settings.period = 'all'; onPreview(); }, 'button usage-coral-button'), externalLink('How receipts work', `${repoUrl}/blob/main/docs/usage.md`, 'quiet-link inline-link')])]),
       doodle('usage-empty-star')
     ]);
   }
@@ -96,7 +96,7 @@ export function renderContributions(context) {
     const key = settings.mode === 'cumulative' ? 'cumulative' : 'total';
     const values = data.series.flatMap((series) => series.days.map((day) => day[key] ?? 0));
     const maximum = Math.max(4, Math.ceil(Math.max(0, ...values) * 1.12 / 4) * 4);
-    const x = (index) => left + plotWidth * index / Math.max(1, data.days.length - 1);
+    const x = (index) => left + plotWidth * (data.days.length === 1 ? 0.5 : index / (data.days.length - 1));
     const y = (value) => top + plotHeight * (1 - value / maximum);
     const plot = svg('svg', { class: 'usage-plot', viewBox: `0 0 ${width} ${height}`, role: 'img', 'aria-labelledby': 'usage-svg-title usage-svg-description' }, [
       svg('title', { id: 'usage-svg-title' }, `${settings.mode === 'cumulative' ? 'Cumulative' : 'Daily'} recorded tokens per GitHub contributor`),
@@ -107,9 +107,9 @@ export function renderContributions(context) {
       plot.append(svg('line', { x1: left, x2: width - right, y1: y(value), y2: y(value), class: 'usage-grid-line' }), svg('text', { x: left - 10, y: y(value) + 4, 'text-anchor': 'end', class: 'usage-axis-label' }, compact(Math.round(value))));
     }
     const tickCount = width < 500 ? 3 : 5;
-    for (let index = 0; index < tickCount; index++) {
-      const dayIndex = Math.round(index * (data.days.length - 1) / (tickCount - 1));
-      plot.append(svg('text', { x: x(dayIndex), y: height - 12, 'text-anchor': index === 0 ? 'start' : index === tickCount - 1 ? 'end' : 'middle', class: 'usage-axis-label' }, dateLabel(data.days[dayIndex].date)));
+    const dateIndices = [...new Set(Array.from({ length: tickCount }, (_, index) => Math.round(index * (data.days.length - 1) / (tickCount - 1))))];
+    for (const [index, dayIndex] of dateIndices.entries()) {
+      plot.append(svg('text', { x: x(dayIndex), y: height - 12, 'text-anchor': dateIndices.length === 1 ? 'middle' : index === 0 ? 'start' : index === dateIndices.length - 1 ? 'end' : 'middle', class: 'usage-axis-label' }, dateLabel(data.days[dayIndex].date)));
     }
     for (const series of data.series) {
       let started = false, path = '';
@@ -120,6 +120,7 @@ export function renderContributions(context) {
       });
       plot.append(svg('path', { d: path, class: `usage-series-line ${color(series.owner, allOwners)}` }));
       if (settings.mode === 'daily') series.days.forEach((day, index) => { if (day.total !== null) plot.append(svg('circle', { cx: x(index), cy: y(day.total), r: 2.5, class: `usage-series-point ${color(series.owner, allOwners)}` })); });
+      else if (series.receiptCount) plot.append(svg('circle', { cx: x(series.days.length - 1), cy: y(series.days.at(-1).cumulative), r: 3, class: `usage-series-point ${color(series.owner, allOwners)}` }));
     }
     const marker = svg('g', { class: 'usage-marker', 'aria-hidden': 'true' }); plot.append(marker);
     const readout = el('div', { class: 'usage-day-readout', 'aria-live': 'polite' });

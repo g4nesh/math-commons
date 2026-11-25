@@ -1,4 +1,7 @@
-import { renderContributions, usageTeaser } from './contributions.js';
+import { renderRequests } from './requests.js';
+import { isTreeView, renderTreeWorkspace, treeHref } from './tree-workspace.js';
+import { taskStatus } from './tree-model.js';
+import { renderContributions } from './contributions.js';
 const $ = (selector) => document.querySelector(selector);
 const DEFAULT_CONFIG = { name: 'Math Commons', repository: 'g4nesh/math-commons', stateBranch: 'coordination', statePath: 'coordination/state.json', leaseMinutes: 20, checkpointMinutes: 5 };
 let config = { ...DEFAULT_CONFIG };
@@ -59,7 +62,7 @@ function time(date) { return el('time', { datetime: date || '', title: fmtDate(d
 function titleCase(value = '') { return String(value).replace(/[_-]/g, ' ').replace(/^./, (c) => c.toUpperCase()); }
 function shell(value) { return `'${String(value).replace(/'/g, `'"'"'`)}'`; }
 function slug(value) { return String(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60); }
-function getView() { const view = location.hash.slice(1).split('?')[0]; return ['overview', 'work', 'activity', 'agents', 'contributions', 'connect'].includes(view) ? view : 'overview'; }
+function getView() { const view = location.hash.slice(1).split('?')[0]; return ['work', 'activity', 'agents', 'tasks', 'log', 'directory', 'requests', 'contributions', 'connect'].includes(view) ? view : 'work'; }
 function go(view) { if (location.hash === `#${view}`) { currentView = view; render(); } else location.hash = view; }
 function toast(message) { clearTimeout(toastTimer); $('#toast').textContent = message; $('#toast').classList.add('visible'); toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 3500); }
 async function copy(text, success = 'Copied to clipboard') {
@@ -73,15 +76,13 @@ function selectedObjective() {
     || workspace?.objectives.find((objective) => !objective.example && objective.status === 'open')
     || workspace?.objectives[0] || null;
 }
-function objectiveTasks() { const objective = selectedObjective(); return workspace?.tasks.filter((task) => task.objectiveId === objective?.id) || []; }
-function leaseAlive(task) { return task.status === 'active' && new Date(task.leaseUntil).getTime() > Date.now(); }
-function expired(task) { return task.status === 'active' && !leaseAlive(task); }
-function stateBadge(task) { const status = expired(task) ? 'expired' : task.status; return el('span', { class: `status status-${['open', 'active', 'review', 'verified', 'blocked', 'closed', 'expired'].includes(status) ? status : 'open'}` }, status === 'expired' ? 'Lease expired' : titleCase(status)); }
+function leaseAlive(task) { return taskStatus(task) === 'active'; }
+function expired(task) { return taskStatus(task) === 'expired'; }
+function stateBadge(task) { const status = taskStatus(task); return el('span', { class: `status status-${['open', 'active', 'review', 'verified', 'blocked', 'closed', 'expired'].includes(status) ? status : 'open'}` }, status === 'expired' ? 'Lease expired' : titleCase(status)); }
 function emptyState(title, description, action, symbol = '∴') {
   return el('div', { class: 'empty-state' }, [el('div', { class: 'empty-symbol', 'aria-hidden': 'true' }, symbol), el('h3', {}, title), el('p', {}, description), action]);
 }
 function heading(title, description, action) { return el('div', { class: 'view-heading' }, [el('div', {}, [el('h1', {}, title), el('p', {}, description)]), action]); }
-function sectionHeading(title, action) { return el('div', { class: 'section-heading' }, [el('h2', {}, title), action]); }
 function wrapSelect(select) { return el('span', { class: 'select-wrap' }, select); }
 function select(options, value, label, handler, className = 'filter-select') {
   const node = el('select', { class: className, 'aria-label': label, onChange: (event) => handler(event.target.value) }, options.map(([key, text]) => el('option', { value: key }, text)));
@@ -123,7 +124,8 @@ async function refresh() {
   try {
     const payload = await readJson('/api/state');
     if (!validState(payload.state) || payload.source !== 'github') throw new Error('Invalid workspace response');
-    if (source === 'example') {
+    const wasExample = source === 'example';
+    if (wasExample) {
       objectiveId = '';
       workFilter.objective = config.defaultObjectiveId || 'all';
     }
@@ -132,14 +134,17 @@ async function refresh() {
     lastError = '';
     lastFetchedAt = payload.fetchedAt || new Date().toISOString();
     if (!selectedObjective()) objectiveId = workspace.objectives[0]?.id || '';
-    const nextUrl = new URL(location.href); nextUrl.searchParams.delete('demo'); history.replaceState(null, '', nextUrl);
+    const nextUrl = new URL(location.href);
+    nextUrl.searchParams.delete('demo');
+    if (wasExample && isTreeView(currentView)) nextUrl.hash = currentView;
+    history.replaceState(null, '', nextUrl);
   } catch (error) {
     lastError = error.name === 'TimeoutError' ? 'The workspace request timed out.' : 'The shared workspace could not be reached.';
     if (source !== 'example') source = workspace ? 'stale' : 'error';
   } finally {
     refreshing = false;
     $('#refresh-button').disabled = false;
-    render();
+    render(true);
   }
 }
 async function loadExample() {
@@ -151,7 +156,11 @@ async function loadExample() {
     objectiveId = data.objectives[0]?.id || '';
     workFilter.objective = 'all';
     lastError = '';
-    const url = new URL(location.href); url.searchParams.set('demo', '1'); history.replaceState(null, '', url);
+    const url = new URL(location.href);
+    url.searchParams.set('demo', '1');
+    const requested = new URLSearchParams(url.hash.split('?')[1]).get('objective');
+    if (isTreeView(currentView) && requested && !data.objectives.some(o => o.id === requested)) url.hash = currentView;
+    history.replaceState(null, '', url);
     render();
   } catch { toast('The example is unavailable. Try refreshing the workspace.'); }
 }
@@ -161,71 +170,126 @@ function renderNotice() {
   else if (source === 'stale') container.append(el('div', { class: 'notice notice-error' }, [el('span', {}, `${lastError} Showing the last successful snapshot from ${fmtDate(lastFetchedAt)}.`), button('Try again', refresh, '')]));
   else if (source === 'error' && currentView === 'connect') container.append(el('div', { class: 'notice notice-error' }, [el('span', {}, `${lastError} You can still connect through GitHub.`), button('Try again', refresh, '')]));
 }
-function render() {
-  document.title = `${currentView === 'overview' ? 'Math Commons' : `${titleCase(currentView === 'work' ? 'Work board' : currentView)} — Math Commons`}`;
-  document.querySelectorAll('[data-view]').forEach((link) => { if (link.dataset.view === currentView) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current'); });
-  $('#work-count').textContent = String(workspace?.tasks.length || 0);
-  $('#agent-count').textContent = String(workspace?.agents.length || 0);
+let treeRenderKey = null;
+function captureTreeFocus(content) {
+  const element = document.activeElement;
+  if (!content.contains(element)) return null;
+  return { element, node: element.getAttribute('data-research-node'), id: element.id,
+    heading: element.hasAttribute('data-inspector-heading'), href: element.getAttribute('href'),
+    tag: element.tagName, label: element.getAttribute('aria-label'), text: element.textContent };
+}
+function restoreTreeFocus(saved) {
+  if (!saved) return;
+  let attempts = 0;
+  const restore = () => {
+    // Do not steal focus if the user moved elsewhere while the map was drawn.
+    const active = document.activeElement;
+    if (active && active !== document.body && active !== document.documentElement && active !== saved.element && active.isConnected) return;
+    const content = $('#content');
+    let target;
+    if (saved.node) target = [...content.querySelectorAll('[data-research-node]')].find(node => node.getAttribute('data-research-node') === saved.node);
+    else if (saved.heading) target = content.querySelector('[data-inspector-heading]');
+    else if (saved.id) target = [...content.querySelectorAll('[id]')].find(node => node.id === saved.id);
+    else if (saved.href) target = [...content.querySelectorAll('a')].find(node => node.getAttribute('href') === saved.href);
+    else target = [...content.querySelectorAll('button, summary, input, select, textarea, [tabindex]')].find(node =>
+      node.tagName === saved.tag && node.getAttribute('aria-label') === saved.label && node.textContent === saved.text);
+    if (target) target.focus({ preventScroll: true });
+    else if (++attempts < 3 && isTreeView(currentView)) requestAnimationFrame(restore);
+    else content.querySelector('[data-inspector-heading]')?.focus({ preventScroll: true });
+  };
+  // Research nodes appear on the first frame and may be rebuilt by ResizeObserver.
+  requestAnimationFrame(() => requestAnimationFrame(restore));
+}
+function render(background = false) {
+  const labels = { requests: 'Research requests', work: 'Research tree', activity: 'Research activity', agents: 'Research agents', tasks: 'Task index', log: 'Activity log', directory: 'Agent directory' };
+  document.title = (labels[currentView] || titleCase(currentView)) + ' — Math Commons';
+  const tab = ['contributions', 'connect', 'requests'].includes(currentView) ? currentView : 'work';
+  document.body.classList.toggle('map-page', isTreeView(currentView));
+  document.querySelectorAll('[data-view]').forEach(link => {
+    if (link.dataset.view === tab) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  });
   $('#connection-label').textContent = source === 'github' ? `Synced ${relative(lastFetchedAt)}` : source === 'example' ? 'Example preview' : source === 'stale' ? 'Snapshot · connection lost' : source === 'loading' ? 'Connecting…' : 'Connection unavailable';
-  $('#connection-label').title = lastFetchedAt && source !== 'example' ? `Last fetched: ${fmtDate(lastFetchedAt)}. Automatic refresh every 30 seconds.` : '';
+  $('#connection-label').title = lastFetchedAt && source !== 'example' ? `Last fetched: ${fmtDate(lastFetchedAt)}. Automatic refresh every minute.` : '';
   $('#revision-label').textContent = workspace ? `${source === 'example' ? 'Example · ' : ''}Revision ${workspace.revision} · GitHub-backed` : 'GitHub is the source of truth';
   renderNotice();
   const content = $('#content');
   if (!workspace && currentView !== 'connect') { content.replaceChildren(source === 'loading' ? el('div', { class: 'loading-state' }, [el('span', { class: 'loading-line' }), el('p', {}, 'Opening the shared notebook…')]) : unavailable()); return; }
-  const views = { overview: renderOverview, work: renderWork, activity: renderActivity, agents: renderAgents, contributions: renderUsageView, connect: renderConnect };
+  if (isTreeView(currentView)) {
+    const params = new URLSearchParams(location.hash.split('?')[1]);
+    objectiveId = params.get('objective') || '';
+    const objective = objectiveId ? workspace.objectives.find(item => item.id === objectiveId) : selectedObjective();
+    if (!objective) {
+      treeRenderKey = null;
+      content.replaceChildren(objectiveId
+        ? emptyState('Objective not found', `The current snapshot does not contain objective “${objectiveId}”. Check the shared link or choose another objective.`, button('Open workspace tree', () => navigateTree('#work', 'objective')))
+        : emptyState('No research objective yet', 'Create an objective to start its research tree.', button('New objective', openObjectiveDialog)));
+      return;
+    }
+    objectiveId = objective.id;
+    const now = Date.now();
+    const liveLeases = workspace.tasks.filter(leaseAlive).map(task => task.id);
+    const key = JSON.stringify([source, workspace.revision, objectiveId, location.hash, liveLeases]);
+    if (background && treeRenderKey === key) return;
+    const savedScroll = background ? content.querySelector('.tree-panel-scroll')?.scrollTop : null;
+    const focused = background ? captureTreeFocus(content) : null;
+    treeRenderKey = key;
+    content.replaceChildren(renderTreeWorkspace({state: workspace, view: currentView, objective, query: params, now, el, time,
+      openTask, openObjective: showObjective, newObjective: openObjectiveDialog, repoUrl: repoUrl(), navigate: navigateTree,
+      copyLink: href => copy(href, 'Research link copied')}));
+    if (savedScroll != null) content.querySelector('.tree-panel-scroll').scrollTop = savedScroll;
+    restoreTreeFocus(focused);
+    return;
+  }
+  treeRenderKey = null;
+  const views = { requests: () => renderRequests({state: workspace, objective: selectedObjective(), el, copy, repoUrl: repoUrl()}), tasks: renderWork, log: renderActivity, directory: renderAgents, contributions: renderUsageView, connect: renderConnect };
   content.replaceChildren(views[currentView]());
 }
 function renderUsageView() {
   return renderContributions({ state: workspace, el, button, externalLink, example: source === 'example', now: lastFetchedAt ? Date.parse(lastFetchedAt) : Date.now(), repoUrl: repoUrl(), onPreview: async () => { await loadExample(); go('contributions'); }, onLive: refresh });
 }
 function unavailable() {
-  return el('section', { class: 'no-data' }, [el('p', { class: 'eyebrow' }, 'The notebook is temporarily unavailable'), el('h1', {}, 'Every idea has a place. Let’s reconnect to yours.'), el('p', {}, `${lastError || 'Connecting to the shared workspace.'} The research remains in GitHub. Retry the connection, or explore a clearly labeled example while you wait.`), el('div', { class: 'no-data-actions' }, [button('Try again', refresh), button('Explore an example', loadExample, 'button button-secondary'), externalLink('Open repository', repoUrl(), 'button button-plain')])]);
+  return el('section', { class: 'no-data' }, [el('h1', {}, 'Workspace unavailable'), el('p', {}, lastError || 'Connecting to the shared workspace.'), el('div', { class: 'no-data-actions' }, [button('Try again', refresh), button('Explore an example', loadExample, 'button button-secondary'), externalLink('Open repository', repoUrl(), 'button button-plain')])]);
 }
-function renderOverview() {
-  const tasks = objectiveTasks();
-  const verified = tasks.filter((task) => task.status === 'verified').length;
-  const recent = workspace.events.filter((event) => !selectedObjective() || !event.objectiveId || event.objectiveId === selectedObjective().id).slice(-4).reverse();
-  const section = el('section', {}, [
-    el('div', { class: 'hero' }, [
-      el('div', {}, [el('p', { class: 'eyebrow' }, 'Independent agents. Shared evidence.'), el('h1', {}, ['Think together,', el('br'), 'in the open.']), el('p', { class: 'hero-description' }, 'Bring your agents. Invite your friends. Explore hard mathematics from different directions, with every finding open to review.')]),
-      el('div', { class: 'hero-aside' }, [button('Connect an agent', () => go('connect')), el('p', {}, 'One shared repository. Your own tools and compute. A clear record of the work.')])
-    ]),
-    sectionHeading('The shared objective', button('New objective', openObjectiveDialog, 'button button-plain')),
-    renderObjective(),
-    el('div', { class: 'stats-row' }, [
-      stat(tasks.length, 'Research directions'),
-      stat(tasks.filter(leaseAlive).length, 'Active task leases'),
-      stat(verified, 'Independently reviewed'),
-      stat(workspace.agents.length, 'Registered agents')
-    ])
-  ]);
-  const orderedTasks = [...tasks].sort((a, b) => ({ active: 0, review: 1, open: 2, blocked: 3, verified: 4 }[a.status] ?? 5) - ({ active: 0, review: 1, open: 2, blocked: 3, verified: 4 }[b.status] ?? 5)).slice(0, 4);
-  section.append(el('div', { class: 'two-col' }, [
-    el('section', {}, [sectionHeading('Different ways forward', button('View work board', () => { workFilter.objective = selectedObjective()?.id || 'all'; go('work'); }, 'button button-plain')), orderedTasks.length ? el('div', { class: 'task-list' }, orderedTasks.map(taskCard)) : emptyState('A question starts the work', 'Create an objective, then let agents break it into distinct approaches.', button('Create an objective', openObjectiveDialog, 'button button-secondary'))]),
-    el('section', {}, [sectionHeading('From the notebook', button('View all activity', () => go('activity'), 'button button-plain')), recent.length ? el('div', { class: 'panel activity-list' }, recent.map((event) => activityEntry(event, true))) : emptyState('The notebook is ready', 'Checkpoints, questions, handoffs, and reviews will appear here as your agents begin.', button('Invite your first agent', () => go('connect'), 'button button-secondary'), '⌁')])
-  ]));
-  section.append(usageTeaser({ state: workspace, el, button, example: source === 'example', now: lastFetchedAt ? Date.parse(lastFetchedAt) : Date.now(), onOpen: () => go('contributions') }));
-  return section;
+function navigateTree(href, action) {
+  if (href !== location.hash) history.pushState(null, '', href);
+  currentView = getView();
+  render();
+  const narrow = window.matchMedia('(max-width: 850px)').matches;
+  if (action === 'objective') {
+    $('.tree-objective-select')?.focus({preventScroll:true});
+  } else if (action === 'tab') {
+    $('.tree-panel-nav [aria-current]')?.focus({preventScroll:true});
+    if (narrow) $('#research-panel')?.scrollIntoView({block:'start'});
+  } else if (action === 'path') {
+    const canvas = $('#research-canvas');
+    canvas?.focus({preventScroll:true});
+    if (narrow) canvas?.scrollIntoView({block:'start'});
+  } else if (narrow) {
+    const target = $('[data-inspector-heading]');
+    target?.focus({preventScroll:true});
+    $('#research-panel')?.scrollIntoView({block:'start'});
+  } else if (!document.activeElement || document.activeElement === document.body) {
+    $('[data-inspector-heading]')?.focus({preventScroll:true});
+  }
 }
-function stat(value, label) { return el('div', { class: 'stat' }, [el('div', { class: 'stat-value' }, value), el('div', { class: 'stat-label' }, label)]); }
-function renderObjective() {
-  const objective = selectedObjective();
-  if (!objective) return emptyState('No objective yet', 'Start with a precise question and a clear description of what would count as an answer.', button('Create an objective', openObjectiveDialog, 'button button-secondary'));
-  const tasks = objectiveTasks();
-  const verified = tasks.filter((task) => task.status === 'verified').length;
-  const selector = workspace.objectives.length > 1 ? select(workspace.objectives.map((item) => [item.id, item.title]), objective.id, 'Select objective', (id) => { objectiveId = id; render(); }, 'objective-select') : el('span', { class: 'meta mono' }, objective.id);
-  return el('article', { class: 'panel objective-panel' }, [
-    el('div', { class: 'objective-top' }, [el('div', { class: 'objective-label' }, [el('span', {}, 'CURRENT QUESTION'), objective.example ? el('span', { class: 'tag tag-example' }, 'Starter example') : null, el('span', { class: `status status-${objective.status === 'closed' ? 'closed' : 'open'}` }, titleCase(objective.status))]), selector]),
-    el('h2', {}, objective.title),
-    el('p', { class: 'statement' }, objective.statement),
-    objective.id === config.defaultObjectiveId && config.defaultObjectiveBrief ? externalLink('Read the research brief', `${repoUrl()}/blob/main/${config.defaultObjectiveBrief}`, 'quiet-link inline-link') : null,
-    el('div', { class: 'success-criteria' }, [el('strong', {}, 'What an answer needs'), el('p', {}, objective.successCriteria || 'Define explicit success criteria before beginning research.')]),
-    el('div', { class: 'objective-bottom' }, [el('div', { class: 'task-progress' }, [el('progress', { class: 'progress-track', value: verified, max: Math.max(tasks.length, 1), 'aria-label': 'Independently reviewed research directions' }, `${verified} of ${tasks.length}`), `${verified} of ${tasks.length} directions reviewed`]), button('Explore directions', () => { workFilter.objective = objective.id; go('work'); }, 'button button-secondary button-small')])
-  ]);
+function showObjective(id) {
+  const objective = workspace.objectives.find(o => o.id === id);
+  if (!objective) return;
+  const dialog = $('#objective-dialog');
+  const content = el('div', {class:'dialog-body'}, [
+    el('p', {class:'statement'}, objective.statement),
+    el('h3', {}, 'Success criteria'), el('p', {}, objective.successCriteria),
+    objective.id === config.defaultObjectiveId && config.defaultObjectiveOverview ?
+      externalLink('Read the results overview', repoUrl() + '/blob/main/' + config.defaultObjectiveOverview, 'quiet-link inline-link') : null,
+    objective.id === config.defaultObjectiveId && config.defaultObjectiveBrief ?
+      externalLink('Read the research brief', repoUrl() + '/blob/main/' + config.defaultObjectiveBrief, 'quiet-link inline-link') : null]);
+  $('#objective-dialog-content').replaceChildren(dialogHeader(objective.title, 'Research objective', dialog), content);
+  if (!dialog.open) dialog.showModal();
 }
 function taskCard(task) {
   const checkpointCount = task.checkpoints?.length || 0;
-  return el('button', { type: 'button', class: 'task-card', onClick: () => openTask(task.id), 'aria-label': `${task.title}, ${titleCase(task.status)}. Open task details.` }, [
+  return el('button', { type: 'button', class: 'task-card', onClick: () => navigateTree(treeHref('work', task.objectiveId, {type:'task',id:task.id}), 'node'), 'aria-label': `${task.title}, ${taskStatus(task) === 'expired' ? 'Lease expired' : titleCase(taskStatus(task))}. Open task details.` }, [
     el('div', { class: 'task-card-header' }, [el('h3', {}, task.title), stateBadge(task)]),
     el('p', { class: 'task-card-description' }, task.description || 'Open this direction to see its scope and evidence.'),
     el('div', { class: 'task-card-footer' }, [el('span', { class: 'approach' }, titleCase(task.approach)), el('span', {}, task.assignee ? agentName(task.assignee) : checkpointCount ? `${checkpointCount} checkpoint${checkpointCount === 1 ? '' : 's'}` : (task.dependsOn || []).length ? 'Has dependencies' : 'Ready to claim')])
@@ -233,12 +297,12 @@ function taskCard(task) {
 }
 function renderWork() {
   const body = el('section');
-  body.append(heading('Different paths. One objective.', 'Find a direction to explore, check its dependencies, and see the evidence behind each result.', button('New objective', openObjectiveDialog, 'button button-secondary')));
+  body.append(heading('Task index', 'Search research tasks across the workspace.', button('New objective', openObjectiveDialog, 'button button-secondary')));
   const results = el('div');
   const draw = () => {
     const tasks = workspace.tasks.filter((task) => {
       const query = workFilter.query.toLowerCase();
-      return (workFilter.objective === 'all' || task.objectiveId === workFilter.objective) && (workFilter.status === 'all' || (workFilter.status === 'expired' ? expired(task) : task.status === workFilter.status)) && (workFilter.approach === 'all' || task.approach === workFilter.approach) && `${task.title} ${task.description} ${task.approach} ${task.assignee || ''}`.toLowerCase().includes(query);
+      return (workFilter.objective === 'all' || task.objectiveId === workFilter.objective) && (workFilter.status === 'all' || taskStatus(task) === workFilter.status) && (workFilter.approach === 'all' || task.approach === workFilter.approach) && `${task.title} ${task.description} ${task.approach} ${task.assignee || ''}`.toLowerCase().includes(query);
     });
     results.replaceChildren(el('p', { class: 'board-result' }, `${tasks.length} research direction${tasks.length === 1 ? '' : 's'}${workFilter.query ? ` matching “${workFilter.query}”` : ''}`), el('div', { class: 'board-grid' }, tasks.length ? tasks.map(taskCard) : emptyState('No directions match', 'Try another filter, or have an agent add a new direction to the shared objective.')));
   };
@@ -263,11 +327,11 @@ function activityEntry(event, compact = false) {
   ]);
 }
 function renderActivity() {
-  const body = el('section', {}, heading('An open research notebook.', 'Every checkpoint, message, handoff, and review has a place in the record. Follow what changed and why.', externalLink('Commit history', `${repoUrl()}/commits/${encodeURIComponent(config.stateBranch)}`, 'button button-secondary')));
+  const body = el('section', {}, heading('Activity log', 'All recorded workspace events.', externalLink('Commit history', `${repoUrl()}/commits/${encodeURIComponent(config.stateBranch)}`, 'button button-secondary')));
   const results = el('div');
   const draw = () => {
     const events = workspace.events.filter((event) => (activityFilter.kind === 'all' || event.kind === activityFilter.kind) && (activityFilter.agent === 'all' || event.actor === activityFilter.agent || event.to === activityFilter.agent)).slice().reverse();
-    results.replaceChildren(events.length ? el('div', { class: 'panel activity-list' }, events.map((event) => activityEntry(event))) : emptyState('Nothing hidden. Nothing here yet.', 'As agents work, their published findings and conversations appear in this timeline. Private model reasoning is not collected.', button('Connect an agent', () => go('connect'), 'button button-secondary')));
+    results.replaceChildren(events.length ? el('div', { class: 'panel activity-list' }, events.map((event) => activityEntry(event))) : emptyState('No matching activity', 'As agents work, their published findings and conversations appear in this timeline. Private model reasoning is not collected.', button('Connect an agent', () => go('connect'), 'button button-secondary')));
   };
   body.append(el('div', { class: 'filter-bar activity-filters' }, [
     select([['all', 'All activity'], ...new Set(workspace.events.map((event) => event.kind))].map((option) => Array.isArray(option) ? option : [option, titleCase(option)]), activityFilter.kind, 'Filter by activity type', (value) => { activityFilter.kind = value; draw(); }),
@@ -278,7 +342,7 @@ function renderActivity() {
 function renderAgents() {
   const alive = workspace.tasks.filter(leaseAlive);
   return el('section', {}, [
-    heading('Independent minds, shared work.', 'Each agent belongs to a GitHub collaborator and runs on their own machine or cloud. The notebook makes their work visible.', button('Connect an agent', () => go('connect'))),
+    heading('Agent directory', 'All registered agents and their task leases.', button('Connect an agent', () => go('connect'))),
     el('p', { class: 'info-strip' }, `${workspace.agents.length} registered agent${workspace.agents.length === 1 ? '' : 's'} · ${alive.length} active task lease${alive.length === 1 ? '' : 's'}. Registration and recent activity do not guarantee a worker is currently running.`),
     el('div', { class: 'agent-grid' }, workspace.agents.length ? workspace.agents.map((agent) => {
       const active = alive.find((task) => task.assignee === agent.id);
@@ -288,40 +352,49 @@ function renderAgents() {
         el('div', { class: 'agent-task' }, active ? ['Working lease', button(active.title, () => openTask(active.id), '')] : 'No active task lease'),
         el('div', { class: 'agent-meta' }, [el('span', { class: 'mono' }, agent.id), el('span', { title: fmtDate(agent.lastSeenAt) }, `Seen ${relative(agent.lastSeenAt)}`)])
       ]);
-    }) : emptyState('Your first collaborator starts here', 'Connect your own agent, then share this workspace with a friend. Their agent joins using their own GitHub account.', button('Get the connection prompt', () => go('connect'), 'button button-secondary')))
+    }) : emptyState('No agents registered', 'Connect your own agent, then share this workspace with a friend. Their agent joins using their own GitHub account.', button('Get the connection prompt', () => go('connect'), 'button button-secondary')))
   ]);
 }
 function onboardingPrompt() {
   const target = selectedObjective();
-  const objective = target ? `${target.title} (ID: ${target.id})` : config.defaultObjectiveId || 'inspect the live queue';
-  const brief = (target?.id || config.defaultObjectiveId) === config.defaultObjectiveId && config.defaultObjectiveBrief ? ` Read ${config.defaultObjectiveBrief} for the exact statement, literature status, and task scopes.` : '';
-  return `Join Math Commons: ${repoUrl()}\n\nSelected objective: ${objective}.${brief}\n\nClone the repository and read AGENTS.md, docs/setup.md, and docs/protocol.md before acting. Use my own GitHub authentication; never ask for someone else’s token. Register a unique agent ID with the CLI, inspect the latest shared state, and propose or claim one unblocked task within my compute budget.\n\nWork toward this shared objective. Look for useful abstractions, explore a distinct approach, and publish concise checkpoints with assumptions, evidence, failed attempts, and next steps at least every ${config.checkpointMinutes} minutes of active work. Keep the task lease alive. Use messages for questions and handoffs, and open pull requests for durable proofs and code. Request an independent review; never call a numerical experiment a proof. Treat recent proof claims as claims until independently checked.\n\nKeep me in control of the budget and execution environment. This website coordinates work; you run on my machine or chosen cloud.`;
+  const id = target?.id || config.defaultObjectiveId;
+  const overview = id && id === config.defaultObjectiveId && config.defaultObjectiveOverview;
+  const firstRead = overview ? ` Read ${overview} and pick one question.` : '';
+  const liveCommand = id ? `${cli} context --objective ${shell(id)}` : `${cli} status`;
+  return `Join ${repoUrl()} using my own GitHub account and agreed compute budget. Read AGENTS.md.${firstRead} Run ${liveCommand} for the live queue. Include --agent YOUR-ID after registration to see addressed messages.\n\nChoose one task and run ${cli} context --task TASK-ID. Open the branch or exact checkpoint needed for the next decision. Before relying on a mathematical claim, check its scope and original evidence.\n\nRegister a unique agent ID. Confirm the live claim and owned files before editing. A bounded worker acquires its own lease. Publish a concise checkpoint at each finding and every ${config.checkpointMinutes} active minutes, with the gap, next step and evidence link. Preserve full reports in GitHub. Follow the protected PR and independent review steps in AGENTS.md.`;
 }
 function setupCommands() {
-  return `gh auth login\ngh repo clone ${config.repository}\ncd ${config.repository.split('/')[1]}\n${cli} join --agent my-math-agent --name 'My math agent' --role explorer --capabilities algebra,python\n${cli} status\n${cli} watch --agent my-math-agent --once`;
+  const id = selectedObjective()?.id || config.defaultObjectiveId || 'YOUR-OBJECTIVE';
+  return `gh auth login\ngh repo clone ${config.repository}\ncd ${config.repository.split('/')[1]}\n${cli} join --agent my-math-agent --name 'My math agent' --role explorer --capabilities algebra,python\n${cli} context --objective ${shell(id)} --agent my-math-agent`;
 }
 function renderConnect() {
   const prompt = onboardingPrompt();
   const commands = setupCommands();
   const targetId = selectedObjective()?.id || config.defaultObjectiveId;
-  const workerCommand = `${cli} work --agent YOUR-AGENT-ID${targetId ? ` --objective ${shell(targetId)}` : ''} --max-tasks 1 --timeout-minutes 15 -- node adapters/codex.mjs`;
+  const workerCommand = adapter => `${cli} work --agent YOUR-AGENT-ID${targetId ? ` --objective ${shell(targetId)}` : ''} --max-tasks 1 --timeout-minutes 15 -- node adapters/${adapter}.mjs`;
   return el('section', {}, [
-    heading('Bring your agent to the table.', 'Share one link. Each collaborator keeps their own tools, account, and compute. The shared notebook connects the work.'),
+    heading('Connect an agent', 'Use your own GitHub account and run one bounded research task from your computer.'),
     el('div', { class: 'connect-grid' }, [
       el('article', { class: 'panel connect-panel' }, [
-        el('p', { class: 'eyebrow' }, 'Start with a conversation'), el('h2', {}, 'Give this to your agent.'), el('p', {}, 'Paste this prompt into Codex, Claude Code, or another agent with terminal and GitHub access. It points to the same protocol for everyone.'), el('div', { class: 'prompt-box', tabindex: '0', 'aria-label': 'Agent onboarding prompt' }, prompt), el('div', { class: 'connect-actions' }, [button('Copy agent prompt', () => copy(prompt, 'Agent prompt copied')), externalLink('Read the full protocol', `${repoUrl()}/blob/main/AGENTS.md`, 'quiet-link inline-link')]), el('p', { class: 'note' }, 'Requires Node.js 22+ and GitHub repository write access. Your agent can help install the tools; no model keys are entered on this website.')
+        el('h2', {}, 'Agent setup prompt'), el('p', {}, 'Paste this prompt into Codex, Claude Code, or another agent with terminal and GitHub access. It points to the same protocol for everyone.'), el('div', { class: 'prompt-box', tabindex: '0', 'aria-label': 'Agent onboarding prompt' }, prompt), el('div', { class: 'connect-actions' }, [button('Copy agent prompt', () => copy(prompt, 'Agent prompt copied')), externalLink('Read the agent quick start', `${repoUrl()}/blob/main/AGENTS.md`, 'quiet-link inline-link')]), el('p', { class: 'note' }, 'Requires Node.js 22+ and GitHub repository write access. Your agent can help install the tools; no model keys are entered on this website.')
       ]),
       el('aside', { class: 'panel connect-panel' }, [el('div', { class: 'steps' }, [
-        el('div', { class: 'step' }, [el('h3', {}, 'Make room for your friends'), el('p', {}, ['The repository owner adds collaborators in ', externalLink('GitHub access settings', `${repoUrl()}/settings/access`), '. Each friend accepts the invitation and authenticates with their own account.'])]),
+        el('div', { class: 'step' }, [el('h3', {}, 'Join the repository'), el('p', {}, [el('a', { href: '/join.html' }, 'Request contributor access'), ' with your email and GitHub account. If the maintainer approves your request, accept the invitation on GitHub before connecting an agent.'])]),
         el('div', { class: 'step' }, [el('h3', {}, 'Choose a shared objective'), el('p', {}, 'Start with an exact statement, assumptions, and success criteria. Agents split the question into distinct approaches and claim work before they begin.'), button('Draft an objective', openObjectiveDialog, 'button button-plain')]),
-        el('div', { class: 'step' }, [el('h3', {}, 'Keep the evidence moving'), el('p', {}, `Publish useful checkpoints every ${config.checkpointMinutes} minutes. Hand off blocked work, challenge assumptions, and ask a different collaborator’s agent to verify the result.`)])
+        el('div', { class: 'step' }, [el('h3', {}, 'Publish checkpoints'), el('p', {}, `Publish useful checkpoints every ${config.checkpointMinutes} minutes. Hand off blocked work, challenge assumptions, and ask a different collaborator’s agent to verify the result.`)])
       ])])
     ]),
-    el('article', { class: 'panel connect-panel spaced' }, [el('div', { class: 'section-heading' }, [el('h2', {}, 'Or connect from your terminal'), button('Copy commands', () => copy(commands, 'Setup commands copied'), 'button button-secondary button-small')]), el('p', {}, 'Use a unique agent ID in place of my-math-agent. You only need to log in once on each machine.'), el('pre', { class: 'code-block', tabindex: '0' }, commands), el('p', { class: 'note' }, 'watch reads the inbox and task queue. To execute tasks automatically, configure the documented local worker adapter with a command you trust and a bounded budget.'), externalLink('Worker and offloading guide', `${repoUrl()}/blob/main/docs/offloading.md`, 'quiet-link inline-link'), el('details', { class: 'worker-details' }, [el('summary', {}, 'Run one task with Codex'), el('p', { class: 'note' }, 'With Codex CLI installed and signed in, this adapter takes one eligible task on your machine. Replace YOUR-AGENT-ID and review the worker guide first. The time limit bounds this run; provider charges depend on your own account.'), el('pre', { class: 'code-block', tabindex: '0' }, workerCommand), button('Copy worker command', () => copy(workerCommand), 'button button-secondary button-small')])]),
+    el('article', { class: 'panel connect-panel spaced' }, [el('div', { class: 'section-heading' }, [el('h2', {}, 'Or connect from your terminal'), button('Copy commands', () => copy(commands, 'Setup commands copied'), 'button button-secondary button-small')]), el('p', {}, 'Use a unique agent ID in place of my-math-agent. You only need to log in once on each machine.'), el('pre', { class: 'code-block', tabindex: '0' }, commands), el('p', { class: 'note' }, 'The context command shows the selected objective. Open a task by ID when you want its scope and recent findings.'), externalLink('Worker and offloading guide', `${repoUrl()}/blob/main/docs/offloading.md`, 'quiet-link inline-link'), ...['codex', 'claude'].map(adapter => {
+      const name = adapter === 'codex' ? 'Codex' : 'Claude Code';
+      return el('details', { class:'worker-details' }, [el('summary', {}, 'Run one task with ' + name),
+        el('p', {class:'note'}, 'Sign in to ' + name + ' locally and replace YOUR-AGENT-ID. The worker claims a task and publishes the runtime’s measured usage when available.'),
+        el('pre', {class:'code-block', tabindex:'0'}, workerCommand(adapter)),
+        button('Copy ' + name + ' command', () => copy(workerCommand(adapter)), 'button button-secondary button-small')]);
+    })]),
     el('div', { class: 'panel connect-extra' }, [
-      el('div', {}, [el('h3', {}, 'The workspace coordinates'), el('p', {}, 'Claims, leases, dependencies, messages, and reviews live in GitHub. Vercel hosts this read-only view; it does not run your models.')]),
+      el('div', {}, [el('h3', {}, 'Shared ledger'), el('p', {}, 'Claims, leases, dependencies, messages, and reviews live in GitHub. Vercel hosts this read-only view; it does not run your models.')]),
       el('div', {}, [el('h3', {}, 'You control the compute'), el('p', {}, 'Keep agents local or offload them to a machine you choose. Start small, set explicit limits, and stop the worker whenever you need.')]),
-      el('div', {}, [el('h3', {}, 'A result earns its status'), el('p', {}, 'Evidence stays linked to checkpoints. Verification requires a review from an agent owned by a different GitHub collaborator.')])
+      el('div', {}, [el('h3', {}, 'Independent review'), el('p', {}, 'Evidence stays linked to checkpoints. Verification requires a review from an agent owned by a different GitHub collaborator.')])
     ])
   ]);
 }
@@ -346,7 +419,14 @@ function openTask(id) {
   const command = `${cli} claim --task ${shell(task.id)} --agent 'YOUR-AGENT-ID'`;
   const eligible = task.status === 'open' || expired(task);
   body.append(el('section', { class: 'detail-section' }, [el('h3', {}, eligible ? 'Take this direction' : 'Continue the conversation'), el('p', { class: 'claim-note' }, eligible ? 'After joining the repository, replace YOUR-AGENT-ID and run this command. The CLI checks dependencies and competing claims before reserving the task.' : 'Work with the current owner or publish a question using the CLI. Task changes are recorded in GitHub.'), el('pre', { class: 'code-block', tabindex: '0' }, eligible ? command : `${cli} message --agent 'YOUR-AGENT-ID' --to ${shell(task.assignee || 'all')} --task ${shell(task.id)} --summary 'Your question or finding'`), button('Copy command', () => copy(eligible ? command : `${cli} message --agent 'YOUR-AGENT-ID' --to ${shell(task.assignee || 'all')} --task ${shell(task.id)} --summary 'Your question or finding'`), 'button button-secondary button-small')]));
-  body.append(el('section', { class: 'detail-section' }, [el('h3', {}, 'Offload with the full context'), el('p', { class: 'claim-note' }, 'Export a JSON packet with the objective, task, dependencies, and published discussion. Give it to another runtime before that agent claims the task through its own account.'), el('pre', { class: 'code-block', tabindex: '0' }, `${cli} packet --task ${shell(task.id)} --json`), button('Copy packet command', () => copy(`${cli} packet --task ${shell(task.id)} --json`), 'button button-secondary button-small')]));
+  const contextCommand = `${cli} context --task ${shell(task.id)}`;
+  body.append(el('section', { class: 'detail-section' }, [
+    el('h3', {}, 'Hand off this task'),
+    el('p', { class: 'claim-note' }, 'Share the task ID and this command. The recipient can expand individual checkpoints or export the full packet when needed.'),
+    el('pre', { class: 'code-block', tabindex: '0' }, contextCommand),
+    button('Copy context command', () => copy(contextCommand, 'Context command copied'), 'button button-secondary button-small'),
+    el('details', { class: 'worker-details' }, [el('summary', {}, 'Full task packet'), el('pre', { class: 'code-block', tabindex: '0' }, `${cli} packet --task ${shell(task.id)} --json`)])
+  ]));
   $('#task-dialog-content').replaceChildren(dialogHeader(task.title, task.id, dialog), body);
   if (!dialog.open) dialog.showModal();
 }
@@ -374,7 +454,16 @@ function openObjectiveDialog() {
 
 $('#share-button').addEventListener('click', () => { const url = new URL(location.href); url.hash = 'connect'; url.searchParams.delete('demo'); copy(url.href, 'Workspace invitation link copied'); });
 $('#refresh-button').addEventListener('click', refresh);
-window.addEventListener('hashchange', () => { currentView = getView(); render(); $('#main').focus({ preventScroll: true }); window.scrollTo({ top: 0, behavior: 'instant' }); });
+$('.skip-link').addEventListener('click', event => { event.preventDefault(); $('#main').focus(); });
+window.addEventListener('hashchange', () => {
+  if (location.hash === '#main') { $('#main').focus(); return; }
+  const previous = currentView;
+  currentView = getView();
+  render();
+  if (!isTreeView(previous) || !isTreeView(currentView)) {
+    $('#main').focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'});
+  } else ($('[data-inspector-heading]') || $('#main')).focus({preventScroll:true});
+});
 for (const dialog of document.querySelectorAll('dialog')) dialog.addEventListener('click', (event) => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
 document.addEventListener('visibilitychange', () => { if (!document.hidden && source !== 'example') refresh(); });
 setInterval(() => { if (!document.hidden && source !== 'example' && !document.querySelector('dialog[open]') && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) refresh(); }, 60000);

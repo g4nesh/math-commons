@@ -1,0 +1,21 @@
+{
+  "cases": 24,
+  "checks": [
+    "regenerated input hash",
+    "exact unitarity",
+    "division-free determinant",
+    "commutator norm",
+    "n4 exotic functional",
+    "every permutation point",
+    "direct convex weights or separation",
+    "hull facets and margin",
+    "selected witness files",
+    "summary"
+  ],
+  "cpuSeconds": 33.044636999999994,
+  "mismatches": 0,
+  "python": "3.9.6",
+  "reportSha256": "27b84f62ac6c6f4700323da9a75e1b325c70a6b72b2089a0f359c2e2c53cc2a7",
+  "schemaVersion": 1,
+  "scope": "Author-side differential exact replay, not independent-owner review or a universal theorem."
+}

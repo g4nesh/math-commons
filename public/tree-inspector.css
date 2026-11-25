@@ -1,0 +1,59 @@
+.tree-inspector{min-width:0;padding:22px;background:var(--paper);color:var(--ink,#242c25);font-size:.82rem;line-height:1.6;overflow-wrap:anywhere}
+.tree-inspector-header{margin-bottom:16px}
+.tree-inspector-kicker{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px;font-size:.68rem;color:var(--muted,#737a70)}
+.tree-inspector-kicker>span:first-child{text-transform:uppercase;letter-spacing:.1em}
+.tree-inspector h2{font:normal 1.55rem/1.15 Georgia,serif;line-height:1.4;letter-spacing:-.025em;margin:0}
+.tree-inspector h2:focus{outline:none}
+.tree-inspector h2:focus-visible{outline:2px solid var(--accent,#627c54);outline-offset:5px;border-radius:2px}
+.tree-inspector h3{font-size:.73rem;font-weight:550;letter-spacing:.01em;line-height:1.5;margin:0 0 10px;color:#626a60}
+.tree-inspector p{margin:0}
+.tree-inspector-status{display:inline-block;padding:2px 7px;border-radius:4px;background:#f2f3ef;color:#71796c;font-size:.66rem;line-height:1.5;white-space:nowrap}
+.tree-inspector-status-active,.tree-inspector-status-verified{color:#4e6d46;background:#edf3e9}
+.tree-inspector-status-review{color:#526a88;background:#eef2f8}
+.tree-inspector-status-expired,.tree-inspector-status-blocked{color:#8c6b39;background:#faf4e8}
+.tree-inspector-status-closed{color:#59605a;background:#edf0ed}
+.tree-inspector-link,.tree-inspector-context,.tree-inspector-event-link,.tree-inspector-full{display:inline;background:transparent;color:inherit;border:0;border-radius:2px;padding:0;font:inherit;line-height:inherit;text-align:left;cursor:pointer;text-decoration:none;overflow-wrap:anywhere;white-space:normal}
+.tree-inspector-link:hover,.tree-inspector-context:hover,.tree-inspector-event-link:hover,.tree-inspector-full:hover{text-decoration:underline;text-underline-offset:3px;color:#3b5133}
+.tree-inspector button:focus-visible,.tree-inspector a:focus-visible,.tree-inspector summary:focus-visible{outline:2px solid var(--accent,#627c54);outline-offset:3px}
+.tree-inspector-context{font-size:.73rem;color:#738269;margin:-4px 0 12px}
+.tree-inspector-note{color:var(--muted,#737a70);font-size:.77rem;line-height:1.75}
+.tree-inspector-note+.tree-inspector-note{margin-top:5px}
+.tree-inspector-section{padding-top:17px;margin-top:18px;border-top:1px solid #dedbcf}
+.tree-inspector-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:20px 0 4px}
+.tree-inspector-stats>div{display:flex;flex-direction:column-reverse;gap:3px;min-width:0}
+.tree-inspector-stats dt{font-size:.61rem;color:#7b8374;line-height:1.4}
+.tree-inspector-stats dd{font-size:1.24rem;line-height:1.2;font-weight:450;letter-spacing:-.03em;margin:0}
+.tree-inspector-task-list,.tree-inspector-activity,.tree-inspector-evidence ul{list-style:none;margin:0;padding:0}
+.tree-inspector-task-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #f1f3ed}
+.tree-inspector-task-row:first-child{padding-top:0}
+.tree-inspector-task-row:last-child{border-bottom:0;padding-bottom:0}
+.tree-inspector-task-row>.tree-inspector-link{font-size:.78rem;line-height:1.6;flex:1;min-width:0}
+.tree-inspector-task-row>.tree-inspector-status{margin-top:2px;flex-shrink:0}
+.tree-inspector-record-meta{display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:.69rem;color:#7b8275;line-height:1.55;margin-bottom:7px}
+.tree-inspector-record-meta>.tree-inspector-link{color:#66745d}
+.tree-inspector-time{font-size:.67rem;color:#858b7f;white-space:nowrap;flex-shrink:0}
+.tree-inspector-summary{font-size:.81rem;line-height:1.75;color:#424d3e;white-space:pre-wrap}
+.tree-inspector-checkpoint>.tree-inspector-link{display:block;font-size:.75rem;margin-bottom:10px;color:#617654}
+.tree-inspector-evidence{margin-top:11px}
+.tree-inspector-evidence li{font-size:.7rem;line-height:1.6;margin-top:5px}
+.tree-inspector-evidence a{text-decoration:underline;text-underline-offset:3px;color:#718065}
+.tree-inspector details{font-size:.74rem;color:#717b69}
+.tree-inspector details>summary{cursor:pointer;width:fit-content;font-size:.71rem;line-height:1.6}
+.tree-inspector details[open]>summary{margin-bottom:9px}
+.tree-inspector-notes,.tree-inspector-more{margin-top:10px}
+.tree-inspector-notes p{white-space:pre-wrap;font-size:.77rem;line-height:1.75;margin:8px 0}
+.tree-inspector-record-id{display:block;font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;font-size:.63rem;line-height:1.7;color:#8a9083;margin-top:16px!important}
+.tree-inspector-evidence details{margin-top:8px}
+.tree-inspector-activity>li{padding:12px 0;border-bottom:1px solid #eff1eb}
+.tree-inspector-activity>li:first-child{padding-top:0}
+.tree-inspector-activity>li:last-child{padding-bottom:0;border-bottom:0}
+.tree-inspector-activity .tree-inspector-record-meta{font-size:.65rem;margin-bottom:4px}
+.tree-inspector-event-link{font-size:.78rem;line-height:1.65;color:#4b5644;display:block;width:100%}
+.tree-inspector-byline{margin-top:5px;font-size:.66rem;color:#89917f}
+.tree-inspector-agent-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;font-size:.78rem;margin-bottom:7px}
+.tree-inspector-agent-row>span{font-size:.7rem;color:#7b8571}
+.tree-inspector-capabilities{font-size:.69rem;color:#7b8571;margin:5px 0 10px!important}
+.tree-inspector-event-detail{white-space:pre-wrap;max-height:320px;overflow:auto;font-size:.78rem;color:#64705a;line-height:1.8;padding-right:5px;scrollbar-width:thin}
+.tree-inspector-full{display:block;width:fit-content;font-size:.76rem;font-weight:500;color:#536b45;padding:7px 10px;border:1px solid #dce4d5;border-radius:4px;background:#f8faf5;margin:12px 0 17px}
+.tree-inspector-full:hover{background:#f0f5e9;text-decoration:none;border-color:#c7d4bc}
+@media(max-width:740px){.tree-inspector{padding:21px}.tree-inspector h2{font-size:1.22rem}.tree-inspector-stats{max-width:380px}.tree-inspector-task-row{gap:15px}.tree-inspector-event-detail{max-height:260px}.tree-inspector button,.tree-inspector summary,.tree-inspector a{touch-action:manipulation}.tree-inspector-task-row>.tree-inspector-link{padding-block:3px}.tree-inspector-activity>li{padding-block:14px}}

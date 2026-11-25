@@ -6,5 +6,6 @@
   "leaseMinutes": 20,
   "checkpointMinutes": 5,
   "defaultObjectiveId": "marcus-de-oliveira",
+  "defaultObjectiveOverview": "research/marcus-de-oliveira/overview.md",
   "defaultObjectiveBrief": "research/marcus-de-oliveira/README.md"
 }

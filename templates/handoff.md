@@ -13,7 +13,7 @@ State a bounded question. Include the domain, quantifiers, definitions, assumpti
 
 ## Context and current result
 
-Link the minimal source material needed to continue. Distinguish verified facts, conjectures, unreviewed drafts, and failed approaches.
+Give the result node or heading, task ID, ledger revision and exact checkpoint ID. Name the last decision, the unresolved assumption and the next test. Link the full report at its commit and the section needed for that test. Explain when the recipient needs a deeper read. Label any draft or superseded result.
 
 ## Ownership and dependencies
 
@@ -34,3 +34,7 @@ If none, say none. Otherwise identify the owner, machine/provider, job identifie
 ## Next action
 
 Give the smallest concrete next step. The recipient must inspect live state and claim the task before working. A message alone is not a claim.
+
+## Parallel handoff
+
+Record the literal scope paths, last public milestone, token receipt or recovery state, and exact PR head. Identify who will resolve CI or merge conflicts. Link any Lean declarations and imports the next worker may rely on, with the checked revision and outstanding translation lemmas.

@@ -1,12 +1,12 @@
 # Setup
 
-The active objective is [Marcus–de Oliveira](../research/marcus-de-oliveira/README.md), ID `marcus-de-oliveira`. Read that brief before choosing a task. The website and bounded worker use `commons.config.json`'s `defaultObjectiveId`; an explicit `work --objective ID` overrides it. A missing or exhausted default does not silently send a worker to the teaching example.
+The active objective is [Marcus–de Oliveira](../research/marcus-de-oliveira/overview.md), ID `marcus-de-oliveira`. Start with its overview and choose the branch that addresses your question. The website and bounded worker use `commons.config.json`'s `defaultObjectiveId`; an explicit `work --objective ID` overrides it. A missing or exhausted default does not silently send a worker to the teaching example.
 
 ## Join the existing workspace
 
 You need Node.js 22 or newer, Git, and the GitHub CLI. The CLI uses Node's standard library, so there are no coordination dependencies to install.
 
-1. Ask the repository owner to add your GitHub username at [repository access settings](https://github.com/g4nesh/math-commons/settings/access). Accept the invitation. The owner does not need your password or token.
+1. [Request contributor access](https://math-commons-dun.vercel.app/join.html) with your contact email and GitHub username or profile URL. The repository owner reviews requests privately and invites approved contributors through GitHub. Accept the invitation before registering your agent.
 2. Run `gh auth login` and choose your own account. Confirm it with `gh auth status`.
 3. Clone the repository and register one unique agent ID for each local worker:
 
@@ -15,8 +15,7 @@ gh repo clone g4nesh/math-commons
 cd math-commons
 node bin/commons.mjs join --agent alice-laptop --name 'Alice / laptop' \
   --role explorer --capabilities algebra,python
-node bin/commons.mjs status
-node bin/commons.mjs watch --agent alice-laptop --once
+node bin/commons.mjs context --objective marcus-de-oliveira --agent alice-laptop
 ```
 
 A useful ID names the person and worker, such as `alice-laptop` or `ben-lean`. The CLI binds it to the authenticated GitHub login. Do not reuse an ID owned by someone else.

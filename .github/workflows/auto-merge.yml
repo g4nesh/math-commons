@@ -1,0 +1,28 @@
+name: Enable contributor auto-merge
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, reopened, ready_for_review, synchronize]
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  enable:
+    if: ${{ !github.event.pull_request.draft && github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    steps:
+      # This job uses the trusted base workflow and never opens the contributor's checkout.
+      - name: Queue the current head under normal branch protection
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          can_write=$(gh api "repos/$GITHUB_REPOSITORY/collaborators/$AUTHOR/permission" --jq '.user.permissions.push')
+          if [[ "$can_write" != true ]]; then exit 0; fi
+          current=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json state,isDraft,headRefOid,autoMergeRequest)
+          jq -e --arg sha "$HEAD_SHA" '.state == "OPEN" and (.isDraft | not) and .headRefOid == $sha and .autoMergeRequest == null' <<<"$current" >/dev/null || exit 0
+          gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --auto --squash --match-head-commit "$HEAD_SHA"
