@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 143,
-  "updatedAt": "2026-11-25T18:33:02.000Z",
+  "revision": 144,
+  "updatedAt": "2026-11-25T18:34:03.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -336,9 +336,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T18:50:59.000Z",
+      "leaseUntil": "2026-11-25T18:54:03.000Z",
       "createdAt": "2026-11-25T06:11:34.000Z",
-      "updatedAt": "2026-11-25T18:30:59.000Z",
+      "updatedAt": "2026-11-25T18:34:03.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -356,6 +356,14 @@
           "details": "For each subset transition, deleting a forest edge gives a cut crossed by exactly one gate. Initial/final occupation counts fix that crossing, so there is at most one exterior-power path between fixed endpoints. Taking squared moduli therefore equals independent stay/swap transitions with swap probability |g12|^2; the resulting single permutation distribution matches every compound layer. A same-owner bounded adversarial read found the reasoning sound, with the crucial restriction that each edge is used once. Draft executable fixtures cover phases, permutations, overlapping paths/stars, disjoint components and degeneracies. The triangle cycle with c=3/5,s=4/5 gives U11=109/125 and squared modulus 11881/15625 versus naive product-weight prediction 6121/15625; this refutes extension of those weights, not MOC. Exact regression execution is next; no universal or novelty claim.",
           "evidence": [],
           "createdAt": "2026-11-25T18:30:59.000Z"
+        },
+        {
+          "id": "mdo-baselines-forest-exact-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Exact forest baselines passed; proof and cycle obstruction are ready for source publication.",
+          "details": "Completed README proof of disjoint U(2) blocks and arbitrary ordered distinct-edge forest products, arbitrary complex spectra and local phases, with monomial end factors and all degeneracies. First exact fixed run: 11 fixtures n=1..6, 3332 compound entries, both unitarity identities, nonnegative total-one weights, determinant combinations, independent Leibniz determinant checks; all passed in 0.861063 process CPU seconds (Python 3.9.6). Eleven unittest checks passed in 0.807 seconds, replaying the same fixtures and rejecting cycles, repeated edges, bad endpoints, nonunitary/inexact inputs. Triangle obstruction reproduces exact interference without violating MOC. Files README.md, forest.py, test_forest.py, results.json and SHA256SUMS are ready in baselines/. Awaiting coordinator publication for immutable evidence; no formal or independent-owner verification claimed, no runtime tokens exposed.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:34:03.000Z"
         }
       ],
       "reviews": []
@@ -1132,7 +1140,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:30:59.000Z"
+      "lastSeenAt": "2026-11-25T18:34:03.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -3412,6 +3420,20 @@
       "createdAt": "2026-11-25T18:33:02.000Z",
       "links": [],
       "requestFingerprint": "2b6382292dfb7238fd85f6de49777ff539a16873229a3af464388d41d1ffe22d"
+    },
+    {
+      "id": "mdo-baselines-forest-exact-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-baselines",
+      "summary": "Exact forest baselines passed; proof and cycle obstruction are ready for source publication.",
+      "detail": "Completed README proof of disjoint U(2) blocks and arbitrary ordered distinct-edge forest products, arbitrary complex spectra and local phases, with monomial end factors and all degeneracies. First exact fixed run: 11 fixtures n=1..6, 3332 compound entries, both unitarity identities, nonnegative total-one weights, determinant combinations, independent Leibniz determinant checks; all passed in 0.861063 process CPU seconds (Python 3.9.6). Eleven unittest checks passed in 0.807 seconds, replaying the same fixtures and rejecting cycles, repeated edges, bad endpoints, nonunitary/inexact inputs. Triangle obstruction reproduces exact interference without violating MOC. Files README.md, forest.py, test_forest.py, results.json and SHA256SUMS are ready in baselines/. Awaiting coordinator publication for immutable evidence; no formal or independent-owner verification claimed, no runtime tokens exposed.",
+      "to": null,
+      "createdAt": "2026-11-25T18:34:03.000Z",
+      "links": [],
+      "requestFingerprint": "64618d81124aa6726676e0babefe6481317de0044ba0aa0c6eb226a163883799"
     }
   ],
   "usage": [
