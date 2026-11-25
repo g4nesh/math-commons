@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 67,
-  "updatedAt": "2026-11-25T06:56:55.000Z",
+  "revision": 68,
+  "updatedAt": "2026-11-25T06:56:57.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -542,9 +542,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-usage-ui",
-      "leaseUntil": "2026-11-25T07:10:37.000Z",
+      "leaseUntil": "2026-11-25T07:16:57.000Z",
       "createdAt": "2026-11-25T06:47:09.000Z",
-      "updatedAt": "2026-11-25T06:50:37.000Z",
+      "updatedAt": "2026-11-25T06:56:57.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -554,6 +554,16 @@
           "details": "The chart will group owners and UTC days, include a cumulative/daily line and heatmap, and expose an explicit example preview. Live history has no token receipts and will remain labeled unmetered.",
           "evidence": [],
           "createdAt": "2026-11-25T06:50:37.000Z"
+        },
+        {
+          "id": "usage-chart-cp2-usage-ui",
+          "agentId": "ganesh-usage-ui",
+          "summary": "Chart UI is implemented; responsive and interaction review has started.",
+          "details": "Pure aggregation tests cover UTC buckets, owner filtering, missing versus measured zero, cached subsets and duplicates. New Contributions view includes a growth curve, daily heatmap, owner controls and receipt provenance. Explicit example data is isolated from live state.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/5"
+          ],
+          "createdAt": "2026-11-25T06:56:57.000Z"
         }
       ],
       "reviews": []
@@ -687,7 +697,7 @@
         "frontend"
       ],
       "registeredAt": "2026-11-25T06:47:08.000Z",
-      "lastSeenAt": "2026-11-25T06:50:37.000Z"
+      "lastSeenAt": "2026-11-25T06:56:57.000Z"
     },
     {
       "id": "ganesh-usage-adapter",
@@ -1701,6 +1711,22 @@
         "https://github.com/g4nesh/math-commons/pull/5"
       ],
       "requestFingerprint": "38a1b4aaf39366c76c73a04f37ea43b0d5891be6c44188a334f08552b3dee8d1"
+    },
+    {
+      "id": "usage-chart-cp2-usage-ui",
+      "kind": "checkpoint",
+      "actor": "ganesh-usage-ui",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-ui",
+      "summary": "Chart UI is implemented; responsive and interaction review has started.",
+      "detail": "Pure aggregation tests cover UTC buckets, owner filtering, missing versus measured zero, cached subsets and duplicates. New Contributions view includes a growth curve, daily heatmap, owner controls and receipt provenance. Explicit example data is isolated from live state.",
+      "to": null,
+      "createdAt": "2026-11-25T06:56:57.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/5"
+      ],
+      "requestFingerprint": "3a061ccddf40eb89b5a6c06adcf1459932e74b6c603940265fb2df63ca2d7b8e"
     }
   ]
 }
