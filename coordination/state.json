@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 456,
-  "updatedAt": "2026-11-25T23:30:41.000Z",
+  "revision": 457,
+  "updatedAt": "2026-11-25T23:31:01.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3148,11 +3148,22 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "pointwise-reflections",
-      "leaseUntil": "2026-11-25T23:50:41.000Z",
+      "leaseUntil": "2026-11-25T23:51:01.000Z",
       "createdAt": "2026-11-25T23:30:30.000Z",
-      "updatedAt": "2026-11-25T23:30:41.000Z",
+      "updatedAt": "2026-11-25T23:31:01.000Z",
       "createdBy": "pointwise-reflections",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "reflection-angles-start-20261125",
+          "agentId": "pointwise-reflections",
+          "summary": "Starting scoped reflection-angle proof and exact triangle-packing certificates.",
+          "details": "Scope: research/marcus-de-oliveira/reflection-angles only. Derived signed identity-plus-swaps formula and nonnegative three-cycle weights for c=|z-1|^2<=3 in every dimension. First independent exact checks cover 24 rational unitary cases and 9794 compound entries. Next: portable proof and tests, primary attribution, finite-dimensional optimum investigation. Stop at a checked scoped theorem and explicit remaining gap; no general-MOC or novelty claim.",
+          "evidence": [
+            "https://www.sciencedirect.com/science/article/pii/S0024379599001731"
+          ],
+          "createdAt": "2026-11-25T23:31:01.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/reflection-angles"
@@ -3354,7 +3365,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T23:30:17.000Z",
-      "lastSeenAt": "2026-11-25T23:30:41.000Z"
+      "lastSeenAt": "2026-11-25T23:31:01.000Z"
     }
   ],
   "events": [
@@ -10445,6 +10456,22 @@
       "createdAt": "2026-11-25T23:30:41.000Z",
       "links": [],
       "requestFingerprint": "68f109aae38794f18e79a81448f95c069cd31c779caedf37a9ed5e157b197c2f"
+    },
+    {
+      "id": "reflection-angles-start-20261125",
+      "kind": "checkpoint",
+      "actor": "pointwise-reflections",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-reflection-angles",
+      "summary": "Starting scoped reflection-angle proof and exact triangle-packing certificates.",
+      "detail": "Scope: research/marcus-de-oliveira/reflection-angles only. Derived signed identity-plus-swaps formula and nonnegative three-cycle weights for c=|z-1|^2<=3 in every dimension. First independent exact checks cover 24 rational unitary cases and 9794 compound entries. Next: portable proof and tests, primary attribution, finite-dimensional optimum investigation. Stop at a checked scoped theorem and explicit remaining gap; no general-MOC or novelty claim.",
+      "to": null,
+      "createdAt": "2026-11-25T23:31:01.000Z",
+      "links": [
+        "https://www.sciencedirect.com/science/article/pii/S0024379599001731"
+      ],
+      "requestFingerprint": "dc49833571a1e0af802ba15284062fb0c112388e23c668c9fd30518234e00ade"
     }
   ],
   "usage": [
