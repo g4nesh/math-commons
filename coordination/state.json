@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 30,
-  "updatedAt": "2026-11-25T06:35:40.000Z",
+  "revision": 31,
+  "updatedAt": "2026-11-25T06:35:42.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -159,9 +159,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-literature",
-      "leaseUntil": "2026-11-25T06:53:06.000Z",
+      "leaseUntil": "2026-11-25T06:55:42.000Z",
       "createdAt": "2026-11-25T06:11:30.000Z",
-      "updatedAt": "2026-11-25T06:33:06.000Z",
+      "updatedAt": "2026-11-25T06:35:42.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -171,6 +171,16 @@
           "details": "Inspected Theorems 1.1/1.2, section 4.3 and Appendix F of the 66-page Zheng manuscript. Proposition 4.3 refers 90 contact cases to supplementary material; locating that material before treating the reduction as reproduced. No proof accepted.",
           "evidence": [],
           "createdAt": "2026-11-25T06:33:06.000Z"
+        },
+        {
+          "id": "mdo-pass1-cp2-literature",
+          "agentId": "ganesh-literature",
+          "summary": "Located a dimension-lifting theorem; dimension-four certificate audit remains incomplete.",
+          "details": "Read Shitov 2025 Theorems 1 and 19. A valid n=4 proof would conditionally lift Hermitian-A / at-most-four-nonreal-B cases to higher dimensions. Zheng supplement S0/S1/S2 has not been located after targeted searches. The current polygon preprint is hashed; exact stronger common-weight obstruction reproduction is in progress.",
+          "evidence": [
+            "https://www.mathnet.ru/php/archive.phtml?jrnid=im&option_lang=eng&paperid=9292&wshow=paper"
+          ],
+          "createdAt": "2026-11-25T06:35:42.000Z"
         }
       ],
       "reviews": []
@@ -365,7 +375,7 @@
         "source-audit"
       ],
       "registeredAt": "2026-11-25T06:31:26.000Z",
-      "lastSeenAt": "2026-11-25T06:33:06.000Z"
+      "lastSeenAt": "2026-11-25T06:35:42.000Z"
     },
     {
       "id": "ganesh-certificates",
@@ -838,6 +848,22 @@
         "https://github.com/g4nesh/math-commons/pull/4"
       ],
       "requestFingerprint": "1222a9a12747a420e3c0395ee494f6e1d382988faf7b837689abe73259e42ba3"
+    },
+    {
+      "id": "mdo-pass1-cp2-literature",
+      "kind": "checkpoint",
+      "actor": "ganesh-literature",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-literature",
+      "summary": "Located a dimension-lifting theorem; dimension-four certificate audit remains incomplete.",
+      "detail": "Read Shitov 2025 Theorems 1 and 19. A valid n=4 proof would conditionally lift Hermitian-A / at-most-four-nonreal-B cases to higher dimensions. Zheng supplement S0/S1/S2 has not been located after targeted searches. The current polygon preprint is hashed; exact stronger common-weight obstruction reproduction is in progress.",
+      "to": null,
+      "createdAt": "2026-11-25T06:35:42.000Z",
+      "links": [
+        "https://www.mathnet.ru/php/archive.phtml?jrnid=im&option_lang=eng&paperid=9292&wshow=paper"
+      ],
+      "requestFingerprint": "d816617778905afdd770c5dcea19c0e281213cf2d90ad3e841b6bd1efec98c3e"
     }
   ]
 }
