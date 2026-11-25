@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 69,
-  "updatedAt": "2026-11-25T06:56:58.000Z",
+  "revision": 70,
+  "updatedAt": "2026-11-25T06:57:00.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -612,9 +612,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T07:10:40.000Z",
+      "leaseUntil": "2026-11-25T07:17:00.000Z",
       "createdAt": "2026-11-25T06:47:16.000Z",
-      "updatedAt": "2026-11-25T06:50:40.000Z",
+      "updatedAt": "2026-11-25T06:57:00.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -624,6 +624,16 @@
           "details": "Usage guide explains task-linked counters, cached-input subsets, owner attribution, missing history, source limitations and disjoint parent/child accounting. Changes will ship through a reviewed PR and native Vercel integration.",
           "evidence": [],
           "createdAt": "2026-11-25T06:50:40.000Z"
+        },
+        {
+          "id": "usage-chart-cp2-usage-release",
+          "agentId": "ganesh-coordinator",
+          "summary": "Draft PR5 open; accounting docs published and browser QA underway.",
+          "details": "The existing GitHub-to-Vercel pipeline remains in place. First preview loaded a partially written module; current source syntax passes and the preview will be rebuilt before final visual review. Live tokens remain unmetered until actual receipts arrive.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/5"
+          ],
+          "createdAt": "2026-11-25T06:57:00.000Z"
         }
       ],
       "reviews": []
@@ -641,7 +651,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:50:40.000Z"
+      "lastSeenAt": "2026-11-25T06:57:00.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1753,6 +1763,22 @@
         "https://github.com/g4nesh/math-commons/pull/5"
       ],
       "requestFingerprint": "c9573a59aee92a8d669d8f118030b4ccd20fd5980b20d68fefca772ed14e9091"
+    },
+    {
+      "id": "usage-chart-cp2-usage-release",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-release",
+      "summary": "Draft PR5 open; accounting docs published and browser QA underway.",
+      "detail": "The existing GitHub-to-Vercel pipeline remains in place. First preview loaded a partially written module; current source syntax passes and the preview will be rebuilt before final visual review. Live tokens remain unmetered until actual receipts arrive.",
+      "to": null,
+      "createdAt": "2026-11-25T06:57:00.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/5"
+      ],
+      "requestFingerprint": "079edc89a8fd415e7089f1932594188355a025115ccdbf57c0076cb7d49c9378"
     }
   ]
 }
