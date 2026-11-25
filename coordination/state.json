@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 445,
-  "updatedAt": "2026-11-25T23:11:01.000Z",
+  "revision": 446,
+  "updatedAt": "2026-11-25T23:27:48.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2582,12 +2582,12 @@
       "title": "Locate the feasibility boundary as the fourth eigenvalue moves toward zero",
       "description": "Fix the archived U and b and put a3=s(1−i) with s real in [0,1]. At s near 1, positive_box.py gives a twelve-term mixture for all complex a0,a1,a2. Near zero, zero_fiber.py excludes every shared mixture. Obtain separated rational bounds on a change of feasibility using exact feasible certificates and separating duals over all 24 permutations. Do not assume feasibility along this segment is monotone. Budget one twenty-minute pass including solver-free replay and exact endpoint handling.",
       "approach": "constructive",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-search",
+      "leaseUntil": "2026-11-25T23:47:48.000Z",
       "createdAt": "2026-11-25T20:59:25.000Z",
-      "updatedAt": "2026-11-25T20:59:25.000Z",
+      "updatedAt": "2026-11-25T23:27:48.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -3135,7 +3135,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T21:11:00.000Z"
+      "lastSeenAt": "2026-11-25T23:27:48.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -10206,6 +10206,20 @@
       "createdAt": "2026-11-25T23:11:01.000Z",
       "links": [],
       "requestFingerprint": "d6baef0fa07554720bec0a908ab027779321df4e954ab18803f9d38a8c2ccc73"
+    },
+    {
+      "id": "mdo-fourth-boundary-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-fourth-boundary",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:27:48.000Z",
+      "links": [],
+      "requestFingerprint": "f77f412dc907bdc856075e344f0a1b70599b0d3147363ab2125a983695cb9996"
     }
   ],
   "usage": [
