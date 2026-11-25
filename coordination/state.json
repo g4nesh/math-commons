@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 221,
-  "updatedAt": "2026-11-25T19:52:05.000Z",
+  "revision": 222,
+  "updatedAt": "2026-11-25T19:52:08.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1438,9 +1438,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T19:38:41.000Z",
+      "leaseUntil": "2026-11-25T20:12:08.000Z",
       "createdAt": "2026-11-25T18:48:28.000Z",
-      "updatedAt": "2026-11-25T19:18:41.000Z",
+      "updatedAt": "2026-11-25T19:52:08.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1688,7 +1688,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T19:18:41.000Z"
+      "lastSeenAt": "2026-11-25T19:52:08.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -5178,6 +5178,20 @@
         "https://github.com/g4nesh/math-commons/commit/bbbf34f73a498d0ad6c0445aedf96a6c697e0815"
       ],
       "requestFingerprint": "fc17b4053b8d65a334516695aae47a3790034f6270b9c469965e75698a366340"
+    },
+    {
+      "id": "mdo-cut-subset-bridge-final-reclaim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cut-subset-bridge",
+      "summary": "Reclaimed task after ganesh-reductions's lease expired.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:52:08.000Z",
+      "links": [],
+      "requestFingerprint": "13f86b0ff3d3e72f990781161eb2d4dbdbc0992847693c85bfa0e9683066aa89"
     }
   ],
   "usage": [
