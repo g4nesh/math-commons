@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 454,
-  "updatedAt": "2026-11-25T23:30:17.000Z",
+  "revision": 455,
+  "updatedAt": "2026-11-25T23:30:30.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3138,6 +3138,25 @@
         "research/marcus-de-oliveira/overview.md",
         "research/marcus-de-oliveira/pointwise-gluing"
       ]
+    },
+    {
+      "id": "mdo-reflection-angles",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Explicit common-minor certificates for rank-one unitary phases",
+      "description": "Derive exact identity, swap and three-cycle weights for U=I+(z-1)vv*, prove an arbitrary-dimension angle regime and a sharp flat-vector obstruction, characterize feasibility by triangle packing, audit Householder literature, and supply reproducible exact tests. Own only research/marcus-de-oliveira/reflection-angles. No general-MOC or novelty claim.",
+      "approach": "constructive",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T23:30:30.000Z",
+      "updatedAt": "2026-11-25T23:30:30.000Z",
+      "createdBy": "pointwise-reflections",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "research/marcus-de-oliveira/reflection-angles"
+      ]
     }
   ],
   "agents": [
@@ -3335,7 +3354,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T23:30:17.000Z",
-      "lastSeenAt": "2026-11-25T23:30:17.000Z"
+      "lastSeenAt": "2026-11-25T23:30:30.000Z"
     }
   ],
   "events": [
@@ -10398,6 +10417,20 @@
       "createdAt": "2026-11-25T23:30:17.000Z",
       "links": [],
       "requestFingerprint": "5ec8163d99c9b2faac2756f45ea1af997ab300f4163c33ea772d3908134f5b6f"
+    },
+    {
+      "id": "reflection-angles-task-20261125",
+      "kind": "task",
+      "actor": "pointwise-reflections",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-reflection-angles",
+      "summary": "Proposed constructive task: Explicit common-minor certificates for rank-one unitary phases",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:30:30.000Z",
+      "links": [],
+      "requestFingerprint": "ee0f6d79e03a8a3aade83da0c3f21025fc39e96f87ab71bc082e1d6695f3e0e7"
     }
   ],
   "usage": [
