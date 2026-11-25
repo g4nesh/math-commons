@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 72,
-  "updatedAt": "2026-11-25T06:59:34.000Z",
+  "revision": 73,
+  "updatedAt": "2026-11-25T06:59:37.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -574,12 +574,12 @@
       "title": "Codex run token capture",
       "description": "Own adapters/ and test/adapter.test.mjs. Implement the authorized token chart with authenticated attribution, deduplication and explicit missing usage. Publish real provider/run-reported counts only; no invented historical data. Bounded implementation session, checkpoints every five minutes.",
       "approach": "runtime",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-usage-adapter",
-      "leaseUntil": "2026-11-25T07:19:34.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T06:47:13.000Z",
-      "updatedAt": "2026-11-25T06:59:34.000Z",
+      "updatedAt": "2026-11-25T06:59:37.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -612,7 +612,8 @@
           "createdAt": "2026-11-25T06:59:34.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "usage-adapter-final"
     },
     {
       "id": "usage-release",
@@ -739,7 +740,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T06:59:34.000Z"
+      "lastSeenAt": "2026-11-25T06:59:37.000Z"
     }
   ],
   "events": [
@@ -1821,6 +1822,23 @@
         "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/test/adapter.test.mjs"
       ],
       "requestFingerprint": "67c8ebd4c846c84d8c2d3c7332e6fb037e60f6214803996a467bb3fa556b3bad"
+    },
+    {
+      "id": "usage-adapter-submit",
+      "kind": "submit",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-adapter",
+      "summary": "Runtime capture ready for independent review; author-side tests pass. Source PR5 remains under integrated browser and CI review.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:59:37.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/adapters/codex.mjs",
+        "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/test/adapter.test.mjs"
+      ],
+      "requestFingerprint": "0bf9b0db879ce403fb5e79a350a42adb1fce475124bed34407a15b38c2b016e6"
     }
   ]
 }
