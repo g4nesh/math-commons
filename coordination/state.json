@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 278,
-  "updatedAt": "2026-11-25T20:49:31.000Z",
+  "revision": 279,
+  "updatedAt": "2026-11-25T20:49:35.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1954,12 +1954,12 @@
       "title": "Move the fourth eigenvalue while retaining a uniform certificate for the other three",
       "description": "Fix the archived U and b. At a3=1−i the twelve positive weights in fiber_certificate.json work for all complex a0,a1,a2. Can weights depending on a3 alone cover a real segment through that base, uniformly over the other three? Solve the eight multiaffine coefficient equations, sum to one and prove positivity including endpoints on an explicit segment. Treat support changes, singular bases and the seven-diagonal fixed-weight separator explicitly. A certified failure of a specified support still leaves alternative supports open. Budget one 20-minute exact pass; write a solver-free replay, cite the parent certificate and checkpoint partial bounds if necessary.",
       "approach": "constructive",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-search",
+      "leaseUntil": "2026-11-25T21:09:35.000Z",
       "createdAt": "2026-11-25T20:37:26.000Z",
-      "updatedAt": "2026-11-25T20:37:26.000Z",
+      "updatedAt": "2026-11-25T20:49:35.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -2078,7 +2078,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T20:42:55.000Z"
+      "lastSeenAt": "2026-11-25T20:49:35.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -6488,6 +6488,20 @@
         "https://github.com/g4nesh/math-commons/pull/13"
       ],
       "requestFingerprint": "a88b72307c1af0757597c6cf291c5cb88f0358deca70f3b1bd4b62a40b3b3199"
+    },
+    {
+      "id": "mdo-moving-fourth-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-moving-fourth-eigenvalue",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T20:49:35.000Z",
+      "links": [],
+      "requestFingerprint": "a738bccf993c93fafc636f2986390f9363f0e83fb50ef13091cbd17584b03446"
     }
   ],
   "usage": [
