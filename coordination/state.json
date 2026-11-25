@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 496,
-  "updatedAt": "2026-11-25T23:52:06.000Z",
+  "revision": 497,
+  "updatedAt": "2026-11-25T23:52:14.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3464,11 +3464,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-26T00:10:45.000Z",
+      "leaseUntil": "2026-11-26T00:12:14.000Z",
       "createdAt": "2026-11-25T23:50:27.000Z",
-      "updatedAt": "2026-11-25T23:50:45.000Z",
+      "updatedAt": "2026-11-25T23:52:14.000Z",
       "createdBy": "ganesh-reductions",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-star-two-row-start-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Started exact two-row elimination and zero-entry-stratum reduction.",
+          "details": "Claimed only research/marcus-de-oliveira/star-two-row for an initial25-active-minute pass. Deliverable: full compression derivation, quadratic trace/cubic determinant conditions and a reproducible exact negative t-squared coefficient; finite coefficient tests will not be used as a positivity proof. Preliminary checks:384 rational inputs at four t values match the direct Hermitian pencil;1500 exactly unitary sampled inputs include four negative middle coefficients. New algebraic targets: the entire U14=0 stratum has g0=B11*(1-|a4|^2)+|b3|^2+|x3*c4|^2>=0 immediately. For U11=0, the pencil appears to depend on the second-row relative phase through one scalar R with nonnegative slope, suggesting exact reduction to real rows rather than a general unitary-to-orthogonal assertion. These phase identities are being checked before publication. Parent handles all Git and integration.",
+          "evidence": [],
+          "createdAt": "2026-11-25T23:52:14.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/star-two-row"
@@ -3531,7 +3540,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T23:50:45.000Z"
+      "lastSeenAt": "2026-11-25T23:52:14.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -11387,6 +11396,20 @@
         "https://github.com/g4nesh/math-commons/blob/723e4783697b8b2a24c870459a0bab916c95d8a7/research/marcus-de-oliveira/two-spectator-pencils/README.md"
       ],
       "requestFingerprint": "96b74c5f6d023ce6e8ae8684f9e19319783a81bcc38768c804a746844c01556e"
+    },
+    {
+      "id": "mdo-star-two-row-start-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-two-row-compression",
+      "summary": "Started exact two-row elimination and zero-entry-stratum reduction.",
+      "detail": "Claimed only research/marcus-de-oliveira/star-two-row for an initial25-active-minute pass. Deliverable: full compression derivation, quadratic trace/cubic determinant conditions and a reproducible exact negative t-squared coefficient; finite coefficient tests will not be used as a positivity proof. Preliminary checks:384 rational inputs at four t values match the direct Hermitian pencil;1500 exactly unitary sampled inputs include four negative middle coefficients. New algebraic targets: the entire U14=0 stratum has g0=B11*(1-|a4|^2)+|b3|^2+|x3*c4|^2>=0 immediately. For U11=0, the pencil appears to depend on the second-row relative phase through one scalar R with nonnegative slope, suggesting exact reduction to real rows rather than a general unitary-to-orthogonal assertion. These phase identities are being checked before publication. Parent handles all Git and integration.",
+      "to": null,
+      "createdAt": "2026-11-25T23:52:14.000Z",
+      "links": [],
+      "requestFingerprint": "19a37c9ff2ec50d4a2fa6a661028274599be38d690ca7f94d2395bd35771c88e"
     }
   ],
   "usage": [
