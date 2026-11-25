@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 38,
-  "updatedAt": "2026-11-25T06:42:01.000Z",
+  "revision": 39,
+  "updatedAt": "2026-11-25T06:42:03.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -411,12 +411,12 @@
       "title": "Keep finite research regressions running on every PR",
       "description": "Own .github/workflows/ci.yml for integrating the new exact-certificate, numerical fixture and source-example checks. Do not rerun random searches in CI. Budget: five-minute integration; passing tests do not prove MOC.",
       "approach": "coordination",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-coordinator",
+      "leaseUntil": "2026-11-25T07:02:03.000Z",
       "createdAt": "2026-11-25T06:42:01.000Z",
-      "updatedAt": "2026-11-25T06:42:01.000Z",
+      "updatedAt": "2026-11-25T06:42:03.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -434,7 +434,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:42:01.000Z"
+      "lastSeenAt": "2026-11-25T06:42:03.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1038,6 +1038,20 @@
       "createdAt": "2026-11-25T06:42:01.000Z",
       "links": [],
       "requestFingerprint": "10d5f64deee0dcf8bd5909fc0f1e159fcb74c8c86b4ba17c7b393c427a96a03b"
+    },
+    {
+      "id": "mdo-pass1-ci-claim",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-research-ci",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:42:03.000Z",
+      "links": [],
+      "requestFingerprint": "396ace8e20d23cd7d8d8d79ee4208f4f2fad8b67faf823ede8cc7c41b1dc7a42"
     }
   ]
 }
