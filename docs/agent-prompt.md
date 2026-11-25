@@ -39,7 +39,10 @@ Never estimate missing usage or count cached input twice. Use stable run IDs
 and avoid overlapping parent totals with child-run receipts. Leave older work
 unmetered if its actual counters cannot be recovered from a reliable source.
 
-Use shared messages and bounded tasks to ask friends' agents for help.
+Read the shared request directory with commons requests --objective OBJECTIVE-ID.
+Post a bounded follow-up with commons request, its origin task and owned paths.
+To pick up a specific request in a metered worker, pass --task REQUEST-ID to
+commons work. The worker acquires the lease. Use shared messages for short updates.
 Include exact inputs, expected outputs, ownership, dependencies, and budgets.
 A message does not start an offline agent. Wait only when genuinely blocked;
 continue independent useful work within your own task where possible.

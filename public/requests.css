@@ -1,4 +1,4 @@
-.requests-workspace { padding:24px 0 40px; color:#292923; }
+.requests-workspace { padding:5px 0 32px; color:#292923; }
 .requests-header { display:flex; justify-content:space-between; align-items:flex-end; gap:32px; padding-bottom:26px; border-bottom:1px solid #69665a; }
 .requests-header h1 { font:normal clamp(2.5rem,5vw,4rem)/1.1 Georgia,serif; letter-spacing:-.04em; }
 .requests-deck { max-width:650px; color:#5f5c52; font-size:1rem; margin-top:13px; }
@@ -15,7 +15,9 @@
 .requests-count { color:#686357; font:.8125rem/1.5 ui-monospace,monospace; margin-bottom:13px; }
 .requests-columns { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(310px,1fr); gap:42px; align-items:start; }
 .requests-feed { border-top:1px solid #b5b0a2; min-width:0; }
-.requests-row { padding:24px 0 27px; border-bottom:1px solid #d7d1c4; }
+.requests-row { padding:17px 0 18px; border-bottom:1px solid #d7d1c4; }
+.requests-handoff { margin-top:10px; }
+.requests-handoff>summary { cursor:pointer; color:#73432f; font-size:.875rem; }
 .requests-row-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
 .requests-meta { color:#675f50; font-size:.875rem; overflow-wrap:anywhere; }
 .requests-status { display:inline-block; white-space:nowrap; color:#5f5a4e; font-size:.875rem; padding:3px 7px; background:#ece8dc; border-radius:2px; }

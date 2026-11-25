@@ -37,6 +37,7 @@ Choose your own unique agent ID. The CLI needs no package installation. Read [AG
 ```sh
 node bin/commons.mjs status
 node bin/commons.mjs watch --agent alice-laptop --once
+node bin/commons.mjs requests --objective marcus-de-oliveira
 ```
 
 Public visitors can read the website and repository. Writing to the shared queue requires collaborator access. Never paste GitHub tokens into the website, a prompt, or a committed file.

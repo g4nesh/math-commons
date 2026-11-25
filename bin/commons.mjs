@@ -6,6 +6,7 @@ import { randomUUID } from 'node:crypto';
 import { GitHubStore, resolveToken } from '../lib/github.mjs';
 import { eligibleTasks, requestDirectory } from '../lib/core.mjs';
 import { work } from '../lib/worker.mjs';
+import { requestSourceContext } from '../lib/worker-context.mjs';
 import { normalizeUsage, parseTokenFlag } from '../lib/usage.mjs';
 
 export const HELP = `Math Commons — a shared, auditable workspace for mathematical research
@@ -45,7 +46,8 @@ Publish (requires gh auth login or your own GH_TOKEN, plus repo write access):
 
 Run an explicitly selected local adapter (never starts a hosted model itself):
   work --agent ID [--max-tasks 1] [--timeout-minutes 15]
-       [--objective ID] [--approach computational] -- executable arg...
+       [--objective ID] [--approach computational] [--task TASK-ID] -- executable arg...
+  --task selects exactly one eligible task and requires --max-tasks 1; no fallback.
   Adapter reads one JSON work packet from stdin and writes one JSON result:
   {"status":"review","summary":"...","details":"...","evidence":["https://..."]}
   Other result statuses: release, blocked. No shell evaluation is used.
@@ -112,7 +114,7 @@ function assertFlags(command, flags) {
     release: ['task', ...textOptions(['summary'])], block: ['task', ...textOptions(['summary'])], reopen: ['task', ...textOptions(['summary'])],
     close: ['objective', 'evidence', ...textOptions(['summary'])], 'reopen-objective': ['objective', ...textOptions(['summary'])],
     usage: ['task', 'provider', 'model', 'run-id', 'input-tokens', 'output-tokens', 'cached-input-tokens', 'started-at', 'finished-at', 'source', 'evidence', 'usage-file'],
-    work: ['agent', 'max-tasks', 'timeout-minutes', 'objective', 'approach'],
+    work: ['agent', 'max-tasks', 'timeout-minutes', 'objective', 'approach', 'task'],
   };
   const allowed = new Set([...global, ...(options[command] ?? []), ...(['help', 'status', 'watch', 'packet', 'requests', 'work'].includes(command) ? [] : common)]);
   for (const key of Object.keys(flags)) if (!allowed.has(key)) throw new Error(`Unknown option --${key} for ${command}.`);
@@ -188,7 +190,7 @@ export async function main(argv = process.argv.slice(2)) {
   if (command === 'packet') {
     const { state } = await store.read(), task = state.tasks.find(item => item.id === flags.task);
     if (!task) throw new Error('Unknown task. Supply --task ID.');
-    console.log(JSON.stringify({ protocolVersion: 1, repository: config.repository, task, objective: state.objectives.find(item => item.id === task.objectiveId), dependencies: state.tasks.filter(item => task.dependsOn.includes(item.id)), events: state.events.filter(item => item.taskId === task.id) }, null, 2));
+    console.log(JSON.stringify({ protocolVersion: 1, repository: config.repository, task, objective: state.objectives.find(item => item.id === task.objectiveId), dependencies: state.tasks.filter(item => task.dependsOn.includes(item.id)), sourceTask: requestSourceContext(state, task), events: state.events.filter(item => item.taskId === task.id) }, null, 2));
     return;
   }
   if (command === 'watch') {
@@ -222,7 +224,7 @@ export async function main(argv = process.argv.slice(2)) {
     const cancel = () => controller.abort();
     process.once('SIGINT', cancel); process.once('SIGTERM', cancel);
     try {
-      const outcomes = await work(store, { agent: flags.agent, command: trailing[0], args: trailing.slice(1), maxTasks: Number(flags['max-tasks'] ?? 1), timeoutMinutes: Number(flags['timeout-minutes'] ?? 15), objective: flags.objective, approach: flags.approach, signal: controller.signal, onProgress: item => console.error(JSON.stringify(item)) });
+      const outcomes = await work(store, { agent: flags.agent, command: trailing[0], args: trailing.slice(1), maxTasks: Number(flags['max-tasks'] ?? 1), timeoutMinutes: Number(flags['timeout-minutes'] ?? 15), objective: flags.objective, approach: flags.approach, task: flags.task, signal: controller.signal, onProgress: item => console.error(JSON.stringify(item)) });
       console.log(JSON.stringify({ outcomes }, null, 2));
       if (outcomes.some(outcome => outcome.failed)) process.exitCode = 1;
     } finally { process.off('SIGINT', cancel); process.off('SIGTERM', cancel); }
