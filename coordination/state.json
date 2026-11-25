@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 5,
-  "updatedAt": "2026-11-25T06:11:30.000Z",
+  "revision": 6,
+  "updatedAt": "2026-11-25T06:11:31.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -129,6 +129,22 @@
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "mdo-reductions",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Find exact abstractions and equivalent formulations",
+      "description": "Prove the diagonal-unitary-orbit and support-function formulations; investigate scaling, opposite shifts, symmetries, and reductions without assuming commutativity or nonsingular sums. Track both implications and boundary cases. Own research/marcus-de-oliveira/reductions/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+      "approach": "abstraction",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:11:31.000Z",
+      "updatedAt": "2026-11-25T06:11:31.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -143,7 +159,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:11:30.000Z"
+      "lastSeenAt": "2026-11-25T06:11:31.000Z"
     }
   ],
   "events": [
@@ -216,6 +232,20 @@
       "createdAt": "2026-11-25T06:11:30.000Z",
       "links": [],
       "requestFingerprint": "8b348e3dcaf663a00920ee049d8835ff0e89360ffc54c4bbe53cec6aec9df75c"
+    },
+    {
+      "id": "mdo-initial-20261124-mdo-reductions",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-reductions",
+      "summary": "Proposed abstraction task: Find exact abstractions and equivalent formulations",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:11:31.000Z",
+      "links": [],
+      "requestFingerprint": "d37b3fa46efd48c7bf63441cebf91e63ae9efccf1346061c52702792800ec973"
     }
   ]
 }
