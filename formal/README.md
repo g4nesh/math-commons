@@ -57,6 +57,8 @@ In [ForestTrajectory.lean](ForestTrajectory.lean), an occupied subset is a Boole
 | Exactly one | Occupied endpoint exchanged | $p$ |
 | Any | A change outside the gate, or another illegal transition | 0 by the [support theorem](ForestGateSupport.lean) |
 
+The checked declaration `MathCommons.ForestGateMagnitude.orderedGateMagnitudes` takes three lists of occupied spectators, covering those before the first endpoint, between the endpoints and after the second. `decomposeTwoEndpoints` and `filterTwoEndpoints` express the corresponding ordered-list decompositions; `reverseGate` and `reverseUnitary` handle the opposite endpoint order. Applying the six cases to an arbitrary pair of Boolean subset histories still requires assembling those lemmas. The module also checks $0≤p≤1$.
+
 Both the empty and the full subset occur in the first row. Occupied spectator coordinates may precede, separate or follow the two gate endpoints. An exchange picks up the parity of the occupied spectators between the endpoints in the signed minor. Squaring the norm removes that sign. The local result and the forest path-uniqueness theorem have different hypotheses. To combine them into a matrix-product identity still requires a Cauchy–Binet expansion in the same minor convention.
 
 ## Contributing a theorem

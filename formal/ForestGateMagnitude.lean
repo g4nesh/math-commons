@@ -1,10 +1,35 @@
 import ForestGateSupport
 
 /-!
-Exact local magnitude results for the concrete signed minor of ForestGateSupport.
-All scalars are Gaussian rationals represented by pairs. The statements below
-separate arithmetic consequences of unitarity from list-ordering obligations.
-No Cauchy–Binet or matrix-library determinant correspondence is assumed.
+# Exact local unitary-gate magnitudes
+
+All scalars are Gaussian rationals. `orderedGateMagnitudes` proves the complete
+six-entry local table for the ACTUAL signed `ForestGateSupport.minorDet`:
+neither/both occupied give 1; either one-particle stay gives 1-q; either exchange
+gives q, where q = normSq b. `unitaryProbabilityBounds` proves 0 ≤ q ≤ 1.
+The explicit occupied lists allow arbitrarily many spectators before, between,
+and after the endpoints. Their combined list is required to be duplicate-free;
+spectators must avoid the two endpoints. Empty lists and zero entry magnitudes
+are allowed. Unitarity is given by explicit row/column norm equations and complex
+column orthogonality, and the determinant norm is DERIVED from a Lagrange identity.
+
+`interveningExchangeSign` and `reverseExchangeSign` retain the exact ordering
+sign before squaring. `bothOccupiedMinor` accounts for cancellation of those signs.
+`reverseGate` and `reverseUnitary` formally handle the opposite endpoint order by
+replacing (e,a,b,c,d) with (reverseEdge e,d,c,b,a). `decomposeTwoEndpoints` and
+`filterTwoEndpoints` formally expose the two ambient orders and four occupancy
+cases. Applying those decompositions to arbitrary Boolean subset histories is
+not packaged as one exported theorem here; the main table takes the resulting
+occupied lists and their uniqueness/avoidance hypotheses explicitly.
+`emptyFilteredMagnitude` and `fullFilteredMagnitude` give actual filtered empty
+and full cases, with the ambient order explicitly supplied in the latter.
+
+No Cauchy–Binet formula, matrix-library determinant identification, full-complex
+scalar instance, product-gate probability identity or universal MOC result is
+claimed. The zero-dimensional case needs no gate; Edge requires two distinct
+vertices. The two-column Laplace and list-decomposition helper proofs were
+contributed by the sibling protocol agent under the same GitHub owner; this is
+collaboration, not independent review.
 -/
 namespace MathCommons.ForestGateMagnitude
 open ForestTrajectory ForestGateSupport
@@ -281,6 +306,34 @@ theorem minorTwoSupportedColumns {V : Type} (M : V → V → Gaussian)
   rfl
 
 
+/-- Two distinct members occur in one order or the other. No Nodup hypothesis is needed. -/
+theorem decomposeTwoEndpoints {V : Type} (xs : List V) (left right : V)
+    (different : left ≠ right) (hasLeft : left ∈ xs) (hasRight : right ∈ xs) :
+    (∃ before middle after, xs = before ++ left :: (middle ++ right :: after)) ∨
+    (∃ before middle after, xs = before ++ right :: (middle ++ left :: after)) := by
+  obtain ⟨before, tail, rfl⟩ := List.append_of_mem hasLeft
+  rcases List.mem_append.mp hasRight with inBefore | inTail
+  · obtain ⟨pre, middle, eqBefore⟩ := List.append_of_mem inBefore
+    right
+    refine ⟨pre, middle, tail, ?_⟩
+    rw [eqBefore]
+    simp only [List.append_assoc, List.cons_append]
+  · rcases List.mem_cons.mp inTail with equal | inTail
+    · exact False.elim (different equal.symm)
+    · obtain ⟨middle, after, eqTail⟩ := List.append_of_mem inTail
+      left
+      exact ⟨before, middle, after, by rw [eqTail]⟩
+
+/-- Filtering a two-endpoint decomposition separates the four occupancy cases. -/
+theorem filterTwoEndpoints {V : Type} (p : V → Bool) (left right : V)
+    (before middle after : List V) :
+    (before ++ left :: (middle ++ right :: after)).filter p =
+      before.filter p ++ (if p left then [left] else []) ++ middle.filter p ++
+        (if p right then [right] else []) ++ after.filter p := by
+  cases hl : p left <;> cases hr : p right <;>
+    simp [List.filter_append, hl, hr, List.append_assoc]
+
+
 section Gate
 variable {V : Type} [DecidableEq V] {vertices : List V}
 
@@ -412,7 +465,7 @@ theorem signedNot (odd : Bool) (z : Gaussian) :
     Bool.false_eq_true, ↓reduceIte]
   apply Prod.ext <;> simp only [gaussianArithmetic] <;> grind
 
-/-- The reverse exchange has the same squared value, with arbitrarily many
+/-- The reverse exchange has the exact parity sign, with arbitrarily many
 intervening and trailing occupied spectators. No unitarity is used here. -/
 theorem reverseExchangeSign (e : Edge vertices) (a b c d : Gaussian)
     (middle after : List V) (unique : (middle ++ after).Nodup)
@@ -559,7 +612,155 @@ theorem bothOccupiedMinor (e : Edge vertices) (a b c d : Gaussian)
   · intro x hx
     exact (gateEndpointSpectatorZero e a b c d x (avoids x hx).1 (avoids x hx).2).1
 
+
+/-- All six local squared probabilities, with arbitrary occupied spectators
+before, between and after the two ordered endpoints. The hypothesis describes
+the occupied lists explicitly; conversion from a filtered ambient enumeration
+is a separate combinatorial wrapper, not an assumed determinant identity. -/
+theorem orderedGateMagnitudes (e : Edge vertices) (a b c d : Gaussian)
+    (h : UnitaryBlock a b c d) (before middle after : List V)
+    (unique : (before ++ e.left :: (middle ++ e.right :: after)).Nodup)
+    (avoids : ∀ x ∈ before ++ (middle ++ after), x ≠ e.left ∧ x ≠ e.right) :
+    let M := twoCoordinateGate gaussianArithmetic e a b c d
+    let empty := before ++ (middle ++ after)
+    let left := before ++ e.left :: (middle ++ after)
+    let right := before ++ (middle ++ e.right :: after)
+    let both := before ++ e.left :: (middle ++ e.right :: after)
+    normSq (minorDet gaussianArithmetic M empty empty) = 1 ∧
+    normSq (minorDet gaussianArithmetic M left left) = 1 - normSq b ∧
+    normSq (minorDet gaussianArithmetic M right right) = 1 - normSq b ∧
+    normSq (minorDet gaussianArithmetic M left right) = normSq b ∧
+    normSq (minorDet gaussianArithmetic M right left) = normSq b ∧
+    normSq (minorDet gaussianArithmetic M both both) = 1 := by
+  let M := twoCoordinateGate gaussianArithmetic e a b c d
+  have removeR : (middle ++ after).Sublist (middle ++ e.right :: after) :=
+    (List.Sublist.refl middle).append ((List.Sublist.refl after).cons e.right)
+  have removeBoth := removeR.cons e.left
+  have removeLeft := (List.Sublist.refl (middle ++ e.right :: after)).cons e.left
+  have removeRight := removeR.cons₂ e.left
+  have coreUnique := (List.sublist_append_right before
+    (e.left :: (middle ++ e.right :: after))).nodup unique
+  have u := removeBoth.nodup coreUnique
+  have u0 := ((List.Sublist.refl before).append removeBoth).nodup unique
+  have ul := ((List.Sublist.refl before).append removeRight).nodup unique
+  have ur := ((List.Sublist.refl before).append removeLeft).nodup unique
+  have ac : ∀ x ∈ middle ++ after, x ≠ e.left ∧ x ≠ e.right := by
+    intro x hx; exact avoids x (List.mem_append_right _ hx)
+  have identity : ∀ x ∈ before, ∀ y, M x y =
+      if x = y then gaussianArithmetic.one else gaussianArithmetic.zero := by
+    intro x hx y
+    have ax := avoids x (List.mem_append_left _ hx)
+    exact gateSpectatorRow e a b c d x ax.1 ax.2 y
+  have none := identityPrefixMinor M before (middle ++ after) (middle ++ after) u0 identity
+  have ll := identityPrefixMinor M before (e.left :: (middle ++ after))
+    (e.left :: (middle ++ after)) ul identity
+  have rr := identityPrefixMinor M before (middle ++ e.right :: after)
+    (middle ++ e.right :: after) ur identity
+  have lr := identityPrefixMinor M before (e.left :: (middle ++ after))
+    (middle ++ e.right :: after) ur identity
+  have rl := identityPrefixMinor M before (middle ++ e.right :: after)
+    (e.left :: (middle ++ after)) ul identity
+  have bb := identityPrefixMinor M before (e.left :: (middle ++ e.right :: after))
+    (e.left :: (middle ++ e.right :: after)) unique identity
+  have weights := unitaryWeights a b c d h
+  change _ ∧ _ ∧ _ ∧ _ ∧ _ ∧ _
+  constructor
+  · rw [none, gateSpectatorMinor e a b c d (middle ++ after) u ac]
+    exact normSqOne
+  constructor
+  · rw [ll, leftStayMinor e a b c d (middle ++ after) u ac]
+    exact weights.2.2
+  constructor
+  · rw [rr, rightStayMinor e a b c d middle after u ac, weights.2.1]
+    exact weights.2.2
+  constructor
+  · rw [lr]
+    exact interveningExchangeNorm e a b c d middle after u ac
+  constructor
+  · rw [rl, reverseExchangeNorm e a b c d middle after u ac]
+    exact weights.1
+  · rw [bb, bothOccupiedMinor e a b c d middle after u ac]
+    exact unitaryDetNorm a b c d h
+
+theorem normSqNonnegative (z : Gaussian) : 0 ≤ normSq z := by
+  have square : ∀ x : Rat, 0 ≤ x * x := by
+    intro x
+    by_cases hx : 0 ≤ x
+    · exact Rat.mul_nonneg hx hx
+    · have hn : 0 ≤ -x := by grind
+      have hh := Rat.mul_nonneg hn hn
+      grind
+  exact Rat.add_nonneg (square z.1) (square z.2)
+
+theorem unitaryProbabilityBounds (a b c d : Gaussian) (h : UnitaryBlock a b c d) :
+    0 ≤ normSq b ∧ normSq b ≤ 1 := by
+  have ha := normSqNonnegative a
+  have hb := normSqNonnegative b
+  have hr := h.rowLeft
+  grind
+
+
+/-- Reversing the endpoint names reverses both block row and column order. -/
+def reverseEdge (e : Edge vertices) : Edge vertices where
+  nodup := e.nodup
+  complete := e.complete
+  left := e.right
+  right := e.left
+  distinct := Ne.symm e.distinct
+  rest := e.rest
+  enumerate := e.enumerate.trans (List.Perm.swap e.right e.left e.rest)
+  avoids := by intro x hx; exact ⟨(e.avoids x hx).2, (e.avoids x hx).1⟩
+
+theorem reverseGate (e : Edge vertices) (a b c d : Gaussian) :
+    twoCoordinateGate gaussianArithmetic (reverseEdge e) d c b a =
+      twoCoordinateGate gaussianArithmetic e a b c d := by
+  funext x y
+  simp only [twoCoordinateGate, reverseEdge]
+  have distinct := e.distinct
+  grind
+
+theorem reverseUnitary (a b c d : Gaussian) (h : UnitaryBlock a b c d) :
+    UnitaryBlock d c b a := by
+  have h1 := h.rowLeft
+  have h2 := h.rowRight
+  have h3 := h.columnLeft
+  have h4 := h.columnRight
+  have hr := congrArg Prod.fst h.orthogonal
+  have hi := congrArg Prod.snd h.orthogonal
+  constructor
+  · grind
+  · grind
+  · grind
+  · grind
+  · apply Prod.ext <;> simp only [gaussianArithmetic, conjugate] at * <;> grind
+
+
+theorem emptyFilteredMagnitude (e : Edge vertices) (a b c d : Gaussian) :
+    normSq (minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (vertices.filter (fun _ => false)) (vertices.filter (fun _ => false))) = 1 := by
+  have empty : vertices.filter (fun _ => false) = [] := by simp
+  rw [empty, emptyMinor]
+  exact normSqOne
+
+/-- Full-subset corollary with the ambient order explicitly supplied. The general
+existence and reversal tools are `decomposeTwoEndpoints` and `reverseGate`. -/
+theorem fullFilteredMagnitude (e : Edge vertices) (a b c d : Gaussian)
+    (h : UnitaryBlock a b c d) (before middle after : List V)
+    (order : vertices = before ++ e.left :: (middle ++ e.right :: after))
+    (avoids : ∀ x ∈ before ++ (middle ++ after), x ≠ e.left ∧ x ≠ e.right) :
+    normSq (minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (vertices.filter (fun _ => true)) (vertices.filter (fun _ => true))) = 1 := by
+  have unique : (before ++ e.left :: (middle ++ e.right :: after)).Nodup :=
+    order ▸ e.nodup
+  have table := orderedGateMagnitudes e a b c d h before middle after unique avoids
+  have full : vertices.filter (fun _ => true) = vertices :=
+    List.filter_eq_self.mpr (by intro x hx; rfl)
+  rw [full]
+  exact (congrArg (fun xs : List V => normSq (minorDet gaussianArithmetic
+    (twoCoordinateGate gaussianArithmetic e a b c d) xs xs)) order).trans table.2.2.2.2.2
+
 end Gate
+
 #print axioms normSqZero
 #print axioms normSqOne
 #print axioms normSqNeg
@@ -583,6 +784,8 @@ end Gate
 #print axioms blockDetLagrange
 #print axioms unitaryDetNorm
 #print axioms minorTwoSupportedColumns
+#print axioms decomposeTwoEndpoints
+#print axioms filterTwoEndpoints
 #print axioms gateSpectatorRow
 #print axioms gateEntries
 #print axioms prefixGateMagnitudes
@@ -597,8 +800,12 @@ end Gate
 #print axioms rightStayMinor
 #print axioms oppositeSignsProduct
 #print axioms bothOccupiedMinor
+#print axioms orderedGateMagnitudes
+#print axioms normSqNonnegative
+#print axioms unitaryProbabilityBounds
+#print axioms reverseGate
+#print axioms reverseUnitary
+#print axioms emptyFilteredMagnitude
+#print axioms fullFilteredMagnitude
+
 end MathCommons.ForestGateMagnitude
-
-
-
-
