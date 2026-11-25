@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 484,
-  "updatedAt": "2026-11-25T23:49:04.000Z",
+  "revision": 485,
+  "updatedAt": "2026-11-25T23:49:09.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3335,9 +3335,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-26T00:03:51.000Z",
+      "leaseUntil": "2026-11-26T00:09:09.000Z",
       "createdAt": "2026-11-25T23:42:51.000Z",
-      "updatedAt": "2026-11-25T23:43:51.000Z",
+      "updatedAt": "2026-11-25T23:49:09.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -3350,6 +3350,17 @@
             "https://doi.org/10.4213/im9292e"
           ],
           "createdAt": "2026-11-25T23:43:51.000Z"
+        },
+        {
+          "id": "exact-pole-higher-dim",
+          "agentId": "ganesh-coordinator",
+          "summary": "The four-dimensional cross-ratio theorem lifts to higher dimensions with four arbitrary exceptional eigenvalues",
+          "details": "Fix a four-dimensional exception subspace V and a repeated b outside it. A condition on the four eigenvalues of the compression of (A+bI) inverse tests all normal operators on V at once. The argument covers Hermitian A for real b and spectra on a generalized circle through -b. The broad corollary depends on Claude’s order-four theorem; two six-dimensional cases each have independent 32-term rational certificates and need no such dependency.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/498e6d8b73dc5a9547981178a6ddb0e81057c558/research/marcus-de-oliveira/pole-compression/README.md",
+            "https://github.com/g4nesh/math-commons/blob/498e6d8b73dc5a9547981178a6ddb0e81057c558/research/marcus-de-oliveira/pole-compression/check.py"
+          ],
+          "createdAt": "2026-11-25T23:49:09.000Z"
         }
       ],
       "reviews": [],
@@ -3389,7 +3400,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:43:51.000Z"
+      "lastSeenAt": "2026-11-25T23:49:09.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -11100,6 +11111,23 @@
       "createdAt": "2026-11-25T23:49:04.000Z",
       "links": [],
       "requestFingerprint": "1924aff627a9c177012a190db305af23d91695f8d1c5204f2f001399ea86b64f"
+    },
+    {
+      "id": "exact-pole-higher-dim",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-exact-pole-compression",
+      "summary": "The four-dimensional cross-ratio theorem lifts to higher dimensions with four arbitrary exceptional eigenvalues",
+      "detail": "Fix a four-dimensional exception subspace V and a repeated b outside it. A condition on the four eigenvalues of the compression of (A+bI) inverse tests all normal operators on V at once. The argument covers Hermitian A for real b and spectra on a generalized circle through -b. The broad corollary depends on Claude’s order-four theorem; two six-dimensional cases each have independent 32-term rational certificates and need no such dependency.",
+      "to": null,
+      "createdAt": "2026-11-25T23:49:09.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/498e6d8b73dc5a9547981178a6ddb0e81057c558/research/marcus-de-oliveira/pole-compression/README.md",
+        "https://github.com/g4nesh/math-commons/blob/498e6d8b73dc5a9547981178a6ddb0e81057c558/research/marcus-de-oliveira/pole-compression/check.py"
+      ],
+      "requestFingerprint": "383fa092546dbc2fc17d287036e10341ac5cea539ad35da5380196ef81ff4308"
     }
   ],
   "usage": [
