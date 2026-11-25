@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 443,
-  "updatedAt": "2026-11-25T23:07:49.000Z",
+  "revision": 444,
+  "updatedAt": "2026-11-25T23:07:53.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2670,9 +2670,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-air",
-      "leaseUntil": "2026-11-25T23:27:49.000Z",
+      "leaseUntil": "2026-11-25T23:27:53.000Z",
       "createdAt": "2026-11-25T21:33:04.000Z",
-      "updatedAt": "2026-11-25T23:07:49.000Z",
+      "updatedAt": "2026-11-25T23:07:53.000Z",
       "createdBy": "ishaan-air",
       "checkpoints": [
         {
@@ -2682,6 +2682,16 @@
           "details": "Question: can joint optimization over the unitary and both spectra push det(D_a + U D_b U*) outside the permutation hull for n = 5, 6 or 7? Owned path: research/marcus-de-oliveira/optimizer-search. Budget: about two hours of laptop compute in this session, at most a few CPU-heavy jobs at a time. Acceptance: calibration on n <= 4 first (no exterior point expected, known tight configurations reproduced), then restarts for n = 5 to 7; every exterior candidate must survive high-precision polishing and an exact rational certificate checked by independent code before it is reported. First test: toolkit calibration on n = 2, 3, 4. Nothing has been found yet.",
           "evidence": [],
           "createdAt": "2026-11-25T21:33:09.000Z"
+        },
+        {
+          "id": "8123684a-c08a-4260-a86a-52631eff5bcf",
+          "agentId": "ishaan-air",
+          "summary": "No exterior point found at n = 5 to 9 after about 8,500 optimizations; numerical evidence only, contact families catalogued.",
+          "details": "Result: no exterior point. About 8,500 local optimizations at n = 5 to 9 (after 5,300 calibration restarts at n <= 4); every positive floating-point margin failed a 50- or 60-digit recheck. Zero-margin configurations are generalized permutations, block-reducible U, concyclic spectra, eigenvalue collisions, or a zero factor a_i + b_j = 0 with a concyclic complement (this last family reduces to dimension n - 1). Evidence level: numerical only; moderate at n = 5, weak above. Known limits: uneven coverage, a hull-routine defect near coincident products, and no targeted search of strata with many permutation products on one supporting line. Next step: search those high-contact strata directly at n = 5. Draft PR holds code, seeds, runs and the full report.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/4fde1b0e92778ff479e887d7c4f24e2a55f53535/research/marcus-de-oliveira/optimizer-search/README.md"
+          ],
+          "createdAt": "2026-11-25T23:07:53.000Z"
         }
       ],
       "reviews": [],
@@ -3222,7 +3232,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T19:25:34.000Z",
-      "lastSeenAt": "2026-11-25T23:07:49.000Z"
+      "lastSeenAt": "2026-11-25T23:07:53.000Z"
     },
     {
       "id": "ganesh-context-navigation",
@@ -10166,6 +10176,22 @@
       "createdAt": "2026-11-25T23:07:49.000Z",
       "links": [],
       "requestFingerprint": "cd37d18f39a9ed0658a3188ed91973e187c4206c9f55f872f8884d9df5547d10"
+    },
+    {
+      "id": "8123684a-c08a-4260-a86a-52631eff5bcf",
+      "kind": "checkpoint",
+      "actor": "ishaan-air",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-optimizer-search",
+      "summary": "No exterior point found at n = 5 to 9 after about 8,500 optimizations; numerical evidence only, contact families catalogued.",
+      "detail": "Result: no exterior point. About 8,500 local optimizations at n = 5 to 9 (after 5,300 calibration restarts at n <= 4); every positive floating-point margin failed a 50- or 60-digit recheck. Zero-margin configurations are generalized permutations, block-reducible U, concyclic spectra, eigenvalue collisions, or a zero factor a_i + b_j = 0 with a concyclic complement (this last family reduces to dimension n - 1). Evidence level: numerical only; moderate at n = 5, weak above. Known limits: uneven coverage, a hull-routine defect near coincident products, and no targeted search of strata with many permutation products on one supporting line. Next step: search those high-contact strata directly at n = 5. Draft PR holds code, seeds, runs and the full report.",
+      "to": null,
+      "createdAt": "2026-11-25T23:07:53.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/4fde1b0e92778ff479e887d7c4f24e2a55f53535/research/marcus-de-oliveira/optimizer-search/README.md"
+      ],
+      "requestFingerprint": "f09399472174f41dfae8dcf5c8f61a1903a24c8e0e278484aac693d5be03f5e0"
     }
   ],
   "usage": [
