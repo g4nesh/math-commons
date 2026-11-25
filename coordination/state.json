@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 301,
-  "updatedAt": "2026-11-25T20:59:23.000Z",
+  "revision": 302,
+  "updatedAt": "2026-11-25T20:59:25.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2213,6 +2213,29 @@
       "scopePaths": [
         "research/marcus-de-oliveira/zheng-n4-audit"
       ]
+    },
+    {
+      "id": "mdo-fourth-boundary",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Locate the feasibility boundary as the fourth eigenvalue moves toward zero",
+      "description": "Fix the archived U and b and put a3=s(1−i) with s real in [0,1]. At s near 1, positive_box.py gives a twelve-term mixture for all complex a0,a1,a2. Near zero, zero_fiber.py excludes every shared mixture. Obtain separated rational bounds on a change of feasibility using exact feasible certificates and separating duals over all 24 permutations. Do not assume feasibility along this segment is monotone. Budget one twenty-minute pass including solver-free replay and exact endpoint handling.",
+      "approach": "constructive",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T20:59:25.000Z",
+      "updatedAt": "2026-11-25T20:59:25.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "research/marcus-de-oliveira/fourth-boundary"
+      ],
+      "request": {
+        "fromTaskId": "mdo-moving-fourth-eigenvalue",
+        "to": "all"
+      }
     }
   ],
   "agents": [
@@ -2227,7 +2250,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T20:59:23.000Z"
+      "lastSeenAt": "2026-11-25T20:59:25.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -7046,6 +7069,24 @@
         "https://github.com/g4nesh/math-commons/pull/20"
       ],
       "requestFingerprint": "5857e55bb2e91f4ef0febdceb34dcbd5d6047b98245efe480adddc778a141ddc"
+    },
+    {
+      "id": "moving-mag-boundary-request",
+      "kind": "request",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-fourth-boundary",
+      "summary": "Requested research: Locate the feasibility boundary as the fourth eigenvalue moves toward zero",
+      "detail": "Fix the archived U and b and put a3=s(1−i) with s real in [0,1]. At s near 1, positive_box.py gives a twelve-term mixture for all complex a0,a1,a2. Near zero, zero_fiber.py excludes every shared mixture. Obtain separated rational bounds on a change of feasibility using exact feasible certificates and separating duals over all 24 permutations. Do not assume feasibility along this segment is monotone. Budget one twenty-minute pass including solver-free replay and exact endpoint handling.",
+      "to": "all",
+      "createdAt": "2026-11-25T20:59:25.000Z",
+      "links": [],
+      "requestFingerprint": "276d710d6221a27e543fcfd5e8f5117c9261c0ad74599c42f0e473de184dd622",
+      "scopePaths": [
+        "research/marcus-de-oliveira/fourth-boundary"
+      ],
+      "fromTaskId": "mdo-moving-fourth-eigenvalue"
     }
   ],
   "usage": [
