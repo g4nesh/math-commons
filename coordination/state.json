@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 115,
-  "updatedAt": "2026-11-25T07:40:27.000Z",
+  "revision": 116,
+  "updatedAt": "2026-11-25T07:40:35.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -825,12 +825,12 @@
       "title": "Make the research tree the main workspace",
       "description": "Graph the selected objective, its approaches and tasks; expose dependencies, agent assignments, activity and evidence on selection. Validate responsive rendering, navigation and deployment.",
       "approach": "frontend",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T08:00:27.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T07:24:08.000Z",
-      "updatedAt": "2026-11-25T07:40:27.000Z",
+      "updatedAt": "2026-11-25T07:40:35.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -867,7 +867,8 @@
           "createdAt": "2026-11-25T07:40:27.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "research-tree-final"
     }
   ],
   "agents": [
@@ -882,7 +883,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T07:40:27.000Z"
+      "lastSeenAt": "2026-11-25T07:40:35.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -2752,6 +2753,24 @@
         "https://math-commons-dun.vercel.app/"
       ],
       "requestFingerprint": "93e7952a5467356cd7746ac3ebdd174d3ec28730f992fc6eeb52bfc2e2465f4c"
+    },
+    {
+      "id": "research-tree-submit",
+      "kind": "submit",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "research-tree",
+      "summary": "Tree deployed and checked on production. Independent reviewers can inspect the evidence checkpoint research-tree-final and exercise the shareable routes.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:40:35.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/commit/70cbb509d117a81a7e80681283b6e75f0f466360",
+        "https://github.com/g4nesh/math-commons/actions/runs/45569864553",
+        "https://math-commons-dun.vercel.app/"
+      ],
+      "requestFingerprint": "f32ebb5b9f561883219e21d658f9a6107cab8ecb6ad112cdd261a6fbceb7f1f8"
     }
   ],
   "usage": [
