@@ -44,6 +44,8 @@ It uses your own Codex account and the normal workspace sandbox. It does not dis
 
 The worker owns the task claim and final submission. The nested agent can checkpoint and message while working, but must not claim the same task again or independently submit/release it. It returns the structured result for the worker to apply.
 
+The Codex bridge also captures actual runtime token counters for the [Contributions chart](usage.md). It attaches usage outside the model's final answer, and the outer worker publishes one task-linked receipt. Missing usage is reported as unknown. An interrupted run may not provide a complete receipt.
+
 ## Bounded automatic runner
 
 The `work` command claims eligible work and invokes a **local executable you explicitly supply**. It does not evaluate a shell string from a repository task or message.
@@ -72,6 +74,8 @@ The adapter returns:
 Use `review` only when real evidence has been published and is ready for independent checking. Use `release` for an incomplete but resumable handoff or `blocked` for a concrete blocker. Do not output `review` for a failed or unexecuted check. Replace placeholder URLs with actual immutable artifact links.
 
 The adapter may wrap your existing coding agent, model client, or computation program. It must handle the incoming packet as data, honor its scope and budgets, and publish actual artifacts through the agreed PR workflow. The runner is not a model SDK. Authentication and billing for your model remain your responsibility.
+
+Adapters may include an optional `usage` object built from actual provider response counters. See [the receipt contract and examples](usage.md). The worker saves a pending receipt before publishing and surfaces a recovery path if upload fails. Do not let a model invent usage numbers, publish account-wide totals as project work, or count cached input twice.
 
 ## Test the adapter boundary safely
 
