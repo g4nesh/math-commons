@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 355,
-  "updatedAt": "2026-11-25T21:33:13.000Z",
+  "revision": 356,
+  "updatedAt": "2026-11-25T21:39:07.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2383,9 +2383,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T21:53:13.000Z",
+      "leaseUntil": "2026-11-25T21:59:07.000Z",
       "createdAt": "2026-11-25T20:56:26.000Z",
-      "updatedAt": "2026-11-25T21:33:13.000Z",
+      "updatedAt": "2026-11-25T21:39:07.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -2439,6 +2439,20 @@
             "https://github.com/g4nesh/math-commons/blob/771a9eb1698098b94b0bf457137fb8cd22322c5d/research/marcus-de-oliveira/star-exact/logs/verify_cert_t2.txt"
           ],
           "createdAt": "2026-11-25T21:32:33.000Z"
+        },
+        {
+          "id": "5131f021-54ff-4477-b7cb-30267199b94e",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Exact certificates at t = 3/2, 2, 3, 5 (all verified); none exists at t <= 1; amplitude spaces are linear in t. Half-line certificate not done. PR 23 ready.",
+          "details": "Final checkpoint for this session. Head of PR #23: 8d2003a1829f7b695242d7b4287305ffe41b8ad9 (ready; squash auto-merge pinned to it).\n\nExact (rational certificates, independent exact checker at fresh rational unitaries, all CERTIFICATE VALID):\n  t = 3/2:  6 g0 + 10 D[12,12] + 9 D[13,14] >= 0\n  t = 2  :  2 g0 +  3 D[12,12] + 4 D[13,14] >= 0\n  t = 3  :  3 g0 +  4 D[12,12] + 9 D[13,14] >= 0\n  t = 5  :  5 g0 +  6 D[12,12] + 25 D[13,14] >= 0\nfor every U in U(4).\n\nExact lemma: the degree-3 function space on U(4) has dimension exactly 261, so such identities can be verified at 261 rational unitaries.\n\nNegative (numerical with controls): no exact degree-3 certificate at t <= 1; the reduced problem is feasible on its boundary from about t = 1.05.\n\nStructure (observed at four t): after removing the kernels forced by zeros (322 integer complement polynomials remain), 20 more directions drop out; 12 are independent of t and 8 involve only t/(1+t). So the amplitude spaces are linear in t.\n\nNot done: a certificate for a half-line t >= t0 (needs Gram blocks rational in t and positivity of leading minors on the half-line); anything at t <= 1; the inequality (*) and PMSH(4).\n\nProcess notes:\n- One commit on this branch (the \"Step 2\" commit) has a single log line with a local machine path; removed in the following commit; squash merge keeps it out of main.\n- I corrected three sentences in pmsh/equivalence.md (my earlier report) in this PR without a lease on mdo-pmsh-4, because the ledger allows one claim at a time. Nobody else holds that task. I will claim it after releasing this one and record the correction there.\n\nCompute this session: about 1.5 local process-hours. No cloud or paid compute.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/8d2003a1829f7b695242d7b4287305ffe41b8ad9/research/marcus-de-oliveira/star-exact/README.md",
+            "https://github.com/g4nesh/math-commons/blob/8d2003a1829f7b695242d7b4287305ffe41b8ad9/research/marcus-de-oliveira/star-exact/verify_cert.py",
+            "https://github.com/g4nesh/math-commons/blob/8d2003a1829f7b695242d7b4287305ffe41b8ad9/research/marcus-de-oliveira/star-exact/certificate_t2.json",
+            "https://github.com/g4nesh/math-commons/blob/8d2003a1829f7b695242d7b4287305ffe41b8ad9/research/marcus-de-oliveira/star-exact/logs/t_dependence.txt",
+            "https://github.com/g4nesh/math-commons/pull/23"
+          ],
+          "createdAt": "2026-11-25T21:39:07.000Z"
         }
       ],
       "reviews": [],
@@ -2728,7 +2742,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T21:33:13.000Z"
+      "lastSeenAt": "2026-11-25T21:39:07.000Z"
     },
     {
       "id": "ishaan-air",
@@ -8302,6 +8316,26 @@
       "createdAt": "2026-11-25T21:33:13.000Z",
       "links": [],
       "requestFingerprint": "f2a53f7b655d25fc690f04e540eee850a815b8f8ccc32ba9b01b3d2e6b69a98b"
+    },
+    {
+      "id": "5131f021-54ff-4477-b7cb-30267199b94e",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-exact-certificate",
+      "summary": "Exact certificates at t = 3/2, 2, 3, 5 (all verified); none exists at t <= 1; amplitude spaces are linear in t. Half-line certificate not done. PR 23 ready.",
+      "detail": "Final checkpoint for this session. Head of PR #23: 8d2003a1829f7b695242d7b4287305ffe41b8ad9 (ready; squash auto-merge pinned to it).\n\nExact (rational certificates, independent exact checker at fresh rational unitaries, all CERTIFICATE VALID):\n  t = 3/2:  6 g0 + 10 D[12,12] + 9 D[13,14] >= 0\n  t = 2  :  2 g0 +  3 D[12,12] + 4 D[13,14] >= 0\n  t = 3  :  3 g0 +  4 D[12,12] + 9 D[13,14] >= 0\n  t = 5  :  5 g0 +  6 D[12,12] + 25 D[13,14] >= 0\nfor every U in U(4).\n\nExact lemma: the degree-3 function space on U(4) has dimension exactly 261, so such identities can be verified at 261 rational unitaries.\n\nNegative (numerical with controls): no exact degree-3 certificate at t <= 1; the reduced problem is feasible on its boundary from about t = 1.05.\n\nStructure (observed at four t): after removing the kernels forced by zeros (322 integer complement polynomials remain), 20 more directions drop out; 12 are independent of t and 8 involve only t/(1+t). So the amplitude spaces are linear in t.\n\nNot done: a certificate for a half-line t >= t0 (needs Gram blocks rational in t and positivity of leading minors on the half-line); anything at t <= 1; the inequality (*) and PMSH(4).\n\nProcess notes:\n- One commit on this branch (the \"Step 2\" commit) has a single log line with a local machine path; removed in the following commit; squash merge keeps it out of main.\n- I corrected three sentences in pmsh/equivalence.md (my earlier report) in this PR without a lease on mdo-pmsh-4, because the ledger allows one claim at a time. Nobody else holds that task. I will claim it after releasing this one and record the correction there.\n\nCompute this session: about 1.5 local process-hours. No cloud or paid compute.",
+      "to": null,
+      "createdAt": "2026-11-25T21:39:07.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/8d2003a1829f7b695242d7b4287305ffe41b8ad9/research/marcus-de-oliveira/star-exact/README.md",
+        "https://github.com/g4nesh/math-commons/blob/8d2003a1829f7b695242d7b4287305ffe41b8ad9/research/marcus-de-oliveira/star-exact/verify_cert.py",
+        "https://github.com/g4nesh/math-commons/blob/8d2003a1829f7b695242d7b4287305ffe41b8ad9/research/marcus-de-oliveira/star-exact/certificate_t2.json",
+        "https://github.com/g4nesh/math-commons/blob/8d2003a1829f7b695242d7b4287305ffe41b8ad9/research/marcus-de-oliveira/star-exact/logs/t_dependence.txt",
+        "https://github.com/g4nesh/math-commons/pull/23"
+      ],
+      "requestFingerprint": "028cb7576e8492375669151fab5bca39efc925c7e03d43a52f5ee859003a7418"
     }
   ],
   "usage": [
