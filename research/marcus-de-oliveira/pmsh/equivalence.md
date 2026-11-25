@@ -111,12 +111,12 @@ Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0; cvxpy 1.7.5 with Clarabel
 | SOS, degree 2 in the entries of U (59-dim function space) | `sos_torus.py 2 600` | certifies only g0 ≥ −0.1547; does not certify the family |
 | SOS, degree 3 (261-dim) | `sos_torus.py 3 3000`, `sos_scan3.py` | certifies **g0 ≥ −0.067442**, the true minimum. Certifies the t-form for every tested t ≥ 1 (bound ≥ −10⁻⁶·t), but not for t < 1 (e.g. bound/t = −1.9·10⁻³ at t = 0.5) |
 | One degree-3 certificate for all t ≥ 1 | `sos_param.py 3 3000` | feasible: slack −8.6·10⁻⁸ and −2.3·10⁻⁸ for the two members |
-| SOS, degree 4 (954-dim) | `sos2.py 4 5000 …` | certifies t = 0.5, 0.3, 0.2 and 0.15 (bounds/t between −3.4·10⁻⁸ and −2.7·10⁻⁹); does **not** certify t = 0.05 (bound/t = −3.2·10⁻⁴). t = 0.1 was still running at this commit |
-| Parameter-free discriminant form: 4·D[12,12]·D[13,14] − (g0 + D[12,12])² = σ₀ − (g0 + D[12,12])·σ₁ with σ₀ of degree 4 and σ₁ of degree 2 | `sos_disc.py 2 5000` | **running at this commit; no result yet** |
+| SOS, degree 4 (954-dim) | `sos2.py 4 5000 …` | certifies t = 0.5, 0.3, 0.2, 0.15 and 0.1 (bounds/t between −3.4·10⁻⁸ and +6.7·10⁻⁹); does **not** certify t = 0.05 (bound/t = −3.2·10⁻⁴) |
+| Parameter-free discriminant form: 4·D[12,12]·D[13,14] − (g0 + D[12,12])² = σ₀ − (g0 + D[12,12])·σ₁ with σ₀ of degree 4 and σ₁ of degree 2 | `sos_disc.py 2 5000` | **not certified at these degrees**: best slack γ = −5.9·10⁻⁵ for b = D[13,14] (identity residual 2·10⁻¹¹). The second member, b = D[13,23], was still running at this commit |
 
 These certificates are numerical (interior-point solver, tolerance about 10⁻⁸). They are **not** proofs.
 
-**Reading.** In the regime D[12,12] ≥ D[13,14] (optimal t ≥ 1), (★) has a numerical degree-3 certificate. As t → 0 the degree needed grows, so the square-root form needs a different kind of certificate there.
+**Reading.** In the regime D[12,12] ≥ D[13,14] (optimal t ≥ 1), (★) has a numerical degree-3 certificate. Degree 4 extends this to t ≥ 0.1, i.e. D[12,12] ≥ D[13,14]/100. As t → 0 the degree needed grows, so the square-root form needs a different kind of certificate there. The first parameter-free attempt (discriminant form with multiplier degree 2) fails by a margin of about 6·10⁻⁵; a higher multiplier degree was not tried.
 
 ## Adversarial checks and negative results
 
@@ -133,7 +133,7 @@ These certificates are numerical (interior-point solver, tolerance about 10⁻�
 
 **What would finish it.**
 1. An exact certificate for (★) in the regime D[12,12] ≥ D[13,14]: round the degree-3 parametric certificate to exact arithmetic. The identity must be verified on U(4) exactly; the numerical ranks 59, 261, 954 of the sampled function spaces for degrees 2, 3, 4 indicate the number of independent conditions.
-2. A proof in the regime D[12,12] < D[13,14]. Bounded-degree certificates of the t-form do not work uniformly as t → 0. Options: a certificate for the discriminant form 4·D[12,12]·D[13,14] ≥ (L − D[12,12] − D[13,14])² on the set where the right side's base is positive; or a direct argument.
+2. A proof in the regime D[12,12] < D[13,14]/100 (numerically, degree 4 covers the rest). Bounded-degree certificates of the t-form do not work uniformly as t → 0, and the discriminant form with (σ₀, σ₁) of degrees (4, 2) is not exact. Options: a certificate for the discriminant form 4·D[12,12]·D[13,14] ≥ (L − D[12,12] − D[13,14])² on the set where the right side's base is positive; or a direct argument.
 3. An independent recomputation of Step 4 in exact integer arithmetic.
 
 ## Independent review
