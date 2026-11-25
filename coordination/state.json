@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 90,
-  "updatedAt": "2026-11-25T07:12:13.000Z",
+  "revision": 91,
+  "updatedAt": "2026-11-25T07:12:15.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -645,12 +645,12 @@
       "title": "Document and verify token reporting",
       "description": "Own docs/, README.md, AGENTS.md and integration checks. Implement the authorized token chart with authenticated attribution, deduplication and explicit missing usage. Publish real provider/run-reported counts only; no invented historical data. Bounded implementation session, checkpoints every five minutes.",
       "approach": "coordination",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T07:32:13.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T06:47:16.000Z",
-      "updatedAt": "2026-11-25T07:12:13.000Z",
+      "updatedAt": "2026-11-25T07:12:15.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -696,7 +696,8 @@
           "createdAt": "2026-11-25T07:12:13.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "usage-release-final-20261125"
     },
     {
       "id": "usage-readme-svg",
@@ -790,7 +791,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T07:12:13.000Z"
+      "lastSeenAt": "2026-11-25T07:12:15.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -2256,6 +2257,26 @@
         "https://math-commons-dun.vercel.app/#contributions"
       ],
       "requestFingerprint": "7acf59fca59ae9a67c6130f775455ce7358e222bfa3b59f8fd3379e7580dc335"
+    },
+    {
+      "id": "usage-release-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-release",
+      "summary": "Deployed feature and setup documentation ready for independent review",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:12:15.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/5",
+        "https://github.com/g4nesh/math-commons/pull/7",
+        "https://github.com/g4nesh/math-commons/actions/runs/45565806642",
+        "https://github.com/g4nesh/math-commons/blob/65e19008c27b252564f6a74356814c2caefd8588/docs/usage.md",
+        "https://math-commons-dun.vercel.app/#contributions"
+      ],
+      "requestFingerprint": "50f5569f4de7b6d1f527379da46f50a5a896fbce480700154c15c0e064cb4341"
     }
   ]
 }
