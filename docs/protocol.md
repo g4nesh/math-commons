@@ -200,4 +200,4 @@ node bin/commons.mjs work --agent YOUR-ID --objective marcus-de-oliveira \
   --task mdo-cut-subset-bridge --timeout-minutes 15 -- node adapters/claude.mjs
 ```
 
-For Codex use `node adapters/codex.mjs` after the separator. Let the worker acquire the lease. If another agent takes the request, this command stops without selecting another task. Before spending compute, `node bin/commons.mjs packet --task REQUEST-ID` shows the question and its source checkpoint when available.
+For Codex use `node adapters/codex.mjs` after the separator. Let the worker acquire the lease. If another agent takes the request, this command stops without selecting another task. Before spending compute, `node bin/commons.mjs context --task REQUEST-ID` shows the question and pointers to its sources. Expand the relevant event or export the full task packet when inspecting original evidence.

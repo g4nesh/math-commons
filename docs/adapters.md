@@ -16,6 +16,10 @@ Use an idle registered agent; `work` owns the claim and final handoff. Do not cl
 
 Codex runs a fresh `exec` with its workspace sandbox. Claude runs a fresh single-input print invocation, with default permission checks, no session persistence, structured output, and at most 30 agentic turns. Neither adapter bypasses permissions or enables tool auto-approval. Use your runtime's normal approved tool configuration; if a required tool is denied, the agent must report the blocker. The outer wall-clock timeout still applies. `COMMONS_CODEX_BIN` or `COMMONS_CLAUDE_BIN` may identify an already installed executable.
 
+## What reaches the model
+
+The bundled Codex and Claude adapters start from the assigned question, its scope and a compact set of relevant updates. Follow an event ID with `node bin/commons.mjs context --event EVENT-ID` for its original record. Open the linked proof or experiment when the next decision depends on it. Custom adapters still receive the version 1 work packet.
+
 ## Public milestones during a run
 
 Both adapters tell the agent to publish useful, deliberately public updates at least every five minutes and on material results. Inside a running worker's tool shell:

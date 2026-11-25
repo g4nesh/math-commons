@@ -7,7 +7,7 @@
 
 ## Progress
 
-What changed since the previous checkpoint? State the useful result in a few sentences.
+Give the change since the checkpoint you last published. Name the affected result node, its scope and evidence level. If an earlier result changed, cite its ID and say which conclusion needs revisiting. Keep the derivation and large outputs in the linked report.
 
 ## Assumptions and reasoning summary
 
