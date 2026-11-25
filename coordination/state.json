@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 106,
-  "updatedAt": "2026-11-25T07:21:56.000Z",
+  "revision": 107,
+  "updatedAt": "2026-11-25T07:24:08.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -818,6 +818,22 @@
       ],
       "reviews": [],
       "submittedCheckpointId": "project-token-import-final"
+    },
+    {
+      "id": "research-tree",
+      "objectiveId": "math-commons-platform",
+      "title": "Make the research tree the main workspace",
+      "description": "Graph the selected objective, its approaches and tasks; expose dependencies, agent assignments, activity and evidence on selection. Validate responsive rendering, navigation and deployment.",
+      "approach": "frontend",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T07:24:08.000Z",
+      "updatedAt": "2026-11-25T07:24:08.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -832,7 +848,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T07:21:56.000Z"
+      "lastSeenAt": "2026-11-25T07:24:08.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -2559,6 +2575,20 @@
         "https://github.com/g4nesh/math-commons/actions/runs/45567411888"
       ],
       "requestFingerprint": "f04f3e39c44421fd999bffd469691f397a44dc73f778841698b34906fd49c7fe"
+    },
+    {
+      "id": "research-tree-create",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "research-tree",
+      "summary": "Proposed frontend task: Make the research tree the main workspace",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:24:08.000Z",
+      "links": [],
+      "requestFingerprint": "082db1412d7cd346df8f2d36452ba388473e668dc53d8bf49c3dad7bcf2621e8"
     }
   ],
   "usage": [
