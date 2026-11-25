@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 168,
-  "updatedAt": "2026-11-25T18:45:31.000Z",
+  "revision": 169,
+  "updatedAt": "2026-11-25T18:45:34.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1267,11 +1267,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T19:05:00.000Z",
+      "leaseUntil": "2026-11-25T19:05:34.000Z",
       "createdAt": "2026-11-25T18:44:51.000Z",
-      "updatedAt": "2026-11-25T18:45:00.000Z",
+      "updatedAt": "2026-11-25T18:45:34.000Z",
       "createdBy": "ganesh-reductions",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "request-directory-ui-start-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Building explicit request cards and a terminal command composer.",
+          "details": "Own public/requests.js and public/requests.css only. renderRequests({state,objective,el,copy,repoUrl}) returns a DOM section. Reads only tasks with task.request; route #requests?objective=ID; module-memory drafts and objective selection survive minute refresh. Commands follow agreed request --agent --id --objective --title --description --paths [--approach] [--from-task] [--to], with POSIX shell quoting. Claim controls will disclose status, verified-dependency and active-path blockers, invitations do not reserve work. Ten-minute cap; root integrates routing and browser QA.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:45:34.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "public/requests.css",
@@ -1335,7 +1344,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:45:00.000Z"
+      "lastSeenAt": "2026-11-25T18:45:34.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -3996,6 +4005,20 @@
         "https://github.com/g4nesh/math-commons/pull/15"
       ],
       "requestFingerprint": "7c273414740a8a921d03282ae3a4704a3c35c01aebe596840cee6be4c8e2e0e3"
+    },
+    {
+      "id": "request-directory-ui-start-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "request-directory-ui",
+      "summary": "Building explicit request cards and a terminal command composer.",
+      "detail": "Own public/requests.js and public/requests.css only. renderRequests({state,objective,el,copy,repoUrl}) returns a DOM section. Reads only tasks with task.request; route #requests?objective=ID; module-memory drafts and objective selection survive minute refresh. Commands follow agreed request --agent --id --objective --title --description --paths [--approach] [--from-task] [--to], with POSIX shell quoting. Claim controls will disclose status, verified-dependency and active-path blockers, invitations do not reserve work. Ten-minute cap; root integrates routing and browser QA.",
+      "to": null,
+      "createdAt": "2026-11-25T18:45:34.000Z",
+      "links": [],
+      "requestFingerprint": "ebedda801b680af629533d1bdd4fb41007c56f038f9d829e9314208f870f8719"
     }
   ],
   "usage": [
