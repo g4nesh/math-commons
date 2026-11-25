@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 340,
-  "updatedAt": "2026-11-25T21:24:12.000Z",
+  "revision": 341,
+  "updatedAt": "2026-11-25T21:24:15.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1309,12 +1309,12 @@
       "title": "Formalize the unique forest-cut crossing lemma in Lean",
       "description": "Own only formal/ForestCut.lean. Prove general finite-history telescoping and unique crossing determination from endpoints when a cut has one opportunity to change, using Lean 4.24.0 Std. Include axiom reports; no added axioms, sorry or native_decide. State the unformalized graph, subset-history and exterior-power bridges explicitly. Budget 10 minutes and bounded local kernel checks; no paid runs. Root handles CI, docs, source publication and disjoint usage accounting.",
       "approach": "formal-verification",
-      "status": "review",
+      "status": "verified",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
       "leaseUntil": null,
       "createdAt": "2026-11-25T18:36:55.000Z",
-      "updatedAt": "2026-11-25T18:43:58.000Z",
+      "updatedAt": "2026-11-25T21:24:15.000Z",
       "createdBy": "ganesh-reductions",
       "checkpoints": [
         {
@@ -1345,7 +1345,20 @@
           "createdAt": "2026-11-25T18:43:47.000Z"
         }
       ],
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "a4a635ee-3261-4743-87e1-64b5d02561cd",
+          "agentId": "ishaan-air",
+          "verdict": "pass",
+          "summary": "Rebuilt ForestCut.lean at 9123d54 with Lean 4.24.0: 8 theorems, only propext/Quot.sound; statements pinned to independent restatements, hypotheses instantiated non-vacuously. Pass. This file formalizes only the integer cut-count step, not the forest-cut or subset-path bridges.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/mdo-forest-cut-lean.md",
+            "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_forest_cut_lean_ishaan.py"
+          ],
+          "checkpointId": "mdo-forest-cut-lean-published-20261125",
+          "createdAt": "2026-11-25T21:24:15.000Z"
+        }
+      ],
       "scopePaths": [
         "formal/ForestCut.lean"
       ],
@@ -2614,7 +2627,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T19:25:34.000Z",
-      "lastSeenAt": "2026-11-25T21:24:12.000Z"
+      "lastSeenAt": "2026-11-25T21:24:15.000Z"
     },
     {
       "id": "ganesh-context-navigation",
@@ -7942,6 +7955,23 @@
         "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_rational_stress_ishaan.py"
       ],
       "requestFingerprint": "0b90ee31b0ee8e0b5b34260be07a5b25594a69cd80fb13cd2b26812544310cb2"
+    },
+    {
+      "id": "a4a635ee-3261-4743-87e1-64b5d02561cd",
+      "kind": "review",
+      "actor": "ishaan-air",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-cut-lean",
+      "summary": "Independent review passed: Rebuilt ForestCut.lean at 9123d54 with Lean 4.24.0: 8 theorems, only propext/Quot.sound; statements pinned to independent restatements, hypotheses instantiated non-vacuously. Pass. This file formalizes only the integer cut-count step, not the forest-cut or subset-path bridges.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:24:15.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/mdo-forest-cut-lean.md",
+        "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_forest_cut_lean_ishaan.py"
+      ],
+      "requestFingerprint": "cf8edb09a8105fd42b66970b9a238b1191737b146b42940ae523ac5a832dcfc5"
     }
   ],
   "usage": [
