@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 162,
-  "updatedAt": "2026-11-25T18:44:35.000Z",
+  "revision": 163,
+  "updatedAt": "2026-11-25T18:44:45.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1118,9 +1118,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T19:00:06.000Z",
+      "leaseUntil": "2026-11-25T19:04:45.000Z",
       "createdAt": "2026-11-25T18:26:44.000Z",
-      "updatedAt": "2026-11-25T18:40:06.000Z",
+      "updatedAt": "2026-11-25T18:44:45.000Z",
       "createdBy": "ganesh-search",
       "checkpoints": [
         {
@@ -1162,6 +1162,16 @@
           "details": "Main900 cases independently rechecked in31.62 CPU seconds. Separate n7 holdout completed24/24 in22.15CPU seconds and independently replayed all24 in33.04CPU seconds, within120-second stage caps. All924 pairs are exactly noncommuting with nonreal unitary entries; all determinants satisfy exact convex-weight certificates. Totals762 polygon interiors,12 polygon boundaries,150 segment hulls;0 outside. Main contains450 general-complex stress cases+450 structured controls; holdout adds24 general-complex cases.100 n4 negative exotic-functional cases include60 general-complex stresses. Six tests pass;64 artifact hashes match; screen/holdout source hashes match recorded runs. README separates finite evidence, controls, public n<=6 parser and explicit n7 harness. Files frozen awaiting parent immutable PR15 evidence link before submission; no further compute running.",
           "evidence": [],
           "createdAt": "2026-11-25T18:40:06.000Z"
+        },
+        {
+          "id": "mdo-rational-stress-distinctness-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Read-only audit found no arithmetic blocker; exact matrix-pair distinctness now checked separately.",
+          "details": "Peer source review confirmed n7 extension, independent subset-DP determinant, certificate checks and support margins have no identified blocker. Reviewer noted witness integrity hashes include case names, so they alone do not prove distinct mathematical inputs. Added check_distinct.py and distinct-inputs.json: hashes only canonical A diagonal and exact B entries, excluding metadata/U representation; all924 ordered coordinate matrix pairs are distinct with0 duplicates,14.57CPU seconds, no new samples. README explicitly does not claim distinct symmetry classes. Main900 and n7 completed reports remain unchanged.66 artifact hashes prepared; manifest SHA2567a41e92eb83148f61691166001c36e21f0af03dea637cb99019d2049ce52acf9. Frozen awaiting parent artifact commit on PR15 before final evidence/submission.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/15"
+          ],
+          "createdAt": "2026-11-25T18:44:45.000Z"
         }
       ],
       "reviews": []
@@ -1281,7 +1291,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T18:40:06.000Z"
+      "lastSeenAt": "2026-11-25T18:44:45.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -3859,6 +3869,22 @@
       "createdAt": "2026-11-25T18:44:35.000Z",
       "links": [],
       "requestFingerprint": "2c4cdc0e39db5110937ddf2d579e4a8e721ad6e077a4fe0186d798eb16088623"
+    },
+    {
+      "id": "mdo-rational-stress-distinctness-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-rational-stress",
+      "summary": "Read-only audit found no arithmetic blocker; exact matrix-pair distinctness now checked separately.",
+      "detail": "Peer source review confirmed n7 extension, independent subset-DP determinant, certificate checks and support margins have no identified blocker. Reviewer noted witness integrity hashes include case names, so they alone do not prove distinct mathematical inputs. Added check_distinct.py and distinct-inputs.json: hashes only canonical A diagonal and exact B entries, excluding metadata/U representation; all924 ordered coordinate matrix pairs are distinct with0 duplicates,14.57CPU seconds, no new samples. README explicitly does not claim distinct symmetry classes. Main900 and n7 completed reports remain unchanged.66 artifact hashes prepared; manifest SHA2567a41e92eb83148f61691166001c36e21f0af03dea637cb99019d2049ce52acf9. Frozen awaiting parent artifact commit on PR15 before final evidence/submission.",
+      "to": null,
+      "createdAt": "2026-11-25T18:44:45.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/15"
+      ],
+      "requestFingerprint": "3cc064c74c79eec877a04fc483db3827650c4effbdf16b2159f215f146f37fec"
     }
   ],
   "usage": [
