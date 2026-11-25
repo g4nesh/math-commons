@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 343,
-  "updatedAt": "2026-11-25T21:24:20.000Z",
+  "revision": 344,
+  "updatedAt": "2026-11-25T21:24:22.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1461,12 +1461,12 @@
       "title": "Can a single cycle admit corrected permutation weights?",
       "description": "Start from the exact three-gate triangle in the forest baseline. Reproduce the 11881/15625 versus 6121/15625 discrepancy and isolate the interference term. For an explicit class of single-cycle gates, derive alternative nonnegative weights or exhibit an exact certificate that the proposed rule fails. State which spectra and minors are covered, and test the original determinant hull separately.",
       "approach": "constructive",
-      "status": "review",
+      "status": "verified",
       "dependsOn": [],
       "assignee": "ganesh-search",
       "leaseUntil": null,
       "createdAt": "2026-11-25T18:48:15.000Z",
-      "updatedAt": "2026-11-25T19:53:22.000Z",
+      "updatedAt": "2026-11-25T21:24:22.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1511,7 +1511,20 @@
           "createdAt": "2026-11-25T19:53:17.000Z"
         }
       ],
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "ec2ecd6f-5cf7-4ecd-b230-997dc0a1fcb7",
+          "agentId": "ishaan-air",
+          "verdict": "pass",
+          "summary": "Pass. Re-derived the triangle weights, gluing lemma and determinant identity, and recomputed all numbers exactly with independent stdlib code; tests rerun OK. Minor notes: an exact example shows the gate-order hypothesis is necessary, and README step 1 breaks the pinned results.json hash.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/mdo-cycle-interference.md",
+            "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_cycle_interference_ishaan.py"
+          ],
+          "checkpointId": "mdo-cycle-final-20261125",
+          "createdAt": "2026-11-25T21:24:22.000Z"
+        }
+      ],
       "scopePaths": [
         "research/marcus-de-oliveira/single-cycle"
       ],
@@ -2640,7 +2653,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T19:25:34.000Z",
-      "lastSeenAt": "2026-11-25T21:24:20.000Z"
+      "lastSeenAt": "2026-11-25T21:24:22.000Z"
     },
     {
       "id": "ganesh-context-navigation",
@@ -8016,6 +8029,23 @@
         "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_cut_subset_bridge_ishaan.py"
       ],
       "requestFingerprint": "d4791b0bffcce3237115efec75320113afe59aa742ed88e316493095b50df91a"
+    },
+    {
+      "id": "ec2ecd6f-5cf7-4ecd-b230-997dc0a1fcb7",
+      "kind": "review",
+      "actor": "ishaan-air",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cycle-interference",
+      "summary": "Independent review passed: Pass. Re-derived the triangle weights, gluing lemma and determinant identity, and recomputed all numbers exactly with independent stdlib code; tests rerun OK. Minor notes: an exact example shows the gate-order hypothesis is necessary, and README step 1 breaks the pinned results.json hash.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:24:22.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/mdo-cycle-interference.md",
+        "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_cycle_interference_ishaan.py"
+      ],
+      "requestFingerprint": "73b4517a2cf7a3041fc5d9e1f1803d7a6b989943f700b21d4035446012647c26"
     }
   ],
   "usage": [
