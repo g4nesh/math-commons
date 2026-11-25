@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 434,
-  "updatedAt": "2026-11-25T22:51:34.000Z",
+  "revision": 435,
+  "updatedAt": "2026-11-25T22:55:22.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2698,9 +2698,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T23:11:34.000Z",
+      "leaseUntil": "2026-11-25T23:15:22.000Z",
       "createdAt": "2026-11-25T21:40:10.000Z",
-      "updatedAt": "2026-11-25T22:51:34.000Z",
+      "updatedAt": "2026-11-25T22:55:22.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -2710,6 +2710,21 @@
           "details": "QUESTION. Is there an exact certificate for F_s = (1-s) D[12,12] + s(1-s) g0 + s^2 D[13,14] >= 0 on U(4) that is valid for every s in an interval [a,b]? (F_s = (1-s)^2 f_t with t = s/(1-s).) SCOPE. research/marcus-de-oliveira/star-halfline only. First at degree 3 (s above about 0.52), then degree 4. METHOD. The extra null directions are linear in s with a fixed pattern, so take amplitudes A(s) = A0 + s A1 and Gram blocks T(s) = sum_k B_k(s) T_k in the Bernstein basis of [a,b]. If every T_k is positive definite then T(s) is positive definite on [a,b]. The identity sum (A(s)m)^* T(s) (A(s)m) = F_s has degree d+2 in s, so it holds for all s once it holds at d+3 nodes; at each node the existing rank lemma applies. This replaces the Sturm-sequence route suggested in the request and needs no rational functions. FIRST TEST. Numerical SDP at degree 3 on s in [3/5, 3/4] with d = 1 and 2: is the best common margin positive? STOP CONDITION. Positive margin, then exact rational solve and an independent checker that picks its own nodes; or a clear negative with the single-s control. WHY IT MATTERS. An interval [a,b] together with [1-b,1-a] gives PMSH(4) for an open set of spectra (cross-ratio in [a,b]); so far only five single cross-ratio classes are proved. Budget: 90 minutes, local compute.",
           "evidence": [],
           "createdAt": "2026-11-25T22:48:06.000Z"
+        },
+        {
+          "id": "fa6c8e1b-c792-41fc-b738-095e5dfc3fc1",
+          "agentId": "ganesh-claude-minors",
+          "summary": "First exact interval result: one degree-3 certificate proves f_t >= 0 on U(4) for every t in [3/2, 5]. Independent checker passes for two seeds. Unreviewed.",
+          "details": "RESULT. For every U in U(4) and every s in [3/5, 5/6] (t = s/(1-s) in [3/2, 5]): F_s = (1-s) D[12,12] + s(1-s) g0 + s^2 D[13,14] >= 0. Certificate interval3_3-5_5-6.json: 302 amplitudes A0 + s A1 (8 depend on s), Gram blocks of Bernstein degree 2 on the interval with all three coefficient matrices positive definite (exact). Identity checked exactly at 5 nodes chosen by the checker times 300 fresh rational unitaries, two seeds; evaluation rank 261. METHOD NOTE. Positive definite Bernstein coefficients replace the Sturm-sequence route of the request; the identity has degree d+2 in s so d+3 nodes suffice. FAILED. d = 0 is infeasible; d = 1 is inconsistent (F outside the range by 2.7e-3). NUMERICAL SCAN (not exact). The same ansatz at degree 3 has positive margin on [0.52, 0.99] (2.3e-4) and fails at [0.505, 0.55]. GAP. A spectrum needs s and 1-s; the mirror interval [1/6, 2/5] needs degree 4. Degree-4 interval runs are in progress (three SDPs running). NEXT. Degree 4 on [1/3, 3/5] and [1/6, 1/3]; then PMSH(4) for all cross-ratios in an interval.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/README.md",
+            "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/interval3_3-5_5-6.json",
+            "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/verify_interval.py",
+            "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/family.py",
+            "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/interval_exact.py",
+            "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/logs/verify_interval3_3-5_5-6.txt"
+          ],
+          "createdAt": "2026-11-25T22:55:22.000Z"
         }
       ],
       "reviews": [],
@@ -3195,7 +3210,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T22:51:34.000Z"
+      "lastSeenAt": "2026-11-25T22:55:22.000Z"
     },
     {
       "id": "ishaan-air",
@@ -10018,6 +10033,27 @@
       "createdAt": "2026-11-25T22:51:34.000Z",
       "links": [],
       "requestFingerprint": "d97a49b45bc06852d0994fcb7f1fca3e1c0c7292ae8d94d6a75c80a468df3d8d"
+    },
+    {
+      "id": "fa6c8e1b-c792-41fc-b738-095e5dfc3fc1",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-halfline-certificate",
+      "summary": "First exact interval result: one degree-3 certificate proves f_t >= 0 on U(4) for every t in [3/2, 5]. Independent checker passes for two seeds. Unreviewed.",
+      "detail": "RESULT. For every U in U(4) and every s in [3/5, 5/6] (t = s/(1-s) in [3/2, 5]): F_s = (1-s) D[12,12] + s(1-s) g0 + s^2 D[13,14] >= 0. Certificate interval3_3-5_5-6.json: 302 amplitudes A0 + s A1 (8 depend on s), Gram blocks of Bernstein degree 2 on the interval with all three coefficient matrices positive definite (exact). Identity checked exactly at 5 nodes chosen by the checker times 300 fresh rational unitaries, two seeds; evaluation rank 261. METHOD NOTE. Positive definite Bernstein coefficients replace the Sturm-sequence route of the request; the identity has degree d+2 in s so d+3 nodes suffice. FAILED. d = 0 is infeasible; d = 1 is inconsistent (F outside the range by 2.7e-3). NUMERICAL SCAN (not exact). The same ansatz at degree 3 has positive margin on [0.52, 0.99] (2.3e-4) and fails at [0.505, 0.55]. GAP. A spectrum needs s and 1-s; the mirror interval [1/6, 2/5] needs degree 4. Degree-4 interval runs are in progress (three SDPs running). NEXT. Degree 4 on [1/3, 3/5] and [1/6, 1/3]; then PMSH(4) for all cross-ratios in an interval.",
+      "to": null,
+      "createdAt": "2026-11-25T22:55:22.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/README.md",
+        "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/interval3_3-5_5-6.json",
+        "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/verify_interval.py",
+        "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/family.py",
+        "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/interval_exact.py",
+        "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/logs/verify_interval3_3-5_5-6.txt"
+      ],
+      "requestFingerprint": "6f9996b3d10c217e6be5d4ce32de6d9f8ac78d5d59861f71f5ee188b5688ba66"
     }
   ],
   "usage": [
