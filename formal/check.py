@@ -1,8 +1,10 @@
 """Recheck all listed public theorems and their transitive axiom reports."""
 from pathlib import Path
+import os
 import re
 import subprocess
 import sys
+from tempfile import TemporaryDirectory
 
 root = Path(__file__).resolve().parent
 theorems = {
@@ -18,8 +20,11 @@ version = (root / 'lean-toolchain').read_text().strip().split(':v')[1]
 output = subprocess.check_output([lean, '--version'], cwd=root, text=True)
 if not re.search(r'\bversion ' + re.escape(version) + r'[, )]', output):
     sys.exit(f'Expected Lean {version}, found {output.strip()}')
-for source, expected in theorems.items():
-    run = subprocess.run([lean, '-DwarningAsError=true', source], cwd=root, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+def check_module(source, expected, build_dir):
+    output_file = Path(build_dir, Path(source).stem + '.olean')
+    run = subprocess.run([lean, '-DwarningAsError=true', '-o', str(output_file), source],
+                         cwd=root, env={**os.environ, 'LEAN_PATH': build_dir},
+                         text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     print(run.stdout, end='')
     if run.returncode:
         sys.exit(run.returncode)
@@ -31,3 +36,9 @@ for source, expected in theorems.items():
         seen.add(name)
     if expected - seen:
         sys.exit(f'Missing axiom reports: {sorted(expected - seen)}')
+
+
+# Later modules import the dependencies built by this same verification run.
+with TemporaryDirectory(prefix='math-commons-lean-') as build_dir:
+    for source, expected in theorems.items():
+        check_module(source, expected, build_dir)
