@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 167,
-  "updatedAt": "2026-11-25T18:45:25.000Z",
+  "revision": 168,
+  "updatedAt": "2026-11-25T18:45:31.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1115,12 +1115,12 @@
       "title": "Screen noncommuting rational normal pairs with exact hull certificates",
       "description": "Own only research/marcus-de-oliveira/rational-stress/. Build a stdlib reproducible exact Gaussian-rational screen in dimensions4,5,6 using complex Givens products, near-vertex mixing and cap-centered rational O-star mixing. Target at most900 cases:360 n4,360 n5,180 n6; single-process600 CPU-second and720 wall-second screen cap, total session30minutes. Check exact unitarity, normality, noncommutation, all permutation points and exact convex weights or separation; preserve seeds, report, selected witnesses and replay. Finite instance evidence only; no universal theorem. Independent review requested after immutable artifacts.",
       "approach": "computational",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T19:05:25.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T18:26:44.000Z",
-      "updatedAt": "2026-11-25T18:45:25.000Z",
+      "updatedAt": "2026-11-25T18:45:31.000Z",
       "createdBy": "ganesh-search",
       "checkpoints": [
         {
@@ -1186,7 +1186,8 @@
           "createdAt": "2026-11-25T18:45:25.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "mdo-rational-stress-final-20261125"
     },
     {
       "id": "mdo-forest-cut-lean",
@@ -1323,7 +1324,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T18:45:25.000Z"
+      "lastSeenAt": "2026-11-25T18:45:31.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -3977,6 +3978,24 @@
         "https://github.com/g4nesh/math-commons/pull/15"
       ],
       "requestFingerprint": "285100585db46983161bef994c87d78e9f5d75f0f806ce2b03882073f3400375"
+    },
+    {
+      "id": "mdo-rational-stress-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-rational-stress",
+      "summary": "Exact finite-instance screen and n7 holdout completed with replayable certificates, bounded compute and independent arithmetic checks; ready for review by another GitHub owner. No general MDO resolution claimed.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:45:31.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/f425dbcdcce6bff43101921be1738bedf4c9d97d/research/marcus-de-oliveira/rational-stress/README.md",
+        "https://github.com/g4nesh/math-commons/blob/f425dbcdcce6bff43101921be1738bedf4c9d97d/research/marcus-de-oliveira/rational-stress/SHA256SUMS",
+        "https://github.com/g4nesh/math-commons/pull/15"
+      ],
+      "requestFingerprint": "7c273414740a8a921d03282ae3a4704a3c35c01aebe596840cee6be4c8e2e0e3"
     }
   ],
   "usage": [
