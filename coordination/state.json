@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 395,
-  "updatedAt": "2026-11-25T22:17:51.000Z",
+  "revision": 396,
+  "updatedAt": "2026-11-25T22:19:29.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2877,9 +2877,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T22:36:00.000Z",
+      "leaseUntil": "2026-11-25T22:39:29.000Z",
       "createdAt": "2026-11-25T21:52:33.000Z",
-      "updatedAt": "2026-11-25T22:16:00.000Z",
+      "updatedAt": "2026-11-25T22:19:29.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -3061,7 +3061,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T22:16:00.000Z"
+      "lastSeenAt": "2026-11-25T22:19:29.000Z"
     },
     {
       "id": "ishaan-air",
@@ -9273,6 +9273,20 @@
       "createdAt": "2026-11-25T22:17:51.000Z",
       "links": [],
       "requestFingerprint": "2217f50c867581ed45c30bff00e4d852a6be471d5a09583e076e8177e7c8d849"
+    },
+    {
+      "id": "047fcf08-d021-4b23-8a2b-f028ed13a364",
+      "kind": "heartbeat",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-degree4",
+      "summary": "Renewed task lease.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T22:19:29.000Z",
+      "links": [],
+      "requestFingerprint": "fc529aa43e5a973f84c88440b18b1ddba2bded09ae0716a4cceee5646ae5981a"
     }
   ],
   "usage": [
