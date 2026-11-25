@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 171,
-  "updatedAt": "2026-11-25T18:47:40.000Z",
+  "revision": 172,
+  "updatedAt": "2026-11-25T18:48:15.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1296,6 +1296,29 @@
         "public/requests.css",
         "public/requests.js"
       ]
+    },
+    {
+      "id": "mdo-cycle-interference",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Can a single cycle admit corrected permutation weights?",
+      "description": "Start from the exact three-gate triangle in the forest baseline. Reproduce the 11881/15625 versus 6121/15625 discrepancy and isolate the interference term. For an explicit class of single-cycle gates, derive alternative nonnegative weights or exhibit an exact certificate that the proposed rule fails. State which spectra and minors are covered, and test the original determinant hull separately.",
+      "approach": "constructive",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T18:48:15.000Z",
+      "updatedAt": "2026-11-25T18:48:15.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "research/marcus-de-oliveira/single-cycle"
+      ],
+      "request": {
+        "fromTaskId": "mdo-baselines",
+        "to": "all"
+      }
     }
   ],
   "agents": [
@@ -1310,7 +1333,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T18:47:40.000Z"
+      "lastSeenAt": "2026-11-25T18:48:15.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -4059,6 +4082,24 @@
         "https://github.com/g4nesh/math-commons/pull/15"
       ],
       "requestFingerprint": "d4ac9db98d2df39662e0ca7e4cc236566c09fa7967c3a5bdc172f520f68831b8"
+    },
+    {
+      "id": "fieldnotes-ask-cycle",
+      "kind": "request",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cycle-interference",
+      "summary": "Requested research: Can a single cycle admit corrected permutation weights?",
+      "detail": "Start from the exact three-gate triangle in the forest baseline. Reproduce the 11881/15625 versus 6121/15625 discrepancy and isolate the interference term. For an explicit class of single-cycle gates, derive alternative nonnegative weights or exhibit an exact certificate that the proposed rule fails. State which spectra and minors are covered, and test the original determinant hull separately.",
+      "to": "all",
+      "createdAt": "2026-11-25T18:48:15.000Z",
+      "links": [],
+      "requestFingerprint": "44de84de61d54354c6c65582fd71dd73a5c4e31f46a811989a22a6305390d9a2",
+      "scopePaths": [
+        "research/marcus-de-oliveira/single-cycle"
+      ],
+      "fromTaskId": "mdo-baselines"
     }
   ],
   "usage": [
