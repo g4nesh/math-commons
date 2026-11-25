@@ -51,17 +51,6 @@ def solve(rows,rhs):
     return tuple(w),rank,basis
 
 
-if __name__=='__main__':
-    for t in (F(0),F(1,100),F(-1,100),F(1),F(-1)):
-        rows,rhs=coefficient_system(s.Q(1,-1)+t)
-        weights,rank,basis=solve(rows,rhs)
-        print(json.dumps({'t':str(t),'rank':rank,'basisRows':basis,'consistent':weights is not None,
-                          'minimumWeight':str(min(weights)) if weights else None,
-                          'agreesAtBase':weights==BASE_WEIGHTS if t==0 else None}))
-    rows,rhs=coefficient_system(s.Q(1,-1),tuple(permutations(range(4))))
-    print('full rank',solve(rows,rhs)[1])
-
-
 def ptrim(p):
     p=list(map(F,p))
     while len(p)>1 and p[-1]==0:p.pop()
@@ -152,3 +141,112 @@ def derive():
         assert left==pmul(den,(rhs0[i],rhs1[i]-rhs0[i]))
     return {'support':[list(p)for p in SUPPORT],'numerators':nums,'denominator':den,
             'basisRows':basis,'basisDeterminant':[str(x)for x in rawden]}
+
+
+def evaluate(p,t):
+    out=F(0)
+    for coefficient in reversed(p):out=out*t+coefficient
+    return out
+
+
+def bernstein(p,left,right):
+    """Exact coefficients in B_i^n(x), t=left+(right-left)*x."""
+    from math import comb
+    n=len(p)-1
+    power=[sum(F(p[k])*comb(k,j)*left**(k-j)*(right-left)**j for k in range(j,n+1))for j in range(n+1)]
+    return tuple(sum(power[j]*F(comb(i,j),comb(n,j))for j in range(i+1))for i in range(n+1))
+
+
+INTERVAL=(F(-3,4),F(2))
+DENOMINATOR=(9765625,15625000,6640625,781250)
+
+
+def weights_at(data,t):
+    if isinstance(t,bool) or not isinstance(t,(int,F)):
+        raise TypeError('Parameter must be an exact integer or Fraction')
+    if not INTERVAL[0]<=t<=INTERVAL[1]:
+        raise ValueError('Outside the certified closed interval [-3/4,2]')
+    return tuple(evaluate(p,t)/evaluate(data['denominator'],t)for p in data['numerators'])
+
+
+def verify(data):
+    s.source_check()
+    if s.e.multiply(s.U,s.e.adjoint(s.U))!=s.e.identity(4) or s.e.multiply(s.e.adjoint(s.U),s.U)!=s.e.identity(4):
+        raise ArithmeticError('Archived matrix is not exactly unitary')
+    if s.cross(s.B_SPECTRUM[0]-s.B_SPECTRUM[1],s.B_SPECTRUM[3]-s.B_SPECTRUM[1])!=-5:
+        raise ArithmeticError('The stated noncollinear second spectrum changed')
+    if data['support']!=[list(p)for p in SUPPORT] or len(data['numerators'])!=12:
+        raise ValueError('Wrong permutation support')
+    polynomials=[data['denominator']]+data['numerators']
+    if any(not isinstance(p,list) or not p or any(type(x)is not int for x in p) for p in polynomials):
+        raise ValueError('Expected exact integer polynomial coefficients')
+    if tuple(data['denominator'])!=DENOMINATOR:
+        raise ValueError('Unexpected certificate denominator')
+    if pmul(pmul((1,1),(5,2)),(5,1))!=tuple(F(x,390625)for x in DENOMINATOR):
+        raise ArithmeticError('Denominator factorization failed')
+    rows0,rhs0=coefficient_system(s.Q(1,-1));rows1,rhs1=coefficient_system(s.Q(2,-1))
+    for i,row in enumerate(rows0):
+        left=(F(0),)
+        for j,x in enumerate(row):left=padd(left,pmul((x,rows1[i][j]-x),data['numerators'][j]))
+        if left!=pmul(data['denominator'],(rhs0[i],rhs1[i]-rhs0[i])):
+            raise ArithmeticError('A cleared coefficient identity failed')
+    controls=[bernstein(p,*INTERVAL)for p in data['numerators']]
+    if any(min(c)<=0 for c in controls):
+        raise ArithmeticError('Bernstein coefficients do not prove strict positivity')
+    if weights_at(data,0)!=BASE_WEIGHTS:
+        raise ArithmeticError('Base point does not recover archived masses')
+    # Check the recorded Cramer minor polynomial using its proven degree bound.
+    if len(set(data['basisRows']))!=12 or any(type(i)is not int or not 0<=i<17 for i in data['basisRows']):
+        raise ValueError('Invalid basis row indices')
+    determinant_polynomial=tuple(F(x)for x in data['basisDeterminant'])
+    if len(determinant_polynomial)>13:raise ValueError('Basis determinant exceeds degree bound12')
+    for t in range(13):
+        rows,_=coefficient_system(s.Q(1,-1)+t)
+        if evaluate(determinant_polynomial,t)!=real_det([rows[i]for i in data['basisRows']]):
+            raise ArithmeticError('Recorded basis minor polynomial failed exact interpolation check')
+    # Each direct evaluation checks a different route than coefficient matching.
+    from itertools import product
+    endpoint_checks=[]
+    for t in (INTERVAL[0],F(0),INTERVAL[1]):
+        w=weights_at(data,t);z=s.Q(1,-1)+t
+        for corner in product((0,1),repeat=3):
+            a=[s.Q(bit)for bit in corner]+[z]
+            actual=s.leibniz(s.matrix_sum(a))
+            if actual!=s.e.determinant(s.matrix_sum(a)):raise ArithmeticError('Determinants disagree')
+            predicted=sum((mass*s.vertex(a,p)for mass,p in zip(w,SUPPORT)),s.Z)
+            if actual!=predicted:raise ArithmeticError('Corner reconstruction failed')
+        endpoint_checks.append({'t':str(t),'a3':z.encode(),'weights':list(map(str,w)),'minimumWeight':str(min(w))})
+    singular=[]
+    for t in (F(-1),F(-5,2),F(-5)):
+        rows,rhs=coefficient_system(s.Q(1,-1)+t)
+        solution,rank,_=solve(rows,rhs)
+        _,augmented_rank,_=solve([row+[b]for row,b in zip(rows,rhs)],[0]*len(rows))
+        singular.append({'t':str(t),'a3':(s.Q(1,-1)+t).encode(),'coefficientRank':rank,
+                         'augmentedRank':augmented_rank,'specifiedSupportConsistent':solution is not None})
+    return {'parameter':'a3=1-i+t, t real; a0,a1,a2 arbitrary complex',
+            'closedInterval':list(map(str,INTERVAL)),'realCoefficientIdentities':17,
+            'positiveMasses':12,'bernsteinCoefficients':[list(map(str,c))for c in controls],
+            'minimumBernsteinCoefficients':[str(min(c))for c in controls],
+            'denominatorFactorization':'390625*(t+1)*(2*t+5)*(t+5)',
+            'baseMassesRecovered':True,'coefficientDegreeBound':12,'basisMinorValuesChecked':13,
+            'exactEndpointAndBaseChecks':endpoint_checks,'specifiedSupportAtFormulaPoles':singular,
+            'scope':'Fixed archived U,b; uniform over three complex eigenvalues on the stated fourth-eigenvalue segment. No general MDO theorem or pointwise counterexample.'}
+
+
+def main():
+    import argparse,resource
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--derive',action='store_true',help='Recreate rational polynomial weights by exact linear algebra; no optimizer')
+    parser.add_argument('--check',type=Path,default=Path(__file__).with_name('derived.json'))
+    parser.add_argument('--output',type=Path,help='Write derived coefficient data (with --derive)')
+    parser.add_argument('--report',type=Path,help='Write version-independent verification details')
+    args=parser.parse_args();resource.setrlimit(resource.RLIMIT_CPU,(60,60))
+    data=derive()if args.derive else json.loads(args.check.read_text())
+    report=verify(data)
+    if args.output:
+        if not args.derive:parser.error('--output requires --derive')
+        args.output.write_text(json.dumps(data,indent=2)+'\n')
+    if args.report:args.report.write_text(json.dumps(report,indent=2)+'\n')
+    print(json.dumps({k:report[k]for k in ('closedInterval','realCoefficientIdentities','positiveMasses','baseMassesRecovered','specifiedSupportAtFormulaPoles')}))
+
+if __name__=='__main__':main()
