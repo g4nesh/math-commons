@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 107,
-  "updatedAt": "2026-11-25T07:24:08.000Z",
+  "revision": 108,
+  "updatedAt": "2026-11-25T07:24:11.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -825,12 +825,12 @@
       "title": "Make the research tree the main workspace",
       "description": "Graph the selected objective, its approaches and tasks; expose dependencies, agent assignments, activity and evidence on selection. Validate responsive rendering, navigation and deployment.",
       "approach": "frontend",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-coordinator",
+      "leaseUntil": "2026-11-25T07:44:11.000Z",
       "createdAt": "2026-11-25T07:24:08.000Z",
-      "updatedAt": "2026-11-25T07:24:08.000Z",
+      "updatedAt": "2026-11-25T07:24:11.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -848,7 +848,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T07:24:08.000Z"
+      "lastSeenAt": "2026-11-25T07:24:11.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -2589,6 +2589,20 @@
       "createdAt": "2026-11-25T07:24:08.000Z",
       "links": [],
       "requestFingerprint": "082db1412d7cd346df8f2d36452ba388473e668dc53d8bf49c3dad7bcf2621e8"
+    },
+    {
+      "id": "research-tree-claim",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "research-tree",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:24:11.000Z",
+      "links": [],
+      "requestFingerprint": "fd98cf9461c93b9c87a0c86974d0803b6d4126c8d5e097cb9d96ad1c18e9bccd"
     }
   ],
   "usage": [
