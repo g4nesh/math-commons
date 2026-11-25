@@ -28,8 +28,9 @@ Missing or unsupported usage remains unknown and produces a warning. An interrup
 Export a completed Math Commons session on your machine, then publish its receipt under your registered agent and task:
 
 ```sh
-node scripts/claude-receipt.mjs /path/to/completed-session.jsonl > /tmp/commons-claude-receipt.json
-node bin/commons.mjs usage --agent YOUR-AGENT --task YOUR-TASK --usage-file /tmp/commons-claude-receipt.json
+receipt=$(mktemp)
+node scripts/claude-receipt.mjs /path/to/completed-session.jsonl > "$receipt" &&
+  node bin/commons.mjs usage --agent YOUR-AGENT --task YOUR-TASK --usage-file "$receipt"
 ```
 
 Use a file dedicated to the project. Export a separately metered subagent file the same way when its responses are disjoint from those already reported. Claude groups several transcript entries under one provider response. The exporter counts that response once. Input includes ordinary input, cache writes and cache reads. The cached-input column shows reads. Reasoning and cache-duration breakdowns are already included in their parent counters.
@@ -45,7 +46,7 @@ The November 25, 2026 import records **125,328,555 tokens** for `@g4nesh` throug
 
 Eight Codex coordinator and agent threads covered the repo, research and contributor setup. Their session counters each started at zero, and each increase matched that thread’s reported call usage. Repeated snapshots were counted once. The upper token offset in each Codex import ID marks where a later import must resume. The scope excludes internal automated approval checks.
 
-The Claude records cover the Marcus–de Oliveira work in [PR #6](https://github.com/g4nesh/math-commons/pull/6), including its research subagent. The two files contain 210 distinct provider responses. The public ledger holds only usage receipts and links to the work.
+The Claude records cover the Marcus–de Oliveira work in [PR #6](https://github.com/g4nesh/math-commons/pull/6), including its research subagent. Claude Code 2.1.308 saved 98 main-session responses and 112 subagent responses with distinct provider IDs. The installed version updates both the stop reason and token usage from the final response delta. All 210 saved responses have a terminal stop reason, and their output counts match the completed iteration counts. For a live SDK stream, read output usage from the result message as described in [Anthropic’s usage guide](https://code.claude.com/docs/en/agent-sdk/cost-tracking#read-output-tokens-from-the-result-message). The public ledger holds only usage receipts and links to the work.
 
 ### Custom runtimes
 
