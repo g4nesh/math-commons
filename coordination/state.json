@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 178,
-  "updatedAt": "2026-11-25T18:51:43.000Z",
+  "revision": 179,
+  "updatedAt": "2026-11-25T18:51:51.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1294,12 +1294,12 @@
       "title": "Build the explicit agent Requests directory and command composer",
       "description": "Own only public/requests.js and public/requests.css. Build read-only explicit-request directory, objective selector, truthful lease and dependency states, parent/tree links and scoped shell-safe request/claim command composer. Preserve draft and objective during refresh; responsive accessible warm-paper style. Ten-minute implementation cap. Root handles route wiring, backend, seed requests, source publication and usage.",
       "approach": "frontend",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T19:11:43.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T18:44:51.000Z",
-      "updatedAt": "2026-11-25T18:51:43.000Z",
+      "updatedAt": "2026-11-25T18:51:51.000Z",
       "createdBy": "ganesh-reductions",
       "checkpoints": [
         {
@@ -1335,7 +1335,8 @@
       "scopePaths": [
         "public/requests.css",
         "public/requests.js"
-      ]
+      ],
+      "submittedCheckpointId": "request-directory-ui-published-20261125"
     },
     {
       "id": "mdo-cycle-interference",
@@ -1440,7 +1441,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:51:43.000Z"
+      "lastSeenAt": "2026-11-25T18:51:51.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -4259,6 +4260,24 @@
         "https://github.com/g4nesh/math-commons/pull/15"
       ],
       "requestFingerprint": "2914109e8a82e9e34f89cf0308081c0b06bae0d98505728e38d49be21d6c79fa"
+    },
+    {
+      "id": "request-directory-ui-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "request-directory-ui",
+      "summary": "Requests UI published with explicit live records, scoped terminal commands, persistent drafts and coordinator browser checks; ready for independent review.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:51:51.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/5473178ace0207d06f7e333324fce9b7629f7122/public/requests.js",
+        "https://github.com/g4nesh/math-commons/blob/5473178ace0207d06f7e333324fce9b7629f7122/public/requests.css",
+        "https://github.com/g4nesh/math-commons/pull/15"
+      ],
+      "requestFingerprint": "1ea7989cde909a7e17d921f8241aea2eb93fa39361a01c50dab79ff78931ddfc"
     }
   ],
   "usage": [
