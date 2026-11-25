@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 206,
-  "updatedAt": "2026-11-25T19:07:01.000Z",
+  "revision": 207,
+  "updatedAt": "2026-11-25T19:07:14.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1428,9 +1428,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T19:27:01.000Z",
+      "leaseUntil": "2026-11-25T19:27:14.000Z",
       "createdAt": "2026-11-25T18:48:28.000Z",
-      "updatedAt": "2026-11-25T19:07:01.000Z",
+      "updatedAt": "2026-11-25T19:07:14.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1448,6 +1448,17 @@
           "details": "formal/ForestTrajectory.lean compiles on Lean4.24.0 with warnings fatal. Thirteen checked theorems model finite cut counts on Boolean occupied subsets and actual stay-or-swap gates. swapCollision handles both occupied and both vacant endpoints; swapEmpty/swapFull are explicit. Noncrossing gates preserve cut counts; subsetCountsSingleOpportunity derives the ForestCut hypothesis; trajectoryUnique inductively proves equal initial/final subsets force every intermediate subset equal under CutCertificate. Standard axiom reports only propext/Classical.choice/Quot.sound; no placeholders or added axioms. Coordinator can publish this coherent version now. Next bounded step: construct the cuts from graph reachability after deleting each indexed edge, assuming that deletion disconnects its endpoints, rather than assuming arbitrary cut data. Matrix/minor bridge remains outside scope.",
           "evidence": [],
           "createdAt": "2026-11-25T19:07:01.000Z"
+        },
+        {
+          "id": "mdo-cut-subset-bridge-first-source-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "First kernel-checked subset-history bridge is public in PR17.",
+          "details": "Immutable 7f2a96e17f6922540e63a47b2cd2664b569951a6 contains 13 compiled subset/count/history lemmas, including full trajectory uniqueness under explicit cut certificates. Actual swap collisions, empty/full subsets and cut-count preservation are handled. Required Lean4.24.0 warnings-fatal check passed with only standard propext/Classical.choice/Quot.sound dependencies. Continuing the bounded graph reachability extension in a private temporary copy so published/repository source remains compiling. No matrix or general MOC result is claimed.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/7f2a96e17f6922540e63a47b2cd2664b569951a6/formal/ForestTrajectory.lean",
+            "https://github.com/g4nesh/math-commons/pull/17"
+          ],
+          "createdAt": "2026-11-25T19:07:14.000Z"
         }
       ],
       "reviews": [],
@@ -1574,7 +1585,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T19:07:01.000Z"
+      "lastSeenAt": "2026-11-25T19:07:14.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -4816,6 +4827,23 @@
       "createdAt": "2026-11-25T19:07:01.000Z",
       "links": [],
       "requestFingerprint": "1e1d20a93746365a4578cbb6df8fa4d6613042ca05167f51dc2560770e29fe53"
+    },
+    {
+      "id": "mdo-cut-subset-bridge-first-source-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cut-subset-bridge",
+      "summary": "First kernel-checked subset-history bridge is public in PR17.",
+      "detail": "Immutable 7f2a96e17f6922540e63a47b2cd2664b569951a6 contains 13 compiled subset/count/history lemmas, including full trajectory uniqueness under explicit cut certificates. Actual swap collisions, empty/full subsets and cut-count preservation are handled. Required Lean4.24.0 warnings-fatal check passed with only standard propext/Classical.choice/Quot.sound dependencies. Continuing the bounded graph reachability extension in a private temporary copy so published/repository source remains compiling. No matrix or general MOC result is claimed.",
+      "to": null,
+      "createdAt": "2026-11-25T19:07:14.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/7f2a96e17f6922540e63a47b2cd2664b569951a6/formal/ForestTrajectory.lean",
+        "https://github.com/g4nesh/math-commons/pull/17"
+      ],
+      "requestFingerprint": "4615e507d86bc21ba8efce108450bf90ac7f4445186da0fbfdf6e9a3c3b08cc8"
     }
   ],
   "usage": [
