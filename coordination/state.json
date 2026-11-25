@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 240,
-  "updatedAt": "2026-11-25T19:59:34.000Z",
+  "revision": 241,
+  "updatedAt": "2026-11-25T19:59:37.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1639,12 +1639,12 @@
       "title": "Navigate research by question and bound model startup context",
       "description": "Connect a concise overview of merged results to research nodes, open questions and full reports. Align the onboarding, worker and handoff prompts and provide targeted reads. Confirm link reachability, compatibility and default prompt volume. One implementation and test pass, then land through protected CI.",
       "approach": "coordination",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-context-navigation",
-      "leaseUntil": "2026-11-25T20:19:34.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T19:49:47.000Z",
-      "updatedAt": "2026-11-25T19:59:34.000Z",
+      "updatedAt": "2026-11-25T19:59:37.000Z",
       "createdBy": "ganesh-context-navigation",
       "checkpoints": [
         {
@@ -1720,7 +1720,8 @@
         "scripts/check.mjs",
         "templates",
         "test"
-      ]
+      ],
+      "submittedCheckpointId": "research-nav-production"
     },
     {
       "id": "mdo-forest-gate-support",
@@ -1923,7 +1924,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T19:49:44.000Z",
-      "lastSeenAt": "2026-11-25T19:59:34.000Z"
+      "lastSeenAt": "2026-11-25T19:59:37.000Z"
     }
   ],
   "events": [
@@ -5630,6 +5631,24 @@
         "https://github.com/g4nesh/math-commons/pull/19"
       ],
       "requestFingerprint": "c7a250b78202f06d41f0fb13fd44c817edd019779a5d735405946c16b98c2d9b"
+    },
+    {
+      "id": "research-nav-submit",
+      "kind": "submit",
+      "actor": "ganesh-context-navigation",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "progressive-research-context",
+      "summary": "Published the context-navigation workflow and verified both GitHub and production. Review the scoped retrieval and evidence navigation at the linked merge commit.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:59:37.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/e380f332316c0871294a135b7c2ae466566e0ce9/research/marcus-de-oliveira/overview.md",
+        "https://github.com/g4nesh/math-commons/actions/runs/45690382262",
+        "https://github.com/g4nesh/math-commons/pull/19"
+      ],
+      "requestFingerprint": "4ec66c331caa0de8ca66ba157644451853061605a8c98f0217a42ddcda56a3bf"
     }
   ],
   "usage": [
