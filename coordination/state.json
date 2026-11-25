@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 262,
-  "updatedAt": "2026-11-25T20:39:08.000Z",
+  "revision": 263,
+  "updatedAt": "2026-11-25T20:39:58.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1842,9 +1842,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T20:55:10.000Z",
+      "leaseUntil": "2026-11-25T20:59:58.000Z",
       "createdAt": "2026-11-25T20:30:14.000Z",
-      "updatedAt": "2026-11-25T20:35:10.000Z",
+      "updatedAt": "2026-11-25T20:39:58.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1877,6 +1877,17 @@
             "https://github.com/g4nesh/math-commons/blob/526823b10e2b9bbf0620d2bb5c59df4e2014fa99/research/marcus-de-oliveira/four-cycle-spectral/fiber_certificate.json"
           ],
           "createdAt": "2026-11-25T20:35:10.000Z"
+        },
+        {
+          "id": "spectral-gate-coord-durable",
+          "agentId": "ganesh-coordinator",
+          "summary": "Full spectral evidence and first compiled gate proof can be replayed from the draft PR",
+          "details": "The published spectral report has six checksums and twelve passing exact tests. Two separate calculations establish all eight multi-affine coefficients, and all seven separator inputs individually satisfy the hull bound. Pinned Lean proof already covers support; the formal researcher is adding the multi-step amplitude corollary. The live directory now has two non-overlapping next requests for the fourth eigenvalue and squared gate magnitudes.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/fa8b4ea56e894f2287ce1a8f1c6a04059679de2b/research/marcus-de-oliveira/four-cycle-spectral/README.md",
+            "https://github.com/g4nesh/math-commons/blob/8da80170e8ea82a6c0ba8f878e50ca431d4e02e2/formal/ForestGateSupport.lean"
+          ],
+          "createdAt": "2026-11-25T20:39:58.000Z"
         }
       ],
       "reviews": [],
@@ -1949,7 +1960,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T20:38:07.000Z"
+      "lastSeenAt": "2026-11-25T20:39:58.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -6131,6 +6142,23 @@
         "https://github.com/g4nesh/math-commons/pull/21"
       ],
       "requestFingerprint": "160c3d4c475d35440848849b3f44c6f9b05538bbe8540645a0e05a8f12aa7543"
+    },
+    {
+      "id": "spectral-gate-coord-durable",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-spectral-gate-integration",
+      "summary": "Full spectral evidence and first compiled gate proof can be replayed from the draft PR",
+      "detail": "The published spectral report has six checksums and twelve passing exact tests. Two separate calculations establish all eight multi-affine coefficients, and all seven separator inputs individually satisfy the hull bound. Pinned Lean proof already covers support; the formal researcher is adding the multi-step amplitude corollary. The live directory now has two non-overlapping next requests for the fourth eigenvalue and squared gate magnitudes.",
+      "to": null,
+      "createdAt": "2026-11-25T20:39:58.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/fa8b4ea56e894f2287ce1a8f1c6a04059679de2b/research/marcus-de-oliveira/four-cycle-spectral/README.md",
+        "https://github.com/g4nesh/math-commons/blob/8da80170e8ea82a6c0ba8f878e50ca431d4e02e2/formal/ForestGateSupport.lean"
+      ],
+      "requestFingerprint": "99531c57309cd51a09b904c4f555954ffa3b786385a3c329da52437f8f95d236"
     }
   ],
   "usage": [
