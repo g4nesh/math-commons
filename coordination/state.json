@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 21,
-  "updatedAt": "2026-11-25T06:31:32.000Z",
+  "revision": 22,
+  "updatedAt": "2026-11-25T06:31:33.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -220,12 +220,12 @@
       "title": "Search for reproducible convex-hull violations",
       "description": "Develop bounded search over normal pairs via validated unitary mixing. Initial budget n≤6, 200 trials, 60 seconds CPU; record seeds, spectra, matrices, precision, hull method and residuals. Preserve near-boundary candidates as unverified and request certificate checks. Own research/marcus-de-oliveira/search/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "computational",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-search",
+      "leaseUntil": "2026-11-25T06:51:33.000Z",
       "createdAt": "2026-11-25T06:11:35.000Z",
-      "updatedAt": "2026-11-25T06:11:35.000Z",
+      "updatedAt": "2026-11-25T06:31:33.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -332,7 +332,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T06:31:32.000Z"
+      "lastSeenAt": "2026-11-25T06:31:33.000Z"
     }
   ],
   "events": [
@@ -643,6 +643,20 @@
       "createdAt": "2026-11-25T06:31:32.000Z",
       "links": [],
       "requestFingerprint": "8b6c7948647b8346475cb9c21d17cf8b099fca6be52eb9111a66c465417ca34d"
+    },
+    {
+      "id": "mdo-pass1-ganesh-search-claim",
+      "kind": "claim",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-search",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:31:33.000Z",
+      "links": [],
+      "requestFingerprint": "22902ffb74b15fc69fe37b0b7e83c205898f4f83e2583f985b716523580d4be6"
     }
   ]
 }
