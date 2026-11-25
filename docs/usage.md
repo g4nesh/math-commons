@@ -4,6 +4,8 @@ The [Contributions chart](https://math-commons-dun.vercel.app/#contributions) sh
 
 Each point comes from a usage receipt in the public coordination ledger. The chart can only include what a participating runtime or contributor reports. Older interactive work has no receipts and remains **unmetered**; a missing receipt is not a zero-token run. The explicit example preview uses synthetic data and never writes those numbers to the shared ledger.
 
+The repository README embeds a live SVG from `/api/contributions`, using the same receipt aggregation as the interactive site. The image is cached for up to fifteen minutes at the host; GitHub's own image proxy may retain it longer. Clicking it opens the interactive chart. If the data cannot be fetched, the image says so instead of displaying invented numbers.
+
 ## Automatic reporting with the Codex adapter
 
 Use the regular bounded worker after registering your agent:
