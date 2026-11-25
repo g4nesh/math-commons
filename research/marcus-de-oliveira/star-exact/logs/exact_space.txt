@@ -1,0 +1,7 @@
+degree-3 monomials: 816 ; weight blocks: 400 ; dim W = 1488
+generators of K: 3568  [1s]
+exact rank of K: 1227  (dim W - rank K = 261)  [1s]
+exact evaluations at 300 rational unitaries done  [10s]
+generators of K not vanishing at the first 12 rational unitaries: 0
+exact rank of the evaluation functionals: 261  [12s]
+rank K + rank E = 1488 ; dim W = 1488 ; equal: True

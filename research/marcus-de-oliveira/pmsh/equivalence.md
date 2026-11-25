@@ -111,13 +111,13 @@ Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0; cvxpy 1.7.5 with Clarabel
 | The cross term is necessary | `rewrite_check.py` | min of g0 + D[12,12] is −0.0255; min of g0 + D[12,12] + D[13,14] is −0.0015 |
 | SOS, degree 2 in the entries of U (59-dim function space) | `sos_torus.py 2 600` | certifies only g0 ≥ −0.1547; does not certify the family |
 | SOS, degree 3 (261-dim) | `sos_torus.py 3 3000`, `sos_scan3.py` | certifies **g0 ≥ −0.067442**, the true minimum. Certifies the t-form for every tested t ≥ 1 (bound ≥ −10⁻⁶·t), but not for t < 1 (e.g. bound/t = −1.9·10⁻³ at t = 0.5) |
-| One degree-3 certificate for all t ≥ 1 | `sos_param.py 3 3000` | feasible: slack −8.6·10⁻⁸ and −2.3·10⁻⁸ for the two members |
+| One degree-3 certificate for all t ≥ 1 | `sos_param.py 3 3000` | slack −8.6·10⁻⁸ and −2.3·10⁻⁸ for the two members. **Corrected reading:** this is a near-miss, not a certificate. [`../star-exact/`](../star-exact/README.md) shows that at t = 1 no exact degree-3 certificate exists, while exact rational certificates do exist at t = 3/2, 2, 3, 5 |
 | SOS, degree 4 (954-dim) | `sos2.py 4 5000 …` | certifies t = 0.5, 0.3, 0.2, 0.15 and 0.1 (bounds/t between −3.4·10⁻⁸ and +6.7·10⁻⁹); does **not** certify t = 0.05 (bound/t = −3.2·10⁻⁴) |
 | Parameter-free discriminant form: 4·D[12,12]·D[13,14] − (g0 + D[12,12])² = σ₀ − (g0 + D[12,12])·σ₁ with σ₀ of degree 4 and σ₁ of degree 2 | `sos_disc.py 2 5000` | **not certified at these degrees**: best slack γ = −5.9·10⁻⁵ for both members, b = D[13,14] and b = D[13,23] (identity residuals ≤ 2.3·10⁻¹¹) |
 
 These certificates are numerical (interior-point solver, tolerance about 10⁻⁸). They are **not** proofs.
 
-**Reading.** In the regime D[12,12] ≥ D[13,14] (optimal t ≥ 1), (★) has a numerical degree-3 certificate. Degree 4 extends this to t ≥ 0.1, i.e. D[12,12] ≥ D[13,14]/100. As t → 0 the degree needed grows, so the square-root form needs a different kind of certificate there. The first parameter-free attempt (discriminant form with multiplier degree 2) fails by a margin of about 6·10⁻⁵; a higher multiplier degree was not tried.
+**Reading (corrected after the exact analysis in [`../star-exact/`](../star-exact/README.md)).** At degree 3 the bound is within 10⁻⁸ of zero for t ≥ 1, but it is attained only for t slightly above 1: exact certificates were constructed at t = 3/2, 2, 3, 5, and at t = 1 none exists. Degree 4 extends this to t ≥ 0.1, i.e. D[12,12] ≥ D[13,14]/100. As t → 0 the degree needed grows, so the square-root form needs a different kind of certificate there. The first parameter-free attempt (discriminant form with multiplier degree 2) fails by a margin of about 6·10⁻⁵; a higher multiplier degree was not tried.
 
 ## Other forms of (★), for whoever attacks it
 
@@ -146,7 +146,7 @@ These are reformulations, not progress on the proof. Both are checked numericall
 - **By-product (numerical):** the degree-3 SOS bound for g0 equals Drury's constant, so the global optimality of the skew-conference family (see [`../minors/drury-constant.md`](../minors/drury-constant.md)) should be provable by an exact degree-3 certificate.
 
 **What would finish it.**
-1. An exact certificate for (★) in the regime D[12,12] ≥ D[13,14]: round the degree-3 parametric certificate to exact arithmetic. The identity must be verified on U(4) exactly; the numerical ranks 59, 261, 954 of the sampled function spaces for degrees 2, 3, 4 indicate the number of independent conditions.
+1. An exact certificate for (★) on a half-line t ≥ t₀ > 1. Exact certificates exist at single values of t (see [`../star-exact/`](../star-exact/README.md)); what is missing is one certificate with Gram blocks rational in t. The value t = 1 itself needs degree 4 or another method. The identity must be verified on U(4) exactly; the numerical ranks 59, 261, 954 of the sampled function spaces for degrees 2, 3, 4 indicate the number of independent conditions.
 2. A proof in the regime D[12,12] < D[13,14]/100 (numerically, degree 4 covers the rest). Bounded-degree certificates of the t-form do not work uniformly as t → 0, and the discriminant form with (σ₀, σ₁) of degrees (4, 2) is not exact. Options: a certificate for the discriminant form 4·D[12,12]·D[13,14] ≥ (L − D[12,12] − D[13,14])² on the set where the right side's base is positive; or a direct argument.
 3. An independent recomputation of Step 4 in exact integer arithmetic.
 
