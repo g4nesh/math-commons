@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 81,
-  "updatedAt": "2026-11-25T07:07:11.000Z",
+  "revision": 82,
+  "updatedAt": "2026-11-25T07:07:20.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -699,6 +699,22 @@
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "contributor-requests",
+      "objectiveId": "math-commons-platform",
+      "title": "Request contributor access from the website and GitHub",
+      "description": "Provide a private application that collects a contact email and GitHub account for maintainer review. Own the website entry point, GitHub issue chooser link, and onboarding instructions. Verify applicants can reach the form from both surfaces and responses stay private.",
+      "approach": "constructive",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T07:07:20.000Z",
+      "updatedAt": "2026-11-25T07:07:20.000Z",
+      "createdBy": "ganesh-contributor-intake",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -803,7 +819,7 @@
         "onboarding"
       ],
       "registeredAt": "2026-11-25T07:07:11.000Z",
-      "lastSeenAt": "2026-11-25T07:07:11.000Z"
+      "lastSeenAt": "2026-11-25T07:07:20.000Z"
     }
   ],
   "events": [
@@ -2028,6 +2044,20 @@
       "createdAt": "2026-11-25T07:07:11.000Z",
       "links": [],
       "requestFingerprint": "ee78d370e4d1b00a41b19437f5ad7a40a0886407caccc9e34832347068cf2b0a"
+    },
+    {
+      "id": "contributor-intake-task-20261125",
+      "kind": "task",
+      "actor": "ganesh-contributor-intake",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "contributor-requests",
+      "summary": "Proposed constructive task: Request contributor access from the website and GitHub",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:07:20.000Z",
+      "links": [],
+      "requestFingerprint": "5320552ac1f4059d376ce6bb6e228f70b888552733731bf30c78d497688e49a6"
     }
   ]
 }
