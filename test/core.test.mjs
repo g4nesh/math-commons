@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { applyOperation, eligibleTasks, validateState, MAX_STATE_BYTES } from '../lib/core.mjs';
-import { parseArgs } from '../bin/commons.mjs';
+import { applyOperation, eligibleTasks, requestDirectory, validateState, MAX_STATE_BYTES } from '../lib/core.mjs';
+import { parseArgs, main } from '../bin/commons.mjs';
 
 const START = '2026-11-25T00:00:00.000Z';
 let sequence = 0;
@@ -177,5 +177,130 @@ test('scoped leases protect ancestors across objectives, allow siblings and rele
 test('scope declarations reject ambiguous and nonliteral paths', () => {
   for (const paths of [[], [''], ['../lib'], ['.git/config'], ['/src'], ['lib//src'], ['lib/*.js'], ['a\\b'], ['a/./b']]) {
     assert.throws(() => apply(fixture(), { kind: 'claim', task: 'lemma', scopePaths: paths }), /path/i);
+  }
+});
+
+const researchRequest = changes => ({ kind: 'request', taskId: 'boundary-request', objectiveId: 'problem',
+  title: 'Check the boundary independently', description: 'Write a bounded boundary check with exact evidence.',
+  scopePaths: ['research/boundary/'], fromTaskId: 'lemma', to: 'bob-agent', ...changes });
+
+test('request creates one ordinary scoped task and one attributable invitation event', () => {
+  const input = fixture(), operation = researchRequest({ id: 'stable-research-request' });
+  const result = apply(input, operation), task = result.state.tasks.at(-1);
+  assert.equal(result.state.tasks.length, input.tasks.length + 1);
+  assert.equal(result.state.events.length, input.events.length + 1);
+  assert.equal(task.status, 'open'); assert.equal(task.assignee, null); assert.equal(task.leaseUntil, null);
+  assert.equal(task.createdBy, 'alice-agent'); assert.equal(task.createdAt, START);
+  assert.deepEqual(task.scopePaths, ['research/boundary']);
+  assert.deepEqual(task.request, { fromTaskId: 'lemma', to: 'bob-agent' });
+  assert.deepEqual(task.dependsOn, []); assert.deepEqual(task.checkpoints, []);
+  assert.equal(result.event.kind, 'request'); assert.equal(result.event.to, 'bob-agent');
+  assert.equal(result.event.actorOwner, 'alice'); assert.equal(result.event.taskId, task.id);
+  assert.deepEqual(result.event.scopePaths, task.scopePaths); assert.equal(result.event.fromTaskId, 'lemma');
+  assert.equal(result.event.detail, task.description);
+  assert.equal(input.tasks.length, 1); assert.deepEqual(result.state.tasks[0], input.tasks[0]);
+  const retry = apply(result.state, operation);
+  assert.equal(retry.duplicate, true); assert.equal(retry.state.revision, result.state.revision);
+  for (const change of [{ to: 'all' }, { fromTaskId: null }, { scopePaths: ['another/path'] }]) {
+    assert.throws(() => apply(result.state, { ...operation, ...change }), { code: 'IDEMPOTENCY_CONFLICT' });
+  }
+});
+
+test('request invitations never restrict claims and reuse the existing review lifecycle', () => {
+  let state = apply(fixture(), researchRequest({ to: 'alice-agent' })).state;
+  // Bob was not the invitee and can still claim an eligible task.
+  state = apply(state, { kind: 'claim', agent: 'bob-agent', task: 'boundary-request' }, 'bob').state;
+  state = apply(state, { kind: 'checkpoint', agent: 'bob-agent', task: 'boundary-request', summary: 'Checked exact boundary', evidence: ['https://example.com/proof'] }, 'bob').state;
+  state = apply(state, { kind: 'submit', agent: 'bob-agent', task: 'boundary-request', summary: 'Ready for review' }, 'bob').state;
+  const task = state.tasks.at(-1);
+  state = apply(state, { kind: 'review', task: task.id, checkpointId: task.submittedCheckpointId, verdict: 'pass', summary: 'Replayed the exact cases', evidence: ['https://example.com/review'] }).state;
+  assert.equal(state.tasks.at(-1).status, 'verified');
+  assert.deepEqual(state.tasks.at(-1).request, { fromTaskId: 'lemma', to: 'alice-agent' });
+});
+
+test('requests require valid paths, a known invitation target and a same-objective origin', () => {
+  const input = fixture();
+  for (const change of [{ scopePaths: undefined }, { scopePaths: [] }, { scopePaths: ['../outside'] }, { to: 'missing-agent' },
+    { fromTaskId: 'missing-task' }, { fromTaskId: 'boundary-request' }, { taskId: 'lemma' }]) {
+    assert.throws(() => apply(input, researchRequest(change)));
+  }
+  let state = apply(input, { kind: 'objective', objectiveId: 'other', title: 'Other', statement: 'Other scope', success: 'Evidence' }).state;
+  state = apply(state, { kind: 'task', taskId: 'foreign', objectiveId: 'other', title: 'Foreign', description: 'Other task' }).state;
+  assert.throws(() => apply(state, researchRequest({ fromTaskId: 'foreign' })), /same objective/);
+  state.objectives[0].status = 'closed';
+  assert.throws(() => apply(state, researchRequest()), /closed objective/);
+  assert.throws(() => apply(input, researchRequest(), 'mallory'), { code: 'FORBIDDEN' });
+  const open = apply(input, researchRequest({ fromTaskId: undefined, to: undefined })).state;
+  assert.deepEqual(open.tasks.at(-1).request, { fromTaskId: null, to: 'all' });
+});
+
+test('request directory preserves actual status and owner while marking lease expiry and overlap', () => {
+  let state = apply(fixture(), researchRequest()).state;
+  let directory = requestDirectory(state, { objective: 'problem', now: Date.parse(START) });
+  assert.equal(directory.requests.length, 1); assert.equal(directory.requests[0].claimable, true);
+  assert.deepEqual(directory.requests[0].requester, { id: 'alice-agent', name: 'Alice', owner: 'alice' });
+  assert.deepEqual(directory.requests[0].fromTask, { id: 'lemma', title: 'Prove the lemma' });
+  state = apply(state, { kind: 'claim', task: 'boundary-request', agent: 'bob-agent' }, 'bob').state;
+  directory = requestDirectory(state, { objective: 'problem', now: Date.parse(START) });
+  assert.equal(directory.requests[0].liveLease, true); assert.equal(directory.requests[0].claimable, false);
+  assert.deepEqual(directory.requests[0].assigneeAgent, { id: 'bob-agent', name: 'Bob', owner: 'bob' });
+  const expired = requestDirectory(state, { objective: 'problem', now: Date.parse('2026-11-25T00:21:00Z') }).requests[0];
+  assert.equal(expired.status, 'active'); assert.equal(expired.leaseExpired, true); assert.equal(expired.liveLease, false); assert.equal(expired.claimable, true);
+  assert.equal(expired.assigneeAgent.id, 'bob-agent'); // Expiry does not rewrite historical attribution.
+  state = apply(state, researchRequest({ taskId: 'overlapping-request', scopePaths: ['research/boundary/other.md'] })).state;
+  assert.equal(requestDirectory(state, { objective: 'problem', now: Date.parse(START) }).requests.find(task => task.id === 'overlapping-request').claimable, false);
+});
+
+test('legacy tasks/messages are not inferred as requests and malformed metadata fails validation', () => {
+  let state = fixture();
+  state = apply(state, { kind: 'message', to: 'bob-agent', task: 'lemma', summary: 'Please inspect this' }).state;
+  assert.deepEqual(requestDirectory(state, { objective: 'problem', now: Date.parse(START) }).requests, []);
+  state = apply(state, researchRequest()).state;
+  for (const metadata of [null, [], {}, { fromTaskId: null }, { fromTaskId: 'boundary-request', to: 'all' }, { fromTaskId: null, to: 'missing' }, { fromTaskId: null, to: 'all', hidden: true }]) {
+    const changed = structuredClone(state); changed.tasks.at(-1).request = metadata;
+    assert.throws(() => validateState(changed));
+  }
+  const unscoped = structuredClone(state); delete unscoped.tasks.at(-1).scopePaths;
+  assert.throws(() => validateState(unscoped), /scope paths/);
+  assert.throws(() => requestDirectory(state, { objective: 'missing' }), /Unknown objective/);
+  assert.throws(() => requestDirectory(state, { objective: 'problem', now: NaN }), /current time/);
+  const copy = requestDirectory(state, { objective: 'problem' }); copy.requests[0].scopePaths.push('changed');
+  assert.deepEqual(state.tasks.at(-1).scopePaths, ['research/boundary']);
+});
+
+test('request CLI serializes explicit metadata and requests directory performs only a read', async () => {
+  let state = fixture();
+  const oldFetch = globalThis.fetch, oldLog = console.log, oldError = console.error, oldToken = process.env.GH_TOKEN;
+  const calls = [], output = [];
+  process.env.GH_TOKEN = 'fixture-token-not-a-credential';
+  console.log = value => output.push(String(value)); console.error = () => {};
+  globalThis.fetch = async (url, options = {}) => {
+    calls.push({ url, method: options.method });
+    if (url === 'https://api.github.com/user') return new Response(JSON.stringify({ login: 'alice' }), { status: 200 });
+    if (options.method === 'PUT') {
+      state = JSON.parse(Buffer.from(JSON.parse(options.body).content, 'base64').toString());
+      return new Response(JSON.stringify({ commit: { sha: 'fixture-commit' } }), { status: 200 });
+    }
+    return new Response(JSON.stringify({ type: 'file', encoding: 'base64', sha: 'fixture-sha', size: Buffer.byteLength(JSON.stringify(state)), content: Buffer.from(JSON.stringify(state)).toString('base64') }), { status: 200, headers: { date: new Date(START).toUTCString() } });
+  };
+  try {
+    await main(['request', '--agent', 'alice-agent', '--id', 'cli-request', '--objective', 'problem', '--title', 'Check endpoints', '--description', 'Exact endpoint calculation', '--paths', 'research/endpoint/', '--from-task', 'lemma', '--to', 'bob-agent', '--request-id', 'stable-cli-request']);
+    assert.deepEqual(state.tasks.at(-1).request, { fromTaskId: 'lemma', to: 'bob-agent' });
+    assert.deepEqual(state.tasks.at(-1).scopePaths, ['research/endpoint']);
+    assert.equal(state.events.at(-1).kind, 'request');
+    calls.length = 0; output.length = 0;
+    await main(['requests', '--objective', 'problem', '--json']);
+    assert.equal(calls.length, 1); assert.equal(calls[0].method, 'GET');
+    const directory = JSON.parse(output[0]); assert.equal(directory.requests.length, 1); assert.equal(directory.requests[0].requester.owner, 'alice');
+    output.length = 0; await main(['requests', '--objective', 'problem']);
+    assert.match(output.join('\n'), /invitation: bob-agent/); assert.match(output.join('\n'), /assigned: unassigned/);
+    const count = calls.length;
+    await assert.rejects(main(['requests']), /requires --objective/);
+    await assert.rejects(main(['request', '--agent', 'alice-agent']), /requires --paths/);
+    await assert.rejects(main(['requests', '--objective', 'problem', '--agent', 'alice-agent']), /Unknown option/);
+    assert.equal(calls.length, count);
+  } finally {
+    globalThis.fetch = oldFetch; console.log = oldLog; console.error = oldError;
+    if (oldToken === undefined) delete process.env.GH_TOKEN; else process.env.GH_TOKEN = oldToken;
   }
 });

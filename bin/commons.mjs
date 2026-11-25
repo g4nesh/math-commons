@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { GitHubStore, resolveToken } from '../lib/github.mjs';
-import { eligibleTasks } from '../lib/core.mjs';
+import { eligibleTasks, requestDirectory } from '../lib/core.mjs';
 import { work } from '../lib/worker.mjs';
 import { normalizeUsage, parseTokenFlag } from '../lib/usage.mjs';
 
@@ -17,12 +17,15 @@ Read only:
   status [--json]                              Show objectives, tasks, and agents
   watch [--objective ID] [--agent ID] [--once] [--interval 30]   Show reservations, progress and available tasks
   packet --task ID [--json]                    Export context for another runtime
+  requests --objective ID [--json]             List explicit research requests and actual task status
 
 Publish (requires gh auth login or your own GH_TOKEN, plus repo write access):
   join --agent ID --name NAME [--role explorer] [--capabilities algebra,python]
   objective --agent ID --id ID --title TITLE --statement TEXT --success TEXT
   task --agent ID --id ID --objective ID --title TITLE --description TEXT
        [--approach abstraction] [--depends task-a,task-b] [--paths dir,file]
+  request --agent ID --id ID --objective ID --title TITLE --description TEXT
+          --paths dir,file [--approach abstraction] [--from-task ID] [--to AGENT|all]
   claim --agent ID --task ID [--paths dir,file]
   heartbeat --agent ID --task ID
   checkpoint --agent ID --task ID --summary TEXT --details TEXT [--evidence URL,URL]
@@ -57,6 +60,8 @@ Leases last 20 minutes by default. Checkpoint every 5 minutes and at meaningful
 results. submit requires an evidence checkpoint. A review must cite the exact
 submitted checkpoint and come from a different GitHub owner than all authors.
 Verified means independently reviewed; it does not mean machine-proved.
+Research requests are ordinary scoped tasks. --to is an invitation; any eligible
+collaborator may claim. A request does not start another agent or grant a lease.
 Usage is contributor-reported, not a provider-certified billing total. Cached input
 is included in input tokens, never added again. Unknown usage is not recorded as zero.
 `;
@@ -88,16 +93,17 @@ async function inputText(flags, name) {
   }
   return flags[name];
 }
-const knownCommands = new Set(['help', 'status', 'watch', 'packet', 'join', 'objective', 'task', 'claim', 'heartbeat', 'checkpoint', 'submit', 'review', 'message', 'release', 'block', 'reopen', 'close', 'reopen-objective', 'work', 'usage']);
+const knownCommands = new Set(['help', 'status', 'watch', 'packet', 'requests', 'request', 'join', 'objective', 'task', 'claim', 'heartbeat', 'checkpoint', 'submit', 'review', 'message', 'release', 'block', 'reopen', 'close', 'reopen-objective', 'work', 'usage']);
 function assertFlags(command, flags) {
   const global = ['config', 'json', 'help'];
   const common = ['agent', 'request-id'];
   const textOptions = names => names.flatMap(name => [name, `${name}-file`]);
   const options = {
-    help: [], status: [], watch: ['agent', 'objective', 'once', 'interval'], packet: ['task'],
+    help: [], status: [], watch: ['agent', 'objective', 'once', 'interval'], packet: ['task'], requests: ['objective'],
     join: ['name', 'role', 'capabilities'],
     objective: ['id', 'tags', ...textOptions(['title', 'statement', 'success'])],
     task: ['id', 'objective', 'approach', 'depends', 'paths', ...textOptions(['title', 'description'])],
+    request: ['id', 'objective', 'approach', 'paths', 'from-task', 'to', ...textOptions(['title', 'description'])],
     claim: ['task', 'paths'], heartbeat: ['task'],
     checkpoint: ['task', 'evidence', ...textOptions(['summary', 'details'])],
     submit: ['task', ...textOptions(['summary'])],
@@ -108,7 +114,7 @@ function assertFlags(command, flags) {
     usage: ['task', 'provider', 'model', 'run-id', 'input-tokens', 'output-tokens', 'cached-input-tokens', 'started-at', 'finished-at', 'source', 'evidence', 'usage-file'],
     work: ['agent', 'max-tasks', 'timeout-minutes', 'objective', 'approach'],
   };
-  const allowed = new Set([...global, ...(options[command] ?? []), ...(['help', 'status', 'watch', 'packet', 'work'].includes(command) ? [] : common)]);
+  const allowed = new Set([...global, ...(options[command] ?? []), ...(['help', 'status', 'watch', 'packet', 'requests', 'work'].includes(command) ? [] : common)]);
   for (const key of Object.keys(flags)) if (!allowed.has(key)) throw new Error(`Unknown option --${key} for ${command}.`);
 }
 export async function usageOperationFromFlags(flags, config) {
@@ -150,14 +156,33 @@ export async function main(argv = process.argv.slice(2)) {
   if (!knownCommands.has(command)) throw new Error(`Unknown command ${command}. Run help.`);
   assertFlags(command, flags);
   if (command === 'help' || flags.help) { console.log(HELP); return; }
+  if (command === 'requests' && !flags.objective) throw new Error('requests requires --objective ID.');
+  if (command === 'request' && !flags.paths) throw new Error('request requires --paths for the new task scope.');
   if (trailing.length && command !== 'work') throw new Error('Arguments after -- are only supported by work.');
   const configPath = flags.config ? resolve(flags.config) : fileURLToPath(new URL('../commons.config.json', import.meta.url));
   const config = JSON.parse(await readFile(configPath, 'utf8'));
-  const readOnly = ['status', 'watch', 'packet'].includes(command);
+  const readOnly = ['status', 'watch', 'packet', 'requests'].includes(command);
   const store = new GitHubStore(config, { token: resolveToken({ required: !readOnly }) });
   if (command === 'status') {
     const { state } = await store.read();
     if (flags.json) console.log(JSON.stringify(state, null, 2)); else printStatus(state);
+    return;
+  }
+  if (command === 'requests') {
+    const { state, serverTime } = await store.read();
+    const directory = requestDirectory(state, { objective: flags.objective, now: Date.parse(serverTime) });
+    if (flags.json) console.log(JSON.stringify(directory, null, 2));
+    else {
+      console.log(`Math Commons requests · ${flags.objective} · revision ${directory.revision}`);
+      if (!directory.requests.length) console.log('No explicit research requests for this objective. Existing tasks and messages remain unchanged.');
+      for (const task of directory.requests) {
+        console.log(`\n${task.id}: ${task.title}`);
+        console.log(`  ${task.status}${task.leaseExpired ? ' (lease expired)' : ''} · ${task.claimable ? 'claimable' : 'not currently claimable'} · assigned: ${task.assigneeAgent ? `${task.assigneeAgent.id} (@${task.assigneeAgent.owner})` : 'unassigned'}`);
+        console.log(`  requested by ${task.requester.id} (@${task.requester.owner}) · invitation: ${task.request.to} · source: ${task.fromTask?.id || 'no origin task'}`);
+        console.log(`  paths: ${task.scopePaths.join(', ')}`);
+        if (task.liveLease) console.log(`  lease until: ${task.leaseUntil}`);
+      }
+    }
     return;
   }
   if (command === 'packet') {
@@ -213,11 +238,12 @@ export async function main(argv = process.argv.slice(2)) {
   const op = { id: flags['request-id'] ?? randomUUID(), kind: command, agent: flags.agent };
   const copy = (key, flag = key) => { if (flags[flag] !== undefined) op[key] = flags[flag]; };
   copy('task'); copy('name'); copy('role'); copy('objectiveId', command === 'objective' ? 'id' : 'objective');
-  if (command === 'task') copy('taskId', 'id');
+  if (command === 'task' || command === 'request') copy('taskId', 'id');
   if (flags.paths !== undefined) op.scopePaths = flags.paths.split(',').map(path => path.trim());
   for (const key of ['title', 'statement', 'success', 'description', 'summary', 'details']) { const value = await inputText(flags, key); if (value !== undefined) op[key] = value; }
   for (const [key, flag] of [['capabilities', 'capabilities'], ['tags', 'tags'], ['dependsOn', 'depends'], ['evidence', 'evidence']]) if (flags[flag] !== undefined) op[key] = list(flags[flag]);
   copy('approach'); copy('verdict'); copy('to'); copy('checkpointId', 'checkpoint');
+  copy('fromTaskId', 'from-task');
   if (command === 'review' && !op.checkpointId) throw new Error('Review requires --checkpoint ID for the exact checkpoint you inspected.');
   console.error(`Request ID: ${op.id}. Reuse --request-id ${op.id} with this exact command after an uncertain write.`);
   const result = await store.mutate(op);
