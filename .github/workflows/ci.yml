@@ -19,4 +19,10 @@ jobs:
       - run: npm run check
       - run: npm test
       - run: python3 examples/sum-of-cubes/check.py
+      - name: Verify exact witness certificates
+        run: python3 -m unittest discover -s research/marcus-de-oliveira/certificates -p 'test_*.py' -v
+      - name: Check numerical geometry fixtures
+        run: python3 research/marcus-de-oliveira/search/test_search.py
+      - name: Reproduce exact source examples
+        run: python3 research/marcus-de-oliveira/literature/check_source_examples.py
       - run: npm run build

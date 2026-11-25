@@ -1,0 +1,15 @@
+{
+  "scope": "Author-side finite regression; independent owner review pending",
+  "pythonVersion": "3.9.6",
+  "recordedAtUTC": "2026-11-25T06:40:44.978984+00:00",
+  "testsPassed": 16,
+  "testCommand": "python3 -m unittest discover -s research/marcus-de-oliveira/certificates -p 'test_*.py' -v",
+  "reproducedFixtures": [
+    "goyal-2026",
+    "zhang-ma-2026",
+    "complex-householder-n4"
+  ],
+  "allFixtureMemberships": "inside",
+  "universalConjectureResolved": false,
+  "floatingSearchCertified": false
+}

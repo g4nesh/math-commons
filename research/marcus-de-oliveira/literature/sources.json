@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "retrieved_utc_date": "2026-11-25",
+  "local_date": "2026-11-24",
+  "local_timezone": "America/Phoenix",
+  "agent": "ganesh-literature",
+  "owner": "g4nesh",
+  "independent_owner_review": false,
+  "redistributed_source_pdfs": false,
+  "sources": [
+    {
+      "id": "kovacec-p2611-v2",
+      "title": "A large polygonal region contained in a simply connected Marcus de Oliveira region",
+      "url": "https://www.mat.uc.pt/preprints/ps/p2611.pdf",
+      "version": "v2, 2026-11-04; original cover date 2026-04-07",
+      "pages": 10,
+      "access": "full PDF downloaded; selected pages extracted; page 4 rendered and inspected",
+      "bytes": 927388,
+      "sha256": "5221b16e83aa171d6fcc95d3985d4e71ac3cc7b5f0c542ae726406625df3fe54",
+      "full_theorem_independently_verified": false
+    },
+    {
+      "id": "zheng-n4",
+      "title": "The Marcus–de Oliveira conjecture for n = 4",
+      "doi": "10.13140/RG.2.2.36790.25923",
+      "landing_url": "https://www.researchgate.net/publication/416773999_The_Marcus-de_Oliveira_conjecture_for_n_4",
+      "url": "https://www.researchgate.net/profile/Dongzhe-Zheng/publication/416773999_The_Marcus-de_Oliveira_conjecture_for_n_4/links/6add31918aa8df110de33813/The-Marcus-de-Oliveira-conjecture-for-n-4.pdf",
+      "version": "October 2026 preprint; landing page showed author upload 2026-10-24; no explicit PDF version number established",
+      "pages": 66,
+      "access": "full web PDF text readable; direct byte download returned HTTP 403",
+      "sha256": null,
+      "hash_unavailable_reason": "No successful byte download; extraction is not the PDF",
+      "supplements_status": "S0, S1, S2 referenced in Appendix F; not located in bounded search; not replayed",
+      "full_theorem_independently_verified": false
+    },
+    {
+      "id": "shitov-2025",
+      "title": "A further sufficient condition for the determinantal conjecture",
+      "url": "https://www.mathnet.ru/php/archive.phtml?jrnid=im&option_lang=eng&paperid=9292&wshow=paper",
+      "doi": "10.4213/im9292e",
+      "english_publication_date": "2025-08-25",
+      "received_date": "2021-11-21",
+      "access": "full English HTML including proof readable; direct PDF request timed out without bytes",
+      "sha256": null,
+      "full_theorem_independently_verified": false
+    },
+    {
+      "id": "drury-2006",
+      "url": "https://journals.uwyo.edu/index.php/ela/article/view/403",
+      "fulltext_url": "https://ftp.gwdg.de/pub/EMIS/journals/ELA/ela-articles/articles/vol15_pp285-296.pdf",
+      "access": "primary statement screened",
+      "sha256": null,
+      "full_theorem_independently_verified": false
+    },
+    {
+      "id": "rodtes-2020-v1",
+      "url": "https://arxiv.org/abs/2006.14846v1",
+      "fulltext_url": "https://arxiv.org/html/2006.14846v1",
+      "version": "arXiv v1, 2020-06-26",
+      "access": "full HTML screened",
+      "sha256": null,
+      "full_theorem_independently_verified": false
+    },
+    {
+      "id": "bebiano-providencia-2025",
+      "url": "https://www.mdpi.com/2227-7390/13/5/711",
+      "doi": "10.3390/math13050711",
+      "publication_date": "2025-02-22",
+      "access": "survey full text screened",
+      "sha256": null,
+      "full_theorem_independently_verified": false
+    },
+    {
+      "id": "mulero-martinez-2026",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0024379526001266",
+      "doi": "10.1016/j.laa.2026.03.019",
+      "access": "publisher abstract only; full text inaccessible",
+      "sha256": null,
+      "full_theorem_independently_verified": false
+    }
+  ]
+}
