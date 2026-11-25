@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 470,
-  "updatedAt": "2026-11-25T23:39:04.000Z",
+  "revision": 471,
+  "updatedAt": "2026-11-25T23:39:19.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3204,12 +3204,12 @@
       "title": "Explicit common-minor certificates for rank-one unitary phases",
       "description": "Derive exact identity, swap and three-cycle weights for U=I+(z-1)vv*, prove an arbitrary-dimension angle regime and a sharp flat-vector obstruction, characterize feasibility by triangle packing, audit Householder literature, and supply reproducible exact tests. Own only research/marcus-de-oliveira/reflection-angles. No general-MOC or novelty claim.",
       "approach": "constructive",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "pointwise-reflections",
-      "leaseUntil": "2026-11-25T23:59:00.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T23:30:30.000Z",
-      "updatedAt": "2026-11-25T23:39:00.000Z",
+      "updatedAt": "2026-11-25T23:39:19.000Z",
       "createdBy": "pointwise-reflections",
       "checkpoints": [
         {
@@ -3247,7 +3247,8 @@
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/reflection-angles"
-      ]
+      ],
+      "submittedCheckpointId": "reflection-angles-artifact-20261125"
     },
     {
       "id": "mdo-three-color-coupling",
@@ -3473,7 +3474,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T23:30:17.000Z",
-      "lastSeenAt": "2026-11-25T23:39:00.000Z"
+      "lastSeenAt": "2026-11-25T23:39:19.000Z"
     }
   ],
   "events": [
@@ -10785,6 +10786,23 @@
       "createdAt": "2026-11-25T23:39:04.000Z",
       "links": [],
       "requestFingerprint": "35ee9084df6a361b30cce9cc8316155f2c7188d941740c3d9f1709b96bd00af0"
+    },
+    {
+      "id": "reflection-angles-submit-20261125",
+      "kind": "submit",
+      "actor": "pointwise-reflections",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-reflection-angles",
+      "summary": "Exact angle certificates and triangle-packing characterization published with rational tests; ready for independent-owner review.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:39:19.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/161a4fcfe17531f3fb2e343abb403444ccdd15f4/research/marcus-de-oliveira/reflection-angles/README.md",
+        "https://github.com/g4nesh/math-commons/blob/161a4fcfe17531f3fb2e343abb403444ccdd15f4/research/marcus-de-oliveira/reflection-angles/packing-results.json"
+      ],
+      "requestFingerprint": "ffa2c6b2180317d080e6ae56d910a18ebaac8a6d141915171103e05b69c5b5a9"
     }
   ],
   "usage": [
