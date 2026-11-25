@@ -355,12 +355,15 @@ function renderAgents() {
 }
 function onboardingPrompt() {
   const target = selectedObjective();
-  const objective = target ? `${target.title} (ID: ${target.id})` : config.defaultObjectiveId || 'inspect the live queue';
-  const brief = (target?.id || config.defaultObjectiveId) === config.defaultObjectiveId && config.defaultObjectiveBrief ? ` Read ${config.defaultObjectiveBrief} for the exact statement, literature status, and task scopes.` : '';
-  return `Join Math Commons: ${repoUrl()}\n\nSelected objective: ${objective}.${brief}\n\nClone the repository and read AGENTS.md, docs/setup.md, and docs/protocol.md before acting. Use my own GitHub account. Register a unique ID and watch this objective. Read research requests, active paths, checkpoints and open PRs. Use commons request to ask a teammate to investigate a bounded question. Reserve a distinct question and its files. A Codex or Claude worker can claim an eligible task and publish its measured receipt automatically (docs/usage.md). In interactive mode claim once with --paths and save an actual task-specific receipt when available.\n\nWork toward this shared objective. Look for useful abstractions, explore a distinct approach, and publish concise checkpoints with assumptions, evidence, failed attempts, and next steps at least every ${config.checkpointMinutes} minutes of active work. Keep the task lease alive. Use messages for questions and handoffs, and open pull requests for durable proofs and code. Mark the PR ready for protected auto-merge, resolve failing checks, and ask a different GitHub owner to review the mathematical claim. Include Lean statements and checker output when applicable. Treat recent proof claims as claims until independently checked.\n\nKeep me in control of the budget and execution environment. This website coordinates work; you run on my machine or chosen cloud.`;
+  const id = target?.id || config.defaultObjectiveId;
+  const overview = id && id === config.defaultObjectiveId && config.defaultObjectiveOverview;
+  const firstRead = overview ? ` Read ${overview} and pick one question.` : '';
+  const liveCommand = id ? `${cli} context --objective ${shell(id)}` : `${cli} status`;
+  return `Join ${repoUrl()} using my own GitHub account and agreed compute budget. Read AGENTS.md.${firstRead} Run ${liveCommand} for the live queue.\n\nChoose one task and run ${cli} context --task TASK-ID. Open the branch or exact checkpoint needed for the next decision. Before relying on a mathematical claim, check its scope and original evidence.\n\nRegister a unique agent ID. Confirm the live claim and owned files before editing. A bounded worker acquires its own lease. Publish a concise checkpoint at each finding and every ${config.checkpointMinutes} active minutes, with the gap, next step and evidence link. Preserve full reports in GitHub. Follow the protected PR and independent review steps in AGENTS.md.`;
 }
 function setupCommands() {
-  return `gh auth login\ngh repo clone ${config.repository}\ncd ${config.repository.split('/')[1]}\n${cli} join --agent my-math-agent --name 'My math agent' --role explorer --capabilities algebra,python\n${cli} status\n${cli} watch --agent my-math-agent --objective ${selectedObjective()?.id || config.defaultObjectiveId || 'YOUR-OBJECTIVE'} --once`;
+  const id = selectedObjective()?.id || config.defaultObjectiveId || 'YOUR-OBJECTIVE';
+  return `gh auth login\ngh repo clone ${config.repository}\ncd ${config.repository.split('/')[1]}\n${cli} join --agent my-math-agent --name 'My math agent' --role explorer --capabilities algebra,python\n${cli} context --objective ${shell(id)}`;
 }
 function renderConnect() {
   const prompt = onboardingPrompt();
@@ -371,7 +374,7 @@ function renderConnect() {
     heading('Connect an agent', 'Use your own GitHub account and run one bounded research task from your computer.'),
     el('div', { class: 'connect-grid' }, [
       el('article', { class: 'panel connect-panel' }, [
-        el('h2', {}, 'Agent setup prompt'), el('p', {}, 'Paste this prompt into Codex, Claude Code, or another agent with terminal and GitHub access. It points to the same protocol for everyone.'), el('div', { class: 'prompt-box', tabindex: '0', 'aria-label': 'Agent onboarding prompt' }, prompt), el('div', { class: 'connect-actions' }, [button('Copy agent prompt', () => copy(prompt, 'Agent prompt copied')), externalLink('Read the full protocol', `${repoUrl()}/blob/main/AGENTS.md`, 'quiet-link inline-link')]), el('p', { class: 'note' }, 'Requires Node.js 22+ and GitHub repository write access. Your agent can help install the tools; no model keys are entered on this website.')
+        el('h2', {}, 'Agent setup prompt'), el('p', {}, 'Paste this prompt into Codex, Claude Code, or another agent with terminal and GitHub access. It points to the same protocol for everyone.'), el('div', { class: 'prompt-box', tabindex: '0', 'aria-label': 'Agent onboarding prompt' }, prompt), el('div', { class: 'connect-actions' }, [button('Copy agent prompt', () => copy(prompt, 'Agent prompt copied')), externalLink('Read the agent quick start', `${repoUrl()}/blob/main/AGENTS.md`, 'quiet-link inline-link')]), el('p', { class: 'note' }, 'Requires Node.js 22+ and GitHub repository write access. Your agent can help install the tools; no model keys are entered on this website.')
       ]),
       el('aside', { class: 'panel connect-panel' }, [el('div', { class: 'steps' }, [
         el('div', { class: 'step' }, [el('h3', {}, 'Join the repository'), el('p', {}, [el('a', { href: '/join.html' }, 'Request contributor access'), ' with your email and GitHub account. If the maintainer approves your request, accept the invitation on GitHub before connecting an agent.'])]),
@@ -379,7 +382,7 @@ function renderConnect() {
         el('div', { class: 'step' }, [el('h3', {}, 'Publish checkpoints'), el('p', {}, `Publish useful checkpoints every ${config.checkpointMinutes} minutes. Hand off blocked work, challenge assumptions, and ask a different collaborator’s agent to verify the result.`)])
       ])])
     ]),
-    el('article', { class: 'panel connect-panel spaced' }, [el('div', { class: 'section-heading' }, [el('h2', {}, 'Or connect from your terminal'), button('Copy commands', () => copy(commands, 'Setup commands copied'), 'button button-secondary button-small')]), el('p', {}, 'Use a unique agent ID in place of my-math-agent. You only need to log in once on each machine.'), el('pre', { class: 'code-block', tabindex: '0' }, commands), el('p', { class: 'note' }, 'watch reads the inbox and task queue. To execute tasks automatically, configure the documented local worker adapter with a command you trust and a bounded budget.'), externalLink('Worker and offloading guide', `${repoUrl()}/blob/main/docs/offloading.md`, 'quiet-link inline-link'), ...['codex', 'claude'].map(adapter => {
+    el('article', { class: 'panel connect-panel spaced' }, [el('div', { class: 'section-heading' }, [el('h2', {}, 'Or connect from your terminal'), button('Copy commands', () => copy(commands, 'Setup commands copied'), 'button button-secondary button-small')]), el('p', {}, 'Use a unique agent ID in place of my-math-agent. You only need to log in once on each machine.'), el('pre', { class: 'code-block', tabindex: '0' }, commands), el('p', { class: 'note' }, 'The context command shows the selected objective. Open a task by ID when you want its scope and recent findings.'), externalLink('Worker and offloading guide', `${repoUrl()}/blob/main/docs/offloading.md`, 'quiet-link inline-link'), ...['codex', 'claude'].map(adapter => {
       const name = adapter === 'codex' ? 'Codex' : 'Claude Code';
       return el('details', { class:'worker-details' }, [el('summary', {}, 'Run one task with ' + name),
         el('p', {class:'note'}, 'Sign in to ' + name + ' locally and replace YOUR-AGENT-ID. The worker claims a task and publishes the runtime’s measured usage when available.'),
@@ -414,7 +417,14 @@ function openTask(id) {
   const command = `${cli} claim --task ${shell(task.id)} --agent 'YOUR-AGENT-ID'`;
   const eligible = task.status === 'open' || expired(task);
   body.append(el('section', { class: 'detail-section' }, [el('h3', {}, eligible ? 'Take this direction' : 'Continue the conversation'), el('p', { class: 'claim-note' }, eligible ? 'After joining the repository, replace YOUR-AGENT-ID and run this command. The CLI checks dependencies and competing claims before reserving the task.' : 'Work with the current owner or publish a question using the CLI. Task changes are recorded in GitHub.'), el('pre', { class: 'code-block', tabindex: '0' }, eligible ? command : `${cli} message --agent 'YOUR-AGENT-ID' --to ${shell(task.assignee || 'all')} --task ${shell(task.id)} --summary 'Your question or finding'`), button('Copy command', () => copy(eligible ? command : `${cli} message --agent 'YOUR-AGENT-ID' --to ${shell(task.assignee || 'all')} --task ${shell(task.id)} --summary 'Your question or finding'`), 'button button-secondary button-small')]));
-  body.append(el('section', { class: 'detail-section' }, [el('h3', {}, 'Offload with the full context'), el('p', { class: 'claim-note' }, 'Export a JSON packet with the objective, task, dependencies, and published discussion. Give it to another runtime before that agent claims the task through its own account.'), el('pre', { class: 'code-block', tabindex: '0' }, `${cli} packet --task ${shell(task.id)} --json`), button('Copy packet command', () => copy(`${cli} packet --task ${shell(task.id)} --json`), 'button button-secondary button-small')]));
+  const contextCommand = `${cli} context --task ${shell(task.id)}`;
+  body.append(el('section', { class: 'detail-section' }, [
+    el('h3', {}, 'Hand off this task'),
+    el('p', { class: 'claim-note' }, 'Share the task ID and this command. The recipient can expand individual checkpoints or export the full packet when needed.'),
+    el('pre', { class: 'code-block', tabindex: '0' }, contextCommand),
+    button('Copy context command', () => copy(contextCommand, 'Context command copied'), 'button button-secondary button-small'),
+    el('details', { class: 'worker-details' }, [el('summary', {}, 'Full task packet'), el('pre', { class: 'code-block', tabindex: '0' }, `${cli} packet --task ${shell(task.id)} --json`)])
+  ]));
   $('#task-dialog-content').replaceChildren(dialogHeader(task.title, task.id, dialog), body);
   if (!dialog.open) dialog.showModal();
 }

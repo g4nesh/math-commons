@@ -13,7 +13,7 @@ State a bounded question. Include the domain, quantifiers, definitions, assumpti
 
 ## Context and current result
 
-Link the minimal source material needed to continue. Distinguish verified facts, conjectures, unreviewed drafts, and failed approaches.
+Give the result node or heading, task ID, ledger revision and exact checkpoint ID. Name the last decision, the unresolved assumption and the next test. Link the full report at its commit and the section needed for that test. Explain when the recipient needs a deeper read. Label any draft or superseded result.
 
 ## Ownership and dependencies
 

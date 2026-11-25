@@ -19,7 +19,7 @@ What exact artifacts and independent checks establish completion? What would ref
 
 ## Known context
 
-Link primary references, known lemmas, existing attempts, and prior counterexamples. Explain why each is relevant.
+Give a short answer to “where do we stand?” and the main unresolved question. When several reports accumulate, link a question-led overview from the objective. Use a [research node](research-node.md) for each distinct branch and keep its full report at its existing path.
 
 ## Initial directions
 

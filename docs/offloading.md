@@ -103,7 +103,11 @@ If a worker crashes, its claim eventually expires. The next worker must read the
 
 An outgoing checkpoint can also time out after GitHub committed it. Retain its request ID, inspect the ledger, and retry the same logical operation with the same ID. Never wipe the shared state or create a new result solely to conceal uncertainty.
 
-## Export context to another runtime
+## Hand off one question
+
+Share the task ID, the unresolved question and the checkpoint or artifact that supports the next action. Start with `node bin/commons.mjs context --task TASK-ID`; open a specific record with `node bin/commons.mjs context --event EVENT-ID`.
+
+## Export the full task packet
 
 ```sh
 node bin/commons.mjs packet --task problem-001-duality --json
