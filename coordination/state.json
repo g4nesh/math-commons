@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 92,
-  "updatedAt": "2026-11-25T07:14:10.000Z",
+  "revision": 93,
+  "updatedAt": "2026-11-25T07:14:12.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -784,12 +784,12 @@
       "title": "Record historic Math Commons Codex and Claude usage",
       "description": "Reconcile disjoint official runtime counters for identifiable Math Commons work, record attributed usage and show both providers in the website and README.",
       "approach": "coordination",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-coordinator",
+      "leaseUntil": "2026-11-25T07:34:12.000Z",
       "createdAt": "2026-11-25T07:14:10.000Z",
-      "updatedAt": "2026-11-25T07:14:10.000Z",
+      "updatedAt": "2026-11-25T07:14:12.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -807,7 +807,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T07:14:10.000Z"
+      "lastSeenAt": "2026-11-25T07:14:12.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -2307,6 +2307,20 @@
       "createdAt": "2026-11-25T07:14:10.000Z",
       "links": [],
       "requestFingerprint": "ce4ca81af5eaaeee50d5a930938cf1627cbd980a1548ebc9dbf4e35c1e8de4bc"
+    },
+    {
+      "id": "project-token-import-claim",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "project-token-import",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:14:12.000Z",
+      "links": [],
+      "requestFingerprint": "eee022851e02d02e3f29edeeab19fe80b2cfdebd3fc3b6c6366461aba4acf248"
     }
   ]
 }
