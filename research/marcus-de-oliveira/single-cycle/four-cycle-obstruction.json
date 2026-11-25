@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "claim": "No probability distribution on S4 matches every squared minor of this exact four-cycle unitary.",
+  "scope": "Obstruction to common-minor certificates, not to the Marcus-de Oliveira determinant conjecture.",
+  "matrixConvention": "R14 R34 R23 R12 with blocks [[3/5,4/5],[-4/5,3/5]]; zero-based supports in data",
+  "U": [
+    [
+      "-31/625",
+      "492/625",
+      "-48/125",
+      "12/25"
+    ],
+    [
+      "-12/25",
+      "9/25",
+      "4/5",
+      "0"
+    ],
+    [
+      "48/125",
+      "-36/125",
+      "9/25",
+      "4/5"
+    ],
+    [
+      "-492/625",
+      "-256/625",
+      "-36/125",
+      "9/25"
+    ]
+  ],
+  "cover": [
+    {
+      "rows": [
+        0
+      ],
+      "columns": [
+        0
+      ],
+      "squaredMinor": "961/390625"
+    },
+    {
+      "rows": [
+        1
+      ],
+      "columns": [
+        3
+      ],
+      "squaredMinor": "0"
+    },
+    {
+      "rows": [
+        2
+      ],
+      "columns": [
+        1
+      ],
+      "squaredMinor": "1296/15625"
+    },
+    {
+      "rows": [
+        3
+      ],
+      "columns": [
+        2
+      ],
+      "squaredMinor": "1296/15625"
+    },
+    {
+      "rows": [
+        0,
+        1
+      ],
+      "columns": [
+        0,
+        2
+      ],
+      "squaredMinor": "784/15625"
+    },
+    {
+      "rows": [
+        0,
+        1
+      ],
+      "columns": [
+        0,
+        3
+      ],
+      "squaredMinor": "20736/390625"
+    },
+    {
+      "rows": [
+        0,
+        1
+      ],
+      "columns": [
+        1,
+        3
+      ],
+      "squaredMinor": "11664/390625"
+    },
+    {
+      "rows": [
+        0,
+        2
+      ],
+      "columns": [
+        0,
+        1
+      ],
+      "squaredMinor": "1296/15625"
+    },
+    {
+      "rows": [
+        0,
+        2
+      ],
+      "columns": [
+        0,
+        3
+      ],
+      "squaredMinor": "784/15625"
+    },
+    {
+      "rows": [
+        0,
+        2
+      ],
+      "columns": [
+        1,
+        2
+      ],
+      "squaredMinor": "11664/390625"
+    },
+    {
+      "rows": [
+        0,
+        3
+      ],
+      "columns": [
+        0,
+        1
+      ],
+      "squaredMinor": "256/625"
+    },
+    {
+      "rows": [
+        0,
+        3
+      ],
+      "columns": [
+        0,
+        2
+      ],
+      "squaredMinor": "1296/15625"
+    },
+    {
+      "rows": [
+        0,
+        3
+      ],
+      "columns": [
+        2,
+        3
+      ],
+      "squaredMinor": "0"
+    }
+  ],
+  "permutationChecks": [
+    {
+      "columnToRow": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "hits": 4
+    },
+    {
+      "columnToRow": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "hits": 4
+    },
+    {
+      "columnToRow": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "hits": 7
+    },
+    {
+      "columnToRow": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "hits": 4
+    },
+    {
+      "columnToRow": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "hits": 4
+    },
+    {
+      "columnToRow": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "hits": 4
+    },
+    {
+      "columnToRow": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "hits": 4
+    },
+    {
+      "columnToRow": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "hits": 4
+    },
+    {
+      "columnToRow": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "hits": 4
+    },
+    {
+      "columnToRow": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "hits": 4
+    },
+    {
+      "columnToRow": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "hits": 1
+    },
+    {
+      "columnToRow": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "hits": 4
+    },
+    {
+      "columnToRow": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "hits": 1
+    }
+  ],
+  "permutationLowerBound": "1",
+  "unitaryCoverValue": "14953/15625",
+  "strictGap": "672/15625"
+}
