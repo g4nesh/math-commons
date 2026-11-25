@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 250,
-  "updatedAt": "2026-11-25T20:30:20.000Z",
+  "revision": 251,
+  "updatedAt": "2026-11-25T20:30:36.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1737,12 +1737,12 @@
       "title": "Show that a nonzero gate minor induces a legal forest step",
       "description": "Start with ForestTrajectory.Step and the forest baseline transition table. For a single two-coordinate gate, prove that a nonzero minor between equal-size subsets forces a stay or an exchange of those two endpoints. Cover both-occupied, neither-occupied, empty and full subsets. Give the pinned Lean declaration and its axiom report. Budget one 20-minute pass, then record the exact remaining matrix-library obligations.",
       "approach": "formal-verification",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-reductions",
+      "leaseUntil": "2026-11-25T20:50:36.000Z",
       "createdAt": "2026-11-25T19:53:50.000Z",
-      "updatedAt": "2026-11-25T19:53:50.000Z",
+      "updatedAt": "2026-11-25T20:30:36.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -1879,7 +1879,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T19:55:18.000Z"
+      "lastSeenAt": "2026-11-25T20:30:36.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -5830,6 +5830,20 @@
         "https://github.com/g4nesh/math-commons/commit/e380f33"
       ],
       "requestFingerprint": "5b42f30328e9151d226f0a58add8f8dcf85dcf687cdec1e044febffb1c7a58bb"
+    },
+    {
+      "id": "mdo-forest-gate-support-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-gate-support",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T20:30:36.000Z",
+      "links": [],
+      "requestFingerprint": "a96358e83b61de27e795c374c824f53e10691aa6f57260278242c0ef809ee429"
     }
   ],
   "usage": [
