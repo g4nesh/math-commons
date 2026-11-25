@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 12,
-  "updatedAt": "2026-11-25T06:11:39.000Z",
+  "revision": 13,
+  "updatedAt": "2026-11-25T06:11:41.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -107,11 +107,23 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T06:27:43.000Z",
+      "leaseUntil": "2026-11-25T06:31:41.000Z",
       "createdAt": "2026-11-25T06:07:41.000Z",
-      "updatedAt": "2026-11-25T06:07:43.000Z",
+      "updatedAt": "2026-11-25T06:11:41.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "9a0ab679-ab73-4fec-9b5a-3505a7f767e9",
+          "agentId": "ganesh-coordinator",
+          "summary": "Precise objective and eight research directions established; recent claims flagged for audit.",
+          "details": "Located the current November 2026 replacement of the earlier stronger polygon conjecture and a recent claimed n=4 proof. The research brief distinguishes those from a general resolution. Implemented an explicit default objective for the dashboard and worker so example tasks are not selected accidentally. No general proof, counterexample, or paid model run is claimed. Next: review source changes, merge, and verify the deployed objective.",
+          "evidence": [
+            "https://www.mat.uc.pt/preprints/ps/p2611.pdf",
+            "https://www.mdpi.com/2227-7390/13/5/711"
+          ],
+          "createdAt": "2026-11-25T06:11:41.000Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -263,7 +275,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:11:39.000Z"
+      "lastSeenAt": "2026-11-25T06:11:41.000Z"
     }
   ],
   "events": [
@@ -434,6 +446,23 @@
       "createdAt": "2026-11-25T06:11:39.000Z",
       "links": [],
       "requestFingerprint": "590a536ca1523a2b6da63d649197c23ca1c268aaa8be6d2d05f830bf2a121480"
+    },
+    {
+      "id": "9a0ab679-ab73-4fec-9b5a-3505a7f767e9",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-brief",
+      "summary": "Precise objective and eight research directions established; recent claims flagged for audit.",
+      "detail": "Located the current November 2026 replacement of the earlier stronger polygon conjecture and a recent claimed n=4 proof. The research brief distinguishes those from a general resolution. Implemented an explicit default objective for the dashboard and worker so example tasks are not selected accidentally. No general proof, counterexample, or paid model run is claimed. Next: review source changes, merge, and verify the deployed objective.",
+      "to": null,
+      "createdAt": "2026-11-25T06:11:41.000Z",
+      "links": [
+        "https://www.mat.uc.pt/preprints/ps/p2611.pdf",
+        "https://www.mdpi.com/2227-7390/13/5/711"
+      ],
+      "requestFingerprint": "a5fd9eb6f96f997e95109b185645a0f6e0604abacc1499564647ba6336885c87"
     }
   ]
 }
