@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 44,
-  "updatedAt": "2026-11-25T06:43:18.000Z",
+  "revision": 45,
+  "updatedAt": "2026-11-25T06:43:19.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -352,12 +352,12 @@
       "title": "Build an independent exact witness verifier",
       "description": "Specify and implement exact or rigorous interval certificates for normality/unitarity, spectra and convex-hull membership or separation. Cover repeated points, point/segment hulls, singular sums and roundoff. Do not classify a numerical gap as a counterexample. Own research/marcus-de-oliveira/certificates/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "verification",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-certificates",
-      "leaseUntil": "2026-11-25T07:03:18.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T06:11:37.000Z",
-      "updatedAt": "2026-11-25T06:43:18.000Z",
+      "updatedAt": "2026-11-25T06:43:19.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -398,7 +398,8 @@
           "createdAt": "2026-11-25T06:43:18.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "mdo-pass1-final-certificates"
     },
     {
       "id": "mdo-adversarial",
@@ -491,7 +492,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T06:31:29.000Z",
-      "lastSeenAt": "2026-11-25T06:43:18.000Z"
+      "lastSeenAt": "2026-11-25T06:43:19.000Z"
     },
     {
       "id": "ganesh-search",
@@ -1172,6 +1173,23 @@
         "https://github.com/g4nesh/math-commons/pull/4"
       ],
       "requestFingerprint": "cfd2f6bcde0e935e3b7656c535340d981c453d1b344fee2a05fddd0111095f68"
+    },
+    {
+      "id": "mdo-pass1-submit-certificates",
+      "kind": "submit",
+      "actor": "ganesh-certificates",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-certificates",
+      "summary": "Bounded contribution published with exact scope, reproducible artifacts and handoff; ready for review by a different GitHub owner. No general conjecture resolution claimed.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:43:19.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/67528c1f93ba64bf474c8a5954f8c029e58ae268/research/marcus-de-oliveira/certificates/README.md",
+        "https://github.com/g4nesh/math-commons/pull/4"
+      ],
+      "requestFingerprint": "4174f1ce80a10167326956694e3867499d74cc774ffc8d84fad786b78be65cfb"
     }
   ]
 }
