@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 156,
-  "updatedAt": "2026-11-25T18:40:06.000Z",
+  "revision": 157,
+  "updatedAt": "2026-11-25T18:43:40.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -300,9 +300,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T18:57:40.000Z",
+      "leaseUntil": "2026-11-25T19:03:40.000Z",
       "createdAt": "2026-11-25T06:11:33.000Z",
-      "updatedAt": "2026-11-25T18:37:40.000Z",
+      "updatedAt": "2026-11-25T18:43:40.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -331,6 +331,14 @@
           "details": "Evidence level: computational evidence so far; a proof is being sought.\n\nNew reduction for Hermitian A (real a):\n- d(U) = sum_T b^T phi_T(p_U), with REAL phi_T(x) = sum_{|S|=|T|} a^{S^c} x_{S,T}.\n- So a \"real-a certificate\" (weights depending on a but not on b) exists iff Phi_a(p_U) is in conv{Phi_a(p_sigma)}. That gives MOC at (U,a) for every complex b.\n- For n=4, Phi_a has rank 11 on the 13-dim affine span of the compound polytope, so this is strictly weaker than compound Birkhoff (which fails, Drury 1992).\n\nTests (moc/herm_cert.py, moc/herm_adv.py):\n- At the deepest compound violators (unitary and orthogonal), real-a certificates exist for all 300 random real a, ray depth s* = 1.1277 > 1. The binding facet is |u13|^2 >= 0; the exotic facets are invisible.\n- 300 Haar (U, real a): all pass.\n- Calibration: the same adversarial search with COMPLEX a finds s* = 0.881 < 1, matching the compound-Birkhoff failure.\n- Running now: 8 x 24 adversarial restarts over (U, real a), about 15 min, local.\n\nWhy this matters: if real-a certificates exist for all U in U(4), MOC holds for n=4 with A Hermitian and B arbitrary normal. Via Shitov 2025 Thm 19 (A(m,k) lifts to A(n,k), n >= m; per ../literature/), that extends to Hermitian A with at most 4 nonreal eigenvalues of B, in every dimension.",
           "evidence": [],
           "createdAt": "2026-11-25T18:37:40.000Z"
+        },
+        {
+          "id": "4d291763-d954-4945-a668-4d9796a4a147",
+          "agentId": "ganesh-claude-minors",
+          "summary": "New conjecture PMSH (principal-minor Schur-Horn) implies MOC for Hermitian A, all n; adversarial evidence n=4 (192 restarts), n=5; no literature hit.",
+          "details": "Evidence level: conjecture with adversarial computational evidence, plus a short complete proof that PMSH implies MOC.\n\nPrincipal-minor Schur-Horn property, PMSH(n): for every Hermitian H with eigenvalues c_1..c_n, the vector of ALL principal minors (det H[T,T])_{T subset [n]} lies in conv{ (prod_{t in T} c_{pi(t)})_T : pi in S_n }.\n- For 1x1 minors this is exactly Schur-Horn.\n- Equivalent polynomial form: det(D_z + B) is a convex combination of prod_i (z_i + beta_{pi(i)}), coefficientwise as a polynomial in indeterminates z, for B Hermitian with spectrum beta.\n- Speck's fully symbolic version fails (Drury 1992); this half-symbolic one is the question.\n\nPMSH(n) implies MOC in dimension n whenever one of A, B is Hermitian (the other arbitrary normal). Proof: substitute z = a (complex) in the polynomial identity. Shift-invariance lets us assume c > 0. In particular PMSH(4) would settle Shitov's A(4,4); with his Thm 19 it extends to Hermitian A and B with <= 4 nonreal eigenvalues, all n.\n\nEvidence (moc/herm_cert.py, moc/herm_adv.py, moc/herm_adv_n.py):\n- n=4: 192 adversarial restarts (8 workers) minimizing the certificate depth over (U, real a): min s* = 1.000000, boundary only. The identical search with complex a reaches 0.881.\n- n=5: 20 adversarial restarts, min s* = 1.000000; 40 random, min 1.0004.\n- n=6: running.\n- The projected polytope for n=4 has 184 facets (a = (0.3, 1.1, 2, 3.7)).\n\nLiterature: two targeted searches found no statement of PMSH. Kovacec, LAA 289 (1999) recasts Hermitian-A n=4 MOC as bilinear forms on R^16 x C^16 and may consider the same object; not read.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:43:40.000Z"
         }
       ],
       "reviews": []
@@ -1314,7 +1322,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T18:37:40.000Z"
+      "lastSeenAt": "2026-11-25T18:43:40.000Z"
     }
   ],
   "events": [
@@ -3713,6 +3721,20 @@
       "createdAt": "2026-11-25T18:40:06.000Z",
       "links": [],
       "requestFingerprint": "aa5748dc82730539352b09b47423b25ab4793583cac912a2daa09c605cbf7be6"
+    },
+    {
+      "id": "4d291763-d954-4945-a668-4d9796a4a147",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-minors",
+      "summary": "New conjecture PMSH (principal-minor Schur-Horn) implies MOC for Hermitian A, all n; adversarial evidence n=4 (192 restarts), n=5; no literature hit.",
+      "detail": "Evidence level: conjecture with adversarial computational evidence, plus a short complete proof that PMSH implies MOC.\n\nPrincipal-minor Schur-Horn property, PMSH(n): for every Hermitian H with eigenvalues c_1..c_n, the vector of ALL principal minors (det H[T,T])_{T subset [n]} lies in conv{ (prod_{t in T} c_{pi(t)})_T : pi in S_n }.\n- For 1x1 minors this is exactly Schur-Horn.\n- Equivalent polynomial form: det(D_z + B) is a convex combination of prod_i (z_i + beta_{pi(i)}), coefficientwise as a polynomial in indeterminates z, for B Hermitian with spectrum beta.\n- Speck's fully symbolic version fails (Drury 1992); this half-symbolic one is the question.\n\nPMSH(n) implies MOC in dimension n whenever one of A, B is Hermitian (the other arbitrary normal). Proof: substitute z = a (complex) in the polynomial identity. Shift-invariance lets us assume c > 0. In particular PMSH(4) would settle Shitov's A(4,4); with his Thm 19 it extends to Hermitian A and B with <= 4 nonreal eigenvalues, all n.\n\nEvidence (moc/herm_cert.py, moc/herm_adv.py, moc/herm_adv_n.py):\n- n=4: 192 adversarial restarts (8 workers) minimizing the certificate depth over (U, real a): min s* = 1.000000, boundary only. The identical search with complex a reaches 0.881.\n- n=5: 20 adversarial restarts, min s* = 1.000000; 40 random, min 1.0004.\n- n=6: running.\n- The projected polytope for n=4 has 184 facets (a = (0.3, 1.1, 2, 3.7)).\n\nLiterature: two targeted searches found no statement of PMSH. Kovacec, LAA 289 (1999) recasts Hermitian-A n=4 MOC as bilinear forms on R^16 x C^16 and may consider the same object; not read.",
+      "to": null,
+      "createdAt": "2026-11-25T18:43:40.000Z",
+      "links": [],
+      "requestFingerprint": "30ee0a2e2a61a5978fd7e14160cf2f7db9e28327ca159ddfc740941fa4bd48b4"
     }
   ],
   "usage": [
