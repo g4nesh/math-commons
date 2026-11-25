@@ -242,6 +242,45 @@ theorem unitaryDetNorm (a b c d : Gaussian) (h : UnitaryBlock a b c d) :
   grind
 
 
+theorem minorTwoSupportedColumns {V : Type} (M : V → V → Gaussian)
+    (r c₁ c₂ : V) (rs middle after : List V)
+    (unique : (c₁ :: (middle ++ c₂ :: after)).Nodup)
+    (zero : ∀ y ∈ middle ++ after, M r y = gaussianArithmetic.zero) :
+    minorDet gaussianArithmetic M (r :: rs) (c₁ :: (middle ++ c₂ :: after)) =
+      gaussianArithmetic.add
+        (gaussianArithmetic.mul (M r c₁)
+          (minorDet gaussianArithmetic M rs (middle ++ c₂ :: after)))
+        (signed gaussianArithmetic (parity (c₁ :: middle))
+          (gaussianArithmetic.mul (M r c₂)
+            (minorDet gaussianArithmetic M rs (c₁ :: (middle ++ after))))) := by
+  simp only [minorDet, columnChoices, List.map_cons, List.map_map, Function.comp_def, scalarSum]
+  have tail : scalarSum gaussianArithmetic
+      ((columnChoices (middle ++ c₂ :: after)).map
+        (fun q => signed gaussianArithmetic (!q.odd)
+          (gaussianArithmetic.mul (M r q.column)
+            (minorDet gaussianArithmetic M rs (c₁ :: q.remaining))))) =
+      signed gaussianArithmetic (parity (c₁ :: middle))
+        (gaussianArithmetic.mul (M r c₂)
+          (minorDet gaussianArithmetic M rs (c₁ :: (middle ++ after)))) := by
+    apply scalarSumUniqueKey (columnChoices (middle ++ c₂ :: after)) ColumnChoice.column
+      (by simpa only [columnChoicesColumns] using (List.nodup_cons.mp unique).2)
+      ⟨c₂, middle ++ after, parity middle⟩ (selectedChoiceMember middle after c₂)
+    intro q hq different
+    have member : q.column ∈ middle ++ c₂ :: after :=
+      (choicePerm (middle ++ c₂ :: after) q hq).mem_iff.mp List.mem_cons_self
+    have inside : q.column ∈ middle ++ after := by
+      rcases List.mem_append.mp member with h | h
+      · exact List.mem_append_left _ h
+      · rcases List.mem_cons.mp h with eq | h
+        · exact False.elim (different eq)
+        · exact List.mem_append_right _ h
+    rw [zero q.column inside, gaussianArithmetic.zeroMul]
+    cases q.odd <;> simp only [signed, Bool.not_true, Bool.not_false,
+      Bool.false_eq_true, ↓reduceIte, gaussianArithmetic.negZero]
+  rw [tail]
+  rfl
+
+
 section Gate
 variable {V : Type} [DecidableEq V] {vertices : List V}
 
@@ -322,6 +361,204 @@ theorem prefixGateMagnitudes (e : Edge vertices) (a b c d : Gaussian)
     by rw [lr], by rw [rl]; exact weights.1,
     by rw [both]; exact unitaryDetNorm a b c d h⟩
 
+
+theorem gateEndpointSpectatorZero (e : Edge vertices) (a b c d : Gaussian)
+    (x : V) (xl : x ≠ e.left) (xr : x ≠ e.right) :
+    twoCoordinateGate gaussianArithmetic e a b c d e.left x = gaussianArithmetic.zero ∧
+    twoCoordinateGate gaussianArithmetic e a b c d e.right x = gaussianArithmetic.zero := by
+  simp [twoCoordinateGate, xl, xr, Ne.symm xl, Ne.symm xr, e.distinct, Ne.symm e.distinct]
+
+/-- Exchange from the right endpoint to the left crosses any number of occupied
+spectators, with the exact parity sign in the ordered minor. Trailing occupied
+spectators are arbitrary as well. -/
+theorem interveningExchangeSign (e : Edge vertices) (a b c d : Gaussian)
+    (middle after : List V) (unique : (middle ++ after).Nodup)
+    (avoids : ∀ x ∈ middle ++ after, x ≠ e.left ∧ x ≠ e.right) :
+    minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (e.left :: (middle ++ after)) (middle ++ e.right :: after) =
+      signed gaussianArithmetic (parity middle) b := by
+  let M := twoCoordinateGate gaussianArithmetic e a b c d
+  have identity : ∀ x ∈ middle ++ after, ∀ y, M x y =
+      if x = y then gaussianArithmetic.one else gaussianArithmetic.zero := by
+    intro x hx y
+    exact gateSpectatorRow e a b c d x (avoids x hx).1 (avoids x hx).2 y
+  have nr : e.right ∉ middle ++ after := by
+    intro hx; exact (avoids e.right hx).2 rfl
+  have inserted : (middle ++ e.right :: after).Nodup :=
+    List.perm_middle.nodup_iff.mpr (List.nodup_cons.mpr ⟨nr, unique⟩)
+  rw [minorSelectedColumn _ e.left e.right (middle ++ after) middle after inserted]
+  · have spectators := identityPrefixMinor M (middle ++ after) [] []
+      (by simpa using unique) identity
+    simp only [List.append_nil, emptyMinor] at spectators
+    change signed gaussianArithmetic (parity middle)
+      (gaussianArithmetic.mul (M e.left e.right)
+        (minorDet gaussianArithmetic M (middle ++ after) (middle ++ after))) = _
+    rw [spectators, gaussianMulOne]
+    exact congrArg (signed gaussianArithmetic (parity middle)) (gateEntries e a b c d).2.1
+  · intro x hx
+    exact (gateEndpointSpectatorZero e a b c d x (avoids x hx).1 (avoids x hx).2).1
+
+theorem interveningExchangeNorm (e : Edge vertices) (a b c d : Gaussian)
+    (middle after : List V) (unique : (middle ++ after).Nodup)
+    (avoids : ∀ x ∈ middle ++ after, x ≠ e.left ∧ x ≠ e.right) :
+    normSq (minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (e.left :: (middle ++ after)) (middle ++ e.right :: after)) = normSq b := by
+  rw [interveningExchangeSign e a b c d middle after unique avoids, normSqSigned]
+
+theorem signedNot (odd : Bool) (z : Gaussian) :
+    signed gaussianArithmetic (!odd) z =
+      gaussianArithmetic.neg (signed gaussianArithmetic odd z) := by
+  cases odd <;> simp only [signed, Bool.not_false, Bool.not_true,
+    Bool.false_eq_true, ↓reduceIte]
+  apply Prod.ext <;> simp only [gaussianArithmetic] <;> grind
+
+/-- The reverse exchange has the same squared value, with arbitrarily many
+intervening and trailing occupied spectators. No unitarity is used here. -/
+theorem reverseExchangeSign (e : Edge vertices) (a b c d : Gaussian)
+    (middle after : List V) (unique : (middle ++ after).Nodup)
+    (avoids : ∀ x ∈ middle ++ after, x ≠ e.left ∧ x ≠ e.right) :
+    minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (middle ++ e.right :: after) (e.left :: (middle ++ after)) =
+      signed gaussianArithmetic (parity middle) c := by
+  let M := twoCoordinateGate gaussianArithmetic e a b c d
+  induction middle with
+  | nil =>
+    simp only [List.nil_append] at unique avoids ⊢
+    change minorDet gaussianArithmetic M (e.right :: after) (e.left :: after) = c
+    rw [minorFirstColumn M e.right e.left after after]
+    · have identity : ∀ x ∈ after, ∀ y, M x y =
+          if x = y then gaussianArithmetic.one else gaussianArithmetic.zero := by
+        intro x hx y
+        exact gateSpectatorRow e a b c d x (avoids x hx).1 (avoids x hx).2 y
+      have tail := identityPrefixMinor M after [] [] (by simpa using unique) identity
+      simp only [List.append_nil, emptyMinor] at tail
+      rw [tail, gaussianMulOne]
+      exact (gateEntries e a b c d).2.2.1
+    · intro x hx
+      exact (gateEndpointSpectatorZero e a b c d x (avoids x hx).1 (avoids x hx).2).2
+  | cons x xs ih =>
+    have nu := List.nodup_cons.mp unique
+    have ax := avoids x List.mem_cons_self
+    have atail : ∀ y ∈ xs ++ after, y ≠ e.left ∧ y ≠ e.right := by
+      intro y hy; exact avoids y (List.mem_cons_of_mem x hy)
+    have nl : e.left ∉ x :: (xs ++ after) := by
+      intro hx; exact (avoids e.left hx).1 rfl
+    have insert : ([e.left] ++ x :: (xs ++ after)).Nodup :=
+      List.nodup_cons.mpr ⟨nl, unique⟩
+    change minorDet gaussianArithmetic M (x :: (xs ++ e.right :: after))
+      ([e.left] ++ x :: (xs ++ after)) = _
+    rw [minorSelectedColumn M x x (xs ++ e.right :: after) [e.left] (xs ++ after) insert]
+    · have diag : M x x = gaussianArithmetic.one := by
+        simpa using gateSpectatorRow e a b c d x ax.1 ax.2 x
+      rw [diag]
+      simp only [gaussianOneMul]
+      change gaussianArithmetic.neg (minorDet gaussianArithmetic M
+        (xs ++ e.right :: after) (e.left :: (xs ++ after))) =
+        signed gaussianArithmetic (!(parity xs)) c
+      rw [ih nu.2 atail, signedNot]
+    · intro y hy
+      have different : x ≠ y := by
+        intro eq
+        rcases List.mem_cons.mp hy with yl | ht
+        · exact ax.1 (eq.trans yl)
+        · exact nu.1 (eq ▸ ht)
+      change twoCoordinateGate gaussianArithmetic e a b c d x y = _
+      simp only [gateSpectatorRow e a b c d x ax.1 ax.2 y, different, ↓reduceIte]
+
+
+theorem reverseExchangeNorm (e : Edge vertices) (a b c d : Gaussian)
+    (middle after : List V) (unique : (middle ++ after).Nodup)
+    (avoids : ∀ x ∈ middle ++ after, x ≠ e.left ∧ x ≠ e.right) :
+    normSq (minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (middle ++ e.right :: after) (e.left :: (middle ++ after))) = normSq c := by
+  rw [reverseExchangeSign e a b c d middle after unique avoids, normSqSigned]
+
+
+theorem gateSpectatorMinor (e : Edge vertices) (a b c d : Gaussian)
+    (xs : List V) (unique : xs.Nodup)
+    (avoids : ∀ x ∈ xs, x ≠ e.left ∧ x ≠ e.right) :
+    minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d) xs xs =
+      gaussianArithmetic.one := by
+  have identity : ∀ x ∈ xs, ∀ y,
+      twoCoordinateGate gaussianArithmetic e a b c d x y =
+      if x = y then gaussianArithmetic.one else gaussianArithmetic.zero := by
+    intro x hx y
+    exact gateSpectatorRow e a b c d x (avoids x hx).1 (avoids x hx).2 y
+  simpa only [List.append_nil, emptyMinor] using
+    identityPrefixMinor (twoCoordinateGate gaussianArithmetic e a b c d) xs [] []
+      (by simpa using unique) identity
+
+theorem leftStayMinor (e : Edge vertices) (a b c d : Gaussian)
+    (xs : List V) (unique : xs.Nodup)
+    (avoids : ∀ x ∈ xs, x ≠ e.left ∧ x ≠ e.right) :
+    minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (e.left :: xs) (e.left :: xs) = a := by
+  rw [minorFirstColumn]
+  · rw [gateSpectatorMinor e a b c d xs unique avoids, gaussianMulOne]
+    exact (gateEntries e a b c d).1
+  · intro x hx
+    exact (gateEndpointSpectatorZero e a b c d x (avoids x hx).1 (avoids x hx).2).1
+
+theorem rightStayMinor (e : Edge vertices) (a b c d : Gaussian)
+    (middle after : List V) (unique : (middle ++ after).Nodup)
+    (avoids : ∀ x ∈ middle ++ after, x ≠ e.left ∧ x ≠ e.right) :
+    minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (middle ++ e.right :: after) (middle ++ e.right :: after) = d := by
+  let M := twoCoordinateGate gaussianArithmetic e a b c d
+  have nr : e.right ∉ middle ++ after := by intro hx; exact (avoids e.right hx).2 rfl
+  have inserted : (middle ++ e.right :: after).Nodup :=
+    List.perm_middle.nodup_iff.mpr (List.nodup_cons.mpr ⟨nr, unique⟩)
+  have identity : ∀ x ∈ middle, ∀ y, M x y =
+      if x = y then gaussianArithmetic.one else gaussianArithmetic.zero := by
+    intro x hx y
+    have ax := avoids x (List.mem_append_left _ hx)
+    exact gateSpectatorRow e a b c d x ax.1 ax.2 y
+  rw [identityPrefixMinor M middle (e.right :: after) (e.right :: after) inserted identity]
+  rw [minorFirstColumn M e.right e.right after after]
+  · have ua := (List.sublist_append_right middle after).nodup unique
+    have aa : ∀ x ∈ after, x ≠ e.left ∧ x ≠ e.right := by
+      intro x hx; exact avoids x (List.mem_append_right _ hx)
+    rw [gateSpectatorMinor e a b c d after ua aa, gaussianMulOne]
+    exact (gateEntries e a b c d).2.2.2
+  · intro x hx
+    have ax := avoids x (List.mem_append_right _ hx)
+    exact (gateEndpointSpectatorZero e a b c d x ax.1 ax.2).2
+
+theorem oppositeSignsProduct (odd : Bool) (b c : Gaussian) :
+    signed gaussianArithmetic (!odd)
+      (gaussianArithmetic.mul b (signed gaussianArithmetic odd c)) =
+      gaussianArithmetic.neg (gaussianArithmetic.mul b c) := by
+  cases odd <;> simp only [signed, Bool.not_false, Bool.not_true,
+    Bool.false_eq_true, ↓reduceIte]
+  apply Prod.ext <;> simp only [gaussianArithmetic] <;> grind
+
+/-- Double occupation has the block determinant for arbitrary intervening and
+trailing spectators: the two permutation signs cancel in the crossed term. -/
+theorem bothOccupiedMinor (e : Edge vertices) (a b c d : Gaussian)
+    (middle after : List V) (unique : (middle ++ after).Nodup)
+    (avoids : ∀ x ∈ middle ++ after, x ≠ e.left ∧ x ≠ e.right) :
+    minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (e.left :: (middle ++ e.right :: after))
+      (e.left :: (middle ++ e.right :: after)) = blockDet a b c d := by
+  have nr : e.right ∉ middle ++ after := by intro hx; exact (avoids e.right hx).2 rfl
+  have inserted : (middle ++ e.right :: after).Nodup :=
+    List.perm_middle.nodup_iff.mpr (List.nodup_cons.mpr ⟨nr, unique⟩)
+  have nl : e.left ∉ middle ++ e.right :: after := by
+    intro hx
+    rcases List.mem_append.mp hx with hm | ha
+    · exact (avoids e.left (List.mem_append_left _ hm)).1 rfl
+    · rcases List.mem_cons.mp ha with eq | ha
+      · exact e.distinct eq
+      · exact (avoids e.left (List.mem_append_right _ ha)).1 rfl
+  rw [minorTwoSupportedColumns _ e.left e.left e.right
+    (middle ++ e.right :: after) middle after (List.nodup_cons.mpr ⟨nl, inserted⟩)]
+  · rw [rightStayMinor e a b c d middle after unique avoids,
+      reverseExchangeSign e a b c d middle after unique avoids,
+      (gateEntries e a b c d).1, (gateEntries e a b c d).2.1]
+    simp only [parity, oppositeSignsProduct, blockDet]
+  · intro x hx
+    exact (gateEndpointSpectatorZero e a b c d x (avoids x hx).1 (avoids x hx).2).1
+
 end Gate
 #print axioms normSqZero
 #print axioms normSqOne
@@ -345,9 +582,21 @@ end Gate
 #print axioms minorSelectedColumn
 #print axioms blockDetLagrange
 #print axioms unitaryDetNorm
+#print axioms minorTwoSupportedColumns
 #print axioms gateSpectatorRow
 #print axioms gateEntries
 #print axioms prefixGateMagnitudes
+#print axioms gateEndpointSpectatorZero
+#print axioms interveningExchangeSign
+#print axioms interveningExchangeNorm
+#print axioms signedNot
+#print axioms reverseExchangeSign
+#print axioms reverseExchangeNorm
+#print axioms gateSpectatorMinor
+#print axioms leftStayMinor
+#print axioms rightStayMinor
+#print axioms oppositeSignsProduct
+#print axioms bothOccupiedMinor
 end MathCommons.ForestGateMagnitude
 
 
