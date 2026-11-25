@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 204,
-  "updatedAt": "2026-11-25T19:04:16.000Z",
+  "revision": 205,
+  "updatedAt": "2026-11-25T19:05:48.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1386,9 +1386,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T19:23:10.000Z",
+      "leaseUntil": "2026-11-25T19:25:48.000Z",
       "createdAt": "2026-11-25T18:48:15.000Z",
-      "updatedAt": "2026-11-25T19:03:10.000Z",
+      "updatedAt": "2026-11-25T19:05:48.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1398,6 +1398,16 @@
           "details": "Own only research/marcus-de-oliveira/single-cycle/. Budget: approximately 12 active minutes; local exact Python only, at most 60 CPU seconds per fixed regression run. First target: construct a nonnegative Birkhoff decomposition of the singleton matrix |U|^2 for arbitrary 3x3 unitary U, use complementary-minor identities to prove one distribution matches every squared minor, and reproduce corrected weights for the existing 3/5,4/5 triangle. Then test a triangle with pendant forest gates if time. Acceptance: a complete scoped written argument, exact executable checks of all minor sizes and determinant identities, and explicit limits separating this certificate from the unrestricted conjecture. Parent owns Git publication and centrally records actual nonoverlapping runtime usage.",
           "evidence": [],
           "createdAt": "2026-11-25T19:03:10.000Z"
+        },
+        {
+          "id": "mdo-cycle-formula-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Explicit triangle correction and one-coordinate gluing passed 1416 exact minor checks.",
+          "details": "For a 3x3 doubly stochastic D=|U|^2, on column-to-row permutations (012,021,102,120,201,210), use weights (x,D00-x,D22-x,D02-D11+x,D01-D22+x,D11-x), where max(0,D22-D01,D11-D02)<=x<=min(D00,D11,D22). The known n<=3 complementary-minor argument is already in minors/report.md section 3 and is credited, not claimed new. Existing triangle: x=1881/15625 gives corrected return probability11881/15625, versus failed product weights6121/15625. A support-overlap lemma for two supported unitaries intersecting in at most one coordinate gives unique intermediate subsets and permits convolution of their certificates. Fixed exact code now passes14 fixtures,1416 all-size compound identities, including complex phases, all six triangle gate orders, a dimension6 triangle with pendant gates added on both sides, and two dimension3 blocks glued at one pivot. A separate4-cycle regression matches singleton marginals but its lexicographic Birkhoff weights fail a size2 minor; original determinant hull check remains inside. Written proof and focused regression tests are being finalized; no unrestricted cycle theorem or novelty claim.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/17"
+          ],
+          "createdAt": "2026-11-25T19:05:48.000Z"
         }
       ],
       "reviews": [],
@@ -1545,7 +1555,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T19:03:10.000Z"
+      "lastSeenAt": "2026-11-25T19:05:48.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -4768,6 +4778,22 @@
         "https://github.com/g4nesh/math-commons/commits/coordination"
       ],
       "requestFingerprint": "5e2725621ff5924c507c37eaf5607f259be04a1ecbce496055c663ea1528b226"
+    },
+    {
+      "id": "mdo-cycle-formula-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cycle-interference",
+      "summary": "Explicit triangle correction and one-coordinate gluing passed 1416 exact minor checks.",
+      "detail": "For a 3x3 doubly stochastic D=|U|^2, on column-to-row permutations (012,021,102,120,201,210), use weights (x,D00-x,D22-x,D02-D11+x,D01-D22+x,D11-x), where max(0,D22-D01,D11-D02)<=x<=min(D00,D11,D22). The known n<=3 complementary-minor argument is already in minors/report.md section 3 and is credited, not claimed new. Existing triangle: x=1881/15625 gives corrected return probability11881/15625, versus failed product weights6121/15625. A support-overlap lemma for two supported unitaries intersecting in at most one coordinate gives unique intermediate subsets and permits convolution of their certificates. Fixed exact code now passes14 fixtures,1416 all-size compound identities, including complex phases, all six triangle gate orders, a dimension6 triangle with pendant gates added on both sides, and two dimension3 blocks glued at one pivot. A separate4-cycle regression matches singleton marginals but its lexicographic Birkhoff weights fail a size2 minor; original determinant hull check remains inside. Written proof and focused regression tests are being finalized; no unrestricted cycle theorem or novelty claim.",
+      "to": null,
+      "createdAt": "2026-11-25T19:05:48.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/17"
+      ],
+      "requestFingerprint": "85be25e4cd2e2d6b60c712997e2b2cdfc1f4141f949b09e595e42ce1bc644fba"
     }
   ],
   "usage": [
