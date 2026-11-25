@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 245,
-  "updatedAt": "2026-11-25T20:26:07.000Z",
+  "revision": 246,
+  "updatedAt": "2026-11-25T20:29:56.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1760,12 +1760,12 @@
       "title": "Find spectrum-dependent weights for the certified four-cycle",
       "description": "Use the explicit four-edge matrix and stored spectral hull witness in single-cycle/results.json. Select a nontrivial one-real-parameter deformation of one complex eigenvalue through the fixture. Try to certify an explicit positive-length interval using rational barycentric weights or an exact support inequality. State where the chosen triangle degenerates or a weight changes sign and keep every claim tied to that interval. Budget one 20-minute pass including rational endpoint checks. A failed triangle is not a disproof of the full hull bound.",
       "approach": "constructive",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-search",
+      "leaseUntil": "2026-11-25T20:49:56.000Z",
       "createdAt": "2026-11-25T19:53:53.000Z",
-      "updatedAt": "2026-11-25T19:53:53.000Z",
+      "updatedAt": "2026-11-25T20:29:56.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -1823,7 +1823,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T19:55:15.000Z"
+      "lastSeenAt": "2026-11-25T20:29:56.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -5713,6 +5713,20 @@
       "createdAt": "2026-11-25T20:26:07.000Z",
       "links": [],
       "requestFingerprint": "43a78dae10f6d01a0e78002fadc3b9fe35e7f0ad9b7c1a761769dab03695eee9"
+    },
+    {
+      "id": "mdo-four-cycle-spectral-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-four-cycle-spectral-weights",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T20:29:56.000Z",
+      "links": [],
+      "requestFingerprint": "0228cfd37f5e327d5eb8c93dd74bca8d4b81b44e3fe96d1ab11a80e985b8600e"
     }
   ],
   "usage": [
