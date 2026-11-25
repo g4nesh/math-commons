@@ -1,0 +1,6 @@
+n7_herm_k4_s herm 7 701 70 --k 4 --sep 0.05
+n7_herm_k5_s herm 7 702 70 --k 5 --sep 0.05
+n7_herm_k6_s herm 7 703 70 --k 6 --sep 0.05
+n7_herm_k7_s herm 7 704 70 --k 7 --sep 0.05
+n7_herm_k5_c herm 7 705 85 --k 5 --dperm 0.15 --dblock 0.15
+n7_herm_k7_c herm 7 706 85 --k 7 --dperm 0.15 --dblock 0.15

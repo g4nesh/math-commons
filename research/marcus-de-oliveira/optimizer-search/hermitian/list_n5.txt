@@ -1,0 +1,17 @@
+# tag cls n seed time_seconds extra
+n5_herm_k4 herm 5 501 50 --k 4
+n5_herm_k5 herm 5 502 50 --k 5
+n5_herm_k4_c herm 5 503 50 --k 4 --dperm 0.15 --dblock 0.15
+n5_herm_k5_c herm 5 504 50 --k 5 --dperm 0.15 --dblock 0.15
+n5_linecirc linecirc 5 505 25
+n5_linecirc_c linecirc 5 506 25 --dperm 0.15 --dblock 0.15
+n5_circles circles 5 507 25
+n5_circles_c circles 5 508 25 --dperm 0.15 --dblock 0.15
+n5_unitary unitary 5 509 20
+n5_unitary_c unitary 5 510 20 --dperm 0.15 --dblock 0.15
+n5_a3r_221_c a3r 5 511 25 --mult 2,2,1 --dperm 0.15 --dblock 0.15
+n5_a3r_311_c a3r 5 512 25 --mult 3,1,1 --dperm 0.15 --dblock 0.15
+n5_a3c_221_c a3c 5 513 25 --mult 2,2,1 --dperm 0.15 --dblock 0.15
+n5_outa10_c outa 5 514 25 --R 10 --dperm 0.15 --dblock 0.15
+n5_outb10_c outb 5 515 25 --R 10 --dperm 0.15 --dblock 0.15
+n5_outc10_c outc 5 516 25 --R 10 --dperm 0.15 --dblock 0.15
