@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 219,
-  "updatedAt": "2026-11-25T19:49:54.000Z",
+  "revision": 220,
+  "updatedAt": "2026-11-25T19:52:02.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1553,9 +1553,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T19:24:16.000Z",
+      "leaseUntil": "2026-11-25T20:12:02.000Z",
       "createdAt": "2026-11-25T19:03:44.000Z",
-      "updatedAt": "2026-11-25T19:04:16.000Z",
+      "updatedAt": "2026-11-25T19:52:02.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1634,7 +1634,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T19:04:16.000Z"
+      "lastSeenAt": "2026-11-25T19:52:02.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -5138,6 +5138,20 @@
       "createdAt": "2026-11-25T19:49:54.000Z",
       "links": [],
       "requestFingerprint": "2ccb66ac0d2d3444833b260c66392a3a9d66c862e63b39744aae650692f6432f"
+    },
+    {
+      "id": "mdo-followups-integration-reclaim",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-followup-integration",
+      "summary": "Reclaimed task after ganesh-coordinator's lease expired.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:52:02.000Z",
+      "links": [],
+      "requestFingerprint": "de99807aeedc6f8de1599a5d0c97a845a7bf22c42917a211a11bcc14bb6b04e6"
     }
   ],
   "usage": [
