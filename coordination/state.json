@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 242,
-  "updatedAt": "2026-11-25T20:21:44.000Z",
+  "revision": 243,
+  "updatedAt": "2026-11-25T20:21:47.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1534,9 +1534,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T20:41:44.000Z",
+      "leaseUntil": "2026-11-25T20:41:47.000Z",
       "createdAt": "2026-11-25T18:56:46.000Z",
-      "updatedAt": "2026-11-25T20:21:44.000Z",
+      "updatedAt": "2026-11-25T20:21:47.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -1574,6 +1574,14 @@
           "details": "Resuming mdo-pmsh-4 after my own release (handoff at commit ccafd3e, draft PR #18). Same agent ID and operator; the session's model changed from claude-opus-5-5 to claude-fable-5-2.\n\nCorrection to my earlier records: PR #6 was merged at 07:05Z, BEFORE the second-pass commit 8c1b1fb (pmsh.md, drury-constant.md). Those files are on branch claude/mdo-minors-compound-certificates only, not on main. A new PR will carry them. Ledger evidence links to commit 8c1b1fb remain valid.\n\nNew approach for this session (constructive; aim: a written proof or an explicit finite list of inequalities):\n1. Fiber picture. For fixed B=|U|^2, a PMSH certificate exists iff N_U + eta q^T lies in K(B) for some eta, where K(B) is the pairing-matrix fiber of the compound polytope Q and q is the direction determined by the spectrum ratio. K(B) is cut out by positivity of squared 2x2 minors and the 48 exotic facets.\n2. So each hard facet should be: (exotic facet) + alpha*(squared minor) + alpha'*(squared minor) >= 0, with alpha, alpha' explicit in the ratio. Derive these in closed form for every arc of the ratio, and verify against the exactly computed facets.\n3. Then try to prove the resulting quartic inequalities on U(4): look for Pluecker/Jacobi identities; test whether sums-of-squares certificates exist.\n\nBudget: about 3 hours wall-clock, at most 4 local process-hours, no cloud.",
           "evidence": [],
           "createdAt": "2026-11-25T19:55:54.000Z"
+        },
+        {
+          "id": "0fe1b655-42d7-49a2-85e4-813f86321f17",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Spectrum eliminated: PMSH(4) hard facets reduce to spectrum-free inequalities g_F + a + 2 sqrt(ab) >= 0 in squared 2x2 minors; all tested ones hold numerically. Not yet proved.",
+          "details": "Evidence levels marked. Scripts are in a scratch directory; they will be committed to PR #18's branch before the next checkpoint.\n\n1. Fiber LP (exact identity, cross-checked numerically). A PMSH certificate at (U, spectrum) exists iff N_U + eta q^T stays inside the compound polytope Q for some eta. On 182 unitaries (82 in exotic caps) the fiber LP and the direct certificate LP agree in every case.\n\n2. Closed form of all hard facets (verified against qhull at c=(3,4,6,12): 96 of 96 reproduced, none spurious). Every hard facet is\n   g_F + alpha*D_a + alpha'*D_b >= 0,\n   with g_F one of the 48 exotic facets and D_a, D_b squared 2x2 minors. Exactly two per exotic facet.\n\n3. Spectrum eliminated (symbolic, sympy). For the base facet g0 = B11+B33+D[14,34]-D[12,14] and ratio parameter rho:\n   - rho in (0,1): g0 + (1/rho) D[12,12] + (rho/(1-rho)) D[13,T] >= 0, T in {14,23}\n   - rho > 1: g0 + (rho-1) D[12,T] + (rho/(rho-1)) D[14,14] >= 0, T in {13,24}\n   - rho < 0: g0 + (1-rho) D[13,13] + (-1/rho) D[14,T] >= 0, T in {12,34}\n   Each family has the shape g0 + (1+1/t) a + t b with t>0. Minimizing over t gives ONE spectrum-free inequality per family:\n   g0 + a + 2 sqrt(a b) >= 0.\n\n4. Exact rewriting (checked on all 24 vertices, integer arithmetic): g0 = D[13,13]+D[14,14]+D[13,14]+D[13,23]-D[12,34]. So the first family reads\n   D[12,34] <= D[13,13] + D[14,14] + D[13,23] + (sqrt D[12,12] + sqrt D[13,14])^2.\n\n5. Numerical status: five of the six square-root inequalities attached to g0 have minimum 0 over U(4) (60 Nelder-Mead restarts each; the sixth run's output was lost and will be rerun). The cross term is necessary: min of g0 + D[12,12] is -0.0255 and min of g0 + D[12,12] + D[13,14] is -0.0015.\n\n6. Negative result: the first-level SDP relaxation over O(6) (compound in the real basis, where all coordinates are quadratic forms) is far too weak: it gives g0 >= -1, or -1/3 with B >= 0 added.\n\nNot established: the square-root inequalities themselves; and the facet description for ALL rho is so far verified only at sampled spectra.\nNext: sampled torus-symmetric sums-of-squares certificates of degree 2, 3, 4 in the entries of U.",
+          "evidence": [],
+          "createdAt": "2026-11-25T20:21:47.000Z"
         }
       ],
       "reviews": []
@@ -1900,7 +1908,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T20:21:44.000Z"
+      "lastSeenAt": "2026-11-25T20:21:47.000Z"
     },
     {
       "id": "ishaan-air",
@@ -5663,6 +5671,20 @@
       "createdAt": "2026-11-25T20:21:44.000Z",
       "links": [],
       "requestFingerprint": "e5912c4acee5b09c03ceded07ecbdf49b3906a56040b3c28554f7aef6a7e3fc3"
+    },
+    {
+      "id": "0fe1b655-42d7-49a2-85e4-813f86321f17",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pmsh-4",
+      "summary": "Spectrum eliminated: PMSH(4) hard facets reduce to spectrum-free inequalities g_F + a + 2 sqrt(ab) >= 0 in squared 2x2 minors; all tested ones hold numerically. Not yet proved.",
+      "detail": "Evidence levels marked. Scripts are in a scratch directory; they will be committed to PR #18's branch before the next checkpoint.\n\n1. Fiber LP (exact identity, cross-checked numerically). A PMSH certificate at (U, spectrum) exists iff N_U + eta q^T stays inside the compound polytope Q for some eta. On 182 unitaries (82 in exotic caps) the fiber LP and the direct certificate LP agree in every case.\n\n2. Closed form of all hard facets (verified against qhull at c=(3,4,6,12): 96 of 96 reproduced, none spurious). Every hard facet is\n   g_F + alpha*D_a + alpha'*D_b >= 0,\n   with g_F one of the 48 exotic facets and D_a, D_b squared 2x2 minors. Exactly two per exotic facet.\n\n3. Spectrum eliminated (symbolic, sympy). For the base facet g0 = B11+B33+D[14,34]-D[12,14] and ratio parameter rho:\n   - rho in (0,1): g0 + (1/rho) D[12,12] + (rho/(1-rho)) D[13,T] >= 0, T in {14,23}\n   - rho > 1: g0 + (rho-1) D[12,T] + (rho/(rho-1)) D[14,14] >= 0, T in {13,24}\n   - rho < 0: g0 + (1-rho) D[13,13] + (-1/rho) D[14,T] >= 0, T in {12,34}\n   Each family has the shape g0 + (1+1/t) a + t b with t>0. Minimizing over t gives ONE spectrum-free inequality per family:\n   g0 + a + 2 sqrt(a b) >= 0.\n\n4. Exact rewriting (checked on all 24 vertices, integer arithmetic): g0 = D[13,13]+D[14,14]+D[13,14]+D[13,23]-D[12,34]. So the first family reads\n   D[12,34] <= D[13,13] + D[14,14] + D[13,23] + (sqrt D[12,12] + sqrt D[13,14])^2.\n\n5. Numerical status: five of the six square-root inequalities attached to g0 have minimum 0 over U(4) (60 Nelder-Mead restarts each; the sixth run's output was lost and will be rerun). The cross term is necessary: min of g0 + D[12,12] is -0.0255 and min of g0 + D[12,12] + D[13,14] is -0.0015.\n\n6. Negative result: the first-level SDP relaxation over O(6) (compound in the real basis, where all coordinates are quadratic forms) is far too weak: it gives g0 >= -1, or -1/3 with B >= 0 added.\n\nNot established: the square-root inequalities themselves; and the facet description for ALL rho is so far verified only at sampled spectra.\nNext: sampled torus-symmetric sums-of-squares certificates of degree 2, 3, 4 in the entries of U.",
+      "to": null,
+      "createdAt": "2026-11-25T20:21:47.000Z",
+      "links": [],
+      "requestFingerprint": "64f7d3dc2021554a41c8610c2840820be80610a020e53816c2d53c2e27b0eeac"
     }
   ],
   "usage": [
