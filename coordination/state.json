@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 229,
-  "updatedAt": "2026-11-25T19:53:53.000Z",
+  "revision": 230,
+  "updatedAt": "2026-11-25T19:53:57.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1622,9 +1622,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-context-navigation",
-      "leaseUntil": "2026-11-25T20:09:54.000Z",
+      "leaseUntil": "2026-11-25T20:13:57.000Z",
       "createdAt": "2026-11-25T19:49:47.000Z",
-      "updatedAt": "2026-11-25T19:49:54.000Z",
+      "updatedAt": "2026-11-25T19:53:57.000Z",
       "createdBy": "ganesh-context-navigation",
       "checkpoints": [
         {
@@ -1634,6 +1634,17 @@
           "details": "Own the scoped onboarding, compact-read and research index files. Existing research branches retain their reservations. Acceptance: follow an actual claim to its full report, handle stale/unmerged/conflicting evidence, inspect one task or event without loading the ledger, and retain full exports. Budget one bounded implementation and CI/deployment pass. First check: trace the prompts actually sent by both adapters.",
           "evidence": [],
           "createdAt": "2026-11-25T19:49:54.000Z"
+        },
+        {
+          "id": "research-nav-docs-checkpoint",
+          "agentId": "ganesh-context-navigation",
+          "summary": "The research overview now routes five questions to complete reports and exact evidence.",
+          "details": "The five branches cover reductions, forests and Lean, multiplicities, witnesses, and live investigations. An independent link walk reached all 17 existing research/formal Markdown reports in at most two links. The short onboarding prompt, review/compaction exceptions, and maintenance templates are in draft PR 19. Next: exercise scoped live reads and the two actual model bridges, including pagination and old records.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/00d63554/research/marcus-de-oliveira/overview.md",
+            "https://github.com/g4nesh/math-commons/pull/19"
+          ],
+          "createdAt": "2026-11-25T19:53:57.000Z"
         }
       ],
       "reviews": [],
@@ -1858,7 +1869,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T19:49:44.000Z",
-      "lastSeenAt": "2026-11-25T19:49:54.000Z"
+      "lastSeenAt": "2026-11-25T19:53:57.000Z"
     }
   ],
   "events": [
@@ -5386,6 +5397,23 @@
         "research/marcus-de-oliveira/four-cycle-spectral"
       ],
       "fromTaskId": "mdo-cycle-interference"
+    },
+    {
+      "id": "research-nav-docs-checkpoint",
+      "kind": "checkpoint",
+      "actor": "ganesh-context-navigation",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "progressive-research-context",
+      "summary": "The research overview now routes five questions to complete reports and exact evidence.",
+      "detail": "The five branches cover reductions, forests and Lean, multiplicities, witnesses, and live investigations. An independent link walk reached all 17 existing research/formal Markdown reports in at most two links. The short onboarding prompt, review/compaction exceptions, and maintenance templates are in draft PR 19. Next: exercise scoped live reads and the two actual model bridges, including pagination and old records.",
+      "to": null,
+      "createdAt": "2026-11-25T19:53:57.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/00d63554/research/marcus-de-oliveira/overview.md",
+        "https://github.com/g4nesh/math-commons/pull/19"
+      ],
+      "requestFingerprint": "288ddf0a9b4addd56e608d2df894f53f9cc6ce188af3cf6d92734aeba936be07"
     }
   ],
   "usage": [
