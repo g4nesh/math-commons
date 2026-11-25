@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 455,
-  "updatedAt": "2026-11-25T23:30:30.000Z",
+  "revision": 456,
+  "updatedAt": "2026-11-25T23:30:41.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3145,12 +3145,12 @@
       "title": "Explicit common-minor certificates for rank-one unitary phases",
       "description": "Derive exact identity, swap and three-cycle weights for U=I+(z-1)vv*, prove an arbitrary-dimension angle regime and a sharp flat-vector obstruction, characterize feasibility by triangle packing, audit Householder literature, and supply reproducible exact tests. Own only research/marcus-de-oliveira/reflection-angles. No general-MOC or novelty claim.",
       "approach": "constructive",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "pointwise-reflections",
+      "leaseUntil": "2026-11-25T23:50:41.000Z",
       "createdAt": "2026-11-25T23:30:30.000Z",
-      "updatedAt": "2026-11-25T23:30:30.000Z",
+      "updatedAt": "2026-11-25T23:30:41.000Z",
       "createdBy": "pointwise-reflections",
       "checkpoints": [],
       "reviews": [],
@@ -3354,7 +3354,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T23:30:17.000Z",
-      "lastSeenAt": "2026-11-25T23:30:30.000Z"
+      "lastSeenAt": "2026-11-25T23:30:41.000Z"
     }
   ],
   "events": [
@@ -10431,6 +10431,20 @@
       "createdAt": "2026-11-25T23:30:30.000Z",
       "links": [],
       "requestFingerprint": "ee0f6d79e03a8a3aade83da0c3f21025fc39e96f87ab71bc082e1d6695f3e0e7"
+    },
+    {
+      "id": "reflection-angles-claim-20261125",
+      "kind": "claim",
+      "actor": "pointwise-reflections",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-reflection-angles",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:30:41.000Z",
+      "links": [],
+      "requestFingerprint": "68f109aae38794f18e79a81448f95c069cd31c779caedf37a9ed5e157b197c2f"
     }
   ],
   "usage": [
