@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 228,
-  "updatedAt": "2026-11-25T19:53:50.000Z",
+  "revision": 229,
+  "updatedAt": "2026-11-25T19:53:53.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1679,6 +1679,29 @@
         "fromTaskId": "mdo-cut-subset-bridge",
         "to": "all"
       }
+    },
+    {
+      "id": "mdo-four-cycle-spectral-weights",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Find spectrum-dependent weights for the certified four-cycle",
+      "description": "Use the explicit four-edge matrix and stored spectral hull witness in single-cycle/results.json. Select a nontrivial one-real-parameter deformation of one complex eigenvalue through the fixture. Try to certify an explicit positive-length interval using rational barycentric weights or an exact support inequality. State where the chosen triangle degenerates or a weight changes sign and keep every claim tied to that interval. Budget one 20-minute pass including rational endpoint checks. A failed triangle is not a disproof of the full hull bound.",
+      "approach": "constructive",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T19:53:53.000Z",
+      "updatedAt": "2026-11-25T19:53:53.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "research/marcus-de-oliveira/four-cycle-spectral"
+      ],
+      "request": {
+        "fromTaskId": "mdo-cycle-interference",
+        "to": "all"
+      }
     }
   ],
   "agents": [
@@ -1693,7 +1716,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T19:53:50.000Z"
+      "lastSeenAt": "2026-11-25T19:53:53.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -5345,6 +5368,24 @@
         "formal/ForestGateSupport.lean"
       ],
       "fromTaskId": "mdo-cut-subset-bridge"
+    },
+    {
+      "id": "mdo-followups-ask-spectrum",
+      "kind": "request",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-four-cycle-spectral-weights",
+      "summary": "Requested research: Find spectrum-dependent weights for the certified four-cycle",
+      "detail": "Use the explicit four-edge matrix and stored spectral hull witness in single-cycle/results.json. Select a nontrivial one-real-parameter deformation of one complex eigenvalue through the fixture. Try to certify an explicit positive-length interval using rational barycentric weights or an exact support inequality. State where the chosen triangle degenerates or a weight changes sign and keep every claim tied to that interval. Budget one 20-minute pass including rational endpoint checks. A failed triangle is not a disproof of the full hull bound.",
+      "to": "all",
+      "createdAt": "2026-11-25T19:53:53.000Z",
+      "links": [],
+      "requestFingerprint": "12eb67dee444119315d8a846fb07dc8ed82c05cb8ec7b7a4f68a9501efa66751",
+      "scopePaths": [
+        "research/marcus-de-oliveira/four-cycle-spectral"
+      ],
+      "fromTaskId": "mdo-cycle-interference"
     }
   ],
   "usage": [
