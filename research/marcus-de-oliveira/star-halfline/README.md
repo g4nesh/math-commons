@@ -51,12 +51,23 @@ One Bernstein-degree-2 solution exists on much longer intervals. Best common mar
 
 So degree 3 reaches from about s = 0.51 to at least 0.99, and fails at 0.505, in line with the single-t results.
 
+## Supporting exact checks for the step from intervals of s to spectra
+
+Theorem EQ ([`../pmsh/equivalence.md`](../pmsh/equivalence.md), Steps 4–6) turns nonnegativity of F_s at s = ρ and s = 1−ρ into PMSH(4) for spectra of cross-ratio ρ ∈ (0, 1). Two of its computational inputs used floating-point determinants rounded to integers. Both are now exact:
+
+- **Facets of the compound polytope Q (`q_facets_exact.py`).** All 1,961,256 orientation determinants of 14-subsets of the 24 vertices, by fraction-free integer elimination with overflow and divisibility checks. Result: exactly 82 facets = 16 (B = 0) + 18 (D = 0) + 48 (orbit of g0).
+- **Orientation quadratics of the projected polytope** (`../star-degree4/chiro_exact.py`, already on main).
+
+**Cross-check on every interval between critical ratios inside (0, 1)** (`../star-degree4/ratio_facets.py`, exact; [`logs/ratio_facets_intervals.txt`](logs/ratio_facets_intervals.txt)). At one rational ρ in each of the 14 intervals, every facet reduces exactly to nonnegative coordinates (88) or to F_s at a permuted unitary with s = ρ (48) and s = 1−ρ (48). Nothing else occurs.
+
 ## Reproduction
 
 Python 3.9.6, numpy 2.0.2, scipy 1.13.1, cvxpy 1.7.5 (Clarabel), python-flint 0.6.0. Run from this directory.
 
 ```sh
 python3 verify_interval.py interval3_3-5_5-6.json 777      # the check (3 seconds)
+
+python3 q_facets_exact.py                                  # 82 facets of Q, exact (40 seconds)
 
 python3 family.py 3 && python3 family.py 4                 # amplitude families, exact
 python3 interval_sdp.py 3 3/5 5/6 2                        # numerical solution (6 seconds)
