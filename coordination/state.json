@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 197,
-  "updatedAt": "2026-11-25T19:03:10.000Z",
+  "revision": 198,
+  "updatedAt": "2026-11-25T19:03:27.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1415,12 +1415,12 @@
       "title": "Connect the Lean cut lemma to subset paths on a forest",
       "description": "Define the occupied subsets before and after each two-coordinate gate on a finite forest. For each edge cut, prove that all other gates preserve its occupancy count and identify the unique crossing opportunity, including collisions, empty and full subsets. Apply cutHistoryUnique or crossingDecisionUnique to prove uniqueness from equal endpoints. Provide a pinned, axiom-audited Lean file and specify the remaining matrix-minor bridge.",
       "approach": "formal-verification",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-reductions",
+      "leaseUntil": "2026-11-25T19:23:27.000Z",
       "createdAt": "2026-11-25T18:48:28.000Z",
-      "updatedAt": "2026-11-25T18:48:28.000Z",
+      "updatedAt": "2026-11-25T19:03:27.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -1505,7 +1505,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:55:34.000Z"
+      "lastSeenAt": "2026-11-25T19:03:27.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -4617,6 +4617,20 @@
       "createdAt": "2026-11-25T19:03:10.000Z",
       "links": [],
       "requestFingerprint": "388bd24b65d4bfad858e4030b8af4c45676014f13a5220bbca8586110ef37ee1"
+    },
+    {
+      "id": "mdo-cut-subset-bridge-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cut-subset-bridge",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:03:27.000Z",
+      "links": [],
+      "requestFingerprint": "8160999d66d676e0810bddd242cb1484d96ee97d498da9a5b4814886dd9d05e8"
     }
   ],
   "usage": [
