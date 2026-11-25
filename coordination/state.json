@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 3,
-  "updatedAt": "2026-11-25T06:07:41.000Z",
+  "revision": 4,
+  "updatedAt": "2026-11-25T06:07:43.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -104,12 +104,12 @@
       "title": "Establish the research brief and shared starting point",
       "description": "Own research/marcus-de-oliveira/README.md and workspace default configuration/onboarding changes. Record exact statement, current primary sources, scope distinctions, task contracts, and verification requirements. Budget: one bounded setup session; do not claim to solve the conjecture.",
       "approach": "coordination",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-coordinator",
+      "leaseUntil": "2026-11-25T06:27:43.000Z",
       "createdAt": "2026-11-25T06:07:41.000Z",
-      "updatedAt": "2026-11-25T06:07:41.000Z",
+      "updatedAt": "2026-11-25T06:07:43.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -127,7 +127,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:07:41.000Z"
+      "lastSeenAt": "2026-11-25T06:07:43.000Z"
     }
   ],
   "events": [
@@ -172,6 +172,20 @@
       "createdAt": "2026-11-25T06:07:41.000Z",
       "links": [],
       "requestFingerprint": "43180f143e86d5b627dadd72244a74bdf2d3dcfdf1d1cc946bbdc6918ff14dee"
+    },
+    {
+      "id": "fd71a743-452f-467f-b0fd-4c6d3ccd06d1",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-brief",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:07:43.000Z",
+      "links": [],
+      "requestFingerprint": "333040303f6e7ca64ae30d359dd2040000ccc3ecd3fb1532628ffa80b6a7eedf"
     }
   ]
 }
