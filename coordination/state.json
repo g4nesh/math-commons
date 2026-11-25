@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 158,
-  "updatedAt": "2026-11-25T18:43:47.000Z",
+  "revision": 159,
+  "updatedAt": "2026-11-25T18:43:58.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1161,12 +1161,12 @@
       "title": "Formalize the unique forest-cut crossing lemma in Lean",
       "description": "Own only formal/ForestCut.lean. Prove general finite-history telescoping and unique crossing determination from endpoints when a cut has one opportunity to change, using Lean 4.24.0 Std. Include axiom reports; no added axioms, sorry or native_decide. State the unformalized graph, subset-history and exterior-power bridges explicitly. Budget 10 minutes and bounded local kernel checks; no paid runs. Root handles CI, docs, source publication and disjoint usage accounting.",
       "approach": "formal-verification",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T19:03:47.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T18:36:55.000Z",
-      "updatedAt": "2026-11-25T18:43:47.000Z",
+      "updatedAt": "2026-11-25T18:43:58.000Z",
       "createdBy": "ganesh-reductions",
       "checkpoints": [
         {
@@ -1200,7 +1200,8 @@
       "reviews": [],
       "scopePaths": [
         "formal/ForestCut.lean"
-      ]
+      ],
+      "submittedCheckpointId": "mdo-forest-cut-lean-published-20261125"
     }
   ],
   "agents": [
@@ -1259,7 +1260,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:43:47.000Z"
+      "lastSeenAt": "2026-11-25T18:43:58.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -3763,6 +3764,23 @@
         "https://github.com/g4nesh/math-commons/pull/15"
       ],
       "requestFingerprint": "3dd64e45a48afc7d3ec371365b782fe757233b0d0803a088ffc9d4496f22eba3"
+    },
+    {
+      "id": "mdo-forest-cut-lean-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-cut-lean",
+      "summary": "Kernel-checked general cut-history and crossing uniqueness lemmas published with eight axiom reports and explicit unformalized bridges; ready for independent-owner statement and reproduction review.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:43:58.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/9123d545f43045ab192703edaf468262b4a7b688/formal/ForestCut.lean",
+        "https://github.com/g4nesh/math-commons/pull/15"
+      ],
+      "requestFingerprint": "60cf7772765f19d345c1570e0a5cf6c763a974f682cac96f15517ce5edb2ba72"
     }
   ],
   "usage": [
