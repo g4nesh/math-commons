@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 71,
-  "updatedAt": "2026-11-25T06:58:05.000Z",
+  "revision": 72,
+  "updatedAt": "2026-11-25T06:59:34.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -577,9 +577,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-usage-adapter",
-      "leaseUntil": "2026-11-25T07:16:58.000Z",
+      "leaseUntil": "2026-11-25T07:19:34.000Z",
       "createdAt": "2026-11-25T06:47:13.000Z",
-      "updatedAt": "2026-11-25T06:56:58.000Z",
+      "updatedAt": "2026-11-25T06:59:34.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -599,6 +599,17 @@
             "https://github.com/g4nesh/math-commons/pull/5"
           ],
           "createdAt": "2026-11-25T06:56:58.000Z"
+        },
+        {
+          "id": "usage-adapter-final",
+          "agentId": "ganesh-usage-adapter",
+          "summary": "Codex run metering published with11 focused no-model tests passing.",
+          "details": "Captures one fresh-run terminal receipt, hashes runtime identity, strips model-authored usage, handles missing/default/ambiguous counters honestly, and preserves valid usage through invalid or oversized final answers. Source semantics pinned to official Codex commit. No model run started for testing.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/adapters/codex.mjs",
+            "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/test/adapter.test.mjs"
+          ],
+          "createdAt": "2026-11-25T06:59:34.000Z"
         }
       ],
       "reviews": []
@@ -728,7 +739,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T06:56:58.000Z"
+      "lastSeenAt": "2026-11-25T06:59:34.000Z"
     }
   ],
   "events": [
@@ -1793,6 +1804,23 @@
       "createdAt": "2026-11-25T06:58:05.000Z",
       "links": [],
       "requestFingerprint": "5af18dbad7bc668d6253b133ce160f7b9b7e2f95604d4c2198eb37b8d434a1fa"
+    },
+    {
+      "id": "usage-adapter-final",
+      "kind": "checkpoint",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-adapter",
+      "summary": "Codex run metering published with11 focused no-model tests passing.",
+      "detail": "Captures one fresh-run terminal receipt, hashes runtime identity, strips model-authored usage, handles missing/default/ambiguous counters honestly, and preserves valid usage through invalid or oversized final answers. Source semantics pinned to official Codex commit. No model run started for testing.",
+      "to": null,
+      "createdAt": "2026-11-25T06:59:34.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/adapters/codex.mjs",
+        "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/test/adapter.test.mjs"
+      ],
+      "requestFingerprint": "67c8ebd4c846c84d8c2d3c7332e6fb037e60f6214803996a467bb3fa556b3bad"
     }
   ]
 }
