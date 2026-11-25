@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 61,
-  "updatedAt": "2026-11-25T06:47:16.000Z",
+  "revision": 62,
+  "updatedAt": "2026-11-25T06:47:17.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -552,12 +552,12 @@
       "title": "Document and verify token reporting",
       "description": "Own docs/, README.md, AGENTS.md and integration checks. Implement the authorized token chart with authenticated attribution, deduplication and explicit missing usage. Publish real provider/run-reported counts only; no invented historical data. Bounded implementation session, checkpoints every five minutes.",
       "approach": "coordination",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-coordinator",
+      "leaseUntil": "2026-11-25T07:07:17.000Z",
       "createdAt": "2026-11-25T06:47:16.000Z",
-      "updatedAt": "2026-11-25T06:47:16.000Z",
+      "updatedAt": "2026-11-25T06:47:17.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -575,7 +575,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:47:16.000Z"
+      "lastSeenAt": "2026-11-25T06:47:17.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1569,6 +1569,20 @@
       "createdAt": "2026-11-25T06:47:16.000Z",
       "links": [],
       "requestFingerprint": "d174d2eab10fed1a2f68e1c2b7dcf446bcaf70946605048ebc1bdca6f15382f5"
+    },
+    {
+      "id": "usage-chart-claim-usage-release",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-release",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:47:17.000Z",
+      "links": [],
+      "requestFingerprint": "33a69030d1810d9fb81ff3ec1e04307c9a9cc30e89d3eec87a1f436582ab8380"
     }
   ]
 }
