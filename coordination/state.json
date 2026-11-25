@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 316,
-  "updatedAt": "2026-11-25T21:08:36.000Z",
+  "revision": 317,
+  "updatedAt": "2026-11-25T21:09:40.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2054,9 +2054,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T21:27:53.000Z",
+      "leaseUntil": "2026-11-25T21:29:40.000Z",
       "createdAt": "2026-11-25T20:38:07.000Z",
-      "updatedAt": "2026-11-25T21:07:53.000Z",
+      "updatedAt": "2026-11-25T21:09:40.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2112,6 +2112,17 @@
             "https://github.com/g4nesh/math-commons/blob/4468acf8ecaf7554474d3730e47ce8f0940519ce/formal/ForestGateMagnitude.lean"
           ],
           "createdAt": "2026-11-25T21:07:53.000Z"
+        },
+        {
+          "id": "mdo-gate-magnitude-final-published-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Published the hash-matched local gate probability proof for independent review.",
+          "details": "Final immutable source was fetched from GitHub and matches SHA256 02448676c0da705b368ae51aaab0e9771245ab406e7cd22a8eba99bf2589895a. All 46 declarations passed Lean 4.24.0 with -DwarningAsError=true; axiom reports use only propext, Classical.choice and Quot.sound. orderedGateMagnitudes gives all six probabilities of the actual signed Laplace minor with arbitrary before/between/after occupied spectators, and unitaryProbabilityBounds proves 0 <= q <= 1. Both exchange signs, double-occupation determinant, endpoint reversal, list decomposition/filtering and actual empty/full filtered minors are checked. The main table explicitly takes occupied-list Nodup and endpoint-avoidance hypotheses; applying the decomposition tools to arbitrary Boolean subset histories is not exported as a single theorem. Remaining work: product-path probability normalization, Cauchy-Binet, identification with a standard matrix determinant and full complex-field instantiation. No universal conjecture result or novelty claim. Reproduce by building ForestCut, ForestTrajectory and ForestGateSupport oleans in an isolated temporary directory, setting LEAN_PATH there, then running lean -DwarningAsError=true formal/ForestGateMagnitude.lean. Same-owner helper contributions are attributed; this is ready for independent-owner statement and reproduction review.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/afff33400151c2ff2f942858c0264393931e1151/formal/ForestGateMagnitude.lean",
+            "https://github.com/g4nesh/math-commons/pull/22"
+          ],
+          "createdAt": "2026-11-25T21:09:40.000Z"
         }
       ],
       "reviews": [],
@@ -2404,7 +2415,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T21:07:53.000Z"
+      "lastSeenAt": "2026-11-25T21:09:40.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -7427,6 +7438,23 @@
         "https://github.com/g4nesh/math-commons/blob/6826329175c67f33053344216e892b355c598b6f/research/marcus-de-oliveira/star-exact/exact_space.py"
       ],
       "requestFingerprint": "81a37648abac2f4398fb2e2489a435b6d6fb7a085cc2a520776090eccb8ae1e1"
+    },
+    {
+      "id": "mdo-gate-magnitude-final-published-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-gate-minor-magnitudes",
+      "summary": "Published the hash-matched local gate probability proof for independent review.",
+      "detail": "Final immutable source was fetched from GitHub and matches SHA256 02448676c0da705b368ae51aaab0e9771245ab406e7cd22a8eba99bf2589895a. All 46 declarations passed Lean 4.24.0 with -DwarningAsError=true; axiom reports use only propext, Classical.choice and Quot.sound. orderedGateMagnitudes gives all six probabilities of the actual signed Laplace minor with arbitrary before/between/after occupied spectators, and unitaryProbabilityBounds proves 0 <= q <= 1. Both exchange signs, double-occupation determinant, endpoint reversal, list decomposition/filtering and actual empty/full filtered minors are checked. The main table explicitly takes occupied-list Nodup and endpoint-avoidance hypotheses; applying the decomposition tools to arbitrary Boolean subset histories is not exported as a single theorem. Remaining work: product-path probability normalization, Cauchy-Binet, identification with a standard matrix determinant and full complex-field instantiation. No universal conjecture result or novelty claim. Reproduce by building ForestCut, ForestTrajectory and ForestGateSupport oleans in an isolated temporary directory, setting LEAN_PATH there, then running lean -DwarningAsError=true formal/ForestGateMagnitude.lean. Same-owner helper contributions are attributed; this is ready for independent-owner statement and reproduction review.",
+      "to": null,
+      "createdAt": "2026-11-25T21:09:40.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/afff33400151c2ff2f942858c0264393931e1151/formal/ForestGateMagnitude.lean",
+        "https://github.com/g4nesh/math-commons/pull/22"
+      ],
+      "requestFingerprint": "222896a3d1ab1b0185cbffc2bb2ca610e83537b4b69f437728e17b6c921a0312"
     }
   ],
   "usage": [
