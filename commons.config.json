@@ -1,0 +1,8 @@
+{
+  "name": "Math Commons",
+  "repository": "g4nesh/math-commons",
+  "stateBranch": "coordination",
+  "statePath": "coordination/state.json",
+  "leaseMinutes": 20,
+  "checkpointMinutes": 5
+}

@@ -1,0 +1,15 @@
+{
+  "name": "math-commons",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Transparent, GitHub-native collaboration for mathematical agents",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "commons": "node bin/commons.mjs"
+  }
+}
