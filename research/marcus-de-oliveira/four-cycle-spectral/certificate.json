@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "evidenceLevel": "written continuous parameter proofs and exact coefficient checks; same-owner, not Lean or independent review",
+  "pythonVersion": "3.9.6",
+  "U": [
+    [
+      [
+        "-31/625",
+        "0"
+      ],
+      [
+        "492/625",
+        "0"
+      ],
+      [
+        "-48/125",
+        "0"
+      ],
+      [
+        "12/25",
+        "0"
+      ]
+    ],
+    [
+      [
+        "-12/25",
+        "0"
+      ],
+      [
+        "9/25",
+        "0"
+      ],
+      [
+        "4/5",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    [
+      [
+        "48/125",
+        "0"
+      ],
+      [
+        "-36/125",
+        "0"
+      ],
+      [
+        "9/25",
+        "0"
+      ],
+      [
+        "4/5",
+        "0"
+      ]
+    ],
+    [
+      [
+        "-492/625",
+        "0"
+      ],
+      [
+        "-256/625",
+        "0"
+      ],
+      [
+        "-36/125",
+        "0"
+      ],
+      [
+        "9/25",
+        "0"
+      ]
+    ]
+  ],
+  "baseA": [
+    [
+      "-2",
+      "-1"
+    ],
+    [
+      "-1",
+      "0"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "1",
+      "-1"
+    ]
+  ],
+  "fixedB": [
+    [
+      "3",
+      "-2"
+    ],
+    [
+      "2",
+      "0"
+    ],
+    [
+      "1",
+      "2"
+    ],
+    [
+      "0",
+      "-1"
+    ]
+  ],
+  "deformation": "a0(t)=-2+i(t-1); every other eigenvalue and U fixed; t real",
+  "interval": [
+    "-40",
+    "1"
+  ],
+  "supportColumnToRow": [
+    [
+      1,
+      3,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      3
+    ],
+    [
+      1,
+      2,
+      0,
+      3
+    ]
+  ],
+  "determinantAffineConstantSlope": [
+    [
+      "269802/390625",
+      "-5707764/390625"
+    ],
+    [
+      "-1235313/390625",
+      "1850391/390625"
+    ]
+  ],
+  "verticesAffineConstantSlope": [
+    [
+      [
+        "-48",
+        "-64"
+      ],
+      [
+        "-4",
+        "28"
+      ]
+    ],
+    [
+      [
+        "30",
+        "-10"
+      ],
+      [
+        "-8",
+        "6"
+      ]
+    ],
+    [
+      [
+        "12",
+        "16"
+      ],
+      [
+        "14",
+        "2"
+      ]
+    ]
+  ],
+  "orientedAreaCoefficients": [
+    "3000",
+    "-2000",
+    "500"
+  ],
+  "weightNumeratorsAscending": [
+    [
+      "13203996",
+      "-5027220",
+      "-131806"
+    ],
+    [
+      "14562000",
+      "-10814944",
+      "6202444"
+    ],
+    [
+      "19109004",
+      "-15407836",
+      "1741862"
+    ]
+  ],
+  "weightCommonDenominatorAscending": [
+    "46875000",
+    "-31250000",
+    "7812500"
+  ],
+  "polynomialIdentitiesVerified": true,
+  "positivityProof": {
+    "n1ConcaveEndpointValues": [
+      "3403196",
+      "8044970"
+    ],
+    "n2Discriminant": "-244316944388864",
+    "n3DerivativeUpperBound": "-11924112",
+    "n3RightEndpointValue": "5443030",
+    "denominatorGlobalLowerBound": "15625000",
+    "rootIsolation": {
+      "N1NegativeRoot": [
+        "-41",
+        "-40"
+      ],
+      "N1PositiveRoot": [
+        "2",
+        "3"
+      ],
+      "N3SmallerRoot": [
+        "1",
+        "3/2"
+      ],
+      "N3LargerRoot": [
+        "7",
+        "8"
+      ]
+    }
+  },
+  "exactParameterChecks": [
+    {
+      "t": "-40",
+      "weights": [
+        "850799/3449218750",
+        "259276754/344921875",
+        "855600411/3449218750"
+      ],
+      "determinant": [
+        "49682322/390625",
+        "-79723404/390625"
+      ]
+    },
+    {
+      "t": "-20",
+      "weights": [
+        "15256499/949218750",
+        "22598654/31640625",
+        "256002631/949218750"
+      ],
+      "determinant": [
+        "24976062/390625",
+        "-42715584/390625"
+      ]
+    },
+    {
+      "t": "-1",
+      "weights": [
+        "1809941/8593750",
+        "7894847/21484375",
+        "18129351/42968750"
+      ],
+      "determinant": [
+        "301023/78125",
+        "-1511631/78125"
+      ]
+    },
+    {
+      "t": "0",
+      "weights": [
+        "1100333/3906250",
+        "4854/15625",
+        "1592417/3906250"
+      ],
+      "determinant": [
+        "269802/390625",
+        "-5707764/390625"
+      ]
+    },
+    {
+      "t": "1/2",
+      "weights": [
+        "21314869/66406250",
+        "10705139/33203125",
+        "23681103/66406250"
+      ],
+      "determinant": [
+        "-695709/781250",
+        "-9565137/781250"
+      ]
+    },
+    {
+      "t": "1",
+      "weights": [
+        "804497/2343750",
+        "6633/15625",
+        "544303/2343750"
+      ],
+      "determinant": [
+        "-965511/390625",
+        "-3857373/390625"
+      ]
+    }
+  ],
+  "complexPlaneExtension": {
+    "claim": "For every complex a0=z, the other seven eigenvalues and U fixed, these five constant nonnegative weights reconstruct the determinant.",
+    "supportColumnToRow": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        3,
+        2
+      ],
+      [
+        0,
+        2,
+        1,
+        3
+      ],
+      [
+        1,
+        0,
+        2,
+        3
+      ],
+      [
+        3,
+        1,
+        2,
+        0
+      ]
+    ],
+    "weights": [
+      "22689/390625",
+      "8848/15625",
+      "1296/15625",
+      "144/15625",
+      "110736/390625"
+    ],
+    "determinantAffineConstantSlope": [
+      [
+        "2735271/390625",
+        "-1386747/390625"
+      ],
+      [
+        "1850391/390625",
+        "1235313/390625"
+      ]
+    ],
+    "verticesAffineConstantSlope": [
+      [
+        [
+          "23",
+          "-11"
+        ],
+        [
+          "7",
+          "1"
+        ]
+      ],
+      [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      [
+        [
+          "34",
+          "12"
+        ],
+        [
+          "6",
+          "8"
+        ]
+      ],
+      [
+        [
+          "32",
+          "-24"
+        ],
+        [
+          "16",
+          "-12"
+        ]
+      ],
+      [
+        [
+          "9",
+          "-13"
+        ],
+        [
+          "13",
+          "9"
+        ]
+      ]
+    ],
+    "coefficientIdentitiesVerified": true,
+    "discoveryCredit": "ganesh-coordinator; independently solved and checked here"
+  },
+  "scope": "One fixed four-cycle and seven fixed eigenvalues. No general MDO theorem and no common squared-minor certificate. Triangle failure elsewhere is not a full-hull violation.",
+  "sourceSha256": {
+    "single-cycle/results.json": "7c04b6fe24ddd906fc747886ee87cc3e127e34ece9b736e7cadbfc7683173ce3",
+    "certificates/verify.py": "8cb1a7288dec6cbf55d90044f9c0e9a76a60253ccd452593050af9ea02bf78ff"
+  }
+}
