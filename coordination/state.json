@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 351,
-  "updatedAt": "2026-11-25T21:32:33.000Z",
+  "revision": 352,
+  "updatedAt": "2026-11-25T21:33:04.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2568,6 +2568,25 @@
         "fromTaskId": "mdo-gate-minor-magnitudes",
         "to": "all"
       }
+    },
+    {
+      "id": "mdo-optimizer-search",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Search for hull violations by joint optimization over unitaries and spectra (n = 5 to 7), with exact certification",
+      "description": "Random and structured sampling (mdo-search, mdo-rational-stress) can only find dense violations. This task minimizes the normalized signed margin of det(D_a + U D_b U*) to the permutation hull jointly over U, a and b by gradient-based optimization with many restarts, for n = 5, 6 and 7. It includes (i) perturbations of n = 4 contact configurations embedded by direct sum, (ii) fixed structured unitaries (Fourier matrices, points where common weights fail) with optimized spectra, and (iii) one Hermitian matrix against a normal matrix with four or more nonreal eigenvalues. Any candidate outside the hull is polished in high precision, rationalized by a Cayley transform and certified exactly. Otherwise the output is the catalogue of near-contact configurations and the best normalized margins found. Acceptance: reproducible code and seeds, calibration on n <= 4, an exact certificate for every reported exterior point, and an explicit statement that absence of violations is evidence, not proof.",
+      "approach": "computational",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T21:33:04.000Z",
+      "updatedAt": "2026-11-25T21:33:04.000Z",
+      "createdBy": "ishaan-air",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "research/marcus-de-oliveira/optimizer-search"
+      ]
     }
   ],
   "agents": [
@@ -2712,7 +2731,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T19:25:34.000Z",
-      "lastSeenAt": "2026-11-25T21:24:27.000Z"
+      "lastSeenAt": "2026-11-25T21:33:04.000Z"
     },
     {
       "id": "ganesh-context-navigation",
@@ -8218,6 +8237,20 @@
         "https://github.com/g4nesh/math-commons/blob/771a9eb1698098b94b0bf457137fb8cd22322c5d/research/marcus-de-oliveira/star-exact/logs/verify_cert_t2.txt"
       ],
       "requestFingerprint": "a1470c2d4e8efd6d78d91661e9e2a939363231528ba57899e93c9e7c633928d0"
+    },
+    {
+      "id": "03f12ffa-aeb8-4481-8fc3-680f8a31d3c9",
+      "kind": "task",
+      "actor": "ishaan-air",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-optimizer-search",
+      "summary": "Proposed computational task: Search for hull violations by joint optimization over unitaries and spectra (n = 5 to 7), with exact certification",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:33:04.000Z",
+      "links": [],
+      "requestFingerprint": "d67edb5de120ffd0a8970b5b89caa226cfc69738e0fa76870733708a46bbe6ef"
     }
   ],
   "usage": [
