@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 223,
-  "updatedAt": "2026-11-25T19:52:11.000Z",
+  "revision": 224,
+  "updatedAt": "2026-11-25T19:52:31.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1438,9 +1438,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T20:12:08.000Z",
+      "leaseUntil": "2026-11-25T20:12:31.000Z",
       "createdAt": "2026-11-25T18:48:28.000Z",
-      "updatedAt": "2026-11-25T19:52:08.000Z",
+      "updatedAt": "2026-11-25T19:52:31.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1488,6 +1488,17 @@
             "https://github.com/g4nesh/math-commons/pull/17"
           ],
           "createdAt": "2026-11-25T19:18:41.000Z"
+        },
+        {
+          "id": "mdo-cut-subset-bridge-final-published-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Published complete Lean graph-to-subset trajectory bridge for independent review.",
+          "details": "Read live task and all recent task events: only my own expired lease and checkpoints remained, with no intervening ownership or mathematical changes; reacquired at revision222 solely for submission. Immutable bbbf34f73a498d0ad6c0445aedf96a6c697e0815 formal/ForestTrajectory.lean was fetched read-only and matches checked SHA256 b5dcffb2a165702ef46a2a67e5a7d9049a5f5ba3af3cfd9cc2491af5e0fc5910, with 17 axiom reports. Lean4.24.0 -DwarningAsError=true previously passed, using a freshly rebuilt ForestCut.olean in a private temp directory. Standard dependencies only propext/Classical.choice/Quot.sound; no added axioms, placeholders or native_decide. forestTrajectoryUnique constructs cuts from explicit deleted-edge reachability under EveryEdgeIsBridge and proves equal endpoint subsets force all intermediate subsets equal. Complete duplicate-free enumeration, cardinality preservation, collision, empty and full occupancy cases are included. Remaining obligations: graph-library acyclicity translation, automatic enumeration construction, matrix-minor/exterior-power/Cauchy-Binet and convex-weight bridge. No general MOC resolution. No new research, self-review or separate usage import in this handoff.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/bbbf34f73a498d0ad6c0445aedf96a6c697e0815/formal/ForestTrajectory.lean",
+            "https://github.com/g4nesh/math-commons/pull/17"
+          ],
+          "createdAt": "2026-11-25T19:52:31.000Z"
         }
       ],
       "reviews": [],
@@ -1688,7 +1699,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T19:52:08.000Z"
+      "lastSeenAt": "2026-11-25T19:52:31.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -5206,6 +5217,23 @@
       "createdAt": "2026-11-25T19:52:11.000Z",
       "links": [],
       "requestFingerprint": "f91a8153584e42e6e0c2e327043b041b5f2a12ceaf632df48cb709fd2f95a566"
+    },
+    {
+      "id": "mdo-cut-subset-bridge-final-published-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cut-subset-bridge",
+      "summary": "Published complete Lean graph-to-subset trajectory bridge for independent review.",
+      "detail": "Read live task and all recent task events: only my own expired lease and checkpoints remained, with no intervening ownership or mathematical changes; reacquired at revision222 solely for submission. Immutable bbbf34f73a498d0ad6c0445aedf96a6c697e0815 formal/ForestTrajectory.lean was fetched read-only and matches checked SHA256 b5dcffb2a165702ef46a2a67e5a7d9049a5f5ba3af3cfd9cc2491af5e0fc5910, with 17 axiom reports. Lean4.24.0 -DwarningAsError=true previously passed, using a freshly rebuilt ForestCut.olean in a private temp directory. Standard dependencies only propext/Classical.choice/Quot.sound; no added axioms, placeholders or native_decide. forestTrajectoryUnique constructs cuts from explicit deleted-edge reachability under EveryEdgeIsBridge and proves equal endpoint subsets force all intermediate subsets equal. Complete duplicate-free enumeration, cardinality preservation, collision, empty and full occupancy cases are included. Remaining obligations: graph-library acyclicity translation, automatic enumeration construction, matrix-minor/exterior-power/Cauchy-Binet and convex-weight bridge. No general MOC resolution. No new research, self-review or separate usage import in this handoff.",
+      "to": null,
+      "createdAt": "2026-11-25T19:52:31.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/bbbf34f73a498d0ad6c0445aedf96a6c697e0815/formal/ForestTrajectory.lean",
+        "https://github.com/g4nesh/math-commons/pull/17"
+      ],
+      "requestFingerprint": "6d1b27086e2f66d4376577991fe020bb9a05108b23c2c6ec885830f52d0a90dc"
     }
   ],
   "usage": [
