@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 477,
-  "updatedAt": "2026-11-25T23:43:51.000Z",
+  "revision": 478,
+  "updatedAt": "2026-11-25T23:43:59.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2487,9 +2487,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T23:59:04.000Z",
+      "leaseUntil": "2026-11-26T00:03:59.000Z",
       "createdAt": "2026-11-25T20:56:29.000Z",
-      "updatedAt": "2026-11-25T23:39:04.000Z",
+      "updatedAt": "2026-11-25T23:43:59.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -2515,6 +2515,14 @@
           "details": "Added a real orthogonal family with first row (0,1/3,2/3,2/3). For 0<mu<1 it has g0=-4A, A/C=mu^2/36, and star margin A*(12/mu-3)>0. Thus star is proved on this family all the way to t*=mu/6->0, while g0>=0 and g0+A>=0 both fail arbitrarily deep in the small-ratio regime. This explains a specific obstruction to extending the positive-gap neighborhood through K=0; it is not a star counterexample or a generic repeat of the already-known cross-term failure. Four fixed actual matrices passed exact squarefree-radical arithmetic checks of orthogonality and all formulas. An earlier 486-case exact slice grid missed these negative-g0 points; its script is retained and the miss is explicitly disclosed. Full small-ratio proof remains open. Preparing final proof/readability checks and source freeze.",
           "evidence": [],
           "createdAt": "2026-11-25T23:39:04.000Z"
+        },
+        {
+          "id": "mdo-star-small-ratio-frozen-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Frozen the partial analytic proof, exact zero-stratum family and replay artifacts.",
+          "details": "Source is ready for publication: README SHA256 303067e770cbef78c8fed1801ba82dce5114f6e865ba92870ffa0acda7bfc037, with eight files listed in SHA256SUMS. Results are the exact A=0 gap, the explicit condition 49*P*A<=K^2 proving star, and the zero-entry family with g0=-4A but positive star margin for t*=mu/6->0. All 608 exact rational cases and four exact radical cases pass; the unsuccessful 486-case exploratory slice grid is retained and disclosed. The rewrite to the original six-minor inequality is now derived by elementary unitary/Bessel identities in the report. Full small-ratio coverage remains open. Parent owns publication and independent-review handoff. While awaiting the source pin, I am checking a coordinator-suggested two-by-two compression in private scratch only; no further source edits are planned for this frozen artifact.",
+          "evidence": [],
+          "createdAt": "2026-11-25T23:43:59.000Z"
         }
       ],
       "reviews": [],
@@ -3386,7 +3394,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T23:39:04.000Z"
+      "lastSeenAt": "2026-11-25T23:43:59.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -10947,6 +10955,20 @@
         "https://doi.org/10.4213/im9292e"
       ],
       "requestFingerprint": "60e03963088f2c5997a1daeb137a187a4e0df052eb4c25139ec74c77c97311c2"
+    },
+    {
+      "id": "mdo-star-small-ratio-frozen-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-small-ratio",
+      "summary": "Frozen the partial analytic proof, exact zero-stratum family and replay artifacts.",
+      "detail": "Source is ready for publication: README SHA256 303067e770cbef78c8fed1801ba82dce5114f6e865ba92870ffa0acda7bfc037, with eight files listed in SHA256SUMS. Results are the exact A=0 gap, the explicit condition 49*P*A<=K^2 proving star, and the zero-entry family with g0=-4A but positive star margin for t*=mu/6->0. All 608 exact rational cases and four exact radical cases pass; the unsuccessful 486-case exploratory slice grid is retained and disclosed. The rewrite to the original six-minor inequality is now derived by elementary unitary/Bessel identities in the report. Full small-ratio coverage remains open. Parent owns publication and independent-review handoff. While awaiting the source pin, I am checking a coordinator-suggested two-by-two compression in private scratch only; no further source edits are planned for this frozen artifact.",
+      "to": null,
+      "createdAt": "2026-11-25T23:43:59.000Z",
+      "links": [],
+      "requestFingerprint": "efad7c467606b88729112959cd973c524393cb455b79493db24c0d7056405dde"
     }
   ],
   "usage": [
