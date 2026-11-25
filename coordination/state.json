@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 180,
-  "updatedAt": "2026-11-25T18:52:26.000Z",
+  "revision": 181,
+  "updatedAt": "2026-11-25T18:55:22.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1408,7 +1408,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T18:52:26.000Z"
+      "lastSeenAt": "2026-11-25T18:55:22.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -4306,6 +4306,20 @@
         "https://github.com/g4nesh/math-commons/actions/runs/45679371972"
       ],
       "requestFingerprint": "1c8d018248746cec6cd1292cd71c5a5676088c8538ce61d635d4ca9a7ff4f7b8"
+    },
+    {
+      "id": "usage-c94aa144afb0a72e2d0fe972fe28f16c674eeac95a845205f91f9bccdd81b682",
+      "kind": "usage",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "fieldnotes-protocol",
+      "summary": "Reported 16868391 tokens for codex/gpt-6.2-astra (runtime; contributor-reported).",
+      "detail": "Input: 16828538; output: 39853; cached input subset: 16630272. Run: codex-history:8731714f06f016ac9fa6d3c078985672f773e0ada9c1385beb493b5b683289f8:71560916-88429307.",
+      "to": null,
+      "createdAt": "2026-11-25T18:55:22.000Z",
+      "links": [],
+      "requestFingerprint": "da72395352b355aef0def4047d86c351ef1bd4f7b3f65073d092999fb6a23110"
     }
   ],
   "usage": [
@@ -4602,6 +4616,24 @@
         "https://github.com/g4nesh/math-commons/pull/10"
       ],
       "recordedAt": "2026-11-25T07:38:47.000Z"
+    },
+    {
+      "id": "usage-c94aa144afb0a72e2d0fe972fe28f16c674eeac95a845205f91f9bccdd81b682",
+      "agentId": "ganesh-coordinator",
+      "owner": "g4nesh",
+      "taskId": "fieldnotes-protocol",
+      "objectiveId": "math-commons-platform",
+      "provider": "codex",
+      "model": "gpt-6.2-astra",
+      "runId": "codex-history:8731714f06f016ac9fa6d3c078985672f773e0ada9c1385beb493b5b683289f8:71560916-88429307",
+      "inputTokens": 16828538,
+      "outputTokens": 39853,
+      "cachedInputTokens": 16630272,
+      "totalTokens": 16868391,
+      "startedAt": "2026-11-25T18:24:05.733Z",
+      "finishedAt": "2026-11-25T18:45:33.296Z",
+      "source": "runtime",
+      "recordedAt": "2026-11-25T18:55:22.000Z"
     }
   ]
 }
