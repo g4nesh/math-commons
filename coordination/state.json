@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 43,
-  "updatedAt": "2026-11-25T06:43:16.000Z",
+  "revision": 44,
+  "updatedAt": "2026-11-25T06:43:18.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -355,9 +355,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-certificates",
-      "leaseUntil": "2026-11-25T07:00:22.000Z",
+      "leaseUntil": "2026-11-25T07:03:18.000Z",
       "createdAt": "2026-11-25T06:11:37.000Z",
-      "updatedAt": "2026-11-25T06:40:22.000Z",
+      "updatedAt": "2026-11-25T06:43:18.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -385,6 +385,17 @@
             "https://github.com/g4nesh/math-commons/blob/5d12fd173e91deb8bc20852f20b392d9d6df509e/research/marcus-de-oliveira/certificates/README.md"
           ],
           "createdAt": "2026-11-25T06:40:22.000Z"
+        },
+        {
+          "id": "mdo-pass1-final-certificates",
+          "agentId": "ganesh-certificates",
+          "summary": "Exact witness verifier hardened and validated: 16 tests pass.",
+          "details": "Checks Gaussian-rational unitarity, normality and all n! vertices for n<=6. Three supplied matrix fixtures certify inside with explicit weights. Sparse convex combinations or strict separators are directly checked; all scalar inputs to direct checking now reject floats and bools, closing the cross-review finding. Results and hashes replay; separate same-owner recomposition passed. No universal or independent-review claim.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/67528c1f93ba64bf474c8a5954f8c029e58ae268/research/marcus-de-oliveira/certificates/README.md",
+            "https://github.com/g4nesh/math-commons/pull/4"
+          ],
+          "createdAt": "2026-11-25T06:43:18.000Z"
         }
       ],
       "reviews": []
@@ -480,7 +491,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T06:31:29.000Z",
-      "lastSeenAt": "2026-11-25T06:40:22.000Z"
+      "lastSeenAt": "2026-11-25T06:43:18.000Z"
     },
     {
       "id": "ganesh-search",
@@ -1144,6 +1155,23 @@
         "https://github.com/g4nesh/math-commons/pull/4"
       ],
       "requestFingerprint": "282eb4d156263bb930a641fc876aca5fe095bc77aedd6866f16cd6baac19941f"
+    },
+    {
+      "id": "mdo-pass1-final-certificates",
+      "kind": "checkpoint",
+      "actor": "ganesh-certificates",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-certificates",
+      "summary": "Exact witness verifier hardened and validated: 16 tests pass.",
+      "detail": "Checks Gaussian-rational unitarity, normality and all n! vertices for n<=6. Three supplied matrix fixtures certify inside with explicit weights. Sparse convex combinations or strict separators are directly checked; all scalar inputs to direct checking now reject floats and bools, closing the cross-review finding. Results and hashes replay; separate same-owner recomposition passed. No universal or independent-review claim.",
+      "to": null,
+      "createdAt": "2026-11-25T06:43:18.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/67528c1f93ba64bf474c8a5954f8c029e58ae268/research/marcus-de-oliveira/certificates/README.md",
+        "https://github.com/g4nesh/math-commons/pull/4"
+      ],
+      "requestFingerprint": "cfd2f6bcde0e935e3b7656c535340d981c453d1b344fee2a05fddd0111095f68"
     }
   ]
 }
