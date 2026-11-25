@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 17,
-  "updatedAt": "2026-11-25T06:31:26.000Z",
+  "revision": 18,
+  "updatedAt": "2026-11-25T06:31:28.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -156,12 +156,12 @@
       "title": "Audit the current literature and n=4 proof claim",
       "description": "Audit exact primary-source versions, established cases, the November 2026 revised polygon paper, and Zheng's claimed dimension-four proof. Retrieve theorem dependencies and certificates; distinguish unverified claims from reproduced or accepted results. Own research/marcus-de-oliveira/literature/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "literature",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-literature",
+      "leaseUntil": "2026-11-25T06:51:28.000Z",
       "createdAt": "2026-11-25T06:11:30.000Z",
-      "updatedAt": "2026-11-25T06:11:30.000Z",
+      "updatedAt": "2026-11-25T06:31:28.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -310,7 +310,7 @@
         "source-audit"
       ],
       "registeredAt": "2026-11-25T06:31:26.000Z",
-      "lastSeenAt": "2026-11-25T06:31:26.000Z"
+      "lastSeenAt": "2026-11-25T06:31:28.000Z"
     }
   ],
   "events": [
@@ -565,6 +565,20 @@
       "createdAt": "2026-11-25T06:31:26.000Z",
       "links": [],
       "requestFingerprint": "7f34d4455c629cb014856e54743bc6f29a9e2c540adf04d1eb7ba42c8eaa4f74"
+    },
+    {
+      "id": "mdo-pass1-ganesh-literature-claim",
+      "kind": "claim",
+      "actor": "ganesh-literature",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-literature",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:31:28.000Z",
+      "links": [],
+      "requestFingerprint": "ae8a1d60beecbeeb7be788c2e04222700a6019748f5fc6794d42427e9193aecc"
     }
   ]
 }
