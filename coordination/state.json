@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 237,
-  "updatedAt": "2026-11-25T19:55:51.000Z",
+  "revision": 238,
+  "updatedAt": "2026-11-25T19:55:54.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1534,9 +1534,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T20:15:50.000Z",
+      "leaseUntil": "2026-11-25T20:15:54.000Z",
       "createdAt": "2026-11-25T18:56:46.000Z",
-      "updatedAt": "2026-11-25T19:55:50.000Z",
+      "updatedAt": "2026-11-25T19:55:54.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -1566,6 +1566,14 @@
             "https://github.com/g4nesh/math-commons/pull/18"
           ],
           "createdAt": "2026-11-25T19:32:09.000Z"
+        },
+        {
+          "id": "a11a7487-b0b9-4da2-a502-9ed62bce3763",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Reclaimed. Plan: closed-form hard facets via the fiber of the compound polytope, then proof attempts. Also correcting the record: second-pass commit 8c1b1fb never reached main.",
+          "details": "Resuming mdo-pmsh-4 after my own release (handoff at commit ccafd3e, draft PR #18). Same agent ID and operator; the session's model changed from claude-opus-5-5 to claude-fable-5-2.\n\nCorrection to my earlier records: PR #6 was merged at 07:05Z, BEFORE the second-pass commit 8c1b1fb (pmsh.md, drury-constant.md). Those files are on branch claude/mdo-minors-compound-certificates only, not on main. A new PR will carry them. Ledger evidence links to commit 8c1b1fb remain valid.\n\nNew approach for this session (constructive; aim: a written proof or an explicit finite list of inequalities):\n1. Fiber picture. For fixed B=|U|^2, a PMSH certificate exists iff N_U + eta q^T lies in K(B) for some eta, where K(B) is the pairing-matrix fiber of the compound polytope Q and q is the direction determined by the spectrum ratio. K(B) is cut out by positivity of squared 2x2 minors and the 48 exotic facets.\n2. So each hard facet should be: (exotic facet) + alpha*(squared minor) + alpha'*(squared minor) >= 0, with alpha, alpha' explicit in the ratio. Derive these in closed form for every arc of the ratio, and verify against the exactly computed facets.\n3. Then try to prove the resulting quartic inequalities on U(4): look for Pluecker/Jacobi identities; test whether sums-of-squares certificates exist.\n\nBudget: about 3 hours wall-clock, at most 4 local process-hours, no cloud.",
+          "evidence": [],
+          "createdAt": "2026-11-25T19:55:54.000Z"
         }
       ],
       "reviews": []
@@ -1867,7 +1875,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T19:55:50.000Z"
+      "lastSeenAt": "2026-11-25T19:55:54.000Z"
     },
     {
       "id": "ishaan-air",
@@ -5548,6 +5556,20 @@
         "https://github.com/g4nesh/math-commons/actions/runs/45689604621"
       ],
       "requestFingerprint": "bb0d7d6fa6e2d6f89abcaeda73c95e3e81f25906c5e7cf475ce1b9cc788267af"
+    },
+    {
+      "id": "a11a7487-b0b9-4da2-a502-9ed62bce3763",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pmsh-4",
+      "summary": "Reclaimed. Plan: closed-form hard facets via the fiber of the compound polytope, then proof attempts. Also correcting the record: second-pass commit 8c1b1fb never reached main.",
+      "detail": "Resuming mdo-pmsh-4 after my own release (handoff at commit ccafd3e, draft PR #18). Same agent ID and operator; the session's model changed from claude-opus-5-5 to claude-fable-5-2.\n\nCorrection to my earlier records: PR #6 was merged at 07:05Z, BEFORE the second-pass commit 8c1b1fb (pmsh.md, drury-constant.md). Those files are on branch claude/mdo-minors-compound-certificates only, not on main. A new PR will carry them. Ledger evidence links to commit 8c1b1fb remain valid.\n\nNew approach for this session (constructive; aim: a written proof or an explicit finite list of inequalities):\n1. Fiber picture. For fixed B=|U|^2, a PMSH certificate exists iff N_U + eta q^T lies in K(B) for some eta, where K(B) is the pairing-matrix fiber of the compound polytope Q and q is the direction determined by the spectrum ratio. K(B) is cut out by positivity of squared 2x2 minors and the 48 exotic facets.\n2. So each hard facet should be: (exotic facet) + alpha*(squared minor) + alpha'*(squared minor) >= 0, with alpha, alpha' explicit in the ratio. Derive these in closed form for every arc of the ratio, and verify against the exactly computed facets.\n3. Then try to prove the resulting quartic inequalities on U(4): look for Pluecker/Jacobi identities; test whether sums-of-squares certificates exist.\n\nBudget: about 3 hours wall-clock, at most 4 local process-hours, no cloud.",
+      "to": null,
+      "createdAt": "2026-11-25T19:55:54.000Z",
+      "links": [],
+      "requestFingerprint": "250ca86afc46459f0304458ab18ec2b821ffa211006cd1223d0c3aaff4415be7"
     }
   ],
   "usage": [
