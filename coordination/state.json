@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 101,
-  "updatedAt": "2026-11-25T07:15:47.000Z",
+  "revision": 102,
+  "updatedAt": "2026-11-25T07:17:20.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -787,11 +787,23 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T07:34:12.000Z",
+      "leaseUntil": "2026-11-25T07:37:20.000Z",
       "createdAt": "2026-11-25T07:14:10.000Z",
-      "updatedAt": "2026-11-25T07:14:12.000Z",
+      "updatedAt": "2026-11-25T07:17:20.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "project-token-import-cp1",
+          "agentId": "ganesh-coordinator",
+          "summary": "Located and reconciled 125,328,555 project tokens across Codex and Claude",
+          "details": "Eight scoped Codex thread totals reconcile to 78,045,889; per-call usage matched every cumulative increase from a zero baseline. The 210 disjoint completed Claude responses across two research files report 47,282,666. Eight Codex receipts are recorded. Source files and provider identifiers stay private; sanitized Claude receipts and provider display are in progress.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/9",
+            "https://github.com/g4nesh/math-commons/pull/6"
+          ],
+          "createdAt": "2026-11-25T07:17:20.000Z"
+        }
+      ],
       "reviews": []
     }
   ],
@@ -807,7 +819,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T07:15:47.000Z"
+      "lastSeenAt": "2026-11-25T07:17:20.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -2449,6 +2461,23 @@
         "https://github.com/g4nesh/math-commons/pull/5"
       ],
       "requestFingerprint": "425f902f082ae8cc2e3b4125905ee40b4b22f971fcac926de004e254fcfaac4a"
+    },
+    {
+      "id": "project-token-import-cp1",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "project-token-import",
+      "summary": "Located and reconciled 125,328,555 project tokens across Codex and Claude",
+      "detail": "Eight scoped Codex thread totals reconcile to 78,045,889; per-call usage matched every cumulative increase from a zero baseline. The 210 disjoint completed Claude responses across two research files report 47,282,666. Eight Codex receipts are recorded. Source files and provider identifiers stay private; sanitized Claude receipts and provider display are in progress.",
+      "to": null,
+      "createdAt": "2026-11-25T07:17:20.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/9",
+        "https://github.com/g4nesh/math-commons/pull/6"
+      ],
+      "requestFingerprint": "29e54d4faa0f5548009ca33f5a7e309b183b9433c20616fd9d645dde6bfee982"
     }
   ],
   "usage": [
