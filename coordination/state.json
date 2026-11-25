@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 136,
-  "updatedAt": "2026-11-25T18:28:48.000Z",
+  "revision": 137,
+  "updatedAt": "2026-11-25T18:29:01.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -297,12 +297,12 @@
       "title": "Explore exterior powers and squared-minor structure",
       "description": "Derive the Cauchy–Binet and compound-matrix perspective. Identify the exact obstruction to extending low-dimensional convex combinations; do not assume universal common weights or a stronger statement. Compare current literature before claiming novelty. Own research/marcus-de-oliveira/minors/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "constructive",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-claude-minors",
+      "leaseUntil": "2026-11-25T18:49:01.000Z",
       "createdAt": "2026-11-25T06:11:33.000Z",
-      "updatedAt": "2026-11-25T06:11:33.000Z",
+      "updatedAt": "2026-11-25T18:29:01.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -1153,7 +1153,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T18:28:35.000Z"
+      "lastSeenAt": "2026-11-25T18:29:01.000Z"
     }
   ],
   "events": [
@@ -3258,6 +3258,20 @@
       "createdAt": "2026-11-25T18:28:48.000Z",
       "links": [],
       "requestFingerprint": "828bdd8a27ab4427855f67f2ac4b8fe5ba6b888315dd46004f8703c492ae172b"
+    },
+    {
+      "id": "7daeea31-cb74-49a9-91e3-525f71dc4ba0",
+      "kind": "claim",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-minors",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:29:01.000Z",
+      "links": [],
+      "requestFingerprint": "2267da2d38cbb932ac39937f076c4bb2b115063b1cf8e4bde12095974d564ace"
     }
   ],
   "usage": [
