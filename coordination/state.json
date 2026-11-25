@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 85,
-  "updatedAt": "2026-11-25T07:09:21.000Z",
+  "revision": 86,
+  "updatedAt": "2026-11-25T07:11:52.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -709,9 +709,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-contributor-intake",
-      "leaseUntil": "2026-11-25T07:29:21.000Z",
+      "leaseUntil": "2026-11-25T07:31:52.000Z",
       "createdAt": "2026-11-25T07:07:20.000Z",
-      "updatedAt": "2026-11-25T07:09:21.000Z",
+      "updatedAt": "2026-11-25T07:11:52.000Z",
       "createdBy": "ganesh-contributor-intake",
       "checkpoints": [
         {
@@ -732,6 +732,18 @@
             "https://github.com/g4nesh/math-commons/pull/8"
           ],
           "createdAt": "2026-11-25T07:09:21.000Z"
+        },
+        {
+          "id": "contributor-intake-production-check",
+          "agentId": "ganesh-contributor-intake",
+          "summary": "Contributor intake is live from the site, README and GitHub issue chooser.",
+          "details": "Vercel production identifies the main merge commit 5a810be8dd2db075bfc4776a0fdda495b1304f23. Followed the live Connect link and confirmed the embedded contact email and GitHub fields and Submit are enabled. Anonymous access and required-field validation were checked. The rendered README and issue chooser both link to the same published form. Responses remain private to the maintainer. All 93 Node tests and post-merge GitHub CI passed.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/5a810be8dd2db075bfc4776a0fdda495b1304f23/public/join.html",
+            "https://github.com/g4nesh/math-commons/actions/runs/45566139213",
+            "https://math-commons-dun.vercel.app/join.html"
+          ],
+          "createdAt": "2026-11-25T07:11:52.000Z"
         }
       ],
       "reviews": []
@@ -839,7 +851,7 @@
         "onboarding"
       ],
       "registeredAt": "2026-11-25T07:07:11.000Z",
-      "lastSeenAt": "2026-11-25T07:09:21.000Z"
+      "lastSeenAt": "2026-11-25T07:11:52.000Z"
     }
   ],
   "events": [
@@ -2123,6 +2135,24 @@
         "https://github.com/g4nesh/math-commons/pull/8"
       ],
       "requestFingerprint": "2acbaea27093ff390e48101b3e2a555fd4e622f1037271fba325c1ba2bc04a06"
+    },
+    {
+      "id": "contributor-intake-production-check",
+      "kind": "checkpoint",
+      "actor": "ganesh-contributor-intake",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "contributor-requests",
+      "summary": "Contributor intake is live from the site, README and GitHub issue chooser.",
+      "detail": "Vercel production identifies the main merge commit 5a810be8dd2db075bfc4776a0fdda495b1304f23. Followed the live Connect link and confirmed the embedded contact email and GitHub fields and Submit are enabled. Anonymous access and required-field validation were checked. The rendered README and issue chooser both link to the same published form. Responses remain private to the maintainer. All 93 Node tests and post-merge GitHub CI passed.",
+      "to": null,
+      "createdAt": "2026-11-25T07:11:52.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/5a810be8dd2db075bfc4776a0fdda495b1304f23/public/join.html",
+        "https://github.com/g4nesh/math-commons/actions/runs/45566139213",
+        "https://math-commons-dun.vercel.app/join.html"
+      ],
+      "requestFingerprint": "10192811f72ab58ab2a775fd0ecf2fd849d4ba37c5368d5b2712e460d0550a56"
     }
   ]
 }
