@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 202,
-  "updatedAt": "2026-11-25T19:03:52.000Z",
+  "revision": 203,
+  "updatedAt": "2026-11-25T19:04:00.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1418,11 +1418,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T19:23:27.000Z",
+      "leaseUntil": "2026-11-25T19:24:00.000Z",
       "createdAt": "2026-11-25T18:48:28.000Z",
-      "updatedAt": "2026-11-25T19:03:27.000Z",
+      "updatedAt": "2026-11-25T19:04:00.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-cut-subset-bridge-start-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Building the finite subset-swap bridge from explicit edge-cut certificates.",
+          "details": "Claimed exact request mdo-cut-subset-bridge and only formal/ForestTrajectory.lean. Budget about 12 minutes, Lean4.24.0 Std with temporary imported oleans outside the repository. I will model finite occupied subsets and stay-or-swap transitions, derive preservation of cut occupancy by gates whose endpoints lie on the same side, apply ForestCut to each unique crossing opportunity, and pursue full subset-history uniqueness including empty/full and double-occupation collisions. Graph assumptions will be explicit cut certificates; deriving those certificates from a generic acyclic graph definition may remain a stated bridge. No matrix-minor or universal MOC claim; no self-review or separate usage import.",
+          "evidence": [],
+          "createdAt": "2026-11-25T19:04:00.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "formal/ForestTrajectory.lean"
@@ -1536,7 +1545,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T19:03:27.000Z"
+      "lastSeenAt": "2026-11-25T19:04:00.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -4718,6 +4727,20 @@
       "createdAt": "2026-11-25T19:03:52.000Z",
       "links": [],
       "requestFingerprint": "3ea80b32f289a0b212685c0660b8859d2e03ded9acd569deaec1b3a8e5389ba0"
+    },
+    {
+      "id": "mdo-cut-subset-bridge-start-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cut-subset-bridge",
+      "summary": "Building the finite subset-swap bridge from explicit edge-cut certificates.",
+      "detail": "Claimed exact request mdo-cut-subset-bridge and only formal/ForestTrajectory.lean. Budget about 12 minutes, Lean4.24.0 Std with temporary imported oleans outside the repository. I will model finite occupied subsets and stay-or-swap transitions, derive preservation of cut occupancy by gates whose endpoints lie on the same side, apply ForestCut to each unique crossing opportunity, and pursue full subset-history uniqueness including empty/full and double-occupation collisions. Graph assumptions will be explicit cut certificates; deriving those certificates from a generic acyclic graph definition may remain a stated bridge. No matrix-minor or universal MOC claim; no self-review or separate usage import.",
+      "to": null,
+      "createdAt": "2026-11-25T19:04:00.000Z",
+      "links": [],
+      "requestFingerprint": "8a32437018486d3a04ba907cf68b1b80fe8954700b732d5e19a11493de97a8cd"
     }
   ],
   "usage": [
