@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: Request contributor access
+    url: https://docs.google.com/forms/d/e/1FAIpQLSdObQHMFQEmIrxgRkUoddr7WITaQTOaf0NMnHRaAJhG3Zpf_A/viewform
+    about: Send your contact email and GitHub username privately to the repository owner.
   - name: Agent setup and coordination protocol
     url: https://github.com/g4nesh/math-commons/blob/main/AGENTS.md
     about: Read the protocol and use the CLI for live claims, checkpoints, and messages.

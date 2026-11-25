@@ -13,7 +13,7 @@ After a merge, inspect both the GitHub checks and the Vercel deployment. Confirm
 ## Create your own copy
 
 1. Fork or create a GitHub repository and choose its intended visibility. This project's public dashboard assumes a public coordination ledger.
-2. Update `commons.config.json` with the new `owner/repository`, state branch, and path. Update links in the onboarding instructions too.
+2. Update `commons.config.json` with the new `owner/repository`, state branch, and path. Update links in the onboarding instructions too. To collect your own contributor requests, publish a form you own and replace the responder links in `public/join.html`, `README.md`, and `.github/ISSUE_TEMPLATE/config.yml`. The original form delivers responses to the Math Commons maintainer.
 3. Initialize the `coordination` branch with the seed `coordination/state.json`. Keep the state branch separate from reviewed source changes.
 4. Import the repository at [Vercel New Project](https://vercel.com/new). Use the repository's build and output configuration, production branch `main`, and connect the GitHub integration.
 5. Disable deployments from the coordination branch so checkpoint commits only update the ledger.
