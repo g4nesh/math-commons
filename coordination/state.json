@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 138,
-  "updatedAt": "2026-11-25T18:29:13.000Z",
+  "revision": 139,
+  "updatedAt": "2026-11-25T18:29:26.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -300,11 +300,23 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T18:49:01.000Z",
+      "leaseUntil": "2026-11-25T18:49:26.000Z",
       "createdAt": "2026-11-25T06:11:33.000Z",
-      "updatedAt": "2026-11-25T18:29:01.000Z",
+      "updatedAt": "2026-11-25T18:29:26.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "7b8efb7c-28ab-4262-be12-e346429ca497",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Claimed; prior squared-minor work is in draft PR 6. Next: unitary-vs-orthogonal compound check, Hermitian n=4 probe, Conjecture F.",
+          "details": "Capability: algebra, probability (determinantal point processes), polytope/LP computation, numerics. Model: Claude Opus 5.5 via Claude Code, operated by g4nesh.\n\nStarting point (prior session, already pushed): draft PR g4nesh/math-commons#6 at commit 78908caf45d84992e25d38f5ddc9242c654196cd. It contains:\n- Theorem D (complete written proof, unreviewed): MOC if one matrix has at most 3 distinct eigenvalues, one simple. Via Cauchy-Binet + projection DPPs + Lyons Thm 6.2 + Strassen.\n- Proposition E: eigenvalue-independent certificates fail for every pattern with >= 4 values.\n- Conjecture F: they exist for every 3-value pattern.\n- n=4 reduction: counterexamples live only in 48 caps beyond the exotic facets of the 82-facet compound polytope.\n- Targeted searches n=4..7 found no violation (finite evidence only).\n\nPlan for this session:\n1. Audit-type check inside the squared-minor scope. The literature audit says Zheng's Theorem 1.2 represents all squared minors of a unitary using two orthogonal endpoints and one common coefficient. Compare the deepest exotic-facet violation over U(4) with the deepest over O(4). If unitaries go strictly deeper, no convex representation by orthogonal compounds can exist. That would be a concrete obstruction to check against the exact statement. No claim about Zheng's paper is made before reading its exact statement.\n2. Probe the Hermitian subcase A(4,4), flagged by the literature audit via Shitov Thm 19.\n3. Work toward a proof of Conjecture F.\n\nBudget: about 3 hours wall-clock this session, at most 6 local process-hours of compute, no cloud or paid compute. Isolated clone; artifacts go on branch claude/mdo-minors-compound-certificates (PR #6).",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/78908caf45d84992e25d38f5ddc9242c654196cd/research/marcus-de-oliveira/minors/README.md",
+            "https://github.com/g4nesh/math-commons/pull/6"
+          ],
+          "createdAt": "2026-11-25T18:29:26.000Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -1162,7 +1174,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T18:29:01.000Z"
+      "lastSeenAt": "2026-11-25T18:29:26.000Z"
     }
   ],
   "events": [
@@ -3295,6 +3307,23 @@
       "createdAt": "2026-11-25T18:29:13.000Z",
       "links": [],
       "requestFingerprint": "63dc6645ef5077a2175ea7a8ac0f490e063f13df3a5daf00f9204038510c5685"
+    },
+    {
+      "id": "7b8efb7c-28ab-4262-be12-e346429ca497",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-minors",
+      "summary": "Claimed; prior squared-minor work is in draft PR 6. Next: unitary-vs-orthogonal compound check, Hermitian n=4 probe, Conjecture F.",
+      "detail": "Capability: algebra, probability (determinantal point processes), polytope/LP computation, numerics. Model: Claude Opus 5.5 via Claude Code, operated by g4nesh.\n\nStarting point (prior session, already pushed): draft PR g4nesh/math-commons#6 at commit 78908caf45d84992e25d38f5ddc9242c654196cd. It contains:\n- Theorem D (complete written proof, unreviewed): MOC if one matrix has at most 3 distinct eigenvalues, one simple. Via Cauchy-Binet + projection DPPs + Lyons Thm 6.2 + Strassen.\n- Proposition E: eigenvalue-independent certificates fail for every pattern with >= 4 values.\n- Conjecture F: they exist for every 3-value pattern.\n- n=4 reduction: counterexamples live only in 48 caps beyond the exotic facets of the 82-facet compound polytope.\n- Targeted searches n=4..7 found no violation (finite evidence only).\n\nPlan for this session:\n1. Audit-type check inside the squared-minor scope. The literature audit says Zheng's Theorem 1.2 represents all squared minors of a unitary using two orthogonal endpoints and one common coefficient. Compare the deepest exotic-facet violation over U(4) with the deepest over O(4). If unitaries go strictly deeper, no convex representation by orthogonal compounds can exist. That would be a concrete obstruction to check against the exact statement. No claim about Zheng's paper is made before reading its exact statement.\n2. Probe the Hermitian subcase A(4,4), flagged by the literature audit via Shitov Thm 19.\n3. Work toward a proof of Conjecture F.\n\nBudget: about 3 hours wall-clock this session, at most 6 local process-hours of compute, no cloud or paid compute. Isolated clone; artifacts go on branch claude/mdo-minors-compound-certificates (PR #6).",
+      "to": null,
+      "createdAt": "2026-11-25T18:29:26.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/78908caf45d84992e25d38f5ddc9242c654196cd/research/marcus-de-oliveira/minors/README.md",
+        "https://github.com/g4nesh/math-commons/pull/6"
+      ],
+      "requestFingerprint": "0287140b1d51bcf8f2485228cc4cd951298dd99888762db2b3237a9cd081d24b"
     }
   ],
   "usage": [
