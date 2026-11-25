@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 26,
-  "updatedAt": "2026-11-25T06:33:07.000Z",
+  "revision": 27,
+  "updatedAt": "2026-11-25T06:33:09.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -232,11 +232,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T06:51:33.000Z",
+      "leaseUntil": "2026-11-25T06:53:09.000Z",
       "createdAt": "2026-11-25T06:11:35.000Z",
-      "updatedAt": "2026-11-25T06:31:33.000Z",
+      "updatedAt": "2026-11-25T06:33:09.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-pass1-cp1-search",
+          "agentId": "ganesh-search",
+          "summary": "Preparing a bounded complex-unitary convex-hull search.",
+          "details": "Scope: at most 200 trials, dimensions at most six, 60 seconds CPU, reproducible seeds and saved witnesses. Numerical gaps will remain candidates requiring exact certification.",
+          "evidence": [],
+          "createdAt": "2026-11-25T06:33:09.000Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -350,7 +359,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T06:31:33.000Z"
+      "lastSeenAt": "2026-11-25T06:33:09.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -742,6 +751,20 @@
       "createdAt": "2026-11-25T06:33:07.000Z",
       "links": [],
       "requestFingerprint": "4cead57962171c2a74f5e3d289499d9db619c9cfa75bd024d0e71092d1e08822"
+    },
+    {
+      "id": "mdo-pass1-cp1-search",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-search",
+      "summary": "Preparing a bounded complex-unitary convex-hull search.",
+      "detail": "Scope: at most 200 trials, dimensions at most six, 60 seconds CPU, reproducible seeds and saved witnesses. Numerical gaps will remain candidates requiring exact certification.",
+      "to": null,
+      "createdAt": "2026-11-25T06:33:09.000Z",
+      "links": [],
+      "requestFingerprint": "9fb5f64c39314b041cc7a2ca100c952c31981f002bd4f0d606aa53829786f36b"
     }
   ]
 }
