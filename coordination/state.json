@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 60,
-  "updatedAt": "2026-11-25T06:47:15.000Z",
+  "revision": 61,
+  "updatedAt": "2026-11-25T06:47:16.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -545,6 +545,22 @@
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "usage-release",
+      "objectiveId": "math-commons-platform",
+      "title": "Document and verify token reporting",
+      "description": "Own docs/, README.md, AGENTS.md and integration checks. Implement the authorized token chart with authenticated attribution, deduplication and explicit missing usage. Publish real provider/run-reported counts only; no invented historical data. Bounded implementation session, checkpoints every five minutes.",
+      "approach": "coordination",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:47:16.000Z",
+      "updatedAt": "2026-11-25T06:47:16.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -559,7 +575,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:47:13.000Z"
+      "lastSeenAt": "2026-11-25T06:47:16.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1539,6 +1555,20 @@
       "createdAt": "2026-11-25T06:47:15.000Z",
       "links": [],
       "requestFingerprint": "dd7e8c3bb79ecac972b9bbed80f9ea086034d8ab8698c8a211c5f5c32513cc7f"
+    },
+    {
+      "id": "usage-chart-task-usage-release",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-release",
+      "summary": "Proposed coordination task: Document and verify token reporting",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:47:16.000Z",
+      "links": [],
+      "requestFingerprint": "d174d2eab10fed1a2f68e1c2b7dcf446bcaf70946605048ebc1bdca6f15382f5"
     }
   ]
 }
