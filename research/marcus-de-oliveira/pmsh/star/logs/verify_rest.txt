@@ -1,0 +1,10 @@
+(1) triples checked: 288 ; failing the identity (alpha-1)*alpha' = 1 or with a sign change inside a used interval: 0  [3s]
+    distinct multiplier pairs (alpha, alpha') and multiplicities:
+      alpha = (rho - 1)/rho          alpha' = -rho                   x 48
+      alpha = 1 - rho                alpha' = -1/rho                 x 48
+      alpha = -1/(rho - 1)           alpha' = -(rho - 1)/rho         x 48
+      alpha = 1/rho                  alpha' = -rho/(rho - 1)         x 48
+      alpha = rho                    alpha' = 1/(rho - 1)            x 48
+      alpha = rho/(rho - 1)          alpha' = rho - 1                x 48
+(2) 14-subsets: 1961256 ; max |float det - integer| = 3.6e-14 ; max |det| = 64
+    facets of Q found: 82 ; equal to the union of 16 (B=0) + 18 (D=0) + 48 (exotic): True  [8s]

@@ -1,0 +1,4 @@
+(1) |zeta|^2, |omega|^2 reproduce all 18 squared minors: max error 1.9e-15
+(2) A has two unit singular values and det A = det R_11: max error 1.4e-15 ; cases with det A < 0: 1999 of 4000
+    block form equals the margin of (*) on those cases: max error 3.1e-15
+smallest margin of (*) over 4000 Haar unitaries: 0.0457

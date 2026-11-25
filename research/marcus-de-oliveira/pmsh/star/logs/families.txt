@@ -1,0 +1,7 @@
+hard-facet families attached to g0 (alpha, alpha' > 0 on the stated range of rho):
+  rho in Interval.open(-oo, 0)   g0 + (1 - rho)*D[13,13] + (-1/rho)*D[14,12] >= 0
+  rho in Interval.open(-oo, 0)   g0 + (1 - rho)*D[13,13] + (-1/rho)*D[14,34] >= 0
+  rho in Interval.open(0, 1)     g0 + (1/rho)*D[12,12] + (-rho/(rho - 1))*D[13,14] >= 0
+  rho in Interval.open(0, 1)     g0 + (1/rho)*D[12,12] + (-rho/(rho - 1))*D[13,23] >= 0
+  rho in Interval.open(1, oo)    g0 + (rho - 1)*D[12,13] + (rho/(rho - 1))*D[14,14] >= 0
+  rho in Interval.open(1, oo)    g0 + (rho - 1)*D[12,24] + (rho/(rho - 1))*D[14,14] >= 0
