@@ -1,0 +1,6 @@
+  n=7 U 1/6: max J -1.636e-03 | overall -1.636e-03  [102s]
+  n=7 U 2/6: max J -1.374e-03 | overall -1.374e-03  [195s]
+  n=7 U 3/6: max J -1.627e-03 | overall -1.374e-03  [268s]
+  n=7 U 4/6: max J -1.928e-03 | overall -1.374e-03  [328s]
+  n=7 U 5/6: max J -2.341e-03 | overall -1.374e-03  [390s]
+  n=7 U 6/6: max J -2.983e-03 | overall -1.374e-03  [452s]

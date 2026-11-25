@@ -1,0 +1,7 @@
+phase1: 60 bad U; violation before: max 0.0220; after deepening: max 0.0389 median 0.0374
+  10/60 U done, max J so far -2.8450e-02, median of per-U maxima -2.8519e-02  (63s)
+  20/60 U done, max J so far -2.8450e-02, median of per-U maxima -2.8513e-02  (129s)
+  30/60 U done, max J so far -2.8411e-02, median of per-U maxima -2.8504e-02  (194s)
+  40/60 U done, max J so far -6.9756e-04, median of per-U maxima -2.8488e-02  (256s)
+  50/60 U done, max J so far -2.5919e-04, median of per-U maxima -2.8463e-02  (313s)
+  60/60 U done, max J so far -2.5919e-04, median of per-U maxima -2.4122e-02  (371s)

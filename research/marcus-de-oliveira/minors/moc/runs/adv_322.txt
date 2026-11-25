@@ -1,0 +1,18 @@
+pattern (3, 2, 2) classes 210 affine dim 82
+  restart 0: s*=1.000000 (best 1.000000)
+  restart 1: s*=1.000000 (best 1.000000)
+  restart 2: s*=1.000000 (best 1.000000)
+  restart 3: s*=1.000000 (best 1.000000)
+  restart 4: s*=1.000000 (best 1.000000)
+  restart 5: s*=1.000000 (best 1.000000)
+  restart 6: s*=1.000000 (best 1.000000)
+  restart 7: s*=1.000000 (best 1.000000)
+  restart 8: s*=1.000000 (best 1.000000)
+  restart 9: s*=1.000000 (best 1.000000)
+  restart 10: s*=1.000000 (best 1.000000)
+  restart 11: s*=1.000000 (best 1.000000)
+  restart 12: s*=1.000000 (best 1.000000)
+  restart 13: s*=1.000000 (best 1.000000)
+  restart 14: s*=1.000000 (best 1.000000)
+  restart 15: s*=1.000000 (best 1.000000)
+RESULT pattern (3, 2, 2): min s* = 1.000000  (s*<1 means certificate fails)  [149s]

@@ -1,0 +1,2 @@
+n=5 colours=3 ranks=[2, 2, 2] affdim=111 : min s* = 1.000000   (max off-span residual 5.4e-15)
+n=5 colours=3 ranks=[1, 2, 3] affdim=111 : min s* = 1.000000   (max off-span residual 5.0e-15)
