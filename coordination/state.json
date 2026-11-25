@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 73,
-  "updatedAt": "2026-11-25T06:59:37.000Z",
+  "revision": 74,
+  "updatedAt": "2026-11-25T06:59:39.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -649,6 +649,22 @@
         }
       ],
       "reviews": []
+    },
+    {
+      "id": "usage-readme-svg",
+      "objectiveId": "math-commons-platform",
+      "title": "Embed the live contribution chart in the GitHub README",
+      "description": "Own lib/contributions-svg.mjs, api/contributions.js and test/contributions-svg.test.mjs. Generate safe readable SVG from the same reported receipts, with truthful empty/failure states and shared caching. Root owns README embedding. Bounded implementation and verification; no invented usage.",
+      "approach": "presentation",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:59:39.000Z",
+      "updatedAt": "2026-11-25T06:59:39.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -663,7 +679,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:57:00.000Z"
+      "lastSeenAt": "2026-11-25T06:59:39.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1839,6 +1855,20 @@
         "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/test/adapter.test.mjs"
       ],
       "requestFingerprint": "0bf9b0db879ce403fb5e79a350a42adb1fce475124bed34407a15b38c2b016e6"
+    },
+    {
+      "id": "usage-readme-svg-task",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-readme-svg",
+      "summary": "Proposed presentation task: Embed the live contribution chart in the GitHub README",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:59:39.000Z",
+      "links": [],
+      "requestFingerprint": "1698658a6794af34343a36a8f8d250a5832cbba799004a96d5f33bffd6dacb20"
     }
   ]
 }
