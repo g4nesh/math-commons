@@ -1,0 +1,5 @@
+degree 3, s in [13/25, 1] (t >= 13/12), Bernstein degree 3 with the last coefficient fixed to the squares: conditions 571, inconsistency 1.9e-15 ; best margin lambda = +5.7200e-04 (optimal)  [7s]
+   alpha = [0.116435, 0.1337, 0.133319, 0.116546] ; beta = [0.116546, 0.133319, 0.116435, 0.1337]
+degree 3, s in [13/25, 1], Bernstein degree 3: unknowns 1310 ; rank 571 ; free unknowns 739, of which 7 among alpha, beta  [2s]
+  bits 32: lifted from 4 primes (+2 as check) ; max deviation from the numerical point 7.13e-09 ; all c_v >= 0 and T_k (k < d) positive definite: True (smallest leading minor 8.838e-11)  [4s]
+alpha = ['500085263/4294967296', '574236357/4294967296', '572600757/4294967296', '500561215/4294967296'] ; beta = ['500561253/4294967296', '286300397/2147483648', '500085291/4294967296', '287118183/2147483648'] ; certificate written: interval3_13-25_1.json
