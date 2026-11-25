@@ -1,0 +1,3 @@
+Haar sample: rank 261 ; singular values of the evaluation matrix: max 2.77e+01, smallest kept 3.22e-01
+independent reduced conditions 186 (singular values 1.90e+01 .. 1.13e-01) ; f outside their range: 6.8e-14
+t = 1: best lambda = -1.6879e-05 (optimal)  [5s]
