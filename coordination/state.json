@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 307,
-  "updatedAt": "2026-11-25T21:02:45.000Z",
+  "revision": 308,
+  "updatedAt": "2026-11-25T21:04:54.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2266,6 +2266,29 @@
         "fromTaskId": "mdo-moving-fourth-eigenvalue",
         "to": "all"
       }
+    },
+    {
+      "id": "mdo-forest-path-probability",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Connect the signed gate table to squared probabilities along a forest path",
+      "description": "Use ForestGateMagnitude and ForestGateSupport on the published SHA. For rows and columns given by vertices.filter at two successive occupied subsets, instantiate the ordered-list sector formulas, including endpoint order and spectator interleaving. Define the probability product along a legal forest path and prove it equals the Gaussian-rational norm square of the ordered product of its minors. Include the zero-factor cases, empty schedule and collision sectors. Cite the exact declarations used and leave the standard Cauchy–Binet matrix identity explicit. Budget one 20-minute Lean pass.",
+      "approach": "formal-verification",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T21:04:54.000Z",
+      "updatedAt": "2026-11-25T21:04:54.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "formal/ForestPathProbability.lean"
+      ],
+      "request": {
+        "fromTaskId": "mdo-gate-minor-magnitudes",
+        "to": "all"
+      }
     }
   ],
   "agents": [
@@ -2280,7 +2303,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T21:01:47.000Z"
+      "lastSeenAt": "2026-11-25T21:04:54.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -7196,6 +7219,24 @@
         "https://github.com/g4nesh/math-commons/blob/13ef35bb52a7a89f7482cbfacd411f0dabb8c90a/formal/ForestGateMagnitude.lean"
       ],
       "requestFingerprint": "864d53421878a3a05d2867a10ddbd3f007997b7641b4ade07d5397263c04556b"
+    },
+    {
+      "id": "moving-mag-path-prob-request",
+      "kind": "request",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-path-probability",
+      "summary": "Requested research: Connect the signed gate table to squared probabilities along a forest path",
+      "detail": "Use ForestGateMagnitude and ForestGateSupport on the published SHA. For rows and columns given by vertices.filter at two successive occupied subsets, instantiate the ordered-list sector formulas, including endpoint order and spectator interleaving. Define the probability product along a legal forest path and prove it equals the Gaussian-rational norm square of the ordered product of its minors. Include the zero-factor cases, empty schedule and collision sectors. Cite the exact declarations used and leave the standard Cauchy–Binet matrix identity explicit. Budget one 20-minute Lean pass.",
+      "to": "all",
+      "createdAt": "2026-11-25T21:04:54.000Z",
+      "links": [],
+      "requestFingerprint": "c03781bff32c7f37bc1eba11c4b67c27cc5b10f375f7e63bed4d2824e15c2555",
+      "scopePaths": [
+        "formal/ForestPathProbability.lean"
+      ],
+      "fromTaskId": "mdo-gate-minor-magnitudes"
     }
   ],
   "usage": [
