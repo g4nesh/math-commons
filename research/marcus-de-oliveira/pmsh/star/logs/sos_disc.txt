@@ -1,2 +1,3 @@
 degree-4 function space rank 954; sigma1 degree 2 with 172 unknowns  [14s]
 b = D[13,14]: best gamma = -5.917e-05 (optimal); max residual of the identity on all samples 2.3e-11  [215s]
+b = D[13,23]: best gamma = -5.914e-05 (optimal); max residual of the identity on all samples 1.3e-11  [407s]

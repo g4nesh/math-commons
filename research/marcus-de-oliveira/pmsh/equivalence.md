@@ -112,7 +112,7 @@ Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0; cvxpy 1.7.5 with Clarabel
 | SOS, degree 3 (261-dim) | `sos_torus.py 3 3000`, `sos_scan3.py` | certifies **g0 ≥ −0.067442**, the true minimum. Certifies the t-form for every tested t ≥ 1 (bound ≥ −10⁻⁶·t), but not for t < 1 (e.g. bound/t = −1.9·10⁻³ at t = 0.5) |
 | One degree-3 certificate for all t ≥ 1 | `sos_param.py 3 3000` | feasible: slack −8.6·10⁻⁸ and −2.3·10⁻⁸ for the two members |
 | SOS, degree 4 (954-dim) | `sos2.py 4 5000 …` | certifies t = 0.5, 0.3, 0.2, 0.15 and 0.1 (bounds/t between −3.4·10⁻⁸ and +6.7·10⁻⁹); does **not** certify t = 0.05 (bound/t = −3.2·10⁻⁴) |
-| Parameter-free discriminant form: 4·D[12,12]·D[13,14] − (g0 + D[12,12])² = σ₀ − (g0 + D[12,12])·σ₁ with σ₀ of degree 4 and σ₁ of degree 2 | `sos_disc.py 2 5000` | **not certified at these degrees**: best slack γ = −5.9·10⁻⁵ for b = D[13,14] (identity residual 2·10⁻¹¹). The second member, b = D[13,23], was still running at this commit |
+| Parameter-free discriminant form: 4·D[12,12]·D[13,14] − (g0 + D[12,12])² = σ₀ − (g0 + D[12,12])·σ₁ with σ₀ of degree 4 and σ₁ of degree 2 | `sos_disc.py 2 5000` | **not certified at these degrees**: best slack γ = −5.9·10⁻⁵ for both members, b = D[13,14] and b = D[13,23] (identity residuals ≤ 2.3·10⁻¹¹) |
 
 These certificates are numerical (interior-point solver, tolerance about 10⁻⁸). They are **not** proofs.
 
