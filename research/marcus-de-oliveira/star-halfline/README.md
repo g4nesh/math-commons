@@ -30,16 +30,27 @@ Replacing t by 1/t replaces s by 1−s. A spectrum with cross-ratio ρ ∈ (0, 1
 4. **Search and exact solve.** `interval_sdp.py` maximizes the common margin λ with T_{b,k} ⪰ λ·I (floating point). `interval_exact.py` solves the linear system over ℚ (reduced row echelon form modulo three primes, rational reconstruction, a fourth prime as cross-check), sets the free unknowns to rounded numerical values, and tests positive definiteness exactly.
 5. **Independent check (`verify_interval.py`).** Exact arithmetic only. It picks its own d + 3 values of s and fresh rational unitaries from a seed.
 
-## Result 1 (exact): every t in [3/2, 5] at once
+## Result 1 (exact): every t in [13/12, 99] at degree 3
 
-> **Theorem I3.** For every U ∈ U(4) and every s ∈ [3/5, 5/6]: F_s(U) ≥ 0. Equivalently, t·g0 + (1+t)·D[12,12] + t²·D[13,14] ≥ 0 for every t ∈ [3/2, 5].
+> **Theorem I3.** For every U ∈ U(4) and every s ∈ [13/25, 99/100]: F_s(U) ≥ 0. Equivalently, t·g0 + (1+t)·D[12,12] + t²·D[13,14] ≥ 0 for every t ∈ [13/12, 99].
 
-- Certificate: [`interval3_3-5_5-6.json`](interval3_3-5_5-6.json), degree 3 in the entries of U, Bernstein degree d = 2, 302 amplitudes, three positive definite rational matrices per block.
-- Numerical margin before rounding: λ = 2.9·10⁻³. Linear system: 1,302 unknowns, exact rank 570.
-- Check: (P) all Bernstein coefficients positive definite; (I) identity exact at 5 values of s chosen by the checker times 300 fresh rational unitaries, for two seeds; (E) evaluation rank 261. Logs: [`logs/`](logs/).
+Six certificates on adjacent intervals, each of degree 3 in the entries of U and Bernstein degree d = 2, with 302 amplitudes and three positive definite rational matrices per block. Each linear system has 1,302 unknowns and exact rank 570.
+
+| s interval | t interval | numerical margin λ | certificate |
+| --- | --- | --- | --- |
+| [13/25, 11/20] | [13/12, 11/9] | 5.7·10⁻⁴ | [`interval3_13-25_11-20.json`](interval3_13-25_11-20.json) |
+| [11/20, 3/5] | [11/9, 3/2] | 1.6·10⁻³ | [`interval3_11-20_3-5.json`](interval3_11-20_3-5.json) |
+| [3/5, 5/6] | [3/2, 5] | 2.9·10⁻³ | [`interval3_3-5_5-6.json`](interval3_3-5_5-6.json) |
+| [5/6, 9/10] | [5, 9] | 2.2·10⁻³ | [`interval3_5-6_9-10.json`](interval3_5-6_9-10.json) |
+| [9/10, 19/20] | [9, 19] | 1.1·10⁻³ | [`interval3_9-10_19-20.json`](interval3_9-10_19-20.json) |
+| [19/20, 99/100] | [19, 99] | 2.3·10⁻⁴ | [`interval3_19-20_99-100.json`](interval3_19-20_99-100.json) |
+
+**Check of each certificate** (`verify_interval.py`, two seeds): (P) all Bernstein coefficients positive definite; (I) identity exact at 5 values of s chosen by the checker times 300 fresh rational unitaries; (E) evaluation rank 261. Logs: [`logs/`](logs/).
+
+**Notes.**
 - With d = 1 the system is inconsistent, and with d = 0 it is infeasible. d = 3 gives the same margin as d = 2.
-
-**What it does not give yet.** A spectrum needs s and 1−s. The interval [3/5, 5/6] and its mirror [1/6, 2/5] do not overlap, and the mirror needs degree 4. So no open set of spectra is covered by this result alone.
+- This answers the request with t₀ = 13/12. The request noted that t₀ = 1 is impossible at degree 3. The whole half-line is not covered: the stretch t > 99 (s → 1) is left out, because the certificate degenerates there (F₁ = D[13,14] is a single square).
+- **No open set of spectra follows from degree 3 alone.** A spectrum needs s and 1−s, and s < 1/2 needs degree 4.
 
 ## Numerical scan at degree 3 (not exact)
 
@@ -65,16 +76,16 @@ Theorem EQ ([`../pmsh/equivalence.md`](../pmsh/equivalence.md), Steps 4–6) tur
 Python 3.9.6, numpy 2.0.2, scipy 1.13.1, cvxpy 1.7.5 (Clarabel), python-flint 0.6.0. Run from this directory.
 
 ```sh
-python3 verify_interval.py interval3_3-5_5-6.json 777      # the check (3 seconds)
+for f in interval3_*.json; do python3 verify_interval.py $f 777; done      # the checks (3 seconds each)
 
 python3 q_facets_exact.py                                  # 82 facets of Q, exact (40 seconds)
 
 python3 family.py 3 && python3 family.py 4                 # amplitude families, exact
-python3 interval_sdp.py 3 3/5 5/6 2                        # numerical solution (6 seconds)
-python3 interval_exact.py 3 3/5 5/6 2                      # exact certificate
+python3 run_interval.py 3 3/5 5/6 2                        # numerical search, exact solve, check with two seeds
+# likewise: 13/25 11/20 ; 11/20 3/5 ; 5/6 9/10 ; 9/10 19/20 ; 19/20 99/100
 ```
 
 ## Next steps
 
 1. Degree 4 on an interval below 1/2 and across 1/2, so that s and 1−s are both covered: an open set of spectra.
-2. Longer degree-3 intervals, exact.
+2. The end s → 1 (t → ∞): a certificate that degenerates to the single square D[13,14].
