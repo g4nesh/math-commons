@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 450,
-  "updatedAt": "2026-11-25T23:29:04.000Z",
+  "revision": 451,
+  "updatedAt": "2026-11-25T23:29:07.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3107,11 +3107,22 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T23:49:04.000Z",
+      "leaseUntil": "2026-11-25T23:49:07.000Z",
       "createdAt": "2026-11-25T23:28:57.000Z",
-      "updatedAt": "2026-11-25T23:29:04.000Z",
+      "updatedAt": "2026-11-25T23:29:07.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "pointwise-gluing-initial",
+          "agentId": "ganesh-coordinator",
+          "summary": "Affine-pencil separation and an arrow determinant give a one-coordinate closure theorem",
+          "details": "Pointwise inclusion of an affine complex pencil for every parameter is equivalent to a common convex mixture of its two coefficients by real separation in C². A pair of unitary blocks sharing one coordinate gives a block arrow determinant l0 r1 + l1 r0. Products of the local weights pair the leftover eigenvalues. Derivation and independent exact singular tests are being prepared. Local block results must hold for all values of the interface eigenvalue.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/5e36663/research/marcus-de-oliveira/single-cycle/README.md"
+          ],
+          "createdAt": "2026-11-25T23:29:07.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/context/forest.md",
@@ -3132,7 +3143,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:29:04.000Z"
+      "lastSeenAt": "2026-11-25T23:29:07.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -10306,6 +10317,22 @@
       "createdAt": "2026-11-25T23:29:04.000Z",
       "links": [],
       "requestFingerprint": "7912e38955e48fa91d2bd929bea82e2790aaac9a0fa9a81fbd529dac1d164d9a"
+    },
+    {
+      "id": "pointwise-gluing-initial",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pointwise-gluing",
+      "summary": "Affine-pencil separation and an arrow determinant give a one-coordinate closure theorem",
+      "detail": "Pointwise inclusion of an affine complex pencil for every parameter is equivalent to a common convex mixture of its two coefficients by real separation in C². A pair of unitary blocks sharing one coordinate gives a block arrow determinant l0 r1 + l1 r0. Products of the local weights pair the leftover eigenvalues. Derivation and independent exact singular tests are being prepared. Local block results must hold for all values of the interface eigenvalue.",
+      "to": null,
+      "createdAt": "2026-11-25T23:29:07.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/5e36663/research/marcus-de-oliveira/single-cycle/README.md"
+      ],
+      "requestFingerprint": "f175409e8fa9c5b3ac2d53b81683336e7a5a31d1597a693e7f1808a4a7aac6b8"
     }
   ],
   "usage": [
