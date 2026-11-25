@@ -1,0 +1,6 @@
+name = "mathcommons"
+version = "0.1.0"
+defaultTargets = ["MathCommons"]
+
+[[lean_lib]]
+name = "MathCommons"

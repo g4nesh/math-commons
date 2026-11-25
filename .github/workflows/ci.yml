@@ -25,4 +25,14 @@ jobs:
         run: python3 research/marcus-de-oliveira/search/test_search.py
       - name: Reproduce exact source examples
         run: python3 research/marcus-de-oliveira/literature/check_source_examples.py
+      - name: Install the pinned Lean toolchain
+        uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: formal
+          auto-config: 'false'
+          build: 'false'
+          use-github-cache: 'false'
+          use-mathlib-cache: 'false'
+      - name: Check the formal statements and their axiom dependencies
+        run: python3 formal/check.py
       - run: npm run build
