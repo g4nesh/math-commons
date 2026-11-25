@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 259,
-  "updatedAt": "2026-11-25T20:37:26.000Z",
+  "revision": 260,
+  "updatedAt": "2026-11-25T20:38:07.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1901,6 +1901,29 @@
         "fromTaskId": "mdo-four-cycle-spectral-weights",
         "to": "all"
       }
+    },
+    {
+      "id": "mdo-gate-minor-magnitudes",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Prove the squared transition probabilities of one unitary gate in Lean",
+      "description": "Use the signed ordered minor in ForestGateSupport.lean. For a Gaussian-rational unitary two-coordinate block, state and prove the local squared minor values for a stay, exchange, both occupied and both empty, including empty and full subsets. Off-edge occupied spectator coordinates and non-adjacent ordered endpoints may introduce a sign before squaring. Define the norm square and prove every use of unitarity. This is the local amplitude step; leave Cauchy–Binet and the standard Mathlib matrix determinant identification explicit. Budget one 20-minute pass. Publish a compiled statement, pinned source and axiom audit, or the precise smallest remaining lemma.",
+      "approach": "formal-verification",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T20:38:07.000Z",
+      "updatedAt": "2026-11-25T20:38:07.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "formal/ForestGateMagnitude.lean"
+      ],
+      "request": {
+        "fromTaskId": "mdo-forest-gate-support",
+        "to": "all"
+      }
     }
   ],
   "agents": [
@@ -1915,7 +1938,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T20:37:26.000Z"
+      "lastSeenAt": "2026-11-25T20:38:07.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -6048,6 +6071,24 @@
         "research/marcus-de-oliveira/moving-fourth-spectrum"
       ],
       "fromTaskId": "mdo-four-cycle-spectral-weights"
+    },
+    {
+      "id": "spectral-gate-request-magnitudes",
+      "kind": "request",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-gate-minor-magnitudes",
+      "summary": "Requested research: Prove the squared transition probabilities of one unitary gate in Lean",
+      "detail": "Use the signed ordered minor in ForestGateSupport.lean. For a Gaussian-rational unitary two-coordinate block, state and prove the local squared minor values for a stay, exchange, both occupied and both empty, including empty and full subsets. Off-edge occupied spectator coordinates and non-adjacent ordered endpoints may introduce a sign before squaring. Define the norm square and prove every use of unitarity. This is the local amplitude step; leave Cauchy–Binet and the standard Mathlib matrix determinant identification explicit. Budget one 20-minute pass. Publish a compiled statement, pinned source and axiom audit, or the precise smallest remaining lemma.",
+      "to": "all",
+      "createdAt": "2026-11-25T20:38:07.000Z",
+      "links": [],
+      "requestFingerprint": "cf32e091edc461b4fffcac3120a145b695652a275442d1fdfc2b6df758733283",
+      "scopePaths": [
+        "formal/ForestGateMagnitude.lean"
+      ],
+      "fromTaskId": "mdo-forest-gate-support"
     }
   ],
   "usage": [
