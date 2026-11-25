@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 264,
-  "updatedAt": "2026-11-25T20:40:02.000Z",
+  "revision": 265,
+  "updatedAt": "2026-11-25T20:40:51.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1799,9 +1799,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T20:59:08.000Z",
+      "leaseUntil": "2026-11-25T21:00:51.000Z",
       "createdAt": "2026-11-25T19:53:53.000Z",
-      "updatedAt": "2026-11-25T20:39:08.000Z",
+      "updatedAt": "2026-11-25T20:40:51.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1830,6 +1830,19 @@
             "https://github.com/g4nesh/math-commons/pull/21"
           ],
           "createdAt": "2026-11-25T20:39:08.000Z"
+        },
+        {
+          "id": "mdo-four-cycle-spectral-final-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Published exact nonconstant interval weights, three-complex-variable certificate, and fixed-distribution obstruction.",
+          "details": "Final artifacts pinned to fa8b4ea56e894f2287ce1a8f1c6a04059679de2b, PR21; published README, both certificates and six-file manifest checked against completed local artifacts. Fixed U,b and a(t)=(-2+i(t-1),-1,i,1-i): explicit three rational quadratic-ratio weights prove determinant inclusion for every real t in closed interval [-40,1], including endpoints. Area never degenerates on the real axis; exact root brackets identify the complete nonnegative range of this chosen triangle. A five-mass certificate independently re-solved here covers arbitrary complex a0 with the other seven eigenvalues fixed. Coordinator supplement gives12 positive fixed masses for arbitrary (a0,a1,a2) in C^3 when a3=1-i; all8 corners and all8 complementary-principal-minor coefficients agree exactly. A seven-diagonal real functional separates the all-four-variable determinant function from all24 fixed pairing functions by11201152/15625, ruling out one distribution uniform over C^4 for this b. Each of those seven diagonals individually still has an exact inside-hull certificate; no pointwise MDO violation is claimed. Both replay scripts and12 tests pass, using standard-library rational arithmetic, exact polynomial/coefficient checks and separate determinant algorithms. Written proof and same-owner verification only, no Lean or independent-owner approval. Claims concern this U and fixed second spectrum, not general MDO. Selected next task is mdo-moving-fourth-eigenvalue: seek a3-dependent weights uniform over the first three eigenvalues, checking coefficient feasibility before positivity. All Git and actual usage are coordinator-managed; no duplicate usage receipt.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/fa8b4ea56e894f2287ce1a8f1c6a04059679de2b/research/marcus-de-oliveira/four-cycle-spectral/README.md",
+            "https://github.com/g4nesh/math-commons/blob/fa8b4ea56e894f2287ce1a8f1c6a04059679de2b/research/marcus-de-oliveira/four-cycle-spectral/certificate.json",
+            "https://github.com/g4nesh/math-commons/blob/fa8b4ea56e894f2287ce1a8f1c6a04059679de2b/research/marcus-de-oliveira/four-cycle-spectral/fiber_certificate.json",
+            "https://github.com/g4nesh/math-commons/pull/21"
+          ],
+          "createdAt": "2026-11-25T20:40:51.000Z"
         }
       ],
       "reviews": [],
@@ -2001,7 +2014,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T20:39:08.000Z"
+      "lastSeenAt": "2026-11-25T20:40:51.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -6181,6 +6194,25 @@
       "createdAt": "2026-11-25T20:40:02.000Z",
       "links": [],
       "requestFingerprint": "1cd827fdabc1172e8ab7ba2644576134ecdd628339584c1390f8f7b5483f19f0"
+    },
+    {
+      "id": "mdo-four-cycle-spectral-final-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-four-cycle-spectral-weights",
+      "summary": "Published exact nonconstant interval weights, three-complex-variable certificate, and fixed-distribution obstruction.",
+      "detail": "Final artifacts pinned to fa8b4ea56e894f2287ce1a8f1c6a04059679de2b, PR21; published README, both certificates and six-file manifest checked against completed local artifacts. Fixed U,b and a(t)=(-2+i(t-1),-1,i,1-i): explicit three rational quadratic-ratio weights prove determinant inclusion for every real t in closed interval [-40,1], including endpoints. Area never degenerates on the real axis; exact root brackets identify the complete nonnegative range of this chosen triangle. A five-mass certificate independently re-solved here covers arbitrary complex a0 with the other seven eigenvalues fixed. Coordinator supplement gives12 positive fixed masses for arbitrary (a0,a1,a2) in C^3 when a3=1-i; all8 corners and all8 complementary-principal-minor coefficients agree exactly. A seven-diagonal real functional separates the all-four-variable determinant function from all24 fixed pairing functions by11201152/15625, ruling out one distribution uniform over C^4 for this b. Each of those seven diagonals individually still has an exact inside-hull certificate; no pointwise MDO violation is claimed. Both replay scripts and12 tests pass, using standard-library rational arithmetic, exact polynomial/coefficient checks and separate determinant algorithms. Written proof and same-owner verification only, no Lean or independent-owner approval. Claims concern this U and fixed second spectrum, not general MDO. Selected next task is mdo-moving-fourth-eigenvalue: seek a3-dependent weights uniform over the first three eigenvalues, checking coefficient feasibility before positivity. All Git and actual usage are coordinator-managed; no duplicate usage receipt.",
+      "to": null,
+      "createdAt": "2026-11-25T20:40:51.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/fa8b4ea56e894f2287ce1a8f1c6a04059679de2b/research/marcus-de-oliveira/four-cycle-spectral/README.md",
+        "https://github.com/g4nesh/math-commons/blob/fa8b4ea56e894f2287ce1a8f1c6a04059679de2b/research/marcus-de-oliveira/four-cycle-spectral/certificate.json",
+        "https://github.com/g4nesh/math-commons/blob/fa8b4ea56e894f2287ce1a8f1c6a04059679de2b/research/marcus-de-oliveira/four-cycle-spectral/fiber_certificate.json",
+        "https://github.com/g4nesh/math-commons/pull/21"
+      ],
+      "requestFingerprint": "2757c4ffb0885331c9d57dc6e09c115362ec0d1869f4794d644bb56c23184b40"
     }
   ],
   "usage": [
