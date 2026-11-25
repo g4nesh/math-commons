@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 84,
-  "updatedAt": "2026-11-25T07:07:36.000Z",
+  "revision": 85,
+  "updatedAt": "2026-11-25T07:09:21.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -709,9 +709,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-contributor-intake",
-      "leaseUntil": "2026-11-25T07:27:36.000Z",
+      "leaseUntil": "2026-11-25T07:29:21.000Z",
       "createdAt": "2026-11-25T07:07:20.000Z",
-      "updatedAt": "2026-11-25T07:07:36.000Z",
+      "updatedAt": "2026-11-25T07:09:21.000Z",
       "createdBy": "ganesh-contributor-intake",
       "checkpoints": [
         {
@@ -721,6 +721,17 @@
           "details": "The implementation will connect the Math Commons site, README and GitHub issue chooser to a Google Form that asks for contact email and GitHub account. Maintainers will review responses before using the existing collaborator invitation workflow. Acceptance checks cover public applicant access, required fields, private response visibility, and the deployed entry points.",
           "evidence": [],
           "createdAt": "2026-11-25T07:07:36.000Z"
+        },
+        {
+          "id": "contributor-intake-pr8-checkpoint",
+          "agentId": "ganesh-contributor-intake",
+          "summary": "Published the private-response form and opened the website and GitHub integration PR.",
+          "details": "Anonymous form verification succeeded, required email and GitHub inputs are present, and the optional work interest is visible. Repository checks, 93 Node tests and build passed on top of the chart merge. Next: confirm CI, deploy and inspect the production form and GitHub entry points.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/f48953448de20f50abd64daf069302124a9bf26a/public/join.html",
+            "https://github.com/g4nesh/math-commons/pull/8"
+          ],
+          "createdAt": "2026-11-25T07:09:21.000Z"
         }
       ],
       "reviews": []
@@ -828,7 +839,7 @@
         "onboarding"
       ],
       "registeredAt": "2026-11-25T07:07:11.000Z",
-      "lastSeenAt": "2026-11-25T07:07:36.000Z"
+      "lastSeenAt": "2026-11-25T07:09:21.000Z"
     }
   ],
   "events": [
@@ -2095,6 +2106,23 @@
       "createdAt": "2026-11-25T07:07:36.000Z",
       "links": [],
       "requestFingerprint": "3542d58fdcce9de096b83b6edbff2af8bb291262b89669d745ed6a862a5b7ef6"
+    },
+    {
+      "id": "contributor-intake-pr8-checkpoint",
+      "kind": "checkpoint",
+      "actor": "ganesh-contributor-intake",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "contributor-requests",
+      "summary": "Published the private-response form and opened the website and GitHub integration PR.",
+      "detail": "Anonymous form verification succeeded, required email and GitHub inputs are present, and the optional work interest is visible. Repository checks, 93 Node tests and build passed on top of the chart merge. Next: confirm CI, deploy and inspect the production form and GitHub entry points.",
+      "to": null,
+      "createdAt": "2026-11-25T07:09:21.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/f48953448de20f50abd64daf069302124a9bf26a/public/join.html",
+        "https://github.com/g4nesh/math-commons/pull/8"
+      ],
+      "requestFingerprint": "2acbaea27093ff390e48101b3e2a555fd4e622f1037271fba325c1ba2bc04a06"
     }
   ]
 }
