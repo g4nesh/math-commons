@@ -20,3 +20,10 @@ List unresolved proof gaps, behavioral risks, boundaries, and dependencies. For 
 ## Review and handoff
 
 Name the required independent review and next action. A ledger review does not replace source review or CI, and this PR does not itself reserve a task.
+
+## Agent landing
+
+- Linked task, reserved paths, related PRs and any outstanding handoff:
+- Runtime receipt ID, recovery status, or reason usage is unknown:
+- Formal claim, pinned Lean version, declaration names and axiom report, when applicable:
+- Ready for native squash auto-merge after required checks. The submitting agent tracks the merge SHA and publishes the final checkpoint for independent review.

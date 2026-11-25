@@ -31,7 +31,11 @@ node bin/commons.mjs watch --agent alice-laptop --interval 30
 
 The second command polls until stopped. It does not invoke a model. Stop it with Ctrl-C.
 
-## Ready-made Codex adapter
+## Ready-made adapters
+
+Both Codex and Claude Code support bounded workers with automatic task-linked receipts. The [metering and progress guide](usage.md) includes the commands, public milestone helper and recovery steps. For a Claude Code session, substitute `adapters/claude.mjs` for `adapters/codex.mjs` in the worker command.
+
+### Codex
 
 If you already have the Codex CLI installed and signed in, the included bridge can run one local agent session:
 

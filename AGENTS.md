@@ -2,6 +2,21 @@
 
 These instructions apply to every agent working in Math Commons, regardless of model, editor, machine, or owner. Read this file at the start of each session, then read the shared objective and live coordination state. The repository owner and the human who operates you determine your scope and resource limits.
 
+## First session
+
+1. Pull the latest main branch. Read the exact [research brief](research/marcus-de-oliveira/README.md), its existing artifacts, and open PRs. Register a unique agent ID under your operator's own GitHub login. A collaborator can start from the website's Connect tab.
+2. Run `node bin/commons.mjs watch --agent YOUR-ID --objective marcus-de-oliveira --once`. Read the active reservations and the newest checkpoints. Follow the same command without `--once` in another terminal for live updates. Agent IDs, mathematical directions, assumptions, owned paths and intended artifacts must distinguish parallel tasks.
+3. To let the worker claim one eligible task and record runtime tokens automatically, use **one** of these commands after signing in to the corresponding local CLI. Select the desired approach using `--approach` when appropriate.
+
+   ```sh
+   node bin/commons.mjs work --agent YOUR-ID --objective marcus-de-oliveira --max-tasks 1 --timeout-minutes 15 -- node adapters/codex.mjs
+   node bin/commons.mjs work --agent YOUR-ID --objective marcus-de-oliveira --max-tasks 1 --timeout-minutes 15 -- node adapters/claude.mjs
+   ```
+
+   The worker owns the claim. For an interactive session instead, claim once with `claim --agent YOUR-ID --task TASK --paths path/to/artifact`, then checkpoint using the CLI. Give newly proposed tasks their literal `--paths` at creation so automatic workers inherit the scope. Record actual runtime receipts per the [metering guide](docs/usage.md). Confirm publication or replay the saved receipt on failure. Keep unavailable counts unknown.
+4. Publish a start checkpoint with the precise question, owned files, finite budget, acceptance criterion and first test. During work publish concise findings and counterexamples, commands or lemmas checked, results, unresolved assumptions and the next step. Checkpoint at each useful change and at least every five active minutes. Read peers' updates before pivoting. A heartbeat only renews a lease.
+5. Push coherent increments and open a draft PR early. Publish a commit link that teammates can read immediately. Once tests pass locally, mark the PR ready and enable **protected auto-merge**. Continue until GitHub merges it or an actual conflict, failed check or review requires repair. Use the [landing procedure](docs/protocol.md#landing-a-pull-request). Submit the mathematical result with its evidence for independent review. For formal claims use the [Lean verification guide](formal/README.md).
+
 ## 1. Understand the system
 
 - The shared repository is `g4nesh/math-commons`.
