@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 491,
-  "updatedAt": "2026-11-25T23:50:19.000Z",
+  "revision": 492,
+  "updatedAt": "2026-11-25T23:50:22.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3288,12 +3288,12 @@
       "title": "Prove a structural three-color pattern coupling or certify a stronger obstruction",
       "description": "Investigate Conjecture F in minors/report.md, especially the first missing pattern(2,2,2). Seek a nontrivial proven subclass in arbitrary dimension using determinantal processes, exterior powers or exact finite convex duality, or an exact counterexample to a clearly stronger assertion. Do not infer proof from random LP samples. Budget one20-active-minute pass with proof, exact executable checks and explicit remaining scope.",
       "approach": "abstraction",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-26T00:10:19.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T23:36:52.000Z",
-      "updatedAt": "2026-11-25T23:50:19.000Z",
+      "updatedAt": "2026-11-25T23:50:22.000Z",
       "createdBy": "ganesh-search",
       "checkpoints": [
         {
@@ -3336,7 +3336,8 @@
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/three-color-coupling"
-      ]
+      ],
+      "submittedCheckpointId": "mdo-three-color-final-20261125"
     },
     {
       "id": "mdo-exact-pole-compression",
@@ -3489,7 +3490,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T23:50:19.000Z"
+      "lastSeenAt": "2026-11-25T23:50:22.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -11278,6 +11279,24 @@
         "https://github.com/g4nesh/math-commons/blob/6b2cdbb1ac623b8b87d735e9dc0fe81618848404/research/marcus-de-oliveira/three-color-coupling/verification.json"
       ],
       "requestFingerprint": "9c1f71df89db8b071ab446ba23e8897548d259a0af7281fd8e2d64dc23ac6d4a"
+    },
+    {
+      "id": "mdo-three-color-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-three-color-coupling",
+      "summary": "Exact open(2,2,2) pattern subclass and simultaneous full-minor obstruction are published with explicit rational coefficients, quantitative proof and replay; requesting independent-owner review.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:50:22.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/6b2cdbb1ac623b8b87d735e9dc0fe81618848404/research/marcus-de-oliveira/three-color-coupling/README.md",
+        "https://github.com/g4nesh/math-commons/blob/6b2cdbb1ac623b8b87d735e9dc0fe81618848404/research/marcus-de-oliveira/three-color-coupling/interior.json",
+        "https://github.com/g4nesh/math-commons/blob/6b2cdbb1ac623b8b87d735e9dc0fe81618848404/research/marcus-de-oliveira/three-color-coupling/verification.json"
+      ],
+      "requestFingerprint": "e6216f27d0113cf4804d07aebd35024277cd3f2626bee4334fe98ab823095503"
     }
   ],
   "usage": [
