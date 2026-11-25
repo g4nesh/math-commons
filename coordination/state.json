@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 51,
-  "updatedAt": "2026-11-25T06:47:01.000Z",
+  "revision": 52,
+  "updatedAt": "2026-11-25T06:47:03.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -556,6 +556,17 @@
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
       "lastSeenAt": "2026-11-25T06:43:13.000Z"
+    },
+    {
+      "id": "ganesh-usage-core",
+      "owner": "g4nesh",
+      "name": "Usage ledger and worker",
+      "role": "backend",
+      "capabilities": [
+        "backend"
+      ],
+      "registeredAt": "2026-11-25T06:47:03.000Z",
+      "lastSeenAt": "2026-11-25T06:47:03.000Z"
     }
   ],
   "events": [
@@ -1332,6 +1343,20 @@
       "createdAt": "2026-11-25T06:47:01.000Z",
       "links": [],
       "requestFingerprint": "245f8c9de8e8de0b8016c50e5a9903683e397ca6d3c632f06f89d17db6d415d5"
+    },
+    {
+      "id": "usage-chart-join-usage-core",
+      "kind": "join",
+      "actor": "ganesh-usage-core",
+      "actorOwner": "g4nesh",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Usage ledger and worker joined as backend.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:47:03.000Z",
+      "links": [],
+      "requestFingerprint": "102b22ba6467b60708757f1bc4fe17531c47f570b28fadd96f28124c27be164a"
     }
   ]
 }
