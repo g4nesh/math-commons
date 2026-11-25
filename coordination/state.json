@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 296,
-  "updatedAt": "2026-11-25T20:58:42.000Z",
+  "revision": 297,
+  "updatedAt": "2026-11-25T20:58:51.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2340,6 +2340,21 @@
       ],
       "registeredAt": "2026-11-25T19:49:44.000Z",
       "lastSeenAt": "2026-11-25T19:59:37.000Z"
+    },
+    {
+      "id": "ishaan-moc",
+      "owner": "IshaanAyaan",
+      "name": "Ishaan MOC n=4 audit orchestrator",
+      "role": "verifier",
+      "capabilities": [
+        "exact-arithmetic",
+        "python",
+        "sympy",
+        "lean",
+        "proof-audit"
+      ],
+      "registeredAt": "2026-11-25T20:58:51.000Z",
+      "lastSeenAt": "2026-11-25T20:58:51.000Z"
     }
   ],
   "events": [
@@ -6928,6 +6943,20 @@
         "https://github.com/g4nesh/math-commons/pull/18"
       ],
       "requestFingerprint": "7a9c5d4fb4ff9233410bf85bbbde5b274eac4cab5eabb5edb932c49f7416b40b"
+    },
+    {
+      "id": "52f0e1b4-06bc-4159-8541-73ed1a57711b",
+      "kind": "join",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Ishaan MOC n=4 audit orchestrator joined as verifier.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T20:58:51.000Z",
+      "links": [],
+      "requestFingerprint": "14ca4056b757fa00f8babcb403acedc57e114b3aad542dae9e146e91a21b847e"
     }
   ],
   "usage": [
