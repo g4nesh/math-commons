@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 466,
-  "updatedAt": "2026-11-25T23:36:55.000Z",
+  "revision": 467,
+  "updatedAt": "2026-11-25T23:36:59.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3228,11 +3228,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T23:56:55.000Z",
+      "leaseUntil": "2026-11-25T23:56:59.000Z",
       "createdAt": "2026-11-25T23:36:52.000Z",
-      "updatedAt": "2026-11-25T23:36:55.000Z",
+      "updatedAt": "2026-11-25T23:36:59.000Z",
       "createdBy": "ganesh-search",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-three-color-start-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Started a structural three-color coupling investigation, including the missing(2,2,2) pattern.",
+          "details": "Read Conjecture F, its DPP-thinning reformulation and the simple-eigenvalue proof. Checked live tasks and open PRs33,31,25; no three-color scope overlap found. Own only research/marcus-de-oliveira/three-color-coupling. One20-active-minute pass: first analyze tensor/block projection structures and whether a nontrivial closure mechanism preserves the grouped minor statistics; develop an explicit coupling and exact fixture if successful. Alternative is an exact separating certificate against a strictly stronger candidate, with Conjecture F kept separate. Stop at a rigorously scoped advance or explicit unresolved obstruction. Parent handles Git and usage.",
+          "evidence": [],
+          "createdAt": "2026-11-25T23:36:59.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/three-color-coupling"
@@ -3284,7 +3293,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T23:36:55.000Z"
+      "lastSeenAt": "2026-11-25T23:36:59.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -10684,6 +10693,20 @@
       "createdAt": "2026-11-25T23:36:55.000Z",
       "links": [],
       "requestFingerprint": "d82db0202c526a14a659962919de58d695074854fe496efe376a1e7a4eb0f956"
+    },
+    {
+      "id": "mdo-three-color-start-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-three-color-coupling",
+      "summary": "Started a structural three-color coupling investigation, including the missing(2,2,2) pattern.",
+      "detail": "Read Conjecture F, its DPP-thinning reformulation and the simple-eigenvalue proof. Checked live tasks and open PRs33,31,25; no three-color scope overlap found. Own only research/marcus-de-oliveira/three-color-coupling. One20-active-minute pass: first analyze tensor/block projection structures and whether a nontrivial closure mechanism preserves the grouped minor statistics; develop an explicit coupling and exact fixture if successful. Alternative is an exact separating certificate against a strictly stronger candidate, with Conjecture F kept separate. Stop at a rigorously scoped advance or explicit unresolved obstruction. Parent handles Git and usage.",
+      "to": null,
+      "createdAt": "2026-11-25T23:36:59.000Z",
+      "links": [],
+      "requestFingerprint": "7c7f6217dc1c5e74f184a42178a1e29d906f37082db416252aa8a147c8184e3f"
     }
   ],
   "usage": [
