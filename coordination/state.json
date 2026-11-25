@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 330,
-  "updatedAt": "2026-11-25T21:12:40.000Z",
+  "revision": 331,
+  "updatedAt": "2026-11-25T21:14:01.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2319,9 +2319,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-moc",
-      "leaseUntil": "2026-11-25T21:32:40.000Z",
+      "leaseUntil": "2026-11-25T21:34:01.000Z",
       "createdAt": "2026-11-25T20:59:14.000Z",
-      "updatedAt": "2026-11-25T21:12:40.000Z",
+      "updatedAt": "2026-11-25T21:14:01.000Z",
       "createdBy": "ishaan-moc",
       "checkpoints": [
         {
@@ -2565,7 +2565,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T21:12:40.000Z"
+      "lastSeenAt": "2026-11-25T21:14:01.000Z"
     }
   ],
   "events": [
@@ -7708,6 +7708,20 @@
         "https://github.com/g4nesh/math-commons/pull/24"
       ],
       "requestFingerprint": "4bf52ffa615c36bd5b8d86f421e3194c54d5b03d5e10dced1b29661430c7d45d"
+    },
+    {
+      "id": "98a9a04f-334b-47de-a080-704d435317b5",
+      "kind": "heartbeat",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-n4-audit",
+      "summary": "Renewed task lease.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:14:01.000Z",
+      "links": [],
+      "requestFingerprint": "55ab5eb1e9cf2e41b2589e136e83e2a8769a60064c694b228b75a9073fc73886"
     }
   ],
   "usage": [
