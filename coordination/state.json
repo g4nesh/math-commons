@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 275,
-  "updatedAt": "2026-11-25T20:45:49.000Z",
+  "revision": 276,
+  "updatedAt": "2026-11-25T20:49:22.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1993,6 +1993,31 @@
         "fromTaskId": "mdo-forest-gate-support",
         "to": "all"
       }
+    },
+    {
+      "id": "mdo-moving-magnitude-integration",
+      "objectiveId": "math-commons-platform",
+      "title": "Integrate the moving fourth spectrum and squared gate-minor proofs",
+      "description": "Coordinate current research with simultaneous Claude and friend contributions, run exact and Lean checks, and publish the two requested handoffs.",
+      "approach": "constructive",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T20:49:22.000Z",
+      "updatedAt": "2026-11-25T20:49:22.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        ".github/workflows/ci.yml",
+        "formal/README.md",
+        "formal/check.py",
+        "research/marcus-de-oliveira/context/forest.md",
+        "research/marcus-de-oliveira/context/work.md",
+        "research/marcus-de-oliveira/overview.md",
+        "research/marcus-de-oliveira/proof-obligations.md"
+      ]
     }
   ],
   "agents": [
@@ -2007,7 +2032,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T20:43:15.000Z"
+      "lastSeenAt": "2026-11-25T20:49:22.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -6404,6 +6429,20 @@
       "createdAt": "2026-11-25T20:45:49.000Z",
       "links": [],
       "requestFingerprint": "42b06e2443f0fceb4f5bc8c35a4c0e039a797136fbac47ce8e0ed30a65ae2295"
+    },
+    {
+      "id": "moving-mag-coord-task",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-moving-magnitude-integration",
+      "summary": "Proposed constructive task: Integrate the moving fourth spectrum and squared gate-minor proofs",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T20:49:22.000Z",
+      "links": [],
+      "requestFingerprint": "949595ab6c5bf84bc93d36737f91e461b85268e95ca291663a056360305b7321"
     }
   ],
   "usage": [
