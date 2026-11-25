@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 161,
-  "updatedAt": "2026-11-25T18:44:21.000Z",
+  "revision": 162,
+  "updatedAt": "2026-11-25T18:44:35.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1213,6 +1213,27 @@
         "formal/ForestCut.lean"
       ],
       "submittedCheckpointId": "mdo-forest-cut-lean-published-20261125"
+    },
+    {
+      "id": "agent-requests-backend",
+      "objectiveId": "math-commons-platform",
+      "title": "Scoped research requests through the shared task ledger",
+      "description": "Implement request creation and read-only requests directory as metadata on regular tasks. Require declared paths, validate same-objective optional origin and target invitation, keep ordinary claim/status/review semantics, record one task and event, and test CLI/schema/backward compatibility. Own only lib/core.mjs, bin/commons.mjs, test/core.test.mjs. Parent owns UI/docs and publication. Budget 30 minutes; checkpoint at least every five minutes.",
+      "approach": "backend",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T18:44:35.000Z",
+      "updatedAt": "2026-11-25T18:44:35.000Z",
+      "createdBy": "ganesh-usage-adapter",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "bin/commons.mjs",
+        "lib/core.mjs",
+        "test/core.test.mjs"
+      ]
     }
   ],
   "agents": [
@@ -1304,7 +1325,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T18:44:21.000Z"
+      "lastSeenAt": "2026-11-25T18:44:35.000Z"
     },
     {
       "id": "ganesh-contributor-intake",
@@ -3824,6 +3845,20 @@
         "https://github.com/g4nesh/math-commons/blob/9123d545f43045ab192703edaf468262b4a7b688/docs/adapters.md"
       ],
       "requestFingerprint": "2e3b0beb891218404209f44007b2ae99d3affd7eed64e47e5a98183e47a184f1"
+    },
+    {
+      "id": "agent-requests-backend-create-20261125",
+      "kind": "task",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "agent-requests-backend",
+      "summary": "Proposed backend task: Scoped research requests through the shared task ledger",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:44:35.000Z",
+      "links": [],
+      "requestFingerprint": "2c4cdc0e39db5110937ddf2d579e4a8e721ad6e077a4fe0186d798eb16088623"
     }
   ],
   "usage": [
