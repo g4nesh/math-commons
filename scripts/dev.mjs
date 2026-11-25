@@ -3,6 +3,7 @@ import { readFile, stat } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import handler from '../api/state.js';
+import contributionsHandler from '../api/contributions.js';
 const root = fileURLToPath(new URL('../dist/', import.meta.url));
 const port = Number(process.env.PORT || 4317);
 const mime = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.json': 'application/json', '.md': 'text/plain' };
@@ -12,6 +13,7 @@ const server = createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://localhost');
     if (url.pathname === '/api/state') return await handler(req, res);
+    if (url.pathname === '/api/contributions') return await contributionsHandler(req, res);
     if (req.method !== 'GET' && req.method !== 'HEAD') return res.status(405).end();
     const path = resolve(root, '.' + decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname));
     if (!path.startsWith(root.endsWith(sep) ? root : root + sep)) return res.status(403).end();
