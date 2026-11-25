@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 238,
-  "updatedAt": "2026-11-25T19:55:54.000Z",
+  "revision": 239,
+  "updatedAt": "2026-11-25T19:58:08.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1642,9 +1642,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-context-navigation",
-      "leaseUntil": "2026-11-25T20:14:19.000Z",
+      "leaseUntil": "2026-11-25T20:18:08.000Z",
       "createdAt": "2026-11-25T19:49:47.000Z",
-      "updatedAt": "2026-11-25T19:54:19.000Z",
+      "updatedAt": "2026-11-25T19:58:08.000Z",
       "createdBy": "ganesh-context-navigation",
       "checkpoints": [
         {
@@ -1675,6 +1675,18 @@
             "https://github.com/g4nesh/math-commons/blob/00d635555f8f05af5d7ffae6e55a0ae7f693e319/research/marcus-de-oliveira/overview.md"
           ],
           "createdAt": "2026-11-25T19:54:19.000Z"
+        },
+        {
+          "id": "research-nav-ship-checkpoint",
+          "agentId": "ganesh-context-navigation",
+          "summary": "Both model adapters now start with a scoped question and can retrieve exact evidence.",
+          "details": "PR 19 includes the newly merged results from PR 17. All 18 research and formal Markdown reports are within two links of the overview. All 151 Node tests, syntax checks and build passed. At ledger revision 227, the serialized synthesis research data shrank from 75,806 bytes to 5,621 bytes. This is an input-size comparison, not measured token usage. Live task and exact checkpoint reads passed. GitHub protected auto-merge is queued pending CI.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/eb8014520dbd61bed049ddb77031011a64e240e4/adapters/research-prompt.mjs",
+            "https://github.com/g4nesh/math-commons/blob/eb8014520dbd61bed049ddb77031011a64e240e4/research/marcus-de-oliveira/overview.md",
+            "https://github.com/g4nesh/math-commons/pull/19"
+          ],
+          "createdAt": "2026-11-25T19:58:08.000Z"
         }
       ],
       "reviews": [],
@@ -1899,7 +1911,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T19:49:44.000Z",
-      "lastSeenAt": "2026-11-25T19:54:19.000Z"
+      "lastSeenAt": "2026-11-25T19:58:08.000Z"
     }
   ],
   "events": [
@@ -5570,6 +5582,24 @@
       "createdAt": "2026-11-25T19:55:54.000Z",
       "links": [],
       "requestFingerprint": "250ca86afc46459f0304458ab18ec2b821ffa211006cd1223d0c3aaff4415be7"
+    },
+    {
+      "id": "research-nav-ship-checkpoint",
+      "kind": "checkpoint",
+      "actor": "ganesh-context-navigation",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "progressive-research-context",
+      "summary": "Both model adapters now start with a scoped question and can retrieve exact evidence.",
+      "detail": "PR 19 includes the newly merged results from PR 17. All 18 research and formal Markdown reports are within two links of the overview. All 151 Node tests, syntax checks and build passed. At ledger revision 227, the serialized synthesis research data shrank from 75,806 bytes to 5,621 bytes. This is an input-size comparison, not measured token usage. Live task and exact checkpoint reads passed. GitHub protected auto-merge is queued pending CI.",
+      "to": null,
+      "createdAt": "2026-11-25T19:58:08.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/eb8014520dbd61bed049ddb77031011a64e240e4/adapters/research-prompt.mjs",
+        "https://github.com/g4nesh/math-commons/blob/eb8014520dbd61bed049ddb77031011a64e240e4/research/marcus-de-oliveira/overview.md",
+        "https://github.com/g4nesh/math-commons/pull/19"
+      ],
+      "requestFingerprint": "32bee23019638603c7a7551ff8f44e66c38bf48f4810cc8d668974b67d72a718"
     }
   ],
   "usage": [
