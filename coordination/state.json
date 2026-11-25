@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 449,
-  "updatedAt": "2026-11-25T23:28:57.000Z",
+  "revision": 450,
+  "updatedAt": "2026-11-25T23:29:04.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3104,12 +3104,12 @@
       "title": "Glue pointwise determinant certificates across one coordinate in arbitrary dimension",
       "description": "Prove the affine pencil convex hull equivalence over one free complex eigenvalue and a composition theorem for relative unitaries that individually satisfy pointwise MDO. Derive nonuniform Householder applications, direct exact fixtures, and the limitation of a larger interface.",
       "approach": "abstraction",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-coordinator",
+      "leaseUntil": "2026-11-25T23:49:04.000Z",
       "createdAt": "2026-11-25T23:28:57.000Z",
-      "updatedAt": "2026-11-25T23:28:57.000Z",
+      "updatedAt": "2026-11-25T23:29:04.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -3132,7 +3132,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:28:57.000Z"
+      "lastSeenAt": "2026-11-25T23:29:04.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -10292,6 +10292,20 @@
       "createdAt": "2026-11-25T23:28:57.000Z",
       "links": [],
       "requestFingerprint": "685e287f9366273cbb38a865852f56108d8b3964a9028b22c597ed0a07a953b2"
+    },
+    {
+      "id": "pointwise-gluing-claim-v1",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pointwise-gluing",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:29:04.000Z",
+      "links": [],
+      "requestFingerprint": "7912e38955e48fa91d2bd929bea82e2790aaac9a0fa9a81fbd529dac1d164d9a"
     }
   ],
   "usage": [
