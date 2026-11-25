@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 471,
-  "updatedAt": "2026-11-25T23:39:19.000Z",
+  "revision": 472,
+  "updatedAt": "2026-11-25T23:41:40.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3259,9 +3259,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T23:56:59.000Z",
+      "leaseUntil": "2026-11-26T00:01:40.000Z",
       "createdAt": "2026-11-25T23:36:52.000Z",
-      "updatedAt": "2026-11-25T23:36:59.000Z",
+      "updatedAt": "2026-11-25T23:41:40.000Z",
       "createdBy": "ganesh-search",
       "checkpoints": [
         {
@@ -3271,6 +3271,14 @@
           "details": "Read Conjecture F, its DPP-thinning reformulation and the simple-eigenvalue proof. Checked live tasks and open PRs33,31,25; no three-color scope overlap found. Own only research/marcus-de-oliveira/three-color-coupling. One20-active-minute pass: first analyze tensor/block projection structures and whether a nontrivial closure mechanism preserves the grouped minor statistics; develop an explicit coupling and exact fixture if successful. Alternative is an exact separating certificate against a strictly stronger candidate, with Conjecture F kept separate. Stop at a rigorously scoped advance or explicit unresolved obstruction. Parent handles Git and usage.",
           "evidence": [],
           "createdAt": "2026-11-25T23:36:59.000Z"
+        },
+        {
+          "id": "mdo-three-color-interior-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Found an exact dense(2,2,2) interior coupling outside the full common-minor polytope.",
+          "details": "An explicit rational six-dimensional unitary has positive weights on all90 fixed-count colorings; exact phase-I discovery took124 pivots and0.75s, and all358 grouped-statistic equations were checked exactly. At the same matrix, the archived13-minor cover plus8 escape singleton terms violates its permutation bound by an exact positive gap approximately0.04094534; this rules out every full common-minor distribution. The structural proof uses the canonical signed-coloring polynomial: a fixed correction from the strict interior base preserves all grouped identities for nearby unitaries. Entrywise perturbation delta changes each canonical mass by at most30delta; the21-term obstruction changes by at most96delta. Thus an explicit joint open ball will retain positive three-color weights and exclude full common-minor certificates. Preparing independent squared-minor replay and mutation tests. This is a nontrivial scoped open subclass, not Conjecture F in general.",
+          "evidence": [],
+          "createdAt": "2026-11-25T23:41:40.000Z"
         }
       ],
       "reviews": [],
@@ -3324,7 +3332,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T23:36:59.000Z"
+      "lastSeenAt": "2026-11-25T23:41:40.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -10803,6 +10811,20 @@
         "https://github.com/g4nesh/math-commons/blob/161a4fcfe17531f3fb2e343abb403444ccdd15f4/research/marcus-de-oliveira/reflection-angles/packing-results.json"
       ],
       "requestFingerprint": "ffa2c6b2180317d080e6ae56d910a18ebaac8a6d141915171103e05b69c5b5a9"
+    },
+    {
+      "id": "mdo-three-color-interior-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-three-color-coupling",
+      "summary": "Found an exact dense(2,2,2) interior coupling outside the full common-minor polytope.",
+      "detail": "An explicit rational six-dimensional unitary has positive weights on all90 fixed-count colorings; exact phase-I discovery took124 pivots and0.75s, and all358 grouped-statistic equations were checked exactly. At the same matrix, the archived13-minor cover plus8 escape singleton terms violates its permutation bound by an exact positive gap approximately0.04094534; this rules out every full common-minor distribution. The structural proof uses the canonical signed-coloring polynomial: a fixed correction from the strict interior base preserves all grouped identities for nearby unitaries. Entrywise perturbation delta changes each canonical mass by at most30delta; the21-term obstruction changes by at most96delta. Thus an explicit joint open ball will retain positive three-color weights and exclude full common-minor certificates. Preparing independent squared-minor replay and mutation tests. This is a nontrivial scoped open subclass, not Conjecture F in general.",
+      "to": null,
+      "createdAt": "2026-11-25T23:41:40.000Z",
+      "links": [],
+      "requestFingerprint": "0d9238a1181f2ae7c8e167e0f2c1adea83a84c6010361b63fe5745b64304ee14"
     }
   ],
   "usage": [
