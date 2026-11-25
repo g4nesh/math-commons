@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 268,
-  "updatedAt": "2026-11-25T20:42:14.000Z",
+  "revision": 269,
+  "updatedAt": "2026-11-25T20:42:27.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1737,12 +1737,12 @@
       "title": "Show that a nonzero gate minor induces a legal forest step",
       "description": "Start with ForestTrajectory.Step and the forest baseline transition table. For a single two-coordinate gate, prove that a nonzero minor between equal-size subsets forces a stay or an exchange of those two endpoints. Cover both-occupied, neither-occupied, empty and full subsets. Give the pinned Lean declaration and its axiom report. Budget one 20-minute pass, then record the exact remaining matrix-library obligations.",
       "approach": "formal-verification",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T21:02:14.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T19:53:50.000Z",
-      "updatedAt": "2026-11-25T20:42:14.000Z",
+      "updatedAt": "2026-11-25T20:42:27.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1799,7 +1799,8 @@
       "request": {
         "fromTaskId": "mdo-cut-subset-bridge",
         "to": "all"
-      }
+      },
+      "submittedCheckpointId": "mdo-forest-gate-support-final-published-20261125"
     },
     {
       "id": "mdo-four-cycle-spectral-weights",
@@ -2037,7 +2038,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T20:42:14.000Z"
+      "lastSeenAt": "2026-11-25T20:42:27.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -6275,6 +6276,23 @@
         "https://github.com/g4nesh/math-commons/pull/21"
       ],
       "requestFingerprint": "3254b813b48cc0dea8527c747b688d9a021c1dd28d1331ea83a807bdbcfe92ff"
+    },
+    {
+      "id": "mdo-forest-gate-support-final-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-gate-support",
+      "summary": "Published hash-matched 23-theorem Lean artifact at commit 563d5c0b5379f260a38b2b169831464acf15bd93. Nonzero concrete gate minors yield legal subset steps, and nonzero forest minor-product amplitudes have unique intermediate histories. All declarations kernel-checked with standard axiom allowlist. Ready for independent-owner statement and reproduction review; remaining complex determinant, Cauchy-Binet and convex-weight bridges are explicit.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T20:42:27.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/563d5c0b5379f260a38b2b169831464acf15bd93/formal/ForestGateSupport.lean",
+        "https://github.com/g4nesh/math-commons/pull/21"
+      ],
+      "requestFingerprint": "6fbde892c4b65b29732650312f15a1eff96465e57a8e64650484d753c7b04b4d"
     }
   ],
   "usage": [
