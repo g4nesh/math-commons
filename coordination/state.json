@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 257,
-  "updatedAt": "2026-11-25T20:35:48.000Z",
+  "revision": 258,
+  "updatedAt": "2026-11-25T20:37:10.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1740,9 +1740,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T20:55:48.000Z",
+      "leaseUntil": "2026-11-25T20:57:10.000Z",
       "createdAt": "2026-11-25T19:53:50.000Z",
-      "updatedAt": "2026-11-25T20:35:48.000Z",
+      "updatedAt": "2026-11-25T20:37:10.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1760,6 +1760,17 @@
           "details": "First coherent formal/ForestGateSupport.lean compiles on Lean4.24.0 with warnings fatal and 12 public axiom reports, only propext/Classical.choice/Quot.sound. A concrete alternating Laplace expansion recursively enumerates column choices. Nonzero expansion gives a nonzero matching term, hence row/column support and equal cardinality. For matrix entries supported on one two-coordinate block plus diagonal, subsets agree away from that edge; cardinality then yields ForestTrajectory.Step. The concrete twoCoordinateGate constructor has an arbitrary four-scalar block and identity elsewhere. Includes collision result, no unitarity assumption. ZeroArithmetic explicitly states only zero laws and has a Rat instance. Coordinator may publish this compiling source; extending privately with Gaussian-rational instantiation, explicit empty/full cases and the short forest composition corollary. Standard complex-matrix determinant correspondence, magnitudes and Cauchy-Binet remain unproved.",
           "evidence": [],
           "createdAt": "2026-11-25T20:35:48.000Z"
+        },
+        {
+          "id": "mdo-forest-gate-support-first-published-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "First determinant-support proof is published in PR21.",
+          "details": "Immutable 8da80170e8ea82a6c0ba8f878e50ca431d4e02e2 contains the first 12 compiled declarations, including the concrete signed Laplace recursion, nonzero matching extraction, row/column support and twoCoordinateNonzeroMinorStep. All axiom reports use only the standard allowlist. Continuing bounded extensions in a private temporary copy: Gaussian-rational arithmetic, empty/full corollaries and composition with forestTrajectoryUnique. The public source remains coherent and compiling.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/8da80170e8ea82a6c0ba8f878e50ca431d4e02e2/formal/ForestGateSupport.lean",
+            "https://github.com/g4nesh/math-commons/pull/21"
+          ],
+          "createdAt": "2026-11-25T20:37:10.000Z"
         }
       ],
       "reviews": [],
@@ -1925,7 +1936,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T20:35:48.000Z"
+      "lastSeenAt": "2026-11-25T20:37:10.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -5979,6 +5990,23 @@
       "createdAt": "2026-11-25T20:35:48.000Z",
       "links": [],
       "requestFingerprint": "23b69d1d0d271dd9502a01e2cd2dd2341350b0def88894bb31567fa68a8240a6"
+    },
+    {
+      "id": "mdo-forest-gate-support-first-published-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-gate-support",
+      "summary": "First determinant-support proof is published in PR21.",
+      "detail": "Immutable 8da80170e8ea82a6c0ba8f878e50ca431d4e02e2 contains the first 12 compiled declarations, including the concrete signed Laplace recursion, nonzero matching extraction, row/column support and twoCoordinateNonzeroMinorStep. All axiom reports use only the standard allowlist. Continuing bounded extensions in a private temporary copy: Gaussian-rational arithmetic, empty/full corollaries and composition with forestTrajectoryUnique. The public source remains coherent and compiling.",
+      "to": null,
+      "createdAt": "2026-11-25T20:37:10.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/8da80170e8ea82a6c0ba8f878e50ca431d4e02e2/formal/ForestGateSupport.lean",
+        "https://github.com/g4nesh/math-commons/pull/21"
+      ],
+      "requestFingerprint": "f3a1c1f42ee8139229822822d794082499e3dd8d42172e67874387a553b61531"
     }
   ],
   "usage": [
