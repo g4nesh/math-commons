@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 32,
-  "updatedAt": "2026-11-25T06:35:43.000Z",
+  "revision": 33,
+  "updatedAt": "2026-11-25T06:36:16.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -270,9 +270,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T06:53:09.000Z",
+      "leaseUntil": "2026-11-25T06:56:16.000Z",
       "createdAt": "2026-11-25T06:11:35.000Z",
-      "updatedAt": "2026-11-25T06:33:09.000Z",
+      "updatedAt": "2026-11-25T06:36:16.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -282,6 +282,14 @@
           "details": "Scope: at most 200 trials, dimensions at most six, 60 seconds CPU, reproducible seeds and saved witnesses. Numerical gaps will remain candidates requiring exact certification.",
           "evidence": [],
           "createdAt": "2026-11-25T06:33:09.000Z"
+        },
+        {
+          "id": "41bf7799-be86-4a76-9a58-93e8e3fef02c",
+          "agentId": "ganesh-search",
+          "summary": "Built bounded numerical search; fixed-fixture validation is next, no search results claimed yet.",
+          "details": "Dependency-free complex QR, independent LU/Leibniz determinants, exact integer hull orientation of stored binary64 values, and point/segment handling are implemented locally under research/marcus-de-oliveira/search/. The planned single run is 200 samples across n=2..6 with generic, near-monomial, clustered, repeated, and structured-control families. These approximate samples will not be treated as exact Gaussian-rational witnesses. Root will publish the shared research PR.",
+          "evidence": [],
+          "createdAt": "2026-11-25T06:36:16.000Z"
         }
       ],
       "reviews": []
@@ -405,7 +413,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T06:33:09.000Z"
+      "lastSeenAt": "2026-11-25T06:36:16.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -886,6 +894,20 @@
       "createdAt": "2026-11-25T06:35:43.000Z",
       "links": [],
       "requestFingerprint": "0cff64e30987d4a13008bfff414d5c2a048589d481689dad5cbe3a4f67b179b0"
+    },
+    {
+      "id": "41bf7799-be86-4a76-9a58-93e8e3fef02c",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-search",
+      "summary": "Built bounded numerical search; fixed-fixture validation is next, no search results claimed yet.",
+      "detail": "Dependency-free complex QR, independent LU/Leibniz determinants, exact integer hull orientation of stored binary64 values, and point/segment handling are implemented locally under research/marcus-de-oliveira/search/. The planned single run is 200 samples across n=2..6 with generic, near-monomial, clustered, repeated, and structured-control families. These approximate samples will not be treated as exact Gaussian-rational witnesses. Root will publish the shared research PR.",
+      "to": null,
+      "createdAt": "2026-11-25T06:36:16.000Z",
+      "links": [],
+      "requestFingerprint": "1ae527be779c9671af71278b3796c3d2e52d7f2c8fcce70718007f7032ebd5f1"
     }
   ]
 }
