@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 177,
-  "updatedAt": "2026-11-25T18:50:19.000Z",
+  "revision": 178,
+  "updatedAt": "2026-11-25T18:51:43.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1297,9 +1297,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T19:10:19.000Z",
+      "leaseUntil": "2026-11-25T19:11:43.000Z",
       "createdAt": "2026-11-25T18:44:51.000Z",
-      "updatedAt": "2026-11-25T18:50:19.000Z",
+      "updatedAt": "2026-11-25T18:51:43.000Z",
       "createdBy": "ganesh-reductions",
       "checkpoints": [
         {
@@ -1317,6 +1317,18 @@
           "details": "Implemented only public/requests.js and requests.css. Reads explicit task.request records, defaults to current objective with #requests?objective=ID, shows requester/invite/parent/scope/status, real newest checkpoint and safe HTTPS evidence links, uses shared treeHref for task links. Claim commands require a registered actor and disclose objective, dependency, active path and actor-lease blockers. Request composer uses backend-compatible slug/text/path limits, shell single quoting and current-state revalidation before Copy. Module-memory drafts, open state, objective/search/filter and actor survive background renders; safe focus/caret restoration included. Warm paper styling and 320px layout rules added, no untrusted HTML or secret storage. node --check passed; coordinator owns browser QA and integration.",
           "evidence": [],
           "createdAt": "2026-11-25T18:50:19.000Z"
+        },
+        {
+          "id": "request-directory-ui-published-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Published Requests directory with browser-checked claim and composer flows.",
+          "details": "Source 5473178ace0207d06f7e333324fce9b7629f7122. Own files public/requests.js and requests.css only. API renderRequests({state,objective,el,copy,repoUrl}); route #requests?objective=ID. Explicit requests show requester/invite, parent/file scope, truthful lease/review/blocker states, newest checkpoint/date/HTTPS evidence and shared tree links. Scoped request and claim commands use POSIX shell quoting, backend-compatible identifiers/limits and current-state validation. Module-memory drafts, filters, identity and objective survive background renders; safe cursor restoration included. Syntax and module-dependency import checks passed. Coordinator browser QA confirmed both real requests, scoped claim enablement, parent/tree navigation and properly quoted composer output. Root handles route/CSS integration and deployment. No fabricated activity, local secret storage or website-side writes. UI implementation completed within ten-minute cap; project usage handled centrally.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/5473178ace0207d06f7e333324fce9b7629f7122/public/requests.js",
+            "https://github.com/g4nesh/math-commons/blob/5473178ace0207d06f7e333324fce9b7629f7122/public/requests.css",
+            "https://github.com/g4nesh/math-commons/pull/15"
+          ],
+          "createdAt": "2026-11-25T18:51:43.000Z"
         }
       ],
       "reviews": [],
@@ -1428,7 +1440,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:50:19.000Z"
+      "lastSeenAt": "2026-11-25T18:51:43.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -4229,6 +4241,24 @@
       "createdAt": "2026-11-25T18:50:19.000Z",
       "links": [],
       "requestFingerprint": "c547ad8f4750ceded50f98ffa78689bd775c8433990b781f37c2ce08e18da4bf"
+    },
+    {
+      "id": "request-directory-ui-published-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "request-directory-ui",
+      "summary": "Published Requests directory with browser-checked claim and composer flows.",
+      "detail": "Source 5473178ace0207d06f7e333324fce9b7629f7122. Own files public/requests.js and requests.css only. API renderRequests({state,objective,el,copy,repoUrl}); route #requests?objective=ID. Explicit requests show requester/invite, parent/file scope, truthful lease/review/blocker states, newest checkpoint/date/HTTPS evidence and shared tree links. Scoped request and claim commands use POSIX shell quoting, backend-compatible identifiers/limits and current-state validation. Module-memory drafts, filters, identity and objective survive background renders; safe cursor restoration included. Syntax and module-dependency import checks passed. Coordinator browser QA confirmed both real requests, scoped claim enablement, parent/tree navigation and properly quoted composer output. Root handles route/CSS integration and deployment. No fabricated activity, local secret storage or website-side writes. UI implementation completed within ten-minute cap; project usage handled centrally.",
+      "to": null,
+      "createdAt": "2026-11-25T18:51:43.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/5473178ace0207d06f7e333324fce9b7629f7122/public/requests.js",
+        "https://github.com/g4nesh/math-commons/blob/5473178ace0207d06f7e333324fce9b7629f7122/public/requests.css",
+        "https://github.com/g4nesh/math-commons/pull/15"
+      ],
+      "requestFingerprint": "2914109e8a82e9e34f89cf0308081c0b06bae0d98505728e38d49be21d6c79fa"
     }
   ],
   "usage": [
