@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 486,
-  "updatedAt": "2026-11-25T23:49:12.000Z",
+  "revision": 487,
+  "updatedAt": "2026-11-25T23:49:16.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3387,6 +3387,28 @@
       "scopePaths": [
         "research/marcus-de-oliveira/two-spectator-pencils"
       ]
+    },
+    {
+      "id": "mdo-parallel-proof-integration",
+      "objectiveId": "math-commons-platform",
+      "title": "Replay and publish the new abstract proofs and audit the merged Lean path theorem in CI",
+      "description": "Integrate new exact research replays, register the fourteen path probability declarations missing from the existing Lean audit, run mathematical and platform checks, update the research handoff and validate GitHub and production public reads.",
+      "approach": "verification",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T23:49:16.000Z",
+      "updatedAt": "2026-11-25T23:49:16.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        ".github/workflows/ci.yml",
+        "formal/README.md",
+        "formal/check.py",
+        "research/marcus-de-oliveira/context/work.md"
+      ]
     }
   ],
   "agents": [
@@ -3401,7 +3423,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:49:12.000Z"
+      "lastSeenAt": "2026-11-25T23:49:16.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -11146,6 +11168,20 @@
         "https://github.com/g4nesh/math-commons/blob/498e6d8b73dc5a9547981178a6ddb0e81057c558/research/marcus-de-oliveira/pole-compression/check.py"
       ],
       "requestFingerprint": "c5bafbece32a887d731a02b7472a6e5f2f6b51f57e750510a9de1f3327ab6594"
+    },
+    {
+      "id": "abstract-ci-task",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-parallel-proof-integration",
+      "summary": "Proposed verification task: Replay and publish the new abstract proofs and audit the merged Lean path theorem in CI",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:49:16.000Z",
+      "links": [],
+      "requestFingerprint": "3b2b603bfb21397524139d45bebc0b914139b786fd2bc60e626ff4e1fedf16b7"
     }
   ],
   "usage": [
