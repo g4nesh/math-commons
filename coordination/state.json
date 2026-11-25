@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 248,
-  "updatedAt": "2026-11-25T20:30:14.000Z",
+  "revision": 249,
+  "updatedAt": "2026-11-25T20:30:17.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1792,12 +1792,12 @@
       "title": "Publish and replay the four-cycle spectral and forest gate-minor results",
       "description": "Integrate the two non-overlapping research claims from current main into mandatory checks, research navigation and a protected pull request. Verify on GitHub and production, and submit exact evidence.",
       "approach": "constructive",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-coordinator",
+      "leaseUntil": "2026-11-25T20:50:17.000Z",
       "createdAt": "2026-11-25T20:30:14.000Z",
-      "updatedAt": "2026-11-25T20:30:14.000Z",
+      "updatedAt": "2026-11-25T20:30:17.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -1824,7 +1824,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T20:30:14.000Z"
+      "lastSeenAt": "2026-11-25T20:30:17.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -5789,6 +5789,20 @@
       "createdAt": "2026-11-25T20:30:14.000Z",
       "links": [],
       "requestFingerprint": "66164141933758739991e82188b571909da2ef1339efbd6454c8dd1ad6add25f"
+    },
+    {
+      "id": "spectral-gate-integration-claim",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-spectral-gate-integration",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T20:30:17.000Z",
+      "links": [],
+      "requestFingerprint": "be27b89844c3cd0eaef07748efdd2b3326e39e932b3550fd3411a05b8aa53693"
     }
   ],
   "usage": [
