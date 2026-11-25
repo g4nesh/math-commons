@@ -52,7 +52,22 @@ cd research/marcus-de-oliveira/star-exact && python3 exact_space.py 300
 - The request's premise fails at t = 1: there is nothing exact to round at degree 3.
 - Plausible reason: the inequality (★) is the envelope of the t-family, and it is tight along a whole zero set, so f_t is flat to higher order in some directions near that set. Fixed-degree sums of squares then approximate but do not attain.
 
+## Step 3 (done, numerical): for t above 1 an exact degree-3 certificate looks possible, with more forced structure
+
+**Scan in t (`reduced_scan.py`, same complement spaces, Haar sample).** Best minimum eigenvalue λ of the reduced blocks:
+
+| t | 0.5 | 1 | 1.05 | 1.1 | 1.5 | 2 | 3 | 10 | 100 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| λ | −8.8·10⁻³ | −1.7·10⁻⁵ | −3·10⁻¹¹ | −2·10⁻¹⁰ | −2·10⁻⁹ | −7·10⁻⁹ | −1·10⁻⁸ | −2·10⁻⁷ | −4·10⁻⁸ |
+
+- t ≤ 1: clearly infeasible. No exact degree-3 certificate.
+- t ≥ 1.05: λ = 0 to solver tolerance. The reduced identity is feasible, but only with singular blocks, so there are further forced kernel directions beyond those coming from zeros.
+
+**Central solution at t = 2 (`center.py`).** Of the 322 eigenvalues of the reduced blocks, 302 are ≥ 10⁻³ and 20 are ≤ 10⁻⁹. A clean gap.
+
+**The 20 extra directions (`extra_kernel.py`).** They are simple: either a single complement polynomial is dropped, or two are tied with ratio 3/2 at t = 2. Example: in the block with u₁₁u₂₄u₃₄ and u₁₄u₂₄u₃₁ the surviving amplitude is u₂₄·(3·u₁₁u₃₄ − 2·u₁₄u₃₁). This suggests amplitudes that depend on t, such as u₂₄·((1+t)·u₁₁u₃₄ − t·u₁₄u₃₁). **That formula is a guess from one value of t.**
+
 ## Next steps
 
-5. Same test for t > 1 at degree 3 (the zero set is the same).
-6. Same test at degree 4 for t = 1.
+7. Exact certificate at t = 2: second reduction with rational directions, then rounding and exact verification.
+8. Degree 4 at t = 1.
