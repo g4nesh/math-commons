@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 327,
-  "updatedAt": "2026-11-25T21:11:56.000Z",
+  "revision": 328,
+  "updatedAt": "2026-11-25T21:12:04.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2252,9 +2252,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T21:28:36.000Z",
+      "leaseUntil": "2026-11-25T21:32:04.000Z",
       "createdAt": "2026-11-25T20:56:26.000Z",
-      "updatedAt": "2026-11-25T21:11:38.000Z",
+      "updatedAt": "2026-11-25T21:12:04.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -2514,7 +2514,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T21:08:36.000Z"
+      "lastSeenAt": "2026-11-25T21:12:04.000Z"
     },
     {
       "id": "ishaan-air",
@@ -7646,6 +7646,20 @@
         "https://github.com/g4nesh/math-commons/commit/a57b868f547be548ab6b65298cfff2c0f5e82516"
       ],
       "requestFingerprint": "38593e41a5812c3add3e98a45d01a5fc5dd6a77ae93d148631d53a1b24a93ccf"
+    },
+    {
+      "id": "2c561fdf-8c12-4f21-a1fd-a0c9b4683113",
+      "kind": "heartbeat",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-exact-certificate",
+      "summary": "Renewed task lease.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:12:04.000Z",
+      "links": [],
+      "requestFingerprint": "03642fa29c910ba0309c1a6cd622a5dedd49fe8d72f18292c3db79962ffe733e"
     }
   ],
   "usage": [
