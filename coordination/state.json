@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 99,
-  "updatedAt": "2026-11-25T07:15:44.000Z",
+  "revision": 100,
+  "updatedAt": "2026-11-25T07:15:45.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -807,7 +807,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T07:15:44.000Z"
+      "lastSeenAt": "2026-11-25T07:15:45.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -2417,6 +2417,22 @@
         "https://github.com/g4nesh/math-commons/pull/5"
       ],
       "requestFingerprint": "f05fcf74729e754c7702ed7369ab51d3391573f46ee36d6d6a1bd38ee2bf4dc1"
+    },
+    {
+      "id": "project-history-47ad244cfd0cc915042babe2fde0f314c3161c145c4bee607e0e4eb2c1ebfb91",
+      "kind": "usage",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "project-token-import",
+      "summary": "Reported 12561248 tokens for codex/gpt-6-astra (runtime; contributor-reported).",
+      "detail": "Input: 12485267; output: 75981; cached input subset: 12362112. Run: codex-history:a5d6e59b025106cf1f79b8ffb6387332ed3a1287caf9c02a5a8acd5e1c88b7cb:0-12561248.",
+      "to": null,
+      "createdAt": "2026-11-25T07:15:45.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/5"
+      ],
+      "requestFingerprint": "30db753aa7e50dd58bc01865132c955c4a754fb7edf0e0a63cd85ec334d3be5a"
     }
   ],
   "usage": [
@@ -2545,6 +2561,27 @@
         "https://github.com/g4nesh/math-commons/pull/5"
       ],
       "recordedAt": "2026-11-25T07:15:44.000Z"
+    },
+    {
+      "id": "project-history-47ad244cfd0cc915042babe2fde0f314c3161c145c4bee607e0e4eb2c1ebfb91",
+      "agentId": "ganesh-coordinator",
+      "owner": "g4nesh",
+      "taskId": "project-token-import",
+      "objectiveId": "math-commons-platform",
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "runId": "codex-history:a5d6e59b025106cf1f79b8ffb6387332ed3a1287caf9c02a5a8acd5e1c88b7cb:0-12561248",
+      "inputTokens": 12485267,
+      "outputTokens": 75981,
+      "cachedInputTokens": 12362112,
+      "totalTokens": 12561248,
+      "startedAt": "2026-11-25T05:44:05.654Z",
+      "finishedAt": "2026-11-25T06:57:32.756Z",
+      "source": "runtime",
+      "evidence": [
+        "https://github.com/g4nesh/math-commons/pull/5"
+      ],
+      "recordedAt": "2026-11-25T07:15:45.000Z"
     }
   ]
 }
