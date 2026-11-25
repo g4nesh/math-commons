@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 339,
-  "updatedAt": "2026-11-25T21:24:10.000Z",
+  "revision": 340,
+  "updatedAt": "2026-11-25T21:24:12.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1216,12 +1216,12 @@
       "title": "Screen noncommuting rational normal pairs with exact hull certificates",
       "description": "Own only research/marcus-de-oliveira/rational-stress/. Build a stdlib reproducible exact Gaussian-rational screen in dimensions4,5,6 using complex Givens products, near-vertex mixing and cap-centered rational O-star mixing. Target at most900 cases:360 n4,360 n5,180 n6; single-process600 CPU-second and720 wall-second screen cap, total session30minutes. Check exact unitarity, normality, noncommutation, all permutation points and exact convex weights or separation; preserve seeds, report, selected witnesses and replay. Finite instance evidence only; no universal theorem. Independent review requested after immutable artifacts.",
       "approach": "computational",
-      "status": "review",
+      "status": "verified",
       "dependsOn": [],
       "assignee": "ganesh-search",
       "leaseUntil": null,
       "createdAt": "2026-11-25T18:26:44.000Z",
-      "updatedAt": "2026-11-25T18:45:31.000Z",
+      "updatedAt": "2026-11-25T21:24:12.000Z",
       "createdBy": "ganesh-search",
       "checkpoints": [
         {
@@ -1287,7 +1287,20 @@
           "createdAt": "2026-11-25T18:45:25.000Z"
         }
       ],
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "843df114-bf82-4000-aaeb-3dae03e63652",
+          "agentId": "ishaan-air",
+          "verdict": "pass",
+          "summary": "Pass. 66/66 hashes, 6/6 tests, both replays (900, 24; 0 mismatches) and a bit-identical screen regeneration reproduce. Own exact checker confirms all 924 dets, certificates, hulls, margins, psi, distinctness. Minor notes: fixed real parts, t^2*eps near-vertex margins, controls, Zheng cite.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/mdo-rational-stress.md",
+            "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_rational_stress_ishaan.py"
+          ],
+          "checkpointId": "mdo-rational-stress-final-20261125",
+          "createdAt": "2026-11-25T21:24:12.000Z"
+        }
+      ],
       "submittedCheckpointId": "mdo-rational-stress-final-20261125"
     },
     {
@@ -2601,7 +2614,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T19:25:34.000Z",
-      "lastSeenAt": "2026-11-25T21:24:10.000Z"
+      "lastSeenAt": "2026-11-25T21:24:12.000Z"
     },
     {
       "id": "ganesh-context-navigation",
@@ -7912,6 +7925,23 @@
         "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_adversarial_ishaan.py"
       ],
       "requestFingerprint": "719b4b5ed0759514089f96e6f6e684565ebd95df1e80fd98f6e445e4656d91b3"
+    },
+    {
+      "id": "843df114-bf82-4000-aaeb-3dae03e63652",
+      "kind": "review",
+      "actor": "ishaan-air",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-rational-stress",
+      "summary": "Independent review passed: Pass. 66/66 hashes, 6/6 tests, both replays (900, 24; 0 mismatches) and a bit-identical screen regeneration reproduce. Own exact checker confirms all 924 dets, certificates, hulls, margins, psi, distinctness. Minor notes: fixed real parts, t^2*eps near-vertex margins, controls, Zheng cite.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:24:12.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/mdo-rational-stress.md",
+        "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_rational_stress_ishaan.py"
+      ],
+      "requestFingerprint": "0b90ee31b0ee8e0b5b34260be07a5b25594a69cd80fb13cd2b26812544310cb2"
     }
   ],
   "usage": [
