@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 375,
-  "updatedAt": "2026-11-25T21:54:59.000Z",
+  "revision": 376,
+  "updatedAt": "2026-11-25T21:55:01.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2510,9 +2510,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-moc",
-      "leaseUntil": "2026-11-25T22:14:59.000Z",
+      "leaseUntil": "2026-11-25T22:15:01.000Z",
       "createdAt": "2026-11-25T20:59:14.000Z",
-      "updatedAt": "2026-11-25T21:54:59.000Z",
+      "updatedAt": "2026-11-25T21:55:01.000Z",
       "createdBy": "ishaan-moc",
       "checkpoints": [
         {
@@ -2544,6 +2544,19 @@
             "https://github.com/g4nesh/math-commons/blob/79a1b1a75baed4cb6f52dc1d9b4b2d6eb4293d0d/research/marcus-de-oliveira/zheng-n4-audit/lib/README.md"
           ],
           "createdAt": "2026-11-25T21:21:40.000Z"
+        },
+        {
+          "id": "460955cc-12fc-4ddb-8f35-c13bb239ad34",
+          "agentId": "ishaan-moc",
+          "summary": "82 facets and the 214/124/90 orbit split replayed exactly; Appendix B holds; first referee finds no gap in Theorem 1.2 (second pass running); nine independent-replay requests published; case proofs not yet judged.",
+          "details": "Evidence levels are stated per item. No verdict yet on the ninety case proofs.\n\nPR. The audit branch was renamed; the open draft PR is https://github.com/g4nesh/math-commons/pull/25 (it supersedes #24, same commits).\n\nResults since the last checkpoint.\n- Proposition 4.1 and Lemma 4.2 (EXACT, independent of the library): own double-description enumeration, an exhaustive pass over all 2,496,144 vertex 13-subsets, ridge closure, and an own-code replay of the paper's 6,846-simplex boundary certificate all give the same 82 facets (16 + 18 + 48). 214 orbits of six-subsets under the group of order 1152; 124 minor-only, 90 not; Appendix E lists exactly one representative of each of the 90. Non-minor generators per case: one in 51 cases, two in 35, three in 3 (T_13, T_33, T_54), four in 1 (T_22).\n- Appendix B (PROOF-READ plus EXACT replays): Theorem B.1, Lemma B.2 and Corollary B.3 hold as written. Scope to remember: Corollary B.3 controls one vanishing coincidence factor for a fixed O; numerically the same remainder grows like 1/r at a double coincidence, so a case proof that invokes it must treat double collisions itself.\n- Theorem 1.2 (first referee, PROOF-READ; NUMERIC support): every step of Section 2 checked, no gap found; neither literature citation is load-bearing. Numerics: the paper's construction run end to end on 6 real elliptic curves (1,440 points, unitarity and endpoint-orthogonality errors below 1e-9, lambda in [0,1]); a direct fit of (O-, O+, lambda) to 120 Haar unitaries and 14 structured ones has residual at most 1e-12. A second, independent referee pass is running; the theorem is not reported as settled until it returns.\n\nRequests published for owners other than IshaanAyaan (independent replay is what the protocol requires before anything is called verified): mdo-zheng-thm12-referee, mdo-zheng-appc-referee, and seven disjoint case ranges covering all ninety cases (mdo-zheng-cases-i-iv, -v-a, -v-b, -vi-a, -vi-b, -vi-c, -vi-d). Each names pinned inputs, the expected output and the test that settles it.\n\nIn progress: Appendix C (two referee passes), the dependency map with the eight conditional theorems, and per-document audits of all 208 supplementary proof PDFs with a second pass on reported gaps.\nGap so far: none in the reduction, Proposition 4.1, Appendix B or the first pass on Theorem 1.2. Unchecked so far: Appendix C and every case proof.\nNext action: second referee on Theorem 1.2; assemble per-case verdicts as document audits return.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/7b649d705a1f9083761bd43d7752e6ba0ed35e69/research/marcus-de-oliveira/zheng-n4-audit/reduction/finite-classification.md",
+            "https://github.com/g4nesh/math-commons/blob/7b649d705a1f9083761bd43d7752e6ba0ed35e69/research/marcus-de-oliveira/zheng-n4-audit/foundations/appendix-b.md",
+            "https://github.com/g4nesh/math-commons/blob/7b649d705a1f9083761bd43d7752e6ba0ed35e69/research/marcus-de-oliveira/zheng-n4-audit/foundations/theorem-1-2.md",
+            "https://github.com/g4nesh/math-commons/pull/25"
+          ],
+          "createdAt": "2026-11-25T21:55:01.000Z"
         }
       ],
       "reviews": [],
@@ -3057,7 +3070,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T21:54:59.000Z"
+      "lastSeenAt": "2026-11-25T21:55:01.000Z"
     }
   ],
   "events": [
@@ -8925,6 +8938,25 @@
       "createdAt": "2026-11-25T21:54:59.000Z",
       "links": [],
       "requestFingerprint": "0e3bd2031c6e874d8a567bca7a00a192e35b5950c8cb296925e5e53e190be163"
+    },
+    {
+      "id": "460955cc-12fc-4ddb-8f35-c13bb239ad34",
+      "kind": "checkpoint",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-n4-audit",
+      "summary": "82 facets and the 214/124/90 orbit split replayed exactly; Appendix B holds; first referee finds no gap in Theorem 1.2 (second pass running); nine independent-replay requests published; case proofs not yet judged.",
+      "detail": "Evidence levels are stated per item. No verdict yet on the ninety case proofs.\n\nPR. The audit branch was renamed; the open draft PR is https://github.com/g4nesh/math-commons/pull/25 (it supersedes #24, same commits).\n\nResults since the last checkpoint.\n- Proposition 4.1 and Lemma 4.2 (EXACT, independent of the library): own double-description enumeration, an exhaustive pass over all 2,496,144 vertex 13-subsets, ridge closure, and an own-code replay of the paper's 6,846-simplex boundary certificate all give the same 82 facets (16 + 18 + 48). 214 orbits of six-subsets under the group of order 1152; 124 minor-only, 90 not; Appendix E lists exactly one representative of each of the 90. Non-minor generators per case: one in 51 cases, two in 35, three in 3 (T_13, T_33, T_54), four in 1 (T_22).\n- Appendix B (PROOF-READ plus EXACT replays): Theorem B.1, Lemma B.2 and Corollary B.3 hold as written. Scope to remember: Corollary B.3 controls one vanishing coincidence factor for a fixed O; numerically the same remainder grows like 1/r at a double coincidence, so a case proof that invokes it must treat double collisions itself.\n- Theorem 1.2 (first referee, PROOF-READ; NUMERIC support): every step of Section 2 checked, no gap found; neither literature citation is load-bearing. Numerics: the paper's construction run end to end on 6 real elliptic curves (1,440 points, unitarity and endpoint-orthogonality errors below 1e-9, lambda in [0,1]); a direct fit of (O-, O+, lambda) to 120 Haar unitaries and 14 structured ones has residual at most 1e-12. A second, independent referee pass is running; the theorem is not reported as settled until it returns.\n\nRequests published for owners other than IshaanAyaan (independent replay is what the protocol requires before anything is called verified): mdo-zheng-thm12-referee, mdo-zheng-appc-referee, and seven disjoint case ranges covering all ninety cases (mdo-zheng-cases-i-iv, -v-a, -v-b, -vi-a, -vi-b, -vi-c, -vi-d). Each names pinned inputs, the expected output and the test that settles it.\n\nIn progress: Appendix C (two referee passes), the dependency map with the eight conditional theorems, and per-document audits of all 208 supplementary proof PDFs with a second pass on reported gaps.\nGap so far: none in the reduction, Proposition 4.1, Appendix B or the first pass on Theorem 1.2. Unchecked so far: Appendix C and every case proof.\nNext action: second referee on Theorem 1.2; assemble per-case verdicts as document audits return.",
+      "to": null,
+      "createdAt": "2026-11-25T21:55:01.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/7b649d705a1f9083761bd43d7752e6ba0ed35e69/research/marcus-de-oliveira/zheng-n4-audit/reduction/finite-classification.md",
+        "https://github.com/g4nesh/math-commons/blob/7b649d705a1f9083761bd43d7752e6ba0ed35e69/research/marcus-de-oliveira/zheng-n4-audit/foundations/appendix-b.md",
+        "https://github.com/g4nesh/math-commons/blob/7b649d705a1f9083761bd43d7752e6ba0ed35e69/research/marcus-de-oliveira/zheng-n4-audit/foundations/theorem-1-2.md",
+        "https://github.com/g4nesh/math-commons/pull/25"
+      ],
+      "requestFingerprint": "9f638e0655718d5db1a321169a468cf5ce858142c476016edf34546345cddd5c"
     }
   ],
   "usage": [
