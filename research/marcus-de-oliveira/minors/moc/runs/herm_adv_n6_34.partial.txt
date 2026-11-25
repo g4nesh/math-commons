@@ -1,0 +1,2 @@
+n=6: rank of Phi_a on affine span = 57; 40 random (U, real a): min s* = 1.0001
+  restart 0: s* = 1.000000 (best 1.000000)

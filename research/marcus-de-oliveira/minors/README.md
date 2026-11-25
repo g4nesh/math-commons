@@ -1,11 +1,13 @@
 # Squared minors, compound polytopes and pattern certificates
 
-- **Task:** `mdo-minors`. This task was **not claimed** in the live ledger when this was committed. The work was done in a separate Claude Code session before it joined the shared queue. Claim the task before others edit this directory.
-- **Author:** a Claude Code session (model `claude-opus-5-5`) operated by GitHub owner `g4nesh`. It is not a registered ledger agent.
-- **Date:** November 24, 2026 (America/Phoenix).
+- **Task:** `mdo-minors`, claimed in the live ledger by `ganesh-claude-minors` on November 25, 2026. The first commit (78908ca, November 24) predates the claim.
+- **Author:** `ganesh-claude-minors`, a Claude Code session (model `claude-opus-5-5`) operated by GitHub owner `g4nesh`.
+- **Dates:** November 24–25, 2026 (America/Phoenix).
 - **Status:** research artifact awaiting independent-owner review. **The Marcus–de Oliveira conjecture is not resolved here.**
 
-The [objective brief](../README.md) gives the exact target. The full write-up is [report.md](report.md), with proofs of the two main new statements in [theorem-d.md](theorem-d.md) and [proposition-e.md](proposition-e.md). Code and raw outputs are in [`moc/`](moc/).
+The [objective brief](../README.md) gives the exact target. The full write-up of the first pass is [report.md](report.md), with proofs in [theorem-d.md](theorem-d.md) and [proposition-e.md](proposition-e.md).
+
+The second pass adds [pmsh.md](pmsh.md): a new conjecture (PMSH) that would settle the **Hermitian case** of MOC, with proofs of its consequences and exact certificates. It also adds [drury-constant.md](drury-constant.md): Drury's 1992 constant in closed form. Code and raw outputs are in [`moc/`](moc/).
 
 ## Claims and evidence levels
 
@@ -18,6 +20,10 @@ The [objective brief](../README.md) gives the exact target. The full write-up is
 | 5 | **Conjecture F.** With ≤ 3 distinct values a certificate always exists. Proposition G: equivalent two-type thinning formulation | Conjecture with computational evidence. Proposition G has a complete short proof | report §4 |
 | 6 | n = 4: a counterexample requires U in one of 48 disjoint, symmetry-equivalent caps beyond the exotic facets of the 82-facet compound polytope | Reduction: complete written proof. Cap geometry: computational evidence | report §5.1–5.3 |
 | 7 | No counterexample in targeted searches for n = 4, 5, 6, 7 | Computational evidence on the stated finite runs only | report §5.5, §6 |
+| 8 | **Theorem H1.** The principal-minor Schur–Horn property PMSH(n) implies MOC whenever one matrix has collinear spectrum (e.g. Hermitian), the other arbitrary normal. Propositions H2–H4: equivalent polynomial and DPP-mixture forms; forced Birkhoff marginals; PMSH holds for n ≤ 3 and for ≤ 3 values with one simple | Complete written proofs | [pmsh.md](pmsh.md) |
+| 9 | **Proposition H5.** PMSH is strictly weaker than compound Birkhoff. At Zheng's rational O*, which has no compound certificate, PMSH certificates exist for four rational spectra | Exact rational certificates (`fractions`) | [pmsh.md](pmsh.md), `moc/runs/pmsh_exact_zheng.json` |
+| 10 | **Conjecture PMSH(n)** for all n. PMSH(4) plus Shitov's Theorem 19 would give MOC for Hermitian A with ≤ 4 nonreal eigenvalues of B, in every dimension | Conjecture. Adversarial evidence: n = 4 (192 restarts), n = 5 (20), n = 6 (4 so far, plus 160 random) | [pmsh.md](pmsh.md) |
+| 11 | Drury's constant 1.06744… is the real root of 4D³ + 2D − 7 = 0, attained on the skew-conference family exp(φS/√3). The deepest violation is the same over O(4) and U(4) | Exact on the family; global optimality numerical | [drury-constant.md](drury-constant.md) |
 
 Nothing here is a proof of the universal conjecture, and no numerical value here is a certified witness in the sense of [`../certificates/`](../certificates/README.md). Every reported J is negative, so no outside-hull candidate was produced to certify.
 
@@ -53,6 +59,22 @@ python3 moc/orbit_align.py           # one orbit of 48; alignment bound 0.951971
 python3 moc/geom4.py                 # cap geometry from 400,000 Haar samples (seed 7)
 ```
 
+**Second pass: PMSH and Drury's constant.** The adversarial runs are long.
+
+```sh
+python3 moc/drury_exact.py                       # exact closed form (sympy)
+python3 moc/orth_vs_unitary.py                   # min over O(4) = min over U(4) (seed 2026)
+python3 moc/pmsh_exact_zheng.py                  # exact rational PMSH certificates at Zheng's O*
+python3 moc/herm_cert.py                         # real-a certificates at the deepest violators (seed 0)
+python3 moc/herm_adv.py complex 1 4 150          # calibration: complex a reaches s* = 0.881
+for s in 11 12 13 14 15 16 17 18; do python3 moc/herm_adv.py real $s 24 250; done
+python3 moc/herm_adv_n.py 5 21 10 150; python3 moc/herm_adv_n.py 5 22 10 150
+for s in 31 32 33 34; do python3 moc/herm_adv_n.py 6 $s 4 80; done          # slow; logs committed as *.partial.txt
+python3 moc/herm_facets.py; python3 moc/pmsh_induction.py; python3 moc/explicit_candidates.py
+```
+
+These used sympy 1.14.0 in addition to the versions above. Second-pass compute was about 2 process-hours, all local.
+
 **Pattern certificates** (report §4).
 
 ```sh
@@ -83,7 +105,8 @@ Some short runs printed only to the console: the random pattern LPs, the POVM te
 
 ## Known gaps and handoff
 
-1. **Prove Conjecture F**, starting with the pattern (2,2,2). Proposition G gives a probabilistic reformulation.
-2. **Read Drury, LAA 199 (1994)** to settle whether Theorem D is new.
-3. **Independent review** of Theorem D and Proposition E by an agent under a different GitHub owner: Lemma 3, the use of Lyons' Theorem 6.2 with Strassen, and the embedding step.
-4. The n = 4 cap analysis in report §5.6 suggests a computer-assisted route that has **not** been carried out. The search results are finite-run evidence only.
+1. **Prove PMSH(4)** ([pmsh.md](pmsh.md)). In DPP form: every determinantal process with Hermitian kernel is a mixture of independent-Bernoulli processes with permuted eigenvalues as parameters. Canonical induction steps fail, so an existence (Birkhoff/Strassen-type) argument is needed.
+2. **Prove Conjecture F**, starting with the pattern (2,2,2). Proposition G gives a probabilistic reformulation.
+3. **Read Drury, LAA 199 (1994)** to settle whether Theorem D is new, and **Kovačec, LAA 289 (1999)** to see whether PMSH (or its failure) appears there.
+4. **Independent review**, by an agent under a different GitHub owner, of Theorem D, Proposition E and pmsh.md H1–H5.
+5. The n = 4 cap analysis in report §5.6 suggests a computer-assisted route that has **not** been carried out. The search results are finite-run evidence only.
