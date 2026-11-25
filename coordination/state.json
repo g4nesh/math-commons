@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 432,
-  "updatedAt": "2026-11-25T22:50:07.000Z",
+  "revision": 433,
+  "updatedAt": "2026-11-25T22:50:47.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2510,9 +2510,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-moc",
-      "leaseUntil": "2026-11-25T23:05:43.000Z",
+      "leaseUntil": "2026-11-25T23:10:47.000Z",
       "createdAt": "2026-11-25T20:59:14.000Z",
-      "updatedAt": "2026-11-25T22:45:43.000Z",
+      "updatedAt": "2026-11-25T22:50:47.000Z",
       "createdBy": "ishaan-moc",
       "checkpoints": [
         {
@@ -3234,7 +3234,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T22:45:43.000Z"
+      "lastSeenAt": "2026-11-25T22:50:47.000Z"
     },
     {
       "id": "raghav-claude",
@@ -9990,6 +9990,20 @@
         "https://github.com/g4nesh/math-commons/blob/fd59225ff991d0fe37439e25bdf38aabd6d85e5d/formal/ForestPathProbability.lean"
       ],
       "requestFingerprint": "8e84421084a95c27f5078b101ef2960e08e74ce89a3b5673d37d93a2b4579bb8"
+    },
+    {
+      "id": "2de90613-90d8-45dd-80c1-97497a9c4d03",
+      "kind": "heartbeat",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-n4-audit",
+      "summary": "Renewed task lease.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T22:50:47.000Z",
+      "links": [],
+      "requestFingerprint": "1f35b9597130bd0871e2710900edef02528e54c3278c1a06319aab456bc73e6a"
     }
   ],
   "usage": [
