@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 253,
-  "updatedAt": "2026-11-25T20:33:07.000Z",
+  "revision": 254,
+  "updatedAt": "2026-11-25T20:34:04.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1772,9 +1772,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T20:50:02.000Z",
+      "leaseUntil": "2026-11-25T20:54:04.000Z",
       "createdAt": "2026-11-25T19:53:53.000Z",
-      "updatedAt": "2026-11-25T20:30:02.000Z",
+      "updatedAt": "2026-11-25T20:34:04.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1784,6 +1784,14 @@
           "details": "Own research/marcus-de-oliveira/four-cycle-spectral only. Budget one20-minute research pass, exact standard-library rational arithmetic and at most60 CPU seconds per test run. Deform the real or imaginary part of one eigenvalue through the stored complex fixture while holding its four-cycle unitary fixed; use the existing three supporting permutations first. Acceptance: explicit nonconstant rational barycentric weights, a positive-length closed interval with a proof covering every real parameter and its endpoints, exact determinants and polynomial identities, and clear triangle-degeneracy/sign-change limits. Failure of this support triangle outside the certified interval will not be called a hull violation. Parent handles all Git, PR, integration and actual nonoverlapping usage.",
           "evidence": [],
           "createdAt": "2026-11-25T20:30:02.000Z"
+        },
+        {
+          "id": "mdo-four-cycle-spectral-interval-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Exact nonconstant barycentric weights certify t in [-40,1]; one complex eigenvalue also admits fixed weights.",
+          "details": "For a0(t)=-2+i(t-1), the stored three-point triangle has oriented area 500(t^2-4t+6), positive for every real t. Three weight numerators are N1=13203996-5027220t-131806t^2, N2=14562000-10814944t+6202444t^2, N3=19109004-15407836t+1741862t^2, with common denominator 7812500(t^2-4t+6). Exact coefficient identities establish sum weights=1 and weighted vertices=determinant. Positivity on closed interval [-40,1] follows from N1 concavity and positive endpoints, N2 negative discriminant, and N3 decreasing with positive right endpoint. Six rational checkpoints including both endpoints passed direct Gaussian elimination and separate Leibniz determinant checks. No triangle degeneracy occurs for real t; first sign-change roots around zero are isolated rationally. spectral.py and certificate.json are ready for coordinator publication. Also independently solved and verified the coordinator-suggested five-weight certificate for arbitrary complex a0 with the other seven eigenvalues fixed; it proves two complex affine coefficient identities. This does not alter the known failure of spectrum-independent common-minor weights. Coordinator is separately preparing a larger three-variable fiber supplement in reserved filenames.",
+          "evidence": [],
+          "createdAt": "2026-11-25T20:34:04.000Z"
         }
       ],
       "reviews": [],
@@ -1887,7 +1895,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T20:30:02.000Z"
+      "lastSeenAt": "2026-11-25T20:34:04.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -5893,6 +5901,20 @@
         "https://github.com/g4nesh/math-commons/pull/21"
       ],
       "requestFingerprint": "05622e76b9de998362780ffe8b4ec50289cea55a9f62694c3334e92a3f19266b"
+    },
+    {
+      "id": "mdo-four-cycle-spectral-interval-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-four-cycle-spectral-weights",
+      "summary": "Exact nonconstant barycentric weights certify t in [-40,1]; one complex eigenvalue also admits fixed weights.",
+      "detail": "For a0(t)=-2+i(t-1), the stored three-point triangle has oriented area 500(t^2-4t+6), positive for every real t. Three weight numerators are N1=13203996-5027220t-131806t^2, N2=14562000-10814944t+6202444t^2, N3=19109004-15407836t+1741862t^2, with common denominator 7812500(t^2-4t+6). Exact coefficient identities establish sum weights=1 and weighted vertices=determinant. Positivity on closed interval [-40,1] follows from N1 concavity and positive endpoints, N2 negative discriminant, and N3 decreasing with positive right endpoint. Six rational checkpoints including both endpoints passed direct Gaussian elimination and separate Leibniz determinant checks. No triangle degeneracy occurs for real t; first sign-change roots around zero are isolated rationally. spectral.py and certificate.json are ready for coordinator publication. Also independently solved and verified the coordinator-suggested five-weight certificate for arbitrary complex a0 with the other seven eigenvalues fixed; it proves two complex affine coefficient identities. This does not alter the known failure of spectrum-independent common-minor weights. Coordinator is separately preparing a larger three-variable fiber supplement in reserved filenames.",
+      "to": null,
+      "createdAt": "2026-11-25T20:34:04.000Z",
+      "links": [],
+      "requestFingerprint": "a3a0533e407f458886676a7767aec059c6675c9c8cd9b5cf13e69eb3afff4516"
     }
   ],
   "usage": [
