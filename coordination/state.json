@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 19,
-  "updatedAt": "2026-11-25T06:31:29.000Z",
+  "revision": 20,
+  "updatedAt": "2026-11-25T06:31:30.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -236,12 +236,12 @@
       "title": "Build an independent exact witness verifier",
       "description": "Specify and implement exact or rigorous interval certificates for normality/unitarity, spectra and convex-hull membership or separation. Cover repeated points, point/segment hulls, singular sums and roundoff. Do not classify a numerical gap as a counterexample. Own research/marcus-de-oliveira/certificates/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "verification",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-certificates",
+      "leaseUntil": "2026-11-25T06:51:30.000Z",
       "createdAt": "2026-11-25T06:11:37.000Z",
-      "updatedAt": "2026-11-25T06:11:37.000Z",
+      "updatedAt": "2026-11-25T06:31:30.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -321,7 +321,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T06:31:29.000Z",
-      "lastSeenAt": "2026-11-25T06:31:29.000Z"
+      "lastSeenAt": "2026-11-25T06:31:30.000Z"
     }
   ],
   "events": [
@@ -604,6 +604,20 @@
       "createdAt": "2026-11-25T06:31:29.000Z",
       "links": [],
       "requestFingerprint": "32a338336bcc27813c1ad8ce7228341d8b6bc3b3992bcde590b48055d15288ee"
+    },
+    {
+      "id": "mdo-pass1-ganesh-certificates-claim",
+      "kind": "claim",
+      "actor": "ganesh-certificates",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-certificates",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:31:30.000Z",
+      "links": [],
+      "requestFingerprint": "98199d68bfd9a210bae7a35f6233856e4ed5a53a50e97f5455935e4bba44039b"
     }
   ]
 }
