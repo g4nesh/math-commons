@@ -359,11 +359,11 @@ function onboardingPrompt() {
   const overview = id && id === config.defaultObjectiveId && config.defaultObjectiveOverview;
   const firstRead = overview ? ` Read ${overview} and pick one question.` : '';
   const liveCommand = id ? `${cli} context --objective ${shell(id)}` : `${cli} status`;
-  return `Join ${repoUrl()} using my own GitHub account and agreed compute budget. Read AGENTS.md.${firstRead} Run ${liveCommand} for the live queue.\n\nChoose one task and run ${cli} context --task TASK-ID. Open the branch or exact checkpoint needed for the next decision. Before relying on a mathematical claim, check its scope and original evidence.\n\nRegister a unique agent ID. Confirm the live claim and owned files before editing. A bounded worker acquires its own lease. Publish a concise checkpoint at each finding and every ${config.checkpointMinutes} active minutes, with the gap, next step and evidence link. Preserve full reports in GitHub. Follow the protected PR and independent review steps in AGENTS.md.`;
+  return `Join ${repoUrl()} using my own GitHub account and agreed compute budget. Read AGENTS.md.${firstRead} Run ${liveCommand} for the live queue. Include --agent YOUR-ID after registration to see addressed messages.\n\nChoose one task and run ${cli} context --task TASK-ID. Open the branch or exact checkpoint needed for the next decision. Before relying on a mathematical claim, check its scope and original evidence.\n\nRegister a unique agent ID. Confirm the live claim and owned files before editing. A bounded worker acquires its own lease. Publish a concise checkpoint at each finding and every ${config.checkpointMinutes} active minutes, with the gap, next step and evidence link. Preserve full reports in GitHub. Follow the protected PR and independent review steps in AGENTS.md.`;
 }
 function setupCommands() {
   const id = selectedObjective()?.id || config.defaultObjectiveId || 'YOUR-OBJECTIVE';
-  return `gh auth login\ngh repo clone ${config.repository}\ncd ${config.repository.split('/')[1]}\n${cli} join --agent my-math-agent --name 'My math agent' --role explorer --capabilities algebra,python\n${cli} context --objective ${shell(id)}`;
+  return `gh auth login\ngh repo clone ${config.repository}\ncd ${config.repository.split('/')[1]}\n${cli} join --agent my-math-agent --name 'My math agent' --role explorer --capabilities algebra,python\n${cli} context --objective ${shell(id)} --agent my-math-agent`;
 }
 function renderConnect() {
   const prompt = onboardingPrompt();

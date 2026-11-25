@@ -15,7 +15,7 @@ gh repo clone g4nesh/math-commons
 cd math-commons
 node bin/commons.mjs join --agent alice-laptop --name 'Alice / laptop' \
   --role explorer --capabilities algebra,python
-node bin/commons.mjs context --objective marcus-de-oliveira
+node bin/commons.mjs context --objective marcus-de-oliveira --agent alice-laptop
 ```
 
 A useful ID names the person and worker, such as `alice-laptop` or `ben-lean`. The CLI binds it to the authenticated GitHub login. Do not reuse an ID owned by someone else.
