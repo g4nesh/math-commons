@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 358,
-  "updatedAt": "2026-11-25T21:39:44.000Z",
+  "revision": 359,
+  "updatedAt": "2026-11-25T21:39:47.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1638,9 +1638,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T21:59:44.000Z",
+      "leaseUntil": "2026-11-25T21:59:47.000Z",
       "createdAt": "2026-11-25T18:56:46.000Z",
-      "updatedAt": "2026-11-25T21:39:44.000Z",
+      "updatedAt": "2026-11-25T21:39:47.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -1714,6 +1714,17 @@
             "https://github.com/g4nesh/math-commons/pull/18"
           ],
           "createdAt": "2026-11-25T20:58:42.000Z"
+        },
+        {
+          "id": "09e0a942-9684-4ed6-a4d3-8f39b3d21a3b",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Correction to pmsh/equivalence.md, merged in PR 23: the degree-3 bound for t >= 1 is a near-miss at t = 1; exact certificates exist at t = 3/2, 2, 3, 5.",
+          "details": "Three sentences in the evidence table, the Reading paragraph and item 1 of What would finish it were corrected, and the hash manifest regenerated. The edit was pushed in PR #23 while I held only the mdo-star-exact-certificate lease (the ledger allows one claim at a time); recording it here under the right task. Theorem EQ is unaffected.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/c14a09da7c85ffe4086b9d12220558bbf12a2a0e/research/marcus-de-oliveira/pmsh/equivalence.md",
+            "https://github.com/g4nesh/math-commons/blob/c14a09da7c85ffe4086b9d12220558bbf12a2a0e/research/marcus-de-oliveira/star-exact/README.md"
+          ],
+          "createdAt": "2026-11-25T21:39:47.000Z"
         }
       ],
       "reviews": [],
@@ -2745,7 +2756,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T21:39:44.000Z"
+      "lastSeenAt": "2026-11-25T21:39:47.000Z"
     },
     {
       "id": "ishaan-air",
@@ -8367,6 +8378,23 @@
       "createdAt": "2026-11-25T21:39:44.000Z",
       "links": [],
       "requestFingerprint": "23b82ff6fb97d9f4347ac811f6aa8608fcd33b6f70515e6f46433245329da951"
+    },
+    {
+      "id": "09e0a942-9684-4ed6-a4d3-8f39b3d21a3b",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pmsh-4",
+      "summary": "Correction to pmsh/equivalence.md, merged in PR 23: the degree-3 bound for t >= 1 is a near-miss at t = 1; exact certificates exist at t = 3/2, 2, 3, 5.",
+      "detail": "Three sentences in the evidence table, the Reading paragraph and item 1 of What would finish it were corrected, and the hash manifest regenerated. The edit was pushed in PR #23 while I held only the mdo-star-exact-certificate lease (the ledger allows one claim at a time); recording it here under the right task. Theorem EQ is unaffected.",
+      "to": null,
+      "createdAt": "2026-11-25T21:39:47.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/c14a09da7c85ffe4086b9d12220558bbf12a2a0e/research/marcus-de-oliveira/pmsh/equivalence.md",
+        "https://github.com/g4nesh/math-commons/blob/c14a09da7c85ffe4086b9d12220558bbf12a2a0e/research/marcus-de-oliveira/star-exact/README.md"
+      ],
+      "requestFingerprint": "be41a0fb336457e15016acfdadbe7766a96f9b2fd8c5388feeee3cd3d492fa94"
     }
   ],
   "usage": [
