@@ -83,11 +83,25 @@ def check():
     left = check_certificate(True, A[:5], B[:5], h, weights['left'])
     right = check_certificate(False, A[4:], B[4:], h, weights['right'])
     total = v.ZERO
+    points = []
     for p, mass in left.items():
         for q, weight in right.items():
             pi = global_pair(p, q)
-            total += mass * weight * math.prod((a + B[j] for a, j in zip(A, pi)), start=v.ONE)
+            product = math.prod((a + B[j] for a, j in zip(A, pi)), start=v.ONE)
+            points.append(product.pair())
+            total += mass * weight * product
     assert total == value(A, B, u)
+
+    hull = v.convex_hull(points)
+    assert len(hull) >= 3
+    distances = []
+    for first, second in zip(hull, hull[1:] + hull[:1]):
+        normal_bound = abs(second[0]-first[0]) + abs(second[1]-first[1])
+        distances.append(v.cross(first, second, total.pair()) / normal_bound)
+    margin = min(distances)
+    assert margin > 0
+    assert all(x.real**2 + x.imag**2 <= 16 for x in A + B)
+    radius = min(Fraction(1), margin / (2 * 12 * N * 10**(N - 1)))
 
     # Zero slopes on the left, right, and both. Check the arrow formula without division.
     for force_left, force_right in itertools.product((False, True), repeat=2):
@@ -101,7 +115,8 @@ def check():
         assert (l1 == v.ZERO) == force_left and (r1 == v.ZERO) == force_right
         assert l0 * r1 + l1 * r0 == value(a, b, u)
     return {'dimension': N, 'leftTerms': len(left), 'rightTerms': len(right),
-            'pairings': len(left) * len(right), 'determinant': total.encode(), 'arrowCases': 4}
+            'pairings': len(left) * len(right), 'determinant': total.encode(), 'arrowCases': 4,
+            'hullVertices': len(hull), 'marginLowerBound': str(margin), 'jointRadius': str(radius)}
 
 
 if __name__ == '__main__':
