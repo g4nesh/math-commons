@@ -27,6 +27,19 @@ theorems = {
         'gaussianGateMinorStep', 'nonzeroMinorCollision', 'nonzeroMinorEmpty', 'nonzeroMinorFull',
         'nonzeroMinorFactorsTrajectory', 'nonzeroMinorHistoriesUnique',
         'nonzeroPathFactors', 'nonzeroAmplitudesUnique')},
+    'ForestGateMagnitude.lean': {'MathCommons.ForestGateMagnitude.' + n for n in (
+        'normSqZero', 'normSqOne', 'normSqNeg', 'normSqMul', 'normSqSigned', 'unitaryWeights',
+        'gaussianOneMul', 'gaussianMulOne', 'gaussianAddZero', 'gaussianZeroAdd', 'singletonMinor',
+        'gaussianTwoByTwo', 'scalarSumMapZero', 'minorFirstColumn', 'identityPrefixMinor',
+        'lastChoiceMember', 'scalarSumUniqueKey', 'minorLastColumn', 'selectedChoiceMember',
+        'minorSelectedColumn', 'blockDetLagrange', 'unitaryDetNorm', 'minorTwoSupportedColumns',
+        'decomposeTwoEndpoints', 'filterTwoEndpoints', 'gateSpectatorRow', 'gateEntries',
+        'prefixGateMagnitudes', 'gateEndpointSpectatorZero', 'interveningExchangeSign',
+        'interveningExchangeNorm', 'signedNot', 'reverseExchangeSign', 'reverseExchangeNorm',
+        'gateSpectatorMinor', 'leftStayMinor', 'rightStayMinor', 'oppositeSignsProduct',
+        'bothOccupiedMinor', 'orderedGateMagnitudes', 'normSqNonnegative',
+        'unitaryProbabilityBounds', 'reverseGate', 'reverseUnitary', 'emptyFilteredMagnitude',
+        'fullFilteredMagnitude')},
 }
 allowed = {'propext', 'Classical.choice', 'Quot.sound'}
 lean = sys.argv[1] if len(sys.argv) == 2 else 'lean'
