@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 53,
-  "updatedAt": "2026-11-25T06:47:05.000Z",
+  "revision": 54,
+  "updatedAt": "2026-11-25T06:47:06.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -504,12 +504,12 @@
       "title": "Usage ledger and worker",
       "description": "Own lib/core.mjs, lib/worker.mjs, bin/commons.mjs, lib/usage.mjs and core/worker/usage tests. Implement the authorized token chart with authenticated attribution, deduplication and explicit missing usage. Publish real provider/run-reported counts only; no invented historical data. Bounded implementation session, checkpoints every five minutes.",
       "approach": "backend",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-usage-core",
+      "leaseUntil": "2026-11-25T07:07:06.000Z",
       "createdAt": "2026-11-25T06:47:05.000Z",
-      "updatedAt": "2026-11-25T06:47:05.000Z",
+      "updatedAt": "2026-11-25T06:47:06.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -582,7 +582,7 @@
         "backend"
       ],
       "registeredAt": "2026-11-25T06:47:03.000Z",
-      "lastSeenAt": "2026-11-25T06:47:03.000Z"
+      "lastSeenAt": "2026-11-25T06:47:06.000Z"
     }
   ],
   "events": [
@@ -1387,6 +1387,20 @@
       "createdAt": "2026-11-25T06:47:05.000Z",
       "links": [],
       "requestFingerprint": "54835948b6ad090ff1cdc0dc15559920884f003e52db6a0e9f4afea3ebd7e123"
+    },
+    {
+      "id": "usage-chart-claim-usage-core",
+      "kind": "claim",
+      "actor": "ganesh-usage-core",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-core",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:47:06.000Z",
+      "links": [],
+      "requestFingerprint": "0da98f6213e4e876640f4347373bbf3438b92937e735468e2edf6eac964811b4"
     }
   ]
 }
