@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 91,
-  "updatedAt": "2026-11-25T07:12:15.000Z",
+  "revision": 92,
+  "updatedAt": "2026-11-25T07:14:10.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -777,6 +777,22 @@
       ],
       "reviews": [],
       "submittedCheckpointId": "contributor-intake-production-check"
+    },
+    {
+      "id": "project-token-import",
+      "objectiveId": "math-commons-platform",
+      "title": "Record historic Math Commons Codex and Claude usage",
+      "description": "Reconcile disjoint official runtime counters for identifiable Math Commons work, record attributed usage and show both providers in the website and README.",
+      "approach": "coordination",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T07:14:10.000Z",
+      "updatedAt": "2026-11-25T07:14:10.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -791,7 +807,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T07:12:15.000Z"
+      "lastSeenAt": "2026-11-25T07:14:10.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -2277,6 +2293,20 @@
         "https://math-commons-dun.vercel.app/#contributions"
       ],
       "requestFingerprint": "50f5569f4de7b6d1f527379da46f50a5a896fbce480700154c15c0e064cb4341"
+    },
+    {
+      "id": "project-token-import-create",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "project-token-import",
+      "summary": "Proposed coordination task: Record historic Math Commons Codex and Claude usage",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:14:10.000Z",
+      "links": [],
+      "requestFingerprint": "ce4ca81af5eaaeee50d5a930938cf1627cbd980a1548ebc9dbf4e35c1e8de4bc"
     }
   ]
 }
