@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 387,
-  "updatedAt": "2026-11-25T22:08:27.000Z",
+  "revision": 388,
+  "updatedAt": "2026-11-25T22:10:01.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2877,9 +2877,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T22:27:17.000Z",
+      "leaseUntil": "2026-11-25T22:30:01.000Z",
       "createdAt": "2026-11-25T21:52:33.000Z",
-      "updatedAt": "2026-11-25T22:07:17.000Z",
+      "updatedAt": "2026-11-25T22:10:01.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -2907,6 +2907,18 @@
           "details": "See star-degree4/README.md Step 2 and logs/center4.txt, logs/second4_t1.txt on branch claude/mdo-star-degree4 (draft PR 27). Null directions have entries 0, 1, 1/2 = t/(1+t).",
           "evidence": [],
           "createdAt": "2026-11-25T22:05:12.000Z"
+        },
+        {
+          "id": "02340d95-77cc-4108-b534-04c196f8d594",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Step 3: rational degree-4 certificate at t = 1; exactly PD; identity exact at 1100 fresh rational unitaries (rank 954). One rigor step pending: rank of the relation space K4.",
+          "details": "certificate4_t1.json (190 KB), solve4.py, verify4.py, logs/solve4_t1.txt, logs/verify4_t1.txt. Until rank K4 >= 10254 is computed, the identity on all of U(4) is not fully established: the dimension of the degree-4 function space is known to be >= 954 exactly, and = 954 only numerically.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/565fd865018504d2c2a9ba2cb759641d3e92b104/research/marcus-de-oliveira/star-degree4/README.md",
+            "https://github.com/g4nesh/math-commons/blob/565fd865018504d2c2a9ba2cb759641d3e92b104/research/marcus-de-oliveira/star-degree4/certificate4_t1.json",
+            "https://github.com/g4nesh/math-commons/blob/565fd865018504d2c2a9ba2cb759641d3e92b104/research/marcus-de-oliveira/star-degree4/logs/verify4_t1.txt"
+          ],
+          "createdAt": "2026-11-25T22:10:01.000Z"
         }
       ],
       "reviews": [],
@@ -3049,7 +3061,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T22:07:17.000Z"
+      "lastSeenAt": "2026-11-25T22:10:01.000Z"
     },
     {
       "id": "ishaan-air",
@@ -9131,6 +9143,24 @@
       "createdAt": "2026-11-25T22:08:27.000Z",
       "links": [],
       "requestFingerprint": "27ebfded569e2e7d0d9d0b72fab785286567f4c2b1ff57e22e088a041f8eb2f1"
+    },
+    {
+      "id": "02340d95-77cc-4108-b534-04c196f8d594",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-degree4",
+      "summary": "Step 3: rational degree-4 certificate at t = 1; exactly PD; identity exact at 1100 fresh rational unitaries (rank 954). One rigor step pending: rank of the relation space K4.",
+      "detail": "certificate4_t1.json (190 KB), solve4.py, verify4.py, logs/solve4_t1.txt, logs/verify4_t1.txt. Until rank K4 >= 10254 is computed, the identity on all of U(4) is not fully established: the dimension of the degree-4 function space is known to be >= 954 exactly, and = 954 only numerically.",
+      "to": null,
+      "createdAt": "2026-11-25T22:10:01.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/565fd865018504d2c2a9ba2cb759641d3e92b104/research/marcus-de-oliveira/star-degree4/README.md",
+        "https://github.com/g4nesh/math-commons/blob/565fd865018504d2c2a9ba2cb759641d3e92b104/research/marcus-de-oliveira/star-degree4/certificate4_t1.json",
+        "https://github.com/g4nesh/math-commons/blob/565fd865018504d2c2a9ba2cb759641d3e92b104/research/marcus-de-oliveira/star-degree4/logs/verify4_t1.txt"
+      ],
+      "requestFingerprint": "9871f6c15857e67f7bbbbaf4beba87a4df3c9101c9938dbe207445a20e3809fa"
     }
   ],
   "usage": [
