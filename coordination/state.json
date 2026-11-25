@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 141,
-  "updatedAt": "2026-11-25T18:30:59.000Z",
+  "revision": 142,
+  "updatedAt": "2026-11-25T18:32:54.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1035,9 +1035,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T18:49:50.000Z",
+      "leaseUntil": "2026-11-25T18:52:54.000Z",
       "createdAt": "2026-11-25T18:26:44.000Z",
-      "updatedAt": "2026-11-25T18:29:50.000Z",
+      "updatedAt": "2026-11-25T18:32:54.000Z",
       "createdBy": "ganesh-search",
       "checkpoints": [
         {
@@ -1055,6 +1055,14 @@
           "details": "New screen.py constructs rational complex Givens chains, exposed-vertex perturbations and Zheng O-star centered unitaries without importing rounded saved U. Pilot n4,n5,n6 cases all have exact unitary/normal checks, nonzero commutators, polygon hulls and exact inside certificates. Main900-case run has not started. Adding independent determinant/certificate replay and hard budget interrupts before running the declared screen. Six spectra families separate general complex stress from singular,two-value,Hermitian controls; no universal result claimed.",
           "evidence": [],
           "createdAt": "2026-11-25T18:29:50.000Z"
+        },
+        {
+          "id": "mdo-rational-stress-results-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Completed900 exact cases: no outside determinant, all900 pairs noncommuting.",
+          "details": "Declared screen completed in41.66 CPU seconds/41.83 wall seconds on local Python3.9.6, well under600/720 caps. Counts:360 n4,360 n5,180 n6;181440 permutation points enumerated;738 polygon interiors,12 exact polygon-boundary cases,150 degenerate segment cases,0 outside. All900 U are genuinely complex and exactly unitary; every commutator is nonzero.450 general complex stresses plus450 separately labeled singular/two-value/Hermitian controls.100 n4 cases have exact negative Zheng exotic functional.150 sums are exactly singular. Saved full witnesses for all12 boundary cases plus18 tight positive-margin cases. Beginning independent arithmetic replay capped180 CPU/240 wall seconds; results remain author-side finite-instance evidence.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:32:54.000Z"
         }
       ],
       "reviews": []
@@ -1105,7 +1113,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T18:29:50.000Z"
+      "lastSeenAt": "2026-11-25T18:32:54.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -3368,6 +3376,20 @@
       "createdAt": "2026-11-25T18:30:59.000Z",
       "links": [],
       "requestFingerprint": "99c21f5fd6179f0ddf4d6940e394544599fc900591aedec9cc49e0c6ad77d504"
+    },
+    {
+      "id": "mdo-rational-stress-results-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-rational-stress",
+      "summary": "Completed900 exact cases: no outside determinant, all900 pairs noncommuting.",
+      "detail": "Declared screen completed in41.66 CPU seconds/41.83 wall seconds on local Python3.9.6, well under600/720 caps. Counts:360 n4,360 n5,180 n6;181440 permutation points enumerated;738 polygon interiors,12 exact polygon-boundary cases,150 degenerate segment cases,0 outside. All900 U are genuinely complex and exactly unitary; every commutator is nonzero.450 general complex stresses plus450 separately labeled singular/two-value/Hermitian controls.100 n4 cases have exact negative Zheng exotic functional.150 sums are exactly singular. Saved full witnesses for all12 boundary cases plus18 tight positive-margin cases. Beginning independent arithmetic replay capped180 CPU/240 wall seconds; results remain author-side finite-instance evidence.",
+      "to": null,
+      "createdAt": "2026-11-25T18:32:54.000Z",
+      "links": [],
+      "requestFingerprint": "91e545c895891c0b3f894fd59a2e2f59e0fa50ccb2730300d2d50b8d9a7bccbe"
     }
   ],
   "usage": [
