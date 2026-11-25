@@ -1,0 +1,1 @@
+re-polished 1894 zeros ; residual of the degree-3 vanishing conditions: median 3.7e-16, max 4.4e-05 ; kept (< 1e-12): 1885  [17s]

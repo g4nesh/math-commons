@@ -1,0 +1,3 @@
+rho = 1/2: 184 facets (vertex counts {11: 96, 14: 48, 16: 24, 18: 16}) = 88 trivial + 96 hard ; hard multiplier pairs (alpha on D_a, alpha' on D_b): {('2', '1'): 96} ; unexplained: 0  [4s]
+rho = 2: 184 facets (vertex counts {11: 96, 14: 48, 16: 24, 18: 16}) = 88 trivial + 96 hard ; hard multiplier pairs (alpha on D_a, alpha' on D_b): {('2', '1'): 96} ; unexplained: 0  [5s]
+rho = -1: 184 facets (vertex counts {11: 96, 14: 48, 16: 24, 18: 16}) = 88 trivial + 96 hard ; hard multiplier pairs (alpha on D_a, alpha' on D_b): {('2', '1'): 96} ; unexplained: 0  [5s]

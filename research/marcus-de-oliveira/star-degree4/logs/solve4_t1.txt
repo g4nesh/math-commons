@@ -1,0 +1,9 @@
+unknowns 5481 ; rational unitaries 1100  [3s]
+  prime 1073741789: rank 821  [6s]
+  prime 1073741783: rank 821  [10s]
+  prime 1073741741: rank 821  [13s]
+  prime 1073741723: rank 821  [16s]
+echelon form lifted: rank 821, free unknowns 4660 ; entries failing reconstruction or the cross-check prime: 0 ; largest numerator/denominator 969  [19s]
+exact solution: max deviation from the numerical point 3.73e-04  [21s]
+all leading principal minors positive: True ; smallest 2.954e-14  [21s]
+certificate written: certificate4_t1.json (positive definite: True)
