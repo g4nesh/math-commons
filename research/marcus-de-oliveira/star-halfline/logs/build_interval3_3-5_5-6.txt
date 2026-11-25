@@ -1,0 +1,9 @@
+degree 3, s in [3/5, 5/6] (t in [3/2, 5]), Bernstein degree 2: unknowns 1302, conditions 570, F outside the range 2.2e-15 ; best common margin lambda = +2.8894e-03 (optimal)  [5s]
+degree 3, s in [3/5, 5/6], Bernstein degree 2: unknowns 1302 ; equations 1500 (nodes 3/5, 79/120, 43/60, 31/40, 5/6)  [1s]
+  prime 1073741789: rank 570  [2s]
+  prime 1073741783: rank 570  [3s]
+  prime 1073741741: rank 570  [4s]
+  prime 1073741723: rank 570  [4s]
+echelon form lifted: rank 570, free unknowns 732 ; entries failing reconstruction or the cross-check prime: 0 ; largest numerator/denominator 106308  [5s]
+free unknowns rounded to denominator 2^24: max deviation from the numerical point 2.67e-05 ; all Bernstein coefficients positive definite: True (smallest leading minor 3.483e-10)  [5s]
+certificate written: interval3_3-5_5-6.json
