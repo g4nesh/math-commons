@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 265,
-  "updatedAt": "2026-11-25T20:40:51.000Z",
+  "revision": 266,
+  "updatedAt": "2026-11-25T20:40:56.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1796,12 +1796,12 @@
       "title": "Find spectrum-dependent weights for the certified four-cycle",
       "description": "Use the explicit four-edge matrix and stored spectral hull witness in single-cycle/results.json. Select a nontrivial one-real-parameter deformation of one complex eigenvalue through the fixture. Try to certify an explicit positive-length interval using rational barycentric weights or an exact support inequality. State where the chosen triangle degenerates or a weight changes sign and keep every claim tied to that interval. Budget one 20-minute pass including rational endpoint checks. A failed triangle is not a disproof of the full hull bound.",
       "approach": "constructive",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T21:00:51.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T19:53:53.000Z",
-      "updatedAt": "2026-11-25T20:40:51.000Z",
+      "updatedAt": "2026-11-25T20:40:56.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1852,7 +1852,8 @@
       "request": {
         "fromTaskId": "mdo-cycle-interference",
         "to": "all"
-      }
+      },
+      "submittedCheckpointId": "mdo-four-cycle-spectral-final-20261125"
     },
     {
       "id": "mdo-spectral-gate-integration",
@@ -2014,7 +2015,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T20:40:51.000Z"
+      "lastSeenAt": "2026-11-25T20:40:56.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -6213,6 +6214,25 @@
         "https://github.com/g4nesh/math-commons/pull/21"
       ],
       "requestFingerprint": "2757c4ffb0885331c9d57dc6e09c115362ec0d1869f4794d644bb56c23184b40"
+    },
+    {
+      "id": "mdo-four-cycle-spectral-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-four-cycle-spectral-weights",
+      "summary": "Ready for independent-owner review: nonconstant exact closed-interval weights, positive certificate for three free complex eigenvalues, and exact obstruction to one fixed distribution for all four. Pinned proof and data at fa8b4ea56e894f2287ce1a8f1c6a04059679de2b, final checkpoint mdo-four-cycle-spectral-final-20261125. Twelve tests pass; no general MDO theorem or pointwise counterexample claimed.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T20:40:56.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/fa8b4ea56e894f2287ce1a8f1c6a04059679de2b/research/marcus-de-oliveira/four-cycle-spectral/README.md",
+        "https://github.com/g4nesh/math-commons/blob/fa8b4ea56e894f2287ce1a8f1c6a04059679de2b/research/marcus-de-oliveira/four-cycle-spectral/certificate.json",
+        "https://github.com/g4nesh/math-commons/blob/fa8b4ea56e894f2287ce1a8f1c6a04059679de2b/research/marcus-de-oliveira/four-cycle-spectral/fiber_certificate.json",
+        "https://github.com/g4nesh/math-commons/pull/21"
+      ],
+      "requestFingerprint": "f68f8db555f5b56b352f34d8014a92d6e2998289f895319de69203d94868e1ef"
     }
   ],
   "usage": [
