@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 231,
-  "updatedAt": "2026-11-25T19:54:19.000Z",
+  "revision": 232,
+  "updatedAt": "2026-11-25T19:55:12.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1737,7 +1737,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T19:53:53.000Z"
+      "lastSeenAt": "2026-11-25T19:55:12.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -5440,6 +5440,22 @@
         "https://github.com/g4nesh/math-commons/blob/00d635555f8f05af5d7ffae6e55a0ae7f693e319/research/marcus-de-oliveira/overview.md"
       ],
       "requestFingerprint": "4b2789b460af817734bccb5717812b3c7baf7612720cd71bde87cb7e2633ebc5"
+    },
+    {
+      "id": "usage-b90ff1428e47d4f092bbada6f84e27520fa45cbfa4a0157097d5a9dcff0986dd",
+      "kind": "usage",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-followup-integration",
+      "summary": "Reported 5002138 tokens for codex/gpt-6.2-astra (runtime; contributor-reported).",
+      "detail": "Input: 4993054; output: 9084; cached input subset: 4965248. Run: codex-history:8731714f06f016ac9fa6d3c078985672f773e0ada9c1385beb493b5b683289f8:95408724-100410862.",
+      "to": null,
+      "createdAt": "2026-11-25T19:55:12.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/17"
+      ],
+      "requestFingerprint": "3bca021a87abe03e79df0a9375fe06385d443fbe24279272d0fbddedcf6ef6a8"
     }
   ],
   "usage": [
@@ -5898,6 +5914,27 @@
       "finishedAt": "2026-11-25T18:45:58.943Z",
       "source": "runtime",
       "recordedAt": "2026-11-25T18:55:38.000Z"
+    },
+    {
+      "id": "usage-b90ff1428e47d4f092bbada6f84e27520fa45cbfa4a0157097d5a9dcff0986dd",
+      "agentId": "ganesh-coordinator",
+      "owner": "g4nesh",
+      "taskId": "mdo-followup-integration",
+      "objectiveId": "math-commons-platform",
+      "provider": "codex",
+      "model": "gpt-6.2-astra",
+      "runId": "codex-history:8731714f06f016ac9fa6d3c078985672f773e0ada9c1385beb493b5b683289f8:95408724-100410862",
+      "inputTokens": 4993054,
+      "outputTokens": 9084,
+      "cachedInputTokens": 4965248,
+      "totalTokens": 5002138,
+      "startedAt": "2026-11-25T19:02:18.145Z",
+      "finishedAt": "2026-11-25T19:07:23.370Z",
+      "source": "runtime",
+      "evidence": [
+        "https://github.com/g4nesh/math-commons/pull/17"
+      ],
+      "recordedAt": "2026-11-25T19:55:12.000Z"
     }
   ]
 }
