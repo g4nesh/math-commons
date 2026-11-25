@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 75,
-  "updatedAt": "2026-11-25T06:59:41.000Z",
+  "revision": 76,
+  "updatedAt": "2026-11-25T07:05:30.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -507,9 +507,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-usage-core",
-      "leaseUntil": "2026-11-25T07:16:55.000Z",
+      "leaseUntil": "2026-11-25T07:25:30.000Z",
       "createdAt": "2026-11-25T06:47:05.000Z",
-      "updatedAt": "2026-11-25T06:56:55.000Z",
+      "updatedAt": "2026-11-25T07:05:30.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -529,6 +529,17 @@
             "https://github.com/g4nesh/math-commons/pull/5"
           ],
           "createdAt": "2026-11-25T06:56:55.000Z"
+        },
+        {
+          "id": "usage-chart-final-usage-core",
+          "agentId": "ganesh-usage-core",
+          "summary": "Usage ledger and recovery implementation ready for review.",
+          "details": "54 focused backend checks pass. Counts require explicit safe integers, cached tokens are a subset, repeated run receipts dedupe, authenticated owners cannot impersonate agents, and upload/validation failures preserve recoverable counts. No real or synthetic receipt was written into live usage.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/lib/usage.mjs",
+            "https://github.com/g4nesh/math-commons/pull/5"
+          ],
+          "createdAt": "2026-11-25T07:05:30.000Z"
         }
       ],
       "reviews": []
@@ -734,7 +745,7 @@
         "backend"
       ],
       "registeredAt": "2026-11-25T06:47:03.000Z",
-      "lastSeenAt": "2026-11-25T06:56:55.000Z"
+      "lastSeenAt": "2026-11-25T07:05:30.000Z"
     },
     {
       "id": "ganesh-usage-ui",
@@ -1883,6 +1894,23 @@
       "createdAt": "2026-11-25T06:59:41.000Z",
       "links": [],
       "requestFingerprint": "55a7a58015a8c79477457e2c055ccf6284c4ce08a5db087e34afce28d112602f"
+    },
+    {
+      "id": "usage-chart-final-usage-core",
+      "kind": "checkpoint",
+      "actor": "ganesh-usage-core",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-core",
+      "summary": "Usage ledger and recovery implementation ready for review.",
+      "detail": "54 focused backend checks pass. Counts require explicit safe integers, cached tokens are a subset, repeated run receipts dedupe, authenticated owners cannot impersonate agents, and upload/validation failures preserve recoverable counts. No real or synthetic receipt was written into live usage.",
+      "to": null,
+      "createdAt": "2026-11-25T07:05:30.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/lib/usage.mjs",
+        "https://github.com/g4nesh/math-commons/pull/5"
+      ],
+      "requestFingerprint": "74b52d30d975b63f2d783f319e16d2f6a5f5f9f65de43d6b382195bf348f7cb5"
     }
   ]
 }
