@@ -4,6 +4,7 @@
 - **Status:** the target is reached, as a computer-assisted result that has **not** been independently reviewed.
   - **Theorem S4 (exact):** for every U ∈ U(4), g0 + 2·D[12,12] + D[13,14] ≥ 0.
   - **Theorem HQ (consequence):** PMSH(4) holds for every Hermitian matrix whose four eigenvalues form a harmonic quadruple. Hence the Marcus–de Oliveira inclusion holds for n = 4 whenever one matrix has such a spectrum on a line and the other is any normal matrix.
+  - **Theorem R (Step 5):** the same for four more cross-ratio classes: 1/3, 1/4, 2/5, 1/6. The class 1/4 is the arithmetic progressions.
   - Everything else (other spectra, the general inequality (★), the conjecture itself) remains open.
 - **Evidence levels:** marked per item below.
 
@@ -113,6 +114,41 @@ The proof does not use the facet list of the compound polytope Q. A second class
 - Only harmonic spectra are covered. A spectrum with cross-ratio ρ needs f_t at t = ρ/(1−ρ) and at 1/t.
 - End-to-end numerical sanity check, not part of the proof (`end_to_end.py`): for three harmonic spectra and 624 unitaries, including the deepest cap unitaries, the certificate LP is feasible to 0, and the same weights reproduce det(D_a + H) for random complex a to 2·10⁻¹³.
 
+## Step 5 (done, exact): four more values of t, one cross-ratio class each
+
+**Which t a spectrum needs (`ratio_facets.py`, exact).** For any rational ratio ρ the script lists every facet of the projected polytope with an exact reduction, either to nonnegative coordinates or to one member L_t := g0 + (1 + 1/t)·D[12,12] + t·D[13,14] of the family at a permuted unitary (t·L_t = f_t). In every case run: 88 + 96 facets, and the 96 use t = ρ/(1−ρ) and its reciprocal, 48 each, when 0 < ρ < 1. The other five labellings of the same spectrum give the same two values ([`logs/ratio_facets_all_images.txt`](logs/ratio_facets_all_images.txt)).
+
+**More exact certificates (`run_t.py`).** The chain of Steps 1–3 runs unchanged at other t. Each time: 56 further null directions with entries 0, 1 and t/(1+t); 2,249 amplitudes; a rational certificate with positive definite blocks; identity exact at 1,100 fresh rational unitaries for two seeds; evaluation rank 954. Lemma 4 does not depend on t.
+
+| t | strict margin λ | certificate | proves on U(4) |
+| --- | --- | --- | --- |
+| 1/2 | 3.9·10⁻³ | [`certificate4_t1-2.json`](certificate4_t1-2.json) | g0 + 3·D[12,12] + (1/2)·D[13,14] ≥ 0 |
+| 1/3 | 1.9·10⁻³ | [`certificate4_t1-3.json`](certificate4_t1-3.json) | g0 + 4·D[12,12] + (1/3)·D[13,14] ≥ 0 |
+| 2/3 | 5.6·10⁻³ | [`certificate4_t2-3.json`](certificate4_t2-3.json) | g0 + (5/2)·D[12,12] + (2/3)·D[13,14] ≥ 0 |
+| 1/5 | 7.4·10⁻⁴ | [`certificate4_t1-5.json`](certificate4_t1-5.json) | g0 + 6·D[12,12] + (1/5)·D[13,14] ≥ 0 |
+
+At t = 1/5 the first exact solution (free unknowns rounded to denominator 2²⁰) was not positive definite; rounding to 2³⁰ gives one. `solve4.py` now writes a certificate only if it is positive definite.
+
+The reciprocal values t = 2, 3, 3/2, 5 are the exact degree-3 certificates of [`../star-exact/`](../star-exact/README.md), rechecked here with a fresh seed (`logs/verify3_*`).
+
+> **Theorem R.** Let H be a Hermitian 4×4 matrix with distinct eigenvalues whose cross-ratio, in some labelling, is one of
+>
+> | cross-ratio | t used | example spectra |
+> | --- | --- | --- |
+> | 1/2 (harmonic; Theorem HQ) | 1 | (0, 2, 3, 6) |
+> | 1/3 | 1/2, 2 | (0, 1, 2, 4), (0, 2, 3, 4) |
+> | **1/4** | 1/3, 3 | **every arithmetic progression**, e.g. (0, 1, 2, 3) |
+> | 2/5 | 2/3, 3/2 | (0, 1, 2, 6), (0, 4, 5, 6) |
+> | 1/6 | 1/5, 5 | (0, 1, 3, 5), (0, 2, 4, 5) |
+>
+> Then PMSH holds for H. Consequently the Marcus–de Oliveira inclusion holds for n = 4 when one normal matrix has such a spectrum on a line and the other is any normal matrix.
+
+*Proof.* As for Theorem HQ, with `ratio_facets.py` in place of `harmonic_facets.py`: at the listed ratio, 88 facets reduce to coordinates and 48 + 48 to L_t and L_{1/t} at permuted unitaries (certificates in [`ratio_facets.json`](ratio_facets.json)). Both are nonnegative on U(4) by the certificates above. ∎
+
+Each row is a single cross-ratio class: a set of spectra of codimension one. No open set of spectra is covered. Evidence level and caveats are those of Theorem HQ.
+
+End-to-end numerical sanity check (`end_to_end.py more`, not part of the proof): 8 spectra from these classes and 1,664 pairs (U, c): the certificate LP is feasible to 0, and its weights reproduce det(D_a + H) to the LP tolerance (6·10⁻⁷).
+
 ## Reproduction
 
 Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0, cvxpy 1.7.5 (Clarabel), python-flint 0.6.0. Run from this directory.
@@ -125,11 +161,15 @@ python3 lemma4.py 10254 1                          # rank K4 >= 10254 (about 4 m
 python3 chiro_exact.py                             # ... recomputed in exact integer arithmetic (1 minute)
 python3 harmonic_facets.py 1/2 2 -1                # all facets at the harmonic ratios, each certified exactly
 python3 ratio_half.py 1/2 2 -1                     # optional: the same split via the exotic facets of Q
+for t in 1-2 1-3 2-3 1-5; do python3 verify4.py certificate4_t$t.json 777; done          # degree 4, t < 1
+(cd ../star-exact && for t in 2 3 1.5 5; do python3 verify_cert.py certificate_t$t.json; done)   # degree 3, t > 1
+python3 ratio_facets.py 1/3 1/4 2/5 1/6            # facets at these ratios reduce to coordinates, L_t and L_{1/t}
 
 # construction (needs the zeros produced by ../star-exact: zeros.py, zero_walk.py):
 python3 zeros4.py && python3 complement4.py
 python3 reduced4.py 1 && python3 center4.py - 1 && python3 second4.py 1
 python3 solve4.py 1
+python3 run_t.py 1/2                               # the whole chain at another t
 ```
 
 Outputs of the runs reported here are in [`logs/`](logs/).
@@ -137,5 +177,5 @@ Outputs of the runs reported here are in [`logs/`](logs/).
 ## Next steps
 
 5. Independent review by another GitHub owner: rerun the checks above; read the proof of Theorem HQ and the lemma's argument.
-6. More spectra: degree 4 looks feasible for t from about 0.1 upward (tested up to 5), so pairs (t, 1/t) of exact certificates would cover more cross-ratios one at a time. A continuum needs certificates that are rational in t.
+6. An open set of spectra. Single values of t give single cross-ratio classes. An interval of t needs one certificate that depends on t. The structure found here suggests how: the null directions are linear in s = t/(1+t) with a fixed 0/1 pattern (checked at t = 1, 1/2, 1/3, 2/3, 1/5), so amplitudes can be taken linear in s and the Gram blocks polynomial in s.
 7. A literature check for Theorem HQ (Kovačec 1999 in particular).
