@@ -97,6 +97,7 @@ Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0; cvxpy 1.7.5 with Clarabel
 | `chiro.py` | orientation quadratics and critical values | float64 determinants rounded to integers | 2,704,156 subsets; max deviation from an integer 4.3·10⁻¹⁴; max \|coefficient\| 64; 41 critical values |
 | `facets_exact.py` | Step 4, item 2 | exact integer / rational | 42 intervals, each 184 = 88 + 96, 0 unexplained; all 288 triples used |
 | `verify_rest.py` | Step 4, item 3; the 82 facets of Q | symbolic; float64 determinants rounded | 288 of 288 identities; Q's facets = 16 + 18 + 48 |
+| `forms_check.py` | the SO(6) and block reformulations of (★) | float | errors ≤ 3·10⁻¹⁵; smallest margin of (★) on 4,000 Haar unitaries is 0.046 |
 
 **Trusted components and limits.**
 - Orientation determinants are computed in float64 and rounded. All entries are small integers and every determinant is an integer of absolute value ≤ 64 (computed deviation ≤ 4.3·10⁻¹⁴), so the rounding is safe, but it is not exact integer arithmetic. A reviewer may want to recompute with a fraction-free method.
@@ -117,6 +118,19 @@ Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0; cvxpy 1.7.5 with Clarabel
 These certificates are numerical (interior-point solver, tolerance about 10⁻⁸). They are **not** proofs.
 
 **Reading.** In the regime D[12,12] ≥ D[13,14] (optimal t ≥ 1), (★) has a numerical degree-3 certificate. Degree 4 extends this to t ≥ 0.1, i.e. D[12,12] ≥ D[13,14]/100. As t → 0 the degree needed grows, so the square-root form needs a different kind of certificate there. The first parameter-free attempt (discriminant form with multiplier degree 2) fails by a margin of about 6·10⁻⁵; a higher multiplier degree was not tried.
+
+## Other forms of (★), for whoever attacks it
+
+These are reformulations, not progress on the proof. Both are checked numerically in `star/forms_check.py` (errors ≤ 3·10⁻¹⁵ on 4,000 Haar unitaries).
+
+- **Frame form.** Every minor in (★) uses row 1. With rows x, a, b, c of U (an orthonormal frame of ℂ⁴), U[1k, T] for T = {i, j} is x_i y_j − x_j y_i with y the k-th row. So (★) is an inequality about one unit vector x and an orthonormal basis (a, b, c) of its complement.
+- **SO(6) form.** For det U = 1 the second compound is a real orthogonal matrix R ∈ SO(6) in the basis of `star/so6.py`, split into 2×2 blocks R_MN by the three matchings. Each block acts on ℂ as z ↦ ζ_MN·z + ω_MN·z̄, and D[S,T] = |ζ_MN|², D[S,Tᶜ] = |ω_MN|² for the members S, T of the matchings that contain index 1.
+- **Block form.** Let A be the 4×4 real matrix formed by the blocks R_MN with M, N ∈ {2, 3}. It has singular values (1, 1, s₁, s₂) and det A = det R₁₁. When det A < 0, the margin of (★) equals
+
+  |z₁₁|² + |z₂₂|² + ½‖A₁₂‖_F² + (s₁ − s₂)·|z₁₂| + det A,
+
+  where z₁₁, z₂₂, z₁₂ are the complex-linear parts of the 2×2 blocks of A. When det A ≥ 0, (★) is trivial. So (★) is a statement about real 4×4 contractions with two unit singular values and negative determinant.
+- **Where it is tight.** On products of two Givens rotations acting on disjoint pairs (times a permutation). There the margin is 0 on a two-parameter family, not only at permutation matrices.
 
 ## Adversarial checks and negative results
 
