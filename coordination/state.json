@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 8,
-  "updatedAt": "2026-11-25T06:11:34.000Z",
+  "revision": 9,
+  "updatedAt": "2026-11-25T06:11:35.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -177,6 +177,22 @@
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "mdo-search",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Search for reproducible convex-hull violations",
+      "description": "Develop bounded search over normal pairs via validated unitary mixing. Initial budget n≤6, 200 trials, 60 seconds CPU; record seeds, spectra, matrices, precision, hull method and residuals. Preserve near-boundary candidates as unverified and request certificate checks. Own research/marcus-de-oliveira/search/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+      "approach": "computational",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:11:35.000Z",
+      "updatedAt": "2026-11-25T06:11:35.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -191,7 +207,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:11:34.000Z"
+      "lastSeenAt": "2026-11-25T06:11:35.000Z"
     }
   ],
   "events": [
@@ -306,6 +322,20 @@
       "createdAt": "2026-11-25T06:11:34.000Z",
       "links": [],
       "requestFingerprint": "d7073d3ec207e4c21a8511b3fcb1c20d79f9ec4c6a9f9ee00febb35fbe4daf14"
+    },
+    {
+      "id": "mdo-initial-20261124-mdo-search",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-search",
+      "summary": "Proposed computational task: Search for reproducible convex-hull violations",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:11:35.000Z",
+      "links": [],
+      "requestFingerprint": "8eed5edd62a68c986e6260cac4fcafb2c5a490c8ec7115d30b5100d2757901ec"
     }
   ]
 }
