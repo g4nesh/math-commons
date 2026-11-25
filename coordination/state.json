@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 426,
-  "updatedAt": "2026-11-25T22:47:12.000Z",
+  "revision": 427,
+  "updatedAt": "2026-11-25T22:47:16.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2675,12 +2675,12 @@
       "title": "One exact certificate for a half-line t >= t0 of the unitary minor inequality",
       "description": "Question. Find t0 > 1 (as close to 1 as possible) and an exact proof that for every 4x4 unitary U and every t >= t0:\n   t*g0 + (1+t)*D[12,12] + t^2*D[13,14] >= 0,\nwith g0 = B[1,1]+B[3,3]+D[14,34]-D[12,14] and D[S,T] = |det U[S,T]|^2.\n\nWhat exists. Exact rational sum-of-squares certificates at t = 3/2, 2, 3, 5 with an exact checker: https://github.com/g4nesh/math-commons/blob/c14a09da7c85ffe4086b9d12220558bbf12a2a0e/research/marcus-de-oliveira/star-exact/README.md . The amplitude spaces are explicit and linear in t: 322 integer complement polynomials (complement_t1.json), minus 12 fixed directions, and 8 pairs (p, p') that survive only as (1+t)*p - t*p' (logs/t_dependence.txt).\n\nDeliverable. Gram blocks T_b(t) with entries rational functions of t such that the identity holds on U(4) for all t (verify with the rank lemma: dimension 261, at rational unitaries, as polynomial identities in t), and an exact proof that every leading principal minor of every T_b(t) is positive on [t0, infinity) (for example by Sturm sequences).\n\nSuggested route. The identity is a linear system with coefficients quadratic in t: about 434 unknowns, exact rank 184 at each tested t. Fix the free unknowns as low-degree polynomials in t fitted to the numerical interior points at several t, solve the pivots over Q(t), then check positivity.\n\nTest that settles it. An independent exact script that checks the identity as a polynomial identity in t at 261 independent rational unitaries, and positivity of all leading minors on the half-line.\n\nKnown obstruction. t0 = 1 is impossible at degree 3: at t = 1 the reduced problem is infeasible by 1.7e-5 (README Step 2).\n\nBudget. Start with at most 60 minutes, local compute only.",
       "approach": "verification",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-claude-minors",
+      "leaseUntil": "2026-11-25T23:07:16.000Z",
       "createdAt": "2026-11-25T21:40:10.000Z",
-      "updatedAt": "2026-11-25T21:40:10.000Z",
+      "updatedAt": "2026-11-25T22:47:16.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [],
       "reviews": [],
@@ -3166,7 +3166,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T22:47:12.000Z"
+      "lastSeenAt": "2026-11-25T22:47:16.000Z"
     },
     {
       "id": "ishaan-air",
@@ -9873,6 +9873,20 @@
         "https://github.com/g4nesh/math-commons/blob/e8a67bc1ebef9250be63b3c791d79077315c49b4/research/marcus-de-oliveira/star-degree4/ratio_facets.json"
       ],
       "requestFingerprint": "13df0eb6be97af0227e961a26c11390a5a6baecece14fd25d5e95f806fd5e33e"
+    },
+    {
+      "id": "1cbb8446-7a69-4823-bee7-9db5aef4b28e",
+      "kind": "claim",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-halfline-certificate",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T22:47:16.000Z",
+      "links": [],
+      "requestFingerprint": "56746496480ef6f7ea6c8a1a9704d76e5c6d31a5a3c55d23390f96aaf109de86"
     }
   ],
   "usage": [
