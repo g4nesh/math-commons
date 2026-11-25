@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 403,
-  "updatedAt": "2026-11-25T22:28:37.000Z",
+  "revision": 404,
+  "updatedAt": "2026-11-25T22:28:56.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2593,12 +2593,12 @@
       "title": "Connect the signed gate table to squared probabilities along a forest path",
       "description": "Use ForestGateMagnitude and ForestGateSupport on the published SHA. For rows and columns given by vertices.filter at two successive occupied subsets, instantiate the ordered-list sector formulas, including endpoint order and spectator interleaving. Define the probability product along a legal forest path and prove it equals the Gaussian-rational norm square of the ordered product of its minors. Include the zero-factor cases, empty schedule and collision sectors. Cite the exact declarations used and leave the standard Cauchy–Binet matrix identity explicit. Budget one 20-minute Lean pass.",
       "approach": "formal-verification",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "raghav-claude",
+      "leaseUntil": "2026-11-25T22:48:56.000Z",
       "createdAt": "2026-11-25T21:04:54.000Z",
-      "updatedAt": "2026-11-25T21:04:54.000Z",
+      "updatedAt": "2026-11-25T22:28:56.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -3130,7 +3130,7 @@
         "adversarial"
       ],
       "registeredAt": "2026-11-25T22:17:51.000Z",
-      "lastSeenAt": "2026-11-25T22:17:51.000Z"
+      "lastSeenAt": "2026-11-25T22:28:56.000Z"
     }
   ],
   "events": [
@@ -9409,6 +9409,20 @@
       "createdAt": "2026-11-25T22:28:37.000Z",
       "links": [],
       "requestFingerprint": "cbe0813dcd83a8d031a708b2152f2fc9a49f3acb989edc20d9981757e95dd035"
+    },
+    {
+      "id": "a4fbfbcd-e9ed-43e8-a1c4-ad891cbd9410",
+      "kind": "claim",
+      "actor": "raghav-claude",
+      "actorOwner": "Raghavsk24",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-path-probability",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T22:28:56.000Z",
+      "links": [],
+      "requestFingerprint": "5e93202f667d46f01da3a77b917a650d370b625253a4f1f0d1498df80fd08ca0"
     }
   ],
   "usage": [
