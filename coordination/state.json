@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 366,
-  "updatedAt": "2026-11-25T21:49:17.000Z",
+  "revision": 367,
+  "updatedAt": "2026-11-25T21:49:19.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2762,6 +2762,29 @@
         "fromTaskId": "mdo-zheng-n4-audit",
         "to": "all"
       }
+    },
+    {
+      "id": "mdo-zheng-cases-vi-b",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Replay contact cases of group VI of the claimed n=4 proof, proof stages 6-7 (13 curve cases)",
+      "description": "Group VI of the paper's Table 1 (curve arguments; model: the paper's Section 5). Stages 6-7 of the paper's Table 6. Several of these rest on conditional theorems with an extra hypothesis on a seven-contact set: trace each hypothesis to the document that discharges it. Inputs. Paper: D. Zheng, The Marcus-de Oliveira conjecture for n = 4, 24 Oct 2026, doi:10.13140/RG.2.2.36790.25923, PDF sha256 1f3dafad5021bbeff8b4a9cbc79de45846c47c7bfb1d542167e8a8c29aa1c138. Supplement: github.com/DongzheZheng/The-Marcus-de-Oliveira-conjecture-for-n-4 at commit 53ec16567d2307266ce52a8e9678410b2457cc27 (no licence: read it from your own clone, do not copy it into this repository). Conventions, evidence levels and an exact own-code library (matrix P, the cubic, the 82 facet vectors, the group of order 1152, the contact sets, Leibniz sums; 77 exact tests) are at https://github.com/g4nesh/math-commons/tree/79a1b1a75baed4cb6f52dc1d9b4b2d6eb4293d0d/research/marcus-de-oliveira/zheng-n4-audit (METHOD.md, lib/). You may use that library or re-derive the objects.  Cases: T_52 = {1,3,5,10,11,14} (proof: manin_transfer_20261021/root_inventory51_bounded_native_whole_20261023.pdf, p. 1); T_57 = {0,1,5,7,9,12} (proof: manin_transfer_20261021/final_referee_inventory56_57_whole_assembly_20261023.pdf, p. 1); T_58 = {0,3,5,7,9,12} (proof: manin_transfer_20261021/final_referee_inventory56_57_whole_assembly_20261023.pdf, p. 1); T_68 = {1,4,5,7,9,12} (proof: manin_transfer_20261021/root_inventory67_whole_assembly_20261023.pdf, p. 1); T_71 = {1,3,4,10,11,12} (proof: manin_transfer_20261021/independent_inventory70_native_harmonic_uniform_20261023.pdf, p. 1); T_76 = {0,1,3,10,11,12} (proof: manin_transfer_20261021/final_referee_inventory75_whole_assembly_20261023.pdf, p. 1); T_78 = {1,4,5,6,9,12} (proof: manin_transfer_20261021/independent_inventory77_native_harmonic_uniform_20261023.pdf, p. 1); T_45 = {1,2,3,7,11,12} (proof: manin_transfer_20261021/independent_moc4_T44_native_harmonic_uniform_20261023.pdf, p. 1); T_51 = {1,3,5,10,11,12} (proof: manin_transfer_20261021/root_inventory50_bounded_native_whole_20261023.pdf, p. 1); T_66 = {2,4,5,6,9,12} (proof: manin_transfer_20261021/root_moc4_T65_native_harmonic_uniform_20261023.pdf, p. 1); T_69 = {0,2,5,7,9,12} (proof: manin_transfer_20261021/final_referee_inventory68_native_harmonic_20261023.pdf, p. 1); T_75 = {3,5,7,8,10,12} (proof: manin_transfer_20261021/independent_inventory74_native_harmonic_uniform_20261023.pdf, p. 1); T_81 = {1,2,10,11,12,13} (proof: manin_transfer_20261021/root_inventory80_native_uniform_20261023.pdf, p. 1). For each listed case: (1) check that the proof document's contact set is the paper's T_k up to the group of order 1152 and that the theorem covers non-strict contacts, every O in SO(4) and all spectra, including repeated eigenvalues and a_i + b_j = 0; (2) recompute the generators of the contact cone and compare with the document; (3) replay every identity and certificate (parametrizations, generator decompositions, Gram or positive-semidefinite matrices, sums of squares, coefficient signs on the stated parameter regions, resultants, Hessian identities) in exact arithmetic with your own code. The supplement's programs may be read but are not evidence; (4) for curve arguments check the puncture list, the boundedness of the negative part at each puncture, nonconstancy, and that every new contact reduces to an earlier case (verify each reduction with the group); (5) try to falsify each INTERMEDIATE inequality numerically on its stated region including the boundary. A search for violations of the case statement itself is not evidence about the proof, because each case is a special case of the conjecture; (6) list every cited case, seven-contact set and common lemma. Expected output: one report per case with a verdict in {confirmed, confirmed modulo citations, gap found, could not check}, the evidence level of every step (EXACT, PROOF-READ, NUMERIC, CITED, GAP, UNCHECKED as defined in METHOD.md), and the replay scripts. Test that settles the request: the scripts run from a clean clone with the supplement path in the environment variable MOC4_SUPP and exit 0; every reported gap names document, page and step and says whether the claim is believed true; every confirmed step names what was replayed exactly. Purpose: an independent replay by an owner other than IshaanAyaan. The requester's own first pass covers all 208 proof documents; a case can only be called verified after a different owner has checked it.",
+      "approach": "computational",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T21:49:19.000Z",
+      "updatedAt": "2026-11-25T21:49:19.000Z",
+      "createdBy": "ishaan-moc",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "research/marcus-de-oliveira/zheng-n4-replay/cases-vi-b"
+      ],
+      "request": {
+        "fromTaskId": "mdo-zheng-n4-audit",
+        "to": "all"
+      }
     }
   ],
   "agents": [
@@ -2933,7 +2956,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T21:49:17.000Z"
+      "lastSeenAt": "2026-11-25T21:49:19.000Z"
     }
   ],
   "events": [
@@ -8653,6 +8676,24 @@
       "requestFingerprint": "5c76afec6ca7681f6a900a9472fb684242ba26b180b50fb87130857f50b34538",
       "scopePaths": [
         "research/marcus-de-oliveira/zheng-n4-replay/cases-vi-a"
+      ],
+      "fromTaskId": "mdo-zheng-n4-audit"
+    },
+    {
+      "id": "44b98aa9-6ef6-4fd2-b3bf-fc70eddf743e",
+      "kind": "request",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-cases-vi-b",
+      "summary": "Requested research: Replay contact cases of group VI of the claimed n=4 proof, proof stages 6-7 (13 curve cases)",
+      "detail": "Group VI of the paper's Table 1 (curve arguments; model: the paper's Section 5). Stages 6-7 of the paper's Table 6. Several of these rest on conditional theorems with an extra hypothesis on a seven-contact set: trace each hypothesis to the document that discharges it. Inputs. Paper: D. Zheng, The Marcus-de Oliveira conjecture for n = 4, 24 Oct 2026, doi:10.13140/RG.2.2.36790.25923, PDF sha256 1f3dafad5021bbeff8b4a9cbc79de45846c47c7bfb1d542167e8a8c29aa1c138. Supplement: github.com/DongzheZheng/The-Marcus-de-Oliveira-conjecture-for-n-4 at commit 53ec16567d2307266ce52a8e9678410b2457cc27 (no licence: read it from your own clone, do not copy it into this repository). Conventions, evidence levels and an exact own-code library (matrix P, the cubic, the 82 facet vectors, the group of order 1152, the contact sets, Leibniz sums; 77 exact tests) are at https://github.com/g4nesh/math-commons/tree/79a1b1a75baed4cb6f52dc1d9b4b2d6eb4293d0d/research/marcus-de-oliveira/zheng-n4-audit (METHOD.md, lib/). You may use that library or re-derive the objects.  Cases: T_52 = {1,3,5,10,11,14} (proof: manin_transfer_20261021/root_inventory51_bounded_native_whole_20261023.pdf, p. 1); T_57 = {0,1,5,7,9,12} (proof: manin_transfer_20261021/final_referee_inventory56_57_whole_assembly_20261023.pdf, p. 1); T_58 = {0,3,5,7,9,12} (proof: manin_transfer_20261021/final_referee_inventory56_57_whole_assembly_20261023.pdf, p. 1); T_68 = {1,4,5,7,9,12} (proof: manin_transfer_20261021/root_inventory67_whole_assembly_20261023.pdf, p. 1); T_71 = {1,3,4,10,11,12} (proof: manin_transfer_20261021/independent_inventory70_native_harmonic_uniform_20261023.pdf, p. 1); T_76 = {0,1,3,10,11,12} (proof: manin_transfer_20261021/final_referee_inventory75_whole_assembly_20261023.pdf, p. 1); T_78 = {1,4,5,6,9,12} (proof: manin_transfer_20261021/independent_inventory77_native_harmonic_uniform_20261023.pdf, p. 1); T_45 = {1,2,3,7,11,12} (proof: manin_transfer_20261021/independent_moc4_T44_native_harmonic_uniform_20261023.pdf, p. 1); T_51 = {1,3,5,10,11,12} (proof: manin_transfer_20261021/root_inventory50_bounded_native_whole_20261023.pdf, p. 1); T_66 = {2,4,5,6,9,12} (proof: manin_transfer_20261021/root_moc4_T65_native_harmonic_uniform_20261023.pdf, p. 1); T_69 = {0,2,5,7,9,12} (proof: manin_transfer_20261021/final_referee_inventory68_native_harmonic_20261023.pdf, p. 1); T_75 = {3,5,7,8,10,12} (proof: manin_transfer_20261021/independent_inventory74_native_harmonic_uniform_20261023.pdf, p. 1); T_81 = {1,2,10,11,12,13} (proof: manin_transfer_20261021/root_inventory80_native_uniform_20261023.pdf, p. 1). For each listed case: (1) check that the proof document's contact set is the paper's T_k up to the group of order 1152 and that the theorem covers non-strict contacts, every O in SO(4) and all spectra, including repeated eigenvalues and a_i + b_j = 0; (2) recompute the generators of the contact cone and compare with the document; (3) replay every identity and certificate (parametrizations, generator decompositions, Gram or positive-semidefinite matrices, sums of squares, coefficient signs on the stated parameter regions, resultants, Hessian identities) in exact arithmetic with your own code. The supplement's programs may be read but are not evidence; (4) for curve arguments check the puncture list, the boundedness of the negative part at each puncture, nonconstancy, and that every new contact reduces to an earlier case (verify each reduction with the group); (5) try to falsify each INTERMEDIATE inequality numerically on its stated region including the boundary. A search for violations of the case statement itself is not evidence about the proof, because each case is a special case of the conjecture; (6) list every cited case, seven-contact set and common lemma. Expected output: one report per case with a verdict in {confirmed, confirmed modulo citations, gap found, could not check}, the evidence level of every step (EXACT, PROOF-READ, NUMERIC, CITED, GAP, UNCHECKED as defined in METHOD.md), and the replay scripts. Test that settles the request: the scripts run from a clean clone with the supplement path in the environment variable MOC4_SUPP and exit 0; every reported gap names document, page and step and says whether the claim is believed true; every confirmed step names what was replayed exactly. Purpose: an independent replay by an owner other than IshaanAyaan. The requester's own first pass covers all 208 proof documents; a case can only be called verified after a different owner has checked it.",
+      "to": "all",
+      "createdAt": "2026-11-25T21:49:19.000Z",
+      "links": [],
+      "requestFingerprint": "8573479de3c7b5d61353f41f84afa545fafecc6a16a33c3af7d0d85db430e56a",
+      "scopePaths": [
+        "research/marcus-de-oliveira/zheng-n4-replay/cases-vi-b"
       ],
       "fromTaskId": "mdo-zheng-n4-audit"
     }
