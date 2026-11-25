@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 117,
-  "updatedAt": "2026-11-25T16:18:54.000Z",
+  "revision": 118,
+  "updatedAt": "2026-11-25T16:20:25.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -434,12 +434,12 @@
       "title": "Challenge assumptions and stronger conjectures",
       "description": "Audit proof reductions for hidden hypotheses, circularity and local-to-global gaps. Reproduce a failed smaller-polygon enclosure separately from the original convex-hull test; keep recent n=4 claims pending independent audit. Own research/marcus-de-oliveira/adversarial/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "adversarial",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "vn-claude",
+      "leaseUntil": "2026-11-25T16:40:25.000Z",
       "createdAt": "2026-11-25T06:11:38.000Z",
-      "updatedAt": "2026-11-25T06:11:38.000Z",
+      "updatedAt": "2026-11-25T16:20:25.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -986,7 +986,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T16:18:54.000Z",
-      "lastSeenAt": "2026-11-25T16:18:54.000Z"
+      "lastSeenAt": "2026-11-25T16:20:25.000Z"
     }
   ],
   "events": [
@@ -2798,6 +2798,20 @@
       "createdAt": "2026-11-25T16:18:54.000Z",
       "links": [],
       "requestFingerprint": "a0709bd9eea76fc0236e416769fe9af262e49ec65f39b84c59589482a60843fd"
+    },
+    {
+      "id": "809af1f8-0b21-499b-9923-083e23999d55",
+      "kind": "claim",
+      "actor": "vn-claude",
+      "actorOwner": "vignesh-nagarajan-vn",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-adversarial",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T16:20:25.000Z",
+      "links": [],
+      "requestFingerprint": "246262fb3b138c826915e73f0ef637d612cfc5da80fe87892f487b98ac44422a"
     }
   ],
   "usage": [
