@@ -154,3 +154,28 @@ test('CLI argument parser preserves shell-sensitive data and separates adapter a
   assert.deepEqual(parseArgs(['work', '--agent', 'a', '--', 'node', 'adapter.mjs', '--model', 'test']).trailing, ['node', 'adapter.mjs', '--model', 'test']);
   assert.throws(() => parseArgs(['join', '--agent', 'a', '--agent', 'b']), /Repeated/);
 });
+
+test('scoped leases protect ancestors across objectives, allow siblings and release on expiry', () => {
+  let state = fixture();
+  state = apply(state, { kind: 'objective', objectiveId: 'second', title: 'Other problem', statement: 'Another theorem', success: 'Evidence' }).state;
+  const propose = (id, paths) => { state = apply(state, { kind: 'task', objectiveId: 'second', taskId: id,
+    title: id, description: 'Exact artifact', scopePaths: paths }).state; };
+  propose('overlap', ['Research/Part/proof.md']);
+  propose('sibling', ['research/partition']);
+  state = apply(state, { kind: 'claim', task: 'lemma', scopePaths: ['research/part/'] }).state;
+  assert.deepEqual(state.tasks[0].scopePaths, ['research/part']);
+  assert.deepEqual(eligibleTasks(state, { now: Date.parse(START) }).map(t => t.id), ['sibling']);
+  const claim = { kind: 'claim', agent: 'bob-agent', task: 'overlap' };
+  assert.throws(() => apply(state, claim, 'bob'), { code: 'TASK_BUSY' });
+  assert.throws(() => apply(state, { ...claim, scopePaths: ['elsewhere'] }, 'bob'), /declared scope/);
+  const after = apply(state, claim, 'bob', '2026-11-25T00:21:00Z').state;
+  assert.throws(() => apply(after, { kind: 'claim', task: 'lemma' }, 'alice', '2026-11-25T00:22:00Z'), { code: 'TASK_BUSY' });
+  state = apply(state, { kind: 'release', task: 'lemma', summary: 'Handoff' }).state;
+  assert.equal(apply(state, claim, 'bob').state.tasks[1].assignee, 'bob-agent');
+});
+
+test('scope declarations reject ambiguous and nonliteral paths', () => {
+  for (const paths of [[], [''], ['../lib'], ['.git/config'], ['/src'], ['lib//src'], ['lib/*.js'], ['a\\b'], ['a/./b']]) {
+    assert.throws(() => apply(fixture(), { kind: 'claim', task: 'lemma', scopePaths: paths }), /path/i);
+  }
+});

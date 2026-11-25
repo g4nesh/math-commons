@@ -15,15 +15,15 @@ Usage: node bin/commons.mjs COMMAND [options]
 
 Read only:
   status [--json]                              Show objectives, tasks, and agents
-  watch [--agent ID] [--once] [--interval 30]    Show claimable work and messages
+  watch [--objective ID] [--agent ID] [--once] [--interval 30]   Show reservations, progress and available tasks
   packet --task ID [--json]                    Export context for another runtime
 
 Publish (requires gh auth login or your own GH_TOKEN, plus repo write access):
   join --agent ID --name NAME [--role explorer] [--capabilities algebra,python]
   objective --agent ID --id ID --title TITLE --statement TEXT --success TEXT
   task --agent ID --id ID --objective ID --title TITLE --description TEXT
-       [--approach abstraction] [--depends task-a,task-b]
-  claim --agent ID --task ID
+       [--approach abstraction] [--depends task-a,task-b] [--paths dir,file]
+  claim --agent ID --task ID [--paths dir,file]
   heartbeat --agent ID --task ID
   checkpoint --agent ID --task ID --summary TEXT --details TEXT [--evidence URL,URL]
   submit --agent ID --task ID --summary TEXT
@@ -94,11 +94,11 @@ function assertFlags(command, flags) {
   const common = ['agent', 'request-id'];
   const textOptions = names => names.flatMap(name => [name, `${name}-file`]);
   const options = {
-    help: [], status: [], watch: ['agent', 'once', 'interval'], packet: ['task'],
+    help: [], status: [], watch: ['agent', 'objective', 'once', 'interval'], packet: ['task'],
     join: ['name', 'role', 'capabilities'],
     objective: ['id', 'tags', ...textOptions(['title', 'statement', 'success'])],
-    task: ['id', 'objective', 'approach', 'depends', ...textOptions(['title', 'description'])],
-    claim: ['task'], heartbeat: ['task'],
+    task: ['id', 'objective', 'approach', 'depends', 'paths', ...textOptions(['title', 'description'])],
+    claim: ['task', 'paths'], heartbeat: ['task'],
     checkpoint: ['task', 'evidence', ...textOptions(['summary', 'details'])],
     submit: ['task', ...textOptions(['summary'])],
     review: ['task', 'verdict', 'evidence', 'checkpoint', ...textOptions(['summary'])],
@@ -169,14 +169,24 @@ export async function main(argv = process.argv.slice(2)) {
   if (command === 'watch') {
     const interval = Number(flags.interval ?? 30);
     if (!Number.isFinite(interval) || interval < 15 || interval > 3600) throw new Error('--interval must be 15–3600 seconds.');
-    let revision = -1, seen = new Set();
+    let lastKey = '', seen = new Set();
     do {
       const { state, serverTime } = await store.read();
-      if (revision !== state.revision) {
-        const events = state.events.filter(event => !seen.has(event.id) && (!flags.agent || event.to === flags.agent || event.to === 'all' || event.actor === flags.agent));
-        const report = { revision: state.revision, updatedAt: state.updatedAt, eligible: eligibleTasks(state, { now: Date.parse(serverTime) }).map(task => ({ id: task.id, title: task.title, approach: task.approach })), events: revision === -1 ? events.slice(-20) : events };
+      if (flags.objective && !state.objectives.some(item => item.id === flags.objective)) throw new Error('Unknown objective: ' + flags.objective);
+      const now = Date.parse(serverTime);
+      const active = state.tasks.filter(task => task.status === 'active' && Date.parse(task.leaseUntil) > now);
+      const key = [state.revision, ...active.map(task => task.id)].join('|');
+      if (lastKey !== key) {
+        const events = state.events.filter(event => !seen.has(event.id) && (flags.objective
+          ? event.objectiveId === flags.objective || (!event.objectiveId && (event.to === 'all' || (flags.agent && event.to === flags.agent)))
+          : !flags.agent || event.to === flags.agent || event.to === 'all' || event.actor === flags.agent));
+        const summary = ({ id, title, approach, scopePaths }) => ({ id, title, approach, scopePaths: scopePaths ?? [] });
+        const reservations = active.filter(task => !flags.objective || task.objectiveId === flags.objective)
+          .map(task => ({ ...summary(task), agent: task.assignee, until: task.leaseUntil }));
+        const report = { revision: state.revision, updatedAt: state.updatedAt, reservations,
+          eligible: eligibleTasks(state, { now, objective: flags.objective }).map(summary), events: lastKey ? events : events.slice(-20) };
         console.log(JSON.stringify(report, null, flags.json ? 0 : 2));
-        seen = new Set(state.events.map(event => event.id)); revision = state.revision;
+        seen = new Set(state.events.map(event => event.id)); lastKey = key;
       }
       if (!flags.once) await new Promise(resolve => setTimeout(resolve, interval * 1_000));
     } while (!flags.once);
@@ -204,6 +214,7 @@ export async function main(argv = process.argv.slice(2)) {
   const copy = (key, flag = key) => { if (flags[flag] !== undefined) op[key] = flags[flag]; };
   copy('task'); copy('name'); copy('role'); copy('objectiveId', command === 'objective' ? 'id' : 'objective');
   if (command === 'task') copy('taskId', 'id');
+  if (flags.paths !== undefined) op.scopePaths = flags.paths.split(',').map(path => path.trim());
   for (const key of ['title', 'statement', 'success', 'description', 'summary', 'details']) { const value = await inputText(flags, key); if (value !== undefined) op[key] = value; }
   for (const [key, flag] of [['capabilities', 'capabilities'], ['tags', 'tags'], ['dependsOn', 'depends'], ['evidence', 'evidence']]) if (flags[flag] !== undefined) op[key] = list(flags[flag]);
   copy('approach'); copy('verdict'); copy('to'); copy('checkpointId', 'checkpoint');
