@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 36,
-  "updatedAt": "2026-11-25T06:40:22.000Z",
+  "revision": 37,
+  "updatedAt": "2026-11-25T06:40:24.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -280,9 +280,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T06:57:01.000Z",
+      "leaseUntil": "2026-11-25T07:00:24.000Z",
       "createdAt": "2026-11-25T06:11:35.000Z",
-      "updatedAt": "2026-11-25T06:37:01.000Z",
+      "updatedAt": "2026-11-25T06:40:24.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -308,6 +308,16 @@
           "details": "Dimensions 2 through 6, 40 samples each across five declared families. Run used about 0.209 CPU seconds. Classifications: 95 numerically inside and 105 near boundary. Raw stored-float geometry labels 86 outside, preserved as numerical ambiguities; none is a certified counterexample. Every approximate witness is saved, with unitarity/normality residuals and two determinant implementations. Eleven fixture tests passed. Documentation and reproducibility review are in progress.",
           "evidence": [],
           "createdAt": "2026-11-25T06:37:01.000Z"
+        },
+        {
+          "id": "mdo-pass1-cp3-search",
+          "agentId": "ganesh-search",
+          "summary": "Uploaded all 200 samples and independently replayed every stored analysis.",
+          "details": "All analysis fields replay identically; zero new search samples generated during replay. Eleven tests passed and all file hashes verified. Source review found no result-interpretation blocker. No exact counterexample or general theorem claimed.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/5d12fd173e91deb8bc20852f20b392d9d6df509e/research/marcus-de-oliveira/search/README.md"
+          ],
+          "createdAt": "2026-11-25T06:40:24.000Z"
         }
       ],
       "reviews": []
@@ -441,7 +451,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T06:37:01.000Z"
+      "lastSeenAt": "2026-11-25T06:40:24.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -982,6 +992,22 @@
         "https://github.com/g4nesh/math-commons/blob/5d12fd173e91deb8bc20852f20b392d9d6df509e/research/marcus-de-oliveira/certificates/README.md"
       ],
       "requestFingerprint": "e6725c9fd3aa2b7508e142e66c663ba90df2ee96e0fff38922538d121d24bf8b"
+    },
+    {
+      "id": "mdo-pass1-cp3-search",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-search",
+      "summary": "Uploaded all 200 samples and independently replayed every stored analysis.",
+      "detail": "All analysis fields replay identically; zero new search samples generated during replay. Eleven tests passed and all file hashes verified. Source review found no result-interpretation blocker. No exact counterexample or general theorem claimed.",
+      "to": null,
+      "createdAt": "2026-11-25T06:40:24.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/5d12fd173e91deb8bc20852f20b392d9d6df509e/research/marcus-de-oliveira/search/README.md"
+      ],
+      "requestFingerprint": "18bbaa57ebc4a9a9924f939b7a45587f51c6ad41008300c820b8dfb700ba16c1"
     }
   ]
 }
