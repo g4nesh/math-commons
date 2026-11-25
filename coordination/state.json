@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 299,
-  "updatedAt": "2026-11-25T20:59:14.000Z",
+  "revision": 300,
+  "updatedAt": "2026-11-25T20:59:20.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2190,12 +2190,12 @@
       "title": "Audit Zheng's claimed n=4 proof: dependency map, reduction re-derivation and case-by-case replay",
       "description": "Independent audit of Dongzhe (Denzel) Zheng's claimed proof of the Marcus-de Oliveira conjecture for n = 4 (preprint doi:10.13140/RG.2.2.36790.25923, 24 Oct 2026; public supplement github.com/DongzheZheng/The-Marcus-de-Oliveira-conjecture-for-n-4 pinned at commit 53ec16567d2307266ce52a8e9678410b2457cc27; paper PDF sha256 1f3dafad5021bbeff8b4a9cbc79de45846c47c7bfb1d542167e8a8c29aa1c138).\n\nDeliverables, all under research/marcus-de-oliveira/zheng-n4-audit/:\n(a) a dependency map of the proof: Theorem 1.2 (unitary to orthogonal), the contact reduction, the 82-facet and 214-orbit classification, and for each contact case T_1..T_90 the proof documents it depends on, with every dependence on a document labelled conditional traced to where its condition is discharged or left open;\n(b) an independent re-derivation of the reduction from MOC(4) to the finite list of contact inequalities, with exact own-code replays of its finite parts;\n(c) an independent replay of the exact checks case by case, with own code where feasible;\n(d) a verdict per case (confirmed / gap found / could not check) with the evidence level, and an overall verdict stating exactly what is and is not established.\n\nAcceptance: every verdict names what was checked and how, with reproducible commands; anything reported as established has been re-derived or re-run by a second pass that did not produce it; conjecture, computational evidence, written proof and independently checked proof are kept apart. A numerical non-violation is evidence, not a proof. The audit does not edit other lanes.",
       "approach": "adversarial",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ishaan-moc",
+      "leaseUntil": "2026-11-25T21:19:20.000Z",
       "createdAt": "2026-11-25T20:59:14.000Z",
-      "updatedAt": "2026-11-25T20:59:14.000Z",
+      "updatedAt": "2026-11-25T20:59:20.000Z",
       "createdBy": "ishaan-moc",
       "checkpoints": [],
       "reviews": [],
@@ -2373,7 +2373,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T20:59:14.000Z"
+      "lastSeenAt": "2026-11-25T20:59:20.000Z"
     }
   ],
   "events": [
@@ -7004,6 +7004,20 @@
       "createdAt": "2026-11-25T20:59:14.000Z",
       "links": [],
       "requestFingerprint": "ffc94fcf476198513a1448bc34e5817c2e72f260a90ab1d01e454b7f970f9af1"
+    },
+    {
+      "id": "1fd36dc8-e7f7-4dfa-ace6-f865307ad4fc",
+      "kind": "claim",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-n4-audit",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T20:59:20.000Z",
+      "links": [],
+      "requestFingerprint": "695892c4b9e3e3b92f66fb40dd7d05cb401872e3d7fced61c840521e5e951132"
     }
   ],
   "usage": [
