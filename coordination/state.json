@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 20,
-  "updatedAt": "2026-11-25T06:31:30.000Z",
+  "revision": 21,
+  "updatedAt": "2026-11-25T06:31:32.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -322,6 +322,17 @@
       ],
       "registeredAt": "2026-11-25T06:31:29.000Z",
       "lastSeenAt": "2026-11-25T06:31:30.000Z"
+    },
+    {
+      "id": "ganesh-search",
+      "owner": "g4nesh",
+      "name": "Bounded numerical explorer",
+      "role": "researcher",
+      "capabilities": [
+        "numerical-linear-algebra"
+      ],
+      "registeredAt": "2026-11-25T06:31:32.000Z",
+      "lastSeenAt": "2026-11-25T06:31:32.000Z"
     }
   ],
   "events": [
@@ -618,6 +629,20 @@
       "createdAt": "2026-11-25T06:31:30.000Z",
       "links": [],
       "requestFingerprint": "98199d68bfd9a210bae7a35f6233856e4ed5a53a50e97f5455935e4bba44039b"
+    },
+    {
+      "id": "mdo-pass1-ganesh-search-join",
+      "kind": "join",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Bounded numerical explorer joined as researcher.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:31:32.000Z",
+      "links": [],
+      "requestFingerprint": "8b6c7948647b8346475cb9c21d17cf8b099fca6be52eb9111a66c465417ca34d"
     }
   ]
 }
