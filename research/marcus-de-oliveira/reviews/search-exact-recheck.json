@@ -1,0 +1,1607 @@
+{
+  "source": "search/report.json @ 67528c1",
+  "maxUnitaryDistance": 3.64275408404521e-16,
+  "outside": [],
+  "cases": [
+    {
+      "id": "n2-generic-00",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-generic-01",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-generic-02",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-generic-03",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-generic-04",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-generic-05",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-generic-06",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-generic-07",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-near_monomial-00",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-near_monomial-01",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-near_monomial-02",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-near_monomial-03",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-near_monomial-04",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-near_monomial-05",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-near_monomial-06",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-near_monomial-07",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-clustered-00",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-clustered-01",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-clustered-02",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-clustered-03",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-clustered-04",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-clustered-05",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-clustered-06",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-clustered-07",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-repeated-00",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-repeated-01",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-repeated-02",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-repeated-03",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-repeated-04",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-repeated-05",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-repeated-06",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-repeated-07",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-structured_control-00",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-structured_control-01",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-structured_control-02",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-structured_control-03",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-structured_control-04",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-structured_control-05",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-structured_control-06",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n2-structured_control-07",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-generic-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.08931026439662526,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-generic-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.09877128593912571,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-generic-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.1988506213749074,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-generic-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.1781119385751221,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-generic-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.18829826384914514,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-generic-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.10812110026787808,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-generic-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.2716250063192372,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-generic-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.06425151038015783,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-near_monomial-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 4.2000562637282595e-06,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-near_monomial-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 2.9628188968981865e-08,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-near_monomial-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.3522333159122914e-10,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-near_monomial-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.317725751225279e-12,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-near_monomial-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 3.2946123546562496e-15,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-near_monomial-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 4.0096939398716127e-16,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-near_monomial-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 6.270710144324045e-18,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-near_monomial-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.972950487864633e-20,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-clustered-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 6.292019603948253e-06,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-clustered-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 3.2236117535245574e-10,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-clustered-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 4.772034483549703e-15,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-clustered-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.3297093300545086e-17,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-clustered-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 7.178276304363656e-07,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-clustered-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.0907216755064197e-09,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n3-clustered-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 4.3244415634452636e-14,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-clustered-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.285527123624832e-18,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-repeated-00",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-repeated-01",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-repeated-02",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-repeated-03",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-repeated-04",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-repeated-05",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-repeated-06",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-repeated-07",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-structured_control-00",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-structured_control-01",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-structured_control-02",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-structured_control-03",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-structured_control-04",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-structured_control-05",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-structured_control-06",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n3-structured_control-07",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-generic-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.049644675877721915,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-generic-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.14211250129489636,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-generic-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.4047932588495914,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-generic-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.2846357389507225,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-generic-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.17847985762233998,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-generic-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.19912065463149695,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-generic-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.20452079369568454,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-generic-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.11890393562643163,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-near_monomial-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.17589083971743447,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-near_monomial-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.06822020315734965,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-near_monomial-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 8.649247684984993e-10,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-near_monomial-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.04844319811339364,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-near_monomial-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.04854476934368184,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-near_monomial-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.5334565326129025e-16,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-near_monomial-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.10894558693651825,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-near_monomial-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.05346174156283218,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-clustered-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 2.0372911672048076e-05,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-clustered-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 6.921546784871702e-10,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-clustered-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.3023728320383136e-13,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-clustered-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.3981741906480584e-17,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-clustered-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 3.556523106276755e-05,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-clustered-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 6.925780164983663e-09,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-clustered-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 3.2028160748140063e-14,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-clustered-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 9.771553628199741e-18,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-repeated-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.03812296305344191,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-repeated-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.01278609940312606,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-repeated-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.018144884417496794,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-repeated-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.044473029435529256,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-repeated-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.0023768058510692885,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-repeated-05",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-repeated-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.045210698814417055,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-repeated-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.009959726087372826,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n4-structured_control-00",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-structured_control-01",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-structured_control-02",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-structured_control-03",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-structured_control-04",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-structured_control-05",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-structured_control-06",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n4-structured_control-07",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-generic-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.1615759820621969,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-generic-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.4531981995508627,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-generic-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.2686784100280217,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-generic-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.24575455552246678,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-generic-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.3364078634276714,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-generic-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.1307739736036236,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-generic-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.4671270691964234,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-generic-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.20176281335041818,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-near_monomial-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.013622386359422e-05,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-near_monomial-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.13568492308042393,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-near_monomial-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.13141871048202522,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-near_monomial-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.21944382786770897,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-near_monomial-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.17591408523267796,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-near_monomial-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.009984596257443835,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-near_monomial-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.11975287061020777,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-near_monomial-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.04227211864659199,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-clustered-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 4.074255304279448e-05,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-clustered-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 8.904892671978628e-10,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-clustered-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 2.9275843358081383e-13,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-clustered-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 2.1962443878909222e-17,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-clustered-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 2.3421748859863502e-05,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-clustered-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 5.932962928907328e-10,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-clustered-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 7.061381892932175e-13,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-clustered-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 7.219105912241951e-17,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-repeated-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.008405463270650849,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-repeated-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.005536652208790809,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-repeated-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.02113058555907774,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-repeated-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.037497534778171575,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-repeated-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.028505952107030996,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-repeated-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.04334564608588664,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-repeated-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.028845357644497742,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n5-repeated-07",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-structured_control-00",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-structured_control-01",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-structured_control-02",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-structured_control-03",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-structured_control-04",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-structured_control-05",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-structured_control-06",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n5-structured_control-07",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-generic-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.29183803742766634,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-generic-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.18596951496945768,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-generic-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.34161217215504375,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-generic-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.34976326908628996,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-generic-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.4835105875944229,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-generic-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.3669403096173824,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-generic-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.24576200239656154,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-generic-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.31766597693625814,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-near_monomial-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.15773235645374872,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-near_monomial-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.09851182370380511,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-near_monomial-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.0961060164738022,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-near_monomial-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.2221783012029379,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-near_monomial-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.4703061253044769,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-near_monomial-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.12523198209682243,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-near_monomial-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.4187977713225916,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-near_monomial-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.417679316356211,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-clustered-00",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.4565737320839453e-05,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-clustered-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 3.55894587356026e-09,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-clustered-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.0100355554367295e-12,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-clustered-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 2.66569327717287e-17,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-clustered-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.2404350183877491e-05,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-clustered-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 2.3030545402872693e-09,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-clustered-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 7.571463586188033e-13,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-clustered-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 1.5628505117484332e-17,
+      "storedFloatOutside": false,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-repeated-00",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-repeated-01",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.12456420555779754,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-repeated-02",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.0010760377787260458,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-repeated-03",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.0073104337471653815,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-repeated-04",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.10422185052096261,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-repeated-05",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.031610117215493824,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-repeated-06",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.1609533703115754,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-repeated-07",
+      "hullDimension": 2,
+      "membership": "inside",
+      "relativeExactSlack": 0.005799373131353988,
+      "storedFloatOutside": false,
+      "classification": "numerically_inside"
+    },
+    {
+      "id": "n6-structured_control-00",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-structured_control-01",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-structured_control-02",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-structured_control-03",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-structured_control-04",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-structured_control-05",
+      "hullDimension": 1,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-structured_control-06",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    },
+    {
+      "id": "n6-structured_control-07",
+      "hullDimension": 0,
+      "membership": "inside",
+      "relativeExactSlack": 0.0,
+      "storedFloatOutside": true,
+      "classification": "numerically_near_boundary"
+    }
+  ]
+}
