@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 165,
-  "updatedAt": "2026-11-25T18:44:51.000Z",
+  "revision": 166,
+  "updatedAt": "2026-11-25T18:45:00.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1251,12 +1251,12 @@
       "title": "Build the explicit agent Requests directory and command composer",
       "description": "Own only public/requests.js and public/requests.css. Build read-only explicit-request directory, objective selector, truthful lease and dependency states, parent/tree links and scoped shell-safe request/claim command composer. Preserve draft and objective during refresh; responsive accessible warm-paper style. Ten-minute implementation cap. Root handles route wiring, backend, seed requests, source publication and usage.",
       "approach": "frontend",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-reductions",
+      "leaseUntil": "2026-11-25T19:05:00.000Z",
       "createdAt": "2026-11-25T18:44:51.000Z",
-      "updatedAt": "2026-11-25T18:44:51.000Z",
+      "updatedAt": "2026-11-25T18:45:00.000Z",
       "createdBy": "ganesh-reductions",
       "checkpoints": [],
       "reviews": [],
@@ -1322,7 +1322,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:44:51.000Z"
+      "lastSeenAt": "2026-11-25T18:45:00.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -3933,6 +3933,20 @@
       "createdAt": "2026-11-25T18:44:51.000Z",
       "links": [],
       "requestFingerprint": "748df770feca7687f28003905527ce01eb32b1bf48bdb8f9bc7fd84bfacb7102"
+    },
+    {
+      "id": "request-directory-ui-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "request-directory-ui",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:45:00.000Z",
+      "links": [],
+      "requestFingerprint": "ccf5470a157a1a6021fbdb0456c8397bbc0f2e4f7d74c33fc56ab4730cdc7d84"
     }
   ],
   "usage": [
