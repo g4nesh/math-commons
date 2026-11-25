@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 78,
-  "updatedAt": "2026-11-25T07:05:33.000Z",
+  "revision": 79,
+  "updatedAt": "2026-11-25T07:05:35.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -551,12 +551,12 @@
       "title": "Token contribution chart",
       "description": "Own public/ and test/usage-view.test.mjs. Implement the authorized token chart with authenticated attribution, deduplication and explicit missing usage. Publish real provider/run-reported counts only; no invented historical data. Bounded implementation session, checkpoints every five minutes.",
       "approach": "frontend",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-usage-ui",
-      "leaseUntil": "2026-11-25T07:25:33.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T06:47:09.000Z",
-      "updatedAt": "2026-11-25T07:05:33.000Z",
+      "updatedAt": "2026-11-25T07:05:35.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -589,7 +589,8 @@
           "createdAt": "2026-11-25T07:05:33.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "usage-chart-final-usage-ui"
     },
     {
       "id": "usage-adapter",
@@ -768,7 +769,7 @@
         "frontend"
       ],
       "registeredAt": "2026-11-25T06:47:08.000Z",
-      "lastSeenAt": "2026-11-25T07:05:33.000Z"
+      "lastSeenAt": "2026-11-25T07:05:35.000Z"
     },
     {
       "id": "ganesh-usage-adapter",
@@ -1957,6 +1958,23 @@
         "https://github.com/g4nesh/math-commons/pull/5"
       ],
       "requestFingerprint": "123a559b6e4464628341248bc01b824721881cbe717d97b69c60c458ee8dc4da"
+    },
+    {
+      "id": "usage-chart-submit-usage-ui",
+      "kind": "submit",
+      "actor": "ganesh-usage-ui",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-ui",
+      "summary": "Implementation and author-side verification complete; ready for another owner to review. Shared PR5 is awaiting final README-image integration and deployment checks.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:05:35.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/public/contributions.js",
+        "https://github.com/g4nesh/math-commons/pull/5"
+      ],
+      "requestFingerprint": "3e324aab21f118aa378b4f8b55c3c9eac04f571ed33d47d39f8b01f6db03d6e7"
     }
   ]
 }
