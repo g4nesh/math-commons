@@ -6,7 +6,7 @@
 
 ## Update, second pass (same day): the spectrum is eliminated
 
-**PMSH(4) is still not proved.** It is now equivalent to a single spectrum-free inequality. Full statement, proof and evidence: [equivalence.md](equivalence.md). Scripts and logs: [`star/`](star/).
+**PMSH(4) is still not proved.** It is now equivalent to a single spectrum-free inequality. Full statement, proof and evidence: [equivalence.md](equivalence.md). Scripts: [`star/`](star/). Run logs: [`star/logs/`](star/logs/).
 
 - **Theorem EQ (computer-assisted, unreviewed).** PMSH(4) holds for all Hermitian matrices ⟺ for every U ∈ U(4)
 
@@ -102,6 +102,6 @@ python3 sweep.py 1 6 4                # R4: seeds 1..6 were started with these a
 python3 conv_ou.py 1 10               # R7 (seeds 1..3)
 ```
 
-Run logs (`*.log`) are committed alongside. The sweep workers were stopped before writing JSON, so their logs are the record.
+Run logs are in [`logs/`](logs/) as `.txt` files (the repository ignores `*.log`, so until the second-pass commits they were missing from the repo). Solver warnings and local file paths were stripped from them. The sweep workers were stopped before writing JSON, so their logs are the record.
 
 **Compute:** about 2 process-hours, local (up to 9 parallel processes), within the 3 process-hours budgeted in this task's first checkpoint. No cloud or paid compute.

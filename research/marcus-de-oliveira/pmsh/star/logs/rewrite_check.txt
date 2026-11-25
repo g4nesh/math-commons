@@ -1,0 +1,6 @@
+form 1 equals g0 on all 24 vertices: True ; form 2: True
+max difference on 200 Haar unitaries: 1.0e-15
+min over U(4) of g0                                             = -0.067442
+min over U(4) of g0 + D[12,12]                                  = -0.025473
+min over U(4) of g0 + D[12,12] + D[13,14]                       = -0.001521
+min over U(4) of g0 + 2 D[12,12]                                = -0.015928

@@ -1,0 +1,5 @@
+min over U(4) of |u34*X + u22*Y|^2 - L = -1.000000
+min over U(4) of |u34*X - u22*Y|^2 - L = -1.000000
+min over U(4) of |conj(u22)*X + conj(u34)*Y|^2 - L = -1.000000
+min over U(4) of |conj(u22)*X - conj(u34)*Y|^2 - L = -1.000000
+reference: min of (|X|+|Y|)^2 - L = +5.397e-13

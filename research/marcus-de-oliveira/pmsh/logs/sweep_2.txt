@@ -1,0 +1,1 @@
+a=[-4.883 -1.045 -0.826  0.378] facets=184 nontrivial=96 (vertex counts [11]; trivial ones [14, 16, 18]) max_U(nontrivial)=-9.92e-13

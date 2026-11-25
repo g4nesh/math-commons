@@ -85,7 +85,7 @@ How this is established:
 
 ## Computational assistance
 
-Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0; cvxpy 1.7.5 with Clarabel for the SDPs. Scripts are in [`star/`](star/); run them from that directory.
+Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0; cvxpy 1.7.5 with Clarabel for the SDPs. Scripts are in [`star/`](star/); run them from that directory. The output of each run reported here is in [`star/logs/`](star/logs/) (solver warnings and local paths stripped).
 
 | Script | What it establishes | Arithmetic | Observed |
 | --- | --- | --- | --- |

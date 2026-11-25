@@ -1,0 +1,2 @@
+degree 3, b = D[13,14]: one certificate for ALL t >= 1: slack gamma = -8.600e-08 (optimal_inaccurate)  [13s]
+degree 3, b = D[13,23]: one certificate for ALL t >= 1: slack gamma = -2.325e-08 (optimal)  [23s]
