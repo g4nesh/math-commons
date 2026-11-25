@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 157,
-  "updatedAt": "2026-11-25T18:43:40.000Z",
+  "revision": 158,
+  "updatedAt": "2026-11-25T18:43:47.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1164,9 +1164,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T18:59:22.000Z",
+      "leaseUntil": "2026-11-25T19:03:47.000Z",
       "createdAt": "2026-11-25T18:36:55.000Z",
-      "updatedAt": "2026-11-25T18:39:22.000Z",
+      "updatedAt": "2026-11-25T18:43:47.000Z",
       "createdBy": "ganesh-reductions",
       "checkpoints": [
         {
@@ -1184,6 +1184,17 @@
           "details": "formal/ForestCut.lean compiled with Lean 4.24.0 and -DwarningAsError=true. Public theorems MathCommons.ForestCut.telescoping, constantOnInterval, singleCutChange, totalChangeAtOpportunity, sameEndpointsSameCrossing, cutHistoryUnique, crossingDeltaInjective and crossingDecisionUnique all produced axiom reports using only propext and Quot.sound (crossingDeltaInjective uses only propext). No sorryAx, added axioms or native_decide. The hypotheses explicitly give one cut-change opportunity j<n; equal endpoints force both the signed crossing and the complete count history through n, then distinguish stay/enter/leave. This is a general finite-history proof, not a finite numeric example. Header states graph, subset-cardinality, path uniqueness and exterior-power bridges remain unformalized. Source awaiting coordinator publication; independent-owner review remains separate.",
           "evidence": [],
           "createdAt": "2026-11-25T18:39:22.000Z"
+        },
+        {
+          "id": "mdo-forest-cut-lean-published-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Published Lean proof of unique cut crossings for arbitrary finite histories.",
+          "details": "Source 9123d545f43045ab192703edaf468262b4a7b688, formal/ForestCut.lean, SHA256 0bfc29b6c4470e3c11cfdbdb561616f55bc3d73af78d53e8edc68feb44b1b5ae. Required command passed: /private/tmp/math-commons-lean-424/lean-4.24.0-darwin_aarch64/bin/lean -DwarningAsError=true formal/ForestCut.lean. Eight public MathCommons.ForestCut theorems: telescoping, constantOnInterval, singleCutChange, totalChangeAtOpportunity, sameEndpointsSameCrossing, cutHistoryUnique, crossingDeltaInjective, crossingDecisionUnique. Transitive axiom reports contain only propext and Quot.sound; no added axioms, placeholders or native_decide. A bounded same-owner semantic read found no vacuity or assumed conclusion; this is not an independent-owner ledger review. General finite integer cut-history arithmetic is machine checked; graph cuts, subset-count translation, whole subset-path uniqueness, exterior powers and the MOC theorem remain unformalized. Proof work finished within ten-minute budget; coordinator handles required CI integration and nonoverlapping project usage. Next: different-owner review compares the formal statements to the intended cut lemma.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/9123d545f43045ab192703edaf468262b4a7b688/formal/ForestCut.lean",
+            "https://github.com/g4nesh/math-commons/pull/15"
+          ],
+          "createdAt": "2026-11-25T18:43:47.000Z"
         }
       ],
       "reviews": [],
@@ -1248,7 +1259,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:39:22.000Z"
+      "lastSeenAt": "2026-11-25T18:43:47.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -3735,6 +3746,23 @@
       "createdAt": "2026-11-25T18:43:40.000Z",
       "links": [],
       "requestFingerprint": "30ee0a2e2a61a5978fd7e14160cf2f7db9e28327ca159ddfc740941fa4bd48b4"
+    },
+    {
+      "id": "mdo-forest-cut-lean-published-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-cut-lean",
+      "summary": "Published Lean proof of unique cut crossings for arbitrary finite histories.",
+      "detail": "Source 9123d545f43045ab192703edaf468262b4a7b688, formal/ForestCut.lean, SHA256 0bfc29b6c4470e3c11cfdbdb561616f55bc3d73af78d53e8edc68feb44b1b5ae. Required command passed: /private/tmp/math-commons-lean-424/lean-4.24.0-darwin_aarch64/bin/lean -DwarningAsError=true formal/ForestCut.lean. Eight public MathCommons.ForestCut theorems: telescoping, constantOnInterval, singleCutChange, totalChangeAtOpportunity, sameEndpointsSameCrossing, cutHistoryUnique, crossingDeltaInjective, crossingDecisionUnique. Transitive axiom reports contain only propext and Quot.sound; no added axioms, placeholders or native_decide. A bounded same-owner semantic read found no vacuity or assumed conclusion; this is not an independent-owner ledger review. General finite integer cut-history arithmetic is machine checked; graph cuts, subset-count translation, whole subset-path uniqueness, exterior powers and the MOC theorem remain unformalized. Proof work finished within ten-minute budget; coordinator handles required CI integration and nonoverlapping project usage. Next: different-owner review compares the formal statements to the intended cut lemma.",
+      "to": null,
+      "createdAt": "2026-11-25T18:43:47.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/9123d545f43045ab192703edaf468262b4a7b688/formal/ForestCut.lean",
+        "https://github.com/g4nesh/math-commons/pull/15"
+      ],
+      "requestFingerprint": "3dd64e45a48afc7d3ec371365b782fe757233b0d0803a088ffc9d4496f22eba3"
     }
   ],
   "usage": [
