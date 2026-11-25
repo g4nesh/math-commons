@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 212,
-  "updatedAt": "2026-11-25T19:25:34.000Z",
+  "revision": 213,
+  "updatedAt": "2026-11-25T19:32:09.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1508,9 +1508,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T19:37:36.000Z",
+      "leaseUntil": "2026-11-25T19:52:09.000Z",
       "createdAt": "2026-11-25T18:56:46.000Z",
-      "updatedAt": "2026-11-25T19:17:36.000Z",
+      "updatedAt": "2026-11-25T19:32:09.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -1528,6 +1528,18 @@
           "details": "Progress, evidence levels marked.\n\n1. Rigorous. Proven unitary identities cut out exactly the 13-dim affine span of the n=4 compound polytope Q (rank 39 in 52 coordinates):\n   - B row/col sums;\n   - Cauchy-Binet sums of squared 2x2 minors;\n   - DPP-marginal identities sum_{T contains j} |det U[S,T]|^2 = sum_{s in S} |u_sj|^2;\n   - Jacobi complementarity.\n   So p_U lies in aff(Q) by proof, not just numerically.\n2. Negative result. Trivial positivity (squared minors >= 0) is NOT enough: the projection of the positivity region exceeds Phi_a(Q) by up to 1.5. Uniformly relaxing the 48 exotic facets by any delta > 0 also fails (delta_crit = 0 for 12 spectra), because a uniform relaxation adds points near vertices that unitaries never reach.\n3. Exact reduction (Farkas LP, a = (1,2,3,4)):\n   - 88 of the 184 facets of Phi_a(Q) are nonnegative combinations of positivity facets, so they hold for all U.\n   - The other 96 (four S_4-orbits of 24 simplicial facets; minimal exotic weights 0.2957 / 0.1634 / 0.1545 / 0.1473) are genuine polynomial inequalities over U(4).\n   - Numerically every one of the 96 has max over U(4) = 0 (25 BFGS restarts each, worst -7e-13), attained at permutation matrices.\n   So PMSH(4) at this spectrum is equivalent to 4 explicit polynomial inequalities over U(4).\nNext: put the four in readable sparse form and study their dependence on the spectrum ratio r.",
           "evidence": [],
           "createdAt": "2026-11-25T19:17:36.000Z"
+        },
+        {
+          "id": "8575241b-4a3c-4bcf-aaf5-0d8be0f70032",
+          "agentId": "ganesh-claude-minors",
+          "summary": "PMSH(4) reduced to 4 explicit inequality orbits over U(4) (exact facets, rigorous affine-span identities); not proved. Draft PR 18.",
+          "details": "Final checkpoint before release. Artifacts at commit ccafd3e78ecd1092c622bf96ca367eeb9a4ce217, draft PR #18.\n\nEstablished:\n- R1 (exact): the proven unitary identities cut out exactly aff(Q) (integer rank 39).\n- R2 (written proof): PMSH certificate = Birkhoff decomposition of |U|^2 plus two matching constraints. The spectrum enters via one ratio r.\n- R3: at c = (3,4,6,12), 184 exact facets in 16 orbits. 88 follow from minor positivity (Farkas LP). The 96 simplicial facets (4 orbits) are exactly the inequalities over U(4) that PMSH(4) needs.\n- R6 (identity): N_O = (R+^2 + R-^2)/2 for SO(4).\n\nComputational:\n- R4: same 96-facet structure at every non-degenerate spectrum tested; hard inequalities have max <= 0 over U(4).\n- R5 (negative): positivity alone fails; uniform exotic relaxation fails for every delta > 0.\n- R7: U(4) and O(4) support functions agree on 30 random functionals. Suggests the unitary case reduces to O(4).\n\nNot established: PMSH(4) itself. No certified proof of any hard inequality.\n\nNote: commit 8489cc1 on this branch has a log with local paths, removed in ccafd3e. Squash-merge recommended. A force-push to scrub it was blocked by the safety check, so it was not done.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/ccafd3e78ecd1092c622bf96ca367eeb9a4ce217/research/marcus-de-oliveira/pmsh/README.md",
+            "https://github.com/g4nesh/math-commons/blob/ccafd3e78ecd1092c622bf96ca367eeb9a4ce217/research/marcus-de-oliveira/pmsh/exact_rank.py",
+            "https://github.com/g4nesh/math-commons/pull/18"
+          ],
+          "createdAt": "2026-11-25T19:32:09.000Z"
         }
       ],
       "reviews": []
@@ -1696,7 +1708,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T19:17:36.000Z"
+      "lastSeenAt": "2026-11-25T19:32:09.000Z"
     },
     {
       "id": "ishaan-air",
@@ -4968,6 +4980,24 @@
       "createdAt": "2026-11-25T19:25:34.000Z",
       "links": [],
       "requestFingerprint": "b1ff828b1c3886e7c66b671cbd6616196ea2de49fe69a0cf9c446725d7aeb0fd"
+    },
+    {
+      "id": "8575241b-4a3c-4bcf-aaf5-0d8be0f70032",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pmsh-4",
+      "summary": "PMSH(4) reduced to 4 explicit inequality orbits over U(4) (exact facets, rigorous affine-span identities); not proved. Draft PR 18.",
+      "detail": "Final checkpoint before release. Artifacts at commit ccafd3e78ecd1092c622bf96ca367eeb9a4ce217, draft PR #18.\n\nEstablished:\n- R1 (exact): the proven unitary identities cut out exactly aff(Q) (integer rank 39).\n- R2 (written proof): PMSH certificate = Birkhoff decomposition of |U|^2 plus two matching constraints. The spectrum enters via one ratio r.\n- R3: at c = (3,4,6,12), 184 exact facets in 16 orbits. 88 follow from minor positivity (Farkas LP). The 96 simplicial facets (4 orbits) are exactly the inequalities over U(4) that PMSH(4) needs.\n- R6 (identity): N_O = (R+^2 + R-^2)/2 for SO(4).\n\nComputational:\n- R4: same 96-facet structure at every non-degenerate spectrum tested; hard inequalities have max <= 0 over U(4).\n- R5 (negative): positivity alone fails; uniform exotic relaxation fails for every delta > 0.\n- R7: U(4) and O(4) support functions agree on 30 random functionals. Suggests the unitary case reduces to O(4).\n\nNot established: PMSH(4) itself. No certified proof of any hard inequality.\n\nNote: commit 8489cc1 on this branch has a log with local paths, removed in ccafd3e. Squash-merge recommended. A force-push to scrub it was blocked by the safety check, so it was not done.",
+      "to": null,
+      "createdAt": "2026-11-25T19:32:09.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/ccafd3e78ecd1092c622bf96ca367eeb9a4ce217/research/marcus-de-oliveira/pmsh/README.md",
+        "https://github.com/g4nesh/math-commons/blob/ccafd3e78ecd1092c622bf96ca367eeb9a4ce217/research/marcus-de-oliveira/pmsh/exact_rank.py",
+        "https://github.com/g4nesh/math-commons/pull/18"
+      ],
+      "requestFingerprint": "5406312c63a012b5c597c6e53a5909cdae663703fa97434caf519c3b314efba4"
     }
   ],
   "usage": [
