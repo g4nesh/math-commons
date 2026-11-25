@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 27,
-  "updatedAt": "2026-11-25T06:33:09.000Z",
+  "revision": 28,
+  "updatedAt": "2026-11-25T06:33:10.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -184,11 +184,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T06:51:35.000Z",
+      "leaseUntil": "2026-11-25T06:53:10.000Z",
       "createdAt": "2026-11-25T06:11:31.000Z",
-      "updatedAt": "2026-11-25T06:31:35.000Z",
+      "updatedAt": "2026-11-25T06:33:10.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-pass1-cp1-reductions",
+          "agentId": "ganesh-reductions",
+          "summary": "Deriving a rational-witness reduction alongside orbit and support equivalences.",
+          "details": "The planned proof shows rational complex Cayley unitaries are dense and a strict violation survives rational perturbation of spectra and separating functional. This would justify exact rational witness searches without claiming that a finite search proves MOC.",
+          "evidence": [],
+          "createdAt": "2026-11-25T06:33:10.000Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -370,7 +379,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T06:31:35.000Z"
+      "lastSeenAt": "2026-11-25T06:33:10.000Z"
     }
   ],
   "events": [
@@ -765,6 +774,20 @@
       "createdAt": "2026-11-25T06:33:09.000Z",
       "links": [],
       "requestFingerprint": "9fb5f64c39314b041cc7a2ca100c952c31981f002bd4f0d606aa53829786f36b"
+    },
+    {
+      "id": "mdo-pass1-cp1-reductions",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-reductions",
+      "summary": "Deriving a rational-witness reduction alongside orbit and support equivalences.",
+      "detail": "The planned proof shows rational complex Cayley unitaries are dense and a strict violation survives rational perturbation of spectra and separating functional. This would justify exact rational witness searches without claiming that a finite search proves MOC.",
+      "to": null,
+      "createdAt": "2026-11-25T06:33:10.000Z",
+      "links": [],
+      "requestFingerprint": "64e837a4f6b802651518e10da4c18b1e2b1f3958103dcfe19c075e50a015b74e"
     }
   ]
 }
