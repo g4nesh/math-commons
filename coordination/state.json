@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 465,
-  "updatedAt": "2026-11-25T23:36:52.000Z",
+  "revision": 466,
+  "updatedAt": "2026-11-25T23:36:55.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3225,12 +3225,12 @@
       "title": "Prove a structural three-color pattern coupling or certify a stronger obstruction",
       "description": "Investigate Conjecture F in minors/report.md, especially the first missing pattern(2,2,2). Seek a nontrivial proven subclass in arbitrary dimension using determinantal processes, exterior powers or exact finite convex duality, or an exact counterexample to a clearly stronger assertion. Do not infer proof from random LP samples. Budget one20-active-minute pass with proof, exact executable checks and explicit remaining scope.",
       "approach": "abstraction",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-search",
+      "leaseUntil": "2026-11-25T23:56:55.000Z",
       "createdAt": "2026-11-25T23:36:52.000Z",
-      "updatedAt": "2026-11-25T23:36:52.000Z",
+      "updatedAt": "2026-11-25T23:36:55.000Z",
       "createdBy": "ganesh-search",
       "checkpoints": [],
       "reviews": [],
@@ -3284,7 +3284,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T23:36:52.000Z"
+      "lastSeenAt": "2026-11-25T23:36:55.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -10670,6 +10670,20 @@
       "createdAt": "2026-11-25T23:36:52.000Z",
       "links": [],
       "requestFingerprint": "d412ea19c1ef973fc0d888655e6cc1c2b1ee0340801ceac4b106610f1ad7b0e8"
+    },
+    {
+      "id": "mdo-three-color-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-three-color-coupling",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:36:55.000Z",
+      "links": [],
+      "requestFingerprint": "d82db0202c526a14a659962919de58d695074854fe496efe376a1e7a4eb0f956"
     }
   ],
   "usage": [
