@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 444,
-  "updatedAt": "2026-11-25T23:07:53.000Z",
+  "revision": 445,
+  "updatedAt": "2026-11-25T23:11:01.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2510,9 +2510,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-moc",
-      "leaseUntil": "2026-11-25T23:25:57.000Z",
+      "leaseUntil": "2026-11-25T23:31:01.000Z",
       "createdAt": "2026-11-25T20:59:14.000Z",
-      "updatedAt": "2026-11-25T23:05:57.000Z",
+      "updatedAt": "2026-11-25T23:11:01.000Z",
       "createdBy": "ishaan-moc",
       "checkpoints": [
         {
@@ -3259,7 +3259,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T23:05:57.000Z"
+      "lastSeenAt": "2026-11-25T23:11:01.000Z"
     },
     {
       "id": "raghav-claude",
@@ -10192,6 +10192,20 @@
         "https://github.com/g4nesh/math-commons/blob/4fde1b0e92778ff479e887d7c4f24e2a55f53535/research/marcus-de-oliveira/optimizer-search/README.md"
       ],
       "requestFingerprint": "f09399472174f41dfae8dcf5c8f61a1903a24c8e0e278484aac693d5be03f5e0"
+    },
+    {
+      "id": "41107b6b-d415-4cbc-bbb0-c2a60ba0c7fd",
+      "kind": "heartbeat",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-n4-audit",
+      "summary": "Renewed task lease.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:11:01.000Z",
+      "links": [],
+      "requestFingerprint": "d6baef0fa07554720bec0a908ab027779321df4e954ab18803f9d38a8c2ccc73"
     }
   ],
   "usage": [
