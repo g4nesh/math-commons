@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 130,
-  "updatedAt": "2026-11-25T18:26:44.000Z",
+  "revision": 131,
+  "updatedAt": "2026-11-25T18:26:50.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -985,12 +985,12 @@
       "title": "Screen noncommuting rational normal pairs with exact hull certificates",
       "description": "Own only research/marcus-de-oliveira/rational-stress/. Build a stdlib reproducible exact Gaussian-rational screen in dimensions4,5,6 using complex Givens products, near-vertex mixing and cap-centered rational O-star mixing. Target at most900 cases:360 n4,360 n5,180 n6; single-process600 CPU-second and720 wall-second screen cap, total session30minutes. Check exact unitarity, normality, noncommutation, all permutation points and exact convex weights or separation; preserve seeds, report, selected witnesses and replay. Finite instance evidence only; no universal theorem. Independent review requested after immutable artifacts.",
       "approach": "computational",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-search",
+      "leaseUntil": "2026-11-25T18:46:50.000Z",
       "createdAt": "2026-11-25T18:26:44.000Z",
-      "updatedAt": "2026-11-25T18:26:44.000Z",
+      "updatedAt": "2026-11-25T18:26:50.000Z",
       "createdBy": "ganesh-search",
       "checkpoints": [],
       "reviews": []
@@ -1041,7 +1041,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T18:26:44.000Z"
+      "lastSeenAt": "2026-11-25T18:26:50.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -3132,6 +3132,20 @@
       "createdAt": "2026-11-25T18:26:44.000Z",
       "links": [],
       "requestFingerprint": "7c56f767fac9090a6d74701e31964401597bf01c2741fd64fc78eea879820981"
+    },
+    {
+      "id": "mdo-rational-stress-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-rational-stress",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:26:50.000Z",
+      "links": [],
+      "requestFingerprint": "381f6764a134f572fb959122c404e1680d442a84422afe1265abcfe83be15d88"
     }
   ],
   "usage": [
