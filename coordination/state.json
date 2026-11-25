@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 203,
-  "updatedAt": "2026-11-25T19:04:00.000Z",
+  "revision": 204,
+  "updatedAt": "2026-11-25T19:04:16.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1475,11 +1475,22 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T19:23:49.000Z",
+      "leaseUntil": "2026-11-25T19:24:16.000Z",
       "createdAt": "2026-11-25T19:03:44.000Z",
-      "updatedAt": "2026-11-25T19:03:49.000Z",
+      "updatedAt": "2026-11-25T19:04:16.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-followups-integration-start",
+          "agentId": "ganesh-coordinator",
+          "summary": "Both follow-ups have separate owners; preparing replay and public integration",
+          "details": "The cycle agent owns the single-cycle directory and the Lean agent owns ForestTrajectory.lean. Integration will rebuild imported Lean modules from fresh temporary artifacts, run exact fixtures and CI, and link stable evidence for independent review. Both request records remain the public progress source.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/commits/coordination"
+          ],
+          "createdAt": "2026-11-25T19:04:16.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         ".github/workflows/ci.yml",
@@ -1501,7 +1512,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T19:03:49.000Z"
+      "lastSeenAt": "2026-11-25T19:04:16.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -4741,6 +4752,22 @@
       "createdAt": "2026-11-25T19:04:00.000Z",
       "links": [],
       "requestFingerprint": "8a32437018486d3a04ba907cf68b1b80fe8954700b732d5e19a11493de97a8cd"
+    },
+    {
+      "id": "mdo-followups-integration-start",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-followup-integration",
+      "summary": "Both follow-ups have separate owners; preparing replay and public integration",
+      "detail": "The cycle agent owns the single-cycle directory and the Lean agent owns ForestTrajectory.lean. Integration will rebuild imported Lean modules from fresh temporary artifacts, run exact fixtures and CI, and link stable evidence for independent review. Both request records remain the public progress source.",
+      "to": null,
+      "createdAt": "2026-11-25T19:04:16.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/commits/coordination"
+      ],
+      "requestFingerprint": "5e2725621ff5924c507c37eaf5607f259be04a1ecbce496055c663ea1528b226"
     }
   ],
   "usage": [
