@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 467,
-  "updatedAt": "2026-11-25T23:36:59.000Z",
+  "revision": 468,
+  "updatedAt": "2026-11-25T23:37:53.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3145,9 +3145,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T23:52:34.000Z",
+      "leaseUntil": "2026-11-25T23:57:53.000Z",
       "createdAt": "2026-11-25T23:28:57.000Z",
-      "updatedAt": "2026-11-25T23:34:40.000Z",
+      "updatedAt": "2026-11-25T23:37:53.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -3170,6 +3170,17 @@
             "https://github.com/g4nesh/math-commons/blob/fd380c113359b66976678381fa715c915ac3a291/research/marcus-de-oliveira/pointwise-gluing/pencil-weights.json"
           ],
           "createdAt": "2026-11-25T23:32:34.000Z"
+        },
+        {
+          "id": "pointwise-gluing-schur-reduction",
+          "agentId": "ganesh-coordinator",
+          "summary": "Larger interfaces reduce when the effective matrix is normal or the two effective matrices share a flag",
+          "details": "Schur elimination, local pairing and reinsertion give a conditional any-interface theorem. A rational order-four example isolates the missing condition: two genuine normal blocks yield nonnormal opposite triangular Schur complements. Diagonal eigenvalue replacement predicts 1 but the original determinant is 3/4; the original hull still contains it. On the order-nine glued example, exact facet margins also give an explicit neighborhood of dense, unstructured unitaries and varying spectra.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/e873bc8e8d9ae187f3c5cfa0309716ca163a4949/research/marcus-de-oliveira/pointwise-gluing/larger-interface.md",
+            "https://github.com/g4nesh/math-commons/commit/c4965140487419e79f465a9dc23f5df9c277eead"
+          ],
+          "createdAt": "2026-11-25T23:37:53.000Z"
         }
       ],
       "reviews": [],
@@ -3260,7 +3271,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:34:40.000Z"
+      "lastSeenAt": "2026-11-25T23:37:53.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -10707,6 +10718,23 @@
       "createdAt": "2026-11-25T23:36:59.000Z",
       "links": [],
       "requestFingerprint": "7c7f6217dc1c5e74f184a42178a1e29d906f37082db416252aa8a147c8184e3f"
+    },
+    {
+      "id": "pointwise-gluing-schur-reduction",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pointwise-gluing",
+      "summary": "Larger interfaces reduce when the effective matrix is normal or the two effective matrices share a flag",
+      "detail": "Schur elimination, local pairing and reinsertion give a conditional any-interface theorem. A rational order-four example isolates the missing condition: two genuine normal blocks yield nonnormal opposite triangular Schur complements. Diagonal eigenvalue replacement predicts 1 but the original determinant is 3/4; the original hull still contains it. On the order-nine glued example, exact facet margins also give an explicit neighborhood of dense, unstructured unitaries and varying spectra.",
+      "to": null,
+      "createdAt": "2026-11-25T23:37:53.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/e873bc8e8d9ae187f3c5cfa0309716ca163a4949/research/marcus-de-oliveira/pointwise-gluing/larger-interface.md",
+        "https://github.com/g4nesh/math-commons/commit/c4965140487419e79f465a9dc23f5df9c277eead"
+      ],
+      "requestFingerprint": "b5572a4564090180f1f10b418c9d39783ccd73e55d34d2f0e0d5e3a0bc4daf7c"
     }
   ],
   "usage": [
