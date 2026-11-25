@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 485,
-  "updatedAt": "2026-11-25T23:49:09.000Z",
+  "revision": 486,
+  "updatedAt": "2026-11-25T23:49:12.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3332,12 +3332,12 @@
       "title": "Lift lower-dimensional proofs by exact pole compression and injective interlacing weights",
       "description": "Use exact determinant factorization at an eigenvalue of B, conditional on a normal compression of the shifted inverse of A. Derive constructive interlacing weights when the shifted inverse is Hermitian, recover the known three-exception theorem, and determine when the merged order-four cross-ratio certificates lift to higher dimensions with four freely varying exceptions. Document any singular limit and conditional dependency.",
       "approach": "abstraction",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-26T00:09:09.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T23:42:51.000Z",
-      "updatedAt": "2026-11-25T23:49:09.000Z",
+      "updatedAt": "2026-11-25T23:49:12.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -3366,7 +3366,8 @@
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/pole-compression"
-      ]
+      ],
+      "submittedCheckpointId": "exact-pole-higher-dim"
     },
     {
       "id": "mdo-two-spectator-pencils",
@@ -3400,7 +3401,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:49:09.000Z"
+      "lastSeenAt": "2026-11-25T23:49:12.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -11128,6 +11129,23 @@
         "https://github.com/g4nesh/math-commons/blob/498e6d8b73dc5a9547981178a6ddb0e81057c558/research/marcus-de-oliveira/pole-compression/check.py"
       ],
       "requestFingerprint": "383fa092546dbc2fc17d287036e10341ac5cea539ad35da5380196ef81ff4308"
+    },
+    {
+      "id": "exact-pole-submit",
+      "kind": "submit",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-exact-pole-compression",
+      "summary": "Submitted exact determinant and interlacing lifts, conditional cross-ratio corollary and two independent order-six replay certificates",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:49:12.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/498e6d8b73dc5a9547981178a6ddb0e81057c558/research/marcus-de-oliveira/pole-compression/README.md",
+        "https://github.com/g4nesh/math-commons/blob/498e6d8b73dc5a9547981178a6ddb0e81057c558/research/marcus-de-oliveira/pole-compression/check.py"
+      ],
+      "requestFingerprint": "c5bafbece32a887d731a02b7472a6e5f2f6b51f57e750510a9de1f3327ab6594"
     }
   ],
   "usage": [
