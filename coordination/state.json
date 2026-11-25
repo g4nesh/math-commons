@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 309,
-  "updatedAt": "2026-11-25T21:04:58.000Z",
+  "revision": 310,
+  "updatedAt": "2026-11-25T21:05:22.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1985,9 +1985,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T21:19:55.000Z",
+      "leaseUntil": "2026-11-25T21:25:22.000Z",
       "createdAt": "2026-11-25T20:37:26.000Z",
-      "updatedAt": "2026-11-25T20:59:55.000Z",
+      "updatedAt": "2026-11-25T21:05:22.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2019,6 +2019,20 @@
             "https://github.com/g4nesh/math-commons/pull/22"
           ],
           "createdAt": "2026-11-25T20:59:55.000Z"
+        },
+        {
+          "id": "mdo-moving-fourth-final-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Published exact positive and excluded fourth-eigenvalue regions, with endpoint-inclusive proofs and reproducible certificates.",
+          "details": "Final source pinned to ac81a919c68fc685e1e104b350bac9ca2499c5c5, PR22. Published README, coefficient data, verification report and nine-file SHA256SUMS checked against tested local artifacts. Principal result: for fixed archived noncollinear b and four-cycle U, twelve rational weights with D(t)=390625(t+1)(2t+5)(t+5) work uniformly over all complex a0,a1,a2 when a3=1-i+t and -3/4<=t<=2. All17 real coefficient identities hold exactly; strictly positive Bernstein coefficients give each supported mass at least114359/2362500000, including both endpoints. At formula poles, this support is inconsistent at t=-1,-5 but consistent rank11 at t=-5/2; no general infeasibility follows from a singular formula. Coordinator supplement proves a closed complex square around1-i of radius1/1024 by an exact augmented-rank polynomial identity and a strict inverse-perturbation positivity bound. Another exact functional excludes all24-permutation shared distributions on the open square about0 with radius26085/58260907; each of its6 probe triples separately has a positive convex certificate valid for every complex a3, so no pointwise MDO counterexample is claimed. All12 tests pass; all4 replay scripts passed with exact rational arithmetic. Claude inequality replay covers this real U and1152 relabelings only; its open general claim and Hermitian conclusions are not premises. Full proofs, source credits, exact commands and selected diagonal-path handoff are in the pinned README. Same-owner written/finite verification, not Lean or independent-owner approval. No general MDO result or maximal-region claim. Coordinator handles Git and actual usage; no extra usage import.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/README.md",
+            "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/derived.json",
+            "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/verification.json",
+            "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/zero_fiber.json",
+            "https://github.com/g4nesh/math-commons/pull/22"
+          ],
+          "createdAt": "2026-11-25T21:05:22.000Z"
         }
       ],
       "reviews": [],
@@ -2348,7 +2362,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T20:59:55.000Z"
+      "lastSeenAt": "2026-11-25T21:05:22.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -7267,6 +7281,26 @@
         "https://github.com/g4nesh/math-commons/pull/18"
       ],
       "requestFingerprint": "6a441e244e853a1b2603850e09926922c2609fbcca7f7dc73394c173e41551b5"
+    },
+    {
+      "id": "mdo-moving-fourth-final-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-moving-fourth-eigenvalue",
+      "summary": "Published exact positive and excluded fourth-eigenvalue regions, with endpoint-inclusive proofs and reproducible certificates.",
+      "detail": "Final source pinned to ac81a919c68fc685e1e104b350bac9ca2499c5c5, PR22. Published README, coefficient data, verification report and nine-file SHA256SUMS checked against tested local artifacts. Principal result: for fixed archived noncollinear b and four-cycle U, twelve rational weights with D(t)=390625(t+1)(2t+5)(t+5) work uniformly over all complex a0,a1,a2 when a3=1-i+t and -3/4<=t<=2. All17 real coefficient identities hold exactly; strictly positive Bernstein coefficients give each supported mass at least114359/2362500000, including both endpoints. At formula poles, this support is inconsistent at t=-1,-5 but consistent rank11 at t=-5/2; no general infeasibility follows from a singular formula. Coordinator supplement proves a closed complex square around1-i of radius1/1024 by an exact augmented-rank polynomial identity and a strict inverse-perturbation positivity bound. Another exact functional excludes all24-permutation shared distributions on the open square about0 with radius26085/58260907; each of its6 probe triples separately has a positive convex certificate valid for every complex a3, so no pointwise MDO counterexample is claimed. All12 tests pass; all4 replay scripts passed with exact rational arithmetic. Claude inequality replay covers this real U and1152 relabelings only; its open general claim and Hermitian conclusions are not premises. Full proofs, source credits, exact commands and selected diagonal-path handoff are in the pinned README. Same-owner written/finite verification, not Lean or independent-owner approval. No general MDO result or maximal-region claim. Coordinator handles Git and actual usage; no extra usage import.",
+      "to": null,
+      "createdAt": "2026-11-25T21:05:22.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/README.md",
+        "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/derived.json",
+        "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/verification.json",
+        "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/zero_fiber.json",
+        "https://github.com/g4nesh/math-commons/pull/22"
+      ],
+      "requestFingerprint": "1aadfa9d0c4ac5056f844ea5ad6e1a6bc8799cfd70cbe0451c95da82ab6734ea"
     }
   ],
   "usage": [
