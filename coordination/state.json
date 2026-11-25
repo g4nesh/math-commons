@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 140,
-  "updatedAt": "2026-11-25T18:29:50.000Z",
+  "revision": 141,
+  "updatedAt": "2026-11-25T18:30:59.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -328,9 +328,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T18:48:48.000Z",
+      "leaseUntil": "2026-11-25T18:50:59.000Z",
       "createdAt": "2026-11-25T06:11:34.000Z",
-      "updatedAt": "2026-11-25T18:28:48.000Z",
+      "updatedAt": "2026-11-25T18:30:59.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -340,6 +340,14 @@
           "details": "Scope is research/marcus-de-oliveira/baselines/ only. Read current reductions, minors and adversarial artifacts: the single Givens segment identity and general squared-minor framework already exist; no forest-product theorem was found. I will give full arbitrary-complex disjoint-block weights, then test and prove the stronger family of ordered two-coordinate unitary gates using each edge of a forest once. The proposed mechanism is uniqueness of subset trajectories across forest cuts; cyclic interference is an explicit falsification target. Budget: at most 25 minutes wall time from this checkpoint, fixed exact rational fixtures with n at most 6 and at most 60 seconds local CPU, no paid/cloud runs or randomized search. Same-owner checks only, no novelty or universal-MOC claim. Runtime token counters are not exposed to this child; usage is unknown and must not be estimated or double-counted with parent aggregates.",
           "evidence": [],
           "createdAt": "2026-11-25T18:28:48.000Z"
+        },
+        {
+          "id": "mdo-baselines-forest-proof-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Derived a common permutation certificate for distinct-edge forest products.",
+          "details": "For each subset transition, deleting a forest edge gives a cut crossed by exactly one gate. Initial/final occupation counts fix that crossing, so there is at most one exterior-power path between fixed endpoints. Taking squared moduli therefore equals independent stay/swap transitions with swap probability |g12|^2; the resulting single permutation distribution matches every compound layer. A same-owner bounded adversarial read found the reasoning sound, with the crucial restriction that each edge is used once. Draft executable fixtures cover phases, permutations, overlapping paths/stars, disjoint components and degeneracies. The triangle cycle with c=3/5,s=4/5 gives U11=109/125 and squared modulus 11881/15625 versus naive product-weight prediction 6121/15625; this refutes extension of those weights, not MOC. Exact regression execution is next; no universal or novelty claim.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:30:59.000Z"
         }
       ],
       "reviews": []
@@ -1108,7 +1116,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:28:48.000Z"
+      "lastSeenAt": "2026-11-25T18:30:59.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -3346,6 +3354,20 @@
       "createdAt": "2026-11-25T18:29:50.000Z",
       "links": [],
       "requestFingerprint": "955f0b99d3da68fc823731c365151fd9677dc0a1517334247d9aae5a0b451dd9"
+    },
+    {
+      "id": "mdo-baselines-forest-proof-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-baselines",
+      "summary": "Derived a common permutation certificate for distinct-edge forest products.",
+      "detail": "For each subset transition, deleting a forest edge gives a cut crossed by exactly one gate. Initial/final occupation counts fix that crossing, so there is at most one exterior-power path between fixed endpoints. Taking squared moduli therefore equals independent stay/swap transitions with swap probability |g12|^2; the resulting single permutation distribution matches every compound layer. A same-owner bounded adversarial read found the reasoning sound, with the crucial restriction that each edge is used once. Draft executable fixtures cover phases, permutations, overlapping paths/stars, disjoint components and degeneracies. The triangle cycle with c=3/5,s=4/5 gives U11=109/125 and squared modulus 11881/15625 versus naive product-weight prediction 6121/15625; this refutes extension of those weights, not MOC. Exact regression execution is next; no universal or novelty claim.",
+      "to": null,
+      "createdAt": "2026-11-25T18:30:59.000Z",
+      "links": [],
+      "requestFingerprint": "99c21f5fd6179f0ddf4d6940e394544599fc900591aedec9cc49e0c6ad77d504"
     }
   ],
   "usage": [
