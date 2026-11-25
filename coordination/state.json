@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 247,
-  "updatedAt": "2026-11-25T20:30:02.000Z",
+  "revision": 248,
+  "updatedAt": "2026-11-25T20:30:14.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1785,6 +1785,31 @@
         "fromTaskId": "mdo-cycle-interference",
         "to": "all"
       }
+    },
+    {
+      "id": "mdo-spectral-gate-integration",
+      "objectiveId": "math-commons-platform",
+      "title": "Publish and replay the four-cycle spectral and forest gate-minor results",
+      "description": "Integrate the two non-overlapping research claims from current main into mandatory checks, research navigation and a protected pull request. Verify on GitHub and production, and submit exact evidence.",
+      "approach": "constructive",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T20:30:14.000Z",
+      "updatedAt": "2026-11-25T20:30:14.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        ".github/workflows/ci.yml",
+        "formal/README.md",
+        "formal/check.py",
+        "research/marcus-de-oliveira/context/forest.md",
+        "research/marcus-de-oliveira/context/work.md",
+        "research/marcus-de-oliveira/overview.md",
+        "research/marcus-de-oliveira/proof-obligations.md"
+      ]
     }
   ],
   "agents": [
@@ -1799,7 +1824,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T19:55:51.000Z"
+      "lastSeenAt": "2026-11-25T20:30:14.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -5750,6 +5775,20 @@
       "createdAt": "2026-11-25T20:30:02.000Z",
       "links": [],
       "requestFingerprint": "a8f64fb6eaba7b550823373043346f72b9cfcd3628b5267b164477ba82d638b7"
+    },
+    {
+      "id": "spectral-gate-integration-create",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-spectral-gate-integration",
+      "summary": "Proposed constructive task: Publish and replay the four-cycle spectral and forest gate-minor results",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T20:30:14.000Z",
+      "links": [],
+      "requestFingerprint": "66164141933758739991e82188b571909da2ef1339efbd6454c8dd1ad6add25f"
     }
   ],
   "usage": [
