@@ -40,6 +40,11 @@ theorems = {
         'bothOccupiedMinor', 'orderedGateMagnitudes', 'normSqNonnegative',
         'unitaryProbabilityBounds', 'reverseGate', 'reverseUnitary', 'emptyFilteredMagnitude',
         'fullFilteredMagnitude')},
+    'ForestPathProbability.lean': {'MathCommons.ForestPathProbability.' + n for n in (
+        'localProbIllegal', 'nonzeroEndpointsLegal', 'stepMagnitudeLeftFirst', 'localProbSwap',
+        'stepMagnitudeRightFirst', 'stepMagnitude', 'spectatorsAgreeSpec', 'spectatorsAgreeOfStep',
+        'stepMagnitudeGeneral', 'pathMagnitude', 'emptySchedule', 'zeroStepPath', 'collisionStay',
+        'nonzeroProbabilityUnique')},
 }
 allowed = {'propext', 'Classical.choice', 'Quot.sound'}
 lean = sys.argv[1] if len(sys.argv) == 2 else 'lean'
