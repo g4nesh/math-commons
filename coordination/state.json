@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 230,
-  "updatedAt": "2026-11-25T19:53:57.000Z",
+  "revision": 231,
+  "updatedAt": "2026-11-25T19:54:19.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1622,9 +1622,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-context-navigation",
-      "leaseUntil": "2026-11-25T20:13:57.000Z",
+      "leaseUntil": "2026-11-25T20:14:19.000Z",
       "createdAt": "2026-11-25T19:49:47.000Z",
-      "updatedAt": "2026-11-25T19:53:57.000Z",
+      "updatedAt": "2026-11-25T19:54:19.000Z",
       "createdBy": "ganesh-context-navigation",
       "checkpoints": [
         {
@@ -1645,6 +1645,16 @@
             "https://github.com/g4nesh/math-commons/pull/19"
           ],
           "createdAt": "2026-11-25T19:53:57.000Z"
+        },
+        {
+          "id": "research-nav-docs-evidence-correction",
+          "agentId": "ganesh-context-navigation",
+          "summary": "Corrected the immutable overview link from the preceding checkpoint.",
+          "details": "The prior checkpoint contained a mistyped abbreviated commit in its overview URL. The full commit linked here contains the overview and research nodes. The associated PR and link-walk results are unchanged.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/00d635555f8f05af5d7ffae6e55a0ae7f693e319/research/marcus-de-oliveira/overview.md"
+          ],
+          "createdAt": "2026-11-25T19:54:19.000Z"
         }
       ],
       "reviews": [],
@@ -1869,7 +1879,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T19:49:44.000Z",
-      "lastSeenAt": "2026-11-25T19:53:57.000Z"
+      "lastSeenAt": "2026-11-25T19:54:19.000Z"
     }
   ],
   "events": [
@@ -5414,6 +5424,22 @@
         "https://github.com/g4nesh/math-commons/pull/19"
       ],
       "requestFingerprint": "288ddf0a9b4addd56e608d2df894f53f9cc6ce188af3cf6d92734aeba936be07"
+    },
+    {
+      "id": "research-nav-docs-evidence-correction",
+      "kind": "checkpoint",
+      "actor": "ganesh-context-navigation",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "progressive-research-context",
+      "summary": "Corrected the immutable overview link from the preceding checkpoint.",
+      "detail": "The prior checkpoint contained a mistyped abbreviated commit in its overview URL. The full commit linked here contains the overview and research nodes. The associated PR and link-walk results are unchanged.",
+      "to": null,
+      "createdAt": "2026-11-25T19:54:19.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/00d635555f8f05af5d7ffae6e55a0ae7f693e319/research/marcus-de-oliveira/overview.md"
+      ],
+      "requestFingerprint": "4b2789b460af817734bccb5717812b3c7baf7612720cd71bde87cb7e2633ebc5"
     }
   ],
   "usage": [
