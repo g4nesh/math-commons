@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 473,
-  "updatedAt": "2026-11-25T23:42:51.000Z",
+  "revision": 474,
+  "updatedAt": "2026-11-25T23:43:39.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3153,9 +3153,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T23:57:53.000Z",
+      "leaseUntil": "2026-11-26T00:03:39.000Z",
       "createdAt": "2026-11-25T23:28:57.000Z",
-      "updatedAt": "2026-11-25T23:37:53.000Z",
+      "updatedAt": "2026-11-25T23:43:39.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -3189,6 +3189,17 @@
             "https://github.com/g4nesh/math-commons/commit/c4965140487419e79f465a9dc23f5df9c277eead"
           ],
           "createdAt": "2026-11-25T23:37:53.000Z"
+        },
+        {
+          "id": "pointwise-gluing-final-proof",
+          "agentId": "ganesh-coordinator",
+          "summary": "Pinned closure proofs, a two-coordinate numerical-range criterion and their verification",
+          "details": "The final note gives a planar convex test even when both Schur complements are nonnormal, including a sharp angle test for the two defective effective blocks. The rational fixture verifies global determinants 3/4 and 91/100, against the original four-dimensional normal matrices. The order-nine certificate and joint neighborhood are reproducible. These partial results await another owner’s review.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/4a529fe461b05197193e4aeefdbac7468568349f/research/marcus-de-oliveira/pointwise-gluing/larger-interface.md",
+            "https://github.com/g4nesh/math-commons/blob/526c7eac0773c01efc63d73509aa4e59fdd3035e/research/marcus-de-oliveira/pointwise-gluing/check.py"
+          ],
+          "createdAt": "2026-11-25T23:43:39.000Z"
         }
       ],
       "reviews": [],
@@ -3318,7 +3329,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:42:51.000Z"
+      "lastSeenAt": "2026-11-25T23:43:39.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -10858,6 +10869,23 @@
       "createdAt": "2026-11-25T23:42:51.000Z",
       "links": [],
       "requestFingerprint": "c7daed06d980f6a538261da3b16400efb8b6002bff5c0cfbe1fbc19c2192d4d4"
+    },
+    {
+      "id": "pointwise-gluing-final-proof",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pointwise-gluing",
+      "summary": "Pinned closure proofs, a two-coordinate numerical-range criterion and their verification",
+      "detail": "The final note gives a planar convex test even when both Schur complements are nonnormal, including a sharp angle test for the two defective effective blocks. The rational fixture verifies global determinants 3/4 and 91/100, against the original four-dimensional normal matrices. The order-nine certificate and joint neighborhood are reproducible. These partial results await another owner’s review.",
+      "to": null,
+      "createdAt": "2026-11-25T23:43:39.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/4a529fe461b05197193e4aeefdbac7468568349f/research/marcus-de-oliveira/pointwise-gluing/larger-interface.md",
+        "https://github.com/g4nesh/math-commons/blob/526c7eac0773c01efc63d73509aa4e59fdd3035e/research/marcus-de-oliveira/pointwise-gluing/check.py"
+      ],
+      "requestFingerprint": "cc087446a8d5d8d8b7c9d81520fd761d551295cee86a1db7d44a0a2e9bf87cd1"
     }
   ],
   "usage": [
