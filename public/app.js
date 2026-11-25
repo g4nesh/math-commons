@@ -1,3 +1,4 @@
+import { renderContributions, usageTeaser } from './contributions.js';
 const $ = (selector) => document.querySelector(selector);
 const DEFAULT_CONFIG = { name: 'Math Commons', repository: 'g4nesh/math-commons', stateBranch: 'coordination', statePath: 'coordination/state.json', leaseMinutes: 20, checkpointMinutes: 5 };
 let config = { ...DEFAULT_CONFIG };
@@ -58,7 +59,7 @@ function time(date) { return el('time', { datetime: date || '', title: fmtDate(d
 function titleCase(value = '') { return String(value).replace(/[_-]/g, ' ').replace(/^./, (c) => c.toUpperCase()); }
 function shell(value) { return `'${String(value).replace(/'/g, `'"'"'`)}'`; }
 function slug(value) { return String(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60); }
-function getView() { const view = location.hash.slice(1).split('?')[0]; return ['overview', 'work', 'activity', 'agents', 'connect'].includes(view) ? view : 'overview'; }
+function getView() { const view = location.hash.slice(1).split('?')[0]; return ['overview', 'work', 'activity', 'agents', 'contributions', 'connect'].includes(view) ? view : 'overview'; }
 function go(view) { if (location.hash === `#${view}`) { currentView = view; render(); } else location.hash = view; }
 function toast(message) { clearTimeout(toastTimer); $('#toast').textContent = message; $('#toast').classList.add('visible'); toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 3500); }
 async function copy(text, success = 'Copied to clipboard') {
@@ -156,7 +157,7 @@ async function loadExample() {
 }
 function renderNotice() {
   const container = $('#notice'); container.replaceChildren();
-  if (source === 'example') container.append(el('div', { class: 'notice' }, [el('span', {}, `Example preview. This is a starting problem, not a live research session.${lastError ? ' The live connection is currently unavailable.' : ''}`), button('Return to live workspace', refresh, '')]));
+  if (source === 'example') container.append(el('div', { class: 'notice' }, [el('span', {}, `Example preview. Starter research and synthetic contribution data; not a live research session.${lastError ? ' The live connection is currently unavailable.' : ''}`), button('Return to live workspace', refresh, '')]));
   else if (source === 'stale') container.append(el('div', { class: 'notice notice-error' }, [el('span', {}, `${lastError} Showing the last successful snapshot from ${fmtDate(lastFetchedAt)}.`), button('Try again', refresh, '')]));
   else if (source === 'error' && currentView === 'connect') container.append(el('div', { class: 'notice notice-error' }, [el('span', {}, `${lastError} You can still connect through GitHub.`), button('Try again', refresh, '')]));
 }
@@ -171,8 +172,11 @@ function render() {
   renderNotice();
   const content = $('#content');
   if (!workspace && currentView !== 'connect') { content.replaceChildren(source === 'loading' ? el('div', { class: 'loading-state' }, [el('span', { class: 'loading-line' }), el('p', {}, 'Opening the shared notebook…')]) : unavailable()); return; }
-  const views = { overview: renderOverview, work: renderWork, activity: renderActivity, agents: renderAgents, connect: renderConnect };
+  const views = { overview: renderOverview, work: renderWork, activity: renderActivity, agents: renderAgents, contributions: renderUsageView, connect: renderConnect };
   content.replaceChildren(views[currentView]());
+}
+function renderUsageView() {
+  return renderContributions({ state: workspace, el, button, externalLink, example: source === 'example', now: lastFetchedAt ? Date.parse(lastFetchedAt) : Date.now(), repoUrl: repoUrl(), onPreview: async () => { await loadExample(); go('contributions'); }, onLive: refresh });
 }
 function unavailable() {
   return el('section', { class: 'no-data' }, [el('p', { class: 'eyebrow' }, 'The notebook is temporarily unavailable'), el('h1', {}, 'Every idea has a place. Let’s reconnect to yours.'), el('p', {}, `${lastError || 'Connecting to the shared workspace.'} The research remains in GitHub. Retry the connection, or explore a clearly labeled example while you wait.`), el('div', { class: 'no-data-actions' }, [button('Try again', refresh), button('Explore an example', loadExample, 'button button-secondary'), externalLink('Open repository', repoUrl(), 'button button-plain')])]);
@@ -200,6 +204,7 @@ function renderOverview() {
     el('section', {}, [sectionHeading('Different ways forward', button('View work board', () => { workFilter.objective = selectedObjective()?.id || 'all'; go('work'); }, 'button button-plain')), orderedTasks.length ? el('div', { class: 'task-list' }, orderedTasks.map(taskCard)) : emptyState('A question starts the work', 'Create an objective, then let agents break it into distinct approaches.', button('Create an objective', openObjectiveDialog, 'button button-secondary'))]),
     el('section', {}, [sectionHeading('From the notebook', button('View all activity', () => go('activity'), 'button button-plain')), recent.length ? el('div', { class: 'panel activity-list' }, recent.map((event) => activityEntry(event, true))) : emptyState('The notebook is ready', 'Checkpoints, questions, handoffs, and reviews will appear here as your agents begin.', button('Invite your first agent', () => go('connect'), 'button button-secondary'), '⌁')])
   ]));
+  section.append(usageTeaser({ state: workspace, el, button, example: source === 'example', now: lastFetchedAt ? Date.parse(lastFetchedAt) : Date.now(), onOpen: () => go('contributions') }));
   return section;
 }
 function stat(value, label) { return el('div', { class: 'stat' }, [el('div', { class: 'stat-value' }, value), el('div', { class: 'stat-label' }, label)]); }
