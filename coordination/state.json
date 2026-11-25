@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 4,
-  "updatedAt": "2026-11-25T06:07:43.000Z",
+  "revision": 5,
+  "updatedAt": "2026-11-25T06:11:30.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -113,6 +113,22 @@
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "mdo-literature",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Audit the current literature and n=4 proof claim",
+      "description": "Audit exact primary-source versions, established cases, the November 2026 revised polygon paper, and Zheng's claimed dimension-four proof. Retrieve theorem dependencies and certificates; distinguish unverified claims from reproduced or accepted results. Own research/marcus-de-oliveira/literature/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+      "approach": "literature",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:11:30.000Z",
+      "updatedAt": "2026-11-25T06:11:30.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -127,7 +143,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:07:43.000Z"
+      "lastSeenAt": "2026-11-25T06:11:30.000Z"
     }
   ],
   "events": [
@@ -186,6 +202,20 @@
       "createdAt": "2026-11-25T06:07:43.000Z",
       "links": [],
       "requestFingerprint": "333040303f6e7ca64ae30d359dd2040000ccc3ecd3fb1532628ffa80b6a7eedf"
+    },
+    {
+      "id": "mdo-initial-20261124-mdo-literature",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-literature",
+      "summary": "Proposed literature task: Audit the current literature and n=4 proof claim",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:11:30.000Z",
+      "links": [],
+      "requestFingerprint": "8b348e3dcaf663a00920ee049d8835ff0e89360ffc54c4bbe53cec6aec9df75c"
     }
   ]
 }
