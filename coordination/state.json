@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 154,
-  "updatedAt": "2026-11-25T18:39:22.000Z",
+  "revision": 155,
+  "updatedAt": "2026-11-25T18:39:26.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1058,9 +1058,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-usage-adapter",
-      "leaseUntil": "2026-11-25T18:55:02.000Z",
+      "leaseUntil": "2026-11-25T18:59:26.000Z",
       "createdAt": "2026-11-25T18:26:24.000Z",
-      "updatedAt": "2026-11-25T18:35:02.000Z",
+      "updatedAt": "2026-11-25T18:39:26.000Z",
       "createdBy": "ganesh-usage-adapter",
       "checkpoints": [
         {
@@ -1078,6 +1078,14 @@
           "details": "Added fresh Claude Code print adapter with final modelUsage aggregation, cache normalization, hashed runtime ID, error receipt preservation, and no raw event publication. Added validated per-run JSONL progress artifact, helper for nested tool subprocesses, throttling/coalescing, stable checkpoint IDs, serialized heartbeat/progress writes, and saved exact operations for ambiguous-write recovery. Existing 27 worker/Codex tests and 11 new Claude/progress tests pass with fake provider executables; no paid provider run. Now validating worker lease-loss integration and documenting copyable commands and limits. This turn own token receipt will be handled centrally by root to avoid double counting.",
           "evidence": [],
           "createdAt": "2026-11-25T18:35:02.000Z"
+        },
+        {
+          "id": "worker-live-reporting-checkpoint-3",
+          "agentId": "ganesh-usage-adapter",
+          "summary": "Worker reporting implementation frozen; 60 focused fixture tests and runtime syntax checks pass.",
+          "details": "Completed fresh Claude Code automatic receipts using final inclusive modelUsage, preserving successful or failed terminal receipts without raw conversation. Codex and Claude nested tool subprocesses both exercised the actual public progress helper. The worker publishes during runs, coalesces bursts, serializes lease-bound writes, saves exact pending operations, aborts on uncertain publication, and preserves captured token usage after lease failure. Regression tests cover the final-frame/slow-upload race, global broadcasts/direct messages without foreign-objective leakage, fragmented streams, cache arithmetic, duplicates, missing counters, malformed artifacts, recovery replay, and cancellation. Added copyable setup/progress/recovery commands and limitations in docs/adapters.md and docs/usage.md. Source frozen for root commit/PR; immutable artifact checkpoint and submit remain pending root publication. No paid provider run or own-session usage publication.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:39:26.000Z"
         }
       ],
       "reviews": []
@@ -1257,7 +1265,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T18:35:02.000Z"
+      "lastSeenAt": "2026-11-25T18:39:26.000Z"
     },
     {
       "id": "ganesh-contributor-intake",
@@ -3669,6 +3677,20 @@
       "createdAt": "2026-11-25T18:39:22.000Z",
       "links": [],
       "requestFingerprint": "1672fe52c8efba14d00f3dc7d40d3a4e9c839f580cab982cfaac3479fb7307fd"
+    },
+    {
+      "id": "worker-live-reporting-checkpoint-3",
+      "kind": "checkpoint",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "worker-live-reporting",
+      "summary": "Worker reporting implementation frozen; 60 focused fixture tests and runtime syntax checks pass.",
+      "detail": "Completed fresh Claude Code automatic receipts using final inclusive modelUsage, preserving successful or failed terminal receipts without raw conversation. Codex and Claude nested tool subprocesses both exercised the actual public progress helper. The worker publishes during runs, coalesces bursts, serializes lease-bound writes, saves exact pending operations, aborts on uncertain publication, and preserves captured token usage after lease failure. Regression tests cover the final-frame/slow-upload race, global broadcasts/direct messages without foreign-objective leakage, fragmented streams, cache arithmetic, duplicates, missing counters, malformed artifacts, recovery replay, and cancellation. Added copyable setup/progress/recovery commands and limitations in docs/adapters.md and docs/usage.md. Source frozen for root commit/PR; immutable artifact checkpoint and submit remain pending root publication. No paid provider run or own-session usage publication.",
+      "to": null,
+      "createdAt": "2026-11-25T18:39:26.000Z",
+      "links": [],
+      "requestFingerprint": "39cd3cacb9d8c2736e85712ead387928a9e5f8871509f548dde23cabf50279a4"
     }
   ],
   "usage": [
