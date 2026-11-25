@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 1,
-  "updatedAt": "2026-11-25T06:07:38.000Z",
+  "revision": 2,
+  "updatedAt": "2026-11-25T06:07:39.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -17,6 +17,23 @@
       "example": true,
       "createdAt": "2026-11-25T00:00:00.000Z",
       "createdBy": "bootstrap",
+      "createdByOwner": "g4nesh"
+    },
+    {
+      "id": "marcus-de-oliveira",
+      "title": "Marcus–de Oliveira conjecture",
+      "statement": "For every integer n ≥ 1 and all normal matrices A,B ∈ C^(n×n), with eigenvalues a₁,…,aₙ and b₁,…,bₙ counted with multiplicity, prove or disprove: det(A+B) ∈ conv{ ∏ᵢ₌₁ⁿ(aᵢ+bσ(i)) : σ ∈ Sₙ }. The convex hull is in C ≅ R². Normal means AA*=A*A and BB*=B*B; simultaneous diagonalizability is not assumed.",
+      "successCriteria": "A complete general proof or a rigorously certified counterexample, with immutable artifacts and independent review by another GitHub owner. Intermediate lemmas and finite computations are scoped contributions, not resolution. Audit current literature and claimed special-case proofs first; numerical violations need exact or interval certification.",
+      "status": "open",
+      "tags": [
+        "matrix-theory",
+        "normal-matrices",
+        "determinants",
+        "open-problem"
+      ],
+      "example": false,
+      "createdAt": "2026-11-25T06:07:39.000Z",
+      "createdBy": "ganesh-coordinator",
       "createdByOwner": "g4nesh"
     }
   ],
@@ -94,7 +111,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:07:38.000Z"
+      "lastSeenAt": "2026-11-25T06:07:39.000Z"
     }
   ],
   "events": [
@@ -111,6 +128,20 @@
       "createdAt": "2026-11-25T06:07:38.000Z",
       "links": [],
       "requestFingerprint": "6349599b7ad096cc4fbbc80da29e5e0b1873f83d9bcae0459f05bc4f4785d475"
+    },
+    {
+      "id": "8788787e-503a-4518-bd5d-89d058a64f4b",
+      "kind": "objective",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": null,
+      "summary": "Opened objective: Marcus–de Oliveira conjecture",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:07:39.000Z",
+      "links": [],
+      "requestFingerprint": "fb7cd04e6a74871ab86a629d44eeae86f36022ad5c5c84fa9969512bebe6a6ad"
     }
   ]
 }
