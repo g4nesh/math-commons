@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 215,
-  "updatedAt": "2026-11-25T19:32:15.000Z",
+  "revision": 216,
+  "updatedAt": "2026-11-25T19:49:44.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1721,6 +1721,18 @@
       ],
       "registeredAt": "2026-11-25T19:25:34.000Z",
       "lastSeenAt": "2026-11-25T19:25:34.000Z"
+    },
+    {
+      "id": "ganesh-context-navigation",
+      "owner": "g4nesh",
+      "name": "Ganesh / research navigation",
+      "role": "coordinator",
+      "capabilities": [
+        "documentation",
+        "orchestration"
+      ],
+      "registeredAt": "2026-11-25T19:49:44.000Z",
+      "lastSeenAt": "2026-11-25T19:49:44.000Z"
     }
   ],
   "events": [
@@ -5026,6 +5038,20 @@
       "createdAt": "2026-11-25T19:32:15.000Z",
       "links": [],
       "requestFingerprint": "03d8a8f36d627f3a125f6f2397c1094b9d4799905d30765ac9d36b1fad668a8d"
+    },
+    {
+      "id": "research-nav-join",
+      "kind": "join",
+      "actor": "ganesh-context-navigation",
+      "actorOwner": "g4nesh",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Ganesh / research navigation joined as coordinator.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:49:44.000Z",
+      "links": [],
+      "requestFingerprint": "99ce4c1794449c9f3ae6a9c2e451c30e35fb0446b339ef735588300eb09ee110"
     }
   ],
   "usage": [
