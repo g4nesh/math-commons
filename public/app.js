@@ -123,7 +123,8 @@ async function refresh() {
   try {
     const payload = await readJson('/api/state');
     if (!validState(payload.state) || payload.source !== 'github') throw new Error('Invalid workspace response');
-    if (source === 'example') {
+    const wasExample = source === 'example';
+    if (wasExample) {
       objectiveId = '';
       workFilter.objective = config.defaultObjectiveId || 'all';
     }
@@ -132,7 +133,10 @@ async function refresh() {
     lastError = '';
     lastFetchedAt = payload.fetchedAt || new Date().toISOString();
     if (!selectedObjective()) objectiveId = workspace.objectives[0]?.id || '';
-    const nextUrl = new URL(location.href); nextUrl.searchParams.delete('demo'); history.replaceState(null, '', nextUrl);
+    const nextUrl = new URL(location.href);
+    nextUrl.searchParams.delete('demo');
+    if (wasExample && isTreeView(currentView)) nextUrl.hash = currentView;
+    history.replaceState(null, '', nextUrl);
   } catch (error) {
     lastError = error.name === 'TimeoutError' ? 'The workspace request timed out.' : 'The shared workspace could not be reached.';
     if (source !== 'example') source = workspace ? 'stale' : 'error';
@@ -151,7 +155,11 @@ async function loadExample() {
     objectiveId = data.objectives[0]?.id || '';
     workFilter.objective = 'all';
     lastError = '';
-    const url = new URL(location.href); url.searchParams.set('demo', '1'); history.replaceState(null, '', url);
+    const url = new URL(location.href);
+    url.searchParams.set('demo', '1');
+    const requested = new URLSearchParams(url.hash.split('?')[1]).get('objective');
+    if (isTreeView(currentView) && requested && !data.objectives.some(o => o.id === requested)) url.hash = currentView;
+    history.replaceState(null, '', url);
     render();
   } catch { toast('The example is unavailable. Try refreshing the workspace.'); }
 }
@@ -240,7 +248,7 @@ function renderUsageView() {
   return renderContributions({ state: workspace, el, button, externalLink, example: source === 'example', now: lastFetchedAt ? Date.parse(lastFetchedAt) : Date.now(), repoUrl: repoUrl(), onPreview: async () => { await loadExample(); go('contributions'); }, onLive: refresh });
 }
 function unavailable() {
-  return el('section', { class: 'no-data' }, [el('p', { class: 'eyebrow' }, 'The notebook is temporarily unavailable'), el('h1', {}, 'Every idea has a place. Let’s reconnect to yours.'), el('p', {}, `${lastError || 'Connecting to the shared workspace.'} The research remains in GitHub. Retry the connection, or explore a clearly labeled example while you wait.`), el('div', { class: 'no-data-actions' }, [button('Try again', refresh), button('Explore an example', loadExample, 'button button-secondary'), externalLink('Open repository', repoUrl(), 'button button-plain')])]);
+  return el('section', { class: 'no-data' }, [el('h1', {}, 'Workspace unavailable'), el('p', {}, lastError || 'Connecting to the shared workspace.'), el('div', { class: 'no-data-actions' }, [button('Try again', refresh), button('Explore an example', loadExample, 'button button-secondary'), externalLink('Open repository', repoUrl(), 'button button-plain')])]);
 }
 function navigateTree(href, action) {
   if (href !== location.hash) history.pushState(null, '', href);
