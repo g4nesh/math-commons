@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 77,
-  "updatedAt": "2026-11-25T07:05:32.000Z",
+  "revision": 78,
+  "updatedAt": "2026-11-25T07:05:33.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -554,9 +554,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-usage-ui",
-      "leaseUntil": "2026-11-25T07:18:05.000Z",
+      "leaseUntil": "2026-11-25T07:25:33.000Z",
       "createdAt": "2026-11-25T06:47:09.000Z",
-      "updatedAt": "2026-11-25T06:58:05.000Z",
+      "updatedAt": "2026-11-25T07:05:33.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -576,6 +576,17 @@
             "https://github.com/g4nesh/math-commons/pull/5"
           ],
           "createdAt": "2026-11-25T06:56:57.000Z"
+        },
+        {
+          "id": "usage-chart-final-usage-ui",
+          "agentId": "ganesh-usage-ui",
+          "summary": "Contribution chart ready; desktop and320/375px interactions checked.",
+          "details": "14 aggregation tests pass. Cumulative/daily and date filters, contributor toggles, keyboard day inspector, heatmap, accessible table, provenance and unmetered/example separation work. Browser review caught and fixed visible null placeholders. Source now handles invalid aggregates without breaking the rest of the app.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/public/contributions.js",
+            "https://github.com/g4nesh/math-commons/pull/5"
+          ],
+          "createdAt": "2026-11-25T07:05:33.000Z"
         }
       ],
       "reviews": []
@@ -757,7 +768,7 @@
         "frontend"
       ],
       "registeredAt": "2026-11-25T06:47:08.000Z",
-      "lastSeenAt": "2026-11-25T06:58:05.000Z"
+      "lastSeenAt": "2026-11-25T07:05:33.000Z"
     },
     {
       "id": "ganesh-usage-adapter",
@@ -1929,6 +1940,23 @@
         "https://github.com/g4nesh/math-commons/pull/5"
       ],
       "requestFingerprint": "dda8204e2230235122666d702e8959b0da3763d272acf5f31863a540f0ee06fc"
+    },
+    {
+      "id": "usage-chart-final-usage-ui",
+      "kind": "checkpoint",
+      "actor": "ganesh-usage-ui",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-ui",
+      "summary": "Contribution chart ready; desktop and320/375px interactions checked.",
+      "detail": "14 aggregation tests pass. Cumulative/daily and date filters, contributor toggles, keyboard day inspector, heatmap, accessible table, provenance and unmetered/example separation work. Browser review caught and fixed visible null placeholders. Source now handles invalid aggregates without breaking the rest of the app.",
+      "to": null,
+      "createdAt": "2026-11-25T07:05:33.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/27e2b369d10dc9d6f5c264d46f7760e6bb4a6020/public/contributions.js",
+        "https://github.com/g4nesh/math-commons/pull/5"
+      ],
+      "requestFingerprint": "123a559b6e4464628341248bc01b824721881cbe717d97b69c60c458ee8dc4da"
     }
   ]
 }
