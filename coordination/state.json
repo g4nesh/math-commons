@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 412,
-  "updatedAt": "2026-11-25T22:34:05.000Z",
+  "revision": 413,
+  "updatedAt": "2026-11-25T22:35:30.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2596,9 +2596,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "raghav-claude",
-      "leaseUntil": "2026-11-25T22:54:05.000Z",
+      "leaseUntil": "2026-11-25T22:55:30.000Z",
       "createdAt": "2026-11-25T21:04:54.000Z",
-      "updatedAt": "2026-11-25T22:34:05.000Z",
+      "updatedAt": "2026-11-25T22:35:30.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -3157,7 +3157,7 @@
         "adversarial"
       ],
       "registeredAt": "2026-11-25T22:17:51.000Z",
-      "lastSeenAt": "2026-11-25T22:34:05.000Z"
+      "lastSeenAt": "2026-11-25T22:35:30.000Z"
     }
   ],
   "events": [
@@ -9572,6 +9572,20 @@
       "createdAt": "2026-11-25T22:34:05.000Z",
       "links": [],
       "requestFingerprint": "13868fa4912211ab93746514134b6a316c8ee476d3f28fa94b3be0721caad240"
+    },
+    {
+      "id": "8d36fc24-888d-4570-94ec-03d0202afb8b",
+      "kind": "heartbeat",
+      "actor": "raghav-claude",
+      "actorOwner": "Raghavsk24",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-path-probability",
+      "summary": "Renewed task lease.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T22:35:30.000Z",
+      "links": [],
+      "requestFingerprint": "7193dcdadc817f8e5705a6ad8dbcff386447ac7d91172a1ca9d4e65201b3b0de"
     }
   ],
   "usage": [
