@@ -1,7 +1,10 @@
 # Exact certificate for the unitary minor inequality (regime t ≥ 1)
 
 - **Task:** `mdo-star-exact-certificate` (request from `mdo-pmsh-4`). Agent `ganesh-claude-minors` (Claude Code, model `claude-fable-5-2`), GitHub owner `g4nesh`. November 25, 2026.
-- **Status:** in progress. **Negative result so far: at t = 1 no exact degree-3 certificate exists** (numerical evidence with controls, Step 2). This file is updated as each step lands.
+- **Status:** in progress.
+  - **Exact result (Step 4):** for every U ∈ U(4), 2·g0 + 3·D[12,12] + 4·D[13,14] ≥ 0. This is the case t = 2, with an exact rational sum-of-squares certificate and an independent exact check.
+  - **Negative result (Step 2):** at t = 1 no exact degree-3 certificate exists (numerical evidence with controls).
+  - The full target (all t ≥ 1 at once) is **not** done.
 - **Evidence levels:** marked per item. Nothing here is independently reviewed.
 
 **Target.** For every U ∈ U(4) and every t ≥ 1:
@@ -67,7 +70,52 @@ cd research/marcus-de-oliveira/star-exact && python3 exact_space.py 300
 
 **The 20 extra directions (`extra_kernel.py`).** They are simple: either a single complement polynomial is dropped, or two are tied with ratio 3/2 at t = 2. Example: in the block with u₁₁u₂₄u₃₄ and u₁₄u₂₄u₃₁ the surviving amplitude is u₂₄·(3·u₁₁u₃₄ − 2·u₁₄u₃₁). This suggests amplitudes that depend on t, such as u₂₄·((1+t)·u₁₁u₃₄ − t·u₁₄u₃₁). **That formula is a guess from one value of t.**
 
+## Step 4 (done, exact): a certificate at t = 2
+
+> **Theorem S2.** For every U ∈ U(4):  2·g0 + 3·D[12,12] + 4·D[13,14] ≥ 0.
+> Equivalently g0 + (3/2)·D[12,12] + 2·D[13,14] ≥ 0, the member t = 2 of the family.
+
+**Evidence level.** Exact computer-verified certificate in rational arithmetic, with an independent checker. Not reviewed by another GitHub owner.
+
+**The certificate** ([`certificate_t2.json`](certificate_t2.json)). 302 cubic polynomials q = A_b·m_b in 196 weight blocks, with rational coefficients (denominators 1 and 3), and rational symmetric matrices T_b such that
+
+  2·g0 + 3·D[12,12] + 4·D[13,14] = Σ_b (A_b m_b)* T_b (A_b m_b)  on U(4),  every T_b positive definite.
+
+**How it was built.**
+1. Second reduction (`second_reduction.py 2`): the 20 extra kernel directions of the central solution were rationalized (rounding moved entries by at most 8.6·10⁻⁵) and removed, leaving 302 amplitudes.
+2. Strict feasibility (`reduced2.py 2`): all blocks can be kept ≥ 0.034·I.
+3. Exact solve (`exact_cert.py 2`): the identity at 300 rational unitaries is a rational linear system with 434 unknowns and exact rank 184. The 250 free unknowns were set to the rounded numerical values; the others were solved exactly. The result is within 1.1·10⁻⁶ of the numerical point.
+
+**How it is checked (`verify_cert.py certificate_t2.json 777`, exact arithmetic only).**
+1. Lemma 1 at 300 **fresh** rational unitaries (a seed not used in the construction): rank K = 1227, rank of evaluations = 261, sum 1488.
+2. Every T_b is symmetric with positive leading principal minors (smallest 2.2·10⁻⁴).
+3. The identity holds exactly at all 300 fresh unitaries. By Lemma 1 it therefore holds on all of U(4).
+
+Why step 3 suffices: both sides restrict to elements of the 261-dimensional space of Lemma 1. The right side is a combination of the basis functions Re(conj(m_p)·m_q). The left side is too, after multiplying each term by a squared row norm, which equals 1 on U(4).
+
+**What it gives, and what it does not.**
+- One rigorous member of the family. By symmetry its 288 images also hold.
+- It does **not** give PMSH(4) at any spectrum: a spectrum with ratio ρ needs the family at both t = ρ/(1−ρ) and its reciprocal, and the reciprocal is below 1.
+- It shows the pipeline works: zeros → integer complement spaces → second reduction → rational solve → exact check. Each further rational t ≥ 1.05 should take about a minute.
+
+## Reproduction
+
+Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0, cvxpy 1.7.5 (Clarabel), python-flint 0.6.0. Run from this directory.
+
+```sh
+# exact check only (about 25 seconds):
+python3 verify_cert.py certificate_t2.json 777
+
+# full construction at t = 2:
+python3 zeros.py 1 700 1 && python3 zero_walk.py 1 5 120 && python3 polish.py 1 zeros_walk_t1.pkl
+python3 reduce.py 1                      # complement_t1.json (integer bases)
+python3 center.py 2 && python3 second_reduction.py 2 && python3 reduced2.py 2
+python3 exact_cert.py 2                  # certificate_t2.json
+```
+
+Outputs of the runs reported here are in [`logs/`](logs/). Intermediate `.pkl` files are not committed.
+
 ## Next steps
 
-7. Exact certificate at t = 2: second reduction with rational directions, then rounding and exact verification.
-8. Degree 4 at t = 1.
+8. Certificates at other rational t ≥ 1.05, and the dependence of the amplitudes on t; then one certificate for a whole half-line.
+9. Degree 4 at t = 1 and below.
