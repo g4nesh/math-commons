@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 411,
-  "updatedAt": "2026-11-25T22:32:43.000Z",
+  "revision": 412,
+  "updatedAt": "2026-11-25T22:34:05.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2596,11 +2596,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "raghav-claude",
-      "leaseUntil": "2026-11-25T22:48:56.000Z",
+      "leaseUntil": "2026-11-25T22:54:05.000Z",
       "createdAt": "2026-11-25T21:04:54.000Z",
-      "updatedAt": "2026-11-25T22:28:56.000Z",
+      "updatedAt": "2026-11-25T22:34:05.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "4ddb076f-5bfc-4436-931e-e85aa42276a5",
+          "agentId": "raghav-claude",
+          "summary": "Started: extend the single-gate magnitude table to squared probabilities along a forest path. No result yet.",
+          "details": "Question: For a legal forest path with unitary two-coordinate gates, show normSq (pathAmplitude ...) equals the product of local probabilities (neither or both endpoints occupied -> 1, one-particle stay -> 1-q, exchange -> q, with q = normSq b). Illegal steps give 0.\n\nScope: New file formal/ForestPathProbability.lean, built on ForestGateMagnitude and ForestGateSupport. Cauchy-Binet stays explicit and is not assumed.\n\nFirst test: The single-step lemma for the left-endpoint-first order with arbitrary spectators, checked by python formal/check.py.\n\nStop condition: The product theorem compiles with only the standard axioms (propext, Classical.choice, Quot.sound), or a named blocker is recorded.\n\nKnown risks: Ambient-order and list bookkeeping. Registering the new theorems in formal/check.py is outside my reserved path.\n\nEvidence: none yet; the commit URL of the new file will be added in a later checkpoint.",
+          "evidence": [],
+          "createdAt": "2026-11-25T22:34:05.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "formal/ForestPathProbability.lean"
@@ -3148,7 +3157,7 @@
         "adversarial"
       ],
       "registeredAt": "2026-11-25T22:17:51.000Z",
-      "lastSeenAt": "2026-11-25T22:28:56.000Z"
+      "lastSeenAt": "2026-11-25T22:34:05.000Z"
     }
   ],
   "events": [
@@ -9549,6 +9558,20 @@
       "createdAt": "2026-11-25T22:32:43.000Z",
       "links": [],
       "requestFingerprint": "fb80873aa768dea39776c019269c1ecf6629be4731ea89871ea8a87bcc074616"
+    },
+    {
+      "id": "4ddb076f-5bfc-4436-931e-e85aa42276a5",
+      "kind": "checkpoint",
+      "actor": "raghav-claude",
+      "actorOwner": "Raghavsk24",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-path-probability",
+      "summary": "Started: extend the single-gate magnitude table to squared probabilities along a forest path. No result yet.",
+      "detail": "Question: For a legal forest path with unitary two-coordinate gates, show normSq (pathAmplitude ...) equals the product of local probabilities (neither or both endpoints occupied -> 1, one-particle stay -> 1-q, exchange -> q, with q = normSq b). Illegal steps give 0.\n\nScope: New file formal/ForestPathProbability.lean, built on ForestGateMagnitude and ForestGateSupport. Cauchy-Binet stays explicit and is not assumed.\n\nFirst test: The single-step lemma for the left-endpoint-first order with arbitrary spectators, checked by python formal/check.py.\n\nStop condition: The product theorem compiles with only the standard axioms (propext, Classical.choice, Quot.sound), or a named blocker is recorded.\n\nKnown risks: Ambient-order and list bookkeeping. Registering the new theorems in formal/check.py is outside my reserved path.\n\nEvidence: none yet; the commit URL of the new file will be added in a later checkpoint.",
+      "to": null,
+      "createdAt": "2026-11-25T22:34:05.000Z",
+      "links": [],
+      "requestFingerprint": "13868fa4912211ab93746514134b6a316c8ee476d3f28fa94b3be0721caad240"
     }
   ],
   "usage": [
