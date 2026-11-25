@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 68,
-  "updatedAt": "2026-11-25T06:56:57.000Z",
+  "revision": 69,
+  "updatedAt": "2026-11-25T06:56:58.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -577,9 +577,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-usage-adapter",
-      "leaseUntil": "2026-11-25T07:10:39.000Z",
+      "leaseUntil": "2026-11-25T07:16:58.000Z",
       "createdAt": "2026-11-25T06:47:13.000Z",
-      "updatedAt": "2026-11-25T06:50:39.000Z",
+      "updatedAt": "2026-11-25T06:56:58.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -589,6 +589,16 @@
           "details": "Official source emits cumulative thread totals at fresh exec completion. The adapter will accept one terminal record and reject ambiguous accounting, rather than summing cumulative values. All-zero can mean unavailable and is handled as missing. No paid model test is launched.",
           "evidence": [],
           "createdAt": "2026-11-25T06:50:39.000Z"
+        },
+        {
+          "id": "usage-chart-cp2-usage-adapter",
+          "agentId": "ganesh-usage-adapter",
+          "summary": "Runtime capture implemented and validated with11 no-model tests.",
+          "details": "Pinned official Codex emitter semantics, bounded fragmented JSONL capture, hashed runtime identity, no transcript publication and safe blocked results preserving valid usage. Oversized model answers are compacted to a blocked result instead of dropping the receipt.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/5"
+          ],
+          "createdAt": "2026-11-25T06:56:58.000Z"
         }
       ],
       "reviews": []
@@ -708,7 +718,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T06:50:39.000Z"
+      "lastSeenAt": "2026-11-25T06:56:58.000Z"
     }
   ],
   "events": [
@@ -1727,6 +1737,22 @@
         "https://github.com/g4nesh/math-commons/pull/5"
       ],
       "requestFingerprint": "3a061ccddf40eb89b5a6c06adcf1459932e74b6c603940265fb2df63ca2d7b8e"
+    },
+    {
+      "id": "usage-chart-cp2-usage-adapter",
+      "kind": "checkpoint",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-adapter",
+      "summary": "Runtime capture implemented and validated with11 no-model tests.",
+      "detail": "Pinned official Codex emitter semantics, bounded fragmented JSONL capture, hashed runtime identity, no transcript publication and safe blocked results preserving valid usage. Oversized model answers are compacted to a blocked result instead of dropping the receipt.",
+      "to": null,
+      "createdAt": "2026-11-25T06:56:58.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/5"
+      ],
+      "requestFingerprint": "c9573a59aee92a8d669d8f118030b4ccd20fd5980b20d68fefca772ed14e9091"
     }
   ]
 }
