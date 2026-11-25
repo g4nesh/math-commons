@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 62,
-  "updatedAt": "2026-11-25T06:47:17.000Z",
+  "revision": 63,
+  "updatedAt": "2026-11-25T06:50:35.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -507,11 +507,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-usage-core",
-      "leaseUntil": "2026-11-25T07:07:06.000Z",
+      "leaseUntil": "2026-11-25T07:10:35.000Z",
       "createdAt": "2026-11-25T06:47:05.000Z",
-      "updatedAt": "2026-11-25T06:47:06.000Z",
+      "updatedAt": "2026-11-25T06:50:35.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "usage-chart-cp1-usage-core",
+          "agentId": "ganesh-usage-core",
+          "summary": "Defined authenticated, deduplicated run receipt contract.",
+          "details": "Receipts bind owner/agent/task, use safe integer input+output totals, treat cached input as a subset, and preserve pending uploads for retry. Existing state remains readable without usage receipts.",
+          "evidence": [],
+          "createdAt": "2026-11-25T06:50:35.000Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -630,7 +639,7 @@
         "backend"
       ],
       "registeredAt": "2026-11-25T06:47:03.000Z",
-      "lastSeenAt": "2026-11-25T06:47:06.000Z"
+      "lastSeenAt": "2026-11-25T06:50:35.000Z"
     },
     {
       "id": "ganesh-usage-ui",
@@ -1583,6 +1592,20 @@
       "createdAt": "2026-11-25T06:47:17.000Z",
       "links": [],
       "requestFingerprint": "33a69030d1810d9fb81ff3ec1e04307c9a9cc30e89d3eec87a1f436582ab8380"
+    },
+    {
+      "id": "usage-chart-cp1-usage-core",
+      "kind": "checkpoint",
+      "actor": "ganesh-usage-core",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-core",
+      "summary": "Defined authenticated, deduplicated run receipt contract.",
+      "detail": "Receipts bind owner/agent/task, use safe integer input+output totals, treat cached input as a subset, and preserve pending uploads for retry. Existing state remains readable without usage receipts.",
+      "to": null,
+      "createdAt": "2026-11-25T06:50:35.000Z",
+      "links": [],
+      "requestFingerprint": "1a19cb3a77f078c288c2236b27c676aa52691df298540819877b04099fc5a3d7"
     }
   ]
 }
