@@ -3,3 +3,5 @@
 *.npz
 *.raw
 __pycache__/
+amplitudes4_t0*.json
+certificate4_t0*.json

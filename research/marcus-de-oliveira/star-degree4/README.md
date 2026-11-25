@@ -113,6 +113,27 @@ The proof does not use the facet list of the compound polytope Q. A second class
 - Only harmonic spectra are covered. A spectrum with cross-ratio ρ needs f_t at t = ρ/(1−ρ) and at 1/t.
 - End-to-end numerical sanity check, not part of the proof (`end_to_end.py`): for three harmonic spectra and 624 unitaries, including the deepest cap unitaries, the certificate LP is feasible to 0, and the same weights reproduce det(D_a + H) for random complex a to 2·10⁻¹³.
 
+## Step 5 (in progress): more values of t, one cross-ratio class each
+
+**Which t a spectrum needs (`ratio_facets.py`, exact).** For any rational ratio ρ the script lists every facet of the projected polytope with an exact reduction, either to nonnegative coordinates or to one member L_t = g0 + (1 + 1/t)·D[12,12] + t·D[13,14] of the family at a permuted unitary (t·L_t = f_t). Observed: 88 + 96 facets, and the 96 use t = ρ/(1−ρ) and its reciprocal (48 each) when 0 < ρ < 1.
+
+| ratio ρ (and its five images) | t needed | status |
+| --- | --- | --- |
+| 1/2 (harmonic) | 1 | proved: Theorem HQ |
+| 1/3 | 1/2 and 2 | **proved below** |
+
+**t = 1/2 (`run_t.py 1/2`).** Same structure as at t = 1: 56 further null directions, now with entries 0, 1 and 1/3 = t/(1+t); 2,249 amplitudes; strictly feasible (blocks ≥ 0.0039·I). Rational certificate [`certificate4_t1-2.json`](certificate4_t1-2.json): every T_b positive definite, identity exact at 1,100 fresh rational unitaries for two seeds, evaluation rank 954. With Lemma 4:
+
+> **Theorem S4′ (exact).** For every U ∈ U(4): g0 + 3·D[12,12] + ½·D[13,14] ≥ 0.
+
+**t = 2** is the exact degree-3 certificate of [`../star-exact/`](../star-exact/README.md): g0 + (3/2)·D[12,12] + 2·D[13,14] ≥ 0 on U(4).
+
+> **Theorem R3.** PMSH(4) holds for every Hermitian 4×4 matrix whose eigenvalues have cross-ratio 1/3 in some labelling (equivalently 2/3, 3/2, 3, −2 or −1/2), for example (0, 2, 3, 4). The Marcus–de Oliveira inclusion follows for n = 4 when one normal matrix has such a spectrum on a line and the other is any normal matrix.
+
+*Proof.* As for Theorem HQ, with `ratio_facets.py 1/3` in place of `harmonic_facets.py`: 88 facets reduce to coordinates, 48 to L_{1/2} and 48 to L_2 at permuted unitaries. ∎
+
+Same evidence level and caveats as Theorem HQ.
+
 ## Reproduction
 
 Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0, cvxpy 1.7.5 (Clarabel), python-flint 0.6.0. Run from this directory.
@@ -125,11 +146,15 @@ python3 lemma4.py 10254 1                          # rank K4 >= 10254 (about 4 m
 python3 chiro_exact.py                             # ... recomputed in exact integer arithmetic (1 minute)
 python3 harmonic_facets.py 1/2 2 -1                # all facets at the harmonic ratios, each certified exactly
 python3 ratio_half.py 1/2 2 -1                     # optional: the same split via the exotic facets of Q
+python3 verify4.py certificate4_t1-2.json 777      # t = 1/2
+python3 ratio_facets.py 1/3                        # facets at ratio 1/3 reduce to coordinates, L_{1/2} and L_2
+(cd ../star-exact && python3 verify_cert.py certificate_t2.json)   # t = 2 (degree 3)
 
 # construction (needs the zeros produced by ../star-exact: zeros.py, zero_walk.py):
 python3 zeros4.py && python3 complement4.py
 python3 reduced4.py 1 && python3 center4.py - 1 && python3 second4.py 1
 python3 solve4.py 1
+python3 run_t.py 1/2                               # the whole chain at another t
 ```
 
 Outputs of the runs reported here are in [`logs/`](logs/).
