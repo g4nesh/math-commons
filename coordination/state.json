@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 82,
-  "updatedAt": "2026-11-25T07:07:20.000Z",
+  "revision": 83,
+  "updatedAt": "2026-11-25T07:07:27.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -706,12 +706,12 @@
       "title": "Request contributor access from the website and GitHub",
       "description": "Provide a private application that collects a contact email and GitHub account for maintainer review. Own the website entry point, GitHub issue chooser link, and onboarding instructions. Verify applicants can reach the form from both surfaces and responses stay private.",
       "approach": "constructive",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-contributor-intake",
+      "leaseUntil": "2026-11-25T07:27:27.000Z",
       "createdAt": "2026-11-25T07:07:20.000Z",
-      "updatedAt": "2026-11-25T07:07:20.000Z",
+      "updatedAt": "2026-11-25T07:07:27.000Z",
       "createdBy": "ganesh-contributor-intake",
       "checkpoints": [],
       "reviews": []
@@ -819,7 +819,7 @@
         "onboarding"
       ],
       "registeredAt": "2026-11-25T07:07:11.000Z",
-      "lastSeenAt": "2026-11-25T07:07:20.000Z"
+      "lastSeenAt": "2026-11-25T07:07:27.000Z"
     }
   ],
   "events": [
@@ -2058,6 +2058,20 @@
       "createdAt": "2026-11-25T07:07:20.000Z",
       "links": [],
       "requestFingerprint": "5320552ac1f4059d376ce6bb6e228f70b888552733731bf30c78d497688e49a6"
+    },
+    {
+      "id": "contributor-intake-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-contributor-intake",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "contributor-requests",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:07:27.000Z",
+      "links": [],
+      "requestFingerprint": "92f864f2ba9a2165fe5267a7d2becfadce4b980baf343053e472cf48715ed9a3"
     }
   ]
 }
