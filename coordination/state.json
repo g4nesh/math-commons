@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 308,
-  "updatedAt": "2026-11-25T21:04:54.000Z",
+  "revision": 309,
+  "updatedAt": "2026-11-25T21:04:58.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2107,9 +2107,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T21:19:23.000Z",
+      "leaseUntil": "2026-11-25T21:24:58.000Z",
       "createdAt": "2026-11-25T20:49:22.000Z",
-      "updatedAt": "2026-11-25T20:59:23.000Z",
+      "updatedAt": "2026-11-25T21:04:58.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2157,6 +2157,18 @@
             "https://github.com/g4nesh/math-commons/pull/20"
           ],
           "createdAt": "2026-11-25T20:59:23.000Z"
+        },
+        {
+          "id": "moving-mag-coord-final-artifacts",
+          "agentId": "ganesh-coordinator",
+          "summary": "Full spectral report and interleaved gate-minor proofs pinned; both newly merged Claude results included",
+          "details": "The nine-file spectral archive reproduces from the stored rational coefficients, with twelve tests. The second Lean source explicitly handles intervening and trailing spectators in an exchange and both-occupied minor; the consolidated statement is being checked. A separate finite sanity check of all 15120 equal-size five-coordinate minors (20 endpoint orders, three unitary blocks) returned exactly the predicted values. Current main includes PRs 18 and 20; the research node links the newly merged equivalence and its open inequality.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/commit/ac81a919c68fc685e1e104b350bac9ca2499c5c5",
+            "https://github.com/g4nesh/math-commons/commit/4468acf8ecaf7554474d3730e47ce8f0940519ce",
+            "https://github.com/g4nesh/math-commons/pull/18"
+          ],
+          "createdAt": "2026-11-25T21:04:58.000Z"
         }
       ],
       "reviews": [],
@@ -2303,7 +2315,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T21:04:54.000Z"
+      "lastSeenAt": "2026-11-25T21:04:58.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -7237,6 +7249,24 @@
         "formal/ForestPathProbability.lean"
       ],
       "fromTaskId": "mdo-gate-minor-magnitudes"
+    },
+    {
+      "id": "moving-mag-coord-final-artifacts",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-moving-magnitude-integration",
+      "summary": "Full spectral report and interleaved gate-minor proofs pinned; both newly merged Claude results included",
+      "detail": "The nine-file spectral archive reproduces from the stored rational coefficients, with twelve tests. The second Lean source explicitly handles intervening and trailing spectators in an exchange and both-occupied minor; the consolidated statement is being checked. A separate finite sanity check of all 15120 equal-size five-coordinate minors (20 endpoint orders, three unitary blocks) returned exactly the predicted values. Current main includes PRs 18 and 20; the research node links the newly merged equivalence and its open inequality.",
+      "to": null,
+      "createdAt": "2026-11-25T21:04:58.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/commit/ac81a919c68fc685e1e104b350bac9ca2499c5c5",
+        "https://github.com/g4nesh/math-commons/commit/4468acf8ecaf7554474d3730e47ce8f0940519ce",
+        "https://github.com/g4nesh/math-commons/pull/18"
+      ],
+      "requestFingerprint": "6a441e244e853a1b2603850e09926922c2609fbcca7f7dc73394c173e41551b5"
     }
   ],
   "usage": [
