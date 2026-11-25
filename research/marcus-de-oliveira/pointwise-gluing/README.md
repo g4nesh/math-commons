@@ -45,3 +45,9 @@ Each product pairs every original $a$ and $b$ exactly once. The left assignments
 A simple example isolates the limitation of the separation step. The polynomial $1+zw$ is in the pointwise convex hull of the twelve polynomials $\eta(1-zw),\eta z,\eta w$ with $\eta\in\{4,-4,4i,-4i\}$. Indeed with $M=\max(|1-zw|,|z|,|w|)$ the square formed by the four multiples of a term of modulus $M$ contains the disk of radius $2\sqrt2 M$. Also $(1+zw)^2=(1-zw)^2+4zw$, so $|1+zw|\le\sqrt5 M$. But all twelve coefficient vectors satisfy “constant coefficient plus $zw$ coefficient equals zero,” while the target sum is two. Thus two free complex coordinates can have pointwise inclusion without any common coefficient distribution. This example concerns abstract pencils. It does not decide the spectrum-constrained interface of two MDO blocks.
 
 The theorem addresses relative unitaries with the indicated factorization. A dense irreducible unitary need not admit it. A two-coordinate interface needs additional information about cross terms or a different proof.
+
+## Exact order-nine example
+
+Two flat order-five Householder matrices meeting at one coordinate give an order-nine unitary. For the nonreal spectra in the checker, each side has a five-permutation certificate for both pencil coefficients. Their 25 products give the global value $(64384+7470336i)/625$. The verifier reconstructs the two pencils, checks every positive rational mass, assembles each full permutation and evaluates the order-nine determinant directly. It also checks (1) with zero left, right and simultaneous slopes.
+
+Run `python3 -B research/marcus-de-oliveira/pointwise-gluing/check.py` from the repository root. [Stored rational certificates](pencil-weights.json) · [Exact checker](check.py)
