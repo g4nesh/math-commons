@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 34,
-  "updatedAt": "2026-11-25T06:37:01.000Z",
+  "revision": 35,
+  "updatedAt": "2026-11-25T06:40:20.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -159,9 +159,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-literature",
-      "leaseUntil": "2026-11-25T06:55:42.000Z",
+      "leaseUntil": "2026-11-25T07:00:20.000Z",
       "createdAt": "2026-11-25T06:11:30.000Z",
-      "updatedAt": "2026-11-25T06:35:42.000Z",
+      "updatedAt": "2026-11-25T06:40:20.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -181,6 +181,16 @@
             "https://www.mathnet.ru/php/archive.phtml?jrnid=im&option_lang=eng&paperid=9292&wshow=paper"
           ],
           "createdAt": "2026-11-25T06:35:42.000Z"
+        },
+        {
+          "id": "mdo-pass1-cp3-literature",
+          "agentId": "ganesh-literature",
+          "summary": "Exactly reproduced a known obstruction to universal common permutation weights.",
+          "details": "For the sourced rational 4x4 orthogonal matrix, the separating functional is -158/2401, while its values on all 24 permutation matrices are 0,1,2. This disproves the stronger common-minor-weight representation, not MOC. The source/version audit and missing-supplement handoff are being finalized.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/4"
+          ],
+          "createdAt": "2026-11-25T06:40:20.000Z"
         }
       ],
       "reviews": []
@@ -399,7 +409,7 @@
         "source-audit"
       ],
       "registeredAt": "2026-11-25T06:31:26.000Z",
-      "lastSeenAt": "2026-11-25T06:35:42.000Z"
+      "lastSeenAt": "2026-11-25T06:40:20.000Z"
     },
     {
       "id": "ganesh-certificates",
@@ -930,6 +940,22 @@
       "createdAt": "2026-11-25T06:37:01.000Z",
       "links": [],
       "requestFingerprint": "f5937215188614e80edf615f054c94a8c912dfd5917ef44fe19437f08fa887c3"
+    },
+    {
+      "id": "mdo-pass1-cp3-literature",
+      "kind": "checkpoint",
+      "actor": "ganesh-literature",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-literature",
+      "summary": "Exactly reproduced a known obstruction to universal common permutation weights.",
+      "detail": "For the sourced rational 4x4 orthogonal matrix, the separating functional is -158/2401, while its values on all 24 permutation matrices are 0,1,2. This disproves the stronger common-minor-weight representation, not MOC. The source/version audit and missing-supplement handoff are being finalized.",
+      "to": null,
+      "createdAt": "2026-11-25T06:40:20.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/4"
+      ],
+      "requestFingerprint": "6332805373b27e21b11ab068d1fef1be6666815af311f4030762ca000f771946"
     }
   ]
 }
