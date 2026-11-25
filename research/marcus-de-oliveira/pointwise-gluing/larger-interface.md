@@ -1,0 +1,24 @@
+# A normal effective matrix allows a larger interface
+
+Use coordinates $L,J,R$, with $J$ of arbitrary positive size. Let $X$ act on $L,J$ and $Y$ on $J,R$. In the conjugated global sum set $B'=Y D_{b_{J,R}}Y^*$, $T=D_{a_R}+B'_{RR}$. Assume $T$ is invertible and that its Schur complement at the interface,
+$$K=B'_{JJ}-B'_{JR}T^{-1}B'_{RJ},$$
+is normal. Write $K=W D_\kappa W^*$. Suppose the ordinary MDO inclusion holds for the required local spectra at the rotated relative unitaries $X(I_L\oplus W)$ and $(W^*\oplus I_R)Y$. In particular it suffices that both local dimensions are known MDO dimensions. Then the global MDO inclusion holds for these data.
+
+**Proof.** Eliminate $R$. The remaining determinant is that of $X^* D_{a_{L,J}}X+\operatorname{diag}(b_L,K)$, multiplied by $\det T$. The first local inclusion therefore expresses the full determinant as a convex mixture of terms
+$$C\det(T)\prod_{j\in J}(a_{i(j)}+\kappa_j),$$
+where $C$ contains the factors assigned to $b_L$ and the $a_{i(j)}$ are precisely the unused eigenvalues. For each term form the right local sum of $B'$ and the normal matrix $\operatorname{diag}(W D_{(a_{i(j)})}W^*,D_{a_R})$. Eliminating $R$ shows that its determinant is exactly $\det(T)\prod_j(a_{i(j)}+\kappa_j)$. Apply the second local inclusion to that right sum. Each product multiplied by $C$ pairs every original eigenvalue once. The second distribution may depend on the first pairing. Their resulting nonnegative masses sum to one. This argument works also for repeated eigenvalues of $K$ and zero products.
+
+**A checkable spectral hypothesis.** Suppose $b_{J,R}=\eta+\omega t$ and $a_R=-\eta+\omega h$ coordinatewise for real vectors $t,h$, with $|\omega|=1$. Then $B'=\eta I+\omega H$ for a Hermitian $H$. Whenever $T$ is invertible, $K$ is a scalar shift and rotation of the Hermitian Schur complement of $H_{RR}+D_h$ and is normal. If the local dimensions are unconditionally covered, the singular case follows by adding a common real increment to $h$ and taking a limit. Finite hulls vary continuously with their vertices. The spectra $a_{L,J}$ and $b_L$ can still be arbitrary complex numbers.
+
+For example, a four-dimensional relative unitary with a prescribed zero can be factored across an interface of size two using two three-dimensional blocks. The chosen zero row and column are the two outside coordinates after independent relabeling. Both local dimensions are known. The stated line hypothesis on three right $b$-values and the negative of the outside $a$-value suffices. For general $r$ rows and $c$ columns forming a zero rectangle, the same orthonormal completion gives interface size $n-r-c$, when this number is positive.
+
+**A second sufficient condition.** Assume the left exterior block also is invertible. Eliminate it to obtain the left effective interface matrix $M$. Suppose $M$ and $K$ have a common invariant complete flag, so there is a unitary $W$ in whose basis both are upper triangular. The same two local inclusions suffice. Indeed replacing $K$ by $W D_\kappa W^*$ preserves the full determinant, since the two interface sums have the same triangular diagonal. On the right, adding a matrix diagonal in this basis to the original upper triangular $K$ gives a triangular sum, so its determinant is again the product of diagonal sums. In size two a common eigenvector is enough. Normality of $K$ alone in the first theorem needs no hypothesis on $M$.
+
+## What fails for a general effective matrix
+
+Even the Schur complement of a genuine normal block can carry an off-diagonal entry that changes the global determinant. Let $P$ be the $3\times3$ cyclic shift and $F=(I+P)^{-1}=(I-P+P^2)/2$. Both $F$ and $F^T$ are real normal. Put one on $L,J$ and the other on $J,R$, oriented so their effective triangular entries are on opposite sides of the diagonal. Set the left outside $b$ and the right outside $a$ to zero. Both outside blocks are $[1/2]$. The two effective matrices are
+$$\begin{pmatrix}1&-1\\0&1\end{pmatrix},\qquad
+\begin{pmatrix}1&0\\-1&1\end{pmatrix}.$$
+Each is obtained by inverting the corresponding $2\times2$ principal block of $I+P$ or its transpose. Their sum has determinant three. Replacing either with the diagonal matrix of its eigenvalues would give four. After including the exterior factors the actual determinant is $3/4$, and the replacement gives one.
+
+The original MDO inclusion holds in this example. Both spectra are $0,1/2,(1+i\sqrt3)/2,(1-i\sqrt3)/2$. Pair $0$ and $1/2$ across the two spectra in both orders. Pairing the two remaining numbers with their conjugates gives vertex $1/4$, and pairing them with themselves gives one. The convex weights $1/3$ and $2/3$ give $3/4$. Resolving generic interfaces requires retaining or controlling the off-diagonal contribution. [Exact rational replay](interface.py)
