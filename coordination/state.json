@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 287,
-  "updatedAt": "2026-11-25T20:52:48.000Z",
+  "revision": 288,
+  "updatedAt": "2026-11-25T20:54:09.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2003,9 +2003,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T21:12:48.000Z",
+      "leaseUntil": "2026-11-25T21:14:09.000Z",
       "createdAt": "2026-11-25T20:38:07.000Z",
-      "updatedAt": "2026-11-25T20:52:48.000Z",
+      "updatedAt": "2026-11-25T20:54:09.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2023,6 +2023,16 @@
           "details": "Exact Rat-pair norm multiplication, invariance under Laplace signs, complementary unitary entry magnitudes and the actual two-by-two signed minor formula compile in a private Lean copy. Now proving removal of an arbitrary common identity spectator prefix from the same minor definition, and the determinant norm from explicit column orthogonality. Arbitrary spectator interleavings remain unproved. No source artifact has been published yet; first coherent file will follow once these interface lemmas compile.",
           "evidence": [],
           "createdAt": "2026-11-25T20:52:48.000Z"
+        },
+        {
+          "id": "mdo-gate-magnitude-first-published-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Published the first 15 checked norm and spectator-prefix lemmas.",
+          "details": "Immutable source includes norm-square multiplication and sign invariance, explicit unitary complementary weights, the concrete signed two-by-two formula, and removal of an arbitrary identity spectator prefix. All compile under Lean4.24.0 with warnings fatal. Continuing the bounded pass on arbitrary-position exchange signs and the normalized block determinant; no complete spectator-placement theorem is claimed at this checkpoint.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/59996d82a2a6090a50980e089d45e6913f1703e4/formal/ForestGateMagnitude.lean"
+          ],
+          "createdAt": "2026-11-25T20:54:09.000Z"
         }
       ],
       "reviews": [],
@@ -2140,7 +2150,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T20:52:48.000Z"
+      "lastSeenAt": "2026-11-25T20:54:09.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -6676,6 +6686,22 @@
       "createdAt": "2026-11-25T20:52:48.000Z",
       "links": [],
       "requestFingerprint": "cb837b836b475714fba5ef1078a751b2484a3e03143202c21c68b9e5595bc239"
+    },
+    {
+      "id": "mdo-gate-magnitude-first-published-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-gate-minor-magnitudes",
+      "summary": "Published the first 15 checked norm and spectator-prefix lemmas.",
+      "detail": "Immutable source includes norm-square multiplication and sign invariance, explicit unitary complementary weights, the concrete signed two-by-two formula, and removal of an arbitrary identity spectator prefix. All compile under Lean4.24.0 with warnings fatal. Continuing the bounded pass on arbitrary-position exchange signs and the normalized block determinant; no complete spectator-placement theorem is claimed at this checkpoint.",
+      "to": null,
+      "createdAt": "2026-11-25T20:54:09.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/59996d82a2a6090a50980e089d45e6913f1703e4/formal/ForestGateMagnitude.lean"
+      ],
+      "requestFingerprint": "1d5f9264cc1d354e22b01e307fcfddcc4051b06b6eabb4cd865e6c1198a6a340"
     }
   ],
   "usage": [
