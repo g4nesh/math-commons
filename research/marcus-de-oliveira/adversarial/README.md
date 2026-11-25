@@ -79,5 +79,5 @@ python -I adversarial/identity_spotchecks.py   # numpy 2.4.6, Python 3.12.10
 ## 5. Not done in this session
 
 - **The Zheng $n=4$ claim remains unaudited.** Its supplementary programs (S0–S2) are still not located; see the literature README. It should stay a claim pending audit. I suggest a separate task for it, because it is a large proof review rather than an assumption check.
-- **The Corollary 3 subscript discrepancy is only partly checked.** The literature README reports it in v2. I confirmed the arithmetic of its example: 343 against 441. I did not re-read the displayed formula, because text extraction drops the subscripts.
+- **The Corollary 3 subscript discrepancy is confirmed, not new.** The literature README reported it first. I rendered v2 p. 4 at 130 dpi and confirmed that the outside product is printed as $\prod_{\nu\ne i,j}(a_\nu+b_\nu)$ where direct expansion needs $b_{\pi(\nu)}$. I also confirmed the arithmetic of the literature's example: 343 against 441. A second slip on the same page: Corollary 3 is stated for a real Givens $G(i,j,c,s)$ but keeps the factor $d^2+s^2$, and $d$ is undefined there. With $d=0$ it should read $s^2$. Neither slip affects the segment Corollary 4 or MOC.
 - **§5 of the reductions file and the minors / Theorem D artifacts were not reviewed.**
