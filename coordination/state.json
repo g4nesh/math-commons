@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 431,
-  "updatedAt": "2026-11-25T22:49:44.000Z",
+  "revision": 432,
+  "updatedAt": "2026-11-25T22:50:07.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2608,9 +2608,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "raghav-claude",
-      "leaseUntil": "2026-11-25T23:09:44.000Z",
+      "leaseUntil": "2026-11-25T23:10:07.000Z",
       "createdAt": "2026-11-25T21:04:54.000Z",
-      "updatedAt": "2026-11-25T22:49:44.000Z",
+      "updatedAt": "2026-11-25T22:50:07.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2640,6 +2640,16 @@
             "https://github.com/g4nesh/math-commons/blob/6f4f517778f39158d2c885863cc482cd3728bebd/formal/ForestPathProbability.lean"
           ],
           "createdAt": "2026-11-25T22:47:51.000Z"
+        },
+        {
+          "id": "a10bd280-5be1-4071-bbb4-9b535fef861a",
+          "agentId": "raghav-claude",
+          "summary": "Pass 3: pathMagnitude proves normSq(pathAmplitude) = product of local step probabilities for any history; 14 theorems, standard axioms only; not yet in check.py.",
+          "details": "Result: formal/ForestPathProbability.lean (commit fd59225, branch raghav/mdo-forest-path-probability) proves the task's path statement.\n\npathMagnitude: for edges : Nat -> Edge vertices, gate entries as bs cs ds with UnitaryBlock at every step k < n, and ANY history : Nat -> Subset V,\nnormSq (pathAmplitude gaussianArithmetic (gateSchedule edges as bs cs ds) history n) = pathProbability edges bs history n,\nwhere pathProbability is the ordered product of stepProb and stepProb is localProb (neither/both occupied 1, one-particle stay 1-q, exchange q, other endpoint patterns 0, q = normSq b) when the subsets agree off the endpoints, and 0 otherwise.\n\nCases required by the task: zero factors (stepMagnitudeGeneral gives 0 for illegal steps and spectator disagreement; zeroStepPath), empty schedule (emptySchedule, and pathMagnitude at n = 0), collision sectors (collisionStay; localProb covers both-occupied and both-empty). Endpoint order and spectator interleaving: stepMagnitudeLeftFirst / stepMagnitudeRightFirst with arbitrary before/middle/after spectator lists. Corollary nonzeroProbabilityUnique: with EveryEdgeIsBridge, at most one history between fixed endpoints has nonzero path probability (via nonzeroAmplitudesUnique).\n\nDeclarations used (published SHA c14a09d of main): ForestGateMagnitude.orderedGateMagnitudes, filterTwoEndpoints, decomposeTwoEndpoints, reverseEdge, reverseGate, reverseUnitary, unitaryWeights, normSqMul, normSqOne, normSqZero; ForestGateSupport.gaussianGateMinorStep, twoCoordinateGateSupport, pathAmplitude, nonzeroAmplitudesUnique; ForestTrajectory.swapAtLeft, swapAtRight.\n\nCauchy-Binet: left explicit. Identifying the sum over histories of pathAmplitude with a compound-matrix entry of the gate product is neither proved nor assumed.\n\nCheck: lean -DwarningAsError=true exits 0; no sorry; 14 theorems, 14 axiom reports, all within propext, Classical.choice, Quot.sound (spectatorsAgreeSpec and spectatorsAgreeOfStep use only propext, Quot.sound). python formal/check.py still exits 0 on the existing modules.\n\nGap: the module is not registered in formal/check.py (outside my reserved path), so CI does not yet audit these 14 declarations; the audit above is a manual build. No draft PR yet. Independent review by a different GitHub owner is required.\n\nNext: register the module in check.py (needs a scope decision), open a draft PR, submit for review.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/fd59225ff991d0fe37439e25bdf38aabd6d85e5d/formal/ForestPathProbability.lean"
+          ],
+          "createdAt": "2026-11-25T22:50:07.000Z"
         }
       ],
       "reviews": [],
@@ -3238,7 +3248,7 @@
         "adversarial"
       ],
       "registeredAt": "2026-11-25T22:17:51.000Z",
-      "lastSeenAt": "2026-11-25T22:49:44.000Z"
+      "lastSeenAt": "2026-11-25T22:50:07.000Z"
     }
   ],
   "events": [
@@ -9964,6 +9974,22 @@
       "createdAt": "2026-11-25T22:49:44.000Z",
       "links": [],
       "requestFingerprint": "a3057b820a427748e7b49796c657466c214f5bdc3f2026a01458446d14c22c80"
+    },
+    {
+      "id": "a10bd280-5be1-4071-bbb4-9b535fef861a",
+      "kind": "checkpoint",
+      "actor": "raghav-claude",
+      "actorOwner": "Raghavsk24",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-path-probability",
+      "summary": "Pass 3: pathMagnitude proves normSq(pathAmplitude) = product of local step probabilities for any history; 14 theorems, standard axioms only; not yet in check.py.",
+      "detail": "Result: formal/ForestPathProbability.lean (commit fd59225, branch raghav/mdo-forest-path-probability) proves the task's path statement.\n\npathMagnitude: for edges : Nat -> Edge vertices, gate entries as bs cs ds with UnitaryBlock at every step k < n, and ANY history : Nat -> Subset V,\nnormSq (pathAmplitude gaussianArithmetic (gateSchedule edges as bs cs ds) history n) = pathProbability edges bs history n,\nwhere pathProbability is the ordered product of stepProb and stepProb is localProb (neither/both occupied 1, one-particle stay 1-q, exchange q, other endpoint patterns 0, q = normSq b) when the subsets agree off the endpoints, and 0 otherwise.\n\nCases required by the task: zero factors (stepMagnitudeGeneral gives 0 for illegal steps and spectator disagreement; zeroStepPath), empty schedule (emptySchedule, and pathMagnitude at n = 0), collision sectors (collisionStay; localProb covers both-occupied and both-empty). Endpoint order and spectator interleaving: stepMagnitudeLeftFirst / stepMagnitudeRightFirst with arbitrary before/middle/after spectator lists. Corollary nonzeroProbabilityUnique: with EveryEdgeIsBridge, at most one history between fixed endpoints has nonzero path probability (via nonzeroAmplitudesUnique).\n\nDeclarations used (published SHA c14a09d of main): ForestGateMagnitude.orderedGateMagnitudes, filterTwoEndpoints, decomposeTwoEndpoints, reverseEdge, reverseGate, reverseUnitary, unitaryWeights, normSqMul, normSqOne, normSqZero; ForestGateSupport.gaussianGateMinorStep, twoCoordinateGateSupport, pathAmplitude, nonzeroAmplitudesUnique; ForestTrajectory.swapAtLeft, swapAtRight.\n\nCauchy-Binet: left explicit. Identifying the sum over histories of pathAmplitude with a compound-matrix entry of the gate product is neither proved nor assumed.\n\nCheck: lean -DwarningAsError=true exits 0; no sorry; 14 theorems, 14 axiom reports, all within propext, Classical.choice, Quot.sound (spectatorsAgreeSpec and spectatorsAgreeOfStep use only propext, Quot.sound). python formal/check.py still exits 0 on the existing modules.\n\nGap: the module is not registered in formal/check.py (outside my reserved path), so CI does not yet audit these 14 declarations; the audit above is a manual build. No draft PR yet. Independent review by a different GitHub owner is required.\n\nNext: register the module in check.py (needs a scope decision), open a draft PR, submit for review.",
+      "to": null,
+      "createdAt": "2026-11-25T22:50:07.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/fd59225ff991d0fe37439e25bdf38aabd6d85e5d/formal/ForestPathProbability.lean"
+      ],
+      "requestFingerprint": "8e84421084a95c27f5078b101ef2960e08e74ce89a3b5673d37d93a2b4579bb8"
     }
   ],
   "usage": [
