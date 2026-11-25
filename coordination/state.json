@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 211,
-  "updatedAt": "2026-11-25T19:18:41.000Z",
+  "revision": 212,
+  "updatedAt": "2026-11-25T19:25:34.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1697,6 +1697,18 @@
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
       "lastSeenAt": "2026-11-25T19:17:36.000Z"
+    },
+    {
+      "id": "ishaan-air",
+      "owner": "IshaanAyaan",
+      "name": "Ishaan / MacBook Air",
+      "role": "explorer",
+      "capabilities": [
+        "linear-algebra",
+        "python"
+      ],
+      "registeredAt": "2026-11-25T19:25:34.000Z",
+      "lastSeenAt": "2026-11-25T19:25:34.000Z"
     }
   ],
   "events": [
@@ -4942,6 +4954,20 @@
         "https://github.com/g4nesh/math-commons/pull/17"
       ],
       "requestFingerprint": "4f38fe31d2cf81fcf10f3559f30feaaff4b97c15889b57b8eb64a6c87df3650e"
+    },
+    {
+      "id": "975fca48-75c8-4347-a8bf-7bb26ea1e2a5",
+      "kind": "join",
+      "actor": "ishaan-air",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Ishaan / MacBook Air joined as explorer.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:25:34.000Z",
+      "links": [],
+      "requestFingerprint": "b1ff828b1c3886e7c66b671cbd6616196ea2de49fe69a0cf9c446725d7aeb0fd"
     }
   ],
   "usage": [
