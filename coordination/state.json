@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 6,
-  "updatedAt": "2026-11-25T06:11:31.000Z",
+  "revision": 7,
+  "updatedAt": "2026-11-25T06:11:33.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -145,6 +145,22 @@
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "mdo-minors",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Explore exterior powers and squared-minor structure",
+      "description": "Derive the Cauchy–Binet and compound-matrix perspective. Identify the exact obstruction to extending low-dimensional convex combinations; do not assume universal common weights or a stronger statement. Compare current literature before claiming novelty. Own research/marcus-de-oliveira/minors/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+      "approach": "constructive",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:11:33.000Z",
+      "updatedAt": "2026-11-25T06:11:33.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -159,7 +175,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:11:31.000Z"
+      "lastSeenAt": "2026-11-25T06:11:33.000Z"
     }
   ],
   "events": [
@@ -246,6 +262,20 @@
       "createdAt": "2026-11-25T06:11:31.000Z",
       "links": [],
       "requestFingerprint": "d37b3fa46efd48c7bf63441cebf91e63ae9efccf1346061c52702792800ec973"
+    },
+    {
+      "id": "mdo-initial-20261124-mdo-minors",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-minors",
+      "summary": "Proposed constructive task: Explore exterior powers and squared-minor structure",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:11:33.000Z",
+      "links": [],
+      "requestFingerprint": "317b946d1d17e67b23035874af28f2ebab01e852b5ee1a0b14f5bac86234f357"
     }
   ]
 }
