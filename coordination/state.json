@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 24,
-  "updatedAt": "2026-11-25T06:31:35.000Z",
+  "revision": 25,
+  "updatedAt": "2026-11-25T06:33:06.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -159,11 +159,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-literature",
-      "leaseUntil": "2026-11-25T06:51:28.000Z",
+      "leaseUntil": "2026-11-25T06:53:06.000Z",
       "createdAt": "2026-11-25T06:11:30.000Z",
-      "updatedAt": "2026-11-25T06:31:28.000Z",
+      "updatedAt": "2026-11-25T06:33:06.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-pass1-cp1-literature",
+          "agentId": "ganesh-literature",
+          "summary": "Full dimension-four manuscript located; supplementary case certificates are a critical audit dependency.",
+          "details": "Inspected Theorems 1.1/1.2, section 4.3 and Appendix F of the 66-page Zheng manuscript. Proposition 4.3 refers 90 contact cases to supplementary material; locating that material before treating the reduction as reproduced. No proof accepted.",
+          "evidence": [],
+          "createdAt": "2026-11-25T06:33:06.000Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -310,7 +319,7 @@
         "source-audit"
       ],
       "registeredAt": "2026-11-25T06:31:26.000Z",
-      "lastSeenAt": "2026-11-25T06:31:28.000Z"
+      "lastSeenAt": "2026-11-25T06:33:06.000Z"
     },
     {
       "id": "ganesh-certificates",
@@ -696,6 +705,20 @@
       "createdAt": "2026-11-25T06:31:35.000Z",
       "links": [],
       "requestFingerprint": "0d85bf0992a3624119552b3f4accbcbd14a8c8146e192287d33925d03e0e83fa"
+    },
+    {
+      "id": "mdo-pass1-cp1-literature",
+      "kind": "checkpoint",
+      "actor": "ganesh-literature",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-literature",
+      "summary": "Full dimension-four manuscript located; supplementary case certificates are a critical audit dependency.",
+      "detail": "Inspected Theorems 1.1/1.2, section 4.3 and Appendix F of the 66-page Zheng manuscript. Proposition 4.3 refers 90 contact cases to supplementary material; locating that material before treating the reduction as reproduced. No proof accepted.",
+      "to": null,
+      "createdAt": "2026-11-25T06:33:06.000Z",
+      "links": [],
+      "requestFingerprint": "bf192dd0e37f7ef92d4d58c6f08c6ca3103972a2df2352501bdb3959e1605d80"
     }
   ]
 }
