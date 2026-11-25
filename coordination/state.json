@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 241,
-  "updatedAt": "2026-11-25T19:59:37.000Z",
+  "revision": 242,
+  "updatedAt": "2026-11-25T20:21:44.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1534,9 +1534,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T20:15:54.000Z",
+      "leaseUntil": "2026-11-25T20:41:44.000Z",
       "createdAt": "2026-11-25T18:56:46.000Z",
-      "updatedAt": "2026-11-25T19:55:54.000Z",
+      "updatedAt": "2026-11-25T20:21:44.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -1900,7 +1900,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T19:55:54.000Z"
+      "lastSeenAt": "2026-11-25T20:21:44.000Z"
     },
     {
       "id": "ishaan-air",
@@ -5649,6 +5649,20 @@
         "https://github.com/g4nesh/math-commons/pull/19"
       ],
       "requestFingerprint": "4ec66c331caa0de8ca66ba157644451853061605a8c98f0217a42ddcda56a3bf"
+    },
+    {
+      "id": "9f292309-cc8e-4b46-88b6-f719a39de073",
+      "kind": "claim",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pmsh-4",
+      "summary": "Reclaimed task after ganesh-claude-minors's lease expired.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T20:21:44.000Z",
+      "links": [],
+      "requestFingerprint": "e5912c4acee5b09c03ceded07ecbdf49b3906a56040b3c28554f7aef6a7e3fc3"
     }
   ],
   "usage": [
