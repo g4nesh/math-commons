@@ -1,0 +1,66 @@
+[
+  {
+    "id": "mdo-literature",
+    "title": "Audit the current literature and n=4 proof claim",
+    "approach": "literature",
+    "description": "Audit exact primary-source versions, established cases, the November 2026 revised polygon paper, and Zheng's claimed dimension-four proof. Retrieve theorem dependencies and certificates; distinguish unverified claims from reproduced or accepted results. Own research/marcus-de-oliveira/literature/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+    "dependsOn": []
+  },
+  {
+    "id": "mdo-reductions",
+    "title": "Find exact abstractions and equivalent formulations",
+    "approach": "abstraction",
+    "description": "Prove the diagonal-unitary-orbit and support-function formulations; investigate scaling, opposite shifts, symmetries, and reductions without assuming commutativity or nonsingular sums. Track both implications and boundary cases. Own research/marcus-de-oliveira/reductions/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+    "dependsOn": []
+  },
+  {
+    "id": "mdo-minors",
+    "title": "Explore exterior powers and squared-minor structure",
+    "approach": "constructive",
+    "description": "Derive the Cauchy–Binet and compound-matrix perspective. Identify the exact obstruction to extending low-dimensional convex combinations; do not assume universal common weights or a stronger statement. Compare current literature before claiming novelty. Own research/marcus-de-oliveira/minors/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+    "dependsOn": []
+  },
+  {
+    "id": "mdo-baselines",
+    "title": "Reproduce small cases and rotation baselines",
+    "approach": "constructive",
+    "description": "Derive elementary cases and the two-coordinate Givens segment relation; reproduce known n≤3 cases with exact scope. Explain why composing local rotations does not automatically prove a global statement. These are validation baselines, not novel resolutions. Own research/marcus-de-oliveira/baselines/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+    "dependsOn": []
+  },
+  {
+    "id": "mdo-search",
+    "title": "Search for reproducible convex-hull violations",
+    "approach": "computational",
+    "description": "Develop bounded search over normal pairs via validated unitary mixing. Initial budget n≤6, 200 trials, 60 seconds CPU; record seeds, spectra, matrices, precision, hull method and residuals. Preserve near-boundary candidates as unverified and request certificate checks. Own research/marcus-de-oliveira/search/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+    "dependsOn": []
+  },
+  {
+    "id": "mdo-certificates",
+    "title": "Build an independent exact witness verifier",
+    "approach": "verification",
+    "description": "Specify and implement exact or rigorous interval certificates for normality/unitarity, spectra and convex-hull membership or separation. Cover repeated points, point/segment hulls, singular sums and roundoff. Do not classify a numerical gap as a counterexample. Own research/marcus-de-oliveira/certificates/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+    "dependsOn": []
+  },
+  {
+    "id": "mdo-adversarial",
+    "title": "Challenge assumptions and stronger conjectures",
+    "approach": "adversarial",
+    "description": "Audit proof reductions for hidden hypotheses, circularity and local-to-global gaps. Reproduce a failed smaller-polygon enclosure separately from the original convex-hull test; keep recent n=4 claims pending independent audit. Own research/marcus-de-oliveira/adversarial/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+    "dependsOn": []
+  },
+  {
+    "id": "mdo-synthesis",
+    "title": "Map reviewed evidence to the unresolved core",
+    "approach": "synthesis",
+    "description": "After the research contributions are independently reviewed, map each precise claim to immutable evidence and state the remaining gap. Intermediate success does not close the overall conjecture. Own research/marcus-de-oliveira/synthesis/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
+    "dependsOn": [
+      "mdo-literature",
+      "mdo-reductions",
+      "mdo-minors",
+      "mdo-baselines",
+      "mdo-search",
+      "mdo-certificates",
+      "mdo-adversarial"
+    ]
+  }
+]

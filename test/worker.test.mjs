@@ -145,3 +145,64 @@ test('worker does not claim it published a blocker after losing its lease', asyn
   assert.equal(outcomes[0].failed, true);
   assert.equal(store.state.tasks[0].status, 'active');
 });
+
+
+async function withRealObjective() {
+  const store = await mockStore();
+  store.state.objectives[0].example = true;
+  await store.mutate({ kind: 'objective', agent: 'worker', objectiveId: 'marcus-de-oliveira', title: 'Marcus–de Oliveira conjecture', statement: 'Current shared research objective', success: 'Independently reviewed research' });
+  await store.mutate({ kind: 'task', agent: 'worker', taskId: 'mdo-direction', objectiveId: 'marcus-de-oliveira', title: 'Explore the real objective', description: 'One bounded research direction' });
+  store.config.defaultObjectiveId = 'marcus-de-oliveira';
+  return store;
+}
+
+test('worker defaults to configured real objective even when example tasks appear first', async () => {
+  const store = await withRealObjective();
+  const outcomes = await work(store, { agent: 'worker', command: 'adapter', run: async (_cmd, _args, packet) => {
+    assert.equal(packet.objective.id, 'marcus-de-oliveira');
+    return { status: 'release', summary: 'Real objective selected' };
+  } });
+  assert.equal(outcomes[0].taskId, 'mdo-direction');
+  assert.equal(store.state.tasks.find(task => task.id === 't').status, 'open');
+  assert.equal(store.state.events.filter(event => event.kind === 'claim').at(-1).taskId, 'mdo-direction');
+});
+
+test('explicit objective overrides the configured worker default', async () => {
+  const store = await withRealObjective();
+  const outcomes = await work(store, { agent: 'worker', command: 'adapter', objective: 'p', run: async (_cmd, _args, packet) => {
+    assert.equal(packet.objective.id, 'p');
+    return { status: 'release', summary: 'Explicit objective selected' };
+  } });
+  assert.equal(outcomes[0].taskId, 't');
+  assert.equal(store.state.tasks.find(task => task.id === 'mdo-direction').status, 'open');
+});
+
+test('missing configured objective fails before running or claiming the example', async () => {
+  const store = await mockStore();
+  store.config.defaultObjectiveId = 'not-created';
+  let runs = 0;
+  await assert.rejects(work(store, { agent: 'worker', command: 'adapter', run: async () => { runs++; } }), /not-created was not found/);
+  assert.equal(runs, 0);
+  assert.equal(store.state.events.some(event => event.kind === 'claim'), false);
+});
+
+test('closed, blocked, or exhausted defaults never fall back to available example work', async () => {
+  for (const situation of ['closed', 'blocked', 'exhausted']) {
+    const store = await withRealObjective();
+    if (situation === 'closed') store.state.objectives.find(objective => objective.id === 'marcus-de-oliveira').status = 'closed';
+    if (situation === 'blocked') store.state.tasks.find(task => task.id === 'mdo-direction').status = 'blocked';
+    if (situation === 'exhausted') store.state.tasks = store.state.tasks.filter(task => task.id !== 'mdo-direction');
+    let runs = 0; const progress = [];
+    const outcomes = await work(store, { agent: 'worker', command: 'adapter', onProgress: event => progress.push(event), run: async () => { runs++; } });
+    assert.equal(runs, 0, situation);
+    assert.deepEqual(outcomes, [], situation);
+    assert.equal(store.state.events.some(event => event.kind === 'claim'), false, situation);
+    assert.match(progress[0].summary, /No eligible tasks for marcus-de-oliveira/);
+  }
+});
+
+test('an empty explicit objective cannot bypass a configured default', async () => {
+  const store = await withRealObjective();
+  await assert.rejects(work(store, { agent: 'worker', command: 'adapter', objective: '' }), /valid objective ID/);
+  assert.equal(store.state.events.some(event => event.kind === 'claim'), false);
+});

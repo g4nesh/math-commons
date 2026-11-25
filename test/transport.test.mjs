@@ -79,3 +79,12 @@ test('read detects malformed or oversized state and config refuses source branch
   const store = new GitHubStore(config, { fetchImpl: async () => new Response(JSON.stringify({ type: 'file', encoding: 'base64', sha: 'sha', size: 50, content: Buffer.from('{broken').toString('base64') }), { status: 200 }) });
   await assert.rejects(store.read(), /not valid JSON/);
 });
+
+
+test('optional configured default objective must be a nonempty objective slug', () => {
+  assert.equal(validateConfig({ ...config, defaultObjectiveId: 'marcus-de-oliveira' }).defaultObjectiveId, 'marcus-de-oliveira');
+  assert.equal(validateConfig(config).defaultObjectiveId, undefined);
+  for (const defaultObjectiveId of ['', null, 12, '../other', 'Uppercase', 'a'.repeat(81)]) {
+    assert.throws(() => validateConfig({ ...config, defaultObjectiveId }), /defaultObjectiveId/);
+  }
+});
