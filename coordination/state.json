@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 163,
-  "updatedAt": "2026-11-25T18:44:45.000Z",
+  "revision": 164,
+  "updatedAt": "2026-11-25T18:44:48.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1230,12 +1230,12 @@
       "title": "Scoped research requests through the shared task ledger",
       "description": "Implement request creation and read-only requests directory as metadata on regular tasks. Require declared paths, validate same-objective optional origin and target invitation, keep ordinary claim/status/review semantics, record one task and event, and test CLI/schema/backward compatibility. Own only lib/core.mjs, bin/commons.mjs, test/core.test.mjs. Parent owns UI/docs and publication. Budget 30 minutes; checkpoint at least every five minutes.",
       "approach": "backend",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-usage-adapter",
+      "leaseUntil": "2026-11-25T19:04:48.000Z",
       "createdAt": "2026-11-25T18:44:35.000Z",
-      "updatedAt": "2026-11-25T18:44:35.000Z",
+      "updatedAt": "2026-11-25T18:44:48.000Z",
       "createdBy": "ganesh-usage-adapter",
       "checkpoints": [],
       "reviews": [],
@@ -1335,7 +1335,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T18:44:35.000Z"
+      "lastSeenAt": "2026-11-25T18:44:48.000Z"
     },
     {
       "id": "ganesh-contributor-intake",
@@ -3885,6 +3885,20 @@
         "https://github.com/g4nesh/math-commons/pull/15"
       ],
       "requestFingerprint": "3cc064c74c79eec877a04fc483db3827650c4effbdf16b2159f215f146f37fec"
+    },
+    {
+      "id": "agent-requests-backend-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "agent-requests-backend",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:44:48.000Z",
+      "links": [],
+      "requestFingerprint": "04688f49a32d95abd1394fe2eed17ef267a1de96762bc9ae6220dc916376e7cb"
     }
   ],
   "usage": [
