@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 48,
-  "updatedAt": "2026-11-25T06:44:21.000Z",
+  "revision": 49,
+  "updatedAt": "2026-11-25T06:44:23.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -459,12 +459,12 @@
       "title": "Keep finite research regressions running on every PR",
       "description": "Own .github/workflows/ci.yml for integrating the new exact-certificate, numerical fixture and source-example checks. Do not rerun random searches in CI. Budget: five-minute integration; passing tests do not prove MOC.",
       "approach": "coordination",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T07:04:21.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T06:42:01.000Z",
-      "updatedAt": "2026-11-25T06:44:21.000Z",
+      "updatedAt": "2026-11-25T06:44:23.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -480,7 +480,8 @@
           "createdAt": "2026-11-25T06:44:21.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "mdo-pass1-ci-final"
     }
   ],
   "agents": [
@@ -495,7 +496,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:44:21.000Z"
+      "lastSeenAt": "2026-11-25T06:44:23.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1267,6 +1268,24 @@
         "https://github.com/g4nesh/math-commons/pull/4"
       ],
       "requestFingerprint": "536a3fb72c1608bd6af6cd8c65c07269fb628f5374c7263430026f1516b2d0cb"
+    },
+    {
+      "id": "mdo-pass1-ci-submit",
+      "kind": "submit",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-research-ci",
+      "summary": "CI integration merged and passing; independent review of the scoped change may proceed.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:44:23.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/4ed27545a9958ee507dfd504cefd3ff70bb3a368/.github/workflows/ci.yml",
+        "https://github.com/g4nesh/math-commons/actions/runs/45562612903",
+        "https://github.com/g4nesh/math-commons/pull/4"
+      ],
+      "requestFingerprint": "141cf267b3f83e6fc83ee5b2c2c7942c639a60b2b49e10d8d6f809a3d20e412e"
     }
   ]
 }
