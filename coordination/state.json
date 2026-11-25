@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 487,
-  "updatedAt": "2026-11-25T23:49:16.000Z",
+  "revision": 488,
+  "updatedAt": "2026-11-25T23:49:19.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3394,12 +3394,12 @@
       "title": "Replay and publish the new abstract proofs and audit the merged Lean path theorem in CI",
       "description": "Integrate new exact research replays, register the fourteen path probability declarations missing from the existing Lean audit, run mathematical and platform checks, update the research handoff and validate GitHub and production public reads.",
       "approach": "verification",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-coordinator",
+      "leaseUntil": "2026-11-26T00:09:19.000Z",
       "createdAt": "2026-11-25T23:49:16.000Z",
-      "updatedAt": "2026-11-25T23:49:16.000Z",
+      "updatedAt": "2026-11-25T23:49:19.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -3423,7 +3423,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:49:16.000Z"
+      "lastSeenAt": "2026-11-25T23:49:19.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -11182,6 +11182,20 @@
       "createdAt": "2026-11-25T23:49:16.000Z",
       "links": [],
       "requestFingerprint": "3b2b603bfb21397524139d45bebc0b914139b786fd2bc60e626ff4e1fedf16b7"
+    },
+    {
+      "id": "abstract-ci-claim",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-parallel-proof-integration",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:49:19.000Z",
+      "links": [],
+      "requestFingerprint": "c7afaf8ec372453967967d91c0359f0d4b0a9efaf29f38cdc9302d10bd668be8"
     }
   ],
   "usage": [
