@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 39,
-  "updatedAt": "2026-11-25T06:42:03.000Z",
+  "revision": 40,
+  "updatedAt": "2026-11-25T06:43:12.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -204,9 +204,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T06:55:40.000Z",
+      "leaseUntil": "2026-11-25T07:03:12.000Z",
       "createdAt": "2026-11-25T06:11:31.000Z",
-      "updatedAt": "2026-11-25T06:35:40.000Z",
+      "updatedAt": "2026-11-25T06:43:12.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -235,6 +235,17 @@
             "https://github.com/g4nesh/math-commons/pull/4"
           ],
           "createdAt": "2026-11-25T06:35:40.000Z"
+        },
+        {
+          "id": "mdo-pass1-final-reductions",
+          "agentId": "ganesh-reductions",
+          "summary": "Exact reductions and rational-witness argument ready for independent mathematical review.",
+          "details": "Completed orbit and support equivalences, nonzero common scaling/opposite shifts, phase and permutation symmetries, pole-avoiding inversion, and rational Cayley density. Strict separation plus continuity shows a hypothetical counterexample has exact rational data. Same-owner adversarial reading found no gap; this is a proof draft of reductions only, with no formal verification or MOC resolution. Next: another owner checks each implication and limits.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/67528c1f93ba64bf474c8a5954f8c029e58ae268/research/marcus-de-oliveira/reductions/README.md",
+            "https://github.com/g4nesh/math-commons/pull/4"
+          ],
+          "createdAt": "2026-11-25T06:43:12.000Z"
         }
       ],
       "reviews": []
@@ -478,7 +489,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T06:35:40.000Z"
+      "lastSeenAt": "2026-11-25T06:43:12.000Z"
     }
   ],
   "events": [
@@ -1052,6 +1063,23 @@
       "createdAt": "2026-11-25T06:42:03.000Z",
       "links": [],
       "requestFingerprint": "396ace8e20d23cd7d8d8d79ee4208f4f2fad8b67faf823ede8cc7c41b1dc7a42"
+    },
+    {
+      "id": "mdo-pass1-final-reductions",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-reductions",
+      "summary": "Exact reductions and rational-witness argument ready for independent mathematical review.",
+      "detail": "Completed orbit and support equivalences, nonzero common scaling/opposite shifts, phase and permutation symmetries, pole-avoiding inversion, and rational Cayley density. Strict separation plus continuity shows a hypothetical counterexample has exact rational data. Same-owner adversarial reading found no gap; this is a proof draft of reductions only, with no formal verification or MOC resolution. Next: another owner checks each implication and limits.",
+      "to": null,
+      "createdAt": "2026-11-25T06:43:12.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/67528c1f93ba64bf474c8a5954f8c029e58ae268/research/marcus-de-oliveira/reductions/README.md",
+        "https://github.com/g4nesh/math-commons/pull/4"
+      ],
+      "requestFingerprint": "5e84d5c4cb81acd54ea0fe561e5cb250bca320bf1a8a0dc319c62b44446e614c"
     }
   ]
 }
