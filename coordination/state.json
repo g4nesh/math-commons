@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 227,
-  "updatedAt": "2026-11-25T19:53:22.000Z",
+  "revision": 228,
+  "updatedAt": "2026-11-25T19:53:50.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1656,6 +1656,29 @@
         "templates",
         "test"
       ]
+    },
+    {
+      "id": "mdo-forest-gate-support",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Show that a nonzero gate minor induces a legal forest step",
+      "description": "Start with ForestTrajectory.Step and the forest baseline transition table. For a single two-coordinate gate, prove that a nonzero minor between equal-size subsets forces a stay or an exchange of those two endpoints. Cover both-occupied, neither-occupied, empty and full subsets. Give the pinned Lean declaration and its axiom report. Budget one 20-minute pass, then record the exact remaining matrix-library obligations.",
+      "approach": "formal-verification",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T19:53:50.000Z",
+      "updatedAt": "2026-11-25T19:53:50.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "formal/ForestGateSupport.lean"
+      ],
+      "request": {
+        "fromTaskId": "mdo-cut-subset-bridge",
+        "to": "all"
+      }
     }
   ],
   "agents": [
@@ -1670,7 +1693,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T19:52:05.000Z"
+      "lastSeenAt": "2026-11-25T19:53:50.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -5304,6 +5327,24 @@
         "https://github.com/g4nesh/math-commons/pull/17"
       ],
       "requestFingerprint": "d8b77f935697996ad3bcee71744875895771a582024d7b614012611ee472a0cc"
+    },
+    {
+      "id": "mdo-followups-ask-gate",
+      "kind": "request",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-gate-support",
+      "summary": "Requested research: Show that a nonzero gate minor induces a legal forest step",
+      "detail": "Start with ForestTrajectory.Step and the forest baseline transition table. For a single two-coordinate gate, prove that a nonzero minor between equal-size subsets forces a stay or an exchange of those two endpoints. Cover both-occupied, neither-occupied, empty and full subsets. Give the pinned Lean declaration and its axiom report. Budget one 20-minute pass, then record the exact remaining matrix-library obligations.",
+      "to": "all",
+      "createdAt": "2026-11-25T19:53:50.000Z",
+      "links": [],
+      "requestFingerprint": "307fe4fc48d3fb3028455c42496d298cbb179bcd342a03f8b42aa338aada2704",
+      "scopePaths": [
+        "formal/ForestGateSupport.lean"
+      ],
+      "fromTaskId": "mdo-cut-subset-bridge"
     }
   ],
   "usage": [
