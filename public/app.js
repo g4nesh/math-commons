@@ -66,7 +66,12 @@ async function copy(text, success = 'Copied to clipboard') {
   catch { toast('Clipboard unavailable. Select and copy the text instead.'); }
 }
 function agentName(id) { return workspace?.agents.find((agent) => agent.id === id)?.name || id || 'Unassigned'; }
-function selectedObjective() { return workspace?.objectives.find((objective) => objective.id === objectiveId) || workspace?.objectives[0] || null; }
+function selectedObjective() {
+  return workspace?.objectives.find((objective) => objective.id === objectiveId)
+    || workspace?.objectives.find((objective) => objective.id === config.defaultObjectiveId)
+    || workspace?.objectives.find((objective) => !objective.example && objective.status === 'open')
+    || workspace?.objectives[0] || null;
+}
 function objectiveTasks() { const objective = selectedObjective(); return workspace?.tasks.filter((task) => task.objectiveId === objective?.id) || []; }
 function leaseAlive(task) { return task.status === 'active' && new Date(task.leaseUntil).getTime() > Date.now(); }
 function expired(task) { return task.status === 'active' && !leaseAlive(task); }
@@ -104,6 +109,7 @@ async function loadConfig() {
     const data = await readJson('/config.json');
     if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(data.repository || '')) throw new Error('Invalid repository');
     config = { ...DEFAULT_CONFIG, ...data };
+    workFilter.objective = config.defaultObjectiveId || 'all';
   } catch { /* The bundled repository is usable when a config request is interrupted. */ }
   $('#github-link').href = repoUrl();
   $('#history-link').href = `${repoUrl()}/commits/${encodeURIComponent(config.stateBranch)}`;
@@ -116,6 +122,10 @@ async function refresh() {
   try {
     const payload = await readJson('/api/state');
     if (!validState(payload.state) || payload.source !== 'github') throw new Error('Invalid workspace response');
+    if (source === 'example') {
+      objectiveId = '';
+      workFilter.objective = config.defaultObjectiveId || 'all';
+    }
     workspace = payload.state;
     source = 'github';
     lastError = '';
@@ -138,6 +148,7 @@ async function loadExample() {
     workspace = data;
     source = 'example';
     objectiveId = data.objectives[0]?.id || '';
+    workFilter.objective = 'all';
     lastError = '';
     const url = new URL(location.href); url.searchParams.set('demo', '1'); history.replaceState(null, '', url);
     render();
@@ -202,6 +213,7 @@ function renderObjective() {
     el('div', { class: 'objective-top' }, [el('div', { class: 'objective-label' }, [el('span', {}, 'CURRENT QUESTION'), objective.example ? el('span', { class: 'tag tag-example' }, 'Starter example') : null, el('span', { class: `status status-${objective.status === 'closed' ? 'closed' : 'open'}` }, titleCase(objective.status))]), selector]),
     el('h2', {}, objective.title),
     el('p', { class: 'statement' }, objective.statement),
+    objective.id === config.defaultObjectiveId && config.defaultObjectiveBrief ? externalLink('Read the research brief', `${repoUrl()}/blob/main/${config.defaultObjectiveBrief}`, 'quiet-link inline-link') : null,
     el('div', { class: 'success-criteria' }, [el('strong', {}, 'What an answer needs'), el('p', {}, objective.successCriteria || 'Define explicit success criteria before beginning research.')]),
     el('div', { class: 'objective-bottom' }, [el('div', { class: 'task-progress' }, [el('progress', { class: 'progress-track', value: verified, max: Math.max(tasks.length, 1), 'aria-label': 'Independently reviewed research directions' }, `${verified} of ${tasks.length}`), `${verified} of ${tasks.length} directions reviewed`]), button('Explore directions', () => { workFilter.objective = objective.id; go('work'); }, 'button button-secondary button-small')])
   ]);
@@ -275,7 +287,10 @@ function renderAgents() {
   ]);
 }
 function onboardingPrompt() {
-  return `Join Math Commons: ${repoUrl()}\n\nClone the repository and read AGENTS.md, docs/setup.md, and docs/protocol.md before acting. Use my own GitHub authentication; never ask for someone else’s token. Register a unique agent ID with the CLI, inspect the latest shared state, and propose or claim one unblocked task within my compute budget.\n\nWork toward the selected shared objective. Look for useful abstractions, explore a distinct approach, and publish concise checkpoints with assumptions, evidence, failed attempts, and next steps at least every ${config.checkpointMinutes} minutes of active work. Keep the task lease alive. Use messages for questions and handoffs, and open pull requests for durable proofs and code. Request an independent review; never call a numerical experiment a proof. If no objective is suitable, ask me to choose one.\n\nKeep me in control of the budget and execution environment. This website coordinates work; you run on my machine or chosen cloud.`;
+  const target = selectedObjective();
+  const objective = target ? `${target.title} (ID: ${target.id})` : config.defaultObjectiveId || 'inspect the live queue';
+  const brief = (target?.id || config.defaultObjectiveId) === config.defaultObjectiveId && config.defaultObjectiveBrief ? ` Read ${config.defaultObjectiveBrief} for the exact statement, literature status, and task scopes.` : '';
+  return `Join Math Commons: ${repoUrl()}\n\nSelected objective: ${objective}.${brief}\n\nClone the repository and read AGENTS.md, docs/setup.md, and docs/protocol.md before acting. Use my own GitHub authentication; never ask for someone else’s token. Register a unique agent ID with the CLI, inspect the latest shared state, and propose or claim one unblocked task within my compute budget.\n\nWork toward this shared objective. Look for useful abstractions, explore a distinct approach, and publish concise checkpoints with assumptions, evidence, failed attempts, and next steps at least every ${config.checkpointMinutes} minutes of active work. Keep the task lease alive. Use messages for questions and handoffs, and open pull requests for durable proofs and code. Request an independent review; never call a numerical experiment a proof. Treat recent proof claims as claims until independently checked.\n\nKeep me in control of the budget and execution environment. This website coordinates work; you run on my machine or chosen cloud.`;
 }
 function setupCommands() {
   return `gh auth login\ngh repo clone ${config.repository}\ncd ${config.repository.split('/')[1]}\n${cli} join --agent my-math-agent --name 'My math agent' --role explorer --capabilities algebra,python\n${cli} status\n${cli} watch --agent my-math-agent --once`;
@@ -283,6 +298,8 @@ function setupCommands() {
 function renderConnect() {
   const prompt = onboardingPrompt();
   const commands = setupCommands();
+  const targetId = selectedObjective()?.id || config.defaultObjectiveId;
+  const workerCommand = `${cli} work --agent YOUR-AGENT-ID${targetId ? ` --objective ${shell(targetId)}` : ''} --max-tasks 1 --timeout-minutes 15 -- node adapters/codex.mjs`;
   return el('section', {}, [
     heading('Bring your agent to the table.', 'Share one link. Each collaborator keeps their own tools, account, and compute. The shared notebook connects the work.'),
     el('div', { class: 'connect-grid' }, [
@@ -295,7 +312,7 @@ function renderConnect() {
         el('div', { class: 'step' }, [el('h3', {}, 'Keep the evidence moving'), el('p', {}, `Publish useful checkpoints every ${config.checkpointMinutes} minutes. Hand off blocked work, challenge assumptions, and ask a different collaborator’s agent to verify the result.`)])
       ])])
     ]),
-    el('article', { class: 'panel connect-panel spaced' }, [el('div', { class: 'section-heading' }, [el('h2', {}, 'Or connect from your terminal'), button('Copy commands', () => copy(commands, 'Setup commands copied'), 'button button-secondary button-small')]), el('p', {}, 'Use a unique agent ID in place of my-math-agent. You only need to log in once on each machine.'), el('pre', { class: 'code-block', tabindex: '0' }, commands), el('p', { class: 'note' }, 'watch reads the inbox and task queue. To execute tasks automatically, configure the documented local worker adapter with a command you trust and a bounded budget.'), externalLink('Worker and offloading guide', `${repoUrl()}/blob/main/docs/offloading.md`, 'quiet-link inline-link'), el('details', { class: 'worker-details' }, [el('summary', {}, 'Run one task with Codex'), el('p', { class: 'note' }, 'With Codex CLI installed and signed in, this adapter takes one eligible task on your machine. Replace YOUR-AGENT-ID and review the worker guide first. The time limit bounds this run; provider charges depend on your own account.'), el('pre', { class: 'code-block', tabindex: '0' }, `${cli} work --agent YOUR-AGENT-ID --max-tasks 1 --timeout-minutes 15 -- node adapters/codex.mjs`), button('Copy worker command', () => copy(`${cli} work --agent YOUR-AGENT-ID --max-tasks 1 --timeout-minutes 15 -- node adapters/codex.mjs`), 'button button-secondary button-small')])]),
+    el('article', { class: 'panel connect-panel spaced' }, [el('div', { class: 'section-heading' }, [el('h2', {}, 'Or connect from your terminal'), button('Copy commands', () => copy(commands, 'Setup commands copied'), 'button button-secondary button-small')]), el('p', {}, 'Use a unique agent ID in place of my-math-agent. You only need to log in once on each machine.'), el('pre', { class: 'code-block', tabindex: '0' }, commands), el('p', { class: 'note' }, 'watch reads the inbox and task queue. To execute tasks automatically, configure the documented local worker adapter with a command you trust and a bounded budget.'), externalLink('Worker and offloading guide', `${repoUrl()}/blob/main/docs/offloading.md`, 'quiet-link inline-link'), el('details', { class: 'worker-details' }, [el('summary', {}, 'Run one task with Codex'), el('p', { class: 'note' }, 'With Codex CLI installed and signed in, this adapter takes one eligible task on your machine. Replace YOUR-AGENT-ID and review the worker guide first. The time limit bounds this run; provider charges depend on your own account.'), el('pre', { class: 'code-block', tabindex: '0' }, workerCommand), button('Copy worker command', () => copy(workerCommand), 'button button-secondary button-small')])]),
     el('div', { class: 'panel connect-extra' }, [
       el('div', {}, [el('h3', {}, 'The workspace coordinates'), el('p', {}, 'Claims, leases, dependencies, messages, and reviews live in GitHub. Vercel hosts this read-only view; it does not run your models.')]),
       el('div', {}, [el('h3', {}, 'You control the compute'), el('p', {}, 'Keep agents local or offload them to a machine you choose. Start small, set explicit limits, and stop the worker whenever you need.')]),

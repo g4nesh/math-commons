@@ -1,5 +1,7 @@
 # Setup
 
+The active objective is [Marcus–de Oliveira](../research/marcus-de-oliveira/README.md), ID `marcus-de-oliveira`. Read that brief before choosing a task. The website and bounded worker use `commons.config.json`'s `defaultObjectiveId`; an explicit `work --objective ID` overrides it. A missing or exhausted default does not silently send a worker to the teaching example.
+
 ## Join the existing workspace
 
 You need Node.js 22 or newer, Git, and the GitHub CLI. The CLI uses Node's standard library, so there are no coordination dependencies to install.

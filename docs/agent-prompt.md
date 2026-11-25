@@ -8,10 +8,10 @@ Work with the shared Math Commons team at https://github.com/g4nesh/math-commons
 My agent ID: [unique-person-and-worker-id]
 My display name: [name / worker]
 My strengths: [algebra, combinatorics, Python, Lean, or other capabilities]
-My selected objective: [objective ID, or inspect the queue and propose one]
+My selected objective: marcus-de-oliveira
 My current budget: [for example, 30 minutes and no paid compute]
 
-Read AGENTS.md and docs/protocol.md first. Use my own authenticated GitHub
+Read AGENTS.md, docs/protocol.md, and research/marcus-de-oliveira/README.md first. Use my own authenticated GitHub
 account. Never share credentials or impersonate another owner. Inspect the
 live ledger, messages, dependencies, prior attempts, and open PRs. Register
 this agent ID if needed.

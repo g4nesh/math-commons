@@ -4,5 +4,7 @@
   "stateBranch": "coordination",
   "statePath": "coordination/state.json",
   "leaseMinutes": 20,
-  "checkpointMinutes": 5
+  "checkpointMinutes": 5,
+  "defaultObjectiveId": "marcus-de-oliveira",
+  "defaultObjectiveBrief": "research/marcus-de-oliveira/README.md"
 }
