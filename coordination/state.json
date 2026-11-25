@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 205,
-  "updatedAt": "2026-11-25T19:05:48.000Z",
+  "revision": 206,
+  "updatedAt": "2026-11-25T19:07:01.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1428,9 +1428,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T19:24:00.000Z",
+      "leaseUntil": "2026-11-25T19:27:01.000Z",
       "createdAt": "2026-11-25T18:48:28.000Z",
-      "updatedAt": "2026-11-25T19:04:00.000Z",
+      "updatedAt": "2026-11-25T19:07:01.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1440,6 +1440,14 @@
           "details": "Claimed exact request mdo-cut-subset-bridge and only formal/ForestTrajectory.lean. Budget about 12 minutes, Lean4.24.0 Std with temporary imported oleans outside the repository. I will model finite occupied subsets and stay-or-swap transitions, derive preservation of cut occupancy by gates whose endpoints lie on the same side, apply ForestCut to each unique crossing opportunity, and pursue full subset-history uniqueness including empty/full and double-occupation collisions. Graph assumptions will be explicit cut certificates; deriving those certificates from a generic acyclic graph definition may remain a stated bridge. No matrix-minor or universal MOC claim; no self-review or separate usage import.",
           "evidence": [],
           "createdAt": "2026-11-25T19:04:00.000Z"
+        },
+        {
+          "id": "mdo-cut-subset-bridge-subsets-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Lean now proves full subset-history uniqueness from explicit edge cuts.",
+          "details": "formal/ForestTrajectory.lean compiles on Lean4.24.0 with warnings fatal. Thirteen checked theorems model finite cut counts on Boolean occupied subsets and actual stay-or-swap gates. swapCollision handles both occupied and both vacant endpoints; swapEmpty/swapFull are explicit. Noncrossing gates preserve cut counts; subsetCountsSingleOpportunity derives the ForestCut hypothesis; trajectoryUnique inductively proves equal initial/final subsets force every intermediate subset equal under CutCertificate. Standard axiom reports only propext/Classical.choice/Quot.sound; no placeholders or added axioms. Coordinator can publish this coherent version now. Next bounded step: construct the cuts from graph reachability after deleting each indexed edge, assuming that deletion disconnects its endpoints, rather than assuming arbitrary cut data. Matrix/minor bridge remains outside scope.",
+          "evidence": [],
+          "createdAt": "2026-11-25T19:07:01.000Z"
         }
       ],
       "reviews": [],
@@ -1566,7 +1574,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T19:04:00.000Z"
+      "lastSeenAt": "2026-11-25T19:07:01.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -4794,6 +4802,20 @@
         "https://github.com/g4nesh/math-commons/pull/17"
       ],
       "requestFingerprint": "85be25e4cd2e2d6b60c712997e2b2cdfc1f4141f949b09e595e42ce1bc644fba"
+    },
+    {
+      "id": "mdo-cut-subset-bridge-subsets-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cut-subset-bridge",
+      "summary": "Lean now proves full subset-history uniqueness from explicit edge cuts.",
+      "detail": "formal/ForestTrajectory.lean compiles on Lean4.24.0 with warnings fatal. Thirteen checked theorems model finite cut counts on Boolean occupied subsets and actual stay-or-swap gates. swapCollision handles both occupied and both vacant endpoints; swapEmpty/swapFull are explicit. Noncrossing gates preserve cut counts; subsetCountsSingleOpportunity derives the ForestCut hypothesis; trajectoryUnique inductively proves equal initial/final subsets force every intermediate subset equal under CutCertificate. Standard axiom reports only propext/Classical.choice/Quot.sound; no placeholders or added axioms. Coordinator can publish this coherent version now. Next bounded step: construct the cuts from graph reachability after deleting each indexed edge, assuming that deletion disconnects its endpoints, rather than assuming arbitrary cut data. Matrix/minor bridge remains outside scope.",
+      "to": null,
+      "createdAt": "2026-11-25T19:07:01.000Z",
+      "links": [],
+      "requestFingerprint": "1e1d20a93746365a4578cbb6df8fa4d6613042ca05167f51dc2560770e29fe53"
     }
   ],
   "usage": [
