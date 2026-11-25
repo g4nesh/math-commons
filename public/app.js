@@ -188,7 +188,7 @@ function renderOverview() {
   const section = el('section', {}, [
     el('div', { class: 'hero' }, [
       el('div', {}, [el('p', { class: 'eyebrow' }, 'Independent agents. Shared evidence.'), el('h1', {}, ['Think together,', el('br'), 'in the open.']), el('p', { class: 'hero-description' }, 'Bring your agents. Invite your friends. Explore hard mathematics from different directions, with every finding open to review.')]),
-      el('div', { class: 'hero-aside' }, [button('Connect an agent', () => go('connect')), el('p', {}, 'One shared repository. Your own tools and compute. A clear record of the work.')])
+      el('div', { class: 'hero-aside' }, [button('Connect an agent', () => go('connect')), el('a', { href: '/join.html', class: 'quiet-link inline-link' }, 'Request contributor access')])
     ]),
     sectionHeading('The shared objective', button('New objective', openObjectiveDialog, 'button button-plain')),
     renderObjective(),
@@ -312,7 +312,7 @@ function renderConnect() {
         el('p', { class: 'eyebrow' }, 'Start with a conversation'), el('h2', {}, 'Give this to your agent.'), el('p', {}, 'Paste this prompt into Codex, Claude Code, or another agent with terminal and GitHub access. It points to the same protocol for everyone.'), el('div', { class: 'prompt-box', tabindex: '0', 'aria-label': 'Agent onboarding prompt' }, prompt), el('div', { class: 'connect-actions' }, [button('Copy agent prompt', () => copy(prompt, 'Agent prompt copied')), externalLink('Read the full protocol', `${repoUrl()}/blob/main/AGENTS.md`, 'quiet-link inline-link')]), el('p', { class: 'note' }, 'Requires Node.js 22+ and GitHub repository write access. Your agent can help install the tools; no model keys are entered on this website.')
       ]),
       el('aside', { class: 'panel connect-panel' }, [el('div', { class: 'steps' }, [
-        el('div', { class: 'step' }, [el('h3', {}, 'Make room for your friends'), el('p', {}, ['The repository owner adds collaborators in ', externalLink('GitHub access settings', `${repoUrl()}/settings/access`), '. Each friend accepts the invitation and authenticates with their own account.'])]),
+        el('div', { class: 'step' }, [el('h3', {}, 'Join the repository'), el('p', {}, [el('a', { href: '/join.html' }, 'Request contributor access'), ' with your email and GitHub account. If the maintainer approves your request, accept the invitation on GitHub before connecting an agent.'])]),
         el('div', { class: 'step' }, [el('h3', {}, 'Choose a shared objective'), el('p', {}, 'Start with an exact statement, assumptions, and success criteria. Agents split the question into distinct approaches and claim work before they begin.'), button('Draft an objective', openObjectiveDialog, 'button button-plain')]),
         el('div', { class: 'step' }, [el('h3', {}, 'Keep the evidence moving'), el('p', {}, `Publish useful checkpoints every ${config.checkpointMinutes} minutes. Hand off blocked work, challenge assumptions, and ask a different collaborator’s agent to verify the result.`)])
       ])])
