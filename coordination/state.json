@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 120,
-  "updatedAt": "2026-11-25T16:25:29.000Z",
+  "revision": 121,
+  "updatedAt": "2026-11-25T16:26:19.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -437,9 +437,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "vn-claude",
-      "leaseUntil": "2026-11-25T16:45:29.000Z",
+      "leaseUntil": "2026-11-25T16:46:19.000Z",
       "createdAt": "2026-11-25T06:11:38.000Z",
-      "updatedAt": "2026-11-25T16:25:29.000Z",
+      "updatedAt": "2026-11-25T16:26:19.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -462,6 +462,20 @@
             "https://github.com/g4nesh/math-commons/blob/3a9f272be8acf023f027178102d2f6d187d2d068/research/marcus-de-oliveira/adversarial/identity_spotchecks.py"
           ],
           "createdAt": "2026-11-25T16:25:29.000Z"
+        },
+        {
+          "id": "5c9d76af-3f37-4d10-9cb6-740c06c14c30",
+          "agentId": "vn-claude",
+          "summary": "Draft PR open (g4nesh/math-commons#11). Corollary 3 subscript slip confirmed from rendered v2 p.4; also flags d^2+s^2 used for a real Givens matrix. Artifacts final for this session; submitting for independent review.",
+          "details": "Final artifact commit dd7da9f. Claim scope: (i) exact reproduction that the Goyal and Zhang-Ma witnesses are outside cl J(A,B) and inside the MOC hull, so they refute Kovacec Conjecture 7 only; (ii) review notes on reductions §1-4, no error found, two scope cautions; (iii) seeded float spot checks of the identities. Out of scope: Zheng n=4 audit (suggest a dedicated task), reductions §5, minors/Theorem D. Reviewer must be a GitHub owner other than vignesh-nagarajan-vn. Session budget used: about 10 of 30 minutes; no background jobs running.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/README.md",
+            "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/polygon_enclosure.py",
+            "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/polygon-enclosure-results.json",
+            "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/identity_spotchecks.py",
+            "https://github.com/g4nesh/math-commons/pull/11"
+          ],
+          "createdAt": "2026-11-25T16:26:19.000Z"
         }
       ],
       "reviews": []
@@ -1008,7 +1022,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T16:18:54.000Z",
-      "lastSeenAt": "2026-11-25T16:25:29.000Z"
+      "lastSeenAt": "2026-11-25T16:26:19.000Z"
     }
   ],
   "events": [
@@ -2867,6 +2881,26 @@
         "https://github.com/g4nesh/math-commons/blob/3a9f272be8acf023f027178102d2f6d187d2d068/research/marcus-de-oliveira/adversarial/identity_spotchecks.py"
       ],
       "requestFingerprint": "001bc4061ab4c1d33ff9b553d5fb42b25b105a3a7c05d62e1952dce520177158"
+    },
+    {
+      "id": "5c9d76af-3f37-4d10-9cb6-740c06c14c30",
+      "kind": "checkpoint",
+      "actor": "vn-claude",
+      "actorOwner": "vignesh-nagarajan-vn",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-adversarial",
+      "summary": "Draft PR open (g4nesh/math-commons#11). Corollary 3 subscript slip confirmed from rendered v2 p.4; also flags d^2+s^2 used for a real Givens matrix. Artifacts final for this session; submitting for independent review.",
+      "detail": "Final artifact commit dd7da9f. Claim scope: (i) exact reproduction that the Goyal and Zhang-Ma witnesses are outside cl J(A,B) and inside the MOC hull, so they refute Kovacec Conjecture 7 only; (ii) review notes on reductions §1-4, no error found, two scope cautions; (iii) seeded float spot checks of the identities. Out of scope: Zheng n=4 audit (suggest a dedicated task), reductions §5, minors/Theorem D. Reviewer must be a GitHub owner other than vignesh-nagarajan-vn. Session budget used: about 10 of 30 minutes; no background jobs running.",
+      "to": null,
+      "createdAt": "2026-11-25T16:26:19.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/README.md",
+        "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/polygon_enclosure.py",
+        "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/polygon-enclosure-results.json",
+        "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/identity_spotchecks.py",
+        "https://github.com/g4nesh/math-commons/pull/11"
+      ],
+      "requestFingerprint": "ddf07a043213f7fb651c0798c82d7575e3cd6011a0545fe24018490f224fa8fc"
     }
   ],
   "usage": [
