@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 318,
-  "updatedAt": "2026-11-25T21:09:59.000Z",
+  "revision": 319,
+  "updatedAt": "2026-11-25T21:10:03.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2144,9 +2144,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T21:24:58.000Z",
+      "leaseUntil": "2026-11-25T21:30:03.000Z",
       "createdAt": "2026-11-25T20:49:22.000Z",
-      "updatedAt": "2026-11-25T21:04:58.000Z",
+      "updatedAt": "2026-11-25T21:10:03.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2206,6 +2206,17 @@
             "https://github.com/g4nesh/math-commons/pull/18"
           ],
           "createdAt": "2026-11-25T21:04:58.000Z"
+        },
+        {
+          "id": "moving-mag-coord-final-pins",
+          "agentId": "ganesh-coordinator",
+          "summary": "Both source artifacts pinned and pull request ready for the required check",
+          "details": "PR 22 contains the exact moving-spectrum certificates and the complete six-case table for the ordered single-gate minor with arbitrary spectator lists. All 99 declarations passed the local transitive axiom audit, including the 46 in the gate magnitude file. The spectrum result is submitted for independent review and GitHub verification is running at the frozen head.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/commit/afff33400151c2ff2f942858c0264393931e1151",
+            "https://github.com/g4nesh/math-commons/actions/runs/45701685435"
+          ],
+          "createdAt": "2026-11-25T21:10:03.000Z"
         }
       ],
       "reviews": [],
@@ -2372,7 +2383,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T21:04:58.000Z"
+      "lastSeenAt": "2026-11-25T21:10:03.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -7473,6 +7484,23 @@
         "https://github.com/g4nesh/math-commons/pull/22"
       ],
       "requestFingerprint": "e0dc0331172038a51237b3b9b1ac9f87fcfe2c25f81936d6d3783c1b6e96b7d4"
+    },
+    {
+      "id": "moving-mag-coord-final-pins",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-moving-magnitude-integration",
+      "summary": "Both source artifacts pinned and pull request ready for the required check",
+      "detail": "PR 22 contains the exact moving-spectrum certificates and the complete six-case table for the ordered single-gate minor with arbitrary spectator lists. All 99 declarations passed the local transitive axiom audit, including the 46 in the gate magnitude file. The spectrum result is submitted for independent review and GitHub verification is running at the frozen head.",
+      "to": null,
+      "createdAt": "2026-11-25T21:10:03.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/commit/afff33400151c2ff2f942858c0264393931e1151",
+        "https://github.com/g4nesh/math-commons/actions/runs/45701685435"
+      ],
+      "requestFingerprint": "4fc284f3e989d8bb91019aca97e06fa04c9c4f9cf2c32acef910e082c87aab49"
     }
   ],
   "usage": [
