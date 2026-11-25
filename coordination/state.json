@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 155,
-  "updatedAt": "2026-11-25T18:39:26.000Z",
+  "revision": 156,
+  "updatedAt": "2026-11-25T18:40:06.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1099,9 +1099,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T18:55:49.000Z",
+      "leaseUntil": "2026-11-25T19:00:06.000Z",
       "createdAt": "2026-11-25T18:26:44.000Z",
-      "updatedAt": "2026-11-25T18:35:49.000Z",
+      "updatedAt": "2026-11-25T18:40:06.000Z",
       "createdBy": "ganesh-search",
       "checkpoints": [
         {
@@ -1135,6 +1135,14 @@
           "details": "Division-free Fraction-pair determinant replay rechecked all900 input hashes, unitarity, nonzero commutators, every permutation point, direct weights, hull facets/margins and saved witnesses with0 mismatches in31.62 CPU seconds. Parent authorized separate n7 extension:24 cases, generic/thin/clustered complex spectra with generic or near-vertex complex mixing, distinct holdout seed;120 CPU/150 wall seconds for screening and120 CPU/150 wall seconds for replay. Existing900-case files and the public verifier n<=6 limit remain unchanged. New holdout harness uses dimension-generic exact primitives and checks n=7 explicitly; every completed holdout witness will be saved.",
           "evidence": [],
           "createdAt": "2026-11-25T18:35:49.000Z"
+        },
+        {
+          "id": "mdo-rational-stress-ready-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Exact stress artifacts complete:924 cases,302400 permutation points,0 replay mismatches.",
+          "details": "Main900 cases independently rechecked in31.62 CPU seconds. Separate n7 holdout completed24/24 in22.15CPU seconds and independently replayed all24 in33.04CPU seconds, within120-second stage caps. All924 pairs are exactly noncommuting with nonreal unitary entries; all determinants satisfy exact convex-weight certificates. Totals762 polygon interiors,12 polygon boundaries,150 segment hulls;0 outside. Main contains450 general-complex stress cases+450 structured controls; holdout adds24 general-complex cases.100 n4 negative exotic-functional cases include60 general-complex stresses. Six tests pass;64 artifact hashes match; screen/holdout source hashes match recorded runs. README separates finite evidence, controls, public n<=6 parser and explicit n7 harness. Files frozen awaiting parent immutable PR15 evidence link before submission; no further compute running.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:40:06.000Z"
         }
       ],
       "reviews": []
@@ -1221,7 +1229,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T18:35:49.000Z"
+      "lastSeenAt": "2026-11-25T18:40:06.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -3691,6 +3699,20 @@
       "createdAt": "2026-11-25T18:39:26.000Z",
       "links": [],
       "requestFingerprint": "39cd3cacb9d8c2736e85712ead387928a9e5f8871509f548dde23cabf50279a4"
+    },
+    {
+      "id": "mdo-rational-stress-ready-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-rational-stress",
+      "summary": "Exact stress artifacts complete:924 cases,302400 permutation points,0 replay mismatches.",
+      "detail": "Main900 cases independently rechecked in31.62 CPU seconds. Separate n7 holdout completed24/24 in22.15CPU seconds and independently replayed all24 in33.04CPU seconds, within120-second stage caps. All924 pairs are exactly noncommuting with nonreal unitary entries; all determinants satisfy exact convex-weight certificates. Totals762 polygon interiors,12 polygon boundaries,150 segment hulls;0 outside. Main contains450 general-complex stress cases+450 structured controls; holdout adds24 general-complex cases.100 n4 negative exotic-functional cases include60 general-complex stresses. Six tests pass;64 artifact hashes match; screen/holdout source hashes match recorded runs. README separates finite evidence, controls, public n<=6 parser and explicit n7 harness. Files frozen awaiting parent immutable PR15 evidence link before submission; no further compute running.",
+      "to": null,
+      "createdAt": "2026-11-25T18:40:06.000Z",
+      "links": [],
+      "requestFingerprint": "aa5748dc82730539352b09b47423b25ab4793583cac912a2daa09c605cbf7be6"
     }
   ],
   "usage": [
