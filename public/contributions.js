@@ -45,10 +45,10 @@ export function renderContributions(context) {
     const data = dataFor(state, example, { now: referenceTime });
     const hasAny = all.allReceiptCount > 0;
     const activity = example ? [] : ownerActivity(state);
-    const heading = el('div', { class: 'usage-heading' }, [
-      el('div', {}, [el('p', { class: 'eyebrow' }, 'The contribution notebook'), el('h1', {}, ['Big questions.', el('br'), el('span', { class: 'usage-underlined' }, 'A little from everyone.')]), el('p', { class: 'usage-intro' }, 'A shared record of the tokens your agents put into the work. Each line belongs to a person. Every number starts with a receipt.')]),
-      el('div', { class: 'usage-heading-note' }, [doodle(), el('span', { class: 'usage-handnote' }, 'show your work.')])
-    ]);
+    const heading = el('div', { class: 'usage-heading' }, el('div', {}, [
+      el('h1', {}, 'Token contributions'),
+      el('p', { class: 'usage-intro' }, 'Tokens recorded by each contributor’s agents, grouped by the day a run finished.')
+    ]));
     const controls = el('div', { class: 'usage-controls' }, [
       el('div', { class: 'usage-window-label' }, [el('span', { class: 'usage-small-title' }, 'Recorded contributions'), el('span', { class: 'meta' }, `${dateLabel(data.startDay)} – ${dateLabel(data.endDay)} · UTC`)]),
       el('div', { class: 'usage-control-groups' }, [segmented([['7d', '7 days'], ['30d', '30 days'], ['all', 'All time']], settings.period, 'Date window', (value) => { settings.period = value; draw(); }), segmented([['cumulative', 'Cumulative'], ['daily', 'Daily']], settings.mode, 'Chart mode', (value) => { settings.mode = value; draw(); })])
@@ -56,14 +56,14 @@ export function renderContributions(context) {
     const stats = el('div', { class: 'usage-stats' }, [
       metric(data.total === null ? (hasAny ? 'No receipts' : 'Not metered yet') : compact(data.total), 'Recorded tokens', data.total === null ? 'Historical usage is unknown' : `${whole(data.total)} input + output tokens`, 'usage-total', data.providers),
       metric(data.input === null ? '—' : compact(data.input), 'Input tokens', data.cachedInput === null ? 'No input receipts in this window' : `${whole(data.cachedInput)} cached · included in input`),
-      metric(data.output === null ? '—' : compact(data.output), 'Output tokens', data.receiptCount ? `${whole(data.receiptCount)} run receipts in this window` : 'Receipts make a zero meaningful'),
+      metric(data.output === null ? '—' : compact(data.output), 'Output tokens', data.receiptCount ? `${whole(data.receiptCount)} run receipts in this window` : 'No output receipts in this window'),
       metric(data.series.filter((row) => row.receiptCount).length || '—', 'Metered contributors', example ? 'Synthetic example identities' : 'Grouped by GitHub owner')
     ]);
     const chartPanel = el('section', { class: 'usage-chart-panel', 'aria-labelledby': 'usage-chart-title' }, [
-      el('div', { class: 'usage-chart-title-row' }, [el('div', {}, [el('h2', { id: 'usage-chart-title' }, settings.mode === 'cumulative' ? 'It adds up.' : 'One day at a time.'), el('p', {}, settings.mode === 'cumulative' ? 'Cumulative recorded tokens within the selected window.' : 'Recorded tokens by finish date. Blank days have no receipts.')]), el('span', { class: 'usage-stamp' }, example ? 'SYNTHETIC EXAMPLE' : 'RECEIPTS, NOT ESTIMATES')]),
+      el('div', { class: 'usage-chart-title-row' }, [el('div', {}, [el('h2', { id: 'usage-chart-title' }, settings.mode === 'cumulative' ? 'Cumulative tokens' : 'Daily tokens'), el('p', {}, settings.mode === 'cumulative' ? 'Cumulative recorded tokens within the selected window.' : 'Recorded tokens by finish date. Blank days have no receipts.')]), example ? el('span', { class: 'usage-stamp' }, 'Synthetic example') : null]),
       hasAny ? ownerControls(all.availableOwners, data.availableOwners) : null,
       data.receiptCount ? chart(data, all.availableOwners) : emptyChart(hasAny),
-      el('div', { class: 'usage-chart-foot' }, [el('span', {}, 'Input + output. Cached input is counted once.'), el('span', {}, 'Token volume is not mathematical quality.')])
+      el('div', { class: 'usage-chart-foot' }, [el('span', {}, 'Input + output. Cached input is counted once.'), externalLink('Receipt format', `${repoUrl}/blob/main/docs/usage.md`, 'quiet-link inline-link')])
     ]);
     replace(root, heading,
       example ? el('div', { class: 'usage-example-banner', role: 'status' }, [el('div', {}, [el('strong', {}, 'Example chart · synthetic data'), el('p', {}, 'These fictional contributors and receipts illustrate the chart. They are not workspace usage.')]), button('Return to live data', () => { settings.owners = null; onLive(); }, 'button button-secondary button-small')]) : null,
@@ -86,7 +86,7 @@ export function renderContributions(context) {
   function emptyChart(filtered) {
     return el('div', { class: 'usage-empty-chart' }, [
       el('div', { class: 'usage-empty-axis', 'aria-hidden': 'true' }),
-      el('div', { class: 'usage-empty-note' }, [el('span', { class: 'usage-handnote' }, filtered ? 'nothing recorded here (yet)' : 'first receipt goes here'), el('h3', {}, filtered ? 'No receipts in this selection.' : 'The work is real. The meter is next.'), el('p', {}, filtered ? 'Choose another date window or show everyone. A blank chart means missing receipts, not zero historical usage.' : 'Agents have already been contributing. Earlier runs were not metered, so we’re leaving their token totals unknown.'), el('div', { class: 'usage-empty-actions' }, [filtered ? button('Show all recorded work', () => { settings.period = 'all'; settings.owners = null; draw(); }, 'button button-secondary') : button('Preview example chart', () => { settings.owners = null; settings.period = 'all'; onPreview(); }, 'button usage-coral-button'), externalLink('How receipts work', `${repoUrl}/blob/main/docs/usage.md`, 'quiet-link inline-link')])]),
+      el('div', { class: 'usage-empty-note' }, [el('h3', {}, filtered ? 'No receipts in this selection.' : 'No token receipts yet.'), el('p', {}, filtered ? 'Choose another date window or show everyone. A blank chart means missing receipts, not zero historical usage.' : 'Agents have already been contributing. Earlier runs were not metered, so we’re leaving their token totals unknown.'), el('div', { class: 'usage-empty-actions' }, [filtered ? button('Show all recorded work', () => { settings.period = 'all'; settings.owners = null; draw(); }, 'button button-secondary') : button('Preview example chart', () => { settings.owners = null; settings.period = 'all'; onPreview(); }, 'button usage-coral-button'), externalLink('How receipts work', `${repoUrl}/blob/main/docs/usage.md`, 'quiet-link inline-link')])]),
       doodle('usage-empty-star')
     ]);
   }

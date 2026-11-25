@@ -33,6 +33,20 @@ const labels = { open: 'Open', active: 'Lease held', expired: 'Lease expired', r
 const statusOf = (task, now) => Object.hasOwn(labels, taskStatus(task, now)) ? taskStatus(task, now) : 'unknown';
 const cubic = (x1, y1, x2, y2) => `M${x1},${y1} C${(x1 + x2) / 2},${y1} ${(x1 + x2) / 2},${y2} ${x2},${y2}`;
 
+// Coordinates are the six permutation products in formal/MathCommons.lean.
+function witnessDiagram() {
+  const points = [[6,-2], [2,0], [2,1], [0,-1], [0,2], [2,-2]];
+  const scale = ([x,y]) => [11 + 14*x, 39 - 14*y];
+  const at = point => scale(point).join(',');
+  const [cx,cy] = scale([2/3,2/9]);
+  return svg('svg', { class:'rmap-witness', viewBox:'0 0 110 79', 'aria-hidden':'true' }, [
+    svg('path', { d:'M4,39 H104 M11,5 V73', class:'rmap-axis' }),
+    svg('polygon', { points:[3,5,0,2,4].map(i => at(points[i])).join(' '), class:'rmap-polygon' }),
+    ...points.map(point => { const [x,y]=scale(point); return svg('circle',{cx:x,cy:y,r:2,class:'rmap-vertex'}); }),
+    svg('circle', { cx,cy,r:3.8,class:'rmap-determinant' })
+  ]);
+}
+
 function relatedSelection(tree, selection, now) {
   const event = selection?.type === 'event' ? tree.events.find((item) => item.id === selection.id) : null;
   const selectedTask = selection?.type === 'task' ? tree.tasks.find((item) => item.id === selection.id) : event?.taskId ? tree.tasks.find((item) => item.id === event.taskId) : null;
@@ -50,17 +64,17 @@ function relatedSelection(tree, selection, now) {
 function overviewLayout(tree, availableWidth, narrow) {
   const width = narrow ? Math.max(260, availableWidth - 2) : 820;
   const half = Math.ceil(tree.branches.length / 2);
-  const overviewHeight = Math.max(420, Math.max(0, half - 1) * 100 + 112);
-  const root = narrow ? { x: width / 2 - 106, y: 16, width: 212, height: 96 } : { x: 310, y: overviewHeight / 2 - 55, width: 200, height: 110 };
+  const overviewHeight = Math.max(420, Math.max(0, half - 1) * 77 + 100);
+  const root = narrow ? { x: width / 2 - 106, y: 16, width: 212, height: 96 } : { x: 328, y: overviewHeight / 2 - 55, width: 164, height: 110 };
   const branches = [], tasks = [];
   tree.branches.forEach((branch, index) => {
     const side = index < half ? 'left' : 'right';
     const row = side === 'left' ? index : index - half;
     const sideCount = side === 'left' ? half : tree.branches.length - half;
-    const branchWidth = narrow ? Math.min(190, (width - 64) / 2) : 152;
+    const branchWidth = narrow ? Math.min(190, (width - 64) / 2) : 175;
     const branchNode = {
       data: branch, color: index % 7, side,
-      x: narrow ? side === 'left' ? 20 : width - 20 - branchWidth : side === 'left' ? 86 : 582,
+      x: narrow ? side === 'left' ? 20 : width - 20 - branchWidth : side === 'left' ? 64 : 581,
       y: narrow ? 132 + row * 77 : 35 + (sideCount === 1 ? (overviewHeight - 112) / 2 : row * (overviewHeight - 112) / (sideCount - 1)),
       width: branchWidth, height: narrow ? 38 : 44
     };
@@ -225,7 +239,12 @@ export function renderResearchMap({ tree, selection = null, onSelect, now = Date
     if (target) for (const from of layout.tasks.filter((task) => dependencies.has(task.data.id) && task !== target)) {
       canvas.append(svg('path', { d: `M${from.x + from.width},${from.y + from.height / 2} C${layout.width - 8},${from.y + from.height / 2} ${layout.width - 8},${target.y + target.height / 2} ${target.x + target.width + 2},${target.y + target.height / 2}`, class: 'rmap-dependency-link', 'marker-end': `url(#${marker})` }));
     }
-    addNode('objective', tree.objective.id, r, [html('span', { class: 'rmap-root-kicker' }, tree.objective.example ? 'Example question' : 'Shared question'), html('span', { class: 'rmap-root-title' }, tree.objective.title || tree.objective.id)], '', tree.objective.title || tree.objective.id);
+    const isDeterminantal = tree.objective.id === 'marcus-de-oliveira';
+    const rootContent = isDeterminantal
+      ? [witnessDiagram(), html('span', {class:'rmap-figure-caption'}, '3 × 3 witness')]
+      : html('span', {class:'rmap-root-title'}, tree.objective.title || tree.objective.id);
+    addNode('objective', tree.objective.id, r, rootContent, isDeterminantal ? 'rmap-witness-node' : '',
+      isDeterminantal ? 'Marcus–de Oliveira conjecture. Exact three by three example: the determinant lies inside the permutation hull.' : tree.objective.title || tree.objective.id);
     for (const branch of layout.branches) {
       const live = branch.data.activeCount > 0;
       const { label, activeCount } = branch.data;
