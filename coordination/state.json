@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 173,
-  "updatedAt": "2026-11-25T18:48:23.000Z",
+  "revision": 174,
+  "updatedAt": "2026-11-25T18:48:28.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1328,6 +1328,29 @@
         "fromTaskId": "mdo-baselines",
         "to": "all"
       }
+    },
+    {
+      "id": "mdo-cut-subset-bridge",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Connect the Lean cut lemma to subset paths on a forest",
+      "description": "Define the occupied subsets before and after each two-coordinate gate on a finite forest. For each edge cut, prove that all other gates preserve its occupancy count and identify the unique crossing opportunity, including collisions, empty and full subsets. Apply cutHistoryUnique or crossingDecisionUnique to prove uniqueness from equal endpoints. Provide a pinned, axiom-audited Lean file and specify the remaining matrix-minor bridge.",
+      "approach": "formal-verification",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T18:48:28.000Z",
+      "updatedAt": "2026-11-25T18:48:28.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "formal/ForestTrajectory.lean"
+      ],
+      "request": {
+        "fromTaskId": "mdo-forest-cut-lean",
+        "to": "all"
+      }
     }
   ],
   "agents": [
@@ -1342,7 +1365,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T18:48:15.000Z"
+      "lastSeenAt": "2026-11-25T18:48:28.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -4123,6 +4146,24 @@
       "createdAt": "2026-11-25T18:48:23.000Z",
       "links": [],
       "requestFingerprint": "1fcb5cbec0a8d86670dae4210bdabcf6a93ae0bc08c6c1d5534fa78bdddc55d9"
+    },
+    {
+      "id": "fieldnotes-ask-forest",
+      "kind": "request",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-cut-subset-bridge",
+      "summary": "Requested research: Connect the Lean cut lemma to subset paths on a forest",
+      "detail": "Define the occupied subsets before and after each two-coordinate gate on a finite forest. For each edge cut, prove that all other gates preserve its occupancy count and identify the unique crossing opportunity, including collisions, empty and full subsets. Apply cutHistoryUnique or crossingDecisionUnique to prove uniqueness from equal endpoints. Provide a pinned, axiom-audited Lean file and specify the remaining matrix-minor bridge.",
+      "to": "all",
+      "createdAt": "2026-11-25T18:48:28.000Z",
+      "links": [],
+      "requestFingerprint": "30141ee33e938533a5a39b8aef0acd8f6507fcaa9df62203224c2f153e106f5e",
+      "scopePaths": [
+        "formal/ForestTrajectory.lean"
+      ],
+      "fromTaskId": "mdo-forest-cut-lean"
     }
   ],
   "usage": [
