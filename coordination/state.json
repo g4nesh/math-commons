@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 282,
-  "updatedAt": "2026-11-25T20:49:57.000Z",
+  "revision": 283,
+  "updatedAt": "2026-11-25T20:50:35.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1989,11 +1989,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T21:09:57.000Z",
+      "leaseUntil": "2026-11-25T21:10:35.000Z",
       "createdAt": "2026-11-25T20:38:07.000Z",
-      "updatedAt": "2026-11-25T20:49:57.000Z",
+      "updatedAt": "2026-11-25T20:50:35.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-gate-magnitude-start-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Formalizing exact Gaussian-rational gate minor magnitudes.",
+          "details": "Own only formal/ForestGateMagnitude.lean. First derive norm-square algebra and the local unitary two-by-two determinant identity against the existing signed Laplace minor; then extend through spectator coordinates and nonadjacent ordering signs. Scope is one bounded 20-minute pass, standard Lean 4.24.0 kernel checks only. Stop with a compiled artifact and an explicit smallest remaining lemma if arbitrary spectator placements cannot be completed. Cauchy-Binet and the standard matrix determinant identification remain outside this task. Parent owns source publishing, integration and usage.",
+          "evidence": [],
+          "createdAt": "2026-11-25T20:50:35.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "formal/ForestGateMagnitude.lean"
@@ -2098,7 +2107,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T20:49:57.000Z"
+      "lastSeenAt": "2026-11-25T20:50:35.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -6555,6 +6564,20 @@
       "createdAt": "2026-11-25T20:49:57.000Z",
       "links": [],
       "requestFingerprint": "f5afcd84b91c1ffa4642cf4d0c198640c8d7187a1bbd162295e7fb789cd35aba"
+    },
+    {
+      "id": "mdo-gate-magnitude-start-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-gate-minor-magnitudes",
+      "summary": "Formalizing exact Gaussian-rational gate minor magnitudes.",
+      "detail": "Own only formal/ForestGateMagnitude.lean. First derive norm-square algebra and the local unitary two-by-two determinant identity against the existing signed Laplace minor; then extend through spectator coordinates and nonadjacent ordering signs. Scope is one bounded 20-minute pass, standard Lean 4.24.0 kernel checks only. Stop with a compiled artifact and an explicit smallest remaining lemma if arbitrary spectator placements cannot be completed. Cauchy-Binet and the standard matrix determinant identification remain outside this task. Parent owns source publishing, integration and usage.",
+      "to": null,
+      "createdAt": "2026-11-25T20:50:35.000Z",
+      "links": [],
+      "requestFingerprint": "1d727b1e835f177098c574ebc0f286317f12998a50e9ab5be898cbed831bdf3f"
     }
   ],
   "usage": [
