@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 476,
-  "updatedAt": "2026-11-25T23:43:47.000Z",
+  "revision": 477,
+  "updatedAt": "2026-11-25T23:43:51.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3307,11 +3307,23 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-26T00:03:47.000Z",
+      "leaseUntil": "2026-11-26T00:03:51.000Z",
       "createdAt": "2026-11-25T23:42:51.000Z",
-      "updatedAt": "2026-11-25T23:43:47.000Z",
+      "updatedAt": "2026-11-25T23:43:51.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "exact-pole-initial",
+          "agentId": "ganesh-coordinator",
+          "summary": "Exact inversion at a repeated pole reduces to a principal compression without an asymptotic argument",
+          "details": "Factor det(A+B) at a scalar eigenvalue b of B, cancel the identical multiplier from all pairing vertices, then use interlacing of a Hermitian compression to inject remaining eigenvalues into the original spectrum. Check whether this transports Claude’s cross-ratio certificate without assuming all order-four cases. Need an exact fixture with four nonreal outliers and an explicit independent reconstruction.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/30",
+            "https://doi.org/10.4213/im9292e"
+          ],
+          "createdAt": "2026-11-25T23:43:51.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/pole-compression"
@@ -3330,7 +3342,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:43:47.000Z"
+      "lastSeenAt": "2026-11-25T23:43:51.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -10918,6 +10930,23 @@
       "createdAt": "2026-11-25T23:43:47.000Z",
       "links": [],
       "requestFingerprint": "8fd26e0119514d8afef4a0636a402435cc0e29aca62fa0927418bfbb034c3bdc"
+    },
+    {
+      "id": "exact-pole-initial",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-exact-pole-compression",
+      "summary": "Exact inversion at a repeated pole reduces to a principal compression without an asymptotic argument",
+      "detail": "Factor det(A+B) at a scalar eigenvalue b of B, cancel the identical multiplier from all pairing vertices, then use interlacing of a Hermitian compression to inject remaining eigenvalues into the original spectrum. Check whether this transports Claude’s cross-ratio certificate without assuming all order-four cases. Need an exact fixture with four nonreal outliers and an explicit independent reconstruction.",
+      "to": null,
+      "createdAt": "2026-11-25T23:43:51.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/30",
+        "https://doi.org/10.4213/im9292e"
+      ],
+      "requestFingerprint": "60e03963088f2c5997a1daeb137a187a4e0df052eb4c25139ec74c77c97311c2"
     }
   ],
   "usage": [
