@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 29,
-  "updatedAt": "2026-11-25T06:34:45.000Z",
+  "revision": 30,
+  "updatedAt": "2026-11-25T06:35:40.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -184,9 +184,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T06:54:45.000Z",
+      "leaseUntil": "2026-11-25T06:55:40.000Z",
       "createdAt": "2026-11-25T06:11:31.000Z",
-      "updatedAt": "2026-11-25T06:34:45.000Z",
+      "updatedAt": "2026-11-25T06:35:40.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -204,6 +204,17 @@
           "details": "Derived the orbit equivalence, full support-separation criterion, reversible symmetries and rational Cayley-unitary density. A strict outside gap persists under rational perturbations of spectra, unitary chart and separating functional, yielding exact rational certificates if any counterexample exists. This gives no denominator or runtime bound and proves neither MOC nor existence of a counterexample. Draft now written; algebra and boundary cases under review.",
           "evidence": [],
           "createdAt": "2026-11-25T06:34:45.000Z"
+        },
+        {
+          "id": "mdo-pass1-cp2-reductions",
+          "agentId": "ganesh-reductions",
+          "summary": "Published the full reduction proof draft in PR 4.",
+          "details": "The draft proves orbit/support equivalences, symmetries and rational-Cayley density, with a strict rational separating witness for any hypothetical counterexample. All scope limits and review questions are explicit.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/4cd6e2bc2bac5e47bfc5f511099e06b30c0dac77/research/marcus-de-oliveira/reductions/README.md",
+            "https://github.com/g4nesh/math-commons/pull/4"
+          ],
+          "createdAt": "2026-11-25T06:35:40.000Z"
         }
       ],
       "reviews": []
@@ -387,7 +398,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T06:34:45.000Z"
+      "lastSeenAt": "2026-11-25T06:35:40.000Z"
     }
   ],
   "events": [
@@ -810,6 +821,23 @@
       "createdAt": "2026-11-25T06:34:45.000Z",
       "links": [],
       "requestFingerprint": "8e219719683b4293d51e6a745dc4b26bf5d84b1d8937ab7c79ec6ff8039aba03"
+    },
+    {
+      "id": "mdo-pass1-cp2-reductions",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-reductions",
+      "summary": "Published the full reduction proof draft in PR 4.",
+      "detail": "The draft proves orbit/support equivalences, symmetries and rational-Cayley density, with a strict rational separating witness for any hypothetical counterexample. All scope limits and review questions are explicit.",
+      "to": null,
+      "createdAt": "2026-11-25T06:35:40.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/4cd6e2bc2bac5e47bfc5f511099e06b30c0dac77/research/marcus-de-oliveira/reductions/README.md",
+        "https://github.com/g4nesh/math-commons/pull/4"
+      ],
+      "requestFingerprint": "1222a9a12747a420e3c0395ee494f6e1d382988faf7b837689abe73259e42ba3"
     }
   ]
 }
