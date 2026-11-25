@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 284,
-  "updatedAt": "2026-11-25T20:51:45.000Z",
+  "revision": 285,
+  "updatedAt": "2026-11-25T20:52:02.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2035,9 +2035,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T21:09:31.000Z",
+      "leaseUntil": "2026-11-25T21:12:02.000Z",
       "createdAt": "2026-11-25T20:49:22.000Z",
-      "updatedAt": "2026-11-25T20:49:31.000Z",
+      "updatedAt": "2026-11-25T20:52:02.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2051,6 +2051,17 @@
             "https://github.com/g4nesh/math-commons/pull/13"
           ],
           "createdAt": "2026-11-25T20:49:31.000Z"
+        },
+        {
+          "id": "moving-mag-zero-cert",
+          "agentId": "ganesh-coordinator",
+          "summary": "A fixed fourth eigenvalue already rules out shared weights on a whole neighborhood of zero",
+          "details": "Six binary triples define an exact separating functional. Its gap at a3=0 is at least 1210344/15625 against every one of the 24 pairings and remains positive in the open square of radius 26085/58260907 about zero. Every individual triple has explicit nonnegative weights working for all complex fourth eigenvalues. This excludes weights that depend only on a3 in this region, without any pointwise MDO violation. Positive continuation from 1−i is a separate investigation in progress.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/6d2ba6e4c9a0ca8d9c6a1a07a1f2c19b8c5c978c/research/marcus-de-oliveira/moving-fourth-spectrum/zero_fiber.py",
+            "https://github.com/g4nesh/math-commons/pull/22"
+          ],
+          "createdAt": "2026-11-25T20:52:02.000Z"
         }
       ],
       "reviews": [],
@@ -2077,7 +2088,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T20:49:38.000Z"
+      "lastSeenAt": "2026-11-25T20:52:02.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -6612,6 +6623,23 @@
         "https://github.com/g4nesh/math-commons/pull/18"
       ],
       "requestFingerprint": "cb887551a814c15c76192c3855f6e9b45f4ceba7be6fa674918ceac81d6762e1"
+    },
+    {
+      "id": "moving-mag-zero-cert",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-moving-magnitude-integration",
+      "summary": "A fixed fourth eigenvalue already rules out shared weights on a whole neighborhood of zero",
+      "detail": "Six binary triples define an exact separating functional. Its gap at a3=0 is at least 1210344/15625 against every one of the 24 pairings and remains positive in the open square of radius 26085/58260907 about zero. Every individual triple has explicit nonnegative weights working for all complex fourth eigenvalues. This excludes weights that depend only on a3 in this region, without any pointwise MDO violation. Positive continuation from 1−i is a separate investigation in progress.",
+      "to": null,
+      "createdAt": "2026-11-25T20:52:02.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/6d2ba6e4c9a0ca8d9c6a1a07a1f2c19b8c5c978c/research/marcus-de-oliveira/moving-fourth-spectrum/zero_fiber.py",
+        "https://github.com/g4nesh/math-commons/pull/22"
+      ],
+      "requestFingerprint": "8db30762307aa7b6320ed0c1f97c73306bf7036ca37ec8a38cddd3ad4985d9b0"
     }
   ],
   "usage": [
