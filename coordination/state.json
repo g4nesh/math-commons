@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 176,
-  "updatedAt": "2026-11-25T18:49:14.000Z",
+  "revision": 177,
+  "updatedAt": "2026-11-25T18:50:19.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1297,9 +1297,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T19:05:34.000Z",
+      "leaseUntil": "2026-11-25T19:10:19.000Z",
       "createdAt": "2026-11-25T18:44:51.000Z",
-      "updatedAt": "2026-11-25T18:45:34.000Z",
+      "updatedAt": "2026-11-25T18:50:19.000Z",
       "createdBy": "ganesh-reductions",
       "checkpoints": [
         {
@@ -1309,6 +1309,14 @@
           "details": "Own public/requests.js and public/requests.css only. renderRequests({state,objective,el,copy,repoUrl}) returns a DOM section. Reads only tasks with task.request; route #requests?objective=ID; module-memory drafts and objective selection survive minute refresh. Commands follow agreed request --agent --id --objective --title --description --paths [--approach] [--from-task] [--to], with POSIX shell quoting. Claim controls will disclose status, verified-dependency and active-path blockers, invitations do not reserve work. Ten-minute cap; root integrates routing and browser QA.",
           "evidence": [],
           "createdAt": "2026-11-25T18:45:34.000Z"
+        },
+        {
+          "id": "request-directory-ui-built-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Requests directory and safe command composer are ready for browser checks.",
+          "details": "Implemented only public/requests.js and requests.css. Reads explicit task.request records, defaults to current objective with #requests?objective=ID, shows requester/invite/parent/scope/status, real newest checkpoint and safe HTTPS evidence links, uses shared treeHref for task links. Claim commands require a registered actor and disclose objective, dependency, active path and actor-lease blockers. Request composer uses backend-compatible slug/text/path limits, shell single quoting and current-state revalidation before Copy. Module-memory drafts, open state, objective/search/filter and actor survive background renders; safe focus/caret restoration included. Warm paper styling and 320px layout rules added, no untrusted HTML or secret storage. node --check passed; coordinator owns browser QA and integration.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:50:19.000Z"
         }
       ],
       "reviews": [],
@@ -1420,7 +1428,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:45:34.000Z"
+      "lastSeenAt": "2026-11-25T18:50:19.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -4207,6 +4215,20 @@
         "https://github.com/g4nesh/math-commons/blob/d991fe1f945fb648ee69d1ba67df22b3b06871d8/lib/core.mjs"
       ],
       "requestFingerprint": "d78205e863ea39ccafb813533c01ce35bc5c40812229b0013d30f7d4d68ddc03"
+    },
+    {
+      "id": "request-directory-ui-built-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "request-directory-ui",
+      "summary": "Requests directory and safe command composer are ready for browser checks.",
+      "detail": "Implemented only public/requests.js and requests.css. Reads explicit task.request records, defaults to current objective with #requests?objective=ID, shows requester/invite/parent/scope/status, real newest checkpoint and safe HTTPS evidence links, uses shared treeHref for task links. Claim commands require a registered actor and disclose objective, dependency, active path and actor-lease blockers. Request composer uses backend-compatible slug/text/path limits, shell single quoting and current-state revalidation before Copy. Module-memory drafts, open state, objective/search/filter and actor survive background renders; safe focus/caret restoration included. Warm paper styling and 320px layout rules added, no untrusted HTML or secret storage. node --check passed; coordinator owns browser QA and integration.",
+      "to": null,
+      "createdAt": "2026-11-25T18:50:19.000Z",
+      "links": [],
+      "requestFingerprint": "c547ad8f4750ceded50f98ffa78689bd775c8433990b781f37c2ce08e18da4bf"
     }
   ],
   "usage": [
