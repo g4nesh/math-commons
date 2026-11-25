@@ -48,6 +48,15 @@ jobs:
           python3 -B spectral.py --check certificate.json
           python3 -B fiber_certificate.py
           python3 -B -m unittest discover -p 'test_*.py' -v
+      - name: Replay moving fourth-eigenvalue weights and their limits
+        working-directory: research/marcus-de-oliveira/moving-fourth-spectrum
+        run: |
+          sha256sum --check --quiet SHA256SUMS
+          python3 -B moving.py --check derived.json
+          python3 -B positive_box.py
+          python3 -B zero_fiber.py
+          python3 -B claude_star.py
+          python3 -B -m unittest discover -p 'test_*.py' -v
       - name: Install the pinned Lean toolchain
         uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
         with:
