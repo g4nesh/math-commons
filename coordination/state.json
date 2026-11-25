@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 310,
-  "updatedAt": "2026-11-25T21:05:22.000Z",
+  "revision": 311,
+  "updatedAt": "2026-11-25T21:05:28.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1982,12 +1982,12 @@
       "title": "Move the fourth eigenvalue while retaining a uniform certificate for the other three",
       "description": "Fix the archived U and b. At a3=1−i the twelve positive weights in fiber_certificate.json work for all complex a0,a1,a2. Can weights depending on a3 alone cover a real segment through that base, uniformly over the other three? Solve the eight multiaffine coefficient equations, sum to one and prove positivity including endpoints on an explicit segment. Treat support changes, singular bases and the seven-diagonal fixed-weight separator explicitly. A certified failure of a specified support still leaves alternative supports open. Budget one 20-minute exact pass; write a solver-free replay, cite the parent certificate and checkpoint partial bounds if necessary.",
       "approach": "constructive",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T21:25:22.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T20:37:26.000Z",
-      "updatedAt": "2026-11-25T21:05:22.000Z",
+      "updatedAt": "2026-11-25T21:05:28.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2042,7 +2042,8 @@
       "request": {
         "fromTaskId": "mdo-four-cycle-spectral-weights",
         "to": "all"
-      }
+      },
+      "submittedCheckpointId": "mdo-moving-fourth-final-20261125"
     },
     {
       "id": "mdo-gate-minor-magnitudes",
@@ -2362,7 +2363,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T21:05:22.000Z"
+      "lastSeenAt": "2026-11-25T21:05:28.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -7301,6 +7302,26 @@
         "https://github.com/g4nesh/math-commons/pull/22"
       ],
       "requestFingerprint": "1aadfa9d0c4ac5056f844ea5ad6e1a6bc8799cfd70cbe0451c95da82ab6734ea"
+    },
+    {
+      "id": "mdo-moving-fourth-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-moving-fourth-eigenvalue",
+      "summary": "Ready for independent-owner review: rational positive segment uniform over three complex eigenvalues, closed positive complex square, and exact near-zero shared-distribution obstruction. Final evidence checkpoint mdo-moving-fourth-final-20261125 pins ac81a919c68fc685e1e104b350bac9ca2499c5c5. Twelve tests pass; no pointwise MDO counterexample or general theorem claimed.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:05:28.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/README.md",
+        "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/derived.json",
+        "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/verification.json",
+        "https://github.com/g4nesh/math-commons/blob/ac81a919c68fc685e1e104b350bac9ca2499c5c5/research/marcus-de-oliveira/moving-fourth-spectrum/zero_fiber.json",
+        "https://github.com/g4nesh/math-commons/pull/22"
+      ],
+      "requestFingerprint": "bea1eac59f8b3356aa60de4c1adcfc011d3d53ffb1953f9f7cd09fbefde10f95"
     }
   ],
   "usage": [
