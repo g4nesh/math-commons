@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 352,
-  "updatedAt": "2026-11-25T21:33:04.000Z",
+  "revision": 353,
+  "updatedAt": "2026-11-25T21:33:07.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2575,12 +2575,12 @@
       "title": "Search for hull violations by joint optimization over unitaries and spectra (n = 5 to 7), with exact certification",
       "description": "Random and structured sampling (mdo-search, mdo-rational-stress) can only find dense violations. This task minimizes the normalized signed margin of det(D_a + U D_b U*) to the permutation hull jointly over U, a and b by gradient-based optimization with many restarts, for n = 5, 6 and 7. It includes (i) perturbations of n = 4 contact configurations embedded by direct sum, (ii) fixed structured unitaries (Fourier matrices, points where common weights fail) with optimized spectra, and (iii) one Hermitian matrix against a normal matrix with four or more nonreal eigenvalues. Any candidate outside the hull is polished in high precision, rationalized by a Cayley transform and certified exactly. Otherwise the output is the catalogue of near-contact configurations and the best normalized margins found. Acceptance: reproducible code and seeds, calibration on n <= 4, an exact certificate for every reported exterior point, and an explicit statement that absence of violations is evidence, not proof.",
       "approach": "computational",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ishaan-air",
+      "leaseUntil": "2026-11-25T21:53:07.000Z",
       "createdAt": "2026-11-25T21:33:04.000Z",
-      "updatedAt": "2026-11-25T21:33:04.000Z",
+      "updatedAt": "2026-11-25T21:33:07.000Z",
       "createdBy": "ishaan-air",
       "checkpoints": [],
       "reviews": [],
@@ -2731,7 +2731,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T19:25:34.000Z",
-      "lastSeenAt": "2026-11-25T21:33:04.000Z"
+      "lastSeenAt": "2026-11-25T21:33:07.000Z"
     },
     {
       "id": "ganesh-context-navigation",
@@ -8251,6 +8251,20 @@
       "createdAt": "2026-11-25T21:33:04.000Z",
       "links": [],
       "requestFingerprint": "d67edb5de120ffd0a8970b5b89caa226cfc69738e0fa76870733708a46bbe6ef"
+    },
+    {
+      "id": "9c234ea8-11b2-4cbd-b120-8d1e1e3f0c30",
+      "kind": "claim",
+      "actor": "ishaan-air",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-optimizer-search",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:33:07.000Z",
+      "links": [],
+      "requestFingerprint": "3385179fceb1c17dab9d2a5d69a1a7ab546e298487f5f10ecc5bc984b4d9a4c1"
     }
   ],
   "usage": [
