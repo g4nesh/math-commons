@@ -44,7 +44,20 @@ In [ForestTrajectory.lean](ForestTrajectory.lean), an occupied subset is a Boole
 
 `MathCommons.ForestGateSupport.twoCoordinateNonzeroMinorStep` accepts four arbitrary block entries. Its scalar interface specifies addition, multiplication, negation, zero and one, with the zero identities used in the proof. The support implication applies to singular blocks. Rational and Gaussian-rational instances instantiate the interface.
 
-`MathCommons.ForestGateSupport.nonzeroAmplitudesUnique` combines this support result and the forest theorem. For fixed endpoint subsets, at most one history has a nonzero ordered product of its gate minors. Empty and full subsets, repeated occupancy and vanishing factors are covered. The checker audits all 23 named results in the module. The remaining steps identify the ordered expansion with the standard complex determinant, compute the squared transition magnitudes for a unitary block, and compose the minors by Cauchy–Binet. [Written forest argument](../research/marcus-de-oliveira/baselines/README.md)
+`MathCommons.ForestGateSupport.nonzeroAmplitudesUnique` combines this support result and the forest theorem. For fixed endpoint subsets, at most one history has a nonzero ordered product of its gate minors. Empty and full subsets, repeated occupancy and vanishing factors are covered. The checker audits all 23 named results in the module. The local unitary computation below supplies the transition magnitudes. Identifying the ordered expansion with the standard complex determinant and composing the minors by Cauchy–Binet remain open. [Written forest argument](../research/marcus-de-oliveira/baselines/README.md)
+
+## Squared probabilities for a single gate
+
+[ForestGateMagnitude.lean](ForestGateMagnitude.lean) uses Gaussian-rational entries and the ordered Laplace expansion in `ForestGateSupport`. For the gate with block entries $a,b,c,d$ in row order, let $p=|b|^2$. Unitarity gives $|c|^2=p$, $|a|^2=|d|^2=1-p$, and $|ad-bc|^2=1$. The following table describes occupied **subsets**, so a transposition acting on two occupied endpoints produces the same subset.
+
+| Occupied endpoints in the input | Output subset | Squared minor |
+| --- | --- | --- |
+| Neither or both | Same subset | 1 |
+| Exactly one | Same subset | $1-p$ |
+| Exactly one | Occupied endpoint exchanged | $p$ |
+| Any | A change outside the gate, or another illegal transition | 0 by the [support theorem](ForestGateSupport.lean) |
+
+Both the empty and the full subset occur in the first row. Occupied spectator coordinates may precede, separate or follow the two gate endpoints. An exchange picks up the parity of the occupied spectators between the endpoints in the signed minor. Squaring the norm removes that sign. The local result and the forest path-uniqueness theorem have different hypotheses. To combine them into a matrix-product identity still requires a Cauchy–Binet expansion in the same minor convention.
 
 ## Contributing a theorem
 
