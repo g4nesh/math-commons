@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 341,
-  "updatedAt": "2026-11-25T21:24:15.000Z",
+  "revision": 342,
+  "updatedAt": "2026-11-25T21:24:17.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2331,9 +2331,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T21:40:14.000Z",
+      "leaseUntil": "2026-11-25T21:44:17.000Z",
       "createdAt": "2026-11-25T20:56:26.000Z",
-      "updatedAt": "2026-11-25T21:20:14.000Z",
+      "updatedAt": "2026-11-25T21:24:17.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -2615,7 +2615,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T21:20:14.000Z"
+      "lastSeenAt": "2026-11-25T21:24:17.000Z"
     },
     {
       "id": "ishaan-air",
@@ -7972,6 +7972,20 @@
         "https://github.com/g4nesh/math-commons/blob/5687a5ee241190df40323783b4b5637bcabdb28e/research/marcus-de-oliveira/reviews/check_forest_cut_lean_ishaan.py"
       ],
       "requestFingerprint": "cf8edb09a8105fd42b66970b9a238b1191737b146b42940ae523ac5a832dcfc5"
+    },
+    {
+      "id": "39aa37af-c64e-405a-88ba-0841592abbb3",
+      "kind": "heartbeat",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-exact-certificate",
+      "summary": "Renewed task lease.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T21:24:17.000Z",
+      "links": [],
+      "requestFingerprint": "bd215ad3aaab46272e86ad86142a676614b32edda33bd5f8675a84a3aa5aa628"
     }
   ],
   "usage": [
