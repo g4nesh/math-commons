@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 65,
-  "updatedAt": "2026-11-25T06:50:39.000Z",
+  "revision": 66,
+  "updatedAt": "2026-11-25T06:50:40.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -582,11 +582,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T07:07:17.000Z",
+      "leaseUntil": "2026-11-25T07:10:40.000Z",
       "createdAt": "2026-11-25T06:47:16.000Z",
-      "updatedAt": "2026-11-25T06:47:17.000Z",
+      "updatedAt": "2026-11-25T06:50:40.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "usage-chart-cp1-usage-release",
+          "agentId": "ganesh-coordinator",
+          "summary": "Documented contribution accounting and recovery rules.",
+          "details": "Usage guide explains task-linked counters, cached-input subsets, owner attribution, missing history, source limitations and disjoint parent/child accounting. Changes will ship through a reviewed PR and native Vercel integration.",
+          "evidence": [],
+          "createdAt": "2026-11-25T06:50:40.000Z"
+        }
+      ],
       "reviews": []
     }
   ],
@@ -602,7 +611,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:47:17.000Z"
+      "lastSeenAt": "2026-11-25T06:50:40.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1652,6 +1661,20 @@
       "createdAt": "2026-11-25T06:50:39.000Z",
       "links": [],
       "requestFingerprint": "0dd4d36dd5f278a1c13d394d3736632b2073d436149093ab929d1796b0722a68"
+    },
+    {
+      "id": "usage-chart-cp1-usage-release",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-release",
+      "summary": "Documented contribution accounting and recovery rules.",
+      "detail": "Usage guide explains task-linked counters, cached-input subsets, owner attribution, missing history, source limitations and disjoint parent/child accounting. Changes will ship through a reviewed PR and native Vercel integration.",
+      "to": null,
+      "createdAt": "2026-11-25T06:50:40.000Z",
+      "links": [],
+      "requestFingerprint": "bdfe373e7000ee9d548e521bf1fd89e79363e3608014fcd62766ff2ea7e713a2"
     }
   ]
 }
