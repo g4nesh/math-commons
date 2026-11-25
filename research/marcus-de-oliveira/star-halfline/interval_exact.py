@@ -42,16 +42,22 @@ if __name__ == '__main__':
             G = gram_columns_mod(ma, mb, A0, A1, sj, blocks, p); tau = (sj - a) / (b - a)
             rows.append(np.hstack([(modq(bernstein(d, k, tau), p) * G) % p for k in range(d + 1)] + [np.array([modq(f, p) for f in fv], dtype=np.int64)[:, None]]))
         return np.vstack(rows)
-    # 1. pivot unknowns
-    p = PRIMES[0]; Mnp = system(p); M = flint.nmod_mat(Mnp.shape[0], NT + 1, Mnp.reshape(-1).tolist(), p); del Mnp
-    Rm, rank = M.rref(); del M; pivs = []
-    for r in range(rank):
-        c = 0 if not pivs else pivs[-1] + 1
-        while int(Rm[r, c]) == 0: c += 1
-        pivs.append(c)
-    del Rm; assert NT not in pivs, "inconsistent system"
+    # 1. pivot unknowns (cached in pivots<tag>_d<d>.pkl: the row reduction is the slow step at degree 4)
+    import os
+    cache = 'pivots%s_d%d.pkl' % (tag, d)
+    if os.path.exists(cache): pivs = pickle.load(open(cache, 'rb')); rank = len(pivs)
+    else:
+        p = PRIMES[0]; Mnp = system(p); M = flint.nmod_mat(Mnp.shape[0], NT + 1, Mnp.reshape(-1).tolist(), p); del Mnp
+        Rm, rank = M.rref(); del M; pivs = []
+        for r in range(rank):
+            c = 0 if not pivs else pivs[-1] + 1
+            while int(Rm[r, c]) == 0: c += 1
+            pivs.append(c)
+        del Rm; assert NT not in pivs, "inconsistent system"
+        pickle.dump(pivs, open(cache, 'wb'))
     pset = set(pivs); free = np.array([c for c in range(NT) if c not in pset], dtype=np.int64); parr = np.array(pivs, dtype=np.int64)
     print("rank %d ; free unknowns %d  [%.0fs]" % (rank, len(free), time.time() - t0), flush=True)
+    if not os.path.exists('interval%s_d%d.pkl' % (tag, d)): sys.exit('pivots cached; no numerical solution yet')
     num = pickle.load(open('interval%s_d%d.pkl' % (tag, d), 'rb')); xnum = np.concatenate(num['x']); assert len(xnum) == NT
     ok = False
     for bits in (32, 44, 56):

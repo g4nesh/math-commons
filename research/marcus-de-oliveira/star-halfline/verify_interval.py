@@ -9,6 +9,9 @@ With t = s/(1-s):  F_s = (1-s)^2 (t g0 + (1+t) D[12,12] + t^2 D[13,14]).
 Checks, all in exact arithmetic:
  (P) every T_{b,k} is symmetric with positive leading principal minors.  Since B_k >= 0 on [a, b] and sum_k B_k = 1,
      T_b(s) is positive definite for every s in [a, b].
+     Variant with b = 1 (field 'end'): the last coefficient is  T_inf = sum_v c_v w_v w_v^T  with rational vectors w_v and
+     c_v >= 0, positive semidefinite by construction; the others are positive definite.  Then T_b(s) is positive
+     semidefinite on [a, 1] (definite for s < 1), which is all the conclusion needs.
  (I) the identity holds at d+3 nodes s chosen HERE (from the seed; not the nodes used in the construction) and, at each
      node, at N fresh rational unitaries.
  (E) the evaluation functionals at those unitaries have rank r_E on the space W of conjugation-symmetric torus-invariant
@@ -26,7 +29,8 @@ t0 = time.time(); path = sys.argv[1]; seed = int(sys.argv[2]) if len(sys.argv) >
 cert = json.load(open(path)); deg = cert['degree']; a, b = Fr(cert['a']), Fr(cert['b']); d = cert['d']; A0, A1 = cert['A0'], cert['A1']
 T = [[[[Fr(q) for q in row] for row in Tb] for Tb in Tk] for Tk in cert['T']]; MONS, blocks = space(deg)
 nU = int(sys.argv[3]) if len(sys.argv) > 3 else (300 if deg == 3 else 1100); rE_expected = {3: 261, 4: 954}[deg]
-assert a < b and len(T) == d + 1 and len(A0) == len(A1) == len(blocks) and all(len(Tk) == len(blocks) for Tk in T)
+end = cert.get('end'); npd = d if end else d + 1
+assert a < b and len(T) == npd and len(A0) == len(A1) == len(blocks) and all(len(Tk) == len(blocks) for Tk in T)
 for a0, a1, blk in zip(A0, A1, blocks):
     assert len(a0) == len(a1) and all(len(r) == len(blk) and all(isinstance(c, int) for c in r) for r in a0 + a1)
 # (P)
@@ -38,8 +42,15 @@ for Tk in T:
         for m in range(1, r + 1):
             dt = flint.fmpq_mat(m, m, [flint.fmpq(Tb[i][j].numerator, Tb[i][j].denominator) for i in range(m) for j in range(m)]).det(); dt = Fr(int(dt.p), int(dt.q))
             okP &= dt > 0; minpm = dt if minpm is None else min(minpm, dt)
-print("(P) degree %d, s in [%s, %s], i.e. t in [%s, %s] ; %d amplitudes ; %d Bernstein coefficients per block ; all symmetric with positive leading principal minors: %s (smallest %.3e)  [%.0fs]"
-      % (deg, a, b, a / (1 - a), b / (1 - b), namp, d + 1, okP, float(minpm), time.time() - t0), flush=True)
+if end:
+    assert b == 1; cv = [Fr(q) for q in end['c']]; okP &= all(c >= 0 for c in cv); Tinf = [[[Fr(0)] * len(a0) for _ in a0] for a0 in A0]
+    for c, bi, w in zip(cv, end['block'], end['w']):
+        w = [Fr(q) for q in w]; assert len(w) == len(A0[bi])
+        for i in range(len(w)):
+            for j in range(len(w)): Tinf[bi][i][j] += c * w[i] * w[j]
+    T.append(Tinf)
+print("(P) degree %d, s in [%s, %s], i.e. t %s ; %d amplitudes ; %d positive definite Bernstein coefficients per block%s ; all symmetric with positive leading principal minors%s: %s (smallest %.3e)  [%.0fs]"
+      % (deg, a, b, ">= %s" % (a / (1 - a)) if end else "in [%s, %s]" % (a / (1 - a), b / (1 - b)), namp, npd, " plus one sum of %d squares with weights c_v" % len(end['c']) if end else "", " and all c_v >= 0" if end else "", okP, float(minpm), time.time() - t0), flush=True)
 # (I)
 rng = random.Random(seed); Us = [rational_unitary(rng) for _ in range(nU)]; assert all(is_unitary(U) for U in Us)
 nodes = set()

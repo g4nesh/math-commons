@@ -28,28 +28,40 @@ Replacing t by 1/t replaces s by 1−s. A spectrum with cross-ratio ρ ∈ (0, 1
    Since B_k ≥ 0 on [a, b] and Σ_k B_k = 1, each T_b(s) is then positive definite on the whole interval. No root counting is needed.
 3. **Finitely many conditions.** For fixed U both sides are polynomials in s of degree ≤ d + 2. So the identity for all s follows from the identity at d + 3 values of s. At each of them the rank lemma applies as before (function-space dimension 261 at degree 3, 954 at degree 4).
 4. **Search and exact solve.** `interval_sdp.py` maximizes the common margin λ with T_{b,k} ⪰ λ·I (floating point). `interval_exact.py` solves the linear system over ℚ (reduced row echelon form modulo three primes, rational reconstruction, a fourth prime as cross-check), sets the free unknowns to rounded numerical values, and tests positive definiteness exactly.
-5. **Independent check (`verify_interval.py`).** Exact arithmetic only. It picks its own d + 3 values of s and fresh rational unitaries from a seed.
+5. **Independent check (`verify_interval.py`).** Exact arithmetic only. It picks its own d + 3 values of s and fresh rational unitaries from a seed. `run_interval.py` runs search, exact solve and check with two seeds.
 
-## Result 1 (exact): every t in [13/12, 99] at degree 3
+## Result 1 (exact): the whole half-line t ≥ 51/49 at degree 3
 
-> **Theorem I3.** For every U ∈ U(4) and every s ∈ [13/25, 99/100]: F_s(U) ≥ 0. Equivalently, t·g0 + (1+t)·D[12,12] + t²·D[13,14] ≥ 0 for every t ∈ [13/12, 99].
+> **Theorem I3.** For every U ∈ U(4) and every s ∈ [51/100, 1]: F_s(U) ≥ 0. Equivalently, t·g0 + (1+t)·D[12,12] + t²·D[13,14] ≥ 0 for **every t ≥ 51/49** ≈ 1.041.
 
-Six certificates on adjacent intervals, each of degree 3 in the entries of U and Bernstein degree d = 2, with 302 amplitudes and three positive definite rational matrices per block. Each linear system has 1,302 unknowns and exact rank 570.
+One certificate proves it: [`interval3_51-100_1.json`](interval3_51-100_1.json).
 
-| s interval | t interval | numerical margin λ | certificate |
-| --- | --- | --- | --- |
-| [13/25, 11/20] | [13/12, 11/9] | 5.7·10⁻⁴ | [`interval3_13-25_11-20.json`](interval3_13-25_11-20.json) |
-| [11/20, 3/5] | [11/9, 3/2] | 1.6·10⁻³ | [`interval3_11-20_3-5.json`](interval3_11-20_3-5.json) |
-| [3/5, 5/6] | [3/2, 5] | 2.9·10⁻³ | [`interval3_3-5_5-6.json`](interval3_3-5_5-6.json) |
-| [5/6, 9/10] | [5, 9] | 2.2·10⁻³ | [`interval3_5-6_9-10.json`](interval3_5-6_9-10.json) |
-| [9/10, 19/20] | [9, 19] | 1.1·10⁻³ | [`interval3_9-10_19-20.json`](interval3_9-10_19-20.json) |
-| [19/20, 99/100] | [19, 99] | 2.3·10⁻⁴ | [`interval3_19-20_99-100.json`](interval3_19-20_99-100.json) |
+**The end s = 1 (`end1.py`, `end1_exact.py`).** At s = 1 the target is the single square F₁ = D[13,14], so no positive definite certificate can reach it. What works:
+- On U(4), D[13,14] = Σ_{i,j} c_ij·|det U[13,14]·u_ij|² whenever c_ij = α_i + β_j and Σα + Σβ = 1, because rows and columns have norm 1. All 16 products det U[13,14]·u_ij lie in the amplitude space at s = 1 (exact check), with coordinate vectors w_ij.
+- Take the **last** Bernstein coefficient to be T_∞ := Σ c_ij·w_ij w_ijᵀ with c_ij ≥ 0. It is positive semidefinite by construction. The other coefficients are positive definite. Then T_b(s) is positive definite for s < 1 and semidefinite at s = 1, which is all that is needed.
+- This needs Bernstein degree d = 3. With d = 2 the best margin is 0 to solver precision.
+- Before this, single-s solves showed the margin shrinking exactly like 0.0232·(1−s) from s = 0.99 to 0.99999, which suggested that the degeneration is regular.
 
-**Check of each certificate** (`verify_interval.py`, two seeds): (P) all Bernstein coefficients positive definite; (I) identity exact at 5 values of s chosen by the checker times 300 fresh rational unitaries; (E) evaluation rank 261. Logs: [`logs/`](logs/).
+**All degree-3 certificates** (each: 302 amplitudes; checked by `verify_interval.py` with two seeds: positive definiteness exact, identity exact at d + 3 values of s chosen by the checker times 300 fresh rational unitaries, evaluation rank 261):
+
+| s interval | t range | d | numerical margin λ | certificate |
+| --- | --- | --- | --- | --- |
+| **[51/100, 1]** | **t ≥ 51/49** | 3 | 1.8·10⁻⁴ | [`interval3_51-100_1.json`](interval3_51-100_1.json) |
+| [13/25, 1] | t ≥ 13/12 | 3 | 5.7·10⁻⁴ | [`interval3_13-25_1.json`](interval3_13-25_1.json) |
+| [3/5, 1] | t ≥ 3/2 | 3 | 2.9·10⁻³ | [`interval3_3-5_1.json`](interval3_3-5_1.json) |
+| [13/25, 11/20] | [13/12, 11/9] | 2 | 5.7·10⁻⁴ | [`interval3_13-25_11-20.json`](interval3_13-25_11-20.json) |
+| [11/20, 3/5] | [11/9, 3/2] | 2 | 1.6·10⁻³ | [`interval3_11-20_3-5.json`](interval3_11-20_3-5.json) |
+| [3/5, 5/6] | [3/2, 5] | 2 | 2.9·10⁻³ | [`interval3_3-5_5-6.json`](interval3_3-5_5-6.json) |
+| [5/6, 9/10] | [5, 9] | 2 | 2.2·10⁻³ | [`interval3_5-6_9-10.json`](interval3_5-6_9-10.json) |
+| [9/10, 19/20] | [9, 19] | 2 | 1.1·10⁻³ | [`interval3_9-10_19-20.json`](interval3_9-10_19-20.json) |
+| [19/20, 99/100] | [19, 99] | 2 | 2.3·10⁻⁴ | [`interval3_19-20_99-100.json`](interval3_19-20_99-100.json) |
+
+The first row alone gives the theorem. The others are independent of it and overlap it.
 
 **Notes.**
-- With d = 1 the system is inconsistent, and with d = 0 it is infeasible. d = 3 gives the same margin as d = 2.
-- This answers the request with t₀ = 13/12. The request noted that t₀ = 1 is impossible at degree 3. The whole half-line is not covered: the stretch t > 99 (s → 1) is left out, because the certificate degenerates there (F₁ = D[13,14] is a single square).
+- On a closed interval inside (1/2, 1): d = 0 is infeasible, d = 1 is inconsistent, d = 2 works, d = 3 gives the same margin.
+- **Answer to the request:** t₀ = 51/49. The request noted that t₀ = 1 is impossible at degree 3; numerically the ansatz fails at s = 0.505 (t ≈ 1.02).
+- A first attempt at [13/25, 1] and [51/100, 1] rounded α, β to denominator 1024 and lost positive definiteness (margin 6·10⁻⁴ against a shift of 3·10⁻³). Rounding them like the other unknowns works.
 - **No open set of spectra follows from degree 3 alone.** A spectrum needs s and 1−s, and s < 1/2 needs degree 4.
 
 ## Numerical scan at degree 3 (not exact)
@@ -83,9 +95,10 @@ python3 q_facets_exact.py                                  # 82 facets of Q, exa
 python3 family.py 3 && python3 family.py 4                 # amplitude families, exact
 python3 run_interval.py 3 3/5 5/6 2                        # numerical search, exact solve, check with two seeds
 # likewise: 13/25 11/20 ; 11/20 3/5 ; 5/6 9/10 ; 9/10 19/20 ; 19/20 99/100
+python3 run_interval.py 3 51/100 1 3                       # the half-line (endpoint variant); likewise 13/25 1 and 3/5 1
 ```
 
 ## Next steps
 
 1. Degree 4 on an interval below 1/2 and across 1/2, so that s and 1−s are both covered: an open set of spectra.
-2. The end s → 1 (t → ∞): a certificate that degenerates to the single square D[13,14].
+2. The end s → 0 (t → 0). There the family of amplitude spaces degenerates differently: only 12 of the 16 products det U[12,12]·u_ij lie in the degree-3 amplitude space at s = 0 (126 of 136 at degree 4), so the construction used at s = 1 does not transfer.
