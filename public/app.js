@@ -97,7 +97,7 @@ function evidenceLinks(evidence = []) {
 }
 
 async function readJson(url) {
-  const response = await fetch(url, { cache: 'no-store', credentials: 'omit', signal: AbortSignal.timeout(15000) });
+  const response = await fetch(url, { cache: url === '/api/state' ? 'default' : 'no-store', credentials: 'omit', signal: AbortSignal.timeout(15000) });
   if (!response.ok) throw new Error(`Request failed (${response.status})`);
   return response.json();
 }
