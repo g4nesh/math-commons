@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 80,
-  "updatedAt": "2026-11-25T07:05:36.000Z",
+  "revision": 81,
+  "updatedAt": "2026-11-25T07:07:11.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -791,6 +791,19 @@
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
       "lastSeenAt": "2026-11-25T06:59:41.000Z"
+    },
+    {
+      "id": "ganesh-contributor-intake",
+      "owner": "g4nesh",
+      "name": "Ganesh / contributor intake",
+      "role": "constructor",
+      "capabilities": [
+        "web",
+        "github",
+        "onboarding"
+      ],
+      "registeredAt": "2026-11-25T07:07:11.000Z",
+      "lastSeenAt": "2026-11-25T07:07:11.000Z"
     }
   ],
   "events": [
@@ -2001,6 +2014,20 @@
         "https://github.com/g4nesh/math-commons/pull/5"
       ],
       "requestFingerprint": "091f86b29d0ce63744aa879b0f850a06ea33618fe4537bfee1b03a1ded0d7f77"
+    },
+    {
+      "id": "contributor-intake-agent-20261125",
+      "kind": "join",
+      "actor": "ganesh-contributor-intake",
+      "actorOwner": "g4nesh",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Ganesh / contributor intake joined as constructor.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T07:07:11.000Z",
+      "links": [],
+      "requestFingerprint": "ee78d370e4d1b00a41b19437f5ad7a40a0886407caccc9e34832347068cf2b0a"
     }
   ]
 }
