@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 306,
-  "updatedAt": "2026-11-25T21:01:47.000Z",
+  "revision": 307,
+  "updatedAt": "2026-11-25T21:02:45.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2039,9 +2039,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T21:17:55.000Z",
+      "leaseUntil": "2026-11-25T21:22:45.000Z",
       "createdAt": "2026-11-25T20:38:07.000Z",
-      "updatedAt": "2026-11-25T20:57:55.000Z",
+      "updatedAt": "2026-11-25T21:02:45.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2077,6 +2077,16 @@
           "details": "The coherent source now has 25 kernel-checked theorems. Unitary determinant magnitude follows from an explicit Gaussian-rational Lagrange identity and column orthogonality, retaining arbitrary determinant phase. prefixGateMagnitudes proves all six local table entries against the actual signed minor: neither/both occupied have norm square one, stay is one minus q, exchange is q. Also checked minorSelectedColumn at arbitrary column position with explicit list parity, preparing the nonadjacent spectator-sign bridge. General interleaving is not yet claimed. Parent can publish this compiling increment; continuing within the original20-minute budget.",
           "evidence": [],
           "createdAt": "2026-11-25T20:57:55.000Z"
+        },
+        {
+          "id": "mdo-gate-magnitude-progress3-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Checked arbitrary intervening-spectator exchange signs and double-occupation determinant.",
+          "details": "The actual signed minor now has exact forward and reverse exchange formulas with any number of occupied coordinates between the endpoints and after them. Their sign is parity of the intervening list. bothOccupiedMinor proves the exact block determinant for arbitrary intervening and trailing spectators; its crossed signs cancel. Neither and both one-particle stay identities also compile. A teammate supplied a separately checked two-supported-column expansion used in the assembly. Common leading spectators are handled by the existing arbitrary identityPrefixMinor. Final bounded work is packaging all six probability values with one explicit placement contract and axiom audit. Standard determinant identification and Cauchy-Binet remain outside scope.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/13ef35bb52a7a89f7482cbfacd411f0dabb8c90a/formal/ForestGateMagnitude.lean"
+          ],
+          "createdAt": "2026-11-25T21:02:45.000Z"
         }
       ],
       "reviews": [],
@@ -2314,7 +2324,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T20:57:55.000Z"
+      "lastSeenAt": "2026-11-25T21:02:45.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -7170,6 +7180,22 @@
         "https://github.com/g4nesh/math-commons/pull/20"
       ],
       "requestFingerprint": "81dddf8fb4274595eea38dfea1341630a3cf85cf11539138a136ab519e4061ba"
+    },
+    {
+      "id": "mdo-gate-magnitude-progress3-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-gate-minor-magnitudes",
+      "summary": "Checked arbitrary intervening-spectator exchange signs and double-occupation determinant.",
+      "detail": "The actual signed minor now has exact forward and reverse exchange formulas with any number of occupied coordinates between the endpoints and after them. Their sign is parity of the intervening list. bothOccupiedMinor proves the exact block determinant for arbitrary intervening and trailing spectators; its crossed signs cancel. Neither and both one-particle stay identities also compile. A teammate supplied a separately checked two-supported-column expansion used in the assembly. Common leading spectators are handled by the existing arbitrary identityPrefixMinor. Final bounded work is packaging all six probability values with one explicit placement contract and axiom audit. Standard determinant identification and Cauchy-Binet remain outside scope.",
+      "to": null,
+      "createdAt": "2026-11-25T21:02:45.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/13ef35bb52a7a89f7482cbfacd411f0dabb8c90a/formal/ForestGateMagnitude.lean"
+      ],
+      "requestFingerprint": "864d53421878a3a05d2867a10ddbd3f007997b7641b4ade07d5397263c04556b"
     }
   ],
   "usage": [
