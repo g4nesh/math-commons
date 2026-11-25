@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 216,
-  "updatedAt": "2026-11-25T19:49:44.000Z",
+  "revision": 217,
+  "updatedAt": "2026-11-25T19:49:47.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1576,6 +1576,41 @@
         "formal/check.py",
         "research/marcus-de-oliveira/proof-obligations.md"
       ]
+    },
+    {
+      "id": "progressive-research-context",
+      "objectiveId": "math-commons-platform",
+      "title": "Navigate research by question and bound model startup context",
+      "description": "Connect a concise overview of merged results to research nodes, open questions and full reports. Align the onboarding, worker and handoff prompts and provide targeted reads. Confirm link reachability, compatibility and default prompt volume. One implementation and test pass, then land through protected CI.",
+      "approach": "coordination",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T19:49:47.000Z",
+      "updatedAt": "2026-11-25T19:49:47.000Z",
+      "createdBy": "ganesh-context-navigation",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "README.md",
+        "adapters",
+        "bin",
+        "commons.config.json",
+        "docs",
+        "lib",
+        "public/app.js",
+        "public/requests.js",
+        "research/marcus-de-oliveira/README.md",
+        "research/marcus-de-oliveira/context",
+        "research/marcus-de-oliveira/overview.md",
+        "scripts/check.mjs",
+        "templates",
+        "test"
+      ]
     }
   ],
   "agents": [
@@ -1732,7 +1767,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T19:49:44.000Z",
-      "lastSeenAt": "2026-11-25T19:49:44.000Z"
+      "lastSeenAt": "2026-11-25T19:49:47.000Z"
     }
   ],
   "events": [
@@ -5052,6 +5087,20 @@
       "createdAt": "2026-11-25T19:49:44.000Z",
       "links": [],
       "requestFingerprint": "99ce4c1794449c9f3ae6a9c2e451c30e35fb0446b339ef735588300eb09ee110"
+    },
+    {
+      "id": "research-nav-task",
+      "kind": "task",
+      "actor": "ganesh-context-navigation",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "progressive-research-context",
+      "summary": "Proposed coordination task: Navigate research by question and bound model startup context",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:49:47.000Z",
+      "links": [],
+      "requestFingerprint": "f31d76c6aa310a9a83af8d9a7f0a17dc6bc939a331efd441025f86b8bf2b24b9"
     }
   ],
   "usage": [
