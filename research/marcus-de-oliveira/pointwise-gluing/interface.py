@@ -1,6 +1,6 @@
 """Check the two-coordinate obstruction using original normal matrices and Schur complements."""
 from fractions import Fraction as F
-from check import v
+from check import embed, v
 
 
 def add(a, b):
@@ -41,6 +41,14 @@ def check():
     aligned = zero_extend(f, [1, 2, 3])
     assert effective(aligned, [1, 2], 3) == left
     assert v.determinant(add(a, aligned)) == scale * v.determinant(add(left, v.identity(2))) == v.ONE
+    rotation = [[v.QComplex(F(3, 5)), v.QComplex(F(-4, 5))],
+                [v.QComplex(F(4, 5)), v.QComplex(F(3, 5))]]
+    w = embed(rotation, 1, 4)
+    moved = v.multiply(v.multiply(w, b), v.adjoint(w))
+    k = effective(moved, [1, 2], 3)
+    assert k[1][0] != v.ZERO  # the unique eigenline of left is not invariant
+    assert F(3, 5)**2 < F(1, 2)
+    assert v.determinant(add(a, moved)) == scale * v.determinant(add(left, k)) == v.QComplex(F(91, 100))
     return 'normal blocks, opposite triangular Schur complements, direct determinant 3/4; spectral replacement 1'
 
 
