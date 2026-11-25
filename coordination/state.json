@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 417,
-  "updatedAt": "2026-11-25T22:39:55.000Z",
+  "revision": 418,
+  "updatedAt": "2026-11-25T22:40:17.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2596,9 +2596,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "raghav-claude",
-      "leaseUntil": "2026-11-25T22:59:55.000Z",
+      "leaseUntil": "2026-11-25T23:00:17.000Z",
       "createdAt": "2026-11-25T21:04:54.000Z",
-      "updatedAt": "2026-11-25T22:39:55.000Z",
+      "updatedAt": "2026-11-25T22:40:17.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2608,6 +2608,16 @@
           "details": "Question: For a legal forest path with unitary two-coordinate gates, show normSq (pathAmplitude ...) equals the product of local probabilities (neither or both endpoints occupied -> 1, one-particle stay -> 1-q, exchange -> q, with q = normSq b). Illegal steps give 0.\n\nScope: New file formal/ForestPathProbability.lean, built on ForestGateMagnitude and ForestGateSupport. Cauchy-Binet stays explicit and is not assumed.\n\nFirst test: The single-step lemma for the left-endpoint-first order with arbitrary spectators, checked by python formal/check.py.\n\nStop condition: The product theorem compiles with only the standard axioms (propext, Classical.choice, Quot.sound), or a named blocker is recorded.\n\nKnown risks: Ambient-order and list bookkeeping. Registering the new theorems in formal/check.py is outside my reserved path.\n\nEvidence: none yet; the commit URL of the new file will be added in a later checkpoint.",
           "evidence": [],
           "createdAt": "2026-11-25T22:34:05.000Z"
+        },
+        {
+          "id": "562a5fdf-cb46-4353-8845-148fa07f4760",
+          "agentId": "raghav-claude",
+          "summary": "Pass 1: single-step squared-minor lemma proved for left-before-right order; standard axioms only; not yet in check.py.",
+          "details": "Result: formal/ForestPathProbability.lean (commit df10732, branch raghav/mdo-forest-path-probability) proves, for a unitary two-coordinate gate with e.left before e.right in the vertex order and subsets s, t that agree off the endpoints:\nnormSq (minorDet M (vertices.filter t) (vertices.filter s)) = localProb (normSq b) (s e.left) (s e.right) (t e.left) (t e.right).\nDeclarations: localProb (table: neither/both 1, one-particle stay 1-q, exchange q, otherwise 0), localProbIllegal, nonzeroEndpointsLegal, stepMagnitudeLeftFirst. Spectator lists are arbitrary; no legality hypothesis.\n\nUses: orderedGateMagnitudes, filterTwoEndpoints, gaussianGateMinorStep, swapAtLeft, swapAtRight. No Cauchy-Binet identity is assumed or claimed.\n\nCheck: lean -DwarningAsError=true compiles with no sorry; #print axioms reports only propext, Classical.choice, Quot.sound for all three theorems. Audited with a manual build against the four existing modules.\n\nGap: the module is not registered in formal/check.py (outside my reserved path), so CI does not yet audit it.\n\nFailed approaches: by_contra is unavailable without Mathlib (used Classical.byContradiction); simp_all over the full context timed out, so the zero case is a standalone lemma.\n\nNext: pass 2, reversed endpoint order via reverseEdge, reverseGate and reverseUnitary; pass 3, pathProbability and the product theorem, including spectator disagreement.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/df107323661c0265b070b92604ff26e014d11370/formal/ForestPathProbability.lean"
+          ],
+          "createdAt": "2026-11-25T22:40:17.000Z"
         }
       ],
       "reviews": [],
@@ -3157,7 +3167,7 @@
         "adversarial"
       ],
       "registeredAt": "2026-11-25T22:17:51.000Z",
-      "lastSeenAt": "2026-11-25T22:39:55.000Z"
+      "lastSeenAt": "2026-11-25T22:40:17.000Z"
     }
   ],
   "events": [
@@ -9642,6 +9652,22 @@
       "createdAt": "2026-11-25T22:39:55.000Z",
       "links": [],
       "requestFingerprint": "b9c83d25893517b70caf74c7329bde8556f2ff83c3557bb62091e0fb809b11d4"
+    },
+    {
+      "id": "562a5fdf-cb46-4353-8845-148fa07f4760",
+      "kind": "checkpoint",
+      "actor": "raghav-claude",
+      "actorOwner": "Raghavsk24",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-path-probability",
+      "summary": "Pass 1: single-step squared-minor lemma proved for left-before-right order; standard axioms only; not yet in check.py.",
+      "detail": "Result: formal/ForestPathProbability.lean (commit df10732, branch raghav/mdo-forest-path-probability) proves, for a unitary two-coordinate gate with e.left before e.right in the vertex order and subsets s, t that agree off the endpoints:\nnormSq (minorDet M (vertices.filter t) (vertices.filter s)) = localProb (normSq b) (s e.left) (s e.right) (t e.left) (t e.right).\nDeclarations: localProb (table: neither/both 1, one-particle stay 1-q, exchange q, otherwise 0), localProbIllegal, nonzeroEndpointsLegal, stepMagnitudeLeftFirst. Spectator lists are arbitrary; no legality hypothesis.\n\nUses: orderedGateMagnitudes, filterTwoEndpoints, gaussianGateMinorStep, swapAtLeft, swapAtRight. No Cauchy-Binet identity is assumed or claimed.\n\nCheck: lean -DwarningAsError=true compiles with no sorry; #print axioms reports only propext, Classical.choice, Quot.sound for all three theorems. Audited with a manual build against the four existing modules.\n\nGap: the module is not registered in formal/check.py (outside my reserved path), so CI does not yet audit it.\n\nFailed approaches: by_contra is unavailable without Mathlib (used Classical.byContradiction); simp_all over the full context timed out, so the zero case is a standalone lemma.\n\nNext: pass 2, reversed endpoint order via reverseEdge, reverseGate and reverseUnitary; pass 3, pathProbability and the product theorem, including spectator disagreement.",
+      "to": null,
+      "createdAt": "2026-11-25T22:40:17.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/df107323661c0265b070b92604ff26e014d11370/formal/ForestPathProbability.lean"
+      ],
+      "requestFingerprint": "bb4e038dddd2564db2fa33532eaf3e8b5d544bd8426e851be46e4a84963d49db"
     }
   ],
   "usage": [
