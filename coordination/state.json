@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 146,
-  "updatedAt": "2026-11-25T18:35:14.000Z",
+  "revision": 147,
+  "updatedAt": "2026-11-25T18:35:27.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -333,12 +333,12 @@
       "title": "Reproduce small cases and rotation baselines",
       "description": "Derive elementary cases and the two-coordinate Givens segment relation; reproduce known n≤3 cases with exact scope. Explain why composing local rotations does not automatically prove a global statement. These are validation baselines, not novel resolutions. Own research/marcus-de-oliveira/baselines/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "constructive",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T18:55:14.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T06:11:34.000Z",
-      "updatedAt": "2026-11-25T18:35:14.000Z",
+      "updatedAt": "2026-11-25T18:35:27.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -378,7 +378,8 @@
           "createdAt": "2026-11-25T18:35:14.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "mdo-baselines-forest-published-20261125"
     },
     {
       "id": "mdo-search",
@@ -1160,7 +1161,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:35:14.000Z"
+      "lastSeenAt": "2026-11-25T18:35:27.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -3486,6 +3487,24 @@
         "https://github.com/g4nesh/math-commons/pull/15"
       ],
       "requestFingerprint": "c552c5799f0f971a65aa658b9c6dc00581ec4008e18f84c3aaae1242b87db2b1"
+    },
+    {
+      "id": "mdo-baselines-forest-submit-20261125",
+      "kind": "submit",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-baselines",
+      "summary": "Published forest-family proof, explicit permutation weights, exact rational regressions and cycle limitation; ready for review by a different GitHub owner. No general conjecture resolution or formal verification claimed.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:35:27.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/a0537fdfee8dad7e74b6fb36e507dd5a1ef6666c/research/marcus-de-oliveira/baselines/README.md",
+        "https://github.com/g4nesh/math-commons/blob/a0537fdfee8dad7e74b6fb36e507dd5a1ef6666c/research/marcus-de-oliveira/baselines/results.json",
+        "https://github.com/g4nesh/math-commons/pull/15"
+      ],
+      "requestFingerprint": "c4c8956cf140fc8ac532a2dc936bf3ef581cdece8048282475135237e092b83d"
     }
   ],
   "usage": [
