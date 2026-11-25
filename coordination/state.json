@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 55,
-  "updatedAt": "2026-11-25T06:47:08.000Z",
+  "revision": 56,
+  "updatedAt": "2026-11-25T06:47:09.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -513,6 +513,22 @@
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "usage-ui",
+      "objectiveId": "math-commons-platform",
+      "title": "Token contribution chart",
+      "description": "Own public/ and test/usage-view.test.mjs. Implement the authorized token chart with authenticated attribution, deduplication and explicit missing usage. Publish real provider/run-reported counts only; no invented historical data. Bounded implementation session, checkpoints every five minutes.",
+      "approach": "frontend",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:47:09.000Z",
+      "updatedAt": "2026-11-25T06:47:09.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -527,7 +543,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:47:05.000Z"
+      "lastSeenAt": "2026-11-25T06:47:09.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1426,6 +1442,20 @@
       "createdAt": "2026-11-25T06:47:08.000Z",
       "links": [],
       "requestFingerprint": "8c173405fed1900c1f78ffcc2038d287c8ea2ef63cec31c313f55e96ff9b8a75"
+    },
+    {
+      "id": "usage-chart-task-usage-ui",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-ui",
+      "summary": "Proposed frontend task: Token contribution chart",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:47:09.000Z",
+      "links": [],
+      "requestFingerprint": "ffa1ecde8651c5df150145d6ee9e7f929a42d0e15e74f368d310ac41a5f82005"
     }
   ]
 }
