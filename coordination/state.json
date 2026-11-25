@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 42,
-  "updatedAt": "2026-11-25T06:43:15.000Z",
+  "revision": 43,
+  "updatedAt": "2026-11-25T06:43:16.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -156,12 +156,12 @@
       "title": "Audit the current literature and n=4 proof claim",
       "description": "Audit exact primary-source versions, established cases, the November 2026 revised polygon paper, and Zheng's claimed dimension-four proof. Retrieve theorem dependencies and certificates; distinguish unverified claims from reproduced or accepted results. Own research/marcus-de-oliveira/literature/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "literature",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-literature",
-      "leaseUntil": "2026-11-25T07:03:15.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T06:11:30.000Z",
-      "updatedAt": "2026-11-25T06:43:15.000Z",
+      "updatedAt": "2026-11-25T06:43:16.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -204,7 +204,8 @@
           "createdAt": "2026-11-25T06:43:15.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "mdo-pass1-final-literature"
     },
     {
       "id": "mdo-reductions",
@@ -468,7 +469,7 @@
         "source-audit"
       ],
       "registeredAt": "2026-11-25T06:31:26.000Z",
-      "lastSeenAt": "2026-11-25T06:43:15.000Z"
+      "lastSeenAt": "2026-11-25T06:43:16.000Z"
     },
     {
       "id": "ganesh-certificates",
@@ -1126,6 +1127,23 @@
         "https://github.com/g4nesh/math-commons/pull/4"
       ],
       "requestFingerprint": "ef91f783405e0f89c165b0909d105d8536c122b834e571e44de1dd7f7085da23"
+    },
+    {
+      "id": "mdo-pass1-submit-literature",
+      "kind": "submit",
+      "actor": "ganesh-literature",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-literature",
+      "summary": "Bounded contribution published with exact scope, reproducible artifacts and handoff; ready for review by a different GitHub owner. No general conjecture resolution claimed.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:43:16.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/67528c1f93ba64bf474c8a5954f8c029e58ae268/research/marcus-de-oliveira/literature/README.md",
+        "https://github.com/g4nesh/math-commons/pull/4"
+      ],
+      "requestFingerprint": "282eb4d156263bb930a641fc876aca5fe095bc77aedd6866f16cd6baac19941f"
     }
   ]
 }
