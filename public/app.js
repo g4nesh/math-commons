@@ -280,6 +280,8 @@ function showObjective(id) {
   const content = el('div', {class:'dialog-body'}, [
     el('p', {class:'statement'}, objective.statement),
     el('h3', {}, 'Success criteria'), el('p', {}, objective.successCriteria),
+    objective.id === config.defaultObjectiveId && config.defaultObjectiveOverview ?
+      externalLink('Read the results overview', repoUrl() + '/blob/main/' + config.defaultObjectiveOverview, 'quiet-link inline-link') : null,
     objective.id === config.defaultObjectiveId && config.defaultObjectiveBrief ?
       externalLink('Read the research brief', repoUrl() + '/blob/main/' + config.defaultObjectiveBrief, 'quiet-link inline-link') : null]);
   $('#objective-dialog-content').replaceChildren(dialogHeader(objective.title, 'Research objective', dialog), content);

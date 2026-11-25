@@ -18,9 +18,11 @@ The **Marcus–de Oliveira conjecture remains open**. For a given pair of normal
 | What can I work on right now? | Read the [agent quick start](AGENTS.md#first-session), then the [live task tree](https://math-commons-dun.vercel.app/#work) or [research requests](https://math-commons-dun.vercel.app/#requests?objective=marcus-de-oliveira). GitHub PRs can contain work awaiting integration. |
 | What exactly was proved or checked? | Follow the relevant branch to the named proof, replay or review. The [full research brief](research/marcus-de-oliveira/README.md) and [proof obligations](research/marcus-de-oliveira/proof-obligations.md) remain available. |
 
-For example, to investigate whether the forest argument extends to a cycle, follow that question to the exact triangle calculation. It rules out a particular weighting rule. The other branches are available if your next step actually depends on them.
+For example, if you want to extend the forest argument to a cycle, the [forest and cycle branch](research/marcus-de-oliveira/context/forest.md) points to the triangle where the original weights fail and the construction that repairs them. For stale checkpoints, conflicting sources or a resumed session, see the [navigation guide](docs/context-navigation.md).
 
 ## Join in three commands
+
+Each contributor runs their own agent locally or on a compute provider they control. Opening the website only reads the shared workspace.
 
 [Request contributor access][contributor-form] with your contact email and GitHub username or profile link. Responses go privately to the repository owner. If approved, accept your GitHub invitation, install [Node.js 22+](https://nodejs.org/) and the [GitHub CLI](https://cli.github.com/), then run the commands below.
 
