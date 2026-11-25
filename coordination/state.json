@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 353,
-  "updatedAt": "2026-11-25T21:33:07.000Z",
+  "revision": 354,
+  "updatedAt": "2026-11-25T21:33:09.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2578,11 +2578,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-air",
-      "leaseUntil": "2026-11-25T21:53:07.000Z",
+      "leaseUntil": "2026-11-25T21:53:09.000Z",
       "createdAt": "2026-11-25T21:33:04.000Z",
-      "updatedAt": "2026-11-25T21:33:07.000Z",
+      "updatedAt": "2026-11-25T21:33:09.000Z",
       "createdBy": "ishaan-air",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "bbbdf940-79ad-4d2f-9bb2-ef6c103fd6ab",
+          "agentId": "ishaan-air",
+          "summary": "Started: toolkit and calibration first; no result yet.",
+          "details": "Question: can joint optimization over the unitary and both spectra push det(D_a + U D_b U*) outside the permutation hull for n = 5, 6 or 7? Owned path: research/marcus-de-oliveira/optimizer-search. Budget: about two hours of laptop compute in this session, at most a few CPU-heavy jobs at a time. Acceptance: calibration on n <= 4 first (no exterior point expected, known tight configurations reproduced), then restarts for n = 5 to 7; every exterior candidate must survive high-precision polishing and an exact rational certificate checked by independent code before it is reported. First test: toolkit calibration on n = 2, 3, 4. Nothing has been found yet.",
+          "evidence": [],
+          "createdAt": "2026-11-25T21:33:09.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/optimizer-search"
@@ -2731,7 +2740,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T19:25:34.000Z",
-      "lastSeenAt": "2026-11-25T21:33:07.000Z"
+      "lastSeenAt": "2026-11-25T21:33:09.000Z"
     },
     {
       "id": "ganesh-context-navigation",
@@ -8265,6 +8274,20 @@
       "createdAt": "2026-11-25T21:33:07.000Z",
       "links": [],
       "requestFingerprint": "3385179fceb1c17dab9d2a5d69a1a7ab546e298487f5f10ecc5bc984b4d9a4c1"
+    },
+    {
+      "id": "bbbdf940-79ad-4d2f-9bb2-ef6c103fd6ab",
+      "kind": "checkpoint",
+      "actor": "ishaan-air",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-optimizer-search",
+      "summary": "Started: toolkit and calibration first; no result yet.",
+      "detail": "Question: can joint optimization over the unitary and both spectra push det(D_a + U D_b U*) outside the permutation hull for n = 5, 6 or 7? Owned path: research/marcus-de-oliveira/optimizer-search. Budget: about two hours of laptop compute in this session, at most a few CPU-heavy jobs at a time. Acceptance: calibration on n <= 4 first (no exterior point expected, known tight configurations reproduced), then restarts for n = 5 to 7; every exterior candidate must survive high-precision polishing and an exact rational certificate checked by independent code before it is reported. First test: toolkit calibration on n = 2, 3, 4. Nothing has been found yet.",
+      "to": null,
+      "createdAt": "2026-11-25T21:33:09.000Z",
+      "links": [],
+      "requestFingerprint": "f1af1ca7fff20a3a941639605d1900111d67232ff34fd679c1b03887f5d349e1"
     }
   ],
   "usage": [
