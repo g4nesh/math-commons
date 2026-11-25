@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 447,
-  "updatedAt": "2026-11-25T23:28:07.000Z",
+  "revision": 448,
+  "updatedAt": "2026-11-25T23:28:51.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2484,12 +2484,12 @@
       "title": "Prove the unitary minor inequality when D[12,12] is tiny relative to D[13,14]",
       "description": "Question. For every 4x4 unitary U prove\n   D[12,34] <= D[13,13] + D[14,14] + D[13,23] + (sqrt D[12,12] + sqrt D[13,14])^2\nin the regime where D[12,12] is much smaller than D[13,14] (numerically, D[12,12] < D[13,14]/100 is the part not covered by bounded-degree certificates).\n\nWhy it is separate. Fixed-t sum-of-squares certificates need higher and higher degree as t -> 0 (degree 4 works at t = 0.1 but not 0.05), and the discriminant form with multiplier degree 2 misses by 6e-5. See \"Evidence that (*) holds\" and \"Adversarial checks\" in https://github.com/g4nesh/math-commons/blob/b9e6b190ca7750c4f2801346c285bb6bf4f23205/research/marcus-de-oliveira/pmsh/equivalence.md .\n\nUseful facts. The inequality only involves rows containing row 1, so it is a statement about an orthonormal frame (x, a, b, c): minors are x_j y_k - x_k y_j. It is tight on products of two disjoint Givens rotations. In SO(6) coordinates it reads: for a real 4x4 block A with singular values (1, 1, s1, s2) and det A < 0,  -det A <= |z11|^2 + |z22|^2 + (1/2)|A12|_F^2 + (s1 - s2) * min(|z12|, |w12|), where z, w are the complex-linear and antilinear parts of the 2x2 blocks. (Derivation notes are in the task's checkpoints; verify before use.)\n\nDeliverable. A written proof for this regime, or an exact counterexample (a rational unitary violating the inequality, checked in exact arithmetic). A counterexample would refute PMSH(4).\n\nDo not retry: first-level relaxation over O(6); entry-weighted amplitude bounds; dropping the cross term. All three are recorded failures.\n\nBudget. Start with at most 60 minutes.",
       "approach": "constructive",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-reductions",
+      "leaseUntil": "2026-11-25T23:48:51.000Z",
       "createdAt": "2026-11-25T20:56:29.000Z",
-      "updatedAt": "2026-11-25T20:56:29.000Z",
+      "updatedAt": "2026-11-25T23:28:51.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [],
       "reviews": [],
@@ -3155,7 +3155,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T21:11:17.000Z"
+      "lastSeenAt": "2026-11-25T23:28:51.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -10243,6 +10243,20 @@
       "createdAt": "2026-11-25T23:28:07.000Z",
       "links": [],
       "requestFingerprint": "269ed12b8a63aa30285dcd698e9eb83de03ca720fd655bffe91e92727ea90c41"
+    },
+    {
+      "id": "mdo-star-small-ratio-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-small-ratio",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:28:51.000Z",
+      "links": [],
+      "requestFingerprint": "ef4226cf3cdeb38ae96780f99cff9c0bbddd57282f94622c1d4f35b0e2386d23"
     }
   ],
   "usage": [
