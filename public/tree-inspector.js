@@ -140,7 +140,12 @@ export function renderTreeInspector({ tree, selection, onSelect = () => {}, stat
   const selected = selection || { type: 'objective', id: objective?.id };
 
   if (objective && selected.type === 'objective' && selected.id === objective.id) {
-    append(header('Shared objective', objective.title || objective.id, badge(objective.status)), fullObjective(), stats(tasks));
+    append(header('Objective', 'Research notes', badge(objective.status)), fullObjective());
+    if (objective.id === 'marcus-de-oliveira') append(section('The diagram', [
+      note('Each black point is an eigenvalue pairing. The red point is the determinant, ⅔ + ²⁄₉ i. This example has dimension three.'),
+      external('Read the checked calculation ↗', `${repoUrl}/blob/main/formal/README.md`)
+    ]));
+    append(stats(tasks));
     if (objective.conclusion) append(section('Recorded conclusion', [note(short(objective.conclusion)), evidence(objective.evidence)]));
     const checkpoint = latestCheckpoint(tasks);
     if (checkpoint) append(checkpointCard(checkpoint, true));
@@ -160,11 +165,15 @@ export function renderTreeInspector({ tree, selection, onSelect = () => {}, stat
   } else if (selected.type === 'task') {
     const task = taskMap.get(selected.id);
     if (task) {
-      append(header('Task', task.title || task.id, badge(taskStatus(task))));
+      append(header(task.request ? 'Research request' : 'Task', task.title || task.id, badge(taskStatus(task))));
       const branch = branches.find((item) => item.tasks.some((itemTask) => itemTask.id === task.id));
       if (branch) append(select('branch', branch.id, `↳ ${branch.label || label(branch.id)}`, 'tree-inspector-context'));
       append(fullTask(task));
       if (task.description) append(note(short(task.description)));
+      const origin = taskMap.get(task.request?.fromTaskId);
+      if (origin) append(section('Requested from', taskList([origin])));
+      const followUps = tasks.filter(item => item.request?.fromTaskId === task.id);
+      if (followUps.length) append(section('Follow-up requests', taskList(followUps)));
       const leaseTime = timestamp(task.leaseUntil);
       let leaseNote = 'No live lease on this task.';
       if (live(task)) leaseNote = `Reserved until ${new Date(leaseTime).toUTCString()}. Process status unknown.`;

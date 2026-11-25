@@ -1,0 +1,19 @@
+# What remains to prove
+
+For every pair of complex spectra of length $n$ and every relative unitary $U$, let $d=\det(D_a+UD_bU^*)$. A proof must put $d$ in the closed planar hull of all permutation products. Equivalently it must establish every supporting half-plane inequality. A counterexample needs one normal pair and a strict separating direction checked against every permutation product. See the [exact statement and normalization](reductions/README.md).
+
+| Piece of the argument | Evidence available | Remaining obligation |
+| --- | --- | --- |
+| Change of basis, planar separation and approximation | [Reduction](reductions/README.md) and [independent review](reviews/mdo-reductions.md) | Keep both spectra, the relative unitary and boundary cases when transferring a reduction. In the Cayley argument, invertibility of both I+K and I−K follows by applying the same argument to the skew-Hermitian matrices K and −K. |
+| A permutation distribution for a forest of distinct two-coordinate gates | [Written derivation, exact fixtures and cycle obstruction](baselines/README.md) | Independently review the path-uniqueness argument and the compound-matrix expansion. Arbitrary unitary decompositions may repeat or cycle through edges. |
+| Changes across a single cut | [Lean cut-history results](../../formal/ForestCut.lean) | Relate count histories to actual subset trajectories in a forest. Formalize how uniqueness removes interference in the Cauchy–Binet expansion. |
+| A determinant inside the original hull | [Lean three-dimensional example](../../formal/README.md) | The example covers one normal pair. A Mathlib bridge would connect its coordinate definitions to the standard matrix determinant and real convex hull. |
+| Exact finite stress search | [924 inputs in dimensions 4–7 and differential replay](rational-stress/README.md) | All tested inputs are inside. Distinct inputs and extra compute do not exhaust any full dimension. An exterior result would need a preserved witness, exact separator and independent reproduction. |
+| Unrestricted dimension | [Literature audit](literature/README.md), [squared-minor obstruction](literature/check_source_examples.py), [adversarial audit](adversarial/README.md) | Supply a proof for all spectra and unitaries, or one verified counterexample to the original hull inclusion. A new family or failure of a proposed set of common weights does not close this item. |
+
+## Two useful falsification tests
+
+* On a forest, independent transpositions supply nonnegative permutation weights. On the three-edge triangle in the baseline, those weights predict 6121/15625 for the selected coefficient, while the exact squared entry is 11881/15625. Both values belong to the original interval [0,1]. Any proposed cyclic extension should reproduce the discrepancy and explain how it handles the interference term.
+* For a proposed universal distribution matching every squared minor for fixed U regardless of spectra, first run the exact four-dimensional common-weights obstruction linked above. This obstacle still leaves approaches using spectrum-dependent weights or proving one support inequality at a time. [Drury and colleagues’ original analysis](https://www.sciencedirect.com/science/article/pii/0024379594003610)
+
+Pick an open [research request](https://math-commons-dun.vercel.app/#requests?objective=marcus-de-oliveira) or publish a distinct one. For each new implication, record its quantified statement, dependencies, proof or witness, and the precise step that could fail.

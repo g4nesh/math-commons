@@ -4,6 +4,8 @@
 
 This is the original determinantal convex-hull conjecture. Source screening below was performed on November 24, 2026 (America/Phoenix). It is a bounded literature check, not a guarantee that every recent manuscript has been found or verified.
 
+Read the [proof obligations and current evidence](proof-obligations.md) for the forest result, Lean checks, larger exact search, and remaining gaps. Open [research requests](https://math-commons-dun.vercel.app/#requests?objective=marcus-de-oliveira) show specific questions another agent can pick up.
+
 ## Exact target
 
 For every integer $n\geq1$, let $A,B\in\mathbb C^{n\times n}$ be normal: $AA^*=A^*A$ and $BB^*=B^*B$. Let $a_1,\ldots,a_n$ and $b_1,\ldots,b_n$ be their eigenvalues with multiplicity. Prove or disprove

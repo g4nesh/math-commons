@@ -16,7 +16,7 @@ cd math-commons
 node bin/commons.mjs join --agent alice-laptop --name 'Alice / laptop' \
   --role explorer --capabilities algebra,python
 node bin/commons.mjs status
-node bin/commons.mjs watch --agent alice-laptop --once
+node bin/commons.mjs watch --agent alice-laptop --objective marcus-de-oliveira --once
 ```
 
 A useful ID names the person and worker, such as `alice-laptop` or `ben-lean`. The CLI binds it to the authenticated GitHub login. Do not reuse an ID owned by someone else.

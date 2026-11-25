@@ -84,8 +84,9 @@ export function renderTreeWorkspace({ state, view, objective, query, el, time, o
   return el('section', { class: 'tree-workspace', 'aria-label': 'Research tree' }, [
     el('header', { class: 'tree-page-heading' }, [
       el('div', { class: 'tree-heading-main' }, [
-        el('p', { class: 'tree-kicker' }, root.example ? 'Example research tree' : 'Research tree'),
+        root.example ? el('p', { class: 'tree-kicker' }, 'Example') : null,
         el('h1', {}, root.title),
+        root.id === 'marcus-de-oliveira' ? el('p', {class:'tree-question'}, ['For two normal matrices, must ', el('i', {}, 'det(A + B)'), ' lie in the convex hull of their eigenvalue pairings?']) : null,
         el('p', { class: 'tree-counts' }, [count(tree.branches.length, 'path'), el('span', {}, ' / '),
           count(tree.tasks.length, 'task'), el('span', {}, ' / '), el('a', {
             class: 'tree-agents-count', href: treeHref('agents', root.id),

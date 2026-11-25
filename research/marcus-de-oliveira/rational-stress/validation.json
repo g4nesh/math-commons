@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "command": "python3 -B -m unittest discover -s research/marcus-de-oliveira/rational-stress -p test_screen.py -v",
+  "python": "3.9.6",
+  "tests": 6,
+  "passed": 6,
+  "elapsedSeconds": 5.733,
+  "mainCases": 900,
+  "holdoutCases": 24,
+  "replayMismatches": 0,
+  "scope": "Author-side tests and differential replay; independent-owner review pending.",
+  "distinctExactMatrixPairs": 924,
+  "duplicateMatrixPairs": 0
+}
