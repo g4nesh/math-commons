@@ -11,7 +11,6 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
-import platform
 import resource
 import sys
 
@@ -46,13 +45,6 @@ def leibniz(matrix):
         sign = (-1)**sum(p[i]>p[j] for i in range(len(p)) for j in range(i+1,len(p)))
         out += sign*product(matrix[i][p[i]] for i in range(len(p)))
     return out
-
-
-def trim(poly):
-    poly = list(poly)
-    while len(poly)>1 and poly[-1] == 0:
-        poly.pop()
-    return tuple(poly)
 
 
 def add(p,q):
@@ -227,7 +219,7 @@ def report():
         check_at(z,PLANE,global_weights)
     encode_affine = lambda p:[z.encode() for z in p]
     return {'schemaVersion':1,'evidenceLevel':'written continuous parameter proofs and exact coefficient checks; same-owner, not Lean or independent review',
-            'pythonVersion':platform.python_version(),'U':[[z.encode() for z in row]for row in U],
+            'U':[[z.encode() for z in row]for row in U],
             'baseA':[z.encode() for z in BASE_A],'fixedB':[z.encode() for z in B_SPECTRUM],
             'deformation':'a0(t)=-2+i(t-1); every other eigenvalue and U fixed; t real',
             'interval':list(map(str,INTERVAL)),'supportColumnToRow':[list(p)for p in TRIANGLE],

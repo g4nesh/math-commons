@@ -1,7 +1,6 @@
 {
   "schemaVersion": 1,
   "evidenceLevel": "written continuous parameter proofs and exact coefficient checks; same-owner, not Lean or independent review",
-  "pythonVersion": "3.9.6",
   "U": [
     [
       [
