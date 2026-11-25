@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 458,
-  "updatedAt": "2026-11-25T23:32:34.000Z",
+  "revision": 459,
+  "updatedAt": "2026-11-25T23:32:58.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2594,9 +2594,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T23:48:07.000Z",
+      "leaseUntil": "2026-11-25T23:52:58.000Z",
       "createdAt": "2026-11-25T20:59:25.000Z",
-      "updatedAt": "2026-11-25T23:28:07.000Z",
+      "updatedAt": "2026-11-25T23:32:58.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2606,6 +2606,14 @@
           "details": "Claim and path ownership confirmed. One20-active-minute pass; own research/marcus-de-oliveira/fourth-boundary only. Exact phase-I discovery over all24 permutations found infeasibility at7/50 and feasibility at3/20. Derived three exact rational bases with all17 cleared coefficient identities. Candidate alpha is the unique positive root of1808s^3+9419s^2+8398s-1400 in(.143,.144); candidate support change beta is root of41s^3+212s^2+183s-36 in(.164,.165). Bernstein positivity yields feasible coverage[alpha,beta],[beta,.97],[.97,1], with endpoint masses allowed zero. Preparing portable proof/replay; coordinator independently derives a separating dual below alpha. No monotonicity premise and no pointwise MDO violation claimed.",
           "evidence": [],
           "createdAt": "2026-11-25T23:28:07.000Z"
+        },
+        {
+          "id": "mdo-fourth-boundary-classification-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Exact complete path classification: a shared mixture exists iff s is at least the cubic root alpha.",
+          "details": "Portable solver-free replay now passes. For a3=s(1-i),0<=s<=1, with archived U,b fixed and all first3 eigenvalues arbitrary complex, feasible set is[alpha,1], alpha unique positive root1808s^3+9419s^2+8398s-1400, approximately0.143106204978043899. Three rational supports prove[alpha,beta],[beta,97/100],[97/100,1], with all51 real coefficient identities and exact Bernstein signs. Coordinator cofactor dual independently regenerated: normalization(12544/5)s^3(s+4), all24 vertex values nonnegative, target32(1+3s+s^2)f(s)<0 for0<s<alpha. Separate endpoint0 dual gap3472/33125. Algebraic endpoints explicitly included; no monotonicity assumption, no pointwise MDO counterexample. Nine focused tests pass locally. Files ready for coordinator publication; immutable evidence follows.",
+          "evidence": [],
+          "createdAt": "2026-11-25T23:32:58.000Z"
         }
       ],
       "reviews": [],
@@ -3226,7 +3234,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T23:28:07.000Z"
+      "lastSeenAt": "2026-11-25T23:32:58.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -10500,6 +10508,20 @@
         "https://github.com/g4nesh/math-commons/blob/fd380c113359b66976678381fa715c915ac3a291/research/marcus-de-oliveira/pointwise-gluing/pencil-weights.json"
       ],
       "requestFingerprint": "e123e1c434c7696324ae1c125057dce927457dbcf163bed8cbc5493b2e96296a"
+    },
+    {
+      "id": "mdo-fourth-boundary-classification-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-fourth-boundary",
+      "summary": "Exact complete path classification: a shared mixture exists iff s is at least the cubic root alpha.",
+      "detail": "Portable solver-free replay now passes. For a3=s(1-i),0<=s<=1, with archived U,b fixed and all first3 eigenvalues arbitrary complex, feasible set is[alpha,1], alpha unique positive root1808s^3+9419s^2+8398s-1400, approximately0.143106204978043899. Three rational supports prove[alpha,beta],[beta,97/100],[97/100,1], with all51 real coefficient identities and exact Bernstein signs. Coordinator cofactor dual independently regenerated: normalization(12544/5)s^3(s+4), all24 vertex values nonnegative, target32(1+3s+s^2)f(s)<0 for0<s<alpha. Separate endpoint0 dual gap3472/33125. Algebraic endpoints explicitly included; no monotonicity assumption, no pointwise MDO counterexample. Nine focused tests pass locally. Files ready for coordinator publication; immutable evidence follows.",
+      "to": null,
+      "createdAt": "2026-11-25T23:32:58.000Z",
+      "links": [],
+      "requestFingerprint": "d0c8e28812689c89fbdb629d55a29467be9e049acff7e576fe80ab739a7c8da8"
     }
   ],
   "usage": [
