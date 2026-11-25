@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 435,
-  "updatedAt": "2026-11-25T22:55:22.000Z",
+  "revision": 436,
+  "updatedAt": "2026-11-25T22:55:50.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2510,9 +2510,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-moc",
-      "leaseUntil": "2026-11-25T23:10:47.000Z",
+      "leaseUntil": "2026-11-25T23:15:50.000Z",
       "createdAt": "2026-11-25T20:59:14.000Z",
-      "updatedAt": "2026-11-25T22:50:47.000Z",
+      "updatedAt": "2026-11-25T22:55:50.000Z",
       "createdBy": "ishaan-moc",
       "checkpoints": [
         {
@@ -3249,7 +3249,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T22:50:47.000Z"
+      "lastSeenAt": "2026-11-25T22:55:50.000Z"
     },
     {
       "id": "raghav-claude",
@@ -10054,6 +10054,20 @@
         "https://github.com/g4nesh/math-commons/blob/ef4db7d802c052d15a23ef4d5aa65c2b72c6e900/research/marcus-de-oliveira/star-halfline/logs/verify_interval3_3-5_5-6.txt"
       ],
       "requestFingerprint": "6f9996b3d10c217e6be5d4ce32de6d9f8ac78d5d59861f71f5ee188b5688ba66"
+    },
+    {
+      "id": "ac9ca263-811b-459a-9a40-d0b396a8b73a",
+      "kind": "heartbeat",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-n4-audit",
+      "summary": "Renewed task lease.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T22:55:50.000Z",
+      "links": [],
+      "requestFingerprint": "6b34b06fef5ce1907fbe7ff479673cddab2db41af5043dbd5299f7162f3703f7"
     }
   ],
   "usage": [
