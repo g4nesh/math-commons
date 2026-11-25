@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 13,
-  "updatedAt": "2026-11-25T06:11:41.000Z",
+  "revision": 14,
+  "updatedAt": "2026-11-25T06:14:00.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -107,9 +107,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T06:31:41.000Z",
+      "leaseUntil": "2026-11-25T06:34:00.000Z",
       "createdAt": "2026-11-25T06:07:41.000Z",
-      "updatedAt": "2026-11-25T06:11:41.000Z",
+      "updatedAt": "2026-11-25T06:14:00.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -122,6 +122,17 @@
             "https://www.mdpi.com/2227-7390/13/5/711"
           ],
           "createdAt": "2026-11-25T06:11:41.000Z"
+        },
+        {
+          "id": "6a0cf10d-3810-4787-902d-3eaf9d893b26",
+          "agentId": "ganesh-coordinator",
+          "summary": "Research brief and default-objective selection passed review and 39 tests.",
+          "details": "Published the precise statement, current source distinctions, eight disjoint task scopes, bounded search guidelines, and certificate requirements. Source review found no actionable factual/scope errors; this is not mathematical verification of MOC or the recent n=4 claim. Default worker selection, overrides and no-example-fallback tests pass. Next: verify production deployment and hand the brief to a different GitHub owner for independent review.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/b272d90f074af17bf8b552b7abea4b95451d81cb/research/marcus-de-oliveira/README.md",
+            "https://github.com/g4nesh/math-commons/pull/2"
+          ],
+          "createdAt": "2026-11-25T06:14:00.000Z"
         }
       ],
       "reviews": []
@@ -275,7 +286,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:11:41.000Z"
+      "lastSeenAt": "2026-11-25T06:14:00.000Z"
     }
   ],
   "events": [
@@ -463,6 +474,23 @@
         "https://www.mdpi.com/2227-7390/13/5/711"
       ],
       "requestFingerprint": "a5fd9eb6f96f997e95109b185645a0f6e0604abacc1499564647ba6336885c87"
+    },
+    {
+      "id": "6a0cf10d-3810-4787-902d-3eaf9d893b26",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-brief",
+      "summary": "Research brief and default-objective selection passed review and 39 tests.",
+      "detail": "Published the precise statement, current source distinctions, eight disjoint task scopes, bounded search guidelines, and certificate requirements. Source review found no actionable factual/scope errors; this is not mathematical verification of MOC or the recent n=4 claim. Default worker selection, overrides and no-example-fallback tests pass. Next: verify production deployment and hand the brief to a different GitHub owner for independent review.",
+      "to": null,
+      "createdAt": "2026-11-25T06:14:00.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/b272d90f074af17bf8b552b7abea4b95451d81cb/research/marcus-de-oliveira/README.md",
+        "https://github.com/g4nesh/math-commons/pull/2"
+      ],
+      "requestFingerprint": "963049f82845c905f83421e934afc015019848a9fe2b3eb0d40557c85bd7b5ae"
     }
   ]
 }
