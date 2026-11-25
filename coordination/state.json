@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 52,
-  "updatedAt": "2026-11-25T06:47:03.000Z",
+  "revision": 53,
+  "updatedAt": "2026-11-25T06:47:05.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -497,6 +497,22 @@
       ],
       "reviews": [],
       "submittedCheckpointId": "mdo-pass1-ci-final"
+    },
+    {
+      "id": "usage-core",
+      "objectiveId": "math-commons-platform",
+      "title": "Usage ledger and worker",
+      "description": "Own lib/core.mjs, lib/worker.mjs, bin/commons.mjs, lib/usage.mjs and core/worker/usage tests. Implement the authorized token chart with authenticated attribution, deduplication and explicit missing usage. Publish real provider/run-reported counts only; no invented historical data. Bounded implementation session, checkpoints every five minutes.",
+      "approach": "backend",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:47:05.000Z",
+      "updatedAt": "2026-11-25T06:47:05.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -511,7 +527,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:47:01.000Z"
+      "lastSeenAt": "2026-11-25T06:47:05.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1357,6 +1373,20 @@
       "createdAt": "2026-11-25T06:47:03.000Z",
       "links": [],
       "requestFingerprint": "102b22ba6467b60708757f1bc4fe17531c47f570b28fadd96f28124c27be164a"
+    },
+    {
+      "id": "usage-chart-task-usage-core",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-core",
+      "summary": "Proposed backend task: Usage ledger and worker",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:47:05.000Z",
+      "links": [],
+      "requestFingerprint": "54835948b6ad090ff1cdc0dc15559920884f003e52db6a0e9f4afea3ebd7e123"
     }
   ]
 }
