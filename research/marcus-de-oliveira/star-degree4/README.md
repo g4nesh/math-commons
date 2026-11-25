@@ -1,7 +1,9 @@
 # Is the unitary minor inequality at t = 1 an exact degree-4 sum of squares?
 
 - **Task:** `mdo-star-degree4` (request from `mdo-star-exact-certificate`). Agent `ganesh-claude-minors` (Claude Code, model `claude-fable-5-2`), GitHub owner `g4nesh`. November 25, 2026.
-- **Status:** in progress. **No exact certificate yet.** Updated as each step lands.
+- **Status:** in progress.
+  - **Certificate at t = 1 found (Step 3).** It is positive definite exactly and satisfies the identity exactly at 1,100 fresh rational unitaries.
+  - **One step of the rigor argument is still pending:** the exact rank of the relation space at degree 4 (Step 4). Until it lands, the identity on *all* of U(4) is not fully established.
 - **Evidence levels:** marked per item. Nothing here is independently reviewed.
 
 **Target.** f₁ := g0 + 2·D[12,12] + D[13,14] ≥ 0 on U(4), with an exact certificate. Here D[S,T] = |det U[S,T]|² and g0 = B[1,1] + B[3,3] + D[14,34] − D[12,14]. More generally f_t := t·g0 + (1+t)·D[12,12] + t²·D[13,14].
@@ -41,7 +43,26 @@ So degree 4 looks exact-feasible for t from about 0.1 upward and is clearly infe
 
 **Strict feasibility.** On these amplitude spaces every block can be kept ≥ **0.012·I** with the identity exact on the Haar sample. So a rational certificate should exist.
 
+## Step 3 (done, exact computations): a rational certificate at t = 1
+
+**The certificate ([`certificate4_t1.json`](certificate4_t1.json), 190 KB).** 2,249 quartic polynomials q = A_b·m_b with integer coefficients, in 853 weight blocks, and rational symmetric matrices T_b with
+
+  g0 + 2·D[12,12] + D[13,14] = Σ_b (A_b m_b)* T_b (A_b m_b),  every T_b positive definite.
+
+**How it was built (`solve4.py 1`).**
+1. The identity at 1,100 rational unitaries is a linear system over ℚ: 5,481 unknowns, rank 821.
+2. Its reduced row echelon form was computed modulo three primes near 2³⁰ and lifted by rational reconstruction. All entries have numerators and denominators ≤ 969, and a fourth prime confirms every entry.
+3. The 4,660 free unknowns were set to the numerical strictly feasible point rounded to denominator 2²⁰; the 821 pivot unknowns follow exactly. The result is within 3.7·10⁻⁴ of the numerical point.
+4. All leading principal minors of all T_b are positive (exact rational arithmetic).
+
+**Independent check (`verify4.py certificate4_t1.json 777`).**
+- (2) Every T_b is symmetric with positive leading principal minors.
+- (3) The identity holds **exactly** at 1,100 fresh rational unitaries (a seed not used in the construction), in exact integer arithmetic.
+- (E) The evaluation functionals at those unitaries have rank 954 on the 11,208-dimensional space W₄ of conjugation-symmetric torus-invariant (4,4)-forms (rank modulo a prime, a lower bound over ℚ).
+
+**What is still missing for "on all of U(4)".** As at degree 3, one needs the dimension of W₄ restricted to U(4) to be exactly 954. (E) gives ≥ 954. The matching bound ≤ 954 needs rank K₄ ≥ 10,254 for the space K₄ spanned by unitarity relations times degree-3 monomial pairs. That computation is Step 4.
+
 ## Next steps
 
-3. Exact solve (modular row reduction with rational reconstruction), exact positive-definiteness check.
-4. Exact rank lemma at degree 4 (expected dimension 954) and an independent exact check at fresh rational unitaries.
+4. Rank of K₄ (`lemma4.py`): a 10,254 × 10,254 determinant modulo a prime.
+5. Then Theorem: f₁ ≥ 0 on U(4), and PMSH(4) for spectra with ratio 1/2 (via Theorem EQ).
