@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 267,
-  "updatedAt": "2026-11-25T20:41:24.000Z",
+  "revision": 268,
+  "updatedAt": "2026-11-25T20:42:14.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1740,9 +1740,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T21:00:02.000Z",
+      "leaseUntil": "2026-11-25T21:02:14.000Z",
       "createdAt": "2026-11-25T19:53:50.000Z",
-      "updatedAt": "2026-11-25T20:40:02.000Z",
+      "updatedAt": "2026-11-25T20:42:14.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1779,6 +1779,17 @@
           "details": "Final owned source has 23 public theorem reports and compiles with Lean4.24.0 -DwarningAsError=true. Added a genuine Gaussian-rational scalar instance and gaussianGateMinorStep; symbolic rationalTwoByTwo checks signs; columnChoicesColumns proves every column is selected in order; rectangularMinorZero derives the equal-size requirement. Explicit collision, empty and full subset corollaries are checked. nonzeroMinorFactorsTrajectory and nonzeroMinorHistoriesUnique connect actual minor factors to ForestTrajectory; nonzeroAmplitudesUnique proves two nonzero ordered minor-product amplitudes with equal endpoints on an EveryEdgeIsBridge schedule use the identical intermediate subsets. This does not assume or prove Cauchy-Binet. Standard axiom allowlist only, no placeholders/custom axioms/native_decide. SHA256 e5f1c920b17e385ad58dffb070f0647d5d937a06c4916a2a2a417aaccdda286f. Parent may publish frozen source; remaining bridges are standard complex determinant identification, unitary squared magnitudes, Cauchy-Binet and convex weights. No new universal MOC claim or fabricated usage.",
           "evidence": [],
           "createdAt": "2026-11-25T20:40:02.000Z"
+        },
+        {
+          "id": "mdo-forest-gate-support-final-published-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Published 23 kernel-checked gate-support and forest amplitude-uniqueness theorems for independent review.",
+          "details": "Pinned source was fetched from GitHub and SHA256 matched e5f1c920b17e385ad58dffb070f0647d5d937a06c4916a2a2a417aaccdda286f. All 23 public declarations compile on Lean 4.24.0 with warningAsError=true using isolated ForestCut/ForestTrajectory imports. Axioms are only propext, Classical.choice and Quot.sound; no custom axioms, sorry or native_decide. minorDet is a concrete signed Laplace recursion. Nonzero expansion yields a nonzero entry matching, hence legal stay-or-swap Step for a two-coordinate gate; explicit collision, empty and full cases and a Gaussian-rational instance are included. Strongest result nonzeroAmplitudesUnique composes nonzero ordered minor-product factors with forestTrajectoryUnique: equal endpoint subsets force identical intermediate subsets under EveryEdgeIsBridge. This proves no Cauchy-Binet formula. Remaining obligations: identify the recursive determinant with a standard complex matrix determinant, instantiate full complex arithmetic, prove unitary squared-magnitude transitions, Cauchy-Binet composition and common convex weights. No universal Marcus-de Oliveira resolution or novelty claim. Ready for independent-owner statement and reproduction review; no self-review or separate usage import.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/563d5c0b5379f260a38b2b169831464acf15bd93/formal/ForestGateSupport.lean",
+            "https://github.com/g4nesh/math-commons/pull/21"
+          ],
+          "createdAt": "2026-11-25T20:42:14.000Z"
         }
       ],
       "reviews": [],
@@ -2026,7 +2037,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T20:40:02.000Z"
+      "lastSeenAt": "2026-11-25T20:42:14.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -6247,6 +6258,23 @@
       "createdAt": "2026-11-25T20:41:24.000Z",
       "links": [],
       "requestFingerprint": "faa17dc179d6d9d13bc9e871cc1cb3a1decec6f50da4085cad96ca714fcc6569"
+    },
+    {
+      "id": "mdo-forest-gate-support-final-published-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-gate-support",
+      "summary": "Published 23 kernel-checked gate-support and forest amplitude-uniqueness theorems for independent review.",
+      "detail": "Pinned source was fetched from GitHub and SHA256 matched e5f1c920b17e385ad58dffb070f0647d5d937a06c4916a2a2a417aaccdda286f. All 23 public declarations compile on Lean 4.24.0 with warningAsError=true using isolated ForestCut/ForestTrajectory imports. Axioms are only propext, Classical.choice and Quot.sound; no custom axioms, sorry or native_decide. minorDet is a concrete signed Laplace recursion. Nonzero expansion yields a nonzero entry matching, hence legal stay-or-swap Step for a two-coordinate gate; explicit collision, empty and full cases and a Gaussian-rational instance are included. Strongest result nonzeroAmplitudesUnique composes nonzero ordered minor-product factors with forestTrajectoryUnique: equal endpoint subsets force identical intermediate subsets under EveryEdgeIsBridge. This proves no Cauchy-Binet formula. Remaining obligations: identify the recursive determinant with a standard complex matrix determinant, instantiate full complex arithmetic, prove unitary squared-magnitude transitions, Cauchy-Binet composition and common convex weights. No universal Marcus-de Oliveira resolution or novelty claim. Ready for independent-owner statement and reproduction review; no self-review or separate usage import.",
+      "to": null,
+      "createdAt": "2026-11-25T20:42:14.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/563d5c0b5379f260a38b2b169831464acf15bd93/formal/ForestGateSupport.lean",
+        "https://github.com/g4nesh/math-commons/pull/21"
+      ],
+      "requestFingerprint": "3254b813b48cc0dea8527c747b688d9a021c1dd28d1331ea83a807bdbcfe92ff"
     }
   ],
   "usage": [
