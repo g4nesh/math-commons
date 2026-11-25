@@ -5,7 +5,17 @@ Finite occupied subsets are Boolean vertex functions. Each indexed gate either
 preserves a subset or exchanges two endpoints. The finite vertex enumeration is
 split around each edge, so occupancy counts count each endpoint exactly once.
 The general uniqueness result below does not identify labeled particles: when
-both endpoints have the same occupancy, a swap is the same subset.
+both endpoints have the same occupancy, a swap is the same subset. The vertex
+enumeration is duplicate-free and exhaustive, so its cut counts are actual
+subset cardinalities.
+
+The graph hypothesis `EveryEdgeIsBridge` is stated using explicit undirected
+reachability after deleting an indexed edge; from it the code constructs each
+cut and proves all surviving edges remain on one side. Its equivalence to a
+library's acyclicity predicate and automatic construction of the finite endpoint
+enumeration certificates are not formalized. The schedule is a total Nat-indexed
+function, used only through `n`; empty/full refers to occupancy, not a claimed
+encoding of every zero-vertex graph.
 
 This file concerns the combinatorial bridge only. No complex matrices,
 exterior powers, Cauchy–Binet, amplitudes, or convex weights are formalized here.
@@ -14,10 +24,11 @@ namespace MathCommons.ForestTrajectory
 
 variable {V : Type} [DecidableEq V]
 
-/-- An edge with an explicit decomposition of the finite vertex enumeration.
-For a genuine set enumeration the caller supplies a duplicate-free `vertices`.
-The arithmetic proofs only need that the two endpoints occur exactly once. -/
+/-- An edge with an explicit decomposition of an exhaustive, duplicate-free
+finite vertex enumeration. -/
 structure Edge (vertices : List V) where
+  nodup : vertices.Nodup
+  complete : ∀ x, x ∈ vertices
   left : V
   right : V
   distinct : left ≠ right
@@ -121,6 +132,18 @@ def Trajectory {vertices : List V} (edges : Nat → Edge vertices) (n : Nat)
     (history : Nat → Subset V) : Prop :=
   ∀ k, k < n → Step (edges k) (history k) (history (k + 1))
 
+/-- Stay-or-swap evolution keeps the occupied subset cardinality fixed. -/
+theorem trajectoryPreservesCardinality {vertices : List V}
+    (edges : Nat → Edge vertices) (n : Nat) (history : Nat → Subset V)
+    (path : Trajectory edges n history) (k : Nat) (within : k ≤ n) :
+    cutCount vertices (fun _ => true) (history k) =
+      cutCount vertices (fun _ => true) (history 0) := by
+  apply ForestCut.constantOnInterval
+    (fun t => cutCount vertices (fun _ => true) (history t)) 0 k (by omega)
+  intro t _ before
+  exact stepPreservesNoncrossingCut (edges t) (fun _ => true) _ _ rfl
+    (path t (by omega))
+
 /-- The one-opportunity hypothesis is derived from actual subset transitions. -/
 theorem subsetCountsSingleOpportunity {vertices : List V}
     (edges : Nat → Edge vertices) (n : Nat) (cuts : CutCertificate edges n)
@@ -160,6 +183,69 @@ theorem trajectoryUnique {vertices : List V}
     · rw [previous]; exact pathB k hk
     · exact naturalCounts
 
+/-- Undirected reachability using the first `n` indexed edges except `removed`.
+The constructors explicitly provide reflexivity, symmetry and concatenation. -/
+inductive ReachWithout {vertices : List V} (edges : Nat → Edge vertices)
+    (n removed : Nat) : V → V → Prop where
+  | refl (x : V) : ReachWithout edges n removed x x
+  | edge (k : Nat) (within : k < n) (different : k ≠ removed) :
+      ReachWithout edges n removed (edges k).left (edges k).right
+  | symm {x y : V} : ReachWithout edges n removed x y → ReachWithout edges n removed y x
+  | trans {x y z : V} : ReachWithout edges n removed x y →
+      ReachWithout edges n removed y z → ReachWithout edges n removed x z
+
+/-- The explicit forest hypothesis used here: every indexed edge disconnects
+its endpoints when removed. This excludes repeated parallel edges as well.
+An equivalence with a library definition of acyclic graphs is not proved here. -/
+def EveryEdgeIsBridge {vertices : List V} (edges : Nat → Edge vertices) (n : Nat) : Prop :=
+  ∀ j, j < n → ¬ ReachWithout edges n j (edges j).left (edges j).right
+
+/-- The side of the deleted-edge cut containing that edge's left endpoint. -/
+noncomputable def edgeSide {vertices : List V} (edges : Nat → Edge vertices)
+    (n j : Nat) : Subset V := by
+  classical
+  exact fun x => decide (ReachWithout edges n j (edges j).left x)
+
+omit [DecidableEq V] in
+theorem edgeSideSeparates {vertices : List V} (edges : Nat → Edge vertices)
+    (n : Nat) (bridges : EveryEdgeIsBridge edges n) (j : Nat) (hj : j < n) :
+    edgeSide edges n j (edges j).left ≠ edgeSide edges n j (edges j).right := by
+  have left : ReachWithout edges n j (edges j).left (edges j).left := .refl _
+  have right := bridges j hj
+  simp [edgeSide, left, right]
+
+omit [DecidableEq V] in
+theorem survivingEdgeSameSide {vertices : List V} (edges : Nat → Edge vertices)
+    (n j k : Nat) (hk : k < n) (different : k ≠ j) :
+    edgeSide edges n j (edges k).left = edgeSide edges n j (edges k).right := by
+  have adjacent : ReachWithout edges n j (edges k).left (edges k).right := .edge k hk different
+  have iffReach : ReachWithout edges n j (edges j).left (edges k).left ↔
+      ReachWithout edges n j (edges j).left (edges k).right :=
+    ⟨fun reach => .trans reach adjacent, fun reach => .trans reach (.symm adjacent)⟩
+  by_cases left : ReachWithout edges n j (edges j).left (edges k).left
+  · have right := iffReach.mp left
+    simp [edgeSide, left, right]
+  · have right : ¬ ReachWithout edges n j (edges j).left (edges k).right :=
+      fun reach => left (iffReach.mpr reach)
+    simp [edgeSide, left, right]
+
+/-- Constructs, rather than postulates, all cut certificates from reachability. -/
+noncomputable def cutsOfBridges {vertices : List V} (edges : Nat → Edge vertices)
+    (n : Nat) (bridges : EveryEdgeIsBridge edges n) : CutCertificate edges n where
+  side := edgeSide edges n
+  separates := edgeSideSeparates edges n bridges
+  other := fun j _ k hk different => survivingEdgeSameSide edges n j k hk different
+
+/-- Strongest result: for an indexed finite graph in which deleting each edge
+disconnects its endpoints, two stay-or-swap subset histories with equal endpoints
+agree at every time in the finite interval. No separate cut data is assumed. -/
+theorem forestTrajectoryUnique {vertices : List V}
+    (edges : Nat → Edge vertices) (n : Nat) (bridges : EveryEdgeIsBridge edges n)
+    (a b : Nat → Subset V) (pathA : Trajectory edges n a) (pathB : Trajectory edges n b)
+    (start : a 0 = b 0) (finish : a n = b n) :
+    ∀ k, k ≤ n → a k = b k :=
+  trajectoryUnique edges n (cutsOfBridges edges n bridges) a b pathA pathB start finish
+
 #print axioms swapAtLeft
 #print axioms swapAtRight
 #print axioms swapCollision
@@ -171,7 +257,11 @@ theorem trajectoryUnique {vertices : List V}
 #print axioms stepPreservesNoncrossingCut
 #print axioms equalCountSwapCollision
 #print axioms nextSubsetUnique
+#print axioms trajectoryPreservesCardinality
 #print axioms subsetCountsSingleOpportunity
 #print axioms trajectoryUnique
+#print axioms edgeSideSeparates
+#print axioms survivingEdgeSameSide
+#print axioms forestTrajectoryUnique
 
 end MathCommons.ForestTrajectory
