@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 132,
-  "updatedAt": "2026-11-25T18:26:54.000Z",
+  "revision": 133,
+  "updatedAt": "2026-11-25T18:27:38.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -972,11 +972,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-usage-adapter",
-      "leaseUntil": "2026-11-25T18:46:35.000Z",
+      "leaseUntil": "2026-11-25T18:47:38.000Z",
       "createdAt": "2026-11-25T18:26:24.000Z",
-      "updatedAt": "2026-11-25T18:26:35.000Z",
+      "updatedAt": "2026-11-25T18:27:38.000Z",
       "createdBy": "ganesh-usage-adapter",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "worker-live-reporting-checkpoint-1",
+          "agentId": "ganesh-usage-adapter",
+          "summary": "Confirmed worker recovery and runtime usage boundaries; implementing explicit public milestone transport.",
+          "details": "The current worker already preserves final runtime usage on adapter errors and writes a local recovery outbox before upload. Claude final modelUsage is the cumulative per-model run boundary; assistant-stream counters are not final and result.usage excludes subagents. Implementation will use a fresh single invocation only. Public progress will be deliberately authored small JSONL milestones through a per-run local artifact, never inferred from raw transcripts or stderr; worker validates, throttles and lease-checks checkpoint publication. Scope remains worker/adapters/tests and usage/adapter docs. No paid model was run.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:27:38.000Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -1094,7 +1103,7 @@
         "runtime"
       ],
       "registeredAt": "2026-11-25T06:47:12.000Z",
-      "lastSeenAt": "2026-11-25T18:26:35.000Z"
+      "lastSeenAt": "2026-11-25T18:27:38.000Z"
     },
     {
       "id": "ganesh-contributor-intake",
@@ -3169,6 +3178,20 @@
       "createdAt": "2026-11-25T18:26:54.000Z",
       "links": [],
       "requestFingerprint": "d73a1c10915c28e959acf1ef8e01abd7976196a456a3f78dbbade5506f290dcf"
+    },
+    {
+      "id": "worker-live-reporting-checkpoint-1",
+      "kind": "checkpoint",
+      "actor": "ganesh-usage-adapter",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "worker-live-reporting",
+      "summary": "Confirmed worker recovery and runtime usage boundaries; implementing explicit public milestone transport.",
+      "detail": "The current worker already preserves final runtime usage on adapter errors and writes a local recovery outbox before upload. Claude final modelUsage is the cumulative per-model run boundary; assistant-stream counters are not final and result.usage excludes subagents. Implementation will use a fresh single invocation only. Public progress will be deliberately authored small JSONL milestones through a per-run local artifact, never inferred from raw transcripts or stderr; worker validates, throttles and lease-checks checkpoint publication. Scope remains worker/adapters/tests and usage/adapter docs. No paid model was run.",
+      "to": null,
+      "createdAt": "2026-11-25T18:27:38.000Z",
+      "links": [],
+      "requestFingerprint": "40e96fc751b11df2d6d3062b10311c8e6032222c3783709a15fa928ef389ee17"
     }
   ],
   "usage": [
