@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 23,
-  "updatedAt": "2026-11-25T06:31:34.000Z",
+  "revision": 24,
+  "updatedAt": "2026-11-25T06:31:35.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -172,12 +172,12 @@
       "title": "Find exact abstractions and equivalent formulations",
       "description": "Prove the diagonal-unitary-orbit and support-function formulations; investigate scaling, opposite shifts, symmetries, and reductions without assuming commutativity or nonsingular sums. Track both implications and boundary cases. Own research/marcus-de-oliveira/reductions/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "abstraction",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-reductions",
+      "leaseUntil": "2026-11-25T06:51:35.000Z",
       "createdAt": "2026-11-25T06:11:31.000Z",
-      "updatedAt": "2026-11-25T06:11:31.000Z",
+      "updatedAt": "2026-11-25T06:31:35.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -343,7 +343,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T06:31:34.000Z"
+      "lastSeenAt": "2026-11-25T06:31:35.000Z"
     }
   ],
   "events": [
@@ -682,6 +682,20 @@
       "createdAt": "2026-11-25T06:31:34.000Z",
       "links": [],
       "requestFingerprint": "38a56445ec91f31039622227a1ecc8023076a54726ae712c9af6474433f97c96"
+    },
+    {
+      "id": "mdo-pass1-ganesh-reductions-claim",
+      "kind": "claim",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-reductions",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:31:35.000Z",
+      "links": [],
+      "requestFingerprint": "0d85bf0992a3624119552b3f4accbcbd14a8c8146e192287d33925d03e0e83fa"
     }
   ]
 }
