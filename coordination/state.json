@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 475,
-  "updatedAt": "2026-11-25T23:43:44.000Z",
+  "revision": 476,
+  "updatedAt": "2026-11-25T23:43:47.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3304,12 +3304,12 @@
       "title": "Lift lower-dimensional proofs by exact pole compression and injective interlacing weights",
       "description": "Use exact determinant factorization at an eigenvalue of B, conditional on a normal compression of the shifted inverse of A. Derive constructive interlacing weights when the shifted inverse is Hermitian, recover the known three-exception theorem, and determine when the merged order-four cross-ratio certificates lift to higher dimensions with four freely varying exceptions. Document any singular limit and conditional dependency.",
       "approach": "abstraction",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-coordinator",
+      "leaseUntil": "2026-11-26T00:03:47.000Z",
       "createdAt": "2026-11-25T23:42:51.000Z",
-      "updatedAt": "2026-11-25T23:42:51.000Z",
+      "updatedAt": "2026-11-25T23:43:47.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -3330,7 +3330,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:43:44.000Z"
+      "lastSeenAt": "2026-11-25T23:43:47.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -10904,6 +10904,20 @@
         "https://github.com/g4nesh/math-commons/blob/526c7eac0773c01efc63d73509aa4e59fdd3035e/research/marcus-de-oliveira/pointwise-gluing/check.py"
       ],
       "requestFingerprint": "5fb70f741bb255242ca37a5048730f93e44df83b0b348520d60983d9df76ddac"
+    },
+    {
+      "id": "exact-pole-claim",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-exact-pole-compression",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:43:47.000Z",
+      "links": [],
+      "requestFingerprint": "8fd26e0119514d8afef4a0636a402435cc0e29aca62fa0927418bfbb034c3bdc"
     }
   ],
   "usage": [
