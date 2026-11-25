@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 201,
-  "updatedAt": "2026-11-25T19:03:49.000Z",
+  "revision": 202,
+  "updatedAt": "2026-11-25T19:03:52.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1441,11 +1441,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T19:23:47.000Z",
+      "leaseUntil": "2026-11-25T19:23:52.000Z",
       "createdAt": "2026-11-25T18:56:46.000Z",
-      "updatedAt": "2026-11-25T19:03:47.000Z",
+      "updatedAt": "2026-11-25T19:03:52.000Z",
       "createdBy": "ganesh-claude-minors",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "2f4cd432-4961-4337-a6d1-044da40dd792",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Claimed. Plan: reduce PMSH(4) to a one-parameter polytope projection; test whether trivial minor-positivity facets alone suffice, then make it exact.",
+          "details": "Approach (constructive, aiming at a complete written proof):\n\n1. Exact reduction. By pmsh.md H3, a PMSH certificate for H = U D_c U* must be a Birkhoff decomposition of B = |U|^2. Given B, only two extra linear conditions remain. They live on the 'pairing' level: for the three perfect matchings M of positions, E_lambda[c_{pi(s)}c_{pi(t)} + c_{pi(u)}c_{pi(v)}] = det H[st] + det H[uv].\n   - So PMSH(4) depends on c only through the ratio r = (p_A - p_B)/(p_B - p_C) of the eigen-matching sums. This is one real parameter.\n2. Sufficient condition to test: let Q_triv be the affine span of the compound polytope Q cut by the TRIVIAL inequalities only (all squared 1x1 and 2x2 minors >= 0). Every unitary lies in Q_triv. If the projection Phi_c(Q_triv) equals Phi_c(Q), PMSH(4) holds for that c and ALL U.\n   - Checkable by one LP per facet of Phi_c(Q), and exactly in rational arithmetic for rational r.\n3. If (2) holds for all r, turn it into a proof via a parametric analysis in r.\n\nBudget: about 2 hours wall-clock, at most 3 local process-hours, no cloud.\nBranch: claude/mdo-pmsh-4. Owned path: research/marcus-de-oliveira/pmsh/.",
+          "evidence": [],
+          "createdAt": "2026-11-25T19:03:52.000Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -1601,7 +1610,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T19:03:47.000Z"
+      "lastSeenAt": "2026-11-25T19:03:52.000Z"
     }
   ],
   "events": [
@@ -4695,6 +4704,20 @@
       "createdAt": "2026-11-25T19:03:49.000Z",
       "links": [],
       "requestFingerprint": "3be61f4712bf3b0c474b23254c8ca59b5a4f14e88ff8530ba86844929ae8af83"
+    },
+    {
+      "id": "2f4cd432-4961-4337-a6d1-044da40dd792",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pmsh-4",
+      "summary": "Claimed. Plan: reduce PMSH(4) to a one-parameter polytope projection; test whether trivial minor-positivity facets alone suffice, then make it exact.",
+      "detail": "Approach (constructive, aiming at a complete written proof):\n\n1. Exact reduction. By pmsh.md H3, a PMSH certificate for H = U D_c U* must be a Birkhoff decomposition of B = |U|^2. Given B, only two extra linear conditions remain. They live on the 'pairing' level: for the three perfect matchings M of positions, E_lambda[c_{pi(s)}c_{pi(t)} + c_{pi(u)}c_{pi(v)}] = det H[st] + det H[uv].\n   - So PMSH(4) depends on c only through the ratio r = (p_A - p_B)/(p_B - p_C) of the eigen-matching sums. This is one real parameter.\n2. Sufficient condition to test: let Q_triv be the affine span of the compound polytope Q cut by the TRIVIAL inequalities only (all squared 1x1 and 2x2 minors >= 0). Every unitary lies in Q_triv. If the projection Phi_c(Q_triv) equals Phi_c(Q), PMSH(4) holds for that c and ALL U.\n   - Checkable by one LP per facet of Phi_c(Q), and exactly in rational arithmetic for rational r.\n3. If (2) holds for all r, turn it into a proof via a parametric analysis in r.\n\nBudget: about 2 hours wall-clock, at most 3 local process-hours, no cloud.\nBranch: claude/mdo-pmsh-4. Owned path: research/marcus-de-oliveira/pmsh/.",
+      "to": null,
+      "createdAt": "2026-11-25T19:03:52.000Z",
+      "links": [],
+      "requestFingerprint": "3ea80b32f289a0b212685c0660b8859d2e03ded9acd569deaec1b3a8e5389ba0"
     }
   ],
   "usage": [
