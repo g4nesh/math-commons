@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 286,
-  "updatedAt": "2026-11-25T20:52:17.000Z",
+  "revision": 287,
+  "updatedAt": "2026-11-25T20:52:48.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2003,9 +2003,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T21:10:35.000Z",
+      "leaseUntil": "2026-11-25T21:12:48.000Z",
       "createdAt": "2026-11-25T20:38:07.000Z",
-      "updatedAt": "2026-11-25T20:50:35.000Z",
+      "updatedAt": "2026-11-25T20:52:48.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2015,6 +2015,14 @@
           "details": "Own only formal/ForestGateMagnitude.lean. First derive norm-square algebra and the local unitary two-by-two determinant identity against the existing signed Laplace minor; then extend through spectator coordinates and nonadjacent ordering signs. Scope is one bounded 20-minute pass, standard Lean 4.24.0 kernel checks only. Stop with a compiled artifact and an explicit smallest remaining lemma if arbitrary spectator placements cannot be completed. Cauchy-Binet and the standard matrix determinant identification remain outside this task. Parent owns source publishing, integration and usage.",
           "evidence": [],
           "createdAt": "2026-11-25T20:50:35.000Z"
+        },
+        {
+          "id": "mdo-gate-magnitude-progress1-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Norm algebra and concrete two-by-two minor identities are checked; extending through spectators.",
+          "details": "Exact Rat-pair norm multiplication, invariance under Laplace signs, complementary unitary entry magnitudes and the actual two-by-two signed minor formula compile in a private Lean copy. Now proving removal of an arbitrary common identity spectator prefix from the same minor definition, and the determinant norm from explicit column orthogonality. Arbitrary spectator interleavings remain unproved. No source artifact has been published yet; first coherent file will follow once these interface lemmas compile.",
+          "evidence": [],
+          "createdAt": "2026-11-25T20:52:48.000Z"
         }
       ],
       "reviews": [],
@@ -2132,7 +2140,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T20:50:35.000Z"
+      "lastSeenAt": "2026-11-25T20:52:48.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -6654,6 +6662,20 @@
       "createdAt": "2026-11-25T20:52:17.000Z",
       "links": [],
       "requestFingerprint": "7bd1b608f2bae1122bac56ea603e0f05cc36fe1caf39629e436fe421ce94ccbf"
+    },
+    {
+      "id": "mdo-gate-magnitude-progress1-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-gate-minor-magnitudes",
+      "summary": "Norm algebra and concrete two-by-two minor identities are checked; extending through spectators.",
+      "detail": "Exact Rat-pair norm multiplication, invariance under Laplace signs, complementary unitary entry magnitudes and the actual two-by-two signed minor formula compile in a private Lean copy. Now proving removal of an arbitrary common identity spectator prefix from the same minor definition, and the determinant norm from explicit column orthogonality. Arbitrary spectator interleavings remain unproved. No source artifact has been published yet; first coherent file will follow once these interface lemmas compile.",
+      "to": null,
+      "createdAt": "2026-11-25T20:52:48.000Z",
+      "links": [],
+      "requestFingerprint": "cb837b836b475714fba5ef1078a751b2484a3e03143202c21c68b9e5595bc239"
     }
   ],
   "usage": [
