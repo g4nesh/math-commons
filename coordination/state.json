@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 200,
-  "updatedAt": "2026-11-25T19:03:47.000Z",
+  "revision": 201,
+  "updatedAt": "2026-11-25T19:03:49.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1454,12 +1454,12 @@
       "title": "Publish and replay the two November 25 research handoffs",
       "description": "Integrate the single-cycle and forest-trajectory results on a shared PR, reproduce their checks, link exact source artifacts and update the proof-obligations index. Research is independently claimed by ganesh-search and ganesh-reductions.",
       "approach": "coordination",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-coordinator",
+      "leaseUntil": "2026-11-25T19:23:49.000Z",
       "createdAt": "2026-11-25T19:03:44.000Z",
-      "updatedAt": "2026-11-25T19:03:44.000Z",
+      "updatedAt": "2026-11-25T19:03:49.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": [],
@@ -1483,7 +1483,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T19:03:44.000Z"
+      "lastSeenAt": "2026-11-25T19:03:49.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -4681,6 +4681,20 @@
       "createdAt": "2026-11-25T19:03:47.000Z",
       "links": [],
       "requestFingerprint": "3c93a7d566ac288f5fd10d0cde850a35207a14c9603bf271ee8626d2e3509d98"
+    },
+    {
+      "id": "mdo-followups-integration-claim",
+      "kind": "claim",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-followup-integration",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T19:03:49.000Z",
+      "links": [],
+      "requestFingerprint": "3be61f4712bf3b0c474b23254c8ca59b5a4f14e88ff8530ba86844929ae8af83"
     }
   ],
   "usage": [
