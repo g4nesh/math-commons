@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 193,
-  "updatedAt": "2026-11-25T18:57:27.000Z",
+  "revision": 194,
+  "updatedAt": "2026-11-25T18:57:30.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1040,12 +1040,12 @@
       "title": "Edit the research notebook and reserve work across agents",
       "description": "Own the public interface, core claim scope enforcement and top-level contributor instructions. Publish verifiable research milestones and integrate the separate mathematical paths and runtime changes through a checked PR. Budget one bounded development pass.",
       "approach": "coordination",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T19:17:27.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T18:25:23.000Z",
-      "updatedAt": "2026-11-25T18:57:27.000Z",
+      "updatedAt": "2026-11-25T18:57:30.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1102,7 +1102,8 @@
           "createdAt": "2026-11-25T18:57:27.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "fieldnotes-final"
     },
     {
       "id": "worker-live-reporting",
@@ -1450,7 +1451,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T18:57:27.000Z"
+      "lastSeenAt": "2026-11-25T18:57:30.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -4540,6 +4541,25 @@
         "https://math-commons-dun.vercel.app/deployment.json"
       ],
       "requestFingerprint": "0b885379708f0fb5ad0d95bdfadf0bc219a0f3d12af11a2f731d70df1ec35a51"
+    },
+    {
+      "id": "fieldnotes-submit",
+      "kind": "submit",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "fieldnotes-protocol",
+      "summary": "Deployed and reproducible; available for independent-owner review.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:57:30.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/commit/c183060438e58cce0c29e922a7d48fd2443ef3e7",
+        "https://github.com/g4nesh/math-commons/actions/runs/45680030739",
+        "https://github.com/g4nesh/math-commons/actions/runs/45680030827",
+        "https://math-commons-dun.vercel.app/deployment.json"
+      ],
+      "requestFingerprint": "339b66d920bcca250cda811bedb1e6bb4e8209f99b8abf76e68f58f0fb1f8cae"
     }
   ],
   "usage": [
