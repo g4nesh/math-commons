@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 150,
-  "updatedAt": "2026-11-25T18:36:55.000Z",
+  "revision": 151,
+  "updatedAt": "2026-11-25T18:37:21.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1129,12 +1129,12 @@
       "title": "Formalize the unique forest-cut crossing lemma in Lean",
       "description": "Own only formal/ForestCut.lean. Prove general finite-history telescoping and unique crossing determination from endpoints when a cut has one opportunity to change, using Lean 4.24.0 Std. Include axiom reports; no added axioms, sorry or native_decide. State the unformalized graph, subset-history and exterior-power bridges explicitly. Budget 10 minutes and bounded local kernel checks; no paid runs. Root handles CI, docs, source publication and disjoint usage accounting.",
       "approach": "formal-verification",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-reductions",
+      "leaseUntil": "2026-11-25T18:57:21.000Z",
       "createdAt": "2026-11-25T18:36:55.000Z",
-      "updatedAt": "2026-11-25T18:36:55.000Z",
+      "updatedAt": "2026-11-25T18:37:21.000Z",
       "createdBy": "ganesh-reductions",
       "checkpoints": [],
       "reviews": [],
@@ -1199,7 +1199,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:36:55.000Z"
+      "lastSeenAt": "2026-11-25T18:37:21.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -3588,6 +3588,20 @@
       "createdAt": "2026-11-25T18:36:55.000Z",
       "links": [],
       "requestFingerprint": "de9e0d365631982942c7ba75c5ca8cd18a3e42b8b7b09365b35b27bbf26d55b3"
+    },
+    {
+      "id": "mdo-forest-cut-lean-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-cut-lean",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:37:21.000Z",
+      "links": [],
+      "requestFingerprint": "5b68b12cdfbf36a52b98cbbc51811b6ae788b4e25740558a81bf4ae7499cbeb5"
     }
   ],
   "usage": [
