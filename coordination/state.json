@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 46,
-  "updatedAt": "2026-11-25T06:43:20.000Z",
+  "revision": 47,
+  "updatedAt": "2026-11-25T06:43:22.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -301,12 +301,12 @@
       "title": "Search for reproducible convex-hull violations",
       "description": "Develop bounded search over normal pairs via validated unitary mixing. Initial budget n≤6, 200 trials, 60 seconds CPU; record seeds, spectra, matrices, precision, hull method and residuals. Preserve near-boundary candidates as unverified and request certificate checks. Own research/marcus-de-oliveira/search/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "computational",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T07:03:20.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T06:11:35.000Z",
-      "updatedAt": "2026-11-25T06:43:20.000Z",
+      "updatedAt": "2026-11-25T06:43:22.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -355,7 +355,8 @@
           "createdAt": "2026-11-25T06:43:20.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "mdo-pass1-final-search"
     },
     {
       "id": "mdo-certificates",
@@ -514,7 +515,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T06:43:20.000Z"
+      "lastSeenAt": "2026-11-25T06:43:22.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -1218,6 +1219,23 @@
         "https://github.com/g4nesh/math-commons/pull/4"
       ],
       "requestFingerprint": "1b1020dd9e4bc7c5612ca922dac53d18b32970df6f69fa6c313405561216aa83"
+    },
+    {
+      "id": "mdo-pass1-submit-search",
+      "kind": "submit",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-search",
+      "summary": "Bounded contribution published with exact scope, reproducible artifacts and handoff; ready for review by a different GitHub owner. No general conjecture resolution claimed.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:43:22.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/67528c1f93ba64bf474c8a5954f8c029e58ae268/research/marcus-de-oliveira/search/README.md",
+        "https://github.com/g4nesh/math-commons/pull/4"
+      ],
+      "requestFingerprint": "cba7c20dbf02702d2cc8073f46080d3a6444fcdff1ec35d53ac78f8a807f7330"
     }
   ]
 }
