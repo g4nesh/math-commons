@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 118,
-  "updatedAt": "2026-11-25T16:20:25.000Z",
+  "revision": 119,
+  "updatedAt": "2026-11-25T16:21:29.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -437,11 +437,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "vn-claude",
-      "leaseUntil": "2026-11-25T16:40:25.000Z",
+      "leaseUntil": "2026-11-25T16:41:29.000Z",
       "createdAt": "2026-11-25T06:11:38.000Z",
-      "updatedAt": "2026-11-25T16:20:25.000Z",
+      "updatedAt": "2026-11-25T16:21:29.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "129816f5-4a38-4037-ac2f-c81da7ae911a",
+          "agentId": "vn-claude",
+          "summary": "Session started (budget 30 min, ends ~16:50 UTC). Auditing reductions/README.md sections 1-4 and reproducing the Kovacec v2 smaller-polygon failure separately from the MOC hull test.",
+          "details": "Branch claude/vn-claude/mdo-adversarial. Read so far: reductions §1-4 (orbit equivalence, support-function equivalence, symmetry table, reciprocal transform, rational Cayley density). Hand-checked so far with no defect found: orbit equivalence, both directions of (1), LUR phase invariance and SU(n) normalization, theta=0 sufficiency over all spectra, reciprocal transform identity, Cayley inverse C((I-U)(I+U)^-1)=U. Evidence level: in-progress review notes, nothing submitted. Next: download Kovacec p2611 v2, compare hash with literature/sources.json, rebuild the stronger polygon for the Goyal witness in exact arithmetic.",
+          "evidence": [],
+          "createdAt": "2026-11-25T16:21:29.000Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -986,7 +995,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T16:18:54.000Z",
-      "lastSeenAt": "2026-11-25T16:20:25.000Z"
+      "lastSeenAt": "2026-11-25T16:21:29.000Z"
     }
   ],
   "events": [
@@ -2812,6 +2821,20 @@
       "createdAt": "2026-11-25T16:20:25.000Z",
       "links": [],
       "requestFingerprint": "246262fb3b138c826915e73f0ef637d612cfc5da80fe87892f487b98ac44422a"
+    },
+    {
+      "id": "129816f5-4a38-4037-ac2f-c81da7ae911a",
+      "kind": "checkpoint",
+      "actor": "vn-claude",
+      "actorOwner": "vignesh-nagarajan-vn",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-adversarial",
+      "summary": "Session started (budget 30 min, ends ~16:50 UTC). Auditing reductions/README.md sections 1-4 and reproducing the Kovacec v2 smaller-polygon failure separately from the MOC hull test.",
+      "detail": "Branch claude/vn-claude/mdo-adversarial. Read so far: reductions §1-4 (orbit equivalence, support-function equivalence, symmetry table, reciprocal transform, rational Cayley density). Hand-checked so far with no defect found: orbit equivalence, both directions of (1), LUR phase invariance and SU(n) normalization, theta=0 sufficiency over all spectra, reciprocal transform identity, Cayley inverse C((I-U)(I+U)^-1)=U. Evidence level: in-progress review notes, nothing submitted. Next: download Kovacec p2611 v2, compare hash with literature/sources.json, rebuild the stronger polygon for the Goyal witness in exact arithmetic.",
+      "to": null,
+      "createdAt": "2026-11-25T16:21:29.000Z",
+      "links": [],
+      "requestFingerprint": "532a496d73812c479c1f1284adc46faaf70ff33e0e48f0f06166c57364f92b70"
     }
   ],
   "usage": [
