@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 459,
-  "updatedAt": "2026-11-25T23:32:58.000Z",
+  "revision": 460,
+  "updatedAt": "2026-11-25T23:33:54.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2487,9 +2487,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T23:49:11.000Z",
+      "leaseUntil": "2026-11-25T23:53:54.000Z",
       "createdAt": "2026-11-25T20:56:29.000Z",
-      "updatedAt": "2026-11-25T23:29:21.000Z",
+      "updatedAt": "2026-11-25T23:33:54.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -2499,6 +2499,14 @@
           "details": "Own only research/marcus-de-oliveira/star-small-ratio. The first claim was refused by STATE_CAPACITY; it now succeeded after maintainer repair, before repository edits. PR30 now covers f_t for t>=1/5; this route targets the remaining t->0 behavior, not another bounded-degree interval. The pointwise optimizing parameter is t*=sqrt(D[12,12]/D[13,14]) when both minors are nonzero. Scratch derivation gives an explicit SOS on D[12,12]=0 and candidate quantitative gap g0 >= B11*B12*B14/(B11+B12). All 432 fixed exact Gaussian-rational boundary fixtures (424 genuinely complex) passed the identity and gap checks in 0.57 CPU seconds. Next: write the proof with p=0/q=0 cases, verify a perturbation extension near this boundary, and expose the lower-dimensional zero-entry strata left unresolved. This is a partial analytic route, not a proof of the full star inequality; original budget at most60 minutes.",
           "evidence": [],
           "createdAt": "2026-11-25T23:29:11.000Z"
+        },
+        {
+          "id": "mdo-star-small-ratio-proof-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Analytic boundary gap and explicit positive-width small-minor region are written and checked.",
+          "details": "README now proves g0>=K/P on A=0, with K=B11*B12*B14 and P=B11+B12; p=0 and q=0 receive direct formulas. A fixed-first-row unitary rotation plus a Lipschitz estimate gives g0>=K/P-7*sqrt(A/P), hence 49*P*A<=K^2 implies g0>=0 and star. This is a nonuniform region, not every small A/C. A same-owner sibling checked the algebra, denominator cases and perturbation proof without finding a gap; that is not independent review. Exact standard-library replay: 432 boundary cases, 144 nonzero-A perturbations, 32 denominator-degenerate cases, 608 total, zero failures in 0.87 CPU seconds. All 96 perturbations meeting the sufficient condition also have C>0 and t*=sqrt(A/C)<1/5, so the new region includes points beyond the inspected interval certificate. Parent may publish coherent files now. Next bounded step: inspect the zero-entry strata where the uniform boundary gap vanishes and record exact remaining limitations.",
+          "evidence": [],
+          "createdAt": "2026-11-25T23:33:54.000Z"
         }
       ],
       "reviews": [],
@@ -3245,7 +3253,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T23:29:21.000Z"
+      "lastSeenAt": "2026-11-25T23:33:54.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -10522,6 +10530,20 @@
       "createdAt": "2026-11-25T23:32:58.000Z",
       "links": [],
       "requestFingerprint": "d0c8e28812689c89fbdb629d55a29467be9e049acff7e576fe80ab739a7c8da8"
+    },
+    {
+      "id": "mdo-star-small-ratio-proof-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-small-ratio",
+      "summary": "Analytic boundary gap and explicit positive-width small-minor region are written and checked.",
+      "detail": "README now proves g0>=K/P on A=0, with K=B11*B12*B14 and P=B11+B12; p=0 and q=0 receive direct formulas. A fixed-first-row unitary rotation plus a Lipschitz estimate gives g0>=K/P-7*sqrt(A/P), hence 49*P*A<=K^2 implies g0>=0 and star. This is a nonuniform region, not every small A/C. A same-owner sibling checked the algebra, denominator cases and perturbation proof without finding a gap; that is not independent review. Exact standard-library replay: 432 boundary cases, 144 nonzero-A perturbations, 32 denominator-degenerate cases, 608 total, zero failures in 0.87 CPU seconds. All 96 perturbations meeting the sufficient condition also have C>0 and t*=sqrt(A/C)<1/5, so the new region includes points beyond the inspected interval certificate. Parent may publish coherent files now. Next bounded step: inspect the zero-entry strata where the uniform boundary gap vanishes and record exact remaining limitations.",
+      "to": null,
+      "createdAt": "2026-11-25T23:33:54.000Z",
+      "links": [],
+      "requestFingerprint": "4e7baac990e9caff81e161ab74c60b175f15f09cb6d0dfdd9e70b506884d28ba"
     }
   ],
   "usage": [
