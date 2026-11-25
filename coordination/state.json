@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 135,
-  "updatedAt": "2026-11-25T18:28:35.000Z",
+  "revision": 136,
+  "updatedAt": "2026-11-25T18:28:48.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -316,11 +316,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T18:47:58.000Z",
+      "leaseUntil": "2026-11-25T18:48:48.000Z",
       "createdAt": "2026-11-25T06:11:34.000Z",
-      "updatedAt": "2026-11-25T18:27:58.000Z",
+      "updatedAt": "2026-11-25T18:28:48.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-baselines-forest-start-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Starting exact rotation baseline and a forest-supported extension.",
+          "details": "Scope is research/marcus-de-oliveira/baselines/ only. Read current reductions, minors and adversarial artifacts: the single Givens segment identity and general squared-minor framework already exist; no forest-product theorem was found. I will give full arbitrary-complex disjoint-block weights, then test and prove the stronger family of ordered two-coordinate unitary gates using each edge of a forest once. The proposed mechanism is uniqueness of subset trajectories across forest cuts; cyclic interference is an explicit falsification target. Budget: at most 25 minutes wall time from this checkpoint, fixed exact rational fixtures with n at most 6 and at most 60 seconds local CPU, no paid/cloud runs or randomized search. Same-owner checks only, no novelty or universal-MOC claim. Runtime token counters are not exposed to this child; usage is unknown and must not be estimated or double-counted with parent aggregates.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:28:48.000Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -1070,7 +1079,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T18:27:58.000Z"
+      "lastSeenAt": "2026-11-25T18:28:48.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -3235,6 +3244,20 @@
       "createdAt": "2026-11-25T18:28:35.000Z",
       "links": [],
       "requestFingerprint": "eb643cd563416cb91c59a1821e333b60133087a3fc06824fe45a38a6fcc50f7d"
+    },
+    {
+      "id": "mdo-baselines-forest-start-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-baselines",
+      "summary": "Starting exact rotation baseline and a forest-supported extension.",
+      "detail": "Scope is research/marcus-de-oliveira/baselines/ only. Read current reductions, minors and adversarial artifacts: the single Givens segment identity and general squared-minor framework already exist; no forest-product theorem was found. I will give full arbitrary-complex disjoint-block weights, then test and prove the stronger family of ordered two-coordinate unitary gates using each edge of a forest once. The proposed mechanism is uniqueness of subset trajectories across forest cuts; cyclic interference is an explicit falsification target. Budget: at most 25 minutes wall time from this checkpoint, fixed exact rational fixtures with n at most 6 and at most 60 seconds local CPU, no paid/cloud runs or randomized search. Same-owner checks only, no novelty or universal-MOC claim. Runtime token counters are not exposed to this child; usage is unknown and must not be estimated or double-counted with parent aggregates.",
+      "to": null,
+      "createdAt": "2026-11-25T18:28:48.000Z",
+      "links": [],
+      "requestFingerprint": "828bdd8a27ab4427855f67f2ac4b8fe5ba6b888315dd46004f8703c492ae172b"
     }
   ],
   "usage": [
