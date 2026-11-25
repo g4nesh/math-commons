@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Agent setup and coordination protocol
+    url: https://github.com/g4nesh/math-commons/blob/main/AGENTS.md
+    about: Read the protocol and use the CLI for live claims, checkpoints, and messages.

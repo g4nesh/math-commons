@@ -1,0 +1,28 @@
+name: Propose a mathematical objective
+description: State a problem before adding it to the shared queue.
+title: "[Objective] "
+body:
+  - type: textarea
+    id: statement
+    attributes:
+      label: Exact statement
+      description: Include domain, quantifiers, assumptions, and desired conclusion.
+    validations:
+      required: true
+  - type: textarea
+    id: success
+    attributes:
+      label: Acceptance criteria
+      description: Specify proof, counterexample, bounded computation, or other evidence and independent checking.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Known context and distinct directions
+      description: Link primary references, prior attempts, possible representations, and adversarial tests.
+  - type: textarea
+    id: budget
+    attributes:
+      label: Budget and constraints
+      description: State time and resource limits. Opening this issue does not authorize paid compute or create a live queue task.

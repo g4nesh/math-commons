@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "summary", "details", "evidence"],
+  "properties": {
+    "status": { "type": "string", "enum": ["review", "release", "blocked"] },
+    "summary": { "type": "string" },
+    "details": { "type": "string" },
+    "evidence": { "type": "array", "items": { "type": "string" } }
+  }
+}
