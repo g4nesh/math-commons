@@ -1,0 +1,65 @@
+[PASS] span{chi_IJ} + constants on S_4 has dimension 14 :: rank=14
+[PASS] constants already lie in span{chi_IJ} (rank of the 52 functions alone is 14)
+[PASS] affine hull of the 24 indicator points has dimension 13
+[PASS] chosen basis V of W has rank 14 :: columns [0, 1, 2, 3, 5, 6, 7, 9, 10, 11, 17, 18, 23, 24]
+[PASS] (4.5): each p_sigma is an integer combination of B_0..B_13 (P re-derived)
+[PASS] P has rank 14 and last column all ones (P kappa = 1)
+[PASS] Appendix A: 14x14 submatrix of P on rows {0,1,2,3,4,6,7,8,9,10,12,13,16,18} has det 1
+[PASS] column space of P = column space of [1|E]: Q is affinely isomorphic to conv{e_sigma}
+[PASS] candidate list: 16 + 18 + 48 = 82 pairwise distinct value vectors :: {'n1': 16, 'n2': 18, 'h': 48}
+[PASS] every candidate value vector lies in W (is a v(c) for some c in V_R)
+[PASS] every candidate is >= 0 at all 24 vertices
+[PASS] zero/one/two counts: n1 (18,6,0), n2 (20,4,0), h (13,10,1) :: {'n1': {(18, 6, 0)}, 'n2': {(20, 4, 0)}, 'h': {(13, 10, 1)}}
+[PASS] each candidate's zero set has rank 13 (a hyperplane of aff Q)
+[PASS] the 82 zero sets are pairwise distinct
+[info] double description: 82 rays in 0.0s
+[PASS] DD: the cone {c : v_sigma(c) >= 0} has exactly 82 extreme rays (= facets of Q)
+[PASS] DD rays coincide with the 82 candidates (16 n1 + 18 n2 + 48 h)
+[info] exhaustive 13-subsets: 2496144 subsets, 1632360 affinely independent, 82 distinct supporting hyperplanes, 53.3s
+[PASS] exhaustive check over all C(24,13) vertex 13-subsets finds exactly the 82 candidates
+[PASS] G generated as a permutation group of the 24 vertices has order 1152 and equals {s -> r s r', s -> r s^-1 r'}
+[PASS] G permutes the 82 facets (G acts by coordinate permutations of the indicator embedding)
+[PASS] G maps minor vectors to minor vectors and h-vectors to h-vectors
+[info] facet orbits under G: sizes [16, 18, 48]
+[info] ridges per facet by type {'n1': {39}, 'n2': {57}, 'h': {13}}; 2274 facet-ridge incidences, 3.5s
+[PASS] every ridge of every listed facet lies in exactly two listed facets
+[PASS] the facet-ridge graph on the 82 listed facets is connected
+[PASS] Appendix D lists 82 specs, each one of the candidates, bijectively
+[PASS] supp data: permutations_1_based is the lexicographic order
+[PASS] supp data: matching_basis_1_based equals (A.1) as transcribed
+[PASS] supp data: 'vertices' equals P re-derived above from (4.5)
+[PASS] supp data: each facet's 'values' = P*normal and 'zero_vertices' consistent
+[PASS] supp data: the 82 facet value vectors equal the auditor's 82 (as a set, primitive)
+[info] supp data: facet order in the JSON equals Appendix D order: True
+[PASS] facet-definitions.json agrees with the Appendix D transcription
+[PASS] 6846 boundary simplices, distinct, sorted 13-element vertex sets
+[PASS] each simplex lies in exactly one of the 82 hyperplanes
+[PASS] every listed facet contains at least one simplex :: simplices per facet: min 1, max 306
+[PASS] every det[24(v_i - b)] (13x13, sorted vertex order) is nonzero
+[info] determinant signs in sorted order: 3423 positive, 3423 negative; |det| values: [146081389744226304, 219122084616339456, 292162779488452608, 438244169232678912]...
+[PASS] boundary of the oriented chain z = sum sgn(det) [sorted simplex] is zero :: 44499 distinct 12-faces, 0 with nonzero coefficient
+[PASS] number of distinct boundary 12-faces is 44,499 :: 44499
+[info] faces by number of incident simplices: [(2, 44499)]
+[info] control: with all signs +1 in sorted order, 24839 faces fail to cancel
+[info] orbit enumeration 0.3s
+[PASS] C(24,6) = 134596 six-subsets
+[PASS] G has exactly 214 orbits on six-subsets :: 214
+[PASS] orbit sizes sum to 134596 and divide 1152
+[PASS] |F_T| and number of non-minor generators are constant on orbits (checked on 32 group elements per orbit)
+[PASS] 124 orbits are minor-only and 90 contain a non-minor generator :: 124 minor-only, 90 non-minor
+[PASS] Appendix E: 90 six-element sets transcribed
+[PASS] T_1..T_90 lie in 90 distinct orbits
+[PASS] the orbits of T_1..T_90 are exactly the 90 non-minor orbits
+[info] non-minor generators per case (count: number of cases): [(1, 51), (2, 35), (3, 3), (4, 1)]
+[info] orbit sizes of the 90 cases: [24, 72, 96, 144, 192, 288, 576, 1152]
+[PASS] logical point: every 6-subset of a contact set lies in one of the 214 orbits, and N_S is contained in N_T for T in S
+[PASS] Table 3 (Section 5): each A_{rho,rho',eps}(T_nu) equals the stated image, a six-subset of T_85+{j} containing j
+[PASS] Section 5.2: the 11 gaps declared positive plus the 7 new contacts of Table 3 are the 18 non-contacts of T_85
+[info] T_85 + j with a non-minor generator: j in [1, 3, 4, 6, 8, 11, 12, 15, 17, 19, 20, 22]; minor-only: [2, 10, 13, 16, 21, 23]
+[PASS] Table 5: 27 seven-element sets, each contains a six-subset from a non-minor orbit
+[PASS] Table 5: each auxiliary seven-set itself has a non-minor generator in N_S :: []
+[info] Lemma 4.2 DD on 214 representatives: 0.1s; dim N_T histogram [(1, 1), (2, 2), (3, 5), (4, 13), (5, 21), (6, 33), (7, 22), (8, 116), (9, 1)]
+[PASS] Lemma 4.2: for all 214 representatives the extreme rays of N_T (own DD) are exactly {f_j : j in F_T}
+[PASS] lane reduced coordinates: [VERTS|1] has rank 14 and the same column space as [1|E] (exact)
+[PASS] lane facets4.npy: 82 rows whose zero sets are exactly the 82 facets (float data, tol 1e-9) :: rows=82, max rel. deviation of values 4.44e-16
+total time 89.6s; 0 failing claims
