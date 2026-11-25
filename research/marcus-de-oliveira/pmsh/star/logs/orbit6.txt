@@ -1,0 +1,2 @@
+stabiliser of g0 (as a functional on the polytope): 24 elements
+orbits of the six (a,b) pairs under the stabiliser: [[0, 1, 2, 3, 4, 5]]

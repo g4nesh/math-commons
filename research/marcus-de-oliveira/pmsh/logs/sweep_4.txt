@@ -1,0 +1,121 @@
+a=[-1.304 -0.349  1.318  3.327] facets=184 nontrivial=96 (vertex counts [11]; trivial ones [14, 16, 18]) max_U(nontrivial)=-3.51e-14
+Traceback (most recent call last):
+  File "pmsh/sweep.py", line 39, in <module>
+    nf, nt, vt_nt, vt_tr, wU = analyse(a, ur, rng)
+  File "pmsh/sweep.py", line 12, in analyse
+    hh = ConvexHull(Y @ Bas.T)
+  File "_qhull.pyx", line 2425, in scipy.spatial._qhull.ConvexHull.__init__
+  File "_qhull.pyx", line 343, in scipy.spatial._qhull._Qhull.__init__
+scipy.spatial._qhull.QhullError: QH6271 qhull topology error (qh_check_dupridge): wide merge (1571900632.6x wider) due to dupridge between f4427 and f4426 (vertex dist 8.7), merge dist 0.99, while processing p8
+- Allow error with option 'Q12'
+ERRONEOUS FACET:
+- f4427
+    - flags: bottom newfacet mergehorizon dupridge mergeridge2
+    - normal:   -0.1462  -0.1099 -0.05347   0.3611 -0.01138  -0.2753  -0.0887   0.3315   0.0901   0.7947 -0.008473
+    - offset:  -218.9483
+    - vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p5(v10) p4(v9) p21(v6) p9(v5) p18(v4)
+    - neighboring facets: f904 f4424 f1936 f1940 f221 f4426 f522 f1946
+    - ridges:
+     - r8360 tested simplicialbot
+           vertices: p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p5(v10) p4(v9) p21(v6) p9(v5) p18(v4)
+           between f904 and f4427
+     - r14412 simplicialbot
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p0(v13) p5(v10) p4(v9) p21(v6) p9(v5) p18(v4)
+           between f904 and f4427
+     - r14413 simplicialtop
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p5(v10) p4(v9) p21(v6) p9(v5) p18(v4)
+           between f4427 and f904
+     - r14418 simplicialbot
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p5(v10) p4(v9) p21(v6) p9(v5)
+           between f904 and f4427
+     - r14409 simplicialtop simplicialbot
+           vertices: p8(v21) p6(v18) p20(v17) p10(v14) p0(v13) p5(v10) p4(v9) p21(v6) p9(v5) p18(v4)
+           between f4427 and f4424
+     - r14410 simplicialbot
+           vertices: p8(v21) p2(v19) p20(v17) p10(v14) p0(v13) p5(v10) p4(v9) p21(v6) p9(v5) p18(v4)
+           between f1936 and f4427
+     - r14411 simplicialtop
+           vertices: p8(v21) p2(v19) p6(v18) p10(v14) p0(v13) p5(v10) p4(v9) p21(v6) p9(v5) p18(v4)
+           between f4427 and f1940
+     - r14417 simplicialtop
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p5(v10) p4(v9) p21(v6) p18(v4)
+           between f4427 and f221
+     - r14416 simplicialbot
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p5(v10) p4(v9) p9(v5) p18(v4)
+           between f4426 and f4427
+     - r14414 simplicialbot
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p4(v9) p21(v6) p9(v5) p18(v4)
+           between f522 and f4427
+     - r14415 simplicialtop
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p5(v10) p21(v6) p9(v5) p18(v4)
+           between f4427 and f1946
+ERRONEOUS OTHER FACET:
+- f4426
+    - flags: top newfacet mergehorizon dupridge mergeridge1
+    - normal:    -0.119 -0.08819 -0.03809   0.2837 -0.008938  -0.1967 -0.09955   0.2196  -0.3129   0.8372 -0.02172
+    - offset:  -181.5134
+    - vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p14(v11) p5(v10) p4(v9) p9(v5) p18(v4)
+    - neighboring facets: f688 f4424 f1936 f1940 f221 f1946 f4427 f522
+    - ridges:
+     - r8018 simplicialtop simplicialbot
+           vertices: p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p14(v11) p5(v10) p4(v9) p9(v5) p18(v4)
+           between f4426 and f688
+     - r14403 simplicialtop
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p0(v13) p14(v11) p5(v10) p4(v9) p9(v5) p18(v4)
+           between f4426 and f688
+     - r14404 simplicialbot
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p14(v11) p5(v10) p4(v9) p9(v5) p18(v4)
+           between f688 and f4426
+     - r14408 simplicialtop
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p14(v11) p5(v10) p4(v9) p9(v5)
+           between f4426 and f688
+     - r14400 simplicialtop simplicialbot
+           vertices: p8(v21) p6(v18) p20(v17) p10(v14) p0(v13) p14(v11) p5(v10) p4(v9) p9(v5) p18(v4)
+           between f4424 and f4426
+     - r14401 simplicialtop
+           vertices: p8(v21) p2(v19) p20(v17) p10(v14) p0(v13) p14(v11) p5(v10) p4(v9) p9(v5) p18(v4)
+           between f4426 and f1936
+     - r14402 simplicialbot
+           vertices: p8(v21) p2(v19) p6(v18) p10(v14) p0(v13) p14(v11) p5(v10) p4(v9) p9(v5) p18(v4)
+           between f1940 and f4426
+     - r14407 simplicialbot
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p14(v11) p5(v10) p4(v9) p18(v4)
+           between f221 and f4426
+     - r14406 simplicialtop
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p14(v11) p5(v10) p9(v5) p18(v4)
+           between f4426 and f1946
+     - r14416 simplicialbot
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p5(v10) p4(v9) p9(v5) p18(v4)
+           between f4426 and f4427
+     - r14405 simplicialbot
+           vertices: p8(v21) p2(v19) p6(v18) p20(v17) p10(v14) p0(v13) p14(v11) p4(v9) p9(v5) p18(v4)
+           between f522 and f4426
+While executing:  | qhull i Qx Qt
+Options selected for Qhull 2019.1.r 2019/06/21:
+  run-id 644930100  incidence  Qxact-merge  Qtriangulate  _zero-centrum
+  Q3-no-merge-vertices-dim-high  _max-width 6e+03  Error-roundoff 2.6e-11
+  _one-merge 6e-10  _near-inside 3e-09  Visible-distance 1.6e-10
+  U-max-coplanar 1.6e-10  Width-outside 3.1e-10  _wide-facet 9.4e-10
+  _maxoutside 6.3e-10
+Last point added to hull was p8.  Last merge was #2628.
+At error exit:
+Convex hull of 24 points in 11-d:
+  Number of vertices: 21
+  Number of facets: 579
+  Number of non-simplicial facets: 244
+Statistics for:  | qhull i Qx Qt
+  Number of points processed: 21
+  Number of hyperplanes created: 1245
+  Number of distance tests for qhull: 1830
+  Number of distance tests for merging: 30142
+  Number of distance tests for checking: 0
+  Number of merged facets: 3470
+  Maximum distance of point above facet: 1.2e-10 (0.2x)
+  Maximum distance of vertex below facet: -1.1e-10 (0.2x)
+precision problems (corrected unless 'Q0' or an error)
+    516 coplanar horizon facets for new vertices
+     10 nearly singular or axis-parallel hyperplanes
+      1 dupridges with multiple neighbors
+A wide merge error has occurred.  Qhull has produced a wide facet due to facet merges and vertex merges.
+This usually occurs when the input is nearly degenerate and substantial merging has occurred.
+See http://www.qhull.org/html/qh-impre.htm#limit

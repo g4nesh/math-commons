@@ -1,0 +1,11 @@
+functional 0: max_U 5.3058525854  max_O 5.3058525854  gap -1.12e-13
+functional 1: max_U 7.0356187729  max_O 7.0356187729  gap -9.15e-14
+functional 2: max_U 3.4159725731  max_O 3.4159725731  gap -1.07e-13
+functional 3: max_U 3.1713083291  max_O 3.1713083291  gap -1.15e-13
+functional 4: max_U 4.7552969190  max_O 4.7552969190  gap -1.78e-15
+functional 5: max_U 4.1124686624  max_O 4.1124686624  gap -2.66e-14
+functional 6: max_U 3.9118105304  max_O 3.9118105304  gap -4.00e-15
+functional 7: max_U 5.1812608852  max_O 5.1812608852  gap -1.24e-14
+functional 8: max_U 3.9355764972  max_O 3.9355764972  gap -1.33e-15
+functional 9: max_U 7.7464719847  max_O 7.7464719847  gap -2.04e-14
+RESULT seed 2: max gap (U minus O) over 10 functionals = -1.332e-15
