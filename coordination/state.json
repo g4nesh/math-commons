@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 314,
-  "updatedAt": "2026-11-25T21:06:59.000Z",
+  "revision": 315,
+  "updatedAt": "2026-11-25T21:07:53.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2054,9 +2054,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T21:22:45.000Z",
+      "leaseUntil": "2026-11-25T21:27:53.000Z",
       "createdAt": "2026-11-25T20:38:07.000Z",
-      "updatedAt": "2026-11-25T21:02:45.000Z",
+      "updatedAt": "2026-11-25T21:07:53.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2102,6 +2102,16 @@
             "https://github.com/g4nesh/math-commons/blob/13ef35bb52a7a89f7482cbfacd411f0dabb8c90a/formal/ForestGateMagnitude.lean"
           ],
           "createdAt": "2026-11-25T21:02:45.000Z"
+        },
+        {
+          "id": "mdo-gate-magnitude-frozen-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Complete ordered local probability table and reversal tools are kernel-checked and frozen.",
+          "details": "Final owned source contains46 theorems. orderedGateMagnitudes proves the six local norm-square values for arbitrary occupied spectator lists before, between and after the endpoints; unitaryProbabilityBounds gives0<=q<=1. Explicit signed exchange and both-occupied determinant proofs handle nonadjacent placements. reverseGate/reverseUnitary cover reversed endpoint order. decomposeTwoEndpoints/filterTwoEndpoints formally expose ambient order and occupancy cases; the main table takes the resulting occupied-list Nodup/avoidance contract explicitly rather than exporting one all-Boolean-history wrapper. Actual filtered empty/full corollaries are included. The full repo file passed Lean4.24.0 -DwarningAsError=true;46 axiom reports use only propext, Classical.choice, Quot.sound; git diff --check passed. SHA25602448676c0da705b368ae51aaab0e9771245ab406e7cd22a8eba99bf2589895a. No new edits planned; awaiting immutable final source pin, then independent review submission. Matrix-library determinant identification, full complex-field instantiation, Cauchy-Binet and product-path probability normalization remain outside scope.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/4468acf8ecaf7554474d3730e47ce8f0940519ce/formal/ForestGateMagnitude.lean"
+          ],
+          "createdAt": "2026-11-25T21:07:53.000Z"
         }
       ],
       "reviews": [],
@@ -2383,7 +2393,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T21:02:45.000Z"
+      "lastSeenAt": "2026-11-25T21:07:53.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -7373,6 +7383,22 @@
       "createdAt": "2026-11-25T21:06:59.000Z",
       "links": [],
       "requestFingerprint": "4269f2e8273f229d314b441402a7f10ccc7de60b3c3220d5569cb68f52b9c86e"
+    },
+    {
+      "id": "mdo-gate-magnitude-frozen-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-gate-minor-magnitudes",
+      "summary": "Complete ordered local probability table and reversal tools are kernel-checked and frozen.",
+      "detail": "Final owned source contains46 theorems. orderedGateMagnitudes proves the six local norm-square values for arbitrary occupied spectator lists before, between and after the endpoints; unitaryProbabilityBounds gives0<=q<=1. Explicit signed exchange and both-occupied determinant proofs handle nonadjacent placements. reverseGate/reverseUnitary cover reversed endpoint order. decomposeTwoEndpoints/filterTwoEndpoints formally expose ambient order and occupancy cases; the main table takes the resulting occupied-list Nodup/avoidance contract explicitly rather than exporting one all-Boolean-history wrapper. Actual filtered empty/full corollaries are included. The full repo file passed Lean4.24.0 -DwarningAsError=true;46 axiom reports use only propext, Classical.choice, Quot.sound; git diff --check passed. SHA25602448676c0da705b368ae51aaab0e9771245ab406e7cd22a8eba99bf2589895a. No new edits planned; awaiting immutable final source pin, then independent review submission. Matrix-library determinant identification, full complex-field instantiation, Cauchy-Binet and product-path probability normalization remain outside scope.",
+      "to": null,
+      "createdAt": "2026-11-25T21:07:53.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/4468acf8ecaf7554474d3730e47ce8f0940519ce/formal/ForestGateMagnitude.lean"
+      ],
+      "requestFingerprint": "f0250c7660386046fcc7ef6343809afab10de58107b861392c5477fbf5df27eb"
     }
   ],
   "usage": [
