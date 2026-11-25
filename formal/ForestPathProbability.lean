@@ -3,8 +3,10 @@ import ForestGateMagnitude
 /-!
 # Squared probabilities along a forest path
 
-Pass 1: the local probability table `localProb` and the single-step lemma
-`stepMagnitudeLeftFirst` for an ambient vertex order with `e.left` before `e.right`.
+`localProb` is the local probability table. `stepMagnitude` proves that, for a unitary
+two-coordinate gate and subsets agreeing off the gate's endpoints, the squared minor
+between `vertices.filter t` and `vertices.filter s` equals `localProb`, in either
+ambient order of the endpoints (`stepMagnitudeLeftFirst`, `stepMagnitudeRightFirst`).
 All scalars are Gaussian rationals. No Cauchy–Binet identity is used or claimed.
 -/
 namespace MathCommons.ForestPathProbability
@@ -101,10 +103,43 @@ theorem stepMagnitudeLeftFirst (e : Edge vertices) (a b c d : Gaussian)
   · rw [zero leg]
     exact (localProbIllegal _ _ _ _ _ leg).symm
 
+/-- Exchanging the roles of the two endpoints leaves the table unchanged. -/
+theorem localProbSwap (q : Rat) (sl sr tl tr : Bool) :
+    localProb q sr sl tr tl = localProb q sl sr tl tr := by
+  cases sl <;> cases sr <;> cases tl <;> cases tr <;> rfl
+
+/-- The opposite ambient order, reduced to `stepMagnitudeLeftFirst` through `reverseEdge`. -/
+theorem stepMagnitudeRightFirst (e : Edge vertices) (a b c d : Gaussian)
+    (h : UnitaryBlock a b c d) (before middle after : List V)
+    (order : vertices = before ++ e.right :: (middle ++ e.left :: after))
+    (s t : Subset V) (spectators : ∀ x, x ≠ e.left → x ≠ e.right → t x = s x) :
+    normSq (minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (vertices.filter t) (vertices.filter s)) =
+      localProb (normSq b) (s e.left) (s e.right) (t e.left) (t e.right) := by
+  have reversed := stepMagnitudeLeftFirst (reverseEdge e) d c b a (reverseUnitary a b c d h)
+    before middle after order s t (fun x xl xr => spectators x xr xl)
+  rw [reverseGate] at reversed
+  rw [reversed, (unitaryWeights a b c d h).1]
+  exact localProbSwap _ _ _ _ _
+
+/-- The single-step identity in either ambient order. -/
+theorem stepMagnitude (e : Edge vertices) (a b c d : Gaussian) (h : UnitaryBlock a b c d)
+    (s t : Subset V) (spectators : ∀ x, x ≠ e.left → x ≠ e.right → t x = s x) :
+    normSq (minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (vertices.filter t) (vertices.filter s)) =
+      localProb (normSq b) (s e.left) (s e.right) (t e.left) (t e.right) := by
+  rcases decomposeTwoEndpoints vertices e.left e.right e.distinct (e.complete _) (e.complete _)
+    with ⟨before, middle, after, order⟩ | ⟨before, middle, after, order⟩
+  · exact stepMagnitudeLeftFirst e a b c d h before middle after order s t spectators
+  · exact stepMagnitudeRightFirst e a b c d h before middle after order s t spectators
+
 end Step
 
 #print axioms localProbIllegal
 #print axioms nonzeroEndpointsLegal
 #print axioms stepMagnitudeLeftFirst
+#print axioms localProbSwap
+#print axioms stepMagnitudeRightFirst
+#print axioms stepMagnitude
 
 end MathCommons.ForestPathProbability
