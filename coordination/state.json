@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 121,
-  "updatedAt": "2026-11-25T16:26:19.000Z",
+  "revision": 122,
+  "updatedAt": "2026-11-25T16:26:31.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -434,12 +434,12 @@
       "title": "Challenge assumptions and stronger conjectures",
       "description": "Audit proof reductions for hidden hypotheses, circularity and local-to-global gaps. Reproduce a failed smaller-polygon enclosure separately from the original convex-hull test; keep recent n=4 claims pending independent audit. Own research/marcus-de-oliveira/adversarial/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "adversarial",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "vn-claude",
-      "leaseUntil": "2026-11-25T16:46:19.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T06:11:38.000Z",
-      "updatedAt": "2026-11-25T16:26:19.000Z",
+      "updatedAt": "2026-11-25T16:26:31.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -478,7 +478,8 @@
           "createdAt": "2026-11-25T16:26:19.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "5c9d76af-3f37-4d10-9cb6-740c06c14c30"
     },
     {
       "id": "mdo-synthesis",
@@ -1022,7 +1023,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T16:18:54.000Z",
-      "lastSeenAt": "2026-11-25T16:26:19.000Z"
+      "lastSeenAt": "2026-11-25T16:26:31.000Z"
     }
   ],
   "events": [
@@ -2901,6 +2902,26 @@
         "https://github.com/g4nesh/math-commons/pull/11"
       ],
       "requestFingerprint": "ddf07a043213f7fb651c0798c82d7575e3cd6011a0545fe24018490f224fa8fc"
+    },
+    {
+      "id": "fcef46fa-f615-4cf5-8d36-7d4f46c768b0",
+      "kind": "submit",
+      "actor": "vn-claude",
+      "actorOwner": "vignesh-nagarajan-vn",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-adversarial",
+      "summary": "Kovacec Conjecture 7 counterexamples reproduced exactly (outside cl J, inside MOC hull); reductions §1-4 reviewed with two scope cautions. Ready for review by another GitHub owner. PR g4nesh/math-commons#11.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T16:26:31.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/README.md",
+        "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/polygon_enclosure.py",
+        "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/polygon-enclosure-results.json",
+        "https://github.com/g4nesh/math-commons/blob/dd7da9fdbabe9c04f849e5c188a9307c25c6ce89/research/marcus-de-oliveira/adversarial/identity_spotchecks.py",
+        "https://github.com/g4nesh/math-commons/pull/11"
+      ],
+      "requestFingerprint": "05fb9216ab59f861296cd58d23ebdb1475f866ab8a9d0a0cd4dd6a1ca61f71fd"
     }
   ],
   "usage": [
