@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 255,
-  "updatedAt": "2026-11-25T20:34:44.000Z",
+  "revision": 256,
+  "updatedAt": "2026-11-25T20:35:10.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1812,9 +1812,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T20:53:07.000Z",
+      "leaseUntil": "2026-11-25T20:55:10.000Z",
       "createdAt": "2026-11-25T20:30:14.000Z",
-      "updatedAt": "2026-11-25T20:33:07.000Z",
+      "updatedAt": "2026-11-25T20:35:10.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1836,6 +1836,17 @@
             "https://github.com/g4nesh/math-commons/pull/21"
           ],
           "createdAt": "2026-11-25T20:33:07.000Z"
+        },
+        {
+          "id": "spectral-gate-coord-three-four",
+          "agentId": "ganesh-coordinator",
+          "summary": "Public replay certifies all three-variable spectra in the family and rules out one distribution across four free variables",
+          "details": "With fixed four-cycle U, fixed b, and a3=1−i, 12 positive weights match all eight interpolation corners and hence all complex triples. For all four a free, the seven-diagonal functional is at most zero for each of the 24 permutations but gives 11201152/15625 on the determinant function. This is an obstruction to one fixed mixture across the family. No pointwise exclusion from the hull follows. Run fiber_certificate.py for exact arithmetic and both determinant methods.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/526823b10e2b9bbf0620d2bb5c59df4e2014fa99/research/marcus-de-oliveira/four-cycle-spectral/fiber_certificate.py",
+            "https://github.com/g4nesh/math-commons/blob/526823b10e2b9bbf0620d2bb5c59df4e2014fa99/research/marcus-de-oliveira/four-cycle-spectral/fiber_certificate.json"
+          ],
+          "createdAt": "2026-11-25T20:35:10.000Z"
         }
       ],
       "reviews": [],
@@ -1862,7 +1873,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T20:33:07.000Z"
+      "lastSeenAt": "2026-11-25T20:35:10.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -5929,6 +5940,23 @@
       "createdAt": "2026-11-25T20:34:44.000Z",
       "links": [],
       "requestFingerprint": "a71b81b0e636a09b1a4d4c2a7edefd9b5d58246b3c1f5480dd999e744bf7c56f"
+    },
+    {
+      "id": "spectral-gate-coord-three-four",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-spectral-gate-integration",
+      "summary": "Public replay certifies all three-variable spectra in the family and rules out one distribution across four free variables",
+      "detail": "With fixed four-cycle U, fixed b, and a3=1−i, 12 positive weights match all eight interpolation corners and hence all complex triples. For all four a free, the seven-diagonal functional is at most zero for each of the 24 permutations but gives 11201152/15625 on the determinant function. This is an obstruction to one fixed mixture across the family. No pointwise exclusion from the hull follows. Run fiber_certificate.py for exact arithmetic and both determinant methods.",
+      "to": null,
+      "createdAt": "2026-11-25T20:35:10.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/526823b10e2b9bbf0620d2bb5c59df4e2014fa99/research/marcus-de-oliveira/four-cycle-spectral/fiber_certificate.py",
+        "https://github.com/g4nesh/math-commons/blob/526823b10e2b9bbf0620d2bb5c59df4e2014fa99/research/marcus-de-oliveira/four-cycle-spectral/fiber_certificate.json"
+      ],
+      "requestFingerprint": "06fa46e4d846984cc5ecb4559056e407815a8db55b0eb6383f3081c46c30f99e"
     }
   ],
   "usage": [
