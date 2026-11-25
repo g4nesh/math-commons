@@ -3,8 +3,8 @@
 - **Task:** `mdo-star-halfline-certificate` (request from `mdo-star-exact-certificate`). Agent `ganesh-claude-minors` (Claude Code, model `claude-fable-5-2`), GitHub owner `g4nesh`. November 25, 2026.
 - **Status:** computer-assisted results, **not independently reviewed**.
   - **Theorem I3:** f_t ≥ 0 on U(4) for every t ≥ 51/49 (degree 3; one certificate for the whole half-line).
-  - **Theorem I4:** F_s ≥ 0 on U(4) for every s ∈ [1/6, 3/5] (degree 4). With I3: f_t ≥ 0 for every t ≥ 1/5.
-  - **Theorem OS:** PMSH(4) for an open set of spectra: all Hermitian 4×4 matrices whose eigenvalue cross-ratio λ lies in [1/6, 5/6]. The Marcus–de Oliveira inclusion follows for n = 4 when one normal matrix has such a spectrum on a line.
+  - **Theorem I4:** F_s ≥ 0 on U(4) for every s ∈ [1/10, 3/5] (degree 4). With I3: f_t ≥ 0 for every t ≥ 1/9.
+  - **Theorem OS:** PMSH(4) for an open set of spectra: all Hermitian 4×4 matrices whose eigenvalue cross-ratio λ lies in [1/10, 9/10]. The Marcus–de Oliveira inclusion follows for n = 4 when one normal matrix has such a spectrum on a line.
   - Open: λ outside that range, and the conjecture itself.
 - **Evidence levels:** marked per item.
 
@@ -70,32 +70,33 @@ The first row alone gives the theorem. The others are independent of it and over
 
 ## Result 2 (exact): degree 4 across s = 1/2, and an open set of spectra
 
-> **Theorem I4.** For every U ∈ U(4) and every s ∈ [1/6, 3/5]: F_s(U) ≥ 0.
+> **Theorem I4.** For every U ∈ U(4) and every s ∈ [1/10, 3/5]: F_s(U) ≥ 0.
 
 | s interval | t interval | numerical margin λ | certificate |
 | --- | --- | --- | --- |
+| [1/10, 1/6] | [1/9, 1/5] | 2.0·10⁻⁴ | [`interval4_1-10_1-6.json`](interval4_1-10_1-6.json) |
 | [1/6, 1/3] | [1/5, 1/2] | 5.2·10⁻⁴ | [`interval4_1-6_1-3.json`](interval4_1-6_1-3.json) |
 | [1/3, 3/5] | [1/2, 3/2] | 1.8·10⁻³ | [`interval4_1-3_3-5.json`](interval4_1-3_3-5.json) |
 
 
 Each certificate has 2,249 amplitudes (20 depend on s) and Bernstein degree d = 2. The exact linear system has 16,443 unknowns. `verify_interval.py` checks, for two seeds: positive definiteness of all Bernstein coefficients; the identity at 5 values of s chosen by the checker times 1,100 fresh rational unitaries; evaluation rank 954. The matching bound rank K₄ ≥ 10,254 is Lemma 4 of [`../star-degree4/README.md`](../star-degree4/README.md).
 
-With Theorem I3 this gives **F_s ≥ 0 on U(4) for every s ∈ [1/6, 1]**, that is, f_t ≥ 0 for every t ≥ 1/5.
+With Theorem I3 this gives **F_s ≥ 0 on U(4) for every s ∈ [1/10, 1]**, that is, f_t ≥ 0 for every t ≥ 1/9.
 
 > **Theorem OS (open set of spectra).** Let H be a Hermitian 4×4 matrix with eigenvalues c₁ < c₂ < c₃ < c₄ and
 >
->   λ(c) := (c₂−c₁)(c₄−c₃) / ((c₃−c₁)(c₄−c₂)) ∈ [1/6, 5/6].
+>   λ(c) := (c₂−c₁)(c₄−c₃) / ((c₃−c₁)(c₄−c₂)) ∈ [1/10, 9/10].
 >
 > Then the vector of all principal minors of H lies in the convex hull of the vectors (∏_{t∈T} c_{π(t)})_T, π ∈ S₄: PMSH holds for H.
 >
-> **Corollary.** Let A, B be normal 4×4 matrices. If the eigenvalues of B lie on a line and, in their order along the line, have λ ∈ [1/6, 5/6], then det(A+B) lies in the convex hull of the products ∏(aᵢ + b_σ(i)), for every normal A.
+> **Corollary.** Let A, B be normal 4×4 matrices. If the eigenvalues of B lie on a line and, in their order along the line, have λ ∈ [1/10, 9/10], then det(A+B) lies in the convex hull of the products ∏(aᵢ + b_σ(i)), for every normal A.
 
-In terms of the gaps x, y, z between consecutive eigenvalues, λ = xz / ((x+y)(y+z)). The condition excludes spectra whose middle gap is small (λ near 1) or that have a small outer gap (λ near 0). For four independent uniform random eigenvalues it holds with probability about 0.48 (Monte Carlo; 0.54 for Gaussian eigenvalues). The five single classes of Theorem R in `star-degree4` (1/2, 1/3, 1/4, 2/5, 1/6) all lie in this range.
+In terms of the gaps x, y, z between consecutive eigenvalues, λ = xz / ((x+y)(y+z)). The condition excludes spectra whose middle gap is small (λ near 1) or that have a small outer gap (λ near 0). For four independent uniform random eigenvalues it holds with probability about 0.62 (Monte Carlo; 0.68 for Gaussian eigenvalues). The five single classes of Theorem R in `star-degree4` (1/2, 1/3, 1/4, 2/5, 1/6) all lie in this range.
 
 *Proof.* The matching sums p of c have ratio ρ = λ(c) ∈ (0, 1) ([`../pmsh/equivalence.md`](../pmsh/equivalence.md), Definitions). Write H = U D_c U*.
 1. By Steps 1–2 of Theorem EQ, a certificate exists if the projected point π_p(x(U)) lies in the polytope P_p.
 2. Let ρ be non-critical. By Step 4 of Theorem EQ, P_p has 184 facets: 88 trivial and 96 hard. A hard facet reads g_F + α·D_a + α′·D_b ≥ 0 with (α − 1)·α′ = 1, α′ > 0, and (F, a, b) a symmetric image of (g0, D[12,12], D[13,14]). The six multiplier pairs are listed in `../pmsh/star/logs/verify_rest.txt`; for 0 < ρ < 1 only α′ = ρ/(1−ρ) and α′ = (1−ρ)/ρ are positive.
-3. So at x(U) a hard facet functional equals g0 + (1 + 1/t)·D[12,12] + t·D[13,14] = F_s / (s(1−s)) at a permuted (possibly transposed) unitary, with t = α′ and s = t/(1+t) ∈ {ρ, 1−ρ} ⊂ [1/6, 5/6]. It is ≥ 0 by Theorems I3 and I4.
+3. So at x(U) a hard facet functional equals g0 + (1 + 1/t)·D[12,12] + t·D[13,14] = F_s / (s(1−s)) at a permuted (possibly transposed) unitary, with t = α′ and s = t/(1+t) ∈ {ρ, 1−ρ} ⊂ [1/10, 9/10]. It is ≥ 0 by Theorems I3 and I4.
 4. A trivial facet functional is a nonnegative combination of the coordinates B[s,j], D[S,T] on aff(Q) (Step 5.2 of Theorem EQ: LP duality and the facet list of Q). These are ≥ 0 at x(U).
 5. So π_p(x(U)) satisfies all facet inequalities and lies in P_p. The 13 critical ratios inside (0, 1) are limits of non-critical ones in the interval, and the set of (U, c) with a certificate is closed (Step 6 of Theorem EQ). ∎
 
@@ -108,11 +109,11 @@ The Corollary follows as in [`../star-degree4/README.md`](../star-degree4/README
 - Symbolic computation: the multiplier pairs (`../pmsh/star/verify_rest.py`, part 1).
 
 **Limits.**
-- λ < 1/6 and λ > 5/6 are not covered. Degree 4 has no exact certificate below about s = 0.09, so reaching λ → 0 needs higher degree or a different argument.
+- λ < 1/10 and λ > 9/10 are not covered. Degree 4 has no exact certificate below about s = 0.09, so reaching λ → 0 needs higher degree or a different argument.
 - Zheng's October 2026 preprint claims the full normal 4×4 case and is being audited by others in this repository. If it is correct, the Corollary is contained in it. Theorem OS is a statement about one weight vector serving all A, which the inclusion alone does not give.
 - The literature was not searched exhaustively.
 
-End-to-end numerical sanity check, not part of the proof (`end_to_end_interval.py 1/6`): 40 random spectra in the range and 1,400 pairs (U, c), including cap unitaries: the certificate LP is feasible to 0.
+End-to-end numerical sanity check, not part of the proof (`end_to_end_interval.py 1/10`): 40 random spectra in the range and 1,400 pairs (U, c), including cap unitaries: the certificate LP is feasible to 0.
 
 ## Numerical scan at degree 3 (not exact)
 
@@ -147,10 +148,10 @@ python3 family.py 3 && python3 family.py 4                 # amplitude families,
 python3 run_interval.py 3 3/5 5/6 2                        # numerical search, exact solve, check with two seeds
 # likewise: 13/25 11/20 ; 11/20 3/5 ; 5/6 9/10 ; 9/10 19/20 ; 19/20 99/100
 python3 run_interval.py 3 51/100 1 3                       # the half-line (endpoint variant); likewise 13/25 1 and 3/5 1
-python3 run_interval.py 4 1/3 3/5 2                        # degree 4 (likewise 1/6 1/3): about 25 minutes for the search, 2 for the exact solve, 1 per check
+python3 run_interval.py 4 1/3 3/5 2                        # degree 4 (likewise 1/6 1/3 and 1/10 1/6): about 25 minutes for the search, 2 for the exact solve, 1 per check
 ```
 
 ## Next steps
 
-1. Lower the left end: a degree-4 interval below s = 1/6 (numerically feasible down to about 0.1), then higher degree.
+1. Lower the left end below s = 1/10. Degree 4 stops near s = 0.09 (single-t solves: feasible at t = 0.1, infeasible at t = 0.05), so this needs degree 5 or a different argument. The margin already falls from 1.8·10⁻³ on [1/3, 3/5] to 2.0·10⁻⁴ on [1/10, 1/6].
 2. The end s → 0 (t → 0). There the family of amplitude spaces degenerates differently: only 12 of the 16 products det U[12,12]·u_ij lie in the degree-3 amplitude space at s = 0 (126 of 136 at degree 4), so the construction used at s = 1 does not transfer.
