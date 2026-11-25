@@ -98,7 +98,7 @@ function taskHeight(task, width, tree, now) {
     }
   }
   context.font = `400 10px ${getComputedStyle(document.documentElement).fontFamily}`;
-  const metaLines = Math.max(1, Math.ceil(context.measureText(taskMeta(task, tree, now)).width / Math.max(80, width - 50)));
+  const metaLines = Math.max(statusOf(task, now) === 'active' ? 2 : 1, Math.ceil(context.measureText(taskMeta(task, tree, now)).width / Math.max(80, width - 50)));
   return Math.max(84, Math.ceil(lines * 18.9) + 48 + (metaLines - 1) * 14);
 }
 
@@ -233,7 +233,7 @@ export function renderResearchMap({ tree, selection = null, onSelect, now = Date
     for (const task of layout.tasks) {
       const status = statusOf(task.data, now);
       const related = context.related.has(task.data.id);
-      const label = `${task.data.title || task.data.id}. ${labels[status]}.`;
+      const label = `${task.data.title || task.data.id}. ${taskMeta(task.data, tree, now)}.`;
       if (task.dot) addNode('task', task.data.id, task, html('span', { class: 'rmap-dot-core', 'aria-hidden': 'true' }), `rmap-task-endpoint rmap-status-${status}${related ? ' is-related' : ''}`, label);
       else addNode('task', task.data.id, task, [html('span', { class: 'rmap-task-title' }, task.data.title || task.data.id), html('span', { class: 'rmap-task-meta' }, [html('i', { class: `rmap-status-dot rmap-status-${status}`, 'aria-hidden': 'true' }), html('span', { class: 'rmap-status-label' }, taskMeta(task.data, tree, now)), dependencies.has(task.data.id) ? html('span', { class: 'rmap-prerequisite' }, 'Prerequisite') : null])], `rmap-color-${task.color}${related ? ' is-related' : ''}${dependencies.has(task.data.id) ? ' is-prerequisite' : ''}`, label);
     }
