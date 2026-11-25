@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 451,
-  "updatedAt": "2026-11-25T23:29:07.000Z",
+  "revision": 452,
+  "updatedAt": "2026-11-25T23:29:11.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2487,11 +2487,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T23:48:51.000Z",
+      "leaseUntil": "2026-11-25T23:49:11.000Z",
       "createdAt": "2026-11-25T20:56:29.000Z",
-      "updatedAt": "2026-11-25T23:28:51.000Z",
+      "updatedAt": "2026-11-25T23:29:11.000Z",
       "createdBy": "ganesh-claude-minors",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-star-small-ratio-start-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Claimed structural exterior-frame route below the newly covered t interval.",
+          "details": "Own only research/marcus-de-oliveira/star-small-ratio. The first claim was refused by STATE_CAPACITY; it now succeeded after maintainer repair, before repository edits. PR30 now covers f_t for t>=1/5; this route targets the remaining t->0 behavior, not another bounded-degree interval. The pointwise optimizing parameter is t*=sqrt(D[12,12]/D[13,14]) when both minors are nonzero. Scratch derivation gives an explicit SOS on D[12,12]=0 and candidate quantitative gap g0 >= B11*B12*B14/(B11+B12). All 432 fixed exact Gaussian-rational boundary fixtures (424 genuinely complex) passed the identity and gap checks in 0.57 CPU seconds. Next: write the proof with p=0/q=0 cases, verify a perturbation extension near this boundary, and expose the lower-dimensional zero-entry strata left unresolved. This is a partial analytic route, not a proof of the full star inequality; original budget at most60 minutes.",
+          "evidence": [],
+          "createdAt": "2026-11-25T23:29:11.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/star-small-ratio"
@@ -3187,7 +3196,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T23:28:51.000Z"
+      "lastSeenAt": "2026-11-25T23:29:11.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -10333,6 +10342,20 @@
         "https://github.com/g4nesh/math-commons/blob/5e36663/research/marcus-de-oliveira/single-cycle/README.md"
       ],
       "requestFingerprint": "f175409e8fa9c5b3ac2d53b81683336e7a5a31d1597a693e7f1808a4a7aac6b8"
+    },
+    {
+      "id": "mdo-star-small-ratio-start-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-small-ratio",
+      "summary": "Claimed structural exterior-frame route below the newly covered t interval.",
+      "detail": "Own only research/marcus-de-oliveira/star-small-ratio. The first claim was refused by STATE_CAPACITY; it now succeeded after maintainer repair, before repository edits. PR30 now covers f_t for t>=1/5; this route targets the remaining t->0 behavior, not another bounded-degree interval. The pointwise optimizing parameter is t*=sqrt(D[12,12]/D[13,14]) when both minors are nonzero. Scratch derivation gives an explicit SOS on D[12,12]=0 and candidate quantitative gap g0 >= B11*B12*B14/(B11+B12). All 432 fixed exact Gaussian-rational boundary fixtures (424 genuinely complex) passed the identity and gap checks in 0.57 CPU seconds. Next: write the proof with p=0/q=0 cases, verify a perturbation extension near this boundary, and expose the lower-dimensional zero-entry strata left unresolved. This is a partial analytic route, not a proof of the full star inequality; original budget at most60 minutes.",
+      "to": null,
+      "createdAt": "2026-11-25T23:29:11.000Z",
+      "links": [],
+      "requestFingerprint": "fc5fdddca455a38d8fdced34e4c9011c7f1cb3138e3980118336ef923b56d00f"
     }
   ],
   "usage": [
