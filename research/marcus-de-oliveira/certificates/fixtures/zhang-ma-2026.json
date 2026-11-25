@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "name": "zhang-ma-2026",
+  "source": "https://www.mat.uc.pt/preprints/ps/p2611.pdf#page=8",
+  "notes": "Input transcribed from p2611 v2 (4 November 2026), section 4. A counterexample to a stronger polygon-enclosure statement, not to the original MDO convex-hull claim. Recompute before trusting expectedDeterminant.",
+  "a": [
+    [
+      "-3",
+      "-1"
+    ],
+    [
+      "-5",
+      "-2"
+    ],
+    [
+      "4",
+      "-3"
+    ]
+  ],
+  "b": [
+    [
+      "-2",
+      "1"
+    ],
+    [
+      "4",
+      "3"
+    ],
+    [
+      "-2",
+      "-5"
+    ]
+  ],
+  "U": [
+    [
+      [
+        "-3/7",
+        "0"
+      ],
+      [
+        "-2/7",
+        "0"
+      ],
+      [
+        "6/7",
+        "0"
+      ]
+    ],
+    [
+      [
+        "-2/7",
+        "0"
+      ],
+      [
+        "-6/7",
+        "0"
+      ],
+      [
+        "-3/7",
+        "0"
+      ]
+    ],
+    [
+      [
+        "-6/7",
+        "0"
+      ],
+      [
+        "3/7",
+        "0"
+      ],
+      [
+        "-2/7",
+        "0"
+      ]
+    ]
+  ],
+  "expectedDeterminant": [
+    "2864/49",
+    "1840/49"
+  ]
+}

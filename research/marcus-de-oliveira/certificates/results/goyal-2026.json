@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "name": "goyal-2026",
+  "dimension": 3,
+  "arithmetic": "exact Gaussian rationals (fractions.Fraction); no floating-point tolerance",
+  "unitary": true,
+  "normalA": true,
+  "normalB": true,
+  "determinant": [
+    "2/3",
+    "2/9"
+  ],
+  "singularSum": false,
+  "permutationCount": 6,
+  "uniquePointCount": 6,
+  "permutationPoints": [
+    {
+      "permutation": [
+        1,
+        2,
+        3
+      ],
+      "point": [
+        "6",
+        "-2"
+      ]
+    },
+    {
+      "permutation": [
+        1,
+        3,
+        2
+      ],
+      "point": [
+        "2",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        2,
+        1,
+        3
+      ],
+      "point": [
+        "2",
+        "1"
+      ]
+    },
+    {
+      "permutation": [
+        2,
+        3,
+        1
+      ],
+      "point": [
+        "0",
+        "-1"
+      ]
+    },
+    {
+      "permutation": [
+        3,
+        1,
+        2
+      ],
+      "point": [
+        "0",
+        "2"
+      ]
+    },
+    {
+      "permutation": [
+        3,
+        2,
+        1
+      ],
+      "point": [
+        "2",
+        "-2"
+      ]
+    }
+  ],
+  "hull": [
+    [
+      "0",
+      "-1"
+    ],
+    [
+      "2",
+      "-2"
+    ],
+    [
+      "6",
+      "-2"
+    ],
+    [
+      "2",
+      "1"
+    ],
+    [
+      "0",
+      "2"
+    ]
+  ],
+  "hullDimension": 2,
+  "membership": "inside",
+  "AplusB": [
+    [
+      [
+        "-1/9",
+        "1/3"
+      ],
+      [
+        "-4/9",
+        "2/3"
+      ],
+      [
+        "8/9",
+        "0"
+      ]
+    ],
+    [
+      [
+        "-4/9",
+        "2/3"
+      ],
+      [
+        "2/9",
+        "0"
+      ],
+      [
+        "-4/9",
+        "-2/3"
+      ]
+    ],
+    [
+      [
+        "8/9",
+        "0"
+      ],
+      [
+        "-4/9",
+        "-2/3"
+      ],
+      [
+        "-1/9",
+        "2/3"
+      ]
+    ]
+  ],
+  "scope": "One finite exact input over Q(i), dimension at most 6. This is not a proof of the universal conjecture or independent peer review.",
+  "convexCombination": [
+    {
+      "permutation": [
+        2,
+        3,
+        1
+      ],
+      "point": [
+        "0",
+        "-1"
+      ],
+      "weight": "13/27"
+    },
+    {
+      "permutation": [
+        2,
+        1,
+        3
+      ],
+      "point": [
+        "2",
+        "1"
+      ],
+      "weight": "1/3"
+    },
+    {
+      "permutation": [
+        3,
+        1,
+        2
+      ],
+      "point": [
+        "0",
+        "2"
+      ],
+      "weight": "5/27"
+    }
+  ]
+}

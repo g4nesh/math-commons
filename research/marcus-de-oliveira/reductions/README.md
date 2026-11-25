@@ -84,6 +84,30 @@ If \(R=0\), all pairwise sums are zero and MOC holds for this pair. Otherwise sc
 
 For the universal problem over **all spectra**, proving only the direction \(\theta=0\) in (2) is sufficient: for another angle use \(c=e^{-i\theta/n}\), which multiplies every determinant and vertex by \(e^{-i\theta}\). This does not reduce a fixed-spectra numerical membership check to one direction; its spectra would change.
 
+### A pole-avoiding reciprocal transformation
+
+Choose \(c\) outside the finite set \(\{a_i,-b_j\}\), and set
+
+\[
+A'=(A-cI)^{-1},\qquad B'=(B+cI)^{-1}.
+\]
+
+Both inverses are normal. Put \(X=A-cI\), \(Y=B+cI\). Without assuming that they commute,
+
+\[
+A'+B'=X^{-1}(X+Y)Y^{-1},\qquad
+\det(A'+B')=\frac{\det(A+B)}{\det X\det Y}.
+\]
+
+For every permutation,
+
+\[
+\prod_i\left(\frac1{a_i-c}+\frac1{b_{\sigma(i)}+c}\right)
+=\frac{z_\sigma(a,b)}{\prod_i(a_i-c)\prod_j(b_j+c)}.
+\]
+
+The denominator equals \(\det X\det Y\ne0\), independent of the permutation. The determinant and its entire comparison hull therefore undergo the same nonzero complex scaling, proving membership equivalence. This transformation is recorded as Theorem 12 in [Shitov (2025)](https://www.mathnet.ru/php/archive.phtml?jrnid=im&option_lang=eng&paperid=9292&wshow=paper); the calculation here makes its hypotheses explicit. It does not require \(A+B\) to be invertible. It is invalid at a pole, and near-pole numerical amplification must not be confused with a true violation.
+
 ## 4. Exact rational data suffice for finding a counterexample
 
 Write \(\mathbb Q(i)=\{p+iq:p,q\in\mathbb Q\}\). A skew-Hermitian matrix satisfies \(K^*=-K\). Define

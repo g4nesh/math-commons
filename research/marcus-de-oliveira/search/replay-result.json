@@ -1,0 +1,9 @@
+{
+  "schema": "mdo.saved-sample-replay.v1",
+  "input": "research/marcus-de-oliveira/search/report.json",
+  "cases_replayed": 200,
+  "new_search_samples": 0,
+  "all_analysis_fields_identical": true,
+  "mismatches": [],
+  "note": "Bitwise numeric agreement is expected on the original Python/platform. Other libm/platform versions may differ and require review; a mismatch is not a mathematical counterexample."
+}
