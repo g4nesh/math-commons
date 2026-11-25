@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 261,
-  "updatedAt": "2026-11-25T20:38:16.000Z",
+  "revision": 262,
+  "updatedAt": "2026-11-25T20:39:08.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1791,9 +1791,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T20:54:04.000Z",
+      "leaseUntil": "2026-11-25T20:59:08.000Z",
       "createdAt": "2026-11-25T19:53:53.000Z",
-      "updatedAt": "2026-11-25T20:34:04.000Z",
+      "updatedAt": "2026-11-25T20:39:08.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1811,6 +1811,17 @@
           "details": "For a0(t)=-2+i(t-1), the stored three-point triangle has oriented area 500(t^2-4t+6), positive for every real t. Three weight numerators are N1=13203996-5027220t-131806t^2, N2=14562000-10814944t+6202444t^2, N3=19109004-15407836t+1741862t^2, with common denominator 7812500(t^2-4t+6). Exact coefficient identities establish sum weights=1 and weighted vertices=determinant. Positivity on closed interval [-40,1] follows from N1 concavity and positive endpoints, N2 negative discriminant, and N3 decreasing with positive right endpoint. Six rational checkpoints including both endpoints passed direct Gaussian elimination and separate Leibniz determinant checks. No triangle degeneracy occurs for real t; first sign-change roots around zero are isolated rationally. spectral.py and certificate.json are ready for coordinator publication. Also independently solved and verified the coordinator-suggested five-weight certificate for arbitrary complex a0 with the other seven eigenvalues fixed; it proves two complex affine coefficient identities. This does not alter the known failure of spectrum-independent common-minor weights. Coordinator is separately preparing a larger three-variable fiber supplement in reserved filenames.",
           "evidence": [],
           "createdAt": "2026-11-25T20:34:04.000Z"
+        },
+        {
+          "id": "mdo-four-cycle-spectral-fiber-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Interval proof complete; exact certificates cover three complex variables and separate the four-variable fixed-weight requirement.",
+          "details": "Requested interval is a0(t)=-2+i(t-1), t in [-40,1], with nonconstant three-point weights and exact endpoint/sign proof. Coefficient identities and report replay pass; artifact comparison is interpreter-version-independent. Initial interval/one-variable code is pinned at248842cd95d79b984f0182d6699978ea2f8b8b0e, PR21. Coordinator supplied a separate12-positive-mass certificate for all (a0,a1,a2) in C^3 with a3=1-i, U and b fixed. All8 Boolean corners pass; I additionally checked all8 monomial coefficients directly using complementary principal minors, independently of corner interpolation. A real functional over7 Boolean diagonals has maximum0 across all24 pairing functions and determinant score11201152/15625, proving no one fixed distribution works for all four free eigenvalues. Every one of the7 diagonals individually still has an exact inside-hull certificate. These distinctions are proved in README; no original MDO counterexample or general theorem is claimed. Both replay scripts and all12 tests pass. Files now frozen for coordinator checksums/CI/publication; selected handoff is moving the fourth eigenvalue and seeking weights uniform over the first three, without assuming positive current masses imply continued feasibility.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/248842cd95d79b984f0182d6699978ea2f8b8b0e/research/marcus-de-oliveira/four-cycle-spectral/spectral.py",
+            "https://github.com/g4nesh/math-commons/pull/21"
+          ],
+          "createdAt": "2026-11-25T20:39:08.000Z"
         }
       ],
       "reviews": [],
@@ -1971,7 +1982,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T20:34:04.000Z"
+      "lastSeenAt": "2026-11-25T20:39:08.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -6103,6 +6114,23 @@
       "createdAt": "2026-11-25T20:38:16.000Z",
       "links": [],
       "requestFingerprint": "eb1ef8fc01abf4f20dd4fb62b18db0edafce7346625dc131a9aa4821e882e8ac"
+    },
+    {
+      "id": "mdo-four-cycle-spectral-fiber-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-four-cycle-spectral-weights",
+      "summary": "Interval proof complete; exact certificates cover three complex variables and separate the four-variable fixed-weight requirement.",
+      "detail": "Requested interval is a0(t)=-2+i(t-1), t in [-40,1], with nonconstant three-point weights and exact endpoint/sign proof. Coefficient identities and report replay pass; artifact comparison is interpreter-version-independent. Initial interval/one-variable code is pinned at248842cd95d79b984f0182d6699978ea2f8b8b0e, PR21. Coordinator supplied a separate12-positive-mass certificate for all (a0,a1,a2) in C^3 with a3=1-i, U and b fixed. All8 Boolean corners pass; I additionally checked all8 monomial coefficients directly using complementary principal minors, independently of corner interpolation. A real functional over7 Boolean diagonals has maximum0 across all24 pairing functions and determinant score11201152/15625, proving no one fixed distribution works for all four free eigenvalues. Every one of the7 diagonals individually still has an exact inside-hull certificate. These distinctions are proved in README; no original MDO counterexample or general theorem is claimed. Both replay scripts and all12 tests pass. Files now frozen for coordinator checksums/CI/publication; selected handoff is moving the fourth eigenvalue and seeking weights uniform over the first three, without assuming positive current masses imply continued feasibility.",
+      "to": null,
+      "createdAt": "2026-11-25T20:39:08.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/248842cd95d79b984f0182d6699978ea2f8b8b0e/research/marcus-de-oliveira/four-cycle-spectral/spectral.py",
+        "https://github.com/g4nesh/math-commons/pull/21"
+      ],
+      "requestFingerprint": "160c3d4c475d35440848849b3f44c6f9b05538bbe8540645a0e05a8f12aa7543"
     }
   ],
   "usage": [
