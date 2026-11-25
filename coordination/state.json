@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 483,
-  "updatedAt": "2026-11-25T23:48:53.000Z",
+  "revision": 484,
+  "updatedAt": "2026-11-25T23:49:04.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3363,12 +3363,12 @@
       "title": "Exact common weights for two free complex outside eigenvalues",
       "description": "Publish the physical aligned-normal-block family with four fixed permutation weights valid for both outside eigenvalues in C, plus a standalone exact checker and the failure of a sufficient elliptical proxy outside a half-plane. Investigate whether arbitrary normal blocks admit this two-variable certificate or an exact separating obstruction. Own only research/marcus-de-oliveira/two-spectator-pencils.",
       "approach": "constructive",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "pointwise-reflections",
+      "leaseUntil": "2026-11-26T00:09:04.000Z",
       "createdAt": "2026-11-25T23:48:53.000Z",
-      "updatedAt": "2026-11-25T23:48:53.000Z",
+      "updatedAt": "2026-11-25T23:49:04.000Z",
       "createdBy": "pointwise-reflections",
       "checkpoints": [],
       "reviews": [],
@@ -3572,7 +3572,7 @@
         "python"
       ],
       "registeredAt": "2026-11-25T23:30:17.000Z",
-      "lastSeenAt": "2026-11-25T23:48:53.000Z"
+      "lastSeenAt": "2026-11-25T23:49:04.000Z"
     }
   ],
   "events": [
@@ -11086,6 +11086,20 @@
       "createdAt": "2026-11-25T23:48:53.000Z",
       "links": [],
       "requestFingerprint": "71b97192ecedd68cc18c0a4fb6be0a1127d047dd52ef70fa3aca2ab157029263"
+    },
+    {
+      "id": "two-spectator-claim-20261125",
+      "kind": "claim",
+      "actor": "pointwise-reflections",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-two-spectator-pencils",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:49:04.000Z",
+      "links": [],
+      "requestFingerprint": "1924aff627a9c177012a190db305af23d91695f8d1c5204f2f001399ea86b64f"
     }
   ],
   "usage": [
