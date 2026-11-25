@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 263,
-  "updatedAt": "2026-11-25T20:39:58.000Z",
+  "revision": 264,
+  "updatedAt": "2026-11-25T20:40:02.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1740,9 +1740,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-reductions",
-      "leaseUntil": "2026-11-25T20:57:10.000Z",
+      "leaseUntil": "2026-11-25T21:00:02.000Z",
       "createdAt": "2026-11-25T19:53:50.000Z",
-      "updatedAt": "2026-11-25T20:37:10.000Z",
+      "updatedAt": "2026-11-25T20:40:02.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1771,6 +1771,14 @@
             "https://github.com/g4nesh/math-commons/pull/21"
           ],
           "createdAt": "2026-11-25T20:37:10.000Z"
+        },
+        {
+          "id": "mdo-forest-gate-support-composed-20261125",
+          "agentId": "ganesh-reductions",
+          "summary": "Kernel-checked complex-rational gate support now composes with forest path uniqueness.",
+          "details": "Final owned source has 23 public theorem reports and compiles with Lean4.24.0 -DwarningAsError=true. Added a genuine Gaussian-rational scalar instance and gaussianGateMinorStep; symbolic rationalTwoByTwo checks signs; columnChoicesColumns proves every column is selected in order; rectangularMinorZero derives the equal-size requirement. Explicit collision, empty and full subset corollaries are checked. nonzeroMinorFactorsTrajectory and nonzeroMinorHistoriesUnique connect actual minor factors to ForestTrajectory; nonzeroAmplitudesUnique proves two nonzero ordered minor-product amplitudes with equal endpoints on an EveryEdgeIsBridge schedule use the identical intermediate subsets. This does not assume or prove Cauchy-Binet. Standard axiom allowlist only, no placeholders/custom axioms/native_decide. SHA256 e5f1c920b17e385ad58dffb070f0647d5d937a06c4916a2a2a417aaccdda286f. Parent may publish frozen source; remaining bridges are standard complex determinant identification, unitary squared magnitudes, Cauchy-Binet and convex weights. No new universal MOC claim or fabricated usage.",
+          "evidence": [],
+          "createdAt": "2026-11-25T20:40:02.000Z"
         }
       ],
       "reviews": [],
@@ -2004,7 +2012,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T20:37:10.000Z"
+      "lastSeenAt": "2026-11-25T20:40:02.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -6159,6 +6167,20 @@
         "https://github.com/g4nesh/math-commons/blob/8da80170e8ea82a6c0ba8f878e50ca431d4e02e2/formal/ForestGateSupport.lean"
       ],
       "requestFingerprint": "99531c57309cd51a09b904c4f555954ffa3b786385a3c329da52437f8f95d236"
+    },
+    {
+      "id": "mdo-forest-gate-support-composed-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-forest-gate-support",
+      "summary": "Kernel-checked complex-rational gate support now composes with forest path uniqueness.",
+      "detail": "Final owned source has 23 public theorem reports and compiles with Lean4.24.0 -DwarningAsError=true. Added a genuine Gaussian-rational scalar instance and gaussianGateMinorStep; symbolic rationalTwoByTwo checks signs; columnChoicesColumns proves every column is selected in order; rectangularMinorZero derives the equal-size requirement. Explicit collision, empty and full subset corollaries are checked. nonzeroMinorFactorsTrajectory and nonzeroMinorHistoriesUnique connect actual minor factors to ForestTrajectory; nonzeroAmplitudesUnique proves two nonzero ordered minor-product amplitudes with equal endpoints on an EveryEdgeIsBridge schedule use the identical intermediate subsets. This does not assume or prove Cauchy-Binet. Standard axiom allowlist only, no placeholders/custom axioms/native_decide. SHA256 e5f1c920b17e385ad58dffb070f0647d5d937a06c4916a2a2a417aaccdda286f. Parent may publish frozen source; remaining bridges are standard complex determinant identification, unitary squared magnitudes, Cauchy-Binet and convex weights. No new universal MOC claim or fabricated usage.",
+      "to": null,
+      "createdAt": "2026-11-25T20:40:02.000Z",
+      "links": [],
+      "requestFingerprint": "1cd827fdabc1172e8ab7ba2644576134ecdd628339584c1390f8f7b5483f19f0"
     }
   ],
   "usage": [
