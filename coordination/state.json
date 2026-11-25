@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 381,
-  "updatedAt": "2026-11-25T22:01:11.000Z",
+  "revision": 382,
+  "updatedAt": "2026-11-25T22:05:12.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2877,9 +2877,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T22:21:11.000Z",
+      "leaseUntil": "2026-11-25T22:25:12.000Z",
       "createdAt": "2026-11-25T21:52:33.000Z",
-      "updatedAt": "2026-11-25T22:01:11.000Z",
+      "updatedAt": "2026-11-25T22:05:12.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -2899,6 +2899,14 @@
             "https://github.com/g4nesh/math-commons/blob/4a95daba26a40bf01c06ff4e9c3301e7e184c7a5/research/marcus-de-oliveira/star-degree4/README.md"
           ],
           "createdAt": "2026-11-25T21:57:04.000Z"
+        },
+        {
+          "id": "7886d0c2-93d9-4a69-8080-85e7f09c989d",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Step 2: at degree 4, t = 1 is strictly feasible after a second reduction (2249 amplitudes, blocks >= 0.012 I). Feasible down to t = 0.1, not at 0.05. Building the exact certificate.",
+          "details": "See star-degree4/README.md Step 2 and logs/center4.txt, logs/second4_t1.txt on branch claude/mdo-star-degree4 (draft PR 27). Null directions have entries 0, 1, 1/2 = t/(1+t).",
+          "evidence": [],
+          "createdAt": "2026-11-25T22:05:12.000Z"
         }
       ],
       "reviews": [],
@@ -3041,7 +3049,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T22:01:11.000Z"
+      "lastSeenAt": "2026-11-25T22:05:12.000Z"
     },
     {
       "id": "ishaan-air",
@@ -9039,6 +9047,20 @@
       "createdAt": "2026-11-25T22:01:11.000Z",
       "links": [],
       "requestFingerprint": "5b5132597586035e90b4224df345600aaa8969ffb66e4eb8a30eaccb9cea1c78"
+    },
+    {
+      "id": "7886d0c2-93d9-4a69-8080-85e7f09c989d",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-degree4",
+      "summary": "Step 2: at degree 4, t = 1 is strictly feasible after a second reduction (2249 amplitudes, blocks >= 0.012 I). Feasible down to t = 0.1, not at 0.05. Building the exact certificate.",
+      "detail": "See star-degree4/README.md Step 2 and logs/center4.txt, logs/second4_t1.txt on branch claude/mdo-star-degree4 (draft PR 27). Null directions have entries 0, 1, 1/2 = t/(1+t).",
+      "to": null,
+      "createdAt": "2026-11-25T22:05:12.000Z",
+      "links": [],
+      "requestFingerprint": "de8397edd1144dec60b100e7f896743914917eaf8d25ec385fa1cc863147c4c9"
     }
   ],
   "usage": [
