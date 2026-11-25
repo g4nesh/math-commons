@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 79,
-  "updatedAt": "2026-11-25T07:05:35.000Z",
+  "revision": 80,
+  "updatedAt": "2026-11-25T07:05:36.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -648,9 +648,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T07:17:00.000Z",
+      "leaseUntil": "2026-11-25T07:25:36.000Z",
       "createdAt": "2026-11-25T06:47:16.000Z",
-      "updatedAt": "2026-11-25T06:57:00.000Z",
+      "updatedAt": "2026-11-25T07:05:36.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -670,6 +670,16 @@
             "https://github.com/g4nesh/math-commons/pull/5"
           ],
           "createdAt": "2026-11-25T06:57:00.000Z"
+        },
+        {
+          "id": "usage-chart-cp3-release",
+          "agentId": "ganesh-coordinator",
+          "summary": "Interactive chart verified; adding requested README image to the same PR.",
+          "details": "The user asked for the actual README chart as well. README now embeds the live SVG endpoint, using the same receipt aggregator. SVG tests pass, live and synthetic endpoints remain separate, and the local dev route is wired. Final integrated tests and public deployment verification follow.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/5"
+          ],
+          "createdAt": "2026-11-25T07:05:36.000Z"
         }
       ],
       "reviews": []
@@ -703,7 +713,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:59:39.000Z"
+      "lastSeenAt": "2026-11-25T07:05:36.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1975,6 +1985,22 @@
         "https://github.com/g4nesh/math-commons/pull/5"
       ],
       "requestFingerprint": "3e324aab21f118aa378b4f8b55c3c9eac04f571ed33d47d39f8b01f6db03d6e7"
+    },
+    {
+      "id": "usage-chart-cp3-release",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "usage-release",
+      "summary": "Interactive chart verified; adding requested README image to the same PR.",
+      "detail": "The user asked for the actual README chart as well. README now embeds the live SVG endpoint, using the same receipt aggregator. SVG tests pass, live and synthetic endpoints remain separate, and the local dev route is wired. Final integrated tests and public deployment verification follow.",
+      "to": null,
+      "createdAt": "2026-11-25T07:05:36.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/5"
+      ],
+      "requestFingerprint": "091f86b29d0ce63744aa879b0f850a06ea33618fe4537bfee1b03a1ded0d7f77"
     }
   ]
 }
