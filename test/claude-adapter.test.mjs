@@ -71,6 +71,7 @@ if (!args.includes('-p') || args[args.indexOf('--output-format')+1] !== 'stream-
 const session = args[args.indexOf('--session-id')+1];
 let prompt=''; process.stdin.on('data',x=>prompt+=x); process.stdin.on('end',async()=>{
  if(!prompt.includes('task.scopePaths') || !prompt.includes('adapters/progress.mjs') || !prompt.includes('untrusted research data')) process.exit(8);
+ if(fixture.longHistory && (prompt.includes('OLD_REPORT_BODY') || prompt.length > 8000 || !prompt.includes('context --event ID') || !prompt.includes('research/t'))) process.exit(4);
  if(fixture.progress) cp.execFileSync(process.execPath,['adapters/progress.mjs','--summary','A public milestone','--details','Checked a bounded case'],{stdio:'ignore'});
  process.stderr.write('PRIVATE STDERR '+prompt);
  for(const event of fixture.events){if(event.type==='result') event.session_id=session;const bytes=Buffer.from(JSON.stringify(event)+'\\n');for(let i=0;i<bytes.length;i+=5){process.stdout.write(bytes.subarray(i,i+5));await new Promise(r=>setImmediate(r));}}
@@ -83,11 +84,16 @@ let prompt=''; process.stdin.on('data',x=>prompt+=x); process.stdin.on('end',asy
       const timer = setTimeout(() => { child.kill('SIGKILL'); reject(new Error('Fixture timed out')); }, 5000);
       child.stdout.on('data', x => { stdout += x; }); child.stderr.on('data', x => { stderr += x; }); child.on('error', reject);
       child.on('close', code => { clearTimeout(timer); try { resolve({ code, stdout, stderr, result: JSON.parse(stdout) }); } catch { reject(new Error('Fixture returned invalid protocol')); } });
-      child.stdin.end(JSON.stringify({ protocolVersion: 1, task: { id: 't', scopePaths: ['research/t'] }, objective: { id: 'o' }, agent: { id: 'a' } }));
+      child.stdin.end(JSON.stringify({ protocolVersion: 1, task: { id: 't', scopePaths: ['research/t'], checkpoints: fixture.longHistory ? [{ id: 'cp', details: 'OLD_REPORT_BODY'.repeat(40000) }] : [] }, objective: { id: 'o' }, agent: { id: 'a' } }));
     });
     result.progress = await readFile(progressFile, 'utf8'); return result;
   } finally { await rm(directory, { recursive: true, force: true }); }
 }
+
+test('Claude receives the selected card even when a v1 packet has over 512 KB of historical text', async () => {
+  const run = await runFixture({ longHistory: true });
+  assert.equal(run.result.status, 'release');
+});
 
 test('Claude fixture captures actual final metadata and tools can enqueue public progress', async () => {
   const run = await runFixture({ progress: true, events: [{ type: 'assistant', message: { content: 'PRIVATE CONTENT' } }, terminal({ structured_output: { ...answer, usage: { inputTokens: 999999 }, usageWarning: 'PRIVATE MODEL WARNING' } })] });

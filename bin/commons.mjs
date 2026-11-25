@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { GitHubStore, resolveToken } from '../lib/github.mjs';
+import { liveContext } from '../lib/context.mjs';
 import { eligibleTasks, requestDirectory } from '../lib/core.mjs';
 import { work } from '../lib/worker.mjs';
 import { requestSourceContext } from '../lib/worker-context.mjs';
@@ -15,6 +16,10 @@ Usage: node bin/commons.mjs COMMAND [options]
        npm run commons -- COMMAND [options]
 
 Read only:
+  context --objective ID [--page N] [--agent ID]   Compact objective and live task directory
+  context --objective ID --exact                Read just the full statement and success criteria
+  context --task ID [--page N] [--agent ID]     Exact task scope with a page of related signal summaries
+  context --event ID                            Read one complete event, checkpoint, or review
   status [--json]                              Show objectives, tasks, and agents
   watch [--objective ID] [--agent ID] [--once] [--interval 30]   Show reservations, progress and available tasks
   packet --task ID [--json]                    Export context for another runtime
@@ -76,7 +81,7 @@ export function parseArgs(argv) {
     if (!token.startsWith('--')) throw new Error(`Unexpected argument: ${token}. Use --name value.`);
     const key = token.slice(2);
     if (Object.hasOwn(flags, key)) throw new Error(`Repeated option: --${key}.`);
-    if (['json', 'once', 'help'].includes(key)) flags[key] = true;
+    if (['json', 'once', 'help', 'exact'].includes(key)) flags[key] = true;
     else {
       const next = argv[++index];
       if (next === undefined || next.startsWith('--')) throw new Error(`--${key} requires a value.`);
@@ -95,13 +100,13 @@ async function inputText(flags, name) {
   }
   return flags[name];
 }
-const knownCommands = new Set(['help', 'status', 'watch', 'packet', 'requests', 'request', 'join', 'objective', 'task', 'claim', 'heartbeat', 'checkpoint', 'submit', 'review', 'message', 'release', 'block', 'reopen', 'close', 'reopen-objective', 'work', 'usage']);
+const knownCommands = new Set(['help', 'context', 'status', 'watch', 'packet', 'requests', 'request', 'join', 'objective', 'task', 'claim', 'heartbeat', 'checkpoint', 'submit', 'review', 'message', 'release', 'block', 'reopen', 'close', 'reopen-objective', 'work', 'usage']);
 function assertFlags(command, flags) {
   const global = ['config', 'json', 'help'];
   const common = ['agent', 'request-id'];
   const textOptions = names => names.flatMap(name => [name, `${name}-file`]);
   const options = {
-    help: [], status: [], watch: ['agent', 'objective', 'once', 'interval'], packet: ['task'], requests: ['objective'],
+    help: [], context: ['objective', 'task', 'event', 'page', 'agent', 'exact'], status: [], watch: ['agent', 'objective', 'once', 'interval'], packet: ['task'], requests: ['objective'],
     join: ['name', 'role', 'capabilities'],
     objective: ['id', 'tags', ...textOptions(['title', 'statement', 'success'])],
     task: ['id', 'objective', 'approach', 'depends', 'paths', ...textOptions(['title', 'description'])],
@@ -116,7 +121,7 @@ function assertFlags(command, flags) {
     usage: ['task', 'provider', 'model', 'run-id', 'input-tokens', 'output-tokens', 'cached-input-tokens', 'started-at', 'finished-at', 'source', 'evidence', 'usage-file'],
     work: ['agent', 'max-tasks', 'timeout-minutes', 'objective', 'approach', 'task'],
   };
-  const allowed = new Set([...global, ...(options[command] ?? []), ...(['help', 'status', 'watch', 'packet', 'requests', 'work'].includes(command) ? [] : common)]);
+  const allowed = new Set([...global, ...(options[command] ?? []), ...(['help', 'context', 'status', 'watch', 'packet', 'requests', 'work'].includes(command) ? [] : common)]);
   for (const key of Object.keys(flags)) if (!allowed.has(key)) throw new Error(`Unknown option --${key} for ${command}.`);
 }
 export async function usageOperationFromFlags(flags, config) {
@@ -161,10 +166,17 @@ export async function main(argv = process.argv.slice(2)) {
   if (command === 'requests' && !flags.objective) throw new Error('requests requires --objective ID.');
   if (command === 'request' && !flags.paths) throw new Error('request requires --paths for the new task scope.');
   if (trailing.length && command !== 'work') throw new Error('Arguments after -- are only supported by work.');
-  const configPath = flags.config ? resolve(flags.config) : fileURLToPath(new URL('../commons.config.json', import.meta.url));
+  const configOverride = flags.config || process.env.MATH_COMMONS_CONFIG;
+  const configPath = configOverride ? resolve(configOverride) : fileURLToPath(new URL('../commons.config.json', import.meta.url));
   const config = JSON.parse(await readFile(configPath, 'utf8'));
-  const readOnly = ['status', 'watch', 'packet', 'requests'].includes(command);
+  const readOnly = ['context', 'status', 'watch', 'packet', 'requests'].includes(command);
   const store = new GitHubStore(config, { token: resolveToken({ required: !readOnly }) });
+  if (command === 'context') {
+    const { state, serverTime } = await store.read();
+    const view = liveContext(state, flags, Date.parse(serverTime));
+    console.log(JSON.stringify({ repository: config.repository, ...(configOverride ? { configPath } : {}), ...view }, null, flags.json ? 0 : 2));
+    return;
+  }
   if (command === 'status') {
     const { state } = await store.read();
     if (flags.json) console.log(JSON.stringify(state, null, 2)); else printStatus(state);
@@ -224,7 +236,7 @@ export async function main(argv = process.argv.slice(2)) {
     const cancel = () => controller.abort();
     process.once('SIGINT', cancel); process.once('SIGTERM', cancel);
     try {
-      const outcomes = await work(store, { agent: flags.agent, command: trailing[0], args: trailing.slice(1), maxTasks: Number(flags['max-tasks'] ?? 1), timeoutMinutes: Number(flags['timeout-minutes'] ?? 15), objective: flags.objective, approach: flags.approach, task: flags.task, signal: controller.signal, onProgress: item => console.error(JSON.stringify(item)) });
+      const outcomes = await work(store, { configPath: configOverride ? configPath : undefined, agent: flags.agent, command: trailing[0], args: trailing.slice(1), maxTasks: Number(flags['max-tasks'] ?? 1), timeoutMinutes: Number(flags['timeout-minutes'] ?? 15), objective: flags.objective, approach: flags.approach, task: flags.task, signal: controller.signal, onProgress: item => console.error(JSON.stringify(item)) });
       console.log(JSON.stringify({ outcomes }, null, 2));
       if (outcomes.some(outcome => outcome.failed)) process.exitCode = 1;
     } finally { process.off('SIGINT', cancel); process.off('SIGTERM', cancel); }

@@ -26,7 +26,8 @@ async function runAdapter(fixture) {
       "const fixture = JSON.parse(process.env.COMMONS_ADAPTER_FIXTURE);",
       "let prompt = ''; process.stdin.on('data', chunk => prompt += chunk);",
       "process.stdin.on('end', async () => {",
-      " if (!prompt.includes('task-a') || !prompt.includes('untrusted data')) process.exit(3);",
+      " if (!prompt.includes('task-a') || !prompt.includes('untrusted research data')) process.exit(3);",
+      " if (fixture.longHistory && (prompt.includes('OLD_REPORT_BODY') || prompt.length > 8000 || !prompt.includes('context --event ID') || !prompt.includes('research/owned'))) process.exit(4);",
       " if (fixture.progressFile) require('node:child_process').execFileSync(process.execPath, ['adapters/progress.mjs', '--summary', 'Codex public milestone', '--details', 'A bounded check completed'], { stdio: 'ignore' });",
       " if (fixture.oversizedAnswer) fixture.answer.details = 'x'.repeat(150000);",
       " if (fixture.escapedAnswer) fixture.answer.evidence = Array.from({length:30}, () => 'https://example.test/' + '\\u0000'.repeat(1900));",
@@ -55,7 +56,7 @@ async function runAdapter(fixture) {
         clearTimeout(timeout);
         try { resolve({ code, stdout, stderr, result: JSON.parse(stdout) }); } catch { reject(new Error('Adapter omitted its result')); }
       });
-      child.stdin.end(JSON.stringify({ protocolVersion: 1, task: { id: 'task-a' }, agent: { id: 'alice' }, repository: 'g4nesh/math-commons' }));
+      child.stdin.end(JSON.stringify({ protocolVersion: 1, task: { id: 'task-a', scopePaths: ['research/owned'], checkpoints: fixture.longHistory ? [{ id: 'cp', details: 'OLD_REPORT_BODY'.repeat(40000) }] : [] }, agent: { id: 'alice' }, repository: 'g4nesh/math-commons' }));
     });
   } finally { await rm(dir, { recursive: true, force: true }); }
 }
@@ -77,6 +78,11 @@ test('Codex adapter captures runtime counts, hashes identity, and publishes no e
   assert.ok(Date.parse(run.result.usage.startedAt) <= Date.parse(run.result.usage.finishedAt));
   assert.doesNotMatch(run.stdout + run.stderr, /SECRET|runtime-thread-secret-id|999999/);
   assert.equal(run.stderr, '');
+});
+
+test('Codex receives the selected card even when a v1 packet has over 512 KB of historical text', async () => {
+  const run = await runAdapter({ longHistory: true, stream: jsonl([...started, completed]) });
+  assert.equal(run.result.status, 'release');
 });
 
 test('Codex tool subprocess can enqueue an explicit public milestone without a special descriptor', async () => {
