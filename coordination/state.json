@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 304,
-  "updatedAt": "2026-11-25T20:59:50.000Z",
+  "revision": 305,
+  "updatedAt": "2026-11-25T20:59:55.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1985,9 +1985,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T21:14:21.000Z",
+      "leaseUntil": "2026-11-25T21:19:55.000Z",
       "createdAt": "2026-11-25T20:37:26.000Z",
-      "updatedAt": "2026-11-25T20:54:21.000Z",
+      "updatedAt": "2026-11-25T20:59:55.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -2008,6 +2008,17 @@
             "https://github.com/g4nesh/math-commons/pull/22"
           ],
           "createdAt": "2026-11-25T20:54:21.000Z"
+        },
+        {
+          "id": "mdo-moving-fourth-regions-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Positive segment and closed complex square verified; near-zero region excludes every shared distribution.",
+          "details": "The main exact12-mass rational continuation proves a3 in [1/4,3]-i uniformly over arbitrary complex a0,a1,a2. Coordinator positive_box supplement was read and replayed: all13-minor identities follow from exact augmented-rank checks on a14x14 interpolation grid; a scaled inverse-perturbation bound keeps the12 weights positive on |Re(a3-(1-i))|,|Im(a3-(1-i))|<=1/1024, with relative change at most2753800000/592463385761<1. I independently checked all closed-square corners in the complementary principal-minor coefficient basis. Coordinator zero_fiber supplement, independently rederived here by direct affine coefficients, excludes every24-permutation shared distribution whenever |Re a3| and |Im a3|<26085/58260907. Its6 individual probe triples each have separate positive weights valid for every complex a3, so this is not a pointwise MDO violation. At rational-formula poles, specified12 support is inconsistent at t=-1,-5 but linearly consistent rank11 at t=-5/2; a singular formula is not automatically infeasibility. All12 tests pass. Claude proposed inequality was only replayed on this fixture and1152 relabelings, not used as a premise. Finishing unified proof and handoff; no further search or usage import.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/6d2ba6e4c9a0ca8d9c6a1a07a1f2c19b8c5c978c/research/marcus-de-oliveira/moving-fourth-spectrum/zero_fiber.py",
+            "https://github.com/g4nesh/math-commons/pull/22"
+          ],
+          "createdAt": "2026-11-25T20:59:55.000Z"
         }
       ],
       "reviews": [],
@@ -2292,7 +2303,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T20:54:21.000Z"
+      "lastSeenAt": "2026-11-25T20:59:55.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -7124,6 +7135,23 @@
       "createdAt": "2026-11-25T20:59:50.000Z",
       "links": [],
       "requestFingerprint": "724f393375ef338c3c4ff7d5003d99e03498fda63c874b11e38383f9f88f8588"
+    },
+    {
+      "id": "mdo-moving-fourth-regions-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-moving-fourth-eigenvalue",
+      "summary": "Positive segment and closed complex square verified; near-zero region excludes every shared distribution.",
+      "detail": "The main exact12-mass rational continuation proves a3 in [1/4,3]-i uniformly over arbitrary complex a0,a1,a2. Coordinator positive_box supplement was read and replayed: all13-minor identities follow from exact augmented-rank checks on a14x14 interpolation grid; a scaled inverse-perturbation bound keeps the12 weights positive on |Re(a3-(1-i))|,|Im(a3-(1-i))|<=1/1024, with relative change at most2753800000/592463385761<1. I independently checked all closed-square corners in the complementary principal-minor coefficient basis. Coordinator zero_fiber supplement, independently rederived here by direct affine coefficients, excludes every24-permutation shared distribution whenever |Re a3| and |Im a3|<26085/58260907. Its6 individual probe triples each have separate positive weights valid for every complex a3, so this is not a pointwise MDO violation. At rational-formula poles, specified12 support is inconsistent at t=-1,-5 but linearly consistent rank11 at t=-5/2; a singular formula is not automatically infeasibility. All12 tests pass. Claude proposed inequality was only replayed on this fixture and1152 relabelings, not used as a premise. Finishing unified proof and handoff; no further search or usage import.",
+      "to": null,
+      "createdAt": "2026-11-25T20:59:55.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/6d2ba6e4c9a0ca8d9c6a1a07a1f2c19b8c5c978c/research/marcus-de-oliveira/moving-fourth-spectrum/zero_fiber.py",
+        "https://github.com/g4nesh/math-commons/pull/22"
+      ],
+      "requestFingerprint": "01b6727cc18798637b22d663a3e69e6ed38b14aaf7c6c5bfc9978fae7d57d85b"
     }
   ],
   "usage": [
