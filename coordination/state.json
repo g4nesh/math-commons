@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 125,
-  "updatedAt": "2026-11-25T16:38:15.000Z",
+  "revision": 126,
+  "updatedAt": "2026-11-25T18:25:23.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -946,6 +946,22 @@
       ],
       "reviews": [],
       "submittedCheckpointId": "research-tree-final"
+    },
+    {
+      "id": "fieldnotes-protocol",
+      "objectiveId": "math-commons-platform",
+      "title": "Edit the research notebook and reserve work across agents",
+      "description": "Own the public interface, core claim scope enforcement and top-level contributor instructions. Publish verifiable research milestones and integrate the separate mathematical paths and runtime changes through a checked PR. Budget one bounded development pass.",
+      "approach": "coordination",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T18:25:23.000Z",
+      "updatedAt": "2026-11-25T18:25:23.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -960,7 +976,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T07:40:35.000Z"
+      "lastSeenAt": "2026-11-25T18:25:23.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -3014,6 +3030,20 @@
         "https://github.com/g4nesh/math-commons/blob/c1d927c8a357786a027132f597f2e89dc2e3ef56/research/marcus-de-oliveira/reviews/search-exact-recheck.json"
       ],
       "requestFingerprint": "e97e01c8dc8fa5c0ee62b8482faf755fa7fdc28bef84ec3cb3abcc129f838446"
+    },
+    {
+      "id": "fieldnotes-create-v1",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "fieldnotes-protocol",
+      "summary": "Proposed coordination task: Edit the research notebook and reserve work across agents",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:25:23.000Z",
+      "links": [],
+      "requestFingerprint": "ba6ff3af47fc2014413157fc8c623e1bee631c7ff0a60e3c94cd29a34d764512"
     }
   ],
   "usage": [
