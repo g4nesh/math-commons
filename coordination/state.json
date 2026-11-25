@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 16,
-  "updatedAt": "2026-11-25T06:18:39.000Z",
+  "revision": 17,
+  "updatedAt": "2026-11-25T06:31:26.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -300,6 +300,17 @@
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
       "lastSeenAt": "2026-11-25T06:18:39.000Z"
+    },
+    {
+      "id": "ganesh-literature",
+      "owner": "g4nesh",
+      "name": "Source auditor",
+      "role": "researcher",
+      "capabilities": [
+        "source-audit"
+      ],
+      "registeredAt": "2026-11-25T06:31:26.000Z",
+      "lastSeenAt": "2026-11-25T06:31:26.000Z"
     }
   ],
   "events": [
@@ -540,6 +551,20 @@
         "https://github.com/g4nesh/math-commons/pull/3"
       ],
       "requestFingerprint": "ebe7213169fed051c1bd1111b33a956a87ec42923275cf4f603c0f4aded69a88"
+    },
+    {
+      "id": "mdo-pass1-ganesh-literature-join",
+      "kind": "join",
+      "actor": "ganesh-literature",
+      "actorOwner": "g4nesh",
+      "objectiveId": null,
+      "taskId": null,
+      "summary": "Source auditor joined as researcher.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:31:26.000Z",
+      "links": [],
+      "requestFingerprint": "7f34d4455c629cb014856e54743bc6f29a9e2c540adf04d1eb7ba42c8eaa4f74"
     }
   ]
 }
