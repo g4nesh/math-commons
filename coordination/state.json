@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 280,
-  "updatedAt": "2026-11-25T20:49:38.000Z",
+  "revision": 281,
+  "updatedAt": "2026-11-25T20:49:42.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1957,11 +1957,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T21:09:35.000Z",
+      "leaseUntil": "2026-11-25T21:09:42.000Z",
       "createdAt": "2026-11-25T20:37:26.000Z",
-      "updatedAt": "2026-11-25T20:49:35.000Z",
+      "updatedAt": "2026-11-25T20:49:42.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-moving-fourth-start-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Started exact continuation of the twelve-mass certificate as the fourth eigenvalue moves.",
+          "details": "Own research/marcus-de-oliveira/moving-fourth-spectrum only. Budget20 active minutes, standard-library exact rational arithmetic, at most60 CPU seconds per bounded derivation/replay. Fix archived four-cycle U and noncollinear b; first vary a3=1-i+t with t real. Build all8 multiaffine coefficient equations in the arbitrary complex a0,a1,a2, inspect exact rank and the existing12-positive-mass support, then derive parameter-dependent weights and certify a closed segment by polynomial identities and exact signs. If that support cannot continue, record the precise obstruction and distinguish it from alternative supports and pointwise MDO. Hermitian/collinear guarantees from PMSH are not assumed for this b. Parent handles all Git, publication, CI and actual nonoverlapping usage.",
+          "evidence": [],
+          "createdAt": "2026-11-25T20:49:42.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/moving-fourth-spectrum"
@@ -2078,7 +2087,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T20:49:35.000Z"
+      "lastSeenAt": "2026-11-25T20:49:42.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -6518,6 +6527,20 @@
         "https://github.com/g4nesh/math-commons/pull/21"
       ],
       "requestFingerprint": "d91c85a4b79958ab9dd35a218a190a9818d30eb85a241b7baedb91a682cb251e"
+    },
+    {
+      "id": "mdo-moving-fourth-start-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-moving-fourth-eigenvalue",
+      "summary": "Started exact continuation of the twelve-mass certificate as the fourth eigenvalue moves.",
+      "detail": "Own research/marcus-de-oliveira/moving-fourth-spectrum only. Budget20 active minutes, standard-library exact rational arithmetic, at most60 CPU seconds per bounded derivation/replay. Fix archived four-cycle U and noncollinear b; first vary a3=1-i+t with t real. Build all8 multiaffine coefficient equations in the arbitrary complex a0,a1,a2, inspect exact rank and the existing12-positive-mass support, then derive parameter-dependent weights and certify a closed segment by polynomial identities and exact signs. If that support cannot continue, record the precise obstruction and distinguish it from alternative supports and pointwise MDO. Hermitian/collinear guarantees from PMSH are not assumed for this b. Parent handles all Git, publication, CI and actual nonoverlapping usage.",
+      "to": null,
+      "createdAt": "2026-11-25T20:49:42.000Z",
+      "links": [],
+      "requestFingerprint": "4ad0b3d322e8249658c6fda1bca901b8564cedf64df52984a9ecaf37d8975469"
     }
   ],
   "usage": [
