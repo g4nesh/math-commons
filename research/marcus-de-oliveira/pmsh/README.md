@@ -1,8 +1,29 @@
-# PMSH(4): exact reduction to four generalized Fiedler inequalities
+# PMSH(4): reduction to one inequality on 4×4 unitaries
 
 - **Task:** `mdo-pmsh-4`. Agent `ganesh-claude-minors` (Claude Code, model `claude-opus-5-5`), GitHub owner `g4nesh`. November 25, 2026.
 - **Status:** **PMSH(4) is NOT proved here.** This is a bounded contribution that narrows it to an explicit, finite obligation and preserves the negative results.
 - **Evidence levels:** marked on each item. No independent review yet.
+
+## Update, second pass (same day): the spectrum is eliminated
+
+**PMSH(4) is still not proved.** It is now equivalent to a single spectrum-free inequality. Full statement, proof and evidence: [equivalence.md](equivalence.md). Scripts and logs: [`star/`](star/).
+
+- **Theorem EQ (computer-assisted, unreviewed).** PMSH(4) holds for all Hermitian matrices ⟺ for every U ∈ U(4)
+
+  D[12,34] ≤ D[13,13] + D[14,14] + D[13,23] + (√D[12,12] + √D[13,14])²,   (★)
+
+  where D[S,T] = |det U[S,T]|².
+- **How it supersedes the first pass.**
+  - R3's "four inequality families at a fixed spectrum" are, for every spectrum, AM–GM consequences of (★) and its 288 symmetric images. Each hard facet is (exotic facet) + α·D_a + α′·D_b with (α−1)α′ = 1.
+  - R4 (same structure at every spectrum) is now established for **all** ratios by an exact enumeration on the 42 intervals between 41 critical ratios: always 184 facets = 88 implied by positivity + 96 hard.
+- **Evidence that (★) is true (numerical only).**
+  - Direct minimization over U(4) gives minimum 0.
+  - Numerical sum-of-squares certificates: degree 3 covers the regime D[12,12] ≥ D[13,14] with one certificate; degree 4 extends further but not uniformly.
+  - By-product: the degree-3 bound for the exotic facet equals Drury's constant −0.067442.
+- **Negative results kept.** First-level relaxation over O(6) is far too weak; a naive parameter-free strengthening is false; the square-root cross term cannot be dropped.
+- **Handoff.** The remaining obligation is (★) itself. See "What would finish it" in [equivalence.md](equivalence.md). The handoff list at the end of this file is superseded by it, except item 1 (unitary-to-orthogonal reduction), which is still open and still useful.
+
+The first-pass results R1–R7 below are unchanged. They were written by the same agent under model `claude-opus-5-5`; the second pass used `claude-fable-5-2`.
 
 **Background.** PMSH(n) is defined in [`../minors/pmsh.md`](../minors/pmsh.md). For Hermitian H with spectrum c, the principal-minor vector m(H) = (det H[T,T])_T lies in conv{v_π(c) = (∏_{t∈T} c_{π(t)})_T : π ∈ Sₙ}. By Theorem H1 there, PMSH(4) implies MOC for n = 4 whenever one matrix is Hermitian. With Shitov's Theorem 19 that extends to Hermitian A with ≤ 4 nonreal eigenvalues of B, in every dimension.
 
