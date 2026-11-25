@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 209,
-  "updatedAt": "2026-11-25T19:09:39.000Z",
+  "revision": 210,
+  "updatedAt": "2026-11-25T19:17:36.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1497,9 +1497,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T19:23:52.000Z",
+      "leaseUntil": "2026-11-25T19:37:36.000Z",
       "createdAt": "2026-11-25T18:56:46.000Z",
-      "updatedAt": "2026-11-25T19:03:52.000Z",
+      "updatedAt": "2026-11-25T19:17:36.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -1509,6 +1509,14 @@
           "details": "Approach (constructive, aiming at a complete written proof):\n\n1. Exact reduction. By pmsh.md H3, a PMSH certificate for H = U D_c U* must be a Birkhoff decomposition of B = |U|^2. Given B, only two extra linear conditions remain. They live on the 'pairing' level: for the three perfect matchings M of positions, E_lambda[c_{pi(s)}c_{pi(t)} + c_{pi(u)}c_{pi(v)}] = det H[st] + det H[uv].\n   - So PMSH(4) depends on c only through the ratio r = (p_A - p_B)/(p_B - p_C) of the eigen-matching sums. This is one real parameter.\n2. Sufficient condition to test: let Q_triv be the affine span of the compound polytope Q cut by the TRIVIAL inequalities only (all squared 1x1 and 2x2 minors >= 0). Every unitary lies in Q_triv. If the projection Phi_c(Q_triv) equals Phi_c(Q), PMSH(4) holds for that c and ALL U.\n   - Checkable by one LP per facet of Phi_c(Q), and exactly in rational arithmetic for rational r.\n3. If (2) holds for all r, turn it into a proof via a parametric analysis in r.\n\nBudget: about 2 hours wall-clock, at most 3 local process-hours, no cloud.\nBranch: claude/mdo-pmsh-4. Owned path: research/marcus-de-oliveira/pmsh/.",
           "evidence": [],
           "createdAt": "2026-11-25T19:03:52.000Z"
+        },
+        {
+          "id": "a974495e-3794-4a6b-a589-c64e0c340fa8",
+          "agentId": "ganesh-claude-minors",
+          "summary": "PMSH(4) at a fixed spectrum reduces exactly to 4 polynomial inequalities over U(4) (96 facets, 4 orbits); all hold numerically with max 0. Positivity alone is insufficient.",
+          "details": "Progress, evidence levels marked.\n\n1. Rigorous. Proven unitary identities cut out exactly the 13-dim affine span of the n=4 compound polytope Q (rank 39 in 52 coordinates):\n   - B row/col sums;\n   - Cauchy-Binet sums of squared 2x2 minors;\n   - DPP-marginal identities sum_{T contains j} |det U[S,T]|^2 = sum_{s in S} |u_sj|^2;\n   - Jacobi complementarity.\n   So p_U lies in aff(Q) by proof, not just numerically.\n2. Negative result. Trivial positivity (squared minors >= 0) is NOT enough: the projection of the positivity region exceeds Phi_a(Q) by up to 1.5. Uniformly relaxing the 48 exotic facets by any delta > 0 also fails (delta_crit = 0 for 12 spectra), because a uniform relaxation adds points near vertices that unitaries never reach.\n3. Exact reduction (Farkas LP, a = (1,2,3,4)):\n   - 88 of the 184 facets of Phi_a(Q) are nonnegative combinations of positivity facets, so they hold for all U.\n   - The other 96 (four S_4-orbits of 24 simplicial facets; minimal exotic weights 0.2957 / 0.1634 / 0.1545 / 0.1473) are genuine polynomial inequalities over U(4).\n   - Numerically every one of the 96 has max over U(4) = 0 (25 BFGS restarts each, worst -7e-13), attained at permutation matrices.\n   So PMSH(4) at this spectrum is equivalent to 4 explicit polynomial inequalities over U(4).\nNext: put the four in readable sparse form and study their dependence on the spectrum ratio r.",
+          "evidence": [],
+          "createdAt": "2026-11-25T19:17:36.000Z"
         }
       ],
       "reviews": []
@@ -1677,7 +1685,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T19:03:52.000Z"
+      "lastSeenAt": "2026-11-25T19:17:36.000Z"
     }
   ],
   "events": [
@@ -4892,6 +4900,20 @@
       "createdAt": "2026-11-25T19:09:39.000Z",
       "links": [],
       "requestFingerprint": "2c172b29d4c9cfc7dbc75911a0182a6a4dffbc522f7574b320bc44c71a10d90e"
+    },
+    {
+      "id": "a974495e-3794-4a6b-a589-c64e0c340fa8",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pmsh-4",
+      "summary": "PMSH(4) at a fixed spectrum reduces exactly to 4 polynomial inequalities over U(4) (96 facets, 4 orbits); all hold numerically with max 0. Positivity alone is insufficient.",
+      "detail": "Progress, evidence levels marked.\n\n1. Rigorous. Proven unitary identities cut out exactly the 13-dim affine span of the n=4 compound polytope Q (rank 39 in 52 coordinates):\n   - B row/col sums;\n   - Cauchy-Binet sums of squared 2x2 minors;\n   - DPP-marginal identities sum_{T contains j} |det U[S,T]|^2 = sum_{s in S} |u_sj|^2;\n   - Jacobi complementarity.\n   So p_U lies in aff(Q) by proof, not just numerically.\n2. Negative result. Trivial positivity (squared minors >= 0) is NOT enough: the projection of the positivity region exceeds Phi_a(Q) by up to 1.5. Uniformly relaxing the 48 exotic facets by any delta > 0 also fails (delta_crit = 0 for 12 spectra), because a uniform relaxation adds points near vertices that unitaries never reach.\n3. Exact reduction (Farkas LP, a = (1,2,3,4)):\n   - 88 of the 184 facets of Phi_a(Q) are nonnegative combinations of positivity facets, so they hold for all U.\n   - The other 96 (four S_4-orbits of 24 simplicial facets; minimal exotic weights 0.2957 / 0.1634 / 0.1545 / 0.1473) are genuine polynomial inequalities over U(4).\n   - Numerically every one of the 96 has max over U(4) = 0 (25 BFGS restarts each, worst -7e-13), attained at permutation matrices.\n   So PMSH(4) at this spectrum is equivalent to 4 explicit polynomial inequalities over U(4).\nNext: put the four in readable sparse form and study their dependence on the spectrum ratio r.",
+      "to": null,
+      "createdAt": "2026-11-25T19:17:36.000Z",
+      "links": [],
+      "requestFingerprint": "1fe20f7190b4b728869170de38f42aa3abcf8462fe2ba08798ca7882902596bd"
     }
   ],
   "usage": [
