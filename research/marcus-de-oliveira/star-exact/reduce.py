@@ -1,7 +1,7 @@
 """Facial reduction for the t = 1 certificate.
 1. From polished zeros: for each weight block, C_b = real coefficient vectors c with c . m_b(U) = 0 on the zero set
    (the cubics vanishing on the zero set).  Rationalise a row-reduced basis.
-2. Reduced SDP:  f = sum_b (C_b m_b)^* S_b (C_b m_b)  on U(4),  maximise lambda with S_b >= lambda * I."""
+2. The reduced SDP  f = sum_b (C_b m_b)^* S_b (C_b m_b)  is solved in reduced_sdp.py and reduced_haar.py."""
 import sys, time, json, pickle, numpy as np, cvxpy as cp
 from fractions import Fraction as Fr
 from numeric import *
@@ -38,26 +38,4 @@ if __name__ == '__main__':
     for b, c in zip(BLOCK_LIST, comp): hist[(len(b), len(c))] = hist.get((len(b), len(c)), 0) + 1
     print("   (block size, complement dim) counts:", dict(sorted(hist.items())))
     json.dump({'t': t, 'complement': [[[str(q) for q in row] for row in c] for c in comp]}, open('complement_t%g.json' % t, 'w'))
-    # ---- reduced SDP ----
-    Us, rows, pcs = sample(); E = np.array([[float(x) for x in row] for row in rows])
-    f = np.array([float(t * g + (1 + t) * a + t * t * b) for g, a, b in pcs])
-    u, sv, vt = np.linalg.svd(E, full_matrices=False); rk = int((sv > 1e-9 * sv[0]).sum()); P = u[:, :rk].T; PE = P @ E
-    lam = cp.Variable(); expr = 0; cons = []; Svars = []
-    for (idx, n), c in zip(BLOCK_SLICES, comp):
-        r = len(c)
-        if r == 0: Svars.append(None); continue
-        Cf = np.array([[float(q) for q in row] for row in c])               # r x n
-        S = cp.Variable((r, r), symmetric=True); Svars.append(S)
-        cons.append(S - lam * np.eye(r) >> 0)
-        # contribution to E s:  sum_{i<=j} E[:, idx_k] * coefficient, where G = C^T S C, s_ii = G_ii, s_ij = 2 G_ij
-        k = 0; Acoef = np.zeros((rk, r, r))
-        for i in range(n):
-            for j in range(i, n):
-                w = np.outer(Cf[:, i], Cf[:, j]); w = w + w.T if i != j else w
-                Acoef += PE[:, idx[k]][:, None, None] * w[None]; k += 1
-        expr = expr + cp.sum(cp.multiply(Acoef.reshape(rk, -1), cp.reshape(cp.vec(S, order='C'), (1, r * r), order='C')), axis=1)
-    cons.append(expr == P @ f)
-    prob = cp.Problem(cp.Maximize(lam), cons); prob.solve(solver='CLARABEL')
-    print("reduced SDP: status %s ; best lambda (min eigenvalue of all reduced blocks) = %s  [%.0fs]" % (prob.status, None if lam.value is None else "%+.4e" % lam.value, time.time() - t0))
-    if lam.value is not None:
-        pickle.dump({'t': t, 'S': [None if S is None else S.value for S in Svars], 'lam': float(lam.value)}, open('reduced_t%g.pkl' % t, 'wb'))
+    # the reduced SDP itself is in reduced_sdp.py (rational sample) and reduced_haar.py (Haar sample)
