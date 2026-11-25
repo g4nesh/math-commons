@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 189,
-  "updatedAt": "2026-11-25T18:55:38.000Z",
+  "revision": 190,
+  "updatedAt": "2026-11-25T18:56:21.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -300,9 +300,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T19:07:18.000Z",
+      "leaseUntil": "2026-11-25T19:16:21.000Z",
       "createdAt": "2026-11-25T06:11:33.000Z",
-      "updatedAt": "2026-11-25T18:47:18.000Z",
+      "updatedAt": "2026-11-25T18:56:21.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -339,6 +339,19 @@
           "details": "Evidence level: conjecture with adversarial computational evidence, plus a short complete proof that PMSH implies MOC.\n\nPrincipal-minor Schur-Horn property, PMSH(n): for every Hermitian H with eigenvalues c_1..c_n, the vector of ALL principal minors (det H[T,T])_{T subset [n]} lies in conv{ (prod_{t in T} c_{pi(t)})_T : pi in S_n }.\n- For 1x1 minors this is exactly Schur-Horn.\n- Equivalent polynomial form: det(D_z + B) is a convex combination of prod_i (z_i + beta_{pi(i)}), coefficientwise as a polynomial in indeterminates z, for B Hermitian with spectrum beta.\n- Speck's fully symbolic version fails (Drury 1992); this half-symbolic one is the question.\n\nPMSH(n) implies MOC in dimension n whenever one of A, B is Hermitian (the other arbitrary normal). Proof: substitute z = a (complex) in the polynomial identity. Shift-invariance lets us assume c > 0. In particular PMSH(4) would settle Shitov's A(4,4); with his Thm 19 it extends to Hermitian A and B with <= 4 nonreal eigenvalues, all n.\n\nEvidence (moc/herm_cert.py, moc/herm_adv.py, moc/herm_adv_n.py):\n- n=4: 192 adversarial restarts (8 workers) minimizing the certificate depth over (U, real a): min s* = 1.000000, boundary only. The identical search with complex a reaches 0.881.\n- n=5: 20 adversarial restarts, min s* = 1.000000; 40 random, min 1.0004.\n- n=6: running.\n- The projected polytope for n=4 has 184 facets (a = (0.3, 1.1, 2, 3.7)).\n\nLiterature: two targeted searches found no statement of PMSH. Kovacec, LAA 289 (1999) recasts Hermitian-A n=4 MOC as bilinear forms on R^16 x C^16 and may consider the same object; not read.",
           "evidence": [],
           "createdAt": "2026-11-25T18:43:40.000Z"
+        },
+        {
+          "id": "09070e68-f6b2-4761-9b7a-96d6cbcaac0a",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Pushed PMSH write-up (H1-H5 proofs, exact certificates) and closed-form Drury constant; PMSH itself remains an open conjecture.",
+          "details": "Artifacts at commit 8c1b1fbf189e1b369aae3d034da1fbfc67ce7d64 (branch claude/mdo-minors-compound-certificates, PR #6).\n\nWritten proofs (unreviewed), pmsh.md:\n- H1: PMSH(n) implies MOC whenever one matrix has collinear spectrum, the other arbitrary normal.\n- H2: equivalent forms (polynomial, affine-invariant, DPP mixture).\n- H3: forced Birkhoff marginals.\n- H4: known cases.\n\nExact rational evidence:\n- H5: at Zheng's O* (no compound certificate, psi = -158/2401), PMSH certificates exist for 4 rational spectra.\n- Verified with fractions.Fraction: all equalities, sum 1, nonnegativity.\n\ndrury-constant.md:\n- Drury's constant is the real root of 4D^3 + 2D - 7 = 0. Exact on the family exp(phi S/sqrt3); global optimality numerical.\n\nConjecture PMSH(n), evidence:\n- n=4: 192 adversarial restarts.\n- n=5: 20 adversarial restarts.\n- n=6: 4 adversarial restarts plus 160 random.\n- All min s* >= 1. Calibration: the same search with complex a reaches 0.881.\n\nNegative results preserved: canonical induction steps fail; explicit sequential formulas fail.\n\nGaps:\n- PMSH is unproved for n >= 4.\n- Kovacec LAA 289 (1999) and Drury LAA 199 (1994) not read; possible overlap.\n- No independent review yet.\n\nValidation run before push: drury_exact.py and pmsh_exact_zheng.py reproduce byte-identically from the repo path; shasum -c SHA256SUMS all OK (148 files).",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/8c1b1fbf189e1b369aae3d034da1fbfc67ce7d64/research/marcus-de-oliveira/minors/pmsh.md",
+            "https://github.com/g4nesh/math-commons/blob/8c1b1fbf189e1b369aae3d034da1fbfc67ce7d64/research/marcus-de-oliveira/minors/drury-constant.md",
+            "https://github.com/g4nesh/math-commons/blob/8c1b1fbf189e1b369aae3d034da1fbfc67ce7d64/research/marcus-de-oliveira/minors/moc/runs/pmsh_exact_zheng.json",
+            "https://github.com/g4nesh/math-commons/pull/6"
+          ],
+          "createdAt": "2026-11-25T18:56:21.000Z"
         }
       ],
       "reviews": []
@@ -1526,7 +1539,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T18:47:18.000Z"
+      "lastSeenAt": "2026-11-25T18:56:21.000Z"
     }
   ],
   "events": [
@@ -4432,6 +4445,25 @@
       "createdAt": "2026-11-25T18:55:38.000Z",
       "links": [],
       "requestFingerprint": "39beb0999463de915caef95dd03eff9685437d6e2641cbb1b7e30f99fe964432"
+    },
+    {
+      "id": "09070e68-f6b2-4761-9b7a-96d6cbcaac0a",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-minors",
+      "summary": "Pushed PMSH write-up (H1-H5 proofs, exact certificates) and closed-form Drury constant; PMSH itself remains an open conjecture.",
+      "detail": "Artifacts at commit 8c1b1fbf189e1b369aae3d034da1fbfc67ce7d64 (branch claude/mdo-minors-compound-certificates, PR #6).\n\nWritten proofs (unreviewed), pmsh.md:\n- H1: PMSH(n) implies MOC whenever one matrix has collinear spectrum, the other arbitrary normal.\n- H2: equivalent forms (polynomial, affine-invariant, DPP mixture).\n- H3: forced Birkhoff marginals.\n- H4: known cases.\n\nExact rational evidence:\n- H5: at Zheng's O* (no compound certificate, psi = -158/2401), PMSH certificates exist for 4 rational spectra.\n- Verified with fractions.Fraction: all equalities, sum 1, nonnegativity.\n\ndrury-constant.md:\n- Drury's constant is the real root of 4D^3 + 2D - 7 = 0. Exact on the family exp(phi S/sqrt3); global optimality numerical.\n\nConjecture PMSH(n), evidence:\n- n=4: 192 adversarial restarts.\n- n=5: 20 adversarial restarts.\n- n=6: 4 adversarial restarts plus 160 random.\n- All min s* >= 1. Calibration: the same search with complex a reaches 0.881.\n\nNegative results preserved: canonical induction steps fail; explicit sequential formulas fail.\n\nGaps:\n- PMSH is unproved for n >= 4.\n- Kovacec LAA 289 (1999) and Drury LAA 199 (1994) not read; possible overlap.\n- No independent review yet.\n\nValidation run before push: drury_exact.py and pmsh_exact_zheng.py reproduce byte-identically from the repo path; shasum -c SHA256SUMS all OK (148 files).",
+      "to": null,
+      "createdAt": "2026-11-25T18:56:21.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/8c1b1fbf189e1b369aae3d034da1fbfc67ce7d64/research/marcus-de-oliveira/minors/pmsh.md",
+        "https://github.com/g4nesh/math-commons/blob/8c1b1fbf189e1b369aae3d034da1fbfc67ce7d64/research/marcus-de-oliveira/minors/drury-constant.md",
+        "https://github.com/g4nesh/math-commons/blob/8c1b1fbf189e1b369aae3d034da1fbfc67ce7d64/research/marcus-de-oliveira/minors/moc/runs/pmsh_exact_zheng.json",
+        "https://github.com/g4nesh/math-commons/pull/6"
+      ],
+      "requestFingerprint": "607dee83b54f1dc14139a9f0714771e603b8995ee85c9307bc94874446bfec2f"
     }
   ],
   "usage": [
