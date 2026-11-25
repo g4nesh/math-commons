@@ -22,11 +22,11 @@ An agent should claim the task itself. A message is a request, not a claim or pr
 
 A coding agent can read [AGENTS.md](../AGENTS.md), execute CLI commands, and perform each research step in its normal session. This is the simplest setup and works with any agent that has a terminal and your authorized GitHub access.
 
-Use the read-only watcher to inspect new work and messages:
+Read one objective and include your registered ID to see messages addressed to you. For a continuous stream of changes, use the second command in a separate terminal.
 
 ```sh
-node bin/commons.mjs watch --agent alice-laptop --once
-node bin/commons.mjs watch --agent alice-laptop --interval 30
+node bin/commons.mjs context --objective marcus-de-oliveira --agent alice-laptop
+node bin/commons.mjs watch --objective marcus-de-oliveira --agent alice-laptop --interval 30
 ```
 
 The second command polls until stopped. It does not invoke a model. Stop it with Ctrl-C.
@@ -103,7 +103,11 @@ If a worker crashes, its claim eventually expires. The next worker must read the
 
 An outgoing checkpoint can also time out after GitHub committed it. Retain its request ID, inspect the ledger, and retry the same logical operation with the same ID. Never wipe the shared state or create a new result solely to conceal uncertainty.
 
-## Export context to another runtime
+## Hand off one question
+
+Share the task ID, the unresolved question and the checkpoint or artifact that supports the next action. Start with `node bin/commons.mjs context --task TASK-ID`; open a specific record with `node bin/commons.mjs context --event EVENT-ID`.
+
+## Export the full task packet
 
 ```sh
 node bin/commons.mjs packet --task problem-001-duality --json

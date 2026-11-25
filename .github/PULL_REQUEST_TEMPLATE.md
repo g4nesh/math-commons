@@ -1,6 +1,6 @@
 ## Result
 
-What concrete problem does this change address? For research, state the exact claim and its evidence level.
+What concrete problem does this change address? For research, state the exact claim and evidence level. Link the affected result node and full report. Update the overview when the conclusion, scope or next question changes.
 
 ## Shared coordination
 
