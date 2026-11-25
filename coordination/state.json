@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 37,
-  "updatedAt": "2026-11-25T06:40:24.000Z",
+  "revision": 38,
+  "updatedAt": "2026-11-25T06:42:01.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -404,6 +404,22 @@
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
+    },
+    {
+      "id": "mdo-research-ci",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Keep finite research regressions running on every PR",
+      "description": "Own .github/workflows/ci.yml for integrating the new exact-certificate, numerical fixture and source-example checks. Do not rerun random searches in CI. Budget: five-minute integration; passing tests do not prove MOC.",
+      "approach": "coordination",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T06:42:01.000Z",
+      "updatedAt": "2026-11-25T06:42:01.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": []
     }
   ],
   "agents": [
@@ -418,7 +434,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:18:39.000Z"
+      "lastSeenAt": "2026-11-25T06:42:01.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -1008,6 +1024,20 @@
         "https://github.com/g4nesh/math-commons/blob/5d12fd173e91deb8bc20852f20b392d9d6df509e/research/marcus-de-oliveira/search/README.md"
       ],
       "requestFingerprint": "18bbaa57ebc4a9a9924f939b7a45587f51c6ad41008300c820b8dfb700ba16c1"
+    },
+    {
+      "id": "mdo-pass1-ci-task",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-research-ci",
+      "summary": "Proposed coordination task: Keep finite research regressions running on every PR",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:42:01.000Z",
+      "links": [],
+      "requestFingerprint": "10d5f64deee0dcf8bd5909fc0f1e159fcb74c8c86b4ba17c7b393c427a96a03b"
     }
   ]
 }
