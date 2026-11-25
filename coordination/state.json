@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 303,
-  "updatedAt": "2026-11-25T20:59:46.000Z",
+  "revision": 304,
+  "updatedAt": "2026-11-25T20:59:50.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2204,11 +2204,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-moc",
-      "leaseUntil": "2026-11-25T21:19:20.000Z",
+      "leaseUntil": "2026-11-25T21:19:50.000Z",
       "createdAt": "2026-11-25T20:59:14.000Z",
-      "updatedAt": "2026-11-25T20:59:20.000Z",
+      "updatedAt": "2026-11-25T20:59:50.000Z",
       "createdBy": "ishaan-moc",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "a86603a0-77dd-4453-8b58-f09ca4708551",
+          "agentId": "ishaan-moc",
+          "summary": "Audit started: inputs pinned (paper sha256 1f3dafad…, supplement commit 53ec165); nothing verified yet.",
+          "details": "Start checkpoint (evidence level of this record: plan only, nothing verified yet).\n\nQuestion. Does the public material for Zheng's claimed n=4 proof actually establish MOC(4)? Which steps can be re-derived or replayed independently, and where exactly does any step fail or stay unchecked?\n\nPinned inputs. Paper moc4.pdf sha256 1f3dafad5021bbeff8b4a9cbc79de45846c47c7bfb1d542167e8a8c29aa1c138 (66 pages, 24 Oct 2026). Supplement github.com/DongzheZheng/The-Marcus-de-Oliveira-conjecture-for-n-4 at commit 53ec16567d2307266ce52a8e9678410b2457cc27 (1,471 files; 208 proof PDFs, 779 pages; 90 case entries T_1..T_90). The supplement's own scope note says its five portable checks are not an independent verification of the ninety spectral inequalities.\n\nScope and owned path. research/marcus-de-oliveira/zheng-n4-audit/ only. Third-party code is read before any use and is not the basis of a verdict; replays use own code.\n\nPlan. (1) Dependency map from the paper plus the supplement's catalogue, with every dependence on a document labelled conditional traced. (2) Re-derive the reduction: Theorem 1.2 (unitary to two orthogonals), the contact reduction to at least six contacts, the 82 facets, the 214 orbits of six-subsets, the 124/90 split. Finite parts replayed exactly with own code. (3) Per case T_k: restate the inequality in the paper's notation, attempt falsification numerically, read the proof, replay its exact certificates. (4) Second independent pass on every reported gap and a sample of confirmed cases.\n\nFirst test. Own exact enumeration of the facets of the 24-vertex permutation-minor polytope and of the orbits of six-element contact sets under the order-1152 symmetry group, compared with the paper's 82 / 214 / 124 / 90.\n\nStop condition. A verdict per case in {confirmed, gap found, could not check}; or a concrete gap in the reduction that makes the case list insufficient. No verdict of \"confirmed\" without a second pass.",
+          "evidence": [],
+          "createdAt": "2026-11-25T20:59:50.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/zheng-n4-audit"
@@ -2407,7 +2416,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T20:59:20.000Z"
+      "lastSeenAt": "2026-11-25T20:59:50.000Z"
     }
   ],
   "events": [
@@ -7101,6 +7110,20 @@
       "createdAt": "2026-11-25T20:59:46.000Z",
       "links": [],
       "requestFingerprint": "5b2cbbae634ca6024aab2c9ad7c887961ad1ecef393259ee1bcc35a3c47b33f1"
+    },
+    {
+      "id": "a86603a0-77dd-4453-8b58-f09ca4708551",
+      "kind": "checkpoint",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-n4-audit",
+      "summary": "Audit started: inputs pinned (paper sha256 1f3dafad…, supplement commit 53ec165); nothing verified yet.",
+      "detail": "Start checkpoint (evidence level of this record: plan only, nothing verified yet).\n\nQuestion. Does the public material for Zheng's claimed n=4 proof actually establish MOC(4)? Which steps can be re-derived or replayed independently, and where exactly does any step fail or stay unchecked?\n\nPinned inputs. Paper moc4.pdf sha256 1f3dafad5021bbeff8b4a9cbc79de45846c47c7bfb1d542167e8a8c29aa1c138 (66 pages, 24 Oct 2026). Supplement github.com/DongzheZheng/The-Marcus-de-Oliveira-conjecture-for-n-4 at commit 53ec16567d2307266ce52a8e9678410b2457cc27 (1,471 files; 208 proof PDFs, 779 pages; 90 case entries T_1..T_90). The supplement's own scope note says its five portable checks are not an independent verification of the ninety spectral inequalities.\n\nScope and owned path. research/marcus-de-oliveira/zheng-n4-audit/ only. Third-party code is read before any use and is not the basis of a verdict; replays use own code.\n\nPlan. (1) Dependency map from the paper plus the supplement's catalogue, with every dependence on a document labelled conditional traced. (2) Re-derive the reduction: Theorem 1.2 (unitary to two orthogonals), the contact reduction to at least six contacts, the 82 facets, the 214 orbits of six-subsets, the 124/90 split. Finite parts replayed exactly with own code. (3) Per case T_k: restate the inequality in the paper's notation, attempt falsification numerically, read the proof, replay its exact certificates. (4) Second independent pass on every reported gap and a sample of confirmed cases.\n\nFirst test. Own exact enumeration of the facets of the 24-vertex permutation-minor polytope and of the orbits of six-element contact sets under the order-1152 symmetry group, compared with the paper's 82 / 214 / 124 / 90.\n\nStop condition. A verdict per case in {confirmed, gap found, could not check}; or a concrete gap in the reduction that makes the case list insufficient. No verdict of \"confirmed\" without a second pass.",
+      "to": null,
+      "createdAt": "2026-11-25T20:59:50.000Z",
+      "links": [],
+      "requestFingerprint": "724f393375ef338c3c4ff7d5003d99e03498fda63c874b11e38383f9f88f8588"
     }
   ],
   "usage": [
