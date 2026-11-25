@@ -1,4 +1,6 @@
-import { renderContributions, usageTeaser } from './contributions.js';
+import { isTreeView, renderTreeWorkspace, treeHref } from './tree-workspace.js';
+import { taskStatus } from './tree-model.js';
+import { renderContributions } from './contributions.js';
 const $ = (selector) => document.querySelector(selector);
 const DEFAULT_CONFIG = { name: 'Math Commons', repository: 'g4nesh/math-commons', stateBranch: 'coordination', statePath: 'coordination/state.json', leaseMinutes: 20, checkpointMinutes: 5 };
 let config = { ...DEFAULT_CONFIG };
@@ -59,7 +61,7 @@ function time(date) { return el('time', { datetime: date || '', title: fmtDate(d
 function titleCase(value = '') { return String(value).replace(/[_-]/g, ' ').replace(/^./, (c) => c.toUpperCase()); }
 function shell(value) { return `'${String(value).replace(/'/g, `'"'"'`)}'`; }
 function slug(value) { return String(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60); }
-function getView() { const view = location.hash.slice(1).split('?')[0]; return ['overview', 'work', 'activity', 'agents', 'contributions', 'connect'].includes(view) ? view : 'overview'; }
+function getView() { const view = location.hash.slice(1).split('?')[0]; return ['work', 'activity', 'agents', 'tasks', 'log', 'directory', 'contributions', 'connect'].includes(view) ? view : 'work'; }
 function go(view) { if (location.hash === `#${view}`) { currentView = view; render(); } else location.hash = view; }
 function toast(message) { clearTimeout(toastTimer); $('#toast').textContent = message; $('#toast').classList.add('visible'); toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 3500); }
 async function copy(text, success = 'Copied to clipboard') {
@@ -73,15 +75,13 @@ function selectedObjective() {
     || workspace?.objectives.find((objective) => !objective.example && objective.status === 'open')
     || workspace?.objectives[0] || null;
 }
-function objectiveTasks() { const objective = selectedObjective(); return workspace?.tasks.filter((task) => task.objectiveId === objective?.id) || []; }
-function leaseAlive(task) { return task.status === 'active' && new Date(task.leaseUntil).getTime() > Date.now(); }
-function expired(task) { return task.status === 'active' && !leaseAlive(task); }
-function stateBadge(task) { const status = expired(task) ? 'expired' : task.status; return el('span', { class: `status status-${['open', 'active', 'review', 'verified', 'blocked', 'closed', 'expired'].includes(status) ? status : 'open'}` }, status === 'expired' ? 'Lease expired' : titleCase(status)); }
+function leaseAlive(task) { return taskStatus(task) === 'active'; }
+function expired(task) { return taskStatus(task) === 'expired'; }
+function stateBadge(task) { const status = taskStatus(task); return el('span', { class: `status status-${['open', 'active', 'review', 'verified', 'blocked', 'closed', 'expired'].includes(status) ? status : 'open'}` }, status === 'expired' ? 'Lease expired' : titleCase(status)); }
 function emptyState(title, description, action, symbol = '∴') {
   return el('div', { class: 'empty-state' }, [el('div', { class: 'empty-symbol', 'aria-hidden': 'true' }, symbol), el('h3', {}, title), el('p', {}, description), action]);
 }
 function heading(title, description, action) { return el('div', { class: 'view-heading' }, [el('div', {}, [el('h1', {}, title), el('p', {}, description)]), action]); }
-function sectionHeading(title, action) { return el('div', { class: 'section-heading' }, [el('h2', {}, title), action]); }
 function wrapSelect(select) { return el('span', { class: 'select-wrap' }, select); }
 function select(options, value, label, handler, className = 'filter-select') {
   const node = el('select', { class: className, 'aria-label': label, onChange: (event) => handler(event.target.value) }, options.map(([key, text]) => el('option', { value: key }, text)));
@@ -123,7 +123,8 @@ async function refresh() {
   try {
     const payload = await readJson('/api/state');
     if (!validState(payload.state) || payload.source !== 'github') throw new Error('Invalid workspace response');
-    if (source === 'example') {
+    const wasExample = source === 'example';
+    if (wasExample) {
       objectiveId = '';
       workFilter.objective = config.defaultObjectiveId || 'all';
     }
@@ -132,14 +133,17 @@ async function refresh() {
     lastError = '';
     lastFetchedAt = payload.fetchedAt || new Date().toISOString();
     if (!selectedObjective()) objectiveId = workspace.objectives[0]?.id || '';
-    const nextUrl = new URL(location.href); nextUrl.searchParams.delete('demo'); history.replaceState(null, '', nextUrl);
+    const nextUrl = new URL(location.href);
+    nextUrl.searchParams.delete('demo');
+    if (wasExample && isTreeView(currentView)) nextUrl.hash = currentView;
+    history.replaceState(null, '', nextUrl);
   } catch (error) {
     lastError = error.name === 'TimeoutError' ? 'The workspace request timed out.' : 'The shared workspace could not be reached.';
     if (source !== 'example') source = workspace ? 'stale' : 'error';
   } finally {
     refreshing = false;
     $('#refresh-button').disabled = false;
-    render();
+    render(true);
   }
 }
 async function loadExample() {
@@ -151,7 +155,11 @@ async function loadExample() {
     objectiveId = data.objectives[0]?.id || '';
     workFilter.objective = 'all';
     lastError = '';
-    const url = new URL(location.href); url.searchParams.set('demo', '1'); history.replaceState(null, '', url);
+    const url = new URL(location.href);
+    url.searchParams.set('demo', '1');
+    const requested = new URLSearchParams(url.hash.split('?')[1]).get('objective');
+    if (isTreeView(currentView) && requested && !data.objectives.some(o => o.id === requested)) url.hash = currentView;
+    history.replaceState(null, '', url);
     render();
   } catch { toast('The example is unavailable. Try refreshing the workspace.'); }
 }
@@ -161,71 +169,124 @@ function renderNotice() {
   else if (source === 'stale') container.append(el('div', { class: 'notice notice-error' }, [el('span', {}, `${lastError} Showing the last successful snapshot from ${fmtDate(lastFetchedAt)}.`), button('Try again', refresh, '')]));
   else if (source === 'error' && currentView === 'connect') container.append(el('div', { class: 'notice notice-error' }, [el('span', {}, `${lastError} You can still connect through GitHub.`), button('Try again', refresh, '')]));
 }
-function render() {
-  document.title = `${currentView === 'overview' ? 'Math Commons' : `${titleCase(currentView === 'work' ? 'Work board' : currentView)} — Math Commons`}`;
-  document.querySelectorAll('[data-view]').forEach((link) => { if (link.dataset.view === currentView) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current'); });
-  $('#work-count').textContent = String(workspace?.tasks.length || 0);
-  $('#agent-count').textContent = String(workspace?.agents.length || 0);
+let treeRenderKey = null;
+function captureTreeFocus(content) {
+  const element = document.activeElement;
+  if (!content.contains(element)) return null;
+  return { element, node: element.getAttribute('data-research-node'), id: element.id,
+    heading: element.hasAttribute('data-inspector-heading'), href: element.getAttribute('href'),
+    tag: element.tagName, label: element.getAttribute('aria-label'), text: element.textContent };
+}
+function restoreTreeFocus(saved) {
+  if (!saved) return;
+  let attempts = 0;
+  const restore = () => {
+    // Do not steal focus if the user moved elsewhere while the map was drawn.
+    const active = document.activeElement;
+    if (active && active !== document.body && active !== document.documentElement && active !== saved.element && active.isConnected) return;
+    const content = $('#content');
+    let target;
+    if (saved.node) target = [...content.querySelectorAll('[data-research-node]')].find(node => node.getAttribute('data-research-node') === saved.node);
+    else if (saved.heading) target = content.querySelector('[data-inspector-heading]');
+    else if (saved.id) target = [...content.querySelectorAll('[id]')].find(node => node.id === saved.id);
+    else if (saved.href) target = [...content.querySelectorAll('a')].find(node => node.getAttribute('href') === saved.href);
+    else target = [...content.querySelectorAll('button, summary, input, select, textarea, [tabindex]')].find(node =>
+      node.tagName === saved.tag && node.getAttribute('aria-label') === saved.label && node.textContent === saved.text);
+    if (target) target.focus({ preventScroll: true });
+    else if (++attempts < 3 && isTreeView(currentView)) requestAnimationFrame(restore);
+    else content.querySelector('[data-inspector-heading]')?.focus({ preventScroll: true });
+  };
+  // Research nodes appear on the first frame and may be rebuilt by ResizeObserver.
+  requestAnimationFrame(() => requestAnimationFrame(restore));
+}
+function render(background = false) {
+  const labels = { work: 'Research tree', activity: 'Research activity', agents: 'Research agents', tasks: 'Task index', log: 'Activity log', directory: 'Agent directory' };
+  document.title = (labels[currentView] || titleCase(currentView)) + ' — Math Commons';
+  const tab = currentView === 'contributions' || currentView === 'connect' ? currentView : 'work';
+  document.body.classList.toggle('map-page', isTreeView(currentView));
+  document.querySelectorAll('[data-view]').forEach(link => {
+    if (link.dataset.view === tab) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  });
   $('#connection-label').textContent = source === 'github' ? `Synced ${relative(lastFetchedAt)}` : source === 'example' ? 'Example preview' : source === 'stale' ? 'Snapshot · connection lost' : source === 'loading' ? 'Connecting…' : 'Connection unavailable';
-  $('#connection-label').title = lastFetchedAt && source !== 'example' ? `Last fetched: ${fmtDate(lastFetchedAt)}. Automatic refresh every 30 seconds.` : '';
+  $('#connection-label').title = lastFetchedAt && source !== 'example' ? `Last fetched: ${fmtDate(lastFetchedAt)}. Automatic refresh every minute.` : '';
   $('#revision-label').textContent = workspace ? `${source === 'example' ? 'Example · ' : ''}Revision ${workspace.revision} · GitHub-backed` : 'GitHub is the source of truth';
   renderNotice();
   const content = $('#content');
   if (!workspace && currentView !== 'connect') { content.replaceChildren(source === 'loading' ? el('div', { class: 'loading-state' }, [el('span', { class: 'loading-line' }), el('p', {}, 'Opening the shared notebook…')]) : unavailable()); return; }
-  const views = { overview: renderOverview, work: renderWork, activity: renderActivity, agents: renderAgents, contributions: renderUsageView, connect: renderConnect };
+  if (isTreeView(currentView)) {
+    const params = new URLSearchParams(location.hash.split('?')[1]);
+    objectiveId = params.get('objective') || '';
+    const objective = objectiveId ? workspace.objectives.find(item => item.id === objectiveId) : selectedObjective();
+    if (!objective) {
+      treeRenderKey = null;
+      content.replaceChildren(objectiveId
+        ? emptyState('Objective not found', `The current snapshot does not contain objective “${objectiveId}”. Check the shared link or choose another objective.`, button('Open workspace tree', () => navigateTree('#work', 'objective')))
+        : emptyState('No research objective yet', 'Create an objective to start its research tree.', button('New objective', openObjectiveDialog)));
+      return;
+    }
+    objectiveId = objective.id;
+    const now = Date.now();
+    const liveLeases = workspace.tasks.filter(leaseAlive).map(task => task.id);
+    const key = JSON.stringify([source, workspace.revision, objectiveId, location.hash, liveLeases]);
+    if (background && treeRenderKey === key) return;
+    const savedScroll = background ? content.querySelector('.tree-panel-scroll')?.scrollTop : null;
+    const focused = background ? captureTreeFocus(content) : null;
+    treeRenderKey = key;
+    content.replaceChildren(renderTreeWorkspace({state: workspace, view: currentView, objective, query: params, now, el, time,
+      openTask, openObjective: showObjective, newObjective: openObjectiveDialog, repoUrl: repoUrl(), navigate: navigateTree,
+      copyLink: href => copy(href, 'Research link copied')}));
+    if (savedScroll != null) content.querySelector('.tree-panel-scroll').scrollTop = savedScroll;
+    restoreTreeFocus(focused);
+    return;
+  }
+  treeRenderKey = null;
+  const views = { tasks: renderWork, log: renderActivity, directory: renderAgents, contributions: renderUsageView, connect: renderConnect };
   content.replaceChildren(views[currentView]());
 }
 function renderUsageView() {
   return renderContributions({ state: workspace, el, button, externalLink, example: source === 'example', now: lastFetchedAt ? Date.parse(lastFetchedAt) : Date.now(), repoUrl: repoUrl(), onPreview: async () => { await loadExample(); go('contributions'); }, onLive: refresh });
 }
 function unavailable() {
-  return el('section', { class: 'no-data' }, [el('p', { class: 'eyebrow' }, 'The notebook is temporarily unavailable'), el('h1', {}, 'Every idea has a place. Let’s reconnect to yours.'), el('p', {}, `${lastError || 'Connecting to the shared workspace.'} The research remains in GitHub. Retry the connection, or explore a clearly labeled example while you wait.`), el('div', { class: 'no-data-actions' }, [button('Try again', refresh), button('Explore an example', loadExample, 'button button-secondary'), externalLink('Open repository', repoUrl(), 'button button-plain')])]);
+  return el('section', { class: 'no-data' }, [el('h1', {}, 'Workspace unavailable'), el('p', {}, lastError || 'Connecting to the shared workspace.'), el('div', { class: 'no-data-actions' }, [button('Try again', refresh), button('Explore an example', loadExample, 'button button-secondary'), externalLink('Open repository', repoUrl(), 'button button-plain')])]);
 }
-function renderOverview() {
-  const tasks = objectiveTasks();
-  const verified = tasks.filter((task) => task.status === 'verified').length;
-  const recent = workspace.events.filter((event) => !selectedObjective() || !event.objectiveId || event.objectiveId === selectedObjective().id).slice(-4).reverse();
-  const section = el('section', {}, [
-    el('div', { class: 'hero' }, [
-      el('div', {}, [el('p', { class: 'eyebrow' }, 'Independent agents. Shared evidence.'), el('h1', {}, ['Think together,', el('br'), 'in the open.']), el('p', { class: 'hero-description' }, 'Bring your agents. Invite your friends. Explore hard mathematics from different directions, with every finding open to review.')]),
-      el('div', { class: 'hero-aside' }, [button('Connect an agent', () => go('connect')), el('a', { href: '/join.html', class: 'quiet-link inline-link' }, 'Request contributor access')])
-    ]),
-    sectionHeading('The shared objective', button('New objective', openObjectiveDialog, 'button button-plain')),
-    renderObjective(),
-    el('div', { class: 'stats-row' }, [
-      stat(tasks.length, 'Research directions'),
-      stat(tasks.filter(leaseAlive).length, 'Active task leases'),
-      stat(verified, 'Independently reviewed'),
-      stat(workspace.agents.length, 'Registered agents')
-    ])
-  ]);
-  const orderedTasks = [...tasks].sort((a, b) => ({ active: 0, review: 1, open: 2, blocked: 3, verified: 4 }[a.status] ?? 5) - ({ active: 0, review: 1, open: 2, blocked: 3, verified: 4 }[b.status] ?? 5)).slice(0, 4);
-  section.append(el('div', { class: 'two-col' }, [
-    el('section', {}, [sectionHeading('Different ways forward', button('View work board', () => { workFilter.objective = selectedObjective()?.id || 'all'; go('work'); }, 'button button-plain')), orderedTasks.length ? el('div', { class: 'task-list' }, orderedTasks.map(taskCard)) : emptyState('A question starts the work', 'Create an objective, then let agents break it into distinct approaches.', button('Create an objective', openObjectiveDialog, 'button button-secondary'))]),
-    el('section', {}, [sectionHeading('From the notebook', button('View all activity', () => go('activity'), 'button button-plain')), recent.length ? el('div', { class: 'panel activity-list' }, recent.map((event) => activityEntry(event, true))) : emptyState('The notebook is ready', 'Checkpoints, questions, handoffs, and reviews will appear here as your agents begin.', button('Invite your first agent', () => go('connect'), 'button button-secondary'), '⌁')])
-  ]));
-  section.append(usageTeaser({ state: workspace, el, button, example: source === 'example', now: lastFetchedAt ? Date.parse(lastFetchedAt) : Date.now(), onOpen: () => go('contributions') }));
-  return section;
+function navigateTree(href, action) {
+  if (href !== location.hash) history.pushState(null, '', href);
+  currentView = getView();
+  render();
+  const narrow = window.matchMedia('(max-width: 850px)').matches;
+  if (action === 'objective') {
+    $('.tree-objective-select')?.focus({preventScroll:true});
+  } else if (action === 'tab') {
+    $('.tree-panel-nav [aria-current]')?.focus({preventScroll:true});
+    if (narrow) $('#research-panel')?.scrollIntoView({block:'start'});
+  } else if (action === 'path') {
+    const canvas = $('#research-canvas');
+    canvas?.focus({preventScroll:true});
+    if (narrow) canvas?.scrollIntoView({block:'start'});
+  } else if (narrow) {
+    const target = $('[data-inspector-heading]');
+    target?.focus({preventScroll:true});
+    $('#research-panel')?.scrollIntoView({block:'start'});
+  } else if (!document.activeElement || document.activeElement === document.body) {
+    $('[data-inspector-heading]')?.focus({preventScroll:true});
+  }
 }
-function stat(value, label) { return el('div', { class: 'stat' }, [el('div', { class: 'stat-value' }, value), el('div', { class: 'stat-label' }, label)]); }
-function renderObjective() {
-  const objective = selectedObjective();
-  if (!objective) return emptyState('No objective yet', 'Start with a precise question and a clear description of what would count as an answer.', button('Create an objective', openObjectiveDialog, 'button button-secondary'));
-  const tasks = objectiveTasks();
-  const verified = tasks.filter((task) => task.status === 'verified').length;
-  const selector = workspace.objectives.length > 1 ? select(workspace.objectives.map((item) => [item.id, item.title]), objective.id, 'Select objective', (id) => { objectiveId = id; render(); }, 'objective-select') : el('span', { class: 'meta mono' }, objective.id);
-  return el('article', { class: 'panel objective-panel' }, [
-    el('div', { class: 'objective-top' }, [el('div', { class: 'objective-label' }, [el('span', {}, 'CURRENT QUESTION'), objective.example ? el('span', { class: 'tag tag-example' }, 'Starter example') : null, el('span', { class: `status status-${objective.status === 'closed' ? 'closed' : 'open'}` }, titleCase(objective.status))]), selector]),
-    el('h2', {}, objective.title),
-    el('p', { class: 'statement' }, objective.statement),
-    objective.id === config.defaultObjectiveId && config.defaultObjectiveBrief ? externalLink('Read the research brief', `${repoUrl()}/blob/main/${config.defaultObjectiveBrief}`, 'quiet-link inline-link') : null,
-    el('div', { class: 'success-criteria' }, [el('strong', {}, 'What an answer needs'), el('p', {}, objective.successCriteria || 'Define explicit success criteria before beginning research.')]),
-    el('div', { class: 'objective-bottom' }, [el('div', { class: 'task-progress' }, [el('progress', { class: 'progress-track', value: verified, max: Math.max(tasks.length, 1), 'aria-label': 'Independently reviewed research directions' }, `${verified} of ${tasks.length}`), `${verified} of ${tasks.length} directions reviewed`]), button('Explore directions', () => { workFilter.objective = objective.id; go('work'); }, 'button button-secondary button-small')])
-  ]);
+function showObjective(id) {
+  const objective = workspace.objectives.find(o => o.id === id);
+  if (!objective) return;
+  const dialog = $('#objective-dialog');
+  const content = el('div', {class:'dialog-body'}, [
+    el('p', {class:'statement'}, objective.statement),
+    el('h3', {}, 'Success criteria'), el('p', {}, objective.successCriteria),
+    objective.id === config.defaultObjectiveId && config.defaultObjectiveBrief ?
+      externalLink('Read the research brief', repoUrl() + '/blob/main/' + config.defaultObjectiveBrief, 'quiet-link inline-link') : null]);
+  $('#objective-dialog-content').replaceChildren(dialogHeader(objective.title, 'Research objective', dialog), content);
+  if (!dialog.open) dialog.showModal();
 }
 function taskCard(task) {
   const checkpointCount = task.checkpoints?.length || 0;
-  return el('button', { type: 'button', class: 'task-card', onClick: () => openTask(task.id), 'aria-label': `${task.title}, ${titleCase(task.status)}. Open task details.` }, [
+  return el('button', { type: 'button', class: 'task-card', onClick: () => navigateTree(treeHref('work', task.objectiveId, {type:'task',id:task.id}), 'node'), 'aria-label': `${task.title}, ${taskStatus(task) === 'expired' ? 'Lease expired' : titleCase(taskStatus(task))}. Open task details.` }, [
     el('div', { class: 'task-card-header' }, [el('h3', {}, task.title), stateBadge(task)]),
     el('p', { class: 'task-card-description' }, task.description || 'Open this direction to see its scope and evidence.'),
     el('div', { class: 'task-card-footer' }, [el('span', { class: 'approach' }, titleCase(task.approach)), el('span', {}, task.assignee ? agentName(task.assignee) : checkpointCount ? `${checkpointCount} checkpoint${checkpointCount === 1 ? '' : 's'}` : (task.dependsOn || []).length ? 'Has dependencies' : 'Ready to claim')])
@@ -233,12 +294,12 @@ function taskCard(task) {
 }
 function renderWork() {
   const body = el('section');
-  body.append(heading('Different paths. One objective.', 'Find a direction to explore, check its dependencies, and see the evidence behind each result.', button('New objective', openObjectiveDialog, 'button button-secondary')));
+  body.append(heading('Task index', 'Search research tasks across the workspace.', button('New objective', openObjectiveDialog, 'button button-secondary')));
   const results = el('div');
   const draw = () => {
     const tasks = workspace.tasks.filter((task) => {
       const query = workFilter.query.toLowerCase();
-      return (workFilter.objective === 'all' || task.objectiveId === workFilter.objective) && (workFilter.status === 'all' || (workFilter.status === 'expired' ? expired(task) : task.status === workFilter.status)) && (workFilter.approach === 'all' || task.approach === workFilter.approach) && `${task.title} ${task.description} ${task.approach} ${task.assignee || ''}`.toLowerCase().includes(query);
+      return (workFilter.objective === 'all' || task.objectiveId === workFilter.objective) && (workFilter.status === 'all' || taskStatus(task) === workFilter.status) && (workFilter.approach === 'all' || task.approach === workFilter.approach) && `${task.title} ${task.description} ${task.approach} ${task.assignee || ''}`.toLowerCase().includes(query);
     });
     results.replaceChildren(el('p', { class: 'board-result' }, `${tasks.length} research direction${tasks.length === 1 ? '' : 's'}${workFilter.query ? ` matching “${workFilter.query}”` : ''}`), el('div', { class: 'board-grid' }, tasks.length ? tasks.map(taskCard) : emptyState('No directions match', 'Try another filter, or have an agent add a new direction to the shared objective.')));
   };
@@ -263,7 +324,7 @@ function activityEntry(event, compact = false) {
   ]);
 }
 function renderActivity() {
-  const body = el('section', {}, heading('An open research notebook.', 'Every checkpoint, message, handoff, and review has a place in the record. Follow what changed and why.', externalLink('Commit history', `${repoUrl()}/commits/${encodeURIComponent(config.stateBranch)}`, 'button button-secondary')));
+  const body = el('section', {}, heading('Activity log', 'All recorded workspace events.', externalLink('Commit history', `${repoUrl()}/commits/${encodeURIComponent(config.stateBranch)}`, 'button button-secondary')));
   const results = el('div');
   const draw = () => {
     const events = workspace.events.filter((event) => (activityFilter.kind === 'all' || event.kind === activityFilter.kind) && (activityFilter.agent === 'all' || event.actor === activityFilter.agent || event.to === activityFilter.agent)).slice().reverse();
@@ -278,7 +339,7 @@ function renderActivity() {
 function renderAgents() {
   const alive = workspace.tasks.filter(leaseAlive);
   return el('section', {}, [
-    heading('Independent minds, shared work.', 'Each agent belongs to a GitHub collaborator and runs on their own machine or cloud. The notebook makes their work visible.', button('Connect an agent', () => go('connect'))),
+    heading('Agent directory', 'All registered agents and their task leases.', button('Connect an agent', () => go('connect'))),
     el('p', { class: 'info-strip' }, `${workspace.agents.length} registered agent${workspace.agents.length === 1 ? '' : 's'} · ${alive.length} active task lease${alive.length === 1 ? '' : 's'}. Registration and recent activity do not guarantee a worker is currently running.`),
     el('div', { class: 'agent-grid' }, workspace.agents.length ? workspace.agents.map((agent) => {
       const active = alive.find((task) => task.assignee === agent.id);
@@ -374,7 +435,16 @@ function openObjectiveDialog() {
 
 $('#share-button').addEventListener('click', () => { const url = new URL(location.href); url.hash = 'connect'; url.searchParams.delete('demo'); copy(url.href, 'Workspace invitation link copied'); });
 $('#refresh-button').addEventListener('click', refresh);
-window.addEventListener('hashchange', () => { currentView = getView(); render(); $('#main').focus({ preventScroll: true }); window.scrollTo({ top: 0, behavior: 'instant' }); });
+$('.skip-link').addEventListener('click', event => { event.preventDefault(); $('#main').focus(); });
+window.addEventListener('hashchange', () => {
+  if (location.hash === '#main') { $('#main').focus(); return; }
+  const previous = currentView;
+  currentView = getView();
+  render();
+  if (!isTreeView(previous) || !isTreeView(currentView)) {
+    $('#main').focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'});
+  } else ($('[data-inspector-heading]') || $('#main')).focus({preventScroll:true});
+});
 for (const dialog of document.querySelectorAll('dialog')) dialog.addEventListener('click', (event) => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
 document.addEventListener('visibilitychange', () => { if (!document.hidden && source !== 'example') refresh(); });
 setInterval(() => { if (!document.hidden && source !== 'example' && !document.querySelector('dialog[open]') && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) refresh(); }, 60000);
