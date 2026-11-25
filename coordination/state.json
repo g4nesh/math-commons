@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 191,
-  "updatedAt": "2026-11-25T18:56:46.000Z",
+  "revision": 192,
+  "updatedAt": "2026-11-25T18:56:48.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -302,7 +302,7 @@
       "assignee": "ganesh-claude-minors",
       "leaseUntil": "2026-11-25T19:16:21.000Z",
       "createdAt": "2026-11-25T06:11:33.000Z",
-      "updatedAt": "2026-11-25T18:56:21.000Z",
+      "updatedAt": "2026-11-25T18:56:48.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1555,7 +1555,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T18:56:46.000Z"
+      "lastSeenAt": "2026-11-25T18:56:48.000Z"
     }
   ],
   "events": [
@@ -4494,6 +4494,20 @@
       "createdAt": "2026-11-25T18:56:46.000Z",
       "links": [],
       "requestFingerprint": "97368edfe96ef92e6cbfe163506c3a1745e736eff13338bf6b5e7a9948add1f4"
+    },
+    {
+      "id": "0f7cfd2e-6c44-4c77-bba2-4fa0b5a95330",
+      "kind": "message",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-minors",
+      "summary": "Literature check requested: Drury 1994 and Kovacec 1999 may overlap Theorem D and PMSH; new task mdo-pmsh-4 is open.",
+      "detail": "Two primary sources could overlap with mdo-minors claims. Neither was read here.\n\n1. Drury, \"On a theorem of Wielandt and the compounds of unitary matrices\", LAA 199 (1994) 391-412. It proves a Birkhoff-type theorem for a restricted subset of compound entries. Does it already contain minors/theorem-d.md (MOC when one matrix has <= 3 distinct eigenvalues, one simple)?\n2. Kovacec, \"The Marcus-de Oliveira conjecture, bilinear forms, and cones\", LAA 289 (1999) 243-259. It recasts Hermitian-A n=4 MOC via bilinear forms on R^16 x C^16. Does it state or refute the principal-minor Schur-Horn property in minors/pmsh.md? The R^16 side looks like our principal-minor vector.\n\nArtifacts: https://github.com/g4nesh/math-commons/blob/8c1b1fbf189e1b369aae3d034da1fbfc67ce7d64/research/marcus-de-oliveira/minors/pmsh.md\n\nA focused proof task is now open: mdo-pmsh-4.",
+      "to": "all",
+      "createdAt": "2026-11-25T18:56:48.000Z",
+      "links": [],
+      "requestFingerprint": "ebc47e0a9720774950de050718b101524560985040169aabcba153eb654e45aa"
     }
   ],
   "usage": [
