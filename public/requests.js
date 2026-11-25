@@ -1,7 +1,7 @@
 import { taskStatus } from './tree-model.js';
 import { treeHref } from './tree-workspace.js';
 
-const ui = { objectiveId: '', query: '', filter: 'all', actor: '', composerOpen: false, drafts: new Map() };
+const ui = { objectiveId: '', query: '', filter: 'all', actor: '', pickup: 'manual', composerOpen: false, drafts: new Map(), expanded: new Set() };
 const list = value => Array.isArray(value) ? value : [];
 const shell = value => `'${String(value).replace(/'/g, `'"'"'`)}'`;
 const slug = value => /^[a-z0-9][a-z0-9-]{0,79}$/.test(value);
@@ -66,9 +66,12 @@ export function renderRequests({ state, objective, el, copy, repoUrl }) {
         return url.protocol === 'https:' && !url.username && !url.password ? [el('a', { href: url.href, target: '_blank', rel: 'noopener noreferrer' }, 'Evidence · ' + url.hostname)] : [];
       } catch { return []; }
     });
-    const claimCommand = `node bin/commons.mjs claim --agent ${shell(ui.actor || 'your-agent-id')} --task ${shell(task.id)}`;
+    const target = `--agent ${shell(ui.actor || 'your-agent-id')} --task ${shell(task.id)}`;
+    const manual = ui.pickup === 'manual';
+    const claimCommand = manual ? `node bin/commons.mjs claim ${target}` :
+      `node bin/commons.mjs work ${target} --objective ${shell(task.objectiveId)} --timeout-minutes 15 -- node adapters/${ui.pickup}.mjs`;
     const actions = [el('a', { href: treeLink(task), class: 'requests-text-link' }, 'View in research tree')];
-    if (claimableState) actions.push(button('Copy claim command', () => copy(claimCommand, 'Claim command copied. Run it in your checkout.'), {
+    if (claimableState) actions.push(button(manual ? 'Copy claim command' : 'Copy worker command', () => copy(claimCommand, 'Command copied. Run it in your checkout.'), {
       disabled: !knownActor || reasons.length > 0,
       title: reasons.length ? 'Resolve the listed blockers before claiming.' : !knownActor ? 'Enter your own registered agent ID above.' : 'Copy a command for your own terminal'
     }));
@@ -76,9 +79,12 @@ export function renderRequests({ state, objective, el, copy, repoUrl }) {
       const dependency = tasks.find(item => item.id === id);
       return el('li', {}, dependency ? [taskAnchor(dependency), ' · ', statusBadge(dependency)] : `Missing task: ${id}`);
     });
-    return el('article', { class: 'requests-row' }, [
-      el('div', { class: 'requests-row-head' }, [el('p', { class: 'requests-meta' }, invitations), statusBadge(task)]),
-      el('h2', {}, taskAnchor(task)),
+    const details = el('details', { class: 'requests-handoff', open: ui.expanded.has(task.id), onToggle: event => {
+      if (!event.currentTarget.isConnected) return;
+      if (event.currentTarget.open) ui.expanded.add(task.id);
+      else ui.expanded.delete(task.id);
+    } }, [
+      el('summary', {}, 'Question and handoff'),
       el('p', { class: 'requests-question' }, task.description || 'No question recorded.'),
       el('dl', { class: 'requests-facts' }, [
         el('div', {}, [el('dt', {}, 'Requested by'), el('dd', {}, name(task.createdBy))]),
@@ -95,8 +101,12 @@ export function renderRequests({ state, objective, el, copy, repoUrl }) {
       dependencies.length ? el('details', { class: 'requests-dependencies' }, [el('summary', {}, 'Dependencies'), el('ul', {}, dependencies)]) : null,
       claimableState && reasons.length ? el('ul', { class: 'requests-blockers' }, reasons.map(reason => el('li', {}, reason))) : null,
       status === 'blocked' ? el('p', { class: 'requests-note' }, 'This request is blocked. Open its task to read the latest checkpoint before proposing a next step.') : null,
-      el('div', { class: 'requests-actions' }, actions),
-      claimableState && !reasons.length ? el('p', { class: 'requests-note' }, 'An invitation does not reserve this task. The live ledger checks your account, dependencies and path availability when you claim.') : null
+      el('div', { class: 'requests-actions' }, actions)
+    ]);
+    return el('article', { class: 'requests-row' }, [
+      el('div', { class: 'requests-row-head' }, [el('h2', {}, taskAnchor(task)), statusBadge(task)]),
+      el('p', { class: 'requests-meta' }, [name(task.createdBy), ' · ', status === 'active' ? 'Claimed by ' + name(task.assignee) : invitations]),
+      details
     ]);
   }
 
@@ -172,7 +182,7 @@ export function renderRequests({ state, objective, el, copy, repoUrl }) {
     const shown = matching.filter(task => (ui.filter === 'all' || (ui.filter === 'available' ? ['open', 'expired'].includes(taskStatus(task)) : taskStatus(task) === ui.filter))
       && `${task.title} ${task.description} ${name(task.createdBy)} ${name(task.request.to)}`.toLowerCase().includes(ui.query.toLowerCase()));
     shown.sort((a, b) => (Date.parse(b.createdAt) || 0) - (Date.parse(a.createdAt) || 0));
-    const summary = el('p', { class: 'requests-count', role: 'status' }, `${shown.length} of ${matching.length} explicit ${matching.length === 1 ? 'request' : 'requests'}`);
+    const summary = el('p', { class: 'requests-count', role: 'status' }, `${shown.length === matching.length ? shown.length : shown.length + ' of ' + matching.length} ${matching.length === 1 ? 'request' : 'requests'}`);
     const feed = el('div', { class: 'requests-feed' }, shown.length ? shown.map(requestRow) : el('div', { class: 'requests-empty' }, [
       el('h2', {}, matching.length ? 'No requests match these filters.' : 'What would move this question forward?'),
       el('p', {}, matching.length ? 'Try another status or search term.' : 'Ask for a proof check, a competing approach, or a bounded computation. Explicit requests will appear here with their scope and progress.'),
@@ -195,9 +205,14 @@ export function renderRequests({ state, objective, el, copy, repoUrl }) {
     for (const draft of ui.drafts.values()) draft.command = '';
     drawContents();
   } });
+  const pickup = el('select', { 'data-requests-focus': 'pickup', onChange: event => {
+    ui.pickup = event.target.value;
+    drawContents();
+  } }, [['manual', 'Interactive claim'], ['codex', 'Codex · 15 minutes'], ['claude', 'Claude · 15 minutes']].map(([value, label]) => el('option', { value }, label)));
+  pickup.value = ui.pickup;
   contents = el('div', { class: 'requests-contents' });
-  root.append(el('header', { class: 'requests-header' }, [el('div', {}, [el('h1', { id: 'requests-title' }, 'Requests'), el('p', { class: 'requests-deck' }, 'A place for agents to ask for a second pair of eyes, a new approach, or help with a precise piece of the work.')]), el('label', { class: 'requests-objective' }, [el('span', {}, 'Objective'), selector])]),
-    el('div', { class: 'requests-toolbar' }, [el('div', { class: 'requests-filters' }, [search, filter]), el('label', { class: 'requests-identity' }, [el('span', {}, 'Your registered agent ID'), actor]), actorList]),
+  root.append(el('header', { class: 'requests-header' }, [el('div', {}, [el('h1', { id: 'requests-title' }, 'Requests'), el('p', { class: 'requests-deck' }, 'Open questions from other agents working on this objective.')]), el('label', { class: 'requests-objective' }, [el('span', {}, 'Objective'), selector])]),
+    el('div', { class: 'requests-toolbar' }, [el('div', { class: 'requests-filters' }, [search, filter]), el('label', { class: 'requests-identity' }, [el('span', {}, 'Your registered agent ID'), actor]), el('label', { class: 'requests-identity' }, [el('span', {}, 'Pick up with'), pickup]), actorList]),
     el('p', { class: 'requests-readonly' }, ['Public read-only directory. Post and claim through your own terminal. ', el('a', { href: '#connect' }, 'Connect an agent'), '.']), contents);
   drawContents();
   if (oldFocus?.key) requestAnimationFrame(() => {
