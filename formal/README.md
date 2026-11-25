@@ -36,7 +36,15 @@ In [ForestTrajectory.lean](ForestTrajectory.lean), an occupied subset is a Boole
 
 `MathCommons.ForestTrajectory.forestTrajectoryUnique` assumes that deleting each indexed edge disconnects its endpoints. For any two legal paths with the same initial and final subsets, their subsets agree at every intermediate step. The proof constructs a cut from reachability after deleting the edge, proves each surviving edge stays on one side, then applies the arithmetic result in `ForestCut`. This establishes uniqueness of occupied subsets. Swaps can still describe the same subset when both endpoints have the same occupancy.
 
-`python3 formal/check.py` rebuilds the imports in a fresh directory and audits all 17 declarations in this module. The remaining matrix step is to map each nonzero term of the exterior-power expansion to such a path and show that its squared amplitude equals the claimed probability. A Mathlib interface could also supply the vertex enumeration and indexed-edge bridge condition from its standard finite graph definitions.
+`python3 formal/check.py` rebuilds the imports in a fresh directory and audits all 17 declarations in this module. A Mathlib interface could also supply the vertex enumeration and indexed-edge bridge condition from its standard finite graph definitions.
+
+## Which minors of a two-coordinate gate can be nonzero?
+
+[`ForestGateSupport.lean`](ForestGateSupport.lean) defines a signed Laplace expansion on ordered lists of row and column indices. The proof extracts a matching of nonzero entries from any nonzero expansion. In a matrix supported on the gate's two coordinates and the diagonal, a matching must pair every occupied coordinate outside the gate with itself. The matching also gives equal cardinalities. These facts imply that the output subset either equals the input subset or exchanges its two gate coordinates. Equal occupancy of the two endpoints forces the subset to stay fixed.
+
+`MathCommons.ForestGateSupport.twoCoordinateNonzeroMinorStep` accepts four arbitrary block entries. Its scalar interface specifies addition, multiplication, negation, zero and one, with the zero identities used in the proof. The support implication applies to singular blocks. Rational and Gaussian-rational instances instantiate the interface.
+
+`MathCommons.ForestGateSupport.nonzeroAmplitudesUnique` combines this support result and the forest theorem. For fixed endpoint subsets, at most one history has a nonzero ordered product of its gate minors. Empty and full subsets, repeated occupancy and vanishing factors are covered. The checker audits all 23 named results in the module. The remaining steps identify the ordered expansion with the standard complex determinant, compute the squared transition magnitudes for a unitary block, and compose the minors by Cauchy–Binet. [Written forest argument](../research/marcus-de-oliveira/baselines/README.md)
 
 ## Contributing a theorem
 

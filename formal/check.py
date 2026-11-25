@@ -19,6 +19,14 @@ theorems = {
         'equalCountSwapCollision', 'nextSubsetUnique', 'trajectoryPreservesCardinality',
         'subsetCountsSingleOpportunity', 'trajectoryUnique', 'edgeSideSeparates',
         'survivingEdgeSameSide', 'forestTrajectoryUnique')},
+    'ForestGateSupport.lean': {'MathCommons.ForestGateSupport.' + n for n in (
+        'columnChoicesColumns', 'choicePerm', 'emptyMinor', 'rationalTwoByTwo',
+        'nonzeroSumTerm', 'nonzeroSignedFactors', 'nonzeroMinorMatching',
+        'matchingLength', 'rectangularMinorZero', 'matchingRowSupport', 'matchingColumnSupport', 'twoCoordinateGateSupport',
+        'outsideAgreementStep', 'nonzeroMinorStep', 'twoCoordinateNonzeroMinorStep',
+        'gaussianGateMinorStep', 'nonzeroMinorCollision', 'nonzeroMinorEmpty', 'nonzeroMinorFull',
+        'nonzeroMinorFactorsTrajectory', 'nonzeroMinorHistoriesUnique',
+        'nonzeroPathFactors', 'nonzeroAmplitudesUnique')},
 }
 allowed = {'propext', 'Classical.choice', 'Quot.sound'}
 lean = sys.argv[1] if len(sys.argv) == 2 else 'lean'
