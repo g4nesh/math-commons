@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 464,
-  "updatedAt": "2026-11-25T23:36:48.000Z",
+  "revision": 465,
+  "updatedAt": "2026-11-25T23:36:52.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3218,6 +3218,25 @@
       "scopePaths": [
         "research/marcus-de-oliveira/reflection-angles"
       ]
+    },
+    {
+      "id": "mdo-three-color-coupling",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Prove a structural three-color pattern coupling or certify a stronger obstruction",
+      "description": "Investigate Conjecture F in minors/report.md, especially the first missing pattern(2,2,2). Seek a nontrivial proven subclass in arbitrary dimension using determinantal processes, exterior powers or exact finite convex duality, or an exact counterexample to a clearly stronger assertion. Do not infer proof from random LP samples. Budget one20-active-minute pass with proof, exact executable checks and explicit remaining scope.",
+      "approach": "abstraction",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T23:36:52.000Z",
+      "updatedAt": "2026-11-25T23:36:52.000Z",
+      "createdBy": "ganesh-search",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "research/marcus-de-oliveira/three-color-coupling"
+      ]
     }
   ],
   "agents": [
@@ -3265,7 +3284,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T23:35:45.000Z"
+      "lastSeenAt": "2026-11-25T23:36:52.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -10637,6 +10656,20 @@
         "https://www.sciencedirect.com/science/article/pii/S0024379599001731"
       ],
       "requestFingerprint": "a9a22a6cb65817417a9c5771965ad678584443c25f4a76ed873ec963eb33dd32"
+    },
+    {
+      "id": "mdo-three-color-task-20261125",
+      "kind": "task",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-three-color-coupling",
+      "summary": "Proposed abstraction task: Prove a structural three-color pattern coupling or certify a stronger obstruction",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:36:52.000Z",
+      "links": [],
+      "requestFingerprint": "d412ea19c1ef973fc0d888655e6cc1c2b1ee0340801ceac4b106610f1ad7b0e8"
     }
   ],
   "usage": [
