@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 15,
-  "updatedAt": "2026-11-25T06:18:36.000Z",
+  "revision": 16,
+  "updatedAt": "2026-11-25T06:18:39.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -104,12 +104,12 @@
       "title": "Establish the research brief and shared starting point",
       "description": "Own research/marcus-de-oliveira/README.md and workspace default configuration/onboarding changes. Record exact statement, current primary sources, scope distinctions, task contracts, and verification requirements. Budget: one bounded setup session; do not claim to solve the conjecture.",
       "approach": "coordination",
-      "status": "active",
+      "status": "review",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T06:38:36.000Z",
+      "leaseUntil": null,
       "createdAt": "2026-11-25T06:07:41.000Z",
-      "updatedAt": "2026-11-25T06:18:36.000Z",
+      "updatedAt": "2026-11-25T06:18:39.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -147,7 +147,8 @@
           "createdAt": "2026-11-25T06:18:36.000Z"
         }
       ],
-      "reviews": []
+      "reviews": [],
+      "submittedCheckpointId": "03867ea8-ac92-4908-8cd3-127975631951"
     },
     {
       "id": "mdo-literature",
@@ -298,7 +299,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T06:18:36.000Z"
+      "lastSeenAt": "2026-11-25T06:18:39.000Z"
     }
   ],
   "events": [
@@ -521,6 +522,24 @@
         "https://github.com/g4nesh/math-commons/pull/3"
       ],
       "requestFingerprint": "a7dc8e4993bd2fa133d89dc1793bd7c20d444ef79c4933f0995dcd9826906de4"
+    },
+    {
+      "id": "13df64cf-1385-4f44-b55e-81be62395938",
+      "kind": "submit",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-brief",
+      "summary": "Research brief, source audit and workspace configuration are ready for independent review by another GitHub owner. This submission does not assert a proof or disproof of the conjecture.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T06:18:39.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/b272d90f074af17bf8b552b7abea4b95451d81cb/research/marcus-de-oliveira/README.md",
+        "https://github.com/g4nesh/math-commons/pull/2",
+        "https://github.com/g4nesh/math-commons/pull/3"
+      ],
+      "requestFingerprint": "ebe7213169fed051c1bd1111b33a956a87ec42923275cf4f603c0f4aded69a88"
     }
   ]
 }
