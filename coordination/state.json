@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 272,
-  "updatedAt": "2026-11-25T20:42:57.000Z",
+  "revision": 273,
+  "updatedAt": "2026-11-25T20:43:12.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -1876,9 +1876,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T20:59:58.000Z",
+      "leaseUntil": "2026-11-25T21:03:12.000Z",
       "createdAt": "2026-11-25T20:30:14.000Z",
-      "updatedAt": "2026-11-25T20:39:58.000Z",
+      "updatedAt": "2026-11-25T20:43:12.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -1922,6 +1922,18 @@
             "https://github.com/g4nesh/math-commons/blob/8da80170e8ea82a6c0ba8f878e50ca431d4e02e2/formal/ForestGateSupport.lean"
           ],
           "createdAt": "2026-11-25T20:39:58.000Z"
+        },
+        {
+          "id": "spectral-gate-coord-finished",
+          "agentId": "ganesh-coordinator",
+          "summary": "Both requests merged, deployed and submitted for independent mathematical review",
+          "details": "The tested head and main have identical source trees. Required GitHub Verify passed, and production serves merge 5e8d0e99717de2068e42acdf5896d85d9360f8a2. Exact certificates and all 12 spectral regressions passed. Lean 4.24.0 checked 53 declarations including 23 new ones. The two research tasks show 4 and 5 checkpoints respectively, no outstanding leases, and review pending. Two public follow-ups are open: the moving fourth eigenvalue and local squared gate magnitudes. The two researchers recorded 9725770 measured tokens including cached input; coordination is recorded separately.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/commit/5e8d0e99717de2068e42acdf5896d85d9360f8a2",
+            "https://github.com/g4nesh/math-commons/actions/runs/45697298281",
+            "https://math-commons-dun.vercel.app/deployment.json"
+          ],
+          "createdAt": "2026-11-25T20:43:12.000Z"
         }
       ],
       "reviews": [],
@@ -1994,7 +2006,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T20:42:53.000Z"
+      "lastSeenAt": "2026-11-25T20:43:12.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -6341,6 +6353,24 @@
         "https://github.com/g4nesh/math-commons/pull/21"
       ],
       "requestFingerprint": "75b0a638363b2a5fc4dc30df0fd2a0c599f2be59a0413f5e5318432ff8288ded"
+    },
+    {
+      "id": "spectral-gate-coord-finished",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-spectral-gate-integration",
+      "summary": "Both requests merged, deployed and submitted for independent mathematical review",
+      "detail": "The tested head and main have identical source trees. Required GitHub Verify passed, and production serves merge 5e8d0e99717de2068e42acdf5896d85d9360f8a2. Exact certificates and all 12 spectral regressions passed. Lean 4.24.0 checked 53 declarations including 23 new ones. The two research tasks show 4 and 5 checkpoints respectively, no outstanding leases, and review pending. Two public follow-ups are open: the moving fourth eigenvalue and local squared gate magnitudes. The two researchers recorded 9725770 measured tokens including cached input; coordination is recorded separately.",
+      "to": null,
+      "createdAt": "2026-11-25T20:43:12.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/commit/5e8d0e99717de2068e42acdf5896d85d9360f8a2",
+        "https://github.com/g4nesh/math-commons/actions/runs/45697298281",
+        "https://math-commons-dun.vercel.app/deployment.json"
+      ],
+      "requestFingerprint": "3581a112681880af1984f0e65f0422eb0ac59a9d71c8f54ce6a354660988c746"
     }
   ],
   "usage": [
