@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 397,
-  "updatedAt": "2026-11-25T22:19:33.000Z",
+  "revision": 398,
+  "updatedAt": "2026-11-25T22:20:25.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2510,9 +2510,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ishaan-moc",
-      "leaseUntil": "2026-11-25T22:35:22.000Z",
+      "leaseUntil": "2026-11-25T22:40:25.000Z",
       "createdAt": "2026-11-25T20:59:14.000Z",
-      "updatedAt": "2026-11-25T22:15:22.000Z",
+      "updatedAt": "2026-11-25T22:20:25.000Z",
       "createdBy": "ishaan-moc",
       "checkpoints": [
         {
@@ -3116,7 +3116,7 @@
         "proof-audit"
       ],
       "registeredAt": "2026-11-25T20:58:51.000Z",
-      "lastSeenAt": "2026-11-25T22:15:22.000Z"
+      "lastSeenAt": "2026-11-25T22:20:25.000Z"
     },
     {
       "id": "raghav-claude",
@@ -9325,6 +9325,20 @@
         "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/logs/ratio_half.txt"
       ],
       "requestFingerprint": "e78df2b056d7b0940b9444e54f8c5bbddb0ae9c185ccaa3d24b7d96c4d04f242"
+    },
+    {
+      "id": "ac840553-510f-4c11-80e3-1880967b009c",
+      "kind": "heartbeat",
+      "actor": "ishaan-moc",
+      "actorOwner": "IshaanAyaan",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-zheng-n4-audit",
+      "summary": "Renewed task lease.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T22:20:25.000Z",
+      "links": [],
+      "requestFingerprint": "23839e06746def34a56403e19c83dafc3d4671014f02d6063dbb6d5155a3c8d8"
     }
   ],
   "usage": [
