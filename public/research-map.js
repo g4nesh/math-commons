@@ -228,7 +228,18 @@ export function renderResearchMap({ tree, selection = null, onSelect, now = Date
     addNode('objective', tree.objective.id, r, [html('span', { class: 'rmap-root-kicker' }, tree.objective.example ? 'Example question' : 'Shared question'), html('span', { class: 'rmap-root-title' }, tree.objective.title || tree.objective.id)], '', tree.objective.title || tree.objective.id);
     for (const branch of layout.branches) {
       const live = branch.data.activeCount > 0;
-      addNode('branch', branch.data.id, branch, [html('span', { class: 'rmap-branch-main' }, [html('i', { class: 'rmap-branch-seed', 'aria-hidden': 'true' }), html('span', { class: 'rmap-branch-label' }, branch.data.label), html('span', { class: 'rmap-branch-count' }, branch.data.tasks.length)]), live ? html('span', { class: 'rmap-active-label' }, `${branch.data.activeCount} lease${branch.data.activeCount === 1 ? '' : 's'} held`) : null], `rmap-color-${branch.color}${live ? ' has-active-lease' : ''}`, `${branch.data.label}, ${branch.data.tasks.length} task${branch.data.tasks.length === 1 ? '' : 's'}${live ? `, ${branch.data.activeCount} active task leases` : ''}. Select to explore.`);
+      const { label, activeCount } = branch.data;
+      const taskCount = branch.data.tasks.length;
+      const leaseLabel = `${activeCount} lease${activeCount === 1 ? '' : 's'} held`;
+      const content = html('span', { class: 'rmap-branch-main' }, [
+        html('i', { class: 'rmap-branch-seed', 'aria-hidden': 'true' }),
+        html('span', { class: 'rmap-branch-label' }, label),
+        html('span', { class: 'rmap-branch-count' }, taskCount)
+      ]);
+      addNode('branch', branch.data.id, branch,
+        [content, live ? html('span', { class: 'rmap-active-label' }, leaseLabel) : null],
+        `rmap-color-${branch.color}${live ? ' has-active-lease' : ''}`,
+        `${label}, ${taskCount} task${taskCount === 1 ? '' : 's'}${live ? `, ${leaseLabel}` : ''}. Select to explore.`);
     }
     for (const task of layout.tasks) {
       const status = statusOf(task.data, now);
