@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 142,
-  "updatedAt": "2026-11-25T18:32:54.000Z",
+  "revision": 143,
+  "updatedAt": "2026-11-25T18:33:02.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -300,9 +300,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T18:49:26.000Z",
+      "leaseUntil": "2026-11-25T18:53:02.000Z",
       "createdAt": "2026-11-25T06:11:33.000Z",
-      "updatedAt": "2026-11-25T18:29:26.000Z",
+      "updatedAt": "2026-11-25T18:33:02.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -315,6 +315,14 @@
             "https://github.com/g4nesh/math-commons/pull/6"
           ],
           "createdAt": "2026-11-25T18:29:26.000Z"
+        },
+        {
+          "id": "fbd416bf-4b96-4419-92a8-0a116b49e8c7",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Deepest n=4 compound violation: same over O(4) as U(4); on an exact skew-conference family Drury's constant is the real root of 4D^3+2D-7=0.",
+          "details": "Evidence level: exact symbolic computation on an explicit one-parameter family, plus numerical global optimization. Scripts not yet committed; next commit adds moc/orth_vs_unitary.py and moc/drury_exact.py.\n\n1. Unitary vs orthogonal. min over U(4) of the exotic facet functional g equals min over O(4): both -0.0674422489 (200 / 400 BFGS+Nelder-Mead restarts, seed 2026).\n   - Negative result for the audit idea: a convex representation of unitary compounds by orthogonal compounds is NOT contradicted by depth.\n   - No claim about Zheng's Theorem 1.2 is made.\n2. Exact extremal family. The minimizer is O(y) = yI + sqrt((1-y^2)/3) S, with S the 4x4 skew conference matrix [[0,1,1,-1],[-1,0,-1,-1],[-1,1,0,1],[1,1,-1,0]] (S^2 = -3I).\n   - On this family, exactly: g(y) = 2y^2 - (4 sqrt3/9) y (1-y^2)^{3/2}.\n   - Zheng's rational example O* is y = 1/7, giving -158/2401.\n   - The minimum is at y*^2 = the small root of 16u^3 - 24u^2 + 36u - 1, with g_min = the real root of 4G^3 - 12G^2 + 14G + 1.\n3. Drury's 1992 constant 1.06744 = 1 - g_min is the real root of 4D^3 + 2D - 7 = 0, i.e. D = cbrt(7/8 + 11 sqrt33/72) + cbrt(7/8 - 11 sqrt33/72).\n   - Exact on the family. That the family carries the global minimum over U(4) is numerical: two independent optimizations agree to 1e-10.\nNext: Hermitian n=4 probe, then Conjecture F.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:33:02.000Z"
         }
       ],
       "reviews": []
@@ -1198,7 +1206,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T18:29:26.000Z"
+      "lastSeenAt": "2026-11-25T18:33:02.000Z"
     }
   ],
   "events": [
@@ -3390,6 +3398,20 @@
       "createdAt": "2026-11-25T18:32:54.000Z",
       "links": [],
       "requestFingerprint": "91e545c895891c0b3f894fd59a2e2f59e0fa50ccb2730300d2d50b8d9a7bccbe"
+    },
+    {
+      "id": "fbd416bf-4b96-4419-92a8-0a116b49e8c7",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-minors",
+      "summary": "Deepest n=4 compound violation: same over O(4) as U(4); on an exact skew-conference family Drury's constant is the real root of 4D^3+2D-7=0.",
+      "detail": "Evidence level: exact symbolic computation on an explicit one-parameter family, plus numerical global optimization. Scripts not yet committed; next commit adds moc/orth_vs_unitary.py and moc/drury_exact.py.\n\n1. Unitary vs orthogonal. min over U(4) of the exotic facet functional g equals min over O(4): both -0.0674422489 (200 / 400 BFGS+Nelder-Mead restarts, seed 2026).\n   - Negative result for the audit idea: a convex representation of unitary compounds by orthogonal compounds is NOT contradicted by depth.\n   - No claim about Zheng's Theorem 1.2 is made.\n2. Exact extremal family. The minimizer is O(y) = yI + sqrt((1-y^2)/3) S, with S the 4x4 skew conference matrix [[0,1,1,-1],[-1,0,-1,-1],[-1,1,0,1],[1,1,-1,0]] (S^2 = -3I).\n   - On this family, exactly: g(y) = 2y^2 - (4 sqrt3/9) y (1-y^2)^{3/2}.\n   - Zheng's rational example O* is y = 1/7, giving -158/2401.\n   - The minimum is at y*^2 = the small root of 16u^3 - 24u^2 + 36u - 1, with g_min = the real root of 4G^3 - 12G^2 + 14G + 1.\n3. Drury's 1992 constant 1.06744 = 1 - g_min is the real root of 4D^3 + 2D - 7 = 0, i.e. D = cbrt(7/8 + 11 sqrt33/72) + cbrt(7/8 - 11 sqrt33/72).\n   - Exact on the family. That the family carries the global minimum over U(4) is numerical: two independent optimizations agree to 1e-10.\nNext: Hermitian n=4 probe, then Conjecture F.",
+      "to": null,
+      "createdAt": "2026-11-25T18:33:02.000Z",
+      "links": [],
+      "requestFingerprint": "2b6382292dfb7238fd85f6de49777ff539a16873229a3af464388d41d1ffe22d"
     }
   ],
   "usage": [
