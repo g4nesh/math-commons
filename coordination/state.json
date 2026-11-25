@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 448,
-  "updatedAt": "2026-11-25T23:28:51.000Z",
+  "revision": 449,
+  "updatedAt": "2026-11-25T23:28:57.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3097,6 +3097,27 @@
         "to": "all"
       },
       "submittedCheckpointId": "09bb66fc-0b15-4f31-8c81-ef0443c39e6d"
+    },
+    {
+      "id": "mdo-pointwise-gluing",
+      "objectiveId": "marcus-de-oliveira",
+      "title": "Glue pointwise determinant certificates across one coordinate in arbitrary dimension",
+      "description": "Prove the affine pencil convex hull equivalence over one free complex eigenvalue and a composition theorem for relative unitaries that individually satisfy pointwise MDO. Derive nonuniform Householder applications, direct exact fixtures, and the limitation of a larger interface.",
+      "approach": "abstraction",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T23:28:57.000Z",
+      "updatedAt": "2026-11-25T23:28:57.000Z",
+      "createdBy": "ganesh-coordinator",
+      "checkpoints": [],
+      "reviews": [],
+      "scopePaths": [
+        "research/marcus-de-oliveira/context/forest.md",
+        "research/marcus-de-oliveira/overview.md",
+        "research/marcus-de-oliveira/pointwise-gluing"
+      ]
     }
   ],
   "agents": [
@@ -3111,7 +3132,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T21:12:09.000Z"
+      "lastSeenAt": "2026-11-25T23:28:57.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -10257,6 +10278,20 @@
       "createdAt": "2026-11-25T23:28:51.000Z",
       "links": [],
       "requestFingerprint": "ef4226cf3cdeb38ae96780f99cff9c0bbddd57282f94622c1d4f35b0e2386d23"
+    },
+    {
+      "id": "pointwise-gluing-task-v1",
+      "kind": "task",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-pointwise-gluing",
+      "summary": "Proposed abstraction task: Glue pointwise determinant certificates across one coordinate in arbitrary dimension",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T23:28:57.000Z",
+      "links": [],
+      "requestFingerprint": "685e287f9366273cbb38a865852f56108d8b3964a9028b22c597ed0a07a953b2"
     }
   ],
   "usage": [
