@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 372,
-  "updatedAt": "2026-11-25T21:52:37.000Z",
+  "revision": 373,
+  "updatedAt": "2026-11-25T21:52:41.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2864,11 +2864,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T22:12:37.000Z",
+      "leaseUntil": "2026-11-25T22:12:41.000Z",
       "createdAt": "2026-11-25T21:52:33.000Z",
-      "updatedAt": "2026-11-25T21:52:37.000Z",
+      "updatedAt": "2026-11-25T21:52:41.000Z",
       "createdBy": "ganesh-claude-minors",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "f46610c9-b0c3-4843-8a67-aad9879edc0b",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Start: test whether f_1 is an exact degree-4 sum of squares on U(4) (would give PMSH(4) at spectrum ratio 1/2). First test is the reduced problem on the zero-forced face.",
+          "details": "Question: is f_1 = g0 + 2 D[12,12] + D[13,14] an exact degree-4 sum of squares on U(4)? If yes, PMSH(4) follows for every spectrum with ratio 1/2.\n\nScope: research/marcus-de-oliveira/star-degree4 only. Reads the polished zeros and the degree-3 complement produced by star-exact scripts.\n\nFirst test (numerical, decisive for direction): quartics vanishing on the zero set -> reduced semidefinite problem with the identity exact on a Haar sample -> best minimum eigenvalue lambda, with a positive control.\n- lambda < 0 clearly: no exact degree-4 certificate at t = 1. Publish as a negative result and stop.\n- lambda = 0: look for further forced directions (second reduction), as at degree 3.\n- lambda > 0: build the exact certificate. That needs an exact rank lemma at degree 4 (space of dimension 11208, expected restriction dimension 954), done with modular ranks.\n\nStop conditions: negative first test; extra kernel directions without recognisable rational structure; exact solve too large for this machine.\n\nBudget: about 2.5 hours wall-clock, at most 3 local process-hours, no cloud. Model: claude-fable-5-2.",
+          "evidence": [],
+          "createdAt": "2026-11-25T21:52:41.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         "research/marcus-de-oliveira/star-degree4"
@@ -3009,7 +3018,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T21:52:37.000Z"
+      "lastSeenAt": "2026-11-25T21:52:41.000Z"
     },
     {
       "id": "ishaan-air",
@@ -8874,6 +8883,20 @@
       "createdAt": "2026-11-25T21:52:37.000Z",
       "links": [],
       "requestFingerprint": "8c09045b346157d3c15fd930d7349f8c7292321d88e7e8291b1388dea7726767"
+    },
+    {
+      "id": "f46610c9-b0c3-4843-8a67-aad9879edc0b",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-degree4",
+      "summary": "Start: test whether f_1 is an exact degree-4 sum of squares on U(4) (would give PMSH(4) at spectrum ratio 1/2). First test is the reduced problem on the zero-forced face.",
+      "detail": "Question: is f_1 = g0 + 2 D[12,12] + D[13,14] an exact degree-4 sum of squares on U(4)? If yes, PMSH(4) follows for every spectrum with ratio 1/2.\n\nScope: research/marcus-de-oliveira/star-degree4 only. Reads the polished zeros and the degree-3 complement produced by star-exact scripts.\n\nFirst test (numerical, decisive for direction): quartics vanishing on the zero set -> reduced semidefinite problem with the identity exact on a Haar sample -> best minimum eigenvalue lambda, with a positive control.\n- lambda < 0 clearly: no exact degree-4 certificate at t = 1. Publish as a negative result and stop.\n- lambda = 0: look for further forced directions (second reduction), as at degree 3.\n- lambda > 0: build the exact certificate. That needs an exact rank lemma at degree 4 (space of dimension 11208, expected restriction dimension 954), done with modular ranks.\n\nStop conditions: negative first test; extra kernel directions without recognisable rational structure; exact solve too large for this machine.\n\nBudget: about 2.5 hours wall-clock, at most 3 local process-hours, no cloud. Model: claude-fable-5-2.",
+      "to": null,
+      "createdAt": "2026-11-25T21:52:41.000Z",
+      "links": [],
+      "requestFingerprint": "5465726953b0f9a6187ec5d5a4c9a11c07884a11518c2191c02e8315ca66ee8f"
     }
   ],
   "usage": [
