@@ -1,0 +1,17 @@
+[EXACT] PASS  Hess C(kappa) computed from (A.2) equals the library's H_kappa (3.10)
+[EXACT] PASS  grad C(kappa) = 0 (kappa in Sing C)
+[EXACT] PASS  rank H_kappa = 4
+[EXACT] PASS  H_kappa kappa = 0
+[EXACT] PASS  eq. (1): grad C(x + t kappa) = grad C(x) + t H_kappa x, identically in x and t
+[EXACT] PASS  symmetry used: H(x) kappa = H(kappa) x identically
+[EXACT] PASS  the 16 single-entry vectors span a space of dimension 10
+[EXACT] PASS  each single-entry vector lies in ker H_kappa
+[EXACT] PASS  dim ker H_kappa = 10, hence ker H_kappa = span{n_ij} (over Q, R and C)
+[EXACT] PASS  c = sum a_ij n_ij  =>  (Pc)_sigma = sum_i a_{i,sigma(i)}  (20 random rational a)
+[EXACT] PASS  Phi_c(O) = sum a_ij O_ij^2 on 20 random exact rational O in SO(4)
+[EXACT] PASS  (O_ij^2) is doubly stochastic (20 exact rational O)
+[EXACT] PASS  rank P = 14 (P injective)
+[EXACT] PASS  P kappa = (1,...,1)
+[INFO] PASS  INFO: for a generic rational matching vector H_kappa x != 0 (so generic height lines are not in X)
+[NUMERIC] PASS  NUMERIC Lemma 1: sum a_ij O_ij^2 >= 0 when all permutation sums >= 0 (200 samples, seed 7)  (min = 5.592e-01)
+SUMMARY ALL EXACT CHECKS PASSED

@@ -1,0 +1,12 @@
+[EXACT] PASS  Cayley transforms are exactly unitary (4 Gaussian-rational U)
+[EXACT] PASS  sum_sigma W_sigma = 1
+[EXACT] PASS  sum_{sigma(I)=J} W_sigma = |det U[I,J]|^2 (imaginary part 0) for all I, J, |I| = 0..4
+[EXACT] PASS  facet value of h_{pi,eps} at the response = (t_pi + eps c_pi)/2 (doc's t, c), all 48
+[EXACT] PASS  the 34 minor vectors span V_R (rank 14)
+[EXACT] PASS  cubic changes sign on [0.033721124434, 0.033721124435]
+[EXACT] PASS  cubic has exactly one positive real root (derivative 96x^2+96x+28 > 0)
+[NUMERIC] PASS  NUMERIC nu(U) = rho(U) (LP vs formula) on 300 samples (seed 99; half Haar U(4), half SO(4))  (max |nu-rho| = 3.54e-14; rho > 0 in 37 samples)
+[NUMERIC] PASS  NUMERIC max rho over O(4) (100 Nelder-Mead starts) vs tau* = 0.033721124434  (best = 0.033721124434, tau* - best = -2.78e-17)
+[NUMERIC] PASS  NUMERIC nu = rho at the best orthogonal point  (nu = 0.033721124434)
+[NUMERIC] PASS  NUMERIC max rho over U(4) (50 Nelder-Mead starts) does not exceed tau*  (best = 0.033721124434)
+SUMMARY ALL EXACT CHECKS PASSED

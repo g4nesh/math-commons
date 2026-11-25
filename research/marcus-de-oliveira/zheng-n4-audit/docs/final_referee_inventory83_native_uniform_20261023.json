@@ -1,0 +1,89 @@
+{
+ "doc_id": "final_referee_inventory83_native_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_inventory83_native_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    84
+   ],
+   "contact_sets": [
+    [
+     3,
+     4,
+     8,
+     10,
+     12,
+     13
+    ],
+    [
+     2,
+     5,
+     9,
+     11,
+     12,
+     13
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with Pc(x)>=0 and contacts containing {3,4,8,10,12,13} (group image of T_84={2,5,9,11,12,13}): Phi_{c(x)}(O)>=0 for all real orthogonal O. Eight-distinct spectra by a (z,w) plane-curve argument with height x fixed; degenerate spectra by cited theorems."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "Prop 4.1/Lemma 4.2",
+   "used_for": "11 source rays"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_49/T_48/T_59 or T7_23",
+   "used_for": "ties 0,4,7,8,15,16,19,23 (auditor-supplied)"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_22 or T_23",
+   "used_for": "tie 3 (auditor-supplied)"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_25 or T_28",
+   "used_for": "ties 6,17 (auditor-supplied)"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Appendix B",
+   "used_for": "degenerate spectra"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Lemma 3.5",
+   "used_for": "compact exclusion"
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p.1, paragraph 'Every relevant additional tie'",
+   "claim": "each new tie where f40 or f68 vanishes is covered by a proved case",
+   "why": "the ties and covering cases are not listed in the PDF (only 'in the certificate')",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "auditor computed: 11 ties, each covered by an earlier-stage case (see report)"
+  }
+ ],
+ "unchecked": [
+  "cited dependencies not audited"
+ ],
+ "steps": [
+  "see final_referee_inventory83_native_uniform_20261023.md section C"
+ ],
+ "exact_replays": [
+  "replay/final_referee_inventory83_native_uniform_20261023__check.py: 40 EXACT checks, all pass"
+ ],
+ "numeric_tests": [
+  "INFO NUMERIC T_84 stratum: 6 points (seeds 500.., margin 1e-3), 10 BFGS restarts each; worst min Phi / max gap = 1.487e-12"
+ ]
+}

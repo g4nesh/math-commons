@@ -1,0 +1,40 @@
+[EXACT] PASS  Lemma 1: (D-F_tau) - sum p (F_sigma - F_tau) = D - sum p F_sigma when sum p = 1
+[EXACT] PASS  U#0: total edge mass 1 and incident mass a_i + b_i
+[EXACT] PASS  U#0: for all S, sum_(i<j in S) w_ij = |p_S|^2|q_S|^2 - |<p_S,q_S>|^2 <= sum_S a_i
+[EXACT] PASS  U#0: exact max flow has value 1; theta >= 0, theta_ij+theta_ji = w_ij, out = a_i, in = b_i
+[EXACT] PASS  U#0: law represents all 16 principal minors of U diag(alpha,beta,gamma,gamma) U^* (18 weights, sum 1)
+[EXACT] PASS  U#0: det(diag(x) - U diag(alpha,beta,gamma,gamma) U^*) = sum p prod(x_i - e_sigma(i)) (polynomial identity)
+[EXACT] PASS  U#1: total edge mass 1 and incident mass a_i + b_i
+[EXACT] PASS  U#1: for all S, sum_(i<j in S) w_ij = |p_S|^2|q_S|^2 - |<p_S,q_S>|^2 <= sum_S a_i
+[EXACT] PASS  U#1: exact max flow has value 1; theta >= 0, theta_ij+theta_ji = w_ij, out = a_i, in = b_i
+[EXACT] PASS  U#1: law represents all 16 principal minors of U diag(alpha,beta,gamma,gamma) U^* (18 weights, sum 1)
+[EXACT] PASS  U#1: det(diag(x) - U diag(alpha,beta,gamma,gamma) U^*) = sum p prod(x_i - e_sigma(i)) (polynomial identity)
+[EXACT] PASS  U#2: total edge mass 1 and incident mass a_i + b_i
+[EXACT] PASS  U#2: for all S, sum_(i<j in S) w_ij = |p_S|^2|q_S|^2 - |<p_S,q_S>|^2 <= sum_S a_i
+[EXACT] PASS  U#2: exact max flow has value 1; theta >= 0, theta_ij+theta_ji = w_ij, out = a_i, in = b_i
+[EXACT] PASS  U#2: law represents all 16 principal minors of U diag(alpha,beta,gamma,gamma) U^* (18 weights, sum 1)
+[EXACT] PASS  U#2: det(diag(x) - U diag(alpha,beta,gamma,gamma) U^*) = sum p prod(x_i - e_sigma(i)) (polynomial identity)
+[EXACT] PASS  U#3: total edge mass 1 and incident mass a_i + b_i
+[EXACT] PASS  U#3: for all S, sum_(i<j in S) w_ij = |p_S|^2|q_S|^2 - |<p_S,q_S>|^2 <= sum_S a_i
+[EXACT] PASS  U#3: exact max flow has value 1; theta >= 0, theta_ij+theta_ji = w_ij, out = a_i, in = b_i
+[EXACT] PASS  U#3: law represents all 16 principal minors of U diag(alpha,beta,gamma,gamma) U^* (18 weights, sum 1)
+[EXACT] PASS  U#3: det(diag(x) - U diag(alpha,beta,gamma,gamma) U^*) = sum p prod(x_i - e_sigma(i)) (polynomial identity)
+[EXACT] PASS  U#4: total edge mass 1 and incident mass a_i + b_i
+[EXACT] PASS  U#4: for all S, sum_(i<j in S) w_ij = |p_S|^2|q_S|^2 - |<p_S,q_S>|^2 <= sum_S a_i
+[EXACT] PASS  U#4: exact max flow has value 1; theta >= 0, theta_ij+theta_ji = w_ij, out = a_i, in = b_i
+[EXACT] PASS  U#4: law represents all 16 principal minors of U diag(alpha,beta,gamma,gamma) U^* (18 weights, sum 1)
+[EXACT] PASS  U#4: det(diag(x) - U diag(alpha,beta,gamma,gamma) U^*) = sum p prod(x_i - e_sigma(i)) (polynomial identity)
+[EXACT] PASS  U#5: total edge mass 1 and incident mass a_i + b_i
+[EXACT] PASS  U#5: for all S, sum_(i<j in S) w_ij = |p_S|^2|q_S|^2 - |<p_S,q_S>|^2 <= sum_S a_i
+[EXACT] PASS  U#5: exact max flow has value 1; theta >= 0, theta_ij+theta_ji = w_ij, out = a_i, in = b_i
+[EXACT] PASS  U#5: law represents all 16 principal minors of U diag(alpha,beta,gamma,gamma) U^* (18 weights, sum 1)
+[EXACT] PASS  U#5: det(diag(x) - U diag(alpha,beta,gamma,gamma) U^*) = sum p prod(x_i - e_sigma(i)) (polynomial identity)
+[EXACT] PASS  Leibniz form: Delta_O(A,C) on the affine chart equals det(diag(a) - O diag(e) O^t)
+[EXACT] PASS  homogeneous: Delta_O - sum mu Pi vanishes on [A_i,C_j]=0 for all 16 cross pairs (shared-zero law)
+[EXACT] PASS  homogeneous: vanishes on [C_i,C_j]=0 for all 6 internal pairs (Theorem 2 law)
+[EXACT] PASS  homogeneous: vanishes on [A_i,A_j]=0 for all 6 internal pairs (interchanged spectra, inverse perms)
+EXACT failures: 0
+[NUMERIC] k=1: |(D - sum p F)/t^k| at t=1e-4,1e-8,1e-12: ['0.320145', '0.320145', '0.320145']; without the law |(D - F_tau)/t^k|: ['1.78e+5', '1.78e+9', '1.78e+13']
+[NUMERIC] k=2: |(D - sum p F)/t^k| at t=1e-4,1e-8,1e-12: ['0.428105', '0.428105', '0.428105']; without the law |(D - F_tau)/t^k|: ['1.03e+10', '1.03e+18', '1.03e+26']
+[NUMERIC] k=3: |(D - sum p F)/t^k| at t=1e-4,1e-8,1e-12: ['0.105558', '0.105558', '0.105558']; without the law |(D - F_tau)/t^k|: ['2.57e+13', '2.57e+25', '2.57e+37']
+[NUMERIC] PASS  bounded quotient along curves with vanishing order 1,2,3 (ratio last/first 1.000)

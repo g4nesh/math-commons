@@ -1,0 +1,34 @@
+PASS T = paper T_51
+PASS generators(T) = basis f0,f1,f2,f8,f10,f12,f30,f59
+PASS contact rank 6
+PASS rows 20,16,13,14,7,6,4,0 of the basis profiles form I8
+PASS coefficient of f30 is g4, coefficient of f8 is g14 (exclusive sources)
+PASS f30 is the only non-minor; all basis profiles >= 0
+PASS ties not forcing d=0 are exactly 0,6,7,13,14,16,20
+PASS B, C, D are Table 5 sets 8, 11, 12
+PASS tie 6 -> B, 13 -> B, 14 -> C, 20 -> D (some group element maps the set onto T+{j})
+PASS tie 0 pulled back to six-element cases [9, 11, 17, 38, 65, 76] (not named in the document)
+PASS tie 7 pulled back to six-element cases [42, 65, 71] (not named in the document)
+PASS tie 16 pulled back to six-element cases [9, 11, 17, 38, 65, 76] (not named in the document)
+PASS (1) L_O >= d f30(O) with d = g4, 30 exact random instances
+PASS (2) a = N/(1-S+U) equals W P/Da, t = N/(W+S-U) equals P/Dt
+PASS E = (a+t)(w-z), rE, sE, uE raw ratios (before inversion)
+PASS E Da Dt = P (W+1)(r-W) X W Z
+PASS raw: sE = F11-F5 and uE = F11-F10 hold after inversion
+PASS contact levels H1=0,H3=1,H5=1+r,H11=1+r+s,H10=1+r+s-u
+PASS (3) H4 = r(W+1)/W and H0 = (W-r)(Z-1)
+PASS last-contact curve numerator: 105 terms, degree 5 in W and 2 in Z  (105, 5, 2)
+PASS F(0,Z) = c * r^3((r+s)Z+1) with c = +-1  (r**3*(Z*r + Z*s + 1), 1)
+PASS last-coordinate denominator has degree 1 in Z  W*(-W + r)*(-W**2*Z*u + W**2*Z + W**2*u - W**2 + W*Z*r*u - 2*W*Z*r - W*Z*s + W*r + W*u - W + Z*r**2 + Z*r*s + r)
+PASS Z^2 coefficient = -W(r-W)^2((u-1)W+r)(r+s-u-W) (times the same sign c)  -W*(-W + r)**2*(W*u - W + r)*(-W + r + s - u)
+PASS Z(0) = -1/(r+s), Z'(0) = -(r^3+2r^2s+r^2+rs^2+rs-su)/(r(r+s)^3)  -(r**3 + 2*r**2*s + r**2 + r*s**2 + r*s - s*u)/(r*(r + s)**3)
+PASS finite branch: H14 has a simple pole with residue -r  -r
+PASS finite branch: pole of H14 is simple (d0 = 0, d1 != 0); W is a local parameter, H4 has residue r, so H4 + H14 is holomorphic
+PASS every monomial has degW - degZ >= -1 (so W*F(W,V/W) is a polynomial)
+PASS lowest weighted polynomial = c * (-r^3 V((r+s-u)V - r - s))  -V*r**3*(V*r + V*s - V*u - r - s)
+PASS V-branch: H14 has a simple pole with residue -r  -r
+PASS V-branch: pole of H14 is simple (d0 = 0, d1 != 0); with H4 residue r, H4 + H14 is holomorphic
+PASS witness (2,3,4,5): r(r+s)(r+s-u) and both branch denominators nonzero
+NUMERIC stratum points 4, worst min Phi over SO(4) = 1.2791107588070887e-15
+EXACT checks failed: 0
+exit 0

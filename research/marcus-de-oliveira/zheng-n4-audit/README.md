@@ -27,11 +27,14 @@ The paper's argument has five parts:
 | Path | Content |
 | --- | --- |
 | [METHOD.md](METHOD.md) | Specification, evidence levels, verdict rules, deviations |
-| `lib/` | Own exact library for the objects of the paper, with tests |
+| `lib/` | Own exact library for the objects of the paper, with 77 tests |
 | `reduction/` | Re-derivation of parts 2 and 3 and their exact replays |
 | `foundations/` | Audits of parts 1 and 5 |
-| `deps/` | Dependency map of the ninety cases and the tracing of conditional theorems |
-| `cases/` | One report and verdict per contact case |
-| `replay/` | Own-code replays of the case certificates |
+| [manifest.json](manifest.json) | The 208 proof documents, their roles, and who audits each batch |
+| `docs/`, `replay/` | First-pass report and own-code replay for each proof document |
+| [CLOUD-WORKER.md](CLOUD-WORKER.md), `cloud/` | Instructions for workers auditing two slices of documents, and their results |
+| [generalization-n5.md](generalization-n5.md) | Which ingredients are specific to dimension four |
+
+First-pass document reports are not verdicts on cases. Case verdicts are assembled after a second pass.
 
 [Research overview](../overview.md)

@@ -1,0 +1,106 @@
+{
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_coreD_low_pair_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     7,
+     9,
+     16,
+     23
+    ]
+   ],
+   "restatement": "No x in X with c(x) in N_T, T={0,1,2,7,9,16,23} (Table 5 no. 12), has coefficients (after source-S3 ordering) 0<a<=c<=b<=d, a+c<=d, t,u,v>=0 arbitrary. Exclusion lemma only; b>d or a+c>d not covered.",
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "global real-Hessian inertia and determinant theorem",
+   "used_for": "final contradiction",
+   "note": "all principal 12-minors of Hess C(Re x) >= 0 for x in X ('global real-Hessian inertia'); randomized exact support: all 91 minors > 0 at 4 points"
+  }
+ ],
+ "steps": [
+  [
+   "(2)",
+   "EXACT"
+  ],
+  [
+   "(3)",
+   "EXACT"
+  ],
+  [
+   "(4)",
+   "EXACT"
+  ],
+  [
+   "(5)",
+   "EXACT"
+  ],
+  [
+   "(6)",
+   "EXACT"
+  ],
+  [
+   "octics irreducible/distinct",
+   "EXACT"
+  ],
+  [
+   "13-border divisibility",
+   "EXACT"
+  ],
+  [
+   "charts (7) exhaustive",
+   "PROOF-READ"
+  ],
+  [
+   "16 tables (8)",
+   "EXACT"
+  ],
+  [
+   "alpha<0, simple root, F+-<0",
+   "PROOF-READ"
+  ],
+  [
+   "P<0, Schur, rank 12",
+   "PROOF-READ"
+  ],
+  [
+   "extension to WH+H-=0 and walls",
+   "PROOF-READ (argument supplied by auditor)"
+  ],
+  [
+   "contradiction",
+   "CITED"
+  ]
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "N, R, Q",
+  "Q^4 det H = -4Q^2G^2",
+  "det H_I = (v+b+1)^2 P",
+  "disc = F+F-",
+  "norm = W^2",
+  "S+- = F_eps H^2",
+  "P S = (U+-W)^2 mod G",
+  "both bordered 13-minors divisible by G",
+  "16 tables (term counts equal the document's)",
+  "source S3 (6 elements)"
+ ],
+ "numeric_tests": [
+  "3 realizable points with contact set exactly T (seeds 2026-2028): G ~ 1e-14 relative, coefficients outside the excluded region, min Phi >= ~0"
+ ],
+ "unchecked": [
+  "proof of the cited inertia theorem"
+ ],
+ "doc_id": "blind_moc4_coreD_low_pair_20261023"
+}

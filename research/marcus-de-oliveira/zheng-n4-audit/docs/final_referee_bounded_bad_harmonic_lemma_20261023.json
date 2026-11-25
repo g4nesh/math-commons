@@ -1,0 +1,36 @@
+{
+  "doc_id": "final_referee_bounded_bad_harmonic_lemma_20261023",
+  "pdf": "proofs/manin_transfer_20261021/final_referee_bounded_bad_harmonic_lemma_20261023.pdf",
+  "pages": 2,
+  "verdict": "confirmed",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "restatement": "X compact connected Riemann surface, P finite, H_i meromorphic with poles only in P, g_i = -eta Im H_i, L a real linear combination of the g_i, D a component of {g_i > 0 for all i, L < 0} in X \\ P. If (1) at boundary points of D in X \\ P with all g_i >= 0 and some g_i = 0 we have L >= 0, (2) -L <= M d on D with d >= 0 bounded near each p in P, and (3) not all H_i are constant, then D is empty."},
+    {"label": "application remarks", "page": 2, "restatement": "c = sum lam_k f_k (minor, lam_k >= 0) + d f_bad gives L >= d Phi_fbad(O); d <= d + g_j bounded suffices; height exception: x = f kappa + v0 with f nonconstant forces grad C(v0) = 0 = H_kappa v0, so v0 is in the single-entry span (Birkhoff-safe); a constant full matching vector must be excluded separately."}
+  ],
+  "dependencies": [
+    {"kind": "external", "ref": "removable singularities and maximum principle for subharmonic functions (textbook)", "used_for": "steps 2-4", "match_checked": true},
+    {"kind": "external", "ref": "Birkhoff-von Neumann theorem", "used_for": "height exception remark only", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper (3.10)-(3.12), (4.2); moc4lib", "used_for": "H_kappa kernel, Phi of minor vectors", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "L = 0 at boundary points of D in X \\ P", "kind": "analytic", "status": "PROOF-READ"},
+    {"n": 2, "claim": "v = -L on D, 0 elsewhere, is subharmonic", "kind": "analytic", "status": "PROOF-READ", "note": "argument supplied by auditor: continuous, nonnegative, sub-mean value where v = 0"},
+    {"n": 3, "claim": "v extends over P", "kind": "analytic", "status": "PROOF-READ"},
+    {"n": 4, "claim": "v constant positive, D = X \\ P", "kind": "analytic", "status": "PROOF-READ"},
+    {"n": 5, "claim": "no poles at P since Im H takes both signs near a pole", "kind": "analytic", "status": "PROOF-READ"},
+    {"n": 6, "claim": "all H_i constant: contradiction", "kind": "analytic", "status": "PROOF-READ"},
+    {"n": 7, "claim": "Phi_c(O) >= d Phi_fbad(O)", "kind": "inequality", "status": "EXACT", "note": "instances; lam_k >= 0 on D is an obligation of each application"},
+    {"n": 8, "claim": "positive-gap compensation", "kind": "inequality", "status": "PROOF-READ"},
+    {"n": 9, "claim": "grad C(v0 + f kappa) = grad C(v0) + f H_kappa v0; ker H_kappa = single-entry span", "kind": "identity", "status": "EXACT"},
+    {"n": 10, "claim": "single-entry cost with Pc >= 0 is safe", "kind": "inequality", "status": "PROOF-READ", "note": "Birkhoff CITED"}
+  ],
+  "gaps": [],
+  "exact_replays": [
+    "grad C(v0 + f kappa) = grad C(v0) + f H_kappa v0 symbolically for the cubic (A.2)",
+    "ker H_kappa = span of the 16 single-entry vectors (dim 10, rank H_kappa 4)",
+    "(O_ij^2) doubly stochastic on 10 exact rational O in SO(4)",
+    "Phi_c(O) >= d Phi_fbad(O) for nonnegative minor combinations plus d f_bad, all 48 non-minor f_bad, 10 exact O"
+  ],
+  "numeric_tests": ["Im of a Laurent head z^-k(c + O(z)) takes both signs on |z| = 1e-3: 200 random heads, seed 1"],
+  "unchecked": ["whether each citing document verifies hypotheses 1-3 (left to the auditors of those documents)"]
+}

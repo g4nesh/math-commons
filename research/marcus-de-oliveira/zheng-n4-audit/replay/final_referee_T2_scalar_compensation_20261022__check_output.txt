@@ -1,0 +1,14 @@
+PASS EXACT Thm2_identity_R
+PASS EXACT Thm2_identity_st_given_equal_mass
+PASS EXACT Remark_checkerboard_identity_given_equal_mass
+PASS EXACT Lemma1_square_difference
+PASS EXACT Thm2_(2)_completion
+PASS EXACT Remark_equality_family_s=t=R=0
+PASS EXACT Thm3_H_minus_signed_products_equals_R_quadratic_part
+INFO group elements mapping (11,39,17)->(9,1,22) ordered: 4 as sets with h->h: 8
+INFO images under the stated row/column permutations in the 4 conventions: {('row', 'col'): (8, 2, 69), ('row', 'col^-1'): (8, 2, 69), ('row^-1', 'col'): (9, 1, 22), ('row^-1', 'col^-1'): (9, 1, 22)}
+PASS EXACT orbit_claim_some_convention_maps_(11,39,17)_to_(9,1,22)
+PASS EXACT T3_triple_(1,11,17)_in_same_orbit_as_(9,1,22)_with_h_to_h 8 elements
+NUMERIC Thm2 min (R+2|st|)/mass^2 over 50000 samples (seed 5, ~25% zero coords) = 0.000e+00; Thm3 min (H+2|ST|)/|p|^4 = 7.275e-04
+NUMERIC SOC triple (9, 1, 22): min over SO(4) x tau of Phi(tau f9 + f1/tau + f22) = 2.255e-17 (80 BFGS restarts, seed 12); min of Phi(f22)+2sqrt(Phi f9 Phi f1) on 5000 random O = 7.029e-04
+RESULT ALL EXACT CHECKS PASS []

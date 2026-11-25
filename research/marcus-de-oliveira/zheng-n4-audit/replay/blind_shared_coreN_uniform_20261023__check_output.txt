@@ -1,0 +1,38 @@
+PASS N is Table 5 set no. 24
+PASS generators(N) = {f2,f8,f12,f15,f29,f39,f30}  [2, 8, 12, 15, 29, 30, 39]
+PASS f2,f8,f12,f15,f29,f39 minor; f30 non-minor  ['n13,34', 'n12,23', 'n14,24', 'n12,14', 'n13,12', 'n14,13', 'h4321,-']
+PASS P has rank 14
+PASS rows of P at N have rank 7
+PASS the 7 generator vectors are independent (so span the 7-dim kernel)
+PASS rows [13,14,6,5,10,1,23] of the generators = diag(1,1,1,1,1,1,2)  [[1, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 2]]
+PASS F(w + z kappa) has z-degree 1  [0, 1]
+PASS C has 38 monomials, all coefficients positive  38
+PASS [d^3]C = 1
+PASS Q has 19 monomials, all coefficients positive  19
+PASS [d^2]Q = 1
+INFO det H(w + z kappa): 7028 terms, 650 exact divisions, 9.0 s
+PASS det H(w + z kappa) has z-degree <= 4  [0, 1, 2, 3]
+PASS Q^4 det A is divisible by -4 Q^2
+PASS Q^4 det A / (-4 Q^2) is a perfect square G^2 (identity (4))
+PASS [d^9]G = 1  1
+PASS G has 498 terms  498
+PASS G homogeneous of degree 9
+PASS individual degrees of G in (a,b,c,e,f,g,d) = (2,2,2,2,2,2,9)  (2, 2, 2, 2, 2, 2, 9)
+PASS coefficients of d^k, k >= 4: all positive
+PASS coefficients of d^k, k <= 2: all negative
+INFO d^3 coefficient signs: +70 -1
+PASS R = d G_d - 3 G: 427 monomials, all positive  427
+PASS R contains 6 d^9
+PASS every monomial of R has d-degree >= 4 or d-degree <= 2 (d^3 cancels)
+PASS G(x,0) = -16 a b c e f g C(x,0)
+PASS C(x,0) has 16 monomials, all positive cubic  16
+PASS at a=..=d=1: C = 38, Q = 19, G = 0
+PASS at that point z = -2 and det A_I = -49152 (I = {2..13})  -49152
+PASS at that point det A = 0 and rank A = 12  12
+PASS border ({1}+I,{1}+I): z-degree <= 2 and Q^2 det(..)|_{z=-C/Q} divisible by G  z-deg 2, 17940 terms, 506 divisions
+PASS border ({0}+I,{0}+I): z-degree <= 2 and Q^2 det(..)|_{z=-C/Q} divisible by G  z-deg 2, 26377 terms, 506 divisions
+PASS border ({1}+I,{0}+I): z-degree <= 2 and Q^2 det(..)|_{z=-C/Q} divisible by G  z-deg 2, 22674 terms, 506 divisions
+PASS d^2/dd^2 (-4G^2/Q^2) at a root of G equals -8 G_d^2 / Q^2
+NUMERIC 40 random x >= 0 (seed 20261125, every 4th with one zero wall): >1 positive root in 0 cases; inertia at roots not (7,5,2)/(5,7,2) in: None
+NUMERIC realizable points on the N stratum (lib least squares, seeds 0..19): 20 found; max |g_23|/mean off-N gap = 2.28e-10
+ALL EXACT CHECKS PASSED

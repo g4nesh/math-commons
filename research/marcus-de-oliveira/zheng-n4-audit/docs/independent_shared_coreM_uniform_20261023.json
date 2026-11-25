@@ -1,0 +1,165 @@
+{
+ "doc_id": "independent_shared_coreM_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_shared_coreM_uniform_20261023.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     7,
+     10,
+     16,
+     17
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For x in X, pi* in M={0,1,2,7,10,16,17} (Table 5 #13), c=c(x) with Pc>=0 and (Pc)_s=0 on M (extra contacts allowed): Phi_c(O)>=0 for all O in SO(4); unitary via Thm 1.2. All zero coefficients and walls included."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "sharp pair-SOC atom (f1,f9;f22)",
+   "used_for": "ac,ae,ce >= delta^2 (or pb,pc,bc) sufficient",
+   "match_checked": true,
+   "note": "G-relabelling EXACT; atom itself CITED"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "old-H atom (f3,f15;f26) and image (f23,f15;f26)",
+   "used_for": "xi(e-1)>=1 / S(c-d)>=d^2 sufficient",
+   "match_checked": true,
+   "note": "G-relabelling EXACT; atom CITED"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "three-minor chain (f2;f0,f12;f70) -> (f15;f0,f3;f26)",
+   "used_for": "c>=d^2/q+d^2/t sufficient, q bound (8)",
+   "match_checked": true,
+   "note": "G-relabelling EXACT; atom CITED"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "paper eq. (4.2) Phi(n_IJ)=det^2",
+   "used_for": "d<=0 side, minor remainders",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "paper App. A.1: X subset Sing C",
+   "used_for": "bridge F(Re x)=0, det H(Re x)=0",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "paper Theorem 1.2",
+   "used_for": "unitary form only",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "basis and coefficients = gaps; d=g6-g8",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "gap formulas (2), relation, d<=0 rewrite",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "pair conditions p(b+c)>=d^2 etc.",
+   "status": "PROOF-READ (atom CITED)"
+  },
+  {
+   "n": 4,
+   "claim": "old-H split S(c-d)>=d^2",
+   "status": "PROOF-READ (atom CITED)"
+  },
+  {
+   "n": 5,
+   "claim": "chain condition (4)",
+   "status": "CITED"
+  },
+  {
+   "n": 6,
+   "claim": "C, Q in (5)",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "Q>0, SC identity (7), C>0",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 8,
+   "claim": "bridge F=0, det H=0",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 9,
+   "claim": "(6) Hessian identity, G 273 terms, B 137, A 136, p<->b symmetry",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "(11) c=0 face",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "(7),(8) region constraints",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 12,
+   "claim": "c<1 charts (15)-(17) cover",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 13,
+   "claim": "c>1 charts (19)-(21), affine endpoint (23)",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 14,
+   "claim": "c=1 wall charts",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 15,
+   "claim": "24 tables positive, markers, 31040 coefficients",
+   "status": "EXACT"
+  },
+  {
+   "n": 16,
+   "claim": "conclusion; unitary form",
+   "status": "PROOF-READ/CITED"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators/basis/gaps",
+  "relation and d<=0 rewrite",
+  "G-relabellings of SOC, old-H and chain atoms",
+  "(5),(7), Q rewrite",
+  "Hessian identity (6) by own Bareiss, G re-derived (273 terms), B/A split, p<->b symmetry",
+  "(11) c=0 face",
+  "all 24 tables with identical counts and markers; V>0 in c>1 charts"
+ ],
+ "numeric_tests": [
+  "chain atom at threshold, 3x3 grid x 12 restarts, seed 2: min Phi 9e-16",
+  "3 realizable exact-M points (margin 0.01): |(d+v)G|/scale^9 <= 5e-26, min Phi >= -1e-13"
+ ],
+ "unchecked": [
+  "proofs of the cited SOC, old-H and three-minor-chain reference atoms"
+ ]
+}

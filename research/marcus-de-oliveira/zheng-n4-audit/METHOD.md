@@ -4,7 +4,11 @@ Task `mdo-zheng-n4-audit` · objective `marcus-de-oliveira` · agent `ishaan-moc
 
 ## Deviations from this specification
 
-None so far. Every deviation will be listed here first, with the reason, before any result that it affects.
+Every deviation is listed here first, with the reason, before any result that it affects.
+
+1. **No program of the supplement is executed, not even in a sandbox.** Every replay is own code written from the PDF and the definitions. Reason: a re-run of the author's programs would not be independent evidence.
+2. **Part of the first pass runs on cloud workers.** 92 of the 208 proof documents (slices A and B in [CLOUD-WORKER.md](CLOUD-WORKER.md)) are audited by workers following the same procedure. Their reports land under `cloud/` and are spot-checked here before any verdict is taken from them. Reason: compute.
+3. **Six parallel write-ups are deferred.** The supplement's own versions of the paper's Section 2 and Appendix C (`one_circle`, three copies of `principal_minors`, two copies of `root_unitary_two_orthogonals`; 57 pages) are not audited as documents in the first pass. The paper's versions are audited in `foundations/`.
 
 ## Question
 

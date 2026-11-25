@@ -1,0 +1,30 @@
+[EXACT] PASS  identity (4): n[a(A-B)^2+b(A+B)^2+cD^2+dH] - sum_j (l^T Z l + m^T Z m)(S_j y) in (N)
+[INFO] PASS  identity (4) is not an identity without the reduction mod N (sanity)
+[EXACT] PASS  Schur complement of d in Z equals the displayed 3x3
+[EXACT] PASS  det of the 2x2 Schur complement = 4[ab(c-d) - d^2(a+b+c+d)]/(c-d)
+[EXACT] PASS  d = 0: eigenvalues of Z are 2a, 2b, c, 0
+[EXACT] PASS  c = d, d > 0: Schur complement has (3,3)=0 and (2,3)=-2d (so not PSD)
+[EXACT] PASS  random rational a,b,c,d >= 0: Z PSD (all principal minors) <=> (1), 400 samples, seed 4  (400/400)
+[EXACT] PASS  choice d=1, a=1/alpha-1, b=1/beta-1, c=1/gamma gives equality in (1) on alpha+beta+gamma=1
+[EXACT] PASS  (1) at d=1 equals (a+1)(b+1)c [1 - 1/(a+1) - 1/(b+1) - 1/c] (converse direction)
+[EXACT] PASS  u + v = 2(A^2+B^2), so H + (sqrt u+sqrt v+sqrt w)^2 - u - v = (|A-B|+|A+B|+|D|)^2 - EG
+[EXACT] PASS  Appendix D: f_0, f_6, f_10 are minor vectors and f_54 is a non-minor h vector  (f0=n1,4, f6=n4,1, f10=n13,24, f54=h4231,-)
+[EXACT] PASS  some quaternion convention x -> (p or pbar) x (q or qbar) (possibly swapped/transposed) makes all four responses match at 3 rational points  ([((0, 0, 0), 0), ((0, 0, 1), 1), ((1, 1, 0), 1), ((1, 1, 1), 0)])
+[EXACT] PASS  symbolic: 4 Phi_f0(M(p,q)) - n^2 Q_0 in (N) for convention (0, 0, 0),0
+[EXACT] PASS  symbolic: 4 Phi_f6(M(p,q)) - n^2 Q_6 in (N) for convention (0, 0, 0),0
+[EXACT] PASS  symbolic: 4 Phi_f10(M(p,q)) - n^2 Q_10 in (N) for convention (0, 0, 0),0
+[EXACT] PASS  symbolic: 4 Phi_f54(M(p,q)) - n^2 Q_54 in (N) for convention (0, 0, 0),0
+[EXACT] PASS  M(p,q) M(p,q)^T = (n/2)^2 I modulo N (M/(n/2) is in SO(4) when |p|=|q|)
+[EXACT] PASS  paper T_5 = {1,2,3,4,6,8} (0-based lexicographic indices)
+[EXACT] PASS  generators(T_5) (all f_j vanishing on T_5) = {f0,f1,f2,f3,f4,f5,f6,f9,f10,f53,f54}  ([0, 1, 2, 3, 4, 5, 6, 9, 10, 53, 54])
+[EXACT] PASS  the document's eight profile vectors are among the generators
+[EXACT] PASS  f0,f2,f3,f5,f6,f10,f53 minor; f54 non-minor; the extra generators f1,f4,f9 are minor
+[EXACT] PASS  only non-minor generator of T_5 is f54
+[EXACT] PASS  the eight profile vectors are linearly independent
+[EXACT] PASS  all 11 generators span the same 8-dim space {c : (Pc)_pi = 0 for pi in T_5}
+[EXACT] PASS  profile identity g = g22 f0 + g13 f2 + g12 f3 + g10 f5 + g17 f6 + g7 f10 + g16 f53 - (g16-g0) f54 on each of the 11 generators (hence on the whole 8-dim contact subspace)
+[EXACT] PASS  gap form of the capacity: a=g22, b=g17, c=g7, d=-A0 reproduces the displayed inequality
+[NUMERIC] PASS  NUMERIC (3) on 20000 random unit pairs (seed 2026): min of RHS-LHS  (min = 1.996e-03)
+[NUMERIC] PASS  NUMERIC (2) on capacity-boundary coefficients, same samples: min value  (min = 8.124e-03)
+[INFO] smallest slack in (3) over samples: 1.996e-03
+SUMMARY ALL EXACT CHECKS PASSED

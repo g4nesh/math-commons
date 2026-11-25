@@ -1,0 +1,95 @@
+PASS T equals Table 5 seven-set AUX7[11]
+PASS generators(T) == source list : [0, 2, 3, 5, 12, 15, 26]
+PASS rank of P rows at T is 7
+PASS exclusive rows form I7
+PASS first six generators minor, f26 non-minor
+PASS (2) a group element fixes T and sends the source list to [0,15,5,3,12,2,26] : 1 elements
+PASS C(w(z)) is affine in z
+PASS (8) C0 = q + (t+1)(u+1) + abc (d=1)
+PASS (8) Q0 = ab+ac+bc-au-tc+tu+t+u+1 (d=1)
+PASS JSON G8 has 312 terms : 312
+PASS G8 homogeneous of degree 8
+INFO factor(G8) : content -1, 1 factors, degrees [8]
+PASS G8 irreducible over Q
+INFO det H(w(z)) : terms 6338, z-degree 3, 3.1s
+PASS (9) Q0^4 det H(w(-C0/Q0)) = -4 d^2 Q0^2 G8^2 (own Hessian, d=1)
+PASS (14) G8|a=c=0 = d^2 {qd+(t+d)(u+d)} W4
+PASS (14) W4 has only positive coefficients and contains d^4 with coefficient 1 : terms 19
+PASS thirty-two charts built : 32
+PASS chart R0_cell0: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R0_cell0: one sign and strict monomial present : terms 3539 (0.0s)
+PASS chart R0_cell1: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R0_cell1: one sign and strict monomial present : terms 22473 (0.2s)
+PASS chart R0_cell2: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R0_cell2: one sign and strict monomial present : terms 20346 (0.2s)
+PASS chart R0_qc1: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R0_qc1: one sign and strict monomial present : terms 935 (0.0s)
+PASS chart R0_qa1: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R0_qa1: one sign and strict monomial present : terms 1616 (0.0s)
+PASS chart R1_cell0: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R1_cell0: one sign and strict monomial present : terms 8298 (0.0s)
+PASS chart R1_cell1: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R1_cell1: one sign and strict monomial present : terms 80163 (0.6s)
+PASS chart R1_cell2: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R1_cell2: one sign and strict monomial present : terms 92724 (1.0s)
+PASS chart R1_qc1: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R1_qc1: one sign and strict monomial present : terms 2369 (0.0s)
+PASS chart R1_qa1: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R1_qa1: one sign and strict monomial present : terms 5768 (0.0s)
+PASS chart R2_qlow: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R2_qlow: one sign and strict monomial present : terms 3745 (0.0s)
+PASS chart R2_q1: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R2_q1: one sign and strict monomial present : terms 945 (0.0s)
+PASS chart R2_qmid: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R2_qmid: one sign and strict monomial present : terms 29238 (0.2s)
+PASS chart R2_qhi: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R2_qhi: one sign and strict monomial present : terms 79152 (0.7s)
+PASS chart R2_qa1: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) R2_qa1: one sign and strict monomial present : terms 5338 (0.0s)
+PASS chart c1_qlow: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) c1_qlow: one sign and strict monomial present : terms 536 (0.0s)
+PASS chart c1_q1: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) c1_q1: one sign and strict monomial present : terms 135 (0.0s)
+PASS chart c1_qmid: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) c1_qmid: one sign and strict monomial present : terms 2406 (0.0s)
+PASS chart c1_qhi: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) c1_qhi: one sign and strict monomial present : terms 5289 (0.1s)
+PASS chart c1_qa1: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) c1_qa1: one sign and strict monomial present : terms 434 (0.0s)
+PASS chart a0_r0_low: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_r0_low: one sign and strict monomial present : terms 449 (0.0s)
+PASS chart a0_r0_hi: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_r0_hi: one sign and strict monomial present : terms 981 (0.0s)
+PASS chart a0_r0_wall: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_r0_wall: one sign and strict monomial present : terms 134 (0.0s)
+PASS chart a0_r1_low: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_r1_low: one sign and strict monomial present : terms 758 (0.0s)
+PASS chart a0_r1_hi: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_r1_hi: one sign and strict monomial present : terms 2884 (0.0s)
+PASS chart a0_r1_wall: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_r1_wall: one sign and strict monomial present : terms 253 (0.0s)
+PASS chart a0_r2_low: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_r2_low: one sign and strict monomial present : terms 528 (0.0s)
+PASS chart a0_r2_hi: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_r2_hi: one sign and strict monomial present : terms 822 (0.0s)
+PASS chart a0_r2_wall: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_r2_wall: one sign and strict monomial present : terms 135 (0.0s)
+PASS chart a0_c1_low: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_c1_low: one sign and strict monomial present : terms 105 (0.0s)
+PASS chart a0_c1_hi: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_c1_hi: one sign and strict monomial present : terms 120 (0.0s)
+PASS chart a0_c1_wall: every coordinate denominator has nonnegative coefficients and a strict monomial
+PASS (table) a0_c1_wall: one sign and strict monomial present : terms 27 (0.0s)
+NUMERIC capacity ('SOC', 2, 12) : min over SO(4) of the sufficient-condition margin = -3.130e-30 (40 Nelder-Mead starts, seed 2026)
+NUMERIC capacity ('SOC', 2, 15) : min over SO(4) of the sufficient-condition margin = -3.475e-30 (40 Nelder-Mead starts, seed 2026)
+NUMERIC capacity ('SOC', 12, 15) : min over SO(4) of the sufficient-condition margin = -4.634e-30 (40 Nelder-Mead starts, seed 2026)
+NUMERIC capacity ('oldH', 3, 15) : min over SO(4) of the sufficient-condition margin = -8.400e-30 (40 Nelder-Mead starts, seed 2026)
+NUMERIC capacity ('oldH', 5, 2) : min over SO(4) of the sufficient-condition margin = -4.046e-30 (40 Nelder-Mead starts, seed 2026)
+NUMERIC capacity ('chain', 0, 3, 15) : min over SO(4) of the sufficient-condition margin = 1.739e-29 (40 Nelder-Mead starts, seed 2026)
+NUMERIC capacity ('chain', 0, 5, 2) : min over SO(4) of the sufficient-condition margin = 1.174e-29 (40 Nelder-Mead starts, seed 2026)
+INFO stratum point 0 : none found
+INFO stratum point 1 : none found
+NUMERIC stratum point 2: contact [0, 1, 2, 7, 9, 16, 17], coefficients(d=1) [np.float64(2598.7413), np.float64(38.0163), np.float64(156.7204), np.float64(10.5123), np.float64(64.3566), np.float64(70.7463), np.float64(1.0)], |Pc-g| 5.3e-15, G/sum|terms| = 5.48e-13, min Phi (20 BFGS) = 1.2456e-12
+INFO stratum point 3 : none found
+SUMMARY: 0 EXACT failures []
+exit 0

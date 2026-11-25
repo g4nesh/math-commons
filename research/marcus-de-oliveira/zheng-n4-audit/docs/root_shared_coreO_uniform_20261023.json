@@ -1,0 +1,159 @@
+{
+ "doc_id": "root_shared_coreO_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_shared_coreO_uniform_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     7,
+     14,
+     16,
+     23
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For x in X, pi* with Pc(x) >= 0 and (Pc)_s = 0 for s in O = {0,1,2,7,14,16,23} (Table 5 no. 15), Phi_{c(x)}(M) >= 0 for every M in SO(4) (U(4) via Thm 1.2). All spectra; extra contacts and zero coefficients allowed."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "F03 final_referee_T2_scalar_compensation_20261022: SOC reference inequality x f1 + y f9 + delta f22 safe if xy >= delta^2",
+   "used_for": "atoms (4) and H3 bound (5)",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper A.1 X in Sing C; (4.7) group invariance; (4.2) (lib EXACT)",
+   "used_for": "singular Hessian; transposition and permutation actions; minor vectors",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Theorem 1.2",
+   "used_for": "unitary sentence only",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "kernel basis and decomposition (1)",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "sign rows give a..v >= 0 and a+d..v+d >= 0",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "generator list and circuit (2)",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "d = 0 safe",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "d < 0 reduced to d > 0 by transposition",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "six stabilizer elements permute (a,c,e)",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "SOC atoms (4)",
+   "status": "CITED"
+  },
+  {
+   "n": 8,
+   "claim": "conic addition (5): safe if d <= H3",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 9,
+   "claim": "C = ace + (b+d)(q+d)(v+d), Q as in (6)",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "realizable lift singular, z = -C/Q",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 11,
+   "claim": "(7) Q^4 det H = -4d^2Q^2G^2, G 415 terms deg 8",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "balanced chart (8) covers triangle region with s < 2",
+   "status": "PROOF-READ+EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "D^6 G on chart (8): 2259 positive coefficients, constant 1",
+   "status": "EXACT"
+  },
+  {
+   "n": 14,
+   "claim": "dominant chart (9) covers dominant region with S > 0",
+   "status": "PROOF-READ+EXACT"
+  },
+  {
+   "n": 15,
+   "claim": "cleared G on chart (9): 3096 positive coefficients incl 8X",
+   "status": "EXACT"
+  },
+  {
+   "n": 16,
+   "claim": "(10) zero-leaf factorization",
+   "status": "EXACT"
+  },
+  {
+   "n": 17,
+   "claim": "exhaustion of cases",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 18,
+   "claim": "unitary extension",
+   "status": "CITED"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators(O), kernel, sign rows, circuit (2)",
+  "transposition stabilizes O, f20<->f26, 2<->5, 11<->12, 15<->23",
+  "Stab(O) (order 12) induces all 6 permutations of (f2,f12,f15) fixing f26",
+  "group bridges (f1,f9;f22) -> (fi,fj;f26) for the three pairs",
+  "C and Q equal the displayed formulas",
+  "(7): exact square after dividing by -4d^2Q^2; G 415 terms, deg 8, [d^8]=1",
+  "chart (8): 2259 positive coefficients (D^6), constant 1; minimal exponent also positive",
+  "chart (9): 3096 positive coefficients (L^6(1+Y)^2(1+Z)^4), monomial 8X",
+  "(10) factorization",
+  "chart inverses (sympy)"
+ ],
+ "numeric_tests": [
+  "SOC atoms: min over SO(4) of Phi_f26 + 2 sqrt(Phi_fi Phi_fj) = 0 (1e-12) for 3 pairs and reference (f1,f9;f22), 60 Nelder-Mead restarts each, seed 20261125",
+  "H3 bound: 25 random (a,c,e), 12 BFGS restarts each: worst normalized min Phi = +7e-16",
+  "20 lib stratum points on O: H3 >= d at all (two with genuine nonzero d)"
+ ],
+ "unchecked": [
+  "SOC reference inequality (F03) and its coordinate bridge to f1,f9,f22",
+  "Theorem 1.2"
+ ]
+}

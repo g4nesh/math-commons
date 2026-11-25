@@ -1,0 +1,81 @@
+{
+ "doc_id": "independent_moc4_T3_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T3_uniform_20261022.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "main",
+   "page": 1,
+   "paper_cases": [
+    3
+   ],
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     3,
+     7,
+     8
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "(*) for T_3 for all O in O(4); distinct points: minor cone + SOC family a f1+b f11+c f17 (ab>=c^2); collisions by cited boundary theorems."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "SOC inequality (1) for {f1,f11,f17} (144-orbit)",
+   "status": "CITED; same G-orbit as {f9,f1,f22} (EXACT); numeric min 2.4e-16"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper Thm C.1 (repeated spectrum)",
+   "status": "CITED"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper Thm B.1 (shared zero)",
+   "status": "CITED"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Thm 1.2",
+   "status": "CITED, unitary only"
+  }
+ ],
+ "steps": "see the .md step table (1-17)",
+ "gaps": [
+  {
+   "location": "p.2-3, eq.(7)",
+   "claim": "rho = mu Im v",
+   "why": "one global sign inconsistent with the note's own D28/D17 bracket convention; rho is free and its sign is derived, so harmless",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "rho = -mu Im v"
+  },
+  {
+   "location": "p.2, D>0",
+   "claim": "t+u=u+x=0 gives z=w",
+   "why": "it gives z=v (A_0=C_1), and then w=z; the conclusion still holds",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "cite z=v"
+  }
+ ],
+ "exact_replays": [
+  "source facets, span dimension, 12 facets of the minor cone, A is the unique f17-negative facet",
+  "identity (3)",
+  "D13/D02=x, D23/D01=c/v, D28, D17, chart (6) inverse (symbolic)",
+  "contacts, (7)-(11), v real => zero gaps at 297 exact random rational points (probabilistic identity test)"
+ ],
+ "numeric_tests": [
+  "chart seed 7: 400 feasible, 8 with A<0, min g6 g22 - A^2 = 5.1e-3, min Phi = 3.9e-15",
+  "SOC (1): min 2.4e-16 over SO(4) x tau"
+ ],
+ "unchecked": [
+  "proof of SOC inequality (1): the Leibniz bridge is not in this batch"
+ ]
+}

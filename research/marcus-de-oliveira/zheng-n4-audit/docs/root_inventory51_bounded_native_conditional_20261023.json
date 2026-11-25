@@ -1,0 +1,137 @@
+{
+ "doc_id": "root_inventory51_bounded_native_conditional_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_inventory51_bounded_native_conditional_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [],
+   "contact_sets": [
+    [
+     1,
+     3,
+     5,
+     10,
+     11,
+     14
+    ],
+    [
+     0,
+     1,
+     2,
+     7,
+     9,
+     10,
+     23
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "If (*) holds for contact sets containing an image of G={0,1,2,7,9,10,23}, then (*) holds for T_52, non-strict, all O in SO(4); collisions via App. B/C."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "seven-contact",
+   "ref": "G=T_10^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    23
+   ],
+   "used_for": "hypothesis; tie 20",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "A=T_9^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    17
+   ],
+   "used_for": "ties 6,13",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "C=T_11^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    16,
+    17
+   ],
+   "used_for": "tie 12",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_10/T_11/T_12/T_24/T_39 (unnamed)",
+   "contact_set": [],
+   "used_for": "ties 0,16",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_42/T_46 (unnamed)",
+   "contact_set": [],
+   "used_for": "tie 7",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Prop 4.1/Lemma 4.2",
+   "used_for": "nine-ray cone",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_bounded_bad_harmonic_lemma",
+   "used_for": "harmonic exclusion"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. C (one-circle)",
+   "used_for": "repeated eigenvalues"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. B (shared zero)",
+   "used_for": "a_i+b_j=0"
+  }
+ ],
+ "steps": [
+  "1-4 cone, theta bounds, ties EXACT",
+  "5-7 inverse, H4,H0,H15 EXACT",
+  "8-10 curve 68 terms, D0,N0,(5), resultant EXACT",
+  "11-13 fibre analysis and harmonic PROOF-READ+CITED",
+  "14 witness EXACT",
+  "15 (6) EXACT, Rouche PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "raw ratios, inverse",
+  "H15=-suW(W+1)(Z-1)/D14",
+  "C 68 terms degree (3,2)",
+  "D0, N0, (5), Res_Z=r^3 su(r+s+1)",
+  "(6)",
+  "witness fibre 4Z^2+42Z+14"
+ ],
+ "numeric_tests": [
+  "4 stratum points seeds 0-3, worst min Phi -1.8e-10"
+ ],
+ "unchecked": []
+}

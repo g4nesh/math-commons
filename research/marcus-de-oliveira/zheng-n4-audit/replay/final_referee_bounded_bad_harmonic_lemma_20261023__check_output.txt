@@ -1,0 +1,6 @@
+[EXACT] PASS  grad C(v0 + f kappa) = grad C(v0) + f H_kappa v0 identically (f^2 term is grad C(kappa) = 0)
+[EXACT] PASS  ker H_kappa (dim 10) = span of the 16 single-entry vectors
+[EXACT] PASS  (O_ij^2) doubly stochastic on 10 exact rational O in SO(4)
+[EXACT] PASS  Phi_c(O) >= d Phi_fbad(O) for c = (nonneg. comb. of minor f_j) + d f_bad, d >= 0; all 48 non-minor f_bad, 10 exact O
+[NUMERIC] PASS  NUMERIC pole step: Im H takes both signs on |z| = 1e-3 for 200 random Laurent heads (seed 1)
+SUMMARY ALL EXACT CHECKS PASSED
