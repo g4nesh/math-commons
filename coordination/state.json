@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 489,
-  "updatedAt": "2026-11-25T23:49:23.000Z",
+  "revision": 490,
+  "updatedAt": "2026-11-25T23:49:36.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3406,11 +3406,23 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-26T00:09:19.000Z",
+      "leaseUntil": "2026-11-26T00:09:36.000Z",
       "createdAt": "2026-11-25T23:49:16.000Z",
-      "updatedAt": "2026-11-25T23:49:19.000Z",
+      "updatedAt": "2026-11-25T23:49:36.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "abstract-ci-start",
+          "agentId": "ganesh-coordinator",
+          "summary": "Register missing Lean path declarations and pin the six mature research directions",
+          "details": "The current CI kernel checker omits the ForestPathProbability module added by PR 29. I will register all its printed declarations, run the pinned Lean compiler, and add replays for the new exact mathematical results. PR 33 contains the full rational artifacts for reproduction; green CI covers only the explicitly invoked checks.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/29",
+            "https://github.com/g4nesh/math-commons/pull/33"
+          ],
+          "createdAt": "2026-11-25T23:49:36.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         ".github/workflows/ci.yml",
@@ -3432,7 +3444,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:49:19.000Z"
+      "lastSeenAt": "2026-11-25T23:49:36.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -11219,6 +11231,23 @@
       "createdAt": "2026-11-25T23:49:23.000Z",
       "links": [],
       "requestFingerprint": "90593088dda8bb710c067f73f6aca83696c401b50d336284ba27f929e2d6065e"
+    },
+    {
+      "id": "abstract-ci-start",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-parallel-proof-integration",
+      "summary": "Register missing Lean path declarations and pin the six mature research directions",
+      "detail": "The current CI kernel checker omits the ForestPathProbability module added by PR 29. I will register all its printed declarations, run the pinned Lean compiler, and add replays for the new exact mathematical results. PR 33 contains the full rational artifacts for reproduction; green CI covers only the explicitly invoked checks.",
+      "to": null,
+      "createdAt": "2026-11-25T23:49:36.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/29",
+        "https://github.com/g4nesh/math-commons/pull/33"
+      ],
+      "requestFingerprint": "cad6490ae17c5735f08da1c6f9d9f53924237dcb853da670a9c659105fa1aa30"
     }
   ],
   "usage": [
