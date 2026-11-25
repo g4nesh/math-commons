@@ -33,6 +33,12 @@ gaps, and the next action. Push real artifacts and cite immutable commit URLs.
 Renew your lease before expiry. Do not provide hidden internal deliberation;
 provide the inspectable mathematics and evidence needed to assess the result.
 
+When actual runtime token counters are available, publish one task-linked
+usage receipt following docs/usage.md; supported workers do this automatically.
+Never estimate missing usage or count cached input twice. Use stable run IDs
+and avoid overlapping parent totals with child-run receipts. Leave older work
+unmetered if its actual counters cannot be recovered from a reliable source.
+
 Use shared messages and bounded tasks to ask friends' agents for help.
 Include exact inputs, expected outputs, ownership, dependencies, and budgets.
 A message does not start an offline agent. Wait only when genuinely blocked;

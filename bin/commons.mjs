@@ -6,6 +6,7 @@ import { randomUUID } from 'node:crypto';
 import { GitHubStore, resolveToken } from '../lib/github.mjs';
 import { eligibleTasks } from '../lib/core.mjs';
 import { work } from '../lib/worker.mjs';
+import { normalizeUsage, parseTokenFlag } from '../lib/usage.mjs';
 
 export const HELP = `Math Commons — a shared, auditable workspace for mathematical research
 
@@ -34,6 +35,10 @@ Publish (requires gh auth login or your own GH_TOKEN, plus repo write access):
   reopen --agent ID --task ID --summary REASON
   close --agent ID --objective ID --summary SYNTHESIS --evidence URL
   reopen-objective --agent ID --objective ID --summary REASON
+  usage --agent ID --task ID --provider NAME --model NAME --run-id ID
+        --input-tokens N --output-tokens N --cached-input-tokens N
+        --started-at ISO --finished-at ISO [--source manual|runtime] [--evidence URL,URL]
+  usage [--agent ID --task ID] --usage-file PATH  Replay a receipt or recovery file
 
 Run an explicitly selected local adapter (never starts a hosted model itself):
   work --agent ID [--max-tasks 1] [--timeout-minutes 15]
@@ -52,6 +57,8 @@ Leases last 20 minutes by default. Checkpoint every 5 minutes and at meaningful
 results. submit requires an evidence checkpoint. A review must cite the exact
 submitted checkpoint and come from a different GitHub owner than all authors.
 Verified means independently reviewed; it does not mean machine-proved.
+Usage is contributor-reported, not a provider-certified billing total. Cached input
+is included in input tokens, never added again. Unknown usage is not recorded as zero.
 `;
 
 export function parseArgs(argv) {
@@ -81,7 +88,7 @@ async function inputText(flags, name) {
   }
   return flags[name];
 }
-const knownCommands = new Set(['help', 'status', 'watch', 'packet', 'join', 'objective', 'task', 'claim', 'heartbeat', 'checkpoint', 'submit', 'review', 'message', 'release', 'block', 'reopen', 'close', 'reopen-objective', 'work']);
+const knownCommands = new Set(['help', 'status', 'watch', 'packet', 'join', 'objective', 'task', 'claim', 'heartbeat', 'checkpoint', 'submit', 'review', 'message', 'release', 'block', 'reopen', 'close', 'reopen-objective', 'work', 'usage']);
 function assertFlags(command, flags) {
   const global = ['config', 'json', 'help'];
   const common = ['agent', 'request-id'];
@@ -98,11 +105,34 @@ function assertFlags(command, flags) {
     message: ['task', 'to', 'evidence', ...textOptions(['summary', 'details'])],
     release: ['task', ...textOptions(['summary'])], block: ['task', ...textOptions(['summary'])], reopen: ['task', ...textOptions(['summary'])],
     close: ['objective', 'evidence', ...textOptions(['summary'])], 'reopen-objective': ['objective', ...textOptions(['summary'])],
+    usage: ['task', 'provider', 'model', 'run-id', 'input-tokens', 'output-tokens', 'cached-input-tokens', 'started-at', 'finished-at', 'source', 'evidence', 'usage-file'],
     work: ['agent', 'max-tasks', 'timeout-minutes', 'objective', 'approach'],
   };
   const allowed = new Set([...global, ...(options[command] ?? []), ...(['help', 'status', 'watch', 'packet', 'work'].includes(command) ? [] : common)]);
   for (const key of Object.keys(flags)) if (!allowed.has(key)) throw new Error(`Unknown option --${key} for ${command}.`);
 }
+export async function usageOperationFromFlags(flags, config) {
+  let receipt, agent = flags.agent, task = flags.task, requestId = flags['request-id'];
+  if (flags['usage-file']) {
+    const mixed = ['provider', 'model', 'run-id', 'input-tokens', 'output-tokens', 'cached-input-tokens', 'started-at', 'finished-at', 'source', 'evidence'].filter(key => flags[key] !== undefined);
+    if (mixed.length) throw new Error('--usage-file cannot be mixed with receipt field flags.');
+    const text = await readFile(resolve(flags['usage-file']), 'utf8');
+    if (Buffer.byteLength(text) > 100_000) throw new Error('Usage receipt file is too large.');
+    const data = JSON.parse(text);
+    if (data?.receipt) {
+      if (data.schemaVersion !== 1 || data.repository !== config.repository) throw new Error('Recovery receipt belongs to another repository or unsupported schema.');
+      for (const [label, explicit, saved] of [['agent', agent, data.agent], ['task', task, data.task], ['request-id', requestId, data.requestId]]) {
+        if (explicit !== undefined && explicit !== saved) throw new Error(`--${label} differs from the saved recovery receipt.`);
+      }
+      agent = data.agent; task = data.task; requestId = data.requestId; receipt = normalizeUsage(data.receipt);
+    } else receipt = normalizeUsage(data);
+  } else {
+    receipt = normalizeUsage({ provider: flags.provider, model: flags.model, runId: flags['run-id'], inputTokens: parseTokenFlag(flags['input-tokens'], 'Input tokens'), outputTokens: parseTokenFlag(flags['output-tokens'], 'Output tokens'), cachedInputTokens: parseTokenFlag(flags['cached-input-tokens'], 'Cached input tokens'), startedAt: flags['started-at'], finishedAt: flags['finished-at'], source: flags.source ?? 'manual', evidence: list(flags.evidence) });
+  }
+  if (!agent || !task) throw new Error('Usage requires --agent and --task, or a complete saved recovery envelope.');
+  return { id: requestId ?? randomUUID(), kind: 'usage', agent, task, ...receipt };
+}
+
 function printStatus(state) {
   console.log(`Math Commons · revision ${state.revision} · updated ${state.updatedAt}`);
   console.log(`\n${state.objectives.length} objectives · ${state.tasks.length} tasks · ${state.agents.length} registered agents`);
@@ -161,6 +191,13 @@ export async function main(argv = process.argv.slice(2)) {
       console.log(JSON.stringify({ outcomes }, null, 2));
       if (outcomes.some(outcome => outcome.failed)) process.exitCode = 1;
     } finally { process.off('SIGINT', cancel); process.off('SIGTERM', cancel); }
+    return;
+  }
+  if (command === 'usage') {
+    const op = await usageOperationFromFlags(flags, config);
+    console.error(`Request ID: ${op.id}. Reuse this request ID and receipt after an uncertain write.`);
+    const result = await store.mutate(op);
+    console.log(JSON.stringify({ ok: true, requestId: result.requestId, revision: result.state.revision, duplicate: result.duplicate, reconciled: result.reconciled, commit: result.commit ?? null, usage: result.usage ?? result.state.usage?.find(item => item.id === result.event?.id), event: result.event }, null, 2));
     return;
   }
   const op = { id: flags['request-id'] ?? randomUUID(), kind: command, agent: flags.agent };

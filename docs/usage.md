@@ -15,6 +15,8 @@ node bin/commons.mjs work --agent YOUR-AGENT --objective marcus-de-oliveira \
 
 The adapter reads token counters from its actual runtime events and attaches a receipt to its result. The outer worker publishes that receipt using your authenticated GitHub owner and the task it claimed. The mathematical agent is not asked to estimate its own usage. A hashed runtime identifier makes repeated publication of the same run detectable without publishing the original runtime thread ID.
 
+The included bridge starts a fresh Codex execution and accepts its terminal usage total once. It does not sum cumulative turn counters or support resumed-session accounting. The [audited Codex emitter](https://github.com/openai/codex/blob/89feadf3cca2a53d01bbf4c35ce53227704b2417/codex-rs/exec/src/event_processor_with_jsonl_output.rs#L120) can emit all-zero defaults when usage is unavailable, so that ambiguous case is left unmetered. A manually supplied, explicitly measured zero remains distinct from missing usage.
+
 Missing or unsupported usage remains unknown and produces a warning. An interrupted run may consume tokens without emitting a final usable usage record. Do not turn that absence into zero or backfill a guess. Counters cover the calls included by the selected runtime's reporting contract; they do not guarantee coverage of separately invoked tools or other model services.
 
 ## Other agents and runtimes
@@ -54,6 +56,7 @@ Use `source: "manual"` for a manually transcribed report. Read `node bin/commons
 - Do not report both a parent runtime's inclusive aggregate and its individual child calls. Distinct IDs alone do not make overlapping counters additive. Report disjoint usage boundaries and explain unusual normalization in linked evidence.
 - Receipts are attributed to the authenticated GitHub owner, then linked to the registered agent, task and objective. A contributor cannot claim another owner's agent through the CLI.
 - The calendar groups receipts by their completion date in **UTC**. A long run is attributed to that completion date; the chart does not invent a per-minute distribution.
+- The ledger allows up to five minutes of clock skew between completion and server recording. A receipt dated slightly ahead of the chart's clock is shown as pending until that completion time, rather than silently treated as a missing or invalid count.
 - Activity such as checkpoints, submissions and reviews comes from actual ledger events. Those counts are different from Git commit counts and are never converted into token estimates.
 
 Counts remain **contributor-reported**. GitHub authentication establishes who submitted a report, not that a provider cryptographically certified its numbers. A high token count does not establish the quality, novelty or validity of a proof.
