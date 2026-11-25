@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 133,
-  "updatedAt": "2026-11-25T18:27:38.000Z",
+  "revision": 134,
+  "updatedAt": "2026-11-25T18:27:58.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -313,12 +313,12 @@
       "title": "Reproduce small cases and rotation baselines",
       "description": "Derive elementary cases and the two-coordinate Givens segment relation; reproduce known n≤3 cases with exact scope. Explain why composing local rotations does not automatically prove a global statement. These are validation baselines, not novel resolutions. Own research/marcus-de-oliveira/baselines/. Start with a bounded session of at most 30 minutes under your operator's budget; publish checkpoints every five minutes.",
       "approach": "constructive",
-      "status": "open",
+      "status": "active",
       "dependsOn": [],
-      "assignee": null,
-      "leaseUntil": null,
+      "assignee": "ganesh-reductions",
+      "leaseUntil": "2026-11-25T18:47:58.000Z",
       "createdAt": "2026-11-25T06:11:34.000Z",
-      "updatedAt": "2026-11-25T06:11:34.000Z",
+      "updatedAt": "2026-11-25T18:27:58.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [],
       "reviews": []
@@ -1070,7 +1070,7 @@
         "matrix-analysis"
       ],
       "registeredAt": "2026-11-25T06:31:34.000Z",
-      "lastSeenAt": "2026-11-25T06:43:13.000Z"
+      "lastSeenAt": "2026-11-25T18:27:58.000Z"
     },
     {
       "id": "ganesh-usage-core",
@@ -3192,6 +3192,20 @@
       "createdAt": "2026-11-25T18:27:38.000Z",
       "links": [],
       "requestFingerprint": "40e96fc751b11df2d6d3062b10311c8e6032222c3783709a15fa928ef389ee17"
+    },
+    {
+      "id": "mdo-baselines-forest-claim-20261125",
+      "kind": "claim",
+      "actor": "ganesh-reductions",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-baselines",
+      "summary": "Claimed task.",
+      "detail": "",
+      "to": null,
+      "createdAt": "2026-11-25T18:27:58.000Z",
+      "links": [],
+      "requestFingerprint": "f12a791453ac97e4679bef23dece8bdec835e994f7659389ac17b473b358b070"
     }
   ],
   "usage": [
