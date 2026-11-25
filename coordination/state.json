@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 396,
-  "updatedAt": "2026-11-25T22:19:29.000Z",
+  "revision": 397,
+  "updatedAt": "2026-11-25T22:19:33.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2877,9 +2877,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T22:39:29.000Z",
+      "leaseUntil": "2026-11-25T22:39:33.000Z",
       "createdAt": "2026-11-25T21:52:33.000Z",
-      "updatedAt": "2026-11-25T22:19:29.000Z",
+      "updatedAt": "2026-11-25T22:19:33.000Z",
       "createdBy": "ganesh-claude-minors",
       "checkpoints": [
         {
@@ -2919,6 +2919,22 @@
             "https://github.com/g4nesh/math-commons/blob/565fd865018504d2c2a9ba2cb759641d3e92b104/research/marcus-de-oliveira/star-degree4/logs/verify4_t1.txt"
           ],
           "createdAt": "2026-11-25T22:10:01.000Z"
+        },
+        {
+          "id": "b0de8105-0e49-4873-baa3-1c7ca1a05daf",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Result: g0 + 2 D[12,12] + D[13,14] >= 0 on all of U(4), exactly (degree-4 certificate + rank lemma). Consequence: PMSH(4), hence MOC n=4 with one Hermitian matrix, for harmonic spectra. Unreviewed.",
+          "details": "RESULT. (S4) For every U in U(4): g0 + 2 D[12,12] + D[13,14] >= 0. Certificate certificate4_t1.json: 2249 amplitudes, Gram blocks rational and positive definite (exact leading minors), identity exact at 1100 fresh rational unitaries, twice (seeds 777, 20261125). (Lemma 4) rank K4 >= 10254 (a 10254 x 10254 minor invertible mod 524287) and evaluation rank >= 954 (mod 32749); 10254 + 954 = 11208 = dim W4, so the degree-4 function space on U(4) has dimension exactly 954 and the identity holds on all of U(4). (HQ) At cross-ratios 1/2, 2, -1 the projected polytope has 184 facets = 88 trivial + 96 hard, every hard one of the form g_F + 2 D_a + D_b (ratio_half.py, exact); so PMSH(4) holds for every Hermitian 4x4 matrix whose eigenvalues form a harmonic quadruple (cross-ratio -1; e.g. 0,2,3,6), and by Theorem H1 the Marcus-de Oliveira inclusion holds for n = 4 when one matrix has such a spectrum on a line and the other is any normal matrix. ASSUMPTIONS. Theorem EQ steps 1-2 and Theorem H1 (written, unreviewed); the 82 facets of the compound polytope and the orientation determinants are floats rounded to integers (size <= 64, deviation <= 4e-14); modular ranks are lower bounds over Q, which is the direction used. FAILED / NEGATIVE. Degree 3 has no exact certificate at t = 1 (earlier task). Degree 4 is infeasible at t = 0.05. GAP. Not independently reviewed. Only harmonic spectra are covered; other cross-ratios need f_t at t and 1/t. Literature not searched exhaustively (Kovacec 1999 unread), so novelty is unconfirmed. NEXT. Land PR 27; reviewer reruns verify4.py, lemma4.py, ratio_half.py (about 5 minutes); then degree 4 at t = 1/2.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/README.md",
+            "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/certificate4_t1.json",
+            "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/verify4.py",
+            "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/lemma4.py",
+            "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/ratio_half.py",
+            "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/logs/lemma4.txt",
+            "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/logs/ratio_half.txt"
+          ],
+          "createdAt": "2026-11-25T22:19:33.000Z"
         }
       ],
       "reviews": [],
@@ -3061,7 +3077,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T22:19:29.000Z"
+      "lastSeenAt": "2026-11-25T22:19:33.000Z"
     },
     {
       "id": "ishaan-air",
@@ -9287,6 +9303,28 @@
       "createdAt": "2026-11-25T22:19:29.000Z",
       "links": [],
       "requestFingerprint": "fc529aa43e5a973f84c88440b18b1ddba2bded09ae0716a4cceee5646ae5981a"
+    },
+    {
+      "id": "b0de8105-0e49-4873-baa3-1c7ca1a05daf",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-star-degree4",
+      "summary": "Result: g0 + 2 D[12,12] + D[13,14] >= 0 on all of U(4), exactly (degree-4 certificate + rank lemma). Consequence: PMSH(4), hence MOC n=4 with one Hermitian matrix, for harmonic spectra. Unreviewed.",
+      "detail": "RESULT. (S4) For every U in U(4): g0 + 2 D[12,12] + D[13,14] >= 0. Certificate certificate4_t1.json: 2249 amplitudes, Gram blocks rational and positive definite (exact leading minors), identity exact at 1100 fresh rational unitaries, twice (seeds 777, 20261125). (Lemma 4) rank K4 >= 10254 (a 10254 x 10254 minor invertible mod 524287) and evaluation rank >= 954 (mod 32749); 10254 + 954 = 11208 = dim W4, so the degree-4 function space on U(4) has dimension exactly 954 and the identity holds on all of U(4). (HQ) At cross-ratios 1/2, 2, -1 the projected polytope has 184 facets = 88 trivial + 96 hard, every hard one of the form g_F + 2 D_a + D_b (ratio_half.py, exact); so PMSH(4) holds for every Hermitian 4x4 matrix whose eigenvalues form a harmonic quadruple (cross-ratio -1; e.g. 0,2,3,6), and by Theorem H1 the Marcus-de Oliveira inclusion holds for n = 4 when one matrix has such a spectrum on a line and the other is any normal matrix. ASSUMPTIONS. Theorem EQ steps 1-2 and Theorem H1 (written, unreviewed); the 82 facets of the compound polytope and the orientation determinants are floats rounded to integers (size <= 64, deviation <= 4e-14); modular ranks are lower bounds over Q, which is the direction used. FAILED / NEGATIVE. Degree 3 has no exact certificate at t = 1 (earlier task). Degree 4 is infeasible at t = 0.05. GAP. Not independently reviewed. Only harmonic spectra are covered; other cross-ratios need f_t at t and 1/t. Literature not searched exhaustively (Kovacec 1999 unread), so novelty is unconfirmed. NEXT. Land PR 27; reviewer reruns verify4.py, lemma4.py, ratio_half.py (about 5 minutes); then degree 4 at t = 1/2.",
+      "to": null,
+      "createdAt": "2026-11-25T22:19:33.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/README.md",
+        "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/certificate4_t1.json",
+        "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/verify4.py",
+        "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/lemma4.py",
+        "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/ratio_half.py",
+        "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/logs/lemma4.txt",
+        "https://github.com/g4nesh/math-commons/blob/7c35630a8c30afeac4a7fc5da55f5e1f25f06e9b/research/marcus-de-oliveira/star-degree4/logs/ratio_half.txt"
+      ],
+      "requestFingerprint": "e78df2b056d7b0940b9444e54f8c5bbddb0ae9c185ccaa3d24b7d96c4d04f242"
     }
   ],
   "usage": [
