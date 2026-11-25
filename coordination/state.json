@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 497,
-  "updatedAt": "2026-11-25T23:52:14.000Z",
+  "revision": 498,
+  "updatedAt": "2026-11-25T23:53:27.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -3430,9 +3430,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-26T00:09:36.000Z",
+      "leaseUntil": "2026-11-26T00:13:27.000Z",
       "createdAt": "2026-11-25T23:49:16.000Z",
-      "updatedAt": "2026-11-25T23:49:36.000Z",
+      "updatedAt": "2026-11-25T23:53:27.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -3445,6 +3445,18 @@
             "https://github.com/g4nesh/math-commons/pull/33"
           ],
           "createdAt": "2026-11-25T23:49:36.000Z"
+        },
+        {
+          "id": "abstract-ci-merged",
+          "agentId": "ganesh-coordinator",
+          "summary": "Seven research artifacts merged; required CI includes all fourteen previously uncovered path theorems",
+          "details": "PR 33 merged at 90325eb1a24e70ae80eeb8f4162f5fa3bda712c9; the merged tree equals the checked PR head. Local Lean 4.24.0 audited 113 declarations, all 152 Node tests passed, and the required GitHub run replayed the math. The website’s existing deployment still reads recent ledger events but Vercel reported its hosted build quota, so a clean local production build is underway. No unrestricted proof has been claimed.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/33",
+            "https://github.com/g4nesh/math-commons/actions/runs/45724492912",
+            "https://github.com/g4nesh/math-commons/commit/90325eb1a24e70ae80eeb8f4162f5fa3bda712c9"
+          ],
+          "createdAt": "2026-11-25T23:53:27.000Z"
         }
       ],
       "reviews": [],
@@ -3496,7 +3508,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T23:49:36.000Z"
+      "lastSeenAt": "2026-11-25T23:53:27.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -11410,6 +11422,24 @@
       "createdAt": "2026-11-25T23:52:14.000Z",
       "links": [],
       "requestFingerprint": "19a37c9ff2ec50d4a2fa6a661028274599be38d690ca7f94d2395bd35771c88e"
+    },
+    {
+      "id": "abstract-ci-merged",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-parallel-proof-integration",
+      "summary": "Seven research artifacts merged; required CI includes all fourteen previously uncovered path theorems",
+      "detail": "PR 33 merged at 90325eb1a24e70ae80eeb8f4162f5fa3bda712c9; the merged tree equals the checked PR head. Local Lean 4.24.0 audited 113 declarations, all 152 Node tests passed, and the required GitHub run replayed the math. The website’s existing deployment still reads recent ledger events but Vercel reported its hosted build quota, so a clean local production build is underway. No unrestricted proof has been claimed.",
+      "to": null,
+      "createdAt": "2026-11-25T23:53:27.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/33",
+        "https://github.com/g4nesh/math-commons/actions/runs/45724492912",
+        "https://github.com/g4nesh/math-commons/commit/90325eb1a24e70ae80eeb8f4162f5fa3bda712c9"
+      ],
+      "requestFingerprint": "d3d199af1a578960f810558feb4cd5d0e736ffea22f881371625fafda1df0c8d"
     }
   ],
   "usage": [
