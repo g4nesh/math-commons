@@ -7,6 +7,22 @@ import ForestGateMagnitude
 two-coordinate gate and subsets agreeing off the gate's endpoints, the squared minor
 between `vertices.filter t` and `vertices.filter s` equals `localProb`, in either
 ambient order of the endpoints (`stepMagnitudeLeftFirst`, `stepMagnitudeRightFirst`).
+`stepMagnitudeGeneral` drops the agreement hypothesis: `stepProb` is 0 when the subsets
+disagree off the endpoints, matching the vanishing minor (`gaussianGateMinorStep`).
+
+`pathMagnitude` is the path statement: for any subset history along a schedule of unitary
+gates, `normSq (pathAmplitude ...) = pathProbability ...`. Zero factors, the empty schedule
+(`emptySchedule`, `zeroStepPath`) and collision sectors (`collisionStay`) are covered.
+`nonzeroProbabilityUnique` combines it with `ForestGateSupport.nonzeroAmplitudesUnique`.
+
+Declarations used: `ForestGateMagnitude.orderedGateMagnitudes`, `filterTwoEndpoints`,
+`decomposeTwoEndpoints`, `reverseEdge`, `reverseGate`, `reverseUnitary`, `unitaryWeights`,
+`normSqMul`, `normSqOne`, `normSqZero`; `ForestGateSupport.gaussianGateMinorStep`,
+`twoCoordinateGateSupport`, `pathAmplitude`, `nonzeroAmplitudesUnique`;
+`ForestTrajectory.swapAtLeft`, `swapAtRight`.
+
+Cauchy–Binet is left explicit: identifying the sum over histories of `pathAmplitude` with
+a compound-matrix entry of the gate product is NOT proved or assumed here.
 All scalars are Gaussian rationals. No Cauchy–Binet identity is used or claimed.
 -/
 namespace MathCommons.ForestPathProbability
@@ -133,6 +149,131 @@ theorem stepMagnitude (e : Edge vertices) (a b c d : Gaussian) (h : UnitaryBlock
   · exact stepMagnitudeLeftFirst e a b c d h before middle after order s t spectators
   · exact stepMagnitudeRightFirst e a b c d h before middle after order s t spectators
 
+/-- Decidable test that two subsets agree at every vertex other than the gate's endpoints. -/
+def spectatorsAgree (e : Edge vertices) (s t : Subset V) : Bool :=
+  vertices.all (fun x => decide (x = e.left) || decide (x = e.right) || t x == s x)
+
+theorem spectatorsAgreeSpec (e : Edge vertices) (s t : Subset V)
+    (agree : spectatorsAgree e s t = true) :
+    ∀ x, x ≠ e.left → x ≠ e.right → t x = s x := by
+  intro x xl xr
+  have hx := List.all_eq_true.mp agree x (e.complete x)
+  simp only [Bool.or_eq_true, decide_eq_true_eq, beq_iff_eq] at hx
+  rcases hx with (l | r) | same
+  · exact absurd l xl
+  · exact absurd r xr
+  · exact same
+
+theorem spectatorsAgreeOfStep (e : Edge vertices) (s t : Subset V) (step : Step e s t) :
+    spectatorsAgree e s t = true := by
+  apply List.all_eq_true.mpr
+  intro x _
+  by_cases xl : x = e.left
+  · simp [xl]
+  · by_cases xr : x = e.right
+    · simp [xr]
+    · rcases step with rfl | rfl
+      · simp
+      · simp [swapSubset, xl, xr]
+
+/-- Probability of one gate step: the local table when the spectators agree, else 0. -/
+def stepProb (e : Edge vertices) (b : Gaussian) (s t : Subset V) : Rat :=
+  if spectatorsAgree e s t then
+    localProb (normSq b) (s e.left) (s e.right) (t e.left) (t e.right)
+  else 0
+
+/-- The single-step identity for arbitrary subsets, including spectator disagreement. -/
+theorem stepMagnitudeGeneral (e : Edge vertices) (a b c d : Gaussian)
+    (h : UnitaryBlock a b c d) (s t : Subset V) :
+    normSq (minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+      (vertices.filter t) (vertices.filter s)) = stepProb e b s t := by
+  unfold stepProb
+  cases agree : spectatorsAgree e s t
+  · have zero : minorDet gaussianArithmetic (twoCoordinateGate gaussianArithmetic e a b c d)
+        (vertices.filter t) (vertices.filter s) = (0, 0) :=
+      Classical.byContradiction fun nonzero => by
+        have := spectatorsAgreeOfStep e s t (gaussianGateMinorStep e a b c d s t nonzero)
+        rw [agree] at this
+        exact Bool.false_ne_true this
+    rw [zero, normSqZero]
+    rfl
+  · exact stepMagnitude e a b c d h s t (spectatorsAgreeSpec e s t agree)
+
+/-- Ordered product of step probabilities along a subset history; 1 on the empty schedule. -/
+def pathProbability (edges : Nat → Edge vertices) (bs : Nat → Gaussian)
+    (history : Nat → Subset V) : Nat → Rat
+  | 0 => 1
+  | n + 1 => pathProbability edges bs history n * stepProb (edges n) (bs n) (history n) (history (n + 1))
+
+/-- The gate matrices of a schedule of two-coordinate gates. -/
+def gateSchedule (edges : Nat → Edge vertices) (as bs cs ds : Nat → Gaussian) :
+    Nat → V → V → Gaussian :=
+  fun k => twoCoordinateGate gaussianArithmetic (edges k) (as k) (bs k) (cs k) (ds k)
+
+/-- Main result: along ANY subset history of a schedule of unitary two-coordinate gates,
+the squared modulus of the ordered product of gate minors equals the product of the
+local probabilities. Illegal steps and spectator disagreement contribute 0; the empty
+schedule gives 1. No Cauchy–Binet identity is used: identifying a sum of such products
+with a compound-matrix entry remains a separate, explicit step. -/
+theorem pathMagnitude (edges : Nat → Edge vertices) (as bs cs ds : Nat → Gaussian)
+    (history : Nat → Subset V) (n : Nat)
+    (unitary : ∀ k, k < n → UnitaryBlock (as k) (bs k) (cs k) (ds k)) :
+    normSq (pathAmplitude (vertices := vertices) gaussianArithmetic
+      (gateSchedule edges as bs cs ds) history n) = pathProbability edges bs history n := by
+  induction n with
+  | zero => exact normSqOne
+  | succ n ih =>
+    simp only [pathAmplitude, pathProbability]
+    rw [normSqMul, ih (fun k hk => unitary k (by omega))]
+    rw [gateSchedule, stepMagnitudeGeneral (edges n) (as n) (bs n) (cs n) (ds n)
+      (unitary n (by omega))]
+
+/-- The empty schedule has probability 1. -/
+theorem emptySchedule (edges : Nat → Edge vertices) (bs : Nat → Gaussian)
+    (history : Nat → Subset V) : pathProbability edges bs history 0 = 1 := rfl
+
+/-- A single zero step makes the whole path probability 0. -/
+theorem zeroStepPath (edges : Nat → Edge vertices) (bs : Nat → Gaussian)
+    (history : Nat → Subset V) (n k : Nat) (hk : k < n)
+    (zero : stepProb (edges k) (bs k) (history k) (history (k + 1)) = 0) :
+    pathProbability edges bs history n = 0 := by
+  induction n with
+  | zero => omega
+  | succ n ih =>
+    simp only [pathProbability]
+    by_cases last : k = n
+    · subst last; rw [zero, Rat.mul_zero]
+    · rw [ih (by omega), Rat.zero_mul]
+
+/-- In a collision sector (both endpoints occupied or both empty), staying has probability 1. -/
+theorem collisionStay (e : Edge vertices) (b : Gaussian) (s : Subset V)
+    (collision : s e.left = s e.right) : stepProb e b s s = 1 := by
+  have agree : spectatorsAgree e s s = true := spectatorsAgreeOfStep e s s (Or.inl rfl)
+  unfold stepProb
+  rw [agree]
+  simp only [↓reduceIte]
+  rw [← collision]
+  cases s e.left <;> rfl
+
+/-- With `ForestGateSupport.nonzeroAmplitudesUnique`: along a forest schedule, at most one
+history between fixed endpoint subsets has nonzero path probability. -/
+theorem nonzeroProbabilityUnique (edges : Nat → Edge vertices) (as bs cs ds : Nat → Gaussian)
+    (n : Nat) (bridges : EveryEdgeIsBridge edges n)
+    (unitary : ∀ k, k < n → UnitaryBlock (as k) (bs k) (cs k) (ds k))
+    (x y : Nat → Subset V)
+    (nonzeroX : pathProbability edges bs x n ≠ 0) (nonzeroY : pathProbability edges bs y n ≠ 0)
+    (start : x 0 = y 0) (finish : x n = y n) : ∀ k, k ≤ n → x k = y k := by
+  have amplitude : ∀ z : Nat → Subset V, pathProbability edges bs z n ≠ 0 →
+      pathAmplitude (vertices := vertices) gaussianArithmetic
+        (gateSchedule edges as bs cs ds) z n ≠ gaussianArithmetic.zero := by
+    intro z nz zero
+    apply nz
+    rw [← pathMagnitude edges as bs cs ds z n unitary, zero]
+    exact normSqZero
+  exact nonzeroAmplitudesUnique gaussianArithmetic edges (gateSchedule edges as bs cs ds) n
+    bridges (fun k _ => twoCoordinateGateSupport gaussianArithmetic (edges k) _ _ _ _)
+    x y (amplitude x nonzeroX) (amplitude y nonzeroY) start finish
+
 end Step
 
 #print axioms localProbIllegal
@@ -141,5 +282,13 @@ end Step
 #print axioms localProbSwap
 #print axioms stepMagnitudeRightFirst
 #print axioms stepMagnitude
+#print axioms spectatorsAgreeSpec
+#print axioms spectatorsAgreeOfStep
+#print axioms stepMagnitudeGeneral
+#print axioms pathMagnitude
+#print axioms emptySchedule
+#print axioms zeroStepPath
+#print axioms collisionStay
+#print axioms nonzeroProbabilityUnique
 
 end MathCommons.ForestPathProbability
