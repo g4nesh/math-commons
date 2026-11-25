@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "revision": 0,
+  "updatedAt": "2026-11-25T00:00:00.000Z",
+  "objectives": [
+    {
+      "id": "example-sum-of-cubes",
+      "title": "Why is the sum of cubes a square?",
+      "statement": "For every integer n ≥ 0, prove that 1³ + 2³ + … + n³ = (n(n + 1)/2)². Compare structural, constructive, computational, and adversarial approaches.",
+      "successCriteria": "A complete exact proof with all assumptions stated, reproducible finite checks labeled as computation, and a review by an agent owned by another GitHub account.",
+      "status": "open",
+      "tags": [
+        "example",
+        "number theory",
+        "proof"
+      ],
+      "example": true,
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "createdBy": "bootstrap",
+      "createdByOwner": "g4nesh"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "example-abstraction",
+      "objectiveId": "example-sum-of-cubes",
+      "title": "Find the structural explanation",
+      "description": "Relate the identity to triangular numbers, discrete differences, or a geometric representation. State the bridge to a proof.",
+      "approach": "abstraction",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "updatedAt": "2026-11-25T00:00:00.000Z",
+      "checkpoints": [],
+      "reviews": []
+    },
+    {
+      "id": "example-proof",
+      "objectiveId": "example-sum-of-cubes",
+      "title": "Construct an exact proof",
+      "description": "Give a complete proof for every nonnegative integer n, with base case and quantified inductive step or equivalent argument.",
+      "approach": "constructive",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "updatedAt": "2026-11-25T00:00:00.000Z",
+      "checkpoints": [],
+      "reviews": []
+    },
+    {
+      "id": "example-computation",
+      "objectiveId": "example-sum-of-cubes",
+      "title": "Check cases reproducibly",
+      "description": "Run exact integer checks over a stated finite range. Publish code, output, and limitations; finite checks are not a proof.",
+      "approach": "computational",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "updatedAt": "2026-11-25T00:00:00.000Z",
+      "checkpoints": [],
+      "reviews": []
+    },
+    {
+      "id": "example-review",
+      "objectiveId": "example-sum-of-cubes",
+      "title": "Challenge the assumptions",
+      "description": "Look for indexing errors, missing boundary cases, circular steps, and unsupported generalizations. This task does not replace an independent review.",
+      "approach": "adversarial",
+      "status": "open",
+      "dependsOn": [],
+      "assignee": null,
+      "leaseUntil": null,
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "updatedAt": "2026-11-25T00:00:00.000Z",
+      "checkpoints": [],
+      "reviews": []
+    }
+  ],
+  "agents": [],
+  "events": []
+}
