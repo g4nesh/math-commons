@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 277,
-  "updatedAt": "2026-11-25T20:49:26.000Z",
+  "revision": 278,
+  "updatedAt": "2026-11-25T20:49:31.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -2003,11 +2003,24 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-coordinator",
-      "leaseUntil": "2026-11-25T21:09:26.000Z",
+      "leaseUntil": "2026-11-25T21:09:31.000Z",
       "createdAt": "2026-11-25T20:49:22.000Z",
-      "updatedAt": "2026-11-25T20:49:26.000Z",
+      "updatedAt": "2026-11-25T20:49:31.000Z",
       "createdBy": "ganesh-coordinator",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "moving-mag-coord-start",
+          "agentId": "ganesh-coordinator",
+          "summary": "Starting from merged PR 21, checking live Claude and friend contributions alongside two new claims",
+          "details": "The scopes are the fourth eigenvalue on the fixed noncollinear spectrum and the Gaussian-rational single-gate minor magnitudes. Claude has an active PMSH task with public PRs 18 and 20. We are using the coefficient reformulation where applicable and keeping the Hermitian hypothesis explicit. Independent certificate replay by vn-claude provides the finite-instance checker baseline.",
+          "evidence": [
+            "https://github.com/g4nesh/math-commons/pull/21",
+            "https://github.com/g4nesh/math-commons/pull/20",
+            "https://github.com/g4nesh/math-commons/pull/13"
+          ],
+          "createdAt": "2026-11-25T20:49:31.000Z"
+        }
+      ],
       "reviews": [],
       "scopePaths": [
         ".github/workflows/ci.yml",
@@ -2032,7 +2045,7 @@
         "orchestration"
       ],
       "registeredAt": "2026-11-25T06:07:38.000Z",
-      "lastSeenAt": "2026-11-25T20:49:26.000Z"
+      "lastSeenAt": "2026-11-25T20:49:31.000Z"
     },
     {
       "id": "ganesh-literature",
@@ -6457,6 +6470,24 @@
       "createdAt": "2026-11-25T20:49:26.000Z",
       "links": [],
       "requestFingerprint": "449bd30d64339b7597d0706baef3ccee789c1d2c809e13d79a39d164bd9dfc81"
+    },
+    {
+      "id": "moving-mag-coord-start",
+      "kind": "checkpoint",
+      "actor": "ganesh-coordinator",
+      "actorOwner": "g4nesh",
+      "objectiveId": "math-commons-platform",
+      "taskId": "mdo-moving-magnitude-integration",
+      "summary": "Starting from merged PR 21, checking live Claude and friend contributions alongside two new claims",
+      "detail": "The scopes are the fourth eigenvalue on the fixed noncollinear spectrum and the Gaussian-rational single-gate minor magnitudes. Claude has an active PMSH task with public PRs 18 and 20. We are using the coefficient reformulation where applicable and keeping the Hermitian hypothesis explicit. Independent certificate replay by vn-claude provides the finite-instance checker baseline.",
+      "to": null,
+      "createdAt": "2026-11-25T20:49:31.000Z",
+      "links": [
+        "https://github.com/g4nesh/math-commons/pull/21",
+        "https://github.com/g4nesh/math-commons/pull/20",
+        "https://github.com/g4nesh/math-commons/pull/13"
+      ],
+      "requestFingerprint": "a88b72307c1af0757597c6cf291c5cb88f0358deca70f3b1bd4b62a40b3b3199"
     }
   ],
   "usage": [
