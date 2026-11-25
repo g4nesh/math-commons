@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 131,
-  "updatedAt": "2026-11-25T18:26:50.000Z",
+  "revision": 132,
+  "updatedAt": "2026-11-25T18:26:54.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -988,11 +988,20 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-search",
-      "leaseUntil": "2026-11-25T18:46:50.000Z",
+      "leaseUntil": "2026-11-25T18:46:54.000Z",
       "createdAt": "2026-11-25T18:26:44.000Z",
-      "updatedAt": "2026-11-25T18:26:50.000Z",
+      "updatedAt": "2026-11-25T18:26:54.000Z",
       "createdBy": "ganesh-search",
-      "checkpoints": [],
+      "checkpoints": [
+        {
+          "id": "mdo-rational-stress-scope-20261125",
+          "agentId": "ganesh-search",
+          "summary": "Exact-rational stress scope fixed before compute; no new results yet.",
+          "details": "Read AGENTS/protocol, current ledger revision127, exact verifier/search reviews, and minors/adversarial work. Plan900 maximum cases (360 n4,360 n5,180 n6), seed20261125, single local process,600 CPU seconds/720 wall seconds for screen, total30-minute work period. Complex rational Givens chains, near-permutation mixing and Zheng O-star cap-centered unitary families; varied complex spectra, degeneracy/singularity controls. Every case will verify exact U, normality and commutator, enumerate all n! points, and store exact hull membership certificate; retain hard-boundary/outside witnesses. No paid compute, no general proof claim. Source edits only rational-stress/; parent handles shared PR.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:26:54.000Z"
+        }
+      ],
       "reviews": []
     }
   ],
@@ -1041,7 +1050,7 @@
         "numerical-linear-algebra"
       ],
       "registeredAt": "2026-11-25T06:31:32.000Z",
-      "lastSeenAt": "2026-11-25T18:26:50.000Z"
+      "lastSeenAt": "2026-11-25T18:26:54.000Z"
     },
     {
       "id": "ganesh-reductions",
@@ -3146,6 +3155,20 @@
       "createdAt": "2026-11-25T18:26:50.000Z",
       "links": [],
       "requestFingerprint": "381f6764a134f572fb959122c404e1680d442a84422afe1265abcfe83be15d88"
+    },
+    {
+      "id": "mdo-rational-stress-scope-20261125",
+      "kind": "checkpoint",
+      "actor": "ganesh-search",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-rational-stress",
+      "summary": "Exact-rational stress scope fixed before compute; no new results yet.",
+      "detail": "Read AGENTS/protocol, current ledger revision127, exact verifier/search reviews, and minors/adversarial work. Plan900 maximum cases (360 n4,360 n5,180 n6), seed20261125, single local process,600 CPU seconds/720 wall seconds for screen, total30-minute work period. Complex rational Givens chains, near-permutation mixing and Zheng O-star cap-centered unitary families; varied complex spectra, degeneracy/singularity controls. Every case will verify exact U, normality and commutator, enumerate all n! points, and store exact hull membership certificate; retain hard-boundary/outside witnesses. No paid compute, no general proof claim. Source edits only rational-stress/; parent handles shared PR.",
+      "to": null,
+      "createdAt": "2026-11-25T18:26:54.000Z",
+      "links": [],
+      "requestFingerprint": "d73a1c10915c28e959acf1ef8e01abd7976196a456a3f78dbbade5506f290dcf"
     }
   ],
   "usage": [
