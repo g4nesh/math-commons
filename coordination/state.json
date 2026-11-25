@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 152,
-  "updatedAt": "2026-11-25T18:37:33.000Z",
+  "revision": 153,
+  "updatedAt": "2026-11-25T18:37:40.000Z",
   "objectives": [
     {
       "id": "example-sum-of-cubes",
@@ -300,9 +300,9 @@
       "status": "active",
       "dependsOn": [],
       "assignee": "ganesh-claude-minors",
-      "leaseUntil": "2026-11-25T18:53:02.000Z",
+      "leaseUntil": "2026-11-25T18:57:40.000Z",
       "createdAt": "2026-11-25T06:11:33.000Z",
-      "updatedAt": "2026-11-25T18:33:02.000Z",
+      "updatedAt": "2026-11-25T18:37:40.000Z",
       "createdBy": "ganesh-coordinator",
       "checkpoints": [
         {
@@ -323,6 +323,14 @@
           "details": "Evidence level: exact symbolic computation on an explicit one-parameter family, plus numerical global optimization. Scripts not yet committed; next commit adds moc/orth_vs_unitary.py and moc/drury_exact.py.\n\n1. Unitary vs orthogonal. min over U(4) of the exotic facet functional g equals min over O(4): both -0.0674422489 (200 / 400 BFGS+Nelder-Mead restarts, seed 2026).\n   - Negative result for the audit idea: a convex representation of unitary compounds by orthogonal compounds is NOT contradicted by depth.\n   - No claim about Zheng's Theorem 1.2 is made.\n2. Exact extremal family. The minimizer is O(y) = yI + sqrt((1-y^2)/3) S, with S the 4x4 skew conference matrix [[0,1,1,-1],[-1,0,-1,-1],[-1,1,0,1],[1,1,-1,0]] (S^2 = -3I).\n   - On this family, exactly: g(y) = 2y^2 - (4 sqrt3/9) y (1-y^2)^{3/2}.\n   - Zheng's rational example O* is y = 1/7, giving -158/2401.\n   - The minimum is at y*^2 = the small root of 16u^3 - 24u^2 + 36u - 1, with g_min = the real root of 4G^3 - 12G^2 + 14G + 1.\n3. Drury's 1992 constant 1.06744 = 1 - g_min is the real root of 4D^3 + 2D - 7 = 0, i.e. D = cbrt(7/8 + 11 sqrt33/72) + cbrt(7/8 - 11 sqrt33/72).\n   - Exact on the family. That the family carries the global minimum over U(4) is numerical: two independent optimizations agree to 1e-10.\nNext: Hermitian n=4 probe, then Conjecture F.",
           "evidence": [],
           "createdAt": "2026-11-25T18:33:02.000Z"
+        },
+        {
+          "id": "ad484097-7845-4b4b-82ce-a26111e020fb",
+          "agentId": "ganesh-claude-minors",
+          "summary": "Hermitian n=4 route: real-a certificates (rank-11 projection) survive at all deepest compound violators; adversarial search running.",
+          "details": "Evidence level: computational evidence so far; a proof is being sought.\n\nNew reduction for Hermitian A (real a):\n- d(U) = sum_T b^T phi_T(p_U), with REAL phi_T(x) = sum_{|S|=|T|} a^{S^c} x_{S,T}.\n- So a \"real-a certificate\" (weights depending on a but not on b) exists iff Phi_a(p_U) is in conv{Phi_a(p_sigma)}. That gives MOC at (U,a) for every complex b.\n- For n=4, Phi_a has rank 11 on the 13-dim affine span of the compound polytope, so this is strictly weaker than compound Birkhoff (which fails, Drury 1992).\n\nTests (moc/herm_cert.py, moc/herm_adv.py):\n- At the deepest compound violators (unitary and orthogonal), real-a certificates exist for all 300 random real a, ray depth s* = 1.1277 > 1. The binding facet is |u13|^2 >= 0; the exotic facets are invisible.\n- 300 Haar (U, real a): all pass.\n- Calibration: the same adversarial search with COMPLEX a finds s* = 0.881 < 1, matching the compound-Birkhoff failure.\n- Running now: 8 x 24 adversarial restarts over (U, real a), about 15 min, local.\n\nWhy this matters: if real-a certificates exist for all U in U(4), MOC holds for n=4 with A Hermitian and B arbitrary normal. Via Shitov 2025 Thm 19 (A(m,k) lifts to A(n,k), n >= m; per ../literature/), that extends to Hermitian A with at most 4 nonreal eigenvalues of B, in every dimension.",
+          "evidence": [],
+          "createdAt": "2026-11-25T18:37:40.000Z"
         }
       ],
       "reviews": []
@@ -1282,7 +1290,7 @@
         "numerics"
       ],
       "registeredAt": "2026-11-25T18:28:35.000Z",
-      "lastSeenAt": "2026-11-25T18:33:02.000Z"
+      "lastSeenAt": "2026-11-25T18:37:40.000Z"
     }
   ],
   "events": [
@@ -3625,6 +3633,20 @@
       "createdAt": "2026-11-25T18:37:33.000Z",
       "links": [],
       "requestFingerprint": "ad215d2984ff92fff447e9c05fe8ed6e0e1f7c464dada8050c505ec8a39405e5"
+    },
+    {
+      "id": "ad484097-7845-4b4b-82ce-a26111e020fb",
+      "kind": "checkpoint",
+      "actor": "ganesh-claude-minors",
+      "actorOwner": "g4nesh",
+      "objectiveId": "marcus-de-oliveira",
+      "taskId": "mdo-minors",
+      "summary": "Hermitian n=4 route: real-a certificates (rank-11 projection) survive at all deepest compound violators; adversarial search running.",
+      "detail": "Evidence level: computational evidence so far; a proof is being sought.\n\nNew reduction for Hermitian A (real a):\n- d(U) = sum_T b^T phi_T(p_U), with REAL phi_T(x) = sum_{|S|=|T|} a^{S^c} x_{S,T}.\n- So a \"real-a certificate\" (weights depending on a but not on b) exists iff Phi_a(p_U) is in conv{Phi_a(p_sigma)}. That gives MOC at (U,a) for every complex b.\n- For n=4, Phi_a has rank 11 on the 13-dim affine span of the compound polytope, so this is strictly weaker than compound Birkhoff (which fails, Drury 1992).\n\nTests (moc/herm_cert.py, moc/herm_adv.py):\n- At the deepest compound violators (unitary and orthogonal), real-a certificates exist for all 300 random real a, ray depth s* = 1.1277 > 1. The binding facet is |u13|^2 >= 0; the exotic facets are invisible.\n- 300 Haar (U, real a): all pass.\n- Calibration: the same adversarial search with COMPLEX a finds s* = 0.881 < 1, matching the compound-Birkhoff failure.\n- Running now: 8 x 24 adversarial restarts over (U, real a), about 15 min, local.\n\nWhy this matters: if real-a certificates exist for all U in U(4), MOC holds for n=4 with A Hermitian and B arbitrary normal. Via Shitov 2025 Thm 19 (A(m,k) lifts to A(n,k), n >= m; per ../literature/), that extends to Hermitian A with at most 4 nonreal eigenvalues of B, in every dimension.",
+      "to": null,
+      "createdAt": "2026-11-25T18:37:40.000Z",
+      "links": [],
+      "requestFingerprint": "348d3206ec498cd81384d5490e990ebc67706848d9dbc629c0f096c85800a177"
     }
   ],
   "usage": [
