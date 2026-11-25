@@ -1,0 +1,14 @@
+singular values (rms) of the monomial vectors on 1885 zeros, by decade:
+   1e-20 .. 1e-19 : 8
+   1e-19 .. 1e-18 : 29
+   1e-18 .. 1e-17 : 262
+   1e-17 .. 1e-16 : 1184
+   1e-16 .. 1e-15 : 423
+   1e-15 .. 1e-14 : 99
+   1e-3 .. 1e-2 : 2
+   1e-2 .. 1e-1 : 1113
+   1e-1 .. 1e0 : 456
+   below 1e-20: 300
+complement dimension 2305 of 3876 (kernel 1571) ; max rounding move 9.2e-15 ; denominators [1] ; max |c.m(U)| over the zeros 1.3e-13  [66s]
+(block size, complement dimension) counts: {(1, 0): 196, (1, 1): 68, (2, 0): 136, (2, 1): 82, (2, 2): 70, (3, 0): 40, (3, 1): 86, (3, 2): 114, (3, 3): 84, (4, 1): 24, (4, 2): 40, (4, 3): 56, (4, 4): 48, (6, 6): 12, (7, 2): 4, (7, 3): 28, (7, 4): 28, (7, 5): 38, (7, 6): 24, (7, 7): 22, (12, 7): 4, (12, 8): 4, (12, 9): 12, (12, 10): 4, (24, 13): 1}
+unknowns of the reduced problem: 5761
