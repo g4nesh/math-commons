@@ -76,3 +76,7 @@ A natural next lemma is the relation between the rational interpolation construc
 ## Total probability over finite histories
 
 [ForestPathNormalization.lean](ForestPathNormalization.lean) enumerates legal occupied-subset histories for any finite gate schedule and any starting subset. It counts a stay once when a swap leaves the same subset. `pathMassOne` gives total mass one. For unitary Gaussian-rational gates, `pathProbabilityNonnegative` proves each mass is nonnegative and `pathSquaredMagnitudeMassOne` gives total squared path amplitude one. Cyclic schedules are allowed. Connecting amplitudes that have the same endpoint to the minor of a matrix product still requires an interference argument and Cauchy–Binet. [Statements, assumptions and replay](../research/marcus-de-oliveira/forest-path-normalization/README.md)
+
+## Squared amplitude at a fixed forest endpoint
+
+[ForestEndpointMass.lean](ForestEndpointMass.lean) restricts the canonical histories to one final subset. For a forest gate schedule, at most one of those histories has a nonzero amplitude. `endpointMagnitude` proves that the squared norm of their signed sum equals their total probability, including zero for an unreachable endpoint. The next matrix identity is to identify that signed sum with the corresponding minor of the gate product by iterated Cauchy–Binet. [Exact hypotheses and proof](../research/marcus-de-oliveira/forest-endpoint-mass/README.md)
