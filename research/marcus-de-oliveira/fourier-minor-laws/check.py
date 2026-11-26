@@ -151,6 +151,8 @@ def check(matrix, weights):
 
 
 def main():
+    if not __debug__:
+        raise SystemExit('Run with Python assertions enabled')
     assert Q.positive() and Q*Q*5 == 1 and len(AFFINE) == 10
     base = base_law()
     t = Fraction(1, 256)
