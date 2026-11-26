@@ -1,0 +1,157 @@
+{
+  "leanVersion": "4.24.0",
+  "fatalWarnings": true,
+  "baseMainCommit": "b02605f6e8c18e4b2fac1d329ccd4971dcd8d4d4",
+  "completeRunDeclarationCount": 220,
+  "newDeclarationCount": 28,
+  "sourceSha256": {
+    "formal/MathCommons.lean": "2081110542f5560fe2d09cd31e89de22fcaf85b931adc37a44c469a55d04f3be",
+    "formal/ForestCut.lean": "0bfc29b6c4470e3c11cfdbdb561616f55bc3d73af78d53e8edc68feb44b1b5ae",
+    "formal/ForestTrajectory.lean": "b5dcffb2a165702ef46a2a67e5a7d9049a5f5ba3af3cfd9cc2491af5e0fc5910",
+    "formal/ForestGateSupport.lean": "e5f1c920b17e385ad58dffb070f0647d5d937a06c4916a2a2a417aaccdda286f",
+    "formal/ForestGateMagnitude.lean": "02448676c0da705b368ae51aaab0e9771245ab406e7cd22a8eba99bf2589895a",
+    "formal/ForestPathProbability.lean": "4f01a43913a197c11c1904e3eedfb3161e6b8eec64bb7abb5bfd01a234ecdeca",
+    "formal/ForestPathNormalization.lean": "09df64b8c0941ac9f686017fe3cc82cc52e510af2e830384b5edae10821d8fff",
+    "formal/ForestEndpointMass.lean": "a2a6cec51910d33cc3d22c40001215fb41cd8b3c610327a517898d1b024b9e2d",
+    "formal/ForestProductMinor.lean": "797a22634b38e8f614d1994ad7100a4d3780f48334575fb6d25a0c4ad08b8e25",
+    "formal/ForestPairHistory.lean": "c65a52bef4d9c1674cd163d7a5338dcfabd5baa075cd68257120695a249590bf"
+  },
+  "axiomReports": {
+    "MathCommons.ForestPairHistory.pairMemberSublist": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.filterSingle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.pairFilter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.subsetOfFilter": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.pairSubsetInjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.orderedPairsNodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.nodupMapOn": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.pairSubsetsNodup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.twoSubsetRepresentative": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.identitySubsetMinor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.gaussianSumFilter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.endpointAsSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.pathAmplitudePrefixCongr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.extendedPathAmplitude": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.successorMinorSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.endpointAmplitudeRecurrence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.historySizeTwo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.productPairEndpointAmplitude": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.productPairMagnitude": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.productPairEmptyFiber": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.sumWithCongrOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.sumWithFilter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.sumWithAdd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.sumWithSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.sumWithUniqueKey": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.endpointProbabilityAsSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.endpointPairMassOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPairHistory.productPairMassOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "scope": "Actual arbitrary-length order-two product minors equal canonical endpoint amplitudes; forest unitary schedules give squared endpoint probabilities and normalized finite law. General minor orders and arbitrary-complex library bridge remain open."
+}
