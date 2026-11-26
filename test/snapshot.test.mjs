@@ -122,3 +122,71 @@ test('the immutable real ledger round-trips exactly below the old production loa
   assert.equal(report.referenceCount, 227);
   assert.ok(report.legacyPrettyBytes > 950_000, 'The pre-cdda559 writer must refuse rather than rewrite this snapshot.');
 });
+
+function extendedFixture() {
+  const state = fixture(), task = state.tasks[0], checkpoint = task.checkpoints[0];
+  checkpoint.summary = 'A long, complete checkpoint summary with exact findings. '.repeat(6);
+  checkpoint.evidence = ['https://example.com/immutable/' + 'a'.repeat(100), 'https://example.com/verification/' + 'b'.repeat(100)];
+  Object.assign(state.events[0], { summary: checkpoint.summary, links: [...checkpoint.evidence] });
+  Object.assign(task, { description: 'Complete request with scope, assumptions and exact deliverables. '.repeat(30),
+    createdBy: 'agent', createdAt: '2026-11-25T00:00:00Z', request: { fromTaskId: null, to: 'all' } });
+  state.events.push({ id: 'request-1', kind: 'request', actor: 'agent', taskId: task.id,
+    createdAt: task.createdAt, summary: 'Requested research', detail: task.description, links: [], requestFingerprint: 'keep-request' });
+  return state;
+}
+
+test('request and checkpoint metadata references retain exact full records and compose with v1 detail references', () => {
+  const state = extendedFixture(), before = JSON.stringify(state), stored = JSON.parse(serializeSnapshot(state));
+  assert.ok(stored.events[0].detailReference);
+  assert.ok(stored.events[0].checkpointMetadataReference);
+  assert.ok(stored.events[1].taskDescriptionReference);
+  assert.deepEqual(stored.tasks, state.tasks);
+  assert.match(stored.events[1].detail, /task task-1, description/);
+  assert.equal(JSON.stringify(restoreSnapshot(stored)), before);
+  assert.equal(JSON.stringify(state), before);
+  assert.equal(serializeSnapshot(stored), serializeSnapshot(state));
+
+  // PR40 understands only detailReference: its read restores that field, while
+  // its structured-clone reducer and serializer retain both new unknown markers.
+  const oldRead = structuredClone(stored);
+  for (const event of oldRead.events) if (event.detailReference) {
+    const target = oldRead.tasks.find(task => task.id === event.taskId).checkpoints.find(cp => cp.id === event.id);
+    assert.equal(createHash('sha256').update(target.details).digest('hex'), event.detailReference.sha256);
+    event.detail = target.details; delete event.detailReference;
+  }
+  oldRead.events.push({ id: 'old-writer-event', kind: 'message', detail: 'New work' }); oldRead.revision++;
+  const oldWrite = JSON.stringify(structuredClone(oldRead));
+  const expected = structuredClone(state); expected.events.push(oldRead.events.at(-1)); expected.revision++;
+  assert.equal(JSON.stringify(restoreSnapshot(JSON.parse(oldWrite))), JSON.stringify(expected));
+  assert.equal(JSON.stringify(restoreSnapshot(JSON.parse(serializeSnapshot(JSON.parse(oldWrite))))), JSON.stringify(expected));
+});
+
+test('new reference targets, identity bindings and placeholders fail closed when changed', () => {
+  const mutations = [
+    s => { s.events[0].checkpointMetadataReference.version = 2; },
+    s => { s.events[0].checkpointMetadataReference.extra = true; },
+    s => { s.events[0].checkpointMetadataReference.sha256 = 'a'.repeat(64); },
+    s => { s.events[0].summary += 'changed'; },
+    s => { s.events[0].links.push('https://example.com/changed'); },
+    s => { s.tasks[0].checkpoints[0].summary += 'changed'; },
+    s => { s.tasks[0].checkpoints[0].evidence.reverse(); },
+    s => { s.events[1].taskDescriptionReference.sha256 = 'a'.repeat(64); },
+    s => { s.events[1].taskDescriptionReference.version = 2; },
+    s => { s.events[1].kind = 'message'; },
+    s => { s.events[1].actor = 'another-agent'; },
+    s => { s.events[1].createdAt = '2026-11-26T00:00:00Z'; },
+    s => { s.events[1].detail += 'changed'; },
+    s => { s.tasks[0].description += 'changed'; },
+    s => { delete s.tasks[0].request; },
+  ];
+  for (const mutate of mutations) {
+    const stored = compactSnapshot(extendedFixture()); mutate(stored);
+    const before = JSON.stringify(stored);
+    assert.throws(() => restoreSnapshot(stored), /reference/);
+    assert.equal(JSON.stringify(stored), before);
+  }
+  const mismatched = extendedFixture(); mismatched.events[1].actor = 'another-agent';
+  assert.ok(!compactSnapshot(mismatched).events[1].taskDescriptionReference);
+  const distinct = extendedFixture(); distinct.events[0].links.push('https://example.com/additional');
+  assert.ok(!compactSnapshot(distinct).events[0].checkpointMetadataReference);
+});

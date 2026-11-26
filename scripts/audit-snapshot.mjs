@@ -23,6 +23,8 @@ export function auditSnapshot(bytes) {
     headroomBytes: LEGACY_READER_MAX_BYTES-Buffer.byteLength(encoded),
     originalRawSha256: hash(bytes), originalSemanticSha256: hash(before), restoredSemanticSha256: hash(after),
     semanticBytesIdentical: before === after, referenceCount: stored.events.filter(event => event.detailReference).length,
+    checkpointMetadataReferences: stored.events.filter(event => event.checkpointMetadataReference).length,
+    requestDescriptionReferences: stored.events.filter(event => event.taskDescriptionReference).length,
     recordsBefore: counts(original), recordsAfter: counts(restored),
     legacyPrettyBytes: Buffer.byteLength(JSON.stringify(stored, null, 2)+'\n'),
     legacyBehavior: 'Plain JSON readers see explicit event pointers and complete checkpoint details. Writers retaining unknown event fields preserve references; pre-950k pretty-print clients refuse oversized writes.' };
