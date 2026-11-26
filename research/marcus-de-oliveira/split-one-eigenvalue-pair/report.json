@@ -1,0 +1,17 @@
+{
+  "tables": 33,
+  "monomials": 192,
+  "coefficient_rank": 21,
+  "even_rank": 15,
+  "odd_rank": 6,
+  "zonotope_normal_directions": 31,
+  "repair_inequalities": 83,
+  "canonical_negative_masses": 3,
+  "zero_unitary_entries": 0,
+  "base_mass_floor": "1/1000",
+  "squared_minors_checked": 924,
+  "maximum_permutations_per_table": 32,
+  "entrywise_lipschitz": 672,
+  "closed_entrywise_unitary_ball_radius": "1/1344000",
+  "mass_floor_throughout_ball": "1/2000"
+}
