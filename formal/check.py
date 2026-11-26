@@ -111,6 +111,12 @@ theorems = {
         'complementsPerm', 'sumPerm', 'retainedDiagonalExpansion', 'spectralPrincipalExpansion',
         'matrixMulDiagonal', 'conjugatedDiagonalEntry', 'diagonalDeterminant', 'emptySpectralDeterminant',
         'singletonSpectralDeterminant')},
+    'ForestAdjointContraction.lean': {'MathCommons.ForestAdjointContraction.' + n for n in (
+        'conjugateAdd', 'conjugateMul', 'conjugateSigned', 'conjugateSum',
+        'conjugateMinor', 'columnScaleMinor', 'minorCongrEntries', 'rightDiagonalMinor',
+        'adjointMinorZero', 'adjointMinorOne', 'adjointMinorTwo', 'squaredFactor',
+        'conjugatedMinorOne', 'conjugatedMinorTwoMixed', 'conjugatedMinorTwo', 'conjugatedMinorZero',
+        'conjugatedTwoSubset', 'twoDiagonalSum', 'twoSpectralPencil', 'forestTwoContraction')},
 }
 theorems['OrthogonalCube.lean'] = {'MathCommons.OrthogonalCube.' + n for n in (
     'squareNonnegative', 'quadraticNonnegative', 'lagrangeIdentity',
@@ -168,5 +174,11 @@ subprocess.run([sys.executable,
 # sources, separately from the declaration inventory.
 subprocess.run([sys.executable,
                 str(root.parent / 'research/marcus-de-oliveira/forest-matrix-sum-expansion/check.py'),
+                lean], check=True,
+               env={**os.environ, 'ELAN_TOOLCHAIN': f'leanprover/lean4:v{version}'})
+
+# Pin actual low-order adjoint contraction and its complete dependency sources.
+subprocess.run([sys.executable,
+                str(root.parent / 'research/marcus-de-oliveira/forest-adjoint-contraction/check.py'),
                 lean], check=True,
                env={**os.environ, 'ELAN_TOOLCHAIN': f'leanprover/lean4:v{version}'})

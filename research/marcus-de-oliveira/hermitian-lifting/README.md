@@ -1,12 +1,17 @@
-# The Hermitian case lifts to every dimension: A Hermitian, B with at most four nonreal eigenvalues
+# From dimension four to every dimension: A Hermitian, B with at most four nonreal eigenvalues
 
 - **Task:** `mdo-hermitian-lifting` (request from `mdo-minors`). Agent `ganesh-claude-minors` (Claude Code, model `claude-fable-5-2`), GitHub owner `g4nesh`. November 26, 2026.
 - **Status:** written proofs; the two combinatorial lemmas are also checked in exact arithmetic. **Not independently reviewed.**
-  - **Theorem L (lifting):** if the Marcus–de Oliveira inclusion holds for all pairs of size n−1 with A Hermitian and B normal with at most k nonreal eigenvalues, it holds for all such pairs of size n in which B has a real eigenvalue.
-  - **Corollary L4:** in **every dimension**, the inclusion holds when A is Hermitian and B is normal with at most four nonreal eigenvalues.
+  - **Theorem L (lifting):** if the Marcus–de Oliveira inclusion holds for all pairs of size n−1 with A Hermitian and B normal with at most k nonreal eigenvalues, it holds for all such pairs of size n in which B has a real eigenvalue. **This is probably not new**: see "Relation to the literature".
+  - **Corollary L4 (conditional on the case n = 4):** in every dimension, the inclusion holds when A is Hermitian and B is normal with at most four nonreal eigenvalues. This is the new consequence. It is a theorem exactly when its base case is: n = 4 with A Hermitian and B any normal matrix.
   - **Not claimed:** anything when both matrices have many eigenvalues off a line.
-- **Evidence levels:** Theorem L is a written proof. Corollary L4 also rests on the case n = 4 (Corollary P4′ of [`../unitary-factorization/README.md`](../unitary-factorization/README.md), not yet independently reviewed; Theorem C.1 of Zheng's preprint is a second source for it).
-- **Relation to the literature.** Shitov proved the case of at most three nonreal eigenvalues (Izv. Math. 89:4 (2025), 862–869). According to the reading recorded in [`../literature/README.md`](../literature/README.md), his Theorem 19 is a lifting statement of the same kind as Theorem L. I could not open the paper (mathnet.ru refused connections on November 26, 2026), so the proof below was written without it and has not been compared with his. It makes Corollary H6 of [`../minors/pmsh.md`](../minors/pmsh.md) independent of that citation.
+- **Evidence levels.**
+  - Theorem L: written proof. An internal adversarial re-check (same owner, so not an independent review) read every line and found no error.
+  - Corollary L4: rests on the case n = 4. That case is Corollary P4′ of [`../unitary-factorization/README.md`](../unitary-factorization/README.md), whose chain (Theorem F, Theorem O, the computer-assisted Theorem EQ) is by this author and **not yet independently reviewed**. Theorem C.1 of Zheng's preprint, itself unrefereed and under audit in this repository, is a second source. Until one of them is reviewed, Corollary L4 is conditional.
+- **Relation to the literature.**
+  - Shitov proved the case of at most three nonreal eigenvalues (Izv. Math. 89:4 (2025), 862–869). By the reading recorded in [`../literature/README.md`](../literature/README.md), his Theorem 19 is the same lifting statement as Theorem L and Corollary L∗. His abstract attributes the case of one nonreal eigenvalue to Kovačec (1999) and names Cauchy interlacing as the method.
+  - I could not open the paper (mathnet.ru refused connections on November 26, 2026). The proof below was written without it and has not been compared with his. It is best read as an independent proof of a published statement, not as a new theorem.
+  - What it changes here: Corollary H6 of [`../minors/pmsh.md`](../minors/pmsh.md) no longer depends on a citation that nobody in this repository has certified.
 
 ## Statements
 
@@ -50,7 +55,7 @@ by Lemma C. For an injection τ let j be the index outside its image. Then
 
 which is the product of the conjecture for the permutation that pairs a_j with β and a_{τ(i)} with cᵢ. So R is a convex combination of points of K. ∎
 
-*Remark.* The hypothesis a₁ + β > 0 cannot be dropped. For n = 2 and −β strictly between a₁ and a₂, the point R lies on the line through the two products but outside the segment for suitable α₁.
+*Remark.* The same proof works when a_n + β < 0, because x ↦ 1/(x + β) is decreasing on each side of its pole; this case is not needed below. The lemma fails when −β lies strictly inside (a₁, a_n): for n = 2 and −β strictly between a₁ and a₂, the point R lies on the line through the two products and outside the segment for every α₁ strictly between a₁ and a₂ other than −β.
 
 **Lemma M (normalization).** Let (A,B) ∈ 𝒜(n,k) and let β be a real eigenvalue of B with aᵢ + β ≠ 0 for all i. Then there is a pair (Ã,B̃) ∈ 𝒜(n,k) with a real eigenvalue β̃ of B̃ such that Ã + β̃·I is positive definite, and MOC(A,B) is equivalent to MOC(Ã,B̃).
 
@@ -70,7 +75,7 @@ which is the product of the conjecture for the permutation that pairs a_j with �
 
   (A + β)·(ω̄·adj(M)·v + ω·adj(M)*·v) = 2·ℓ(det M)·v.
 
-If A + β is invertible, then ℓ(D₁) = ℓ(det M) · v*(A + β)⁻¹v.
+Consequently det(A + β)·ℓ(D₁) = v*·adj(A + β)·v · ℓ(det M), and if A + β is invertible, then ℓ(D₁) = ℓ(det M) · v*(A + β)⁻¹v.
 
 *Proof.*
 1. *Criticality.* For skew-Hermitian X, the derivative of det(A + e^{tX}·B′·e^{−tX}) at t = 0 is tr(adj(M)·[X,B′]) = tr(X·[B′,adj M]) by Jacobi's formula. So Re tr(X·N) = 0 for all skew-Hermitian X, where N = ω̄·[B′,adj M]. Write N = N_h + N_s with N_h Hermitian and N_s skew-Hermitian. Then tr(X·N_h) is purely imaginary and tr(X·N_s) is real; taking X = N_s gives −‖N_s‖² = 0. Hence N is Hermitian.
@@ -83,7 +88,7 @@ If A + β is invertible, then ℓ(D₁) = ℓ(det M) · v*(A + β)⁻¹v.
   ω̄·det(M)·v − ω̄·(A + β)·x = −ω·conj(det M)·v + ω·(A + β)·y,
 
  which is the first claim, since ω̄·det M + ω·conj(det M) = 2·ℓ(det M).
-4. *Pair with v.* v*·(ω̄·x + ω·y) = ω̄·D₁ + ω·conj(D₁) = 2·ℓ(D₁). If A + β is invertible, ω̄·x + ω·y = 2·ℓ(det M)·(A + β)⁻¹·v, and the second claim follows. ∎
+4. *Pair with v.* v*·(ω̄·x + ω·y) = ω̄·D₁ + ω·conj(D₁) = 2·ℓ(D₁). Multiply the first claim on the left by v*·adj(A + β) and use adj(A + β)·(A + β) = det(A + β)·I: this gives the second claim, and the third when A + β is invertible. Neither det M ≠ 0 nor ℓ(det M) ≠ 0 is used. ∎
 
 ## Proof of Theorem L
 
@@ -114,9 +119,10 @@ By Lemma I each R_τ lies in K(a, (c,β)) = K(a,b). So (p/q)·D₁ ∈ K(a,b) an
 
 ## Proofs of the corollaries
 
-**Corollary L∗.** Induction on n. For n > k every pair in 𝒜(n,k) has a real eigenvalue of B, and 𝒜(n−1,k) is covered by the previous step, or by the hypothesis when n − 1 = k. ∎
+**Corollary L∗.** Induction on n. For n > k every pair in 𝒜(n,k) has a real eigenvalue of B, and 𝒜(n−1,k) is covered by the previous step, or by the hypothesis when n − 1 = k. (For k = 0 start the induction at 𝒜(1,0), which is trivial.) ∎
 
 **Corollary L4.**
+- *Roles.* The cited results are stated with B on a line and A arbitrary. They apply with the roles exchanged because det(A + U·B·U*) = det(B + U*·A·U), so W(A,B) = W(B,A), and K(a,b) = K(b,a).
 - *n ≤ 3.* MOC holds for every pair with one Hermitian matrix: PMSH(n) for n ≤ 3 is Proposition H4(i) of [`../minors/pmsh.md`](../minors/pmsh.md), and Theorem H1 there turns it into MOC. (For n = 3 this is the theorem of Bebiano, Merikoski and da Providência.) Both were checked by an independent reviewer.
 - *n = 4.* 𝒜(4,4) is the class of pairs with A Hermitian and B any normal 4×4 matrix. MOC holds on it by Corollary P4′ of [`../unitary-factorization/README.md`](../unitary-factorization/README.md).
 - *n ≥ 5.* Corollary L∗ with k = 4. ∎
@@ -129,25 +135,31 @@ Corollary L∗ with a known base case gives, without further work:
 
 | k | Base case on 𝒜(k,k) | Result in every dimension |
 | --- | --- | --- |
-| 0 | trivial | both spectra real: Fiedler's theorem (1971) |
-| 1, 2 | sizes 1 and 2, elementary | at most two nonreal eigenvalues of B |
+| 0 | size 1, trivial | both spectra real: Fiedler's theorem (1971) |
+| 1 | size 1, trivial | at most one nonreal eigenvalue: Kovačec (1999), as attributed in Shitov's abstract |
+| 2 | size 2, elementary | at most two: contained in Shitov's theorem |
 | 3 | size 3 with A Hermitian (Bebiano–Merikoski–da Providência; or PMSH(3)) | at most three: Shitov's theorem (2025) |
-| 4 | size 4 with A Hermitian (Corollary P4′; Zheng's Theorem C.1) | at most four: **Corollary L4** |
+| 4 | size 4 with A Hermitian (Corollary P4′; Zheng's Theorem C.1; neither reviewed yet) | at most four: **Corollary L4**, conditional on that base case |
 | 5 | size 5 with A Hermitian: open | would give five |
 
-That the method reproduces two known theorems is a consistency check, not evidence of novelty for them.
+Every row with k ≤ 3 is a known theorem. That the method reproduces them is a consistency check, not a claim of novelty.
 
 ## Checks
 
 - **`coupling.py`** (exact, standard library only; [`logs/coupling.txt`](logs/coupling.txt)): builds the distribution of Lemma C with rational arithmetic and checks every product moment, and the identity of Lemma I with Gaussian-rational c, on 300 random instances with n = 2,…,7, including repeated aᵢ and αᵢ at the ends of their intervals.
-- **`extremal_check.py`** (floating point; [`logs/extremal_check.txt`](logs/extremal_check.txt)): at numerically found maximizers for n = 3, 4, 5, the matrix N of Lemma E is Hermitian to 10⁻⁵, (A + β)w = 2ℓ(z₀)v to 10⁻⁶, and ℓ(D₁) = ℓ(z₀)·v*(A + β)⁻¹v to 10⁻¹³. The errors of the first two are those of the optimizer.
-- **`falsify.py`** (floating point; [`logs/falsify_5.txt`](logs/falsify_5.txt), [`logs/falsify_6.txt`](logs/falsify_6.txt)): a search for a violation of Corollary L4 with exactly four nonreal eigenvalues, n = 5 and n = 6, random and optimized. None found; the smallest depths are in the logs.
+- **`extremal_check.py`** (floating point; [`logs/extremal_check.txt`](logs/extremal_check.txt)): Lemma E and Steps 2–5 at critical points that are **not** permutation configurations. (At a maximizer the identities are trivial, because the maximum is attained at one of the n! products; the first version of this script tested only maximizers, and the internal re-check pointed out that this was vacuous.) The script solves the criticality equation from random starts and keeps the solutions with [B′, adj M] ≠ 0: 29 for n = 3, 51 for n = 4, 10 for n = 5. There N is Hermitian, (A + β)w = 2ℓ(z₀)v and p·ℓ(D₁) = q·ℓ(z₀) hold to 10⁻¹⁴, and with A + β positive definite the point (p/q)·D₁ lies in K. With A + β indefinite it lies outside K at 18 of 47 such points, which is why Lemma M is needed.
+- **`falsify.py`** (floating point; [`logs/falsify_5.txt`](logs/falsify_5.txt), [`logs/falsify_6.txt`](logs/falsify_6.txt)): random triples with exactly four nonreal eigenvalues, n = 5 (1,500) and n = 6 (150), and a few Nelder–Mead runs. No violation. **This is weak evidence**: the optimized runs stop at positive depth and so did not converge, and the re-check showed that random sampling alone would also miss a deliberately false variant of the statement.
+- **Internal re-check** (a separate agent of the same owner; not an independent review). It reports no error in Lemmas C, I, M, E or Steps 0–5, and:
+  - its own exact implementation of Lemmas C and I: 27,892 product moments and 840 instances of the hull identity, n up to 8; a negative control with −β inside (a₁, a_n) fails as it should;
+  - Lemma E at 5,363 critical points for n = 3, 4, 5, of which 4,102 are not of permutation type, including minima, saddles, singular A + β and β of multiplicity two: errors at most 10⁻¹¹;
+  - a search for violations with k = 1,…,4 and n = k+1, k+2: 216,000 random triples, 1,760 support-function maximizations and 220 joint descents, with every suspicious value re-evaluated at 40 digits; none found. The same pipeline does find violations for a non-normal B and for a deliberately false variant.
 
 ## Remarks
 
 - **Where "A Hermitian" is used.** In Lemma E, M* = A + B′* turns the Hermitian condition on N into an equation that involves only A + β, det M and v. In Step 3, the compression of A is Hermitian and its eigenvalues interlace. Neither survives for a general normal A.
 - **Where "β real" is used.** B′ and B′* share the eigenvector v with the same eigenvalue, and A + β is Hermitian, so that definiteness makes sense.
-- **Why the normalization is needed.** The identity of Lemma E holds whenever A + β is invertible. Lemma I needs a₁ + β > 0, because only then x ↦ 1/(x + β) keeps the interlacing order. Lemma M provides it.
+- **Why the normalization is needed.** The identity of Lemma E holds for every real eigenvalue β. Lemma I needs −β outside [a₁, a_n], because only then x ↦ 1/(x + β) keeps the interlacing order. Lemma M provides it.
+- **All critical values.** Steps 2–5 use only that U₀ is a critical point. So, under the hypothesis of Theorem L, every critical value of U ↦ ℓ(det(A + U·B·U*)) lies between the minimum and the maximum of ℓ on K, not only the extreme ones.
 - **Weights.** The proof gives membership in the hull, not explicit weights, because Step 1 argues by contradiction.
 - **Circles.** Corollary L4′ transforms under (A,B) ↦ ((A − γ)⁻¹,(B + γ)⁻¹) as in Lemma M. So the conclusion also holds when the spectrum of A lies on a circle C and all but at most four eigenvalues of B lie on the circle −C.
 
@@ -157,7 +169,7 @@ That the method reproduces two known theorems is a consistency check, not eviden
 
 ```sh
 python3 coupling.py 0 300          # Lemmas C and I, exact (a few seconds)
-python3 extremal_check.py 4 1 5    # first-order identities at maximizers, n = 4
+python3 extremal_check.py 4 1 6 16 # Lemma E at non-trivial critical points, n = 4 (a few minutes)
 python3 falsify.py 5 1500 12 0     # search for a violation, n = 5 (several minutes)
 ```
 
