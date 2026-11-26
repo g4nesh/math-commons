@@ -1,0 +1,1 @@
+{"n": 6, "seed": 23, "c": [0.0, 0.113708, 0.128644, 0.641458, 0.693933, 1.0], "rays": 1200, "facets": 919, "invalid_discarded": 4, "starts": 3, "max_value": 1.0000000001014087, "min_value": 0.9972653775019609, "above_1_then_rechecked": 0, "confirmed_outside": 0, "touched_off_permutations": 220, "touching_block_shapes": {"6": 220}}
