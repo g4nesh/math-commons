@@ -111,7 +111,7 @@ def weights_at(real, imag, patches=None):
             total = sum(result.values())
             assert total > 0
             return {word: w/total for word, w in result.items() if w}
-    raise ValueError("Outside the six archived quadratic direction patches")
+    raise ValueError("No supplied certificate covers this direction")
 
 
 def main():
@@ -119,9 +119,10 @@ def main():
     verified = [verify_patch(p) for p in data]
     for chart in ("h", "v"):
         ranges = sorted((a, b) for c, a, b in verified if c == chart)
-        assert ranges == [(F(-1), F(-1, 2)), (F(-1, 2), F(0)), (F(0), F(1, 2))]
+        assert ranges == [(F(-1), F(-1, 2)), (F(-1, 2), F(0)),
+                          (F(0), F(1, 2)), (F(1, 2), F(1))]
         print(chart, " ".join(f"[{a},{b}]" for a, b in ranges))
-    print(f"Verified all mixed-polynomial coefficients for {len(data)} patches.")
+    print(f"Verified all mixed-polynomial coefficients for {len(data)} patches covering every complex direction.")
 
 
 if __name__ == "__main__":
