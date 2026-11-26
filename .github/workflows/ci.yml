@@ -99,7 +99,11 @@ jobs:
           python3 -B two-free-real-atlas/check.py
           python3 -B -m unittest discover -s two-free-real-atlas -p 'test_*.py' -v
           python3 -B complex-direction-cover/check.py
+          python3 -B complex-direction-cover/grid_replay.py
           python3 -B -m unittest discover -s complex-direction-cover -p 'test_*.py' -v
+          python3 -B quartic-direction-patches/patches.py
+          python3 -B quartic-direction-patches/derive.py
+          python3 -B -m unittest discover -s quartic-direction-patches -p 'test_*.py' -v
       - name: Install the pinned Lean toolchain
         uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
         with:
