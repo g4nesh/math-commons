@@ -1,0 +1,4 @@
+n5_herm_k4_cs herm 5 531 80 --k 4 --dperm 0.15 --dblock 0.15 --sep 0.1
+n6_herm_k4_cs herm 6 631 110 --k 4 --dperm 0.15 --dblock 0.15 --sep 0.1
+n5_unitary_cs unitary 5 532 60 --dperm 0.15 --dblock 0.15 --sep 0.1
+n7_herm_k4_cs herm 7 731 140 --k 4 --dperm 0.15 --dblock 0.15 --sep 0.1
