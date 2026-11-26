@@ -62,7 +62,7 @@ No generic determinant alternation premise, desired product-minor equality, or p
 
 ## Source and replay
 
-- [Lean source](../../../../formal/ForestPairHistory.lean): 28 declarations with printed transitive axiom reports.
+- [Lean source](../../../formal/ForestPairHistory.lean): 28 declarations with printed transitive axiom reports.
 - [Declaration manifest](declarations.json): exact audited names.
 - [Audit manifest](audit.json): source hashes, dependency hashes, compiler version, and axiom dependencies.
 
