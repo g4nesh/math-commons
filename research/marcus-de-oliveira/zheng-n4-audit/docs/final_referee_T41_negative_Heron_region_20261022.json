@@ -1,0 +1,129 @@
+{
+ "doc_id": "final_referee_T41_negative_Heron_region_20261022",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T41_negative_Heron_region_20261022.pdf",
+ "pages": 3,
+ "verdict": "confirmed",
+ "statements": [
+  {
+   "label": "Proposition 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     1,
+     2,
+     3,
+     6,
+     7,
+     8
+    ]
+   ],
+   "restatement": "For the bad17 source q f3+p f1+j f53+c f6+e f15+d f17+b f16+a f4 (coeffs>=0, d>0) with Fe<0 and Fq<0, there is no x in X with Re x = g + h kappa; i.e. such sources are not spectrally realizable. Fe=0, Fq=0 and both positive are outside the statement.",
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "paper (A.2), X in Sing C",
+   "used_for": "F(w)=0, H(w)delta=0, grad F(delta)=grad F(w)",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "final_referee_T41_bad17_uniform_20261022 (definition of G only; re-derived)",
+   "used_for": "G",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "C+hQ, Q!=0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": "2",
+   "claim": "realizable => kernel vector delta!=0",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": "3",
+   "claim": "det H identity",
+   "kind": "identity",
+   "status": "EXACT (randomized, 6 pts)"
+  },
+  {
+   "n": "4",
+   "claim": "gamma>0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": "5",
+   "claim": "(1) discriminant",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": "6",
+   "claim": "block I height-free, j^2 P(j)",
+   "kind": "identity",
+   "status": "EXACT (randomized, 4 pts)"
+  },
+  {
+   "n": "7",
+   "claim": "(2) resultant, square classes, congruences",
+   "kind": "identity",
+   "status": "EXACT (randomized, 4 pts)"
+  },
+  {
+   "n": "8",
+   "claim": "P<0 on dense set",
+   "kind": "inequality",
+   "status": "EXACT + PROOF-READ"
+  },
+  {
+   "n": "9",
+   "claim": "bordered minors divisible by G => rank 12",
+   "kind": "identity",
+   "status": "EXACT (randomized) + PROOF-READ"
+  },
+  {
+   "n": "10",
+   "claim": "continuity extension",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": "11",
+   "claim": "rank exactly 12 everywhere",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": "12",
+   "claim": "Schur expansion contradiction",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "notes": [],
+ "exact_replays": [
+  "C,Q",
+  "det H identity",
+  "gamma, (1)",
+  "Fe,Fq = Y^2 f, X^2 k",
+  "block I height-free and = j^2 P(j)",
+  "Res_j square, (2) square classes, two congruences mod G, U=alpha P - a2 G, bordered I+{0},I+{1} divisible by G (4 random base points)"
+ ],
+ "numeric_tests": [
+  "rank exactly 12 at 5 real j-roots (mpmath 60 digits, seed 993)"
+ ],
+ "unchecked": [
+  "term counts 393, 333, 9868, 6541, 1675, 531",
+  "symbolic (non-randomized) expansion of P, W14, L7, M7"
+ ]
+}

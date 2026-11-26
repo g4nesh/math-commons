@@ -1,0 +1,13 @@
+PASS cost generators are the T_45 generator set minus f0
+PASS d/dz (1+z^2/b)/(sqrt j + z)^2 = 2(z sqrt j - b)/(b (sqrt j + z)^3)
+PASS Prop 2 from Prop 1 at v=0, r=sqrt j, k=-z, w=sqrt b: p >= (1+z^2/b)/(sqrt j+z)^2
+PASS Prop 2 branch jc<=b^2 value (b+c)/(b(sqrt j+sqrt c)^2) at z=sqrt c
+PASS Prop 2 branch jc>=b^2 value 1/(j+b) at z=b/sqrt j
+PASS scalar test (1) equals x^2+y^2 under the stated substitution (with c = C^2) :: 0
+PASS under that substitution j = r^2(1+v^2) = J^2 and c = k^2(1+v^2) = C^2
+PASS and a,e >= v^2 = t^2/(1-t^2) <= m  iff  t <= sqrt(m/(1+m))
+PASS NUMERIC Prop 1: min Phi over SO(4) >= -1e-9 (relative) at 24 random threshold costs (8 restarts each) :: worst min/sum(coeffs) = 7.140e-17
+PASS NUMERIC Prop 2: min Phi >= -1e-9 (relative) at 20 random threshold costs :: worst 7.779e-16
+INFO NUMERIC Prop 2 at 0.97 x threshold, min Phi (negative = threshold is sharp there) :: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+PASS NUMERIC example (1/2) f1 + f53 + f12 + f7 + f18 >= 0 on SO(4) :: min 2.278e-13
+SUMMARY failures: []

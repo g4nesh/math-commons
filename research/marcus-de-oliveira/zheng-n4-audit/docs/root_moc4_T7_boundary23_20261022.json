@@ -1,0 +1,46 @@
+{
+ "doc_id": "root_moc4_T7_boundary23_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T7_boundary23_20261022.pdf",
+ "pages": 1,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    2,
+    5,
+    6,
+    7,
+    8,
+    23
+   ],
+   "paper_case": "7-set boundary of T_8",
+   "restatement": "x in X, g>=0, contacts contain T_8 u {23}: in the nonminor case ab>=d^2 (via F(c)=0, det H(c)=0 on X), so SOC applies; covers all spectral configurations."
+  }
+ ],
+ "dependencies": [
+  {
+   "ref": "X subset Sing C (paper App. A)",
+   "status": "CITED, lib-replayed"
+  },
+  {
+   "ref": "SOC atom F03",
+   "status": "CITED"
+  }
+ ],
+ "steps": "8 steps; step 5 EXACT-RANDOMIZED",
+ "gaps": [],
+ "exact_replays": [
+  "generators",
+  "C(c0+z kappa)=C+zQ",
+  "G positivity: a=0,b=0 cases, 66 positive coefficients, base identity"
+ ],
+ "numeric_tests": [
+  "G>0 at 2000 random points with ab<d^2, seed 5, min 1.8e-4"
+ ],
+ "unchecked": [
+  "symbolic expansion of the Hessian determinant factorization (checked at 8 random rational points exactly; G loaded from supplement JSON as data)"
+ ]
+}

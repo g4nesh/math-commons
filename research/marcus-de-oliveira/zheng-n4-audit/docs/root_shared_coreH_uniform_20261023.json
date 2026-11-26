@@ -1,0 +1,158 @@
+{
+ "doc_id": "root_shared_coreH_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_shared_coreH_uniform_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    1,
+    6,
+    9,
+    16,
+    17,
+    22
+   ],
+   "paper_table5": 21,
+   "restatement": "For x in X with Pc(x)>=0 and gaps 0 on H={0,1,6,9,16,17,22} (non-strict), Phi_{c(x)}(O)>=0 for all O in SO(4); all spectra."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "paper eq. (4.2) (minor vectors give squared minors)",
+   "used_for": "minor remainders and the d=0 / d<=0 branch",
+   "status": "EXACT in shared lib"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "paper App. A.1: X contained in Sing C; conj(X)=X",
+   "used_for": "F(w)=0 and det H(w)=0 for realizable w",
+   "status": "EXACT in shared lib / PROOF-READ"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "sharp SOC atom, reference family (f1,f9;f22), source document not named",
+   "status": "CITED; group map EXACT; NUMERIC",
+   "used_for": "(2) for (f15,f3;f31)"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "old-H atom, reference (f3,f15;f26) [coreD per core H doc]",
+   "status": "CITED; ordered group map EXACT; NUMERIC",
+   "used_for": "(3),(4) for (f2,f15),(f29,f15),(f5,f3),(f33,f3) with f31"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "basis, I-rows",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "d=0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "atoms",
+   "kind": "citation",
+   "status": "CITED"
+  },
+  {
+   "n": 4,
+   "claim": "aggregation of old-H pairs",
+   "kind": "inequality",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 5,
+   "claim": "(4) capacity sufficiency",
+   "kind": "inequality",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 6,
+   "claim": "(5) C,Q",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "(6) C<0 at failure",
+   "kind": "inequality",
+   "status": "PROOF-READ (decomposition EXACT)"
+  },
+  {
+   "n": 8,
+   "claim": "realizable => F=0, det H=0",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 9,
+   "claim": "(7) Q^4 det H = -4 d^2 Q^2 G^2, G 499 terms",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "(8) symmetries",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "(9) and a=1 wall certificates 709/235",
+   "kind": "certificate",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "(11) dominant certificate 476039, inverse",
+   "kind": "certificate",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "(13) b=0 certificate 2356, inverse",
+   "kind": "certificate",
+   "status": "EXACT"
+  },
+  {
+   "n": 14,
+   "claim": "orientation of auxiliaries",
+   "kind": "case split",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 15,
+   "claim": "exhaustiveness",
+   "kind": "case split",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "basis/I-rows",
+  "C,Q and (6) decomposition",
+  "G via own Bareiss (819 divisions), R=dG",
+  "three symmetries",
+  "certificates 709, 235, 476039 (marker 2Y^4), 2356",
+  "inverse maps (12),(13)",
+  "atom group maps"
+ ],
+ "numeric_tests": [
+  "5 atoms x 20 samples at boundary, seed 20261126: worst 2.6e-16",
+  "12 stratum points: worst -1.2e-10 (d about 0: weak test)"
+ ],
+ "unchecked": [
+  "cited SOC and old-H atoms"
+ ]
+}

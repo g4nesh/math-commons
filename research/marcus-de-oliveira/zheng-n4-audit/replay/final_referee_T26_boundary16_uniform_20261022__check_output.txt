@@ -1,0 +1,19 @@
+PASS generators of T u {16} = {0,2,5,6,54,55,67,70} : [0, 2, 5, 6, 54, 55, 67, 70]
+PASS non-minor generators are exactly 54, 70
+PASS identity (1) f54 + f70 = f0 + f6 + f55 + f67
+PASS a group element fixes T u {16} and acts 54<->70, 2<->5, 55<->67, 0, 6 fixed : ((0, 2, 1, 3), (0, 2, 1, 3), 0)
+INFO Hessian determinant: 7298 terms, degree 3 in z, 10 s
+PASS Q = -ab - d^2
+PASS C = -(d+h)(d+q)(d+w) - c(d^2 + d(h+q+w) + hq + hw + qw)
+PASS Q^4 det H(...) is divisible by -4 Q^2 C^2
+PASS quotient is a perfect square G6^2 (3)
+PASS (4) G6 at q=c=h=w=0 equals -d^2 (a+d)(b+d)(ab-d^2) (sign of the square root fixed by this)
+PASS G6 has 277 monomials and degree 6 : (277, 6)
+PASS G6|a=0 has 136 coefficients, all positive : 136
+PASS G6|b=0 has 136 coefficients, all positive : 136
+PASS deg_b G6 <= 2 : 2
+PASS (5) cleared polynomial has 525 monomials, all coefficients positive : 525
+RESULT: 0 exact checks failed
+
+# Appended by the auditor (separate scratch script, same settings as for final_referee_T26_uniform_20261022):
+NUMERIC cited SOC a f2 + b f5 + d f54 on ab = d^2: worst min Phi / max gap = 1.0e-16 over 30 samples (no violation)

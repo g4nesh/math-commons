@@ -1,0 +1,90 @@
+{
+ "doc_id": "final_referee_T26_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T26_uniform_20261022.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    27
+   ],
+   "contact_sets": [
+    [
+     2,
+     3,
+     4,
+     7,
+     8,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with P c(x) >= 0 vanishing on T_27 = {2,3,4,7,8,12} (non-strict), Phi_{c(x)}(O) >= 0 for all O in SO(4); all spectra."
+  },
+  {
+   "label": "Lemma 1",
+   "page": 2,
+   "restatement": "A realizable cost of form (4) (q f0+p f2+j f5+c f6+e f53+d f54+b f55+a f67, coefficients >= 0, d>0) has pj >= d^2 or K = ab(e-d)-d^2(a+b+e+d) >= 0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "paper Lemma 4.2 / Prop 4.1",
+   "used_for": "generator representation"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper App A.1: X in Sing C",
+   "used_for": "radial necessity",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "old SOC p f2 + j f5 + d f54 safe if pj >= d^2 (face {1,2,3,4,6,7,8,12,16,17,22})",
+   "used_for": "Lemma 1 alternative 1",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "four-coefficient a f67+b f55+e f53+d f54 safe if ab(e-d) >= d^2(a+b+e+d) (orbit of base (f0,f6,f10,f54))",
+   "used_for": "Lemma 1 alternative 2",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  "1 generator list EXACT",
+  "2 identities (3) EXACT",
+  "3 symmetry EXACT",
+  "4 cancellation PROOF-READ",
+  "5 radial necessity PROOF-READ",
+  "6 lift PROOF-READ",
+  "7 C,Q EXACT",
+  "8 signs of C,Q EXACT",
+  "9 factorization (5) with compact G6 EXACT",
+  "10 identity (6) EXACT",
+  "11 sign argument EXACT+PROOF-READ",
+  "12 Lemma 1 PROOF-READ",
+  "13 conclusion CITED",
+  "14 all spectra PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "F_T and non-minor set",
+  "identities (3)",
+  "stabilizer element with the stated action",
+  "C = -(A0+eT), Q = -d(d+e)-pj",
+  "Q^4 det H(y0-(C/Q)kappa) = -4Q^2C^2G6^2 with G6 from (6), 401 terms",
+  "H of (6) has nonnegative coefficients"
+ ],
+ "numeric_tests": [
+  "Lemma 1 sign: 2000 points seed 1, min G6 = 1.108",
+  "cited (1),(2) on boundary: 30 samples each, worst 1e-16, 1.6e-16",
+  "main statement T_27: 8 stratum points, worst -3.4e-15"
+ ],
+ "unchecked": [
+  "proofs of the cited capacities (1),(2)"
+ ]
+}

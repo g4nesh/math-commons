@@ -1,0 +1,111 @@
+{
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T10_A_branch_20261022.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "thm:full",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     4,
+     7,
+     9
+    ]
+   ],
+   "restatement": "Every realizable supported gap vector on T={0,1,2,4,7,9} with A=g16-g3<0 is safe; on the distinct nonreal-v chart with a,b>0: g15 g8 >= (g3-g16)^2 (incl. C=0 stratum); collisions, real v, b=0 by separate results."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "root_moc4_T10_B_branch_20261022 (chart derivation, denominators nonzero)",
+   "status": "CITED; inverse ratios and contact set EXACT"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_7 = {0,1,2,4,7,8} (b=0)",
+   "status": "CITED; containment EXACT"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Appendix B: Theorem B.1, Lemma B.2",
+   "status": "CITED (audited by project)"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Paper Theorem C.1",
+   "status": "CITED"
+  },
+  {
+   "kind": "external",
+   "ref": "global SOC inequality: s f1 + b f11 + d f28 safe when sb >= d^2 (G-orbit)",
+   "status": "CITED, source not named, not in paper; NUMERIC no violation"
+  }
+ ],
+ "steps": [
+  {
+   "step": "chart contacts, inverse ratios",
+   "status": "EXACT"
+  },
+  {
+   "step": "(2)-(5)",
+   "status": "EXACT"
+  },
+  {
+   "step": "forced signs",
+   "status": "EXACT/PROOF-READ"
+  },
+  {
+   "step": "b=0 -> T_7",
+   "status": "CITED"
+  },
+  {
+   "step": "merged C=0, t<0",
+   "status": "EXACT/PROOF-READ"
+  },
+  {
+   "step": "merged C=0, t>0 e^2<=b",
+   "status": "EXACT/PROOF-READ"
+  },
+  {
+   "step": "(8),(9)",
+   "status": "EXACT"
+  },
+  {
+   "step": "(10) incl. k=0",
+   "status": "EXACT/PROOF-READ"
+  },
+  {
+   "step": "t>0 opposing intervals",
+   "status": "EXACT/PROOF-READ"
+  },
+  {
+   "step": "t<0 delta<H",
+   "status": "EXACT/PROOF-READ"
+  },
+  {
+   "step": "auxiliary segment + SOS",
+   "status": "EXACT/PROOF-READ"
+  },
+  {
+   "step": "return to SOC",
+   "status": "CITED"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "43 exact checks: contacts, inverse ratios, (2)-(5), forced-sign identities, (7), merged identities, (8),(9), L_V denominator, (11), SOS, endpoint identities"
+ ],
+ "numeric_tests": [
+  "2x400000 chart samples (seed 2027): 6 supporting with A<0, b>0, min g15g8-e^2 = 1.65 (weak test, thin region)"
+ ],
+ "unchecked": [
+  "chart derivation/exhaustiveness (B-branch note)",
+  "SOC proof"
+ ],
+ "doc_id": "final_referee_T10_A_branch_20261022"
+}

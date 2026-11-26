@@ -1,0 +1,53 @@
+[EXACT] E equals the paper's Table 5 seven-set no. 17: PASS
+[EXACT] generators(E) = {f0,f2,f3,f12,f13,f15,f26}: PASS ['n1,4', 'n13,34', 'n14,34', 'n14,24', 'n2,1', 'n12,14', 'h4132,-']
+[EXACT] f0,f2,f3,f12,f15,f13 are minor vectors and f26 = h_{4132,-} is not: PASS
+[EXACT] rows [23,15,14,8,4,7,3] of the 7 generators form I_7: PASS
+[EXACT] the 7 generators are linearly independent and the E-rows of P have rank 7: PASS
+[EXACT] (2): some g maps the SOC reference (f1,f9;f22) to (f2,f12;f26): PASS (8 elements, e.g. ((0, 1, 3, 2), (0, 2, 1, 3), 0))
+[EXACT] (2): some g maps the SOC reference (f1,f9;f22) to (f2,f15;f26): PASS (8 elements, e.g. ((0, 3, 2, 1), (3, 2, 0, 1), 0))
+[EXACT] (2): some g maps the SOC reference (f1,f9;f22) to (f12,f15;f26): PASS (8 elements, e.g. ((0, 2, 1, 3), (1, 2, 3, 0), 0))
+[EXACT] (3): some g maps (f0,f6,f10;f54) to (f0/f13, f13/f0, f3; f26) with the t-role f10 -> f3: PASS (4 elements)
+[EXACT] (4): some g maps the chain (f2;f0,f12;f70) to (f15;f0,f3;f26): PASS (2 elements)
+[EXACT] (4'): some g maps the chain to (f15;f13,f3;f26) (q f0 replaced by v f13): PASS (2 elements)
+[EXACT] (5): split of d, t, c in proportions q/w reproduces the chain condition: PASS
+[EXACT] (6): SOC atoms x*y = weight^2 and central sum d^2/s: PASS
+[EXACT] Lemma 1: W - X = W B/K and q_C = B + (W - X): PASS
+[EXACT] Lemma 1: q_F v (t_F - delta) = delta^2 (q_F + v + t_F + delta)  [(3) with equality]: PASS
+[EXACT] Lemma 1: lambda^2/q_C + lambda^2/t_C = c  [(4) with equality]: PASS
+[EXACT] Lemma 1: t_F + t_C = K + K^2/W = (q+delta)K/(q+delta-K): PASS
+[EXACT] Lemma 1: delta = dv/(c+v) gives W = q - d^2/(c+v) and total = R_d of (7): PASS
+[EXACT] Lemma 1: R_d(q,0,c) = d^2 q/(cq - d^2) = the chain threshold of (4) at v = 0: PASS
+[EXACT] failure of (3) <=> t < T_F when qv > d^2: qv(t-d) - d^2(q+v+t+d) = (qv-d^2)(t-T_F): PASS
+[EXACT] (8): C(g + z kappa) is affine in z: PASS
+[EXACT] (8): constant term = d{(d+q)(d+v)+dt} + cbp (paper's cubic (A.2), factor 1): PASS
+[EXACT] (8): z-coefficient Q = d^2 + dt + cb - ct + cp + bp: PASS
+[EXACT] (9): every Bareiss division in det H(g + z kappa) is exact: PASS (det: 7264 terms, z-degree 3, 51s)
+[EXACT] (9): Q^4 det H(w(-C/Q)) is divisible by d^2 Q^2: PASS
+[EXACT] (9): Q^4 det H(w(-C/Q)) = -4 d^2 Q^2 G^2 with G integral: PASS
+[EXACT] (9): G has 408 terms and is homogeneous of degree 8: PASS
+[EXACT] (10): G(q,p,t,b,c,v,d) = G(v,p,t,b,c,q,d) = G(q,b,t,p,c,v,d): PASS
+[EXACT] c = 0: G = d A {(d+q)(d+v) - pb} B (with the displayed A, B): PASS
+[EXACT] c = 0: (qv - d^2) B(T_F) = (q+d)(v+d){(p+b)qv + dpb} + pb(d+q+v)(qv-d^2): PASS
+[INFO] G degrees in (q,p,t,b,c,v,d): (3, 2, 2, 2, 2, 3, 8)
+[EXACT] (15) row L    (11)     : all coefficients > 0, a monomial in the strictly positive parameters only, positive reduced denominators: PASS (terms 11763, document says 11763; lowest strict monomial 64*C^2)
+[EXACT] (15) row P    (11)     : all coefficients > 0, a monomial in the strictly positive parameters only, positive reduced denominators: PASS (terms 84446, document says 84446; lowest strict monomial 128*C^2)
+[EXACT] (15) row L    q(c+v)<1 : all coefficients > 0, a monomial in the strictly positive parameters only, positive reduced denominators: PASS (terms 4181, document says 4181; lowest strict monomial 1*C^3)
+[EXACT] (15) row L    q(c+v)>1 : all coefficients > 0, a monomial in the strictly positive parameters only, positive reduced denominators: PASS (terms 11409, document says 11409; lowest strict monomial 1*C^2Q^2)
+[EXACT] (15) row L    q(c+v)=1 : all coefficients > 0, a monomial in the strictly positive parameters only, positive reduced denominators: PASS (terms 1091, document says 1091; lowest strict monomial 1*)
+[EXACT] (15) row P    q(c+v)<1 : all coefficients > 0, a monomial in the strictly positive parameters only, positive reduced denominators: PASS (terms 23837, document says 23837; lowest strict monomial 2*C^3)
+[EXACT] (15) row P    q(c+v)>1 : all coefficients > 0, a monomial in the strictly positive parameters only, positive reduced denominators: PASS (terms 93285, document says 93285; lowest strict monomial 2*C^2Q^2)
+[EXACT] (15) row P    q(c+v)=1 : all coefficients > 0, a monomial in the strictly positive parameters only, positive reduced denominators: PASS (terms 6427, document says 6427; lowest strict monomial 2*)
+[EXACT] (15) row (12) cw<1     : all coefficients > 0, a monomial in the strictly positive parameters only, positive reduced denominators: PASS (terms 27531, document says 27531; lowest strict monomial 2*)
+[EXACT] (15) row (12) cw>1     : all coefficients > 0, a monomial in the strictly positive parameters only, positive reduced denominators: PASS (terms 23799, document says 23799; lowest strict monomial 16*Q^2)
+[EXACT] (15) row (12) cw=1     : all coefficients > 0, a monomial in the strictly positive parameters only, positive reduced denominators: PASS (terms 3955, document says 3955; lowest strict monomial 16*)
+[EXACT] row P inverse: P = p-1, B = pb/[1-p(b+c)], C = pc/[1-p(b+c)]: PASS
+[EXACT] dominant-c inverse: C = c-1, P = cp/[1-c(p+b)], B = cb/[1-c(p+b)]: PASS
+[INFO] exact part finished in 54s
+[NUMERIC] (2) sharp form min_O Phi26 + 2 sqrt(Phi2 Phi12) (30 starts, seed 1): -5.38e-30
+[NUMERIC] (2) sharp form min_O Phi26 + 2 sqrt(Phi2 Phi15) (30 starts, seed 1): -3.85e-30
+[NUMERIC] (2) sharp form min_O Phi26 + 2 sqrt(Phi12 Phi15) (30 starts, seed 1): -3.89e-30
+[NUMERIC] (4) sharp form with f0: min_O Phi26 + 2 sqrt(Phi15)(sqrt(Phi0)+sqrt(Phi3)) (30 starts, seed 2): 2.42e-25
+[NUMERIC] (4) sharp form with f13: min_O Phi26 + 2 sqrt(Phi15)(sqrt(Phi13)+sqrt(Phi3)) (30 starts, seed 2): 7.15e-25
+[NUMERIC] (3) at the boundary t = (q+1)(v+1)/(qv-1), d = 1, 8 (q,v) pairs x 12 starts: worst min 8.12e-25
+[NUMERIC] realizable points with contacts >= E and d >= 0.3 (seed 7): 20 found in 50 starts, 20 with contact set exactly E; worst |G|/sum|terms of G| = 3.9e-15; worst min_SO4 Phi / max gap (15 starts each) = 5.5e-18
+[INFO] total time 130s; EXACT failures: 0 []

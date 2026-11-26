@@ -1,0 +1,100 @@
+PASS doc contact set {0,4,5,6,7,8} is the paper's T_29 literally
+PASS eleven generators 0,1,2,3,4,5,6,33,34,45,46 = lib generators(T_29)
+PASS non-minor generators are exactly 34 and 46
+PASS identity [(34, 1), (46, 1)] = [(3, 1), (6, 2), (33, 1), (45, 1)] on all 24 permutation values
+PASS identity [(2, 1), (34, 1)] = [(0, 1), (6, 1), (33, 1)] on all 24 permutation values
+PASS identity [(4, 1), (34, 1)] = [(1, 1), (3, 1), (6, 1), (33, 1)] on all 24 permutation values
+PASS identity [(0, 1), (46, 1)] = [(2, 1), (3, 1), (6, 1), (45, 1)] on all 24 permutation values
+PASS identity [(1, 1), (46, 1)] = [(4, 1), (6, 1), (45, 1)] on all 24 permutation values
+PASS basis (1) = generators minus {2,4,46}, rank 8
+PASS basis (2) = generators minus {0,1,34}, rank 8
+PASS blind_moc4_T28_bad34_full_radial_20261022.json: variable order ['q', 'p', 'j', 'c', 'e', 'd', 'b', 'a']
+PASS blind_moc4_T28_bad34_full_radial_20261022.json: F(g + z kappa) is affine in z (F(kappa)=0, grad F(kappa)=0)
+PASS blind_moc4_T28_bad34_full_radial_20261022.json: own C equals the JSON C
+PASS blind_moc4_T28_bad34_full_radial_20261022.json: own Q equals the JSON Q
+PASS blind_moc4_T28_bad34_full_radial_20261022.json: first radial factor = +-Q
+INFO blind_moc4_T28_bad34_full_radial_20261022.json: set of values of Q^4 det H / (Q^2 G^2) over the points: {-4}
+PASS blind_moc4_T28_bad34_full_radial_20261022.json: Q^4 det H(g - C/Q kappa) = -4 Q^2 G^2 at 10 random integer points
+PASS (1): every coefficient of C is positive and C contains d^3
+PASS (1): Q = ad+ae+aq+cd+ce+cq+d^2+de+dq-ej+eq
+PASS blind_moc4_T28_bad46_full_radial_20261022.json: variable order ['p', 'r', 'a', 'b', 'c', 'q', 'd', 'sa']
+PASS blind_moc4_T28_bad46_full_radial_20261022.json: F(g + z kappa) is affine in z (F(kappa)=0, grad F(kappa)=0)
+PASS blind_moc4_T28_bad46_full_radial_20261022.json: own C equals the JSON C
+PASS blind_moc4_T28_bad46_full_radial_20261022.json: own Q equals the JSON Q
+PASS blind_moc4_T28_bad46_full_radial_20261022.json: first radial factor = +-Q
+INFO blind_moc4_T28_bad46_full_radial_20261022.json: set of values of Q^4 det H / (Q^2 G^2) over the points: {-4}
+PASS blind_moc4_T28_bad46_full_radial_20261022.json: Q^4 det H(g - C/Q kappa) = -4 Q^2 G^2 at 10 random integer points
+PASS (2): Q = -M a + U M + d U + r s
+PASS (2): M C - b c Q has nonnegative coefficients (44 terms) and contains b d^3 + c d^3
+PASS G34 has 1376 terms, degree 2 in j
+PASS k0 = (p+1) F8 exactly
+PASS F8 is quadratic in a
+PASS F8 a^0 coefficient: 204 terms, all positive, constant 1
+PASS e=0: k2 = 0 and k1 has nonnegative coefficients
+PASS F8 bp<1: transformed coefficient 0 of (4) nonnegative (291 terms)
+PASS F8 bp<1: transformed coefficient 1 of (4) nonnegative (283 terms)
+PASS F8 bp<1: transformed coefficient 2 of (4) nonnegative (166 terms)
+PASS F8 bp>1: L numerator/denominator nonnegative
+PASS F8 bp>1: transformed coefficient 0 of (4) nonnegative (276 terms)
+PASS F8 bp>1: transformed coefficient 1 of (4) nonnegative (467 terms)
+PASS F8 bp>1: transformed coefficient 2 of (4) nonnegative (426 terms)
+PASS G34(b) is quadratic in a
+PASS G34(b), b=B/(1+B) bp<1: transformed coefficient 0 of (4) nonnegative (598 terms)
+PASS G34(b), b=B/(1+B) bp<1: transformed coefficient 1 of (4) nonnegative (638 terms)
+PASS G34(b), b=B/(1+B) bp<1: transformed coefficient 2 of (4) nonnegative (563 terms)
+PASS G34(b), b=B/(1+B) bp>1: L numerator/denominator nonnegative
+PASS G34(b), b=B/(1+B) bp>1: transformed coefficient 0 of (4) nonnegative (736 terms)
+PASS G34(b), b=B/(1+B) bp>1: transformed coefficient 1 of (4) nonnegative (1131 terms)
+PASS G34(b), b=B/(1+B) bp>1: transformed coefficient 2 of (4) nonnegative (1377 terms)
+PASS G34(b) a^0 coefficient at b=B/(1+B): nonnegative with constant 1
+PASS G34(b) a^0 coefficient at b=1: nonnegative with constant 16
+PASS b<=1 bp<1: chart numerators/denominators nonnegative
+PASS b<=1 bp<1: left middle 2k0 + b k1 >= 0
+PASS b<=1 bp<1: cut G34(b) >= 0
+PASS b<=1 bp<1: right middle 2e k0 + (be+e+1) k1 + 2b(e+1) k2 >= 0
+PASS b<=1 bp<1: endpoint e^2 k0 + (e+1) e k1 + (e+1)^2 k2 >= 0
+PASS b<=1 bp>1: chart numerators/denominators nonnegative
+PASS b<=1 bp>1: left middle 2k0 + b k1 >= 0
+PASS b<=1 bp>1: cut G34(b) >= 0
+PASS b<=1 bp>1: right middle 2e k0 + (be+e+1) k1 + 2b(e+1) k2 >= 0
+PASS b<=1 bp>1: endpoint e^2 k0 + (e+1) e k1 + (e+1)^2 k2 >= 0
+PASS b>=1 bp<1 middle (J=1/e+1/b): coefficientwise nonnegative
+PASS b>=1 bp<1 endpoint (J=1/e+1/b): nonnegative by grouping in e (19 univariate certificates)
+PASS b>=1 bp>1 middle (J=1/e+1/b): nonnegative by grouping in e (30 univariate certificates)
+PASS b>=1 bp>1 endpoint (J=1/e+1/b): nonnegative by grouping in e (46 univariate certificates)
+PASS G46 has 1549 terms, degree 2 in a
+PASS G46 k0: 612 terms, all positive, constant 1
+PASS HH: J = 1 + L - (p+q)/4 equals (6) at beta1=theta, delta=(p/2,q/2); delta_i < beta_i
+PASS HC (and CH by exchange): J = L + 1/2 + theta/(2(1+U)) equals (6) at delta=(p/2, beta2), beta2 <= q/2
+PASS CC (and exchange): J = L + 1/(2(1+U)) equals (6) at delta = beta
+PASS Lemma 2 Cauchy step: e1^2/bH + e2^2/cH - (e1+e2)^2/(bH+cH) = (cH e1 - bH e2)^2/(bH cH (bH+cH))
+PASS HH: chart numerators/denominators and J = n/d0 have nonnegative coefficients
+PASS HH: r=s=0 part of P0 + P1 Y + P2 Y^2 has nonnegative coefficients
+PASS HH: P0 nonnegative
+PASS HH: 20 groups (all variables except U,Y) with a negative coefficient, each A,C >= 0 and (B >= 0 or 4AC-B^2 >= 0) on U >= 0
+PASS HH: every exceptional group contains a positive power of r or s
+PASS HC: chart numerators/denominators and J = n/d0 have nonnegative coefficients
+PASS HC: r=s=0 part of P0 + P1 Y + P2 Y^2 has nonnegative coefficients
+PASS HC: P0 nonnegative
+PASS HC: 21 groups (all variables except U,Y) with a negative coefficient, each A,C >= 0 and (B >= 0 or 4AC-B^2 >= 0) on U >= 0
+PASS HC: every exceptional group contains a positive power of r or s
+PASS CH: chart numerators/denominators and J = n/d0 have nonnegative coefficients
+PASS CH: r=s=0 part of P0 + P1 Y + P2 Y^2 has nonnegative coefficients
+PASS CH: P0 nonnegative
+PASS CH: whole numerator coefficientwise nonnegative
+PASS CC: chart numerators/denominators and J = n/d0 have nonnegative coefficients
+PASS CC: r=s=0 part of P0 + P1 Y + P2 Y^2 has nonnegative coefficients
+PASS CC: P0 nonnegative
+PASS CC: P1 nonnegative, P2 nonnegative by grouping in L (26 univariate certificates)
+PASS CC': chart numerators/denominators and J = n/d0 have nonnegative coefficients
+PASS CC': r=s=0 part of P0 + P1 Y + P2 Y^2 has nonnegative coefficients
+PASS CC': P0 nonnegative
+PASS CC': P1 nonnegative, P2 nonnegative by grouping in L (38 univariate certificates)
+INFO NUMERIC cited bound at its boundary, old-H (45,1,34) j=1+1/e: worst min Phi (6 samples x 12 BFGS restarts) = 1.449e-15
+INFO NUMERIC cited bound at its boundary, chain (1;0,45;34) j=1/e+1/b: worst min Phi (6 samples x 12 BFGS restarts) = 6.689e-16
+INFO NUMERIC cited bound at its boundary, four-coefficient (6,0,5,34) bp(a-1)=b+p+a+1: worst min Phi (6 samples x 12 BFGS restarts) = 1.782e-15
+INFO NUMERIC cited bound at its boundary, old-H (33,2,46): worst min Phi (6 samples x 12 BFGS restarts) = 1.107e-15
+INFO NUMERIC cited bound at its boundary, old-H (5,2,46): worst min Phi (6 samples x 12 BFGS restarts) = 5.619e-15
+INFO NUMERIC cited bound at its boundary, chain (2;4,33;46): worst min Phi (6 samples x 12 BFGS restarts) = 1.413e-16
+INFO NUMERIC cited bound at its boundary, chain (2;5,6;46): worst min Phi (6 samples x 12 BFGS restarts) = 1.061e-13
+SUMMARY: ALL EXACT CHECKS PASSED

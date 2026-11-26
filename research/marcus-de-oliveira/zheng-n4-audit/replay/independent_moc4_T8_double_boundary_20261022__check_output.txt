@@ -1,0 +1,22 @@
+PASS EXACT chart: H12 = 1-t-r and H18 = s identically under the inverse formulas
+PASS EXACT chart: r = z(v-1)(tv-w)/(v(z-w)) (same r as the polar chart)
+PASS EXACT g4 = rho x/N
+PASS EXACT g7 = rho B/O
+PASS EXACT g13 = rho r(x-1)/O
+PASS EXACT g23 = rho r t x M H/Dp
+PASS EXACT M g4 + s g7 - Q g20 - M g11 = 0
+PASS EXACT (s-P) g7 - M g23 - D g20 = 0
+PASS EXACT Q (double-boundary) = Q0 (uniform Thm 3)
+PASS EXACT profile identity g = g23 f1 + g21 f2 + g20 f7 + g9 f8 + g7 f9 + g6 f12 + g18 f15 + (g4-g18) f18 on N_T
+PASS EXACT forms: g14 = g9 + g4 when g18 = g20 = 0; g21 = g13 - g4 - g7 when g18 = 0
+PASS EXACT chart: g7 - g9 + x g14 = lambda * g20 with lambda free of v, vb lambda=0
+PASS EXACT boundary: g9/b = (s-1)/M and g14/b = -1/M
+PASS EXACT boundary: g21/b = r(x-1)/B + s/M - 1 = (x-1)(r-P)(s-P)/(M B)
+PASS EXACT E20 = g20 O Dp / rho is a polynomial
+PASS EXACT E6 = g6 O Dt / rho is a polynomial
+PASS EXACT A1 = (M g4 + s g7) N O / rho
+PASS EXACT (4): B{(r+t)(s-P)Dt - t J N} = (x-t)E20 - t B0 A1
+PASS EXACT (5): J E6 - P{C + s(P-r)} B Dt = tP(x-1)(s-P) M A1 + sP(x-1) E20
+PASS EXACT capacity: (s-P)M - s^2 = C = P(1-x) - s(2-t-x)
+NUMERIC SOC(f1,f9,f18): min over 20000 random SO(4) (seed 7) of Phi18 + 2 sqrt(Phi1 Phi9) = 6.986e-06
+SUMMARY all EXACT checks passed

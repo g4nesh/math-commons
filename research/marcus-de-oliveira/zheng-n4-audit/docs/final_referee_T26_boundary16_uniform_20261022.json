@@ -1,0 +1,73 @@
+{
+ "doc_id": "final_referee_T26_boundary16_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T26_boundary16_uniform_20261022.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1 (main)",
+   "page": 1,
+   "contact_sets": [
+    [
+     2,
+     3,
+     4,
+     7,
+     8,
+     12,
+     16
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with P c(x) >= 0 vanishing on T_27 u {16}, Phi_{c(x)}(O) >= 0 on SO(4); all spectra."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "paper Lemma 4.2"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "X in Sing C",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "old SOC a f2 + b f5 + d f54, ab >= d^2",
+   "used_for": "conclusion",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  "1 generators EXACT",
+  "2 identity EXACT",
+  "3 symmetry EXACT",
+  "4 reduction PROOF-READ",
+  "5 radial necessity PROOF-READ",
+  "6 C,Q EXACT",
+  "7 factorization (3) EXACT",
+  "8 (4) EXACT",
+  "9 endpoints a=0,b=0 EXACT",
+  "10 (5) 525 positive coefficients EXACT",
+  "11 case cover PROOF-READ",
+  "12 conclusion CITED"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators",
+  "identity (1)",
+  "symmetry (0,2,1,3)",
+  "C,Q",
+  "G6 277 terms as exact square root",
+  "(4)",
+  "136-coefficient endpoints",
+  "(5) 525 positive coefficients"
+ ],
+ "numeric_tests": [
+  "cited SOC on ab=d^2: 30 samples, worst 1.0e-16"
+ ],
+ "unchecked": [
+  "proof of the cited SOC"
+ ]
+}

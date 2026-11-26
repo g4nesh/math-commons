@@ -1,0 +1,165 @@
+{
+ "doc_id": "independent_shared_coreG_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_shared_coreG_uniform_20261023.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    23
+   ],
+   "paper_table5": 10,
+   "restatement": "For x in X with Pc(x)>=0 and gaps 0 on G={0,1,2,7,9,10,23} (non-strict), Phi_{c(x)}(O)>=0 for all O in SO(4); all spectra (only Re x in Sing C + Sing C used)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "paper eq. (4.2) (minor vectors give squared minors)",
+   "used_for": "minor remainders and the d=0 / d<=0 branch",
+   "status": "EXACT in shared lib"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "paper App. A.1: X contained in Sing C; conj(X)=X",
+   "used_for": "F(w)=0 and det H(w)=0 for realizable w",
+   "status": "EXACT in shared lib / PROOF-READ"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "sharp SOC atom, reference family (f1,f9;f22), source document not named",
+   "status": "CITED; group map EXACT; NUMERIC",
+   "used_for": "(4) H3 capacity, pairs of {f2,f12,f15} with f26"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "old-H atom, reference (f3,f15;f26) [coreD per core H doc]",
+   "status": "CITED; ordered group map EXACT; NUMERIC",
+   "used_for": "(5),(6) for (f3,f15;f26),(f11,f12;f26)"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "kernel basis, I-rows, coefficient formulas",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "(3) identities and f4+f26=f2+f3+f11+f21; d<=0 rewrite into minors",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "(4) SOC aggregation to H3",
+   "kind": "inequality",
+   "status": "PROOF-READ (atom CITED)"
+  },
+  {
+   "n": 4,
+   "claim": "(6) cap aggregation of old-H",
+   "kind": "inequality",
+   "status": "PROOF-READ (atom CITED); cap identity EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "F(w(z))=C+Qz, C>0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "realizable => F=0, det H=0",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 7,
+   "claim": "(7) Q^4 det H = -4Q^2 R9^2, R9 536 terms deg 9",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "(8) symmetry",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "c=0 factor, b=0 by symmetry",
+   "kind": "identity",
+   "status": "EXACT / PROOF-READ"
+  },
+  {
+   "n": 10,
+   "claim": "bounded sector a+b+c<2",
+   "kind": "inequality",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 11,
+   "claim": "13 vertices; 13-simplex coverage",
+   "kind": "finite",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "(11) 13 certificates, total 352583, strict supports",
+   "kind": "certificate",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "(12) a>1 chart, 56416 coeffs, inverse",
+   "kind": "certificate",
+   "status": "EXACT"
+  },
+  {
+   "n": 14,
+   "claim": "(13) b>1 chart, 141628 coeffs, inverse",
+   "kind": "certificate",
+   "status": "EXACT"
+  },
+  {
+   "n": 15,
+   "claim": "exhaustiveness",
+   "kind": "case split",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "basis/I-rows/coefficients",
+  "(3) and d<=0 rewrite",
+  "C,Q",
+  "R9 via own 14x14 Bareiss (819 divisions)",
+  "symmetry (8)",
+  "c=0 factorization",
+  "13 vertices, own pulling triangulation (volume cross-check)",
+  "13 simplex certificates (sizes match, total 352583) + strict-support test",
+  "(12) 56416 coeffs marker 2X^2Y^2",
+  "(13) 141628 coeffs marker 2Y^2",
+  "inverse maps (12),(13)",
+  "cap identity",
+  "atom group maps"
+ ],
+ "numeric_tests": [
+  "5 atoms x 20 samples at boundary, 8 restarts, seed 20261125: worst 2.6e-14",
+  "12 stratum points (seeds 0..11): worst min Phi/max gap -1.0e-10 (all have d<=0: weak test)"
+ ],
+ "unchecked": [
+  "cited SOC and old-H atoms (source documents)",
+  "two-real-response unitary extension (not needed for (*))"
+ ]
+}

@@ -1,0 +1,66 @@
+{
+  "doc_id": "independent_coreE_uniform_20261023",
+  "pdf": "proofs/manin_transfer_20261021/independent_coreE_uniform_20261023.pdf",
+  "pages": 5,
+  "auditor": "K2-cores-EF-second (independent second pass)",
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "contact_sets": [[0, 1, 2, 9, 10, 16, 17]],
+     "restatement": "For every x in X with P c(x) >= 0 and (P c(x))_sigma = 0 for all sigma in E = {0,1,2,9,10,16,17} (= paper Table 5 no. 17; extra contacts allowed), Phi_{c(x)}(O) >= 0 for all O in SO(4) (equivalently O(4)). Covers all of X, so degenerate spectra and all zero coefficients are included.",
+     "covers_all_spectra": true},
+    {"label": "Lemma 1", "page": 2, "contact_sets": [[0, 1, 2, 9, 10, 16, 17]],
+     "restatement": "For g = q f0 + p f2 + t f3 + b f12 + c f15 + v f13 + d f26 with nonnegative coefficients, c,d > 0, v >= 0, q(c+v) > d^2 and t >= R_d(q,v,c) = d(v+d){q(c+v)+dv}/((c+v){q(c+v)-d^2}), Phi_g >= 0 on SO(4); also with q,v swapped. No realizability needed.",
+     "covers_all_spectra": true}
+  ],
+  "dependencies": [
+    {"kind": "common-lemma", "ref": "sharp SOC reference (f1,f9;f22), images (2) for {i,j} in {2,12,15}", "used_for": "(2), (6), c=0 case", "match_checked": true, "status": "CITED; transport by G EXACT; NUMERIC support"},
+    {"kind": "common-lemma", "ref": "four-coefficient reference (f0,f6,f10;f54), image (3)", "used_for": "Lemma 1, c=0 case", "match_checked": true, "status": "CITED; transport EXACT (t-role f10->f3); NUMERIC support"},
+    {"kind": "common-lemma", "ref": "chain reference (f2;f0,f12;f70), images (4) and (4')", "used_for": "Lemma 1, (5)", "match_checked": true, "status": "CITED; transport EXACT (c-role f2->f15); NUMERIC support"},
+    {"kind": "core-doc", "ref": "paper App. A: X subset Sing C, cubic (A.2)", "used_for": "radial necessity (8),(9)", "match_checked": true, "status": "EXACT via shared library"},
+    {"kind": "core-doc", "ref": "paper (4.2): Phi_{n_IJ} = det O[I,J]^2", "used_for": "minor witnesses, d=0", "match_checked": true, "status": "EXACT/PROOF-READ via shared library"},
+    {"kind": "external", "ref": "paper Theorem 1.2 (two-orthogonal reduction)", "used_for": "unitary remark only", "match_checked": false, "status": "CITED, not needed"}
+  ],
+  "steps": [
+    {"n": 1, "claim": "generators(E) = {f0,f2,f3,f12,f13,f15,f26}; rows [23,15,14,8,4,7,3] give I_7; coefficients are gaps >= 0", "status": "EXACT"},
+    {"n": 2, "claim": "six minor generators; d = 0 trivial", "status": "EXACT"},
+    {"n": 3, "claim": "(2),(3),(4),(4') hold", "status": "CITED"},
+    {"n": 4, "claim": "(5) from two chains", "status": "EXACT"},
+    {"n": 5, "claim": "(6) from two SOC atoms", "status": "EXACT"},
+    {"n": 6, "claim": "Lemma 1 allocation identities and total R_d; v = 0 wall", "status": "EXACT"},
+    {"n": 7, "claim": "realizable => C(w) = 0, det H(w) = 0 for w = g + z kappa", "status": "PROOF-READ"},
+    {"n": 8, "claim": "(8) C(g+z kappa) = C_0 + Q z with displayed C_0, Q; C_0 > 0", "status": "EXACT"},
+    {"n": 9, "claim": "(9) Q^4 det H = -4 d^2 Q^2 G^2, G 408 terms degree 8", "status": "EXACT"},
+    {"n": 10, "claim": "(10) symmetries of G", "status": "EXACT"},
+    {"n": 11, "claim": "c = 0 factorization and B(T_F) identity; sign argument", "status": "EXACT"},
+    {"n": 12, "claim": "main partition covers failure set of (6) with c > 0", "status": "PROOF-READ"},
+    {"n": 13, "claim": "auxiliary partition (11),(12) coverage", "status": "PROOF-READ"},
+    {"n": 14, "claim": "dominant-c partition (14) coverage", "status": "PROOF-READ"},
+    {"n": 15, "claim": "eleven tables (15): all coefficients positive, strict markers, positive denominators; counts match", "status": "EXACT"},
+    {"n": 16, "claim": "assembly", "status": "PROOF-READ"},
+    {"n": 17, "claim": "O(4) equivalent to SO(4)", "status": "PROOF-READ"},
+    {"n": 18, "claim": "unitary extension remark", "status": "CITED"}
+  ],
+  "gaps": [
+    {"location": "pp. 3-4, equation labels", "claim": "labels (10) and (12) each used twice; no (13)", "why": "duplicate numbering", "severity": "presentation", "believed_true": true, "repair": "renumber"}
+  ],
+  "exact_replays": [
+    "generators(E), I_7 rows, minor flags, rank 7",
+    "group transport of the three reference inequalities onto (2) (three pairs), (3), (4), (4')",
+    "(5), (6) and seven Lemma 1 identities (sympy)",
+    "(8) C_0 and Q exactly as displayed with the paper's cubic (A.2)",
+    "(9) exact Bareiss determinant of the 14x14 Hessian, -4 d^2 Q^2 G^2, G recomputed (408 terms, degree 8)",
+    "(10) symmetries; c = 0 factorization; B(T_F) identity",
+    "eleven cleared tables (15): term counts and lowest strict markers identical to the document; all coefficients positive",
+    "inverse maps of row P and the dominant-c map"
+  ],
+  "numeric_tests": [
+    "sharp SOC forms for {2,12},{2,15},{12,15}: 30 starts each, seed 1, min -5.4e-30",
+    "sharp chain forms with f0 and f13: 30 starts each, seed 2, min >= 0",
+    "(3) on its boundary at 8 (q,v) pairs, 12 starts each, seed 3, min >= 0",
+    "20 realizable points with contact set exactly E and d >= 0.3 (seed 7): rel |G| <= 3.9e-15, min Phi/maxgap >= 5.5e-18"
+  ],
+  "unchecked": [
+    "the proofs of the three reference inequalities in other supplement documents",
+    "paper Theorem 1.2 (only used for the unitary remark)"
+  ]
+}

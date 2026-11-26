@@ -1,0 +1,13 @@
+PASS C(g + h kappa) affine in h
+PASS (a+e)C - ae{d(a+e)+d^2-j(a+e)} has only nonnegative coefficients :: terms=31
+PASS ... and contains (a+e)d^3
+PASS DR = D^2 + dj(b-a)W{c(d+a)-ja} - (d+a)(j-c)Y
+PASS on Y=0 (so DR = D^2 + X'): D^2 Phi = (D^2 + X')^2 - 4 D^2 X' = (D^2 - X')^2
+PASS a=0: Y = -pcbd
+PASS L1 + W E1 = p{pjW - (d+b)(pc+dW)}
+PASS NUMERIC: pj<d^2 implies Z<0, T3<0, L1+W E1<0 (random samples)
+INFO ratio G_own^2 / RHS^2 at sampled points with a=pc/W, e=-E0/E1 > 0 :: ['1', '1', '1']
+PASS substitution identity holds up to one global constant at 3 exact points
+INFO NUMERIC realizable T_45 samples :: found=11 in chamber=0 with Phi<0=0
+PASS NUMERIC: no sampled realizable T_45 cost lies in the chamber with Phi < 0
+SUMMARY failures: []

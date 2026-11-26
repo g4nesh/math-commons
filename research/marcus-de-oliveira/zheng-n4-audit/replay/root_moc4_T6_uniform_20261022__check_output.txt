@@ -1,0 +1,40 @@
+PASS EXACT T equals paper T_7
+PASS EXACT generators of T = {0,1,2,3,4,5,6,11,21,22,23,26} [0, 1, 2, 3, 4, 5, 6, 11, 21, 22, 23, 26]
+PASS EXACT nonminor generators exactly 22, 26
+PASS EXACT f22 and f26 are positive at permutation 3
+PASS EXACT dim W = 8 and (g3,g6,g9,g10,g12,g13,g16,g18) are coordinates
+PASS EXACT (2) g19 = g6 - g12 + g13 + g18 on W
+PASS EXACT 10 minor generators, rank 8
+PASS EXACT minor cone has exactly 14 extreme dual rays got 14
+PASS EXACT exactly two dual rays negative on a source generator; they are A, B of (1) [-q0 + q1 + q2 - q4 + q5 + q7, -q0 + q2 + q6]
+PASS EXACT (F0-F1)/(F2-F4) = v(z-1)/[z(v-1)] = 1/h
+INFO (F0-F2)/(F0-F1) = (cc - zz)*(rr - vv)/(vv*(cc - rr)*(zz - 1))
+PASS EXACT (F0-F2)/(F0-F1) is +-t(h-1), +-t(h-1)/h or a reciprocal (so t real once h real)
+PASS EXACT F0 - F2 = (z-c)(r-v)
+PASS EXACT (F0-F8)/(F0-F2) = 1 + r(w-v)/(v-r)  (contact 8 <=> s real)
+PASS EXACT X = (1-c)(z-r)/[r(z-c)] = (k/r - 1/v)/(k-1) - 1
+PASS EXACT (F0-F7)/(F0-F2) = -(s X + 1/(k-1))  (contact 7 <=> X real <=> l real, given s, k real)
+PASS EXACT PERMS[7] = (1,0,3,2), PERMS[2] = (0,2,1,3)
+PASS EXACT chart (3): all six contact gaps vanish identically
+PASS EXACT r(w-v)/(v-r) = s in the chart
+PASS EXACT k/r - 1/v = l in the chart
+PASS EXACT (4)-(5) g3
+PASS EXACT (4)-(5) g6
+PASS EXACT (4)-(5) g10
+PASS EXACT (4)-(5) g14
+PASS EXACT (4)-(5) g18
+PASS EXACT (4)-(5) g9
+PASS EXACT (2) holds for chart gaps
+PASS EXACT chart gaps lie in W (linear reconstruction, all 24)
+PASS EXACT (6) A = g16 + (sm/D) g3
+PASS EXACT (6) A = g23 + e/t
+PASS EXACT (7) B = g19 + (sm/D) g3
+PASS EXACT (7) B = g15 - e/t
+PASS EXACT G/g10 = D k^2 |v-1|^2/(s |M|^2)
+PASS EXACT g6/e = s/(|v|^2 (k+ls))
+PASS EXACT g10/g6 = -h(k-l-1)|v|^2/((k-1)|v-1|^2)
+PASS EXACT g18/e = -D/(k-1)
+PASS EXACT interpolation (k+ls)/D = (1-zeta)k/D - zeta alpha/(D W), zeta = qW, l = h-1+W
+PASS EXACT alpha/D = 1 - h(1 + W/D) when l = h-1+W
+PASS EXACT k - l - 1 = -D - W when l = h-1+W
+SUMMARY failures=0

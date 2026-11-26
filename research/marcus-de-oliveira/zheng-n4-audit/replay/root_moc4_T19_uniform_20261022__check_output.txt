@@ -1,0 +1,48 @@
+PASS contact set equals paper T_20 (Appendix E)
+PASS find_g(T_20, T) is the identity-type match
+PASS generators F_T = [0, 1, 2, 3, 4, 5, 6, 27, 28, 33, 34] : [0, 1, 2, 3, 4, 5, 6, 27, 28, 33, 34]
+PASS nonminor generators = [28, 34]
+PASS dim(im P cap {g_T = 0}) = 14 - rank P[T] = 8
+PASS minor generators span dimension 8 = span of all generators
+PASS minor cone has exactly 10 facets and they are the listed functionals : facets=10
+INFO nonminor f28 (h3421,-): A = -1, B = 1
+INFO nonminor f34 (h4321,+): A = 1, B = -1
+PASS F6/F0 = x
+PASS F8/F6 = 1/(1-k)
+PASS F5/F0 = (1-w)A3/(A3-w)
+PASS A3 = hw/(h-1+w) solves it
+PASS F1/F0 = l  <=>  curve (2) up to the factor -1 : -1
+PASS curve with w = 1 + q(v-1) is (v-1)^2 times a polynomial linear in v
+PASS its solution is v(q) of (3)
+PASS coefficient of v is a constant times q T(q) : -q*(k*l*q - k - l*q + q)
+PASS v-numerator at q = k/c equals kl(h-1)(k-1)^2(l-1)/c^2
+PASS contact ratios (R0,R1,R5,R6,R7,R8) = (1,l,h,x,lx,-x/(k-1))
+PASS R14 = (x-v)/((k-1)(v-1))
+PASS R16 = h R14
+PASS R19 = h - h(x-1)/(w-1)
+PASS (4) g3 = mu h k y/((k-1)|q|^2)
+PASS (4) g4/g3 = -l(h-1)(k-1)^2(l-1)|q|^2/(h|T|^2)
+PASS (4) g9/g3 = -x(l-1)(k-1)|q|^2/(hk|q-1|^2)
+PASS (4) g10/g3 = lx(k-1)|q|^2/(h|q-k|^2)
+PASS (5) Pick identity Im v/Im q
+PASS (6) Im w/Im q
+PASS (8) v - 1 = J/(qT)
+PASS (8) A_R = (1-x) l S/J + (h+l-1)
+PASS (8) B_R = -h(1-x)(q-k)T/((k-1)J)
+PASS A = g3 - g2 + g18 = -mu Im A_R and B = g13 - g3 = -mu Im B_R (by linearity, definitional)
+PASS J(0) = hk
+PASS J(p) = kl(h-1)(k-1)^2(l-1)/c^2
+PASS J(1) = -(k-1)(l-1)
+PASS slope of S = hk + (k-1)(l-1)
+PASS S(0) = -hk
+PASS S(p) = k(h-1)(k-c)/c
+PASS J(z0) = -hk(h-1)(k-1)(l-1)/(hk+c-k)^2
+PASS T(q) = c (q - p)
+PASS preliminary sign table of the document is exactly the feasible cell set : [(0, 1, 0, 2), (0, 2, 1, 1), (1, 1, 0, 0), (1, 2, 2, 1), (2, 1, 0, 0), (2, 2, 2, 1)]
+PASS (x-1)/k > 0 leaves cases {k>1,x>1}, {k<0,0<x<1}, {k<0,x<0} : [(0, 1, 0, 2), (1, 1, 0, 0), (2, 2, 2, 1)]
+PASS cell (1, 1, 0, 0): c>1, bracket>1 and g19 < 0 (contradiction)
+PASS cell (2, 2, 2, 1): c>1, bracket>1 and g19 < 0 (contradiction)
+PASS only region (7) survives: 0<h<1, k<0, l>1, x<0 : [(0, 1, 0, 2)]
+PASS in (7): mu Im q > 0, c < 0, 0 < p < 1, interlacing (proof-read, see report)
+NUMERIC seed 20261125, 4000 random chart points: 2013 supported, 0 outside region (7), min(A,B)/max|g| = 1.634e-05
+EXACT FAILURES: none

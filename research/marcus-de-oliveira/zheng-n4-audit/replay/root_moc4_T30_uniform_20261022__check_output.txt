@@ -1,0 +1,60 @@
+PASS doc contact set {0,1,5,6,9,12} is the paper's T_31 literally
+PASS source list (1) = lib generators(T_31)
+PASS contact equations have rank 6 (kernel dim 8)
+PASS values of the 8 generators at permutations (15,4,17,7,11,3,18,14) form the identity matrix
+PASS only f35 is non-minor
+PASS root_moc4_T30_full_radial_20261022.json: variable order ['q', 'p', 'j', 'c', 'e', 'd', 'b', 'a']
+PASS root_moc4_T30_full_radial_20261022.json: F(g + z kappa) is affine in z (F(kappa)=0, grad F(kappa)=0)
+PASS root_moc4_T30_full_radial_20261022.json: own C equals the JSON C
+PASS root_moc4_T30_full_radial_20261022.json: own Q equals the JSON Q
+PASS root_moc4_T30_full_radial_20261022.json: first radial factor = +-Q
+INFO root_moc4_T30_full_radial_20261022.json: set of values of Q^4 det H / (Q^2 G^2) over the points: {-4}
+PASS root_moc4_T30_full_radial_20261022.json: Q^4 det H(g - C/Q kappa) = -4 Q^2 G^2 at 10 random integer points
+PASS C has only negative coefficients and contains -d^3
+PASS Lemma 1: E'(t) formula
+PASS Lemma 1: homogeneous four-coefficient bound t a' b (e - t) >= t^2 (a' + b + e + t), a'=ta, solves to e >= E(t)
+PASS Lemma 1: E(1) = (a+1)(b+1)/(ab-1)
+PASS G9 has 1183 terms and degree 2 in j
+PASS k2 has nonnegative coefficients
+PASS k0 at c=e=q=p=0 equals B=(a+1)^3(b+1)^3
+PASS k0 at e=0 minus B has nonnegative coefficients
+PASS c=0: k1, k2 nonnegative coefficients
+PASS a=0: k0,k1,k2 nonnegative coefficients and k0 constant 1
+PASS (5) k0 >= B(1-Le e)^2, chart swap=0 ab<1: 8494 terms, nonnegative (denominators positive: True)
+PASS (5) k0 >= B(1-Le e)^2, chart swap=0 ab>1: 12163 terms, nonnegative (denominators positive: True)
+PASS (5) k0 >= B(1-Le e)^2, chart swap=1 ab<1: 8569 terms, nonnegative (denominators positive: True)
+PASS (5) k0 >= B(1-Le e)^2, chart swap=1 ab>1: 12328 terms, nonnegative (denominators positive: True)
+PASS domain 1: chart numerators and denominators of a, b, e, J have nonnegative coefficients
+PASS domain 1: cut l = a - b has nonnegative numerator/denominator
+PASS domain 1: [0,l] middle 2k0 + l k1 >= 0
+PASS domain 1: (7) G9(l) - B >= 0
+PASS domain 1: J - l has nonnegative numerator/denominator
+PASS domain 1: [l,J] middle 2G(l) + (J-l)G'(l) >= 0
+PASS domain 1: endpoint G9(J) >= 0
+PASS domain 2: chart numerators and denominators of a, b, e, J have nonnegative coefficients
+PASS domain 2: middle 2D k0 + N k1 >= 0
+PASS domain 2: endpoint D^2 k0 + N D k1 + N^2 k2 >= 0 (coefficientwise)
+PASS domain 3: chart numerators and denominators of a, b, e, J have nonnegative coefficients
+PASS domain 3: middle 2D k0 + N k1 >= 0
+INFO domain 3: endpoint not coefficientwise nonnegative; 88 groups (all variables except c) need a univariate certificate
+PASS domain 3: endpoint >= 0 by grouping in c (exact squarefree + real-root isolation)
+PASS domain 4: chart numerators and denominators of a, b, e, J have nonnegative coefficients
+PASS domain 4: middle 2D k0 + N k1 >= 0
+PASS domain 4: endpoint D^2 k0 + N D k1 + N^2 k2 >= 0 (coefficientwise)
+PASS domain 5: chart numerators and denominators of a, b, e, J have nonnegative coefficients
+PASS domain 5: middle 2D k0 + N k1 >= 0
+PASS domain 5: endpoint D^2 k0 + N D k1 + N^2 k2 >= 0 (coefficientwise)
+PASS domain 6: chart numerators and denominators of a, b, e, J have nonnegative coefficients
+PASS domain 6: middle 2D k0 + N k1 >= 0
+PASS domain 6: endpoint D^2 k0 + N D k1 + N^2 k2 >= 0 (coefficientwise)
+PASS domain 7: chart numerators and denominators of a, b, e, J have nonnegative coefficients
+PASS domain 7: middle 2D k0 + N k1 >= 0
+PASS domain 7: endpoint D^2 k0 + N D k1 + N^2 k2 >= 0 (coefficientwise)
+INFO certificate time 38.6 s
+PASS some g in G maps base profiles (0, 6, 10, 54) to target (7, 0, 5, 35) (or the stated exchange)
+PASS some g in G maps base profiles (3, 5, 54) to target (9, 1, 35) (or the stated exchange)
+PASS some g in G maps base profiles (2, 0, 12, 70) to target (1, 7, 9, 35) (or the stated exchange)
+INFO NUMERIC cited bound at its boundary, old-H j=1+1/c: c f9 + j f1 + f35: worst min Phi over 6 samples x 12 BFGS restarts = 8.292e-15
+INFO NUMERIC cited bound at its boundary, chain j=1/a+1/c: a f7 + j f1 + c f9 + f35: worst min Phi over 6 samples x 12 BFGS restarts = 2.709e-15
+INFO NUMERIC cited bound at its boundary, four-coefficient ab(e-1)=a+b+e+1: a f7 + b f0 + e f5 + f35: worst min Phi over 6 samples x 12 BFGS restarts = 1.729e-17
+SUMMARY: ALL EXACT CHECKS PASSED

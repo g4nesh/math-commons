@@ -1,0 +1,83 @@
+
+==============================================================================
+A. Exact replays of Section C.1 identities (own sympy code from (A.1), (A.2))
+==============================================================================
+[A1 EXACT] P is integer: True; rank P = 14; det of App. A 14x14 row-submatrix = 1
+[A1 EXACT] column m13 of P is all ones (P kappa = 1 with m(kappa)=e13): True
+[A2 EXACT] paper (A.2) cubic == supplement-printed expanded cubic: True
+[A2 EXACT] grad C(m(z)) == 0 and C(m(z)) == 0 identically in z1..z8 (X subset Sing C): True
+[A3 EXACT] (C.5) C(u + h kappa) = C(u) + h (u0 u6 - u1 u5): True
+[A3 EXACT] (C.6) q(Re(theta m(a,-b))) == 0 for real a, complex b, theta: True
+[A3 NUMERIC seed 11, 200 each] max |q(Re theta m)|/|y|^2: concyclic a 8.0e-17, collinear a 4.2e-17, generic a 1.3e-01
+[A4 EXACT] Moebius rule m(f(z)) = (ad-bc)^4 / prod(c z_j + d) * m(z), all 14 coords: True
+[A5 EXACT] Jacobi sign convention validated numerically: True; det(V)*rt(V) satisfies all 56 linear relations of span(B0..B13) as polynomials in 16 entries: True
+[A5 EXACT] rank of the 70 coefficient functionals n_IJ on V (= rank Bmat) = 14 (so rho is a linear function of the 70 minor squares; (C.7) follows linearly from Thm 1.2)
+[A5 NUMERIC seed 5, 200 Haar U] (C.3) max rel err 9.5e-15; |<rho,kappa>-1| 0.0e+00; rho real and <rho,n_IJ>=|det U[I,J]|^2 max err 2.3e-15
+[A6 EXACT] (C.4) G(m(z)+m(w)) = det(A0)det(A1) rho(A0^-1 A1): all 70 coefficient pairings agree as polynomials in z1..z8,w1..w8: True (mismatches: []) [0.2s]
+[elapsed 3.1s]
+
+==============================================================================
+B. Lemma C.2 (n=3) and Lemma C.3 (zero-determinant case)
+==============================================================================
+[B1 NUMERIC seed 2026, 500] Lemma C.2 expansion identity max rel err 4.7e-15; max hull margin of det wrt sigma-points -2.9e-03 (<=0 means inside)
+[B2 NUMERIC seed 2026] Lemma C.3: 1800 random normal pairs with det(A+B)=0 (families ['generic', 'hermitianA', 'repeatedA', 'collinearB', 'smallscale', 'unitaryA'])
+      max hull margin of 0 wrt the 24 sigma-points: -3.72e-03 (<= 0 means 0 in hull)
+      proof replay: extreme point support size max 5 (claim <= 5); single-support branch 0x, 3x3 branch 1800x; max |Wy-x|,|W Dg y - Da x| 8.4e-09; max zero-det/coincidence residual 1.2e-14; max 3x3 hull margin -2.1e-04
+[B3 NUMERIC seed 2026] adversarial Nelder-Mead (25 starts x 1500 it) maximizing the margin over det(A+B)=0: best margin -1.08e-12
+[elapsed 15.0s]
+
+==============================================================================
+C. Corollary C.5 (rank <= 12 on the secant cone) and Proposition C.6 (inertia (6,6,2))
+==============================================================================
+[C1 NUMERIC seed 606, 300, rtol 1e-9] rank H(x), x in X: [8]; rank H(x+x'), x,x' in X: [12]; rank H(Re x): [12]
+[C1 NUMERIC] H(sx+ty)(sx-ty) relative size 3.9e-17 (explicit kernel vector on every secant)
+[C1 NUMERIC] dim of secant cone (Jacobian rank of (z,w)->m(z)+m(w)) = 12 (claim 12); rank of d(G o secant) = 10 (claim 10, => rank H(c) <= 12 on Sigma2)
+[C2 NUMERIC seed 606, n=600] generic            inertia counts {(6, 6, 2): 600}; max n+ 6, max n- 6; min normalized 12x12 principal minor 4.2e-12; rank-12 => some minor >0: True
+[C2 NUMERIC seed 606, n=150] a1=a2              inertia counts {(5, 5, 4): 150}; max n+ 5, max n- 5; min normalized 12x12 principal minor -1.0e+00; rank-12 => some minor >0: True
+[C2 NUMERIC seed 606, n=150] b1=b2              inertia counts {(5, 5, 4): 150}; max n+ 5, max n- 5
+[C2 NUMERIC seed 606, n=150] a1+b1=0            inertia counts {(5, 5, 4): 150}; max n+ 5, max n- 5
+[C2 NUMERIC seed 606, n=150] a real             inertia counts {(6, 6, 2): 150}; max n+ 6, max n- 6; min normalized 12x12 principal minor 1.2e-13; rank-12 => some minor >0: True
+[C2 NUMERIC seed 606, n=150] a concyclic        inertia counts {(6, 6, 2): 150}; max n+ 6, max n- 6
+[C2 NUMERIC seed 606, n=150] a 3 distinct       inertia counts {(5, 5, 4): 150}; max n+ 5, max n- 5
+[C2 NUMERIC seed 606, n=150] a1=a2=a3           inertia counts {(4, 4, 6): 150}; max n+ 4, max n- 4
+[C2 NUMERIC seed 606, n=150] b const            inertia counts {(2, 2, 10): 150}; max n+ 2, max n- 2
+[C2 NUMERIC seed 606, n=150] all real (x real)  inertia counts {(4, 4, 6): 150}; max n+ 4, max n- 4
+[C2 NUMERIC seed 606, n=150] huge spread        inertia counts {(6, 6, 2): 150}; max n+ 6, max n- 6; min normalized 12x12 principal minor 5.0e-15; rank-12 => some minor >0: True
+[C3 EXACT] Gaussian-rational sample points (exact rational arithmetic):
+      seed 1: rank H(x) = 8 (claim 8); rank [H(Re x); H(Im x)] = 14 (claim 14: transversality); exact inertia of H(Re x) (n+, n-, n0) = (6, 6, 2) (claim (6,6,2))
+      seed 2: rank H(x) = 8 (claim 8); rank [H(Re x); H(Im x)] = 14 (claim 14: transversality); exact inertia of H(Re x) (n+, n-, n0) = (6, 6, 2) (claim (6,6,2))
+      seed 3: rank H(x) = 8 (claim 8); rank [H(Re x); H(Im x)] = 14 (claim 14: transversality); exact inertia of H(Re x) (n+, n-, n0) = (6, 6, 2) (claim (6,6,2))
+[elapsed 15.5s]
+
+==============================================================================
+D. Proposition C.4: (M8')^* = Sigma2 (conormal spaces of the Gale quotient)
+==============================================================================
+[D1 NUMERIC seed 404, 40 random complex V, rtol 1e-9] rank of [rho, d rho] (affine tangent of cone over M8') = [10] (claim 10, so conormal = P^3)
+      on the conormal space L(V): max |C(c)|/|H(c)| = 4.9e-17; rank H(c) = [12] (<=12); the 14 quadrics grad C restricted to L span a space of dim [2] (2 = pencil => X cap P(L) is a quartic curve, consistent with an elliptic normal quartic)
+      octads f(A) from both rulings of 3 quadrics of the pencil through [I,V]: max distance of m(f(A)) from L = 2.5e-14; G(m(ruling1)+m(ruling2)) parallel to rho(V): max (1-|cos|) = 4.4e-16
+[D2 NUMERIC] affine dimension of the union of conormal spaces (Jacobian rank of (V,lambda) -> c) = 12 (claim 12, i.e. dim (M8')^* = 11 = dim Sigma2); singular values tail [2.82949305e-01 1.74216429e-01 1.97509935e-09 1.19021964e-09]
+[D3 EXACT] rational V = [[3, -2, -1, 3], [-1, -3, 1, 2], [2, 2, 1, -3], [2, -1, 2, 2]]: rank [rho, d rho] = 10; dim conormal L = 4; C|L == 0: True; rank of the 14 restricted quadrics = 2; rank H(c) at c = L(1,2,-3,5) = 12 [0.2s]
+[elapsed 15.8s]
+
+==============================================================================
+E. Section C.3: K_O (dim 7), phase Hessian S_O, injectivity of B in Lemma C.7, identity (C.8)
+==============================================================================
+[E1 NUMERIC seed 707; 20 real SO(4) + 10 complex SO(4,C), rtol 1e-9]
+      rank[rho(O), d_SO rho] = [7] (claim 7 => dim K_O = 7)
+      d rho along symmetric directions S O vanishes (Gale evenness): max rel 0.0e+00
+      rank[rho0, A, B(Sym^2 C^3)] = [13] (claim 13: Lemma C.7 injectivity of B mod C rho0 + im A)
+      for c in K_O: torus directions D1+O D2 O^t in kernel of the Hessian (max rel 7.6e-14); mixed so x sym Hessian block vanishes (max rel 1.0e-15)
+      rank of c -> S_O(c) on K_O = [6] (claim 6: surjective onto Sym^2)
+      (C.8) C|K_O = alpha(O) det S_O: max relative residual of the best alpha over 25 points = 2.8e-13; |alpha| range [1.86e-03, 2.36e+00] (phase basis is arbitrary, alpha only up to a unit)
+      Cayley test matrix: all 16 entries nonzero, d(O) = -400/131769
+[E2 EXACT] Cayley O = (I-K)(I+K)^-1, 3K = [[0, 4, 3, 2], [-4, 0, 3, -3], [-3, -3, 0, -3], [-2, 3, 3, 0]]: dim K_O = 7; sym-gradient zero: True; torus in Hessian kernel: True; C|K_O == alpha * det S_O as cubic forms in 7 variables: True; alpha = -10673289/928287872 [0.6s]
+      (Lemma C.9 example matrix: O O^t = I: True, det O = 1; computed here only as a cross-check for part 2)
+[E2 EXACT] Lemma C.9 example O (zero entry O_00): dim K_O = 7; sym-gradient zero: True; torus in Hessian kernel: True; C|K_O == alpha * det S_O as cubic forms in 7 variables: True; alpha = -729/80000 [0.4s]
+[elapsed 16.9s]
+
+==============================================================================
+F. End-to-end test of the critical-point mechanism of the proof of Thm C.1 (real a, complex b)
+==============================================================================
+[F NUMERIC seed 1001] 40 random instances (a real, b complex, |theta|=1), 12 starts each (BFGS local maxima + Gauss-Newton critical points, |grad|/scale < 1e-10); tolerances: support 1e-6, |d(O)| 1e-6, |h|,|det| 1e-8 relative
+      critical points by type: {'decomposable': 465, 'cauchy': 15, 'h_zero': 0, 'VIOLATION': 0}; of which from maximization: {'decomposable': 240, 'cauchy': 0, 'h_zero': 0, 'VIOLATION': 0}
+[elapsed 26.1s]

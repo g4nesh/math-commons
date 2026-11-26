@@ -1,0 +1,21 @@
+PASS contact set equals paper T_44 literally
+PASS generators(T) = {0,1,2,3,4,5,6,33,34,59} :: [0, 1, 2, 3, 4, 5, 6, 33, 34, 59]
+PASS only nonminor generator is 34
+PASS contact nullspace has dimension 8
+PASS identity (1) with gap-coordinate coefficients holds on the whole contact nullspace
+PASS g3 = p+d, g9 = b+d, g18 = q+d+a, g22 = j+d+a
+PASS identity f2+f34 = f0+f6+f33
+PASS identity f4+f34 = f1+f3+f6+f33
+PASS -m f34 = x f2 + y f4 - x f0 - y f1 - y f3 - m f6 - m f33 when x+y=m
+PASS some g in G maps (f59,f53,f55,f67,f54,f2) to (f59,f5,f6,f0,f34,f1) :: [((2, 3, 0, 1), (1, 3, 0, 2), 0)]
+PASS C(g + h kappa) is affine in h
+PASS (4): C - p{e(d-c)+d^2} has only nonnegative coefficients :: terms=14
+PASS (4): its d^3 coefficient is 1
+INFO base point d=1: -Q^2 detH/4, C, Q :: (1, Fraction(1, 1), Fraction(1, 1))
+PASS G9 is a polynomial of degree <= 2 in c (exact square root along c-lines) at 6 points
+PASS k0 = (b+1)(p+1)^2 P2 H4 with H4 = (a+q+1)(-K)+D, exact at 6 rational points
+PASS (10) factorization of G9 at e=j=0, exact at 3 points
+PASS Bernstein coefficients (8) nonnegative at 28 exact chart points (both leaf orientations; 2 per row/orientation) :: []
+INFO NUMERIC realizable sampling (seeds 0-11, margin 1e-3) :: found=11 d>0=2 hard=0 min Phi over SO4 = 7.56e-11
+PASS NUMERIC: no sampled realizable T_44 cost with d>0 fails every coefficient bound
+SUMMARY failures: []

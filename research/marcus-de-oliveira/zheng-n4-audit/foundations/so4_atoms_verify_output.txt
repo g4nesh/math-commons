@@ -1,0 +1,108 @@
+# Output of so4_atoms_verify.py, sections run separately through RUNJOB (MOC4_SUPP set for 'exact')
+== section exact 
+Reduction method: every identity is bihomogenised with |p|^2 and |q|^2 to bidegree (4,4) (or (2,2) for 2x2 minors) and compared as polynomials over Q (python-flint). On S^3 x S^3 the homogenised and original forms agree.
+[PASS] E0 [Pi=I] O^T O = |p|^2|q|^2 I
+[PASS] E0 [Pi=I] det O = +(|p|^2|q|^2)^2
+[PASS] E0 [Pi=oldH] O^T O = |p|^2|q|^2 I
+[PASS] E0 [Pi=oldH] det O = +(|p|^2|q|^2)^2
+[PASS] E1 SOC x1 = +-(D0+D1)  (sign 1)
+[PASS] E1 SOC x9 = +-(D0+D3)  (sign 1)
+[PASS] E1 SOC Phi22 = 2K - 2 D0 D2 - 2 D1 D3
+[PASS] E1 SOC sum D = 0 (homogenised, exact)
+[PASS] E1 SOC x1 x9 = +-(D1 D3 - D0 D2)
+[PASS] E1 SOC Phi22 + 2 sgn x1 x9 = 2K - 4 D0 D2
+[PASS] E1 SOC Phi22 - 2 sgn x1 x9 = 2K - 4 D1 D3
+[PASS] E1 SOC Phi1 = x1^2, Phi9 = x9^2
+[PASS] E2 oldH x2 = +-(D0+D2)  (sign 1)
+[PASS] E2 oldH x12 = +-(D0+D3)  (sign -1)
+[PASS] E2 oldH Phi2 + Phi70 + 2 sgn x2 x12 = 2K' - 4 D0 D1
+[PASS] E2 oldH Phi2 + Phi70 - 2 sgn x2 x12 = 2K' - 4 D2 D3
+[PASS] E2 oldH Phi2 = x2^2
+[PASS] E2 Aczel identity (r0 t3 - t0 r3)^2 - (r0^2 - t0^2)(t3^2 - r3^2) = (r0 r3 - t0 t3)^2
+[PASS] E2 K' invariant under p <-> q
+[PASS] E2 Phi70 = 2K' - (D1-D3)(D0-D2) (homogenised)
+[PASS] E3 four x0 = +-(m03 - m12)  (sign 1)
+[PASS] E3 four x6 = +-(m03 + m12)  (sign -1)
+[PASS] E3 four x10 = +-(D0 + D2)  (sign -1)
+[PASS] E3 four Phi54 = |p|^2|q|^2 (x0^2 + x6^2) - X Y
+[PASS] E3 four Phi10 = x10^2
+[PASS] E3 four Phi0 = |p|^2|q|^2 x0^2, Phi6 = |p|^2|q|^2 x6^2
+[PASS] E3 four X Y = (lam0+lam1)^2/4 - sigma^2, sigma = (eps0-eps1)/2
+[PASS] E3 four D0 + D2 - (lam0 - lam1)/2 = (sum D)/2
+[PASS] E3 four pair fact |z^2 - w^2|^2 = (|z|^2 - |w|^2)^2 + 4 Im(conj(z) w)^2
+[PASS] E3 four Re(z^2 - w^2) = lam-type, Im(conj z w) = a d - b c
+[PASS] E4 data: source order lists f0, f2, f12, f70  ([0, 1, 2, 12, 39, 67, 70, 72])
+[PASS] E4 model x -> p x q: det O = +(|p|^2|q|^2)^2
+[PASS] E4 chain Phi0 = |p|^2|q|^2 x0^2
+[PASS] E4 chain 2 Phi0 = |p|^2 |u0|^2 mod N
+[PASS] E4 chain Phi2 = x2^2
+[PASS] E4 chain 2 Phi2 = |p|^2 |u2|^2 mod N
+[PASS] E4 chain Phi12 = x12^2
+[PASS] E4 chain 2 Phi12 = |p|^2 |u12|^2 mod N
+[PASS] E4 chain (PB) 2 Phi70 = |p|^2 (|u70|^2 - 2<u0,u2> - 2<u2,u12>) mod N
+[PASS] E4 chain |u70|^2 is a sum of squares of 8 real cubics (by construction)  (u70 = (g_70(S_j y))_{parity,j}, 8 coordinates)
+== section exact done: 0 failures
+
+== section orbits 
+[PASS] O0 |G| = 1152 and every g permutes the 82 facets
+[PASS] O0 G maps minors to minors
+[PASS] O1 w_{g.sigma}(g.O) = eps(g) w_sigma(O), eps = det(g.O)/det(O) = +-1 (generic O, all g)  (eps counts {1: 576, -1: 576})
+[PASS] O1 hence Phi_{g.j}(g.O) = eps(g) Phi_j(O) and Phi^O4 = Phi/det is G-invariant
+[PASS] O1 minor_{g.j}(g.O) = +- minor_j(O) or +- its complementary minor, all 34 minors and all g
+[PASS] O1 Jacobi: complementary 2x2 minor = +- minor on SO(4) (quaternion model, exact)
+[PASS] O2 det -1: Phi_c(O J) = -Phi_c(O) for J = diag(1,1,1,-1), all 82 c
+[PASS] O2 det -1: minor_j(O J) = +- minor_j(O)
+[PASS] O3 SOC ordered orbit 288, unordered pairs 144; pair swap in orbit  (288 / 144)
+[PASS] O3 old-H ordered orbit 288; reversed order never in orbit  (288)
+[PASS] O3 old-H (3,15;26) [their representative] lies in the orbit of (12,2;70)
+[PASS] O3 chain: 576 distinct (centre, {leaves}, k)  (ordered 576, unordered-leaves 576, leaf swap in orbit: False)
+[PASS] O3 four: ordered 576, ({a,b}, c, d) 288, a<->b swap in orbit  (576 / 288 / True)
+[PASS] O4 cited SOC tuples (12) lie in the orbit with the printed roles  (misses [])
+[PASS] O4 cited oldH tuples (20) lie in the orbit with the printed roles  (misses []; reversed-order hits [])
+[PASS] O4 cited chain tuples (12) lie in the orbit with the printed roles  (misses []; in orbit only with the two leaves listed in the other order: [(2, 39, 67, 70), (5, 23, 6, 54), (2, 5, 6, 46), (59, 53, 55, 54), (59, 53, 67, 54)])
+[PASS] O4 cited four tuples (14) lie in the orbit with the printed roles  (misses [])
+== section orbits done: 0 failures
+
+== section attack SOC
+[PASS] A SOC representative (1, 9, 22): 2000 multistarts, min >= -1e-12  (float min 2.942e-28, mpmath(40 digits) at minimiser 2.942e-28)
+[PASS] A SOC 30 other orbit members x 70 multistarts, min >= -1e-12  (worst member (10, 9, 49), float 1.686e-27, mpmath 1.6852e-27; members [(3, 8, 71), (11, 72, 58), (59, 5, 70), (1, 39, 17), (3, 10, 31), (72, 59, 78), (3, 8, 60), (72, 9, 44), (15, 53, 74), (3, 15, 31), (33, 59, 80), (2, 9, 25), (8, 53, 71), (53, 3, 60), (12, 2, 26), (15, 29, 75), (12, 2, 56), (39, 1, 17), (10, 9, 49), (23, 45, 77), (29, 39, 51), (15, 2, 26), (72, 45, 79), (53, 8, 71), (15, 10, 31), (53, 23, 65), (59, 72, 78), (29, 39, 75), (3, 15, 42), (10, 59, 30)])
+   time 66s
+== section attack done: 0 failures
+
+== section attack oldH
+[PASS] A oldH representative (12, 2, 70): 2000 multistarts, min >= -1e-12  (float min 6.346e-29, mpmath(40 digits) at minimiser 6.3476e-29)
+[PASS] A oldH 30 other orbit members x 70 multistarts, min >= -1e-12  (worst member (15, 23, 52), float 2.473e-28, mpmath 2.4728e-28; members [(12, 1, 30), (3, 53, 78), (12, 8, 71), (53, 9, 25), (2, 59, 76), (8, 2, 25), (2, 5, 20), (53, 59, 66), (9, 53, 65), (11, 12, 38), (15, 53, 76), (39, 29, 80), (5, 59, 34), (29, 9, 44), (2, 59, 30), (5, 9, 22), (3, 33, 66), (9, 10, 37), (1, 9, 43), (10, 8, 64), (53, 15, 56), (33, 45, 79), (12, 8, 50), (5, 2, 46), (8, 23, 52), (45, 72, 49), (59, 1, 35), (15, 23, 52), (29, 12, 35), (15, 29, 66)])
+   time 63s
+== section attack done: 0 failures
+
+== section attack chain
+[PASS] A chain representative (2, 0, 12, 70): 2000 multistarts, min >= -1e-12  (float min 9.687e-26, mpmath(40 digits) at minimiser 9.6936e-26)
+[PASS] A chain 30 other orbit members x 70 multistarts, min >= -1e-12  (worst member (59, 27, 1, 80), float 1.266e-28, mpmath 1.2655e-28; members [(45, 67, 39, 40), (23, 36, 10, 77), (2, 6, 59, 69), (45, 36, 33, 35), (11, 61, 3, 58), (8, 36, 12, 50), (53, 16, 15, 18), (45, 47, 72, 77), (72, 81, 59, 79), (45, 47, 39, 52), (3, 67, 45, 71), (2, 21, 9, 56), (1, 0, 12, 30), (59, 0, 2, 30), (39, 67, 45, 46), (72, 47, 10, 73), (29, 61, 12, 80), (39, 81, 72, 75), (2, 4, 39, 48), (59, 27, 1, 80), (39, 81, 29, 79), (10, 6, 23, 34), (3, 7, 53, 68), (9, 4, 53, 25), (45, 0, 5, 35), (12, 21, 2, 35), (23, 55, 5, 65), (59, 0, 5, 34), (59, 55, 2, 76), (53, 4, 3, 22)])
+   time 68s
+== section attack done: 0 failures
+
+== section attack four
+[PASS] A four representative (0, 6, 10, 54): 2000 multistarts, min >= -1e-12  (float min 7.051e-26, mpmath(40 digits) at minimiser 7.0541e-26)
+[PASS] A four 30 other orbit members x 70 multistarts, min >= -1e-12  (worst member (6, 14, 11, 50), float 1.563e-29, mpmath 1.5628e-29; members [(14, 36, 29, 37), (47, 67, 72, 69), (36, 0, 10, 24), (4, 6, 2, 28), (47, 67, 2, 79), (6, 55, 23, 54), (55, 21, 53, 56), (61, 4, 8, 32), (6, 14, 11, 50), (36, 81, 23, 66), (61, 13, 3, 58), (4, 7, 3, 22), (41, 67, 3, 73), (36, 81, 59, 77), (55, 16, 15, 20), (0, 6, 1, 70), (47, 6, 23, 46), (47, 41, 39, 44), (14, 13, 9, 63), (27, 16, 15, 17), (47, 21, 45, 48), (21, 13, 9, 56), (67, 7, 5, 60), (16, 14, 23, 19), (47, 81, 23, 73), (61, 36, 33, 38), (14, 16, 11, 43), (4, 16, 11, 22), (4, 21, 2, 18), (41, 13, 15, 44)])
+   time 70s
+== section attack done: 0 failures
+
+== section variants 
+[PASS] V SOC (1, 9, 28) wrong facet: pair (1,9) with k = 28 (first non-orbit k found negative): negative minimum found  (float -4.4781e-02; EXACT value at nearby rational SO(4) point -4.4781e-02 (< 0: True))
+[PASS] V SOC (1, 9, 22) factor 1.8: negative minimum found  (float -2.1533e-05; EXACT value at nearby rational SO(4) point -2.1533e-05 (< 0: True))
+[PASS] V SOC (1, 9, 22) absolute value dropped: negative minimum found  (float -5.0000e-01; EXACT value at nearby rational SO(4) point -5.0000e-01 (< 0: True))
+[PASS] V oldH (2, 12, 70) roles swapped (aux <-> main): negative minimum found  (float -4.4813e-02; EXACT value at nearby rational SO(4) point -4.4812e-02 (< 0: True))
+[PASS] V oldH (12, 2, 70) factor 1.8: negative minimum found  (float -8.8609e-06; EXACT value at nearby rational SO(4) point -8.8609e-06 (< 0: True))
+[PASS] V oldH (12, 2, 70) absolute value dropped: negative minimum found  (float -2.7695e-01; EXACT value at nearby rational SO(4) point -2.7695e-01 (< 0: True))
+[PASS] V chain (0, 2, 12, 70) roles swapped (centre <-> leaf): negative minimum found  (float -5.1562e-02; EXACT value at nearby rational SO(4) point -5.1560e-02 (< 0: True))
+[PASS] V chain (2, 0, 12, 70) factor 1.8: still nonnegative (1.8 is NOT a failing variant for chain)  (float min 1.443e-30)
+[PASS] V chain (2, 0, 12, 70) absolute value dropped on |x2||x0|: negative minimum found  (float -5.0000e-01; EXACT value at nearby rational SO(4) point -5.0000e-01 (< 0: True))
+[PASS] V four (0, 10, 6, 54) roles swapped (b <-> c): negative minimum found  (float -3.6462e-02; EXACT value at nearby rational SO(4) point -3.6462e-02 (< 0: True))
+[PASS] V four (0, 6, 10, 54) factor 1.8: negative minimum found  (float -2.2207e-05; EXACT value at nearby rational SO(4) point -2.2207e-05 (< 0: True))
+[PASS] V four (0, 6, 10, 54) absolute value dropped on |x0 x6|: negative minimum found  (float -3.3333e-01; EXACT value at nearby rational SO(4) point -3.3333e-01 (< 0: True))
+[PASS] V chain (2, 0, 12, 70) half compensation (factor 1 instead of 2): negative minimum found  (float -3.2703e-04; EXACT value at nearby rational SO(4) point -3.2703e-04 (< 0: True))
+[PASS] C chain multiplier form F = Phi70 - 2 O33 x0 x2 - (A11+B11) x2 x12 >= 0 (1000 multistarts)  (min -4.146e-16  [NUMERIC only; implies the chain since |O33| <= 1, |A11+B11| <= 2])
+[PASS] C chain: Phi70 + lam |x2|(|x0|+|x12|) has a negative minimum for lam <= lo, none found for lam >= hi  (lo = 1.550, hi = 1.575 (NUMERIC))
+[PASS] C chain attains 0 at a point with |x2| >= 0.29 (equality is not only at degenerate points)  (value 1.61e-21, mpmath 1.607e-21, x2 0.3175, x0 -1.87e-21, x12 3.56e-22, Phi70 1.96e-22)
+== section variants done: 0 failures
+

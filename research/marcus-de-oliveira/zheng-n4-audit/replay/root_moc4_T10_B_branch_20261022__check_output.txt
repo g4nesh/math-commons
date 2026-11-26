@@ -1,0 +1,42 @@
+PASS EXACT T = {0,1,2,4,7,9} is an image of paper T_11 = {0,1,3,5,6,8} (g = ((0, 1, 2, 3), (0, 1, 3, 2), 0))
+PASS EXACT generators(T) = {0,1,2,3,4,5,7,11,12,21,22,26}; non-minor f22, f26
+PASS EXACT canonical profile y = y23 f1 + y18 f3 + y15 f4 + y21 f5 + y8 f7 + y6 f11 + y19 f21 + d f22 on W_T
+INFO (A,B) on generators: {0: (0, 1), 1: (1, 0), 2: (0, 1), 3: (0, 0), 4: (1, 0), 5: (0, 0), 7: (1, 0), 11: (0, 0), 12: (0, 1), 21: (0, 0), 22: (1, -1), 26: (-1, 1)}
+PASS EXACT A+B >= 0 on every generator
+PASS EXACT g19 = G - d and g21 = V - b - d on W_T (G=g3, V=g10, b=g8)
+PASS EXACT b = g8 = 0 boundary: {0,1,2,4,7,8} is paper T_7 and lies in T+{8}
+PASS EXACT-pointwise D2 = (z-c0)(v-r), i.e. Q2 = 1 (contact 2 fixes kappa = i mu/((z-c0)(v-r)))  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise contacts: g_j = 0 for j in T  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise h, t, s, l ratio formulas reproduce the parameters  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise Q1 = -1/(k-1) (contact 1)  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise (1) c = (t-1)(a+d)  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise (1) g19 = G - d, g21 = V - b - d  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise (2) q = (h-k)a - kd - hb  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise (2) J0 g6 = -h b  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise (3) a = -rho l s (h-1)/h  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise (3) G = rho h s D N0/|M1|^2  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise (3) b = -rho h J0 N0/|M2|^2  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise (4) kV = -rho h s/|v-1|^2 - D b  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise r numerator = -h v N0  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise delta = P - Y eta  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise (l-1)NP + (h-l)N0 = C  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise C = h k + J0  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise E = pZ + Y  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise W = -N0 Dn  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise R = |xi|^2 = tYEW/(Z eta)  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise G/a = hYW Dn/(Z|J xi - YW|^2)  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise k g21/a = h^2 p/((-l)|xi+kY|^2) - B0  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise g19/a = 2 delta J Y W/|J xi - YW|^2 (Re xi - LG)  [exact at 12 random rational points, v and vb independent]
+PASS EXACT-pointwise g21/a = 2 Y B0/|xi + kY|^2 (LV - Re xi)  [exact at 12 random rational points, v and vb independent]
+PASS EXACT LV has no k pole: reduced denominator = 2 eta (tY-1) B0
+PASS EXACT N(h,Y) := -(LV-LG) 2 eta delta Z J B0/h is a polynomial, of degree 1 in h and 1 in Y
+PASS EXACT N_h(h,0) = -(eta+t delta)(eta+delta)(delta+1)
+PASS EXACT N_h(h,1/t) = -eta(eta+t delta)(eta+t(delta+1)-1)/t
+PASS EXACT N(h*,0) = -(eta+delta)(delta+1)K/(eta+t delta+t-1)
+PASS EXACT N(h*,1/t) = (eta+delta)(t delta - K)/t
+PASS EXACT q >= 0 <=> h <= h*: q/a = (t-1)(1+delta) - h(t-1+eta+t delta)
+PASS EXACT ab(c-d) - d^2(a+b+c+d) = (a+d){b((t-1)a-d) - t d^2} when c = (t-1)(a+d)
+NUMERIC cited four-coefficient lemma (seed 11): 120 samples, 2/3 on the boundary ab(c-d)=d^2(a+b+c+d); worst normalized min Phi = 7.256e-17
+NUMERIC control outside the region (a=b=1, c=d=0.9): min Phi = -0.0065
+NUMERIC chart sampling (seed 11): 200000 draws, 4 supported points with B<0; worst ab(c-d)-d^2(a+b+c+d) = 1.035e-02; worst min Phi = 1.192e-12
+SUMMARY: 0 EXACT failures

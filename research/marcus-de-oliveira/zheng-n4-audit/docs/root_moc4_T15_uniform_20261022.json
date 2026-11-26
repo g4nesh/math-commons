@@ -1,0 +1,42 @@
+{
+  "doc_id": "root_moc4_T15_uniform_20261022",
+  "pdf": "proofs/manin_transfer_20261021/root_moc4_T15_uniform_20261022.pdf",
+  "pages": 4,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "paper_cases": [16], "contact_sets": [[0, 2, 5, 6, 8, 18]], "covers_all_spectra": true,
+     "restatement": "For x in X with g = Re(F - F_{pi0}) >= 0 and g = 0 on T = {0,2,5,6,8,18} = transpose of T_16 (more contacts allowed), Phi_{c(x)}(O) >= 0 for all O in SO(4), including collisions and extra contacts."}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "Lemma 4.2 / App. D", "used_for": "source cone", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_2 (j=4,19), T_8 (j=7,23), T_3 (j=10,22), T_15 (j=16)", "used_for": "seventh contacts at zeros of f46; stages 1,4,1,1 < 5", "match_checked": true},
+    {"kind": "common-lemma", "ref": "Theorem B.1, Lemma B.2", "used_for": "collisions", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper Sect. 3.1 (nonzero x in X has finite spectra)", "used_for": "full-height continuation", "match_checked": true},
+    {"kind": "common-lemma", "ref": "six-point circle theorem", "used_for": "v real (auditor shows it is unnecessary: v real gives d = 0)", "match_checked": true},
+    {"kind": "core-doc", "ref": "Theorem 1.2", "used_for": "unitary form", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "generators, replacements, d functional", "status": "EXACT"},
+    {"n": 2, "claim": "d<=0 minor", "status": "PROOF-READ"},
+    {"n": 3, "claim": "(1) decomposition", "status": "EXACT"},
+    {"n": 4, "claim": "coefficient signs and (2)", "status": "EXACT"},
+    {"n": 5, "claim": "f46 zero set off T", "status": "EXACT"},
+    {"n": 6, "claim": "seventh-contact witnesses", "status": "CITED"},
+    {"n": 7, "claim": "chart R2,R6,R8,R5", "status": "EXACT"},
+    {"n": 8, "claim": "(3) identities", "status": "EXACT"},
+    {"n": 9, "claim": "v real: d = 0 (auditor argument replaces six-circle citation)", "status": "PROOF-READ"},
+    {"n": 10, "claim": "sign relations", "status": "PROOF-READ"},
+    {"n": 11, "claim": "mu = 1, Im v > 0", "status": "PROOF-READ"},
+    {"n": 12, "claim": "(4) curve", "status": "EXACT"},
+    {"n": 13, "claim": "v nonconstant", "status": "PROOF-READ"},
+    {"n": 14, "claim": "pole locus and (5)", "status": "EXACT"},
+    {"n": 15, "claim": "full height F0/D", "status": "EXACT"},
+    {"n": 16, "claim": "escape bound d -> 0", "status": "PROOF-READ"},
+    {"n": 17, "claim": "two points over v=0, g3 -> 0", "status": "EXACT"},
+    {"n": 18, "claim": "harmonic minimum principle", "status": "PROOF-READ"}
+  ],
+  "gaps": [],
+  "exact_replays": ["T = transpose of T_16", "generators and replacements", "(1) and coefficient signs", "f46 zero set", "7 seventh-contact witnesses", "chart identities and (3)", "(4) curve", "(5) and denominators", "F0/D", "both v=0 branches and R3 limits"],
+  "numeric_tests": ["41 realizable sources on the curve (seed 31), min Phi over SO(4) by 12 BFGS restarts: worst 1.2e-18"],
+  "unchecked": []
+}

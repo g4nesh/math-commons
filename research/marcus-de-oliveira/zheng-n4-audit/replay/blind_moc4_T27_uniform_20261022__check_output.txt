@@ -1,0 +1,55 @@
+PASS contact set equals paper T_28 exactly
+PASS generators = {0,1,2,5,7,9,39,40,41,67,68} : [0, 1, 2, 5, 7, 9, 39, 40, 41, 67, 68]
+PASS non-minor generators are exactly 40, 68
+PASS identity f40 + f68 = f0 + f7 + f41 + f67
+PASS identity f40 + f1 = f0 + f7 + f39
+PASS identity f40 + f9 = f2 + f7 + f41
+PASS a group element fixes T_28 and swaps f40, f68 : ((2, 0, 1, 3), (2, 0, 1, 3), 1)
+PASS group element maps (f59,f53,f55,f67,f54) to (f5,f2,f0,f67,f40) in order
+PASS group element maps (f0,f6,f10,f54) to (f0,f67,f2,f40) in order
+PASS group element maps (f0,f6,f10,f54) to (f67,f41,f39,f40) in order
+INFO Hessian determinant: 17446 terms, degree 3 in z, 183 s
+PASS Q = d^2 + de + dp + ep - ej
+PASS C has 25 terms, all coefficients positive, contains d^3
+PASS Q^4 det H(y0 - (C/Q) kappa) divisible by -4Q^2
+PASS quotient is a perfect square G9^2; G9 has 2124 terms, homogeneous of degree 9
+PASS deg_j G9 = 2
+PASS k0 = C * G6 with G6 of 196 terms, bilinear in e, p : 196
+PASS g00 has only positive coefficients and constant term 1
+PASS k2|e=0 = 0 and k1|e=0 has 375 nonnegative coefficients
+PASS (8) four functions nonnegative-coefficient on chamber ab<1, ac<1 : [135, 94, 94, 105]
+PASS (8) four functions nonnegative-coefficient on chamber ab<1, ac>1 : [135, 98, 164, 161]
+PASS (8) four functions nonnegative-coefficient on chamber ab>1, ac<1 : [135, 164, 98, 161]
+PASS (8) four functions nonnegative-coefficient on chamber ab>1, ac>1 : [130, 180, 180, 268]
+PASS chart 1l: term counts (23160, 30838, 30838) match the document
+PASS chart 1l: Bernstein data nonnegative (coefficients, or exact real-root count in E for mixed groups) : [0, 0, 0]
+PASS chart 1g: term counts (62476, 82332, 82332) match the document
+PASS chart 1g: Bernstein data nonnegative (coefficients, or exact real-root count in E for mixed groups) : [0, 0, 0]
+PASS chart 2l: term counts (8928, 18266, 25267) match the document
+PASS chart 2l: Bernstein data nonnegative (coefficients, or exact real-root count in E for mixed groups) : [0, 0, 0]
+PASS chart 2g: term counts (12719, 25703, 35113) match the document
+INFO chart 2g datum 1: 105 negative coefficients, 105 E-groups with a negative coefficient, 0 groups failing
+INFO chart 2g datum 2: 197 negative coefficients, 197 E-groups with a negative coefficient, 0 groups failing
+PASS chart 2g: Bernstein data nonnegative (coefficients, or exact real-root count in E for mixed groups) : [0, 105, 197]
+PASS chart 3l: term counts (9857, 20025, 27337) match the document
+PASS chart 3l: Bernstein data nonnegative (coefficients, or exact real-root count in E for mixed groups) : [0, 0, 0]
+PASS chart 3g: term counts (33660, 58371, 72870) match the document
+PASS chart 3g: Bernstein data nonnegative (coefficients, or exact real-root count in E for mixed groups) : [0, 0, 0]
+PASS chart 7: term counts (4548, 7772, 10983) match the document
+PASS chart 7: Bernstein data nonnegative (coefficients, or exact real-root count in E for mixed groups) : [0, 0, 0]
+PASS chart 8: term counts (30504, 63441, 100982) match the document
+PASS chart 8: Bernstein data nonnegative (coefficients, or exact real-root count in E for mixed groups) : [0, 0, 0]
+RESULT: 0 exact checks failed
+
+# Appended by the auditor: NUMERIC tests of the cited capacities, separate scratch script
+# (lib min_phi_over_SO4, 12 restarts, 30 random parameter sets ON each boundary, parameter seed 11).
+# Cost = the listed generators with d = 1; value = worst (min Phi over SO(4)) / (max gap).
+NUMERIC (3) j f5 + e f2 + f40, j = 1 + 1/e:                                 worst  4.4e-18
+NUMERIC (4) j f5 + e f2 + b f0 + a f67 + f40, ab<1, b>=1, j at bound (4):    worst  3.7e-16
+NUMERIC (5) same, ab<1, a>=1, j at bound (5):                               worst  2.6e-17
+NUMERIC (6) same, ab>1, e<E_ab, j = 1/e - 1/E_ab:                           worst  1.4e-16
+NUMERIC double SOC, ab = 1, j = 1/e:                                        worst  4.5e-16
+NUMERIC four-coefficient #1 e f2 + a f67 + b f0 + f40, e = E_ab:             worst  2.7e-17
+NUMERIC four-coefficient #2 p f39 + a f67 + c f41 + f40, p = P_ac:           worst  1.8e-16
+NUMERIC power check: (3) with j = 0.9 (1 + 1/e) gives worst -1.7e-06 (the test does detect a violation just inside the bound)
+NUMERIC main statement T_28: 8 floating-point points on the T_28 stratum (seeds 0..7), min Phi / max gap = -2.5e-15 (round-off level)

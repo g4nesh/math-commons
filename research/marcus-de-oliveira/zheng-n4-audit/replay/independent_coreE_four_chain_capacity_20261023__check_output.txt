@@ -1,0 +1,23 @@
+PASS generators(E) = {f0,f2,f3,f12,f13,f15,f26}; the displayed source uses exactly these
+PASS W = q - delta^2/v - B = q + delta - K
+PASS (1) P(delta) = c v (t W - (q+delta) K)  [so P >= 0 iff t W >= (q+delta) K]
+PASS q_F v (t_F - delta) = delta^2 (q_F + v + t_F + delta)
+PASS lambda^2/q_C + lambda^2/t_C = c
+PASS t_F + t_C = K + K^2/W = (q+delta)K/(q+delta-K)
+PASS q_F v - delta^2 = X v and q_C - B = W - X = W B/K
+PASS delta = 0: P(0) = v{c q t - d^2 (q + t)}
+PASS delta = d: P(d) = c{q v (t - d) - d^2 (q + v + t + d)}
+PASS capacity matrix: Schur complement in the last two diagonals is [[W, K], [K, t - K]]
+PASS capacity matrix: det = P(delta)
+PASS delta = dv/(c+v): W = q - d^2/(c+v)
+PASS delta = dv/(c+v): (q+delta)K/W equals the displayed simple threshold
+PASS delta = dv/(c+v) lies in (0, d)
+PASS A^2/X + B^2/(W-X) - (A+B)^2/W = (A W - (A+B) X)^2 / (X (W-X) W) >= 0, equality at X = W A/(A+B)
+PASS example: four inequality strict: qF v (tF - 1/2) > (1/4)(qF + v + tF + 1/2)  (Fraction(78, 5), Fraction(1513, 100))
+PASS example: (1/2)^2/60 + (1/2)^2/(300/19) = 1/50
+PASS example: allocations exhaust q = 100 and total t = 680/19
+INFO example: four alone needs t >= 5151/50 = 103.020; chain alone needs t >= 100; combined simple allocation 680/19 = 35.789; rational section delta=dv/(c+v) gives 3417/100 = 34.170
+PASS example: 680/19 is below both separate thresholds (claim 'beyond separately tested capacities')
+NUMERIC P(delta)=0 boundary, p=b=0, d=1: 60 draws (seed 11, 8 BFGS restarts each): worst min Phi/max|Pc| = 1.68e-18 at (q,v,c,delta,t) = [  0.7641   0.2577   8.8524   0.4309 198.5369]
+NUMERIC example q=100, v=c=1/50, t=680/19, d=1: min Phi/max|Pc| = 2.21e-17 (30 restarts)
+SUMMARY ALL EXACT CHECKS PASS

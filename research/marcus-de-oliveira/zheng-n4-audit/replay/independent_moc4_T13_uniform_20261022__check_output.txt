@@ -1,0 +1,62 @@
+[EXACT] PASS  T is paper T_14 (identity group element)
+[EXACT] PASS  generators(T) = {0,1,2,7,8,9,10,12,39,40,41,44}   [0, 1, 2, 7, 8, 9, 10, 12, 39, 40, 41, 44]
+[EXACT] PASS  non-minor generators are exactly f40, f44
+[EXACT] PASS  face {Pc : (Pc)_T = 0} has dimension 8
+[EXACT] PASS  q = (g1,g6,g7,g8,g9,g13,g16,g18) are coordinates on the face
+[EXACT] PASS  (1) alpha = g1 - g17 - g20
+[EXACT] PASS  (1) beta = g1 - g7 - g17
+[EXACT] PASS  (1) alpha + beta = -C - K
+[EXACT] PASS  g4 = g1 on the face
+[EXACT] PASS  (2) g = g21 f2 + g14 f8 + C f9 + K f10 + g22 f12 + g17 f39 + g20 f41 + alpha f44 (24 coords)
+[EXACT] PASS  (3) g = K f0 + g13 f2 + C f7 + g9 f8 + B f12 + g17 f39 + g7 f41 + beta f40 (24 coords)
+[EXACT] PASS  minor cone has dimension 8
+[EXACT] PASS  minor-cone dual = the 14 coordinate rays and -alpha, -beta (16 rays)   16 facets
+[EXACT] PASS  new contact j=1: T u {j} contains an image of paper T_9 (stage 3 < 5)
+[EXACT] PASS  new contact j=4: on the face g4=g1, so it reduces to j=1
+[EXACT] PASS  new contact j=6: T u {j} contains an image of paper T_2 (stage 1 < 5)
+[EXACT] PASS  new contact j=7: T u {j} contains an image of paper T_4 (stage 1 < 5)
+[EXACT] PASS  new contact j=8: T u {j} contains an image of paper T_3 (stage 1 < 5)
+[EXACT] PASS  new contact j=9: T u {j} contains an image of paper T_1 (stage 1 < 5)
+[EXACT] PASS  new contact j=10: T u {j} contains an image of paper T_5 (stage 1 < 5)
+[EXACT] PASS  new contact j=13: T u {j} contains an image of paper T_1 (stage 1 < 5)
+[EXACT] PASS  new contact j=14: T u {j} contains an image of paper T_6 (stage 1 < 5)
+[EXACT] PASS  new contact j=15: T u {j} contains an image of paper T_10 (stage 2 < 5)
+[EXACT] PASS  new contact j=16: T u {j} contains an image of paper T_7 (stage 1 < 5)
+[EXACT] PASS  new contact j=17: T u {j} contains an image of paper T_11 (stage 3 < 5)
+[EXACT] PASS  new contact j=18: T u {j} contains an image of paper T_5 (stage 1 < 5)
+[EXACT] PASS  new contact j=19: T u {j} contains an image of paper T_3 (stage 1 < 5)
+[EXACT] PASS  new contact j=20: T u {j} contains an image of paper T_9 (stage 3 < 5)
+[EXACT] PASS  new contact j=21: T u {j} contains an image of paper T_6 (stage 1 < 5)
+[EXACT] PASS  new contact j=22: T u {j} contains an image of paper T_8 (stage 4 < 5)
+[EXACT] PASS  new contact j=23: T u {j} contains an image of paper T_7 (stage 1 < 5)
+[EXACT] PASS  F5 - F3 = (z-c)(x-v) (affine chart, factor at infinity omitted)
+[EXACT] PASS  H0..H5 contacts: H2 = s, H3 = s+t, H5 = 1+s+t
+[EXACT] PASS  H12 = s + r, H11 = A + u
+[EXACT] PASS  v = x(sX+t)/E, w = tx/E invert the definitions of s, t
+[EXACT] PASS  r determines c uniquely and c equals the first C spinor ratio
+[EXACT] PASS  (6) the contact equation u = u(X,Z) is the cubic G6 = 0
+[EXACT] PASS  slice X = -t/s: u -> Z(u) is a rational inverse
+[EXACT] PASS  (7) H1 - table entry is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = t
+[EXACT] PASS  (7) H6 - table entry is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = 0
+[EXACT] PASS  (7) H7 - table entry is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = t
+[EXACT] PASS  (7) H8 - table entry is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = -r
+[EXACT] PASS  (7) H9 - table entry is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = (s**2 + 2*s*t + s + t**2 + t*u + t)/(s + t + 1)
+[EXACT] PASS  (7) H13 - table entry is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = s + t
+[EXACT] PASS  (7) H16 - table entry is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = s + t + 1
+[EXACT] PASS  (7) H18 - table entry is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = (r*s + r + s**2 + s*t + s)/s
+[EXACT] PASS  (8) K - (C - k(1+t)B/A) is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = (r*s + r*t + r + s*t*u)/(s*(s + t + 1))
+[EXACT] PASS  (8) alpha - (kB - C) is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = -(r + s)*(s + 1)/s
+[EXACT] PASS  (8) beta - (-kB - K) is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = (r - s*t)/s
+[EXACT] PASS  H23 - (sX + rZ - kDU/A) is a constant on every level set of u, rational in (s,t,r,u) with rational coefficients   const = (r + s**2 + s*t + s)/s
+[EXACT] PASS  (10) Delta = F5 - F3 = -x^2 X D E ((s+1)X + tZ)
+[EXACT] PASS  spinor products reproduce (F_j - F_0)/Delta = H_j for all 24 j on (6)
+[EXACT] PASS  Q = 0 on (6) forces rE - tD = 0 (given X, s, s+1, A, t nonzero)   -X**2*s*(s + 1)*(s + t + 1)*(X*r*s + X*r - X*s*t + r*t - t**2 - t)/t**2
+[EXACT] PASS  D/E has determinant st - (s+1)(1+t) = -A
+[EXACT] PASS  Z = 0 on (6) forces u(s+1) D X = 0
+[EXACT] PASS  restriction to X = 0 is tZ(u(1+t) - ArZ), not identically 0
+[EXACT] PASS  restriction to D = 0 is -ArZ(X - Z) with X = -(1+t)/s
+[EXACT] PASS  leading form = -A s X Z (sX + rZ)
+[EXACT] PASS  [1:0:0] smooth, Z/X = u(s+1)/(As) T + O(T^2), so U -> As/(s+1)
+[EXACT] PASS  [0:1:0] and [r:-s:0] smooth (gradient nonzero when s,r,A != 0)
+[NUMERIC] PASS  main statement on 40 sampled realizable T14 sources (seed 2026, 12 BFGS restarts each): min Phi >= -1e-9   worst = 4.492e-17, tried 696
+EXACT failures: 0

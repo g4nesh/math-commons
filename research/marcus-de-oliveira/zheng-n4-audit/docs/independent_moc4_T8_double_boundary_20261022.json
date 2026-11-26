@@ -1,0 +1,67 @@
+{
+ "doc_id": "independent_moc4_T8_double_boundary_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T8_double_boundary_20261022.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "restatement": "For all x in X with Pc(x)>=0 and contacts containing {0,1,2,3,11,12,18,20}: Phi_c(x)(O)>=0 for all O in SO(4); degenerate spectra via Appendix B.",
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     3,
+     11,
+     12,
+     18,
+     20
+    ]
+   ],
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "Appendix B (Thm B.1, Lemma B.2)",
+   "used_for": "degenerate spectra / collisions",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "SOC (f1,f9,f18)",
+   "used_for": "final step when a^2<=b g23",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_4",
+   "used_for": "b=0 or g23=0",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  "profile identity EXACT",
+  "chart g4,g7,g13,g23 and two linear relations EXACT",
+  "boundary ratios EXACT",
+  "sign chain PROOF-READ",
+  "(4),(5) EXACT",
+  "capacity identity EXACT",
+  "SOC CITED"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "chart identities",
+  "profile identity",
+  "g21/b identity",
+  "(4)",
+  "(5)",
+  "capacity identity"
+ ],
+ "numeric_tests": [
+  "SOC: min Phi18+2sqrt(Phi1 Phi9) over 20000 random SO(4), seed 7: 7.0e-6 >= 0"
+ ],
+ "unchecked": []
+}

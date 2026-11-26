@@ -1,0 +1,146 @@
+{
+ "doc_id": "root_shared_seven_A_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_shared_seven_A_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    17
+   ],
+   "paper_table5": 9,
+   "restatement": "For x in X with Pc(x)>=0 and gaps 0 on {0,1,2,7,9,10,17} (non-strict), Phi_{c(x)}(O)>=0 for all O in SO(4); all spectra."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "paper eq. (4.2) (minor vectors give squared minors)",
+   "used_for": "minor remainders and the d=0 / d<=0 branch",
+   "status": "EXACT in shared lib"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "paper App. A.1: X contained in Sing C; conj(X)=X",
+   "used_for": "F(w)=0 and det H(w)=0 for realizable w",
+   "status": "EXACT in shared lib / PROOF-READ"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "sharp SOC atom, reference family (f1,f9;f22), source document not named",
+   "status": "CITED; group map EXACT; NUMERIC",
+   "used_for": "H3 certificate, pairs of {f2,f12,f15} with f26"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "old-H atom, reference (f11,f1;f34) -> (f3,f15;f26)",
+   "used_for": "(2) t(c-1)<1",
+   "status": "CITED; group map EXACT; NUMERIC"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "chain atom, reference (f2,f0,f12;f70) -> (f15,f0,f3;f26)",
+   "used_for": "(2) cqt<q+t",
+   "status": "CITED; group map EXACT; NUMERIC"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "basis, I-rows",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "d=0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "H3 from SOC",
+   "kind": "inequality",
+   "status": "PROOF-READ (atom CITED)"
+  },
+  {
+   "n": 4,
+   "claim": "(2),(3) failure consequences",
+   "kind": "inequality",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 5,
+   "claim": "C,Q; C>0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "realizable => F=0, det H=0",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 7,
+   "claim": "(4) Q^4 det H = -4Q^2 G^2, G 486 terms",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "c=0 factor",
+   "kind": "identity",
+   "status": "EXACT / PROOF-READ"
+  },
+  {
+   "n": 9,
+   "claim": "(5) main chart coverage",
+   "kind": "case split",
+   "status": "PROOF-READ (inverse EXACT)"
+  },
+  {
+   "n": 10,
+   "claim": "(6)-(8) auxiliary rows coverage",
+   "kind": "case split",
+   "status": "PROOF-READ (inverse EXACT)"
+  },
+  {
+   "n": 11,
+   "claim": "(9) 15 certificates",
+   "kind": "certificate",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "conclusion",
+   "kind": "logic",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "basis/I-rows",
+  "C,Q",
+  "G via own Bareiss (819 divisions)",
+  "c=0 factorization",
+  "15 chart certificates: counts and markers all match table (9)",
+  "inverse maps",
+  "atom group maps"
+ ],
+ "numeric_tests": [
+  "5 atoms x 20 samples at boundary, seed 20261127: worst -5.8e-16",
+  "12 stratum points: worst -9.1e-12 (d about 0: weak test)"
+ ],
+ "unchecked": [
+  "cited SOC, old-H and chain atoms"
+ ]
+}

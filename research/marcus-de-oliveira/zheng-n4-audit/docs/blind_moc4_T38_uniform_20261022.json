@@ -1,0 +1,116 @@
+{
+ "doc_id": "blind_moc4_T38_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T38_uniform_20261022.pdf",
+ "pages": 6,
+ "verdict": "could-not-check",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    2,
+    3,
+    5,
+    7,
+    9,
+    12
+   ],
+   "paper_case": 39,
+   "restatement": "for all x in X with Pc(x)>=0, contacts containing T_39: Phi>=0 on SO(4); zero coefficients and extra contacts included"
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "T24 core (paper T_25 doc) capacities via g=((0,3,1,2),(1,2,3,0),0)",
+   "used_for": "g40 capacities",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "four-coefficient capacity (0,7,12,40)",
+   "used_for": "g40",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "T27 allocation lemma (paper T_28 doc)",
+   "used_for": "g40 domains",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "T28 H/chain resource lemma (paper T_29 doc)",
+   "used_for": "g70 capacity J",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Theorem 1.2",
+   "used_for": "U(4)",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "generators and 3 identities",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "branch reduction",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 3,
+   "claim": "C,Q both branches, C<0 on g70 hard region",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "Hessian square",
+   "status": "UNCHECKED (square property EXACT)"
+  },
+  {
+   "n": 5,
+   "claim": "g40 tables, Sturm groups",
+   "status": "UNCHECKED"
+  },
+  {
+   "n": 6,
+   "claim": "domain cover, Bernstein logic, closure",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 7,
+   "claim": "g70 KKT and SOC peeling tables",
+   "status": "UNCHECKED"
+  },
+  {
+   "n": 8,
+   "claim": "zero resources by perturbation",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators",
+  "three f-identities",
+  "rank-8 bases",
+  "C,Q formulas g40 and g70",
+  "-MC identity and sign",
+  "T24 core group map",
+  "square property at 8 points"
+ ],
+ "numeric_tests": [
+  "G40 no root on [0,J], 6 domain-1 + 6 domain-7 lines",
+  "G70 no root on [0,min(J,1/s)), 6 lines (J numeric)"
+ ],
+ "unchecked": [
+  "G40, G70 polynomials",
+  "16+24+3 g40 tables and 799 Sturm groups",
+  "60 g70 tables",
+  "domains 2-6 and 8 numerically"
+ ]
+}

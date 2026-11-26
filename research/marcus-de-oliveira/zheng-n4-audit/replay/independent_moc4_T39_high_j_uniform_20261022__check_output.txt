@@ -1,0 +1,22 @@
+PASS C = -(ABc + Nj) at d=1
+PASS -Q formula at d=1
+PASS N - (1 + S + ea) has nonnegative coefficients
+PASS chart (5): p*j = P/(1+P) and J*S = V/(1+V), i.e. P = pj/(1-pj), V = JS/(1-JS)
+INFO point 0 : x=[2.896, 0.5281803542673108, 1.0, 2.537, 0.0, 0.827] alpha<=0, no nonnegative root (as claimed: G<0 on c>=0)
+INFO point 1 : x=[0.872, 0.6699266503667481, 1.227, 0.967, 2.752, 2.073] alpha<=0, no nonnegative root (as claimed: G<0 on c>=0)
+INFO point 2 : x=[0.665, 0.7216054654141759, 1.171, 2.636, 0.119, 0.646] alpha<=0, no nonnegative root (as claimed: G<0 on c>=0)
+INFO point 3 : x=[0.0, 0.5234782608695652, 1.15, 2.296, 0.0, 2.11] alpha<=0, no nonnegative root (as claimed: G<0 on c>=0)
+INFO point 4 : x=[0.0, 0.20437262357414449, 1.052, 0.475, 2.541, 2.44] alpha<=0, no nonnegative root (as claimed: G<0 on c>=0)
+INFO point 5 : x=[0.0, 0.930635838150289, 1.038, 1.205, 0.901, 0.266] alpha<=0, no nonnegative root (as claimed: G<0 on c>=0)
+INFO point 6 : x=[0.0, 0.45968349660889224, 1.327, 2.534, 1.896, 0.138] alpha<=0, no nonnegative root (as claimed: G<0 on c>=0)
+INFO point 7 : x=[0.762, 0.7310574521232306, 1.201, 0.739, 0.661, 0.644] alpha<=0, no nonnegative root (as claimed: G<0 on c>=0)
+INFO point 8 : x(q,p,j,e,b,a)=[6780.0, 0.9301956584258074, 1.00839, 22.294398092967818, 7100.0, 12.270560190703218] G deg 2, gamma<0 True, c+=2.2597, sing.vals 3.36e-47,7.26e-41,1.68, P*=-2.541e+21, bordered 1.34e-9,1.55e-12, det binary form 1.5353e-8, Q=-5.2509e+5
+INFO point 9 : x(q,p,j,e,b,a)=[7580.0, 0.49396636089082335, 1.0000681, 454.74302496328926, 5.33, 7665.668135095448] G deg 2, gamma<0 True, c+=5.9067, sing.vals 3.23e-47,7.59e-42,4.44, P*=-7.8943e+28, bordered -5.15e-5,-1.79e-11, det binary form 7.2078e-10, Q=-6.1696e+7
+INFO point 10 : x(q,p,j,e,b,a)=[85.7, 0.9699763325774851, 1.0000244, 1250.0, 7.77, 8750.0] G deg 2, gamma<0 True, c+=2.7458, sing.vals 7.46e-47,3.75e-41,1.84, P*=-7.9184e+25, bordered -1.98e-6,-5.9e-14, det binary form 2.4206e-8, Q=-9.6251e+5
+INFO point 11 : x(q,p,j,e,b,a)=[520.0, 0.8770607630711258, 1.0615, 3.9526829268292683, 765.0, 7.917235772357723] G deg 2, gamma<0 True, c+=3.0771, sing.vals 1.87e-46,5.4e-42,2.27, P*=-2.0158e+16, bordered 6.02e-19,1.21e-20, det binary form 2.4662e-7, Q=-20530.0
+INFO point 12 : x(q,p,j,e,b,a)=[13.5, 0.8669037736811214, 1.000111, 295.65765765765764, 71.1, 253.8918918918919] G deg 2, gamma<0 True, c+=2.6265, sing.vals 2.34e-44,3.41e-41,2.02, P*=-8.2442e+18, bordered 6.28e-15,3.99e-20, det binary form 8.8688e-6, Q=-48244.0
+INFO point 13 : x(q,p,j,e,b,a)=[5.91, 0.5812168919253429, 1.00995, 48.61537688442211, 5.95, 27.46502512562814] G deg 2, gamma<0 True, c+=12.549, sing.vals 3.51e-43,1.56e-41,3.36, P*=-1.3004e+14, bordered 2.53e-23,3.19e-25, det binary form 3.9558e-7, Q=-2023.9
+INFO point 14 : x(q,p,j,e,b,a)=[7160.0, 0.5009330126829853, 1.00213, 126.92535211267605, 71.5, 88.56760563380281] G deg 2, gamma<0 True, c+=3.1746, sing.vals 8.37e-47,1.05e-41,2.67, P*=-5.1847e+20, bordered -5.86e-13,-1.3e-18, det binary form 2.5954e-8, Q=-1.5892e+6
+INFO sign statistics : {'n': 15, 'ineq2': 15, 'gamma_neg': 15, 'alpha_pos': 7}
+PASS NUMERIC: at 15 rational chamber points (one on j=1): G is quadratic in c with gamma<0, unique simple positive root c+; at c+ the Hessian has rank 12, P*<0, both bordered 13-minors vanish, K^T H(w_c) K is definite (NUMERIC, 50 digits; G from exact interpolation)
+SUMMARY: 0 failed checks (0 exact)

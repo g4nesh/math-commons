@@ -1,0 +1,64 @@
+PASS contact set equals paper T_45 literally
+PASS generators(T) = {0,1,2,7,8,12,15,18,53} :: [0, 1, 2, 7, 8, 12, 15, 18, 53]
+PASS only nonminor generator is 18
+PASS identity (1): f18 + f0 = f2 + f1 + f7 + f15
+PASS the eight generators of (2) are independent
+INFO gaps equal to a single coefficient :: {'q': [21], 'p': [23], 'j': [0], 'c': [6], 'e': [9], 'd': [], 'b': [20], 'a': [18]}
+PASS seven minor coefficients are 'exclusive gaps'
+PASS a+d = g4, d = g4 - g18, q+d = g21 + d - ... : g4 = a+d and g18 = a
+PASS q = g21 (so q + d = g21 + d)
+PASS q + d is a gap value (needed for d<=0 absorption) :: [13]
+PASS p + d is a gap value (needed for d<=0 absorption) :: [17]
+PASS b + d is a gap value (needed for d<=0 absorption) :: [10]
+PASS a + d is a gap value (needed for d<=0 absorption) :: [4]
+PASS extra zeros of f18 = {0,6,9,18,20,21,23} :: [0, 6, 9, 18, 20, 21, 23]
+   seventh tie  0: 6-subsets -> [('T_45', 7), ('T_32', 99), ('T_30', 99), ('T_48', 99), ('T_9', 3), ('T_7', 1), ('T_4', 1)] ; earliest = ('T_7', 1)
+   seventh tie  6: 6-subsets -> [('T_36', 1), ('T_41', 99), ('T_39', 1), ('T_45', 7), ('T_55', 99), ('T_43', 1), ('T_44', 1)] ; earliest = ('T_36', 1)
+   seventh tie  9: 6-subsets -> [('T_36', 1), ('T_9', 3), ('T_67', 99), ('T_61', 99), ('T_45', 7), ('T_15', 1), ('T_8', 4)] ; earliest = ('T_36', 1)
+   seventh tie 18: 6-subsets -> [('T_45', 7), ('T_71', 6), ('T_65', 6), ('T_51', 7), ('T_42', 1), ('T_65', 6), ('T_45', 7)] ; earliest = ('T_42', 1)
+   seventh tie 20: 6-subsets -> [('T_83', 99), ('T_40', 1), ('T_76', 6), ('T_64', 99), ('T_36', 1), ('T_38', 5), ('T_45', 7)] ; earliest = ('T_40', 1)
+   seventh tie 21: 6-subsets -> [('T_81', 7), ('T_76', 6), ('T_86', 99), ('T_63', 99), ('T_46', 2), ('T_69', 7), ('T_45', 7)] ; earliest = ('T_46', 2)
+   seventh tie 23: 6-subsets -> [('T_32', 99), ('T_79', 99), ('T_78', 6), ('T_38', 5), ('T_29', 1), ('T_70', 5), ('T_45', 7)] ; earliest = ('T_29', 1)
+PASS every seventh tie contains a six-set closed at a stage < 7 (or all-minor)
+PASS E = F7 - F1 = -s A2 W K L :: -W*s*(W*Z - W + 1)*(W*Z*r - W*r + W + r - 1)*(W*Z*r*s - W*Z - W*r*s + W*s + r*s - s)
+PASS H_0 formula
+PASS H_1 formula
+PASS H_2 formula
+PASS H_3 formula
+PASS H_4 formula
+PASS H_6 formula
+PASS H_7 formula
+PASS H_12 formula
+PASS D := H4 - H18 = W(Y - 1/s) - beta
+PASS H21 - H11 + D = (W-1)/(s A2) - 1 - 1/s
+PASS F1/E = u Z W / K
+INFO irreducible denominator factors of all H_sigma :: {W, W*Z*r*s - W*Z - W*r*s + W*s + r*s - s, W*Z*r - W*r + W + r - 1, s}
+PASS every denominator factor of every H_sigma divides W*A2*L (or is a constant in s)
+PASS H11 * L is a polynomial N in (Z,W) :: 1
+PASS curve is quadratic in W
+PASS A(Z) = -{(u+1)Z - 1} Y (sY - 1) :: -(Z*r - r + 1)*(Z*u + Z - 1)*(Z*r*s - r*s + s - 1)
+PASS C(Z) = curve at W=0 has degree 1 in Z :: -Z*r**2*s + Z*r*s - Z*r - h*r*s + h*s + r**2*s - r*s + r
+INFO curve bidegree (Z, W) and B(Z) degree :: (3, 2, 2)
+PASS basepoint (0,1) lies on the curve for all parameters
+INFO Res_W(C,L) :: Z*(Z - 1)*(Z*r*s - Z*r - r*s + s)*(r*s*u - s*u - s + 1)
+INFO Res_W(C,A2) :: Z*(Z*r - r + 1)*(Z*r**2*u - Z*r*u - Z*r - h*r + h - r*u + r + u)
+INFO Res_W(C,K) :: -Z*(Z**2*r*s*u - Z**2*r*u - Z*h*s + Z*h - Z*r*s*u + Z*r*u + Z*s*u + Z*s - Z + h*s - h - s - u + 1)
+PASS Res(C,L) = const * (rsu-su-s+1) Z (Z-1)(Zrs-Zr-rs+s) :: 1
+PASS Res(C,A2) = const * Z Y {Zr^2u - Zru - Zr - ru - rh + r + u + h} :: 1
+PASS Res(C,K) = Z * (quadratic in Z) (up to a Z-free factor)
+INFO Res(C,K)/Z at (r,s,u,h)=(2,3,4,5) :: -4*(4*Z**2 - 3*Z + 1)
+PASS at (2,3,4,5) Q2 proportional to 16Z^2-12Z+4
+INFO Z=inf: leading coefficient in Z after W=V/Z, degree :: (3, -r*(V*u + V + 1)*(V*r*s + r*s - s + 1))
+PASS (5): leading equation is -r{(u+1)V+1}(rsV+rs-s+1) (up to constant) :: -r*(V*u + V + 1)*(V*r*s + r*s - s + 1)
+PASS Newton polygon: every monomial Z^i W^k of the curve has i - k <= 1 (no other Z->inf branch) :: [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 1), (2, 2), (3, 2)]
+PASS monomial Z^3 W^2 has coefficient -r^2 s (u+1)
+INFO limit of W*Y at the W=inf, Y=0 point (= r * dZ/domega) :: (-h*r + h - r*u + r + u)/(r*u - u - 1)
+PASS that limit is a real rational function of (r,s,u,h) (finite at generic params)
+PASS A simple roots at (2,3,4,5)
+PASS (5) simple roots at (2,3,4,5)
+PASS gcd(A, C) = 1 at (2,3,4,5)
+PASS every common zero of a spinor's two components lies on W*A2*K*L = 0
+PASS all finite-pole and Z=inf projections are real at 20 random rational parameter points :: []
+PASS NUMERIC: chart formulas for A2, t, A0 reproduce 9 sampled realizable T_45 points; r,s,u,h real :: max err 1.34e-09
+INFO NUMERIC min Phi over SO(4) on those points (6 restarts each) :: 2.23e-13
+SUMMARY failures: []

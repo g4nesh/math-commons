@@ -1,0 +1,21 @@
+PASS bad17: all 8 source generators are generators of paper T_42 = [1, 2, 3, 6, 7, 8] | F_T42=[0, 1, 2, 3, 4, 5, 6, 15, 16, 17, 53, 54]
+PASS bad17: exactly one non-minor generator in the source | non-minor: [(17, 'h3421,+')]
+PASS bad17: the 8 generators are linearly independent; with kappa rank 9
+PASS negH p.1: C = -(c+1)(ab+a+ae+b+bq+1+e+j+q+ej+eq+jq), linear in h
+PASS bad17 p.2: R0 = XY r(e/Y, q/X) is a polynomial
+PASS bad17 p.2: 4V divides R0^2 - Fe Fq, so A0 is a polynomial
+PASS bad17 p.1: A0 and R0 depend only on a,b,p,q,e
+INFO bad17 G = V D^2 + R0 j D + A0 j^2 | terms=1191 total degree=8
+PASS negH p.1: det H_F(w) = -4(c+1)^2 G^2/Q^2 with G the bad17 radial factor (exact, 6 random rational points)
+PASS negH p.1: the quartics Fe, Fq (d=1) equal Y^2 f(e/Y), X^2 k(q/X) of the bad17 note
+PASS negH p.1: stabilizer swapping (a,b),(q,e) exchanges Fe and Fq
+PASS negH p.1: G quadratic in j, gamma = [p(1+a+b)+(a+1)(b+1)](e+1+b)^2(c+1)^2(q+1+a)^2
+PASS negH p.1 (1): beta^2-4 alpha gamma = (e+1+b)^2(c+1)^2(q+1+a)^2 Fe Fq
+PASS negH p.1: Fe<0 forces b,p>0 and e>a; Fq<0 forces a>0, q>b (sign structure of the quartics) | by inspection: Fe = square - 4bp(e-a)(e+1+b)
+PASS negH p.2 identities at random base point 0 (block I height-free, = j^2 P(j), P quadratic, Res_j(G,P) square, (2) square classes, congruences mod G, U = alpha P - a2 G, bordered I+{0}, I+{1} numerators divisible by G) | {'interp': True, 'height_free': True, 'factor': True, 'degP': 2, 'res_square': True, 'square_classes_and_congruences': True, 'U_eq_alphaP_minus_a2G': True, 'bordered_div_G': True}
+PASS negH p.2 identities at random base point 1 (block I height-free, = j^2 P(j), P quadratic, Res_j(G,P) square, (2) square classes, congruences mod G, U = alpha P - a2 G, bordered I+{0}, I+{1} numerators divisible by G) | {'interp': True, 'height_free': True, 'factor': True, 'degP': 2, 'res_square': True, 'square_classes_and_congruences': True, 'U_eq_alphaP_minus_a2G': True, 'bordered_div_G': True}
+PASS negH p.2 identities at random base point 2 (block I height-free, = j^2 P(j), P quadratic, Res_j(G,P) square, (2) square classes, congruences mod G, U = alpha P - a2 G, bordered I+{0}, I+{1} numerators divisible by G) | {'interp': True, 'height_free': True, 'factor': True, 'degP': 2, 'res_square': True, 'square_classes_and_congruences': True, 'U_eq_alphaP_minus_a2G': True, 'bordered_div_G': True}
+PASS negH p.2 identities at random base point 3 (block I height-free, = j^2 P(j), P quadratic, Res_j(G,P) square, (2) square classes, congruences mod G, U = alpha P - a2 G, bordered I+{0}, I+{1} numerators divisible by G) | {'interp': True, 'height_free': True, 'factor': True, 'degP': 2, 'res_square': True, 'square_classes_and_congruences': True, 'U_eq_alphaP_minus_a2G': True, 'bordered_div_G': True}
+INFO NUMERIC rank of H_F at real j-roots of G (mpmath 60 digits), 3 smallest singular values | ['6.8e-51 1.7e-50 1.5e+00', '4.4e-50 9.1e-50 5.1e+00', '4.7e-51 4.9e-50 6.9e-01', '3.6e-51 8.9e-51 1.7e+00', '7.4e-51 1.1e-50 1.8e-02']
+INFO negH total time | 11.6s
+SUMMARY: 0 checks failed []

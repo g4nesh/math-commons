@@ -1,0 +1,18 @@
+PASS generators of T u {10} = {0,1,2,6,53,54,55,67,70} : [0, 1, 2, 6, 53, 54, 55, 67, 70]
+PASS non-minor generators are exactly 54, 70
+PASS identity (2) f54 + f70 = f0 + f6 + f55 + f67
+PASS identity (3) f54 + f1 = f0 + f6 + f53
+PASS a group element fixes T u {10} and acts 0<->67, 1<->53, 6<->55, 54<->70, 2 fixed : ((1, 3, 0, 2), (1, 3, 0, 2), 1)
+PASS transposition (sigma -> sigma^-1) maps T u {10} onto T u {13}
+INFO Hessian determinant: 3319 terms, degree 3 in z, 7 s
+PASS C = -(A0 + eT)
+PASS Q = -d(d+e)
+PASS G6 of (6) has 206 monomials : 206
+PASS (5) Q^4 det H(y0 - (C/Q) kappa) = -4 Q^2 C^2 G6^2
+PASS sign identity A0 - e(ab - T) = -K + (c+q)(a+d)(b+d) + cq(a+b+d) + e(d(c+q)+cq)
+PASS A0 - d(a+d)(b+d) has nonnegative coefficients
+PASS p(a+c+d)(b+d+q)(A0+eT) has nonnegative coefficients
+RESULT: 0 exact checks failed
+
+# Appended by the auditor (separate scratch script, same settings as for final_referee_T26_uniform_20261022):
+NUMERIC cited four-coefficient capacity a f67 + b f55 + e f53 + d f54 on its boundary: worst min Phi / max gap = 1.6e-16 over 30 samples (no violation)

@@ -1,0 +1,31 @@
+PASS E1 doc contact set equals paper T_21 exactly T_21=[0, 3, 5, 9, 11, 12]
+INFO one-line notation of T: ['1234', '1342', '1432', '2341', '2431', '3124']
+PASS E2 generators(T) = {0,1,2,7,9,12,29,39,40,41} got [0, 1, 2, 7, 9, 12, 29, 39, 40, 41]
+PASS E2b only f40 is non-minor nonminor=[40] names=['n1,4', 'n12,34', 'n13,34', 'n3,1', 'n14,23', 'n14,24', 'n13,12', 'n14,13', 'h4213,+', 'n4,3']
+PASS E3a f40+f1 = f0+f7+f39
+PASS E3b f40+f9 = f2+f7+f41
+PASS E3c generators span an 8-dim space (10 gens, 2 relations) rank=8
+PASS E4 delta(f40)=1, delta(f1)=delta(f9)=-1, delta(others)=0 {0: 0, 1: -1, 2: 0, 7: 0, 9: -1, 12: 0, 29: 0, 39: 0, 40: 1, 41: 0}
+PASS E5a F3*F11 = F5*F9
+PASS E5b F3-F5 = (A0-C0)(A1-A2)(A3-C1)(C2-C3)
+PASS E5c F3-F9 = (A0-A3)(A1-C2)(A2-C3)(C0-C1)
+PASS E5d homogeneous: F3F11=F5F9, F3-F5=[0,4][1,2][3,5][6,7], F3-F9=[0,3][1,6][2,7][4,5]
+PASS E5e lib matching vector reproduces sigma-points (c=-b convention)
+PASS E6 rectangle: Im = H(q3+q11-q5-q9), Re = q5q9-q3q11, and with sums equal Re = (q3-q5)(q3-q9)
+PASS E7a grad C(y+i d) = [gradC(y)-gradC(d)] + i H_C(y) d (C has real coefficients)
+PASS E7b Euler for gradient: H_C(d) d = 2 grad C(d)
+PASS E7c Euler: y.gradC(y) = 3 C(y)
+PASS E8 C(y0) = (f+d+h)M + e{(q+a+c+d)(f+d)+ac} with M=(b+d)(q+a+d)+c(a+d)
+PASS E8b P y0 = sum coef_j (P f_j)
+PASS E8c rhs and rhs-d^3 have only nonnegative coefficients
+PASS E9 sum lambda_j f_j = (l0+l1)f0+(l2+l9)f2+(l7+l1+l9)f7+l12 f12+l29 f29+(l39+l1)f39+(l40-l1-l9)f40+(l41+l9)f41
+NUMERIC stratum samples found=12/12 (seeds 0..11, tol 1e-10); min label separation=0.000e+00
+NUMERIC eight-distinct samples (relative label separation > 1e-4): 0; samples with a collision: 12
+NUMERIC eight-distinct: max |Re(alpha F_0)|/max|F| = 0.000e+00   (document: H = 0)
+NUMERIC collision samples: max |H|/max|F| = 2.774e-01, min min(|F3-F5|,|F3-F9|)/max|F| = 0.000e+00 (H != 0 needs F3=F5 or F3=F9)
+NUMERIC max delta/max g = 5.686e-11   (document: delta <= 0 on eight-distinct points)
+NUMERIC minor-cone LP infeasible in 0 samples   (document: 0)
+NUMERIC min over samples of min_SO4 Phi / max g = -2.434e-11 (8 BFGS restarts each)
+NUMERIC height-zero sampler w=0.0: 5 solutions (40 starts, seed 7), 1 with relative label separation > 1e-3, 0 of these with all gaps >= 0; max |C(Re x)|/|Re x|^3 = 4.34e-17; eight-distinct with delta > 0: 1, of which with a negative gap: 1
+NUMERIC height-zero sampler w=1.0: 22 solutions (40 starts, seed 7), 0 with relative label separation > 1e-3, 0 of these with all gaps >= 0; max |C(Re x)|/|Re x|^3 = 3.26e-17; eight-distinct with delta > 0: 0, of which with a negative gap: 0
+SUMMARY exact failures: 0

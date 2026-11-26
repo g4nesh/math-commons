@@ -1,0 +1,54 @@
+PASS contact set equals paper T_17 (Appendix E)
+PASS generators F_T = [0,1,2,5,7,9,12,35] : [0, 1, 2, 5, 7, 9, 12, 35]
+PASS only f35 is nonminor : h4312,-
+PASS 8 generators of rank 8 (simplicial cone); dim(im P cap {g_T=0}) = 8
+PASS expansion g = sum coef_j(g) f_j holds on the 8-dim span (coef forms are the dual basis)
+PASS nontied zeros of f35 are {6,7,11,14,15,17,18} : [6, 7, 11, 14, 15, 17, 18]
+INFO extra contact 6: cited cases embedding in T u {j}: [(4, (0, 1, 4, 5, 6, 9)), (11, (0, 1, 4, 5, 6, 12))]
+INFO extra contact 7: cited cases embedding in T u {j}: [(5, (0, 1, 4, 5, 7, 9)), (10, (0, 1, 4, 5, 7, 12))]
+INFO extra contact 11: cited cases embedding in T u {j}: [(15, (0, 1, 4, 5, 9, 11)), (16, (0, 1, 4, 5, 11, 12))]
+INFO extra contact 14: cited cases embedding in T u {j}: [(9, (0, 1, 4, 5, 9, 14)), (11, (0, 1, 4, 5, 12, 14))]
+INFO extra contact 15: cited cases embedding in T u {j}: [(5, (0, 1, 4, 5, 9, 15)), (10, (0, 1, 4, 5, 12, 15))]
+INFO extra contact 17: cited cases embedding in T u {j}: [(4, (0, 1, 4, 5, 9, 17)), (11, (0, 1, 4, 5, 12, 17))]
+INFO extra contact 18: cited cases embedding in T u {j}: [(9, (0, 1, 4, 5, 9, 18)), (11, (0, 1, 4, 5, 12, 18))]
+PASS every nontied zero j of f35: T u {j} contains a G-image of a cited case of stage <= 3
+PASS real-v layer: entry face {sigma(1)=1} u T has only minor generators : [0, 1, 2, 5, 7, 9, 12]
+PASS R1 = x(v-1)/v
+PASS R4 = R1 + (t-1)(x-1)
+PASS R5 = 1 - t
+PASS (R4-R1)/R5 = 1 - x
+PASS R1/R5 = x/hh with hh = v(1-t)/(v-1)
+PASS t = 1 - h(v-1)/v  <=>  tv = (1-h)v + h
+PASS H1 = x/h, H4 = x/h - x + 1, H5 = 1
+PASS (2) H2 = (x-1)(v/(h(v-1)) - 1)
+PASS (2) d = g2 = -mu Im H2 = mu (x-1) Im v / (h |v-1|^2)
+PASS H9 = r  <=>  E9 = 0 (numerators proportional, factor free of z,w) : 1
+PASS H12 = u  <=>  E12 = 0 (numerators proportional, factor free of z,w) : 1
+PASS a = -(v-1)(hu + hv - h - v)/v
+PASS D = (1-h)(x-1) - hu + h(x-1+u)/v
+PASS x - tv = x - h - (1-h)v
+PASS E12 solved: z = (Dw + t(v-x))/a
+PASS (3) a * E9(z = zsol) = curve (3)
+PASS z = w divisor: E12 = t(v-x)(z-1), E9 = z(v-z)(tv-x)
+PASS F0/(v(z-w)(1-t)) = ((h-1)v - h)/h
+PASS D with u = 1-x is the constant x-1
+PASS curve at v = 1 is (x-1)^2 w (w-1) : w*(w - 1)*(x - 1)**2
+PASS a = a1 (v-1) + O((v-1)^2), a1 = 1 - hu
+PASS series: a = (1-hu) s + O(s^2)
+PASS branch w=0: Newton series solves curve (3) to O(s^6) : 6
+INFO branch w=0: H2 has valuation -1, residue (x - 1)/h
+INFO branch w=0: H7 has valuation -1, residue (-x + 1)/h
+PASS branch w=0: res H2 = (x-1)/h and res H7 = -(x-1)/h
+PASS branch w=0: H2 + H7 is regular (real-coefficient series), value (-x*h + x + h*r + h*u - 1)/h
+PASS branch w=0: w = O(s), inverse numerator -> 1 - x, z has a simple pole
+PASS branch w=1: Newton series solves curve (3) to O(s^6) : 6
+INFO branch w=1: H2 has valuation -1, residue (x - 1)/h
+INFO branch w=1: H14 has valuation -1, residue (-x + 1)/h
+PASS branch w=1: res H2 = (x-1)/h and res H14 = -(x-1)/h
+PASS branch w=1: H2 + H14 is regular (real-coefficient series), value (h*r + h*u - 1)/h
+PASS branch w=1: w = 1 + (1-hu)/(x-1) s^2 + O(s^3)
+PASS branch w=1: z = 1 + s + O(s^2) (uses a1 != 0)
+PASS no pole of order >= 2 for H2 and its compensator on either branch
+NUMERIC seed 20261125, 3000 chart samples (both roots): 33 supported with exact six contacts; min coefficient/max|g| = 3.836e-04
+NUMERIC min over SO(4) of Phi (6 restarts each) at 12 supported points: worst = 9.515e-14
+EXACT FAILURES: none

@@ -1,0 +1,105 @@
+{
+ "pdf": "proofs/manin_transfer_20261021/final_referee_moc4_T10_uniform_20261022.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    11
+   ],
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     4,
+     7,
+     9
+    ]
+   ],
+   "restatement": "For all x in X (all spectra) with gaps g>=0 vanishing on T={0,1,2,4,7,9}, Phi>=0 for all O; T = g^{-1}(T_11), g=(id,(0,1,3,2),0)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "Paper Prop. 4.1, Lemma 4.2, eq. (4.2)",
+   "status": "CITED (lib replay)"
+  },
+  {
+   "kind": "branch",
+   "ref": "final_referee_T10_A_branch_20261022",
+   "status": "audited in batch"
+  },
+  {
+   "kind": "branch",
+   "ref": "root_moc4_T10_B_branch_20261022",
+   "status": "CITED, not audited"
+  },
+  {
+   "kind": "external",
+   "ref": "global SOC inequality: s f1 + b f11 + d f28 safe when sb >= d^2 (G-orbit)",
+   "status": "CITED, source not named, not in paper; NUMERIC no violation"
+  },
+  {
+   "kind": "external",
+   "ref": "global four-coefficient inequality: a f4 + B f6 + c f2 + d f28 safe when aB(c-d) >= d^2(a+B+c+d) (G-orbit)",
+   "status": "CITED, source not named, not in paper; NUMERIC no violation, sharp"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Appendix B: Theorem B.1, Lemma B.2",
+   "status": "CITED (audited by project)"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Paper Theorem C.1",
+   "status": "CITED"
+  }
+ ],
+ "steps": [
+  {
+   "step": "generators",
+   "status": "EXACT"
+  },
+  {
+   "step": "A,B values; A+B>=0",
+   "status": "EXACT"
+  },
+  {
+   "step": "seven minor replacements",
+   "status": "EXACT"
+  },
+  {
+   "step": "minor-case elimination",
+   "status": "PROOF-READ"
+  },
+  {
+   "step": "two branch decompositions",
+   "status": "EXACT"
+  },
+  {
+   "step": "exhaustive split",
+   "status": "PROOF-READ"
+  },
+  {
+   "step": "A<0 branch",
+   "status": "CITED (audited)"
+  },
+  {
+   "step": "B<0 branch",
+   "status": "CITED (not audited)"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "22 exact checks incl. group element to T_11 and capacity orbit maps"
+ ],
+ "numeric_tests": [],
+ "unchecked": [
+  "root_moc4_T10_B_branch_20261022 (not in batch)"
+ ],
+ "doc_id": "final_referee_moc4_T10_uniform_20261022"
+}

@@ -1,0 +1,162 @@
+{
+ "doc_id": "blind_shared_coreF_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_shared_coreF_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    14
+   ],
+   "table5_seven_set": 7,
+   "restatement": "For every x in X (all spectra) and pi*, if Pc(x) >= 0 and (Pc(x))_s = 0 on F={0,1,2,7,9,10,14} (non-strict), then Phi_{c(x)}(O) >= 0 for all O in SO(4)."
+  },
+  {
+   "label": "eqs (1)-(2), d<=0",
+   "page": 1,
+   "restatement": "c(x) = q f0+p f2+v f11+b f12+c f15+w f21+d f26, six coefficients are gaps, d real; f26+f1 = f0+f11+f21; d<=0 gives a minor sum."
+  },
+  {
+   "label": "eqs (5)-(8)",
+   "page": 2,
+   "restatement": "C(c+z kappa) = (q+d)(v+d)(w+d)+pbc + (pb+pc+bc+v(d-b)+d^2) z; Q^4 det H(w(-C/Q)) = -4(v+d)^2 Q^2 G^2, G 441 terms; G symmetric under p<->c, q<->w."
+  },
+  {
+   "label": "charts (9)-(10)",
+   "page": 3,
+   "restatement": "Four charts S, B>, B=, P>= cover all unsafe tuples (d=1); cleared G has only positive coefficients on each."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "external",
+   "ref": "sharp SOC reference (f1,f9;f22): x f1 + y f9 + d f22 safe if xy >= d^2",
+   "status": "CITED",
+   "match_checked": true,
+   "used_for": "tests (2)/(6) (core E) and (3) (core F); ordered group actions onto (f2,f12;f26),(f2,f15;f26),(f12,f15;f26) replayed EXACT"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (A.2): X contained in Sing C",
+   "status": "EXACT (moc4lib)",
+   "match_checked": true,
+   "used_for": "realizability necessity C(w)=0, det H(w)=0 by polarization"
+  },
+  {
+   "kind": "external",
+   "ref": "old-H pair: v f11 + b f12 + d f26 safe if v(b-d) >= d^2; mother triple under the named action is paper (f12,f29;f80)",
+   "status": "CITED",
+   "match_checked": false,
+   "used_for": "test (4); source statement not pinned down by the document; data's 'mother minor indices [7,6]' are local indices, not paper f-indices"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "8-ray cone, 7-basis, gap rows",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "f26+f1 = f0+f11+f21",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "gaps at 20,11,3",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "d<0 minor decomposition",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "(3) from SOC atoms",
+   "kind": "citation",
+   "status": "CITED"
+  },
+  {
+   "n": 6,
+   "claim": "(4) old-H",
+   "kind": "citation",
+   "status": "CITED"
+  },
+  {
+   "n": 7,
+   "claim": "realizability necessity",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 8,
+   "claim": "C, Q, Cst>0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "(7) with 441-term G",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "(8) symmetries",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "chart coverage",
+   "kind": "case split",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 12,
+   "claim": "four positive tables",
+   "kind": "certificate",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "conclusion",
+   "kind": "logic",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators(F) 8 rays, rank 7, 7-basis, gap rows",
+  "relation (2)",
+  "d<0 decomposition",
+  "SOC ordered actions (3)",
+  "old-H named action maps (f12,f29;f80) to (f11,f12;f26)",
+  "C and Q",
+  "det H by own Bareiss, (7) with G derived as exact square root = document's 441 coefficients",
+  "symmetries (8)",
+  "chart inverse maps",
+  "four tables all-positive, term counts 852/3075/478/2855 = 7260"
+ ],
+ "numeric_tests": [
+  "SOC at equality 40 draws each, old-H at equality 60 draws (seed 2026): worst >= -9e-17; d doubled: about -1e-3",
+  "realizable points with contact set exactly F (2 seeds): both have d<0; min Phi ~ +1e-12"
+ ],
+ "unchecked": [
+  "source proofs of SOC and old-H inequalities (old-H source statement not located)",
+  "unitary remark"
+ ]
+}

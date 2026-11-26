@@ -1,0 +1,18 @@
+PASS T24 core length with beta=-r: 1/e + (1+beta)^2/(a+b+2beta) = 1/e + b(1-r)^2/(b-r)^2 when a = r^2/b
+PASS supplement T47 contact set {0,4,5,6,9,12} equals paper T_65 (identity element)
+PASS generators(T_65) are exactly the 8 rays f2,f9,f1,f45,f5,f35,f0,f7 : [0, 1, 2, 5, 7, 9, 35, 45]
+PASS C(w(g,h)) is affine in h
+PASS restored height constant C0 = -d{ab+ad+aq+bd+bp+d^2+de+dp+dq+ep+eq+pq} (as in the T47 negative-Phi note)
+PASS height slope Q = ce-cj-d^2-de-dp-dq-ep-eq+jp-pq
+PASS radial polynomial G: 965 terms, total degree 8 : 8.5 s; per-variable degrees (2, 2, 2, 2, 2, 3, 3)
+PASS G^2 agrees with an independent exact Fraction 14x14 determinant at 5 random rational points
+PASS all chart denominators are polynomials with positive coefficients
+PASS cleared G has 136179 terms : negative terms 72; degrees {'A': 16, 'P': 2, 'T': 6, 'V': 10, 'S': 2, 'U': 4, 'Q': 2}
+PASS cleared G has P-degree 2 and T-degree 6
+PASS all negative terms lie in the P^2 S^2 T^0 coefficient
+PASS N = G - P^2 S^2 F has nonnegative coefficients : 134213 terms
+PASS F = U (A+Q+2)(A+1)^4 H exactly
+PASS H = H0 + Q H1 (degree 1 in Q) and H0 has nonnegative coefficients
+PASS H1 >= 0 on the nonnegative orthant by an own AM-GM certificate (X^p1 + X^p2 >= 2 X^m, p1+p2 = 2m) : 32 negative terms of 455, 32 pairs
+PASS N has a positive monomial with P-degree 2, T-degree 6, no U, Q, S factor (strict at all walls)
+SUMMARY: all exact checks passed

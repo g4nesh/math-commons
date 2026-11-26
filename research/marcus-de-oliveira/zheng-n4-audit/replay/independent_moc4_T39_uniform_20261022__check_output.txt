@@ -1,0 +1,33 @@
+PASS contact set {0,1,5,9,14,18} == paper T_40
+PASS generators(T_40) == {1,2,5,9,11,12,28,29,33,35}
+PASS non-minor generators are exactly 28, 35
+PASS contact nullspace has dimension 8
+PASS (1a) f28+f12 = f1+f2+f11+f29
+PASS (1b) f35+f11 = f1+f5+f12+f33
+PASS (1c) f28+f35 = 2f1+f2+f5+f29+f33
+PASS both canonical sources have rank 8
+PASS App. A: c = g11 f5+g17 f1+g6 f12+g7 f9+g15 f2+(g3-g12) f35+g12 f33+g4 f29 on the contact nullspace (checked on a spanning set)
+PASS App. A gap identities g3=b+d, g20=q+d, g23=p+d, g8=a+j+d, g19=e+j+d, g22=p+j+2d
+PASS App. A case j>=m: rewriting into minor sum is an identity
+PASS App. A case j<m: rewriting into second source is an identity
+PASS inverse action preserves T_40
+PASS inverse action maps second source (2,1,11,9,5,28,29,33) to first (5,1,12,9,2,35,33,29) term by term
+PASS split d=da+de gives j_a+j_e = d + d^2/(a+e)
+PASS C = -(ABc + Nj) at d=1
+PASS -Q = (q+b+1+S-p)c + 1 - JS + (q+b)(1+S) + pj at d=1
+INFO seed 0 : normalized q,p,j,c,e,b,a = [np.float64(0.1445), np.float64(37.7647), np.float64(4.7989), np.float64(4.7307), np.float64(10.9353), np.float64(0.2559), np.float64(1.8362)]; pj>=1: True; Hsum: True
+INFO seed 1 : normalized q,p,j,c,e,b,a = [np.float64(1.187), np.float64(9.9515), np.float64(12.0762), np.float64(431.711), np.float64(1.0688), np.float64(9.0928), np.float64(1.1375)]; pj>=1: True; Hsum: True
+INFO seed 2 : normalized q,p,j,c,e,b,a = [np.float64(48.1219), np.float64(31.1502), np.float64(65.0559), np.float64(17.6518), np.float64(1556.3871), np.float64(4.1504), np.float64(141.829)]; pj>=1: True; Hsum: True
+INFO seed 3 : minor sum
+INFO seed 4 : minor sum
+INFO seed 5 : minor sum
+INFO seed 6 : minor sum
+INFO seed 7 : normalized q,p,j,c,e,b,a = [np.float64(0.3103), np.float64(16.6737), np.float64(14.1615), np.float64(10.6617), np.float64(38.2655), np.float64(1.4144), np.float64(54.8674)]; pj>=1: True; Hsum: True
+INFO seed 8 : minor sum
+INFO seed 9 : minor sum
+INFO seed 10 : minor sum
+INFO seed 11 : normalized q,p,j,c,e,b,a = [np.float64(1.4926), np.float64(100.3533), np.float64(185.1857), np.float64(164.9292), np.float64(89.3176), np.float64(2.7469), np.float64(123.1481)]; pj>=1: True; Hsum: True
+PASS NUMERIC: all 12 stratum points (contact set exactly T_40) satisfy the uniform disjunction (7 minor sums)
+PASS NUMERIC SOC (3) at p=j=1: min Phi >= -1e-9 : 1.301e-14; 10% below: 2.495e-13
+PASS NUMERIC old-H sum (4) at a=e=1/2, j=2: min Phi >= -1e-9 : 1.878e-13; 10% below: 2.578e-13
+SUMMARY: 0 failed checks (0 exact)

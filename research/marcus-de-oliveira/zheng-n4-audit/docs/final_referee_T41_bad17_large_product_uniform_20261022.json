@@ -1,0 +1,37 @@
+{
+  "doc_id": "final_referee_T41_bad17_large_product_uniform_20261022",
+  "pdf": "proofs/manin_transfer_20261021/final_referee_T41_bad17_large_product_uniform_20261022.pdf",
+  "pages": 3,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Proposition 1", "page": 1, "contact_sets": [[1, 2, 3, 6, 7, 8]], "paper_cases": [],
+     "restatement": "g = q f3 + p f1 + j f53 + c f6 + e f15 + d f17 + b f16 + a f4, coefficients >= 0, d > 0, ab >= d^2: if g = c(x), x in X, then Phi_g(O) >= 0 for all O; every root of the Hessian necessity G(c,j)=0 with c>=0, j>0 satisfies d^2/j <= p + d(ab-d^2)/((a+d)(b+d)).",
+     "covers_all_spectra": true},
+    {"label": "Lemma 1", "page": 1, "restatement": "G = V D^2 + R0 j D + A0 j^2, D = XY(c+1)+Tcj; a root (c,j) gives J = jXY/D in (0,j] with G(0,J)=0."},
+    {"label": "Lemma 2", "page": 2, "restatement": "a,b,p >= 0, ab >= 1, x,y in [0,1]: h + r >= 0 and (h+r)^2 >= f g with h = 2V(p+L), L = (ab-1)/((a+1)(b+1))."}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "Paper App. A.1 X subset of {grad C = 0}", "used_for": "Hessian necessity", "match_checked": true},
+    {"kind": "other-doc", "ref": "blind_moc4_T24_coherent_capacity (supplement T24 = paper T_25)", "used_for": "core safe under (1)", "match_checked": true},
+    {"kind": "other-doc", "ref": "double-SOC Gram", "used_for": "ab = d^2, pj >= d^2", "match_checked": false}
+  ],
+  "steps": [
+    {"n": 1, "claim": "restricted cubic C < 0", "status": "EXACT"},
+    {"n": 2, "claim": "Hessian necessity G(c,j)=0 (det H = -4(c+1)^2 G^2/Q^2)", "status": "EXACT", "note": "pointwise at 25 exact points"},
+    {"n": 3, "claim": "form (2); R0 48 terms, A0 101 terms", "status": "EXACT"},
+    {"n": 4, "claim": "Lemma 1 transfer and J <= j", "status": "EXACT"},
+    {"n": 5, "claim": "Heron identities", "status": "EXACT"},
+    {"n": 6, "claim": "(4) root formula", "status": "PROOF-READ"},
+    {"n": 7, "claim": "symmetry reduction a >= b", "status": "EXACT"},
+    {"n": 8, "claim": "chart cover", "status": "PROOF-READ"},
+    {"n": 9, "claim": "Lemma 2 four coefficient tables positive", "status": "EXACT"},
+    {"n": 10, "claim": "deduction of (1)", "status": "PROOF-READ"},
+    {"n": 11, "claim": "cited capacity and Gram give safety", "status": "CITED"}
+  ],
+  "gaps": [],
+  "exact_replays": ["restricted cubic", "Fe/Y^2=f, Fq/X^2=g, R0=rXY, A0 polynomial, R0^2-4VA0=FeFq", "Lemma 1 algebra",
+    "Lemma 2 tables: H 135/183, E 1454/1828 coefficients, all positive", "transport [f59,f53,f55,f67,f54] -> [f1,f53,f4,f16,f17] by 2 group elements",
+    "T_42 stabilizer swaps f4<->f16, f3<->f15", "det H Q^2/(-4) = (c+1)^2 G^2 at 25 rational points"],
+  "numeric_tests": ["seed 3: 279 positive roots, min slack of (1) = -3e-16", "seed 4: 12 cores at equality in (1), min Phi over SO(4) = +3.7e-14 (12 restarts)"],
+  "unchecked": ["T24 coherent capacity and double-SOC Gram documents", "global polynomial identity det H = -4(c+1)^2 G^2/Q^2 (pointwise only)", "region ab < d^2 and the bad54 source (outside the document)"]
+}

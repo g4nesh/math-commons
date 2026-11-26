@@ -1,0 +1,125 @@
+{
+ "doc_id": "final_referee_moc4_T5_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_moc4_T5_uniform_20261022.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "main",
+   "page": 1,
+   "paper_cases": [
+    5
+   ],
+   "contact_sets": [
+    [
+     1,
+     2,
+     3,
+     4,
+     6,
+     8
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "x in X, reference pi_1, Pc>=0, (Pc)_s=0 on T5={1,2,3,4,6,8} (extra ties allowed) => Phi_c(O)>=0 for all O in SO(4) (U(4) via Thm 1.2); collisions via C.1, B.1."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2 / Corollary 2.2",
+   "used_for": "U(4) -> SO(4)",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Proposition 4.1, Lemma 4.2",
+   "used_for": "generators; A0>=0 branch",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Theorem C.1 / Prop 1.4",
+   "used_for": "repeated points",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Theorem B.1",
+   "used_for": "shared value",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "old SOC master (bound (1))",
+   "used_for": "branches with (4)",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "final_referee_T5_four_budget_capacity_20261022 (bound (2))",
+   "used_for": "positive H>0 branch; replayed exactly",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "S1-S5",
+   "claim": "generators, replacements, A0 profile, decomposition (3), A0>=0 branch",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": "S6",
+   "claim": "bound (2)",
+   "status": "EXACT (auditor replay)"
+  },
+  {
+   "n": "S7",
+   "claim": "collision strata",
+   "status": "CITED"
+  },
+  {
+   "n": "S8-S11",
+   "claim": "chart, reality, (6) unique, v real, N,E,F>0",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": "S12",
+   "claim": "ten identities (7)",
+   "status": "EXACT"
+  },
+  {
+   "n": "S13-S18",
+   "claim": "negative and positive branches: identities, endpoints, bounds, concavity logic",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": "S19",
+   "claim": "U(4) conclusion",
+   "status": "CITED"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "T5 = paper T_5; generators == lib",
+  "three minor replacements, A0 profile",
+  "decomposition (3)",
+  "chart (6) and uniqueness",
+  "all identities (7)",
+  "(8), da-B, Psi(B), Psi(da), Q/P bounds",
+  "all-negative exclusion identities",
+  "(9), da-B sign, Psi endpoints, P,Q bounds",
+  "K, (B+C)chi identity, -L/H, chi(d*) and P*",
+  "bound (2): quaternion link and companion Gram identity, Schur chain"
+ ],
+ "numeric_tests": [
+  "chart sampling seed 2, 200000x2: 7787 supported (39 neg, 36 pos H<0, 0 pos H>0), no failures",
+  "min Phi at 3 A0<0 points ~1e-12",
+  "bound (2) boundary min 5.7e-14; SOC (1) boundary min 3.0e-12"
+ ],
+ "unchecked": [
+  "bound (1) old SOC master not re-proved",
+  "page images not opened",
+  "positive H>0 branch not hit numerically"
+ ]
+}
