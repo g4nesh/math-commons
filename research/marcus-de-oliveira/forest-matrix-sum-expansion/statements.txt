@@ -1,0 +1,158 @@
+MathCommons.ForestMatrixSumExpansion.filterWithout {V : Type} [DecidableEq V] (before after : List V) (x : V)
+  (unique : (before ++ x :: after).Nodup) : List.filter (fun y => y != x) (before ++ x :: after) = before ++ after
+MathCommons.ForestMatrixSumExpansion.diagonalRowMinor {V : Type} [DecidableEq V]
+  (M : V → V → MathCommons.ForestGateMagnitude.Gaussian) (rows : List V) (x : V)
+  (a : MathCommons.ForestGateMagnitude.Gaussian) (unique : rows.Nodup) (member : x ∈ rows) :
+  MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic
+      (MathCommons.ForestProductMinor.replaceRow M x fun j =>
+        if x = j then a else MathCommons.ForestGateSupport.gaussianArithmetic.zero)
+      rows rows =
+    MathCommons.ForestGateSupport.gaussianArithmetic.mul a
+      (MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic M
+        (List.filter (fun y => y != x) rows) (List.filter (fun y => y != x) rows))
+MathCommons.ForestMatrixSumExpansion.singleDiagonalUpdate {V : Type} [DecidableEq V]
+  (M : V → V → MathCommons.ForestGateMagnitude.Gaussian) (rows : List V) (x : V)
+  (a : MathCommons.ForestGateMagnitude.Gaussian) (unique : rows.Nodup) (member : x ∈ rows) :
+  MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic
+      (MathCommons.ForestMatrixSumExpansion.diagonalUpdate M x a) rows rows =
+    MathCommons.ForestGateSupport.gaussianArithmetic.add
+      (MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic M rows rows)
+      (MathCommons.ForestGateSupport.gaussianArithmetic.mul a
+        (MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic M
+          (List.filter (fun y => y != x) rows) (List.filter (fun y => y != x) rows)))
+MathCommons.ForestMatrixSumExpansion.partialDiagonalNil {V : Type} [DecidableEq V]
+  (a : V → MathCommons.ForestGateMagnitude.Gaussian) (M : V → V → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestMatrixSumExpansion.partialDiagonal [] a M = M
+MathCommons.ForestMatrixSumExpansion.partialDiagonalCons {V : Type} [DecidableEq V] (updates : List V)
+  (a : V → MathCommons.ForestGateMagnitude.Gaussian) (M : V → V → MathCommons.ForestGateMagnitude.Gaussian) (x : V)
+  (absent : ¬x ∈ updates) :
+  MathCommons.ForestMatrixSumExpansion.partialDiagonal (x :: updates) a M =
+    MathCommons.ForestMatrixSumExpansion.diagonalUpdate
+      (MathCommons.ForestMatrixSumExpansion.partialDiagonal updates a M) x (a x)
+MathCommons.ForestMatrixSumExpansion.remainingInsert {V : Type} [DecidableEq V] (rows : List V)
+  (s : MathCommons.ForestTrajectory.Subset V) (x : V) :
+  MathCommons.ForestMatrixSumExpansion.remaining rows (MathCommons.ForestSpectralExpansion.insert x s) =
+    MathCommons.ForestMatrixSumExpansion.remaining (List.filter (fun y => y != x) rows) s
+MathCommons.ForestMatrixSumExpansion.diagonalWeightExcluded {V : Type} [DecidableEq V] (updates : List V)
+  (a : V → MathCommons.ForestGateMagnitude.Gaussian) (s : MathCommons.ForestTrajectory.Subset V) (x : V)
+  (absent : ¬x ∈ updates) (member : s ∈ MathCommons.ForestSpectralExpansion.subsets updates) :
+  MathCommons.ForestMatrixSumExpansion.diagonalWeight (x :: updates) a s =
+    MathCommons.ForestMatrixSumExpansion.diagonalWeight updates a s
+MathCommons.ForestMatrixSumExpansion.diagonalWeightIncluded {V : Type} [DecidableEq V] (updates : List V)
+  (a : V → MathCommons.ForestGateMagnitude.Gaussian) (s : MathCommons.ForestTrajectory.Subset V) (x : V)
+  (absent : ¬x ∈ updates) :
+  MathCommons.ForestMatrixSumExpansion.diagonalWeight (x :: updates) a
+      (MathCommons.ForestSpectralExpansion.insert x s) =
+    MathCommons.ForestGateSupport.gaussianArithmetic.mul (a x)
+      (MathCommons.ForestMatrixSumExpansion.diagonalWeight updates a s)
+MathCommons.ForestMatrixSumExpansion.partialDiagonalExpansion {V : Type} [DecidableEq V] (updates rows : List V)
+  (a : V → MathCommons.ForestGateMagnitude.Gaussian) (M : V → V → MathCommons.ForestGateMagnitude.Gaussian)
+  (uniqueUpdates : updates.Nodup) (uniqueRows : rows.Nodup) (inside : ∀ (x : V), x ∈ updates → x ∈ rows) :
+  MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic
+      (MathCommons.ForestMatrixSumExpansion.partialDiagonal updates a M) rows rows =
+    MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map
+        (fun s =>
+          MathCommons.ForestGateSupport.gaussianArithmetic.mul
+            (MathCommons.ForestMatrixSumExpansion.diagonalWeight updates a s)
+            (MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic M
+              (MathCommons.ForestMatrixSumExpansion.remaining rows s)
+              (MathCommons.ForestMatrixSumExpansion.remaining rows s)))
+        (MathCommons.ForestSpectralExpansion.subsets updates))
+MathCommons.ForestMatrixSumExpansion.diagonalSumExpansion {V : Type} [DecidableEq V] (rows : List V)
+  (a : V → MathCommons.ForestGateMagnitude.Gaussian) (M : V → V → MathCommons.ForestGateMagnitude.Gaussian)
+  (unique : rows.Nodup) :
+  MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic
+      (MathCommons.ForestMatrixSumExpansion.matrixAdd (MathCommons.ForestMatrixSumExpansion.diagonal a) M) rows rows =
+    MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map
+        (fun s =>
+          MathCommons.ForestGateSupport.gaussianArithmetic.mul
+            (MathCommons.ForestMatrixSumExpansion.diagonalWeight rows a s)
+            (MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic M
+              (MathCommons.ForestMatrixSumExpansion.remaining rows s)
+              (MathCommons.ForestMatrixSumExpansion.remaining rows s)))
+        (MathCommons.ForestSpectralExpansion.subsets rows))
+MathCommons.ForestMatrixSumExpansion.complementMember {V : Type} [DecidableEq V] (rows : List V)
+  (s : MathCommons.ForestTrajectory.Subset V) :
+  MathCommons.ForestMatrixSumExpansion.complementSubset rows s ∈ MathCommons.ForestSpectralExpansion.subsets rows
+MathCommons.ForestMatrixSumExpansion.complementTwice {V : Type} [DecidableEq V] (rows : List V)
+  (s : MathCommons.ForestTrajectory.Subset V) (member : s ∈ MathCommons.ForestSpectralExpansion.subsets rows) :
+  MathCommons.ForestMatrixSumExpansion.complementSubset rows
+      (MathCommons.ForestMatrixSumExpansion.complementSubset rows s) =
+    s
+MathCommons.ForestMatrixSumExpansion.complementsPerm {V : Type} [DecidableEq V] (rows : List V) (unique : rows.Nodup) :
+  (List.map (MathCommons.ForestMatrixSumExpansion.complementSubset rows)
+        (MathCommons.ForestSpectralExpansion.subsets rows)).Perm
+    (MathCommons.ForestSpectralExpansion.subsets rows)
+MathCommons.ForestMatrixSumExpansion.sumPerm {X : Type} (xs ys : List X)
+  (f : X → MathCommons.ForestGateMagnitude.Gaussian) (perm : xs.Perm ys) :
+  MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic (List.map f xs) =
+    MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic (List.map f ys)
+MathCommons.ForestMatrixSumExpansion.retainedDiagonalExpansion {V : Type} [DecidableEq V] (rows : List V)
+  (a : V → MathCommons.ForestGateMagnitude.Gaussian) (M : V → V → MathCommons.ForestGateMagnitude.Gaussian)
+  (unique : rows.Nodup) :
+  MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic
+      (MathCommons.ForestMatrixSumExpansion.matrixAdd (MathCommons.ForestMatrixSumExpansion.diagonal a) M) rows rows =
+    MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map
+        (fun s =>
+          MathCommons.ForestGateSupport.gaussianArithmetic.mul
+            (MathCommons.ForestSpectralExpansion.product rows fun x =>
+              if s x = true then MathCommons.ForestGateSupport.gaussianArithmetic.one else a x)
+            (MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic M
+              (List.filter s rows) (List.filter s rows)))
+        (MathCommons.ForestSpectralExpansion.subsets rows))
+MathCommons.ForestMatrixSumExpansion.spectralPrincipalExpansion {V : Type} [DecidableEq V] (vertices : List V)
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) (U : V → V → MathCommons.ForestGateMagnitude.Gaussian)
+  (unique : vertices.Nodup) :
+  MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic
+      (MathCommons.ForestMatrixSumExpansion.matrixAdd (MathCommons.ForestMatrixSumExpansion.diagonal a)
+        (MathCommons.ForestMatrixSumExpansion.conjugatedDiagonal vertices U b))
+      vertices vertices =
+    MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map
+        (fun s =>
+          MathCommons.ForestGateSupport.gaussianArithmetic.mul
+            (MathCommons.ForestSpectralExpansion.product vertices fun x =>
+              if s x = true then MathCommons.ForestGateSupport.gaussianArithmetic.one else a x)
+            (MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic
+              (MathCommons.ForestMatrixSumExpansion.conjugatedDiagonal vertices U b) (List.filter s vertices)
+              (List.filter s vertices)))
+        (MathCommons.ForestSpectralExpansion.subsets vertices))
+MathCommons.ForestMatrixSumExpansion.matrixMulDiagonal {V : Type} [DecidableEq V] (vertices : List V)
+  (U : V → V → MathCommons.ForestGateMagnitude.Gaussian) (b : V → MathCommons.ForestGateMagnitude.Gaussian)
+  (unique : vertices.Nodup) (i j : V) (member : j ∈ vertices) :
+  MathCommons.ForestProductMinor.matrixMul vertices U (MathCommons.ForestMatrixSumExpansion.diagonal b) i j =
+    MathCommons.ForestGateSupport.gaussianArithmetic.mul (U i j) (b j)
+MathCommons.ForestMatrixSumExpansion.conjugatedDiagonalEntry {V : Type} [DecidableEq V] (vertices : List V)
+  (U : V → V → MathCommons.ForestGateMagnitude.Gaussian) (b : V → MathCommons.ForestGateMagnitude.Gaussian)
+  (unique : vertices.Nodup) (i j : V) :
+  MathCommons.ForestMatrixSumExpansion.conjugatedDiagonal vertices U b i j =
+    MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map
+        (fun k =>
+          MathCommons.ForestGateSupport.gaussianArithmetic.mul
+            (MathCommons.ForestGateSupport.gaussianArithmetic.mul (U i k) (b k))
+            (MathCommons.ForestGateMagnitude.conjugate (U j k)))
+        vertices)
+MathCommons.ForestMatrixSumExpansion.diagonalDeterminant {V : Type} [DecidableEq V] (rows : List V)
+  (a : V → MathCommons.ForestGateMagnitude.Gaussian) (unique : rows.Nodup) :
+  MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic
+      (MathCommons.ForestMatrixSumExpansion.diagonal a) rows rows =
+    MathCommons.ForestSpectralExpansion.product rows a
+MathCommons.ForestMatrixSumExpansion.emptySpectralDeterminant {V : Type} [DecidableEq V]
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) (U : V → V → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic
+      (MathCommons.ForestMatrixSumExpansion.matrixAdd (MathCommons.ForestMatrixSumExpansion.diagonal a)
+        (MathCommons.ForestMatrixSumExpansion.conjugatedDiagonal [] U b))
+      [] [] =
+    MathCommons.ForestGateSupport.gaussianArithmetic.one
+MathCommons.ForestMatrixSumExpansion.singletonSpectralDeterminant {V : Type} [DecidableEq V] (x : V)
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) (U : V → V → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic
+      (MathCommons.ForestMatrixSumExpansion.matrixAdd (MathCommons.ForestMatrixSumExpansion.diagonal a)
+        (MathCommons.ForestMatrixSumExpansion.conjugatedDiagonal [x] U b))
+      [x] [x] =
+    MathCommons.ForestGateSupport.gaussianArithmetic.add (a x)
+      (MathCommons.ForestSpectralExpansion.scale (MathCommons.ForestGateMagnitude.normSq (U x x)) (b x))
