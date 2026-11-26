@@ -1,0 +1,18 @@
+{
+  "boundary_cases": 432,
+  "genuinely_complex_boundary_cases": 424,
+  "boundary_zero_g0_cases": 30,
+  "min_boundary_g0_minus_gap": "0",
+  "perturbation_cases": 144,
+  "positive_A_perturbations": 144,
+  "perturbations_satisfying_polynomial_condition": 96,
+  "condition_cases_with_positive_C_and_t_star_below_1_over_5": 96,
+  "p_zero_cases": 16,
+  "q_zero_cases": 16,
+  "total_exact_unitary_cases": 608,
+  "failures": 0,
+  "python": "3.9.6",
+  "cpu_seconds": 0.8787849999999999,
+  "nature": "fixed exact Gaussian-rational regression; analytic proof is README sections2-4",
+  "production_search": false
+}
