@@ -1,0 +1,14 @@
+{
+  "tables": 33,
+  "coefficient_rows": 192,
+  "rank": 21,
+  "kernel_rank": 12,
+  "rays": 935,
+  "physical_group_order": 24,
+  "physical_orbits": 62,
+  "coefficient_orbits": 10,
+  "other_orbits": 52,
+  "extremality": "exact support-nullity, all representatives and group images",
+  "completeness": "pinned exact lrslib reverse-search completion; rerun command in README",
+  "physical_universal_signs": "not established here"
+}
