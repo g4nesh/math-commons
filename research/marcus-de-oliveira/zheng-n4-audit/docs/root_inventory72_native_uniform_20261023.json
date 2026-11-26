@@ -1,0 +1,122 @@
+{
+ "doc_id": "root_inventory72_native_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_inventory72_native_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    4,
+    5,
+    7,
+    9,
+    12
+   ],
+   "paper_case": 73,
+   "restatement": "x in X supported with contacts containing T_73 implies Phi_{c(x)}(O) >= 0 for all O in SO(4); degenerate spectra via Appendix B, extra ties via prior cases, wall u=1 via Rouche"
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "ties 1,6,11,14,17,18 -> e.g. T_5, T_24, T_50, T_51, T_65, T_50 (full lists in report)",
+   "used_for": "extra ties",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "Table 5 #17 {0,1,2,9,10,16,17}",
+   "used_for": "tie 15",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix B Theorem B.1, Lemma B.2",
+   "used_for": "non-eight-distinct spectra",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "compact bounded-negative-part pasting lemma",
+   "used_for": "curve argument",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "theta <= g2,g8,g10; -L <= M min",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "extra-tie reductions",
+   "kind": "citation",
+   "status": "EXACT reduction + CITED"
+  },
+  {
+   "n": 3,
+   "claim": "raw products, inverse (6)-(8), H2,H3,H8,H10",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "C(J,w) bidegree (3,2), 60 terms, (11)",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "fibre over J=inf is w in {-1,inf}; (12) H8->s+1; (13),(14) H10->u",
+   "kind": "limit",
+   "status": "EXACT + PROOF-READ"
+  },
+  {
+   "n": 6,
+   "claim": "nonconstancy and subharmonic contradiction",
+   "kind": "analytic",
+   "status": "PROOF-READ + CITED"
+  },
+  {
+   "n": 7,
+   "claim": "Rouche restoration of u=1",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p. 1, last paragraph of first section",
+   "claim": "one-circle result supplies degenerate normalizations",
+   "why": "unexplained; not needed since the normalization only needs b2,b3,b4 distinct",
+   "severity": "presentation",
+   "believed_true": true
+  }
+ ],
+ "exact_replays": [
+  "generators, theta bounds, extra-tie list and group reductions",
+  "raw products (1),(2),(4)",
+  "inverse (6)-(8) and all contact values",
+  "(3),(9),(10)",
+  "C(J,w) 60 terms, [J^3]C, [w^2]C, [J^2]C at w=-1",
+  "branch w+1=V0/J, H10->u, (12) rewrite"
+ ],
+ "numeric_tests": [
+  "6 T_73 stratum points: C(J,w)=0 and contact reality residual 6.5e-13; min Phi 1.0e-13"
+ ],
+ "unchecked": [
+  "Appendix G stage order of cited cases",
+  "compact pasting lemma (not in batch)"
+ ]
+}

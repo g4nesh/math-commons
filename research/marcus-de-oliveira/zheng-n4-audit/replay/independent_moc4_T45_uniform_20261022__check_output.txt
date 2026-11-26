@@ -1,0 +1,65 @@
+# run in stages: setup (no cache), then 'direct 0 13', 'direct 13 26', 'square', 'numeric' with MOC4_CACHE holding the G9 computed by this script
+## stage setup
+PASS contact set equals paper T_46 literally :: [3, 4, 5, 9, 10, 12]
+PASS generators(T) = {f0,f1,f2,f12,f59,f67,f70,f72} :: [0, 1, 2, 12, 59, 67, 70, 72]
+PASS only f70 is non-minor
+PASS (1) evaluations at (18,16,13,8,2,14,11,7) form the identity matrix
+PASS nullspace of the six contact equations has dimension 8
+PASS zero face a=0: contact set [3, 4, 5, 9, 10, 12, 13] = T u {13} and contains a G-image of paper T_34 (historical label as printed) :: g=((1, 3, 2, 0), (1, 3, 2, 0), 1)
+PASS zero face a=0: printed image [3, 5, 9, 10, 12, 13] is a G-image of paper T_34
+PASS zero face c=0: contact set [2, 3, 4, 5, 9, 10, 12] = T u {2} and contains a G-image of paper T_7 (historical label as printed) :: g=((0, 1, 2, 3), (0, 3, 2, 1), 0)
+PASS zero face c=0: printed image [2, 3, 4, 5, 9, 10] is a G-image of paper T_7
+PASS zero face r=0: contact set [3, 4, 5, 9, 10, 12, 16] = T u {16} and contains a G-image of paper T_15 (historical label as printed) :: g=((3, 2, 0, 1), (3, 0, 1, 2), 0)
+PASS zero face r=0: printed image [3, 4, 5, 9, 10, 16] is a G-image of paper T_15
+PASS (9) Q^4 det Hess C(g - (C/Q) kappa) = -4 Q^2 G9^2 (full 14x14 Hessian of the paper's cubic (A.2), Bareiss determinant) :: h-degree of det 3; factorization content 4, factors (terms, exponent) [(10, 1), (1158, 2)]; 122s
+PASS G9 has 1158 terms, total degree 9 :: terms 1158, degrees (3, 2, 2, 2, 2, 3, 9, 2, 0)
+PASS (7) C(g + h kappa) = C + h Q with the printed C and Q (paper cubic (A.2)) :: C0 = -p*q*d - p*d^2 - p*d*s - r*b*q - r*b*d - r*b*s + r*c*s - r*q*d - r*d^2 - r*d*s - b*q*d - b*d^2 - b*d*s - q*d^2 - d^3 - d^2*s; Q = -r*b + r*c - r*d + a*b - a*c - b*d - b*s + c*s - d^2 - d*s
+PASS (8) R C = (cR - dR - d^2) r s - P exactly
+PASS (8) P has positive coefficients and contains the monomial d^3 r (so P > 0 when d, r > 0)
+SUMMARY: all exact checks passed
+## stage direct 0 13
+INFO G9 loaded from cache (it was computed by this script in an earlier run)
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(-1, -1, -1) p-bound free (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 7229, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 2, 0, 7, 0, 0), 1), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(-1, -1, 0) p-bound free (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 2719, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 2, 0, 7, 0, 0), 2), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(-1, -1, 1) p-bound free (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 13644, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 2, 5, 9, 0, 0), 1), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(-1, 0, -1) p-bound free (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 2770, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 0, 0, 7, 0, 0), 1), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(-1, 0, 0) p-bound free (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 1443, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 0, 0, 10, 0, 0), 1080), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(-1, 0, 1) p-bound free (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 30438, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 0, 18, 13, 0, 0), 8), 0.3s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(-1, 1, -1) p-bound PR (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 15211, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 5, 0, 9, 0, 0), 1), 0.1s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(-1, 1, 0) p-bound PR (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 30844, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 18, 0, 13, 0, 0), 8), 0.3s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(-1, 1, 1) p-bound PR (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 583786, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 21, 5, 15, 0, 0), 4), 13.2s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(0, -1, -1) p-bound free (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 3052, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 2, 0, 9, 0, 0), 1), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(0, -1, 0) p-bound free (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 1139, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 2, 0, 9, 0, 0), 2), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(0, -1, 1) p-bound free (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 5596, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 2, 5, 11, 0, 0), 1), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(0, 0, -1) p-bound free (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 1174, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 0, 0, 9, 0, 0), 1), 0.0s
+SUMMARY: all exact checks passed
+## stage direct 13 26
+INFO G9 loaded from cache (it was computed by this script in an earlier run)
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(0, 0, 0) p-bound free (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 561, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 0, 0, 10, 0, 0), 12054), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(0, 0, 1) p-bound free (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 11961, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 0, 18, 13, 0, 0), 51), 0.1s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(0, 1, -1) p-bound PR (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 6756, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 5, 0, 11, 0, 0), 1), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(0, 1, 0) p-bound PR (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 12359, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 18, 0, 13, 0, 0), 51), 0.2s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(0, 1, 1) p-bound PR (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 235494, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((4, 0, 21, 5, 16, 0, 0), 10), 5.8s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(1, -1, -1) p-bound PB (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 20860, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((7, 5, 2, 0, 9, 0, 0), 1), 0.1s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(1, -1, 0) p-bound PB (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 7651, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((7, 5, 2, 0, 9, 0, 0), 2), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(1, -1, 1) p-bound PB (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 36870, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((7, 5, 2, 5, 11, 0, 0), 1), 0.2s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(1, 0, -1) p-bound PB (14) not used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 8170, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((7, 5, 0, 0, 9, 0, 0), 1), 0.0s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(1, 0, 0) p-bound PB (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 4411, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((7, 5, 0, 0, 13, 0, 0), 5916), 0.1s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(1, 0, 1) p-bound PB (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 105835, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((7, 5, 0, 21, 16, 0, 0), 19), 2.2s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(1, 1, 0) p-bound PB (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 70126, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((7, 5, 15, 0, 13, 0, 0), 19), 0.8s
+PASS Lemma 1 domain signs(x-1,y-1,z-1)=(1, 1, 1) p-bound PB (14) used: nonnegative coefficients and a positive monomial in strictly positive variables :: terms 1299921, negative 0, strict monomial (T,U,V,A,M,P,Q0) ((7, 5, 18, 5, 16, 0, 0), 6), 30.3s
+SUMMARY: all exact checks passed
+## stage square
+INFO G9 loaded from cache (it was computed by this script in an earlier run)
+PASS (15) b/U - r/V = (M^2 - L) * (positive rational function) :: ratio = (T*U + T + U + 1)/(T*U*M)
+PASS 3.1 square interval, PB side (polynomial degree 9 in M after removing M^1), even part of degree 4 in the squared variable: all Bernstein-type coefficients nonnegative, last one has a positive monomial in T,U,V :: term counts [792, 6108, 9995, 12397, 13756], negative counts [0, 0, 0, 0, 0], strict monomial ((11, 9, 6, 0, 0, 0, 0), 2)
+PASS 3.1 square interval, PB side (polynomial degree 9 in M after removing M^1), odd part of degree 4 in the squared variable: all Bernstein-type coefficients nonnegative, last one has a positive monomial in T,U,V :: term counts [2802, 8616, 12022, 14113, 15193], negative counts [0, 0, 0, 0, 0], strict monomial ((11, 9, 6, 0, 0, 0, 0), 2)
+PASS 3.1 square interval, PR side (polynomial degree 9 in w=1/M after removing M^3), even part of degree 4 in the squared variable: all Bernstein-type coefficients nonnegative, last one has a positive monomial in T,U,V :: term counts [4140, 7956, 11076, 13139, 13756], negative counts [0, 0, 0, 0, 0], strict monomial ((8, 6, 9, 0, 0, 0, 0), 2)
+PASS 3.1 square interval, PR side (polynomial degree 9 in w=1/M after removing M^3), odd part of degree 4 in the squared variable: all Bernstein-type coefficients nonnegative, last one has a positive monomial in T,U,V :: term counts [5400, 8588, 11282, 12732, 12912], negative counts [0, 0, 0, 0, 0], strict monomial ((8, 6, 9, 0, 0, 0, 0), 2)
+SUMMARY: all exact checks passed
+## stage numeric
+INFO G9 loaded from cache (it was computed by this script in an earlier run)
+PASS G9 vanishes identically on r = d = 0 (so the numeric necessity test skips points near it)
+NUMERIC necessity: G9 at 10 matching vectors whose gaps vanish on T (seed 7, not sign-constrained): max |G9|/sum|terms| = 1.85e-14; control at random coefficients: min 2.64e-01; skipped 5 points with r or d below 1e-3 relative (found with a_i + b_j = 0)
+NUMERIC main statement: 4 points on the T_46 stratum (lib, seeds 0-3), 15 BFGS restarts each: worst min Phi / max gap = 9.009e-17
+SUMMARY: all exact checks passed

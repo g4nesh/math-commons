@@ -1,0 +1,50 @@
+PASS T6 equals paper T_53 literally
+PASS T7 equals Table 5 aux set 19
+PASS generators(T6) == [0,1,2,5,7,9,21,35] :: [0, 1, 2, 5, 7, 9, 21, 35]
+PASS only f35 non-minor among them
+PASS evaluation at exclusive perms is identity
+PASS rank of P restricted to T6 rows is 6
+PASS at perm 17 only f1 is nonzero (tie 17 kills exactly f1) :: [1]
+PASS generators(T7) == [0,2,5,7,9,21,35]
+PASS 8 generators linearly independent
+PASS non-contact perms with f35 = 0 are exactly {5,7,11,14,15,17,18} :: ([5, 7, 11, 14, 15, 17, 18], [2, 3, 8, 10, 13, 16, 19, 20, 21, 22, 23])
+--- extra ties on the six-contact face T6 (native_harmonic (2)); paper cases contained in T6+{j}
+INFO tie 5 : paper cases (other than 53) contained: [4, 11, 17, 31, 65, 78] ; all-minor 6-subsets: 0
+PASS tie 5: T6+{j} contains an earlier paper case or an all-minor 6-set
+INFO tie 7 : paper cases (other than 53) contained: [18, 20, 26, 35] ; all-minor 6-subsets: 0
+PASS tie 7: T6+{j} contains an earlier paper case or an all-minor 6-set
+INFO tie 11 : paper cases (other than 53) contained: [26, 28, 39, 47, 59, 75] ; all-minor 6-subsets: 0
+PASS tie 11: T6+{j} contains an earlier paper case or an all-minor 6-set
+INFO tie 14 : paper cases (other than 53) contained: [4, 11, 17, 31, 65, 78] ; all-minor 6-subsets: 0
+PASS tie 14: T6+{j} contains an earlier paper case or an all-minor 6-set
+INFO tie 15 : paper cases (other than 53) contained: [26, 28, 39, 47, 59, 75] ; all-minor 6-subsets: 0
+PASS tie 15: T6+{j} contains an earlier paper case or an all-minor 6-set
+INFO tie 17 : paper cases (other than 53) contained: [54, 60] ; all-minor 6-subsets: 0
+INFO tie 18 : paper cases (other than 53) contained: [42, 48, 65, 70] ; all-minor 6-subsets: 0
+PASS tie 18: T6+{j} contains an earlier paper case or an all-minor 6-set
+--- zero coefficients on the seven-contact face T7 (whole_assembly table)
+PASS coefficient a(f0) is the exclusive gap at 18 on T7 cone
+INFO zero a(f0) tie 18 : paper cases contained in T7+{j}: [4, 11, 14, 17, 31, 32, 36, 42, 48, 54, 60, 65, 70, 78, 82]
+PASS zero a(f0): T7+{18} contains an earlier paper case
+PASS coefficient B(f2) is the exclusive gap at 15 on T7 cone
+INFO zero B(f2) tie 15 : paper cases contained in T7+{j}: [18, 20, 21, 23, 26, 28, 35, 36, 39, 47, 54, 59, 60, 75]
+PASS zero B(f2): T7+{15} contains an earlier paper case
+PASS coefficient C(f5) is the exclusive gap at 11 on T7 cone
+INFO zero C(f5) tie 11 : paper cases contained in T7+{j}: [18, 20, 21, 23, 26, 28, 35, 36, 39, 47, 54, 59, 60, 75]
+PASS zero C(f5): T7+{11} contains an earlier paper case
+PASS coefficient b(f7) is the exclusive gap at 14 on T7 cone
+INFO zero b(f7) tie 14 : paper cases contained in T7+{j}: [4, 11, 14, 17, 31, 32, 36, 42, 48, 54, 60, 65, 70, 78, 82]
+PASS zero b(f7): T7+{14} contains an earlier paper case
+PASS coefficient A(f9) is the exclusive gap at 7 on T7 cone
+INFO zero A(f9) tie 7 : paper cases contained in T7+{j}: [18, 20, 21, 23, 26, 28, 35, 36, 39, 47, 54, 59, 60, 75]
+PASS zero A(f9): T7+{7} contains an earlier paper case
+PASS coefficient c(f21) is the exclusive gap at 5 on T7 cone
+INFO zero c(f21) tie 5 : paper cases contained in T7+{j}: [4, 11, 14, 17, 31, 32, 36, 42, 48, 54, 60, 65, 70, 78, 82]
+PASS zero c(f21): T7+{5} contains an earlier paper case
+PASS four-coefficient atom (0,6;10;54) maps to (7, 21, 9, 35) with roles (a,b;c;d) :: ((0, 2, 3, 1), (2, 1, 3, 0), 0)
+PASS four-coefficient atom (0,6;10;54) maps to (0, 21, 2, 35) with roles (a,b;c;d) :: ((1, 2, 0, 3), (0, 1, 2, 3), 0)
+PASS four-coefficient atom (0,6;10;54) maps to (0, 7, 5, 35) with roles (a,b;c;d) :: ((0, 1, 2, 3), (0, 2, 3, 1), 0)
+PASS stabilizer of T7 fixes f35 and permutes the pairs (main, opposite) consistently
+PASS induced action is the full S3 :: [(0, 1, 2), (0, 2, 1), (1, 0, 2), (1, 2, 0), (2, 0, 1), (2, 1, 0)]
+NUMERIC T7 stratum: 30 strictly positive realizable samples (seeds 0..39, margin 1e-3); region-claim violations: 0; min Phi over SO(4) (6 restarts each, scaled) = 4.9391496782710045e-15
+RESULT all EXACT checks passed

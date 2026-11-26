@@ -1,0 +1,211 @@
+{
+ "doc_id": "final_referee_T47_negative_p_Heron_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T47_negative_p_Heron_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "one_line": "Excludes realizable points of the T_65 face with H6 < 0 and H8 < 0 (Thm 1), and with H6 < 0 when p >= b, a, c, d, e > 0 (Cor 2). Every polynomial identity was replayed EXACT, including both full congruences; the argument is sound modulo the HMSV set equality, Prop. C.6 and the negative-Phi theorem (CITED).",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [],
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "T = {0,4,5,6,9,12} = T_65. c = q f2 + p f9 + j f1 + c f45 + e f5 + d f35 + b f0 + a f7 (N_T is simplicial with exactly these 8 generators), coefficients >= 0, d > 0. If H6 < 0 and H8 < 0, where B^2 - 4AC0 = H6 H8 for G = Ap^2 + Bp + C0, then no x in X has c(x) = c with the restored real height. Zero coefficients and Phi = 0 are allowed."
+  },
+  {
+   "label": "Corollary 2",
+   "page": 2,
+   "paper_cases": [],
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "Same face, coefficients >= 0, a, c, d, e > 0, p >= b. If H6 < 0, there is no realizable lift. This includes H8 = 0, A = 0 and Phi = 0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (paper p.27): for x = u + iv in X, C(u) = 0 and det Hess C(u) = 0",
+   "used_for": "G = 0 at every spectrally realizable point, via det H(w(g,-C/Q)) = -4 d^2 G^2/Q^2 (replayed EXACT) and C < 0 (EXACT), so Q != 0 and h = -C/Q",
+   "match_checked": true
+  },
+  {
+   "kind": "external",
+   "ref": "HMSV via paper (C.2): {C = det H = 0} = Sigma2-hat (class (b); this document is one of the four listed in foundations/appendix-c-open-items.md Sec. 4.2)",
+   "used_for": "rank <= 12 at points of the perturbed radial graph that are not known to be realizable",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Corollary C.5 and Proposition C.6 (foundations/appendix-c-part1.md: proved, C.6 modulo standard GIT)",
+   "used_for": "rank <= 12 on Sigma2-hat; nonnegative 12x12 principal minors at H(Re x), one positive at rank 12",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022 (no realizable point with Phi < 0 for coefficients >= 0, e > 0)",
+   "used_for": "Corollary 2: excludes Phi < 0",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "C(w(g,h)) = C + hQ with C = -d{ab+ad+aq+bd+bp+d^2+de+dp+dq+ep+eq+pq} < 0",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own expansion"
+  },
+  {
+   "n": "2",
+   "claim": "det H(w(g,-C/Q)) = -4d^2 G^2/Q^2; G has 965 terms, degree 8, is irreducible",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "14x14 Bareiss, exact square root"
+  },
+  {
+   "n": "3",
+   "claim": "G is quadratic in p; B^2 - 4AC0 = H6 H8 (123 and 260 terms, primitive)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "flint factor"
+  },
+  {
+   "n": "4",
+   "claim": "principal minor P deleting coordinates 1, 6 is height-free; 3376 terms; degree 2 in p",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "12x12 Bareiss"
+  },
+  {
+   "n": "5",
+   "claim": "u0^2 - u1(B gamma - beta C0) = W18^2 (norm 620533 terms, W18 15999 terms, degree 18)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "exact square root"
+  },
+  {
+   "n": "6",
+   "claim": "S+ = H8 R8^2, S- = d^2 H6 T8^2 (465, 595 terms); W18, R8, T8 free of p",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "exact division and square roots"
+  },
+  {
+   "n": "7",
+   "claim": "P S+- = (u1 p + u0 +- W18)^2 + lambda+- G with p-free lambda (150891 and 159898 terms)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "full polynomial congruences"
+  },
+  {
+   "n": "8",
+   "claim": "on G = 0 with W18 R8 T8 != 0 and H6, H8 < 0: P < 0",
+   "kind": "inequality",
+   "status": "PROOF-READ",
+   "how": "S+- < 0 and two squares; P = 0 would force W18 = 0"
+  },
+  {
+   "n": "9",
+   "claim": "H6 H8 > 0 gives G_p = +-sqrt(disc) != 0 at real roots (including A = 0); local graph over the other 7 coordinates",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "implicit function theorem"
+  },
+  {
+   "n": "10",
+   "claim": "density of W18 R8 T8 != 0 on the graph",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "argument supplied by auditor: all three are nonzero polynomials free of p, and the graph projects onto an open set of the 7 free coordinates"
+  },
+  {
+   "n": "11",
+   "claim": "d^2/dp^2 det = -8 d^2 G_p^2/Q^2 < 0 gives corank <= 2; with rank <= 12 the rank is exactly 12",
+   "kind": "analytic",
+   "status": "CITED",
+   "how": "PROOF-READ; rank <= 12 at non-realizable points needs the HMSV set equality"
+  },
+  {
+   "n": "12",
+   "claim": "a rank-12 real symmetric matrix has all nonzero 12x12 principal minors of one sign (X B X^t and Cauchy-Binet)",
+   "kind": "identity",
+   "status": "PROOF-READ",
+   "how": "standard; checked"
+  },
+  {
+   "n": "13",
+   "claim": "continuity: all 12x12 principal minors <= 0 at the putative point; Prop. C.6 gives one > 0 at rank 12; contradiction",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "Prop. C.6"
+  },
+  {
+   "n": "14",
+   "claim": "Cor 2: 4LG + H6 Phi = K5^2 (K5 193 terms); L > 0",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "exact square root"
+  },
+  {
+   "n": "15",
+   "claim": "Cor 2: on G = 0 and H6 < 0, Phi <= 0; Phi < 0 is excluded by the cited theorem (e > 0), so Phi = K5 = 0 and 4L grad G = -H6 grad Phi",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "PROOF-READ plus root_moc4_T47_negative_Phi"
+  },
+  {
+   "n": "16",
+   "claim": "Cor 2: grad Phi != 0 (cases p > b with p != c, p = c, p = b): Phi_j = 2X(p-c), Phi|c=p = R^2, Phi_c|c=p, Phi|p=b = Xb^2, Phi_p|p=b",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy identities; the case logic PROOF-READ"
+  },
+  {
+   "n": "17",
+   "claim": "Cor 2: gcd(G, G_p) = 1, so G_p != 0 is dense; H6 H8 = G_p^2 there gives H8 < 0; Theorem 1 mechanism; G_x != 0 gives rank 12; contradiction",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "as steps 8-13"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "C constant",
+  "det identity with prefactor d^2, G (965 terms)",
+  "disc_p G = H6 H8 (123/260)",
+  "P (3376 terms, height-free, quadratic in p)",
+  "W18^2 identity (620533-term norm, 15999-term W18)",
+  "S+ = H8 R8^2, S- = d^2 H6 T8^2 (465/595)",
+  "both full congruences mod G",
+  "4LG + H6 Phi = K5^2 (193)",
+  "Phi identities of Cor 2",
+  "gcd(G,G_p) = 1, G irreducible"
+ ],
+ "numeric_tests": [
+  "15 realizable points on the T_65 stratum (lib sampler, seeds 5000+, margin 1e-2): |G|/scale <= 2e-13; none has H6 < 0 and H8 < 0; none lies in the Cor. 2 region with H6 < 0",
+  "8 random real points of G = 0 (seed 7): sigma_13/sigma_1 <= 1.6e-16, i.e. numerical corank >= 2, consistent with the cited rank bound"
+ ],
+ "unchecked": [
+  "the HMSV set equality itself (external)",
+  "the negative-Phi exclusion theorem (another document)"
+ ]
+}

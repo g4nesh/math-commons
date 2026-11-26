@@ -1,0 +1,18 @@
+PASS Delta = F+ F- (re-checked)
+PASS gamma has degree <= 3 in A :: 2
+INFO gamma              counts [4473, 4824, 5131, 4374] (pos,neg) [(4473, 0), (4824, 0), (5131, 0), (4374, 0)]
+PASS gamma: every F-coefficient table has the stated sign
+PASS gamma: term counts equal the stated [4473, 4824, 5131, 4374] :: [4473, 4824, 5131, 4374]
+PASS gamma: F^0 marker 4096 x^18 z^3 :: 4096
+PASS R beta - N alpha has degree <= 3 in A :: 3
+INFO R beta - N alpha   counts [5220, 5913, 6435, 5687] (pos,neg) [(5220, 0), (5913, 0), (6435, 0), (5687, 0)]
+PASS R beta - N alpha: every F-coefficient table has the stated sign
+PASS R beta - N alpha: term counts equal the stated [5220, 5913, 6435, 5687] :: [5220, 5913, 6435, 5687]
+PASS R beta - N alpha: F^0 marker 2048 x^18 z^3 :: 2048
+PASS R F* - N alpha has degree <= 3 in A :: 3
+INFO R F* - N alpha     counts [5179, 6624, 7299, 7514] (pos,neg) [(0, 5179), (0, 6624), (0, 7299), (0, 7514)]
+PASS R F* - N alpha: every F-coefficient table has the stated sign
+PASS R F* - N alpha: term counts equal the stated [5179, 6624, 7299, 7514] :: [5179, 6624, 7299, 7514]
+PASS R F* - N alpha: F^0 marker -384 x^18 z^3 C :: -384
+INFO chart: b c = Z^2 exactly, so V = bc - 1 = z(2+z) > 0 for z > 0 (by hand)
+RESULT all EXACT checks passed

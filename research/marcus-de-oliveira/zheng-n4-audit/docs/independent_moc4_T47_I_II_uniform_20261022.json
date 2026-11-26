@@ -1,0 +1,146 @@
+{
+ "doc_id": "independent_moc4_T47_I_II_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_I_II_uniform_20261022.pdf",
+ "pages": 4,
+ "verdict": "could-not-check",
+ "one_line": "Support inequality on the T_65 face for sector I (e <= j) and sector II (ab >= 1, e >= j). The capacity inputs, Q, 2 of 18 positive charts (19536/43392, matching) and the ab = 1 wall structure (9233 terms, 4 negatives, the four listed fibre polynomials) were replayed EXACT. The remaining 16 charts, the last comparison chart and the marker and corner tables are UNCHECKED, so no overall judgement; no discrepancy found.",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 2,
+   "paper_cases": [],
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "T_65 face, d = 1, a, p, e, c > 0, q, b, j >= 0. Every realizable cost with I: e <= j, or II: ab >= 1 and e >= j, has Phi >= 0 on SO(4). It includes q = 0, b = 0 where compatible, and j = 0 in II; it excludes the faces a, p, e, c = 0. The region ab < 1, e > j is not covered."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (paper p.27): for x = u + iv in X, C(u) = 0 and det Hess C(u) = 0",
+   "used_for": "G = 0 at every spectrally realizable point, via det H(w(g,-C/Q)) = -4 d^2 G^2/Q^2 (replayed EXACT) and C < 0 (EXACT), so Q != 0 and h = -C/Q",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2 / Corollary 2.2 (audited in foundations)",
+   "used_for": "transfer of the orthogonal support inequality to unitary matrices",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "SOC (45,1;35), old-H (9,1;35), chain (1;7,9;35), four (0,7;5;35): foundations/so4-atoms.md; orbit and roles re-checked EXACT here",
+   "used_for": "capacities (1), (2)",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "T24 coherent core transported by (59,53,55,67,54,2) -> (45,5,7,0,35,1) (foundations/so4-atoms-part2a.md; transport realised by a group element, EXACT here)",
+   "used_for": "capacity (3)",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022",
+   "used_for": "Phi < 0 in the comparison charts",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "C < 0 and Q formula; G = 0 necessary",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "replayed"
+  },
+  {
+   "n": "2",
+   "claim": "capacities (1): SOC, old-H, chain tuples are in the proved orbits with the printed roles (old-H reversed roles not in orbit)",
+   "kind": "citation",
+   "status": "EXACT",
+   "how": "group orbit computation with lib"
+  },
+  {
+   "n": "3",
+   "claim": "capacity (2) is the four-coefficient atom with (a,b,c,d) = (b,a,e,1)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "orbit check and sympy"
+  },
+  {
+   "n": "4",
+   "claim": "capacity (3) is the transported T24 coherent core",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "part 2a; transport map EXACT"
+  },
+  {
+   "n": "5",
+   "claim": "ab = 1 closure c >= 1/e as a limit of valid pointwise inequalities",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "b -> 1/a from above, Emax -> infinity"
+  },
+  {
+   "n": "6",
+   "claim": "sector I, ab <= 1, a = A/(1+A) and a = 1+A: cleared G positive (19536, 43392)",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "flint; counts match"
+  },
+  {
+   "n": "7",
+   "claim": "sector I, ab > 1 (8 charts) and sector II small/large p (8 charts)",
+   "kind": "inequality",
+   "status": "UNCHECKED",
+   "how": "time"
+  },
+  {
+   "n": "8",
+   "claim": "last II chart: HG = alpha Phi + U0 + c U1 interpolation (the identity is the one replayed for the low-j document); tables 6673/50347/107703",
+   "kind": "inequality",
+   "status": "UNCHECKED",
+   "how": "logic PROOF-READ, tables not replayed"
+  },
+  {
+   "n": "9",
+   "claim": "ab = 1 wall, a = A/(1+A): 9233 terms, 4 negative; their U-fibres are exactly 4U^2-U+13, 8U^2-2U+6, 5U^2-U+1, U^3+7U^2-U+2, each positive on U >= 0",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "flint fibres; sympy real roots"
+  },
+  {
+   "n": "10",
+   "claim": "ab = 1 wall, a = 1+A, with its three tables; 18 marker tables; 20 projective corners",
+   "kind": "inequality",
+   "status": "UNCHECKED",
+   "how": "time"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "atom orbit and role checks (SOC, old-H, chain, four, T24 transport)",
+  "four-atom capacity algebra = (2)",
+  "Q formula",
+  "sector I ab <= 1 charts (19536, 43392 positive)",
+  "ab = 1 wall (a < 1) fibre structure"
+ ],
+ "numeric_tests": [],
+ "unchecked": [
+  "16 of the 18 positive charts",
+  "last-II comparison tables",
+  "18 strict-marker tables and the j = 0 markers",
+  "20 projective corner endpoints",
+  "ab = 1, a = 1+A tables"
+ ]
+}

@@ -1,0 +1,170 @@
+{
+ "doc_id": "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "one_line": "Assembles the support inequality on the whole unswapped IIIb-plus region of T_65 (b > 1, a < 1/b, p, c > 0, 0 < j <= e, j > eb/(e+b)). The new cross-range and stationary-range certificates were replayed EXACT, with stationary counts matching. Correct modulo the cited high-j theorem, the negative-Phi theorem and foundation atoms.",
+ "statements": [
+  {
+   "label": "Theorem 1 (whole)",
+   "page": 1,
+   "paper_cases": [],
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "T_65 face, d = 1: b > 1, 0 < a < 1/b, p, c > 0, q >= 0, 0 < j <= e, j > eb/(e+b). Every x in X with c(x) of this form has Phi_{c(x)} >= 0 on SO(4). The boundary j = eb/(e+b) and the faces a, p, c, e = 0, b = 1, ab = 1 are excluded and stated to be separate inputs."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (paper p.27): for x = u + iv in X, C(u) = 0 and det Hess C(u) = 0",
+   "used_for": "G = 0 at every spectrally realizable point, via det H(w(g,-C/Q)) = -4 d^2 G^2/Q^2 (replayed EXACT) and C < 0 (EXACT), so Q != 0 and h = -C/Q",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2 / Corollary 2.2 (audited in foundations)",
+   "used_for": "transfer of the orthogonal support inequality to unitary matrices",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "SOC (45,1;35): cj >= 1, and old-H (aux 9, main 1; 35): j >= 1 + 1/p (foundations/so4-atoms.md; orbit and roles re-checked in the I_II replay)",
+   "used_for": "pointwise covers",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "merged coherent-C capacity C*(A0,j,e) (foundations/so4-atoms-part2b.md G4: PROVED IN THE DOCUMENT AND CHECKED)",
+   "used_for": "c >= C* cover",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022 (audited in this batch)",
+   "used_for": "0 < j <= 1",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "independent_moc4_T47_IIIb_plus_large_pc_20261022 (audited in this batch)",
+   "used_for": "stationary range with pc >= a^2",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "independent_moc4_T47_merged_C_high_j_uniform_20261022",
+   "used_for": "j >= b",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022",
+   "used_for": "Phi < 0",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "covers: old-H j >= 1 + 1/p, SOC cj >= 1, merged-C c >= C*",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "foundations atoms (proved)"
+  },
+  {
+   "n": "2",
+   "claim": "0 < j <= 1: after SOC (c >= 1/j), the low-j theorem applies; its region matches (j <= 1 < b makes j > eb/(e+b) equivalent to e < bj/(b-j))",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "doc 4 of this batch (EXACT); match PROOF-READ"
+  },
+  {
+   "n": "3",
+   "claim": "j >= b: merged-C high-j theorem",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "not in this batch"
+  },
+  {
+   "n": "4",
+   "claim": "1 < j < b hard part: j = 1+T, b = j+A, a = theta(V)/b, p = theta(P)/T covers p < 1/(j-1), a < 1/b",
+   "kind": "identity",
+   "status": "PROOF-READ",
+   "how": "direct"
+  },
+  {
+   "n": "5",
+   "claim": "cross range je <= A0^2: R = 1 + (A0/j - 1) theta(U), e = jR^2, c = C* theta(S) with C* = (A0+e)/(A0 j (1+R)^2) rational",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy: sqrt(je) = jR; R -> A0/j"
+  },
+  {
+   "n": "6",
+   "claim": "cross range: cleared G has only positive coefficients with strict markers at U = Q = 0, so G > 0",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "flint, 2,009,232 terms"
+  },
+  {
+   "n": "7",
+   "claim": "stationary range je >= A0^2: e = A0^2/j + U, c = theta(S)/(j + A0); cleared G has 134717 terms, 24 negative",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "flint; counts match"
+  },
+  {
+   "n": "8",
+   "claim": "stationary, pc >= a^2: the large-pc theorem (its hypotheses j > 1, j < 1 + 1/p, plus condition, pc >= a^2 hold)",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "doc 3 of this batch"
+  },
+  {
+   "n": "9",
+   "claim": "stationary, pc <= a^2, Phi >= 0: 42 G~ = R0 + M_pc F_pc + M_Phi F_Phi with R0 > 0 and positive multipliers and guard denominators",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "recomputed; weights transcribed as data"
+  },
+  {
+   "n": "10",
+   "claim": "stationary, Phi < 0: negative-Phi theorem",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "other document"
+  },
+  {
+   "n": "11",
+   "claim": "exhaustiveness of the assembly, including the interfaces j = 1, j = b, je = A0^2, e = j, q = 0, pc = a^2",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "each interface lies in a closed chart or a theorem with inclusive bound"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "G (965 terms)",
+  "cross-range chart: all 2,009,232 cleared coefficients positive, markers at U = Q = 0",
+  "stationary chart: 134717 terms, 24 negative",
+  "stationary two-guard certificate R0 (134706 positive, 16827 markers)",
+  "chart identities for C* and R"
+ ],
+ "numeric_tests": [
+  "stationary range, pc <= a^2, Phi >= 0: 3000 log-uniform chart samples (seed 11), min G/scale = 0.31 > 0"
+ ],
+ "unchecked": [
+  "projective endpoint table at je = A0^2 (not needed, see deviations)",
+  "merged-C high-j theorem (other document)"
+ ]
+}

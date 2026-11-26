@@ -1,0 +1,129 @@
+{
+  "permutations": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      1
+    ],
+    [
+      0,
+      2,
+      1
+    ],
+    [
+      1,
+      0,
+      2
+    ],
+    [
+      2,
+      1,
+      0
+    ]
+  ],
+  "pairing_values": [
+    [
+      -216,
+      -648
+    ],
+    [
+      284,
+      -588
+    ],
+    [
+      295,
+      350
+    ],
+    [
+      -531,
+      -18
+    ],
+    [
+      -66,
+      252
+    ],
+    [
+      960,
+      -1120
+    ]
+  ],
+  "minimum_vertex_score": -850560,
+  "minimum_pairs": [
+    [
+      4,
+      5
+    ]
+  ],
+  "abstract_target": [
+    120416,
+    375488
+  ],
+  "abstract_target_score": -871392,
+  "separation": -20832,
+  "generator_rank": 15,
+  "active_count": 20,
+  "active_rank": 14,
+  "generator_dual_value_counts": {
+    "0": 20,
+    "1/2": 14,
+    "1/4": 11
+  },
+  "grouped_coefficient_count": 141,
+  "grouped_coefficient_minimum": "0",
+  "violations_per_pr81_orbit": [
+    0,
+    0,
+    0,
+    2,
+    1,
+    2,
+    2
+  ],
+  "single_ray_repairs": [
+    {
+      "orbit": 5,
+      "dual_value": "-1/2",
+      "positive_terms": 14
+    },
+    {
+      "orbit": 4,
+      "dual_value": "-1/4",
+      "positive_terms": 14
+    },
+    {
+      "orbit": 4,
+      "dual_value": "-1/4",
+      "positive_terms": 14
+    },
+    {
+      "orbit": 6,
+      "dual_value": "-1/4",
+      "positive_terms": 14
+    },
+    {
+      "orbit": 6,
+      "dual_value": "-1/4",
+      "positive_terms": 14
+    },
+    {
+      "orbit": 7,
+      "dual_value": "-1/4",
+      "positive_terms": 14
+    },
+    {
+      "orbit": 7,
+      "dual_value": "-1/4",
+      "positive_terms": 14
+    }
+  ]
+}

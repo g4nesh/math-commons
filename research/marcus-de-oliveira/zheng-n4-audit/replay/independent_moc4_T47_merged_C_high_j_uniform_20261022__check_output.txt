@@ -1,0 +1,38 @@
+### run: check.py r1 r2end
+PASS T65 generators are the eight facets (2,9,1,45,5,35,0,7) of the document
+PASS the eight generators are linearly independent (coefficients of a source are unique)
+PASS only f35 is non-minor
+PASS C(c) = -d(qp+qe+qd+qa+pe+pd+pb+ed+d^2+db+da+ba) (height-equation constant; < 0 when d>0, others >= 0)
+PASS C(c + h kappa) = C(c) + h (m0 m6 - m1 m5) (linear in h)
+PASS det Hess C(c + h kappa) has h-degree <= 3 :: [0, 1, 2, 3]
+PASS at h = -C(c)/Q: det Hess C = -4 d^2 G^2 / Q^2 with G a polynomial (965 terms, multidegree (2,2,2,2,2,8,3,3)) :: 965
+INFO G built in 9.6s :: sign fixed so that G > 0 at (q,p,j,c,e,d,b,a)=(0,2,1/2,1/1000,2/3,1,2,1/10): G = 633.0121937158333
+PASS Thm 2 range j >= A0: chart denominators nonnegative; cleared G has only positive coefficients (document: 109050); positive monomial free of T,U,Q :: (109050, 1)
+PASS Thm 2 endpoint je = A0^2 of range 2: chart denominators nonnegative; cleared G has only positive coefficients; positive monomial free of T,U,Q :: (80874, 8)
+SUMMARY: 0 EXACT check(s) failed []
+exit 0
+### run: check.py num
+PASS T65 generators are the eight facets (2,9,1,45,5,35,0,7) of the document
+PASS the eight generators are linearly independent (coefficients of a source are unique)
+PASS only f35 is non-minor
+PASS C(c) = -d(qp+qe+qd+qa+pe+pd+pb+ed+d^2+db+da+ba) (height-equation constant; < 0 when d>0, others >= 0)
+PASS C(c + h kappa) = C(c) + h (m0 m6 - m1 m5) (linear in h)
+PASS det Hess C(c + h kappa) has h-degree <= 3 :: [0, 1, 2, 3]
+PASS at h = -C(c)/Q: det Hess C = -4 d^2 G^2 / Q^2 with G a polynomial (965 terms, multidegree (2,2,2,2,2,8,3,3)) :: 965
+INFO G built in 7.1s :: sign fixed so that G > 0 at (q,p,j,c,e,d,b,a)=(0,2,1/2,1/1000,2/3,1,2,1/10): G = 633.0121937158333
+INFO NUMERIC doc7_range2 (seed 11, N 20000): min G over all samples 89.8409; over the pc <= a^2, Phi >= 0 subset (11804 samples) 93.1998 :: no sample with G <= 0
+INFO NUMERIC doc7_range3 (seed 11, N 20000): min G over all samples 86.6977; over the pc <= a^2, Phi >= 0 subset (11790 samples) 109.683 :: no sample with G <= 0
+SUMMARY: 0 EXACT check(s) failed []
+exit 0
+### run: check.py r2 (long job)
+PASS T65 generators are the eight facets (2,9,1,45,5,35,0,7) of the document
+PASS the eight generators are linearly independent (coefficients of a source are unique)
+PASS only f35 is non-minor
+PASS C(c) = -d(qp+qe+qd+qa+pe+pd+pb+ed+d^2+db+da+ba) (height-equation constant; < 0 when d>0, others >= 0)
+PASS C(c + h kappa) = C(c) + h (m0 m6 - m1 m5) (linear in h)
+PASS det Hess C(c + h kappa) has h-degree <= 3 :: [0, 1, 2, 3]
+PASS at h = -C(c)/Q: det Hess C = -4 d^2 G^2 / Q^2 with G a polynomial (965 terms, multidegree (2,2,2,2,2,8,3,3)) :: 965
+INFO G built in 6.2s :: sign fixed so that G > 0 at (q,p,j,c,e,d,b,a)=(0,2,1/2,1/1000,2/3,1,2,1/10): G = 633.0121937158333
+PASS Thm 2 range b <= j < A0, je <= A0^2: chart denominators nonnegative; cleared G has only positive coefficients (document: 1810026); positive monomial free of T,U,Q :: (1810026, 32)
+SUMMARY: 0 EXACT check(s) failed []
+exit 0

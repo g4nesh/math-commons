@@ -1,0 +1,77 @@
+{
+ "doc_id": "root_moc4_T47_negative_Phi_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_negative_Phi_20261022.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "paper_cases": [],
+   "restatement": "T_65 source g = q f2+p f9+j f1+c f45+e f5+d f35+b f0+a f7, all coefficients >= 0, d,e > 0, Phi = [(p-c)j+(b-c)(p+d+a)-pa]^2-4ac(p-b)(p+d+a) < 0: no x in X has c(x) = g (any height). Nothing for Phi >= 0 or e = 0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "external",
+   "ref": "{F = det HF = 0} = Sec(M), rank HF <= 12 on Sec",
+   "used_for": "rank exactly 12",
+   "match_checked": false
+  },
+  {
+   "kind": "external",
+   "ref": "global inertia: order-12 principal minors >= 0 at realizable responses",
+   "used_for": "final contradiction",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (audit item 5)",
+   "used_for": "G = 0",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  "C,Q EXACT",
+  "Q=0 impossible PROOF-READ",
+  "det identity EXACT pointwise (25)",
+  "P height-free EXACT",
+  "disc = e^2 Phi Psi EXACT",
+  "norm identities UNCHECKED",
+  "G e-decomposition EXACT",
+  "conic det EXACT",
+  "Phi<0 => a,c>0,p>b,L>0 PROOF-READ",
+  "rank 12 PROOF-READ (cited bound)",
+  "P<=0 rests on UNCHECKED identities, NUMERIC support",
+  "Schur 12-minor sign PROOF-READ",
+  "contradiction PROOF-READ (cited inertia)"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "C,Q",
+  "det HF*Q^2=-4d^2G^2 at 25 rational points",
+  "B^2-4AC0=e^2 Phi Psi (162 terms)",
+  "G = e^2A2+e(q+d+b)B1+(q+d+b)^2K",
+  "det 2H_conic = -2acd^2L^2Phi^2",
+  "Phi(b=j=0) square",
+  "gcd(A,B,C0)=1"
+ ],
+ "numeric_tests": [
+  "P<0 at all 132 real roots of G=0 with Phi<0 (seed 7, 1500 draws, max P = -0.0202)",
+  "200 random realizable responses: rank HF <= 12 and no negative order-12 principal minor (seed 3)"
+ ],
+ "unchecked": [
+  "the five norm identities U, W0, H9, K7, W16 (polynomials not rebuilt)",
+  "symbolic rebuild of P (3475 terms)"
+ ]
+}

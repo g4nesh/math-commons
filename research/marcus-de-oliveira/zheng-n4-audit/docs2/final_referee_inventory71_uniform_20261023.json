@@ -1,0 +1,66 @@
+{
+  "doc_id": "final_referee_inventory71_uniform_20261023",
+  "pdf": "proofs/manin_transfer_20261021/final_referee_inventory71_uniform_20261023.pdf",
+  "pages": 5,
+  "auditor": "C38-T72-T74-second (independent second pass)",
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "whole (Theorem 1)", "page": 1, "paper_cases": [72],
+     "contact_sets": [[1, 3, 4, 7, 8, 12], [0, 1, 2, 10, 14, 17]],
+     "restatement": "For every x in X (all spectra, including repeated eigenvalues, a_i+b_j=0 and extra contacts) with Pc(x)>=0 and (Pc(x))_pi=0 for pi in T={1,3,4,7,8,12} (= paper T_72), Phi_{c(x)}(O)>=0 for all O in O(4). Proved on T'={0,1,2,10,14,17}, mapped to T by rho=0213, chi=0231, no transpose.",
+     "covers_all_spectra": true}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "paper Sect. 4.2 G-equivariance (lib EXACT test of (4.7))", "used_for": "transport T' -> T", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper App. A.1: grad C = 0 on X (lib EXACT)", "used_for": "polarization necessity C=0, det Hess C=0", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper (4.2) Phi_n = det^2", "used_for": "minor remainders nonnegative", "match_checked": true},
+    {"kind": "common-lemma", "ref": "sharp SOC reference inequality (f1,f9;f22)", "used_for": "(3) d <= H3(a,b,c)", "match_checked": true},
+    {"kind": "common-lemma", "ref": "old-H reference inequality (f3,f15;f26)", "used_for": "(4) t(c-d) >= d^2", "match_checked": true},
+    {"kind": "common-lemma", "ref": "ordinary chain reference inequality (center f2; leaves f0,f12; f70)", "used_for": "(5) c >= d^2/w + d^2/t", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper Theorem 1.2", "used_for": "remark on the unitary assertion only", "match_checked": false}
+  ],
+  "steps": [
+    {"n": 1, "claim": "action maps T' to T; transport", "status": "EXACT (set map) / CITED (equivariance, lib-tested)"},
+    {"n": 2, "claim": "generators(T') = {0,2,10,12,13,15,21,23,26}, f26 only non-minor", "status": "EXACT"},
+    {"n": 3, "claim": "representation (1), coefficients = gaps at 23,15,8,7,4,16,9, d=g11-g9", "status": "EXACT"},
+    {"n": 4, "claim": "(2) relation and g20, g12, g11", "status": "EXACT"},
+    {"n": 5, "claim": "signed side d<=0 is a minor sum", "status": "EXACT + PROOF-READ"},
+    {"n": 6, "claim": "role-preserving group images of the three atoms", "status": "EXACT"},
+    {"n": 7, "claim": "the atom inequalities themselves", "status": "CITED (NUMERIC support)"},
+    {"n": 8, "claim": "H3 allocation", "status": "PROOF-READ"},
+    {"n": 9, "claim": "(4),(5) from atoms", "status": "PROOF-READ"},
+    {"n": 10, "claim": "failure conditions (6),(7)", "status": "PROOF-READ"},
+    {"n": 11, "claim": "(8) C(g+z kappa) = C + zQ", "status": "EXACT"},
+    {"n": 12, "claim": "C>0, Q>0, z=-C/Q", "status": "PROOF-READ"},
+    {"n": 13, "claim": "realizable => C=0 and det Hess C=0 at Re x (polarization, Euler)", "status": "PROOF-READ"},
+    {"n": 14, "claim": "(9) Q^4 det H = -4 Q^2 G9^2, G9 1615 terms deg 9, [d^9]=1", "status": "EXACT"},
+    {"n": 15, "claim": "negative-response source has G9=0", "status": "PROOF-READ"},
+    {"n": 16, "claim": "(10) symmetry", "status": "EXACT"},
+    {"n": 17, "claim": "chart coverage of the strict-failure domain", "status": "PROOF-READ + EXACT inverses"},
+    {"n": 18, "claim": "17 cleared tables all positive, counts as stated, total 496798", "status": "EXACT"},
+    {"n": 19, "claim": "strict markers and positive denominators", "status": "EXACT + PROOF-READ"},
+    {"n": 20, "claim": "conclusion", "status": "PROOF-READ"}
+  ],
+  "gaps": [
+    {"location": "pp. 1-2, paragraphs introducing (3), (4), (5)", "claim": "sharp SOC, old-H and ordinary chain reference inequalities hold", "why": "cited without a document reference and without their exact hypotheses; only their consequences (3)-(5) are written", "severity": "presentation", "believed_true": true, "repair": "name the source documents and state each atom: z^2<=xy; x(y-z)>=z^2; center >= z^2/x1 + z^2/x2"}
+  ],
+  "exact_replays": [
+    "T = paper T_72; literal action maps T' to T and permutes the 82 f_j",
+    "generators(T') and minor flags; relation f10+f26=f0+f13+f23; gap readings; g20,g12,g11",
+    "role-preserving G-images of the three atoms",
+    "(8) with the paper cubic (A.2)",
+    "14x14 Hessian determinant of C on g+z kappa (27680 terms), (9) with G9 re-derived as exact square root: 1615 terms, degree 9, [d^9]=1, profile (3,2,2,3,2,3,2,9)",
+    "(10) symmetry of G9, C, Q",
+    "17 cleared tables: all coefficients positive, term counts equal the document's (total 496798), strict markers present",
+    "chart inverse maps (11)-(16), (19)"
+  ],
+  "numeric_tests": [
+    "sharp forms of the five atom images minimized over SO(4): min ~ 0 (>= -4e-28), 100 BFGS+Nelder-Mead restarts each, seed 1",
+    "Phi_f26 alone reaches -0.0674 (atoms are not vacuous)",
+    "random realizable points on the T' stratum (lib sampler, seeds 0-29 or fewer, margins 0 and 1e-2): representation, C(Re x)=0, G9=0 at exact-contact points, d>0 points satisfy (3)-(5), min Phi >= -1e-10"
+  ],
+  "unchecked": [
+    "proofs of the three reference atom inequalities (cited; numeric only)",
+    "Theorem 1.2 (unitary assertion remark; not needed for the contact-cone statement)"
+  ]
+}

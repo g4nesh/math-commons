@@ -1,0 +1,6 @@
+PASS PCBE: x^2/L + (1-x)^2/j - (1+x/L)^2/kappa == K(1-x)^2 - 1
+PASS PCBE: x^2/L + x^2(1/e - 1/(L(L+1))) == x^2(1/e + 1/(L+1))
+PASS PCBE (3): (A+Bt)^2/(J-kt^2) - (A^2/J - B^2/k) == (kAt+BJ)^2/(kJ(J-kt^2))
+PASS PCBE: x* solves K(1-x)^2 - 1 = B x^2
+INFO NUMERIC PCBE threshold attack (seed 7, 300 samples, 4 BFGS restarts each): worst min Phi :: -4.222153184568875e-16
+SUMMARY: 0 EXACT check(s) failed []

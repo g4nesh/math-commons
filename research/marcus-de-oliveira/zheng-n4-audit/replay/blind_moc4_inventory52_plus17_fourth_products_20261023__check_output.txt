@@ -1,0 +1,8 @@
+PASS (4): a b = 1 + u
+PASS (4): 1 - a = Ws/(s+Ws) >= 0
+PASS m - abc = (1-a)bc + b + c + 1
+PASS (6) row 2/3: a - 1 = s/(1+s), 2 - a = 1/(1+s)
+PASS (6) row 3: b - a = u(2-a)/(1+u), 2 - b = (2-a)/(1+u)
+PASS (7): c - b = v(3-b)/(1+v), 3 - c = (3-b)/(1+v)
+UNCHECKED: all L_ij, controller, three-capacity and box coefficient tables of the note
+RESULT all EXACT checks passed

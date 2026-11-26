@@ -1,0 +1,131 @@
+{
+ "doc_id": "final_referee_inventory75_whole_assembly_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_inventory75_whole_assembly_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    76
+   ],
+   "contact_sets": [
+    [
+     0,
+     1,
+     3,
+     10,
+     11,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For x in X with Pc(x) >= 0 and (Pc)_s = 0 on {0,1,3,10,11,12} (non-strict), Phi_{c(x)}(O) >= 0 for O in O(4), hence U(4). Assembled from the conditional harmonic theorem and the S16 boundary theorem."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "independent_inventory75_native_harmonic_conditional_20261023",
+   "used_for": "conditional theorem (audited in this batch)",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "final_referee_inventory75_boundary16_uniform_20261023",
+   "used_for": "hypothesis S16 = Table 5 j=18 (audited in this batch)",
+   "match_checked": true,
+   "contact_set": [
+    0,
+    1,
+    3,
+    10,
+    11,
+    12,
+    16
+   ]
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "Table 5 j=27",
+   "used_for": "face S14 = g.T7_27",
+   "match_checked": true,
+   "contact_set": [
+    1,
+    4,
+    5,
+    7,
+    9,
+    12,
+    14
+   ]
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_9,T_11,T_17,T_29,T_31,T_36,T_38,T_39,T_40,T_44,T_46",
+   "used_for": "other seventh ties",
+   "match_checked": true
+  },
+  {
+   "kind": "external",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary bridge",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "source and d = g2",
+   "kind": "finite",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "S14 image of T7_27",
+   "kind": "finite",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "other ties closed or force d = 0",
+   "kind": "finite",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "S16 source = parent minus f1",
+   "kind": "finite",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "summary of boundary16",
+   "kind": "citation",
+   "status": "CITED"
+  },
+  {
+   "n": 6,
+   "claim": "summary of conditional theorem",
+   "kind": "citation",
+   "status": "CITED"
+  },
+  {
+   "n": 7,
+   "claim": "conclusion",
+   "kind": "argument",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "interface combinatorics (8 checks)"
+ ],
+ "numeric_tests": [
+  "see component documents"
+ ],
+ "unchecked": [
+  "proof of Table 5 j=27 (root_inventory67_g14_uniform) not audited here"
+ ]
+}

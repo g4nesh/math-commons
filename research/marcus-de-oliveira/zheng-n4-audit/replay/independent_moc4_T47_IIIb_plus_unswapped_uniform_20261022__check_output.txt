@@ -1,0 +1,13 @@
+INFO radial octic rebuilt from the cubic in 47.4 s
+PASS height equation C(c(g)+h kappa) is affine in h
+PASS G has 965 terms and total degree 8
+PASS stationary chart: cleared G has 134717 terms, 24 negative (document) : terms=134717 negative=24 min=-120 (1 s)
+PASS guard denominators have only positive coefficients
+PASS stationary certificate: R0 = 42 Gtilde - Mpc F_pc - MPhi F_Phi has only positive coefficients : R0 terms=134706 (document 134706), negative=0
+PASS R0 has positive monomials with U = Q = 0 : 16827
+PASS the two multipliers have only positive coefficients (5 and 6 monomials)
+PASS cross chart: e=jR^2 gives sqrt(je) = jR and the C* branch formula
+PASS cross chart: R -> A0/j as U -> oo (je -> A0^2)
+PASS cross chart: cleared G has only positive coefficients : terms=2009232 negative=0 markers(U=Q=0)=69552 (94 s); document: 1232529 terms
+NUMERIC stationary range, pc<=a^2, Phi>=0: 3000 log-uniform chart samples (seed 11): min G/scale = 3.087e-01 (positive means G>0)
+SUMMARY: all EXACT checks passed

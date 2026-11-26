@@ -1,0 +1,63 @@
+{
+ "doc_id": "final_referee_T46_a0_balanced_leaf_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T46_a0_balanced_leaf_uniform_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Lemma 1",
+   "page": 1,
+   "restatement": "d=1, q=b=x>1, j>0: p>=max(1/j-(x-1)/(x+1),0) => Phi>=0 on SO(4) (universal)"
+  },
+  {
+   "label": "Theorem 2",
+   "page": 1,
+   "contact_set": [
+    1,
+    3,
+    5,
+    6,
+    7,
+    8,
+    14
+   ],
+   "restatement": "realizable cost on the a=0 face with q=b => Phi>=0 on SO(4)"
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "foundations so4-atoms-part2b G3 (T46 face Gram constructions)",
+   "status": "CITED"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_29,T_7,T_36,T_1,T_39",
+   "status": "CITED",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (audit item 5)",
+   "status": "CITED"
+  }
+ ],
+ "steps": [
+  "lambda algebra EXACT",
+  "threshold EXACT",
+  "wall closure PROOF-READ",
+  "G8 EXACT",
+  "tables 415, 60, 664 EXACT",
+  "split PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "G8",
+  "tables 415/60/664 all negative",
+  "chart coverage identity"
+ ],
+ "numeric_tests": [
+  "Lemma 1 threshold: 12 samples seed 12, worst 1.1e-15"
+ ],
+ "unchecked": []
+}

@@ -1,0 +1,31 @@
+PASS C(c + z kappa) has degree 1 in z :: [0, 1]
+PASS z-coefficient equals Q = -(AB+AC+BC+d(A+B+C)+d^2)
+PASS z-free part equals -(stated cubic) (so F = -N - R B + Q z)
+PASS z-free part has degree 1 in B
+PASS N and R have only positive coefficients
+PASS H with rows/cols 0,5 deleted is independent of z
+PASS supplement source order and contacts match
+PASS G (data) has 687 terms, total degree 9, degree 2 in B, no z :: (687, 9)
+PASS det H(c + z* kappa) Q^2 = -4 G^2 at 12 random rational points (exact pointwise)
+PASS two octics: degree 8, 136 terms each :: [(8, 136), (8, 136)]
+PASS Delta = beta^2 - 4 alpha gamma equals F+ F- (exact identity)
+PASS octic irreducible over Q
+PASS octic irreducible over Q
+PASS det H_I = -d A^2 P9 (P9 data, 9 variables-degree 9, B-degree 2) at 6 random points (exact pointwise)
+PASS norm u0^2 - u1(beta p0 - p1 gamma) is a rational square at 8 random points
+PASS (7) S+- / (-d F) is a rational square for an octic F, both signs, 8 points
+PASS (8) P S+- - (U +- W)^2 is proportional to G as a quadratic in B, 8 points
+PASS bordered 13x13 principal minors on I+{0}, I+{5} vanish on G = 0 (divisible by G in B; 4 random parameter points)
+INFO table gamma              terms   9772  positive   9772  negative      0
+PASS gamma table all positive, 9772 terms :: 9772
+PASS gamma marker 512 x^21
+INFO table R beta - N alpha   terms  13819  positive  13819  negative      0
+PASS R beta - N alpha table all positive, 13819 terms :: 13819
+PASS R beta - N alpha marker 256 x^21
+INFO table R F0 - N alpha     terms  15301  positive   6232  negative   9069
+INFO R F0 - N alpha mixed signs
+INFO table R F1 - N alpha     terms  14549  positive      0  negative  14549
+INFO R F1 - N alpha all negative
+PASS R F* - N alpha table all negative (14549 terms) for this octic :: 14549
+PASS strict markers -208 x^21 A and -48 x^21 C :: (-208, -48)
+RESULT all EXACT checks passed

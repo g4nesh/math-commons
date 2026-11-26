@@ -1,0 +1,31 @@
+PASS paper T_49 = {0,3,5,6,9,12}
+PASS generators(T_49) = f0,f1,f2,f5,f7,f9,f29,f39,f40,f41 (ten)  [0, 1, 2, 5, 7, 9, 29, 39, 40, 41]
+PASS the eight role generators vanish together exactly on T_49
+PASS d = f40 is the only non-minor role
+PASS f1 = f7 + f39 + f0 + -f40 (so a ten-generator source has an eight-role form with d replaced by d - x1 - x9)
+PASS f9 = f7 + f2 + f41 + -f40 (so a ten-generator source has an eight-role form with d replaced by d - x1 - x9)
+PASS Q0 = (c+d)(d+e+j) - p(e+j)
+PASS (e+j)C - ejQ0 has 42 terms, all positive, including d^3 e and d^3 j
+PASS c = 0, Q0 = 0: (e+j)C0 is a 27-term polynomial with nonnegative coefficients containing d^3(e+j)
+PASS zero face q = 0: contacts [0, 3, 5, 6, 9, 12, 16] contain an image of paper T_39  image (0, 3, 5, 6, 9, 16) via g=((1, 3, 0, 2), (1, 3, 2, 0), 0)
+PASS zero face p = 0: contacts [0, 3, 5, 6, 9, 11, 12] contain an image of paper T_1  image (0, 3, 5, 6, 9, 11) via g=((2, 3, 0, 1), (3, 1, 0, 2), 1)
+PASS zero face j = 0: contacts [0, 2, 3, 5, 6, 9, 12] contain an image of paper T_3  image (0, 2, 3, 5, 6, 9) via g=((0, 1, 3, 2), (0, 2, 3, 1), 0)
+PASS zero face e = 0: contacts [0, 3, 5, 6, 9, 12, 13] contain an image of paper T_24  image (0, 3, 5, 6, 9, 13) via g=((3, 2, 1, 0), (3, 2, 0, 1), 0)
+PASS zero face b = 0: contacts [0, 3, 5, 6, 7, 9, 12] contain an image of paper T_43  image (0, 3, 5, 6, 7, 9) via g=((0, 1, 2, 3), (0, 1, 3, 2), 0)
+PASS zero face a = 0: contacts [0, 3, 5, 6, 9, 12, 23] contain an image of paper T_44  image (0, 3, 5, 6, 9, 23) via g=((2, 3, 1, 0), (2, 1, 0, 3), 1)
+PASS chain orbit has 576 members, old-H orbit 288
+PASS chain (centre f5; leaves f0, f2; non-minor f40) is in the proved chain orbit
+PASS cached G has the hash of the from-scratch computation
+PASS G: 1772 terms, homogeneous of degree 9, sha256 c89c8cbc5331fcfdbdc22587fbcf8a017fc692eb8fd1f38edbe8a59ca0550a49 (cache)
+PASS G is quadratic in p
+PASS Disc_p(G|c=0) = (a+d+e)^2 F6 F8 with F8 a homogeneous octic  F8 terms 321
+PASS upper-Heron chart: a = AN/AD satisfies a t + (1-j)B0 = j(B0/X + X) (d = 1)
+PASS upper-Heron: substituted G (cleared by AD, AN, E, 1+P only) has 46874 terms, all of one sign  extra factors removed: {}
+PASS upper-Heron: coefficient of E^2 is 4 (= -4 in the supplement's sign)
+PASS upper-Heron wall J = 0 keeps the sign and the E^2 term
+PASS upper-Heron wall P = 0 keeps the sign and the E^2 term
+PASS upper-Heron wall Q = 0 keeps the sign and the E^2 term
+PASS upper-Heron wall B = 0 keeps the sign and the E^2 term
+INFO upper-Heron sha256 28f9c6d55ca343333672cc53dbf3c4b6af5c7e82878bfa172547526601c44280 t=13
+NUMERIC (a,e) chain capacity p = d^2(1/a+1/e) on the c = 0 face (not necessarily realizable): 10 samples, seed 17, restarts 8, worst min Phi / scale = -1.402e-16
+SUMMARY: 0 EXACT check(s) failed

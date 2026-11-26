@@ -1,0 +1,17 @@
+PASS SOC (45,1;35) in the orbit of (1,9;22), pair unordered
+PASS old-H (aux 9, main 1; 35) in the orbit of (3,15;26), ordered
+PASS old-H reversed roles (aux 1, main 9; 35) NOT in that orbit
+PASS chain (centre 1; leaves 7,9; 35) in the orbit of (2;0,12;70)
+PASS four (0,7;5;35) in the orbit of (0,6;10;54), a,b unordered
+PASS T24 core profile map (59,53,55,67,54,2) -> (45,5,7,0,35,1) is realised by one group element
+PASS four atom ab(c-d) >= d^2(a+b+c+d) with (a,b,c,d)=(b,a,e,1) is e >= (a+1)(b+1)/(ab-1) for ab>1
+INFO radial octic rebuilt from the cubic in 61.9 s
+PASS height equation C(c(g)+h kappa) is affine in h
+PASS Q (d=1) = ce - cj - 1 - e - p - q - ep - eq + jp - pq
+PASS sector I, ab<=1, a = A/(1+A): cleared G has only positive coefficients : terms=19536 (document: 19536 / 43392)
+PASS sector I, ab<=1, a = 1+A: cleared G has only positive coefficients : terms=43392 (document: 19536 / 43392)
+INFO ab=1 wall chart: terms=9233 negative=4 (document: 9233 terms, 4 negative)
+INFO fibers with a negative coefficient (after removing the power of U): [4*U**2 - U + 13, 8*U**2 - 2*U + 6, 5*U**2 - U + 1, U**3 + 7*U**2 - U + 2]
+PASS the negative fibers are, up to a positive integer factor, the four listed univariate polynomials
+PASS each listed polynomial is positive on U >= 0 (positive at 0, every real root negative)
+SUMMARY: all EXACT checks passed

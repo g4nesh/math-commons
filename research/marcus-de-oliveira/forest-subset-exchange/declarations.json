@@ -1,0 +1,32 @@
+{
+  "leanVersion": "4.24.0",
+  "namespace": "MathCommons.ForestSubsetExchange",
+  "count": 25,
+  "declarations": [
+    "signedTwice",
+    "swapInvolutive",
+    "stepSymmetric",
+    "reverseSwap",
+    "filterSwapAvoids",
+    "replaceRowList",
+    "leftReplacementForward",
+    "leftReplacementBackward",
+    "rightReplacementForward",
+    "rightReplacementBackward",
+    "leftReplacementSign",
+    "rightReplacementSign",
+    "signedMulLeft",
+    "gateTwoCoefficients",
+    "gateMinorPredecessors",
+    "predecessorMinorSum",
+    "productEndpointAmplitude",
+    "productMagnitude",
+    "productEmptyFiber",
+    "distinctListMember",
+    "distinctListNodup",
+    "reachableEndpointsNodup",
+    "historyEndpointMember",
+    "endpointMassOne",
+    "productMassOne"
+  ]
+}

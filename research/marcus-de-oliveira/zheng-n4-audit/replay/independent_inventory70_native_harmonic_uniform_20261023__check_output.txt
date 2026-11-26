@@ -1,0 +1,67 @@
+PASS T_71 literal equals Appendix E
+INFO stage of T_71 (Table 6) :: 6
+PASS sigma -> sigma o tau maps T_71 to the working tuple {1,4,5,7,9,14} :: [1, 4, 5, 7, 9, 14]
+PASS sigma -> sigma o tau is the group element (id, tau, 0) of the library
+PASS literal source = [0,1,2,8,10,12,53,56,59] :: [0, 1, 2, 8, 10, 12, 53, 56, 59]
+PASS relabelled literal source = working source [0,1,2,5,11,12,33,35,59] :: ([0, 1, 2, 5, 11, 12, 33, 35, 59], [0, 1, 2, 5, 11, 12, 33, 35, 59])
+PASS T71: generators(T) equal the printed source :: [0, 1, 2, 5, 11, 12, 33, 35, 59]
+PASS T71: sole non-minor generator :: [35]
+PASS T71: relation in 24 profiles
+PASS T71: relation in 14 coordinates
+PASS T71: the eight kept generators are independent
+PASS T71: span(kept) = {c : (Pc)_pi = 0 on T} (dim 8)
+PASS T71: coefficient readouts C_i = g_sigma and d = g_p - g_q on the kept basis
+INFO T71: tie :: (0, 'f_bad=0', [(1, 63), (4, 41), (5, 37), (7, 9), (9, 12), (14, 5)], "earlier:['12', '37', '5', '9']")
+INFO T71: tie :: (2, 'f_bad>0', 'all-minor')
+INFO T71: tie :: (3, 'f_bad>0', 'all-minor')
+INFO T71: tie :: (6, 'f_bad=0', [(1, 76), (4, 30), (5, 31), (7, 79), (9, 48), (14, 29)], "earlier:['29', '31']")
+INFO T71: tie :: (8, 'f_bad>0', 'all-minor')
+INFO T71: tie :: (10, 'f_bad>0', 'all-minor')
+INFO T71: tie :: (11, 'f_bad=0', [(1, 51), (4, 45), (5, 65), (7, 45), (9, 65), (14, 42)], "earlier:['42']")
+INFO T71: tie :: (12, 'f_bad=0', [(1, 87), (4, 76), (5, 67), (7, 76), (9, 67), (14, 68)], 'earlier:[]', "aux:['aux7:T^(7)_27[S67]']")
+INFO T71: tie :: (13, 'f_bad>0', 'all-minor')
+INFO T71: tie :: (15, 'f_bad=0', [(1, 63), (4, 9), (5, 12), (7, 41), (9, 37), (14, 5)], "earlier:['12', '37', '5', '9']")
+INFO T71: tie :: (16, 'f_bad>0', 'all-minor')
+INFO T71: tie :: (17, 'f_bad=0', [(1, 76), (4, 79), (5, 48), (7, 30), (9, 31), (14, 29)], "earlier:['29', '31']")
+INFO T71: tie :: (18, 'f_bad=0', [(1, 64), (4, 40), (5, 9), (7, 40), (9, 9), (14, 14)], "earlier:['14', '40', '9']")
+INFO T71: tie :: (19, 'f_bad>0', 'all-minor')
+INFO T71: tie :: (20, 'f_bad>0', 'all-minor')
+INFO T71: tie :: (21, 'f_bad>0', 'all-minor')
+INFO T71: tie :: (22, 'f_bad>0', 'all-minor')
+INFO T71: tie :: (23, 'f_bad>0', 'all-minor')
+PASS T71: every added tie covered (all-minor cone, or an earlier-stage case)
+PASS T71: d <= g3 (g12 = e >= 0)
+PASS T71: extras with f35 = 0 are exactly 0,6,11,12,15,17,18 :: [0, 6, 11, 12, 15, 17, 18]
+PASS T71: T + {12} = Table 5 set #27 {1,4,5,7,9,12,14} literally
+INFO stage of Table-5 #27 (dependency map) :: 5 (S67, root_inventory67_g14)
+PASS E = F7 - F1 = t(y-z)(x-1) up to the global sign of the convention :: -t*(x - 1)*(y - z)
+PASS r = H4 = (y-t)(z-w)/(t(y-z))
+PASS H5 = r(1+k), k = (x-w)/((x-1)(z-w))
+PASS H9 = 1 + v, v = (1-t)y(x-z)/(t(y-z)(x-1))
+PASS H7 = 1
+PASS inverse (5) recovers (x,y,t) from (z,w,r,k,v) exactly on 20 random rational spectra
+PASS homogeneous inverse equals (5) in (Z,Q): y, x, t
+PASS E_hom = const * (-Q Z K N) :: (-Q*Z*(Q*Z*k - Q - Z)*(Q*Z*k - Q*Z*v - Q*v - Q + Z*r - Z + r), 1)
+PASS H3 = r/Q :: r/Q
+PASS F1/E = -r(Z+1)/K :: r*(Z + 1)/(Q*Z*k - Q - Z)
+PASS contacts H1=0, H4=r, H5=r(1+k), H7=1, H9=1+v in (Z,Q)
+PASS every denominator factor of the 24 H lies in {Q, Z, N} (and constants r,k,v) :: ['Q', 'Q*Z*k - Q*Z*v - Q*v - Q + Z*r - Z + r', 'Z']
+PASS C = N14 - h D14 bidegree (2,2) in (Z,Q) :: (2, 2)
+PASS Z^2 coefficient = const k(Qv-r)(Qk+r-1), independent of h :: k*(-Q*v + r)*(Q*k + r - 1)
+PASS C has 33 terms :: 33
+PASS H14 - H12 = (r/Q - v)(kQ - 1) :: (Q*k - 1)*(-Q*v + r)/Q
+PASS H3 - H12 = rk + v - H14 - vkQ identically (so = rk+v-h-vkQ on C)
+PASS C(Z=0) = const (Qv+Q-r)(Qkv-rk-v+h) :: -(-Q*v - Q + r)*(-Q*k*v - h + k*r + v)
+PASS Res_Q(C,N) = const vZ(Z+1)(Zrk-Zv+rk-v-1)(Zrk-Zk-r+v+1) :: Z*v*(Z + 1)*(Z*k*r - Z*k - r + v + 1)*(Z*k*r - Z*v + k*r - v - 1)
+PASS N's Q-coefficient and constant have common zero iff 1+v-r(k+1) = 0 :: k*r + r - v - 1
+PASS top coefficient [Z^2 Q^2] = const k^2 v
+PASS Z=-1, K=0 gives Q = 1/(k+1) and N = 0 there :: [1/(k + 1)]
+INFO K = 0 meets Q Z N only at :: checked by the denominator list above (K is not a denominator of any H)
+PASS (2,3,4,5): all listed nonvanishing conditions hold
+PASS (2,3,4,5): Z^2 and Z^0 coefficients coprime
+INFO (2,3,4,5): gcd of Q^2 and Q^0 coefficients (constant-Z components) :: Poly(1, Z, domain='ZZ')
+INFO NUMERIC: supported chart points (40000 trials, seed 20261125) :: 156
+PASS NUMERIC: d = eta v k Im Q and d <= g3 on all supported points :: 0
+INFO NUMERIC: min over SO(4) of Phi/|g|_inf, first 25 supported points (8 restarts, seed 1) :: 4.228669036564199e-14
+PASS NUMERIC: no violation (> -1e-8)
+SUMMARY: 0 exact/numeric checks failed []

@@ -1,0 +1,59 @@
+
+=== A. Proposition C.4 / Corollary C.5 (audit Section 1) ===
+PASS A1 rho~ defined by <rho~(V), m(z)> = det((z_i - z_{4+j}) V_ij) at 14 points satisfies it on all of {0,1}^8, hence identically in (z, V) (both sides multi-affine in z)
+PASS A2 the same rho~ satisfies <rho~(V), n_IJ> = (-1)^(sum I + sum J) det V[I,J] det V[I^c,J^c] for all 70 (I,J) (polynomial identity; so rho~ = det(V) rho of (C.3))
+INFO A2b  [torus identity rho~(D1 V D2) = det D1 det D2 rho~(V) is immediate from A1: D_a D1 V D2 + D1 V D2 D_b = D1 (D_a V + V D_b) D2]
+PASS A3 audit test point: Omega conditions (i)-(v) hold: det A0 != 0; rank d rho~ = 10; rank M_z = rank M_w = 2; transversality 4+4; join rank 4; m(z), m(w) annihilate rho~(V) and im d rho~ (Lemma 1.2); join image inside N(V); Euler  [rank J 10, dim N 4, ranks M 2 2, forms 4 4, join 4, all V_ij != 0: True, det A1 = -1332]
+PASS A4 differential of (z,w,lambda) -> lambda rho~(V(z,w)) has rank 10 at the test point (dense image in the 10-dim cone M^)  [rank 10]
+PASS A5 second random rational point (own seed): Omega conditions (i)-(v) hold: det A0 != 0; rank d rho~ = 10; rank M_z = rank M_w = 2; transversality 4+4; join rank 4; m(z), m(w) annihilate rho~(V) and im d rho~ (Lemma 1.2); join image inside N(V); Euler  [rank J 10, dim N 4, ranks M 2 2, forms 4 4, join 4, all V_ij != 0: True, det A1 = -17216/27]
+PASS A6 Lemma 1.3 (Segre configurations give rank <= 2) at 3 random rational points
+PASS A7 rank d rho~ <= 10 at a V with four zero entries (Lemma 1.1 'everywhere')  [rank 10]
+PASS A8 consequence test of N(V0) in Sigma2^: C restricted to N(V0) is identically 0 and rank H = 12 at 3 random points of N(V0)  [ranks [12, 12, 12]]
+PASS A9 dim Sigma2^ >= 12 directly: (lam,z,mu,w) -> lam m(z) + mu m(w) has differential rank 12 at a rational point (so dim Sigma2 = 11, independent of the dual-variety argument)  [rank 12]
+PASS A10 at V0: tangent space of E = {(V, xi): xi annihilates im d rho~_V} has dim 20 and its projection to xi has rank 12, so dim (M8')^-hat >= 12  [dim 20, rank 12]
+   section A time 0.2 s
+
+=== B. Lemma C.11 without (C.2) (audit Section 4) ===
+PASS B1 dC/du13 = q and d2C/du13^2 = 0
+PASS B2 H(u)_{i,13} = 0 for i not in W={0,1,5,6} (all u) and H(kappa) supported on W x W
+PASS B3 Lemma 4.1 at 6 random rational u (own seed): degree <= 3 in h and p3 = -2 q(u) det H(u)[K',K']
+PASS B4 paper example: y as printed; q(y) = C(y) = 0; rank H(y) = 12; det(H(y)+hH(kappa)) = p2 h^2 with p2 = -114105877589169227887017984  [rank 12 p2 -114105877589169227887017984]
+PASS B5 smoothness criterion at the example: dC_y and the differentials of ALL rank-12 13x13 minors of H span rank >= 2 (so dim T_y Z <= 12)  [rank 2 from 196 minors]
+PASS B6.0 random parameters (a real, b, theta Gaussian rational): q = C = 0, rank H(y) <= 12, det = p2 h^2 with p2 != 0, smoothness rank >= 2  [rank H 12, p2 != 0: True, smooth rank 2]
+PASS B6.1 random parameters (a real, b, theta Gaussian rational): q = C = 0, rank H(y) <= 12, det = p2 h^2 with p2 != 0, smoothness rank >= 2  [rank H 12, p2 != 0: True, smooth rank 2]
+PASS B6.2 random parameters (a real, b, theta Gaussian rational): q = C = 0, rank H(y) <= 12, det = p2 h^2 with p2 != 0, smoothness rank >= 2  [rank H 12, p2 != 0: True, smooth rank 2]
+INFO B7 special point (a1 = a2)  [rank H(y) 10, nonzero h-degrees of det(H(y)+hH(kappa)) [], q 0, C 0]
+INFO B7 special point (b real)  [rank H(y) 8, nonzero h-degrees of det(H(y)+hH(kappa)) [], q 0, C 0]
+INFO B7 special point (a1 + b1 = 0)  [rank H(y) 10, nonzero h-degrees of det(H(y)+hH(kappa)) [], q 0, C 0]
+INFO B7 special point (theta = i)  [rank H(y) 12, nonzero h-degrees of det(H(y)+hH(kappa)) [2], q 0, C 0]
+   section B time 3.6 s
+
+=== C. Lemma C.10: Vandermonde weights (audit Section 5.1) ===
+PASS C1 105 perfect matchings, 14 noncrossing; each noncrossing one joins odd to even positions
+PASS C2 compatibility matrix 70 x 14 has rank 14 (so the weights are unique)
+PASS C3 all 70 identities Vand(t_S) Vand(t_S^c) = sum_{pi compatible with S} w_pi hold as polynomials in the gaps (rows chosen in reverse order, independently of the audit)
+PASS C4 every w_pi is a nonzero polynomial with nonnegative coefficients in the gaps  [terms [3144, 1683, 1724, 1563, 564, 1683, 770, 1563, 564, 1515, 654, 654, 465, 64]]
+PASS C5 50-digit end-to-end test (12 Cauchy orthogonal matrices from interlaced nodes, both parities, one with a node gap 1e-6): O O^T = I, d(O) = 0, and sum_{sigma(I)=J} p_sigma = det O[I,J]^2 for all 70 (I,J) with p_sigma = w_pi / (Vand(S0) Vand(S0^c))  [max identity error 2.67e-50, max |OO^T - I| 1.16e-47, max |d| 2.51e-53, min |O_ij| 2.07e-5]
+   section C time 2.3 s
+
+=== D. (C.13), (C.14), density step (audit Section 5.2) ===
+INFO D1a  [samples with an extra zero entry are checked as d = 0 only]
+PASS D1 (C.13) exactly at 10 random rational O in SO(4) with O00 = 0; transported to every position (i,j): d(O) = +-(product of the other six entries of row i and column j) with a sign depending only on (i,j)  [signs {(0, 0): 1, (0, 1): 1, (0, 2): 1, (0, 3): 1, (1, 0): 1, (1, 1): 1, (1, 2): 1, (1, 3): 1, (2, 0): 1, (2, 1): 1, (2, 2): 1, (2, 3): 1, (3, 0): 1, (3, 1): 1, (3, 2): 1, (3, 3): 1}]
+PASS D2 (C.13) as a polynomial identity on the parametrization O = diag(1,-Q) H(u) of SO(4) ∩ {O00 = 0} (bijective onto it; dense rational charts), so it holds on all of SO(4) ∩ {O00 = 0} by continuity  [orthogonality True, terms in d 21124]
+PASS D3 (C.14) as a polynomial identity (own parametrization: stereographic (a,b), Cayley [x y z]): dd(E_i O) = s * a b x_j x_k y_i z_i with one common sign s for i = 1,2,3  [orth True, det 1 True, s = [-1, -1, -1]]
+INFO D4a  [per-run min |entry| (position): 2.1e-07(2), 1.4e-06(2), 1.8e-06(2), 3.5e-08(2), 2.1e-06(2), 1.6e-06(2), 1.8e-06(2), 7.0e-07(2), 6.2e-07(2), 1.1e-06(2), 1.8e-08(2), 2.3e-06(2), 4.0e-07(2), 8.5e-07(2), 3.0e-07(2), 1.0e-06(2), 2.0e-06(2), 5.1e-08(2), 1.3e-06(2), 1.0e-06(2)]
+PASS D4 NUMERIC: from the indecomposable point O (row (3/5,4/5,0,0), d = 0, |grad d| = 0.0176) 20 random tangent steps of size 1e-3 projected back to {d = 0} land on points with all 16 entries nonzero (|entry| > 1e-12, far above rounding; the entry O02 grows only quadratically: H is tangent to {O02 = 0} at O)  [max |d| 1.0e-18, runs with min |entry| > 1e-12: 20 of 20, max distance to O 1.41e-03]
+   section D time 0.3 s
+
+=== E. (H3) and (C.8) at special stable points (audit Sections 2, 3) ===
+PASS E1 Lemma C.9 example (O00 = 0, on 7 Pluecker divisors): indecomposable, gauge dim 7, rank[rho0,A] = 7, rank[rho0,A,B] = 13 (H3); (C.8) holds with alpha != 0 iff d != 0  [d = -16/729, det O = 1, (C.8) holds: True, dim K = 7, alpha = -729/16, frame det = 16/729 (= -d: True), alpha * framedet^2 = -16/729 (= d: True)]
+PASS E1 part-1 Cayley matrix (all entries nonzero): indecomposable, gauge dim 7, rank[rho0,A] = 7, rank[rho0,A,B] = 13 (H3); (C.8) holds with alpha != 0 iff d != 0  [d = -400/131769, det O = 1, (C.8) holds: True, dim K = 7, alpha = -131769/400, frame det = 400/131769 (= -d: True), alpha * framedet^2 = -400/131769 (= d: True)]
+PASS E1 random rational SO(4) (own seed): indecomposable, gauge dim 7, rank[rho0,A] = 7, rank[rho0,A,B] = 13 (H3); (C.8) holds with alpha != 0 iff d != 0  [d = -6516784/2650499289, det O = 1, (C.8) holds: True, dim K = 7, alpha = -2650499289/6516784, frame det = 6516784/2650499289 (= -d: True), alpha * framedet^2 = -6516784/2650499289 (= d: True)]
+PASS E1 random O with O00 = 0 (own generator): indecomposable, gauge dim 7, rank[rho0,A] = 7, rank[rho0,A,B] = 13 (H3); (C.8) holds with alpha != 0 iff d != 0  [d = -22026636127852941312/209569098409370624440153, det O = 1, (C.8) holds: True, dim K = 7, alpha = -209569098409370624440153/22026636127852941312, frame det = 22026636127852941312/209569098409370624440153 (= -d: True), alpha * framedet^2 = -22026636127852941312/209569098409370624440153 (= d: True)]
+PASS E1 indecomposable zero-entry point on the Cauchy divisor, row (3/5,4/5,0,0): indecomposable, gauge dim 7, rank[rho0,A] = 7, rank[rho0,A,B] = 13 (H3); (C.8) holds with alpha != 0 iff d != 0  [d = 0, det O = 1, (C.8) holds: True, dim K = 7, alpha = 0, frame F01,F02,F03 degenerate here (frame det 0)]
+PASS E1 complex Gaussian-rational O in SO(4,C): indecomposable, gauge dim 7, rank[rho0,A] = 7, rank[rho0,A,B] = 13 (H3)  [d = complex]
+INFO E2 NUMERIC Haar scan of 1000 real O in SO(4) (seed 2026): smallest singular value of the column-normalised 14x13 matrix [rho0, A, B]  [0.02<=minentry<0.1: n=531 min 2.676e-02 median 1.479e-01; minentry<0.02: n=349 min 5.501e-03 median 1.302e-01; minentry>=0.1: n=120 min 6.509e-02 median 1.742e-01]
+INFO E3 NUMERIC local minimisation of that singular value over real SO(4) with all |O_ij| >= 0.1 (8 starts, Nelder-Mead, 200 iterations)  [minima 1.170e-01, 1.549e-01, 1.849e-01, 2.176e-01, 2.265e-01, 2.287e-01, 2.341e-01, 2.705e-01]
+   section E time 190.7 s
+
+SUMMARY: 0 failure(s); total time 197.1 s

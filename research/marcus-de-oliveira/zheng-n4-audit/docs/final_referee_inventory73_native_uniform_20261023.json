@@ -1,0 +1,137 @@
+{
+ "doc_id": "final_referee_inventory73_native_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_inventory73_native_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    3,
+    4,
+    5,
+    7,
+    8,
+    12
+   ],
+   "paper_case": 74,
+   "restatement": "x in X supported with contacts containing T_74 implies Phi_{c(x)}(O) >= 0 for all O in SO(4); degenerate spectra via Appendix B, extra ties via prior cases and K, walls (10) via Rouche"
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "ties 2,9,10,13,14,18 -> e.g. T_10, T_50, T_24, T_24, T_73, T_50",
+   "used_for": "extra ties",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "K = Table 5 #16 {0,1,2,9,10,14,17} (also T_72 covers tie 16)",
+   "used_for": "tie 16 and the closure argument",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "final_referee_inventory71_uniform_20261023 (G9, C+zQ)",
+   "used_for": "(16),(17)",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "radial necessity p. 27",
+   "used_for": "closure argument",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix B",
+   "used_for": "collisions",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "compact pasting lemma",
+   "used_for": "curve argument",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "coefficients = gaps, d <= g0,g1, -L <= Md, (4)",
+   "kind": "identity",
+   "status": "EXACT + PROOF-READ"
+  },
+  {
+   "n": 2,
+   "claim": "inverse (5)-(7) and spinor inverse",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "C(u,Z) 144 terms, degrees (5,4), [u^5]C=Z^4, (11)",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "finite punctures, Z=inf at u=r,p, u=inf via (12)",
+   "kind": "limit",
+   "status": "EXACT + PROOF-READ"
+  },
+  {
+   "n": 5,
+   "claim": "ramified point (13)-(15)",
+   "kind": "limit",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "closure to K-source, G_K>0 (16)-(17)",
+   "kind": "analytic",
+   "status": "PROOF-READ + EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "nonconstancy, pasting, walls",
+   "kind": "analytic",
+   "status": "PROOF-READ + CITED"
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p. 2, line defining E",
+   "claim": "E = F5 - F3 = x(y-t)(z-w)",
+   "why": "sign depends on the dropped infinite factor; irrelevant for all H_i",
+   "severity": "presentation",
+   "believed_true": true
+  }
+ ],
+ "exact_replays": [
+  "generators, identity rows, f70 bounds, extra ties and group reductions",
+  "K transport and profile action (3)",
+  "(5)-(7), (9), spinor inverse",
+  "C 144 terms, [u^5]C, [Z^4]C",
+  "(12) lowest form",
+  "(13),(14) branch",
+  "(15) limits, H6 simple pole",
+  "G_K face (in T_72 replay)"
+ ],
+ "numeric_tests": [
+  "6 T_74 stratum points: min Phi 2.1e-14"
+ ],
+ "unchecked": [
+  "Appendix G stage order",
+  "compact pasting lemma (not in batch)",
+  "left inverse checked at 4 rational points, not symbolically"
+ ]
+}

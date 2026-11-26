@@ -4630,5 +4630,47 @@
     }
    ]
   }
- ]
+ ],
+ "first_pass_status": {
+  "as_of": "2026-11-26",
+  "note": "First pass paused by the operator for token budget. Documents listed here have no first-pass report; cases/status.json is the generated source.",
+  "without_report": [
+   "blind_moc4_T44_native_contact_chart_20261022",
+   "blind_moc4_inventory52_plus17_third_products_20261023",
+   "blind_moc4_inventory59_native_harmonic_uniform_20261023",
+   "final_referee_inventory56_57_whole_assembly_20261023",
+   "final_referee_inventory56_boundary17_large_product_20261023",
+   "final_referee_inventory56_boundary17_uniform_20261023",
+   "final_referee_inventory56_native_harmonic_20261023",
+   "final_referee_inventory56_rank_two_capacity_20261023",
+   "final_referee_inventory61_native_uniform_20261023",
+   "fresh_strong_principal_minors_20261022",
+   "independent_inventory54_native_uniform_20261023",
+   "independent_inventory55_native_uniform_20261023",
+   "independent_inventory58_native_harmonic_uniform_20261023",
+   "independent_inventory62_native_uniform_20261023",
+   "independent_inventory63_native_uniform_20261023",
+   "independent_inventory67_native_harmonic_conditional_20261023",
+   "independent_moc4_T44_a_Heron_branch_20261023",
+   "independent_moc4_T44_c_below_j_uniform_20261023",
+   "moc_one_circle_20261022__one_circle",
+   "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+   "moc_principal_minors_20261022__principal_minors",
+   "principal_minor_result_20261022__principal_minors",
+   "root_inventory53_native_uniform_20261023",
+   "root_inventory57_native_conditional_20261023",
+   "root_inventory60_native_uniform_20261023",
+   "root_inventory66_native_whole_20261023",
+   "root_inventory67_g14_uniform_20261023",
+   "root_inventory67_whole_assembly_20261023",
+   "root_moc4_T44_e_below_p_uniform_20261023",
+   "root_moc4_T47_whole_assembly_20261023",
+   "root_moc4_T65_native_harmonic_uniform_20261023",
+   "root_unitary_two_orthogonals_20261022"
+  ],
+  "certificates_not_replayed": [
+   "blind_moc4_inventory52_plus17_fourth_products_20261023",
+   "independent_moc4_T47_I_II_uniform_20261022"
+  ]
+ }
 }

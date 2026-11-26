@@ -1,0 +1,115 @@
+{
+ "doc_id": "root_inventory80_native_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_inventory80_native_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    81
+   ],
+   "contact_sets": [
+    [
+     1,
+     2,
+     10,
+     11,
+     12,
+     13
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with Pc(x)>=0 and (Pc(x))_pi=0 on T={1,2,10,11,12,13} (pi*=12), Phi_{c(x)}(O)>=0 for all real orthogonal O; includes extra ties, collisions (Appendix B) and all walls including C identically zero."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_46/T_76",
+   "used_for": "tie 0,15",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_36/T_37/T_38/T_46",
+   "used_for": "tie 4,7",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_34/T_58",
+   "used_for": "tie 6,17",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "Table 5 T7_21",
+   "contact_set": [
+    0,
+    1,
+    6,
+    9,
+    16,
+    17,
+    22
+   ],
+   "used_for": "tie 21",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Corollary B.3(b)",
+   "used_for": "branches (0,0),(0,1): one vanishing factor of E, R(0)!=0, same lifts",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix B (Theorem B.1, Lemma B.2)",
+   "used_for": "collisions satisfy the support inequality; reduction to eight-distinct",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper Lemma 3.5 (bounded-negative-part compact pasting)",
+   "used_for": "curve exclusion",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary form",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  "1-4 cone, d=g3, ties EXACT",
+  "5-9 inverse and nonvanishing EXACT",
+  "10-12 curve 74 terms, contacts mod C, H3 EXACT",
+  "13 x!=0 punctures PROOF-READ",
+  "14-16 fibre x=0, series, four-factor identity, factor limits EXACT",
+  "17 Cor B.3 CITED (hypotheses verified)",
+  "18 nonconstancy PROOF-READ",
+  "19 pasting CITED",
+  "20 Rouche PROOF-READ (auditor-supplied)",
+  "21 C==0 line argument PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators, identity rows, d=g3",
+  "tie reductions",
+  "E, F12=xE, (4), raw (6),(7), F6 identity",
+  "inverse v,w,z",
+  "C 74 terms (5,2), six contacts mod C, H3",
+  "C(0,t)=rst(1-t), derivatives, branch series",
+  "free-lift identity F12-F2=-[A0A1][C0C2][A2C1][A3C3]",
+  "factor limits at both branches"
+ ],
+ "numeric_tests": [
+  "4 stratum points (seeds 8100-8105), worst scaled min Phi +7e-14"
+ ],
+ "unchecked": [
+  "supplement coefficient array/verifier (not used by rule)"
+ ]
+}
