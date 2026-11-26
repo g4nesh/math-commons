@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "family": "a=(x,u+i*v,y,s+i*t); x,y complex and s,t real unrestricted",
+  "secondSquareRadius": "1/4096",
+  "positivePermutations": 18,
+  "uniformMassLowerBound": "1/12000",
+  "zeroPermutations": 6,
+  "invariantSubspaceDimension": 26,
+  "selectedVariables": 60,
+  "realCoefficientEquations": 90,
+  "L": "3093584161463448629943/1118369236270000000",
+  "M": "35434222734263/203339861140",
+  "rho": "3093584161463448629943/4580840391761920000000",
+  "nu": "35434222734263/832880071229440",
+  "relativeDisplacementBound": "194888225038446500000/1487256230298471370057",
+  "collision": {
+    "forcedPairings": [
+      3,
+      5,
+      13,
+      16,
+      19,
+      22
+    ],
+    "fourthEigenvalue": [
+      "0",
+      "1"
+    ],
+    "nonzeroVertexAtSecondZero": [
+      "22",
+      "-4"
+    ]
+  },
+  "directChecks": [
+    {
+      "second": [
+        "0",
+        "0"
+      ],
+      "fourth": [
+        "0",
+        "0"
+      ],
+      "determinant": [
+        "-136437552/390625",
+        "123587354/390625"
+      ]
+    },
+    {
+      "second": [
+        "1/4096",
+        "1/4096"
+      ],
+      "fourth": [
+        "100",
+        "-100"
+      ],
+      "determinant": [
+        "-11157334055069/1600000000",
+        "32116291281253/1600000000"
+      ]
+    },
+    {
+      "second": [
+        "-1/4096",
+        "1/4096"
+      ],
+      "fourth": [
+        "0",
+        "1"
+      ],
+      "determinant": [
+        "-20747617509/50000000",
+        "9222396543/50000000"
+      ]
+    },
+    {
+      "second": [
+        "1/4096",
+        "-1/4096"
+      ],
+      "fourth": [
+        "7/3",
+        "-11/5"
+      ],
+      "determinant": [
+        "-4099383675589/8000000000",
+        "18235620321919/24000000000"
+      ]
+    },
+    {
+      "second": [
+        "-1/4096",
+        "-1/4096"
+      ],
+      "fourth": [
+        "-3",
+        "2"
+      ],
+      "determinant": [
+        "-6799349469/80000000",
+        "-23089063337/160000000"
+      ]
+    }
+  ]
+}
