@@ -1,0 +1,6 @@
+   Fourier matrix            : psi = -1.5708, cos^2(psi/2) = 0.5000, |Im O| = 2.3e-16, formula error = 3.3e-16, margins of (star): U 0.9786, O 0.7735, O R_y 0.9765
+   near a permutation        : psi = +3.0966, cos^2(psi/2) = 0.0005, |Im O| = 1.8e-13, formula error = 5.3e-15, margins of (star): U 0.0385, O 0.9890, O R_y 0.0380
+   Drury point times phases  : psi = -3.1415, cos^2(psi/2) = 0.0000, |Im O| = 8.6e-09, formula error = 4.4e-16, margins of (star): U 0.2173, O 0.2174, O R_y 0.2173
+203 unitaries (200 Haar + 3 special): factorisation failed (formula or orthogonality error above 1e-9, or |Im O| above 1e-6) for 0
+   largest: rank-one residual 8.6e-13 ; |Im O| 8.6e-09 ; |O O^T - I| 1.6e-15 ; error in the squared-minor formula over all 164 minors 5.3e-15
+   cos^2(psi/2) ranged over [0.0000, 0.9883] ; smallest margin of (star) seen at U or at an endpoint: 3.800e-02
