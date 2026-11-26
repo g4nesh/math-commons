@@ -7,6 +7,12 @@ from pathlib import Path
 import argparse
 import json
 
+if not __debug__:
+    raise RuntimeError(
+        "Exact certificate checks require assertions. From the repository root run "
+        "python3 -E -B research/marcus-de-oliveira/principally-balanced-local/check.py"
+    )
+
 HERE = Path(__file__).resolve().parent
 
 
@@ -153,6 +159,7 @@ def construct(spectrum, minors):
     all_s = subsets(n)
     if set(minors) != set(all_s):
         raise ValueError('Every subset minor is required')
+    minors = {subset: Q2.of(value) for subset, value in minors.items()}
     perms = list(permutations(range(n)))
     values = [[vertex(spectrum,p,s) for s in all_s] for p in perms]
     center = {s:sum((v[i] for v in values),ZERO)/len(perms) for i,s in enumerate(all_s)}
