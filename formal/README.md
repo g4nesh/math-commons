@@ -44,7 +44,7 @@ In [ForestTrajectory.lean](ForestTrajectory.lean), an occupied subset is a Boole
 
 `MathCommons.ForestGateSupport.twoCoordinateNonzeroMinorStep` accepts four arbitrary block entries. Its scalar interface specifies addition, multiplication, negation, zero and one, with the zero identities used in the proof. The support implication applies to singular blocks. Rational and Gaussian-rational instances instantiate the interface.
 
-`MathCommons.ForestGateSupport.nonzeroAmplitudesUnique` combines this support result and the forest theorem. For fixed endpoint subsets, at most one history has a nonzero ordered product of its gate minors. Empty and full subsets, repeated occupancy and vanishing factors are covered. The checker audits all 23 named results in the module. The local unitary computation below supplies the transition magnitudes. The actual order-two composition and canonical history bridge are now proved below; higher-order composition and the standard complex determinant interface remain open. [Written forest argument](../research/marcus-de-oliveira/baselines/README.md)
+`MathCommons.ForestGateSupport.nonzeroAmplitudesUnique` combines this support result and the forest theorem. For fixed endpoint subsets, at most one history has a nonzero ordered product of its gate minors. Empty and full subsets, repeated occupancy and vanishing factors are covered. The checker audits all 23 named results in the module. The local unitary computation below supplies the transition magnitudes. Actual gate-product composition and the canonical history bridge at every subset size are now proved in `ForestSubsetExchange` below; the standard arbitrary-complex determinant interface remains open. [Written forest argument](../research/marcus-de-oliveira/baselines/README.md)
 
 ## Squared probabilities for a single gate
 
@@ -59,7 +59,7 @@ In [ForestTrajectory.lean](ForestTrajectory.lean), an occupied subset is a Boole
 
 The checked declaration `MathCommons.ForestGateMagnitude.orderedGateMagnitudes` takes three lists of occupied spectators, covering those before the first endpoint, between the endpoints and after the second. `decomposeTwoEndpoints` and `filterTwoEndpoints` express the corresponding ordered-list decompositions; `reverseGate` and `reverseUnitary` handle the opposite endpoint order. The subsequent path module assembles the cases for arbitrary Boolean subset histories. The module also checks $0≤p≤1$.
 
-Both the empty and the full subset occur in the first row. Occupied spectator coordinates may precede, separate or follow the two gate endpoints. An exchange picks up the parity of the occupied spectators between the endpoints in the signed minor. Squaring the norm removes that sign. The local result and the forest path-uniqueness theorem have different hypotheses. The order-two matrix-product identity is proved below by Cauchy–Binet in this same minor convention; general minor orders remain open.
+Both the empty and the full subset occur in the first row. Occupied spectator coordinates may precede, separate or follow the two gate endpoints. An exchange picks up the parity of the occupied spectators between the endpoints in the signed minor. Squaring the norm removes that sign. The local result and the forest path-uniqueness theorem have different hypotheses. The order-two identity is proved below by Cauchy–Binet, and `ForestSubsetExchange` proves arbitrary-order gate-product composition by a sparse predecessor recurrence in this same minor convention.
 
 ## An unconditional quadratic lemma on the closed unit cube
 
@@ -85,11 +85,11 @@ A natural next lemma is the relation between the rational interpolation construc
 
 ## Total probability over finite histories
 
-[ForestPathNormalization.lean](ForestPathNormalization.lean) enumerates legal occupied-subset histories for any finite gate schedule and any starting subset. It counts a stay once when a swap leaves the same subset. `pathMassOne` gives total mass one. For unitary Gaussian-rational gates, `pathProbabilityNonnegative` proves each mass is nonnegative and `pathSquaredMagnitudeMassOne` gives total squared path amplitude one. Cyclic schedules are allowed. The next two modules and the order-two bridge below supply no-interference and actual order-two matrix composition; arbitrary minor orders remain open. [Statements, assumptions and replay](../research/marcus-de-oliveira/forest-path-normalization/README.md)
+[ForestPathNormalization.lean](ForestPathNormalization.lean) enumerates legal occupied-subset histories for any finite gate schedule and any starting subset. It counts a stay once when a swap leaves the same subset. `pathMassOne` gives total mass one. For unitary Gaussian-rational gates, `pathProbabilityNonnegative` proves each mass is nonnegative and `pathSquaredMagnitudeMassOne` gives total squared path amplitude one. Cyclic schedules are allowed. The endpoint and composition modules below now supply no-interference and actual gate-product matrix composition at every subset size. [Statements, assumptions and replay](../research/marcus-de-oliveira/forest-path-normalization/README.md)
 
 ## Squared amplitude at a fixed forest endpoint
 
-[ForestEndpointMass.lean](ForestEndpointMass.lean) restricts the canonical histories to one final subset. For a forest gate schedule, at most one of those histories has a nonzero amplitude. `endpointMagnitude` proves that the squared norm of their signed sum equals their total probability, including zero for an unreachable endpoint. The signed sum is identified with the actual order-two gate-product minor below; the corresponding arbitrary-order identity remains open. [Exact hypotheses and proof](../research/marcus-de-oliveira/forest-endpoint-mass/README.md)
+[ForestEndpointMass.lean](ForestEndpointMass.lean) restricts the canonical histories to one final subset. For a forest gate schedule, at most one of those histories has a nonzero amplitude. `endpointMagnitude` proves that the squared norm of their signed sum equals their total probability, including zero for an unreachable endpoint. The signed sum is identified with the actual gate-product minor at every subset size by `ForestSubsetExchange` below. [Exact hypotheses and proof](../research/marcus-de-oliveira/forest-endpoint-mass/README.md)
 
 ## Actual matrix products and order-two Cauchy–Binet
 
@@ -109,7 +109,7 @@ The module audits 52 declarations, including finite-sum identities and row-linea
 | `productPairEmptyFiber` | An empty canonical endpoint fiber gives an actual zero order-two minor, without forest or unitarity assumptions. |
 | `productPairMassOne` | For a two-element start and a forest unitary schedule, the actual squared minors sum to one over all canonical output pairs. |
 
-Zero-length schedules, nonadjacent endpoints, collision stays and vanishing factors are included. No matrix-to-history equality, generic alternation premise or probability normalization is assumed. The required checker rebuilds this module after `ForestProductMinor` and audits all 28 reports in this module. The remaining formal gaps are arbitrary minor orders and the standard arbitrary-complex matrix interface; this is not a general MDO proof. [Precise statement, assumptions and hashes](../research/marcus-de-oliveira/forest-pair-history/README.md)
+Zero-length schedules, nonadjacent endpoints, collision stays and vanishing factors are included. No matrix-to-history equality, generic alternation premise or probability normalization is assumed. The required checker rebuilds this module after `ForestProductMinor` and audits all 28 reports in this module. The subsequent `ForestSubsetExchange` module removes the subset-size restriction using sparse predecessors. The standard arbitrary-complex matrix interface remains separate; this is not a general MDO proof. [Precise statement, assumptions and hashes](../research/marcus-de-oliveira/forest-pair-history/README.md)
 
 
 ## Arbitrary-order actual row alternation and gate updates
@@ -118,4 +118,20 @@ Zero-length schedules, nonadjacent endpoints, collision stays and vanishing fact
 
 `MathCommons.ForestMinorAlternation.gateMinorBoth` now proves the actual both-occupied gate formula for arbitrary selected-row length: the minor of the left-multiplied matrix equals the block determinant times the original minor. It assumes the existing finite `Edge` certificate, duplicate-free selected rows, and membership of both endpoints. It needs no unitarity, forest condition or unproved alternation premise.
 
-The required checker audits all 23 new declarations after their dependencies, preserving the earlier pair-history and ordered-field cube checks. Full arbitrary-order Cauchy–Binet tuple grouping, the explicit Boolean-filter single-exchange translation, and the arbitrary-complex matrix interface remain separate. [Exact statements, proof outline and source hashes](../research/marcus-de-oliveira/forest-minor-alternation/README.md)
+The required checker audits all 23 new declarations after their dependencies, preserving the earlier pair-history and ordered-field cube checks. The subsequent module proves the Boolean-filter single-exchange translation and sparse gate composition at arbitrary order. Generic arbitrary-matrix Cauchy–Binet tuple grouping and the arbitrary-complex matrix interface remain separate. [Exact statements, proof outline and source hashes](../research/marcus-de-oliveira/forest-minor-alternation/README.md)
+
+
+## Actual forest product minors at every subset size
+
+[ForestSubsetExchange.lean](ForestSubsetExchange.lean) closes the remaining arbitrary-order **gate-product** bridge. For either gate orientation and either endpoint order in the vertex list, its single-occupied row-replacement lemmas identify the canonical Boolean-filter minor with exactly the parity of the selected intervening spectators. Specializing the derived two-coefficient update to the actual identity matrix identifies its coefficients with actual gate minors. `gateMinorPredecessors` then proves sparse Cauchy–Binet over one or two predecessor subsets, with no minor-size, unitarity or forest premise.
+
+| Lean declaration | Exact scope |
+| --- | --- |
+| `productEndpointAmplitude` | Every actual gate-product minor equals the canonical signed endpoint amplitude, for arbitrary selected subsets and product length; no unitarity or forest assumption. |
+| `productMagnitude` | Under `UnitaryBlock` for used gates and `EveryEdgeIsBridge`, the squared actual product minor equals the canonical endpoint probability at every subset size. |
+| `productEmptyFiber` | An empty canonical endpoint fiber gives an actual zero product minor, without unitarity or a forest assumption. |
+| `productMassOne` | Squared actual forest product minors sum to one over distinct reachable endpoint subsets. |
+
+The required checker audits all 25 declarations and preserves all earlier 261 reports and the cube exact-type/hash audit. Scalars are Gaussian rationals with the existing actual ordered Laplace determinant and matrix product. The complete finite `Edge` representation has two distinct vertices even when the used prefix is empty, so zero- and one-vertex ambient types are not represented by this API. Empty and full selected subsets, unequal selected cardinalities and vanishing transition factors are covered. Reachable endpoints are deduplicated using classical function equality, so the normalized law never counts an endpoint once per path.
+
+Generic arbitrary-matrix all-order Cauchy–Binet, the standard arbitrary-complex matrix interface, a common law on full permutations, and an MDO convex-hull conclusion remain separate. [Precise statement, proof, domain and audit hashes](../research/marcus-de-oliveira/forest-subset-exchange/README.md)
