@@ -1,0 +1,52 @@
+### run: check.py le
+PASS 1/b - a - k = r(1-r)(2b^2-2b(r+1)+r^2+r)/(b(b-r)^2) at a = r^2/b
+PASS larger root of the bracket is b* = (1+r+sqrt(1-r^2))/2 :: [r/2 - sqrt(1 - r**2)/2 + 1/2, r/2 + sqrt(1 - r**2)/2 + 1/2]
+PASS b* = (1+v)/(1+v^2) at r = 2v/(1+v^2), 0<v<1
+PASS v = r/(1+sqrt(1-r^2)) inverts r = 2v/(1+v^2)
+PASS T65 generators are the eight facets (2,9,1,45,5,35,0,7) of the document
+PASS the eight generators are linearly independent (coefficients of a source are unique)
+PASS only f35 is non-minor
+PASS C(c) = -d(qp+qe+qd+qa+pe+pd+pb+ed+d^2+db+da+ba) (height-equation constant; < 0 when d>0, others >= 0)
+PASS C(c + h kappa) = C(c) + h (m0 m6 - m1 m5) (linear in h)
+PASS det Hess C(c + h kappa) has h-degree <= 3 :: [0, 1, 2, 3]
+PASS at h = -C(c)/Q: det Hess C = -4 d^2 G^2 / Q^2 with G a polynomial (965 terms, multidegree (2,2,2,2,2,8,3,3)) :: 965
+INFO G built in 6.8s :: sign fixed so that G > 0 at (q,p,j,c,e,d,b,a)=(0,2,1/2,1/1000,2/3,1,2,1/10): G = 633.0121937158333
+PASS c-gap 1/j - a - k: numerator and denominator have nonnegative coefficients on the chart (so k < 1/j - a)
+PASS Thm 1 endpoint E = A0 + B0 delta + K delta^2 (p le b chart): reduced numerator and denominator nonnegative, positive monomials free of W :: ((144810, 1), (122970, 1))
+SUMMARY: 0 EXACT check(s) failed []
+exit 0
+### run: check.py ge (long job)
+PASS 1/b - a - k = r(1-r)(2b^2-2b(r+1)+r^2+r)/(b(b-r)^2) at a = r^2/b
+PASS larger root of the bracket is b* = (1+r+sqrt(1-r^2))/2 :: [r/2 - sqrt(1 - r**2)/2 + 1/2, r/2 + sqrt(1 - r**2)/2 + 1/2]
+PASS b* = (1+v)/(1+v^2) at r = 2v/(1+v^2), 0<v<1
+PASS v = r/(1+sqrt(1-r^2)) inverts r = 2v/(1+v^2)
+PASS T65 generators are the eight facets (2,9,1,45,5,35,0,7) of the document
+PASS the eight generators are linearly independent (coefficients of a source are unique)
+PASS only f35 is non-minor
+PASS C(c) = -d(qp+qe+qd+qa+pe+pd+pb+ed+d^2+db+da+ba) (height-equation constant; < 0 when d>0, others >= 0)
+PASS C(c + h kappa) = C(c) + h (m0 m6 - m1 m5) (linear in h)
+PASS det Hess C(c + h kappa) has h-degree <= 3 :: [0, 1, 2, 3]
+PASS at h = -C(c)/Q: det Hess C = -4 d^2 G^2 / Q^2 with G a polynomial (965 terms, multidegree (2,2,2,2,2,8,3,3)) :: 965
+INFO G built in 6.5s :: sign fixed so that G > 0 at (q,p,j,c,e,d,b,a)=(0,2,1/2,1/1000,2/3,1,2,1/10): G = 633.0121937158333
+PASS c-gap 1/j - a - k: numerator and denominator have nonnegative coefficients on the chart (so k < 1/j - a)
+PASS Thm 1 endpoint E = A0 + B0 delta + K delta^2 (p ge b chart): reduced numerator and denominator nonnegative, positive monomials free of P :: ((186813, 1), (142950, 1))
+SUMMARY: 0 EXACT check(s) failed []
+exit 0
+### run: check.py num
+PASS 1/b - a - k = r(1-r)(2b^2-2b(r+1)+r^2+r)/(b(b-r)^2) at a = r^2/b
+PASS larger root of the bracket is b* = (1+r+sqrt(1-r^2))/2 :: [r/2 - sqrt(1 - r**2)/2 + 1/2, r/2 + sqrt(1 - r**2)/2 + 1/2]
+PASS b* = (1+v)/(1+v^2) at r = 2v/(1+v^2), 0<v<1
+PASS v = r/(1+sqrt(1-r^2)) inverts r = 2v/(1+v^2)
+PASS T65 generators are the eight facets (2,9,1,45,5,35,0,7) of the document
+PASS the eight generators are linearly independent (coefficients of a source are unique)
+PASS only f35 is non-minor
+PASS C(c) = -d(qp+qe+qd+qa+pe+pd+pb+ed+d^2+db+da+ba) (height-equation constant; < 0 when d>0, others >= 0)
+PASS C(c + h kappa) = C(c) + h (m0 m6 - m1 m5) (linear in h)
+PASS det Hess C(c + h kappa) has h-degree <= 3 :: [0, 1, 2, 3]
+PASS at h = -C(c)/Q: det Hess C = -4 d^2 G^2 / Q^2 with G a polynomial (965 terms, multidegree (2,2,2,2,2,8,3,3)) :: 965
+INFO G built in 9.3s :: sign fixed so that G > 0 at (q,p,j,c,e,d,b,a)=(0,2,1/2,1/1000,2/3,1,2,1/10): G = 633.0121937158333
+INFO NUMERIC doc5_thm2_mid (seed 11, N 20000): min G over all samples 107.895; over the pc <= a^2, Phi >= 0 subset (6172 samples) 117.129 :: no sample with G <= 0
+INFO NUMERIC doc5_thm2_high (seed 11, N 20000): min G over all samples 104.313; over the pc <= a^2, Phi >= 0 subset (6194 samples) 144.124 :: no sample with G <= 0
+INFO NUMERIC Thm 1 endpoint E on b>b*, 1<j<b, k<c<1/j-a, 0<p<1/(j-1) (seed 12, N 20000): min E :: 4.76643 (no sample with E <= 0)
+SUMMARY: 0 EXACT check(s) failed []
+exit 0

@@ -1,0 +1,98 @@
+== A/B. contact set, generators, barriers, boundary ties
+PASS T equals paper T_82 literally
+PASS generators(T) = [0,1,12,39,45,67,70,72] (eq. (1))
+PASS only f_70 is non-minor
+PASS coefficients (q,p,j,c,e,b,d,a) = (g18,g16,g8,g4,g3,g14,g11,g7): rows form the identity
+PASS (2) g6 = j + d + a (all with coefficient 1)
+PASS (2) g15 = c + b + d (all with coefficient 1)
+PASS (2) g19 = q + j + d (all with coefficient 1)
+  tie j= 0: kills non-minor coeff=True; earlier six-subsets=[(2, 'minor'), (5, 'minor'), (9, 'T45'), (10, 'T48'), (12, 'T79'), (13, 'minor')]; earlier Table-5 set=None
+  tie j= 1: kills non-minor coeff=True; earlier six-subsets=[(2, 'minor'), (5, 'minor'), (9, 'minor'), (10, 'minor'), (12, 'minor'), (13, 'minor')]; earlier Table-5 set=None
+  tie j= 3: kills non-minor coeff=False; earlier six-subsets=[(2, 'T34'), (5, 'T21'), (9, 'T21'), (10, 'T22'), (12, 'T33'), (13, 'T34')]; earlier Table-5 set=None
+  tie j= 4: kills non-minor coeff=False; earlier six-subsets=[(2, 'T78'), (5, 'T60'), (9, 'T36'), (10, 'T48'), (13, 'T31')]; earlier Table-5 set=None
+  tie j= 6: kills non-minor coeff=True; earlier six-subsets=[(2, 'minor'), (5, 'minor'), (9, 'minor'), (10, 'T25'), (12, 'minor'), (13, 'minor')]; earlier Table-5 set=None
+  tie j= 7: kills non-minor coeff=False; earlier six-subsets=[(2, 'T31'), (5, 'T36'), (9, 'T60'), (10, 'T48'), (13, 'T78')]; earlier Table-5 set=None
+  tie j= 8: kills non-minor coeff=False; earlier six-subsets=[(2, 'T78'), (5, 'T36'), (9, 'T60'), (10, 'T48'), (13, 'T31')]; earlier Table-5 set=None
+  tie j=11: kills non-minor coeff=True; earlier six-subsets=[(2, 'minor'), (5, 'minor'), (9, 'minor'), (10, 'T84'), (12, 'T30'), (13, 'minor')]; earlier Table-5 set=None
+  tie j=14: kills non-minor coeff=False; earlier six-subsets=[(2, 'T79'), (10, 'T30'), (13, 'T79')]; earlier Table-5 set=T7_25 (stage 7)
+  tie j=15: kills non-minor coeff=True; earlier six-subsets=[(2, 'minor'), (5, 'T45'), (9, 'minor'), (10, 'T48'), (12, 'T79'), (13, 'minor')]; earlier Table-5 set=None
+  tie j=16: kills non-minor coeff=False; earlier six-subsets=[(2, 'T31'), (5, 'T60'), (9, 'T36'), (10, 'T48'), (13, 'T78')]; earlier Table-5 set=None
+  tie j=17: kills non-minor coeff=True; earlier six-subsets=[(2, 'minor'), (5, 'minor'), (9, 'minor'), (10, 'T25'), (12, 'minor'), (13, 'minor')]; earlier Table-5 set=None
+  tie j=18: kills non-minor coeff=False; earlier six-subsets=[(2, 'T79'), (10, 'T30'), (13, 'T79')]; earlier Table-5 set=T7_25 (stage 7)
+  tie j=19: kills non-minor coeff=True; earlier six-subsets=[(2, 'minor'), (5, 'minor'), (9, 'T45'), (10, 'T48'), (12, 'T79'), (13, 'minor')]; earlier Table-5 set=None
+  tie j=20: kills non-minor coeff=True; earlier six-subsets=[(2, 'minor'), (5, 'T81'), (9, 'T81'), (10, 'minor'), (12, 'minor'), (13, 'minor')]; earlier Table-5 set=None
+  tie j=21: kills non-minor coeff=True; earlier six-subsets=[(2, 'minor'), (5, 'T83'), (9, 'T83'), (12, 'T90'), (13, 'minor')]; earlier Table-5 set=None
+  tie j=22: kills non-minor coeff=True; earlier six-subsets=[(2, 'minor'), (5, 'minor'), (9, 'minor'), (10, 'minor'), (12, 'minor'), (13, 'minor')]; earlier Table-5 set=None
+  tie j=23: kills non-minor coeff=True; earlier six-subsets=[(2, 'minor'), (5, 'T45'), (9, 'minor'), (10, 'T48'), (12, 'T79'), (13, 'minor')]; earlier Table-5 set=None
+PASS zeros of f_70 outside T are 3,4,7,8,14,16,18
+PASS each of them contains an earlier-stage six-set
+PASS certificate label T33 read as inventory index = paper T_34 (stage 1) maps into T+{3}
+PASS certificate label T59 read as inventory index = paper T_60 (stage 9) maps into T+{4}
+PASS certificate label T59 read as inventory index = paper T_60 (stage 9) maps into T+{7}
+PASS certificate label T30 read as inventory index = paper T_31 (stage 1) maps into T+{8}
+PASS certificate label T78 read as inventory index = paper T_79 (stage 8) maps into T+{14}
+PASS certificate label T59 read as inventory index = paper T_60 (stage 9) maps into T+{16}
+PASS certificate label T78 read as inventory index = paper T_79 (stage 8) maps into T+{18}
+== C. original variables: A = (0,1,z,w), C = (oo,v,x,t)
+PASS E = (z-v)(w-t)
+PASS (3) F12 = x E
+PASS ratio F5/F13
+PASS ratio F9/F13
+PASS ratio F10/F9
+PASS (12) x F0 = (x-z) F14
+PASS (4) t = Tn/Td
+PASS (4) w = Wn/Wd
+PASS (4) v = x(x+u)w/V
+PASS Td - Tn = x(x+s)(1-z)
+  factored x+r, x+s, x+u, x+h: [x*(-t + z)*(v - w)/((t - w)*(-v + z)), -(t - 1)*(v - w)*(x - z)/((t - w)*(-v + z)), v*(-t + z)*(x - 1)/((t - w)*(-v + z)), -v*(t - 1)*(-w + x)/((t - w)*(-v + z))]  V: w*x*(-t + z)*(x - 1)/((t - w)*(-v + z))
+  factored r = H13: -x*(t - v)*(-w + z)/((t - w)*(-v + z))
+== C. forward parametrization in (r,s,u,h; x,z)
+PASS (3) F12 = x E forward
+  numerator of H13 - r factors: const 1 [('x', 1), ('x - z', 1), ('u + x', 1), ('r + x', 1), ('<355 terms>', 1)]
+PASS a 355-term irreducible factor C exists
+PASS C bidegree (6,2) in (x,z)
+PASS contact H2 holds: identically
+PASS contact H12 holds: identically
+PASS contact H13 holds: mod C
+PASS contact H5 holds: mod C
+PASS contact H9 holds: mod C
+PASS contact H10 holds: mod C
+PASS (5) H11 formula: mod C
+PASS (9) H19 formula: mod C
+PASS (10) H15 formula: mod C
+PASS (11) H6 formula: identically
+== C. sections, local branches, limits (sympy)
+PASS (7) C(1,z) = -(u+1)^2(s+1)^3(z-1) (up to the global sign)
+PASS (8) C(-r,z) = -r^3(r-u)^2(r-s)^3(z+r)
+PASS z-degree of C is 2 (so each fibre over x=1, x=-r is one finite point and z = oo)
+  d_tau Ct(1,0) = -(s + 1)**3*(u + 1)**2
+PASS simple point at (x,z) = (1, oo)
+  d_tau Ct(-r,0) = -r**3*(r - s)**3*(r - u)**2
+PASS simple point at (x,z) = (-r, oo)
+PASS d_tau Ct(1,0) = -(s+1)^3(u+1)^2 and d_x Ct(1,0) = (h+1)(r+1)^2(s+1)(u+1)
+PASS tau/eps -> kappa = (h+1)(r+1)^2/((s+1)^2(u+1))
+PASS at (1,oo): w -> (s+r+2)/(r+1), v/w -> 1, H6 -> v - 1 real
+PASS (1,1) smooth: C_z(1,1) = -(s+1)^3(u+1)^2 != 0
+PASS at (1,1): H15 -> u+r+1 for every slope of the branch
+PASS at (-r,-r): H19 = r(s+1)/(r+1)
+PASS at (-r,oo): H19 -> s
+PASS (-r,-r) smooth: C_z != 0
+PASS (5) H11 -> s+u-r+1 at x = oo
+PASS (6) genericity jointly proper at (2,3,5,7)
+== C. identically-zero specializations
+PASS r=s=-1: [x^2 z^0]C = -h(u+1)
+PASS r=s=-1, h=0: [x^6 z]C = -1
+PASS r=u=-1: [x^2 z^0]C = h^2(s+1)
+PASS r=u=-1, h=0: [x^6 z^2]C - [x z^2]C = 2
+PASS H11 on stratum {s: -1, r: 0} is the real constant u
+PASS H11 on stratum {s: -1, r: u} is the real constant 0
+PASS H11 on stratum {u: -1, r: 0} is the real constant s
+PASS H11 on stratum {u: -1, r: s} is the real constant 0
+PASS H11 on stratum {r: -1, s: -1, u: -1} is the real constant 0
+  INFO: strata on which C is the zero polynomial for all h (none expected): []
+== D. NUMERIC main-statement search (library stratum sampler, margin 1e-3)
+  numeric point 0: contact=[2, 5, 9, 10, 12, 13]  P-residual=1.8e-14  min Phi (scaled) = 1.291e-12
+  numeric point 3: contact=[2, 5, 9, 10, 12, 13]  P-residual=1.3e-14  min Phi (scaled) = 6.985e-12
+  numeric point 4: contact=[2, 5, 9, 10, 12, 13]  P-residual=8.9e-15  min Phi (scaled) = 9.508e-13
+  NUMERIC: 3 points found, worst scaled min Phi = 9.507636200624458e-13
+EXACT failures: []

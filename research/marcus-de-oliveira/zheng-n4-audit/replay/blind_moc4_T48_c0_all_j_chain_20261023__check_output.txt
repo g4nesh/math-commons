@@ -1,0 +1,32 @@
+PASS paper T_49 = {0,3,5,6,9,12}
+PASS generators(T_49) = f0,f1,f2,f5,f7,f9,f29,f39,f40,f41 (ten)  [0, 1, 2, 5, 7, 9, 29, 39, 40, 41]
+PASS the eight role generators vanish together exactly on T_49
+PASS d = f40 is the only non-minor role
+PASS f1 = f7 + f39 + f0 + -f40 (so a ten-generator source has an eight-role form with d replaced by d - x1 - x9)
+PASS f9 = f7 + f2 + f41 + -f40 (so a ten-generator source has an eight-role form with d replaced by d - x1 - x9)
+PASS Q0 = (c+d)(d+e+j) - p(e+j)
+PASS (e+j)C - ejQ0 has 42 terms, all positive, including d^3 e and d^3 j
+PASS c = 0, Q0 = 0: (e+j)C0 is a 27-term polynomial with nonnegative coefficients containing d^3(e+j)
+PASS zero face q = 0: contacts [0, 3, 5, 6, 9, 12, 16] contain an image of paper T_39  image (0, 3, 5, 6, 9, 16) via g=((1, 3, 0, 2), (1, 3, 2, 0), 0)
+PASS zero face p = 0: contacts [0, 3, 5, 6, 9, 11, 12] contain an image of paper T_1  image (0, 3, 5, 6, 9, 11) via g=((2, 3, 0, 1), (3, 1, 0, 2), 1)
+PASS zero face j = 0: contacts [0, 2, 3, 5, 6, 9, 12] contain an image of paper T_3  image (0, 2, 3, 5, 6, 9) via g=((0, 1, 3, 2), (0, 2, 3, 1), 0)
+PASS zero face e = 0: contacts [0, 3, 5, 6, 9, 12, 13] contain an image of paper T_24  image (0, 3, 5, 6, 9, 13) via g=((3, 2, 1, 0), (3, 2, 0, 1), 0)
+PASS zero face b = 0: contacts [0, 3, 5, 6, 7, 9, 12] contain an image of paper T_43  image (0, 3, 5, 6, 7, 9) via g=((0, 1, 2, 3), (0, 1, 3, 2), 0)
+PASS zero face a = 0: contacts [0, 3, 5, 6, 9, 12, 23] contain an image of paper T_44  image (0, 3, 5, 6, 9, 23) via g=((2, 3, 1, 0), (2, 1, 0, 3), 1)
+PASS chain orbit has 576 members, old-H orbit 288
+PASS chain (centre f5; leaves f0, f2; non-minor f40) is in the proved chain orbit
+PASS T_49 u {17} is the paper's seven-element set AUX7 #23 (Table 5) and 17 is the extra zero of f39 = c
+PASS cached G has the hash of the from-scratch computation
+PASS G: 1772 terms, homogeneous of degree 9, sha256 c89c8cbc5331fcfdbdc22587fbcf8a017fc692eb8fd1f38edbe8a59ca0550a49 (cache)
+PASS all-j chart (1): j = B0X(1+A)/C, a = AC/(C+X(1+A)) satisfy a t + (1-j)B0 = j(B0/X + X)
+PASS all-j: j(C - aX) = B0 X (a+1) on the branch
+PASS all-j: A = a(C+X)/(C-aX) inverts the chart
+PASS all-j: substituted G after removing every factor C, AD, AN, A, E, 1+P has 34491 terms, all of one sign  removed {'AD': 2}
+PASS all-j: restoring AD^2 gives the supplement's 84925-term table (all one sign)
+PASS all-j: marker A^2 E^2 has coefficient 1 (supplement: -1)
+PASS all-j wall Q = 0 keeps the sign and the A^2E^2 term
+PASS all-j wall B = 0 keeps the sign and the A^2E^2 term
+PASS all-j wall P = 0 keeps the sign and the A^2E^2 term
+INFO all-j sha256 1c00e99d229a4a841755aaffc20f250a4e87545ae74465e0cd1570f98967fa1a t=1
+NUMERIC realizable points on T_49 u {17} (seeds 0-9, margin 2e-2): 7 found, max |G|/scale = 2.0e-15; 4 with all eight coefficients >= 0 and d > 0: min [p/d - d(1/a+1/e)] = 5.012962294197786, min L = 1685.421674820188, min F6 = 1319985.0807381116
+SUMMARY: 0 EXACT check(s) failed

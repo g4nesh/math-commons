@@ -1,0 +1,29 @@
+PASS tuple (0,3,5,6,9,12) is literally paper T_49
+PASS generators(T_49) = {0,1,2,5,7,9,29,39,40,41}, only f40 non-minor
+PASS f40 + f1 = f7 + f39 + f0 (all 24 values; P injective)
+PASS f40 + f9 = f7 + f2 + f41
+PASS canonical eight profiles (7,5,29,39,2,40,41,0) are independent
+INFO zero coefficient q (f7): extra contacts [16]; six-subsets [('T29', 1), ('T34', 1), ('T39', 1), ('T46', 2), ('T59', 8), ('T78', 6)]
+PASS zero face q reduces to an earlier-stage six-set (stage < 4) :: [('T29', 1), ('T34', 1), ('T39', 1), ('T46', 2)]
+INFO zero coefficient p (f5): extra contacts [11]; six-subsets [('T1', 1), ('T12', 3), ('T14', 5), ('T21', 1), ('T23', 1), ('T36', 1)]
+PASS zero face p reduces to an earlier-stage six-set (stage < 4) :: [('T1', 1), ('T12', 3), ('T21', 1), ('T23', 1), ('T36', 1)]
+INFO zero coefficient j (f29): extra contacts [2]; six-subsets [('T11', 3), ('T12', 3), ('T16', 5), ('T2', 1), ('T28', 1), ('T3', 1)]
+PASS zero face j reduces to an earlier-stage six-set (stage < 4) :: [('T11', 3), ('T12', 3), ('T2', 1), ('T28', 1), ('T3', 1)]
+INFO zero coefficient c (f39): extra contacts [17]; six-subsets [('T48', 8), ('T49', 4), ('T59', 8), ('T84', 9)]
+INFO zero coefficient e (f2): extra contacts [13]; six-subsets [('T24', 5), ('T28', 1), ('T39', 1), ('T42', 1), ('T47', 3), ('T66', 7)]
+PASS zero face e reduces to an earlier-stage six-set (stage < 4) :: [('T28', 1), ('T39', 1), ('T42', 1), ('T47', 3)]
+INFO zero coefficient b (f41): extra contacts [7]; six-subsets [('T29', 1), ('T37', 1), ('T43', 1), ('T49', 4), ('T58', 6)]
+PASS zero face b reduces to an earlier-stage six-set (stage < 4) :: [('T29', 1), ('T37', 1), ('T43', 1)]
+INFO zero coefficient a (f0): extra contacts [23]; six-subsets [('T44', 1), ('T56', 10), ('T59', 8), ('T69', 7), ('T70', 5), ('T77', 9)]
+PASS zero face a reduces to an earlier-stage six-set (stage < 4) :: [('T44', 1)]
+PASS c = 0 face <-> extra contact 17, and T_49+{17} is Table 5 set 23
+PASS F(g + h kappa) affine in h
+INFO own Q = c*d + c*e + c*j + d**2 + d*e + d*j - e*p - j*p
+PASS supplement JSON C,Q equal own C,Q
+PASS G (supplement data) has 1772 terms, degree 9
+PASS det H(g - C kappa/Q) * Q^2 == -4 G^2 at 20 random rational points (own Hessian; pointwise exact)
+PASS Q|c=0 = Q0 = d(d+e+j) - p(e+j)
+PASS (e+j) C0 at Q0 = 0 has only positive coefficients, with a d^3 j term :: 27 terms
+PASS G|c=0 has 759 terms :: 759
+INFO NUMERIC Lemma 2 sanity (seed 2, 50 random realizable w = Re(alpha m)): max scaled |F(w)|, |H(w)(x-y)| = 7.9e-16
+SUMMARY: all EXACT checks passed

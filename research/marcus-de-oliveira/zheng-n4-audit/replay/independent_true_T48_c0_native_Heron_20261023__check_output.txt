@@ -1,0 +1,27 @@
+[EXACT] PASS  contacts {0,3,5,6,9,12,17} = Table 5 set #23 (paper T_49 plus 17)
+[EXACT] PASS  canonical rays (7,5,29,39,2,40,41,0); the only one nonzero at 17 is f39 (c), so contact 17 <=> c = 0
+[EXACT] PASS  contacts: H0=0, H3=s-r, H5=-r, H6=-1, H12=-u identically
+  time 5.2
+[EXACT] PASS  short coordinate function j_amp equals the printed one up to a real shift (0*h + 0)
+[EXACT] PASS  short coordinate function c+d_amp equals the printed one up to a real shift (0*h + 0)
+[EXACT] PASS  short coordinate function a+d_amp equals the printed one up to a real shift (0*h + -1)
+[EXACT] PASS  short coordinate function q+d_amp equals the printed one up to a real shift (-1*h + -r + s)
+[EXACT] PASS  short coordinate function b_amp equals the printed one up to a real shift (0*h + 1)
+[EXACT] PASS  short coordinate function p_amp equals the printed one up to a real shift (1*h + r)
+[EXACT] PASS  (1) d/y = Dn/N on c = 0
+[EXACT] PASS  (1) (b+d)/y = r t/N
+[EXACT] PASS  (1) (q+d)/y = -(Rv+1)/r
+[EXACT] PASS  (1) (a+d)/y = K/A
+[EXACT] PASS  (1) p/y = R Fp/|J + r - s|^2
+[EXACT] PASS  (6) H + (r-1)Fp = -r m
+[EXACT] PASS  (6) (r-1)(Dn + r^2) - H = r^2 m
+[EXACT] PASS  (8) L/y^3 = [(K-A) Bn N + K Dn N - A Dn^2]/(A N^2) with Bn = -t(Rv+1)
+[EXACT] PASS  (10) B/y^2 = -t^2 H/(m N^2) given (7)
+[EXACT] PASS  (10) F6/y^6 = t^2 Dn^2 (m+H)^2/(m^2 N^4) given (7),(9)
+  time 7.4
+  numeric (seed 31): 2363 points of the seven-contact stratum (max decomposition residual 4.3e-12); (1) failures 0, (7) failures 0, (9) failures 0
+  numeric: 33 of them satisfy p,j,d > 0, q,b >= 0; worst normalized F6 = 1.411e-20; sign L != -sign r in 0; points in the open branch r > 0, j > d: 0
+[NUMERIC] PASS  NUMERIC: identities (1), (7), (9) hold at all sampled stratum points
+[NUMERIC] PASS  NUMERIC: F6 >= 0 and sign L = -sign r at all sampled supported points
+  total time 108.7
+FAILED: none

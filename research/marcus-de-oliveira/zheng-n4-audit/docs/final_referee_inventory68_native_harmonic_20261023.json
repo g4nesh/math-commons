@@ -1,0 +1,158 @@
+{
+ "doc_id": "final_referee_inventory68_native_harmonic_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_inventory68_native_harmonic_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "one_line": "Proves T_69 by a harmonic curve argument with barriers d<=g14, d<=g4; all identities, resultants and the tie covering replay exactly; confirmed modulo citations.",
+ "statements": [
+  {
+   "label": "main",
+   "page": 1,
+   "paper_cases": [
+    69
+   ],
+   "contact_sets": [
+    [
+     0,
+     2,
+     5,
+     7,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with Pc(x)>=0 and zero gaps on T_69={0,2,5,7,9,12} (non-strict): Phi_{c(x)}(O)>=0 for all O in SO(4). Coincidences via App. B pointwise; seventh ties via earlier cases or all-minor cones; rest by harmonic curve argument."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_12 (or T_4,T_5,T_29,T_39,T_58)",
+   "contact_set": null,
+   "used_for": "tie 3",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_16 (or T_8,T_11,T_37)",
+   "contact_set": null,
+   "used_for": "tie 6",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_44 (or T_49,T_70)",
+   "contact_set": null,
+   "used_for": "tie 11",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_44",
+   "contact_set": null,
+   "used_for": "tie 13",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_46 (or T_76)",
+   "contact_set": null,
+   "used_for": "tie 16",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_65",
+   "contact_set": null,
+   "used_for": "tie 17",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_38 (or T_36,T_37,T_46)",
+   "contact_set": null,
+   "used_for": "tie 23",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Lemma 4.2 / Prop 4.1 (cone generators)",
+   "used_for": "source list",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary to orthogonal",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Thm B.1 / Lemma B.2 (Appendix B)",
+   "used_for": "pointwise inequality at coincident labels / shared zeros",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "(3.10)-(3.11) ker Hess C(kappa) = E",
+   "used_for": "height-puncture lemma",
+   "match_checked": true
+  },
+  {
+   "kind": "external",
+   "ref": "Birkhoff-von Neumann",
+   "used_for": "Phi of E(Q) >= 0",
+   "match_checked": true
+  }
+ ],
+ "steps": "see the step table in the .md report (EXACT/PROOF-READ/CITED as marked)",
+ "step_counts": {
+  "exact": 13,
+  "proof_read": 6,
+  "cited": 2,
+  "numeric": 1,
+  "gap": 0,
+  "unchecked": 0
+ },
+ "gaps": [
+  {
+   "location": "p.1, 'companion certificate lists and verifies every action'",
+   "claim": "every added tie with f40=0 is covered by an earlier case",
+   "why": "tie table not printed",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "auditor table: ties 3,6,11,13,16,17,23 covered by earlier-stage cases (EXACT)"
+  },
+  {
+   "location": "p.4 harmonic completion",
+   "claim": "all punctures have nonnegative lower limit",
+   "why": "compressed; poles of coordinate functions not separated from inverse-only degenerations",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "denominators of all 24 H lie in {r,W,W-1,Q,P}; their W-projections are real or infinite; supplied by auditor"
+  }
+ ],
+ "exact_replays": [
+  "generators(T) and sole non-minor f40",
+  "f40+f1=f0+f7+f39 (24 and 14 coords)",
+  "readouts C_i=g_sigma, d=g14-g16=g4-g17",
+  "tie covering with stages",
+  "ratio numerators, E",
+  "inverse (2) and round trip",
+  "D, H14, H4, f=-Q/V, H4-H17",
+  "denominators of all 24 H in {r,W,W-1,Q,P}",
+  "C bidegree (2,3), 32 terms, A(W), [W^3]C",
+  "Res_V(C,P), Res_V(C,Q)",
+  "E_hom=-rVW(W-1)QP",
+  "C(V=0)=(W-1)Q2",
+  "specialization (2,3,4,5)"
+ ],
+ "numeric_tests": [
+  "40000 trials seed 20261125: 735 supported chart points, barriers hold, worst min Phi/|g| over SO(4) (25 pts, 8 restarts) = -1.3e-15"
+ ],
+ "unchecked": [
+  "supplement's companion exact program (not used as evidence)",
+  "cited earlier cases and seven-contact theorems (audited elsewhere)"
+ ]
+}

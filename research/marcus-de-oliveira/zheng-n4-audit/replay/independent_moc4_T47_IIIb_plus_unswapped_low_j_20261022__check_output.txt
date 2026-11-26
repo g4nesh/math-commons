@@ -1,0 +1,16 @@
+INFO radial octic rebuilt from the cubic in 78.3 s
+PASS height equation C(c(g)+h kappa) is affine in h
+PASS G has 965 terms and total degree 8 : (965, 8)
+PASS G is quadratic in c
+PASS H = (p+j+d+a)^2
+PASS K = [pj + b(p+d+a) - pa]^2
+PASS identity H G = alpha Phi + U0 + c U1
+PASS identity K G = gamma Phi + c (V0 - c U0)
+PASS low-j chart: cleared alpha has only positive coefficients : terms=1320 negative=0 markers(W=U=Q=0)=0
+PASS low-j chart: cleared gamma has only positive coefficients : terms=6332 negative=0 markers(W=U=Q=0)=84
+PASS low-j chart: cleared V0 has only positive coefficients : terms=28758 negative=0 markers(W=U=Q=0)=330
+PASS low-j chart: cleared EJ has only positive coefficients : terms=28038 negative=0 markers(W=U=Q=0)=270
+PASS gamma and EJ have a positive monomial free of W,U,Q
+PASS e-map equals j + j^2 U/((b-j)(1+U)) (sympy)
+PASS e-map upper limit U->oo equals bj/(b-j)
+SUMMARY: all EXACT checks passed

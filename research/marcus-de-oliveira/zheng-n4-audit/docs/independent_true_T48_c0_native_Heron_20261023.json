@@ -1,0 +1,53 @@
+{
+  "doc_id": "independent_true_T48_c0_native_Heron_20261023",
+  "pdf": "proofs/manin_transfer_20261021/independent_true_T48_c0_native_Heron_20261023.pdf",
+  "pages": 3,
+  "verdict": "gap-found",
+  "statements": [
+    {"label": "main (Theorem 1)", "page": 1, "contact_sets": [[0, 3, 5, 6, 9, 12, 17]],
+     "restatement": "Eight-distinct realizable source with contacts T_49 u {17} (Table 5 #23), canonical rays (7,5,29,39,2,40,41,0), c = 0, p,j,d > 0, q,b >= 0: with B = (b+d)(q+d), L = a(B+dj)+(d-j)B, F6 = L^2-4d^2j^2B one has F6 >= 0 and sign L = -sign r (r = -H5 of the chart). Necessary condition only; no support inequality; collisions excluded.",
+     "covers_all_spectra": false, "paper_cases": []}
+  ],
+  "dependencies": [
+    {"kind": "other-doc", "ref": "independent_true_T48_native_harmonic_conditional_20261023", "used_for": "spectral chart and explicit inverse", "match_checked": true},
+    {"kind": "other-doc", "ref": "standalone checker (absent from supplement)", "used_for": "rows of (3), (4), N_R, (5)", "match_checked": false},
+    {"kind": "other-doc", "ref": "blind_moc4_T48_c0_upper_Heron_chain_20261023", "used_for": "remark only (r<0, j>=d branch)", "match_checked": false},
+    {"kind": "seven-contact", "ref": "Table 5 #23", "used_for": "statement", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "short coordinate functions", "status": "EXACT"},
+    {"n": 2, "claim": "(1) on c=0", "status": "EXACT"},
+    {"n": 3, "claim": "Dn>0, rt>0, Fp!=0", "status": "PROOF-READ"},
+    {"n": 4, "claim": "(2) TN>0", "status": "PROOF-READ"},
+    {"n": 5, "claim": "(3)-(5): rows, det M3, N_R, mN+vR0=tH", "status": "GAP"},
+    {"n": 6, "claim": "(6) identities", "status": "EXACT"},
+    {"n": 7, "claim": "(7) mN(Rv+1)=tH", "status": "NUMERIC"},
+    {"n": 8, "claim": "wall m=0 impossible", "status": "PROOF-READ"},
+    {"n": 9, "claim": "(8) numerator of L", "status": "EXACT"},
+    {"n": 10, "claim": "(9) L/y^3 formula", "status": "NUMERIC"},
+    {"n": 11, "claim": "(10) given (7),(9)", "status": "EXACT"},
+    {"n": 12, "claim": "sign L = -sign r", "status": "PROOF-READ"}
+  ],
+  "gaps": [
+    {"location": "p.2, eqs. (3)-(5)",
+     "claim": "three real rows linear in (RK,R,K) with det M3 = -sN^2 m Fp TN, N_R = -sN Fp TN R0, mN + vR0 = tH",
+     "why": "the rows depend on a representative CN/CD of the c amplitude supplied only by a standalone checker that is not in the supplement; the note prints neither M3, b3 nor R0",
+     "severity": "substantive", "believed_true": true,
+     "repair": "print M3, b3, R0 or publish the checker; consequences (7) and (9) hold numerically at 2363 stratum points"}
+  ],
+  "exact_replays": [
+    "short coordinate functions j, c+d, a+d, q+d, b, p up to real shifts",
+    "(1) on c=0 (five relations)",
+    "(6) two identities",
+    "(8) from (1); (10) from (7),(9)",
+    "contact 17 <=> c = 0 (f39 is the only canonical ray nonzero at 17)"
+  ],
+  "numeric_tests": [
+    "2363 seven-contact stratum points (seed 31): (1), (7), (9) hold, no failure",
+    "33 supported points: F6 >= 0 (worst 1.4e-20 normalized), sign L = -sign r at all; none in r>0, j>d"
+  ],
+  "unchecked": [
+    "exact rows of (3), (4), N_R, (5)",
+    "remaining-branch citations (upper-Heron chain lemma, j<=d theorem)"
+  ]
+}

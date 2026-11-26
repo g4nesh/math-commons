@@ -1,0 +1,200 @@
+{
+ "doc_id": "independent_inventory74_native_harmonic_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_inventory74_native_harmonic_uniform_20261023.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1 (main)",
+   "page": 1,
+   "paper_cases": [
+    75
+   ],
+   "contact_sets": [
+    [
+     3,
+     5,
+     7,
+     8,
+     10,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For x in X with Pc(x) >= 0 and (Pc)_s = 0 for s in {3,5,7,8,10,12} (non-strict), Phi_{c(x)}(O) >= 0 for all O in O(4), hence U(4) by Thm 1.2. Non-eight-distinct spectra go to the collision theorems (App. B, one-circle)."
+  },
+  {
+   "label": "Lemma 2",
+   "page": 3,
+   "restatement": "At an eight-distinct point with exactly the contacts T, H12 has a nonconstant germ in (Y,Z), so a counterexample can be moved to generic real (D,k,u,h) keeping strict support and negativity at fixed O."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_28 / T_39",
+   "used_for": "seventh ties 2, 13",
+   "match_checked": true,
+   "contact_set": [
+    0,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_25",
+   "used_for": "seventh ties 4, 16",
+   "match_checked": true,
+   "contact_set": [
+    3,
+    4,
+    7,
+    8,
+    10,
+    12
+   ]
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_15",
+   "used_for": "seventh tie 9",
+   "match_checked": true,
+   "contact_set": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7
+   ]
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_65",
+   "used_for": "seventh ties 14, 18 (stage 6 < 7)",
+   "match_checked": true,
+   "contact_set": [
+    0,
+    4,
+    5,
+    6,
+    9,
+    12
+   ]
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Lemma 4.2 / Prop 4.1",
+   "used_for": "complete source",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Appendix B (Thm B.1, Lemma B.2), one-circle theorem",
+   "used_for": "collisions",
+   "match_checked": true
+  },
+  {
+   "kind": "external",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary bridge",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "source, exclusive gaps, (1)",
+   "kind": "finite",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "(2) seventh ties closed",
+   "kind": "citation",
+   "status": "EXACT+CITED"
+  },
+  {
+   "n": 3,
+   "claim": "original chart, (4), solution for y,t,w, raw equation, coverage",
+   "kind": "identity",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 4,
+   "claim": "homogeneous inverse, (5), height, onto-ness",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "denominators divide Z L (Y+1) K",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "(7), curve (6) 160 terms bidegree (2,4)",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "Lemma 2 nonconstancy and Rouche",
+   "kind": "analytic",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 8,
+   "claim": "generic exclusions proper",
+   "kind": "finite",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "resultants (8) and finite barriers",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "L=0,Y=-1 point: CY, CZ, limits",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "Z=1, Y=oo, Z=oo branches (9),(10) and barriers",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "harmonic completion",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators/exclusive gaps/(1)/(2) and closers of each seventh tie with Table 6 stages",
+  "E, D, k, y/t/w solution, raw equation",
+  "inverse (5), height, H formulas (7), all 24 denominators",
+  "chart onto-ness (Mobius image)",
+  "curve: 160 terms, Z^4 coefficient, Lemma 2 coefficient chain; full solution set of C==0",
+  "resultants (8)",
+  "CY, CZ, (Y+1)/L and H1 limits",
+  "(10), branch (9) to O(tau^2), barriers H6+H9/u and H4+(1-u)H6",
+  "generic specialisation (2,3,4,5)"
+ ],
+ "numeric_tests": [
+  "120000 curve draws (seed 20261125): 269 strictly supported points; min Phi over SO(4) on 40 (6 restarts): worst min Phi/max gap = -3.8e-15 (rounding)"
+ ],
+ "unchecked": [
+  "the cited earlier cases, Appendix B and one-circle theorem are not re-audited here"
+ ]
+}
