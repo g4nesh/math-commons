@@ -33,25 +33,33 @@ Theorem O follows from Theorem O′, and Theorem O′ from Lemma L.
 
 Put k := p − u = r − q (equal because p + q = r + u). Write Q(w) = Q₁(w₁,w₂) + Q₂(w₃,w₄) with
 
-  Q₁(a,b) = pr·a² − 2pq·ab + qu·b²,  Q₂(a,b) = pr·a² − 2ru·ab + qu·b².
+  Q₁(a,b) = pr·a² − 2pq·ab + qu·b²,  Q₂(a,b) = pr·a² − 2ru·ab + qu·b²,
 
-1. **Q(𝟙) = 2k².** Indeed Q(𝟙) = 2pr + 2qu − 2pq − 2ru = 2(p − u)(r − q).
-2. **One of Q₁, Q₂ is positive semidefinite.** Their determinants are pq·(ru − pq) and ru·(pq − ru), and their diagonal entries are ≥ 0. The roles of (p, q, w₁, w₂) and (r, u, w₃, w₄) are symmetric, so assume ru ≥ pq. Then Q₁ is positive semidefinite.
-3. **Suppose both Q(w) < 0 and Q(𝟙 − w) < 0.** Put v = (w₃,w₄) and v′ = (1 − w₃, 1 − w₄), so v + v′ = (1,1). Then
+and let B₁, B₂ be their bilinear forms. The roles of (p, q, w₁, w₂) and (r, u, w₃, w₄) are symmetric, so assume **ru ≥ pq**.
 
-   Q₂(v) < −Q₁(w₁,w₂) ≤ 0 and Q₂(v′) < −Q₁(1 − w₁, 1 − w₂) ≤ 0.
-4. **Q₂ has signature (1,1), and v, v′ lie in the same component of {Q₂ < 0}.** Q₂ takes a negative value and has nonnegative diagonal, so its determinant is negative. On the two coordinate axes Q₂ ≥ 0, so within the closed first quadrant {Q₂ < 0} is an open sector between two rays; it is connected. Both v and v′ lie in it.
-5. **Reverse triangle inequality for Q₂.** In linear coordinates with −Q₂ = X² − Y², the component is {X > |Y|}. For two of its points,
+Let z = (w₁,w₂), z′ = (1−w₁, 1−w₂), v = (w₃,w₄), v′ = (1−w₃, 1−w₄); all coordinates lie in [0,1], and z + z′ = v + v′ = (1,1). Put
 
-   (X₁X₂ − Y₁Y₂)² − (X₁² − Y₁²)(X₂² − Y₂²) = (X₁Y₂ − X₂Y₁)² ≥ 0 and X₁X₂ − Y₁Y₂ > 0.
+  a = Q₁(z), a′ = Q₁(z′), m = B₁(z,z′);  b = −Q₂(v), b′ = −Q₂(v′), n = −B₂(v,v′).
 
-   Hence √(−Q₂(v + v′)) ≥ √(−Q₂(v)) + √(−Q₂(v′)).
-6. **Triangle inequality for Q₁.** √Q₁ is a seminorm, so √Q₁(1,1) ≤ √Q₁(w₁,w₂) + √Q₁(1 − w₁, 1 − w₂).
-7. **Contradiction.** By 3, 5, 6:
+**Four facts.**
+- **(F1)** a ≥ 0, a′ ≥ 0, and aa′ − m² = pq·(ru − pq)·(z₁z′₂ − z₂z′₁)² ≥ 0. (Q₁ has nonnegative diagonal and determinant pq·(ru − pq) ≥ 0, so it is positive semidefinite.)
+- **(F2)** n² − bb′ = ru·(ru − pq)·(v₁v′₂ − v₂v′₁)² ≥ 0.
+- **(F3)** Q(𝟙) = Q₁(z + z′) + Q₂(v + v′) = (a + a′ + 2m) − (b + b′ + 2n), and Q(𝟙) = 2pr + 2qu − 2pq − 2ru = 2(p − u)(r − q) = 2k² ≥ 0.
+- **(F4)** If b > 0 and b′ > 0, then n > 0.
 
-   √(−Q₂(1,1)) ≥ √(−Q₂(v)) + √(−Q₂(v′)) > √Q₁(w₁,w₂) + √Q₁(1−w₁,1−w₂) ≥ √Q₁(1,1).
+  *Proof of (F4).* b > 0 says pr·v₁² + qu·v₂² < 2ru·v₁v₂, and b′ > 0 says pr·v′₁² + qu·v′₂² < 2ru·v′₁v′₂. Let T = pr·v₁v′₁ + qu·v₂v′₂ ≥ 0. By Cauchy–Schwarz, and then by (x + y)² ≥ 4xy,
 
-   So Q(𝟙) = Q₁(1,1) + Q₂(1,1) < 0, against step 1. ∎
+   T² ≤ (pr·v₁² + qu·v₂²)(pr·v′₁² + qu·v′₂²) < 4r²u²·v₁v₂v′₁v′₂ ≤ r²u²·(v₁v′₂ + v₂v′₁)².
+
+  Both T and ru·(v₁v′₂ + v₂v′₁) are ≥ 0, so T < ru·(v₁v′₂ + v₂v′₁), which is n > 0.
+
+**Conclusion.** Suppose Q(w) < 0 and Q(𝟙 − w) < 0. Since Q₁ ≥ 0, this gives b > a ≥ 0 and b′ > a′ ≥ 0. By (F3), 2(m − n) ≥ (b − a) + (b′ − a′) > 0, and n > 0 by (F4). So m > n > 0, and
+
+  m² > n² ≥ bb′ > aa′ ≥ m²
+
+by (F2) and (F1). This is a contradiction. ∎
+
+*Remark.* In words: √Q₁ obeys the triangle inequality, √(−Q₂) obeys the reversed triangle inequality on the cone where Q₂ < 0, and the two are tied together by Q(𝟙) ≥ 0.
 
 ## Proof of Theorem O′
 
@@ -146,7 +154,7 @@ Its status in this repository: two referee reports by another GitHub owner in [p
 **Checks (`check_orthogonal.py`, exact arithmetic; log in [`logs/check_orthogonal.txt`](logs/check_orthogonal.txt)).**
 - 400 rational matrices in SO(4), each also with one row negated: the block structure A ⊕ B, A, B ∈ SO(3), the formulas for D, the block identities of Step 1, and (★) in square-root-free form.
 - 3,000 rational orthogonal matrices in and near the hard region, of which 1,063 have g0 + D[12,12] < 0, so that the square-root term is needed: (★) holds at all of them.
-- The algebraic identities of Steps 1–4 and of the Lemma, symbolically.
+- The algebraic identities of Steps 1–4 and of facts (F1)–(F4) of the Lemma, symbolically.
 - Lemma L at 200,000 random rational points, including vertices and faces of the cube.
 
 Numerical sanity checks, not part of the proof (`numeric_orthogonal.py`): the minimum of E over SO(3) × SO(3) is 0 to 10⁻¹⁴; the PMSH certificate LP is feasible for random real symmetric matrices, including spectra with cross-ratio far below 1/10.
