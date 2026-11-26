@@ -11,23 +11,35 @@ Task `mdo-n5-contact-strata` · agent `ishaan-moc` · owner IshaanAyaan · 26 No
    - $Q_4$ has 82 facets, 34 squared-minor and 48 others;
    - the 6-element sets fall into 214 orbits, 124 automatic and 90 not.
 3. **n = 5.**
-   - $Q_5$ has 120 vertices and dimension 41.
-   - Two orbits of non-minor facets are found and certified exactly (table below). Whether this list is complete is **not** known.
-   - Already the first orbit leaves almost no automatic 8-sets. In 200,000 uniformly random 8-sets of permutations, every one lies inside some facet of that orbit (NUMERIC sampling of a finite exact test).
-   - An 8-set can avoid all 900 facets of that orbit only if it meets each facet's 36-element support. The fewest permutations that do so is exactly 7, found by an integer program with proved optimality (HiGHS). So automatic 8-sets are not excluded by this orbit alone.
+   - $Q_5$ has 120 vertices and dimension 41. Seven orbits of non-minor facets are certified exactly (table below). Whether this list is complete is **not** known.
+   - **Every tested 8-set is non-automatic (EXACT).** An exact cutting-plane census ([`census.py`](census.py)) repeatedly asks an integer program for an 8-set that meets the support of every known non-minor facet. These are exactly the 8-sets that could still be automatic. It then decides each candidate in exact rational arithmetic. All 9 candidates produced so far are non-automatic:
+     - 2 by an exact linear program that finds a gap vector outside the span of the squared-minor vectors;
+     - 7 by exact enumeration of all extreme rays of their gap cone, which have between 7 and 419 non-minor rays.
+     Five of these decisions supplied the new orbits C–G below; the remaining non-minor rays are recorded in `census_n5.json`.
+   - **Conjecture.** No 8-element set of permutations is automatic at $n=5$: every one lies on a non-minor facet of $Q_5$. Two pieces of evidence:
+     - all 200,000 random 8-sets lie on a facet of orbit A alone;
+     - after the seven orbits, HiGHS finds no 8-set meeting all 57,780 non-minor supports within 600 s, nor within the bounded run that fixes the identity (see `census_n5.json`).
+     A solver time-out is not a proof.
 
-| Non-minor facet orbit | Vertices on the facet | Values of the facet's gap vector off the facet | Orbit size under the group of order 28,800 |
-| --- | --- | --- | --- |
-| A | 84 | 1 on 36 permutations | 900 |
-| B | 74 | 1 on 44, 2 on 2 | 14,400 |
+| Non-minor facet orbit | Vertices on the facet | Values of the gap vector off the facet | Orbit size (group of order 28,800) | Found by |
+| --- | --- | --- | --- | --- |
+| A | 84 | 1 on 36 | 900 | random LP search |
+| B | 74 | 1 on 44, 2 on 2 | 14,400 | random LP search |
+| C | 43 | 1 on 45, 2 on 25, 3 on 5, 5 on 2 | 2,880 | census |
+| D | 74 | 1 on 44, 2 on 2 | 14,400 | census |
+| E | 76 | 1 on 40, 2 on 4 | 3,600 | census, ray enumeration |
+| F | 59 | 1 on 51, 2 on 9, 3 on 1 | 7,200 | census, ray enumeration |
+| G | 74 | 1 on 44, 2 on 2 | 14,400 | census, ray enumeration |
+
+B, D and G have the same values but are distinct orbits (different canonical vertex sets).
 
 Squared-minor facets are $x_{K,J}\geq0$:
 - $|K|=1$: 96 vertices;
 - $|K|=2$: 108 vertices.
 
-The 82 facets of $Q_4$ and these $n=5$ facets are all certified the same way: the vertices on each facet have affine rank $\dim Q_n$, and the affine function vanishing on them is strictly one-signed on the remaining vertices, in exact rational arithmetic (python-flint).
+The 82 facets of $Q_4$ and the seven $n=5$ orbits above are all certified the same way: the vertices on each facet have affine rank $\dim Q_n$, and the affine function vanishing on them is strictly one-signed on the remaining vertices, in exact rational arithmetic (python-flint).
 
-**What this means for the program.** At $n=4$, 124 of 214 patterns were automatic. At $n=5$, the squared-minor cone settles almost no 8-contact pattern on its own. Nearly every rigid configuration will need a case argument, as the 90 non-automatic cases did at $n=4$. So a classification "up to minors" will not shrink the $n=5$ problem the way it did at $n=4$.
+**What this means for the program.** At $n=4$, 124 of 214 patterns were automatic. At $n=5$, the squared-minor cone settles no 8-contact pattern tested so far, and conjecturally none at all. Nearly every rigid configuration will need a case argument, as the 90 non-automatic cases did at $n=4$. So a classification "up to minors" will not shrink the $n=5$ problem the way it did at $n=4$.
 
 ## The reduction
 
@@ -55,12 +67,16 @@ For a contact set $T$, the cone in the task is $F_T=\{g\in C:g_T=0\}$.
 | --- | --- |
 | [`minor_polytope.py`](minor_polytope.py) | Builds $Q_n$, enumerates the facets of $Q_4$ exactly (cddlib, GMP rationals) and the orbits of 6-sets. `python3 -I -B minor_polytope.py 4` |
 | [`facet_search.py`](facet_search.py) | Proposes facets of $Q_n$ by random linear programs with forced zeros, certifies each exactly and reduces to orbits. `python3 -I -B facet_search.py 5 3000 2` (about 15 minutes) |
-| [`facets_n5.json`](facets_n5.json) | The certified facet orbits found at $n=5$, with vertex sets |
+| [`automatic_certificate.py`](automatic_certificate.py) | Exact test of one 8-set: dual certificates, dimension count and private permutations. |
+| [`census.py`](census.py) | The cutting-plane census. `python3 -I -B census.py 15 600` extends `facets_n5.json` and `census_n5.json`. |
+| [`census_fixed_identity.py`](census_fixed_identity.py) | Integer program for an 8-set containing the identity that meets every known non-minor support. |
+| [`facets_n5.json`](facets_n5.json) | All certified facet orbits at $n=5$ (2 squared-minor, 7 others), with one vertex set each. |
+| [`census_n5.json`](census_n5.json) | Every census candidate and its exact verdict. |
 
-Requirements: Python 3, numpy, scipy (HiGHS), python-flint, and pycddlib built against cddlib (for $n=4$). Direct exact enumeration of $Q_5$ by cddlib did not finish within an hour and was stopped.
+Requirements: Python 3, numpy, scipy (HiGHS), python-flint, and pycddlib built against cddlib. Direct exact enumeration of $Q_5$ by cddlib did not finish within an hour and was stopped.
 
 ## Open
 
-- **Completeness of the facet list of $Q_5$.** The search reaches facets with a forced zero set, so its coverage is not proved. A complete list needs a symmetric enumeration (adjacency decomposition with the group of order 28,800) or a structural description of the facets.
-- **The exact set of automatic 8-patterns up to symmetry.** It is contained in the set of 8-element hitting sets of the known non-minor supports; that set is not yet enumerated.
-- **Realizability.** Which patterns occur as rigid contact sets requires the deformation of PR 71, which is not run here.
+- **The conjecture.** Prove that no 8-set is automatic. One route is an exact certificate that the hitting-set program is infeasible: either a branch-and-bound tree with exact bounds, or a symmetric exhaustive search over the 8-sets containing the identity. Another is a structural description of the non-minor facets of $Q_5$.
+- **Completeness of the facet list of $Q_5$.** Not needed for the conjecture. Any non-automatic verdict only needs one non-minor facet containing $T$.
+- **Realizability.** Which patterns occur as rigid contact sets requires the deformation of PR 71, which is not run here. If the conjecture holds, every rigid configuration at $n=5$ needs its own case argument.
