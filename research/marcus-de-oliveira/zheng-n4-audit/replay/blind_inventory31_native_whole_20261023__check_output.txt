@@ -1,0 +1,146 @@
+==== part contacts
+== doc31 [0, 2, 3, 7, 11, 12]
+paper T_32 = [0, 2, 3, 7, 11, 12] find_g: ((0, 1, 2, 3), (0, 1, 2, 3), 0)
+generators: [0, 1, 2, 7, 8, 12, 15, 18, 39, 40] nonminor: [18, 40] ['n1,4', 'n12,34', 'n13,34', 'n3,1', 'n12,23', 'n14,24', 'n12,14', 'h3412,-', 'n14,13', 'h4213,+']
+  f0 n1,4 values (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1)
+  f1 n12,34 values (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1)
+  f2 n13,34 values (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0)
+  f7 n3,1 values (0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+  f8 n12,23 values (0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0)
+  f12 n14,24 values (0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0)
+  f15 n12,14 values (0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0)
+  f18 h3412,- values (0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 2, 1, 0, 1, 0, 0, 1, 0)
+  f39 n14,13 values (0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0)
+  f40 h4213,+ values (0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 2, 1, 1, 0)
+ new index 1 nonminor values [0, 1] -> [('T', 4, 1, (0, 1, 2, 3, 7, 11)), ('T', 7, 1, (0, 1, 2, 3, 7, 12)), ('T', 9, 3, (0, 1, 2, 3, 11, 12)), ('T', 48, 8, (0, 1, 2, 7, 11, 12)), ('T', 30, 9, (0, 1, 3, 7, 11, 12)), ('T', 45, 7, (1, 2, 3, 7, 11, 12))]
+ new index 4 nonminor values [1, 1] -> pure minor
+ new index 5 nonminor values [1, 0] -> [('T', 4, 1, (0, 2, 3, 5, 7, 11)), ('T', 4, 1, (0, 2, 3, 5, 7, 12)), ('T', 14, 5, (0, 2, 3, 5, 11, 12)), ('T', 70, 5, (0, 2, 5, 7, 11, 12)), ('T', 32, 11, (0, 3, 5, 7, 11, 12)), ('T', 60, 9, (2, 3, 5, 7, 11, 12))]
+ new index 6 nonminor values [0, 0] -> [('T', 29, 1, (0, 2, 3, 6, 7, 11)), ('T', 7, 1, (0, 2, 3, 6, 7, 12)), ('T', 14, 5, (0, 2, 3, 6, 11, 12)), ('T', 13, 4, (0, 2, 6, 7, 11, 12)), ('T', 33, 5, (0, 3, 6, 7, 11, 12)), ('T', 36, 1, (2, 3, 6, 7, 11, 12))]
+ new index 8 nonminor values [1, 1] -> pure minor
+ new index 9 nonminor values [0, 0] -> [('T', 29, 1, (0, 2, 3, 7, 9, 11)), ('T', 29, 1, (0, 2, 3, 7, 9, 12)), ('T', 36, 1, (0, 2, 3, 9, 11, 12)), ('T', 77, 9, (0, 2, 7, 9, 11, 12)), ('T', 32, 11, (0, 3, 7, 9, 11, 12)), ('T', 36, 1, (2, 3, 7, 9, 11, 12))]
+ new index 10 nonminor values [1, 1] -> pure minor
+ new index 13 nonminor values [1, 0] -> [('T', 58, 6, (0, 2, 3, 7, 11, 13)), ('T', 19, 1, (0, 2, 3, 7, 12, 13)), ('T', 21, 1, (0, 2, 3, 11, 12, 13)), ('T', 56, 10, (0, 2, 7, 11, 12, 13)), ('T', 32, 11, (0, 3, 7, 11, 12, 13)), ('T', 21, 1, (2, 3, 7, 11, 12, 13))]
+ new index 14 nonminor values [1, 1] -> pure minor
+ new index 15 nonminor values [1, 1] -> pure minor
+ new index 16 nonminor values [2, 0] -> [('AUX7', 25, 7), ('T', 79, 8, (0, 2, 3, 7, 11, 16)), ('T', 30, 9, (0, 2, 3, 7, 12, 16)), ('T', 32, 11, (0, 2, 3, 11, 12, 16)), ('T', 79, 8, (0, 2, 7, 11, 12, 16)), ('T', 89, 12, (0, 3, 7, 11, 12, 16)), ('T', 82, 10, (2, 3, 7, 11, 12, 16))]
+ new index 17 nonminor values [1, 0] -> [('T', 78, 6, (0, 2, 3, 7, 11, 17)), ('T', 31, 1, (0, 2, 3, 7, 12, 17)), ('T', 36, 1, (0, 2, 3, 11, 12, 17)), ('T', 48, 8, (0, 2, 7, 11, 12, 17)), ('T', 82, 10, (0, 3, 7, 11, 12, 17)), ('T', 60, 9, (2, 3, 7, 11, 12, 17))]
+ new index 18 nonminor values [0, 1] -> [('T', 78, 6, (0, 2, 3, 7, 11, 18)), ('T', 29, 1, (0, 2, 3, 7, 12, 18)), ('T', 38, 5, (0, 2, 3, 11, 12, 18)), ('T', 70, 5, (0, 2, 7, 11, 12, 18)), ('T', 79, 8, (0, 3, 7, 11, 12, 18)), ('T', 45, 7, (2, 3, 7, 11, 12, 18))]
+ new index 19 nonminor values [1, 1] -> pure minor
+ new index 20 nonminor values [0, 2] -> [('T', 79, 8, (0, 2, 3, 7, 11, 20)), ('T', 32, 11, (0, 2, 3, 7, 12, 20)), ('T', 40, 1, (0, 2, 3, 11, 12, 20)), ('T', 79, 8, (0, 2, 7, 11, 12, 20)), ('T', 90, 2, (0, 3, 7, 11, 12, 20)), ('T', 83, 9, (2, 3, 7, 11, 12, 20))]
+ new index 21 nonminor values [0, 1] -> [('T', 58, 6, (0, 2, 3, 7, 11, 21)), ('T', 34, 1, (0, 2, 3, 7, 12, 21)), ('T', 41, 9, (0, 2, 3, 11, 12, 21)), ('T', 56, 10, (0, 2, 7, 11, 12, 21)), ('T', 79, 8, (0, 3, 7, 11, 12, 21)), ('T', 81, 7, (2, 3, 7, 11, 12, 21))]
+ new index 22 nonminor values [1, 1] -> pure minor
+ new index 23 nonminor values [0, 0] -> [('AUX7', 22, 1), ('T', 32, 11, (0, 2, 3, 7, 11, 23)), ('T', 33, 5, (0, 2, 3, 7, 12, 23)), ('T', 33, 5, (0, 2, 3, 11, 12, 23)), ('T', 32, 11, (0, 2, 7, 11, 12, 23)), ('T', 89, 12, (0, 3, 7, 11, 12, 23)), ('T', 32, 11, (2, 3, 7, 11, 12, 23))]
+==== part cone
+doc31 rank of contact rows 6
+ basis vanish on T: True  rank of basis profiles: 8
+  gap 1 claimed g computed g OK
+  gap 5 claimed f computed f OK
+  gap 6 claimed e computed e OK
+  gap 9 claimed c computed c OK
+  gap 13 claimed a computed a OK
+  gap 10 claimed b computed b OK
+  gap 23 claimed x0+x1 computed x0 + x1 OK
+  gap 18 claimed x0+f computed f + x0 OK
+  gap 20 claimed x0+b computed b + x0 OK
+  gap 21 claimed x0+a computed a + x0 OK
+  gap 16 claimed x1+b computed b + x1 OK
+  gap 17 claimed x1+g computed g + x1 OK
+  gap 4 (not stated) f + g
+  gap 8 (not stated) b + c + e
+  gap 14 (not stated) b + c
+  gap 15 (not stated) a + c + g
+  gap 19 (not stated) a + e + f + x0
+  gap 22 (not stated) b + e + x0 + x1
+  identity (18, 0) = (1, 2, 7, 15) OK
+  identity (40, 1) = (0, 7, 39) OK
+ f18,f40 at 4 and 10: [(1, 1), (1, 1)]
+==== part chart
+OK   E = (a+t)(z-x)
+OK   rE
+OK   sE
+OK   uE
+perm one-line 0,2,3,7,11,12: ['1234', '1324', '1342', '2143', '2431', '3124']
+OK   (7) forward->inverse recovers z
+OK   (7) forward->inverse recovers w
+OK   (7) forward->inverse recovers a
+OK   (7) forward->inverse recovers t
+OK   (7) inverse->forward recovers r
+OK   (7) inverse->forward recovers s
+OK   (7) inverse->forward recovers u
+OK   (7) inverse->forward recovers W
+OK   Dt numerator - denominator = s(a+1)(z+1)W
+OK   t+z identity
+OK   a*Da = x(1+uW) in original variables
+OK   Da at u=-1/W equals (1+sW)(w+1) with w=x(1+rW)
+OK   H2 = 0
+OK   H0 = 1
+OK   H3 = r
+OK   H12 = s
+OK   H7 = u
+  denominator of (H11-h)*D in the field: 1
+OK   (H11-h)*D is a polynomial (denominator is a nonzero constant)
+denominator of H11-h (reduced): W**2*r*s*x + W*r*s*x + W*r*x + W*s*x + W*s + r*x + s*x + s - u*x - u + x + 1
+C: number of terms = 43  bidegree (W,x) = 2 2
+OK   a - z = -W x D/(Da(1-xW))
+OK   H4
+OK   H11 - H10 = Delta
+OK   F2/E = 1/W
+H10 on (13): 0
+Disc_x C at (2,3,4,7): 3*(1452*W**4 + 2636*W**3 + 1671*W**2 + 414*W + 35)
+  degree 4 gcd with derivative Poly(3, W, domain='ZZ')
+  (10) at (2,3,4,7): 7755264
+OK   C(W,-1)
+OK   D(W,-1)
+OK   C_W(-1,-1)
+  C_x(-1,-1) = (h - 1)*(u - 1)
+  second root W1 at x=-1: -(h + s - u - 1)/(h*s - u) ; W1+1 = (h - 1)*(s - 1)/(h*s - u) ; s*W1+1 = -(s - 1)*(s - u)/(h*s - u)
+  H4 numerator at x=-1: -r*(W + 1)
+OK   [x^2]C
+  D1 = W**2*r*s + W*r*s + W*r + W*s + r + s - u + 1  D0 = W*s + s - u + 1
+  Res_W([x^2]C, D1) = -r*s*(r - u)**2*(s - u)*(u - 1)*(r + s - u + 1)
+OK   Res (12)
+OK   [W^2 x^2]C
+OK   [W^2]C
+  lim D/W^2 at x*: -r*s**2*(h + u)/(u*(s + 1))  expected r s x* = -r*s**2*(h + u)/(u*(s + 1))
+  lim Delta at W->inf, x->x*: -u
+  eps*C(1/eps, eps V)|eps=0 = -s*(V*h*r + V*r*u + h - r*u)
+OK   weighted leading eq
+  D/W at V0, W->inf: s*u*(r + 1)/(h + u)
+  G(eps,x)=eps^2 C(1/eps,x): d/dx at (0,0) = -r*s*(h + u)
+  coefficient ideal saturated Groebner basis: [lam - 1, r + 1, s + 1, u + 1, h - 1]
+PART chart ALLOK True
+==== summary
+part contacts OK
+part cone OK
+part chart OK
+EXACT CHECKS ALL PASS
+
+==== NUMERIC (separate run of numeric_stratum, T=[0,2,3,7,11,12], seeds 100..126, margin 0.01, 25 BFGS restarts; killed by the 400 s limit after seed 126)
+seed 100 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0102 min Phi/sum(gaps) = 2.225e-16
+seed 101 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 4.240e-14
+seed 102 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0102 min Phi/sum(gaps) = 1.041e-14
+seed 103 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 1.215e-14
+seed 104 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 1.366e-15
+seed 105 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 4.042e-15
+seed 106 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = -1.012e-17
+seed 107 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0104 min Phi/sum(gaps) = 1.564e-14
+seed 108 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 2.417e-15
+seed 109 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 7.185e-17
+seed 110 contact [0, 2, 3, 7, 11, 12] min gap off T 0.011 min Phi/sum(gaps) = 1.192e-16
+seed 111 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 1.855e-17
+seed 112 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0103 min Phi/sum(gaps) = 3.430e-14
+seed 113 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0101 min Phi/sum(gaps) = 4.299e-16
+seed 114 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0101 min Phi/sum(gaps) = 4.182e-15
+seed 115 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0101 min Phi/sum(gaps) = 6.993e-16
+seed 116 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0123 min Phi/sum(gaps) = 3.574e-17
+seed 117 no point
+seed 118 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0108 min Phi/sum(gaps) = -6.662e-19
+seed 119 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 5.128e-17
+seed 120 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0102 min Phi/sum(gaps) = 2.855e-17
+seed 121 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 4.584e-14
+seed 122 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 4.904e-17
+seed 123 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0102 min Phi/sum(gaps) = 6.877e-17
+seed 124 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 4.395e-15
+seed 125 contact [0, 2, 3, 7, 11, 12] min gap off T 0.01 min Phi/sum(gaps) = 2.466e-16
+seed 126 contact [0, 2, 3, 7, 11, 12] min gap off T 0.0101 min Phi/sum(gaps) = 3.202e-15
+runjob: killed after 400s

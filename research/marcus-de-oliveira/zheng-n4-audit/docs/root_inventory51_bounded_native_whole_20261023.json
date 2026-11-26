@@ -1,0 +1,138 @@
+{
+ "doc_id": "root_inventory51_bounded_native_whole_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_inventory51_bounded_native_whole_20261023.pdf",
+ "pages": 1,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    52
+   ],
+   "contact_sets": [
+    [
+     1,
+     3,
+     5,
+     10,
+     11,
+     14
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "(*) for T_52={1,3,5,10,11,14}, non-strict, all O in SO(4), unitary via Thm 1.2; representative {3,4,5,7,9,12} in orbit; degenerate spectra via App. B/C."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "branch",
+   "ref": "root_inventory51_bounded_native_conditional_20261023",
+   "used_for": "analytic reduction",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "G=T_10^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    23
+   ],
+   "used_for": "hypothesis; tie 20",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "A=T_9^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    17
+   ],
+   "used_for": "ties 6,13",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "C=T_11^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    16,
+    17
+   ],
+   "used_for": "tie 12",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_10/T_11/T_12/T_24/T_39 (unnamed)",
+   "contact_set": [],
+   "used_for": "ties 0,16",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_42/T_46 (unnamed)",
+   "contact_set": [],
+   "used_for": "tie 7",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Prop 4.1/Lemma 4.2",
+   "used_for": "nine-ray cone",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_bounded_bad_harmonic_lemma",
+   "used_for": "harmonic exclusion"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. C (one-circle)",
+   "used_for": "repeated eigenvalues"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. B (shared zero)",
+   "used_for": "a_i+b_j=0"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Thm 1.2"
+  }
+ ],
+ "steps": [
+  "1 T=T_52 EXACT",
+  "2 theta<=g4,g15 EXACT",
+  "3 W=0 fibre EXACT+PROOF-READ",
+  "4 ties EXACT",
+  "5 analytic PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "T=T_52 and representative",
+  "nine rays",
+  "tie pullbacks with stage order"
+ ],
+ "numeric_tests": [
+  "see conditional"
+ ],
+ "unchecked": [
+  "proof of G (independent_shared_coreG_uniform)"
+ ]
+}

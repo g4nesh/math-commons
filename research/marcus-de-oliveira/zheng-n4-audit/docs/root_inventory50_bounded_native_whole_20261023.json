@@ -1,0 +1,133 @@
+{
+ "doc_id": "root_inventory50_bounded_native_whole_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_inventory50_bounded_native_whole_20261023.pdf",
+ "pages": 1,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    51
+   ],
+   "contact_sets": [
+    [
+     1,
+     3,
+     5,
+     10,
+     11,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "(*) for T_51={1,3,5,10,11,12}, non-strict, all O in SO(4), unitary via Thm 1.2; degenerate spectra via App. B/C cited in the conditional doc."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "branch",
+   "ref": "root_inventory50_bounded_native_conditional_20261023",
+   "used_for": "analytic reduction",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "D=T_12^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    16,
+    23
+   ],
+   "used_for": "hypothesis; tie 20",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "B=T_8^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    16
+   ],
+   "used_for": "ties 6,13",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "C=T_11^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    16,
+    17
+   ],
+   "used_for": "tie 14",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_9/T_11/T_17/T_38/T_65/T_76 (unnamed in doc)",
+   "contact_set": [],
+   "used_for": "ties 0,16",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_42/T_65/T_71 (unnamed)",
+   "contact_set": [],
+   "used_for": "tie 7",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_bounded_bad_harmonic_lemma",
+   "used_for": "harmonic exclusion"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. C (one-circle)",
+   "used_for": "repeated eigenvalues"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. B (shared zero)",
+   "used_for": "a_i+b_j=0"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Thm 1.2"
+  }
+ ],
+ "steps": [
+  "1 T=T_51 EXACT",
+  "2 eight exclusive coefficients EXACT",
+  "3 W=0 branches EXACT+PROOF-READ",
+  "4 ties EXACT",
+  "5 analytic PROOF-READ",
+  "6 assembly PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "T=T_51",
+  "generators",
+  "tie pullbacks with stage order"
+ ],
+ "numeric_tests": [
+  "see conditional"
+ ],
+ "unchecked": [
+  "proof of D (blind_moc4_coreD_uniform)"
+ ]
+}

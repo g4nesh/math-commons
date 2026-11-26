@@ -1,0 +1,52 @@
+{
+ "doc_id": "final_referee_T2_scalar_compensation_20261022",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T2_scalar_compensation_20261022.pdf",
+ "pages": 2,
+ "verdict": "confirmed",
+ "statements": [
+  {
+   "label": "lem:inc",
+   "page": 1,
+   "restatement": "sqrt((r+u)(s+v)) - sqrt(rs) >= sqrt(uv) for r,s,u,v>=0."
+  },
+  {
+   "label": "thm:scalar",
+   "page": 1,
+   "restatement": "Equal-mass nonnegative quadruples: R + 2|st| >= 0, hence tau s^2 + R + tau^-1 t^2 >= 0."
+  },
+  {
+   "label": "thm:quat",
+   "page": 2,
+   "restatement": "p,q in R^4 with |p|=|q|: H + 2|ST| >= 0 and tau S^2 + H + tau^-1 T^2 >= 0 (scalar only; no Leibniz bridge)."
+  }
+ ],
+ "dependencies": [],
+ "steps": "see the .md step table (1-10)",
+ "gaps": [
+  {
+   "location": "p.1, orbit claim",
+   "claim": "row perm (0,2,3,1)",
+   "why": "holds with the inverse row permutation in our convention; a convention issue",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "state the convention"
+  }
+ ],
+ "exact_replays": [
+  "Lemma 1 identity",
+  "R and st identities",
+  "tau completion",
+  "H >= R",
+  "checkerboard identity and equality family",
+  "orbit [11,39,17] -> [9,1,22], stabilizer 8 so orbit 144; (1,11,17) in the same orbit"
+ ],
+ "numeric_tests": [
+  "50000 samples: min (R+2|st|)/mass^2 = 0, min (H+2|ST|)/|p|^4 = 7.3e-4",
+  "Leibniz [9,1,22]: min 2.3e-17"
+ ],
+ "unchecked": [
+  "'earlier sharp family d-m4+tau m6+tau^-1 m8' (coordinates undefined)",
+  "uniqueness of the equality case (remark)",
+  "bridge S^2,T^2,H -> Phi(f9),Phi(f1),Phi(f22) (disclaimed by the note)"
+ ]
+}

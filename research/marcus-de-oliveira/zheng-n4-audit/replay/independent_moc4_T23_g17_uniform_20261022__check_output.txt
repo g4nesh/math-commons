@@ -1,0 +1,47 @@
+PASS EXACT generators_T24+17 [0, 2, 3, 5, 53, 54, 67]
+PASS EXACT rank_7_independent
+PASS EXACT only_f54_nonminor
+INFO T_24+17 is in the orbit of Table-5 seven-set(s): [5]
+PASS EXACT canonical_coefficients_are_gaps
+PASS EXACT d=g9=g5-g16=g0-g1-g16
+PASS EXACT identity_(2)_C(g+h kappa)=-dW+hQ
+PASS EXACT C(Re x)=0_and_detHess(Re x)=0_on_8_gaussian_rational_points
+PASS EXACT json_variable_map_matches_-dW_and_Q
+INFO G: 419 terms, total degree 8, involves h: False, degree in j: 2
+PASS EXACT-AT-POINTS identity_(3)_Q^4 detHess = -4 d^2 Q^2 G^2 at 25 random rational points
+PASS EXACT identity_(7)_k0
+PASS EXACT p=e=0: all coefficients of G positive d^8 coeff=1
+INFO generators of paper T_25 = [0, 1, 2, 6, 53, 54, 55, 59, 67, 70]
+PASS EXACT capacity_transfer_group_element_exists 1 elements, e.g. [((0, 3, 1, 2), (1, 2, 0, 3), 1)]
+INFO that element maps T_25 to [2, 3, 4, 7, 8, 16]; T_24+17 = [2, 3, 4, 6, 7, 8, 17]
+SUMMARY exact checks failed: 0 []
+PASS EXACT bernstein_I-_G(a,b)_middle_coeffs_positive terms=588
+PASS EXACT bernstein_I-_G(a,b)_endpoint_coeffs_positive terms=818
+PASS EXACT bernstein_I-_G(b,a)_middle_coeffs_positive terms=628
+PASS EXACT bernstein_I-_G(b,a)_endpoint_coeffs_positive terms=877
+PASS EXACT bernstein_I+_G(a,b)_middle_coeffs_positive terms=2127
+PASS EXACT bernstein_I+_G(a,b)_endpoint_coeffs_positive terms=3806
+PASS EXACT bernstein_I+_G(b,a)_middle_coeffs_positive terms=2080
+PASS EXACT bernstein_I+_G(b,a)_endpoint_coeffs_positive terms=3728
+PASS EXACT bernstein_II_G(a,b)_middle_coeffs_positive terms=2410
+PASS EXACT bernstein_II_G(a,b)_endpoint_coeffs_positive terms=3275
+PASS EXACT bernstein_II_G(b,a)_middle_coeffs_positive terms=2386
+PASS EXACT bernstein_II_G(b,a)_endpoint_coeffs_positive terms=3280
+PASS EXACT bernstein_IIIa-_G(a,b)_middle_coeffs_positive terms=1511
+PASS EXACT bernstein_IIIa-_G(a,b)_endpoint_coeffs_positive terms=1511
+PASS EXACT bernstein_IIIa-_G(b,a)_middle_coeffs_positive terms=1511
+PASS EXACT bernstein_IIIa-_G(b,a)_endpoint_coeffs_positive terms=1511
+PASS EXACT bernstein_IIIa+_G(a,b)_middle_coeffs_positive terms=2436
+PASS EXACT bernstein_IIIa+_G(a,b)_endpoint_coeffs_positive terms=3252
+PASS EXACT bernstein_IIIa+_G(b,a)_middle_coeffs_positive terms=2436
+PASS EXACT bernstein_IIIa+_G(b,a)_endpoint_coeffs_positive terms=3252
+PASS EXACT bernstein_IIIb+_G(a,b)_middle_coeffs_positive terms=2928
+PASS EXACT bernstein_IIIb+_G(a,b)_endpoint_coeffs_positive terms=4272
+PASS EXACT bernstein_IIIb+_G(b,a)_middle_coeffs_positive terms=2816
+PASS EXACT bernstein_IIIb+_G(b,a)_endpoint_coeffs_positive terms=4132
+PASS EXACT bernstein_IIIb-_G(a,b)_middle_coeffs_positive terms=4581
+PASS EXACT bernstein_IIIb-_G(a,b)_endpoint_coeffs_positive terms=6391
+PASS EXACT bernstein_IIIb-_G(b,a)_middle_coeffs_positive terms=4466
+PASS EXACT bernstein_IIIb-_G(b,a)_endpoint_coeffs_positive terms=6286
+SUMMARY after Bernstein: exact checks failed: 0 []
+NUMERIC capacities at their thresholds (d=1, k=0, 12 draws, seed 5, 8 restarts): SOC worst minPhi=1.802e-14, oldH worst minPhi=2.706e-14, cap5 worst minPhi=2.838e-14, cap6 worst minPhi=1.096e-13

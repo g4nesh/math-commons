@@ -1,0 +1,55 @@
+PASS EXACT contact set equals paper T_83 (identity element)
+PASS EXACT eq.(2): generators of T are f_1,f_2,f_5,f_9,f_28,f_29,f_39,f_59 | [1, 2, 5, 9, 28, 29, 39, 59]
+PASS EXACT rank of contact rows 6, rank of generators 8
+PASS EXACT only f_28 is non-minor
+PASS EXACT seven minor events as listed (0-based pairs (01,23),(02,23),(01,13),(03,12),(02,01),(03,02),(03,03))
+PASS EXACT eq.(3): f_28 equals 1 at sigma = 12, 13, 2
+PASS EXACT extra ties not forcing theta_28 = 0 are 0,1,7,8,19,20,22 | [0, 1, 7, 8, 19, 20, 22]
+PASS EXACT boundary +0 covered by an earlier-stage statement | [('T36', 'stage 1'), ('T38', 'stage 5'), ('T40', 'stage 1'), ('T45', 'stage 7')]
+PASS EXACT boundary +1 covered by an earlier-stage statement | [('T40', 'stage 1'), ('T79', 'stage 8'), ('T90', 'stage 2')]
+PASS EXACT boundary +7 covered by an earlier-stage statement | [('T36', 'stage 1'), ('T38', 'stage 5'), ('T40', 'stage 1'), ('T45', 'stage 7')]
+PASS EXACT boundary +8 covered by an earlier-stage statement | [('T36', 'stage 1'), ('T38', 'stage 5'), ('T40', 'stage 1'), ('T45', 'stage 7')]
+PASS EXACT boundary +19 covered by an earlier-stage statement | [('T36', 'stage 1'), ('T38', 'stage 5'), ('T40', 'stage 1'), ('T45', 'stage 7')]
+PASS EXACT boundary +20 covered by an earlier-stage statement | [('T81', 'stage 7'), ('T7_21', 'stage 1')]
+PASS EXACT boundary +22 covered by an earlier-stage statement | [('T40', 'stage 1'), ('T79', 'stage 8'), ('T90', 'stage 2')]
+PASS EXACT eq.(5): H = paper Table 5 set T^(7)_21 (stage 1)
+PASS EXACT +20: some g maps H onto T u {20} | ((0, 1, 3, 2), (0, 3, 2, 1), 0)
+PASS EXACT eq.(7): E = F5 - F3 = (v-t)(z-y)
+PASS EXACT F9 - F3 = v(1-t)(x-y)
+PASS EXACT eq.(8): contact row C9 as displayed
+PASS EXACT C9 linear in (vt, v, t, 1)
+PASS EXACT eq.(8): contact row C6 as displayed
+PASS EXACT C6 linear in (vt, v, t, 1)
+PASS EXACT eq.(8): contact row C14 as displayed
+PASS EXACT C14 linear in (vt, v, t, 1)
+PASS EXACT eq.(8): contact row C18 as displayed
+PASS EXACT C18 linear in (vt, v, t, 1)
+PASS EXACT eq.(9) Cramer: B3 (N0,N1,N2) = Delta * rhs
+PASS EXACT eq.(10): Delta at raw ratios = -xyz(z-1)(x-1)(x-y)/(v-t)
+PASS EXACT eq.(11): det M = -xz(z-1)(x-y) Q
+PASS EXACT eq.(12): Q has 15 terms
+PASS EXACT eq.(13)-(14): Q = (z-y)^2 (r + u beta - h alpha - alpha beta)
+PASS EXACT eq.(15): inverse x=1/(1-alpha k), y=1/(1-beta k), z=y+kxy
+PASS EXACT eq.(16a): H20 = H14 - alpha (raw products)
+PASS EXACT eq.(16b): H12 = H18 + beta (raw products)
+PASS EXACT eq.(16c): H9 - H18 H14 = (alpha - H14)(beta + H18) (raw products)
+PASS EXACT eq.(18): N0 Delta - N1 N2 = z(z-1)y(y-z)(x-1)(x-y) * S64 with S64 of 64 terms
+PASS EXACT eq.(19): numerator = (const) alpha k^2 * C, C of 179 terms, bidegree (5,2)
+PASS EXACT eq.(20): C(u,k) = -R^3 k(uk-1) (after sign normalization)
+PASS EXACT Cramer coordinate function H9 equals its fixed value on C=0 | identically
+PASS EXACT Cramer coordinate function H6 equals its fixed value on C=0 | identically
+PASS EXACT Cramer coordinate function H14 equals its fixed value on C=0 | identically
+PASS EXACT Cramer coordinate function H18 equals its fixed value on C=0 | identically
+PASS EXACT Cramer coordinate function H5 equals its fixed value on C=0 | identically
+PASS EXACT eq.(17): H12 = R/(alpha-u) on C=0 | identically
+PASS EXACT eq.(21): H8 on C=0 | identically
+PASS EXACT eq.(22): H13 on C=0 | identically
+PASS EXACT eq.(23): H2 on C=0 | identically
+PASS EXACT fibre alpha=u: leading k^2 coefficient = -u R^3
+PASS EXACT eq.(24): C_k(u,0) = R^3, C_k(u,1/u) = -R^3
+PASS EXACT eq.(25): dk/dalpha = 1/R at (u,0) and -(R-u)/(u^2 R) at (u,1/u) | (1/(-h*u + r), (h*u - r + u)/(-h*u**3 + r*u**2))
+PASS EXACT eq.(26): H13 -> -1 along the k=0 branch (any second-order term) | -1
+PASS EXACT eq.(27): H2 -> -1 along the k=1/u branch (any second-order term) | -1
+PASS EXACT u=0: section C(alpha=u=0, k) = r^3 k, a nonzero polynomial when R = r != 0 (Rouche step input)
+INFO NUMERIC T_83 stratum: 6 points (seeds 500.., margin 1e-3), 10 BFGS restarts each; worst min Phi / max gap = 1.429e-12
+SUMMARY: 0 EXACT failures []

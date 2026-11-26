@@ -1,0 +1,58 @@
+PASS EXACT contact_set_equals_paper_T21
+PASS EXACT generators_T21 [0, 1, 2, 7, 9, 12, 29, 39, 40, 41]
+PASS EXACT only_f40_nonminor [40]
+INFO rank of the 10 generators = 8
+PASS EXACT detector_delta_values_on_generators {0: 0, 1: -1, 2: 0, 7: 0, 9: -1, 12: 0, 29: 0, 39: 0, 40: 1, 41: 0}
+PASS EXACT f40+f1=f0+f7+f39
+PASS EXACT f40+f9=f2+f7+f41
+PASS EXACT replacement_rhs_all_minor
+PASS EXACT rectangle_F3F11=F5F9
+PASS EXACT F3-F5_factorization (A0 - C0)*(A1 - A2)*(A3 - C1)*(C2 - C3)
+PASS EXACT F3-F9_factorization (A0 - A3)*(A1 - C2)*(A2 - C3)*(C0 - C1)
+PASS EXACT F3-F5_up_to_sign
+PASS EXACT real_part_forces_(q3-q5)(q3-q9)=0 (q3 - q5)*(q3 - q9)
+PASS EXACT C(Re x)=0_on_12_gaussian_rational_matching_vectors
+PASS EXACT cubic_identity_(2)_up_to_nonzero_constant C(m)/claim = 1
+PASS EXACT lift_vanishes_on_T
+SUMMARY exact checks failed: 0 []
+NUMERIC seed=0 minLabelSep=7.83e-16 contact=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 17, 18, 20, 22, 23] relReF0=-1.31e-14 rel_delta=-3.754e-15 minPhi=1.384e-14
+NUMERIC seed=1 minLabelSep=2.49e-10 contact=[0, 1, 2, 3, 4, 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17] relReF0=-8.36e-11 rel_delta=1.820e-10 minPhi=-1.459e-10
+NUMERIC seed=2 minLabelSep=3.86e-11 contact=[0, 1, 3, 5, 6, 7, 9, 11, 12, 13, 15, 18, 19, 21] relReF0=-2.22e-09 rel_delta=-5.699e-02 minPhi=-3.524e-11
+NUMERIC seed=3 minLabelSep=1.37e-09 contact=[0, 1, 3, 5, 9, 11, 12, 14, 18, 20] relReF0=-5.31e-06 rel_delta=-1.000e+00 minPhi=8.599e-10
+NUMERIC seed=4 minLabelSep=2.91e-14 contact=[0, 1, 2, 3, 4, 5, 9, 11, 12, 17, 18, 23] relReF0=1.33e-16 rel_delta=-9.217e-01 minPhi=8.703e-13
+NUMERIC seed=5 minLabelSep=3.98e-11 contact=[0, 1, 3, 5, 6, 7, 9, 11, 12, 17, 18, 23] relReF0=-4.46e-02 rel_delta=5.686e-11 minPhi=-8.606e-11
+NUMERIC seed=6 minLabelSep=0.00e+00 contact=[0, 1, 2, 3, 4, 5, 9, 11, 12, 15, 17, 18, 21, 23] relReF0=-3.01e-17 rel_delta=-1.903e-01 minPhi=2.318e-13
+NUMERIC seed=7 minLabelSep=8.09e-16 contact=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 17] relReF0=-5.92e-17 rel_delta=-3.594e-13 minPhi=5.950e-14
+NUMERIC seed=8 minLabelSep=1.81e-15 contact=[0, 2, 3, 5, 9, 11, 12, 14] relReF0=-2.77e-01 rel_delta=-6.543e-01 minPhi=3.761e-13
+NUMERIC seed=9 minLabelSep=5.86e-16 contact=[0, 2, 3, 5, 6, 8, 9, 11, 12, 14] relReF0=6.57e-17 rel_delta=-2.058e-01 minPhi=8.676e-14
+NUMERIC seed=10 minLabelSep=7.67e-15 contact=[0, 1, 2, 3, 4, 5, 6, 7, 9, 11, 12] relReF0=5.55e-15 rel_delta=-2.754e-04 minPhi=1.706e-09
+NUMERIC seed=11 minLabelSep=1.00e-04 contact=[0, 3, 5, 9, 11, 12, 21] relReF0=-2.21e-05 rel_delta=-1.955e-01 minPhi=1.500e-10
+NUMERIC seed=12 minLabelSep=7.68e-15 contact=[0, 2, 3, 5, 9, 11, 12, 14] relReF0=-6.97e-01 rel_delta=-9.369e-01 minPhi=9.820e-15
+NUMERIC seed=13 minLabelSep=0.00e+00 contact=[0, 2, 3, 5, 6, 8, 9, 11, 12, 14, 19, 21] relReF0=0.00e+00 rel_delta=-3.754e-01 minPhi=6.864e-13
+NUMERIC seed=14 minLabelSep=0.00e+00 contact=[0, 2, 3, 5, 6, 8, 9, 11, 12, 13, 14, 15, 16, 17, 19, 21, 22, 23] relReF0=0.00e+00 rel_delta=-7.936e-11 minPhi=1.820e-12
+NUMERIC seed=15 minLabelSep=2.51e-12 contact=[0, 1, 2, 3, 4, 5, 9, 11, 12, 14, 15, 17, 18, 20, 21, 23] relReF0=-3.90e-12 rel_delta=-2.502e-01 minPhi=2.109e-12
+NUMERIC seed=16 minLabelSep=8.35e-16 contact=[0, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 19, 21, 22, 23] relReF0=-1.77e-17 rel_delta=-5.939e-08 minPhi=1.727e-13
+NUMERIC seed=17 minLabelSep=9.27e-15 contact=[0, 2, 3, 5, 6, 8, 9, 11, 12, 14] relReF0=2.96e-15 rel_delta=-7.974e-01 minPhi=2.020e-13
+NUMERIC seed=18 minLabelSep=0.00e+00 contact=[0, 2, 3, 5, 6, 8, 9, 11, 12, 14, 19, 21, 22, 23] relReF0=0.00e+00 rel_delta=-9.135e-01 minPhi=6.759e-14
+NUMERIC seed=19 minLabelSep=0.00e+00 contact=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14] relReF0=0.00e+00 rel_delta=-1.303e-02 minPhi=1.446e-12
+NUMERIC seed=20 minLabelSep=1.20e-08 contact=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 18, 19, 20, 21] relReF0=-2.48e-14 rel_delta=-1.000e+00 minPhi=6.173e-14
+NUMERIC seed=21 minLabelSep=5.55e-17 contact=[0, 1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, 15, 17, 18, 19, 21, 23] relReF0=-3.11e-01 rel_delta=-2.961e-16 minPhi=3.571e-15
+NUMERIC seed=22 minLabelSep=1.05e-14 contact=[0, 2, 3, 5, 6, 8, 9, 11, 12, 14, 18, 19, 20, 21, 22, 23] relReF0=3.79e-03 rel_delta=-1.000e+00 minPhi=9.672e-11
+NUMERIC seed=23 minLabelSep=0.00e+00 contact=[0, 2, 3, 5, 6, 8, 9, 11, 12, 14, 19, 21, 22, 23] relReF0=-0.00e+00 rel_delta=-1.761e-02 minPhi=3.359e-15
+NUMERIC seed=24 minLabelSep=1.54e-11 contact=[0, 2, 3, 5, 6, 9, 11, 12, 13, 19, 21] relReF0=1.72e-15 rel_delta=-4.229e-03 minPhi=1.165e-12
+NUMERIC seed=25 minLabelSep=9.16e-16 contact=[0, 3, 5, 9, 11, 12, 18, 21] relReF0=-2.48e-01 rel_delta=-8.224e-01 minPhi=4.789e-13
+NUMERIC seed=26 minLabelSep=1.11e-15 contact=[0, 2, 3, 5, 9, 11, 12, 14] relReF0=-1.88e-01 rel_delta=-7.874e-01 minPhi=2.732e-12
+NUMERIC seed=27 minLabelSep=1.07e-10 contact=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 17, 18, 20, 22, 23] relReF0=-3.59e-12 rel_delta=2.563e-12 minPhi=1.808e-10
+NUMERIC seed=28 minLabelSep=3.74e-11 contact=[0, 1, 2, 3, 4, 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 23] relReF0=-2.17e-14 rel_delta=-1.561e-10 minPhi=-9.507e-13
+NUMERIC seed=29 minLabelSep=1.27e-13 contact=[0, 1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, 15, 18, 19, 21] relReF0=-6.46e-12 rel_delta=-1.000e+00 minPhi=2.845e-10
+NUMERIC seed=30 minLabelSep=8.30e-11 contact=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] relReF0=-4.98e-01 rel_delta=1.456e-10 minPhi=-9.871e-11
+NUMERIC seed=31 minLabelSep=1.22e-12 contact=[0, 2, 3, 5, 6, 8, 9, 11, 12, 13, 14, 16, 19, 21, 22, 23] relReF0=-9.10e-13 rel_delta=-1.507e-11 minPhi=-7.153e-13
+NUMERIC seed=32 minLabelSep=2.48e-16 contact=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] relReF0=2.99e-01 rel_delta=-1.480e-16 minPhi=5.815e-15
+NUMERIC seed=33 minLabelSep=1.17e-13 contact=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] relReF0=2.63e-15 rel_delta=-9.740e-01 minPhi=1.433e-11
+NUMERIC seed=34 minLabelSep=3.67e-15 contact=[0, 3, 5, 6, 9, 11, 12, 14] relReF0=-2.78e-02 rel_delta=-2.036e-02 minPhi=1.997e-14
+NUMERIC seed=35 minLabelSep=8.82e-15 contact=[0, 3, 5, 9, 11, 12, 18, 21] relReF0=5.76e-03 rel_delta=-4.420e-05 minPhi=5.013e-12
+NUMERIC seed=36 minLabelSep=5.55e-16 contact=[0, 2, 3, 5, 9, 11, 12, 14] relReF0=-1.35e-01 rel_delta=-4.710e-02 minPhi=5.446e-14
+NUMERIC seed=37 minLabelSep=2.41e-11 contact=[0, 2, 3, 5, 7, 9, 11, 12, 13, 18, 21, 23] relReF0=-1.89e-01 rel_delta=-1.200e-08 minPhi=3.653e-12
+NUMERIC seed=38 minLabelSep=4.00e-12 contact=[0, 1, 2, 3, 4, 5, 9, 11, 12, 15, 17, 18, 21, 23] relReF0=-1.27e-11 rel_delta=-5.903e-07 minPhi=2.463e-10
+NUMERIC seed=39 minLabelSep=9.45e-15 contact=[0, 2, 3, 5, 9, 11, 12, 14] relReF0=-4.26e-03 rel_delta=-7.053e-03 minPhi=1.107e-14
+NUMERIC stratum points found=40/40 max rel delta=1.820e-10 worst minPhi=-1.459e-10

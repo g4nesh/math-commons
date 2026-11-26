@@ -1,0 +1,52 @@
+PASS EXACT contact set equals paper T_85
+PASS EXACT six contact rows have rank 6; kernel dimension 8
+PASS EXACT eq.(2): basis vectors vanish on T and are independent
+PASS EXACT first seven basis vectors minor, f_35 non-minor
+PASS EXACT exclusive rows (17,15,11,6,4,12,1): coefficient matrix I7 with zero d-column
+PASS EXACT full generator list has 11 elements (1,2,5,11,12,28,29,33,35,39,45) | [1, 2, 5, 11, 12, 28, 29, 33, 35, 39, 45]
+PASS EXACT eq.(3a): f35 + f11 = f1 + f5 + f12 + f33
+PASS EXACT eq.(3b): f35 + f39 = f1 + f2 + f29 + f45
+PASS EXACT f11, f39 are minor vectors
+PASS EXACT negative branch: gap rows contain a >= delta and the eight cross inequalities
+PASS EXACT negative branch: every other gap row is implied (single coefficients or a+e+k-2delta) | {k, e, a, b, f, c, a - 2*delta + e + k, g}
+PASS EXACT minor rewriting: old vector = new seven coefficients + theta f11 + (delta-theta) f39
+PASS EXACT transpose sigma -> sigma^-1 preserves T
+PASS EXACT transpose: new d' = -d - e - k (all 24 rows consistent)
+PASS EXACT transpose: new minor coefficients are the transformed gaps at the exclusive rows
+PASS EXACT boundary table: f35 vanishes off T exactly at 1,4,6,11,12,15,17 | [1, 4, 6, 11, 12, 15, 17]
+PASS EXACT boundary table: f35 > 0 at 2,3,8,10,13,16,19,20,21,22,23 (d=0 rows) | [2, 3, 8, 10, 13, 16, 19, 20, 21, 22, 23]
+PASS EXACT boundary +1: some g maps paper T_40 (stage 1 < 10) into T u {1} | ((0, 1, 2, 3), (0, 1, 2, 3), 0)
+PASS EXACT boundary +6: some g maps paper T_40 (stage 1 < 10) into T u {6} | ((0, 1, 2, 3), (1, 0, 3, 2), 0)
+PASS EXACT boundary +4: some g maps paper T_55 (stage 9 < 10) into T u {4} | ((0, 1, 3, 2), (0, 1, 2, 3), 0)
+PASS EXACT boundary +11: some g maps paper T_55 (stage 9 < 10) into T u {11} | ((1, 0, 3, 2), (0, 1, 3, 2), 1)
+PASS EXACT boundary +12: some g maps paper T_55 (stage 9 < 10) into T u {12} | ((0, 1, 2, 3), (1, 0, 2, 3), 1)
+PASS EXACT boundary +15: some g maps paper T_55 (stage 9 < 10) into T u {15} | ((1, 0, 2, 3), (1, 0, 3, 2), 0)
+PASS EXACT boundary +17: some g maps paper T_81 (stage 7 < 10) into T u {17} | ((0, 3, 2, 1), (3, 1, 2, 0), 0)
+PASS EXACT paper Table 3 row j=1: image of T_40 equals listed set and lies in T u {j}
+PASS EXACT paper Table 3 row j=4: image of T_55 equals listed set and lies in T u {j}
+PASS EXACT paper Table 3 row j=6: image of T_40 equals listed set and lies in T u {j}
+PASS EXACT paper Table 3 row j=11: image of T_55 equals listed set and lies in T u {j}
+PASS EXACT paper Table 3 row j=12: image of T_55 equals listed set and lies in T u {j}
+PASS EXACT paper Table 3 row j=15: image of T_55 equals listed set and lies in T u {j}
+PASS EXACT paper Table 3 row j=17: image of T_81 equals listed set and lies in T u {j}
+PASS EXACT eq.(4): (P5-P0)m=p, (P7-P0)m=r, (P9-P0)m=s, (P14-P0)m=u, (P18-P0)m=h
+PASS EXACT eq.(4): coordinate change is invertible (det = -1)
+PASS EXACT eq.(5): d(m) = m12 - m4 - m8
+PASS EXACT gaps: (P_sigma - P_0)m = sum coeff f_j(sigma) + real-linear(p,r,s,u,h) for all sigma
+PASS EXACT eq.(6): -G2+G3-G4+G7-G8-G9+G10+G11-G12+G13 = -r(a+d) + h(s-r) - pu
+PASS EXACT eq.(8): G13 - G2 = -(d+f)(d+g) + r(d+f) + (s-r)g
+PASS EXACT eq.(9): G1 affine in z with z-coefficient -(c+d+g+k)
+PASS EXACT rank [L8 | kappa] = 9
+PASS EXACT source differences (rows minus row 0) have rank 8
+PASS EXACT Lemma 2 chart (nonzero p): r=0 and hs=pu give u = h*s/p
+PASS EXACT Lemma 2 chart (nonzero u): r=0 and hs=pu give p = h*s/u
+PASS EXACT Lemma 2 chart (nonzero s): r=0 and hs=pu give h = p*u/s
+PASS EXACT Lemma 2 chart (nonzero h): r=0 and hs=pu give s = p*u/h
+INFO NUMERIC seed 500: Im w = -3.007e-02, |gamma7| = 1.21e-10 (expected 0 when Im w > 0)
+INFO NUMERIC seed 501: Im w = -3.816e+00, |gamma7| = 2.72e-15 (expected 0 when Im w > 0)
+INFO NUMERIC seed 502: Im w = -1.963e-03, |gamma7| = 2.82e-15 (expected 0 when Im w > 0)
+INFO NUMERIC seed 503: Im w = -3.319e-01, |gamma7| = 1.72e-14 (expected 0 when Im w > 0)
+INFO NUMERIC seed 504: Im w = -2.257e-02, |gamma7| = 2.08e-16 (expected 0 when Im w > 0)
+INFO NUMERIC seed 505: Im w = -1.700e+00, |gamma7| = 6.23e-13 (expected 0 when Im w > 0)
+INFO NUMERIC T_85 stratum: 6 points (seeds 500.., margin 1e-3), 10 BFGS restarts each; worst min Phi / max gap = 1.325e-15
+SUMMARY: 0 EXACT failures []

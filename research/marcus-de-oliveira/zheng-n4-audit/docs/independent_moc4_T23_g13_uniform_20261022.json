@@ -1,0 +1,43 @@
+{
+  "doc_id": "independent_moc4_T23_g13_uniform_20261022",
+  "pdf": "proofs/manin_transfer_20261021/independent_moc4_T23_g13_uniform_20261022.pdf",
+  "pages": 4,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "contact_sets": [[2, 3, 4, 6, 7, 8, 13]], "covers_all_spectra": true,
+     "restatement": "All x in X with Pc(x) >= 0 vanishing on T_24+{13} (Table 5 set 6, extra contacts allowed): Phi_{c(x)}(O) >= 0 on SO(4); eight-distinct remaining layer has delta <= 0 (minor cone); collisions App. B, real spectrum Thm C.1, ties 0,1,10,22 cited."}
+  ],
+  "dependencies": [
+    {"kind": "paper-case", "ref": "T_3 or T_7 (label T3); also f54(0)>0", "used_for": "tie 0", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_15", "contact_set": [1, 2, 3, 4, 6, 7], "used_for": "tie 1", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_11 (label T10)", "used_for": "tie 10", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_12 (label T11)", "used_for": "tie 22", "match_checked": true},
+    {"kind": "external", "ref": "paper Thm C.1", "used_for": "real x", "match_checked": true},
+    {"kind": "external", "ref": "paper App. B", "used_for": "collisions", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "sources, delta identities, decomposition (1)", "status": "EXACT"},
+    {"n": 2, "claim": "delta<=0 minor cone", "status": "EXACT"},
+    {"n": 3, "claim": "reduction to (2)", "status": "PROOF-READ"},
+    {"n": 4, "claim": "chart exhaustive", "status": "PROOF-READ"},
+    {"n": 5, "claim": "(4)-(6)", "status": "EXACT"},
+    {"n": 6, "claim": "(7)", "status": "PROOF-READ"},
+    {"n": 7, "claim": "(8),(9)", "status": "EXACT"},
+    {"n": 8, "claim": "(10)", "status": "EXACT"},
+    {"n": 9, "claim": "kernel representation", "status": "EXACT"},
+    {"n": 10, "claim": "(11)-(13)", "status": "EXACT"},
+    {"n": 11, "claim": "usrR1>0", "status": "PROOF-READ"},
+    {"n": 12, "claim": "sign elimination", "status": "PROOF-READ"},
+    {"n": 13, "claim": "(15) impossible", "status": "PROOF-READ"},
+    {"n": 14, "claim": "(16) impossible", "status": "PROOF-READ"},
+    {"n": 15, "claim": "degenerate kernel q+t=1", "status": "EXACT"},
+    {"n": 16, "claim": "t=1", "status": "EXACT"}
+  ],
+  "gaps": [
+    {"location": "p.3 'Mj by gj/g9 = (X,1)Mj(X,1)^T/|J|^2'", "claim": "kernel form", "why": "must be read as Hermitian form (X,1)M(Xbar,1)^T", "severity": "presentation", "believed_true": true, "repair": "notation"},
+    {"location": "p.1 tie 0 -> T3", "claim": "tie 0 covered by case T3", "why": "under the usual index shift T3 = paper T_4, which does not fit in T+0", "severity": "presentation", "believed_true": true, "repair": "use paper T_3, or f54(0)>0 which forces delta<=0"}
+  ],
+  "exact_replays": ["(4),(5),(6),(8),(9),(10)", "M13, M12 kernels", "(11),(12),(13)", "degenerate kernel and B=0 consequences", "e/a"],
+  "numeric_tests": ["sign elimination: 400000 draws seed 13, 9954 hypothesis-satisfying, 0 outside (15)/(16)", "(15) identity at 3 float points"],
+  "unchecked": ["direct sampling of the seven-contact curve"]
+}

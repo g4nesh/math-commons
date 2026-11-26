@@ -1,0 +1,297 @@
+{
+ "doc_id": "blind_inventory31_native_whole_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_inventory31_native_whole_20261023.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "main (Theorem 1)",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     2,
+     3,
+     7,
+     11,
+     12
+    ]
+   ],
+   "paper_cases": [
+    32
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with Pc(x)>=0 and zero on T={0,2,3,7,11,12} (=T_32 literally), Phi_{c(x)}(O)>=0 for all O in SO(4); extra contacts, repeated eigenvalues and a_i+b_j=0 included (degenerate spectra via Thm C.1 / Thm B.1)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_4",
+   "contact_set": [
+    0,
+    1,
+    4,
+    5,
+    7,
+    8
+   ],
+   "used_for": "added contacts 1, 5",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_29",
+   "contact_set": [
+    0,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "used_for": "added contacts 6, 9, 18",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_19",
+   "contact_set": [
+    0,
+    1,
+    4,
+    6,
+    7,
+    8
+   ],
+   "used_for": "added contact 13",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_31",
+   "contact_set": [
+    0,
+    1,
+    5,
+    6,
+    9,
+    12
+   ],
+   "used_for": "added contact 17",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_40",
+   "contact_set": [
+    0,
+    1,
+    5,
+    9,
+    14,
+    18
+   ],
+   "used_for": "added contact 20",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_34",
+   "contact_set": [
+    2,
+    3,
+    5,
+    9,
+    10,
+    12
+   ],
+   "used_for": "added contact 21",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "T^(7)_25 (or T_79)",
+   "contact_set": [
+    1,
+    3,
+    4,
+    8,
+    11,
+    12,
+    15
+   ],
+   "used_for": "added contact 16",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "T^(7)_22",
+   "contact_set": [
+    0,
+    2,
+    3,
+    7,
+    11,
+    12,
+    23
+   ],
+   "used_for": "added contact 23",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix C Thm C.1 (one-circle)",
+   "used_for": "repeated eigenvalue within a spectrum"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix B Thm B.1 (shared zero)",
+   "used_for": "a_i+b_j=0"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_bounded_bad_harmonic_lemma (paper Lemma 3.5)",
+   "used_for": "exclusion of generic negative component",
+   "match_checked": true
+  },
+  {
+   "kind": "external",
+   "ref": "paper Theorem 1.2",
+   "used_for": "unitary restatement only"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "T = T_32",
+   "kind": "finite",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "kernel basis, gap formulas (1)",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "identities (2)",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "nonnegative representation on list (3) = generators(T)",
+   "kind": "case split",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 5,
+   "claim": "d18+d40<=min(g4,g10); -L_O<=M min(g4,g10)",
+   "kind": "inequality",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "added contacts covered",
+   "kind": "citation",
+   "status": "CITED"
+  },
+  {
+   "n": 7,
+   "claim": "E,rE,sE,uE factorizations",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "inverse parametrization (7) both directions + auxiliary identities",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "all divisions nonzero at distinct points",
+   "kind": "argument",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 10,
+   "claim": "H normalization, contacts <=> H real, g=-eta Im H",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "H11-h=C/D, 43 terms, bidegree (2,2), D!=0, H4, Delta, F2/E",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "discriminant witness and absolute irreducibility",
+   "kind": "identity+argument",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "puncture atlas formulas (11),(12), leading equations",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 14,
+   "claim": "atlas covers every point of normalization",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 15,
+   "claim": "H4 nonconstant",
+   "kind": "argument",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 16,
+   "claim": "harmonic lemma application",
+   "kind": "citation",
+   "status": "CITED"
+  },
+  {
+   "n": 17,
+   "claim": "constant stratum (13), H10==0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 18,
+   "claim": "Rouche restoration to generic parameters",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "note": "density argument supplied by auditor"
+  },
+  {
+   "n": 19,
+   "claim": "unitary restatement",
+   "kind": "citation",
+   "status": "CITED"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators(T), contact rank, gap formulas (1), identities (2)",
+  "group resolution of all 11 added contacts with paper stages",
+  "E,rE,sE,uE; inverse (7) both directions; Dt, t+z, a*Da, Da at u=-1/W",
+  "H0,H2,H3,H7,H12; C (43 terms, bidegree (2,2)) and D; a-z identity; H4; Delta; F2/E",
+  "disc at (2,3,4,7) squarefree; (11); C_W(-1,-1); W1; [x^2]C; resultant (12); [W^2x^2]C; [W^2]C; limits at x*, V0",
+  "Groebner basis of coefficient ideal; H10==0 on (13)"
+ ],
+ "numeric_tests": [
+  "random_point_on_contact_stratum(T, margin 0.01) seeds 100-126: 26 points, min over SO(4) (25 BFGS restarts) of Phi/sum(gaps) worst -1.0e-17; no violation"
+ ],
+ "unchecked": [
+  "certificate files of the supplement (not run, not needed)",
+  "cited boundary cases and common lemmas (outside this batch)"
+ ]
+}

@@ -1,0 +1,161 @@
+{
+ "doc_id": "blind_shared_coreN_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_shared_coreN_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     3,
+     7,
+     11,
+     12,
+     16,
+     20
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For x in X, pi* with Pc(x) >= 0 and (Pc)_s = 0 for s in N = {0,3,7,11,12,16,20} (Table 5 no. 24), c(x) lies in cone{f2,f8,f12,f15,f29,f39} (minor vectors); i.e. the coefficient d of f30 = h_{4321,-} vanishes. Hence Phi_c(O) >= 0 on SO(4), and on U(4) via Thm 1.2. All spectra."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "paper Proposition C.6 (12x12 principal minors of H(Re x) >= 0 for all x in X)",
+   "used_for": "final contradiction at roots of G with d > 0",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper A.1: X in Sing C (lib EXACT)",
+   "used_for": "Hessian of realizable lift singular",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (4.2) Phi_n = det^2 (lib EXACT)",
+   "used_for": "d = 0 case",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Theorem 1.2",
+   "used_for": "unitary sentence only",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "rank/kernel and generators(N)",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "rows [13,14,6,5,10,1,23] = diag(1,..,1,2); decomposition (1), d = g23/2",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "six minor profiles",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "F(w+z kappa) = C + zQ; C 38, Q 19 positive terms",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "realizable lift has singular Hessian, z = -C/Q",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 6,
+   "claim": "(4) Q^4 det A = -4Q^2G^2, G 498 terms deg 9",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "sign pattern of G in d; R = dG_d - 3G 427 positive terms",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "unique simple positive root",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 9,
+   "claim": "(8) G(x,0) = -16abcefg C(x,0); analytic root graph",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 10,
+   "claim": "boundary roots are limits of graph points",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 11,
+   "claim": "three 13x13 borders divisible by G after Q^2 clearing",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "Schur complement gives rank 12 where det A_I != 0",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 13,
+   "claim": "sample (10): C=38,Q=19,G=0,z=-2,det A_I=-49152",
+   "status": "EXACT"
+  },
+  {
+   "n": 14,
+   "claim": "rank <= 12 on graph and boundary by density/continuity",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 15,
+   "claim": "(11) second derivative -8G_d^2/Q^2 < 0 gives rank >= 12",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 16,
+   "claim": "constant inertia; negative principal 12-minor everywhere incl. boundary",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 17,
+   "claim": "contradiction with Prop C.6",
+   "status": "CITED"
+  },
+  {
+   "n": 18,
+   "claim": "unitary extension",
+   "status": "CITED"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators(N), rank 7 contact rows, diag(1,1,1,1,1,1,2) rows",
+  "C (38 terms), Q (19 terms) from cubic (A.2)",
+  "14x14 det H(w+z kappa) by Bareiss (650 exact divisions); identity (4) with G an exact square, 498 terms, deg 9, [d^9]=1",
+  "sign pattern of d-coefficients of G; R = dG_d - 3G: 427 positive terms incl 6d^9",
+  "G(x,0) = -16abcefg C(x,0), 16 positive cubic terms",
+  "three 13x13 border numerators divisible by G",
+  "sample point: C=38,Q=19,G=0,z=-2,det A_I=-49152, rank A=12",
+  "calculus identity (11)"
+ ],
+ "numeric_tests": [
+  "40 random x>=0 (seed 20261125, 10 with a zero wall): <=1 positive root of G, inertia at roots (7,5,2)/(5,7,2)",
+  "20 seeds of lib stratum search on N: 20 points found, max |g_23|/mean off-N gap = 2.3e-10 (solver tolerance)"
+ ],
+ "unchecked": [
+  "Proposition C.6 itself (Appendix C), Theorem 1.2: cited, not audited here"
+ ]
+}

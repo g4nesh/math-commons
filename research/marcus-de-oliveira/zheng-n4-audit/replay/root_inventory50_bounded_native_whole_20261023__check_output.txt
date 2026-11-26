@@ -1,0 +1,16 @@
+PASS literal contacts {1,3,5,10,11,12} = paper T_51
+PASS B = Table 5 T8^(7), stage 1 < 7
+PASS C = Table 5 T11^(7), stage 1 < 7
+PASS D = Table 5 T12^(7), stage 1 < 7
+PASS generators(T) = f0,f1,f2,f8,f10,f12,f30,f59 (eight, independent)  [0, 1, 2, 8, 10, 12, 30, 59]
+PASS only non-minor generator is f30 and its coefficient is g4 (f30 is the only generator nonzero at 4)
+PASS ties not killing d: {0,6,7,13,14,16,20}
+PASS tie 0 covered by an earlier-stage contact set  six: [9, 11, 17, 38, 65, 76] seven: [3]
+PASS tie 6 covered by an earlier-stage contact set  six: [] seven: [8]
+PASS tie 7 covered by an earlier-stage contact set  six: [42, 65, 71] seven: []
+PASS tie 13 covered by an earlier-stage contact set  six: [] seven: [8]
+PASS tie 14 covered by an earlier-stage contact set  six: [52] seven: [11]
+PASS tie 16 covered by an earlier-stage contact set  six: [9, 11, 17, 38, 65, 76] seven: [3]
+PASS tie 20 covered by an earlier-stage contact set  six: [] seven: [12]
+PASS tie 6 and 13 are images of B, 14 of C, 20 of D
+EXACT checks failed: 0

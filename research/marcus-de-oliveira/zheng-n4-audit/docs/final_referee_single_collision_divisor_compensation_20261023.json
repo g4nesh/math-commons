@@ -1,0 +1,36 @@
+{
+  "doc_id": "final_referee_single_collision_divisor_compensation_20261023",
+  "pdf": "proofs/manin_transfer_20261021/final_referee_single_collision_divisor_compensation_20261023.pdf",
+  "pages": 3,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Lemma 1", "page": 1, "restatement": "If a reduced collision divisor d=0 carries a probability law p (independent of other spectral coordinates) with D_U = sum p F identically on d=0, and E = d e with e a unit at the puncture, then (D_U - sum p F)/E is holomorphic there for any vanishing order of d(t); on a supported branch (all gaps >= 0) the normalized Leibniz sum is locally bounded below."},
+    {"label": "Theorem 2", "page": 2, "restatement": "For every U in U(4) a probability law on S4 depending only on U represents all principal minors of U diag(alpha,beta,gamma,gamma)U^* for all complex alpha,beta,gamma; hence a uniform determinant law on each internal collision divisor (paper Lemma B.2)."},
+    {"label": "Corollary 3", "page": 2, "restatement": "For a denominator that is a product of collision brackets, every puncture where exactly one factor vanishes has locally bounded negative part on the supported branch, any multiplicity (internal pairs: Thm 2; cross pairs: shared-zero theorem). Two simultaneous factors are explicitly not covered."}
+  ],
+  "dependencies": [
+    {"kind": "common-lemma", "ref": "final_referee_shared_zero_birkhoff_20261022 Theorem 1", "used_for": "uniform law on cross divisors", "match_checked": true},
+    {"kind": "external", "ref": "max-flow min-cut theorem", "used_for": "existence of theta", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "affine division D - sum pF = dR", "status": "PROOF-READ"},
+    {"n": 2, "claim": "homogeneous/primitive-spinor extension", "status": "PROOF-READ (argument supplied by auditor) + EXACT instances"},
+    {"n": 3, "claim": "holomorphic quotient R/e", "status": "PROOF-READ"},
+    {"n": 4, "claim": "L - sum p g = -eta Im(R/e)", "status": "EXACT"},
+    {"n": 5, "claim": "lower bound on supported branch", "status": "PROOF-READ"},
+    {"n": 6, "claim": "edge/incident masses", "status": "PROOF-READ+EXACT"},
+    {"n": 7, "claim": "subset inequality via Lagrange identity", "status": "PROOF-READ+EXACT"},
+    {"n": 8, "claim": "flow existence", "status": "PROOF-READ"},
+    {"n": 9, "claim": "incoming mass b_i", "status": "PROOF-READ+EXACT"},
+    {"n": 10, "claim": "rank-two principal minor expansion", "status": "PROOF-READ+EXACT"},
+    {"n": 11, "claim": "law on S4 represents minors", "status": "PROOF-READ+EXACT"},
+    {"n": 12, "claim": "full determinant law", "status": "EXACT instances"},
+    {"n": 13, "claim": "interchange of spectra", "status": "EXACT instances"},
+    {"n": 14, "claim": "bracket types exhaustive", "status": "PROOF-READ"},
+    {"n": 15, "claim": "ambient identities under other collisions", "status": "PROOF-READ"}
+  ],
+  "gaps": [],
+  "exact_replays": ["Theorem 2 flow law, minors and determinant identity on 6 exact unitaries", "Lagrange subset identity for all S", "Leibniz form = det on affine chart", "divisibility of Delta_O - sum mu Pi by all 28 collision brackets (homogeneous)"],
+  "numeric_tests": ["mpmath 50 digits: (D - sum pF)/t^k bounded for k=1,2,3; naive quotient blows up"],
+  "unchecked": ["the subharmonic pasting argument that uses Lemma 1 (outside this document)"]
+}

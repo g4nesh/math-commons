@@ -1,0 +1,44 @@
+[EXACT] PASS  (5)+(2) => (6): -a*sum c_j|u0j|^2 + sum ahat chat m - c*sum a_i|ui0|^2 = sum H_ij m_ij (generic m)
+[EXACT] PASS  prod_i (a_i - c_sigma(i)) = sum H_ij m_ij(sigma) for all 24 sigma (a0=c0=0)
+[EXACT] PASS  m_ij(sigma) = 1{{sigma(0),sigma(i)} = N\{j}} equals the squared 2x2 minor of P_sigma
+[EXACT] PASS  phi is an involution on {pi : pi(0) != 0} (18 perms)
+[EXACT] PASS  m(phi(pi)) = lower-right 3x3 block of P_pi for all 18 pi with pi(0) != 0
+[EXACT] PASS  face W00=0 has affine dimension 8 (computed 8)
+[EXACT] PASS  U#0 (s=733296/878993): marginal identities (2)
+[EXACT] PASS  U#0: law is a probability law with sum_(sigma(0)=0) p = |u00|^2 and (4)
+[EXACT] PASS  U#0: (1) holds as a polynomial identity in d,a1..a3,c1..c3 (10 weights)
+[EXACT] PASS  U#1 (s=63736992/103011305): marginal identities (2)
+[EXACT] PASS  U#1: law is a probability law with sum_(sigma(0)=0) p = |u00|^2 and (4)
+[EXACT] PASS  U#1: (1) holds as a polynomial identity in d,a1..a3,c1..c3 (10 weights)
+[EXACT] PASS  U#2 (s=63512856/112638101): marginal identities (2)
+[EXACT] PASS  U#2: law is a probability law with sum_(sigma(0)=0) p = |u00|^2 and (4)
+[EXACT] PASS  U#2: (1) holds as a polynomial identity in d,a1..a3,c1..c3 (10 weights)
+[EXACT] PASS  U#3 (s=1335664/3716569): marginal identities (2)
+[EXACT] PASS  U#3: law is a probability law with sum_(sigma(0)=0) p = |u00|^2 and (4)
+[EXACT] PASS  U#3: (1) holds as a polynomial identity in d,a1..a3,c1..c3 (10 weights)
+[EXACT] PASS  U#4 (s=416891376/1186540297): marginal identities (2)
+[EXACT] PASS  U#4: law is a probability law with sum_(sigma(0)=0) p = |u00|^2 and (4)
+[EXACT] PASS  U#4: (1) holds as a polynomial identity in d,a1..a3,c1..c3 (10 weights)
+[EXACT] PASS  U#5 (s=1080/3481): marginal identities (2)
+[EXACT] PASS  U#5: law is a probability law with sum_(sigma(0)=0) p = |u00|^2 and (4)
+[EXACT] PASS  U#5: (1) holds as a polynomial identity in d,a1..a3,c1..c3 (6 weights)
+[EXACT] PASS  U#6 (s=0): marginal identities (2)
+[EXACT] PASS  U#6: law is a probability law with sum_(sigma(0)=0) p = |u00|^2 and (4)
+[EXACT] PASS  U#6: (1) holds as a polynomial identity in d,a1..a3,c1..c3 (1 weights)
+[EXACT] PASS  U#7 (s=1): marginal identities (2)
+[EXACT] PASS  U#7: law is a probability law with sum_(sigma(0)=0) p = |u00|^2 and (4)
+[EXACT] PASS  U#7: (1) holds as a polynomial identity in d,a1..a3,c1..c3 (1 weights)
+[INFO] number of nonzero weights from the greedy exact Birkhoff decomposition: [10, 10, 10, 10, 10, 6, 1, 1] (the bound <= 10 is from Caratheodory, PROOF-READ; greedy decompositions need not attain it)
+[EXACT] PASS  relabeling: a law exists for every shared pair (i0, j0), 16 pairs, U#0
+[EXACT] PASS  Thm 2: the displayed O is orthogonal
+[INFO] det O = 1
+[EXACT] PASS  Thm 2: minor values {'d00+sum': 4/49, 'd01,02': 144/2401, 'd01,13': 144/2401, 'd02,01': 400/2401, 'd02,23': 400/2401, 'dBB': 1} match 4/49, 144/2401, 144/2401, 400/2401, 400/2401, 1
+[EXACT] PASS  Thm 2: G(U) = -158/2401 = -158/2401
+[EXACT] PASS  Thm 2: min over S_4 of G(sigma) = 0 >= 0
+[EXACT] PASS  Thm 2: min over S_5 of G(sigma) = 0 >= 0
+[EXACT] PASS  Thm 2: min over S_6 of G(sigma) = 0 >= 0
+[EXACT] PASS  Thm 2: min over S_7 of G(sigma) = 0 >= 0
+[EXACT] PASS  Thm 2: every minor used has 0 in I and 4 not in J
+[EXACT] PASS  Thm 2 (n=5): each used minor is (-1)^|J| times the coefficient of its surviving monomial
+EXACT failures: 0
+[NUMERIC] PASS  (1) on 300 Haar unitaries x 5 random label sets (seed 7): max rel error 2.5e-14
