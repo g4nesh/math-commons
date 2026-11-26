@@ -1,0 +1,55 @@
+non-minor vectors whose functional is g0 after a relabelling: 48 of 48
+SOC: Phi_22 + 2|x_1 x_9| >= 0
+   relabellings with Phi_22 = g0: 24 ; the minors x_1, x_9 become:
+      D[12,12], D[13,13]
+      D[12,12], D[14,14]
+      D[13,13], D[12,12]
+      D[13,13], D[14,14]
+      D[14,14], D[12,12]
+      D[14,14], D[13,13]
+old-H: Phi_70 + Phi_2 + 2|x_12 x_2| >= 0
+   relabellings with Phi_70 = g0: 24 ; the minors x_2, x_12 become:
+      D[12,12], D[13,14]
+      D[12,12], D[13,23]
+      D[13,13], D[14,12]
+      D[13,13], D[14,34]
+      D[14,14], D[12,13]
+      D[14,14], D[12,24]
+chain: Phi_70 + 2|x_2|(|x_0| + |x_12|) >= 0
+   relabellings with Phi_70 = g0: 24 ; the minors x_2, x_0, x_12 become:
+      D[12,12], O[1,1], D[13,14]
+      D[12,12], O[2,2], D[13,14]
+      D[12,12], O[3,3], D[13,23]
+      D[12,12], O[4,4], D[13,23]
+      D[13,13], O[1,1], D[14,12]
+      D[13,13], O[2,2], D[14,34]
+      D[13,13], O[3,3], D[14,12]
+      D[13,13], O[4,4], D[14,34]
+      D[14,14], O[1,1], D[12,13]
+      D[14,14], O[2,2], D[12,24]
+      D[14,14], O[3,3], D[12,24]
+      D[14,14], O[4,4], D[12,13]
+four-coefficient: Phi_54 + Phi_10 + 2(|x_0 x_6| + |x_0 x_10| + |x_6 x_10|) >= 0
+   relabellings with Phi_54 = g0: 24 ; the minors x_10, x_0, x_6 become:
+      D[12,13], O[1,1], O[4,4]
+      D[12,13], O[4,4], O[1,1]
+      D[12,24], O[2,2], O[3,3]
+      D[12,24], O[3,3], O[2,2]
+      D[13,14], O[1,1], O[2,2]
+      D[13,14], O[2,2], O[1,1]
+      D[13,23], O[3,3], O[4,4]
+      D[13,23], O[4,4], O[3,3]
+      D[14,12], O[1,1], O[3,3]
+      D[14,12], O[3,3], O[1,1]
+      D[14,34], O[2,2], O[4,4]
+      D[14,34], O[4,4], O[2,2]
+rank-two: Phi_35 + Phi_12/4 + |x_12| sqrt(Phi_2 + Phi_29) >= 0
+   relabellings with Phi_35 = g0: 24 ; the minors x_12, x_2, x_29 become:
+      D[12,12], D[13,14], D[13,23]
+      D[12,12], D[13,23], D[13,14]
+      D[13,13], D[14,12], D[14,34]
+      D[13,13], D[14,34], D[14,12]
+      D[14,14], D[12,13], D[12,24]
+      D[14,14], D[12,24], D[12,13]
+old-H in the frame (x_2^2, x_12^2) = (D[12,12], D[13,14]) reads g0 + D[12,12] + 2 sqrt(D[12,12] D[13,14]) >= 0, which is inequality (star): True
+ALL MATCHED

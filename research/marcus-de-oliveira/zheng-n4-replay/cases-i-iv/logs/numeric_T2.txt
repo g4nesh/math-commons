@@ -1,0 +1,25 @@
+====================================================================================================
+NUMERIC falsification attempts, case T_2 = {0,1,2,3,6,8}  (floating point; seeds printed)
+====================================================================================================
+[ok] control of the cone test: distance of f_17 = 0.1250, of f_17 + f_9/2 = 0.0625 (both outside the minor cone), of f_17 + f_9 = 0.0e+00 (inside)
+       the linear programme has feasibility tolerance about 1e-7, so a reported distance 0.000e+00 means 'below about 1e-7 of the largest gap'
+       E1: solutions of 'Re F equal on T_2' only (no inequalities) with the four factors of D_02 and |lam| >= 0.05 (no other nondegeneracy imposed); seed 201, 6892 starts
+[no violation] E1 Re F_7 = Re F_9 [relative] :: samples 2000, worst value 6.464e-13, tolerance 1.0e-07
+[no violation] E2 A1 - A2 = eps, eps = 1e-02: Re F_7 = Re F_9 :: samples 200, worst value 8.173e-14, tolerance 1.0e-06 :: seed 202
+[no violation] E2 A1 - A2 = eps, eps = 1e-04: Re F_7 = Re F_9 :: samples 200, worst value 1.247e-11, tolerance 1.0e-05 :: seed 202
+[no violation] E2 C1 - C2 = eps, eps = 1e-02: Re F_7 = Re F_9 :: samples 200, worst value 3.923e-14, tolerance 1.0e-06 :: seed 203
+[no violation] E2 C1 - C2 = eps, eps = 1e-04: Re F_7 = Re F_9 :: samples 200, worst value 4.378e-12, tolerance 1.0e-05 :: seed 203
+[no violation] E2 A0 - C0 = eps, eps = 1e-02: Re F_7 = Re F_9 :: samples 200, worst value 1.021e-13, tolerance 1.0e-06 :: seed 204
+[no violation] E2 A0 - C0 = eps, eps = 1e-04: Re F_7 = Re F_9 :: samples 200, worst value 7.973e-12, tolerance 1.0e-05 :: seed 204
+[no violation] E2 A3 - C3 = eps, eps = 1e-02: Re F_7 = Re F_9 :: samples 200, worst value 7.145e-14, tolerance 1.0e-06 :: seed 205
+[no violation] E2 A3 - C3 = eps, eps = 1e-04: Re F_7 = Re F_9 :: samples 200, worst value 1.697e-11, tolerance 1.0e-05 :: seed 205
+       E3 on the locus A1 = A2 (equalities only, seed 206, 200 samples): largest relative |Re(F_7 - F_9)| = 1.410, so the equality really needs D_02 != 0
+[no violation] E3 locus A1 = A2 with contact set containing T_2: gap vector in the cone of minor profiles; seed 216 :: samples 200, worst value 0.000e+00, tolerance 1.0e-07 :: largest |g_7 - g_9| among these points: 4.500
+       E3 on the locus C1 = C2 (equalities only, seed 207, 200 samples): largest relative |Re(F_7 - F_9)| = 1.046, so the equality really needs D_02 != 0
+[no violation] E3 locus C1 = C2 with contact set containing T_2: gap vector in the cone of minor profiles; seed 217 :: samples 200, worst value 0.000e+00, tolerance 1.0e-07 :: largest |g_7 - g_9| among these points: 4.500
+       E4: points with contact set containing T_2 (inequalities enforced, mean gap off T = 1), |D_02| >= 1e-3; seed 220, 786 solves; 241 of them have contact set exactly T_2; largest g_7 seen 4.500
+[no violation] E4a g_7 = g_9 [relative to max gap] :: samples 300, worst value 1.305e-11, tolerance 1.0e-07
+[no violation] E4b gap vector in the cone of the 11 minor generators of N_{T_2} [relative distance, linear programme] :: samples 300, worst value 0.000e+00, tolerance 1.0e-07
+[no violation] E4c gap vector in the cone of all 34 minor profiles :: samples 300, worst value 0.000e+00, tolerance 1.0e-07
+
+FINAL: NO VIOLATION FOUND (numeric evidence only)

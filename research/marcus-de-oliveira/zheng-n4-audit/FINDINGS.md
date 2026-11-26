@@ -6,7 +6,7 @@ The architecture of the proof is Zheng's: the reduction of unitary to orthogonal
 
 ## Bottom line
 
-**No error has been found in any part examined.** The conjecture for $n=4$ is **not yet established by this audit as a whole**: 32 of the 208 supplementary proof documents have no first-pass report (the first pass is paused; they are listed in [manifest.json](manifest.json)), two rest on certificates not yet replayed, and no review by another owner has taken place. The assembled proof, with the status of every step and of each of the ninety cases, is in [PROOF.md](PROOF.md).
+**No error has been found in any part examined.** The conjecture for $n=4$ is **not yet established by this audit as a whole**: 32 of the 208 supplementary proof documents have no first-pass report (the first pass is paused; they are listed in [manifest.json](manifest.json)), two rest on certificates not yet replayed, and the assembled proof still awaits independent review. The assembled proof, with the status of every step and of each of the ninety cases, is in [PROOF.md](PROOF.md).
 
 | Part of the proof | Result | Evidence |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ Seven documents were audited a second time from scratch by auditors who did not 
 - **Large certificates, now replayed.** Five documents for $T_{38}$, $T_{39}$ and $T_{40}$ rest on coefficient tables and Sturm sequences that the first pass tested only at sampled points. A second pass rebuilt every polynomial from the paper's definitions and replayed all certificates exactly: 17 chart certificates for $T_{38}$; 40 coefficient tables, 799 Sturm sequences, five optimality charts and 60 peeling tables for $T_{39}$; and the shared identities and all coefficient certificates of the three branch documents of $T_{40}$, with the chamber cover. All five documents are now confirmed modulo citations. Notes: `docs2/*__certificates.md`.
 - **32 documents without a first-pass report.** The first pass is paused to save compute: the documents of $T_{45}$ and $T_{53}$–$T_{68}$ (eight batches; the own documents of $T_{45}$ and $T_{54}$–$T_{68}$ are among them), and the six parallel write-ups of the paper's Section 2 and Appendix C. The list is in [manifest.json](manifest.json) under `first_pass_status`. Reports from cloud workers or other owners, if they arrive, will serve as a first or second pass.
 - **Dependency graph.** The supplement's graph is acyclic and agrees with the paper's Table 6, and all ten conditional theorems are discharged at the level of statements. Seven citations found in the texts are missing from the supplement's graph. The follow-ups are resolved: the reuse between $T_8$ and a seven-contact set is at the level of identities, not a logical circle, and no new contact lacks an argument in the cases examined. [Map](deps/dependency-map.md) · [conditional theorems](deps/conditional-tracing.md) · [follow-ups](deps/followups.md)
-- **Independent review.** Nothing here has been reviewed by another owner. Nine requests for independent replays are open in the ledger.
+- **Independent review.** A second GitHub owner (`g4nesh`) is independently replaying the group I–IV contact cases. The case index lists each completed report, its verdict and its outstanding citations. The review status of the complete proof is tracked separately in the coordination ledger. [Case reports and exact replays](../zheng-n4-replay/cases-i-iv/README.md)
 - **Machine checking.** Nothing here is formalized.
 
 ## What a confirmed proof would still need
