@@ -90,7 +90,7 @@ No result of Zheng's preprint is used. Classical facts used: Cauchy–Binet, Jac
 
 **Checks.**
 - `check_factorization.py` (exact, Gaussian-rational unitaries; [`logs/check_factorization.txt`](logs/check_factorization.txt)): identities (J) with its sign and (P); the vanishing signed sum behind Lemma 1 and the triangle inequality itself; the formula of Lemma 2 before the choice of e; the relation among the three complementary minors; the entries of SS* used in Lemma 4 (symbolic).
-- `construct.py` (floating point; [`logs/construct.txt`](logs/construct.txt)): carries out the proof on 1,000 Haar unitaries with no optimization. Every intermediate claim holds to 10⁻¹¹: the triangle closes, the three minors vanish, S − xxᵀ is diagonal with unimodular entries, the hⱼ agree, VᵀV = W², O is real orthogonal, and Corollary F1 holds for all 68 minors of sizes 1 to 3.
+- `construct.py` (floating point; [`logs/construct.txt`](logs/construct.txt)): replays the generic case on 1,000 Haar unitaries with no optimization. The script rejects inputs for which the off-diagonal reconstruction is singular or numerically unresolved. Lemma 5 gives the mathematical construction in the degenerate cases. Every intermediate claim holds to 10⁻¹¹: the triangle closes, the three minors vanish, S − xxᵀ is diagonal with unimodular entries, the hⱼ agree, VᵀV = W², O is real orthogonal, and Corollary F1 holds for all 68 minors of sizes 1 to 3.
 
 ## Remarks
 

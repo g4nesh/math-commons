@@ -33,7 +33,10 @@ TRIPLES = [(3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25), (20, 21, 29)]
 def unit(): a, b, h = rng.choice(TRIPLES); return CQ(Fr(a, h), Fr(b, h)) if rng.random() < 0.5 else CQ(Fr(-b, h), Fr(a, h))
 bad = dict(J=0, P=0, T=0, F=0); n = 0; tri_min = None
 for trial in range(300):
-    U = rational_unitary(rng); assert is_unitary(U); d = det4(U); C = {(S, T): det2(U, S, T) for S in P2 for T in P2}; n += 1
+    U = rational_unitary(rng)
+    if not is_unitary(U):
+        raise ValueError(f"Trial {trial} did not produce a unitary matrix")
+    d = det4(U); C = {(S, T): det2(U, S, T) for S in P2 for T in P2}; n += 1
     for S in P2:
         for T in P2:
             bad['J'] += not eq(C[(comp(S), comp(T))], CQ(sgn(S, T)) * d * C[(S, T)].conj())
@@ -72,4 +75,6 @@ S1 = [L1 + x1 * x1, x1 * x2, x1 * x3, x1 * x4]; S2c = [x2c * x1c, L2c + x2c * x2
 offd = sp.expand(sum(a * b for a, b in zip(S1, S2c)) - (L1 * x1c * x2c + L2c * x1 * x2 + n2 * x1 * x2c))
 diag = sp.expand(sum(a * b for a, b in zip(S1, [L1c + x1c * x1c, x1c * x2c, x1c * x3c, x1c * x4c])) - (L1 * L1c + L1 * x1c**2 + L1c * x1**2 + n2 * x1 * x1c))
 print("(U) entries of S S^* for S = Lambda + x x^T: off-diagonal formula %s ; diagonal formula %s" % (offd == 0, diag == 0))
-print("ALL CHECKS PASSED" if (sum(bad.values()) == 0 and offd == 0 and diag == 0) else "A CHECK FAILED")
+if any(bad.values()) or offd != 0 or diag != 0:
+    raise SystemExit("A CHECK FAILED")
+print("ALL CHECKS PASSED")
