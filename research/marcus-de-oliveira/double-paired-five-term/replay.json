@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "profile_coordinates": 21,
+  "block_trace_monomials": 64,
+  "off_diagonal_determinant_monomials": 80,
+  "relaxation": {
+    "four_phi": -2,
+    "phi": "-1/2",
+    "Plucker_residual": -1,
+    "is_actual_U6_counterexample": false
+  },
+  "universal_five_term_sign": "OPEN",
+  "physical_fixtures": [
+    {
+      "seed": 0,
+      "y": "115135723924733952/376374952353100805",
+      "negative_starting_coefficients": 2
+    },
+    {
+      "seed": 1,
+      "y": "16301205130951303168/65999702991405015625",
+      "negative_starting_coefficients": 1
+    }
+  ]
+}
