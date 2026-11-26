@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 1,
+  "field": "Q(sqrt(2)); [r,s] denotes r+s*sqrt(2), exact rational strings",
+  "permutationConvention": "coordinate position i maps to eigenvalue label p[i], zero based",
+  "center": "H0=i*K4, K4 has +1 above and -1 below diagonal",
+  "offCenter": "H=R*H0*R^T; R acts on coordinates 0,1",
+  "rotationCos": "999999/1000001",
+  "rotationSin": "2000/1000001",
+  "skewPartK": [
+    [
+      "0",
+      "1",
+      "997999/1000001",
+      "997999/1000001"
+    ],
+    [
+      "-1",
+      "0",
+      "1001999/1000001",
+      "1001999/1000001"
+    ],
+    [
+      "-997999/1000001",
+      "-1001999/1000001",
+      "0",
+      "1"
+    ],
+    [
+      "-997999/1000001",
+      "-1001999/1000001",
+      "-1",
+      "0"
+    ]
+  ],
+  "spectrum": [
+    [
+      "1",
+      "1"
+    ],
+    [
+      "-1",
+      "1"
+    ],
+    [
+      "1",
+      "-1"
+    ],
+    [
+      "-1",
+      "-1"
+    ]
+  ],
+  "basisPermutationIndices": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12,
+    18
+  ],
+  "correctionL1": [
+    "0",
+    "2999997000/1000002000001"
+  ],
+  "allWeightsStrictlyGreaterThan": "1/48",
+  "principalMinors": [
+    {
+      "subset": [],
+      "value": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        0
+      ],
+      "value": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        1
+      ],
+      "value": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        2
+      ],
+      "value": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        3
+      ],
+      "value": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        0,
+        1
+      ],
+      "value": [
+        "-1",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        0,
+        2
+      ],
+      "value": [
+        "-996002004001/1000002000001",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        0,
+        3
+      ],
+      "value": [
+        "-996002004001/1000002000001",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        1,
+        2
+      ],
+      "value": [
+        "-1004001996001/1000002000001",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        1,
+        3
+      ],
+      "value": [
+        "-1004001996001/1000002000001",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        2,
+        3
+      ],
+      "value": [
+        "-1",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        0,
+        1,
+        2
+      ],
+      "value": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        0,
+        1,
+        3
+      ],
+      "value": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        0,
+        2,
+        3
+      ],
+      "value": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        1,
+        2,
+        3
+      ],
+      "value": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "subset": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "value": [
+        "1",
+        "0"
+      ]
+    }
+  ],
+  "weights": [
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "weight": [
+        "1/24",
+        "-499999500/1000002000001"
+      ]
+    },
+    {
+      "permutation": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "weight": [
+        "1/24",
+        "-499999500/1000002000001"
+      ]
+    },
+    {
+      "permutation": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "weight": [
+        "1/24",
+        "499999500/1000002000001"
+      ]
+    },
+    {
+      "permutation": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "weight": [
+        "1/24",
+        "499999500/1000002000001"
+      ]
+    },
+    {
+      "permutation": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "weight": [
+        "1/24",
+        "499999500/1000002000001"
+      ]
+    },
+    {
+      "permutation": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "weight": [
+        "1/24",
+        "-499999500/1000002000001"
+      ]
+    },
+    {
+      "permutation": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    },
+    {
+      "permutation": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "weight": [
+        "1/24",
+        "0"
+      ]
+    }
+  ],
+  "exactAffineRanksAtDistinctIntegerSpectra": {
+    "1": 0,
+    "2": 1,
+    "3": 4,
+    "4": 11,
+    "5": 26
+  },
+  "scope": "Exact off-center witness plus finite rank regressions; the all-dimensions neighborhood proof is in README.md"
+}

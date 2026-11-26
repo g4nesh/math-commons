@@ -76,6 +76,13 @@ theorems = {
         'historySizeTwo', 'productPairEndpointAmplitude', 'productPairMagnitude', 'productPairEmptyFiber',
         'sumWithCongrOn', 'sumWithFilter', 'sumWithAdd', 'sumWithSwap',
         'sumWithUniqueKey', 'endpointProbabilityAsSum', 'endpointPairMassOne', 'productPairMassOne')},
+    'ForestMinorAlternation.lean': {'MathCommons.ForestMinorAlternation.' + n for n in (
+        'gaussianNegNeg', 'gaussianNegAdd', 'gaussianMulNeg', 'signedNeg',
+        'gaussianSumNeg', 'doubleChoiceCons', 'doubleChoiceSwap', 'rowDetTwoChoices',
+        'rowDetHeadSwap', 'rowDetAdjacentSwap', 'rowDetAdjacentDuplicate', 'rowDetPrefixNeg',
+        'rowDetSeparatedHeadSwap', 'rowDetExchange', 'rowDetDuplicate', 'minorEqualRowsZero',
+        'minorDuplicateRow', 'twoEndpointAvoids', 'minorExchangeRows', 'gateMinorBoth',
+        'rowDetMove', 'parityMap', 'minorMoveRow')},
 }
 theorems['OrthogonalCube.lean'] = {'MathCommons.OrthogonalCube.' + n for n in (
     'squareNonnegative', 'quadraticNonnegative', 'lagrangeIdentity',

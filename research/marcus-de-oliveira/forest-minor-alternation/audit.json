@@ -1,0 +1,135 @@
+{
+  "leanVersion": "4.24.0",
+  "fatalWarnings": true,
+  "baseMainCommit": "0709813e13b2596ca85d93987bc0c3dd312aee1f",
+  "completeRunDeclarationCount": 243,
+  "newDeclarationCount": 23,
+  "sourceSha256": {
+    "formal/MathCommons.lean": "2081110542f5560fe2d09cd31e89de22fcaf85b931adc37a44c469a55d04f3be",
+    "formal/ForestCut.lean": "0bfc29b6c4470e3c11cfdbdb561616f55bc3d73af78d53e8edc68feb44b1b5ae",
+    "formal/ForestTrajectory.lean": "b5dcffb2a165702ef46a2a67e5a7d9049a5f5ba3af3cfd9cc2491af5e0fc5910",
+    "formal/ForestGateSupport.lean": "e5f1c920b17e385ad58dffb070f0647d5d937a06c4916a2a2a417aaccdda286f",
+    "formal/ForestGateMagnitude.lean": "02448676c0da705b368ae51aaab0e9771245ab406e7cd22a8eba99bf2589895a",
+    "formal/ForestPathProbability.lean": "4f01a43913a197c11c1904e3eedfb3161e6b8eec64bb7abb5bfd01a234ecdeca",
+    "formal/ForestPathNormalization.lean": "09df64b8c0941ac9f686017fe3cc82cc52e510af2e830384b5edae10821d8fff",
+    "formal/ForestEndpointMass.lean": "a2a6cec51910d33cc3d22c40001215fb41cd8b3c610327a517898d1b024b9e2d",
+    "formal/ForestProductMinor.lean": "797a22634b38e8f614d1994ad7100a4d3780f48334575fb6d25a0c4ad08b8e25",
+    "formal/ForestPairHistory.lean": "c65a52bef4d9c1674cd163d7a5338dcfabd5baa075cd68257120695a249590bf",
+    "formal/ForestMinorAlternation.lean": "31c0794ad790a674c670c2eecf1afeebbf3f9228667a92e6f315c02269df08e1"
+  },
+  "axiomReports": {
+    "MathCommons.ForestMinorAlternation.gaussianNegNeg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.gaussianNegAdd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.gaussianMulNeg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.signedNeg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.gaussianSumNeg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.doubleChoiceCons": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.doubleChoiceSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.rowDetTwoChoices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.rowDetHeadSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.rowDetAdjacentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.rowDetAdjacentDuplicate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.rowDetPrefixNeg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.rowDetSeparatedHeadSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.rowDetExchange": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.rowDetDuplicate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.minorEqualRowsZero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.minorDuplicateRow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.twoEndpointAvoids": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.minorExchangeRows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.gateMinorBoth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.rowDetMove": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestMinorAlternation.parityMap": [
+      "propext"
+    ],
+    "MathCommons.ForestMinorAlternation.minorMoveRow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "scope": "Arbitrary-order actual row alternation, duplicate cancellation, row-movement parity and unconditional both-occupied gate update. General tuple-to-subset Cauchy-Binet grouping and Boolean-filter single-exchange translation remain separate."
+}
