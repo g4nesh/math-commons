@@ -1,0 +1,137 @@
+====================================================================================================
+Replay of case T_34 = {2,3,5,9,10,12} (group V): document blind_moc4_bad70_full_safe_disjunction_20261022.pdf
+====================================================================================================
+
+--- Provenance: files of the supplement that were read (hashed; data only)
+[INFO] python 3.9.6, python-flint 0.6.0, sympy 1.14.0 (exact part); numpy 2.0.2, scipy 1.13.1 (NUMERIC part only)
+[PASS] [EXACT] MOC4_SUPP is set (the Gram certificate of (PB), (CQ) exists only as data of the supplement and is needed)
+[PASS] [EXACT] sha256 of blind_moc4_bad70_full_safe_disjunction_20261022.pdf is the one of the file read for this replay  ::  479f5594c498be1fbaf2cc637b35fbffd281c185d3266ae24da0bdb13e4db037
+[PASS] [EXACT] sha256 of blind_moc4_bad70_full_safe_disjunction_20261022.json is the one of the file read for this replay  ::  d59cc38bc1a3a9c0835312aefc5285972b345097724bc2bd7ab112da852d0c9a
+[PASS] [EXACT] sha256 of blind_moc4_next_singlebad_R9_restriction_20261022.json is the one of the file read for this replay  ::  c7e4e885addcbaedcd22d5cfcf0a20e6d6a9dd8a8af7948d9504a67c392c3910
+[PASS] [EXACT] sha256 of blind_moc4_next_singlebad_budget_PSD8_20261022.json is the one of the file read for this replay  ::  3d5ecfb9b6cb8f2e54dd410ffa0a46e6373a71caf7cee022958694c3a481ac0c
+[PASS] [EXACT] sha256 of blind_moc4_next_singlebad_cubic_reduction_20261022.json is the one of the file read for this replay  ::  c8974ea5f4bb3c5bae8b8de3387855a8945860e501dbbfd9495701006cf37f96
+
+--- Foundations rebuilt from the paper's definitions
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14
+[PASS] [EXACT] P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] kappa = Psi(v) at v_1..4 = (0,1), v_5..8 = (1,1), so kappa is in X
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of the cubic C of (A.2))
+[PASS] [EXACT] own Hessian table of C: symmetric and m^t Hess C(m) m = 6 C(m) at 5 random integer points (the table is derived from the 37 monomials of (A.2))
+[PASS] [EXACT] 82 vectors f_j: all lie in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps on the 24 permutation indices; G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+
+--- Comparison of the rebuilt objects with the audit library moc4lib (not used to build anything)
+[PASS] [EXACT] PERMS, P, kappa agree with moc4lib
+[PASS] [EXACT] the 82 value vectors F_VALUES and the minor flags agree with moc4lib
+[PASS] [EXACT] coordinates of all f_j in V_R agree with moc4lib
+[PASS] [EXACT] the cubic C agrees with moc4lib.cubic_C on 20 random rational points (comparison of two transcriptions of (A.2))
+[PASS] [EXACT] T_34 agrees with moc4lib.CONTACT_SETS[34]; generators agree; the group has the same 1152 maps
+
+--- Contact set, generators of the contact cone, scope (document p. 1)
+[PASS] [EXACT] the document's contact set [2, 3, 5, 9, 10, 12] equals the paper's T_34 (Appendix E) as a set of lexicographic indices: group element = identity (the file name 'bad70' and the labels 'T33' are historical; the PDF is titled with T_34)
+[PASS] [EXACT] lexicographically smallest set in the G-orbit of T_34 is {0,1,2,6,10,23}  ::  (0, 1, 2, 6, 10, 23)
+[PASS] [EXACT] F_T = {j : f_j = 0 on T} = [0, 1, 2, 12, 39, 67, 70, 72] equals the document's list
+[PASS] [EXACT] the only non-minor generator is f_70 = h_{4231,+}  ::  f_0 = n_{1,4}, f_1 = n_{12,34}, f_2 = n_{13,34}, f_12 = n_{14,24}, f_39 = n_{14,13}, f_67 = n_{2,2}, f_70 = h_{4231,+}, f_72 = n_{12,12}
+[PASS] [EXACT] direct enumeration of the extreme rays of N_T = {Pc >= 0, (Pc)_T = 0} from P alone (no use of the 82-facet classification): the subspace {(Pc)_T = 0} has dimension 8 and the cone has exactly the 8 rays f_j, j in F_T  ::  8 rays, 1.7 s
+[PASS] [EXACT] the cone is simplicial and every coefficient is a gap: for each generator there is a permutation at which it is 1 and the other seven vanish, so (p, r, a, b, c, q, d, s) = (gap_18, gap_16, gap_13, gap_8, gap_4, gap_14, gap_11, gap_7)  ::  [[18], [16], [13], [8], [4], [14], [11], [7]]
+[INFO] so g in N_T  <=>  g = p f0 + r f1 + a f2 + b f12 + c f39 + q f67 + d f70 + s f72 with all eight coefficients >= 0 (unique); a zero coefficient is exactly an extra contact, and non-strict contacts are included in the document's statement
+[PASS] [EXACT] stabiliser of T_34 in G = {identity, g*}, g* = (rho, rho', eps) = ((2, 3, 0, 1), (1, 0, 3, 2), 0); g* permutes the generators as f0<->f67, f1<->f72, f12<->f39 and fixes f2, f70 (coefficients: p<->q, r<->s, b<->c)  ::  [67, 72, 2, 39, 12, 0, 70, 1]
+[PASS] [EXACT] covariance for g*: the Leibniz weights of a generic 4 x 4 matrix satisfy w_{g*.sigma}(g*.O) = w_sigma(O) for all 24 sigma (identity in 16 variables); g*.O is O with rows and columns permuted by even permutations, so g* maps SO(4) onto SO(4) and Phi_{g*.c}(g*.O) = Phi_c(O) for every c
+[PASS] [EXACT] Laplace and Jacobi identities for the 7 minor generators [0, 1, 2, 12, 39, 67, 72]: Phi_{f_j}(O) = (minor of O)^2 >= 0 on SO(4)
+
+--- Radial necessity (PROOF.md 7.3; paper p. 27): the real part of a point of X
+[PASS] [EXACT] grad C(u + t v) = grad C(u) + t Hess C(u) v + t^2 grad C(v) identically (t = i: real part grad C(u) - grad C(v), imaginary part Hess C(u) v)
+[PASS] [EXACT] Euler: u . grad C(u) = 3 C(u) identically
+[PASS] [EXACT] polarization: u . grad C(v) = (1/2) v^t Hess C(u) v identically
+[PASS] [EXACT] Hess C(u) u = 2 grad C(u) identically (used when Im x = 0)
+[INFO] hence grad C(u+iv) = 0 gives grad C(u) = grad C(v), Hess C(u) v = 0, and 3 C(u) = u.grad C(u) = u.grad C(v) = (1/2) v^t Hess C(u) v = 0; Hess C(u) is singular whenever u != 0 (kernel vector v if v != 0, else u)
+[PASS] [EXACT] spot check on 12 random Gaussian-rational points x = alpha Psi(a,b) (seed 20261125): (P x)_sigma = alpha z_sigma and C(Re x) = 0
+[PASS] [EXACT] same points: Hess C(Re x) Im x = 0
+
+--- Condition (H) (document p. 1): the two 'endpoint inequalities' are instances of the old-H inequality, which the document neither states nor proves
+[PASS] [EXACT] (f12; f2; f70) is the representative of old-H in PROOF.md 7.6; (f39; f2; f70) is its image under 4 elements of G, among them the stabiliser element g*  ::  [((2, 3, 0, 1), (1, 0, 3, 2), 0), ((3, 2, 1, 0), (3, 2, 1, 0), 0), ((0, 3, 1, 2), (1, 2, 0, 3), 1), ((1, 2, 0, 3), (0, 3, 1, 2), 1)]
+[PASS] [EXACT] orbit of the ordered triple (aux f12, main f2; f70) under G has 288 elements (as stated in PROOF.md 7.6)  ::  288
+[PASS] [EXACT] remark: the SOC family (orbit of (f1, f9; f22), the inequality of the supplement's scalar-compensation note) contains triples with the pair {f12, f2} only for the non-minor vectors f26, f56, and with {f39, f2} only for f46, f69; for each such k the vector f70 + f2 - f_k has a negative value, so it is not a nonnegative combination of minor vectors: the endpoint inequalities of (H) are not obtained from SOC by adding minors  ::  {12: [26, 56], 39: [46, 69]}
+[PASS] [EXACT] W = (1/2)[[1,1,1,1],[1,-1,-1,1],[1,-1,1,-1],[1,1,-1,-1]] is symmetric with W^2 = I (so (P, Q) = (Wp, Wq) ranges over S^3 x S^3 with (p, q))
+[PASS] [EXACT] model x -> p x conj(q) with p = 2WP, q = 2WQ: M^t M = 16|P|^2|Q|^2 I and det M = (16|P|^2|Q|^2)^2, so O = M/4 is in SO(4) for unit P, Q
+[PASS] [EXACT] Phi_2 = x_2^2 and Phi_12 = x_12^2 with x_2 = det M[13,34], x_12 = det M[14,24] (polynomial identities in the model)
+[PASS] [EXACT] bridge: x_2 = v_0 + v_1 and x_12 = v_1 + v_2 for O = M/4 (homogenised identities x(M) = 16 (v_i + v_j)); sum v_i = 0
+[PASS] [EXACT] bridge: Phi_2 + Phi_70 = 2[delta^2 + Delta^2 - (v_0 v_2 + v_1 v_3)] on S^3 x S^3, delta = P0Q3 + P1Q2, Delta = P2Q1 + P3Q0 (homogenised identity of bidegree (4,4))
+[PASS] [EXACT] (v_0 + v_1)(v_1 + v_2) = v_0 v_2 - v_1 v_3 + v_1 (v_0+v_1+v_2+v_3): on sum v = 0, x_2 x_12 = v_0 v_2 - v_1 v_3
+[PASS] [EXACT] increment lemma: (r^2+u^2)(s^2+w^2) - (rs + uw)^2 = (rw - us)^2, i.e. sqrt((R+U)(S+W)) - sqrt(RS) >= sqrt(UW) for R, S, U, W >= 0
+[INFO] PROOF-READ (so4-atoms.md 3.2): Phi_2 + Phi_70 + 2|x_12 x_2| = 2[delta^2 + Delta^2 - 2 min(v0v2, v1v3)]. If the min is <= 0, done.  Otherwise (sum v = 0) v0, v2 < 0 < v1, v3 or the reverse; in the first case with a_i = P_i^2, A_i = Q_i^2: |delta| >= |X|, |Delta| >= |Y|, X = sqrt(a1A2) - sqrt(a0A3), Y = sqrt(a3A0) - sqrt(a2A1), and X + Y = [sqrt((A1+v1)(a2-v2)) - sqrt(A1a2)] + [sqrt((A3+v3)(a0-v0)) - sqrt(A3a0)] >= sqrt(-v1v2) + sqrt(-v3v0) > 0, hence delta^2 + Delta^2 >= (X+Y)^2/2 >= 2 sqrt(v0v1v2v3) >= 2 min(v0v2, v1v3).  The reverse case exchanges a and A.
+[PASS] [EXACT] identification with inequality (star) of ../../star-orthogonal (Theorem O): there are relabellings O -> O~ (row and column permutations, with or without transposition) with Phi_70 = g0(O~), Phi_2 = D[12,12](O~) and Phi_12 = D[13,14](O~) (resp. Phi_39 = D[13,14](O~)) at all 24 permutation matrices, hence on SO(4) (both sides are Leibniz sums of vectors of V_R with the same 24 values); (star) for O~ in O(4) is then the old-H inequality for (f12; f2; f70) (resp. (f39; f2; f70))  ::  4 and 4 relabellings, e.g. [(0, (0, 2, 3, 1), (3, 2, 0, 1))] and [(0, (1, 3, 2, 0), (1, 0, 2, 3))]
+[PASS] [EXACT] allocation of (H): with d_b = d b/(b+c), d_c = d c/(b+c): d_b + d_c = d and d_b + d_b^2/b + d_c + d_c^2/c = d + d^2/(b+c)
+[INFO] PROOF-READ: if b, c > 0 and a >= d + d^2/(b+c), put a_b = d_b + d_b^2/b, a_c = d_c + d_c^2/c (a_b + a_c <= a); then g = [a_b f2 + b f12 + d_b f70] + [a_c f2 + c f39 + d_c f70] + (a - a_b - a_c) f2 + p f0 + r f1 + q f67 + s f72, the two brackets satisfy the old-H coefficient condition t(c' - d') >= d'^2 with equality, and the rest are minors.  If c = 0 < b (or b = 0 < c), (H) is the old-H condition for (f12; f2; f70) (or (f39; f2; f70)) itself: no continuity argument is needed.  If b = c = 0, (H) is void.
+
+--- Conditions (PB), (CQ) (document p. 1): the degree-six Gram identities, verified exactly from the supplement's certificate data
+[PASS] [EXACT] certificate data refer to this face: contacts [2, 3, 5, 9, 10, 12], source order [0, 1, 2, 12, 39, 67, 70, 72]
+[PASS] [EXACT] data: 2 x 8 features, each a homogeneous cubic in (p0..p3, q0..q3) with coefficients in (1/2)Z (parsed by a strict term parser)
+[PASS] [EXACT] data: T is an invertible 8 x 8 rational matrix and T^{-1} is an integer matrix
+[PASS] [EXACT] data: four signed coordinate permutations S_0..S_3 of (p0..p3, q0..q3)
+[PASS] [EXACT] (information) S_j is (p, q) -> (e p, q conj(e)) for e = 1, i, j, k
+[PASS] [EXACT] reduction modulo N = |p|^2 - |q|^2 is a normal form (N -> 0, p0^3 -> p0(|q|^2 - ...))
+[PASS] [EXACT] model x -> p x q (own quaternion multiplication): M^t M = |p|^2|q|^2 I and det M = (|p|^2|q|^2)^2; so O = M is in SO(4) for unit p, q (and every O in SO(4) arises: double cover S^3 x S^3 -> SO(4), CITED)
+[PASS] [EXACT] Gram identity, minors: 2 Phi_k(M(y)) = |p|^2 Gamma_kk(y) modulo N for the seven minor generators k (Gamma_kl = sum over 2 parities and 4 maps of u_k u_l, u = T^{-1} F(S_j y))
+[PASS] [EXACT] Gram identity (PB): 2 Phi_70(M(y)) = |p|^2 (Gamma_66 - 2 Gamma_02 - 2 Gamma_23) modulo N (positions: 0 = f0 (p), 2 = f2 (a), 3 = f12 (b), 6 = f70 (d)): the document's Gram matrix with G_02 = G_23 = -d
+[PASS] [EXACT] Gram identity (CQ): 2 Phi_70(M(y)) = |p|^2 (Gamma_66 + 2 Gamma_24 - 2 Gamma_25) modulo N (positions: 4 = f39 (c), 5 = f67 (q)): the document's Gram matrix with G_24 = +d, G_25 = -d
+[PASS] [EXACT] control: with the sign of G_23 flipped the (PB) identity fails (the check is not vacuous)
+[PASS] [EXACT] x^t G_PB x = p(x0 - d x2/p)^2 + b(x3 - d x2/b)^2 + (a - d^2/p - d^2/b) x2^2 + (squares with coefficients r, c, q, d, s): G_PB is positive semidefinite when p, b > 0 and (PB) holds
+[PASS] [EXACT] x^t G_CQ x = c(x4 + d x2/c)^2 + q(x5 - d x2/q)^2 + (a - d^2/c - d^2/q) x2^2 + (squares with coefficients p, r, b, d, s): G_CQ is positive semidefinite when c, q > 0 and (CQ) holds
+[INFO] PROOF-READ: for unit p, q (N = 0, |p| = 1) and g as in (1): 2 Phi_g(O) = sum over the 8 pairs (parity, map) of u^t G u with G = G_PB or G_CQ (linear in the coefficients; follows from the identities above), which is >= 0 when G is positive semidefinite.  Pointwise form: 2 Phi_70 >= -2<u_0,u_2> - 2<u_2,u_3> >= -4|x_2|(|x_0| + |x_12|) since |u_k|^2 = 2 x_k^2.
+[PASS] [EXACT] consistency: (leaves f67, f39; centre f2; f70) of (CQ) is the image under g* of (leaves f0, f12; centre f2; f70) of (PB); the orbit of the chain configuration has 576 elements (leaves unordered), as stated in PROOF.md 7.6  ::  576
+
+--- The necessary radial equation (document p. 2): restricted cubic, exclusion of Q = 0, Hessian determinant, the polynomial R9
+[PASS] [EXACT] the lift v of g = p f0 + ... + s f72 to V_R (unique preimage under P) has integer coordinates in (p, ..., s)
+[PASS] [EXACT] C(v + h kappa) = C + h Q identically, with the document's Q = (a-U)M - dU and C = bc(a-U) - b(d+r)(d+q+s) - c(d+s)(d+p+r) - d(d+p+r)(d+q+s) (U = d+r+s, M = b+c), for the paper's cubic (A.2) with its sign
+[PASS] [EXACT] Q = v_0 v_6 - v_1 v_5 = (1/2) v^t Hess C(kappa) v
+[PASS] [EXACT] M C - bc Q = bc dU - M [b(d+r)(d+q+s) + c(d+s)(d+p+r) + d(d+p+r)(d+q+s)] identically
+[PASS] [EXACT] -(M C - bc Q) is a polynomial with nonnegative coefficients (38 terms) containing b d^3 and c d^3: so Q = 0, M > 0, d > 0 force M C < 0, i.e. C != 0
+[PASS] [EXACT] at b = c = 0: Q = -d(d + r + s) < 0 for d > 0
+[INFO] PROOF-READ: for x in X with c(x) = g and d > 0, u = Re x = v + H kappa (H = Re F_pi*(x)) satisfies C(u) = 0, so C + HQ = 0; by the two checks above Q != 0, hence H = -C/Q
+[PASS] [EXACT] det Hess C(v + h kappa): computed by division-free Laplace expansion (14 x 14, entries linear in 9 variables): 17695 terms, homogeneous of degree 14, degree 3 in h  ::  3.2 s
+[PASS] [EXACT] control: the determinant polynomial agrees with Gaussian elimination over Q at 3 random integer points (independent of the Laplace code)
+[PASS] [EXACT] Hessian identity: Q^4 det Hess C(v - (C/Q) kappa) = -4 Q^2 R9^2 (the document's Q^3 det = -4 Q R9^2), with R9 computed here as an exact square root (5014 terms) and exact quotient by Q  ::  6.9 s
+[PASS] [EXACT] R9 (own): 1381 terms, homogeneous of degree 9, free of h, degree 2 in a, coefficient of d^9 equal to +1
+[PASS] [EXACT] comparison with the supplement's data (variables ['p', 'r', 'a', 'b', 'c', 'q', 'd', 's', 'h']): its stored R9 equals the R9 computed here (same sign normalisation), its stored C, Q equal the document's, its stored lift equals the lift computed here
+[INFO] PROOF-READ: det Hess C(u) = 0 at u = v - (C/Q) kappa (radial necessity; u != 0 since g != 0), so R9(p, r, a, b, c, q, d, s) = 0 for every x in X with c(x) = g in N_T and d > 0
+
+--- The polynomial implication (document pp. 2-3, Lemma 2): R9 = 0, d > 0  =>  (H) or (PB) or (CQ)
+[PASS] [EXACT] d = 1 (homogeneity): R9 = k2 a^2 + k1 a + k0 with k0, k1, k2 in Z[p, r, b, c, q, s] (623, 544, 214 terms)
+[PASS] [EXACT] every coefficient of k0 is positive and its constant term is 1 (so k0 >= 1)
+[PASS] [EXACT] at b = c = 0: k2 = 0 and every coefficient of k1 is positive (81 terms): R9(a) > 0 for a >= 0, so no realizable g has b = c = 0 < d
+[PASS] [EXACT] k0, k1, k2 are invariant under (p, b, r) <-> (q, c, s) (the action of g*): the two orders p >= q and q >= p are mirror images (both are expanded below anyway)
+[PASS] [EXACT] Bernstein form: k0 + k1 (tA) + k2 (tA)^2 = b0 (1-t)^2 + 2 b1 t(1-t) + b2 t^2 with b0 = k0, b1 = k0 + k1 A/2, b2 = k0 + k1 A + k2 A^2; for A = n/e: b1 = (2 k0 e + k1 n)/(2e), b2 = (k0 e^2 + k1 n e + k2 n^2)/e^2
+[INFO] PROOF-READ: if b1, b2 >= 0 and b0 = k0 > 0 then R9(a) > 0 for 0 <= a < A (the term b0 (1-t)^2 is positive for t < 1)
+[PASS] [EXACT] chart identities (theta = T/(1+T)): I, II: z = M(1+M theta)/(1+M), M - z = M^2(1-theta)/(1+M), V0 = z(M+1) - M = M^2 theta, P0 = (1+M theta)/((1+M) theta) solves 1/P0 + 1/z = 1 + 1/M, P = P0 + u (I), P = P0 u/(1+u) (II); III: z = M theta/(1+M), M - z = M(1+M-theta)/(1+M), V0 = M(theta - 1); other primary = P W/(1+W)
+[INFO] PROOF-READ (coverage, order p >= q; the other order is the mirror image): put P = p, z = b, X = q in [0, P], c = M - z, A0 = 1 + 1/M, A1 = 1/P + 1/z (+infinity if Pz = 0), V0 = z(M+1) - M. V0 > 0 <=> 1/z < A0, and then A1 <= A0 <=> P >= P0.  Region I = {V0 > 0, P >= P0} uses A = A1; region II = {V0 > 0, 0 <= P <= P0} and region III = {V0 <= 0} use A = A0; in each region A = min(A0, A1) and A is finite and continuous.  The three charts with M > 0, T > 0 (T >= 0 in III), u, W >= 0 cover the regions except z = M (I, II), z = M/(M+1) (III), X = P > 0 and, for II, P = P0; these lie in the closure of the chart images inside the same region, and b1, b2 are continuous there, so b1, b2 >= 0 extend to the closed regions.
+[PASS] [EXACT] Bernstein certificate, order p>=q, chart I, middle numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 24805 coefficients are positive integers (min 1); the count equals the document's table (24805) and the canonical digest equals the one stored in the supplement's data  ::  0.7 s
+[PASS] [EXACT] Bernstein certificate, order p>=q, chart I, endpoint numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 37747 coefficients are positive integers (min 1); the count equals the document's table (37747) and the canonical digest equals the one stored in the supplement's data  ::  1.0 s
+[PASS] [EXACT] Bernstein certificate, order p>=q, chart II, middle numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 38066 coefficients are positive integers (min 1); the count equals the document's table (38066) and the canonical digest equals the one stored in the supplement's data  ::  1.0 s
+[PASS] [EXACT] Bernstein certificate, order p>=q, chart II, endpoint numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 52638 coefficients are positive integers (min 1); the count equals the document's table (52638) and the canonical digest equals the one stored in the supplement's data  ::  1.4 s
+[PASS] [EXACT] Bernstein certificate, order p>=q, chart III, middle numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 10902 coefficients are positive integers (min 1); the count equals the document's table (10902) and the canonical digest equals the one stored in the supplement's data  ::  0.3 s
+[PASS] [EXACT] Bernstein certificate, order p>=q, chart III, endpoint numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 16934 coefficients are positive integers (min 1); the count equals the document's table (16934) and the canonical digest equals the one stored in the supplement's data  ::  0.5 s
+[PASS] [EXACT] Bernstein certificate, order q>=p, chart I, middle numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 24805 coefficients are positive integers (min 1); the count equals the document's table (24805) and the canonical digest equals the one stored in the supplement's data  ::  0.7 s
+[PASS] [EXACT] Bernstein certificate, order q>=p, chart I, endpoint numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 37747 coefficients are positive integers (min 1); the count equals the document's table (37747) and the canonical digest equals the one stored in the supplement's data  ::  1.0 s
+[PASS] [EXACT] Bernstein certificate, order q>=p, chart II, middle numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 38066 coefficients are positive integers (min 1); the count equals the document's table (38066) and the canonical digest equals the one stored in the supplement's data  ::  1.0 s
+[PASS] [EXACT] Bernstein certificate, order q>=p, chart II, endpoint numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 52638 coefficients are positive integers (min 1); the count equals the document's table (52638) and the canonical digest equals the one stored in the supplement's data  ::  1.4 s
+[PASS] [EXACT] Bernstein certificate, order q>=p, chart III, middle numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 10902 coefficients are positive integers (min 1); the count equals the document's table (10902) and the canonical digest equals the one stored in the supplement's data  ::  0.3 s
+[PASS] [EXACT] Bernstein certificate, order q>=p, chart III, endpoint numerator: after the substitution and multiplication by prod_i den_i^{deg_i} (a positive polynomial) all 16934 coefficients are positive integers (min 1); the count equals the document's table (16934) and the canonical digest equals the one stored in the supplement's data  ::  0.4 s
+[PASS] [EXACT] control of the twelve substitutions: at one random positive rational point each (seed 3402) the expanded numerator equals prod_i den_i^{deg_i} times the Bernstein numerator evaluated at the chart point, and the multiplier is positive (exact rational evaluation, independent of the expansion code and of the supplement's digests)
+[PASS] [EXACT] closed regions: at 1200 rational points (seed 3401; both orders; boundaries z = M, X = P, P = P0, P = 0, z = 0, V0 = 0 and combinations, r or s = 0 allowed, plus interior points) the selected threshold is min(A0, A1), b1 >= 0, b2 >= 0, k0 >= 1 and R9(tA) > 0 for a random t in [0, 1) (exact rational evaluation of own k0, k1, k2)  ::  smallest Bernstein coefficient met: 5.557303255208334
+
+--- NUMERIC falsification attempts (floating point; evidence, not proof)
+[PASS] [NUMERIC] sampler: 300000 matrices from unit quaternion pairs are orthogonal (max defect 1.1e-15) and Phi_2 = x_2^2 (tolerance 1e-12)
+[PASS] [NUMERIC] pointwise old-H (f12; f2; f70) >= 0 on SO(4): 300000 random samples (seed 20261134), then Nelder-Mead from the 40 smallest; minimum found 3.248e-31 (tolerance -1e-10)
+[PASS] [NUMERIC] pointwise old-H (f39; f2; f70) >= 0 on SO(4): 300000 random samples (seed 20261134), then Nelder-Mead from the 40 smallest; minimum found 2.889e-32 (tolerance -1e-10)
+[PASS] [NUMERIC] pointwise chain (f0, f12; f2; f70) = (PB) >= 0 on SO(4): 300000 random samples (seed 20261134), then Nelder-Mead from the 40 smallest; minimum found 7.214e-30 (tolerance -1e-10)
+[PASS] [NUMERIC] pointwise chain (f67, f39; f2; f70) = (CQ) >= 0 on SO(4): 300000 random samples (seed 20261134), then Nelder-Mead from the 40 smallest; minimum found 9.707e-31 (tolerance -1e-10)
+[PASS] [NUMERIC] coefficient forms with equality in (H), resp. (PB), resp. (CQ): 300 random coefficient vectors each (seed 20261135; log-uniform in [1e-2, 1e2], each coefficient set to 0 with probability 1/4 where the condition allows) on 40000 rotations: smallest Phi_g / (sum of coefficients) = 8.01e-07, 8.51e-07, 8.05e-07; after Nelder-Mead from the 2 smallest samples of the first 12 vectors: 3.37e-39, 8.44e-35, 4.39e-39 (tolerance -1e-10)
+[PASS] [NUMERIC] Lemma 2: 60000 random points (seed 20261136; d = 1, other coefficients log-uniform in [10^-2.5, 10^2.5] or 0 with probability 0.12; a = t min(A0, A1), t in [0, 1), or a in [0, 5) when b = c = 0): R9 > 0 at all of them; smallest R9 / (sum of |terms|) = 9.17e-03
+[PASS] [NUMERIC] Lemma 2 through the roots: on the same coefficient vectors, 11561 have a positive root a of R9 (d = 1); the smallest positive root divided by min(A0, A1) is >= 1.006943 at all of them (the lemma asserts >= 1; tolerance 1e-9); no positive root when b = c = 0 (860 vectors)
+[PASS] [NUMERIC] Q = 0 exclusion on the same vectors with M > 0 (a chosen so that Q = 0): C < 0 at all 59140 of them
+[PASS] [NUMERIC] Section 2 on actual points of X: 120 points x = alpha Psi(a, b) (Levenberg-Marquardt from 120 random starts, seed 20261137) whose gaps vanish on T, WITHOUT sign conditions on the other gaps (the identities of Section 2 are polynomial, so C + HQ = 0 and, where Q != 0, R9 = 0 must hold there for coefficients of either sign; 120 of the points have a negative coefficient, 106 have |d| > 1e-3 in the normalisation sum of squared gaps = 1, 6 are degenerate points at which every monomial of R9 vanishes): max |C + HQ| / (sum of |terms|) = 2.0e-12, max |R9| / (sum of |terms|) = 5.4e-13 over the other points (tolerance 1e-9)
+[PASS] [NUMERIC] points of the stratum itself: Levenberg-Marquardt search (300 starts, seed 20261138) for x = alpha Psi(a, b) with gaps 0 on T and every other gap >= 0.01 times the mean gap: 6 points found (contact set exactly T; d between 0.010 and 0.030 of the mean gap).  At all of them |C + HQ| / (sum of |terms|) <= 7.6e-12, |R9| / (sum of |terms|) <= 7.4e-12 (tolerance 1e-9), and a >= the smallest of the three thresholds (ratio between 72 and 1986; all three conditions hold at 6 of the points)
+[INFO] the stratum is therefore not empty for d > 0; at the points found d is at or near the imposed lower bound and the conditions hold with a large margin, so these points do not probe the thresholds (the thresholds are probed by the algebraic tests above)
+
+FINAL: PASS  (101 checks, 155.7 s)
