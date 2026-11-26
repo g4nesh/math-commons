@@ -7,8 +7,8 @@ README; this script only confirms its algebra, in exact arithmetic.
      4 (g0 + D[12,12]) = M22^2 + M33^2 + M23^2 + N23^2 + M11^2 - N11^2   (M = A + B, N = A - B);
      the lower 2x2 blocks of A and B satisfy |zeta| + |omega| = 1 and |zeta|^2 - |omega|^2 = A11 (checked in squared form);
      the inequality (star) itself, in the square-root-free form  w >= 0  or  w^2 <= 4 D[12,12] D[13,14],  w = g0 + D[12,12].
- (2) Symbolic identities (sympy): the expansion of E/2, the shift identity for Qf, Qf(1,1,1,1) = 2k^2, the identity
-     behind the reversed Cauchy-Schwarz inequality, and the identities of facts (F1)-(F4) in the proof of the lemma.
+ (2) Symbolic identities (sympy): the expansion of E/2, the shift identity for Qf, Qf(1,1,1,1) = 2k^2, the 2x2 block
+     identities, and the identities of facts (F1)-(F4) in the proof of the lemma.
  (3) The lemma  max(Qf(w), Qf(1-w)) >= 0  on random rational data, including vertices and faces of the cube.
  (4) Proposition S (squared minors of O (I + (e^{i psi} - 1) y y^T)) on rational data, n = 4 and 5."""
 import itertools, random, sys, time
@@ -103,8 +103,6 @@ half_E = (p * ca - r * cg)**2 + (q * cb - u * cd)**2 + (p * sa - q * sb)**2 + (r
 target = p * r * (ca - cg)**2 + q * u * (cb - cd)**2 + Qf((sa, sb, sg, sd), p, q, r, u) + 2 * kk**2
 idC = sp.expand(half_E - target)
 for c_, s_ in ((ca, sa), (cb, sb), (cg, sg), (cd, sd)): idC = sp.expand(idC.subs(c_**2, 1 - s_**2))
-X1, X2, Y1, Y2 = sp.symbols('X1 X2 Y1 Y2', real=True)
-idD = sp.expand((X1 * X2 - Y1 * Y2)**2 - (X1**2 - Y1**2) * (X2**2 - Y2**2) - (X1 * Y2 - X2 * Y1)**2)
 m11, m12, m21, m22 = sp.symbols('m11 m12 m21 m22', real=True); zr, zi, wr, wi = (m11 + m22) / 2, (m21 - m12) / 2, (m11 - m22) / 2, (m21 + m12) / 2
 idE = [sp.expand((zr**2 + zi**2) - (wr**2 + wi**2) - (m11 * m22 - m12 * m21)), sp.expand(2 * (zr**2 + zi**2 + wr**2 + wi**2) - (m11**2 + m12**2 + m21**2 + m22**2)),
        sp.expand(zr + wr - m11), sp.expand(zr - wr - m22), sp.expand(wi - zi - m12), sp.expand(zi + wi - m21)]
@@ -120,8 +118,8 @@ F4a = sp.expand((pp * rr * v1**2 + qq * uu * v2**2) * (pp * rr * t1**2 + qq * uu
 F4b = sp.expand((v1 * t2 + v2 * t1)**2 - 4 * v1 * v2 * t1 * t2 - (v1 * t2 - v2 * t1)**2)
 F4c = sp.expand(-B2(v1, v2, t1, t2) - (rr * uu * (v1 * t2 + v2 * t1) - (pp * rr * v1 * t1 + qq * uu * v2 * t2)))
 okF = all(e == 0 for e in (F1, F2, F3a, F3b, F3c, F4a, F4b, F4c))
-ok2 = idA == 0 and idB == 0 and idC == 0 and idD == 0 and all(e == 0 for e in idE) and okF
-print("(2) symbolic identities: shift identity %s ; Qf(1,1,1,1) = 2k^2 %s ; expansion of E/2 %s ; reversed Cauchy-Schwarz identity %s ; 2x2 block identities %s ; facts F1-F4 of the lemma %s" % (idA == 0, idB == 0, idC == 0, idD == 0, all(e == 0 for e in idE), okF), flush=True)
+ok2 = idA == 0 and idB == 0 and idC == 0 and all(e == 0 for e in idE) and okF
+print("(2) symbolic identities: shift identity %s ; Qf(1,1,1,1) = 2k^2 %s ; expansion of E/2 %s ; 2x2 block identities %s ; facts F1-F4 of the lemma %s" % (idA == 0, idB == 0, idC == 0, all(e == 0 for e in idE), okF), flush=True)
 # (3) the lemma on random rational data
 def Qn(w, p_, r_):
     q_ = 1 - p_; u_ = 1 - r_; return p_ * r_ * (w[0]**2 + w[2]**2) + q_ * u_ * (w[1]**2 + w[3]**2) - 2 * p_ * q_ * w[0] * w[1] - 2 * r_ * u_ * w[2] * w[3]

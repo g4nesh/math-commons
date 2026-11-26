@@ -1,6 +1,6 @@
 (1) 400 rational matrices in SO(4), each also with one row negated: structure, formulas or (star) failing at 0 ; cases with g0 + D[12,12] < 0: 0  [1s]
 (1b) 3000 rational orthogonal matrices in and near the hard region: (star) failing at 0 ; cases with g0 + D[12,12] < 0, where the square-root term is needed: 1063 ; smallest 4 D12 D13 - w^2 among them: about 4.498e-04  [2s]
-(2) symbolic identities: shift identity True ; Qf(1,1,1,1) = 2k^2 True ; expansion of E/2 True ; reversed Cauchy-Schwarz identity True ; 2x2 block identities True ; facts F1-F4 of the lemma True
+(2) symbolic identities: shift identity True ; Qf(1,1,1,1) = 2k^2 True ; expansion of E/2 True ; 2x2 block identities True ; facts F1-F4 of the lemma True
 (3) lemma: max(Qf(w), Qf(1-w)) < 0 in 0 of 200000 random rational cases ; smallest value 0  [12s]
-(4) Proposition S: 1758 minors of sizes 1 to 3 for n = 4 and 5 (12 rational examples): mismatches 0  [13s]
+(4) Proposition S: 1758 minors of sizes 1 to 3 for n = 4 and 5 (12 rational examples): mismatches 0  [12s]
 ALL CHECKS PASSED

@@ -114,11 +114,17 @@ Let A and B be its matrices on the two subspaces. They are orthogonal, and they 
 
 > Let X be a real symmetric 4×4 matrix with eigenvalues c₁,…,c₄. Then the vector of all principal minors of X lies in the convex hull of the vectors (∏_{t∈T} c_{π(t)})_T, π ∈ S₄.
 
-*Proof.* Write X = O·D_c·Oᵀ with O ∈ O(4). Steps 5 and 6 of Theorem EQ ([`../pmsh/equivalence.md`](../pmsh/equivalence.md)) produce a certificate for H = U·D_c·U* from (★) at the 1,152 matrices P_αUP_β and their transposes. For U = O these are real orthogonal, and Theorem O applies. ∎
+*Proof.* Write X = O·D_c·Oᵀ with O ∈ O(4), and apply the following local form of Theorem EQ to U = O: its 1,152 matrices are real orthogonal, and Theorem O applies to each. ∎
+
+> **Lemma (Theorem EQ, local form).** Let U be a 4×4 unitary such that (★) holds at the 576 matrices P_αUP_β (α, β ∈ S₄) and at their 576 transposes. Then for every real c the matrix H = U·D_c·U* has a PMSH certificate.
+
+*Proof.* This is what Steps 5 and 6 of the proof of Theorem EQ in [`../pmsh/equivalence.md`](../pmsh/equivalence.md) show. Step 5, item 1, uses (★) only at these 1,152 matrices. Items 2–4 use only x(U) ∈ aff(Q) and the facet lists. Step 6 passes to limits in c with U fixed. The statement of Theorem EQ there is the global one; the local form is not stated there. ∎
 
 **The Schur–Horn conjecture in four variables.** Blekherman, Kummer, Sanyal, Shu and Sun (*Linear principal minor polynomials*, arXiv:2112.13321, Section 7.4) say that a homogeneous multiaffine polynomial p = Σ_J a_J·x^J has the *Schur–Horn property* if max_π p(π(λ)) ≥ Σ_J a_J·det X_J for every real symmetric X with eigenvalue vector λ. They prove it in degree 1 (the classical theorem), in degree n − 1 (their Theorem 7.13) and for ±e_d (Proposition 7.15), and conjecture it for all such p. By the support-function description of a convex hull, the property for all p of degree d in n variables is the statement that the vector of d×d principal minors lies in the hull of the permuted products. So:
 
-> **Corollary 1′.** Every homogeneous multiaffine polynomial in four variables has the Schur–Horn property. The new case is degree 2.
+> **Corollary 1′.** Every homogeneous multiaffine polynomial in four variables has the Schur–Horn property. The new case is the general polynomial of degree 2.
+
+In degree 2 and four variables that paper already has ±e₂ (Proposition 7.15) and, as reported by a literature search in this session, x₁(x₂+x₃) (its Lemma 7.17); the general conjecture is its Conjecture 9.10 in the arXiv version. I read Section 7.4 through Lemma 7.16 of the arXiv version; the later items are second-hand.
 
 Corollary 1 is stronger: one weight vector serves all sizes of minors at once.
 
@@ -136,7 +142,7 @@ The spectrum of A is arbitrary. Examples: A complex symmetric and normal, B real
 
   |det U[I,J]|² = λ·|det O₋[I,J]|² + (1 − λ)·|det O₊[I,J]|².
 
-Its status in this repository: two referee reports by another GitHub owner in [pull request 25](https://github.com/g4nesh/math-commons/pull/25) (`zheng-n4-audit/foundations/theorem-1-2.md` and `theorem-1-2-second.md`) both conclude that it is proved as written. That pull request is not merged, and I have not checked the proof myself.
+Its status in this repository: two referee reports by another GitHub owner, merged with pull request 25 at commit 5217304, both conclude that it is proved as written: [`../zheng-n4-audit/foundations/theorem-1-2.md`](../zheng-n4-audit/foundations/theorem-1-2.md) and [`theorem-1-2-second.md`](../zheng-n4-audit/foundations/theorem-1-2-second.md). I have not checked the proof myself.
 
 > **Theorem H.** Assume Zheng's Theorem 1.2. Then (★) holds for every U ∈ U(4). Consequently PMSH(4) holds for every Hermitian 4×4 matrix, and the Marcus–de Oliveira inclusion holds for n = 4 whenever one of the two normal matrices has its eigenvalues on a line, with weights that do not depend on the other spectrum.
 
@@ -170,7 +176,7 @@ Let 𝒲₄ be the set of 4×4 unitaries of the form D₁·O·(I + (e^{iψ} − 
 | Corollaries 1, 1′, 2 | Theorem O and Theorem EQ, Steps 1, 2, 4, 5, 6 (same author, in review; computational inputs exact) | computer-assisted via Theorem EQ |
 | Proposition S, Theorem W | this file; Theorem O; Theorem EQ | written proof; unconditional, on the explicit set 𝒲₄ |
 | 𝒲₄ = U(4) | `factorize.py` | **numerical observation only** |
-| Theorem H | Theorem O, Theorem EQ, and Zheng's Theorem 1.2 (external; two positive referee reports in PR 25) | conditional |
+| Theorem H | Theorem O, Theorem EQ, and Zheng's Theorem 1.2 (external; two positive referee reports on main, in `../zheng-n4-audit/foundations/`) | conditional |
 
 **Checks (`check_orthogonal.py`, exact arithmetic; log in [`logs/check_orthogonal.txt`](logs/check_orthogonal.txt)).**
 - 400 rational matrices in SO(4), each also with one row negated: the block structure A ⊕ B, A, B ∈ SO(3), the formulas for D, the block identities of Step 1, and (★) in square-root-free form.
@@ -180,6 +186,17 @@ Let 𝒲₄ be the set of 4×4 unitaries of the form D₁·O·(I + (e^{iψ} − 
 - Proposition S at 1,758 minors of rational examples with n = 4 and 5.
 
 Numerical sanity checks, not part of the proof (`numeric_orthogonal.py`): the minimum of E over SO(3) × SO(3) is 0 to 10⁻¹⁴; the PMSH certificate LP is feasible for random real symmetric matrices, including spectra with cross-ratio far below 1/10.
+
+## Internal adversarial re-check (same owner; not an independent review)
+
+A separate agent under the same GitHub owner was asked to break the proof. It found no mathematical flaw. This does not replace the review by another owner. What it did, with its own code:
+- Read Lemma L, Steps 1–4 and the Hodge-star argument line by line, including the degenerate cases (zeros among p, q, r, u; A₁₁ = ±1) and every strict inequality.
+- Lemma L on an exact integer grid of 405,769 points (minimum exactly 0) and by optimization. **Both hypotheses are needed:** with w outside the cube by 1/10, (p,q,r,u) = (0, 1, 19/20, 1/20) and w = (1/2, 0, −1/10, −1/10) give Q(w) = −9/20000 and Q(𝟙 − w) = −89/20000; without p + q = r + u, (1,1,0,0) gives −1/2 for both.
+- Theorem O′ needs det A = det B = 1: A = I, B = −I gives E = −4.
+- Theorem O on 300,000 Haar matrices of O(4), 1,200 local minimizations, signed permutations, Drury's family with all symmetric images, products of disjoint Givens rotations, and matrices with zero patterns: the margin is never below −2·10⁻¹⁵.
+- The certificate LP on 3,000 real symmetric matrices, with negative controls; Corollary 2 on 1,500 random pairs.
+
+Its non-mathematical points are all taken up above: the audit of Zheng's theorem is merged; the local form of Theorem EQ is stated as a lemma; the citation for Corollary 1′ is made precise.
 
 ## Relation to other work here
 
