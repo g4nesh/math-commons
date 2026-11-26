@@ -1,0 +1,16 @@
+name: Verify fourth-eigenvalue stability
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  exact-stability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay six exact bounds and original determinant endpoint tests
+        run: python3 -B -m unittest discover -s research/marcus-de-oliveira/fourth-three-free-stability -p 'test_*.py' -v
