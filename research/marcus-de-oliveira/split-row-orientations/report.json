@@ -1,0 +1,44 @@
+{
+  "scope": "one fixed coarse unitary, every U(2) orientation of its last row plane",
+  "canonical_response_shape": [
+    33,
+    4
+  ],
+  "odd_response_shape": [
+    12,
+    3
+  ],
+  "moment_response_shape": [
+    6,
+    3
+  ],
+  "support_normal_directions": 31,
+  "uniform_child_mass_floor": "1/20000",
+  "all_orientation_entrywise_unitary_radius": "1/53760000",
+  "nearby_child_mass_floor": "1/40000",
+  "minimum_parent_mass": "544132018463522/1430557172314453125",
+  "minimum_reduced_squared_slack": "105334129914171950851804901039811769/4427849400851811351275024414062500000000",
+  "mixed_exact_SU2_directions": [
+    [
+      "17103600/19088161",
+      "486720/19088161",
+      "8460961/19088161"
+    ],
+    [
+      "6353928/10975969",
+      "-8948016/10975969",
+      "180289/10975969"
+    ],
+    [
+      "-16/45",
+      "172/225",
+      "121/225"
+    ]
+  ],
+  "vertex_candidates_tested": [
+    326,
+    538,
+    1153
+  ],
+  "polynomial_coefficients_per_fixture": 192
+}
