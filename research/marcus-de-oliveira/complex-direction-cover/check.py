@@ -59,7 +59,8 @@ def verify_patch(patch):
     chart = patch["chart"]
     lo, hi = map(F, patch["interval"])
     degree = patch["degree"]
-    assert chart in ("h", "v") and -1 <= lo < hi <= 1 and 1 <= degree <= 10
+    if chart not in ("h", "v") or not -1 <= lo < hi <= 1 or not 1 <= degree <= 10:
+        raise AssertionError("Invalid chart, direction interval or Bernstein degree")
     totals = {}
     roots = {j: None for j in range(degree+1)}
     used = set()
@@ -67,15 +68,19 @@ def verify_patch(patch):
         w = F(weight)
         c = tuple(map(F, origin))
         p = tuple(int(i)-1 for i in word)
-        assert w > 0 and 0 <= control <= degree and tuple(sorted(c)) == c
-        assert (control, word, c) not in used
+        if w <= 0 or not 0 <= control <= degree or tuple(sorted(c)) != c:
+            raise AssertionError("Invalid weight, Bernstein control index or center order")
+        if (control, word, c) in used:
+            raise AssertionError("Duplicate radial term in the patch")
         used.add((control, word, c))
         idx = atlas.PERMS.index(p)
         roots[control] = set(c) if roots[control] is None else roots[control].intersection(c)
         for key, value in column(chart, lo, hi, degree, control, c, idx).items():
             totals[key] = totals.get(key, F(0))+w*value
-    assert {k: v for k, v in totals.items() if v} == {("mass", j): F(1) for j in roots}
-    assert all(r == set() for r in roots.values())
+    if {k: v for k, v in totals.items() if v} != {("mass", j): F(1) for j in roots}:
+        raise AssertionError("Mass normalization or the mixed polynomial identity failed")
+    if any(r != set() for r in roots.values()):
+        raise AssertionError("A Bernstein control has missing terms or a common real root")
     return chart, lo, hi
 
 
@@ -109,7 +114,8 @@ def weights_at(real, imag, patches=None):
                     w *= (radius-F(center))**2
                 result[word] = result.get(word, F(0))+w
             total = sum(result.values())
-            assert total > 0
+            if total <= 0:
+                raise AssertionError("Pairing weights have a nonpositive total")
             return {word: w/total for word, w in result.items() if w}
     raise ValueError("No supplied certificate covers this direction")
 
@@ -119,8 +125,10 @@ def main():
     verified = [verify_patch(p) for p in data]
     for chart in ("h", "v"):
         ranges = sorted((a, b) for c, a, b in verified if c == chart)
-        assert ranges == [(F(-1), F(-1, 2)), (F(-1, 2), F(0)),
-                          (F(0), F(1, 2)), (F(1, 2), F(1))]
+        expected = [(F(-1), F(-1, 2)), (F(-1, 2), F(0)),
+                    (F(0), F(1, 2)), (F(1, 2), F(1))]
+        if ranges != expected:
+            raise AssertionError(f"Unexpected intervals in chart {chart}")
         print(chart, " ".join(f"[{a},{b}]" for a, b in ranges))
     print(f"Verified all mixed-polynomial coefficients for {len(data)} patches covering every complex direction.")
 

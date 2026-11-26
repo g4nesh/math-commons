@@ -9,6 +9,13 @@ from math import comb
 from pathlib import Path
 import hashlib
 import json
+
+if not __debug__:
+    raise SystemExit(
+        "Certificate checks require assertions. From the repository root run "
+        "python3 -E -B research/marcus-de-oliveira/complex-direction-cover/grid_replay.py"
+    )
+
 SOURCE = Path(__file__).with_name('patches.json')
 ZERO = (F(0), F(0))
 ONE = (F(1), F(0))

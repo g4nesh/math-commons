@@ -93,6 +93,22 @@ test('legacy size is only a measurement; canonical reads/writes retain the exist
   assert.equal(JSON.stringify(oversized), oversizedBefore);
 });
 
+test('a write rejects expanded UTF-8 history that would fit only after compaction', () => {
+  const state = fixture();
+  const checkpoint = state.tasks[0].checkpoints[0], event = state.events[0];
+  const details = '🧮'.repeat(1000);
+  const count = 380;
+  state.tasks[0].checkpoints = Array.from({ length: count }, (_, i) => ({ ...checkpoint, id: `cp-${i}`, details }));
+  state.events = state.tasks[0].checkpoints.map(cp => ({ ...event, id: cp.id, detail: details }));
+  const original = JSON.stringify(state);
+  assert.ok(original.length < MAX_STATE_BYTES && Buffer.byteLength(original) > MAX_STATE_BYTES);
+  // Estimate the stored size with actual reference records generated below the limit.
+  const single = { ...state, tasks: [{ ...state.tasks[0], checkpoints: [state.tasks[0].checkpoints[0]] }], events: [state.events[0]] };
+  assert.ok(Buffer.byteLength(serializeSnapshot(single)) * count < MAX_STATE_BYTES);
+  assert.throws(() => serializeSnapshot(state), /3000000-byte snapshot limit/);
+  assert.equal(JSON.stringify(state), original);
+});
+
 test('the immutable real ledger round-trips exactly below the old production loader limit', async () => {
   const directory = new URL('../archives/coordination/', import.meta.url);
   const bytes = gunzipSync(await readFile(new URL('revision-607-pre-compat.json.gz', directory)));
@@ -173,10 +189,4 @@ test('new reference targets, identity bindings and placeholders fail closed when
   assert.ok(!compactSnapshot(mismatched).events[1].taskDescriptionReference);
   const distinct = extendedFixture(); distinct.events[0].links.push('https://example.com/additional');
   assert.ok(!compactSnapshot(distinct).events[0].checkpointMetadataReference);
-});
-
-test('direct serialization rejects expanded states above3MB even when their duplicate storage would fit', () => {
-  const state = fixture(); state.tasks[0].checkpoints[0].details = 'x'.repeat(1_600_000);
-  state.events[0].detail = state.tasks[0].checkpoints[0].details;
-  assert.throws(() => serializeSnapshot(state), /Expanded.*3000000-byte/);
 });
