@@ -8,13 +8,20 @@ Task `mdo-pmsh-5-orbits` · agent `ganesh-claude-pmsh` · owner g4nesh · 26 Nov
 - **Proved (hand proof plus exact computation; not independently reviewed):**
   - Lemma A, an inequality on every contraction;
   - from it, 74 of the 92 hard facets found at c = (0, 1/4, 1/2, 3/4, 1), all members of 17 orbits that hold 1,380 facets of P₅(c).
+- **Every hard facet found is now in one of three classes:**
+  - the 17 orbits of Lemma A;
+  - orbit 27, which follows linearly from PMSH(4) (floating-point LP, R2);
+  - 16 obstacle orbits, which need (★)-type inequalities.
 - **Exact (rational arithmetic):** the orbits, the decomposition of every hard facet into facets of the minor polytope Q₅, nine orbits of facets of Q₅ that are new relative to [`../../n5-contact-program/strata/`](../../n5-contact-program/strata/README.md) (PR 115), and R1 at n = 5.
 - **Numerical:**
   - which facets of Q₅ fail on U(5);
   - the spectral families of the hard facets;
   - two closed-form, spectrum-free (★)-type inequalities, for orbits 20 and 21;
   - a family test: no hard facet is crossed at 791 facet–spectrum pairs.
-- **Correction to [`../README.md`](../README.md), N3.** "62 of 92 hard facets do not follow linearly from PMSH(4)" is wrong; the right count is **at most 33**. See R2.
+- **Correction to [`../README.md`](../README.md), N3.** "62 of 92 hard facets do not follow linearly from PMSH(4)" is wrong.
+  - 69 of the 92 do follow; at most **23** do not.
+  - None of the 16 obstacle orbits follows.
+  - See R2.
 
 ## Setting
 
@@ -40,18 +47,25 @@ Task `mdo-pmsh-5-orbits` · agent `ganesh-claude-pmsh` · owner g4nesh · 26 Nov
   - the affine function vanishing on it is one-signed on all 120 vertices.
 - **Coverage.** The harvest reached most orbits through a single member. P₅(c) certainly has more hard orbits than these 34.
 
-### R2. Correction: at most 33 of the 92 hard facets fail to follow linearly from PMSH(4)
+### R2. Correction: at most 23 of the 92 hard facets fail to follow linearly from PMSH(4)
 
 - **Why status is an orbit property.** Over all shifts γ, the constraints that PMSH(4) imposes (README N3 (a), (b)) are invariant under the symmetry group:
   - positions permute the deleted index t;
   - with the spectrum c + 1, the reversal H ↦ 3 − H maps constraint (b) at γ to (b) at −3 − γ.
   So following linearly from PMSH(4) is a property of the whole orbit.
-- **The mixed orbits.** Orbits 1, 2, 6 and 8 (53 of the 92 facets) contain members that the first N3 run cut to ≤ 1 and members it did not cut. Example: a member of orbit 1 with relaxation 1.131579 was cut to 0.99999999932 by the 15-shift grid.
-- **What went wrong.** The finite shift grids were not closed under γ ↦ −3 − γ, so the cut members' certificates were never applied to their images. With orbit 5 (6 facets, all cut), 59 of the 92 follow linearly from PMSH(4); at most **33 (29 orbits)** do not.
-- **Rerun with a reversal-closed 82-shift grid** ([`inherit_orbits.py`](inherit_orbits.py), `logs/inherit_orbits_sym82.txt`). This grid is the 40 log-spaced shifts, their images, 0 and −3.
-  - Orbits 0, 9, 18, 19 and 26 are still exceeded: 1.104, 1.043, 1.194, 1.081, 1.054.
-  - Orbit 1's representative is also not cut (1.099). The shifts that cut it, −1 and −1.5, lie inside the range of c + 1 and are not on this grid. A union grid confirms the cut: `logs/inherit_union_*.txt`; see the table note.
-- **This also shrinks README N3's main claim.** N3 said that 62 hard facets need "new five-dimensional inequalities". By R4, 12 of the 29 remaining orbits follow from one such inequality, Lemma A, which is proved.
+- **Two errors in README N3.**
+  1. *The shift grids were not closed under γ ↦ −3 − γ.* Orbits 1, 2, 6 and 8 (53 facets) contain members that the first N3 run cut and members it did not. Example: a member of orbit 1 with relaxation 1.131579 was cut to 0.99999999932 by the 15-shift grid.
+  2. *The decisive shifts lie inside [−2, −1]*, the range of −(c + 1), where H + γ is indefinite. The 40-shift log grid has only two shifts there, so "stable from 15 to 40 shifts" compared two grids that are both sparse where it matters.
+- **Reruns with reversal-closed grids** ([`inherit_orbits.py`](inherit_orbits.py); sparse HiGHS LPs, one representative per orbit).
+  - One fix was needed first. At a singular shift the full-set coordinate's column vanishes and row scaling blows that row up by 10¹²; the row is a tautology (det(H + γ) is fixed by the spectrum), so it is omitted.
+  - *32 shifts* (the 15 shifts of N3, their images, 0 and −3; `logs/inherit_n3sym.txt`): orbits 0, 1, 2, 5, 6, 7, 8 are cut to 1.000000000.
+  - *50 shifts* (adding 21 equally spaced shifts in [−2, −1], an interval the reversal maps to itself; `logs/inherit_dense.txt`, run on the other 27): orbits 3, 12, 14, 26, 27, 31 are also cut to 1.000000000.
+  - *82 shifts* (the 40 log-spaced shifts and their images, run on six representatives; `logs/inherit_orbits_sym82.txt`): weaker; it does not cut orbits 0 and 1.
+  - A value of exactly 1 is the best possible: every hard facet is touched by U(5) (`../README.md` N1), and the relaxation contains every D(U).
+- **Result.** 13 orbits, holding 69 of the 92 facets, follow linearly from PMSH(4). PMSH(4) is proved (computer-assisted, not independently reviewed; see `../README.md`).
+  - The other 21 orbits (23 facets) are not cut by any grid tried. A denser grid could cut more, so 23 is an upper bound.
+  - **None of the 16 obstacle orbits of R5 is cut.** The cut orbits are 12 of the 17 Lemma-A orbits plus orbit 27.
+- **This also changes README N3's main claim.** N3 said 62 hard facets need "new five-dimensional inequalities". That remains true, as far as tested, only for the 16 obstacle orbits (17 facets). The five Lemma-A orbits not cut by any grid (9, 11, 15, 18, 24) need a five-dimensional inequality too, but it is Lemma A, which is proved.
 
 ### R3. Every hard facet is an exact nonnegative combination of facets of Q₅; nine facet orbits of Q₅ are new
 
@@ -114,7 +128,7 @@ Orbits B–G of the strata README (inequalities there) have minima over U(5) of:
 3. Each g_F(D(U)) ≥ 0 by Lemma A, and every squared minor is ≥ 0. ∎
 
 - **The same holds across spectra (numerical).** By R5 these decompositions keep the same support with positive weights over the whole spectral region tested, so the conclusion extends there.
-- **Orbit 27** decomposes into a facet of N8 and squared minors. It follows from N8 ≥ 0 on U(5), which is numerically true (minimum +3·10⁻¹¹) but not proved.
+- **Orbit 27** decomposes into a facet of N8 and squared minors. It follows linearly from PMSH(4) (R2). It would also follow from N8 ≥ 0 on U(5), which is numerically true (minimum +3·10⁻¹¹) but not proved.
 
 ### R5. Spectral families, and the remaining obstacles
 
@@ -152,12 +166,44 @@ Orbits B–G of the strata README (inequalities there) have minima over U(5) of:
 
 Generated by [`summary.py`](summary.py).
 
-| orbit | size | found | vertices | overshoot | PMSH(4), README N3 grid | PMSH(4), reversal-closed grid | non-minor Q5 facets (weight) | squared minors | status | family max - 1 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-TABLE_PLACEHOLDER
+| orbit | size | found | vertices | overshoot | follows linearly from PMSH(4) | non-minor Q5 facets (weight) | squared minors | status | family max - 1 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | 60 | 1 | 52 | 0.115 | yes (32 shifts) | A (3) | 9 | **proved** (Lemma A) | +9.0e-12 |
+| 1 | 60 | 20 | 72 | 0.132 | yes (32 shifts) | A (1) | 4 | **proved** (Lemma A) | +1.8e-12 |
+| 2 | 60 | 19 | 72 | 0.341 | yes (32 shifts) | A (6) | 4 | **proved** (Lemma A) | +4.5e-13 |
+| 3 | 60 | 2 | 52 | 0.357 | yes (50 shifts) | A (4), A (5) | 4 | **proved** (Lemma A) | +1.9e-10 |
+| 4 | 240 | 1 | 26 | 0.111 | not cut: 1.078 (32), 1.068 (50) | A (888), B (621), D (52), D (59), N4 (177), N4 (795) | 10 | obstacle: B, D, N4 fail on U(5) | +9.6e-13 |
+| 5 | 60 | 6 | 72 | 0.254 | yes (32 shifts) | A (6) | 4 | **proved** (Lemma A) | +1.2e-12 |
+| 6 | 60 | 8 | 72 | 0.104 | yes (32 shifts) | A (1) | 4 | **proved** (Lemma A) | +5.5e-11 |
+| 7 | 60 | 1 | 52 | 0.147 | yes (32 shifts) | A (4) | 7 | **proved** (Lemma A) | +2.3e-11 |
+| 8 | 60 | 6 | 72 | 0.541 | yes (32 shifts) | A (8) | 4 | **proved** (Lemma A) | +3.8e-11 |
+| 9 | 60 | 1 | 52 | 0.047 | not cut: 1.040 (32), 1.040 (50), 1.043 (82) | A (3) | 6 | **proved** (Lemma A) | +1.4e-11 |
+| 10 | 240 | 1 | 32 | 0.088 | not cut: 1.077 (32), 1.069 (50) | B (8) | 12 | obstacle: B fails on U(5) | +1.6e-11 |
+| 11 | 240 | 1 | 44 | 0.159 | not cut: 1.128 (32), 1.120 (50) | A (4), A (12) | 8 | **proved** (Lemma A) | +2.8e-11 |
+| 12 | 120 | 1 | 50 | 0.092 | yes (50 shifts) | A (12) | 7 | **proved** (Lemma A) | +1.0e-10 |
+| 13 | 120 | 1 | 42 | 0.155 | not cut: 1.144 (32), 1.142 (50) | B (6), E (3) | 9 | obstacle: B, E fail on U(5) | +9.2e-12 |
+| 14 | 60 | 2 | 60 | 0.235 | yes (50 shifts) | A (8) | 6 | **proved** (Lemma A) | +8.6e-12 |
+| 15 | 120 | 1 | 42 | 0.069 | not cut: 1.060 (32), 1.060 (50) | A (1) | 8 | **proved** (Lemma A) | +1.0e-10 |
+| 16 | 120 | 1 | 58 | 0.457 | not cut: 1.369 (32), 1.346 (50) | A (1), E (2), N9 (6) | 2 | obstacle: E, N9 fail on U(5) | +2.9e-10 |
+| 17 | 120 | 1 | 40 | 0.112 | not cut: 1.105 (32), 1.103 (50) | A (4), E (8) | 8 | obstacle: E fails on U(5) | +3.2e-11 |
+| 18 | 120 | 1 | 46 | 0.321 | not cut: 1.175 (32), 1.175 (50), 1.194 (82) | A (24) | 7 | **proved** (Lemma A) | +1.8e-10 |
+| 19 | 240 | 1 | 31 | 0.247 | not cut: 1.164 (32), 1.068 (50), 1.081 (82) | A (288), N8 (16), N3 (32) | 10 | obstacle: N3 fails on U(5) | +3.1e-11 |
+| 20 | 120 | 2 | 56 | 0.110 | not cut: 1.110 (32), 1.110 (50) | E (3) | 5 | obstacle: E fails on U(5) | +5.0e-11 |
+| 21 | 120 | 1 | 46 | 0.150 | not cut: 1.136 (32), 1.134 (50) | E (9) | 6 | obstacle: E fails on U(5) | +5.2e-11 |
+| 22 | 120 | 1 | 52 | 0.164 | not cut: 1.164 (32), 1.164 (50) | E (6) | 6 | obstacle: E fails on U(5) | +1.1e-11 |
+| 23 | 240 | 1 | 47 | 0.260 | not cut: 1.203 (32), 1.190 (50) | A (6), B (18) | 6 | obstacle: B fails on U(5) | +1.2e-11 |
+| 24 | 60 | 2 | 56 | 0.144 | not cut: 1.129 (32), 1.129 (50) | A (12) | 5 | **proved** (Lemma A) | +3.5e-11 |
+| 25 | 120 | 1 | 56 | 0.147 | not cut: 1.147 (32), 1.147 (50) | E (8) | 5 | obstacle: E fails on U(5) | +1.4e-11 |
+| 26 | 60 | 1 | 56 | 0.112 | yes (50 shifts) | A (3) | 7 | **proved** (Lemma A) | +8.9e-11 |
+| 27 | 120 | 1 | 44 | 0.026 | yes (50 shifts) | N8 (3) | 12 | follows from N8 >= 0 (numerical) | +8.6e-11 |
+| 28 | 120 | 1 | 36 | 0.268 | not cut: 1.234 (32), 1.220 (50) | A (3), E (45), N4 (3), N5 (6) | 7 | obstacle: E, N4, N5 fail on U(5) | +5.0e-11 |
+| 29 | 240 | 1 | 30 | 0.134 | not cut: 1.116 (32), 1.111 (50) | B (12), D (8), N1 (26), N7 (8) | 10 | obstacle: B, D, N1, N7 fail on U(5) | +1.4e-10 |
+| 30 | 120 | 1 | 40 | 0.162 | not cut: 1.148 (32), 1.135 (50) | A (3), N9 (8), N8 (1) | 6 | obstacle: N9 fails on U(5) | +3.7e-11 |
+| 31 | 60 | 1 | 60 | 0.088 | yes (50 shifts) | A (3) | 6 | **proved** (Lemma A) | +4.8e-12 |
+| 32 | 120 | 1 | 56 | 0.146 | not cut: 1.146 (32), 1.145 (50) | E (6) | 5 | obstacle: E fails on U(5) | +1.0e-11 |
+| 33 | 120 | 1 | 50 | 0.370 | not cut: 1.337 (32), 1.311 (50) | E (1), N9 (5), N2 (3) | 2 | obstacle: E, N2, N9 fail on U(5) | +2.0e-10 |
 
-- "PMSH(4), README N3 grid": "cut for some members" means some member was cut to ≤ 1 by the first N3 run; by R2 the whole orbit then follows linearly from PMSH(4).
-- "reversal-closed grid": maximum over R_inh with the 82-shift grid of R2, for representatives run before the runs were stopped.
+- "follows linearly from PMSH(4)": "yes" names the reversal-closed grid of R2 that cuts the representative to 1. Otherwise the column gives the maximum over R_inh for each grid run.
 - "overshoot": relaxation overshoot over {D ≥ 0}.
 - "weight": the rational multiplier of each non-minor facet, relative to the primitive integer gap vectors.
 
@@ -166,17 +212,17 @@ TABLE_PLACEHOLDER
 At this spectrum, among the hard facets found, the obligation for PMSH(5) is now:
 
 1. **Solved by Lemma A:** 17 orbits.
-2. **N8 ≥ 0 on U(5):** orbit 27 only.
+2. **Solved by PMSH(4), linearly:** orbit 27; also 12 of the 17 Lemma-A orbits.
 3. **(★)-type inequalities:** the 16 obstacle orbits, each a family over the two Möbius parameters (s, t) of the form g_F + Σ w_a(s, t)·x_a ≥ 0 with explicit positive weights. For orbits 20 and 21 the family is equivalent to one closed-form inequality, (E20) or (E21).
 
-Ten of the eleven non-minor facets used by obstacle orbits (all but D) fail on U(5) with exactly the n = 4 minimum. A natural conjecture: the obstacle inequalities are images of (★) on 4×4 subsystems. If so, PMSH(5) at this spectrum would reduce to (★) and Lemma A. That has **not** been checked. N3 says the obstacles are not *linear* consequences of PMSH(4), but (★) applied to blocks of U is not a linear constraint in that sense.
+The obstacle orbits use ten failing facet orbits of Q₅. Seven of them (B, E, N3, N4, N5, N7, N9) fail with exactly the n = 4 minimum; D, N1 and N2 do not. Six obstacle orbits (10, 20, 21, 22, 25, 32) use a single facet of B or E. For those, a natural conjecture is that the obstacle inequalities are images of (★) on 4×4 subsystems. If so, those six would follow from (★); the other ten would still need D, N1 or N2 handled. That has **not** been checked. N3 says the obstacles are not *linear* consequences of PMSH(4), but (★) applied to blocks of U is not a linear constraint in that sense.
 
 ## Limits
 
 - **Coverage.** The harvest is partial: 34 orbits reached through 92 facets. The other hard facets of P₅(c) are unknown, and the decomposition and the conclusions above cover only the orbits found.
 - **One spectrum.** The exact results hold at the Möbius class of (0, 1/4, 1/2, 3/4, 1). Across spectra the evidence is numerical: fitted families checked exactly at three points each for three orbits, and the family test.
 - **Numerical evidence only:** that facets fail or hold on U(5), (E20), (E21) and N8. Local optimization can miss a region.
-- **PMSH(4) rerun incomplete.** The reversal-closed inheritance LP was run for six representatives only, then stopped in favour of R3–R5.
+- **Inheritance LPs.** They are floating point and depend on the shift grid: "not cut" is only an upper bound.
 - **No independent review yet.**
 
 ## Files
@@ -184,7 +230,7 @@ Ten of the eleven non-minor facets used by obstacle orbits (all but D) fail on U
 | File | What it does |
 | --- | --- |
 | [`orbits.py`](orbits.py) | Orbits of the 92 hard facets, exact facet certificates, integer gap vectors → `orbits.json` |
-| [`inherit_orbits.py`](inherit_orbits.py) | PMSH(4) inheritance LP on orbit representatives with a reversal-closed shift grid (sparse) |
+| [`inherit_orbits.py`](inherit_orbits.py) | PMSH(4) inheritance LP on orbit representatives with reversal-closed shift grids (sparse; `GRID=n3`, `dense`, default 82 shifts) |
 | [`decompose.py`](decompose.py) | Decomposition into facets of Q₅; exact Carathéodory peel; new facet orbits → `decompose.json` |
 | [`exact_checks.py`](exact_checks.py) | R1 at n = 5, independent certification of N1–N9, exact recheck of all decompositions |
 | [`facet_forms.py`](facet_forms.py) | Minimum-ℓ₁ integer forms of the 16 non-minor orbits → `facet_forms.json` |
@@ -208,7 +254,9 @@ python3 -I -B exact_families.py 3
 python3 -I -B envelope_min.py 60
 python3 -I -B family_min.py 0,1,...,33 24 1   # split into four runs: about 5 min each
 python3 -I -B summary.py
-GRID=union python3 -I -B inherit_orbits.py 1:2   # about 10 min per orbit
+GRID=n3 python3 -I -B inherit_orbits.py 0:34      # 32 shifts, about 1 min per orbit
+GRID=dense python3 -I -B inherit_orbits.py 3:4     # 50 shifts, about 2 min per orbit
+python3 -I -B inherit_orbits.py 0:1                # 82 shifts, about 6 min per orbit
 ```
 
 Logs of every run reported here are in [`logs/`](logs/).

@@ -5,14 +5,15 @@ the symmetry group of orbits.py: positions permute t, and the reversal H -> 3 - 
 (b) at gamma to (b) at -3 - gamma. So whether a hard facet follows linearly from PMSH(4) is a property of
 its orbit, and a finite shift set should be closed under gamma -> -3 - gamma. This script uses the 40
 log-spaced shifts of README N3 in [-40, 40], their images -3 - gamma, and 0, -3 (82 shifts), with sparse
-LP matrices (the dense ones of ../inherited.py would need about 3 GB). With GRID=union in the environment
-it also adds the 15 shifts of the first N3 run (which include -1 and -1.5, inside the range of c + 1)
-and their images (112 shifts).
+LP matrices (the dense ones of ../inherited.py would need about 3 GB). With GRID=n3 in the environment
+it uses instead the 15 shifts of the first N3 run (which include -1 and -1.5, inside the range of c + 1),
+their images, 0 and -3 (32 shifts); GRID=union uses both sets (112 shifts). GRID=dense uses the 15 shifts, 21 equally spaced
+shifts in [-2, -1] (an interval the reversal maps to itself), their images, 0 and -3 (50 shifts).
 
 Reads orbits.json; writes one line per representative: orbit, max over R_triv, max over R_inh
 (scaled so that the facet is "<= 1").
 
-usage: [GRID=union] inherit_orbits.py [first:last]
+usage: [GRID=n3|union|dense] inherit_orbits.py [first:last]
 """
 import itertools
 import json
@@ -55,7 +56,8 @@ REL = vt[int((sv > 1e-9 * sv[0]).sum()):]
 
 G40 = [float(x) for x in np.r_[-np.geomspace(40, 0.05, 20), np.geomspace(0.05, 40, 20)]]
 G15 = [-10.0, -5.0, -2.5, -1.5, -1.0, -0.75, -0.5, -0.25, 0.25, 0.5, 1.0, 1.5, 2.5, 5.0, 10.0]  # README N3 grid
-BASE = G40 + (G15 if os.environ.get("GRID") == "union" else [])
+GIN = [round(-1 - 0.05 * k, 10) for k in range(21)]  # inside the range [-2, -1] of -(c + 1)
+BASE = {"n3": G15, "union": G40 + G15, "dense": G15 + GIN}.get(os.environ.get("GRID"), G40)
 GAMMAS = sorted(set(round(x, 10) for x in BASE + [-3 - x for x in BASE] + [0.0, -3.0]))
 
 
@@ -74,7 +76,9 @@ blocks = []
 for t in range(n):
     sel_a = [i for i, T in enumerate(SUBS) if t not in T]
     blocks.append((np.eye(d)[sel_a], np.zeros(len(sel_a)), np.unique(np.round(V[:, sel_a], 12), axis=0)))
-    sel_b = [i for i, T in enumerate(SUBS) if t in T]
+    # the full set is omitted: det(H + gamma) is fixed by the spectrum, and at a singular shift its column
+    # is zero, so row scaling would blow it up by 1e12 and HiGHS loses feasibility
+    sel_b = [i for i, T in enumerate(SUBS) if t in T and len(T) < n]
     for gm in GAMMAS:
         L, c0 = shift(gm)
         blocks.append((L[sel_b], c0[sel_b], np.unique(np.round((V @ L.T + c0)[:, sel_b], 12), axis=0)))

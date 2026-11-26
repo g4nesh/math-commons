@@ -27,16 +27,17 @@ def main():
     dec = {r["orbit"]: r for r in json.load(open(os.path.join(HERE, "decompose.json")))["decompositions"]}
     umin = parse("unitary_valid*.txt", r"(\w+): min over U\(5\) ([-+.\de]+)")
     fam = parse("family_min_*.txt", r"orbit (\d+): .* max over U\(5\) - 1 = ([-+.\de]+)")
-    inh, uni = {}, {}
-    for pattern, d in (("inherit_orbits_*.txt", inh), ("inherit_union_*.txt", uni)):
-        for fn in glob.glob(os.path.join(LOGS, pattern)):
-            for line in open(fn):
+    grids = {}  # orbit -> {grid: max over R_inh}
+    for name, fn in (("82", "inherit_orbits_sym82.txt"), ("32", "inherit_n3sym.txt"), ("50", "inherit_dense.txt")):
+        path = os.path.join(LOGS, fn)
+        if os.path.exists(path):
+            for line in open(path):
                 k, _, v = line.split()
-                d[k] = float(v)
+                grids.setdefault(int(k), {})[name] = float(v)
     valid = {"A"} | {lab for lab, v in umin.items() if v > -1e-8}  # A: Lemma A (proved)
-    print("| orbit | size | found | vertices | overshoot | PMSH(4), README N3 grid | PMSH(4), reversal-closed grid "
+    print("| orbit | size | found | vertices | overshoot | follows linearly from PMSH(4) "
           "| non-minor Q5 facets (weight) | squared minors | status | family max - 1 |")
-    print("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+    print("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
     for o in orbits:
         k = o["orbit"]
         terms = dec[k]["terms"]
@@ -46,15 +47,20 @@ def main():
         if set(kinds) == {"A"}:
             status = "**proved** (Lemma A)"
         elif set(kinds) <= valid:
-            status = "reduces to " + " and ".join(sorted(set(kinds) - {"A"})) + " >= 0 (numerical)"
+            status = "follows from " + " and ".join(sorted(set(kinds) - {"A"})) + " >= 0 (numerical)"
         else:
-            status = "obstacle: " + ", ".join(sorted(set(kinds) - valid)) + " fail on U(5)"
-        n3 = "cut for some members" if "inherited" in o["status"] else "not cut"
-        sym = f"{inh[str(k)]:.4f}" if str(k) in inh else "not run"
-        if str(k) in uni:
-            sym += f"; with the N3 shifts added: {uni[str(k)]:.6f}"
+            bad = sorted(set(kinds) - valid)
+            status = "obstacle: " + ", ".join(bad) + (" fails" if len(bad) == 1 else " fail") + " on U(5)"
+        res = grids.get(k, {})
+        cut = [g for g, v in res.items() if v <= 1 + 1e-6]
+        if cut:
+            inh = "yes (" + ", ".join(f"{g} shifts" for g in sorted(cut, key=int)) + ")"
+        elif "inherited" in o["status"]:
+            inh = "yes (a member, first N3 run)"
+        else:
+            inh = "not cut: " + ", ".join(f"{v:.3f} ({g})" for g, v in sorted(res.items(), key=lambda x: int(x[0])))
         fm = f"{fam[str(k)]:+.1e}" if str(k) in fam else "not run"
-        print(f"| {k} | {o['size']} | {o['harvested']} | {o['vertices']} | {o['relaxation'][0] - 1:.3f} | {n3} | {sym} "
+        print(f"| {k} | {o['size']} | {o['harvested']} | {o['vertices']} | {o['relaxation'][0] - 1:.3f} | {inh} "
               f"| {nm} | {nminor} | {status} | {fm} |")
     print()
     print("Minimum over U(5) of each non-minor facet of Q5 (unitary_valid.py, 40 starts):",
