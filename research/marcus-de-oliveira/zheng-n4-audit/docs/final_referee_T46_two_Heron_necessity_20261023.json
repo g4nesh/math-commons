@@ -1,0 +1,160 @@
+{
+ "doc_id": "final_referee_T46_two_Heron_necessity_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T46_two_Heron_necessity_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "one_line": "Proves H6 >= 0 and H8 >= 0 at realizable points on one 8-generator face of the T_47 cone. Every identity replayed EXACT; the logic is sound; it rests on the preceding negative-j-Heron theorem and its principal-minor mechanism, the HMSV set equality and Prop. C.6, all CITED.",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [],
+   "contact_sets": [
+    [
+     1,
+     3,
+     5,
+     6,
+     7,
+     8
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "Let T = {1,3,5,6,7,8} = paper T_47 (literal). Let c = q f27 + p f1 + j f59 + c f5 + e f2 + d f28 + b f6 + a f4 with all coefficients >= 0 and b, j, d > 0. This is one simplicial 8-generator face of N_T, which has 10 generators; it omits f0 = n1,4 and f3 = n14,34. If c = c(x) for some x in X (with the restored real height), then H6 >= 0 and H8 >= 0, where disc_j G = (q+d)^2 H6 H8 and H6 = T0^2 + 4bDM(q-c)(q-e)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (paper p.27): for x = u + iv in X, C(u) = 0 and det Hess C(u) = 0",
+   "used_for": "G = 0 at every spectrally realizable point, via det H(w(g,-C/Q)) = -4 d^2 G^2/Q^2 (replayed EXACT) and C < 0 (EXACT), so Q != 0 and h = -C/Q",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "final_referee_T46_negative_j_Heron_uniform_20261023 (Theorem 1: no realizable point with H6 < 0; its signed principal-minor mechanism)",
+   "used_for": "excludes H6 < 0; makes all 12x12 principal minors <= 0 at radial points with H6, H8 < 0",
+   "match_checked": false
+  },
+  {
+   "kind": "external",
+   "ref": "HMSV via paper (C.2): {C = det H = 0} = Sigma2-hat (class (b) in foundations/appendix-c-open-items.md, which lists this document)",
+   "used_for": "rank <= 12 at non-realizable points of the radial graph",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Corollary C.5 (rank H <= 12 on Sigma2-hat) and Proposition C.6 (12x12 principal minors of H(Re x) >= 0; one positive if rank 12), foundations/appendix-c-part1.md",
+   "used_for": "the final contradiction",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "the 8 sources vanish exactly on {1,3,5,6,7,8} = T_47; they are independent; generators(T_47) has 10 elements",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "lib F_ZERO, generators, rank"
+  },
+  {
+   "n": "2",
+   "claim": "height equation affine in h; constant = -(q+d)L - jM < 0",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own expansion of C(c+h kappa)"
+  },
+  {
+   "n": "3",
+   "claim": "det H(w(g,-C/Q)) = -4G^2/Q^2, G irreducible (1556 terms, degree 9)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "14x14 Bareiss determinant, exact square root"
+  },
+  {
+   "n": "4",
+   "claim": "disc_j G = (q+d)^2 H6 H8 (150- and 279-term factors)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "flint factor"
+  },
+  {
+   "n": "5",
+   "claim": "(1) H6 = T0^2 + 4bDM(q-c)(q-e); (H6)_p = 2LT0; (H6)_q = 2(bD-M)T0 + 4bDM(2q-c-e)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "polynomial identities"
+  },
+  {
+   "n": "6",
+   "claim": "case analysis: grad H6 != 0 on {H6 = 0} except on p=q=c=e=t",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "b, D, M, L > 0 from d > 0, b > 0"
+  },
+  {
+   "n": "7",
+   "claim": "on p=q=c=e=t: H8 = W0^2 + 4dDb^2 L t(t+d+b) with W0(0) = -bdL, so H8 > 0 there",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "square root of the restricted difference"
+  },
+  {
+   "n": "8",
+   "claim": "at a realizable point with H8 < 0: G = 0, so G_j^2 = (q+d)^2 H6 H8 gives H6 <= 0; H6 < 0 is excluded by the predecessor; so H6 = 0 and G_j = 0",
+   "kind": "inequality",
+   "status": "CITED",
+   "how": "PROOF-READ, plus the predecessor theorem"
+  },
+  {
+   "n": "9",
+   "claim": "grad disc = (q+d)^2 H8 grad H6 != 0, hence A != 0 and grad G = -grad(disc)/(4A) != 0",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "argument checked line by line"
+  },
+  {
+   "n": "10",
+   "claim": "gcd(G, G_j) = 1, so G_j != 0 is dense on the local smooth real piece of {G = 0}",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "gcd and irreducibility EXACT; density argument completed by the auditor (a real 7-dim analytic piece is Zariski dense in the irreducible G = 0)"
+  },
+  {
+   "n": "11",
+   "claim": "at dense nearby points H6, H8 < 0; the predecessor mechanism gives all 12x12 principal minors <= 0 there, hence at the putative point by continuity",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "predecessor mechanism, not replayed"
+  },
+  {
+   "n": "12",
+   "claim": "some G_x != 0, so d^2/dx^2 det = -8 G_x^2/Q^2 < 0 gives corank <= 2; rank <= 12 gives rank exactly 12",
+   "kind": "analytic",
+   "status": "CITED",
+   "how": "PROOF-READ; rank <= 12 needs the HMSV set equality"
+  },
+  {
+   "n": "13",
+   "claim": "Prop. C.6 gives a positive 12x12 principal minor, a contradiction",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "foundations Appendix C"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "contact set and generator check",
+  "C(c + h kappa) = C + hQ with C = -(q+d)L - jM",
+  "det identity and G (1556 terms, degree 9), G irreducible",
+  "disc_j G = (q+d)^2 H6 H8",
+  "identity (1) and both gradient formulas",
+  "exceptional-locus H8 formula and W0(0) = -bdL",
+  "gcd(G,G_j) = 1"
+ ],
+ "numeric_tests": [],
+ "unchecked": [
+  "the predecessor's principal norm congruences in the T46 frame (cited, not replayed)",
+  "no numerical falsification in this frame"
+ ]
+}

@@ -1,0 +1,44 @@
+PASS tuple (0,3,5,6,9,12) is literally paper T_49
+PASS generators(T_49) = {0,1,2,5,7,9,29,39,40,41}, only f40 non-minor
+PASS f40 + f1 = f7 + f39 + f0 (all 24 values; P injective)
+PASS f40 + f9 = f7 + f2 + f41
+PASS canonical eight profiles (7,5,29,39,2,40,41,0) are independent
+INFO zero coefficient q (f7): extra contacts [16]; six-subsets [('T29', 1), ('T34', 1), ('T39', 1), ('T46', 2), ('T59', 8), ('T78', 6)]
+PASS zero face q reduces to an earlier-stage six-set (stage < 4) :: [('T29', 1), ('T34', 1), ('T39', 1), ('T46', 2)]
+INFO zero coefficient p (f5): extra contacts [11]; six-subsets [('T1', 1), ('T12', 3), ('T14', 5), ('T21', 1), ('T23', 1), ('T36', 1)]
+PASS zero face p reduces to an earlier-stage six-set (stage < 4) :: [('T1', 1), ('T12', 3), ('T21', 1), ('T23', 1), ('T36', 1)]
+INFO zero coefficient j (f29): extra contacts [2]; six-subsets [('T11', 3), ('T12', 3), ('T16', 5), ('T2', 1), ('T28', 1), ('T3', 1)]
+PASS zero face j reduces to an earlier-stage six-set (stage < 4) :: [('T11', 3), ('T12', 3), ('T2', 1), ('T28', 1), ('T3', 1)]
+INFO zero coefficient c (f39): extra contacts [17]; six-subsets [('T48', 8), ('T49', 4), ('T59', 8), ('T84', 9)]
+INFO zero coefficient e (f2): extra contacts [13]; six-subsets [('T24', 5), ('T28', 1), ('T39', 1), ('T42', 1), ('T47', 3), ('T66', 7)]
+PASS zero face e reduces to an earlier-stage six-set (stage < 4) :: [('T28', 1), ('T39', 1), ('T42', 1), ('T47', 3)]
+INFO zero coefficient b (f41): extra contacts [7]; six-subsets [('T29', 1), ('T37', 1), ('T43', 1), ('T49', 4), ('T58', 6)]
+PASS zero face b reduces to an earlier-stage six-set (stage < 4) :: [('T29', 1), ('T37', 1), ('T43', 1)]
+INFO zero coefficient a (f0): extra contacts [23]; six-subsets [('T44', 1), ('T56', 10), ('T59', 8), ('T69', 7), ('T70', 5), ('T77', 9)]
+PASS zero face a reduces to an earlier-stage six-set (stage < 4) :: [('T44', 1)]
+PASS c = 0 face <-> extra contact 17, and T_49+{17} is Table 5 set 23
+PASS F(g + h kappa) affine in h
+INFO own Q = c*d + c*e + c*j + d**2 + d*e + d*j - e*p - j*p
+PASS supplement JSON C,Q equal own C,Q
+PASS G (supplement data) has 1772 terms, degree 9
+PASS det H(g - C kappa/Q) * Q^2 == -4 G^2 at 20 random rational points (own Hessian; pointwise exact)
+PASS (e+j) C - e j Q has only positive coefficients (forced-height exclusion) :: 42 terms
+PASS stationarity: u(1/Q+1/j) - v/e = 1/2
+PASS p* = u^2(1/Q+1/j) + v - a/4 + v^2/e = 1 - u/2 + v/e - a/4
+PASS stationarity with Q = 2u(1+A0) <=> j = 2ue(1+A0)/(A0 e + 2v(1+A0))
+PASS chart 2: e = 2(1+A)V / (2(1+X)(1+A) + V[2(1+X)+AX])
+PASS chart 3: e = (1+X) R V / (X(R+V))
+INFO chart 1: denominator - numerator of j = A*V + 2*A*X + 2*A + 4*X**2 + 6*X + 2
+PASS chart 1: j < 1 (denominator - numerator is a positive-coefficient polynomial)
+PASS chart 1 bijects onto K <= 0: K(X/(1+X), 2X+A) = -A/(1+X)
+PASS chart 3 lies in K > 0: K(X/(1+X), 2XA/(1+A)) = 2X/((1+X)(1+A))
+PASS chain orbit 576, old-H orbit 288
+PASS chain (centre f5; leaves f7,f29; non-minor f40) in the proved chain orbit
+PASS chain (centre f5; leaves f29,f41; non-minor f40) in the proved chain orbit
+PASS chain (centre f5; leaves f0,f2; non-minor f40) in the proved chain orbit
+PASS old-H (aux f2 = e, main f5 = p; f40) in the proved old-H orbit
+PASS reversed old-H roles (aux f5, main f2) NOT in orbit (roles meaningful)
+PASS allocation algebra: chain requirement = u^2(1/Q+1/j); old-H + (a,e) chain = v - a/4 + v^2/e
+PASS chart points satisfy the Theorem-1 hypotheses and stationarity (sample)
+INFO pointwise exact evaluation (seed 23): chart -> [points, #G<0] = {1: [600, 600], 2: [600, 600], 3: [600, 600]}; max G = -2.390e+00 (chart 1)
+SUMMARY: all EXACT checks passed

@@ -1,0 +1,33 @@
+{
+ "doc_id": "blind_moc4_T48_allocation_IV_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_allocation_IV_uniform_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  "Thm 1: eight-role source (d=1), e+j>0, a<=2e/(e+j), q+b<=2j/(e+j), any x in X: Phi>=0; walls and c=0 included"
+ ],
+ "dependencies": [
+  "chain (f5;f0,f2;f40), (f5;f7,f29;f40), (f5;f29,f41;f40): in proved orbit (EXACT)",
+  "old-H (f2,f5;f40),(f29,f5;f40) in proved orbit (EXACT)",
+  "radial necessity (established) + det Hess C = -4G^2/Q0^2 (EXACT, own Bareiss) + 42-term (e+j)C-ejQ0 (EXACT)",
+  "zero faces q,p,j,e,b,a -> paper T_39,T_1,T_3,T_24,T_43,T_44 (embeddings EXACT, proofs CITED)"
+ ],
+ "steps": [
+  "currents and allocation EXACT",
+  "p*=1+1/S-(a+Q)/4 EXACT",
+  "chart onto PROOF-READ",
+  "111608-term DG, 135 coeffs in 45 square groups EXACT",
+  "walls WA=0, WB=0, both, c=0 EXACT"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "G rebuilt from definitions: 1772 terms, degree 9, sha256 c89c8cbc5331fcfdbdc22587fbcf8a017fc692eb8fd1f38edbe8a59ca0550a49; equals -(supplement radial factor)",
+  "DG 111608 terms, 45 groups, marker 108 A^4B^6SP"
+ ],
+ "numeric_tests": [
+  "capacity at p=p*, 12 points seed 12: worst -4.1e-16"
+ ],
+ "unchecked": [
+  "cell coverage (assembly)"
+ ]
+}

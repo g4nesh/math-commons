@@ -1,0 +1,59 @@
+{
+ "doc_id": "root_inventory76_bounded_masks_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_inventory76_bounded_masks_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "contact_set": [
+    0,
+    1,
+    3,
+    10,
+    11,
+    16
+   ],
+   "paper_case": "T_77",
+   "restatement": "(*) for T_77: all x in X with Pc(x)>=0 vanishing on T, all O in SO(4), all spectra (degenerate ones via Appendix B)."
+  }
+ ],
+ "dependencies": [
+  "bounded-negative-part lemma (CITED)",
+  "Appendix B Thm B.1, Lemma B.2 (CITED)",
+  "earlier cases per added tie: +5 T11/T13; +6,+13,+21,+22 T44/T49/T59/T69/T70; +7,+20 T29/T36; +9,+14 T47/T48/T67/A26; +12,+23 T76/T78/T79/A18 (resolved by auditor; PDF does not name them)"
+ ],
+ "steps": [
+  "source and nonminor coefficients EXACT",
+  "(1),(2) gap majorants EXACT/PROOF-READ",
+  "chart raw identities and inverse (3),(4) EXACT",
+  "curve 30 terms, (5),(6),(7), resultant hr(s+u) EXACT",
+  "constant strata (8)-(10) EXACT",
+  "Rouche restoration PROOF-READ (checked by auditor)",
+  "harmonic exclusion CITED"
+ ],
+ "gaps": [
+  {
+   "location": "p.1-2",
+   "claim": "each non-minor added tie contains an image of a specified earlier case",
+   "severity": "presentation",
+   "note": "cases not named in PDF; auditor resolved all eleven with stage order"
+  }
+ ],
+ "exact_replays": [
+  "generators/values",
+  "raw inverse identities",
+  "E factorization",
+  "H0..H11,H2,H5",
+  "curve bidegree and [J^2]C",
+  "P(Y)",
+  "H6,H9 limits",
+  "Res(P,Y-r-1)=hr(s+u)",
+  "(8)-(10)",
+  "tie coverage with Table 6 stages"
+ ],
+ "numeric_tests": [],
+ "unchecked": [
+  "numeric minimization of the main statement (not run)"
+ ]
+}

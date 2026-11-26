@@ -1,0 +1,39 @@
+{
+ "doc_id": "blind_moc4_T48_c0_all_j_chain_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_c0_all_j_chain_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  "Thm 1 (algebraic): c=0, a,e,d,j>0, q,b,p>=0, G=0, L>=0, F6>=0 => p>=d^2(1/a+1/e)",
+  "Cor 2: realizable canonical source with contacts containing T_49+{17} (Table 5 #23): Phi>=0"
+ ],
+ "dependencies": [
+  "chain (f5;f0,f2;f40) EXACT orbit",
+  "Q0=0 exclusion at c=0 (27 terms) EXACT",
+  "interlacing Thm 1 (this batch)",
+  "coordinate Heron theorem CITED",
+  "eight-distinct r!=0 CITED",
+  "Theorem C.1 CITED, Theorem B.1 established",
+  "zero faces q,p,j,e,b,a -> paper T_39,T_1,T_3,T_24,T_43,T_44 (embeddings EXACT, proofs CITED)",
+  "harmonic reduction CITED (closing sentence only)"
+ ],
+ "steps": [
+  "root existence PROOF-READ",
+  "chart (1) identities EXACT",
+  "certificate 84925 terms (34491 after AD^2) one sign EXACT",
+  "walls EXACT",
+  "Cor 2 case split PROOF-READ with CITED inputs"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "G rebuilt from definitions: 1772 terms, degree 9, sha256 c89c8cbc5331fcfdbdc22587fbcf8a017fc692eb8fd1f38edbe8a59ca0550a49; equals -(supplement radial factor)",
+  "84925-term table, divisible by AD^2, marker A^2E^2"
+ ],
+ "numeric_tests": [
+  "7 realizable points on T_49+{17}: G=0 to 2e-15; 4 in scope: capacity margin >=5.0, L>=1685, F6>=1.3e6"
+ ],
+ "unchecked": [
+  "coordinate Heron theorem",
+  "harmonic reduction"
+ ]
+}

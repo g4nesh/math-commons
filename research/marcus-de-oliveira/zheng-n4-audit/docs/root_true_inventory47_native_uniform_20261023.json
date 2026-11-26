@@ -1,0 +1,88 @@
+{
+ "doc_id": "root_true_inventory47_native_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_true_inventory47_native_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     2,
+     5,
+     9,
+     12,
+     13
+    ]
+   ],
+   "paper_cases": [
+    48
+   ],
+   "covers_all_spectra": true,
+   "restatement": "Every x in X with Pc(x) >= 0 and contacts containing T_48 = {0,2,5,9,12,13} has Phi_{c(x)}(O) >= 0 on SO(4); repeated/colliding spectra via Appendix B, extra ties via earlier cases, eight-distinct via a curve/max-principle argument on C(x,z)=0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "bounded-negative-part subharmonic lemma",
+   "used_for": "curve argument",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix B (Thm B.1, Lemma B.2)",
+   "used_for": "repeated/colliding spectra",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Lemma 3.4 + Birkhoff",
+   "used_for": "constant-coordinate alternative",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "earlier-stage six-sets for ties 3,6,7,11,14,15,16,17,18,19,21,23",
+   "used_for": "boundaries",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  "generators EXACT",
+  "majorants (1) EXACT",
+  "(2) PROOF-READ",
+  "ties EXACT",
+  "factorizations EXACT",
+  "inverse (3) EXACT (H5,H9 mod C)",
+  "curve C EXACT",
+  "sections/local data EXACT",
+  "gap identities EXACT",
+  "punctures PROOF-READ",
+  "genericity witness EXACT",
+  "constant alternative PROOF-READ",
+  "Rouche restoration PROOF-READ (auditor-supplied)"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "T=T_48 literally",
+  "generators",
+  "profile majorants",
+  "18 seventh ties with Appendix G stages",
+  "E, F13-F12, F0-F2",
+  "inverse (3), TD-TN, Nv identity",
+  "H13=r -> (x+r)C, C 55 terms bidegree (3,2)",
+  "C(0,z), C(-r,z), C(1,z), Cx, Cz, Czz at (1,1)",
+  "P(Y), P(1)",
+  "H11, H14, H19, H1 identities",
+  "xF0=(x-z)F14",
+  "v,w at (-r,1),(-r,-r),(1,1)",
+  "limits at infinity"
+ ],
+ "numeric_tests": [],
+ "unchecked": [
+  "no numerical search on the main statement (special case of the conjecture)"
+ ]
+}

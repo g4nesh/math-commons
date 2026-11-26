@@ -1,0 +1,28 @@
+== PART A ==
+PASS profile identities f40+f1=f0+f7+f39, f40+f9=f2+f7+f41
+PASS generators of T={0,3,5,6,9,12} = {0,1,2,5,7,9,29,39,40,41}
+PASS F(w) has degree 1 in h, Q = (c+d)(d+e+j) - p(e+j)
+PASS supplement C and Q equal the rebuilt ones
+PASS G: 1772 terms, total degree 9
+PASS P (12-principal deleting 0,5) is height-free with 2784 terms
+PASS deg_j G = 2 and deg_j P = 2
+PASS (3) B^2-4AC0 = (b+c+d)^2 (q+d)^2 Phi H6 with H6 a j-free polynomial of 159 terms
+PASS content gcd(A,B,C0) = 1 (G has no j-free factor)
+PASS gcd(G,P) = gcd(G,G_j) = gcd(G,H6) = gcd(G,Phi) = 1
+PASS G is irreducible over Q
+PASS specializations: P*H6 and P*Phi are squares in Q(sqrt D) at 120 random rational points
+NUMERIC real roots of G in j (seed 1, 40 digits): 558 points, 108 with Phi<0, 0 violations of P*H6>=0, P<0 at every Phi<0 point: True
+FAILED: none
+exit 0
+== PART B ==
+PASS profile identities f40+f1=f0+f7+f39, f40+f9=f2+f7+f41
+PASS generators of T={0,3,5,6,9,12} = {0,1,2,5,7,9,29,39,40,41}
+PASS F(w) has degree 1 in h, Q = (c+d)(d+e+j) - p(e+j)
+PASS supplement C and Q equal the rebuilt ones
+PASS G: 1772 terms, total degree 9
+PASS P (12-principal deleting 0,5) is height-free with 2784 terms
+PASS deg_j G = 2 and deg_j P = 2
+PASS (3) B^2-4AC0 = (b+c+d)^2 (q+d)^2 Phi H6 with H6 a j-free polynomial of 159 terms
+PASS (2) det H(w) at h=-C/Q equals -4 G^2/Q^2
+PASS 13-minor deleting row/col (0,0): forced numerator divisible by G, quotient 872 terms
+PASS 13-minor deleting row/col (5,5): forced numerator divisible by G, quotient 421 terms

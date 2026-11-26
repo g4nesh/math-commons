@@ -1,0 +1,86 @@
+PASS T_70 literal equals Appendix E
+INFO stage of T_70 (Table 6) :: 5
+PASS T70: generators(T) equal the printed source :: [0, 1, 2, 5, 9, 53, 55, 56, 59]
+PASS T70: sole non-minor generator :: [56]
+PASS T70: relation in 24 profiles
+PASS T70: relation in 14 coordinates
+PASS T70: the eight kept generators are independent
+PASS T70: span(kept) = {c : (Pc)_pi = 0 on T} (dim 8)
+PASS T70: coefficient readouts C_i = g_sigma and d = g_p - g_q on the kept basis
+INFO T70: tie :: (0, 'f_bad>0', 'all-minor')
+INFO T70: tie :: (2, 'f_bad=0', [(1, 13), (3, 35), (4, 8), (8, 8), (9, 13), (12, 2)], "earlier:['13', '2', '35', '8']")
+INFO T70: tie :: (5, 'f_bad>0', 'all-minor')
+INFO T70: tie :: (6, 'f_bad>0', 'all-minor')
+INFO T70: tie :: (7, 'f_bad>0', 'all-minor')
+INFO T70: tie :: (10, 'f_bad=0', [(1, 48), (3, 53), (4, 65), (8, 65), (9, 48), (12, 42)], "earlier:['42']")
+INFO T70: tie :: (11, 'f_bad=0', [(1, 32), (3, 78), (4, 38), (8, 45), (9, 79), (12, 29)], "earlier:['29']")
+INFO T70: tie :: (13, 'f_bad>0', 'all-minor')
+INFO T70: tie :: (14, 'f_bad=0', [(1, 56), (3, 59), (4, 44), (8, 69), (9, 77), (12, 49)], "earlier:['44', '49']")
+INFO T70: tie :: (15, 'f_bad=0', [(1, 32), (3, 60), (4, 4), (8, 4), (9, 32), (12, 14)], "earlier:['4']")
+INFO T70: tie :: (16, 'f_bad>0', 'all-minor')
+INFO T70: tie :: (17, 'f_bad=0', [(1, 77), (3, 59), (4, 69), (8, 44), (9, 56), (12, 49)], "earlier:['44', '49']")
+INFO T70: tie :: (18, 'f_bad>0', 'all-minor')
+INFO T70: tie :: (19, 'f_bad>0', 'all-minor')
+INFO T70: tie :: (20, 'f_bad=0', [(1, 79), (3, 78), (4, 45), (8, 38), (9, 32), (12, 29)], "earlier:['29']")
+INFO T70: tie :: (21, 'f_bad>0', 'all-minor')
+INFO T70: tie :: (22, 'f_bad>0', 'all-minor')
+INFO T70: tie :: (23, 'f_bad>0', 'all-minor')
+PASS T70: every added tie covered (all-minor cone, or an earlier-stage case)
+PASS T70: printed tie table (2,10,11,14,15,17,20 -> T_13,T_42,T_29,T_44,T_4,T_44,T_29) holds, all earlier stage
+PASS T70: ties with f56 = 0 are exactly 2,10,11,14,15,17,20
+PASS E = F3 - F1 = (a+t)(w-z)
+PASS F4-F1 = (a+t)(w+1)(x-z)
+PASS F9-F3 = t(a-w)(z+1)
+PASS F9-F8 = a(w-x)(z+1)
+PASS inverse (1): H1=0,H3=1,H4=r,H9=1+s,H8=1+s-u
+PASS forward: L = W - r = (w+1)(w-x)/(w-z)
+PASS forward: uV/L = a/(a+t)
+PASS forward: P = t u V
+PASS round trip: inverse(forward) = identity
+PASS D = H7 - H10 = ruV/(r-W) :: V*r*u/(-W + r)
+PASS H10 = V(s-u) + W
+PASS f = F1/E = (W-V)/(V-1) :: -(V - W)/(V - 1)
+PASS H6 - H11 = D - u and H18 - H20 = D + r
+PASS every denominator factor of the 24 H lies in {r, V, W, W-r, P} :: ['-V*W*s + V*W*u + V*r*s - V*u - W**2 + W*r + W*s + W - r*s - r', '-W + r', 'V', 'W']
+PASS C = num(H12-h) has bidegree (2,4) :: (2, 4)
+PASS A(W) = (r-1) K(W)^2 up to a constant :: 1
+PASS C has 80 integer terms :: 80
+INFO deg_W of A,B,C coefficients :: (2, 3, 4)
+PASS r = 1: dH12/dV printed formula :: s*u*(W*s - W*u + W - s - 1)/(W*(W - 1)*(V*s - V*u + W - s - 1)**2)
+PASS homogeneous inverse matches (1)
+PASS E_hom = const * V W L (V-1) P :: (V*W*(V - 1)*(-W + r)*(-V*W*s + V*W*u + V*r*s - V*u - W**2 + W*r + W*s + W - r*s - r), 1)
+INFO Res_V(C,P) :: -s*u*(-W + r)**2*(W - 1)*(r - s + u - 1)*(-W*s + W*u - W + r*s + r)
+PASS Res_V(C,P) printed (6) up to constant :: 1
+INFO P = p1(W) V + p0(W): p1 :: W*s - W*u - r*s + u
+PASS C(V, W=0) = const r^2 s (Vr-V-r)(Vs-s-1) :: r**2*s*(V*r - V - r)*(V*s - s - 1)
+PASS A(0) != 0 (as polynomial)
+PASS C(V, W=r) = const V^2 r^2 u^2 (r-1) :: V**2*r**2*u**2*(r - 1)
+INFO node: lowest tau power and its coefficient (quadratic in Y) :: (2, r*(Y**2*r**2*u**2 - Y**2*r*u**2 + Y*h*r*u - Y*h*u - 2*Y*r**2*u + Y*r*s*u + Y*r*u**2 + 2*Y*r*u - Y*s*u - h*r + h*s + h + r**2 - r*s - r*u - r + s*u))
+PASS node: lowest order is tau^2, a quadratic in Y with nonzero Y^2 and Y^0 coefficients
+PASS node: (0,r) is a double point (all terms of total order >= 2 in (V, W-r))
+PASS node limit spinors: reference difference = -r A* Y :: Y*r*(Y*r*u - Y*u - r + s + 1)
+PASS node: all 24 H have finite limits along V = tau Y, W = r + tau, equal to the limit-spinor values (identically in Y)
+PASS node limit is a shared-zero configuration: A1 = (r,0) and B3 = (1,0) give bracket 0
+INFO W=inf: top weighted degree and leading polynomial in Y :: (4, (Y*s - Y*u + 1)*(Y*r*s - Y*r*u - Y*s + Y*u - h + r + s - u))
+PASS W=inf: leading polynomial = const {Y(s-u)+1}{(r-1)Y(s-u)-h+r+s-u}
+PASS W=inf: Newton polygon: max j at i=0,1,2 equal 4,3,2 (collinear, slope 1 only)
+PASS K(W*) = 0
+INFO G* = H15 + H7: degrees in V of numerator/denominator :: (2, 1)
+PASS G*: -eta Im G* = C2 + C9 + d on the kept basis
+PASS G* = a* V + b* + c*/(d1 V + d0) with a* = (W-1)K^2/(W(r-W)(K-u)) :: (W - 1)*(-W*s + W*u + r*s)**2/(W*(-W + r)*(-W*s + W*u + r*s - u))
+INFO d1(W) :: W*(-W + r)*(-W*s + W*u + r*s - u)
+INFO C(V=1, W) :: (W - 1)*(-W**3*h + W**3*r + W**3*s - W**3*u + 2*W**2*h*r + W**2*h*u - 2*W**2*r**2 - 2*W**2*r*s - W**2*s*u - W**2*s + W**2*u**2 - W*h*r**2 - W*h*r*u + W*r**3 + W*r**2*s + W*r**2*u + W*r*s*u + 2*W*r*s - r**2*s)
+INFO P at V=1 (pole divisor met at V=1) :: -(W - 1)*(-W + r + u)
+PASS (2,3,5,7): node equation 10(10Y^2+16Y+3) up to sign/scale :: 10*(10*Y**2 + 16*Y + 3)
+PASS (2,3,5,7): W* = -3
+PASS (2,3,5,7): C(1,W) = -(W-1)(7W^3-50W^2+16W+12) up to scale :: (W - 1)*(-7*W**3 + 50*W**2 - 16*W - 12)
+PASS (2,3,5,7): leading and constant V-coefficients coprime
+PASS (2,3,5,7): height cubic squarefree, disjoint from W(W-r)(W-1), Res_V(C,P) and P(V=1)
+PASS (2,3,5,7): node quadratic disjoint from A* = 0 and has distinct nonzero roots
+PASS (2,3,5,7): d1(W*) != 0 and K(W*)-u != 0 and W* not in {0, r, 1}
+PASS (2,3,5,7): W=inf leading roots simple nonzero
+INFO NUMERIC: supported chart points (40000 trials, seed 20261125) :: 23
+PASS NUMERIC: d = -eta Im(ruV/(r-W)) and d <= g15 + g7 on all supported points :: 0
+INFO NUMERIC: min over SO(4) of Phi/|g|_inf, first 23 supported points (8 restarts, seed 1) :: 3.8040174863055755e-14
+PASS NUMERIC: no violation (> -1e-8)
+SUMMARY: 0 exact/numeric checks failed []

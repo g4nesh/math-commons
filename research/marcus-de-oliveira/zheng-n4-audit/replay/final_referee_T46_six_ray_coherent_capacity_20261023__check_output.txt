@@ -1,0 +1,23 @@
+[EXACT] PASS  some g in G maps the T46 roles (27,1,59,5,2,28,6,4) to (0,45,5,9,29,35,7,36) in order (#g=1)
+[INFO] FAIL  the literal reading (row (1,2,0,3), column (2,1,3,0), transpose) in moc4lib convention realises it
+[EXACT] PASS  historical T47 {0,4,5,6,9,12} is paper T_65 up to G; its generators are {0,1,2,5,7,9,35,45}
+[EXACT] PASS  images of the six-ray roles (q,p,j,c,d,b) = (0,45,5,9,35,7) are generators of historical T47; f9, f45, f0, f5, f7 minor, f35 non-minor
+[EXACT] PASS  Phi_{g.c}(g.O) = Phi_c(O) for this g at a random rational O and the T46 six-ray cost (exact)
+[EXACT] PASS  Thm 1: P.S = -h, P.J0 = -1-v, |P|^2 = p* (1)
+[EXACT] PASS  Thm 1: C.B = C.Z = 0, C.J = t - v, |C|^2 = c* (2), |D|^2 = c* + 1
+[EXACT] PASS  Thm 1: the nine displayed completion relations hold for the construction
+[EXACT] PASS  Thm 1: Schur complement of the leaf block = (j - t^2) - (b t^2 - 2 beta t v + q v^2)/l
+[EXACT] PASS  density template: Gram PD, |D|^2 - |C|^2 = 1, satisfies the nine relations (with |Z|^2 normalised to 1)
+[EXACT] PASS  Cor 2: with beta=-r, q=b47, b=a47, v=-rt/b47: leaf block singular (l = 0)
+[EXACT] PASS  Cor 2: c*_46 = rho^2 t^2/(e - kappa t^2) (the T47 p-bound)
+[EXACT] PASS  Cor 2: p*_46 = k + (1 - eta t)^2/(e - kappa t^2) (the T47 c-bound)
+[EXACT] PASS  Cor 2: at t = eta e/kappa: c-bound = 1/e + k - eta^2/kappa, p-bound = rho^2 eta^2 e/(kappa(kappa - eta^2 e))
+[EXACT] PASS  Cor 2: p-bound <= p  <=>  e <= p kappa^2/(eta^2 (p kappa + rho^2)) (identity of the boundary)
+[EXACT] PASS  Cor 3: N = D0^2 + eta^2 e (2 D0 - kappa + eta^2 e) and N - rho^2 eta^2 e/p = D0^2 + D0 eta^2 e + eta^4 e^2
+[EXACT] PASS  Cor 3: at t = eta e/M0, e - kappa t^2 = e N/M0^2, consumed c = k + D0^2/(e N), consumed p = rho^2 eta^2 e/N
+[EXACT] PASS  Cor 4 (A <= D0): t = eta e/D0 gives c = k + (D0-A)^2/(e(D0^2 - kappa A)), unused p = p D0 (D0-A)/N0
+[EXACT] PASS  Cor 4 (A >= D0): t = 1/eta gives c = k, p = rho^2/(A - kappa), and rho^2/(A-kappa) <= p iff A >= D0 (A > kappa)
+[EXACT] PASS  Cor 4 comparison: difference = A^2 {2 D0 (D0 - kappa) + kappa A - A^2} / (e (D0^2 - kappa A)((D0 + A)^2 - kappa A))
+[EXACT] PASS  Cor 4: the brace at A = 0 and A = D0 equals 2 D0 (D0 - kappa) and D0 (D0 - kappa)
+[EXACT] PASS  Cor 2 hypotheses b>1, 0<a<1/b give r<1<b, eta>0, D0>kappa>1 (sample b=3, a=1/4 exact)
+summary: 0 EXACT failures

@@ -1,0 +1,26 @@
+G terms 965 per-variable degrees [2, 2, 2, 2, 2, 8, 3, 3, 0] total degrees [8]
+PASS chart denominator 0 has positive coefficients
+PASS chart denominator 1 has positive coefficients
+PASS chart denominator 2 has positive coefficients
+PASS chart denominator 3 has positive coefficients
+PASS chart denominator 4 has positive coefficients
+PASS chart denominator 5 has positive coefficients
+PASS chart denominator 6 has positive coefficients
+PASS chart denominator 7 has positive coefficients
+PASS chart denominator 8 has positive coefficients
+Gtilde terms 134717
+PASS denominator of a^2-pc has positive coefficients
+PASS denominator of Phi has positive coefficients
+PASS multiplier sizes 5 and 6, positive integer coefficients
+PASS remainder R has only positive integer coefficients : 134706 terms (document: 134706)
+PASS remainder term count equals the document's 134706
+PASS R has a monomial free of the nonnegative variables U, Q : 16827 such monomials
+PASS Gtilde/prod(den^m) == G(chart point) at random point 0
+PASS num/den of a^2-pc correct at point 0
+PASS num/den of Phi correct at point 0
+PASS chart point 0 lies in the stated region
+PASS Gtilde/prod(den^m) == G(chart point) at random point 1
+PASS num/den of a^2-pc correct at point 1
+PASS num/den of Phi correct at point 1
+PASS chart point 1 lies in the stated region
+ALL EXACT CHECKS PASS

@@ -1,0 +1,59 @@
+{
+ "doc_id": "blind_moc4_inventory52_whole_assembly_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory52_whole_assembly_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "whole",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     4,
+     6,
+     9,
+     12
+    ]
+   ],
+   "paper_cases": [
+    53
+   ],
+   "restatement": "For x in X with Pc(x)>=0 and contacts containing T_53={0,1,4,6,9,12}: Phi_{c(x)}(O)>=0 for all O in SO(4); all spectra."
+  }
+ ],
+ "dependencies": [
+  "low/middle/third/fourth product notes (branch)",
+  "native_harmonic_conditional (branch)",
+  "paper cases T_4, T_18 (and other orbit cases) for zero coefficients on T7",
+  "four-coefficient atom so4-atoms 3.4 (orbit EXACT)",
+  "Prop C.6 / Cor C.5",
+  "Appendix B"
+ ],
+ "steps": [
+  "cone/generators/exclusive gaps EXACT",
+  "tie 17 kills f1 EXACT",
+  "zero-coefficient containments EXACT + CITED",
+  "S3 stabilizer EXACT",
+  "Q,N,R EXACT; G pointwise",
+  "region split PROOF-READ",
+  "component notes CITED",
+  "seven-to-six reduction CITED"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators(T6), exclusive identity matrix",
+  "tie-17 kill of f1",
+  "containments for ties 5,7,11,14,15,18",
+  "four-coefficient transports with roles",
+  "S3 stabilizer of T7"
+ ],
+ "numeric_tests": [
+  "T7 stratum, seeds 0..39: 30 samples, 0 region-claim violations, min Phi 4.9e-15"
+ ],
+ "unchecked": [
+  "third_products note (not in batch)",
+  "Appendix G stage order"
+ ]
+}

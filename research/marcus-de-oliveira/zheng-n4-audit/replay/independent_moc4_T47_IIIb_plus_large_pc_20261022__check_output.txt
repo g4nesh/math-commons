@@ -1,0 +1,16 @@
+INFO radial octic rebuilt from the cubic in 51.7 s
+PASS height equation C(c(g)+h kappa) is affine in h
+PASS G has 965 terms and total degree 8 : (965, 8)
+PASS chart 1 (1<j<b): negative coefficients are all -2 with V-exponent >= 2 : terms=45504 negatives=10
+PASS chart 1 (1<j<b): R = Gtilde - (V^2-1)^2 W has only nonnegative coefficients : R terms=45474, W terms=10
+PASS chart 1 (1<j<b): R has a positive monomial free of U,Q : 4374
+PASS chart 2 (j>=b): negative coefficients are all -2 with V-exponent >= 2 : terms=31086 negatives=12
+PASS chart 2 (j>=b): R = Gtilde - (V^2-1)^2 W has only nonnegative coefficients : R terms=31050, W terms=12
+PASS chart 2 (j>=b): R has a positive monomial free of T,U,Q : 594
+PASS chart 1: e upper limit = bj/(b-j)
+PASS chart 1: p upper limit = 1/(j-1)
+PASS chart 1: c numerator/denominator consistent with c = (1/j - a) S/(1+S)
+PASS chart 1: 1/j - a > 0 identically (b(1+V) - jV = b + AV... )
+PASS chart 2: c = (1/j - a) S/(1+S) with a = V/((1+V) j)
+NUMERIC Lemma 1 boundary pc=a^2, j=d^2/(a+c): 12 samples (seed 20261125), min over SO(4) of Phi >= 2.907e-14
+SUMMARY: all EXACT checks passed

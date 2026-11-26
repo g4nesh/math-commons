@@ -1,0 +1,44 @@
+PASS EXACT T equals paper T_90 (Appendix E) : [1, 5, 6, 9, 14, 18]
+PASS EXACT generators(T) = {1,2,5,9,28,29,33,35,59} : [1, 2, 5, 9, 28, 29, 33, 35, 59]
+PASS EXACT non-minor generators are exactly f28, f35 : ['n12,34', 'n13,34', 'n12,24', 'n14,23', 'h3421,-', 'n13,12', 'n12,13', 'h4312,-', 'n14,14']
+PASS EXACT dim ker P[T,:] = 8 : 8
+PASS EXACT the 8 basis vectors are independent (rank 8) and vanish on T
+PASS EXACT exclusive gaps: coefficient of f1,f2,f5,f9,f29,f33,f59 = gap at 17,15,11,7,4,12,0
+PASS EXACT circuit (3): f28 + f35 = 2f1 + f2 + f5 + f29 + f33
+PASS EXACT d<0: gaps 22,19,20,8,3 are a+2d, b+d, c+d, f+d, g+d
+PASS EXACT transposition sigma -> sigma^{-1} maps T to T
+PASS EXACT transposition swaps f28 <-> f35 and permutes the 7 minor generators : {1: 1, 2: 5, 5: 2, 9: 9, 28: 35, 29: 33, 33: 29, 35: 28, 59: 59}
+PASS EXACT stabilizer of T in G has 16 elements : 16
+PASS EXACT exactly 8 stabilizer elements fix f35 (hence f28, and permute the minors) : 8
+PASS EXACT images of the pair (1,5) under those 8 are the listed K_{2,4} edges : [(1, 5), (1, 9), (1, 14), (1, 18), (5, 6), (6, 9), (6, 14), (6, 18)]
+PASS EXACT the edge graph is connected on all six contacts
+PASS EXACT off-T indices where f35 vanishes are {0,4,7,11,12,15,17} : [0, 4, 7, 11, 12, 15, 17]
+PASS EXACT f35 > 0 exactly at {2,3,8,10,13,16,19,20,21,22,23} (d=0 rows) : [2, 3, 8, 10, 13, 16, 19, 20, 21, 22, 23]
+PASS EXACT cited six-set {0,1,5,9,14,18} is paper T_40
+PASS EXACT extra contact j in {0,4,7,11,12,15}: some g maps T_40 into T u {j} : {0: ('1234', '1234', 0), 4: ('1342', '1342', 0), 7: ('1234', '2143', 0), 11: ('2314', '1423', 0), 12: ('1423', '4132', 0), 15: ('2431', '3124', 0)}
+PASS EXACT cited seven-set {0,3,7,11,12,16,20} is paper T^(7)_24
+PASS EXACT extra contact 17: T u {17} is in the G-orbit of T^(7)_24 : ('1243', '2143', 0)
+INFO (read from the paper, not computed): Table 6 puts T_40 and T^(7)_24 in Stage 1 and T_90 in Stage 2
+PASS EXACT (5): (d12 C - d2 C)(L8 w + z kappa) = -d(d+f+g) : -d*(d + f + g)
+PASS EXACT (6): P v0 has differences (F_i - F_1)_{i in T} = (0,1,r,s,u,h) : [0, 1, r, s, u, h]
+PASS EXACT four differences are linear in (b,c,f,g) and free of (e,k,z)
+PASS EXACT (7): determinant of the 4x4 system : det = 2*(d + r)*(-d - h + s)*(-d + u - 1)*(d + h + r - s - u + 1)  (equals (7))
+PASS EXACT (8): unique solution (b,c,f,g) as printed, with B0 = -h+r^2-rs-ru+r+su
+PASS EXACT (9): coefficients of e in G13-G12, k in G2-G3, z in G6 are -d-f-g, -c-d-f, e+k+r-s+1 : [-d - f - g, -c - d - f, e + k + r - s + 1]
+PASS EXACT (9): the three equations are triangular in (e,k,z) and each linear in its variable : dq1/dk=0 dq1/dz=0 dq2/dz=0 dq2/de=0
+PASS EXACT selected 7x7 Jacobian = det(4x4) * product of (9)
+PASS EXACT (10): 2(d+Af)(d+Ag)(f+g+d) = -(r-u+1) r a + P2(d)
+PASS EXACT b-equation of (8) is 2(d+r)b = ra - d^2 + L0 d + B0 with L0 as printed
+PASS EXACT denominators of f and g are 2(d+Af) and -2(d+Ag)
+PASS EXACT Lemma 3: Im of 2(d+r)b - (ra - d^2 + L0 d + B0) = 2[(x+r)beta + yX] - (r alpha - 2xy + L0 y)
+PASS EXACT Lemma 3: X = -x - (x+r) beta/y + (r/2) alpha/y + L0/2
+PASS EXACT grad C = 0 at an exact Gaussian-rational matching vector (sanity of coordinates)
+NUMERIC (a) points of X with the five real contact equations (seed 2026, 30 starts): 30
+NUMERIC (a) max |Re E|/|E|  (E must be purely imaginary): 5.24e-11
+NUMERIC (a) max |Im H_i|  (H_i must be real): 9.77e-10
+NUMERIC (a) max rel. residual of the affine form (6): 8.83e-12
+NUMERIC (a) max rel. error of (8): 2.21e-11
+NUMERIC (a) max rel. error of (10): 1.51e-13
+NUMERIC (a) max rel. error of 'real coefficient = -eta Im w = gap at 17,15,11,7,4,12,0': 3.82e-13
+NUMERIC (b) lib stratum points with contacts containing T (seeds 0..3, 10 tries, margin 0): 4; worst min_O Phi (6 BFGS restarts): -6.290583e-15
+SUMMARY: 0 EXACT failures []

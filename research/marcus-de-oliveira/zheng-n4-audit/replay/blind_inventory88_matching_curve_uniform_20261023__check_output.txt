@@ -1,0 +1,38 @@
+PASS A1 paper T_89 = {2,5,9,10,13,14}
+PASS B1 generators(T_89) = {0,1,11,12,39,42,45,70,72}  [[0, 1, 11, 12, 39, 42, 45, 70, 72]]
+PASS B2 non-minor generators are exactly f42, f70
+PASS B3 kernel of P[T,:] has dimension 8; the profiles of (3) are a basis
+PASS B4 a,b,c,e,f,g,k are exactly the gaps at (18,16,12,8,4,3,7)
+PASS B5 circuit (4): f42 + f70 = 2 f0 + f11 + f39 + f72
+PASS B6 gaps 21, 11, 15, 0 are exactly a+2d, c+d, f+d, k+d  [{21: {'a': 1, 'd': 2}, 11: {'c': 1, 'd': 1}, 15: {'f': 1, 'd': 1}, 0: {'k': 1, 'd': 1}}]
+PASS B7 the printed action row=(0,2,1,3), col=(0,3,2,1) preserves T, exchanges f42 and f70, permutes the 7 minors
+PASS B8 stabilizer has 12 elements; 6 fix f70, permute the minors, and map (2,5) onto the six listed edges  [[(2, 5), (2, 14), (5, 10), (9, 10), (9, 13), (13, 14)]]
+PASS B9 table sets: {0,2,3,7,11,12} = T_32, {1,3,4,8,11,12} = T_79, {0,3,7,11,12,16,20} = Table 5 j = 24
+PASS B10 each extra contact 3,8,16 / 4,7,12 / 18 contains an image of the listed earlier set
+PASS B11 f70 > 0 exactly at the 11 remaining noncontact indices; rows partition the 18 noncontacts
+PASS B12 Appendix G: T_32 (stage 11), T_79 (stage 8), T7_24 (stage 1) precede T_89 (stage 12)
+PASS C1 full-complex-equal identities with the paper cubic: dC3-dC4-dC8 = d(b-g), dC7-dC4-dC8 = d(b-e), dC4|e=g=b = -b(2c+b+d) (up to the global sign of F)  [True,True,True]
+PASS C2 offset v0 of (7): differences (P v0)_i - (P v0)_2 = 0,1,r,s,u,h on 2,5,9,10,13,14
+PASS C2b [L8 | kappa] has rank 9
+PASS C3 each equation of the solve order is linear in its variable with the raw coefficient of (8) (up to a constant factor)  [g: raw-coef match True, den terms 6, num terms 9; e: raw-coef match True, den terms 6, num terms 9; c: raw-coef match True, den terms 6, num terms 35; f: raw-coef match True, den terms 6, num terms 35; a: raw-coef match True, den terms 35, num terms 127; k: raw-coef match True, den terms 26, num terms 122; z: raw-coef match True, den terms 120, num terms 263]
+PASS C4 after substituting earlier solutions each equation is alpha*var + beta with alpha, beta in (r,s,u,h,b,d) only
+PASS C5 (11): solved e and g equal the displayed fractions
+INFO solves done 1s
+INFO nonzero substituted gradient numerators at indices [0, 5, 6, 9, 10, 12, 13] terms [7156, 7259, 7330, 634, 442, 7475, 1921]
+INFO gcd factors (terms, multiplicity): [(211, 1)]
+PASS C6 (9): all nonzero substituted gradient numerators have a common factor with 211 terms
+PASS C7 (9): deg_b C211 = 3, deg_d C211 = 2, [b^3 d^2] C211 a nonzero constant (16 in the primitive integer normalization)  [[b^3d^2] = 16; ratio to content-normalized: see INFO]
+INFO primitive integer C211 has [b^3 d^2] = 16
+PASS C7b primitive integer normalization gives [b^3 d^2] C211 = +-16
+INFO cofactors (num / C211) term counts: [(0, 458), (5, 478), (6, 479), (9, 6), (10, 4), (12, 491), (13, 47)]
+PASS C8 some numerator is a nonzero constant times F6 * C211  [[9]]
+PASS C9 some numerator is C211 times a 47-term polynomial R47
+PASS C10 (10): (2d-u+h)^deg_b R47 at the root of F6 = constant * d^2 * product of the four displayed linear factors  [deg_b R47 = 2]
+INFO polynomial part done 2s
+PASS C11 (13): on b=e=g=0, C(L8 x + z kappa) = +-(C + zQ) with Q = -K2, C = -(a+d) K2  [sign 1]
+PASS C12 (14): det Hess C at L8(a,0,c,0,f,0,k,d) - (a+d) kappa = -4 d^4 K2^2 (a+d)^6 (819 exact divisions)  [161 terms]
+INFO face part done 2s
+PASS NUMERIC D1 C211 vanishes at (r,s,u,h,b,d) of 3000 random complex spectra (seed 3), relative residual < 1e-9; control with b+0.1 stays at least 1000 times larger  [max residual 4.31e-15, min control 1.84e-08]
+INFO total 4s
+PASS NUMERIC D9 main statement: stratum points found by least squares (seeds 0-5, 40 tries, margin 0: contacts contain T), min Phi over SO(4) by 8-start BFGS >= -1e-9  [6 points, worst min Phi -4.6999996970957596e-15]
+SUMMARY all EXACT checks pass
