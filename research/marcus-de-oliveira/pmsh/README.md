@@ -4,6 +4,10 @@
 - **Status:** **PMSH(4) is NOT proved here.** This is a bounded contribution that narrows it to an explicit, finite obligation and preserves the negative results.
 - **Evidence levels:** marked on each item. No independent review yet.
 
+## Update, later the same day: part of PMSH(4) is proved
+
+The inequality below is now proved exactly for every t ≥ 1/9 in its t-form, and with it **PMSH(4) for every spectrum with cross-ratio in [1/10, 9/10]**: see [`../star-degree4/`](../star-degree4/README.md) (single ratios, among them arithmetic progressions) and [`../star-halfline/`](../star-halfline/README.md) (intervals; Theorem OS). Computer-assisted, not independently reviewed. The general case remains open.
+
 ## Update, second pass (same day): the spectrum is eliminated
 
 **PMSH(4) is still not proved.** It is now equivalent to a single spectrum-free inequality. Full statement, proof and evidence: [equivalence.md](equivalence.md). Scripts: [`star/`](star/). Run logs: [`star/logs/`](star/logs/).

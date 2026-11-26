@@ -1,0 +1,2 @@
+t = 1: complement dimension 322 (kernel 494) ; max rounding move 1.5e-14 ; max |c.m(U)| over zeros 3.8e-07 ; denominators [1]
+   (block size, complement dim) counts: {(1, 0): 120, (1, 1): 24, (2, 0): 72, (2, 1): 46, (2, 2): 26, (3, 0): 12, (3, 1): 28, (3, 2): 44, (3, 3): 12, (6, 2): 4, (6, 3): 10, (6, 5): 2}

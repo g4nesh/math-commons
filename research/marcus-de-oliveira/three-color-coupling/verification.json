@@ -1,0 +1,24 @@
+{
+  "dimension": 6,
+  "pattern": [
+    2,
+    2,
+    2
+  ],
+  "colorings": 90,
+  "groupedStatisticRows": 358,
+  "individualSquaredMinors": 924,
+  "strictBaseMassFloor": "1/1000000000000000000000000",
+  "negativeCanonicalMasses": 21,
+  "zeroMatrixEntries": 0,
+  "permutationsChecked": 720,
+  "coverTerms": 21,
+  "minimumPermutationCover": 1,
+  "baseObstructionGap": "64066719632048727152801657518817785285266217556555697629472/1564688922443906437535942723796925003281411937642189687515625",
+  "closedEntrywiseUnitaryBallRadius": "1/60000000000000000000000000",
+  "massLowerBoundThroughoutBall": "1/2000000000000000000000000",
+  "obstructionGapLowerBoundThroughoutBall": "32033359816024363576400828759408892642633108778277848814736/1564688922443906437535942723796925003281411937642189687515625",
+  "massLipschitzConstant": 30,
+  "coverLipschitzConstant": 96,
+  "scope": "Explicit nonempty open subclass of pattern(2,2,2), outside the common-minor polytope throughout. Not general Conjecture F."
+}

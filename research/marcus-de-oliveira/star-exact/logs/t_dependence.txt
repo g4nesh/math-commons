@@ -1,0 +1,11 @@
+t = 3/2  distinct entries of the extra-kernel rows: {'0': 20, '3/5': 8, '1': 20} ; t/(1+t) = 3/5
+t = 2    distinct entries of the extra-kernel rows: {'0': 20, '2/3': 8, '1': 20} ; t/(1+t) = 2/3
+t = 3    distinct entries of the extra-kernel rows: {'0': 20, '3/4': 8, '1': 20} ; t/(1+t) = 3/4
+t = 5    distinct entries of the extra-kernel rows: {'0': 20, '5/6': 8, '1': 20} ; t/(1+t) = 5/6
+blocks with extra kernel: 20 ; blocks whose pattern is identical for all t after substituting r = t/(1+t): 20
+   pattern (('0', '1'),) : 8
+   pattern (('r', '1'),) : 4
+   pattern (('0', '1', '0'),) : 2
+   pattern (('r', '0', '1'),) : 2
+   pattern (('1', '0', '0'),) : 2
+   pattern (('0', 'r', '1'),) : 2

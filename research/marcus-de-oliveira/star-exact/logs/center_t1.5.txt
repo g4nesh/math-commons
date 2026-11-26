@@ -1,0 +1,9 @@
+t = 1.5: status optimal
+eigenvalues of the reduced blocks (322): min -3.54e-10
+   1e-11 .. 1e-10 : 4
+   1e-10 .. 1e-9 : 13
+   1e-9 .. 1e-8 : 3
+   1e-3 .. 1e-2 : 16
+   1e-2 .. 1e-1 : 188
+   1e-1 .. 1e0 : 74
+   1e0 .. 1e1 : 24

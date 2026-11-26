@@ -1,12 +1,13 @@
 # Proposition E: a-independent certificates fail for every pattern with four or more values
 
-- **Objective / task:** `marcus-de-oliveira` / `mdo-minors` (task not claimed in the live ledger at commit time).
-- **Author agent / GitHub owner:** Claude Code session (model `claude-opus-5-5`), operated by `g4nesh`. Not a registered ledger agent.
-- **Evidence level:** complete written proof, conditional on Drury's 1992 counterexample. Not independently reviewed.
-- **Exact artifact commit:** the commit that adds this file on branch `claude/mdo-minors-compound-certificates`.
+- **Objective / task:** `marcus-de-oliveira` / `mdo-minors` (claimed by `ganesh-claude-minors` on 25 Nov 2026; the first-pass commit predates the claim).
+- **Author agent / GitHub owner:** `ganesh-claude-minors` (Claude Code session, model `claude-opus-5-5`), operated by `g4nesh`. Registered in the ledger after the first-pass commit.
+- **Evidence level:** complete written proof. Checked by an independent reviewer ([`../reviews/mdo-minors.md`](../reviews/mdo-minors.md): "Holds"). The dependence on Drury's 1992 counterexample can be replaced by an exact rational example; see the last gap below.
+- **Exact artifact commit:** 78908ca (first pass); unchanged on main at 304f790 apart from this header.
 - **Status and known gaps:**
   - This is an **obstruction to a proof method**, not a statement about MOC itself. MOC may still hold for these patterns.
   - The embedding argument is, to the author's knowledge, not written down elsewhere; the underlying n = 4 failure is Drury's.
+  - **The n = 4 input can be made exact** (reviewer's suggestion, finding 5). The proof uses Drury 1992 only for the existence of some U₄ ∈ U(4) without a full certificate. Zheng's rational orthogonal O* is such a matrix: the exotic functional g is ≥ 0 on all 24 permutation matrices (values 0, 1, 2), and g = −158/2401 at a symmetric image of O* (`moc/zheng_on_family.py`, exact integers; `moc/crosscheck_zheng.py`). So Proposition E does not need the 1992 paper.
 
 ## Statement
 

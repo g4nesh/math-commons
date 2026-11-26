@@ -1,0 +1,5 @@
+exact system assembled: 300 equations, 434 unknowns  [9s]
+exact rank 184 ; free unknowns 250  [9s]
+exact solution found ; max deviation from the numerical point 2.06e-09  [9s]
+all leading principal minors positive: True ; smallest one 9.142e-03
+certificate written: certificate_t5.json  (positive definite: True)

@@ -1,0 +1,24 @@
+{
+  "general_exact_unitaries": 384,
+  "u14_zero_exact_unitaries": 384,
+  "u11_zero_exact_unitaries": 384,
+  "opposite_real_phase_comparisons": 384,
+  "permutation_degeneracies": 24,
+  "saved_negative_coefficient_fixtures": 2,
+  "t_values": [
+    "1/100",
+    "1/5",
+    "1",
+    "5"
+  ],
+  "all_exact_identities_pass": true,
+  "negative_c2_exact": [
+    "-6967634414959095922166053753681234854015302933504/30795100483993887135129899427539005627612941537375625",
+    "-1426840037349781197994246969344/57449173098767439652925611224715625"
+  ],
+  "nonunitary_input_rejected": true,
+  "helper_sha256": "710cd066cd4f0045089bbd845df9280113a31f9e335e1f157bf3bb12a0efa0bc",
+  "python": "3.9.6",
+  "cpu_seconds": 10.922464,
+  "scope": "Exact finite regression, not a universal positivity proof."
+}

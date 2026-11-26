@@ -1,0 +1,2 @@
+harmonic spectra, 624 (U, c) pairs incl. deep cap unitaries: largest LP infeasibility 0.00e+00 ; largest |det(D_a+H) - sum lam z| (relative) using the SAME weights for random complex a: 2.06e-13
+for comparison, non-harmonic spectrum (0,1,2,3) at the deepest cap unitary: LP infeasibility 0.00e+00 (PMSH there is not covered by this theorem)

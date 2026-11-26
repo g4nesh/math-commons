@@ -1,6 +1,7 @@
 """n=4 targeted search.  Counterexamples can only occur for U whose compound vector violates one of
 the 48 exotic facets.  Phase 1: collect deep violators.  Phase 2: for each, maximise J over (a,b,theta)
-with U fixed (batched, analytic gradients).  Phase 3: joint refinement with a penalty keeping U bad."""
+with U fixed (batched, analytic gradients).  U is never varied after phase 1: no joint refinement is implemented.
+Half of the unitaries are 'deepened' in phase 1; these all converge to the one extremal orbit (see reanalyse4.py)."""
 import sys, json, time, numpy as np
 sys.path.insert(0, 'moc')
 from bsearch import Problem, haar, normalise, expm_skew

@@ -1,0 +1,6 @@
+polished 1894 zeros: max gradient norm 2.5e-09 ; max of |g0|, a, b: 1.5e-09 ; accepted (all three < 1e-13): 1886  [11s]
+kernel span 560, complement 256 ; largest ratio (first discarded / last kept singular value) = 3.7e-02
+   blocks of size 1: 144 ; kernel-dimension histogram {np.int64(0): np.int64(21), np.int64(1): np.int64(123)}
+   blocks of size 2: 144 ; kernel-dimension histogram {np.int64(0): np.int64(18), np.int64(1): np.int64(44), np.int64(2): np.int64(82)}
+   blocks of size 3: 96 ; kernel-dimension histogram {np.int64(0): np.int64(2), np.int64(1): np.int64(29), np.int64(2): np.int64(45), np.int64(3): np.int64(20)}
+   blocks of size 6: 16 ; kernel-dimension histogram {np.int64(1): np.int64(1), np.int64(2): np.int64(1), np.int64(3): np.int64(9), np.int64(4): np.int64(5)}

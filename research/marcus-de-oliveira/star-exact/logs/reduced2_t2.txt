@@ -1,0 +1,2 @@
+unknowns 434 ; independent conditions 184 ; relative part of f outside the range 1.2e-15
+t = 2: best lambda = +3.4402e-02 (optimal)  [5s]

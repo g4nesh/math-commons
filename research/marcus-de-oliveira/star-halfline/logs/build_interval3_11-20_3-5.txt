@@ -1,0 +1,6 @@
+degree 3, s in [11/20, 3/5] (t in [11/9, 3/2]), Bernstein degree 2: unknowns 1302, conditions 570, F outside the range 2.1e-15 ; best common margin lambda = +1.5921e-03 (optimal)  [5s]
+degree 3, s in [11/20, 3/5], Bernstein degree 2: unknowns 1302 ; equations 1500 (nodes 11/20, 9/16, 23/40, 47/80, 3/5)  [1s]
+rank 570 ; free unknowns 732  [2s]
+  bits 32: pivot unknowns lifted from 4 primes, confirmed by 2 more ; largest denominator has 45 bits  [4s]
+  bits 32: max deviation from the numerical point 7.84e-09 ; all Bernstein coefficients positive definite: True (smallest leading minor 6.076e-10)  [4s]
+certificate written: interval3_11-20_3-5.json

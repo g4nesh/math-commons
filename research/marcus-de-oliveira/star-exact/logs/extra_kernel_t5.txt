@@ -1,0 +1,55 @@
+block 20 (size 3, complement 3): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [ 1.00000000e+00  1.45132912e+04 -2.64085500e+00]
+     complement basis poly:  +1*u11*u12*u23
+     complement basis poly:  +1*u11*u13*u22
+     complement basis poly:  +1*u12*u13*u21
+block 33 (size 3, complement 3): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [1.000000e+00 2.600000e-05 1.199991e+00]
+     complement basis poly:  +1*u11*u13*u34
+     complement basis poly:  +1*u11*u14*u33
+     complement basis poly:  +1*u13*u14*u31
+block 49 (size 3, complement 3): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [ 1.00000000e+00  9.24759116e+03 -1.22930500e+00]
+     complement basis poly:  +1*u11*u21*u42
+     complement basis poly:  +1*u11*u22*u41
+     complement basis poly:  +1*u12*u21*u41
+block 54 (size 3, complement 3): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [1.0e+00 8.3e-05 1.6e-05]
+     complement basis poly:  +1*u11*u22*u24
+     complement basis poly:  +1*u12*u21*u24
+     complement basis poly:  +1*u14*u21*u22
+block 55 (size 3, complement 3): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [ 1.0e+00  5.9e-05 -3.7e-05]
+     complement basis poly:  +1*u11*u22*u32
+     complement basis poly:  +1*u12*u21*u32
+     complement basis poly:  +1*u12*u22*u31
+block 63 (size 3, complement 2): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [1.00000000e+00 7.19827106e+04]
+     complement basis poly:  +1*u11*u23*u33
+     complement basis poly:  +1*u13*u23*u31
+block 68 (size 3, complement 2): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [1.       1.200007]
+     complement basis poly:  +1*u11*u24*u34
+     complement basis poly:  +1*u14*u24*u31
+block 77 (size 3, complement 3): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [1.00000000e+00 4.02945712e+04 4.83531179e+04]
+     complement basis poly:  +1*u11*u31*u44
+     complement basis poly:  +1*u11*u34*u41
+     complement basis poly:  +1*u14*u31*u41
+block 80 (size 3, complement 2): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [1.       1.200007]
+     complement basis poly:  +1*u11*u32*u34
+     complement basis poly:  +1*u14*u31*u32
+block 96 (size 3, complement 2): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [1.0000000e+00 7.8518894e+04]
+     complement basis poly:  +1*u11*u42*u44
+     complement basis poly:  +1*u14*u41*u42
+block 137 (size 3, complement 2): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [1.       1.200006]
+     complement basis poly:  +1*u13*u22*u43
+     complement basis poly:  +1*u13*u23*u42
+block 141 (size 3, complement 2): 1 extra kernel direction(s) in reduced coordinates:
+     coefficients on the complement basis: [1.0000000e+00 7.4245696e+04]
+     complement basis poly:  +1*u14*u22*u44
+     complement basis poly:  +1*u14*u24*u42
+extra kernel dimension in total: 20 ; max distance of RREF entries from rationals with denominator <= 200: 2.1e-04 ; denominators seen: [1, 4, 5, 7, 35, 38, 66, 79, 110, 142, 148, 151, 152, 157, 179, 181, 188, 195]

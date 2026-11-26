@@ -1,0 +1,4 @@
+(1) rank K = 1227 ; rank of evaluations at 300 fresh rational unitaries (seed 777) = 261 ; sum = 1488 = dim W: True  [10s]
+(2) 196 nonempty blocks, 302 amplitudes ; all T_b symmetric with positive leading principal minors: True (smallest minor 2.224e-04)
+(3) identity fails at 0 of 300 fresh rational unitaries: exact identity HOLDS  [22s]
+CERTIFICATE VALID

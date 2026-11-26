@@ -1,0 +1,1 @@
+t = 2: dropped 20 directions ; amplitudes kept: 302 ; max rounding move 8.6e-05 ; denominators used [1, 3]

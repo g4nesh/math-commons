@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "exact_unitary_cases": 33,
+  "compound_entries_checked": 18910,
+  "permutations_with_support_at_least_four_checked": 5710,
+  "flat_cases": [
+    {
+      "n": 3,
+      "formal_compound_threshold": "9/2",
+      "physical_threshold": "4",
+      "half_turn_expected_moved_points": "8/3",
+      "half_turn_obstructed": false
+    },
+    {
+      "n": 4,
+      "formal_compound_threshold": "4",
+      "physical_threshold": "4",
+      "half_turn_expected_moved_points": "3",
+      "half_turn_obstructed": false
+    },
+    {
+      "n": 5,
+      "formal_compound_threshold": "15/4",
+      "physical_threshold": "15/4",
+      "half_turn_expected_moved_points": "16/5",
+      "half_turn_obstructed": true
+    },
+    {
+      "n": 6,
+      "formal_compound_threshold": "18/5",
+      "physical_threshold": "18/5",
+      "half_turn_expected_moved_points": "10/3",
+      "half_turn_obstructed": true
+    },
+    {
+      "n": 7,
+      "formal_compound_threshold": "7/2",
+      "physical_threshold": "7/2",
+      "half_turn_expected_moved_points": "24/7",
+      "half_turn_obstructed": true
+    }
+  ]
+}
