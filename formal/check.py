@@ -77,6 +77,13 @@ theorems = {
         'sumWithCongrOn', 'sumWithFilter', 'sumWithAdd', 'sumWithSwap',
         'sumWithUniqueKey', 'endpointProbabilityAsSum', 'endpointPairMassOne', 'productPairMassOne')},
 }
+theorems['OrthogonalCube.lean'] = {'MathCommons.OrthogonalCube.' + n for n in (
+    'squareNonnegative', 'quadraticNonnegative', 'lagrangeIdentity',
+    'quadraticCauchy', 'quadraticReverseCauchy', 'firstPartNonnegative',
+    'firstPartCauchy', 'secondPartReverseCauchy', 'complementPolarization',
+    'totalAtOne', 'strictOrderOfSquares', 'weightedCauchy',
+    'strictWeightedCross', 'contradictionFromParts', 'lemmaLOrdered',
+    'cubeFormSwap', 'lemmaL', 'lemmaLMax')}
 allowed = {'propext', 'Classical.choice', 'Quot.sound'}
 lean = sys.argv[1] if len(sys.argv) == 2 else 'lean'
 version = (root / 'lean-toolchain').read_text().strip().split(':v')[1]
@@ -107,3 +114,10 @@ def check_module(source, expected, build_dir):
 with TemporaryDirectory(prefix='math-commons-lean-') as build_dir:
     for source, expected in theorems.items():
         check_module(source, expected, build_dir)
+
+# Also pin the exact generic statement and audited source, independently of the
+# declaration inventory above. This checker uses only temporary build artifacts.
+subprocess.run([sys.executable,
+                str(root.parent / 'research/marcus-de-oliveira/orthogonal-cube-lean/check.py'),
+                lean], check=True,
+               env={**os.environ, 'ELAN_TOOLCHAIN': f'leanprover/lean4:v{version}'})
