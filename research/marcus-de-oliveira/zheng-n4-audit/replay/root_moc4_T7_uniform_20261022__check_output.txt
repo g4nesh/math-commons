@@ -1,0 +1,49 @@
+PASS EXACT T equals paper T_8
+PASS EXACT generators = {0,1,2,3,4,5,6,39,45,46} [0, 1, 2, 3, 4, 5, 6, 39, 45, 46]
+PASS EXACT only f46 nonminor
+PASS EXACT d = 1 on f46, -1 on f0, f1, 0 on the other generators {0: -1, 1: -1, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 39: 0, 45: 0, 46: 1}
+PASS EXACT f46 + f0 = f2 + f3 + f6 + f45
+PASS EXACT f46 + f1 = f4 + f6 + f45
+PASS EXACT dim W = 8 = rank of generators
+PASS EXACT (1) canonical profile identity holds on all of W (24 coordinates)
+PASS EXACT on N_T with d >= 0 all eight canonical coefficients of (1) are >= 0 (checked on the generators of that cone)
+PASS EXACT indices j outside T with f46(j) = 0 are {4,10,16,18,19,22,23} [4, 10, 16, 18, 19, 22, 23]
+PASS EXACT j=4: some paper case T_k (k != 8) maps into T u {j} cases [2, 4, 7, 15, 29, 47]
+PASS EXACT j=10: some paper case T_k (k != 8) maps into T u {j} cases [3, 6, 10, 11, 44, 50]
+PASS EXACT j=18: some paper case T_k (k != 8) maps into T u {j} cases [11, 16, 37, 50, 66, 69]
+PASS EXACT j=19: some paper case T_k (k != 8) maps into T u {j} cases [2, 13, 35, 70]
+PASS EXACT j=22: some paper case T_k (k != 8) maps into T u {j} cases [3, 12, 26, 39, 62, 65]
+INFO j=16: generators of T u {16} = [0, 2, 3, 5, 6, 39, 45, 46]
+INFO j=23: generators of T u {23} = [2, 3, 4, 5, 39, 45, 46]
+PASS EXACT (f2, f39 ; f46) is a G-image of (f1, f9 ; f22) (the SOC atom of independent_moc4_T2)
+PASS EXACT (F2-F0)/D = 1-x, (F6-F0)/D = x(r-1), (F8-F0)/D = r-x
+PASS EXACT R5 = -s x and R7 = x(r-1) - t
+PASS EXACT (2) R1 - R3 = E
+PASS EXACT (2) R9 = -rE + rx - t - x
+PASS EXACT (2) R13 - R12 + R18 + x(R12 - R16 - R18) = (x-1)t + s x(x-1)
+PASS EXACT F0/D = -x(v-1)
+PASS EXACT (4) inverts the chart: s, t, E recovered from v(E), w(E), z(E)
+PASS EXACT contacts: R_j real (R_j(E) = R_j(conj E)) for j in T
+PASS EXACT b = Im E: R1 - R3 = E
+PASS EXACT g9 = -r b
+PASS EXACT a = -x d
+PASS EXACT g16 = (1-s) g12
+PASS EXACT F0/D = -x(v-1), F_j/D = R_j - x(v-1)
+PASS EXACT (5) d/b = s t r^2 (|Z|^2 - K)/|DZ|^2
+PASS EXACT (5) g3/b = s(1-x) L r^2/|(r-1)Z + L|^2
+PASS EXACT (5) g18/b = s r t {L r (rx - t) - |Z - L|^2}/|DZ|^2
+PASS EXACT (6) (g10/b)|(rx-1)Z + L|^2 = r(x-1)[(rx-1)|Z|^2 + 2L Re Z + L{(r-1)(1+t)+s}]
+PASS EXACT every R_j times D L3 L10 is a polynomial in E (reduced denominators divide D L3 L10)
+PASS EXACT dR = R12 - R16 - R18 times D is a polynomial (denominator only D)
+PASS EXACT dR has a finite value at E = infinity (deg_E num <= deg_E den) 2 <= 2
+PASS EXACT R3 times L3 is a polynomial (R3 regular at the roots of D, which differ from E3)
+PASS EXACT D(E3) = r s (x-1) L/(r-1)^2
+PASS EXACT v(E) has denominator dividing P0
+PASS EXACT disc_t(disc_E D) = -16 r^2 s (s-1)(x-1) -16*rr**2*ss*(ss - 1)*(xx - 1)
+PASS INFO leading coefficient of disc_E D in t is positive (a square) 1
+PASS INFO disc_E D at s = 1 equals (r - t)^2 * (positive constant) (rr - tt)**2
+PASS EXACT disc_E P0 = ((1-s)x - 1)^2 + 2t(1 - (1+s)x) + t^2
+PASS EXACT w = v(E-sx)/(vE-s), z = (w(s+v)-v)/(s-1+w) solve the s- and E-definitions for any v
+PASS EXACT t-definition minus t = (v - r)P0(E) + t{(r-1)E + s(x-1)} times a factor free of that linear form quotient computed exactly
+INFO (t_def - t)/[(v-r)P0 + t L3] has numerator degree 0 and denominator degree 2
+SUMMARY failures=0

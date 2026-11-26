@@ -1,0 +1,72 @@
+# Output of six_circle_verify.py (stages run separately through the job limiter; SUPP path omitted)
+# run: python -I -B six_circle_verify.py STAGE   (numeric run as two batches: SIXCIRCLE_N=10000 SIXCIRCLE_BATCH=0 and =1)
+
+$ six_circle_verify.py atoms
+== stage atoms
+[PASS] O(p,q): x -> p x conj(q) satisfies O^T O = |p|^2|q|^2 I and det O = |p|^4|q|^4
+[PASS] lib Appendix D: f2 = n_{13,34}, f12 = n_{14,24}, f70 = h_{4231,+}
+[PASS] H is orthogonal
+[PASS] Phi_{f2} = x2^2, Phi_{f12} = x3^2 (x2 = det O[13,34], x3 = det O[14,24]), polynomial identities
+[PASS] x2 = v0+v1, x3 = v1+v3, v0+v1+v2+v3 = 0, with v_i = P_i^2|Q|^2 - Q_i^2|P|^2
+[PASS] KEY: Phi(f2+f70) = 2(delta^2+Delta^2)|P|^2|Q|^2 - 2(v0 v3 + v1 v2), delta = P0Q2+P1Q3, Delta = P2Q0+P3Q1 (bihomogeneous polynomial identity)
+[PASS] x2 x3 = v0 v3 - v1 v2
+[PASS] Phi_m = Phi(f2+f70) + x2^2 + x3^2 = 2(delta^2+Delta^2) + (v0-v3)^2 - 4 v1 v2
+[PASS] NUMERIC: 200000 random (p,q): min of Phi(f2+f70)+2|x2 x3| = 6.709e-04, min Phi_m = 6.711e-04
+[PASS] NUMERIC: lemma cos^2((a+b)/2) >= min(cos^2 a, cos^2 b) on [-pi/2,pi/2]^2: min 3.41e-08
+[PASS] 12 distinct stored atoms, each value vector in im P
+[PASS] each atom c_k satisfies Phi_{c_k}(O) = Phi_m(S1 O^(T) S2) identically in 16 entries, with signed permutation matrices of det product +1 (so Phi_{c_k} >= 0 on SO(4))
+stage atoms: ALL PASS  (4.5s)
+
+$ six_circle_verify.py dd
+== stage dd
+[PASS] sum of the 34 minor vectors = 7 kappa and they have rank 14 (kappa interior to K_0 and K)
+   own DD: |R| = 72, |R'| = 86  (0.1s)
+[PASS] the 24 evaluation functionals are vertices of R and R'
+[PASS] own DD vertex set of R equals the stored 72-list
+[PASS] the 72 facet normals of the relaxation file are the same set
+[PASS] own DD vertex set of R' equals the stored 86-list
+   vertices of R removed by the atoms (indices in the 72-list): [45, 65]
+[PASS] every vertex of R' is feasible with an active set of rank 13 (re-check)
+[PASS] NUMERIC: 500 random LPs over R: LP optimum = min over own vertex list (max gap 3.6e-15)
+[PASS] NUMERIC: 500 random LPs over R': LP optimum = min over own vertex list (max gap 2.7e-15)
+stage dd: ALL PASS  (1.3s)
+
+$ six_circle_verify.py chambers
+== stage chambers
+[PASS] own F_sigma equals the document's -C_s(2)(1-C_s(3))(zeta-C_s(4))
+[PASS] the four coefficient columns are P-images of real vectors, identically in s,t,u
+[PASS] chamber I: 48 certificates replayed with own F_sigma (nonnegative coefficients, R != 0, kappa + 4 column identities exact); targets = all 48 non-ordinary vertices of own DD list  (4.5s)
+[PASS] chamber I: negative control (record 0 against vertex 15) rejected
+[PASS] chamber II: 48 certificates replayed with own F_sigma (nonnegative coefficients, R != 0, kappa + 4 column identities exact); targets = all 48 non-ordinary vertices of own DD list  (4.8s)
+[PASS] chamber II: negative control (record 0 against vertex 15) rejected
+[PASS] chamber III: 62 certificates replayed with own F_sigma (nonnegative coefficients, R != 0, kappa + 4 column identities exact); targets = all 62 non-ordinary vertices of own DD list  (6.3s)
+[PASS] chamber III: negative control (record 0 against vertex 15) rejected
+[PASS] 12-atom file lists no failed vertex
+[PASS] own exact sample: 75 rational chamber points, 3727 profile extreme rays, every ray in K_0 (I, II) resp. K (III); min w(ray) per chamber = ['0', '0', '0']; chamber-III rays outside the minor cone: 11
+stage chambers: ALL PASS  (21.8s)
+
+$ six_circle_verify.py random
+== stage random
+   per kind (configs, failures): {'generic': (300, 0), 'AA': (300, 0), 'CC': (300, 0), 'AC': (300, 0), 'inf': (300, 0), 'free_eq': (300, 0), 'free_real': (300, 0), 'AC+inf': (300, 0), 'AA+CC': (300, 0), 'free_circle': (300, 0), 'alt': (300, 0), 'alt+AC': (300, 0), 'alt+inf+free_eq': (300, 0)}
+   chambers by perturbed cyclic order: {'I': 1006, 'II': 1885, 'III': 1009}
+[PASS] EXACT: 3900 random rational concyclic 3+3 configurations (Gaussian-rational circle frames, 3600 degenerate/special), up to 3 directions each and all prescribed relabelings: gap vector in g.K (K_0 in chambers I/II, K in III); failures 0  (241s)
+   chamber-III gap vectors outside the minor cone (atoms needed): 0
+   profile-space rank histogram (strong test): {5: 3900}
+[PASS] EXACT strong form: profile cones of the first 3900 configurations, 148241 extreme rays, all in g.K; failures 0; chamber-III rays needing atoms: 1065
+stage random: ALL PASS  (240.9s)
+
+$ SIXCIRCLE_N=10000 SIXCIRCLE_BATCH=0 six_circle_verify.py numeric
+== stage numeric
+   10000 configurations, 24012 local minimizations, 382s
+   10 worst float minima: ['5.06e-20', '7.45e-20', '1.71e-19', '1.72e-19', '1.93e-19', '3.88e-19', '4.05e-19', '4.27e-19', '4.46e-19', '4.53e-19']
+   same points in mpmath (50 digits): ['5.06e-20', '7.45e-20', '1.71e-19', '1.72e-19', '1.93e-19', '3.88e-19', '4.05e-19', '4.27e-19', '4.46e-19', '4.53e-19']
+[PASS] NUMERIC: 10000 random six-on-a-circle configurations (normalized max gap 1): min over SO(4) worst value 5.062e-20; mpmath re-evaluation worst 5.06e-20
+stage numeric: ALL PASS  (382.0s)
+
+$ SIXCIRCLE_N=10000 SIXCIRCLE_BATCH=1 six_circle_verify.py numeric
+== stage numeric
+   10000 configurations, 23640 local minimizations, 338s
+   10 worst float minima: ['3.83e-20', '4.51e-20', '9.18e-20', '9.60e-20', '1.93e-19', '3.25e-19', '3.82e-19', '4.06e-19', '4.13e-19', '4.67e-19']
+   same points in mpmath (50 digits): ['3.83e-20', '4.51e-20', '9.18e-20', '9.6e-20', '1.93e-19', '3.25e-19', '3.82e-19', '4.06e-19', '4.13e-19', '4.67e-19']
+[PASS] NUMERIC: 10000 random six-on-a-circle configurations (normalized max gap 1): min over SO(4) worst value 3.834e-20; mpmath re-evaluation worst 3.83e-20
+stage numeric: ALL PASS  (338.2s)

@@ -1,0 +1,230 @@
+{
+ "doc_id": "independent_moc4_T23_harmonic_reduction_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T23_harmonic_reduction_20261022.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     2,
+     3,
+     4,
+     6,
+     7,
+     8
+    ]
+   ],
+   "paper_cases": [],
+   "covers_all_spectra": true,
+   "restatement": "T={2,3,4,6,7,8} (= paper T_24 up to G). If (*) holds for T+{16} and T+{17}, then (*) holds for T, for every x in X, every O in SO(4), contacts non-strict; degenerate spectra via Appendix B and Theorem C.1; T+{13} via a cited norm-kernel theorem."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "old SOC: delta^2<=g10*g13 safe for g10 f5+g13 f2+delta f54",
+   "used_for": "bounding g13 near nonreal poles",
+   "match_checked": false
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_25",
+   "contact_set": [
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    16
+   ],
+   "used_for": "hypothesis T+{16} (drop 6 gives a T_25 image)",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_26",
+   "contact_set": [
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    17
+   ],
+   "used_for": "hypothesis T+{17} (= Table 5 #5; drop 6 gives a T_26 image)",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "Table 5 #6 (norm-kernel theorem)",
+   "contact_set": [
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    13
+   ],
+   "used_for": "boundary contact 13",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_3",
+   "used_for": "extra contacts 1 and 12",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_1",
+   "used_for": "extra contact 10",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_10",
+   "used_for": "extra contact 22",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Appendix B Thm B.1, Lemma B.2",
+   "used_for": "collision / shared-zero configurations",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Theorem C.1 one-circle",
+   "used_for": "real x",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Theorem 1.2 two-orthogonal",
+   "used_for": "unitary to orthogonal",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "8-term decomposition, delta=g5-g16=g9-g17",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "delta<=0 gives minor decomposition; (1) L_O>=-M_O delta",
+   "status": "EXACT+PROOF-READ (auditor supplied f54+f1, f54+f4 relations)"
+  },
+  {
+   "n": 3,
+   "claim": "extra contacts reduce to listed cases",
+   "status": "EXACT inclusions; cases CITED"
+  },
+  {
+   "n": 4,
+   "claim": "SOC reverse inequality on negative region",
+   "status": "CITED (NUMERIC support)"
+  },
+  {
+   "n": 5,
+   "claim": "chart and H2..H9 values",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "s,t,r,u nonzero",
+   "status": "PROOF-READ (argument supplied by auditor)"
+  },
+  {
+   "n": 7,
+   "claim": "chart exhaustive",
+   "status": "EXACT (auditor); l=n=0 exception has real x"
+  },
+  {
+   "n": 8,
+   "claim": "J relation, z-v, H1, g10=-(tr/q)g1, H5->1",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "nonreal finite poles are zeros of J",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "simple pole, residue ratio z/(z-1) nonreal, residues nonzero",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 11,
+   "claim": "nonreal poles not in closure of negative component",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 12,
+   "claim": "qA1=0 gives contact 1",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "harmonic minimum, puncture list complete",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 14,
+   "claim": "t=1 perturbation",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p.1, 'They are nonzero'",
+   "claim": "s,t,r,u nonzero",
+   "why": "not justified in text",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "s=x(v-1)/(w(x-1)), r=(c-v)(z-1)/((c-z)(x-1)), u=(w-c)(v-z)/(w(c-z)(x-1)), t=c(v-z)/(w(c-z)); nonzero for distinct non-shared-zero points"
+  },
+  {
+   "location": "p.2-3, 'exhaustive rational chart'",
+   "claim": "every configuration is in the chart",
+   "why": "asserted only",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "inverse map replayed; only l=n=0 is missed, which forces real x (one-circle)"
+  },
+  {
+   "location": "p.1, 'forces delta<=0, hence nonnegativity'",
+   "claim": "delta<=0 gives minor decomposition",
+   "why": "needs unstated relations among the 10 generators",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "f54+f1=f0+f6+f53, f54+f4=f2+f3+f6+f53"
+  }
+ ],
+ "exact_replays": [
+  "generators(T) and T~T_24",
+  "8-term decomposition on all 10 generators",
+  "H2..H9, J, z-c, z-v, H1, g10 relation, H5 limit",
+  "denominators of all 24 H_j",
+  "residue ratio mod J, raw numerators",
+  "chart inverse (exhaustiveness)",
+  "seven-set and six-subset reductions via G"
+ ],
+ "numeric_tests": [
+  "SOC (f5,f2,f54) boundary: 6 samples seed 11, worst 3.9e-14; control 3x bound gives -4.0e-2"
+ ],
+ "unchecked": [
+  "norm-kernel theorem for T+{13}",
+  "SOC proof",
+  "cited paper cases T_1,T_3,T_10,T_25,T_26",
+  "main statement not numerically searched"
+ ]
+}

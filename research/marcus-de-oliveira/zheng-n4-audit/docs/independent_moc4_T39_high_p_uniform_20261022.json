@@ -1,0 +1,94 @@
+{
+ "doc_id": "independent_moc4_T39_high_p_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T39_high_p_uniform_20261022.pdf",
+ "pages": 3,
+ "verdict": "could-not-check",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     5,
+     9,
+     14,
+     18
+    ]
+   ],
+   "paper_cases": [],
+   "restatement": "For d>0 and g = q f5 + p f1 + j f12 + c f9 + e f2 + d f35 + b f33 + a f29 (all coefficients >= 0) with p >= d, pj < d^2, no x with grad C(x)=0 has Re x = g + h kappa; so no x in X has c(x) = g. Branch of paper T_40.",
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "Paper App. A.1: X subset of {grad C = 0}",
+   "used_for": "singularity of lifts",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Paper App. D facet vectors",
+   "used_for": "source",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "restricted cubic C + hQ, C<0",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "det H = -4G^2/Q^2",
+   "status": "UNCHECKED",
+   "note": "EXACT at 60 sampled rational base points only"
+  },
+  {
+   "n": 3,
+   "claim": "832/3084/1821-term certificates (2)",
+   "status": "UNCHECKED",
+   "note": "first two EXACT at sampled points"
+  },
+  {
+   "n": 4,
+   "claim": "octic factorization, pseudo-division, trace-norm identity, bordered-minor divisibility",
+   "status": "UNCHECKED",
+   "note": "consequences NUMERIC at sampled roots"
+  },
+  {
+   "n": 5,
+   "claim": "root analysis, Vieta trace/norm signs",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 6,
+   "claim": "rank 12 and nonpositive maximal principal minors; limit extension",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 7,
+   "claim": "Section 4 Schur/definiteness contradiction",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "restriction of the cubic (C, Q formulas)",
+  "N - ea >= 0 coefficientwise",
+  "height independence of P*",
+  "pointwise at 60 rational base points: det identity (1) as perfect square of a quadratic, gamma<0 and AB beta - Nj alpha < 0"
+ ],
+ "numeric_tests": [
+  "seed 7, 60 base points, 8 positive roots: P*(c+)<0, bordered minors ~0, rank 12, all 91 12-minors <0, det(K^T Q_v K)>0 (60 digits)"
+ ],
+ "unchecked": [
+  "global coefficient certificates",
+  "G (1313 terms), F+- octics, L, M, P6 not rebuilt",
+  "companion supplement script not executed"
+ ]
+}

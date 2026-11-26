@@ -1,0 +1,11 @@
+PASS EXACT T equals paper T_8
+PASS EXACT generators of T u {16} = {0,2,3,5,6,39,45,46}
+PASS EXACT j = 16 forces s = 1: g16 = (1-s) g12 identically (exact, general s)
+PASS EXACT at s = 1: L = R(1-RX) + (R+1)t, J = -R-t, c0 = rx - t
+PASS EXACT d/b = t R^2/|w|^2 (w = Z + J)
+PASS EXACT g3/b = (1+X) L R^2/|(R+1)w + R^2(1+X)|^2
+PASS EXACT g23 = g9 - d and g9 = R b at s = 1, so g23/b = R - d/b
+PASS EXACT g3 >= d  <=>  2(1+X) Re w <= LG  (lhs3 = d R^2 (R+1) [LG - 2(1+X)p])
+PASS EXACT g10 >= 0  <=>  2(1+X) Re w >= LV  (bracket = t R [2(1+X)p - LV])
+PASS EXACT LG - LV = (X-R)(1+d)L/((R+1)d)
+SUMMARY failures=0

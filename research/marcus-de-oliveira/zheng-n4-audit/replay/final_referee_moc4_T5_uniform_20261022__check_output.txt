@@ -1,0 +1,110 @@
+=== stage_linear_T5
+PASS T5 equals paper CONTACT_SETS[5]
+PASS T5 generators = {0,1,2,3,4,5,6,9,10,53,54}: got [0, 1, 2, 3, 4, 5, 6, 9, 10, 53, 54]
+PASS T5 only f54 non-minor
+INFO f54 = h4231,-  f53 = n13,13  f9 = n14,23  f10 = n13,24
+PASS f54 + f1 = f0 + f6 + f53
+PASS f54 + f4 = f2 + f3 + f6 + f53
+PASS f54 + f9 = f2 + f5 + f10 + f53
+PASS A0 = g16 - g0 on generators: -1 on f54, +1 on f1,f4,f9, 0 else
+PASS f54 positive at 0, 9, 11
+INFO f54 values (1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 2, 0, 1)
+PASS T5 eq.(3): decomposition holds on a basis of the 8-dim face space
+PASS T5 face space dim 8
+PASS T5 generator span rank 8
+PASS T4, T5 in different G-orbits
+PASS some g in G maps (f6,f0,f5,f34) of T4-(1) to (f0,f6,f10,f54) of T5-(2): ((3, 2, 1, 0), (3, 1, 2, 0), 0)
+ALL LINEAR CHECKS PASSED
+=== stage_chart_T5
+raw R at T5: {1: 0, 2: -t + x, 3: t*(x - 1), 4: 1 - t, 6: (t*v**2*z - t*v**2 - t*v*w*z + t*v*w - v*w*x + v*x + w*x*z - x*z)/(v*(-w + z)), 8: (t*v**2*z - t*v*w*z + t*v*w - t*v*z - v*w*x + w*x*z)/(v*(-w + z))}
+F_1 - F_1 = 0
+F_2 - F_1 = v*(-t + x)*(-w + z)
+F_3 - F_1 = t*v*(-w + z)*(x - 1)
+F_4 - F_1 = -v*(t - 1)*(-w + z)
+F_6 - F_1 = t*v**2*z - t*v**2 - t*v*w*z + t*v*w - v*w*x + v*x + w*x*z - x*z
+F_8 - F_1 = t*v**2*z - t*v*w*z + t*v*w - t*v*z - v*w*x + w*x*z
+solutions: [{w: v, z: v}, {w: (-r - t*v + x)/u, z: r*v/(-t*v - u*v + x)}]
+PASS (6) satisfies r-equation
+PASS (6) satisfies u-equation
+R at T5 in chart: {1: 0, 2: -t + x, 3: t*(x - 1), 4: 1 - t, 6: -r - t - u + x, 8: -r - t + x}
+PASS g0 = -rho x/N
+PASS g7 = -sigma t x (r+u)
+PASS g9 = -sigma t x (r+ux)
+PASS g10 = -sigma r t (x-1)
+PASS x g11 = (x-1) g9
+PASS g12 = -rho r u L/F
+PASS g17 = A0 - sigma t u x (x-1)
+PASS H g13 = t L A0 + sigma t u x (t-1) W
+PASS H g22 = (t-1)(x-r)A0 + sigma r t x (t-1)(x-r-u-1)
+PASS D0 A0 = sigma r u [x t (t-1)(x-1) - J H E/F]
+PASS contact 1: gap vanishes identically in chart
+PASS contact 2: gap vanishes identically in chart
+PASS contact 3: gap vanishes identically in chart
+PASS contact 4: gap vanishes identically in chart
+PASS contact 6: gap vanishes identically in chart
+PASS contact 8: gap vanishes identically in chart
+PASS H = tL + (t-1)(t+u)
+PASS W = H + r(t-1)
+PASS neg: H
+PASS neg: W
+PASS neg: L
+PASS neg: g10 = RT(X+1)
+PASS neg: g17 = B - d
+PASS neg: Hg13 = T[Ld - UX(T+1)W]
+PASS neg: Hg22 = (T+1)[(R-X)d + RTX(R-X-U-1)]
+PASS neg: g7 = TX(R-U)
+PASS neg: da - B = TX(R+UX)(X+1-R)/(R-X)
+PASS neg: Psi(B) = T^2 U X (R+UX)(X+1) Q/H
+PASS neg: Psi(da) = R T^2 X (R+UX) P/(R-X)^2
+PASS neg: Q at U=R+T-X equals -X(T+1)(X+1-R)
+PASS neg: dQ/dU = X+1 (>0)
+PASS neg: P at U=R+T-X equals X(T+1)(R-X-1)
+PASS neg: dP/dU = -R (<0)
+PASS pos/all-neg: Hg22 = (T+1)[(x+R)d + RTx(x+R+U-1)]
+PASS pos/all-neg: H = U - T(R+x-1)
+PASS pos/all-neg: D0 = RT - Ux
+PASS pos/all-neg: D0 at U=T(R+x-1) is -T(x-1)(R+x)
+PASS pos/all-neg: d = (RU/D0)[xT(T+1)(x-1) - JHE/F]
+PASS pos: Hg13 = t[uxhW - Ld]
+PASS pos: Ha = h[(x-r)d + rtx(y-r-u)]
+PASS pos: g17 = tuxy - d
+PASS pos: g7 = tx(r+u)
+PASS pos: H = tL - h(t+u)
+PASS pos: L=0 => W = (t-1)(r+t+u)
+PASS pos: sign(da - B) ~ (r - y): da - B = t x (r+ux)(r-y)/(x-r)
+PASS pos H<0: Psi(da) = -r t^2 x (r+ux) P/(x-r)^2
+PASS pos H<0: Psi(B) = -t^2 u x (r+ux) y Q/H
+PASS pos H<0: P at u = y+h-r equals -h x (y-r)
+PASS pos H<0: dP/du = r
+PASS pos H<0: Q = y(h-u-tk) + kh with r = y+k
+PASS pos H>0: K = tuxy(r+u)/(r+ux)
+PASS pos H>0: a(B-d)(C-d) - d^2(a + B + C) = (B+C) chi(d)
+PASS pos H>0: chi quadratic coeff = -L/H
+PASS pos H>0: W(y=(r+u+W)/t) = W
+PASS pos H>0: chi(d*) = u x^2 (r+u) h P*/((r+ux) L) with t P* as displayed
+PASS pos H>0: y - r - u = ((r+u)(1-t) + W)/t
+time 7.1
+ALL T5 CHECKS PASSED
+=== stage_capacity
+PASS O^T O = |p|^2 |q|^2 I
+PASS Phi_f0(L(p)R(q)) == quartic on S^3 x S^3 (reduced mod |p|^2-1, |q|^2-1)
+PASS Phi_f6(L(p)R(q)) == quartic on S^3 x S^3 (reduced mod |p|^2-1, |q|^2-1)
+PASS Phi_f10(L(p)R(q)) == quartic on S^3 x S^3 (reduced mod |p|^2-1, |q|^2-1)
+PASS Phi_f54(L(p)R(q)) == quartic on S^3 x S^3 (reduced mod |p|^2-1, |q|^2-1)
+PASS companion identity (4): n(a(A-B)^2+b(A+B)^2+cD^2+dH) = sum of Z-forms mod N
+PASS Schur complement of d
+PASS 2x2 Schur det = 4[ab(c-d)-d^2(a+b+c+d)]/(c-d)
+PASS T4 arrowhead Schur complement = d[ab(c-d) - d^2(a+b+c+d)]/((a+d)c(b+d))
+PASS T4 arrowhead det = (a+d)c(b+d) * Schur
+PASS g maps f6->f0, f0->f6, f5->f10, f34->f54 (so T4 (1) with (a,b,c,d) == T5 (2) with (a,b,c,d))
+PASS Phi_{c4}(O) = Phi_{g.c4}((g.O) J) with (g.O) J in SO(4), 8 exact rational O (transport of T5 (2) to T4 (1))
+ALL CAPACITY CHECKS PASSED
+=== numeric (NUMERIC evidence only)
+NUMERIC T5 chart: 200000 draws x 2 signs of mu, 7787 supported; branches {'neg': 39, 'posHneg': 36, 'posHpos': 0, 'A0>=0': 7712}; failures 0 []
+NUMERIC T5 main statement at an A0<0 sample: min Phi over SO(4) = 4.621927015289868e-11
+NUMERIC T5 main statement at an A0<0 sample: min Phi over SO(4) = 6.151702647603876e-13
+NUMERIC T5 main statement at an A0<0 sample: min Phi over SO(4) = 1.0548757379526548e-12
+NUMERIC capacity (2) on boundary ab(c-d)=d^2(a+b+c+d), 3 coefficient sets x 4 restarts: min Phi = 5.6612374177612285e-14
+NUMERIC SOC bound (T5 (1)) on boundary ab=d^2, 3 coefficient sets x 4 restarts: min Phi = 2.999186159359057e-12
+NUMERIC sanity: a=b=c=d=1 (violates capacity): min Phi = -0.008439490157694938
+ALL EXACT STAGES PASSED; total time 22 s

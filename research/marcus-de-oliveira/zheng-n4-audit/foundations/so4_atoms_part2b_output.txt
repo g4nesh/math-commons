@@ -1,0 +1,254 @@
+==== G5 allocation lemmas
+PASS T28: generators vanishing on contact set (0, 4, 5, 6, 7, 8) are [0, 1, 2, 3, 4, 5, 6, 33, 34, 45, 46] :: [0, 1, 2, 3, 4, 5, 6, 33, 34, 45, 46]
+PASS T38: generators vanishing on contact set (2, 3, 5, 7, 9, 12) are [0, 1, 2, 5, 7, 12, 39, 40, 67, 70] :: [0, 1, 2, 5, 7, 12, 39, 40, 67, 70]
+PASS T42: generators vanishing on contact set (1, 2, 4, 6, 7, 8) are [0, 1, 2, 3, 4, 5, 6, 21, 22, 23, 53, 54] :: [0, 1, 2, 3, 4, 5, 6, 21, 22, 23, 53, 54]
+PASS T27: generators vanishing on contact set (2, 3, 5, 6, 9, 12) are [0, 1, 2, 5, 7, 9, 39, 40, 41, 67, 68] :: [0, 1, 2, 5, 7, 9, 39, 40, 41, 67, 68]
+PASS T28 response identity {34: 1, 46: 1} = {3: 1, 6: 2, 33: 1, 45: 1}
+PASS T28 response identity {2: 1, 34: 1} = {0: 1, 6: 1, 33: 1}
+PASS T28 response identity {4: 1, 34: 1} = {1: 1, 3: 1, 6: 1, 33: 1}
+PASS T28 response identity {0: 1, 46: 1} = {2: 1, 3: 1, 6: 1, 45: 1}
+PASS T28 response identity {1: 1, 46: 1} = {4: 1, 6: 1, 45: 1}
+PASS T38 response identity {40: 1, 70: 1} = {0: 1, 5: 1, 12: 1, 39: 1, 67: 1}
+PASS T38 response identity {1: 1, 40: 1} = {0: 1, 7: 1, 39: 1}
+PASS T38 response identity {7: 1, 70: 1} = {1: 1, 5: 1, 12: 1, 67: 1}
+PASS T42 response identity {22: 1, 54: 1} = {0: 1, 4: 1, 5: 1, 23: 1, 53: 1}
+PASS T42 response identity {54: 1, 1: 1} = {0: 1, 6: 1, 53: 1}
+PASS T42 response identity {54: 1, 4: 1} = {2: 1, 3: 1, 6: 1, 53: 1}
+PASS T42 response identity {54: 1, 21: 1} = {0: 1, 2: 1, 23: 1, 53: 1}
+PASS T36 response identity {35: 1, 40: 1} = {0: 1, 7: 1, 2: 1, 29: 1, 45: 1}
+PASS T36 response identity {35: 1, 39: 1} = {1: 1, 2: 1, 29: 1, 45: 1}
+PASS T36 response identity {40: 1, 1: 1} = {0: 1, 7: 1, 39: 1}
+PASS T27 response identity {40: 1, 68: 1} = {0: 1, 7: 1, 41: 1, 67: 1}
+PASS T27 response identity {40: 1, 1: 1} = {0: 1, 7: 1, 39: 1}
+PASS T27 response identity {40: 1, 9: 1} = {2: 1, 7: 1, 41: 1}
+PASS T42 some g in G preserves T42 and exchanges f22, f54 (literal row (0,2,1,3), col (1,0,3,2)) :: literal readings matching: [((1, 0, 3, 2), (0, 2, 1, 3), 0), ((1, 0, 3, 2), (0, 2, 1, 3), 0), ((1, 0, 3, 2), (0, 2, 1, 3), 0), ((1, 0, 3, 2), (0, 2, 1, 3), 0)]
+PASS T36 contact nullspace has dimension 8
+PASS T36 identity delta35 + delta40 = -g17 on the contact nullspace
+PASS T36 (1) minor representation holds on the whole contact nullspace
+PASS T36 (2) delta35 representation holds on the whole contact nullspace
+PASS T36 (3) delta40 representation holds on the whole contact nullspace
+PASS T38 transport T24 core (59,53,55,67,54) -> (5,2,67,0,40) is realised by some g in G
+PASS T27 transport T24 core (59,53,55,67,54) -> (5,2,0,67,40) is realised by some g in G
+PASS T36 transport T24 core (67,55,53,54,59,2) -> (7,0,5,35,45,1) is realised by some g in G
+PASS T36 transport T28 face (4,2,33,5,6,46,45) -> (0,5,2,29,7,40,39) is realised by some g in G
+PASS T36 transport SOC (1,9,22) -> (5,45,40) is realised by some g in G
+PASS T36 stabiliser exchanging (a,b,q,p) = (f7,f0,f2,f29) with (f0,f7,f29,f2), fixing f1,f45,f5,f35 and T36
+PASS atom H(33, 2, 46) in proved orbit with stated roles [T28 Lemma 2 p.3]
+PASS atom H(5, 2, 46) in proved orbit with stated roles [T28 Lemma 2 p.3]
+PASS atom chain(2, 4, 33, 46) in proved orbit with stated roles [T28 Lemma 2 p.3]
+PASS atom chain(2, 5, 6, 46) in proved orbit with stated roles [T28 Lemma 2 p.3]
+PASS H/chain allocation (6): atoms at their thresholds sum exactly to the target cost [T28 Lemma 2 p.3]
+PASS atom H(12, 2, 70) in proved orbit with stated roles [T38 gen.70 p.4]
+PASS atom H(39, 2, 70) in proved orbit with stated roles [T38 gen.70 p.4]
+PASS atom chain(2, 0, 12, 70) in proved orbit with stated roles [T38 gen.70 p.4]
+PASS atom chain(2, 39, 67, 70) in proved orbit with stated roles [T38 gen.70 p.4]
+PASS H/chain allocation (6): atoms at their thresholds sum exactly to the target cost [T38 gen.70 p.4]
+PASS atom SOC(2, 5, 70) in proved orbit with stated roles [T38 gen.70 p.4 (as >= d^2)]
+PASS atom H(3, 5, 54) in proved orbit with stated roles [T42 p.1]
+PASS atom H(23, 5, 54) in proved orbit with stated roles [T42 p.1]
+PASS atom chain(5, 0, 3, 54) in proved orbit with stated roles [T42 p.1]
+PASS atom chain(5, 23, 6, 54) in proved orbit with stated roles [T42 p.1]
+PASS H/chain allocation (6): atoms at their thresholds sum exactly to the target cost [T42 p.1]
+PASS atom SOC(5, 2, 54) in proved orbit with stated roles [T42 p.1 (as >= d^2)]
+PASS atom H(2, 5, 40) in proved orbit with stated roles [T36 (10) p.4]
+PASS atom H(29, 5, 40) in proved orbit with stated roles [T36 (10) p.4]
+PASS atom chain(5, 0, 2, 40) in proved orbit with stated roles [T36 (10) p.4]
+PASS atom chain(5, 29, 7, 40) in proved orbit with stated roles [T36 (10) p.4]
+PASS H/chain allocation (6): atoms at their thresholds sum exactly to the target cost [T36 (10) p.4]
+PASS atom SOC(5, 45, 40) in proved orbit with stated roles [T36 (10) p.4 (as >= d^2)]
+PASS KKT chart HH: energy = stated J, stationarity at beta1 = theta, leaf types feasible :: leaf slacks 2*theta/(U + 1), -2*(theta - 1)/(W + 1)
+PASS KKT chart HC: energy = stated J, stationarity at beta1 = theta, leaf types feasible :: leaf slacks 2*theta/(U + 1), -2*W*(theta - 1)
+PASS KKT chart CC: energy = stated J, stationarity at beta1 = theta, leaf types feasible :: leaf slacks 2*U*theta, -2*(U + W)*(theta - 1)
+PASS atom H(45, 1, 34) in proved orbit with stated roles [T28 (3) j>=1+1/e]
+PASS atom chain(1, 0, 45, 34) in proved orbit with stated roles [T28 (3) j>=1/e+1/b]
+PASS atom four(6, 0, 5, 34) in proved orbit with stated roles [T28 (3) bp(a-1)>=b+p+a+1]
+PASS atom H(2, 5, 40) in proved orbit with stated roles [T38 gen.40 j>=1+1/e]
+PASS atom four(0, 67, 2, 40) in proved orbit with stated roles [T38/T27 e>=E_ab]
+PASS atom four(0, 7, 12, 40) in proved orbit with stated roles [T38 p>=P_ac]
+PASS atom four(67, 41, 39, 40) in proved orbit with stated roles [T27 p>=P_ac]
+PASS atom SOC(45, 1, 35) in proved orbit with stated roles [T36 (6) cj>=1]
+PASS atom H(5, 45, 35) in proved orbit with stated roles [T36 (6) c>=1+1/e]
+PASS atom four(7, 0, 5, 35) in proved orbit with stated roles [T36 (6) K>=0]
+PASS T28 (3) four atom (6,0;5;34) condition = bp(a-1) - (b+p+a+1)
+PASS T36 (6) four atom (7,0;5;35): slack = K = (ab-1)e - (a+1)(b+1)
+PASS T38/T27 eighth chamber: four atom (delta a, c, p, delta) is exactly on its boundary at p = p(delta)
+PASS T38/T27 eighth chamber: coherent (5) scaled to the piece (r a, b, e, j, r) has threshold r^2/e - r^2/E_r
+PASS T38/T27 eighth chamber: four atom on the piece holds iff e >= E_r (slack = (ab-r) r (e - E_r))
+PASS T38/T27 p(delta) strictly increasing on [0,1) when ac >= 1 (derivative factor) :: (a + 1)*(a*c**2 + 2*a*c*delta - delta**2)/(a*c - delta)**2
+PASS atom H(2, 5, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_IV p.1]
+PASS atom chain(5, 0, 2, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_IV p.1]
+PASS atom H(29, 5, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_IV p.1]
+PASS atom chain(5, 7, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_IV p.1]
+PASS atom chain(5, 41, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_IV p.1]
+PASS T48 allocation IV (a <= 2e/S, Q <= 2j/S): atoms at their thresholds sum exactly to the target cost [blind_moc4_T48_allocation_IV p.1]
+PASS atom chain(5, 0, 2, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_II p.1]
+PASS atom H(29, 5, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_II p.1]
+PASS atom chain(5, 7, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_II p.1]
+PASS atom chain(5, 41, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_II p.1]
+PASS T48 allocation II (0<u<1, 2u<=a, Q<=2v): atoms at their thresholds sum exactly to the target cost [blind_moc4_T48_allocation_II p.1]
+PASS atom chain(5, 7, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_III_low_j p.1]
+PASS atom chain(5, 41, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_III_low_j p.1]
+PASS atom H(2, 5, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_III_low_j p.1]
+PASS atom chain(5, 0, 2, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_III_low_j p.1]
+PASS T48 allocation III (0<u<1, Q>=2u, a<=2v): atoms at their thresholds sum exactly to the target cost [blind_moc4_T48_allocation_III_low_j p.1]
+PASS atom chain(5, 0, 2, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_I_low_j p.1, I_small_lambda_low_j p.1]
+PASS atom chain(5, 7, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_I_low_j p.1, I_small_lambda_low_j p.1]
+PASS atom chain(5, 41, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_I_low_j p.1, I_small_lambda_low_j p.1]
+PASS T48 allocation I (both chains, p >= lambda): atoms at their thresholds sum exactly to the target cost [blind_moc4_T48_allocation_I_low_j p.1, I_small_lambda_low_j p.1]
+PASS T48 Cor. 2: e-side requirement = s - alpha + alpha^2/a + s^2/e (min over alpha gives s - phi_a(s) + s^2/e)
+==== GRAM engine
+PASS GRAM[bad70] face sources [0, 1, 2, 12, 39, 67, 70, 72] are generators of contact set [2, 3, 5, 9, 10, 12] :: generators [0, 1, 2, 12, 39, 67, 70, 72]
+PASS GRAM[bad70] linear system built: 419 reduced monomials, rank 18, solution space dim 26
+INFO GRAM[bad70] nodes (g-index -> facet) [0, 1, 2, 12, 39, 67, 70, 72]; minor f = |u_f|^2 in these coordinates: [(0, True), (1, True), (2, True), (12, True), (39, True), (67, True), (72, True)]
+PASS GRAM[bad70] control: minor f0 = |u_f|^2 (diagonal coordinate)
+PASS GRAM[bad70] control: minor f1 = |u_f|^2 (diagonal coordinate)
+PASS GRAM[bad70] control: minor f2 = |u_f|^2 (diagonal coordinate)
+PASS GRAM[bad70] control: minor f12 = |u_f|^2 (diagonal coordinate)
+PASS GRAM[bad70] control: minor f39 = |u_f|^2 (diagonal coordinate)
+PASS GRAM[bad70] control: minor f67 = |u_f|^2 (diagonal coordinate)
+PASS GRAM[bad70] control: minor f72 = |u_f|^2 (diagonal coordinate)
+PASS GRAM[bad70] control: (PB) 2Phi_70 = |u70|^2 - 2<u0,u2> - 2<u2,u12> reproduced by the engine
+==== G1 T44
+PASS GRAM[T44] face sources [2, 1, 53, 12, 8, 18, 7, 15] are generators of contact set [1, 2, 3, 7, 11, 12] :: generators [0, 1, 2, 7, 8, 12, 15, 18, 53]
+PASS GRAM[T44] linear system built: 418 reduced monomials, rank 18, solution space dim 26
+INFO GRAM[T44] nodes (g-index -> facet) [53, 12, 8, 15, 7, 2, 1, 18]; minor f = |u_f|^2 in these coordinates: [(2, True), (1, True), (53, True), (12, True), (8, True), (7, True), (15, False)]
+PASS T44 face source order is (q,p,j,c,e,d,b,a) = (f2,f1,f53,f12,f8,f18,f7,f15)
+PASS GRAM[T44] Prop. 1 (r,k,v,w family): Gram of real vectors (PSD) satisfies the exact degree-six identity with the stated weights [blind_moc4_T44_coherent_chain_capacity p.1]
+PASS T44 Prop. 2: Prop. 1 specialisation gives p(z) = (1 + z^2/b)/(sqrt j + z)^2
+PASS T44 Prop. 2: dp/dz = 2(z sqrt j - b)/(b (sqrt j + z)^3)
+PASS T44 Prop. 2: p(sqrt c) = (b+c)/(b (sqrt j + sqrt c)^2) and p(b/sqrt j) = 1/(j+b)
+PASS T44 Prop. 2 at j = 0: threshold 1/c + 1/b
+PASS GRAM[T44] Prop. 2 b = 0 direct Gram (p = 1/j): Gram of real vectors (PSD) satisfies the exact degree-six identity with the stated weights [blind_moc4_T44_coherent_chain_capacity p.2]
+PASS T44 example r=1,k=-1,v=0,w=1 gives (1/2)f1 + f53 + f12 + f7 + f18
+PASS T44 scalar test (1): Prop. 1 at the stated substitution has p = (1), j = J^2, c = C^2, a,e >= t^2/(1-t^2)
+PASS atom SOC(1, 53, 18) in proved orbit with stated roles [T44 SOC pj >= d^2]
+PASS atom H(15, 53, 18) in proved orbit with stated roles [T44 conic branch p.1, e_below_p p.1, c_below_j p.1]
+PASS atom H(8, 53, 18) in proved orbit with stated roles [T44 conic branch p.1, e_below_p p.1, c_below_j p.1]
+PASS T44 Hsum j >= d + d^2/(a+e) (old-H on a and on e, d split a:e): atoms at their thresholds sum exactly to the target cost [T44 conic branch p.1, e_below_p p.1, c_below_j p.1]
+PASS T44 c_below_j transport (1,53,12,7,18) -> (53,1,8,7,18) is realised by some g in G :: literal row/col (1,3,0,2)+transpose matches: True
+==== G3 T46
+PASS GRAM[T46] face sources [27, 1, 59, 5, 2, 28, 6, 4] are generators of contact set [1, 3, 5, 6, 7, 8] :: generators [0, 1, 2, 3, 4, 5, 6, 27, 28, 59]
+PASS GRAM[T46] linear system built: 413 reduced monomials, rank 18, solution space dim 26
+INFO GRAM[T46] nodes (g-index -> facet) [27, 1, 59, 5, 2, 28, 6, 4]; minor f = |u_f|^2 in these coordinates: [(27, True), (1, True), (59, True), (5, False), (2, True), (6, True), (4, True)]
+PASS T46 face source order is (q,p,j,c,e,d,b,a) = (f27,f1,f59,f5,f2,f28,f6,f4)
+PASS GRAM[T46] core coherent Thm 1: Gram identity with the stated weights [final_referee_T46_core_coherent_capacity p.1]
+PASS T46 core: |P|^2 equals the threshold (1); P.(Q+B) = -h, P.J0 = t-1
+PASS T46 core: G0 PD iff q > 0, l > 0 and j > (1 + (q+b-2beta)/l) t^2 (Schur complement)
+PASS T46 core: threshold (1) equals form (2) h^2/s + (s+kt)^2/(s(sj-(s+4)t^2)), k = 2-q-b
+PASS T46 core: at t* = -kj/(s+4) the threshold is 1/j + (s+2k)/4 + k^2/(4(s+4))
+PASS T46 core: u - 4/s = (q-b)^2/(s l)
+PASS T46 core Cor. 3: t=0, beta=1-q-b gives threshold 1/j + 2 - q - b
+PASS T46 beta=-1: threshold = (t-1)^2/(j - lambda t^2), lambda = (q+b+2)/(q+b-2)
+PASS T46 beta=-1: leaf Schur condition is j > K t^2, K = (q+1)(b+1)/(qb-1); K - lambda = (q-b)^2/((qb-1)(q+b-2))
+PASS T46 beta=-1: t = j/lambda gives 1/j - 1/lambda (valid when j < lambda^2/K)
+PASS T46 balanced q=b=x>1: lambda = K = (x+1)/(x-1) and t = j/lambda gives 1/j - (x-1)/(x+1)
+PASS T46 core transport T24 [59,53,55,67,54] -> T46 [1,59,6,27,28] realised in G
+PASS T46 core transport T46 [1,59,6,27,28] -> T47 [45,5,7,0,35] realised in G
+PASS GRAM[T46] six-ray Thm 1: Gram identity with the stated weights [final_referee_T46_six_ray_coherent_capacity p.1]
+PASS T46 six-ray: |P|^2 = p*, |C|^2 = c*
+PASS T46 six-ray: G0 PD iff q>0, l>0, j - t^2 > (bt^2 - 2beta t v + q v^2)/l
+PASS T46 singular leaf: the 3x3 leaf/J0 block equals the Gram of explicit real vectors when j >= kappa t^2, kappa = 1+1/q
+PASS T46 singular leaf: p* = k + (1-eta t)^2/(j - kappa t^2) and c* = rho^2 t^2/(j - kappa t^2) (q != b)
+PASS T46 a0_all_small Lemma 1 / positive_a_mixed (1): at t = eta j/(D0+A0): j - kappa t^2 = jN/(D0+A0)^2, consumed p = k + D0^2/(jN), consumed c = rho^2 A0/N, N - (rho^2/c)A0 = D0^2 + D0 A0 + A0^2
+PASS atom four(4, 6, 2, 28) in proved orbit with stated roles [T46 positive_a_small_or_balanced, positive_a_mixed (2), whole_assembly (5)]
+PASS T46 six-ray transport [27,1,59,5,2,28,6,4] -> T47 [0,45,5,9,29,35,7,36] realised in G
+PASS six-ray Cor. 2: t = eta e/kappa gives consumed c = 1/e + k - eta^2/kappa and consumed p = rho^2 eta^2 e/(kappa(kappa - eta^2 e))
+PASS six-ray Cor. 4 (A<=D0): t = eta e/D0 gives consumed c = k + (D0-A)^2/(e(D0^2 - kappa A)), unused p = p D0(D0-A)/N0
+PASS six-ray Cor. 4 (A>=D0): t = 1/eta gives consumed c = k and consumed p = rho^2/(A - kappa)
+==== G4 T47
+PASS GRAM[T47[V T^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12] :: generators [0, 1, 2, 5, 7, 9, 35, 45]
+PASS GRAM[T47[V T^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26
+INFO GRAM[T47[V T^-1]] nodes (g-index -> facet) [2, 9, 1, 45, 5, 35, 0, 7]; minor f = |u_f|^2 in these coordinates: [(2, False), (9, False), (1, False), (45, False), (5, True), (0, False), (7, False)]
+INFO T47 coordinates V T^-1: PCBE matrix residual count 18
+PASS GRAM[T47[V^-1 T^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12] :: generators [0, 1, 2, 5, 7, 9, 35, 45]
+PASS GRAM[T47[V^-1 T^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26
+INFO GRAM[T47[V^-1 T^-1]] nodes (g-index -> facet) [2, 9, 1, 45, 5, 35, 0, 7]; minor f = |u_f|^2 in these coordinates: [(2, True), (9, True), (1, True), (45, True), (5, True), (0, True), (7, True)]
+INFO T47 coordinates V^-1 T^-1: PCBE matrix residual count 0
+INFO T47 spectral coordinates identified as V^-1 T^-1
+PASS GRAM[T47[V^T T^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12] :: generators [0, 1, 2, 5, 7, 9, 35, 45]
+PASS GRAM[T47[V^T T^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26
+INFO GRAM[T47[V^T T^-1]] nodes (g-index -> facet) [2, 9, 1, 45, 5, 35, 0, 7]; minor f = |u_f|^2 in these coordinates: [(2, False), (9, False), (1, False), (45, True), (5, False), (0, True), (7, False)]
+INFO T47 coordinates V^T T^-1: PCBE matrix residual count 15
+PASS GRAM[T47[V^-T T^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12] :: generators [0, 1, 2, 5, 7, 9, 35, 45]
+PASS GRAM[T47[V^-T T^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26
+INFO GRAM[T47[V^-T T^-1]] nodes (g-index -> facet) [2, 9, 1, 45, 5, 35, 0, 7]; minor f = |u_f|^2 in these coordinates: [(2, False), (9, False), (1, False), (45, False), (5, False), (0, False), (7, False)]
+INFO T47 coordinates V^-T T^-1: PCBE matrix residual count 16
+PASS GRAM[T47[T^-1 V]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12] :: generators [0, 1, 2, 5, 7, 9, 35, 45]
+PASS GRAM[T47[T^-1 V]] linear system built: 418 reduced monomials, rank 18, solution space dim 26
+INFO GRAM[T47[T^-1 V]] nodes (g-index -> facet) [2, 9, 1, 45, 5, 35, 0, 7]; minor f = |u_f|^2 in these coordinates: [(2, False), (9, False), (1, False), (45, False), (5, False), (0, False), (7, False)]
+INFO T47 coordinates T^-1 V: PCBE matrix residual count 18
+PASS GRAM[T47[T^-1 V^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12] :: generators [0, 1, 2, 5, 7, 9, 35, 45]
+PASS GRAM[T47[T^-1 V^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26
+INFO GRAM[T47[T^-1 V^-1]] nodes (g-index -> facet) [2, 9, 1, 45, 5, 35, 0, 7]; minor f = |u_f|^2 in these coordinates: [(2, False), (9, False), (1, False), (45, False), (5, False), (0, False), (7, False)]
+INFO T47 coordinates T^-1 V^-1: PCBE matrix residual count 18
+PASS GRAM[T47[budget T^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12] :: generators [0, 1, 2, 5, 7, 9, 35, 45]
+PASS GRAM[T47[budget T^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26
+INFO GRAM[T47[budget T^-1]] nodes (g-index -> facet) [2, 9, 1, 45, 5, 35, 0, 7]; minor f = |u_f|^2 in these coordinates: [(2, False), (9, False), (1, False), (45, False), (5, True), (0, False), (7, False)]
+INFO T47 coordinates budget T^-1: PCBE matrix residual count 17
+PASS T47 PCBE: spectral coordinates (budget congruence composed with native V^-1) found in which the PCBE matrix satisfies every coefficient relation identically in x, y, z, w, L
+PASS T47 PCBE: rows P and B coincide (P = B) and the Schur complement over {B, D} is the displayed 3x3 matrix on J, E, C
+PASS T47 PCBE (3): (A+Bt)^2/(J-k t^2) - (A^2/J - B^2/k) = (kAt+BJ)^2/(kJ(J-k t^2))
+PASS T47 PCBE: x^2/L + [(1-x)^2/j - (1+x/L)^2/kappa] = K(1-x)^2 - 1 and x^2/L + x^2(1/e - 1/(L(L+1))) = (1/e+1/(L+1)) x^2
+PASS T47 PCBE: x* = (K-1)/(K+sqrt(K+B(K-1))) solves K(1-x)^2 - 1 = B x^2
+PASS T47 PCBE (1) <=> (2) on 400 random (K, B, c) [NUMERIC consistency, not exact]
+PASS GRAM[T47[budget]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12] :: generators [0, 1, 2, 5, 7, 9, 35, 45]
+PASS GRAM[T47[budget]] linear system built: 418 reduced monomials, rank 18, solution space dim 26
+INFO GRAM[T47[budget]] nodes (g-index -> facet) [2, 9, 1, 45, 5, 35, 0, 7]; minor f = |u_f|^2 in these coordinates: [(2, False), (9, False), (1, False), (45, False), (5, True), (0, False), (7, False)]
+INFO T47 large_pc Gram residuals: spectral 0, budget 16
+PASS T47 IIIb_plus_large_pc Lemma 1: Gram (A perp P,C; <P,C>=-a; J=d(C-A)/(a+c); D perp) satisfies every coefficient relation, and is realised by explicit vectors when pc >= a^2 :: coordinates: spectral
+INFO T47 merged-C residual counts (leaf, gram, count): [('A', 'crossing', 0), ('A', 'stationary', 0), ('A', 'half-energy', 0), ('B', 'crossing', 0), ('B', 'stationary', 0), ('B', 'half-energy', 0)]
+PASS T47 merged-C Lemma 1: crossing, stationary and half-energy Grams for leaf a and leaf b satisfy every coefficient relation
+PASS T47 merged-C: crossing value x^2/L + x^2/e at x = d sqrt(e)/(sqrt j + sqrt e) equals d^2 (L+e)/(L (sqrt j + sqrt e)^2)
+PASS T47 merged-C: the three bounds are homogeneous of degree one in (d, j, e, L), so the proportional split sums to the A0 = a+b bound
+PASS atom H(9, 1, 35) in proved orbit with stated roles [T47]
+PASS atom SOC(45, 1, 35) in proved orbit with stated roles [T47]
+PASS atom chain(1, 7, 9, 35) in proved orbit with stated roles [T47]
+PASS atom four(0, 7, 5, 35) in proved orbit with stated roles [T47]
+PASS T47 transport T24 core (59,53,55,67,54,2) -> (45,5,7,0,35,1) is realised by some g in G
+==== G2 T45
+PASS T45 contact nullspace has dimension 8
+PASS T45 the eight sources vanish on the contacts
+PASS T45 evaluations of (f0,f1,f2,f12,f59,f67,f70,f72) at (18,16,13,8,2,14,11,7) form the identity matrix
+PASS T45 (1): every contact-nullspace cost equals sum_f g_(ev f) f on the whole nullspace
+PASS T45 the seven sources other than f70 are minors
+PASS atom SOC(2, 59, 70) in proved orbit with stated roles [T45 (2)-(6)]
+PASS atom chain(2, 0, 12, 70) in proved orbit with stated roles [T45 (2)-(6)]
+PASS atom chain(59, 0, 1, 70) in proved orbit with stated roles [T45 (2)-(6)]
+PASS atom chain(59, 67, 72, 70) in proved orbit with stated roles [T45 (2)-(6)]
+PASS atom H(1, 59, 70) in proved orbit with stated roles [T45 (2)-(6)]
+PASS atom H(72, 59, 70) in proved orbit with stated roles [T45 (2)-(6)]
+PASS atom H(1, 59, 70) in proved orbit with stated roles [T45]
+PASS atom H(72, 59, 70) in proved orbit with stated roles [T45]
+PASS T45 (6) old-H split c >= d + d^2/(r+s): atoms at their thresholds sum exactly to the target cost [T45]
+INFO T45 old-H literal (row,col) tables reproduced by one of our readings: False (orbit membership above is what the proof needs)
+PASS T45 zero face a=0: T33 contact set is carried by some g in G onto [3, 5, 9, 10, 12, 13]
+PASS T45 zero face c=0: T6 contact set is carried by some g in G onto [2, 3, 4, 5, 9, 10]
+PASS T45 zero face r=0: T14 contact set is carried by some g in G onto [3, 4, 5, 9, 10, 16]
+==== NUM boundary attacks
+NUMERIC G5 H/chain allocation (6), T42 roles, minimised RHS: 20 boundary samples, min Phi/max|coef| = 1.360e-18, mpmath = 1.360e-18
+PASS NUMERIC G5 H/chain allocation (6), T42 roles, minimised RHS: no violation beyond -1e-9 (evidence only) :: 1.360e-18
+NUMERIC G1 T44 Prop. 1 family: 20 boundary samples, min Phi/max|coef| = 2.870e-20, mpmath = 2.870e-20
+PASS NUMERIC G1 T44 Prop. 1 family: no violation beyond -1e-9 (evidence only) :: 2.870e-20
+NUMERIC G1 T44 Prop. 2 threshold: 20 boundary samples, min Phi/max|coef| = 6.230e-19, mpmath = 6.230e-19
+PASS NUMERIC G1 T44 Prop. 2 threshold: no violation beyond -1e-9 (evidence only) :: 6.230e-19
+NUMERIC G2 T45 (6) old-H split: 20 boundary samples, min Phi/max|coef| = 1.666e-18, mpmath = 1.666e-18
+PASS NUMERIC G2 T45 (6) old-H split: no violation beyond -1e-9 (evidence only) :: 1.666e-18
+NUMERIC G3 T46 core threshold (1): 20 boundary samples, min Phi/max|coef| = 1.094e-18, mpmath = 1.094e-18
+PASS NUMERIC G3 T46 core threshold (1): no violation beyond -1e-9 (evidence only) :: 1.094e-18
+NUMERIC G3 T46 six-ray p*, c*: 20 boundary samples, min Phi/max|coef| = 2.112e-18, mpmath = 2.112e-18
+PASS NUMERIC G3 T46 six-ray p*, c*: no violation beyond -1e-9 (evidence only) :: 2.112e-18
+NUMERIC G4 T47 PCBE threshold (1), L = p = b: 20 boundary samples, min Phi/max|coef| = 3.343e-18, mpmath = 3.343e-18
+PASS NUMERIC G4 T47 PCBE threshold (1), L = p = b: no violation beyond -1e-9 (evidence only) :: 3.343e-18
+NUMERIC G4 T47 large_pc Lemma 1 at pc = a^2: 20 boundary samples, min Phi/max|coef| = 5.152e-18, mpmath = 5.152e-18
+PASS NUMERIC G4 T47 large_pc Lemma 1 at pc = a^2: no violation beyond -1e-9 (evidence only) :: 5.152e-18
+NUMERIC G4 T47 merged-C Lemma 1 (crossing / stationary): 20 boundary samples, min Phi/max|coef| = 8.120e-18, mpmath = 8.120e-18
+PASS NUMERIC G4 T47 merged-C Lemma 1 (crossing / stationary): no violation beyond -1e-9 (evidence only) :: 8.120e-18
+NUMERIC control old-H H(1,59;70) with main coefficient lowered 10%: 6 boundary samples, min Phi/max|coef| = -7.287e-07, mpmath = -7.287e-07
+PASS NUMERIC control old-H H(1,59;70) with main coefficient lowered 10%: attack finds a violation (sensitivity control) :: -7.287e-07
+NUMERIC control T44 Prop. 2 with p set to 0: 6 boundary samples, min Phi/max|coef| = -3.854e-02, mpmath = -3.854e-02
+PASS NUMERIC control T44 Prop. 2 with p set to 0: attack finds a violation (sensitivity control) :: -3.854e-02
+NUMERIC control T46 core with p set to 0: 6 boundary samples, min Phi/max|coef| = -5.444e-02, mpmath = -5.444e-02
+PASS NUMERIC control T46 core with p set to 0: attack finds a violation (sensitivity control) :: -5.444e-02
+NUMERIC control T47 large_pc with j set to 0: 6 boundary samples, min Phi/max|coef| = -5.553e-02, mpmath = -5.553e-02
+PASS NUMERIC control T47 large_pc with j set to 0: attack finds a violation (sensitivity control) :: -5.553e-02
+==== done: 211 checks, 0 FAIL, 42.5 s

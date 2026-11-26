@@ -1,0 +1,183 @@
+{
+ "doc_id": "final_referee_inventory29_native_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_inventory29_native_uniform_20261023.pdf",
+ "pages": 5,
+ "paper_case": "T_30 = {2,5,9,12,13,14} (working set literal; stated set {0,1,3,7,11,12} G-equivalent)",
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    2,
+    5,
+    9,
+    12,
+    13,
+    14
+   ],
+   "restatement": "For x in X with Pc(x)>=0 and zero gaps on {0,1,3,7,11,12} (equivalently T_30; non-strict): Phi_{c(x)}(O)>=0 for all real orthogonal O. Degenerate spectra via App. B; non-generic parameters via wall restoration."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_4",
+   "used_for": "extra contacts 0,8,15,16",
+   "status": "EXACT match, CITED"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_19",
+   "used_for": "extra contact 3",
+   "status": "EXACT match, CITED"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_29",
+   "used_for": "extra contacts 4,7,19,23",
+   "status": "EXACT match; audited in this batch"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_40",
+   "used_for": "extra contact 18",
+   "status": "EXACT match, CITED"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_79",
+   "used_for": "extra contacts 10,21",
+   "status": "EXACT match, CITED (stage 8)"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix B Thm B.1, Lemma B.2",
+   "status": "CITED"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "bounded-negative-part lemma (paper Lemma 3.5 pattern)",
+   "status": "CITED"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Hess C(kappa) kernel = E (3.11), Birkhoff (Lemma 3.4)",
+   "status": "CITED; kernel lib EXACT"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "contact-set equivalence",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "S and nonminor 43,70",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "barrier bounds (2)",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "extra-tie resolution",
+   "status": "EXACT match + CITED"
+  },
+  {
+   "n": 5,
+   "claim": "(3)",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 6,
+   "claim": "E, H2, H12, F12/E, H14",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "inverse map (4)",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "61-term curve C, contacts mod C",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "normal i eta/E",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 10,
+   "claim": "(5) H11 on curve, limit at infinity",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "puncture list",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 12,
+   "claim": "(7),(8) fibres",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "(9)-(12)",
+   "status": "EXACT"
+  },
+  {
+   "n": 14,
+   "claim": "x=1 branches, H6 limits",
+   "status": "EXACT"
+  },
+  {
+   "n": 15,
+   "claim": "x=-r branches limits",
+   "status": "EXACT"
+  },
+  {
+   "n": 16,
+   "claim": "constant-coordinate exception",
+   "status": "EXACT+CITED"
+  },
+  {
+   "n": 17,
+   "claim": "pasting/compactness",
+   "status": "PROOF-READ+CITED"
+  },
+  {
+   "n": 18,
+   "claim": "walls with C identically 0",
+   "status": "EXACT"
+  },
+  {
+   "n": 19,
+   "claim": "wall restoration (Rouche)",
+   "status": "PROOF-READ (argument completed by auditor)"
+  }
+ ],
+ "gaps": [],
+ "presentation_notes": [
+  "p.4-5 wall restoration is a sketch; auditor supplied the Hurwitz/Rouche + openness argument",
+  "p.1 'retained full results' for collisions = paper Appendix B, not named"
+ ],
+ "exact_replays": [
+  "group equivalence, generators, barrier bounds",
+  "extra-tie resolution with Table 6 stages",
+  "all curve identities E,(4),C,(5),(7)-(12), limits, xF0=(x-z)F14, wall coefficients (sympy)"
+ ],
+ "numeric_tests": [
+  "main statement: 4 degenerate stratum points, worst min Phi -3.9e-12 (residual level; scratch run)"
+ ],
+ "unchecked": [
+  "the cited earlier cases T_4,T_19,T_40,T_79",
+  "topological lemma (CITED pattern)"
+ ]
+}

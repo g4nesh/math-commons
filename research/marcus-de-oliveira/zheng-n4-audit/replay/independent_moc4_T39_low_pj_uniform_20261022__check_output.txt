@@ -1,0 +1,21 @@
+PASS A0 common zero set of the eight source rays is T_40
+PASS A0 source rays are generators of N_{T_40}; only f35 is non-minor
+PASS C0 restriction is affine in h
+PASS C0 C = -(ABc + Nj)
+PASS C0 -Q = (q+e+1+a+b-p)c + (q+b+1)(e+a+1) - j(e+a) + pj
+PASS C0 N - ea has nonnegative coefficients and constant 1
+PASS C2 substitution maps P,J >= 0 onto 0 <= p, j < 1
+PASS C0 low region: -Q - (1-p)c - (1-j)(e+a) - pj - 1 has nonnegative coefficients (so -Q > 0)
+PASS C3 H(kappa) entries only at (0,6),(6,0),(1,5),(5,1): P* (delete 0,1) is height independent  [(0, 6), (1, 5), (5, 1), (6, 0)]
+PASS C1 EXACT at 60 rational base points: -det H(w(c)) Q^2/4 is a degree-4 polynomial in c (fits 12 points)  60
+PASS C1 EXACT at the same points: it is a perfect square G(c)^2 with G quadratic  60
+PASS C2 EXACT pointwise: with the sign of G fixed by gamma < 0 (gamma != 0 at all points)  60
+PASS C2 EXACT pointwise: AB beta - Nj alpha < 0 for that sign  60
+PASS C3 EXACT pointwise: P*(c) has degree <= 4 in c  60
+INFO base points with a positive root (alpha > 0): 14 of 60
+PASS NUMERIC P*(c+) < 0 at every sampled positive root  max = -1734949.2
+PASS NUMERIC both bordered minors on I u {0}, I u {1} vanish at c+  max |.| = 1.1973e-45
+PASS NUMERIC rank H(w(c+)) = 12 (two singular values < 1e-40, third > 1e-10), Q(c+) != 0
+PASS NUMERIC all 91 principal 12x12 minors < 0 at c+  max = -21.229117
+PASS NUMERIC det(K^T Q_v K) > 0 on the 2-dim kernel (Section 4 definiteness)  min = 3.2839938e-10
+SUMMARY all EXACT checks passed

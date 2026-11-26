@@ -1,0 +1,43 @@
+{
+ "doc_id": "final_referee_T2_collision_closure_20261022",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T2_collision_closure_20261022.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Proposition 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    1,
+    2,
+    4,
+    6,
+    8
+   ],
+   "paper_case": "T_6 (branch)",
+   "restatement": "x in X with g>=0, g=0 on T_6 and some collision A_i=C_j: g is a nonnegative combination of minor profiles, hence Phi>=0 for all O."
+  }
+ ],
+ "dependencies": [
+  {
+   "ref": "paper eq (4.2), Theorem 1.2",
+   "status": "CITED"
+  },
+  {
+   "ref": "paper Lemma 4.2",
+   "status": "lib EXACT"
+  }
+ ],
+ "steps": "7 steps, all EXACT or PROOF-READ",
+ "gaps": [],
+ "exact_replays": [
+  "m_j = f_j",
+  "unused entries",
+  "used-entry six-block generators all minor",
+  "equal-block dimensions 5,4,4,5",
+  "four decompositions on full subspaces"
+ ],
+ "numeric_tests": [],
+ "unchecked": []
+}

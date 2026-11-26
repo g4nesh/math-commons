@@ -1,0 +1,30 @@
+PASS O(p,q)^T O(p,q) = |p|^2|q|^2 I
+PASS det O(p,q) = (|p|^2|q|^2)^2 (so O/|p||q| is in SO(4))
+  node J -> f53 n13,13 minor
+  node C -> f12 n14,24 minor
+  node E -> f8 n12,23 minor
+  node A -> f15 n12,14 minor
+  node B -> f7 n3,1 minor
+  node Q -> f2 n13,34 minor
+  node P -> f1 n12,34 minor
+  node D -> f18 h3412,- NON-minor
+PASS all sources except f18 are minor vectors (Phi >= 0 by (4.2))
+PASS JSON source order is q,p,j,c,e,d,b,a = f2,f1,f53,f12,f8,f18,f7,f15
+PASS R1  M_BB <-> Phi_B
+PASS R2  M_CC <-> Phi_C
+PASS R3  M_JJ <-> Phi_J
+PASS R4  M_PP <-> Phi_P
+PASS R5  M_JC <-> 0
+PASS R6  2M_JP - M_DD <-> -Phi_18
+PASS R7  M_CP - M_BP + M_JP <-> 0
+PASS R8  M_JE + M_JA + M_DD <-> Phi_18
+PASS R9  2(M_CE + M_CA + M_BP) - M_DD <-> -Phi_18
+PASS R10 M_EP + M_AP - M_PD <-> 0
+PASS R11 |m_E + m_A - m_D|^2 <-> Phi_A + Phi_E
+PASS symbolic: R1..R11 imply  sum_KL G_KL M_KL = cost(G)  for all r,k,v (r!=k), w!=0
+PASS Gram diagonal = (r^2(1+v^2), k^2(1+v^2), v^2, v^2, w^2, 0, x^2+y^2, 1+v^2)
+PASS symbolic: b=0 Gram gives  j f53 + (1/j) f1 + f18  under R3, R4, R6
+PASS direct: np*SOS == 2*Phi_cost mod (nq-np) at (r,k,v,w)=('1', '-1', '0', '1')
+PASS direct: np*SOS == 2*Phi_cost mod (nq-np) at (r,k,v,w)=('3/2', '-2/5', '1/3', '7/4')
+PASS direct: np*SOS == 2*Phi_cost mod (nq-np) at (r,k,v,w)=('-2', '5/3', '-3/7', '1/2')
+RESULT ALL EXACT CHECKS PASS

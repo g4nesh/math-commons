@@ -1,0 +1,106 @@
+{
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T9_second_branch_20261022.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "lem:u",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     3,
+     5,
+     7,
+     8
+    ]
+   ],
+   "restatement": "x<0,t>1,r>0, distinct, v nonreal, supporting with d>0 implies u<0."
+  },
+  {
+   "label": "lem:identity",
+   "page": 2,
+   "contact_sets": [
+    [
+     0,
+     1,
+     3,
+     5,
+     7,
+     8
+    ]
+   ],
+   "restatement": "d C0 = N(m S0 + G H) in the zeta chart."
+  },
+  {
+   "label": "thm:region",
+   "page": 2,
+   "contact_sets": [
+    [
+     0,
+     1,
+     3,
+     5,
+     7,
+     8
+    ]
+   ],
+   "restatement": "If d>0, g18>=0, g22>=0 (u<0 region): g14, g9, g19-d >0 and aB(c-d) > d^2(a+B+c+d); safe by four-coefficient orbit (f4,f6,f2,f28)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "final_referee_moc4_T9_uniform_20261022 chart",
+   "status": "EXACT there"
+  },
+  {
+   "kind": "external",
+   "ref": "global four-coefficient inequality: a f4 + B f6 + c f2 + d f28 safe when aB(c-d) >= d^2(a+B+c+d) (G-orbit)",
+   "status": "CITED, source not named, not in paper; NUMERIC no violation, sharp"
+  }
+ ],
+ "steps": [
+  {
+   "step": "Lemma 1 identities",
+   "status": "EXACT"
+  },
+  {
+   "step": "Lemma 1 signs",
+   "status": "PROOF-READ"
+  },
+  {
+   "step": "(2),(3)",
+   "status": "EXACT"
+  },
+  {
+   "step": "(4) and conj forms",
+   "status": "EXACT"
+  },
+  {
+   "step": "(5) derivation",
+   "status": "EXACT/PROOF-READ"
+  },
+  {
+   "step": "V>0, m>H>1, positivity",
+   "status": "PROOF-READ"
+  },
+  {
+   "step": "capacity difference identities and bound",
+   "status": "EXACT/PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "20 exact checks: Lemma 1 identities, (2),(3),(4), conj forms, Theorem 1 algebra"
+ ],
+ "numeric_tests": [
+  "region II u<0 (seed 7, 400000): 71 supporting, min capacity diff 92",
+  "x<0,t>1,u>0: 0 supporting with d>0"
+ ],
+ "unchecked": [
+  "four-coefficient inequality proof"
+ ],
+ "doc_id": "final_referee_T9_second_branch_20261022"
+}

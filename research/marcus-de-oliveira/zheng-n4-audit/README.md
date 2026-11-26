@@ -1,8 +1,8 @@
 # MDO-ZHENG4 · Does the claimed proof for $n=4$ hold up?
 
-**Status.** The dimension-four proof remains under audit. The supplement has been located and pinned. The finite classification has an exact replay of 214 contact-set orbits, of which 124 reduce to nonnegative squared minors and 90 require separate inequalities. [Finite classification and limits](reduction/finite-classification.md) · [pinned inputs](METHOD.md#pinned-inputs)
+**Status.** The dimension-four proof remains under audit. No error has been found in any part examined, and the conjecture for $n=4$ is not yet established by this audit as a whole. [Findings so far](FINDINGS.md) · [pinned inputs](METHOD.md#pinned-inputs)
 
-**Current coverage.** The manifest lists 208 proof documents. This checkpoint contains 38 first-pass document reports with replay scripts. A separate numerical search found 246 configurations across 82 of the 90 contact sets. The eight remaining searches produced no examples. The reports and sampled configurations do not establish the ninety inequalities. [Document inventory](manifest.json) · [first-pass reports](docs/) · [numerical coverage and tolerances](contact-configs.md)
+**Current coverage.** The reduction to ninety contact inequalities, the finite classification (214 orbits, 124 reducing to squared minors, 90 requiring separate inequalities), Theorem 1.2 and Appendix B hold on the checks recorded here. A theorem that twelve case proofs cite has no public proof; the audit supplies one. Several universal inequalities on $\mathrm{SO}(4)$ that the cases rely on are proved here for the first time in public. Of the 208 proof documents, 110 have a first-pass report with replay scripts, 92 are with cloud workers and 6 are deferred. A separate numerical search found 246 configurations across 82 of the 90 contact sets; the reports and sampled configurations do not by themselves establish the ninety inequalities. [Document inventory](manifest.json) · [first-pass reports](docs/) · [second pass](docs2/) · [numerical coverage and tolerances](contact-configs.md)
 
 **Next question.** Which case can be settled once its shared dependencies and remaining proof steps receive an independent second pass? For a specific case, look up its document in the manifest, then open the matching report and replay, if present. Follow the stated evidence levels and verdict rules when recording a result. [Verdict rules](METHOD.md#verdict-per-case)
 
@@ -25,6 +25,10 @@ The paper's argument has five parts:
 | How are contact sets obtained and classified? | [Contact reduction](reduction/contact-reduction.md) · [finite classification and exact checks](reduction/finite-classification.md) |
 | What supports the reduction from unitary to orthogonal matrices? | [First review of Theorem 1.2](foundations/theorem-1-2.md) · [second independent review](foundations/theorem-1-2-second.md) |
 | What has been checked for coincident eigenvalues? | [Appendix B review and limitations](foundations/appendix-b.md) |
+| What has been checked for one spectrum on a circle or line? | [Appendix C, first half](foundations/appendix-c-part1.md) · [second half](foundations/appendix-c-part2.md) · [sketched and cited steps](foundations/appendix-c-open-items.md) |
+| Which universal inequalities on $\mathrm{SO}(4)$ do the cases use, and where are they proved? | [Inventory and proofs](foundations/so4-atoms.md) · [independent re-verification](foundations/so4-atoms-verification.md) · [rank-two and face families](foundations/so4-atoms-part2a.md) · [remaining faces and allocations](foundations/so4-atoms-part2b.md) |
+| Where is the three-plus-three circle theorem proved? | [Statement and proof](foundations/three-plus-three-circle.md) · [independent re-verification](foundations/three-plus-three-circle-verification.md) |
+| Which case depends on which document, and are the conditional theorems discharged? | [Dependency map](deps/dependency-map.md) · [conditional theorems](deps/conditional-tracing.md) |
 | How can I reproduce a computation? | [Library, dependencies and 77 checks](lib/README.md) · [per-document replay scripts](replay/) |
 | What was assigned to other workers? | [Worker instructions and slice assignments](CLOUD-WORKER.md) · [document inventory](manifest.json) |
 | Which arguments depend on dimension four? | [Dimension-five analysis](generalization-n5.md) |

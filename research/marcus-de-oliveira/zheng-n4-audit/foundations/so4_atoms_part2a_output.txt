@@ -1,0 +1,136 @@
+PASS A0 plain model: O^T O = |p|^2|q|^2 I, det O = (|p|^2|q|^2)^2
+PASS B[inv56] data source order equals the stated face order [0, 2, 5, 7, 12, 29, 35] :: [0, 2, 5, 7, 12, 29, 35]
+PASS B[inv56] contact set [0, 1, 5, 7, 9, 12, 17]: generators [0, 2, 5, 7, 12, 29, 35]; the 7 Gram sources are among them
+PASS B[inv56] own Gram map: 417 monomial rows, rank 17; costs rank 7; costs inside the Gram image: True; relation space (Delta) rank 10
+PASS B[inv56] own relation space equals the row space of the supplement R matrix (cross-check of data)
+PASS B[inv56] the ten relations printed on rank-two PDF p.2 span exactly my relation space
+PASS B[T24] data source order equals the stated face order [0, 2, 59, 6, 53, 54, 55, 67] :: [0, 2, 59, 6, 53, 54, 55, 67]
+PASS B[T24] contact set [3, 4, 7, 8, 10, 12]: generators [0, 1, 2, 6, 53, 54, 55, 59, 67, 70]; the 8 Gram sources are among them
+PASS B[T24] own Gram map: 418 monomial rows, rank 18; costs rank 8; costs inside the Gram image: True; relation space (Delta) rank 10
+PASS B[T24] own relation space equals the row space of the supplement R matrix (cross-check of data)
+PASS B[T25] data source order equals the stated face order [0, 1, 2, 5, 6, 39, 67, 70] :: [0, 1, 2, 5, 6, 39, 67, 70]
+PASS B[T25] contact set [2, 3, 5, 7, 8, 12]: generators [0, 1, 2, 5, 6, 39, 67, 70]; the 8 Gram sources are among them
+PASS B[T25] own Gram map: 418 monomial rows, rank 18; costs rank 8; costs inside the Gram image: True; relation space (Delta) rank 10
+PASS B[T25] own relation space equals the row space of the supplement R matrix (cross-check of data)
+face setup done 1.3 s
+PASS C R rank-two G4 = vv^T + dx ww^T: Gram G satisfies my relation space and Binv diag(G) = stated cost
+PASS C R rank-two G4 = vv^T + dx ww^T: exact LDL^T on rows [4, 1, 5, 6]; pivots [d*(d + x), 4*x**3/(d + x), 0, 0]
+PASS C R rank-two G4 = vv^T + dx ww^T: rows outside the LDL order are identically zero
+PASS C R rank-two G4 = vv^T + dx ww^T: full polynomial identity Mlin(G) = 2 Phi_cost (mod N) at rational point {d: 3/2, x: 2/5}
+PASS C F1 T24 (5) coherent [general x]: Gram G satisfies my relation space and Binv diag(G) = stated cost
+PASS C F1 T24 (5) coherent [general x]: exact LDL^T on rows [2, 5, 6, 7, 4]; pivots [j, 1, b, (a*b - 1)/b, -(-a*b*e*j + a*b*j*x**2 + a*b*x**2 - 2*a*b*x + a*b + a*j*x**2 + b*j*x**2 + e*j + j*x**2 - x**2 + 2*x - 1)/(j*(a*b - 1))]
+PASS C F1 T24 (5) coherent [general x]: pivots equal the stated slack expressions
+PASS C F1 T24 (5) coherent [general x]: rows outside the LDL order are identically zero
+PASS C F1 T24 (5) coherent [general x]: full polynomial identity Mlin(G) = 2 Phi_cost (mod N) at rational point {a: 3, b: 2, j: 1/3, e: 7, x: 2/7}
+PASS C F1 T24 (5): at x = 1/(1+jL), (1-x)^2/j + L x^2 = 1/(j + 1/L) (so e >= 1/(j+1/L) <=> j >= 1/e - 1/L)
+PASS C F1 T24 (5): homogeneous form j >= d^2/e - d(ab-d^2)/((a+d)(b+d)) at d = 1 equals j >= 1/e - 1/L
+PASS C F1 T24 (5) at j = 0 (x = 1): Gram G satisfies my relation space and Binv diag(G) = stated cost
+PASS C F1 T24 (5) at j = 0 (x = 1): exact LDL^T on rows [5, 6, 7, 4]; pivots [1, b, (a*b - 1)/b, (a*b*e - a*b - a - b - e - 1)/(a*b - 1)]
+PASS C F1 T24 (5) at j = 0 (x = 1): pivots equal the stated slack expressions
+PASS C F1 T24 (5) at j = 0 (x = 1): rows outside the LDL order are identically zero
+PASS C F1 T24 (5) at j = 0 (x = 1): full polynomial identity Mlin(G) = 2 Phi_cost (mod N) at rational point {a: 3, b: 2, e: 5}
+PASS C F1 T24 double-SOC: Gram G satisfies my relation space and Binv diag(G) = stated cost
+PASS C F1 T24 double-SOC: exact LDL^T on rows [2, 4, 5, 6, 7]; pivots [j, (e*j - 1)/j, 1, b, (a*b - 1)/b]
+PASS C F1 T24 double-SOC: pivots equal the stated slack expressions
+PASS C F1 T24 double-SOC: rows outside the LDL order are identically zero
+PASS C F1 T24 double-SOC: full polynomial identity Mlin(G) = 2 Phi_cost (mod N) at rational point {a: 1, b: 1, j: 2, e: 1/2}
+PASS C F1 T24 (6) parallel, order with B first (b > a or a = 0): Gram G satisfies my relation space and Binv diag(G) = stated cost
+PASS C F1 T24 (6) parallel, order with B first (b > a or a = 0): exact LDL^T on rows [4, 5, 6, 2, 7]; pivots [e, 1, r**2, -(-e*j*r**2 + 2*e*j*r*s - e*j*s**2 + e*r**2*s**2 - 2*e*r*s + e + r**2 - 2*r*s + s**2)/(e*(r - s)**2), 0]
+PASS C F1 T24 (6) parallel, order with B first (b > a or a = 0): pivots equal the stated slack expressions
+PASS C F1 T24 (6) parallel, order with B first (b > a or a = 0): rows outside the LDL order are identically zero
+PASS C F1 T24 (6) parallel, order with B first (b > a or a = 0): full polynomial identity Mlin(G) = 2 Phi_cost (mod N) at rational point {r: 2, s: 1/3, e: 3, j: 5}
+PASS C F1 T24 (6): with a > b the same G is PSD (LDL order with A first), pivots e, 1, s^2, j - 1/e - tau^2, 0
+PASS C F1 T24 (6): tau^2 = b(1-w)^2/(b-w)^2 = a(1-w)^2/(a-w)^2 with w = rs = sqrt(ab) (formula symmetric in a, b)
+PASS C F1 T24 (6): d * [threshold at normalised coefficients] = d^2/e + b(d-w)^2/(b-w)^2 (printed homogeneous form)
+PASS C F2 T25: E.A = t, E.B = -t, E.D = t, |E|^2 = e(t), |V|^2 = hb + q - 2z, |P|^2 = r^2/c + kappa^2(hb+q-2z)
+PASS C F2 T25 with kappa free: exactly one relation fails, and it is kappa (hb + q - 2z) = r - z (forces (12)) :: [(a*(kappa*(q - z) + t + z - 1) + kappa*(a*(b - z) - t**2))/a]
+PASS C F2 T25 Lemma 1 general (free z, kappa from (12)): Gram G satisfies my relation space and Binv diag(G) = stated cost
+PASS C F2 T25 Lemma 1 general (free z, kappa from (12)): exact LDL^T on rows [0, 4, 6, 5, 7, 1, 2]; pivots [a, -(-a*b + t**2)/a, (-a*b*q + a*z**2 + q*t**2)/(-a*b + t**2), c, 1, 0, 0]
+PASS C F2 T25 Lemma 1 general (free z, kappa from (12)): rows outside the LDL order are identically zero
+PASS C F2 T25 Lemma 1 general (free z, kappa from (12)): full polynomial identity Mlin(G) = 2 Phi_cost (mod N) at rational point {a: 2, b: 3, c: 5, q: 7, t: 1/2, z: 1/3}
+PASS C F2 T25: Gbase pivots a, hb, q - z^2/hb, c, 1 (exact LDL^T)
+PASS C F2 T25 Lemma 1 (9): Gram G satisfies my relation space and Binv diag(G) = stated cost
+PASS C F2 T25 Lemma 1 (9): exact LDL^T on rows [0, 4, 6, 5, 7, 1, 2]; pivots [a, -(-a*b + t**2)/a, (-a*b*q + a*t**2 - 2*a*t + a + q*t**2)/(-a*b + t**2), c, 1, 0, 0]
+PASS C F2 T25 Lemma 1 (9): rows outside the LDL order are identically zero
+PASS C F2 T25 Lemma 1 (9): full polynomial identity Mlin(G) = 2 Phi_cost (mod N) at rational point {a: 2, b: 3, c: 5, q: 7, t: 1/2}
+PASS C F2 T25 (10): hb + q - 2z = (hb - wr)^2/hb and kappa^2 (hb+q-2z) = hb r^2 (1-w)^2/(hb-wr)^2
+PASS C F2 T25 (10): at z = wr, q = w^2 r^2/hb the third Gbase pivot q - z^2/hb is 0 (PSD boundary)
+PASS C F2 T25 Lemma 1 (10): Gram G satisfies my relation space and Binv diag(G) = stated cost
+PASS C F2 T25 Lemma 1 (10): exact LDL^T on rows [0, 4, 6, 5, 7, 1, 2]; pivots [a, -(-a*b + t**2)/a, 0, c, 1, 0, 0]
+PASS C F2 T25 Lemma 1 (10): rows outside the LDL order are identically zero
+PASS C F2 T25 Lemma 1 (10): full polynomial identity Mlin(G) = 2 Phi_cost (mod N) at rational point {a: 2, b: 3, c: 5, t: 1/2, w: 1/3}
+PASS D G permutes the 82 f_j (1152 distinct permutations)
+orbit SOC: 144
+orbit H: 288
+orbit chain: 576
+orbit four: 288
+orbit rank2: 144
+PASS D SOC tuple (2, 59, 54) [T24 (4) pj >= d^2] lies in the proved orbit of (1, 9, 22) with the printed roles
+PASS D H tuple (53, 59, 54) [T24 (4) e(j-d) >= d^2] lies in the proved orbit of (3, 15, 26) with the printed roles
+PASS D four tuple (67, 55, 53, 54) [T24 (4) K >= 0] lies in the proved orbit of (0, 6, 10, 54) with the printed roles
+PASS D SOC tuple (2, 5, 70) [T25 (4) pj >= 1] lies in the proved orbit of (1, 9, 22) with the printed roles
+PASS D H tuple (39, 2, 70) [T25 (4) c(p-1) >= 1] lies in the proved orbit of (3, 15, 26) with the printed roles
+PASS D four tuple (0, 6, 1, 70) [T25 (5) first] lies in the proved orbit of (0, 6, 10, 54) with the printed roles
+PASS D four tuple (6, 67, 39, 70) [T25 (5) second] lies in the proved orbit of (0, 6, 10, 54) with the printed roles
+PASS D SOC tuple (2, 5, 54) [T41 bad54 (1) pj >= 1] lies in the proved orbit of (1, 9, 22) with the printed roles
+PASS D H tuple (15, 2, 54) [T41 bad54 (1) a(p-1) >= 1] lies in the proved orbit of (3, 15, 26) with the printed roles
+PASS D H tuple (3, 5, 54) [T41 bad54 (1) b(j-1) >= 1] lies in the proved orbit of (3, 15, 26) with the printed roles
+PASS D chain tuple (2, 0, 15, 54) [T41 bad54 (1) pae >= a+e] lies in the proved orbit of (2, 0, 12, 70) with the printed roles
+PASS D chain tuple (5, 0, 3, 54) [T41 bad54 (1) jbe >= b+e] lies in the proved orbit of (2, 0, 12, 70) with the printed roles
+PASS D chain tuple (12, 0, 2, 35) [inv56 boundary17 (1) chain leaves (0,2)] lies in the proved orbit of (2, 0, 12, 70) with the printed roles
+PASS D chain tuple (12, 7, 29, 35) [inv56 boundary17 (1) chain leaves (7,29)] lies in the proved orbit of (2, 0, 12, 70) with the printed roles
+PASS D four tuple (7, 0, 5, 35) [inv56 boundary17 (3) / large_product (2): qe(c-d) >= d^2(e+q+c+d)] lies in the proved orbit of (0, 6, 10, 54) with the printed roles
+PASS D H tuple (29, 12, 35) [rank-two p.3 old-H] lies in the proved orbit of (3, 15, 26) with the printed roles
+PASS D H tuple (2, 12, 35) [rank-two p.3 old-H] lies in the proved orbit of (3, 15, 26) with the printed roles
+PASS D rank2 tuple (2, 29, 12, 35) [rank-two representative] lies in the proved orbit of (2, 29, 12, 35) with the printed roles
+PASS D T24 core transport T41 bad17 p.2 / large_product p.1 [59,53,55,67,54] -> [1,53,4,16,17]: some g in G realises it (roles J, E, D[, P] exact, {B,A} as a set); ordered (B,A) also realised: True
+PASS D T24 core transport T27 (paper T_28) p.2 (f59,f53,f55,f67,f54) -> (f5,f2,f0,f67,f40): some g in G realises it (roles J, E, D[, P] exact, {B,A} as a set); ordered (B,A) also realised: True
+PASS D T24 core transport T38 (paper T_39) p.1 (f59,f53,f55,f67,f54) -> (f5,f2,f67,f0,f40): some g in G realises it (roles J, E, D[, P] exact, {B,A} as a set); ordered (B,A) also realised: True
+PASS D T24 core transport T36 (paper T_37) p.2 (67,55,53,54,59,2) -> (7,0,5,35,45,1): some g in G realises it (roles J, E, D[, P] exact, {B,A} as a set); ordered (B,A) also realised: True
+PASS D T24 core transport T43 (paper T_44) p.2 (59,53,55,67,54,2) -> (59,5,6,0,34,1): some g in G realises it (roles J, E, D[, P] exact, {B,A} as a set); ordered (B,A) also realised: True
+PASS D T24 core transport T23 g17 (paper T_24) p.2 (59,53,55,67,54,2) -> (5,3,67,0,54,2): some g in G realises it (roles J, E, D[, P] exact, {B,A} as a set); ordered (B,A) also realised: True
+PASS D T24 core transport T25 (6),(7): j->p (f2), e->c (f39), {b,a}->{b,q} (f6,f67), f54->f70: some g in G realises it (roles J, E, D[, P] exact, {B,A} as a set); ordered (B,A) also realised: True
+PASS D T24 face generators = {0,1,2,6,53,54,55,59,67,70} (doc p.1) :: [0, 1, 2, 6, 53, 54, 55, 59, 67, 70]
+PASS D T25 face generators = {0,1,2,5,6,39,67,70} (doc p.1) :: [0, 1, 2, 5, 6, 39, 67, 70]
+PASS D inv56 seven-contact face generators = {0,2,5,7,12,29,35} (doc p.1) :: [0, 2, 5, 7, 12, 29, 35]
+PASS D only f54, f70 (T24), f70 (T25), f35 (inv56) are non-minor among the face generators
+PASS D inv56 (1): split d = d1 + d2 in ratio qj/(q+j) : ea/(e+a); centre allocations d1^2(1/q+1/j) + d2^2(1/e+1/a) = Bch
+PASS D inv56 large_product (1): b(qj/(q+j) + ea/(e+a)) >= d^2 is b >= Bch
+PASS D rank-two (2): min_t>0 [t(f2+f29) + f12/(4t)] = sqrt(f12 (f2+f29)), attained at t = sqrt(f12/(4(f2+f29)))
+exact part done, 11.3 s, failures 0
+E R rank-two boundary (1): 24 coefficient points x 4 starts, min = 3.149e-33 (mpmath50 3.15172e-33) at [(12, 9.8999), (2, 0.0259), (29, 0.0259), (35, 1.0)]
+E R rank-two pointwise (2): 32 starts, min = 2.890e-25
+E F1 T24 (5) boundary: 24 coefficient points x 4 starts, min = 4.935e-32 (mpmath50 4.93503e-32) at [(59, 0.0), (53, 1.6819), (54, 1.0), (55, 6.12), (67, 2.7738)]
+E F1 T24 (6) boundary (both orientations): 24 coefficient points x 4 starts, min = 1.723e-34 (mpmath50 1.58869e-34) at [(59, 13.2026), (53, 0.0868), (54, 1.0), (55, 0.8461), (67, 0.2614)]
+E F1 T24 double-SOC ab = 1, ej = 1: 16 coefficient points x 4 starts, min = 4.268e-34 (mpmath50 4.26154e-34) at [(59, 10.1194), (53, 0.0988), (54, 1.0), (55, 9.2532), (67, 0.1081)]
+E F2 T25 Lemma 1 (9) boundary q hb = r^2: 24 coefficient points x 4 starts, min = 1.396e-31 (mpmath50 1.39587e-31) at [(0, 2.2508), (1, 2.8179), (2, 0.0002), (6, 1.7703), (39, 2.627), (67, 0.0005), (70, 1.0)]
+E F2 T25 Lemma 1 (10) boundary: 20 coefficient points x 4 starts, min = 1.476e-32 (mpmath50 1.62955e-32) at [(0, 0.9861), (1, 0.3061), (2, 0.4032), (6, 13.1763), (39, 0.9672), (67, 0.0198), (70, 1.0)]
+E F3 T41 bad17 (3) transported boundary: 24 coefficient points x 4 starts, min = 4.432e-32 (mpmath50 4.43199e-32) at [(1, 2.0184), (53, 0.4368), (4, 1.3175), (16, 2.3594), (17, 1.0)]
+E F3 T41 bad17 (4) transported boundary: 24 coefficient points x 4 starts, min = 2.563e-34 (mpmath50 2.56271e-34) at [(1, 16.8622), (53, 0.0609), (4, 1.3254), (16, 0.2339), (17, 1.0)]
+E F4 inv56 (1) two-chain boundary b = Bch: 20 coefficient points x 4 starts, min = 1.465e-31 (mpmath50 1.46797e-31) at [(0, 1.753), (2, 3.0565), (7, 11.8147), (29, 0.062), (12, 0.8506), (35, 1.0)]
+E F4 inv56 (3) four-coefficient boundary: 16 coefficient points x 4 starts, min = 4.800e-33 (mpmath50 4.50358e-33) at [(0, 12.4564), (7, 0.6974), (5, 2.9713), (35, 1.0)]
+E R rank-two threshold x0.9 (outside region): 6 coefficient points x 3 starts, min = 1.010e-32 (mpmath50 1.01029e-32) at [(12, 0.8319), (2, 0.3707), (29, 1.4027), (35, 1.0)]
+E R rank-two threshold x0.5 (outside region): 6 coefficient points x 3 starts, min = 1.310e-30 (mpmath50 1.31042e-30) at [(12, 0.722), (2, 1.4453), (29, 0.2094), (35, 1.0)]
+E R rank-two threshold x0.0 (outside region): 6 coefficient points x 3 starts, min = -6.141e-02 (mpmath50 -0.0614138) at [(12, 0.0), (2, 0.0666), (29, 0.0666), (35, 1.0)]
+E F1 T24 (5) threshold x0.9 (outside region): 6 coefficient points x 3 starts, min = 1.777e-29 (mpmath50 1.7771e-29) at [(59, 0.0), (53, 6.9742), (54, 1.0), (55, 1.6762), (67, 1.0706)]
+E F1 T24 (5) threshold x0.5 (outside region): 6 coefficient points x 3 starts, min = 1.027e-32 (mpmath50 3.27934e-32) at [(59, 0.0), (53, 2.8719), (54, 1.0), (55, 1.0426), (67, 5.1639)]
+E F1 T24 (5) threshold x0.0 (outside region): 6 coefficient points x 3 starts, min = 2.549e-30 (mpmath50 2.54859e-30) at [(59, 0.0), (53, 1.8398), (54, 1.0), (55, 9.6992), (67, 0.7317)]
+E F1 T24 (6) threshold x0.9 (outside region): 6 coefficient points x 3 starts, min = 5.207e-30 (mpmath50 5.20685e-30) at [(59, 21.8384), (53, 0.0428), (54, 1.0), (55, 0.0073), (67, 1.0687)]
+E F1 T24 (6) threshold x0.5 (outside region): 6 coefficient points x 3 starts, min = 1.327e-28 (mpmath50 1.32678e-28) at [(59, 0.2646), (53, 1.9526), (54, 1.0), (55, 0.3862), (67, 2.0678)]
+E F1 T24 (6) threshold x0.0 (outside region): 6 coefficient points x 3 starts, min = -2.374e-02 (mpmath50 -0.0237403) at [(59, 0.0), (53, 1.0435), (54, 1.0), (55, 0.025), (67, 1.9528)]
+E F2 T25 (9) threshold x0.9 (outside region): 6 coefficient points x 3 starts, min = 1.676e-29 (mpmath50 1.67605e-29) at [(0, 0.1904), (1, 4.5011), (2, 0.1851), (6, 1.8799), (39, 1.4217), (67, 0.3787), (70, 1.0)]
+E F2 T25 (9) threshold x0.5 (outside region): 6 coefficient points x 3 starts, min = 1.282e-30 (mpmath50 1.32129e-30) at [(0, 2.1221), (1, 0.0), (2, 1.9144), (6, 3.664), (39, 0.2612), (67, 0.2729), (70, 1.0)]
+E F2 T25 (9) threshold x0.0 (outside region): 6 coefficient points x 3 starts, min = -4.012e-02 (mpmath50 -0.040118) at [(0, 0.0767), (1, 0.0), (2, 0.0), (6, 13.9957), (39, 0.0896), (67, 0.0715), (70, 1.0)]
+E F2 T25 (10) threshold x0.9 (outside region): 5 coefficient points x 3 starts, min = 6.299e-31 (mpmath50 5.95744e-31) at [(0, 0.2851), (1, 0.5467), (2, 1.5555), (6, 0.5245), (39, 14.1704), (67, 0.0), (70, 1.0)]
+E F2 T25 (10) threshold x0.5 (outside region): 5 coefficient points x 3 starts, min = 1.793e-27 (mpmath50 1.79295e-27) at [(0, 0.8226), (1, 0.5691), (2, 0.4433), (6, 0.8637), (39, 1.5084), (67, 0.0028), (70, 1.0)]
+E F2 T25 (10) threshold x0.0 (outside region): 5 coefficient points x 3 starts, min = 1.407e-32 (mpmath50 1.40743e-32) at [(0, 0.2856), (1, 0.1912), (2, 0.0), (6, 18.4789), (39, 16.4323), (67, 0.0338), (70, 1.0)]
+E F3 T41 (4) threshold x0.9 (outside region): 6 coefficient points x 3 starts, min = 5.307e-34 (mpmath50 6.69538e-34) at [(1, 0.9036), (53, 1.0711), (4, 2.6238), (16, 0.1772), (17, 1.0)]
+E F3 T41 (4) threshold x0.5 (outside region): 6 coefficient points x 3 starts, min = 1.775e-28 (mpmath50 1.77324e-28) at [(1, 5.681), (53, 0.1112), (4, 0.5223), (16, 0.0191), (17, 1.0)]
+E F3 T41 (4) threshold x0.0 (outside region): 6 coefficient points x 3 starts, min = -4.662e-02 (mpmath50 -0.0466192) at [(1, 0.0), (53, 0.0797), (4, 3.0714), (16, 0.026), (17, 1.0)]
+E F4 inv56 (1) threshold x0.9 (outside region): 6 coefficient points x 3 starts, min = 1.030e-30 (mpmath50 1.10561e-30) at [(0, 1.7367), (2, 2.1772), (7, 0.4882), (29, 3.0531), (12, 0.6489), (35, 1.0)]
+E F4 inv56 (1) threshold x0.5 (outside region): 6 coefficient points x 3 starts, min = 2.534e-30 (mpmath50 2.53432e-30) at [(0, 0.1214), (2, 0.0514), (7, 0.0932), (29, 0.0799), (12, 6.3168), (35, 1.0)]
+E F4 inv56 (1) threshold x0.0 (outside region): 6 coefficient points x 3 starts, min = -4.505e-02 (mpmath50 -0.0450521) at [(0, 0.3734), (2, 0.1914), (7, 0.0559), (29, 0.1678), (12, 0.0), (35, 1.0)]
+E F4 inv56 (3) threshold x0.9 (outside region): 6 coefficient points x 3 starts, min = 2.589e-32 (mpmath50 1.98696e-32) at [(0, 22.5218), (7, 3.4284), (5, 1.2301), (35, 1.0)]
+E F4 inv56 (3) threshold x0.5 (outside region): 6 coefficient points x 3 starts, min = -1.848e-03 (mpmath50 -0.00184796) at [(0, 13.3351), (7, 12.3802), (5, 0.5845), (35, 1.0)]
+E F4 inv56 (3) threshold x0.0 (outside region): 6 coefficient points x 3 starts, min = -4.918e-02 (mpmath50 -0.0491817) at [(0, 0.2023), (7, 4.9496), (5, 0.0), (35, 1.0)]
+TOTAL exact checks 93, failures 0, 100.2 s

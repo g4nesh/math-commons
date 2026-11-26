@@ -1,0 +1,29 @@
+PASS contact set equals paper T_19 (Appendix E)
+PASS find_g(T_19, T) is the identity-type match
+PASS generators F_T = [0, 1, 2, 3, 4, 5, 6, 21, 22, 23, 33, 34] : [0, 1, 2, 3, 4, 5, 6, 21, 22, 23, 33, 34]
+PASS nonminor generators = [22, 34]
+PASS dim(im P cap {g_T = 0}) = 14 - rank P[T] = 8
+PASS minor generators span dimension 8 = span of all generators
+PASS minor cone has exactly 14 facets and they are the listed functionals : facets=14
+INFO nonminor f22 (h3412,+): A = 1, B = -1
+INFO nonminor f34 (h4321,+): A = -1, B = 1
+PASS F6/F0 = x
+PASS F8/F6 = (1-v)/(A2-v) = 1/(1-k)
+PASS F4/F1 = (1-C3)a2/(a2-C3)
+PASS h-equation has unique solution w of (2) : [(h*k*v - h*k + h - k*v + k - 1)/(h - k*v + k - 1)]
+PASS l-equation (given w) has unique solution A3 of (2) : [(-h*k**2*l*v + h*k**2*l + h*k*l*v - 2*h*k*l + h*l + k**2*l*v - k**2*l - k**2*v**2 + k**2*v - k*l*v + 2*k*l - k*v - l)/(-h*k*l + h*l + k**2*l*v - k**2*l - k**2*v + k**2 - k*l*v + 2*k*l - k - l)]
+PASS contact ratios (R0,R1,R4,R6,R7,R8) = (1,l,hl,x,lx,-x/(k-1))
+PASS g2 = mu k y/(k-1)
+PASS g5/g2 = h(k-1)^2(h-1)(l-1)/|D|^2
+PASS g9/g5 = -kx/((h-1)(k-1))
+PASS g10/g2 = hlx(k-1)/|a2|^2
+PASS g14/g2 = (x-1)/(k|v-1|^2)
+PASS g18/g14 = -l(h-1)(k-1)/k
+PASS (5) A/g2 identity
+PASS (5) B/g2 identity
+PASS D and a2 have only real zeros
+PASS sign cells: feasible cells are exactly regions I and II of (4) : [(1, 0, 0, 2), (2, 1, 2, 1)]
+PASS e>1, P>e, L>0 argument (proof-read, see report)
+NUMERIC seed 20261125, 4000 random chart points: 0 supported, 0 outside regions I/II, min(A,B)/max|g| = inf
+NUMERIC 1982 region points (I or II), mu chosen with g2 > 0: min(A,B)/max|g| = 6.232e-05; largest min-gap/max|g| = -5.801e-06 (negative: no supported point among them)
+EXACT FAILURES: none

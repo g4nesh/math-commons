@@ -1,0 +1,28 @@
+PASS EXACT T equals paper T_6
+PASS EXACT m_0 equals paper f_0 (minor n1,4)
+PASS EXACT m_3 equals paper f_3 (minor n14,34)
+PASS EXACT m_4 equals paper f_4 (minor n1,3)
+PASS EXACT m_5 equals paper f_5 (minor n12,24)
+PASS EXACT m_6 equals paper f_6 (minor n4,1)
+PASS EXACT m_9 equals paper f_9 (minor n14,23)
+PASS EXACT m_10 equals paper f_10 (minor n13,24)
+PASS EXACT m_21 equals paper f_21 (minor n4,2)
+PASS EXACT m_23 equals paper f_23 (minor n14,12)
+PASS EXACT exactly four unused entries (0,2),(0,3),(3,0),(3,1) [(0, 2), (0, 3), (3, 0), (3, 1)]
+PASS EXACT used entry: generators of (six-block) and of (six-block u T) are all minor
+PASS EXACT dim {c : (Pc)_T = 0} = 8
+PASS EXACT (g3,g7,g9,g10,g12,g13,g16,g18) are coordinates on W
+PASS EXACT A0=C2: dimension of equal-block subspace = 5 got 5
+PASS EXACT A0=C2: decomposition holds on the whole subspace, all 24 coordinates
+PASS EXACT A0=C2: all generators used are minor
+PASS EXACT A0=C3: dimension of equal-block subspace = 4 got 4
+PASS EXACT A0=C3: decomposition holds on the whole subspace, all 24 coordinates
+PASS EXACT A0=C3: all generators used are minor
+PASS EXACT A3=C0: dimension of equal-block subspace = 4 got 4
+PASS EXACT A3=C0: decomposition holds on the whole subspace, all 24 coordinates
+PASS EXACT A3=C0: all generators used are minor
+PASS EXACT A3=C1: dimension of equal-block subspace = 5 got 5
+PASS EXACT A3=C1: decomposition holds on the whole subspace, all 24 coordinates
+PASS EXACT A3=C1: all generators used are minor
+PASS EXACT a collision A_i = C_j makes the six block products zero (Gaussian rational spectra)
+SUMMARY failures=0

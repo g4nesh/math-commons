@@ -1,0 +1,29 @@
+{
+  "doc_id": "independent_moc4_six_contact_reduction_20261022",
+  "pdf": "proofs/manin_transfer_20261021/independent_moc4_six_contact_reduction_20261022.pdf",
+  "pages": 8,
+  "audit_pass": "second (independent)",
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "lem:curve (Lemma 2)", "page": 2, "restatement": "Irreducible affine curve C, regular f_1..f_m,h, not all f_j constant, sum Re f_j = 1; L=Re h bounded on {all Re f_j>=0}; L>=0 at finite points with all g_j>=0 and some g_j=0. Then L>=0 wherever all g_j>0."},
+    {"label": "lem:safe (Lemma 4)", "page": 3, "restatement": "If x + C kappa lies in X then Phi_O(Re x) >= min_sigma (P Re x)_sigma for all O in O(4)."},
+    {"label": "thm:six (Theorem 5)", "page": 4, "restatement": "Fixed O in O(4): if the support inequality holds for all nonzero x in X with >=6 contacts, it holds for all x in X (paper Thm 3.6, contrapositive)."},
+    {"label": "prop:inventory (Prop 8)", "page": 5, "restatement": "214 G-orbits of 6-subsets; 90 with a non-minor generator (distribution 51/35/3/1), 113 exact six-vertex-face orbits; positivity on the 90 families suffices."},
+    {"label": "prop:one-safe (Prop 10)", "page": 6, "contact_sets": [[0,1,2,3,6,7]], "paper_cases": [1], "covers_all_spectra": true, "restatement": "Every x in X with contact set containing {0,1,2,3,6,7} satisfies Phi_O(c(x))>=0 for all O in O(4) (hence U(4)); all spectra, repeated eigenvalues via paper Thm C.1, a_i+b_j=0 handled internally."},
+    {"label": "prop:T1-safe (Prop 13)", "page": 7, "contact_sets": [[0,1,2,3,6,8]], "paper_cases": [2], "covers_all_spectra": true, "restatement": "Same for {0,1,2,3,6,8} (paper T_2): off the cited degenerations, g7=g9 and c(x) is a nonnegative combination of minor vectors."}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "paper Sect. 3 / App. A (M1) realization of nonzero points of X", "used_for": "Thm 5, Prop 10 coordinate change", "status": "CITED"},
+    {"kind": "core-doc", "ref": "paper Theorem 1.2 (two-orthogonal)", "used_for": "Cor 7, unitary form of Props 10/13", "status": "CITED"},
+    {"kind": "common-lemma", "ref": "paper Prop 1.4(i) / Theorem C.1 (one-circle)", "used_for": "repeated within-spectrum eigenvalues in Props 10/13", "status": "CITED"},
+    {"kind": "core-doc", "ref": "paper Prop 4.1 facet completeness, Lemma 4.2", "used_for": "Prop 8, generator sets", "status": "CITED (lib exact certificate)"},
+    {"kind": "core-doc", "ref": "paper (4.2) minor responses", "used_for": "minor-only cones nonnegative", "status": "CITED"},
+    {"kind": "core-doc", "ref": "paper (4.7) G-equivariance", "used_for": "Prop 8 orbit reduction", "status": "CITED (lib tests)"},
+    {"kind": "external", "ref": "Birkhoff-von Neumann; removable singularities of bounded subharmonic functions; maximum principle; irreducible curve through two points", "used_for": "Lemmas 2, 4; Thm 5", "status": "standard"}
+  ],
+  "steps": "see the step table in the .md (26 steps)",
+  "gaps": [],
+  "exact_replays": ["(M1)-(M4) identities incl. X in Sing C symbolically and ker H_kappa = span e_ij", "gap forms common kernel = C kappa; h_{O,tau} in their real span", "Prop 8 counts 214/90/113/51-35-3-1/9", "entry faces: 15 minor generators each", "Prop 10 factorizations, ratios, imaginary numerators, collision equations", "Prop 13 identity (6), J, facet identity, l values, formal coefficient transfer"],
+  "numeric_tests": ["T1: 12 points, worst min Phi -2.0e-10, all degenerate as predicted", "T1 exact-contact margin 1e-2: 6 points all with repeated eigenvalue", "T2: 12 points worst min Phi -3.1e-15; 2 nondegenerate points |g7-g9|<1e-15"],
+  "unchecked": ["facet completeness and (4.2) not redone (lib)", "GIT realization (M1) not re-proved", "Theorem C.1 and Theorem 1.2 not audited"]
+}

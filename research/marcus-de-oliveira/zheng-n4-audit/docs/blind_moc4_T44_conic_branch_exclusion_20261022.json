@@ -1,0 +1,134 @@
+{
+ "doc_id": "blind_moc4_T44_conic_branch_exclusion_20261022",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T44_conic_branch_exclusion_20261022.pdf",
+ "pages": 3,
+ "verdict": "gap-found",
+ "statements": [
+  {
+   "label": "thm (Theorem 1)",
+   "page": 1,
+   "contact_sets": [
+    [
+     1,
+     2,
+     3,
+     7,
+     11,
+     12
+    ]
+   ],
+   "restatement": "For the T_45 cost q f2+p f1+j f53+c f12+e f8+d f18+b f7+a f15 with q,p,j,c,e,b,d>0, a>=0, pj<d^2, j<d+d^2/(a+e), and Phi<0: there is no x in X whose restored real point is c + h kappa. Hence realizable costs outside the SOC/Hsum capacities satisfy Phi>=0. A conditional exclusion, not a case of Prop 4.3."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "global Hessian inertia theorem: order-12 principal minors of Hess C(Re x) are >= 0",
+   "used_for": "final contradiction",
+   "match_checked": false
+  },
+  {
+   "kind": "external",
+   "ref": "HMSV set equality / secant rank bound rank Hess <= 12",
+   "used_for": "rank exactly 12",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "square-class verifier (polynomials Psi, S, T, Omega, U) and earlier T44 height-pencil verifier",
+   "used_for": "(2), provenance of P",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "id": "S1",
+   "claim": "C>0 on the chamber: (a+e)C - ae{d(a+e)+d^2-j(a+e)} >= 0 coefficientwise with (a+e)d^3",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy from library cubic"
+  },
+  {
+   "id": "S2",
+   "claim": "(1): det H = -4G^2/Q^2, G quadratic in q",
+   "kind": "identity",
+   "status": "NUMERIC",
+   "how": "implicit in S7 sampling"
+  },
+  {
+   "id": "S3",
+   "claim": "(2): disc = e^2 Phi Psi; P(e^2 Phi S^2) = (U+Omega)^2, P(Psi T^2) = (U-Omega)^2 mod G",
+   "kind": "certificate",
+   "status": "GAP",
+   "how": "Psi, S, T, Omega, U not given in the document"
+  },
+  {
+   "id": "S4",
+   "claim": "conic form and (3) det H = 2jXY Phi^2",
+   "kind": "identity",
+   "status": "UNCHECKED",
+   "how": "needs G as bivariate polynomial; time"
+  },
+  {
+   "id": "S5",
+   "claim": "Lemma 2: Y=0 impossible (DR identity, D^2 Phi = (D^2-X')^2)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy"
+  },
+  {
+   "id": "S6",
+   "claim": "X=0 case: Psi substitution",
+   "kind": "identity",
+   "status": "GAP",
+   "how": "Psi not printed (part of S3)"
+  },
+  {
+   "id": "S7",
+   "claim": "W^2E1^2 G|_{a=pc/W,e=-E0/E1} = d(d+b)Z T3 (qL1+L0)^2; L1+WE1 identity; signs Z,T3,L1,L0<0",
+   "kind": "identity",
+   "status": "EXACT + NUMERIC",
+   "how": "L1+WE1 symbolic; substitution identity exact at 3 points (ratio 1); signs sampled"
+  },
+  {
+   "id": "S8",
+   "claim": "rank >= 12 from d^2/dt^2 det < 0; Schur congruence; all maximal principal minors <= 0, one < 0",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "standard; argument re-derived (compound/Cauchy-Binet sign)"
+  },
+  {
+   "id": "S9",
+   "claim": "density of S Omega != 0 on the real hypersurface",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "valid given gcd(A,B,C0)=1 and S, Omega q-free"
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p.1, display (2) and p.2 (X=0 octic identity)",
+   "claim": "three square-class identities modulo G and the identity W^2 Psi|_{a=pc/W} = c^2(E1 e+E0)^2",
+   "why": "the polynomials Psi (137 terms), S, T, Omega, U are not printed, so the identities cannot be checked from the document; they are asserted via a companion verifier",
+   "severity": "substantive",
+   "believed_true": true,
+   "repair": "publish the polynomials or derive the sign of the 12x12 minor directly"
+  }
+ ],
+ "exact_replays": [
+  "cubic guard (a+e)C - ae{...} >= 0",
+  "DR identity and Y=0 square identity",
+  "a=0: Y=-pcbd",
+  "L1+WE1 identity"
+ ],
+ "numeric_tests": [
+  "radial substitution identity exact at 3 rational points (G normalisation matches, ratio 1)",
+  "signs Z,T3,L1+WE1 < 0 under pj<d^2 on 2000 samples",
+  "11 realizable T_45 points: none in the chamber (test is weak)"
+ ],
+ "unchecked": [
+  "(3) conic determinant",
+  "G itself (1188 terms) symbolically"
+ ],
+ "one_line": "Branch lemma for paper T_45 (no realizable lift in an Hsum-hard chamber with Phi<0; not used by the primary T_45 proof): the C>0 guard, the Y=0 and X=0 algebra and the radial substitution identity check, the rank/inertia logic is sound, but (2) involves unprinted polynomials and (3) was not replayed."
+}

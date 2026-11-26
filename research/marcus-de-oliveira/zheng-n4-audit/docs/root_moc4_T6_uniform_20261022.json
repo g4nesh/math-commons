@@ -1,0 +1,49 @@
+{
+ "doc_id": "root_moc4_T6_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T6_uniform_20261022.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    1,
+    2,
+    4,
+    7,
+    8
+   ],
+   "paper_case": "T_7",
+   "restatement": "x in X, g>=0, g=0 on T_7: Phi>=0 for all O; distinct labels with nonreal v give a minor decomposition; repeated/shared via B.1/B.2; v real via Appendix C."
+  }
+ ],
+ "dependencies": [
+  {
+   "ref": "paper Theorem B.1, Lemma B.2",
+   "status": "CITED"
+  },
+  {
+   "ref": "paper Appendix C Theorem C.1",
+   "status": "CITED"
+  },
+  {
+   "ref": "paper Theorem 1.2",
+   "status": "CITED"
+  }
+ ],
+ "steps": "13 steps; identities EXACT, sign/contradiction logic PROOF-READ",
+ "gaps": [],
+ "exact_replays": [
+  "generators, 14 dual rays, A,B, (2)",
+  "chart forward direction (auditor-supplied) and converse",
+  "(4)-(7)",
+  "ratio identities behind (8)",
+  "interpolation identity"
+ ],
+ "numeric_tests": [],
+ "unchecked": [
+  "main statement numeric search (budget)"
+ ]
+}

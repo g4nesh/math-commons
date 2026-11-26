@@ -1,0 +1,124 @@
+{
+ "doc_id": "root_moc4_T47_IIIa_minus_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_IIIa_minus_20261022.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Lemma 1",
+   "contact_sets": [],
+   "restatement": "g = alpha t^2+beta t+gamma, f = H t^2+J t+K, H>0, K>=0, l>0, u0=H gamma-alpha K, u1=H beta-alpha J, v0=K beta-gamma J. If alpha>=0 and u0+l u1>0 and either u0>0 or (gamma>0, v0>=0), then g(t)>0 for all 0<=t<l with f(t)>=0."
+  },
+  {
+   "label": "Theorem 1",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "paper_cases": [],
+   "covers_all_spectra": true,
+   "restatement": "Source g on T_65 (d=1): if 0<a<=1, 0<=b<=1, e>0, 0<=j<=e/(1+e), p,q>=0, 0<=c<1+1/e and Phi(c)>=0 then G(c)>0 (G up to a global sign). With radial necessity and the negative-Phi theorem: no realizable source in this sector. a=0 not claimed. Pure polynomial statement, so no spectral degeneracy issue."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022 / root_moc4_T47_full_radial (radial necessity: realizable source => C(w)=0 and det Hess C = 0 at w(g,-C0/Q), hence G = 0; rests on the secant-variety rank bound)",
+   "used_for": "G = 0 at every spectrally realizable source",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022 (negative-Heron theorem: Phi < 0, d,e > 0 => no realizable lift)",
+   "used_for": "exclude Phi < 0",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "C0 = -d{...} < 0 (own replay: formula EXACT)",
+   "used_for": "Q != 0 at realizable points",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "claim": "Contact set {0,4,5,6,9,12} is paper T_65 (identity element of G); its 8 generators are f2,f9,f1,f45,f5,f35,f0,f7",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "lib generators/CONTACT_SETS"
+  },
+  {
+   "claim": "C(w(g,h)) = C0 + hQ with C0 = -d{ab+ad+aq+bd+bp+d^2+de+dp+dq+ep+eq+pq} < 0 and Q as stated in the negative-Phi note",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own flint computation from (A.2) and App. D"
+  },
+  {
+   "claim": "G: 965-term octic with det Hess C(w(g,-C0/Q)) = -4 d^2 G^2/Q^2",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own Kronecker determinant + 5-point independent Fraction det check"
+  },
+  {
+   "claim": "Realizable source => G = 0 (radial necessity), Q != 0 since C0 < 0",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "secant/Hessian-rank argument of the core notes, not audited here"
+  },
+  {
+   "claim": "Lemma 1 identities",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy"
+  },
+  {
+   "claim": "Lemma 1 case analysis (endpoint, u0<0 forces K>0)",
+   "kind": "inequality",
+   "status": "PROOF-READ",
+   "how": "read line by line"
+  },
+  {
+   "claim": "Phi = Hc^2+Jc+K with H0, K0 as stated",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "flint"
+  },
+  {
+   "claim": "Eend = e u0 + (e+1) u1 is the endpoint condition at l=(e+1)/e",
+   "kind": "identity",
+   "status": "PROOF-READ",
+   "how": "e>0"
+  },
+  {
+   "claim": "Charts (a,b)=(L/S,(L+M)/S) or swapped, j = EU/((1+E)(U+W)) cover the sector incl. walls",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "explicit inverses L=a, M=b-a, N=1-b etc."
+  },
+  {
+   "claim": "Tables: alpha 1439, gamma 3635, v0 33089, Eend 31893 (a<=b); alpha 1439, u0 27768, Eend 31893 (a>=b), all coefficients positive, strict markers",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "own clearing; counts identical; strictness checked over all zero patterns allowed by E>0, L>0 (resp. L+M>0), U+W>0"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "G (965 terms), C0, Q",
+  "Lemma 1 identities",
+  "7 tables with identical term counts and strictness"
+ ],
+ "numeric_tests": [
+  "2 realizable T_65 points: G ~ 0 (rel 6e-12), Phi>0"
+ ],
+ "unchecked": [
+  "radial necessity and negative-Phi theorem (cited)"
+ ],
+ "one_line": "Polynomial claim G>0 on the IIIa-minus sector (with Phi>=0) replayed exactly (all 7 tables, identical term counts); the no-lift conclusion rests on the cited radial necessity and negative-Phi theorem."
+}

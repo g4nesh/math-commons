@@ -1,0 +1,59 @@
+PASS EXACT contact set is paper T_9
+PASS EXACT generators(T_9) = f0,f1,f2,f7,f8,f9,f10,f12,f15,f18 with f18 = h(3412,-) the only non-minor
+PASS EXACT f0 = f1+f2+f7+f15-f18 and f10 = f1+f8+f9+f15-f18 (unique)
+PASS EXACT gap forms: g4=A+h, g6=B, g7=C, g8=A+B+J+Q, g9=Q, g13=A+C+L, g16=2A+C+J+K, g18=h, g10=A+C+J, g14=A+J+Q, g15=A+L+Q, g17=A+K, g20=J, g21=L, g23=K
+PASS EXACT source-cone identity (A<=0 branch is a minor combination; auditor's decomposition)
+PASS EXACT H0..H3 = 0, 1-x, P, 1-tx identically on the chart
+PASS EXACT r := P - H12 = z(v-1)(tv-w)/(v(z-w))
+PASS EXACT D1,D2,D3 = p(1-al), p-q, p-q*al
+PASS EXACT eliminant -lm al^2 + (lm-1+mu) al + (1-mu) has root al=1, other root -(1-mu)/lm (real)
+PASS EXACT inverse: H12 = P - r identically
+PASS EXACT inverse: H18 - H4 = d identically
+PASS EXACT transfer d = (v-1)(eta+b)/(P v)
+PASS EXACT converse: on any chart point, d := H18-H4 gives w and z by the inverse formulas
+PASS EXACT H11 = u  <=>  eta^2 - a eta - b c = 0 (numerator is quadratic times eta-free factor) factor=-1
+PASS EXACT pivotal H4 = displayed + real constant on the curve const=-t - x + 1
+PASS EXACT pivotal H6 = displayed + real constant on the curve const=0
+PASS EXACT pivotal H7 = displayed + real constant on the curve const=1 - x
+PASS EXACT pivotal H8 = displayed + real constant on the curve const=(u + x)/x
+PASS EXACT pivotal H9 = displayed + real constant on the curve const=u + 1
+PASS EXACT pivotal H13 = displayed + real constant on the curve const=-r - t*x + 1
+PASS EXACT pivotal H16 = displayed + real constant on the curve const=-(-r*t*x + r*x + t*x**2 + u*x - u - x)/x
+PASS EXACT pivotal H18 = displayed + real constant on the curve const=-t - x + 1
+PASS EXACT contact value H0 constant on the curve
+PASS EXACT contact value H1 constant on the curve
+PASS EXACT contact value H2 constant on the curve
+PASS EXACT contact value H3 constant on the curve
+PASS EXACT contact value H11 constant on the curve
+PASS EXACT contact value H12 constant on the curve
+PASS EXACT H4 = 1-t-x at v = oo (constant term)
+PASS EXACT denominators of pivotal formulas and of a, bc only vanish at v in {0,1,1/t,x/t} {-t*v + x, v - 1, t*v - 1, x, v, t - 1}
+PASS EXACT a, b, c finite at v=oo
+PASS EXACT v=0 roots of the quadratic are x and -rx
+PASS EXACT residue row '0, eta=-rx' and A(R) = 0 R=[x, 0, 0, 0, 0, 0, 0, x]
+PASS EXACT residue row '0, eta=x' and A(R) = R21 R=[x, 0, 0, 0, 0, 0, x*(r + 1), x*(r + t)/(t - 1)]
+PASS EXACT residue row '1, eta finite' and A(R) = 0 R=[0, 0, 0, 0, 0, r*(x - 1), 0, 0]
+PASS EXACT residue row '1, eta pole' and A(R) = 0 R=[0, -r*(t - 1)*(x - 1)/(-t + x), r*(x - 1), -r*t*(x - 1)**2/(x*(-t + x)), 0, r*(x - 1), r*(x - 1)**2/x, 0]
+PASS EXACT residue row '1/t, eta finite' and A(R) = 0 R=[0, 0, 0, u/(t*x), u/t, 0, -u*(t*x - 1)/(t*x), 0]
+PASS EXACT residue row '1/t, eta pole' and A(R) = R18 R=[0, 0, u/t, 0, u/t, 0, 0, u/t]
+PASS EXACT v=x/t: b(x/t)=0 so the roots are 0 and a(x/t)
+PASS EXACT residue row 'x/t' = (0,K,0,K,0,0,0,0), K=(x-1)a(x/t)/t, A(R)=0
+PASS EXACT v=x/t, branch eta->0: tau*H_j -> 0 for j != 6,8 (H6 handled by simple zero of eta)
+PASS EXACT a(x/t)=c(x/t)=0  <=>  r = x-t, u = -t(x-1) [{r: -t + x, u: -t*x + t}]
+PASS EXACT ramified case: a, b, c each divisible by (tv - x)
+PASS EXACT coalescent root (a(x/t)=0): F_v = -b'(x/t) c(x/t)
+PASS EXACT d=0 => eta=-b; quadratic gives b(b+a-c)=0; b+a-c = v(t-1)((rt+u)v-(r+u))/((v-1)(tv-1))
+PASS EXACT w=0 => eta=-b/t (via transfer); quadratic = (b/t^2)(b+ta-t^2 c); b+ta-t^2c = x(t-1)(r-tv+t)/(v-1)
+PASS EXACT z - w = (v-1)(x-tv) w/(v d + (v-1)(tv-x)): z=w with w != 0 finite forces (v-1)(tv-x)=0 z-w=(v - 1)*(-t*v + x)*(-d*t*v - r*t*v + r*x)/(d*(-d*v - t*v**2 + t*v + v*x - x))
+PASS EXACT seventh contacts keeping a non-minor generator = {6,7,9,18,20,21,23} [6, 7, 9, 18, 20, 21, 23]
+PASS EXACT T_9 u {6} contains a G-image of paper T_5 (Stage 1) g=((0, 1, 3, 2), (0, 2, 3, 1), 0)
+PASS EXACT T_9 u {6} contains a G-image of paper T_6 (Stage 1) g=((0, 1, 2, 3), (0, 1, 2, 3), 1)
+PASS EXACT T_9 u {7} contains a G-image of paper T_4 (Stage 1) g=((0, 1, 3, 2), (0, 1, 3, 2), 0)
+PASS EXACT T_9 u {7} contains a G-image of paper T_7 (Stage 1) g=((0, 1, 2, 3), (0, 1, 2, 3), 1)
+PASS EXACT T_9 u {21} contains a G-image of paper T_5 (Stage 1) g=((0, 1, 3, 2), (0, 2, 3, 1), 1)
+PASS EXACT T_9 u {23} contains a G-image of paper T_4 (Stage 1) g=((0, 3, 1, 2), (0, 2, 3, 1), 1)
+PASS EXACT T_9 u {9} is a G-image of Table 5 set T^(7)_1 g=((0, 2, 1, 3), (0, 1, 2, 3), 0)
+PASS EXACT T_9 u {18} is a G-image of Table 5 set T^(7)_3 g=((0, 2, 1, 3), (0, 1, 2, 3), 0)
+PASS EXACT T_9 u {20} is a G-image of Table 5 set T^(7)_4 g=((0, 2, 1, 3), (0, 1, 2, 3), 0)
+INFO T_9 u {9} also contains paper T_8 (Stage 4, i.e. later than T_9): g=((3, 1, 2, 0), (3, 2, 0, 1), 1)
+SUMMARY all EXACT checks passed

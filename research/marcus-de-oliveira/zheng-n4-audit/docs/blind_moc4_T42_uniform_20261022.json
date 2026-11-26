@@ -1,0 +1,188 @@
+{
+ "doc_id": "blind_moc4_T42_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T42_uniform_20261022.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    43
+   ],
+   "contact_sets": [
+    [
+     1,
+     2,
+     4,
+     6,
+     7,
+     8
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For every x in X and pi* with P c(x) >= 0 and (P c(x))_pi = 0 for pi in {1,2,4,6,7,8} (non-strict: extra contacts allowed), Phi_{c(x)}(O) >= 0 for all O in SO(4). No restriction on the spectra: the proof only uses that Re x (height restored) satisfies C = 0 and det Hess C = 0, which holds for every x in X, including repeated eigenvalues and a_i+b_j=0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "old-H capacities (3,5,54),(23,5,54); chains centred at f5 with ends (f0,f3),(f23,f6); SOC tuple (5,2,54) (coordinate images of earlier proved capacities)",
+   "used_for": "as>=1 safe; a>=J safe",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "H/chain resource-allocation lemma (proof sketched in the doc; capacity forms not stated)",
+   "used_for": "definition of J and safety for a >= J",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "five-chart coverage of the resource lemma ('already proved')",
+   "used_for": "Bernstein tables are computed per KKT chart",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "supplement uniform/full-radial verifiers: 60 exact tables (L0,B1,B2 coefficients in Y nonnegative)",
+   "used_for": "L0 >= (1-a/J)^2, B1,B2 >= 0",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity: Re x satisfies C=0 and det Hess C=0 (secant rank <= 12, cf. HMSV)",
+   "used_for": "hard cost must have G=0",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "symmetry group G (paper Sect. 4.2)",
+   "used_for": "swap f22<->f54",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "id": "S1",
+   "claim": "generator inventory {0,1,2,3,4,5,6,21,22,23,53,54}, nonminor 22,54",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "lib generators(T)"
+  },
+  {
+   "id": "S2",
+   "claim": "four linear identities among f's",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "profiles compared on all 24 permutations"
+  },
+  {
+   "id": "S3",
+   "claim": "g in G fixing T and swapping f22<->f54 (row/col perms as stated)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "found ((1,0,3,2),(0,2,1,3),0) in lib convention; 2 such elements"
+  },
+  {
+   "id": "S4",
+   "claim": "cancellation/absorption gives (1) or a minor sum",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "coefficient bookkeeping with S2"
+  },
+  {
+   "id": "S5",
+   "claim": "basis of (1) has rank 8 and common zero set exactly T",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "rank and zero sets"
+  },
+  {
+   "id": "S6",
+   "claim": "C(g+z kappa)=C+zQ with the displayed C, Q",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy from library cubic; constant 1"
+  },
+  {
+   "id": "S7",
+   "claim": "hard region a<J: -MC identity, MT0-bc >= 0 incl. b,c terms; M=0 case; hence C<0, Q!=0",
+   "kind": "identity/inequality",
+   "status": "EXACT",
+   "how": "sympy; J <= 1+1/M is immediate (delta=0)"
+  },
+  {
+   "id": "S8",
+   "claim": "Q^4 det Hess = -4 Q^2 G^2, G of degree 9 with d^9 coefficient 1",
+   "kind": "identity",
+   "status": "NUMERIC",
+   "how": "exact-at-points: perfect square along 12 lines, base value 1"
+  },
+  {
+   "id": "S9",
+   "claim": "five KKT charts and J formulas; chart coverage",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "'already proved five-chart coverage'"
+  },
+  {
+   "id": "S10",
+   "claim": "60 tables: coefficients of L0,B1,B2 in Y nonnegative; L0(a=0) >= 1",
+   "kind": "certificate",
+   "status": "CITED",
+   "how": "supplement verifier; not replayed; conclusion sampled in S12"
+  },
+  {
+   "id": "S11",
+   "claim": "(1+aS)^2 G(a,S/(1+aS)) = L0+S B1+S^2 B2 and hence G >= (1-as)^2(1-a/J)^2",
+   "kind": "identity",
+   "status": "PROOF-READ",
+   "how": "two-line algebra, re-derived by auditor"
+  },
+  {
+   "id": "S12",
+   "claim": "G >= (1-as)^2(1-a/J)^2 > 0 on the hard region",
+   "kind": "inequality",
+   "status": "NUMERIC",
+   "how": "12 exact rational hard points (J by 1-D convex minimisation in floats); min ratio 571"
+  },
+  {
+   "id": "S13",
+   "claim": "zero-resource and boundary limits (J_eps increases to J; closedness)",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "argument read; J_eps <= J monotone because adding resource lowers each energy"
+  },
+  {
+   "id": "S14",
+   "claim": "as>=1 or a>=J safe",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "capacities"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators and nonminor set of T_43",
+  "four generator identities",
+  "swap symmetry in G",
+  "rank 8 / common zeros of basis (1)",
+  "C and Q of the cubic restriction (constant 1)",
+  "-MC identity and nonnegativity of MT0-bc at d=1",
+  "M=0: C=-(1+p)(1+q)(1+r)",
+  "G(base)=1 normalisation"
+ ],
+ "numeric_tests": [
+  "G^2 = -Q^2 detH/4 is a perfect square along 12 exact lines (degree <= 18)",
+  "G >= (1-as)^2(1-a/J)^2 at 12 exact hard points (seed 20261125), min ratio 571.7",
+  "rank Hess C(Re x) = 12 at 5 random x in X (supports det=0 necessity)",
+  "12 realizable T_43 points (lib stratum sampler, seeds 0-11, margin 1e-3): none hard; min Phi over SO(4) ~ 7e-12 (6 restarts)"
+ ],
+ "unchecked": [
+  "full symbolic replay of G (1398 terms) and of the 60 Bernstein tables (time)",
+  "the KKT chart coverage of the resource lemma",
+  "the forms of the old-H/chain/SOC capacities (other documents)"
+ ],
+ "one_line": "Primary proof of paper T_43={1,2,4,6,7,8} (literal match): reduction to an 8-generator cone, cubic guard and C,Q formulas replay exactly; the radial-factor bound G >= (1-as)^2(1-a/J)^2 holds at all 12 exact sample points; rests on cited SOC/old-H/chain capacities, the resource lemma and the unreplayed 60 Bernstein tables."
+}

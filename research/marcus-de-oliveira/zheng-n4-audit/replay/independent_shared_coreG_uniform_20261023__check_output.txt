@@ -1,0 +1,36 @@
+PASS  T equals Table 5 auxiliary seven-set no. 10 of the paper
+PASS  generators(T) as listed  [generators=[2, 3, 4, 11, 12, 15, 21, 26]]
+PASS  contact rows have rank 7
+PASS  every basis profile vanishes on T
+PASS  basis profiles independent (rank 7)
+PASS  generators(T) = [2,3,4,11,12,15,21,26], only f26 non-minor
+PASS  coefficients: (a,t,u,b,c,v) = (g15,g14,g17,g8,g4,g16), d = g3-g16
+PASS  (3): g21=a+d, g20=t+d, g11=u+d, g3=v+d
+PASS  (3): f4+f26 = f2+f3+f11+f21 in all 24 values
+PASS  d<=0 rewrite equals g in all 24 values; profiles 2,3,4,11,12,15,21 are minor
+PASS  SOC reference (f1,f9;f22) maps to each pair of {f2,f12,f15} with f26
+PASS  old-H reference (f3,f15;f26) maps (aux,main,nonminor) to (f3,f15;f26) and (f11,f12;f26)
+PASS  C(w(z)) = C + Q z with C, Q as printed
+PASS  (7): Q^4 det H(w(-C/Q)) = -4 Q^2 R9^2 with R9 a polynomial  [Bareiss exact divisions 819, deg_z det H = 3, 32s]
+PASS  R9: 536 terms, homogeneous of degree 9  [terms 536, degrees (2, 2, 2, 2, 2, 3, 9)]
+PASS  (8): R9(a,t,u,b,c,v,d) = R9(a,u,t,c,b,v,d)
+PASS  R9|c=0 = (u+d)(a+d)(v+d)^2(t+d)^2 K
+PASS  polytope (10): 252 hyperplane 5-sets, exactly 13 vertices, all integer
+PASS  pulling triangulation (apex = first vertex): 13 full-dimensional simplices; volume equals that of a second pulling triangulation (apex = last vertex)  [volume 17/120, second triangulation has 17 simplices]
+PASS  (11): on each of the 13 simplices (B-L)^2(C-N)^2 R9(list) has positive coefficients and the strict-support condition holds
+PASS  (11): table sizes equal the document (as a multiset) and total 352583  [sizes [28696, 28696, 31304, 24200, 24096, 32332, 28823, 29432, 29432, 24200, 31304, 24096, 15972]]
+PASS  (12) dominant a > 1: X^2 Y^2 R9(list): all coefficients positive, marker present  [terms 56416 (document 56416), marker coefficient 2 (document 2)]
+PASS  (12) dominant a > 1: X^2 Y^2 R9(list): term count equals document
+PASS  (13): V_n and V_D have positive coefficients in (B,K,A,N,Y)
+PASS  (13) dominant b > 1: Y^2 V_D^2 R9(list): all coefficients positive, marker present  [terms 141628 (document 141628), marker coefficient 2 (document 2)]
+PASS  (13) dominant b > 1: Y^2 V_D^2 R9(list): term count equals document
+PASS  cap(X,m) solves X = lam^2/(m-lam)
+PASS  (12) inverse map recovers (a, t, u, b, c, d=1)
+PASS  (13) inverse map recovers (a, t, u, b, c, d=1)
+NUMERIC atom SOC f2,f12;f26 at xy=d^2: N=20, restarts 8, worst min Phi = 2.619e-14
+NUMERIC atom SOC f2,f15;f26 at xy=d^2: N=20, restarts 8, worst min Phi = 4.928e-16
+NUMERIC atom SOC f12,f15;f26 at xy=d^2: N=20, restarts 8, worst min Phi = 9.023e-18
+NUMERIC atom old-H f3,f15;f26 at X(m-d)=d^2: N=20, restarts 8, worst min Phi = 1.544e-16
+NUMERIC atom old-H f11,f12;f26 at X(m-d)=d^2: N=20, restarts 8, worst min Phi = 1.880e-16
+NUMERIC theorem: 12 floating points with contacts containing T (lib random_point_on_contact_stratum, seeds 0..11), worst min Phi/max gap = -1.001e-10
+SUMMARY: all EXACT checks passed

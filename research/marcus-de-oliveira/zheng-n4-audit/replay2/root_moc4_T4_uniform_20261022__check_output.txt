@@ -1,0 +1,50 @@
+PASS EXACT A1 T4 equals paper Appendix E T_4 literally
+PASS EXACT A2 generators(T4) = {f0..f6,f11,f33,f34}  ['n1,4', 'n12,34', 'n13,34', 'n14,34', 'n1,3', 'n12,24', 'n4,1', 'n13,23', 'n12,13', 'h4321,+']
+PASS EXACT A3 document minor table matches Appendix D
+PASS EXACT A4 f34 = f0 - f2 + f6 + f33 (values)  h4321,+
+PASS EXACT A5 relation f0-f1-f2-f3+f4 = 0
+PASS EXACT A6 relation -f0+f2-f6-f33+f34 = 0
+PASS EXACT C1 dim of {c : (Pc)_T4 = 0} is 8
+PASS EXACT C2 decomposition (2) holds on all of W
+PASS EXACT C3 g22 = g16 + g19 + d on W
+PASS EXACT C4 g18 = g14 + g19 + d on W
+PASS EXACT C5 g15 = g9 - d (a = g9 - d) is linear on W
+PASS EXACT C6 d<=0 replacement coefficients
+PASS EXACT C7 transport g maps T5 rays f0,f6,f10,f54 to T4 rays f0,f6,f5,f34  n13,24->n12,24, h4231,-->h4321,+
+PASS EXACT C8 O(p,q)^T O(p,q) = |p|^2|q|^2 I
+PASS EXACT C9 on unit p,q: Phi_f0=(A-B)^2, Phi_f6=(A+B)^2, Phi_f10=D^2, Phi_f54=H
+PASS EXACT C10 companion certificate (4): n[...] == sum l^T Z l + m^T Z m  (mod N)
+PASS EXACT C11 Schur complements of Z: S1 as stated, det S2 = 4[ab(c-d)-d^2(a+b+c+d)]/(c-d)
+PASS EXACT C12 doc's arrowhead Schur identity
+PASS EXACT C13 contact ratios R_sigma on T4 = 0,1-x,t-x,x(t-1),r-x+1,u
+PASS EXACT C14 R5 - R4 = -t (R1 - R0); R4 - R1 = t - 1 (basis of the reality argument)
+PASS EXACT C15 z formula inverts (r,u): z_formula(r(z,w),u(z,w)) = z
+PASS EXACT C16 w formula inverts (r,u)
+PASS EXACT C17 denominators of z,w formulas = -(v-w)(x-tv)(tv-1)/(z-w), -(z-v)(x-tv)(tv-1)/(v(z-w))
+PASS EXACT C18 Q(v) = -(z-v)(v-w)(x-tv)(tv-1)/(v(z-w)) in original variables (so Q(v) != 0)
+PASS EXACT C19 g2 = x/|v|^2 (scaled, rho=-1)
+PASS EXACT C20 g6 = r t (x-1)/|tv-1|^2
+PASS EXACT C21 c = g10 = -t u x/|tv-x|^2
+PASS EXACT C22 g9 = (x-1) c and a = g9 - d
+PASS EXACT C23 (3a) k = g16 = h c - t(b+d)
+PASS EXACT C24 (3b) E e = t y H b - J d, e = g14
+PASS EXACT C25 (4) J = E + hy(r+1), J - xhH = -uy
+PASS EXACT C26 g22, g18 identities hold in the chart too
+PASS EXACT C27 D = d|Q(v)|^2 and P = K|Q(v)|^2 are Hermitian polynomials of bidegree <= (1,1)
+PASS EXACT C28 (6) det M_D = -r^3 t^2 u x y L E
+PASS EXACT C29 (6) D(x/t,x/t) = r u x y (hr - Hy)
+PASS EXACT C30 (7) det M_P = -r^2 t^2 u^2 x^2 h y L E
+PASS EXACT C31 (7) P(x/t,x/t) = r u^2 x^2 y (y - h)
+PASS EXACT C32 E = (h-y)(H+hy) + hyL
+PASS EXACT C33 hr-Hy<=0 bound: H(1-tx) - Hy^2 = H(h-y)(1+y); y - Hy/h + u = -u(y-h)/h
+PASS EXACT C34 a=yc-d => ab(c-d)-d^2(a+b+c+d) = c{ybc - x d(b+d)} (x = y+1)
+PASS EXACT C35 ybc - xd(b+d) - (b+d)/h (tyb - xhd) = yb(c - t(b+d)/h)
+PASS EXACT C36 sigma(0)=0 permutations are 0..5
+PASS EXACT C37 F_sigma/(z-w) for sigma(0)=0 is a polynomial in v,t,x with integer coefficients
+PASS EXACT C38 generators of {0..5} (and of T4 u {0..5}) are all minor vectors
+NUMERIC D1 inequality (1) on 40 random boundary tuples (12 BFGS restarts each, seed 20261125): worst normalized min Phi = 2.691e-18
+NUMERIC D2a chart sampling (seed 20261125, 200000 samples): 2033 admissible T4 points, 0 with d>0; sign claims x>1, 0<t<1, r>0, u<0, K>0 hold at all d>0 points: True
+NUMERIC D2b min of Phi over SO(4) (8 BFGS restarts) at 15 admissible points (0 with d>0): worst min Phi / sum(gaps) = -1.964e-15; Mobius common-factor rel. error 8.2e-14
+NUMERIC D3 lib stratum point (seed 7, margin 1e-2): contact [0, 1, 4, 5, 7, 8], min Phi = -2.020e-10
+NUMERIC D4 lib stratum points with d>0 (seeds 0..39, margin 1e-3): 4 points; chart gaps are a positive multiple of the lib gaps (rel. spread 1.4e-10) and x>1, 0<t<1, r>0, u<0, K>0, capacity (1) strict all hold: True; worst min Phi / sum(gaps) = 5.419e-16
+SUMMARY exact checks failed: 0 []

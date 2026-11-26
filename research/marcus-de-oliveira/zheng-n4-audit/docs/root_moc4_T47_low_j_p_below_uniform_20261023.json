@@ -1,0 +1,106 @@
+{
+ "doc_id": "root_moc4_T47_low_j_p_below_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_low_j_p_below_uniform_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "Every realizable source on T_65 (d=1) with b>1, 0<a<1/b, 0<p<=b, q>=0, e>0, 0<j<=1, j<=eb/(e+b), c>=0 satisfies the support inequality."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022 / root_moc4_T47_full_radial (radial necessity: realizable source => C(w)=0 and det Hess C = 0 at w(g,-C0/Q), hence G = 0; rests on the secant-variety rank bound)",
+   "used_for": "G = 0 at every spectrally realizable source",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "T24 five-ray core under role action [1,59,6,27,28] -> [45,5,7,0,35] (c >= 1/e + k)",
+   "used_for": "capacity",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "claim": "Contact set {0,4,5,6,9,12} is paper T_65 (identity element of G); its 8 generators are f2,f9,f1,f45,f5,f35,f0,f7",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "lib generators/CONTACT_SETS"
+  },
+  {
+   "claim": "C(w(g,h)) = C0 + hQ with C0 = -d{ab+ad+aq+bd+bp+d^2+de+dp+dq+ep+eq+pq} < 0 and Q as stated in the negative-Phi note",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own flint computation from (A.2) and App. D"
+  },
+  {
+   "claim": "G: 965-term octic with det Hess C(w(g,-C0/Q)) = -4 d^2 G^2/Q^2",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own Kronecker determinant + 5-point independent Fraction det check"
+  },
+  {
+   "claim": "Realizable source => G = 0 (radial necessity), Q != 0 since C0 < 0",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "secant/Hessian-rank argument of the core notes, not audited here"
+  },
+  {
+   "claim": "capacity length 1/e + (1-r)^2/(a+b-2r) = 1/e + k when a = r^2/b",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy"
+  },
+  {
+   "claim": "chart covers the region (U>=0 <=> j <= eb/(e+b))",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "-"
+  },
+  {
+   "claim": "cleared G 136179 terms; negatives only in P^2S^2T^0; F factorisation; N, H0 >= 0; H1 >= 0",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "own replay (identical term count) + own AM-GM"
+  },
+  {
+   "claim": "walls p=b, j=1 by bihomogenisation of degrees (2,6)",
+   "kind": "analytic-topological",
+   "status": "PROOF-READ",
+   "how": "argument supplied by auditor: P and T enter only through p and j (e, c via j are degree-0 homogeneous in (T,1+T)); cleared G has P-degree 2, T-degree 6 (EXACT); homogenisation keeps nonnegative coefficients and the P^2T^6 monomial (EXACT)"
+  },
+  {
+   "claim": "strict positivity at U=Q=S=0 walls",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "positive P^2T^6 monomial free of U,Q,S"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "136179-term clearing and decomposition",
+  "own AM-GM for H1"
+ ],
+ "numeric_tests": [
+  "shared 2-point realizability test"
+ ],
+ "unchecked": [
+  "T24 core capacity and role action (group map not checked)",
+  "radial necessity"
+ ],
+ "one_line": "The certificate excluding realizable sources below the T24 capacity on the low-j, p<=b region is replayed exactly (identical 136179-term clearing; own AM-GM for H1); rests on cited radial necessity and the T24 capacity."
+}

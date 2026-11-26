@@ -1,0 +1,47 @@
+PASS EXACT chart inverse: h = z(v-1)/(v(z-1))
+PASS EXACT chart inverse: t = (z-c)(v-r)/((r-c)(v-z))
+PASS EXACT chart inverse: s = (w-v)(1-c)(z-r)/((z-c)(v-r))
+PASS EXACT chart inverse: l = (w-r) z/((w-v)(z-r))
+PASS EXACT contacts of the chart are exactly T = {0,1,2,4,7,9} (generic parameters)
+PASS EXACT (2) g17 = g6 - b - e
+PASS EXACT (2) g14 = b - t(b+q+e)
+PASS EXACT (2) g18 = (1-t)(b+q+e)
+PASS EXACT (3) q = D a - k d - h b with d = -(a+b+q+e)
+PASS EXACT (3) J0 g6 = -h b
+PASS EXACT (4) a = -rho l s H/h
+PASS EXACT (4) G = rho h s D N0/|M1|^2
+PASS EXACT (4) b = -rho h J0 N0/|M2|^2
+PASS EXACT (5) k V = -rho h s/|v-1|^2 - D b
+PASS EXACT forced signs: h(1-f) + e + f = 0
+PASS EXACT t = (b-f)/M
+PASS EXACT g6 = b/beta
+PASS EXACT alpha = C/h
+PASS EXACT (8) (1-t)/s = t Delta
+PASS EXACT (8) W = -N0 Delta
+PASS EXACT R = |xi|^2 = t beta W/(theta b)
+PASS EXACT (9) M1 = D(gamma xi + W)/(Delta alpha)
+PASS EXACT (9) G = eta Delta alpha^2 W/(theta |gamma xi + W|^2)
+PASS EXACT (9) k V = D{eta alpha^2/(theta |xi-k|^2) - b}
+PASS EXACT C=0: theta = 1 - k
+PASS EXACT (7) D = s H theta (1-b)
+PASS EXACT (7) k e = b H theta (1 - 2 Re v) - h
+PASS EXACT (7) k{e + (H theta/D) V |v-1|^2} = -b H theta |v|^2
+PASS EXACT merged: G = p(p-1) beta b(1-b)/(theta Nw)
+PASS EXACT merged: 2 theta Re w = beta e + (2theta-1)(p-1) - p b theta
+PASS EXACT merged: theta q = -(p-1)(1-b) + beta(b+e)
+PASS EXACT merged: s = (p-theta)/(p theta (1-b))
+PASS EXACT L_V reduced denominator is 2 M b theta (1+e)(f-1): 2*M*b*th*(e + 1)*(f - 1)
+PASS EXACT (11) L_G - L_V = -eta L alpha^2/(2 b e theta gamma)
+PASS EXACT L - (e^2 - b) = {theta(b+e) - e} M + e q, q = M - b - e
+PASS EXACT f<1: gamma = -(f(1+e) + theta M (1-f))/(1-f)
+PASS EXACT SOS: L_V^2 - R = alpha^2 P/(4 b^2 theta^2 (1+e)^2)
+PASS EXACT t<0 branch: t = -theta(f-b)/E
+PASS EXACT W = delta - H + theta h - theta(f-b)H(1+delta)/E
+PASS EXACT W = delta - H + theta h + t H (1+delta)
+PASS EXACT W E = (1+delta)E - theta(f-b)H(1+delta) - beta h E
+PASS EXACT E(delta0) = (f-b)H
+PASS EXACT W(delta0) = -beta b H
+PASS EXACT alpha(delta0) = 0, R(delta0) = beta^2, L_V(delta0) = beta
+PASS EXACT W(delta=H) = theta h b/f and E(H) = f H
+PASS NUMERIC A<0 sample (seed 2027, 2 x 400000 draws, both signs of mu): 6 supporting; min g15 g8 - e^2 = 1.652e+00
+RESULT ALL EXACT CHECKS PASS []
