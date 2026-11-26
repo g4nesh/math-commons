@@ -1,0 +1,17 @@
+PASS literal contacts {1,3,5,10,11,14} = paper T_52
+PASS {3,4,5,7,9,12} is in the orbit of T
+PASS A = Table 5 T9^(7), stage 1 < 6
+PASS C = Table 5 T11^(7), stage 1 < 6
+PASS G = Table 5 T10^(7), stage 1 < 6
+PASS generators(T) = f0,f1,f2,f10,f12,f13,f27,f30,f59 (nine, rank 8)  [0, 1, 2, 10, 12, 13, 27, 30, 59]
+PASS only non-minor generator is f30; f30 = 1 at 4 and 15
+PASS ties not killing theta: {0,6,7,12,13,16,20}
+PASS tie 0 covered by an earlier-stage contact set  six: [10, 11, 12, 24, 39] seven: []
+PASS tie 6 covered by an earlier-stage contact set  six: [72] seven: [9]
+PASS tie 7 covered by an earlier-stage contact set  six: [42, 46] seven: []
+PASS tie 12 covered by an earlier-stage contact set  six: [] seven: [11]
+PASS tie 13 covered by an earlier-stage contact set  six: [72] seven: [9]
+PASS tie 16 covered by an earlier-stage contact set  six: [10, 11, 12, 24, 39] seven: []
+PASS tie 20 covered by an earlier-stage contact set  six: [] seven: [10]
+PASS ties 6 and 13 are images of A, 12 of C, 20 of G
+EXACT checks failed: 0

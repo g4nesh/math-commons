@@ -1,0 +1,33 @@
+PASS J equals paper Table 5 seven-set #22
+PASS generators(J) = [2,7,8,12,15,18,39,40] | [2, 7, 8, 12, 15, 18, 39, 40]
+PASS minor flags: all minor except f18, f40
+PASS rank of P rows at J = 7
+PASS the seven profiles (2) are independent (rank 7)
+PASS all seven profiles vanish on J
+PASS measurements (3), first row
+PASS measurements (3), second row
+PASS circuit (4) f18+f40 = f2+2f7+f15+f39 on all 24 values
+PASS stated stabilizer convention = lib element (rho=col, rho'=row, eps=1)
+PASS stabilizer fixes J, fixes six minors, swaps f18<->f40
+PASS w0 has no kappa component (m13 = 0)
+PASS (7)-(8): cubic(w0 + z kappa) = C + z Q
+PASS C, Q have positive coefficients; C contains d^3, Q contains d^2
+PASS B has 38 terms, all positive, d^6 coefficient 1 | 38
+PASS G has 64 terms; negative part = -4acefg(b+d) | 64
+PASS Bareiss: 819 exact divisions for the 14x14 determinant | time 10.0s
+PASS det H(w0 + z kappa) has degree <= 4 in z | 3
+PASS (10): Q^4 det H(w0 - C kappa/Q) = -4 Q^2 C^2 G^2
+PASS (11): Q^4 * each of the three 13x13 border determinants is divisible by G (exact) | border divisions 1950
+PASS gcd(A, B) = 1 | 1
+PASS G irreducible over Q (flint factor) | 1
+PASS (12): C=320/3, Q=40, z=-8/3, G=0 at the sample
+PASS (19): full vector at the sample
+PASS 3H(w) integral
+PASS (19): det(3H(w)[I,I]) = -310542336000 | -310542336000
+PASS rank H(w) = 12 at the sample | 12
+PASS all 91 principal 12-minors at the sample are <= 0, some < 0 | nonzero: 87
+PASS (18): A = -4ce(b+1) xi zeta on the parametrization
+PASS (17): A = -4ce(b+1)[fg - kappa0(f+g+1)] (so A<0 iff fg > kappa0(f+g+1))
+NUMERIC Hessian-inertia (1) on w = 2Re x, x = matching vector of random complex spectra: samples 200, seed 20261125, min normalized 12-principal minor 1.110e-17, numerical ranks {12: 200}
+NUMERIC stratum search on J: points found 8 of 8 seeds, max |rho|/max gap = 7.63e-11
+SUMMARY: 0 EXACT failures []

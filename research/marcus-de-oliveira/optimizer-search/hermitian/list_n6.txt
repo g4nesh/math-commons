@@ -1,0 +1,11 @@
+n6_herm_k4_s herm 6 601 45 --k 4 --sep 0.05
+n6_herm_k5_s herm 6 602 45 --k 5 --sep 0.05
+n6_herm_k6_s herm 6 603 45 --k 6 --sep 0.05
+n6_herm_k4_c herm 6 604 50 --k 4 --dperm 0.15 --dblock 0.15
+n6_herm_k5_c herm 6 605 50 --k 5 --dperm 0.15 --dblock 0.15
+n6_herm_k6_c herm 6 606 50 --k 6 --dperm 0.15 --dblock 0.15
+n6_linecirc_c linecirc 6 607 30 --dperm 0.15 --dblock 0.15
+n6_unitary_c unitary 6 608 30 --dperm 0.15 --dblock 0.15
+n6_a3r_222_c a3r 6 609 30 --mult 2,2,2 --dperm 0.15 --dblock 0.15
+n6_outa10_s outa 6 610 30 --R 10 --sep 0.05
+n6_outb10_c outb 6 611 30 --R 10 --dperm 0.15 --dblock 0.15

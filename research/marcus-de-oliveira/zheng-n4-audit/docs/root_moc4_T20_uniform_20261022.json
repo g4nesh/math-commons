@@ -1,0 +1,36 @@
+{
+  "doc_id": "root_moc4_T20_uniform_20261022",
+  "pdf": "proofs/manin_transfer_20261021/root_moc4_T20_uniform_20261022.pdf",
+  "pages": 2,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "paper_cases": [21], "contact_sets": [[0, 3, 5, 9, 11, 12]], "covers_all_spectra": true,
+     "restatement": "For all x in X with Pc(x) >= 0 vanishing on T_21 (extra contacts allowed), Phi_{c(x)}(O) >= 0 for all O in SO(4); collisions via App. B; eight-distinct layer lies in the minor cone."},
+    {"label": "real-part cubic lemma", "page": 1, "restatement": "x = y + i delta in X implies C(y) = 0."}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "paper A.1: X subset Sing C", "used_for": "C(Re x) = 0", "match_checked": true},
+    {"kind": "external", "ref": "paper App. B Thm B.1, Lemma B.2", "used_for": "collision strata", "match_checked": true},
+    {"kind": "external", "ref": "paper Thm 1.2", "used_for": "orthogonal to unitary", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "contact set = T_21", "status": "EXACT"},
+    {"n": 2, "claim": "sources {0,1,2,7,9,12,29,39,40,41}, only f40 non-minor", "status": "EXACT"},
+    {"n": 3, "claim": "F3 F11 = F5 F9", "status": "EXACT"},
+    {"n": 4, "claim": "swap factorizations", "status": "EXACT"},
+    {"n": 5, "claim": "H = 0 for distinct labels", "status": "EXACT"},
+    {"n": 6, "claim": "c(x') = Re x'", "status": "PROOF-READ"},
+    {"n": 7, "claim": "C(Re x) = 0 on X", "status": "PROOF-READ"},
+    {"n": 8, "claim": "detector delta on generators", "status": "EXACT"},
+    {"n": 9, "claim": "two replacement identities", "status": "EXACT"},
+    {"n": 10, "claim": "delta split gives minor combination or representation (1)", "status": "PROOF-READ"},
+    {"n": 11, "claim": "cubic identity (2)", "status": "EXACT"},
+    {"n": 12, "claim": "RHS >= d^3 > 0", "status": "PROOF-READ"},
+    {"n": 13, "claim": "collisions", "status": "CITED"},
+    {"n": 14, "claim": "O(4)/U(4)", "status": "CITED"}
+  ],
+  "gaps": [],
+  "exact_replays": ["generators", "detector values", "2 replacement identities", "rectangle relation", "2 swap factorizations", "H=0 algebra", "C(Re x)=0 on 12 Gaussian-rational points", "cubic identity (2), ratio 1"],
+  "numeric_tests": ["40 lib stratum points (seeds 0-39), worst min Phi -1.5e-10, all with coincident labels; no eight-distinct point found"],
+  "unchecked": ["eight-distinct stratum not reached numerically"]
+}

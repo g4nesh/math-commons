@@ -1,0 +1,160 @@
+{
+ "doc_id": "blind_shared_coreJ_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_shared_coreJ_uniform_20261023.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     2,
+     3,
+     7,
+     11,
+     12,
+     23
+    ]
+   ],
+   "restatement": "J = AUX7#22. For x in X, pi* in J, with Pc(x) >= 0 and zero on J (extra contacts allowed, all spectra), c(x) lies in cone{f2,f7,f8,f12,f15,f39} (all minor), hence Phi_{c(x)}(O) >= 0 for all O in SO(4)/O(4).",
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "external",
+   "ref": "global matching Hessian inertia theorem (1): det H_C(w)[I,I] >= 0, |I|=12, w = x + conj x",
+   "used_for": "final contradiction",
+   "status": "CITED, NUMERIC support (200 samples, no violation)"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper: X subset Sing C (grad C = 0 on X)",
+   "used_for": "realizable => F(w)=0, det H(w)=0",
+   "status": "EXACT in lib"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (4.2), (4.7), App. D generators",
+   "status": "EXACT in lib"
+  },
+  {
+   "kind": "external",
+   "ref": "paper Theorem 1.2",
+   "used_for": "unitary remark only",
+   "status": "CITED"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "7 profiles span contact kernel",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "gap readings (3)",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "circuit (4), absorption (5)",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "stabilizer swapping f18,f40",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "reduction to (6)",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 6,
+   "claim": "realizable => F=0, det H=0 (polarization)",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 7,
+   "claim": "(7)-(8) C, Q",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "B 38 positive terms; G 64 terms, negative part -4acefg(b+d)",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "(10) Q^4 det H = -4Q^2C^2G^2",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "(11) three Schur borders divisible by G",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "gcd(A,B)=1, G irreducible",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "sample (12), (19) det = -310542336000",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "(13) rank <= 12 via field argument",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 14,
+   "claim": "(15)-(16) rank >= 12 via D''",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 15,
+   "claim": "A<0 forces c,e,f,g>0",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 16,
+   "claim": "(17)-(18) parametrization, connectedness",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 17,
+   "claim": "constant inertia, sign of 12-minors, contradiction with (1)",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 18,
+   "claim": "conclusion rho = 0",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators(J), kernel, gap readings (3), circuit (4), stabilizer",
+  "cubic identity (7)-(8)",
+  "B, G term structure",
+  "14x14 determinant identity (10), 819 divisions",
+  "three Schur borders (11) divisible by G",
+  "gcd(A,B)=1, G irreducible",
+  "sample (12),(19), rank 12 and all 91 principal 12-minors <= 0 at sample",
+  "(17),(18) parametrization identities"
+ ],
+ "numeric_tests": [
+  "Hessian inertia (1): 200 random complex spectra, seed 20261125, min normalized 12-minor 1.1e-17, all rank 12",
+  "J stratum search: 8/8 seeds found points, max |rho|/max gap 7.6e-11"
+ ],
+ "unchecked": [
+  "the cited Hessian inertia theorem itself (only numeric)"
+ ]
+}

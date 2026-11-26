@@ -1,0 +1,5 @@
+n5_herm_k4_s herm 5 521 40 --k 4 --sep 0.05
+n5_herm_k5_s herm 5 522 40 --k 5 --sep 0.05
+n5_circles_c2 circles 5 523 30 --dperm 0.15 --dblock 0.15
+n5_unitary_c2 unitary 5 524 30 --dperm 0.15 --dblock 0.15
+n5_a3r_311_c2 a3r 5 525 30 --mult 3,1,1 --dperm 0.15 --dblock 0.15 --sep 0.0

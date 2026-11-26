@@ -1,0 +1,92 @@
+PASS perms_24_lexicographic
+PASS perms_sgn_compose_inverse
+INFO test_perms took 0.0s
+PASS A1_basis_is_the_14_noncrossing_matchings
+PASS A1_B_linearly_independent
+PASS R1_all_105_matching_products_in_span_of_B
+PASS P_identity_prod_bracket_eq_sum_P_B_16vars : all 24 rows, coefficientwise
+PASS eq4.5_sympy_prod_(z_{4+s(i)}-z_i)_eq_sum_P_B(w)
+PASS P_integer_entries : entry range [0, 2]
+PASS P_rank_14
+PASS P_minor_rows_0,1,2,3,4,6,7,8,9,10,12,13,16,18_det_is_1 : det = 1
+PASS P_kappa_column13_all_ones
+INFO test_basis_and_P took 0.2s
+PASS A2a_grad_C_vanishes_on_X_16vars : X subset Sing(C), all 14 partials
+PASS A2b_T_i_squared_is_identity_i=1..7
+PASS A2b_C(T_i m)_eq_-C(m)_i=1..7
+PASS A2c_partials_coefficient_minor_det_is_1 : det = 1 (rows dC/dm0..dC/dm13, columns in the paper's monomial order)
+PASS eq3.10_Hess_C(kappa)_eq_e0e6+e6e0-e1e5-e5e1
+PASS eq3.10_rank_H_kappa_is_4
+PASS eq3.11_ker_H_kappa_eq_{m0=m1=m5=m6=0}
+PASS eq3.11_E_eq_ker_H_kappa
+PASS eq3.12_grad_C(kappa)_is_0
+PASS eq3.12_grad_C(x+t kappa)_eq_grad_C(x)+t H x
+PASS dimX_jacobian_rank_6_at_rational_points : ranks [6, 6, 6]
+PASS kappa_in_X_matching_vector_of_(0,1)^4(1,1)^4
+INFO test_cubic took 0.2s
+PASS eq3.7_A2_(P E(Q))_sigma_eq_sum_q_i,sigma(i)_symbolic
+PASS entry_subspace_dim_10
+INFO test_entry took 0.0s
+PASS eq4.1_minor_vectors_exist_all_24_rows : 52 index pairs solved exactly
+PASS n_IJ_eq_n_IcJc_for_2sets
+PASS minor_vectors_16+18_distinct
+PASS minor_vectors_zero_counts_18_and_20
+PASS t_pi_values_count_agreements
+PASS d_pi_nonzero_exactly_at_8_relative_3cycles_4plus_4minus
+PASS h_profile_13x0_10x1_1x2_and_max_at_pi
+PASS h_48_distinct
+PASS D_f_list_is_bijection_onto_34_minor+48_h
+PASS D_f_value_profiles
+PASS D_f_nonnegative_at_all_vertices
+PASS D_zero_sets_pairwise_distinct
+PASS D_each_zero_set_affine_rank_12_(facet) : linear rank 13 of zero-set vertices in R^14 = affine dim 12
+INFO test_minors_and_facets took 0.3s
+PASS prop4.1_completeness_exact_certificate : 9420 simplices, all in listed facets: True; mod-2 cycle: True; point in facet f_17 covered 1 time(s)
+INFO test_prop41_completeness took 0.3s
+PASS random_rational_O_in_SO4_nonzero_entries : 24 matrices
+PASS eq4.2_Phi_n_IJ_eq_det_O[I,J]^2 : 52 (I,J) x 24 matrices
+PASS Phi_kappa_eq_1
+PASS eq3.8_Phi_E(Q)_eq_sum_q_ij_O_ij^2
+PASS eq4.4_Phi_h_formula
+PASS Phi_at_signed_permutation_eq_value
+PASS O_star_in_SO4
+PASS eq4.3_O_star_values : Phi_t=4/49, Phi_d=512/2401, Phi_h(id,-1)=-158/2401
+PASS ex1.3_psi_values_on_permutations_13_10_1
+INFO test_leibniz took 1.7s
+PASS eq3.1_P_matching_vector_eq_alpha_prod(a_i+b_sigma(i))_gaussian_rational
+PASS matching_vector_homogeneous_eq_dehomogenized
+PASS eq3.3_gap_vector_values_eq_Re_g_sigma
+PASS eq3.5_Phi_c(x)(O)_eq_Re(alpha det(Da+ODbOt)-F_pi*) : 12 Gaussian-rational spectra
+PASS grad_C_zero_at_gaussian_rational_matching_vector
+PASS contact_set_real_example : T = [0, 1, 2, 3, 4, 5]
+INFO test_spectral took 0.1s
+PASS G_order_1152_faithful
+PASS G_closed_under_composition_(sampled_32x1152)
+PASS table3_all_7_rows_with_convention_rho.sigma.rho2 : [True, True, True, True, True, True, True]
+INFO Table 3 rows matched under alternative conventions: {'rho2.sigma.rho': 2, 'rho^-1.sigma.rho2^-1': 6}
+PASS eq4.7_w_g.sigma(g.O)_eq_w_sigma(O)_all_g
+PASS eq4.7_Phi_g.c(g.O)_eq_Phi_c(O)_all_1152_g
+PASS eq4.7_det-1_column_flip_returns_to_SO4
+PASS eq4.7_random_20
+PASS G_preserves_X_via_relabelled_spectra : 30 random g, Gaussian-rational spectra
+PASS G_permutes_f0..f81
+PASS G_permutes_minor_vectors
+INFO test_group took 3.6s
+PASS E_90_six_sets
+PASS table5_27_seven_sets_distinct
+PASS six_sets_214_orbits : 214 orbits, 0.1s
+PASS orbits_124_all_minor_90_nonminor
+PASS E_T1..T90_are_the_90_nonminor_orbits_one_each
+PASS find_g_maps_T_to_orbit_rep_(T1..T10)
+INFO F_T85 = ['n12,34', 'n13,34', 'n12,24', 'n13,23', 'n14,24', 'h3421,-', 'n13,12', 'n12,13', 'h4312,-', 'n14,13', 'n13,14']
+INFO orbits of the 27 seven-sets: T7_1:nonminor, T7_2:nonminor, T7_3:nonminor, T7_4:nonminor, T7_5:nonminor, T7_6:nonminor, T7_7:nonminor, T7_8:nonminor, T7_9:nonminor, T7_10:nonminor, T7_11:nonminor, T7_12:nonminor, T7_13:nonminor, T7_14:nonminor, T7_15:nonminor, T7_16:nonminor, T7_17:nonminor, T7_18:nonminor, T7_19:nonminor, T7_20:nonminor, T7_21:nonminor, T7_22:nonminor, T7_23:nonminor, T7_24:nonminor, T7_25:nonminor, T7_26:nonminor, T7_27:nonminor
+INFO test_contact_sets took 0.2s
+PASS numeric_so4_param_orthogonal
+PASS numeric_Phi_np_matches_exact
+PASS numeric_min_phi_minor_vector_nonnegative : min = 8.674e-17 (10 restarts, seed 1)
+PASS numeric_min_phi_h_id_minus_below_O_star_value : min = -0.067442 vs Phi(O*) = -0.065806 (20 restarts, seed 1)
+PASS numeric_contact_stratum_point_T85 : contact found = [0, 5, 7, 9, 14, 18]
+PASS numeric_contact_stratum_point_T1 : contact found = [0, 1, 2, 3, 6, 7, 8, 9, 12, 13, 14, 15]
+PASS numeric_contact_stratum_point_T1_exact_contact : contact found = [0, 1, 2, 3, 6, 7]
+INFO test_numeric took 0.2s
+SUMMARY 77/77 checks passed in 6.8s

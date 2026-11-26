@@ -1,0 +1,194 @@
+{
+ "doc_id": "blind_inventory49_bounded_native_conditional_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_inventory49_bounded_native_conditional_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [],
+   "contact_sets": [
+    [
+     1,
+     3,
+     5,
+     6,
+     10,
+     11
+    ],
+    [
+     0,
+     1,
+     2,
+     7,
+     9,
+     10,
+     14
+    ],
+    [
+     0,
+     1,
+     2,
+     7,
+     9,
+     10,
+     23
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "If (*) holds for contact sets containing F={0,1,2,7,9,10,14} and G={0,1,2,7,9,10,23}, then (*) holds for T_50={1,3,5,6,10,11}, non-strict, all O in SO(4); degenerate spectra via App. B/C (cited)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "seven-contact",
+   "ref": "F=T_7^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    14
+   ],
+   "used_for": "hypothesis; tie 13",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "G=T_10^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    23
+   ],
+   "used_for": "hypothesis; tie 20",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "A=T_9^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    17
+   ],
+   "used_for": "tie 14",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "B=T_8^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    16
+   ],
+   "used_for": "tie 12",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_10 (doc 'T9')",
+   "contact_set": [
+    0,
+    1,
+    3,
+    5,
+    7,
+    8
+   ],
+   "used_for": "tie 0",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_43 (doc 'T42')",
+   "contact_set": [
+    1,
+    2,
+    4,
+    6,
+    7,
+    8
+   ],
+   "used_for": "tie 7",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_66 (doc 'T65')",
+   "contact_set": [
+    2,
+    4,
+    5,
+    6,
+    9,
+    12
+   ],
+   "used_for": "tie 16",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_bounded_bad_harmonic_lemma",
+   "used_for": "harmonic exclusion"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. C Thm C.1 (one-circle)",
+   "used_for": "repeated eigenvalues"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. B (shared zero)",
+   "used_for": "a_i+b_j=0"
+  }
+ ],
+ "steps": [
+  "1-4 contact kernel, gap formulas, relations EXACT",
+  "5 interval meet PROOF-READ",
+  "6 decomposition EXACT",
+  "7 bound (2),(3) PROOF-READ + EXACT instances",
+  "8 tie split EXACT",
+  "9 tie actions EXACT/CITED",
+  "10 degenerate CITED",
+  "11-14 inverse, H_i, (8),(9) EXACT",
+  "15 punctures W!=0 PROOF-READ",
+  "16-18 W=0 branch, (11),(12), witness EXACT",
+  "19 nonconstant coordinate PROOF-READ",
+  "20 harmonic lemma PROOF-READ+CITED (puncture set clarified by auditor)",
+  "21 Rouche wall restoration PROOF-READ (argument supplemented by auditor)"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "raw ratios E,rE,sE,uE",
+  "inverse (5) and homogeneous form (6)",
+  "H levels, (8), H4,H15,H0, height",
+  "C(0,Z), weight-zero (11), (12) H15 expansion",
+  "(13) Z-coefficient",
+  "20 random rational inverse recoveries",
+  "bound (3) 30 exact instances"
+ ],
+ "numeric_tests": [
+  "6 stratum points (seeds 0-5, pi*=1), 12 BFGS restarts each: worst min Phi -1.0e-15"
+ ],
+ "unchecked": [
+  "bounded-negative-part lemma itself (cited)",
+  "companion checker"
+ ]
+}

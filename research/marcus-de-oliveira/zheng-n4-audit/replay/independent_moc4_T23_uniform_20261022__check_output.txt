@@ -1,0 +1,49 @@
+PASS EXACT contact_set_equals_paper_T24
+PASS EXACT generators_T24 [0, 1, 2, 3, 4, 5, 6, 53, 54, 67]
+PASS EXACT only_f54_nonminor
+PASS EXACT canonical_decomposition_identity
+PASS EXACT delta=g5-g16=g9-g17_on_span
+INFO rank of generators = 8 (= 14 - 6, so the span is the whole contact subspace)
+PASS EXACT delta_on_generators {0: 0, 1: -1, 2: 0, 3: 0, 4: -1, 5: 0, 6: 0, 53: 0, 54: 1, 67: 0}
+PASS EXACT f54+f1=f0+f6+f53
+PASS EXACT f54+f4=f2+f3+f6+f53
+PASS EXACT extra_ties_with_f54_zero [1, 10, 12, 13, 16, 17, 22]
+PASS EXACT all_other_extra_ties_have_f54_positive
+PASS EXACT tie_1_image_[1, 2, 3, 4, 6, 7]_is_g.T_15_inside_T+1 ((0, 1, 2, 3), (0, 1, 2, 3), 0)
+PASS EXACT tie_10_image_[2, 3, 4, 6, 8, 10]_is_g.T_20_inside_T+10 ((0, 1, 2, 3), (0, 2, 1, 3), 0)
+PASS EXACT tie_12_image_[2, 3, 4, 6, 8, 12]_is_g.T_13_inside_T+12 ((3, 2, 1, 0), (3, 2, 1, 0), 0)
+PASS EXACT tie_22_image_[2, 3, 4, 6, 8, 22]_is_g.T_12_inside_T+22 ((2, 3, 1, 0), (3, 0, 1, 2), 1)
+PASS EXACT tie_16_image_[2, 3, 4, 7, 8, 16]_is_g.T_25_inside_T+16 ((1, 0, 2, 3), (0, 3, 2, 1), 0)
+INFO T+13: equals Table-5 seven-set(s) [6]; contains six-subsets in orbits of paper cases [24, 28, 39, 42, 47, 49, 66]
+INFO T+17: equals Table-5 seven-set(s) [5]; contains six-subsets in orbits of paper cases [24, 26, 37, 44, 65, 67, 73]
+PASS EXACT F3-F2=(z-c)wX -w*(-c + z)*(x - 1)
+PASS EXACT H2_formula
+PASS EXACT H3_formula
+PASS EXACT H4_formula
+PASS EXACT H6_formula
+PASS EXACT H7_formula
+PASS EXACT H8_formula
+PASS EXACT H9_formula
+PASS EXACT inverse_chart_returns_s
+PASS EXACT inverse_chart_returns_t
+PASS EXACT inverse_chart_returns_r
+PASS EXACT inverse_chart_returns_u
+PASS EXACT w=ch
+PASS EXACT z-v=th(z-c)
+PASS EXACT r=-d(z-1)/X
+PASS EXACT z-c=XJ/((t-uX)ell d)
+INFO computing chart forms of H1,H5,H10,H13,H16
+PASS EXACT H1=s+A1/L1
+PASS EXACT H10=(r(q+t)-su)/q-(tr/q)A1/L1
+PASS EXACT H5->1_as_x->inf 1
+INFO among H1,H5,H9,H10,H13,H16 the ones with J dividing the denominator: [13, 16]
+PASS EXACT H1_H5_H9_H10_have_no_J_pole
+PASS EXACT H13_H16_have_J_pole
+PASS EXACT label_denominators_real_linear
+PASS EXACT residue_ratio_H13/H16=z/(z-1)_mod_J
+INFO F16-F2 raw = c*v*z + c*w*x - c*w - c*x*z - v*w*z + v*w - v*z - w*x + w*z + x*z
+PASS EXACT F16-F2_at_c=v=z -(-w + z)*(x - z)*(z - 1)
+SUMMARY exact checks failed: 0 []
+NUMERIC SOC_lemma min over SO(4) of Phi54+2sqrt(Phi5 Phi2): -3.873e-30 (60 Nelder-Mead starts, seed 7)
+NUMERIC chart sampling: 40000 draws (seed 11), supported=383, in SOC-failure region=0, worst minPhi over first 30 of them=inf
+NUMERIC lib stratum points for T_24: 10/10 found, worst minPhi=-3.257e-12

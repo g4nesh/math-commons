@@ -1,0 +1,39 @@
+{
+  "doc_id": "final_referee_T5_four_budget_capacity_20261022",
+  "pdf": "proofs/manin_transfer_20261021/final_referee_T5_four_budget_capacity_20261022.pdf",
+  "pages": 3,
+  "verdict": "confirmed",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "restatement": "For p, q in R^4 with |p| = |q| and a, b, c, d >= 0 with ab(c-d) >= d^2(a+b+c+d): a(A-B)^2 + b(A+B)^2 + cD^2 + dH >= 0. Equivalently EG <= (|D| + 2 max(|A|,|B|))^2 for all such p, q."},
+    {"label": "T5 application", "page": 2, "contact_sets": [[1, 2, 3, 4, 6, 8]], "restatement": "With O = (x -> p x q) normalized, Phi_f0 = (A-B)^2, Phi_f6 = (A+B)^2, Phi_f10 = D^2, Phi_f54 = H. For c in the T_5 contact subspace, g = g22 f0 + g13 f2 + g12 f3 + g10 f5 + g17 f6 + g7 f10 + g16 f53 - A0 f54 (A0 = g16 - g0); if A0 < 0 and g22 g17 (g7 + A0) >= A0^2 (g22 + g17 + g7 - A0) then Phi_c(O) >= 0 on SO(4). Not claimed for all T_5 costs.", "covers_all_spectra": false}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "paper Appendix D, Sect. 4.1-4.2 via moc4lib", "used_for": "f_j, generators(T_5), Phi", "match_checked": true},
+    {"kind": "external", "ref": "SO(4) = S^3 x S^3 / +-1 (quaternion parametrization)", "used_for": "for all O", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "identity (4) mod N", "kind": "identity", "status": "EXACT"},
+    {"n": 2, "claim": "(1) <=> Z PSD", "kind": "inequality", "status": "EXACT"},
+    {"n": 3, "claim": "(4) + Z PSD => (2)", "kind": "inequality", "status": "PROOF-READ"},
+    {"n": 4, "claim": "capacity equality for the alpha-beta-gamma choice", "kind": "identity", "status": "EXACT"},
+    {"n": 5, "claim": "Cauchy-Schwarz infimum", "kind": "inequality", "status": "PROOF-READ"},
+    {"n": 6, "claim": "(2) => (3)", "kind": "algebra", "status": "EXACT"},
+    {"n": 7, "claim": "(3) => (2) under (1)", "kind": "inequality", "status": "EXACT"},
+    {"n": 8, "claim": "quaternion responses of f0, f6, f10, f54", "kind": "identity", "status": "EXACT"},
+    {"n": 9, "claim": "generators(T_5) (11, only f54 non-minor), 8-dim span", "kind": "identity", "status": "EXACT"},
+    {"n": 10, "claim": "profile identity", "kind": "identity", "status": "EXACT"},
+    {"n": 11, "claim": "gap form of the capacity", "kind": "identity", "status": "EXACT"},
+    {"n": 12, "claim": "other summands are nonnegative minor costs", "kind": "inequality", "status": "PROOF-READ"},
+    {"n": 13, "claim": "Gram uniqueness / SOC-obstruction source", "kind": "informational", "status": "UNCHECKED"}
+  ],
+  "gaps": [],
+  "exact_replays": [
+    "identity (4) modulo (N), symbolic in p, q, a, b, c, d",
+    "Schur complements and determinant; d = 0 eigenvalues; 400 random rational tuples PSD <=> (1)",
+    "scalar-form algebra (equality choice, converse equivalence)",
+    "4 Phi_fj(M(p,q)) - n^2 Q_j in (N) for f0, f6, f10, f54; M M^T = (n/2)^2 I mod N",
+    "generators(T_5) = {0,1,2,3,4,5,6,9,10,53,54}, rank 8; profile identity on all 11 generators; capacity in gap form"
+  ],
+  "numeric_tests": ["20000 random unit pairs (seed 2026): min slack of (3) = 2.0e-3; min of (2) on capacity-boundary coefficients = 8.1e-3"],
+  "unchecked": ["the checker's Gram-uniqueness / rank-10 claim", "coverage of the source in final_referee_T5_old_SOC_obstruction_20261022.json"]
+}

@@ -1,0 +1,39 @@
+{
+  "doc_id": "root_moc4_global_real_Hessian_inertia_20261022",
+  "pdf": "proofs/manin_transfer_20261021/root_moc4_global_real_Hessian_inertia_20261022.pdf",
+  "pages": 2,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Lemma 1", "page": 1, "restatement": "For every x in the affine cone over Sec(M), rank Hess C(x) <= 12."},
+    {"label": "Theorem 2", "page": 1, "restatement": "For every m in X (all finite spectra a, b in C^4, all alpha in C, including degenerate ones), A = Hess C(Re m) has at most 6 positive and 6 negative eigenvalues, generic inertia (6,6,2); every principal 12-minor of A is >= 0, and positive when nonzero; rank 12 implies at least one is positive."}
+  ],
+  "dependencies": [
+    {"kind": "external", "ref": "HMSV Thm 3.4, Cor 3.9(a), Sect 3.4, Prop 3.19 (dim Sec(M) = 11, polar image dim 9, generic secant point smooth on C)", "used_for": "Lemma 1", "match_checked": false},
+    {"kind": "external", "ref": "HMSV Cor 4.2 / Terracini", "used_for": "ker H(m) = tangent space; L cap conj(L) = 0", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper Sect. 3 / moc4lib (X in Sing C, dim X = 6, integer parametrization)", "used_for": "throughout", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "Euler H(x)x = 2 grad F(x)", "kind": "identity", "status": "PROOF-READ"},
+    {"n": 2, "claim": "Lemma 1 rank <= 12 on the secant cone", "kind": "algebraic geometry", "status": "CITED"},
+    {"n": 3, "claim": "ker H(m) = T_m X generically (dim 6)", "kind": "algebraic geometry", "status": "PROOF-READ", "note": "argument supplied by auditor + exact rank-8 instance; replaces HMSV Cor 4.2"},
+    {"n": 4, "claim": "conjugate pairs Zariski dense", "kind": "algebraic", "status": "PROOF-READ"},
+    {"n": 5, "claim": "L cap conj(L) = 0 generically", "kind": "algebraic", "status": "EXACT", "note": "rank [A;B] = 14 at an instance, plus polynomial nonvanishing; replaces Terracini"},
+    {"n": 6, "claim": "totally isotropic L forces p, n >= 6", "kind": "linear algebra", "status": "PROOF-READ"},
+    {"n": 7, "claim": "rank A <= 12", "kind": "citation", "status": "CITED"},
+    {"n": 8, "claim": "generic inertia (6,6,2)", "kind": "conclusion", "status": "PROOF-READ"},
+    {"n": 9, "claim": "p, n <= 6 at every realizable parameter (limit)", "kind": "limit", "status": "PROOF-READ"},
+    {"n": 10, "claim": "principal 12-minors >= 0", "kind": "linear algebra", "status": "PROOF-READ"},
+    {"n": 11, "claim": "points at infinity", "kind": "limit", "status": "PROOF-READ"}
+  ],
+  "gaps": [],
+  "exact_replays": [
+    "rank H(m) = 8 at 5 real rational matching vectors; rank_C H(m) = 8 at a Gaussian-rational one",
+    "rank H(m1 + m2) = 12 for 6 random rational pairs (Lemma 1 instances); rank 14 at a random point of V",
+    "rank [H(Re m); H(Im m)] = 14 at an instance",
+    "inertia (6,6,2) at 6 Gaussian-rational (a, b, alpha) via exact charpoly + Descartes",
+    "8 degenerate instances: p, n <= 6",
+    "all 91 principal 12-minors positive at 4 instances"
+  ],
+  "numeric_tests": ["2000 random complex spectra/scales, seed 31, 30% forced coincidences: inertia (6,6) x1015, (5,5) x985, never p or n > 6"],
+  "unchecked": ["the HMSV inputs of Lemma 1 (cited, source not re-read)", "the document's companion exact sample (not loaded)"]
+}

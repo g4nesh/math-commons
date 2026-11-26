@@ -1,0 +1,26 @@
+PASS literal contact tuple is paper T_50
+PASS Table 6 lists every T_k exactly once
+PASS representative {1,3,4,6,7,8} -> T (row (0,2,3,1), column (1,0,2,3), no transpose)
+PASS index.tsv style canonical form {0,1,2,7,9,10} is in the orbit
+PASS statement 'contact rank 6, kernel dimension 8'
+PASS kernel basis [f0,f1,f2,f3,f8,f10,f27,f59] independent and vanishing on T
+PASS ten-source list equals generators(T)
+PASS every source except 30 is a minor vector
+PASS d <= g4 and d <= g15 (f30 = 1 at 4 and 15, all sources >= 0)
+PASS possible extra ties with f30 = 0 are exactly 0,7,12,13,14,16,20
+PASS F is Table 5 set T7^(7), stage 1 < stage(T_50)=8
+PASS G is Table 5 set T10^(7), stage 1 < stage(T_50)=8
+PASS A is Table 5 set T9^(7), stage 1 < stage(T_50)=8
+PASS B is Table 5 set T8^(7), stage 1 < stage(T_50)=8
+PASS tie 0: document's 'T9' set is paper T_10, stage 2 < 8
+PASS tie 0: action image of 10 is inside T+{0}  [0, 1, 3, 5, 6, 10]
+PASS tie 7: document's 'T42' set is paper T_43, stage 1 < 8
+PASS tie 7: action image of 43 is inside T+{7}  [1, 3, 5, 6, 7, 11]
+PASS tie 12: action image of B is inside T+{12}  [1, 3, 5, 6, 10, 11, 12]
+PASS tie 13: action image of F is inside T+{13}  [1, 3, 5, 6, 10, 11, 13]
+PASS tie 14: action image of A is inside T+{14}  [1, 3, 5, 6, 10, 11, 14]
+PASS tie 16: document's 'T65' set is paper T_66, stage 7 < 8
+PASS tie 16: action image of 66 is inside T+{16}  [1, 3, 5, 6, 10, 16]
+PASS tie 20: action image of G is inside T+{20}  [1, 3, 5, 6, 10, 11, 20]
+PASS (1) -L_O <= M min(g4,g15) on 30 exact random instances
+EXACT checks failed: 0

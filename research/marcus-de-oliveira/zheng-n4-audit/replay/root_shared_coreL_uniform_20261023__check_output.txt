@@ -1,0 +1,40 @@
+[PASS] EXACT L is Table 5 set #14
+[PASS] EXACT generators(L) = {2,3,8,11,12,15,23,26}, only f26 non-minor
+[PASS] EXACT contact rows of P on L have rank 7
+[PASS] EXACT the seven listed profiles are independent
+[PASS] EXACT f8 + f26 = f2 + f3 + f12 + f23
+[PASS] EXACT cost vanishes on L
+[PASS] EXACT coefficients = gaps (g15,g14,g17,g8,g4,g9) = (a,b,q,c,e,v)
+[PASS] EXACT g13=a+d, g20=b+d, g22=c+d, g3=v+d
+[PASS] EXACT d<=0 rewrite as minor combination (f8 minor)
+[PASS] EXACT some g in G maps SOC reference (f1,f9;f22) to (2, 12, 26)
+[PASS] EXACT some g in G maps SOC reference (f1,f9;f22) to (2, 15, 26)
+[PASS] EXACT some g in G maps SOC reference (f1,f9;f22) to (12, 15, 26)
+[PASS] EXACT some g in G maps old-H (f3,f15;f26) to (f23,f15;f26)
+[PASS] EXACT (6)-(7): paper cubic C(w0 + z kappa) = C + z Q
+[PASS] EXACT C = ace + (q+1)(xi+1) + P(q+1-e) at d=1
+[PASS] EXACT (9): 4 xi [C - 1 - 3xi/4 - q(xi+1+P) - ace] = 4P(1 - xi(e-1)) + (b-v)^2
+[PASS] EXACT Bareiss elimination uses 819 exact divisions (31.7s)
+[PASS] EXACT Q^4 det H(w0 - C kappa/Q) divisible by -4(a+d)^2 Q^2
+[PASS] EXACT (10): quotient is a perfect square G8^2
+[PASS] EXACT G8: 327 terms, [d^8]G8 = 1, degrees (a,b,q,c,e,v) = (1,2,2,2,2,2), total 8
+[PASS] EXACT G8 invariant under b <-> v
+[PASS] EXACT table balanced (12): 1493 terms, all coefficients >= 0, markers [({}, 1)] (got markers [1])
+[PASS] EXACT table dominant a (13) order 0: 1411 terms, all coefficients >= 0, markers [({'X': 1}, 4)] (got markers [4])
+[PASS] EXACT table dominant a (13) order 1: 1411 terms, all coefficients >= 0, markers [({'X': 1}, 4)] (got markers [4])
+[PASS] EXACT table dominant c (13) order 0: 2113 terms, all coefficients >= 0, markers [({'X': 1}, 8)] (got markers [8])
+[PASS] EXACT table dominant c (13) order 1: 2113 terms, all coefficients >= 0, markers [({'X': 1}, 4)] (got markers [4])
+[PASS] EXACT table solo a (c=e=0): 27 terms, all coefficients >= 0, markers [({}, 1)] (got markers [1])
+[PASS] EXACT table solo c (a=e=0): 72 terms, all coefficients >= 0, markers [({}, 1)] (got markers [1])
+[PASS] EXACT table dominant e<=1 (14) order 0: 2572 terms, all coefficients >= 0, markers [({'E': 1}, 8), ({'T': 1}, 4)] (got markers [8, 4])
+[PASS] EXACT table dominant e<=1 (14) order 1: 2572 terms, all coefficients >= 0, markers [({'E': 1}, 4), ({'T': 1}, 2)] (got markers [4, 2])
+[PASS] EXACT table e<=1 with a=c=0: 80 terms, all coefficients >= 0, markers [({}, 2)] (got markers [2])
+[PASS] EXACT table dominant e>1 (15)-(16) order 0: 7860 terms, all coefficients >= 0, markers [({'E': 4}, 2)] (got markers [2])
+[PASS] EXACT table dominant e>1 (15)-(16) order 1: 7860 terms, all coefficients >= 0, markers [({'E': 4}, 2)] (got markers [2])
+[PASS] EXACT total number of coefficients = 29584 (got 29584)
+[INFO] NUMERIC SOC atom (f2,f12;f26) at xy = delta^2, s-grid [0.05, 0.2, 0.5, 1, 2, 5, 20], 12 restarts, seed 1: min Phi = 6.779e-15
+[INFO] NUMERIC SOC atom (f2,f15;f26) at xy = delta^2, s-grid [0.05, 0.2, 0.5, 1, 2, 5, 20], 12 restarts, seed 1: min Phi = 2.928e-14
+[INFO] NUMERIC SOC atom (f12,f15;f26) at xy = delta^2, s-grid [0.05, 0.2, 0.5, 1, 2, 5, 20], 12 restarts, seed 1: min Phi = 1.093e-14
+[INFO] NUMERIC old-H atom (f3,f15;f26) at b(e-delta) = delta^2: min Phi = 7.910e-16
+[INFO] NUMERIC old-H atom (f23,f15;f26) at b(e-delta) = delta^2: min Phi = 1.256e-16
+SUMMARY: all EXACT checks passed

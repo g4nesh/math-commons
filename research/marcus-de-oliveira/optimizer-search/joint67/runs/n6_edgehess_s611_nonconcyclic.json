@@ -1,0 +1,16 @@
+{
+ "n": 6,
+ "seed": 611,
+ "samples_drawn": 237,
+ "concyclic_samples_excluded": 71,
+ "nonconcyclic_samples": 165,
+ "edge_points_tested": 4713,
+ "max_lam": 9.297839738077518e-11,
+ "max_grad": 1.468586759344438e-15,
+ "lam_quantiles": [
+  4.115961435192124e-13,
+  8.64888242414891e-12,
+  1.9712661056355563e-11,
+  9.297839738077518e-11
+ ]
+}
