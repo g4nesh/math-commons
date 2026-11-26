@@ -1,0 +1,47 @@
+ok   perms(1) complete and distinct
+ok   perms(2) complete and distinct
+ok   perms(3) complete and distinct
+ok   perms(4) complete and distinct
+ok   perms(5) complete and distinct
+ok   perms(6) complete and distinct
+ok   perms(7) complete and distinct
+ok   z_all matches brute force (n=5)
+ok   z_chunks == z_all in order (n=7)
+ok   hull_lean == full hull (n=7)
+ok   d(P_sigma) = z_sigma (0, 1, 2, 3, 4)
+ok   d(P_sigma) = z_sigma (2, 0, 4, 1, 3)
+ok   margin at a permutation is <= 0 (z_sigma may be interior)  -0.01867477280963469
+ok   margin at a hull-vertex permutation is ~0
+ok   signed distance inside
+ok   signed distance outside (vertex region)
+ok   signed distance outside (edge region)
+ok   incomplete permutation list rejected
+ok   Goyal d  (0.6666666666666663+0.22222222222222213j)
+ok   Goyal inside (m<0)  -0.0924500327042048
+ok   skew_from_real skew-Hermitian
+ok   real_from_skew inverse
+ok   cayley unitary
+ok   inverse_cayley
+ok   expm/log unitary
+ok   cayley_coords handles eigenvalue -1
+ok   canonical_spectra keeps m
+ok   canonical_spectra mean b = 0
+ok   d invariant under U -> L U R
+ok   embed: d factorizes
+ok   dist_genperm(P)=0, dist_blockdiag(embed)=0
+ok   dist_genperm(Haar)>0
+ok   analytic gradient n=3 {}  4.0889813757161164e-10
+ok   analytic gradient n=5 {'sep': 1.0, 'dperm': 0.9, 'dblock': 0.9}  3.40971331169726e-08
+ok   n=3 optimizer max m <= 1e-12  2.433758712350006e-16
+ok   psi(O*) = -158/2401 exact
+ok   psi float agrees
+ok   exact Goyal d = 2/3 + 2i/9
+ok   exact Goyal inside
+ok   exact Cayley unitary
+ok   checker rejects inside instance  FAIL: no strict separation: gap = -401019368587621366355083634624857695421849742220972033440455083924150711129639679238941559935262335399723858988960648404243178338693343270628078697449002055229353950187862729518396201565417729489516735386613686120627720385937851276593233010213956258821897696844405446793282897924185203498212134572036734565989634264651490497933093683480693466774/601529052881432049532625451937217996509176380891101541271152281879834531413921747694526770294291807949415476958080720506633052980068478246005262456390143924934786382886318613420319769035420266411597729977760897375095923253511051479237013500231572965123242359094379541436135994405640615890353551824917492302014897163382483086051684845451110112689
+ok   checker rejects non-unitary U  FAIL: U is not unitary (entry 0,0)
+ok   checker rejects gap 0 (n=1)  FAIL: no strict separation: gap = 0
+ok   hp Goyal agrees with float  -0.0924500327042048536697236222428
+ok   hp U unitary to 1e-45
+
+all passed

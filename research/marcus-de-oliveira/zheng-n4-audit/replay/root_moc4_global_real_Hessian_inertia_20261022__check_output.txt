@@ -1,0 +1,11 @@
+[EXACT] PASS  rank H(m) = 8 at 5 random real rational matching vectors  ([8, 8, 8, 8, 8])
+[EXACT] PASS  Lemma 1 instances: rank H(m1 + m2) <= 12 for 6 random pairs of rational matching vectors  ([12, 12, 12, 12, 12, 12])
+[INFO] PASS    and = 12 for all of them (generic pairs)
+[INFO] PASS  contrast: H at a random rational point of V has rank 14  (14)
+[EXACT] PASS  instance: rank_C H(m) = 8 (real embedding [[A,-B],[B,A]] has rank 16)
+[EXACT] PASS  instance: rank [A; B] = 14, so ker H(m) cap ker H(conj m) = 0
+[EXACT] PASS  Theorem 2: inertia of H(Re m) = (6,6,2) at 6 Gaussian-rational spectra and scales  ([(6, 6, 2), (6, 6, 2), (6, 6, 2), (6, 6, 2), (6, 6, 2), (6, 6, 2)])
+[EXACT] PASS  degenerate instances: positive and negative index <= 6  (a1 = a2: (4, 4, 6); a1 = a2, b3 = b4: (2, 2, 10); a1 + b1 = 0: (5, 5, 4); a1+b1 = 0 and a2+b2 = 0: (5, 5, 4); a = (x,x,x,y): (4, 4, 6); a scalar: (2, 2, 10); real a, b (m real): (4, 4, 6); one circle a: (6, 6, 2))
+[EXACT] PASS  all 91 principal 12-minors >= 0 and at least one > 0 (4 generic instances)  (91 pos/0 neg/0 zero; 91 pos/0 neg/0 zero; 91 pos/0 neg/0 zero; 91 pos/0 neg/0 zero)
+[NUMERIC] PASS  NUMERIC: 2000 random complex spectra/scales (seed 31, 30% forced coincidences): max p, max n <= 6  (inertia counts {(5, 5): 985, (6, 6): 1015})
+SUMMARY ALL EXACT CHECKS PASSED

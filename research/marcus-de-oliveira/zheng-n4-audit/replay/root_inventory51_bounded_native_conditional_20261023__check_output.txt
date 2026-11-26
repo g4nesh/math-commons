@@ -1,0 +1,30 @@
+PASS T = paper T_52
+PASS generators(T) = nine source rays f0,f1,f2,f10,f12,f13,f27,f30,f59
+PASS rank of the nine rays is 8 = 14 - contact rank 6
+PASS only f30 non-minor; f30(4) = f30(15) = 1; all rays >= 0
+PASS ties not forcing theta=0 are exactly 0,6,7,12,13,16,20
+PASS A, C, G are Table 5 sets 9, 11, 10
+PASS tie 6 -> A, 13 -> A, 12 -> C, 20 -> G
+PASS tie 0 pulled back to earlier six-element cases [10, 11, 12, 24, 39] (not named in the document)
+PASS tie 7 pulled back to earlier six-element cases [42, 46] (not named in the document)
+PASS tie 16 pulled back to earlier six-element cases [10, 11, 12, 24, 39] (not named in the document)
+PASS theta <= g4, g15 and (1) -L_O <= M min(g4,g15), 30 exact random instances
+PASS (2) a = N/(1-S+U) = W P/Da and t = N/(W+S-U) = P/Dt
+PASS E Da Dt = P (W+1)(r-W) X W Z
+PASS raw ratios rE, sE, uE after inversion
+PASS (3) H4 = r(W+1)/W, H0 = (W-r)(Z-1)
+PASS denominator of H14 is a constant multiple of P  1
+PASS (4) H15 = -suW(W+1)(Z-1)/D14
+PASS C = h D14 - N14 has 68 terms, degree (3,2) in (W,Z)  (68, 3, 2)
+PASS D0 = r((r+s)Z+1)
+PASS N0 = r(1-Z)(r(r+s-u)Z + r - u)
+PASS leading Z^2 coefficient of C(0,Z) is r^2(r+s-u)
+PASS (5) (r+s)^2 C(0,Z0) = rsu(r+s+1)
+PASS (6) Z^2 coefficient of C = (r-W)((u-1)W+r)(r+s-u-W), independent of h  (-W + r)*(W*u - W + r)*(-W + r + s - u)
+PASS last-coordinate denominator D14 has degree 1 in Z
+PASS witness (2,3,4,5): fibre polynomial = 4Z^2 + 42Z + 14 (up to sign), nonzero discriminant  4*Z**2 + 42*Z + 14
+PASS witness: discriminant nonzero and r+s, r+s-u, r+s+1, rsu nonzero
+PASS Res_Z(C(0,Z), D0) is a nonzero multiple of rsu(r+s+1)  r**3*s*u*(r + s + 1)
+NUMERIC stratum points 4, worst min Phi over SO(4) = -1.7587801591704493e-10
+EXACT checks failed: 0
+exit 0

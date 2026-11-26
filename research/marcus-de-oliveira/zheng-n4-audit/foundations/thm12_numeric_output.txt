@@ -1,0 +1,80 @@
+thm12_numeric.py mode=full; numpy 2.5.5
+
+=== E0  exact checks (sympy)   [t=0.0s]
+  (2.2) exact, Gaussian-rational unitary #0: mismatches among 70 = 0
+  (2.2) exact, Gaussian-rational unitary #1: mismatches among 70 = 0
+  Gale invariance (exact, integer V): distinct ratios q_A(g V)/q_A(V) over 70 A: 1 -> [1/4761]
+  span of q-vectors of 60 random configurations: singular values s14=2.627e+03, s15=2.854e-12 (numeric rank 14 expected)
+  (2.2) numeric, 200 Haar U: max |q_A/q_0 - sign*|minor|^2| = 2.22e-15
+
+=== E1  complex elliptic curve: deg W = 2 (q-vectors on a line) and Gale duality (2.4)   [t=1.7s]
+  40 random L in Pic^4(E): singular values of stacked q-vectors s1..s4 = [5.75751373e+00 2.61744832e+00 2.07880951e-14 1.20387493e-14]
+  -> numeric rank 2 (s3/s1 = 3.61e-15): all f(L) lie on one projective line
+  Gale (2.4): max s8/s1 = 1.15e-16, min s7/s1 = 1.71e-04 (1-dim solution), min |d_i|/max|d_i| = 1.52e-04 (all d_i nonzero)
+  f(L) = f(iota L): |q1/|q1| - phase*q2/|q2|| = 4.56e-12
+
+=== E2  the paper's construction on a real curve with 8 real marked points   [t=1.8s]
+  curve 0 e=[ 1.707 -0.551 -1.156] C0 (x<=e3, through O): |H-halving err|=1.1e-14; sign patterns along component: {(np.int64(1), np.int64(1), np.int64(-1), np.int64(-1), np.int64(1), np.int64(1), np.int64(-1), np.int64(-1))}; max s8/s1=9.7e-15, min s7/s1=1.2e-04, max imag/real of d=2.9e-14, min |d_i|=1.42e-03
+     relabel perm=[np.int64(0), np.int64(1), np.int64(4), np.int64(5), np.int64(2), np.int64(3), np.int64(6), np.int64(7)]: max unitarity err=2.5e-12; endpoints imag part=0.0e+00 (orthogonality err 3.7e-13); |r(O-)-r(O+)|=0.394
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 4.36e-12; lam in [0.000274, 0.996361]; lam monotone: True
+  curve 0 e=[ 1.707 -0.551 -1.156] C1 (oval e2<=x<=e1): |H-halving err|=1.1e-14; sign patterns along component: {(np.int64(1), np.int64(1), np.int64(-1), np.int64(-1), np.int64(1), np.int64(1), np.int64(-1), np.int64(-1))}; max s8/s1=7.7e-17, min s7/s1=3.3e-05, max imag/real of d=1.2e-14, min |d_i|=1.16e-03
+     relabel perm=[np.int64(0), np.int64(1), np.int64(4), np.int64(5), np.int64(2), np.int64(3), np.int64(6), np.int64(7)]: max unitarity err=8.5e-12; endpoints imag part=0.0e+00 (orthogonality err 2.2e-12); |r(O-)-r(O+)|=1.349
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 1.22e-11; lam in [0.007672, 0.999481]; lam monotone: True
+  curve 1 e=[ 1.561 -0.75  -0.812] C0 (x<=e3, through O): |H-halving err|=1.1e-12; sign patterns along component: {(np.int64(1), np.int64(1), np.int64(-1), np.int64(1), np.int64(-1), np.int64(-1), np.int64(-1), np.int64(1))}; max s8/s1=7.0e-16, min s7/s1=3.6e-05, max imag/real of d=1.2e-14, min |d_i|=4.97e-03
+     relabel perm=[np.int64(0), np.int64(1), np.int64(3), np.int64(7), np.int64(2), np.int64(4), np.int64(5), np.int64(6)]: max unitarity err=2.7e-12; endpoints imag part=0.0e+00 (orthogonality err 6.0e-13); |r(O-)-r(O+)|=0.235
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 7.03e-12; lam in [0.000268, 0.996284]; lam monotone: True
+  curve 1 e=[ 1.561 -0.75  -0.812] C1 (oval e2<=x<=e1): |H-halving err|=1.1e-12; sign patterns along component: {(np.int64(1), np.int64(1), np.int64(-1), np.int64(1), np.int64(-1), np.int64(-1), np.int64(-1), np.int64(1))}; max s8/s1=8.1e-17, min s7/s1=2.9e-05, max imag/real of d=1.3e-13, min |d_i|=4.55e-04
+     relabel perm=[np.int64(0), np.int64(1), np.int64(3), np.int64(7), np.int64(2), np.int64(4), np.int64(5), np.int64(6)]: max unitarity err=1.3e-11; endpoints imag part=0.0e+00 (orthogonality err 9.7e-12); |r(O-)-r(O+)|=0.407
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 3.45e-11; lam in [0.005390, 0.999259]; lam monotone: True
+  curve 2 e=[ 0.4  -0.15 -0.25] C0 (x<=e3, through O): |H-halving err|=2.8e-14; sign patterns along component: {(np.int64(1), np.int64(-1), np.int64(1), np.int64(-1), np.int64(-1), np.int64(1), np.int64(1), np.int64(-1))}; max s8/s1=1.4e-16, min s7/s1=6.9e-06, max imag/real of d=4.4e-13, min |d_i|=4.69e-06
+     relabel perm=[np.int64(0), np.int64(2), np.int64(5), np.int64(6), np.int64(1), np.int64(3), np.int64(4), np.int64(7)]: max unitarity err=8.0e-11; endpoints imag part=0.0e+00 (orthogonality err 6.0e-11); |r(O-)-r(O+)|=0.217
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 1.34e-10; lam in [0.001427, 0.999301]; lam monotone: True
+  curve 2 e=[ 0.4  -0.15 -0.25] C1 (oval e2<=x<=e1): |H-halving err|=2.8e-14; sign patterns along component: {(np.int64(1), np.int64(-1), np.int64(1), np.int64(-1), np.int64(-1), np.int64(1), np.int64(1), np.int64(-1))}; max s8/s1=1.2e-16, min s7/s1=7.0e-05, max imag/real of d=3.1e-14, min |d_i|=8.09e-05
+     relabel perm=[np.int64(0), np.int64(2), np.int64(5), np.int64(6), np.int64(1), np.int64(3), np.int64(4), np.int64(7)]: max unitarity err=4.1e-12; endpoints imag part=0.0e+00 (orthogonality err 3.4e-12); |r(O-)-r(O+)|=2.781
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 6.45e-12; lam in [0.023475, 0.999833]; lam monotone: True
+  curve 3 e=[ 1.132 -0.533 -0.599] C0 (x<=e3, through O): |H-halving err|=2.1e-13; sign patterns along component: {(np.int64(1), np.int64(-1), np.int64(1), np.int64(-1), np.int64(1), np.int64(1), np.int64(-1), np.int64(-1))}; max s8/s1=2.8e-15, min s7/s1=2.9e-05, max imag/real of d=1.0e-12, min |d_i|=2.49e-02
+     relabel perm=[np.int64(0), np.int64(2), np.int64(4), np.int64(5), np.int64(1), np.int64(3), np.int64(6), np.int64(7)]: max unitarity err=9.1e-12; endpoints imag part=0.0e+00 (orthogonality err 3.4e-12); |r(O-)-r(O+)|=0.281
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 1.76e-11; lam in [0.000278, 0.996412]; lam monotone: True
+  curve 3 e=[ 1.132 -0.533 -0.599] C1 (oval e2<=x<=e1): |H-halving err|=2.1e-13; sign patterns along component: {(np.int64(1), np.int64(-1), np.int64(1), np.int64(-1), np.int64(1), np.int64(1), np.int64(-1), np.int64(-1))}; max s8/s1=1.8e-16, min s7/s1=1.7e-07, max imag/real of d=3.0e-12, min |d_i|=8.70e-03
+     relabel perm=[np.int64(0), np.int64(2), np.int64(4), np.int64(5), np.int64(1), np.int64(3), np.int64(6), np.int64(7)]: max unitarity err=6.5e-10; endpoints imag part=0.0e+00 (orthogonality err 6.5e-10); |r(O-)-r(O+)|=0.255
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 7.87e-10; lam in [0.003774, 0.998941]; lam monotone: True
+  curve 4 e=[ 0.799 -0.338 -0.461] C0 (x<=e3, through O): |H-halving err|=2.4e-13; sign patterns along component: {(np.int64(1), np.int64(-1), np.int64(-1), np.int64(1), np.int64(-1), np.int64(-1), np.int64(1), np.int64(1))}; max s8/s1=1.3e-16, min s7/s1=5.5e-05, max imag/real of d=7.7e-12, min |d_i|=1.00e+00
+     relabel perm=[np.int64(0), np.int64(3), np.int64(6), np.int64(7), np.int64(1), np.int64(2), np.int64(4), np.int64(5)]: max unitarity err=7.2e-11; endpoints imag part=0.0e+00 (orthogonality err 5.9e-11); |r(O-)-r(O+)|=0.753
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 1.47e-10; lam in [0.000410, 0.997570]; lam monotone: True
+  curve 4 e=[ 0.799 -0.338 -0.461] C1 (oval e2<=x<=e1): |H-halving err|=2.4e-13; sign patterns along component: {(np.int64(1), np.int64(-1), np.int64(-1), np.int64(1), np.int64(-1), np.int64(-1), np.int64(1), np.int64(1))}; max s8/s1=1.2e-16, min s7/s1=3.3e-07, max imag/real of d=3.5e-11, min |d_i|=5.66e-03
+     relabel perm=[np.int64(0), np.int64(3), np.int64(6), np.int64(7), np.int64(1), np.int64(2), np.int64(4), np.int64(5)]: max unitarity err=1.5e-10; endpoints imag part=0.0e+00 (orthogonality err 5.8e-11); |r(O-)-r(O+)|=0.768
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 2.05e-10; lam in [0.003929, 0.998983]; lam monotone: True
+  curve 5 e=[ 0.347 -0.11  -0.237] C0 (x<=e3, through O): |H-halving err|=6.7e-16; sign patterns along component: {(np.int64(1), np.int64(-1), np.int64(-1), np.int64(1), np.int64(1), np.int64(-1), np.int64(-1), np.int64(1))}; max s8/s1=6.4e-14, min s7/s1=1.4e-04, max imag/real of d=1.7e-14, min |d_i|=9.80e-02
+     relabel perm=[np.int64(0), np.int64(3), np.int64(4), np.int64(7), np.int64(1), np.int64(2), np.int64(5), np.int64(6)]: max unitarity err=4.8e-11; endpoints imag part=0.0e+00 (orthogonality err 1.9e-13); |r(O-)-r(O+)|=0.413
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 5.55e-11; lam in [0.000888, 0.998876]; lam monotone: True
+  curve 5 e=[ 0.347 -0.11  -0.237] C1 (oval e2<=x<=e1): |H-halving err|=6.7e-16; sign patterns along component: {(np.int64(1), np.int64(-1), np.int64(-1), np.int64(1), np.int64(1), np.int64(-1), np.int64(-1), np.int64(1))}; max s8/s1=4.0e-17, min s7/s1=1.5e-04, max imag/real of d=2.1e-14, min |d_i|=7.22e-02
+     relabel perm=[np.int64(0), np.int64(3), np.int64(4), np.int64(7), np.int64(1), np.int64(2), np.int64(5), np.int64(6)]: max unitarity err=2.9e-13; endpoints imag part=0.0e+00 (orthogonality err 2.5e-13); |r(O-)-r(O+)|=0.394
+     along B: max |r(U_L) - lam r(O-) - (1-lam) r(O+)|_inf = 4.82e-13; lam in [0.003686, 0.998916]; lam monotone: True
+  E2 summary: worst collinearity residual over all circles = 7.87e-10
+
+=== N1  multistart least squares for (O-, O+, lam), residual = max over the 70 equations   [t=1.9s]
+  Haar U(4), n=120 (seed 4): residual quantiles min/median/90%/max = 7.8e-16/8.4e-14/4.4e-13/9.6e-13; #>1e-10: 0
+  Fourier F4                  : unitarity err 1.2e-16; best residual 2.64e-14
+  F4 x diag phases            : unitarity err 1.7e-16; best residual 1.59e-13
+  block diag U(2)xU(2)        : unitarity err 6.7e-16; best residual 6.81e-13
+  block diag U(3)xU(1)        : unitarity err 2.2e-16; best residual 8.16e-14
+  Kronecker U(2)(x)U(2)       : unitarity err 4.4e-16; best residual 1.33e-15
+  permutation                 : unitarity err 0.0e+00; best residual 1.60e-13
+  near permutation eps=0.001  : unitarity err 2.2e-16; best residual 2.27e-13
+  near permutation eps=0.1    : unitarity err 1.4e-16; best residual 5.00e-13
+  O* of Example 1.3           : unitarity err 2.2e-16; best residual 2.45e-13
+  O* exp(i eps H) eps=0.01    : unitarity err 2.2e-16; best residual 5.25e-14
+  O* exp(i eps H) eps=0.1     : unitarity err 1.1e-16; best residual 1.73e-14
+  O* exp(i eps H) eps=0.3     : unitarity err 2.2e-16; best residual 3.63e-14
+  diag phases                 : unitarity err 0.0e+00; best residual 6.37e-13
+  segment test: fit a unitary to interior points of the found segment [r(O-), r(O+)]
+   Haar #0: fit residual 1.2e-15, lam=0.2099, |r(O-)-r(O+)|=1.242; unitary-fit residual at mu=.25/.5/.75: 2.4e-14/7.2e-15/4.1e-14
+   Haar #1: fit residual 2.2e-14, lam=0.6278, |r(O-)-r(O+)|=1.281; unitary-fit residual at mu=.25/.5/.75: 3.2e-14/2.7e-14/1.0e-13
+
+=== N2  conv r(U(4)) = conv r(O(4)): minima of linear functionals   [t=676.7s]
+  sanity: h_(id,-1)(O*) = -0.0658059142  vs  -158/2401 = -0.0658059142
+  sanity: values of the 48 h at the 24 permutation matrices: min 0, max 2
+  48 h_(pi,eps): min over U(4) in [-0.0674422489, -0.0674422489], min over SO(4) in [-0.0674422489, -0.0674422489]; max (minO - minU) = -2.50e-16   (paper: -0.0674422489 for both)
+  40 Gaussian random functionals: raw max (BFGS min over SO(4) - min over U(4)) = 2.84e-14 (0 cases where SO(4) multistart missed); after adding the orthogonal points from the two-orthogonal fit: max = 7.11e-15 (>0 beyond tolerance would contradict Thm 1.2)
+
+=== done   [t=870.1s]

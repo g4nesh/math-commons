@@ -1,0 +1,23 @@
+PASS K equals paper Table 5 seven-set #16
+PASS generators(K) = [0,2,12,13,15,21,26] (simplicial) | [0, 2, 12, 13, 15, 21, 26]
+PASS f26 is the only non-minor generator
+PASS rank of P rows at K = 7
+PASS profile values at rows [23,15,8,7,4,16,11] form I7
+PASS f1 = n12,34, f9 = n14,23, f22 = h3412,+
+PASS (2): group elements carry (f1,f9;f22) to (fi,fj;f26) for all three pairs in {2,12,15} | {(2, 12): ((0, 1, 3, 2), (0, 2, 1, 3), 0), (2, 15): ((0, 3, 2, 1), (3, 2, 0, 1), 0), (12, 15): ((0, 2, 1, 3), (1, 2, 3, 0), 0)}
+PASS stabilizer of K: 6 elements, all of S3 on (a,b,c), same permutation on (q,v,w), d fixed
+PASS (5): cubic(g + z kappa) = C + z Q
+PASS Bareiss: 819 exact divisions | time 115s
+PASS det H(g + z kappa) has z-degree <= 4 | 3
+PASS (6): Q^4 det H(g - C kappa/Q) = -4 Q^2 G^2 for a polynomial G
+PASS G: 746 terms, multidegrees (3,2,2,3,2,3,9), d^9 coefficient +1, homogeneous degree 9 | (746, (3, 2, 2, 3, 2, 3, 9, 0))
+PASS G invariant under (a b)(q v) and (b c)(v w)
+PASS (10): G(q,a,0,v,0,w,d) = {a(v+w+d)+(v+d)(w+d)}(v+d)^2(w+d)^2(q+d)^3
+PASS (8) balanced chart: D^6 * G has all coefficients > 0, constant coefficient 1 | nonzero coefficients: 5373 (document: 5373)
+PASS (9) dominant chart: L^6 (1+Y)^2 (1+Z)^4 * G has all coefficients > 0 and a pure-X monomial | nonzero coefficients: 7297 (document: 7297); coeff of X = 8; constant = 0
+PASS (8) inverse: (Y+Z)/D = y+z0 etc. (so a,b,c recovered)
+PASS (9) inverse: chart returns a, and b,c with b+c = S, b/c = Z
+PASS (3) balanced allocations sum to a,b,c with total s/2; dominant split gives sqrt(a(b+c))
+NUMERIC SOC atom (f1,f9;f22): min over SO(4) of Phi_f22 + 2 sqrt(Phi_f1 Phi_f9) = -1.333e-28 (40 Nelder-Mead restarts, seed 7)
+NUMERIC conic claim (3): min Phi of a f2+b f12+c f15+H3 f26 over SO(4), 12 random (a,b,c), 10 restarts each: 1.791e-13 (normalized by a+b+c)
+SUMMARY: 0 EXACT failures []

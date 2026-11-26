@@ -1,0 +1,54 @@
+[PASS] EXACT M is Table 5 set #13
+[PASS] EXACT generators(M) = [0,2,3,8,12,15,23,26] (the document's zero-active list), only f26 non-minor
+[PASS] EXACT contact rows of P on M have rank 7
+[PASS] EXACT basis (1) independent
+[PASS] EXACT f8 + f26 = f2 + f3 + f12 + f23
+[PASS] EXACT cost vanishes on M
+[PASS] EXACT (q,p,t,b,c,v) = (g23,g15,g14,g8,g4,g9) and d = g6 - g8
+[PASS] EXACT (2): g13=p+d, g12=t+d, g6=b+d, g3=v+d
+[PASS] EXACT d<=0 rewrite as a minor combination (f8 minor)
+[PASS] EXACT some g in G maps SOC reference (f1,f9;f22) to (2, 12, 26)
+[PASS] EXACT some g in G maps SOC reference (f1,f9;f22) to (2, 15, 26)
+[PASS] EXACT some g in G maps SOC reference (f1,f9;f22) to (12, 15, 26)
+[PASS] EXACT old-H (f3,f15;f26) maps to (f23,f15;f26)
+[PASS] EXACT chain (center f2; leaves f0,f12; f70) maps to (center f15; leaves f0,f3; f26)
+[PASS] EXACT (5): paper cubic C(w(z)) = C + Q z
+[PASS] EXACT Q = pb + c(p+b) + [d^2 - S(c-d)]
+[PASS] EXACT (7, first): S C = S d(d+v)(d+q) + d^2 t^2 + S c p b + t v [d^2 - S(c-d)]
+[PASS] EXACT C at S=0 equals d^2(d+q) + cpb
+[PASS] EXACT Bareiss elimination uses 819 exact divisions (47.8s)
+[PASS] EXACT Q^4 det H(w(-C/Q)) divisible by -4(d+v)^2 Q^2
+[PASS] EXACT (6): quotient is a perfect square G^2
+[PASS] EXACT G: 273 terms, homogeneous degree 8, G(0,..,0,1) = 1, linear in v; B 137 terms, A 136 terms
+[PASS] EXACT (10): G invariant under p <-> b
+[PASS] EXACT (11): G|_{c=0} = d(d+v)(d+b)(d+p)[d(q+d)-pb](q+t+d)^2
+[PASS] EXACT table (15) ct<1 B: 378 terms, all coefficients > 0, marker {'C': 2} coefficient 1 (got 1)
+[PASS] EXACT table (15) ct<1 A: 383 terms, all coefficients > 0, marker {'C': 2} coefficient 1 (got 1)
+[PASS] EXACT table (15) ct>1 B: 924 terms, all coefficients > 0, marker {'C': 3, 'T': 3} coefficient 1 (got 1)
+[PASS] EXACT table (15) ct>1 A: 889 terms, all coefficients > 0, marker {'C': 3, 'T': 3} coefficient 1 (got 1)
+[PASS] EXACT table (15) ct=1 B: 147 terms, all coefficients > 0, marker {} coefficient 1 (got 1)
+[PASS] EXACT table (15) ct=1 A: 147 terms, all coefficients > 0, marker {} coefficient 1 (got 1)
+[PASS] EXACT table (16) ct<1 B: 1535 terms, all coefficients > 0, marker {'C': 2} coefficient 2 (got 2)
+[PASS] EXACT table (16) ct<1 A: 1540 terms, all coefficients > 0, marker {'C': 2} coefficient 2 (got 2)
+[PASS] EXACT table (16) ct>1 B: 5490 terms, all coefficients > 0, marker {'C': 3, 'T': 3} coefficient 2 (got 2)
+[PASS] EXACT table (16) ct>1 A: 5486 terms, all coefficients > 0, marker {'C': 3, 'T': 3} coefficient 2 (got 2)
+[PASS] EXACT table (16) ct=1 B: 671 terms, all coefficients > 0, marker {} coefficient 2 (got 2)
+[PASS] EXACT table (16) ct=1 A: 671 terms, all coefficients > 0, marker {} coefficient 2 (got 2)
+[PASS] EXACT c>1 ct<1: V numerator and denominator have positive coefficients
+[PASS] EXACT table c>1 ct<1 B: 1421 terms, all coefficients > 0, marker {} coefficient 2 (got 2)
+[PASS] EXACT table c>1 ct<1 G(V): 2400 terms, all coefficients > 0, marker {} coefficient 3 (got 3)
+[PASS] EXACT c>1 ct>1: V numerator and denominator have positive coefficients
+[PASS] EXACT table c>1 ct>1 B: 3000 terms, all coefficients > 0, marker {'T': 5} coefficient 3 (got 3)
+[PASS] EXACT table c>1 ct>1 G(V): 4320 terms, all coefficients > 0, marker {'C': 2, 'T': 4} coefficient 3 (got 3)
+[PASS] EXACT c>1 ct=1: V numerator and denominator have positive coefficients
+[PASS] EXACT table c>1 ct=1 B: 480 terms, all coefficients > 0, marker {} coefficient 10 (got 10)
+[PASS] EXACT table c>1 ct=1 G(V): 600 terms, all coefficients > 0, marker {} coefficient 6 (got 6)
+[PASS] EXACT table c=1 t<1 B: 100 terms, all coefficients > 0, marker {} coefficient 2 (got 2)
+[PASS] EXACT table c=1 t<1 A: 105 terms, all coefficients > 0, marker {} coefficient 3 (got 3)
+[PASS] EXACT table c=1 t>1 B: 159 terms, all coefficients > 0, marker {'T': 3} coefficient 10 (got 10)
+[PASS] EXACT table c=1 t>1 A: 124 terms, all coefficients > 0, marker {'T': 3} coefficient 6 (got 6)
+[PASS] EXACT table c=1 t=1 B: 35 terms, all coefficients > 0, marker {} coefficient 10 (got 10)
+[PASS] EXACT table c=1 t=1 A: 35 terms, all coefficients > 0, marker {} coefficient 6 (got 6)
+[PASS] EXACT 24 tables with 31040 coefficients in total (got 31040)
+[INFO] NUMERIC chain (center f15; leaves f0,f3; f26) at c = 1/q + 1/t, 9 grid points, 12 restarts, seed 2: min Phi = 9.089e-16
+SUMMARY: all EXACT checks passed

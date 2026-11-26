@@ -1,0 +1,2004 @@
+{
+ "hermitian_continuation": [
+  {
+   "file": "hermitian/runs/cont_n5_herm_k4_c.json",
+   "record": 0,
+   "cls": "herm",
+   "m": -8.09132790336883e-08,
+   "n_active": 2,
+   "dist_genperm": 0.14999996114728764,
+   "dist_blockdiag": 0.14999993062675332,
+   "continuation_m": [
+    -8.08971171645776e-06,
+    -2.427677307609338e-06,
+    -8.091239259827418e-07,
+    -2.427278035980282e-07,
+    -8.091327904055493e-08
+   ],
+   "width_over_diam": 1.9424272009415693e-06,
+   "concyclic_res": 0.2730508934801156,
+   "min_abs_aplusb": 0.13634699430011357,
+   "min_gap_a": 0.15560471716621319,
+   "min_gap_b": 0.09890266816336436,
+   "max_imag_b": 1.6939492183490958e-06,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "hermitian/runs/cont_n5_herm_k4_c.json",
+   "record": 1,
+   "cls": "herm",
+   "m": -1.3552392228695165e-07,
+   "n_active": 2,
+   "dist_genperm": 0.15025570547516998,
+   "dist_blockdiag": 0.14999998076250676,
+   "continuation_m": [
+    -1.3651455386210822e-05,
+    -4.066508249029396e-06,
+    -1.355490910502709e-06,
+    -4.0637142642242114e-07,
+    -1.3552392231412124e-07
+   ],
+   "width_over_diam": 0.3890913831329736,
+   "concyclic_res": 0.19017121446690372,
+   "min_abs_aplusb": 2.2051901793511012e-06,
+   "min_gap_a": 1.147081283042467e-06,
+   "min_gap_b": 0.5051426234558067,
+   "max_imag_b": 0.8957898212233756,
+   "tags": [
+    "near eigenvalue collision",
+    "near zero factor a_i + b_j = 0"
+   ]
+  },
+  {
+   "file": "hermitian/runs/cont_n5_herm_k4_cs.json",
+   "record": 0,
+   "cls": "herm",
+   "m": -1.8877627722965622e-07,
+   "n_active": 2,
+   "dist_genperm": 0.15244419421987665,
+   "dist_blockdiag": 0.1499999453642613,
+   "continuation_m": [
+    -1.898926102884434e-05,
+    -5.66356652120017e-06,
+    -1.8890054903557018e-06,
+    -5.663593421403087e-07,
+    -1.8877627722971626e-07
+   ],
+   "width_over_diam": 0.00012003021961044559,
+   "concyclic_res": 0.23234375998575924,
+   "min_abs_aplusb": 0.0020058774065331076,
+   "min_gap_a": 0.1254208677434193,
+   "min_gap_b": 0.07071322141223925,
+   "max_imag_b": 0.00014005360589387734,
+   "tags": [
+    "near zero factor a_i + b_j = 0"
+   ]
+  },
+  {
+   "file": "hermitian/runs/cont_n5_herm_k4_cs.json",
+   "record": 1,
+   "cls": "herm",
+   "m": -7.443594656506656e-06,
+   "n_active": 6,
+   "dist_genperm": 0.22978371338465786,
+   "dist_blockdiag": 0.149997640949583,
+   "continuation_m": [
+    -1.9275699038155063e-05,
+    -1.1608774379974572e-05,
+    -8.586788978032364e-06,
+    -7.625823805620386e-06,
+    -7.443594656506658e-06
+   ],
+   "width_over_diam": 0.4281606781803544,
+   "concyclic_res": 0.22855193900058665,
+   "min_abs_aplusb": 2.6443437050399785e-05,
+   "min_gap_a": 0.07070954949651499,
+   "min_gap_b": 0.4694949752536799,
+   "max_imag_b": 1.0116118712633642,
+   "tags": [
+    "near zero factor a_i + b_j = 0"
+   ]
+  },
+  {
+   "file": "hermitian/runs/cont_n5_herm_k5_c.json",
+   "record": 0,
+   "cls": "herm",
+   "m": -1.357967501947103e-07,
+   "n_active": 2,
+   "dist_genperm": 0.33936709816123845,
+   "dist_blockdiag": 0.14999997254247077,
+   "continuation_m": [
+    -1.3577908799388599e-05,
+    -4.074565255614317e-06,
+    -1.358382425441754e-06,
+    -4.074058781445924e-07,
+    -1.3579675021823812e-07
+   ],
+   "width_over_diam": 0.44395420965552723,
+   "concyclic_res": 0.2607699900799463,
+   "min_abs_aplusb": 0.25676826720250445,
+   "min_gap_a": 6.404239255820926e-08,
+   "min_gap_b": 0.5613854331091477,
+   "max_imag_b": 0.5699081741759785,
+   "tags": [
+    "near eigenvalue collision"
+   ]
+  },
+  {
+   "file": "hermitian/runs/cont_n5_herm_k5_c.json",
+   "record": 1,
+   "cls": "herm",
+   "m": -2.576563850079603e-07,
+   "n_active": 3,
+   "dist_genperm": 0.22528734156108476,
+   "dist_blockdiag": 0.14999977104695894,
+   "continuation_m": [
+    -1.3853298469960384e-05,
+    -4.2227576937641315e-06,
+    -1.4888273815794594e-06,
+    -5.325832171137237e-07,
+    -2.5765638500887554e-07
+   ],
+   "width_over_diam": 0.08836534952786614,
+   "concyclic_res": 0.044673795049005836,
+   "min_abs_aplusb": 3.6296657631902025e-05,
+   "min_gap_a": 1.3744369939013382e-05,
+   "min_gap_b": 0.40592480421299365,
+   "max_imag_b": 1.3712177165358446,
+   "tags": [
+    "near eigenvalue collision",
+    "near zero factor a_i + b_j = 0"
+   ]
+  },
+  {
+   "file": "hermitian/runs/cont_n5_unitary_cs.json",
+   "record": 0,
+   "cls": "unitary",
+   "m": -3.095846562335605e-09,
+   "n_active": 2,
+   "dist_genperm": 0.15000127994239743,
+   "dist_blockdiag": 0.14999988788032437,
+   "continuation_m": [
+    -3.1729465745595403e-07,
+    -9.308074427170891e-08,
+    -3.1370662265236736e-08,
+    -9.351877765107177e-09,
+    -3.095846593645538e-09
+   ],
+   "width_over_diam": 6.550379561116961e-08,
+   "concyclic_res": 3.5859306283589366e-08,
+   "min_abs_aplusb": 0.062462494322508534,
+   "min_gap_a": 0.617673947830818,
+   "min_gap_b": 0.6588405758080044,
+   "max_imag_b": 0.6561850423679596,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "hermitian/runs/cont_n5_unitary_cs.json",
+   "record": 1,
+   "cls": "unitary",
+   "m": -6.7041267087548604e-09,
+   "n_active": 3,
+   "dist_genperm": 0.22742511749196714,
+   "dist_blockdiag": 0.149999964679969,
+   "continuation_m": [
+    -6.215910582351154e-07,
+    -2.436393544613371e-07,
+    -6.673902156699755e-08,
+    -1.976048370424816e-08,
+    -6.704126709437009e-09
+   ],
+   "width_over_diam": 3.7264829123858037e-07,
+   "concyclic_res": 2.2346716397511445e-07,
+   "min_abs_aplusb": 0.39283527608853247,
+   "min_gap_a": 0.08170740318129162,
+   "min_gap_b": 0.11115733676731629,
+   "max_imag_b": 0.7679179503744739,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "hermitian/runs/cont_n6_herm_k4_cs.json",
+   "record": 0,
+   "cls": "herm",
+   "m": -6.070964217316285e-07,
+   "n_active": 6,
+   "dist_genperm": 0.20360292890610043,
+   "dist_blockdiag": 0.1499992753345749,
+   "continuation_m": [
+    -1.2872749292275625e-05,
+    -5.857308822833394e-06,
+    -3.772886976973774e-06,
+    -9.405955758073378e-07,
+    -6.070964217317308e-07
+   ],
+   "width_over_diam": 0.6586804928461287,
+   "concyclic_res": 0.13765804508580878,
+   "min_abs_aplusb": 0.000605582513110953,
+   "min_gap_a": 0.07068905214358313,
+   "min_gap_b": 0.07069149191722797,
+   "max_imag_b": 1.0730283935615217,
+   "tags": [
+    "near zero factor a_i + b_j = 0"
+   ]
+  },
+  {
+   "file": "hermitian/runs/cont_n6_herm_k4_cs.json",
+   "record": 1,
+   "cls": "herm",
+   "m": -5.223843736896877e-07,
+   "n_active": 2,
+   "dist_genperm": 0.23879083606277052,
+   "dist_blockdiag": 0.1499978860779274,
+   "continuation_m": [
+    -2.566662069655651e-05,
+    -9.159318339377484e-06,
+    -3.7561605867914063e-06,
+    -1.7917600860207294e-06,
+    -5.223843736897645e-07
+   ],
+   "width_over_diam": 0.17533999466003805,
+   "concyclic_res": 0.06588125067694732,
+   "min_abs_aplusb": 0.0011088577618012959,
+   "min_gap_a": 0.07044415145266066,
+   "min_gap_b": 0.07267634086001351,
+   "max_imag_b": 0.8388912239668385,
+   "tags": [
+    "near zero factor a_i + b_j = 0"
+   ]
+  },
+  {
+   "file": "hermitian/runs/cont_n6_herm_k5_c.json",
+   "record": 0,
+   "cls": "herm",
+   "m": -1.9097178427769e-07,
+   "n_active": 2,
+   "dist_genperm": 0.150466578048575,
+   "dist_blockdiag": 0.15000042636900857,
+   "continuation_m": [
+    -1.846939391951521e-05,
+    -5.673411443464008e-06,
+    -1.9032480527734026e-06,
+    -5.739314804719957e-07,
+    -1.9097178427679066e-07
+   ],
+   "width_over_diam": 0.049564472967261526,
+   "concyclic_res": 0.15565022864519582,
+   "min_abs_aplusb": 0.2002809263173922,
+   "min_gap_a": 7.307480605537654e-05,
+   "min_gap_b": 7.127178404639079e-05,
+   "max_imag_b": 0.34866177952127353,
+   "tags": [
+    "near eigenvalue collision"
+   ]
+  },
+  {
+   "file": "hermitian/runs/cont_n6_herm_k5_c.json",
+   "record": 1,
+   "cls": "herm",
+   "m": -1.8508492837464778e-07,
+   "n_active": 2,
+   "dist_genperm": 0.3030840996741393,
+   "dist_blockdiag": 0.14999998681734272,
+   "continuation_m": [
+    -1.8511309395611103e-05,
+    -5.552880496301052e-06,
+    -1.8509806701454956e-06,
+    -5.547692948193699e-07,
+    -1.8508492837455969e-07
+   ],
+   "width_over_diam": 0.8655200615910403,
+   "concyclic_res": 0.22262139025652092,
+   "min_abs_aplusb": 0.38372789339688496,
+   "min_gap_a": 7.161717004574882e-07,
+   "min_gap_b": 1.8677785110645647e-06,
+   "max_imag_b": 1.364856817156011,
+   "tags": [
+    "near eigenvalue collision"
+   ]
+  }
+ ],
+ "joint67_constrained": [
+  {
+   "file": "joint67/runs/n6_constr_s602.json",
+   "best_index": 0,
+   "m": 3.5018530585250214e-16,
+   "dist_genperm": 0.15125526498863928,
+   "dist_blockdiag": 0.14917944786786252,
+   "width_over_diam": 1.0038051242872546e-15,
+   "concyclic_res": 2.6681382141781896e-16,
+   "min_abs_aplusb": 0.03043157894246278,
+   "min_gap_a": 0.11052889003371237,
+   "min_gap_b": 0.15880466272905108,
+   "max_imag_b": 0.9191475190397729,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "joint67/runs/n6_constr_s602.json",
+   "best_index": 1,
+   "m": 3.398430718883129e-16,
+   "dist_genperm": 0.1684009900800768,
+   "dist_blockdiag": 0.14476349696531532,
+   "width_over_diam": 4.780595007572566e-16,
+   "concyclic_res": 2.0451362149737086e-16,
+   "min_abs_aplusb": 0.06862086001732824,
+   "min_gap_a": 0.035352581780180796,
+   "min_gap_b": 0.036301850164281016,
+   "max_imag_b": 0.7936300648540214,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "joint67/runs/n6_constr_s602.json",
+   "best_index": 2,
+   "m": 3.098454256417348e-16,
+   "dist_genperm": 0.17486173838879948,
+   "dist_blockdiag": 0.15021200326873674,
+   "width_over_diam": 1.2206654660064587e-15,
+   "concyclic_res": 6.661584467479633e-16,
+   "min_abs_aplusb": 0.043514630867405,
+   "min_gap_a": 0.035355046129597244,
+   "min_gap_b": 0.037264346403870635,
+   "max_imag_b": 0.7803419862252282,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "joint67/runs/n6_constr_s602.json",
+   "best_index": 3,
+   "m": 7.42749755629192e-17,
+   "dist_genperm": 0.1905725659616202,
+   "dist_blockdiag": 0.14934952262738088,
+   "width_over_diam": 2.476611408471912e-16,
+   "concyclic_res": 9.796635977340644e-17,
+   "min_abs_aplusb": 0.030812901996152234,
+   "min_gap_a": 0.03695019231452681,
+   "min_gap_b": 0.1575421158996308,
+   "max_imag_b": 0.6308974872349938,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "joint67/runs/n6_constr_s602.json",
+   "best_index": 4,
+   "m": 5.3835982730497914e-17,
+   "dist_genperm": 0.2834128158402548,
+   "dist_blockdiag": 0.1483185881491833,
+   "width_over_diam": 4.33741439547571e-16,
+   "concyclic_res": 1.5264869819007394e-16,
+   "min_abs_aplusb": 0.09925297404630397,
+   "min_gap_a": 0.3008442072456162,
+   "min_gap_b": 0.03481868177633518,
+   "max_imag_b": 0.520406520231702,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "joint67/runs/n6_constr_s602.json",
+   "best_index": 5,
+   "m": 2.2865426840392247e-17,
+   "dist_genperm": 0.1923244615870674,
+   "dist_blockdiag": 0.14969262565647945,
+   "width_over_diam": 5.774564310777416e-16,
+   "concyclic_res": 2.3423246120240907e-16,
+   "min_abs_aplusb": 0.043553450878803524,
+   "min_gap_a": 0.09158391707839761,
+   "min_gap_b": 0.035357353495205586,
+   "max_imag_b": 0.7927413772492647,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "joint67/runs/n6_constr_s602.json",
+   "best_index": 6,
+   "m": -7.618414672731411e-18,
+   "dist_genperm": 0.15023276883036052,
+   "dist_blockdiag": 0.14970429648350758,
+   "width_over_diam": 1.885745099765342e-15,
+   "concyclic_res": 1.2033634015407225e-15,
+   "min_abs_aplusb": 0.16801384871972974,
+   "min_gap_a": 0.09207797472971,
+   "min_gap_b": 0.05696846868520983,
+   "max_imag_b": 0.5565859327915155,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "joint67/runs/n6_constr_s602.json",
+   "best_index": 7,
+   "m": -2.8607463094361264e-17,
+   "dist_genperm": 0.29288994443433625,
+   "dist_blockdiag": 0.14785393077228237,
+   "width_over_diam": 8.317760368811659e-16,
+   "concyclic_res": 5.518838069428031e-16,
+   "min_abs_aplusb": 0.09476903212614311,
+   "min_gap_a": 0.0719721123002728,
+   "min_gap_b": 0.09607042319040147,
+   "max_imag_b": 0.18713558094770147,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "joint67/runs/n6_constr_s602.json",
+   "best_index": 8,
+   "m": -1.5026640590640698e-16,
+   "dist_genperm": 0.2290422995216712,
+   "dist_blockdiag": 0.13718981110739303,
+   "width_over_diam": 1.1548355629264541e-15,
+   "concyclic_res": 7.343970841893397e-16,
+   "min_abs_aplusb": 0.1359618415036114,
+   "min_gap_a": 0.03551912345599611,
+   "min_gap_b": 0.03538149930854543,
+   "max_imag_b": 0.6868192315722322,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "joint67/runs/n6_constr_s602.json",
+   "best_index": 9,
+   "m": -3.512314558085164e-16,
+   "dist_genperm": 0.1471539917517558,
+   "dist_blockdiag": 0.14446473379173375,
+   "width_over_diam": 6.6733060045926475e-15,
+   "concyclic_res": 4.920430738524903e-15,
+   "min_abs_aplusb": 0.1447174102262327,
+   "min_gap_a": 0.035345884626177125,
+   "min_gap_b": 0.040080544734062626,
+   "max_imag_b": 1.0905410563412459,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "joint67/runs/n7_constr_s702.json",
+   "best_index": 0,
+   "m": -5.450222122767697e-16,
+   "dist_genperm": 0.23346143587130208,
+   "dist_blockdiag": 0.149003504737113,
+   "width_over_diam": 2.1636249382997607e-15,
+   "concyclic_res": 1.3498801880672943e-15,
+   "min_abs_aplusb": 0.09121679999766842,
+   "min_gap_a": 0.09041489024558545,
+   "min_gap_b": 0.12420734408910301,
+   "max_imag_b": 0.7259290282799994,
+   "tags": [
+    "near-segment hull (a, -b near one circle or line)"
+   ]
+  },
+  {
+   "file": "joint67/runs/n7_constr_s702.json",
+   "best_index": 1,
+   "m": -9.243181856947698e-06,
+   "dist_genperm": 0.15003834433686958,
+   "dist_blockdiag": 0.14999992925186767,
+   "width_over_diam": 0.0007626111152858113,
+   "concyclic_res": 0.0004960656511407266,
+   "min_abs_aplusb": 0.018332857288296308,
+   "min_gap_a": 0.09001961510892655,
+   "min_gap_b": 0.04754370565664582,
+   "max_imag_b": 0.6615929055743102,
+   "tags": [
+    "none of the three"
+   ]
+  },
+  {
+   "file": "joint67/runs/n7_constr_s702.json",
+   "best_index": 2,
+   "m": -1.706395503320605e-05,
+   "dist_genperm": 0.2828638338658035,
+   "dist_blockdiag": 0.14999982879995377,
+   "width_over_diam": 0.0017195783501539545,
+   "concyclic_res": 0.001188989805319772,
+   "min_abs_aplusb": 0.08941054955655622,
+   "min_gap_a": 0.03535449207623851,
+   "min_gap_b": 0.0353688411253644,
+   "max_imag_b": 0.6955654448121411,
+   "tags": [
+    "none of the three"
+   ]
+  },
+  {
+   "file": "joint67/runs/n7_constr_s702.json",
+   "best_index": 3,
+   "m": -2.1011894077260167e-05,
+   "dist_genperm": 0.15082846123166915,
+   "dist_blockdiag": 0.14999972419615304,
+   "width_over_diam": 0.0025227325174628536,
+   "concyclic_res": 0.0007815012704885102,
+   "min_abs_aplusb": 0.036194440011667064,
+   "min_gap_a": 0.037703943132718985,
+   "min_gap_b": 0.06321014247764423,
+   "max_imag_b": 0.36424767140491354,
+   "tags": [
+    "none of the three"
+   ]
+  },
+  {
+   "file": "joint67/runs/n7_constr_s702.json",
+   "best_index": 4,
+   "m": -3.13282803427258e-05,
+   "dist_genperm": 0.23891568439116995,
+   "dist_blockdiag": 0.15000099664296762,
+   "width_over_diam": 0.013088010777133266,
+   "concyclic_res": 0.012932204637752515,
+   "min_abs_aplusb": 0.06253584661548693,
+   "min_gap_a": 0.03534412615409839,
+   "min_gap_b": 0.035344704168962196,
+   "max_imag_b": 0.7139823239716836,
+   "tags": [
+    "none of the three"
+   ]
+  },
+  {
+   "file": "joint67/runs/n7_constr_s702.json",
+   "best_index": 5,
+   "m": -3.291089276268892e-05,
+   "dist_genperm": 0.2864572369386378,
+   "dist_blockdiag": 0.15000030177917978,
+   "width_over_diam": 0.33141063247439473,
+   "concyclic_res": 0.1035803443233814,
+   "min_abs_aplusb": 0.010049400923036576,
+   "min_gap_a": 0.03534328511889675,
+   "min_gap_b": 0.21850596543638792,
+   "max_imag_b": 0.9922064429036356,
+   "tags": [
+    "none of the three"
+   ]
+  },
+  {
+   "file": "joint67/runs/n7_constr_s702.json",
+   "best_index": 6,
+   "m": -0.0001696493893714167,
+   "dist_genperm": 0.32952719720400925,
+   "dist_blockdiag": 0.14999549999001438,
+   "width_over_diam": 0.840693862926346,
+   "concyclic_res": 0.312903640075663,
+   "min_abs_aplusb": 0.10223609920364256,
+   "min_gap_a": 0.03442345067287346,
+   "min_gap_b": 0.034353678558227324,
+   "max_imag_b": 0.610689942593093,
+   "tags": [
+    "none of the three"
+   ]
+  },
+  {
+   "file": "joint67/runs/n7_constr_s702.json",
+   "best_index": 7,
+   "m": -0.00019328864159206394,
+   "dist_genperm": 0.2363568141684551,
+   "dist_blockdiag": 0.15000009123554303,
+   "width_over_diam": 0.4811144533778323,
+   "concyclic_res": 0.24026783326312037,
+   "min_abs_aplusb": 0.28117451688012135,
+   "min_gap_a": 0.03524757439096823,
+   "min_gap_b": 0.03524796112053994,
+   "max_imag_b": 0.6699753149488967,
+   "tags": [
+    "none of the three"
+   ]
+  },
+  {
+   "file": "joint67/runs/n7_constr_s702.json",
+   "best_index": 8,
+   "m": -0.0002877124245236787,
+   "dist_genperm": 0.23109800232172828,
+   "dist_blockdiag": 0.1500047796635089,
+   "width_over_diam": 0.2406737266439436,
+   "concyclic_res": 0.13638406624946076,
+   "min_abs_aplusb": 0.36941954703834323,
+   "min_gap_a": 0.0353782158717701,
+   "min_gap_b": 0.0353828840392994,
+   "max_imag_b": 1.1955720290725138,
+   "tags": [
+    "none of the three"
+   ]
+  },
+  {
+   "file": "joint67/runs/n7_constr_s702.json",
+   "best_index": 9,
+   "m": -0.0003974143404745868,
+   "dist_genperm": 0.2027834780464085,
+   "dist_blockdiag": 0.15000248240950675,
+   "width_over_diam": 0.48261167678011796,
+   "concyclic_res": 0.25926989574189874,
+   "min_abs_aplusb": 0.03926905610294504,
+   "min_gap_a": 0.035317216902513424,
+   "min_gap_b": 0.03576662494514302,
+   "max_imag_b": 0.7910004963960373,
+   "tags": [
+    "none of the three"
+   ]
+  }
+ ],
+ "joint5_zero_factor": {
+  "counts": {
+   "pairs=1, nonzero z on line=24, block=1x1, complement concyclic<1e-8=True": 29,
+   "pairs=1, nonzero z on line=12, block=2x2, complement concyclic<1e-8=True": 22,
+   "pairs=2, nonzero z on line=12, block=2x2, complement concyclic<1e-8=True": 2,
+   "pairs=2, nonzero z on line=26, block=none, complement concyclic<1e-8=False": 3,
+   "pairs=2, nonzero z on line=6, block=1x1, complement concyclic<1e-8=False": 3,
+   "pairs=2, nonzero z on line=4, block=1x1, complement concyclic<1e-8=False": 1,
+   "pairs=1, nonzero z on line=14, block=none, complement concyclic<1e-8=False": 1
+  },
+  "records": [
+   {
+    "file": "joint5/runs/cA_0.05.json",
+    "best_index": 0,
+    "zero_pairs": [
+     [
+      3,
+      1,
+      4.440892098500626e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     3
+    ],
+    "block_cols": [
+     2
+    ],
+    "complement_concyclic_res": 2.0183521312995088e-16,
+    "reduction": "row 3 supported on columns {1,2}",
+    "reduction_rel_error": 2.119385789725149e-11
+   },
+   {
+    "file": "joint5/runs/cA_0.05.json",
+    "best_index": 1,
+    "zero_pairs": [
+     [
+      1,
+      0,
+      9.694605782913356e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     1,
+     2
+    ],
+    "block_cols": [
+     1,
+     4
+    ],
+    "complement_concyclic_res": 6.681328723960832e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.05.json",
+    "best_index": 3,
+    "zero_pairs": [
+     [
+      0,
+      1,
+      5.594315114139763e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     0,
+     1
+    ],
+    "block_cols": [
+     2,
+     4
+    ],
+    "complement_concyclic_res": 1.2951621915272707e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.1.json",
+    "best_index": 2,
+    "zero_pairs": [
+     [
+      4,
+      0,
+      3.376611507232129e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     2,
+     4
+    ],
+    "block_cols": [
+     2,
+     4
+    ],
+    "complement_concyclic_res": 1.642038817326033e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.2.json",
+    "best_index": 0,
+    "zero_pairs": [
+     [
+      2,
+      1,
+      2.865687575934818e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 2.92938245491702e-16,
+    "reduction": "column 1 supported on rows {2,0}",
+    "reduction_rel_error": 8.732076689688268e-12
+   },
+   {
+    "file": "joint5/runs/cA_0.2.json",
+    "best_index": 8,
+    "zero_pairs": [
+     [
+      3,
+      0,
+      2.0053283331865004e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     3
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 6.892005517653812e-16,
+    "reduction": "row 3 supported on columns {0,1}",
+    "reduction_rel_error": 1.2359539031195545e-14
+   },
+   {
+    "file": "joint5/runs/cA_0.2.json",
+    "best_index": 12,
+    "zero_pairs": [
+     [
+      0,
+      0,
+      1.1102230246251565e-16
+     ],
+     [
+      4,
+      3,
+      1.669954059090464e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 4,
+    "block_rows": [
+     0,
+     4
+    ],
+    "block_cols": [
+     1,
+     2
+    ],
+    "complement_concyclic_res": 9.272108135517289e-17
+   },
+   {
+    "file": "joint5/runs/cA_0.2.json",
+    "best_index": 14,
+    "zero_pairs": [
+     [
+      1,
+      0,
+      4.248326105049101e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     3,
+     4
+    ],
+    "block_cols": [
+     0,
+     3
+    ],
+    "complement_concyclic_res": 1.2044610591821543e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.2.json",
+    "best_index": 15,
+    "zero_pairs": [
+     [
+      0,
+      4,
+      3.242090044628961e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     3
+    ],
+    "complement_concyclic_res": 3.9193488138599773e-17,
+    "reduction": "row 0 supported on columns {4,3}",
+    "reduction_rel_error": 4.96150189655884e-10
+   },
+   {
+    "file": "joint5/runs/cA_0.2.json",
+    "best_index": 16,
+    "zero_pairs": [
+     [
+      0,
+      0,
+      8.881784197001252e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 1.3650106638963084e-15,
+    "reduction": "row 0 supported on columns {0,1}",
+    "reduction_rel_error": 1.825583071471763e-09
+   },
+   {
+    "file": "joint5/runs/cA_0.2.json",
+    "best_index": 17,
+    "zero_pairs": [
+     [
+      3,
+      2,
+      2.5823128856601332e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     3
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 9.89360353009039e-16,
+    "reduction": "row 3 supported on columns {2,1}",
+    "reduction_rel_error": 5.142574777728388e-11
+   },
+   {
+    "file": "joint5/runs/cA_0.2.json",
+    "best_index": 18,
+    "zero_pairs": [
+     [
+      2,
+      1,
+      2.0933390557824786e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     2
+    ],
+    "block_cols": [
+     3
+    ],
+    "complement_concyclic_res": 2.852125919581171e-15,
+    "reduction": "row 2 supported on columns {1,3}",
+    "reduction_rel_error": 6.017398677641009e-13
+   },
+   {
+    "file": "joint5/runs/cA_0.2.json",
+    "best_index": 24,
+    "zero_pairs": [
+     [
+      0,
+      3,
+      1.716587549445839e-16
+     ],
+     [
+      3,
+      4,
+      2.3714374201337736e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 4,
+    "block_rows": [
+     1,
+     2
+    ],
+    "block_cols": [
+     3,
+     4
+    ],
+    "complement_concyclic_res": 3.216165038147524e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.2.json",
+    "best_index": 26,
+    "zero_pairs": [
+     [
+      2,
+      1,
+      3.421288751228479e-14
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     0,
+     2
+    ],
+    "block_cols": [
+     0,
+     2
+    ],
+    "complement_concyclic_res": 5.332890566189193e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 0,
+    "zero_pairs": [
+     [
+      2,
+      1,
+      1.3484525896502376e-14
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 3.4813460823267977e-15,
+    "reduction": "column 1 supported on rows {2,0}",
+    "reduction_rel_error": 2.0782710851782858e-12
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 1,
+    "zero_pairs": [
+     [
+      4,
+      2,
+      2.482534153247273e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     0,
+     2
+    ],
+    "block_cols": [
+     1,
+     2
+    ],
+    "complement_concyclic_res": 4.13723504441435e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 4,
+    "zero_pairs": [
+     [
+      4,
+      0,
+      2.931072891608563e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     1
+    ],
+    "block_cols": [
+     0
+    ],
+    "complement_concyclic_res": 5.557193808226711e-16,
+    "reduction": "column 0 supported on rows {4,1}",
+    "reduction_rel_error": 3.1378929433215367e-13
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 6,
+    "zero_pairs": [
+     [
+      3,
+      1,
+      4.965068306494546e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     3
+    ],
+    "block_cols": [
+     0
+    ],
+    "complement_concyclic_res": 7.247491927989252e-16,
+    "reduction": "row 3 supported on columns {1,0}",
+    "reduction_rel_error": 1.4041939014191734e-08
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 17,
+    "zero_pairs": [
+     [
+      0,
+      3,
+      5.578801654593729e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     1,
+     2
+    ],
+    "block_cols": [
+     1,
+     3
+    ],
+    "complement_concyclic_res": 1.3588250155480594e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 19,
+    "zero_pairs": [
+     [
+      2,
+      3,
+      8.539351410930557e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     2
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 3.132646959743821e-16,
+    "reduction": "row 2 supported on columns {3,1}",
+    "reduction_rel_error": 8.204015544116408e-13
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 20,
+    "zero_pairs": [
+     [
+      3,
+      4,
+      4.191610292504107e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     3
+    ],
+    "block_cols": [
+     3
+    ],
+    "complement_concyclic_res": 2.828118071815797e-16,
+    "reduction": "row 3 supported on columns {4,3}",
+    "reduction_rel_error": 6.119555183571604e-13
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 23,
+    "zero_pairs": [
+     [
+      0,
+      0,
+      7.947987303456223e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 6.572993899906465e-16,
+    "reduction": "row 0 supported on columns {0,1}",
+    "reduction_rel_error": 3.8468343175836104e-15
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 24,
+    "zero_pairs": [
+     [
+      1,
+      4,
+      4.220764384040162e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     0,
+     1
+    ],
+    "block_cols": [
+     1,
+     3
+    ],
+    "complement_concyclic_res": 9.777757005716976e-17
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 26,
+    "zero_pairs": [
+     [
+      3,
+      0,
+      5.117875266520903e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     3
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 2.1078262442933353e-16,
+    "reduction": "row 3 supported on columns {0,1}",
+    "reduction_rel_error": 2.736226362415108e-11
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 27,
+    "zero_pairs": [
+     [
+      2,
+      0,
+      1.884928529521895e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     1,
+     2
+    ],
+    "block_cols": [
+     2,
+     3
+    ],
+    "complement_concyclic_res": 4.797224166025619e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 30,
+    "zero_pairs": [
+     [
+      3,
+      3,
+      4.965068306494546e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     2
+    ],
+    "block_cols": [
+     3
+    ],
+    "complement_concyclic_res": 2.2094618034747328e-16,
+    "reduction": "column 3 supported on rows {3,2}",
+    "reduction_rel_error": 1.1836315796827284e-15
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 31,
+    "zero_pairs": [
+     [
+      0,
+      3,
+      5.273559366969494e-16
+     ],
+     [
+      2,
+      0,
+      4.976227170553342e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 26,
+    "n_small_U_entries": 0
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 32,
+    "zero_pairs": [
+     [
+      0,
+      0,
+      1.2474579732659882e-15
+     ],
+     [
+      2,
+      3,
+      8.082545620880531e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 6,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     4
+    ],
+    "complement_concyclic_res": 0.034366807695631794
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 35,
+    "zero_pairs": [
+     [
+      0,
+      4,
+      2.5894628196555746e-15
+     ],
+     [
+      1,
+      2,
+      1.6401643046719713e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 6,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     0
+    ],
+    "complement_concyclic_res": 0.039739359056240986
+   },
+   {
+    "file": "joint5/runs/cA_0.3.json",
+    "best_index": 36,
+    "zero_pairs": [
+     [
+      0,
+      3,
+      1.3394761424494089e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     2
+    ],
+    "complement_concyclic_res": 3.844085588803318e-15,
+    "reduction": "row 0 supported on columns {3,2}",
+    "reduction_rel_error": 7.949870056366327e-10
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 3,
+    "zero_pairs": [
+     [
+      3,
+      0,
+      2.482534153247273e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     2,
+     4
+    ],
+    "block_cols": [
+     0,
+     3
+    ],
+    "complement_concyclic_res": 2.619158198412534e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 7,
+    "zero_pairs": [
+     [
+      3,
+      3,
+      3.1401849173675503e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     2
+    ],
+    "block_cols": [
+     3
+    ],
+    "complement_concyclic_res": 7.014219081532966e-16,
+    "reduction": "column 3 supported on rows {3,2}",
+    "reduction_rel_error": 5.581009102901448e-13
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 11,
+    "zero_pairs": [
+     [
+      2,
+      3,
+      3.510833468576701e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     2,
+     4
+    ],
+    "block_cols": [
+     1,
+     4
+    ],
+    "complement_concyclic_res": 1.8750667544599397e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 14,
+    "zero_pairs": [
+     [
+      3,
+      4,
+      1.3092278833360675e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     3
+    ],
+    "block_cols": [
+     3
+    ],
+    "complement_concyclic_res": 1.6917754968053152e-16,
+    "reduction": "row 3 supported on columns {4,3}",
+    "reduction_rel_error": 3.090190268002619e-10
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 16,
+    "zero_pairs": [
+     [
+      0,
+      0,
+      2.3843961910368667e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 8.323804531898912e-16,
+    "reduction": "row 0 supported on columns {0,1}",
+    "reduction_rel_error": 8.663559104351393e-11
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 17,
+    "zero_pairs": [
+     [
+      4,
+      3,
+      7.021666937153402e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     0,
+     1
+    ],
+    "block_cols": [
+     2,
+     3
+    ],
+    "complement_concyclic_res": 7.509419059830671e-17
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 20,
+    "zero_pairs": [
+     [
+      3,
+      0,
+      2.334110243043934e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     3
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 1.9790165808044454e-16,
+    "reduction": "row 3 supported on columns {0,1}",
+    "reduction_rel_error": 2.6650264498075265e-13
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 23,
+    "zero_pairs": [
+     [
+      3,
+      1,
+      6.753223014464258e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     3
+    ],
+    "block_cols": [
+     2
+    ],
+    "complement_concyclic_res": 2.6586450741040145e-16,
+    "reduction": "row 3 supported on columns {1,2}",
+    "reduction_rel_error": 9.62995571299052e-14
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 25,
+    "zero_pairs": [
+     [
+      4,
+      4,
+      1.8031561955316103e-14
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     4
+    ],
+    "block_cols": [
+     2
+    ],
+    "complement_concyclic_res": 5.732241280572531e-16,
+    "reduction": "row 4 supported on columns {4,2}",
+    "reduction_rel_error": 1.56879097197323e-14
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 26,
+    "zero_pairs": [
+     [
+      4,
+      2,
+      3.775166431889533e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     0,
+     2
+    ],
+    "block_cols": [
+     1,
+     2
+    ],
+    "complement_concyclic_res": 1.7884307979846564e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 28,
+    "zero_pairs": [
+     [
+      3,
+      1,
+      3.219646771412954e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     4
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 5.659387679432444e-15,
+    "reduction": "column 1 supported on rows {3,4}",
+    "reduction_rel_error": 2.2369649863113704e-11
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 29,
+    "zero_pairs": [
+     [
+      1,
+      1,
+      1.386134676818572e-14
+     ],
+     [
+      4,
+      2,
+      5.551115123125783e-17
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 4,
+    "n_small_U_entries": 6,
+    "block_rows": [
+     3
+    ],
+    "block_cols": [
+     1
+    ],
+    "complement_concyclic_res": 0.18312969673611032
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 30,
+    "zero_pairs": [
+     [
+      4,
+      2,
+      1.1102230246251565e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     1,
+     3
+    ],
+    "block_cols": [
+     0,
+     2
+    ],
+    "complement_concyclic_res": 3.362983227415912e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 32,
+    "zero_pairs": [
+     [
+      0,
+      1,
+      5.117875266520904e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     0,
+     1
+    ],
+    "block_cols": [
+     0,
+     2
+    ],
+    "complement_concyclic_res": 7.885246433648436e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 34,
+    "zero_pairs": [
+     [
+      0,
+      2,
+      2.7755575615628914e-17
+     ],
+     [
+      3,
+      4,
+      6.866350197783356e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 26,
+    "n_small_U_entries": 0
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 36,
+    "zero_pairs": [
+     [
+      2,
+      0,
+      1.4602703977091184e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     1,
+     3
+    ],
+    "block_cols": [
+     0,
+     3
+    ],
+    "complement_concyclic_res": 9.000424897940997e-16
+   },
+   {
+    "file": "joint5/runs/cA_0.4.json",
+    "best_index": 39,
+    "zero_pairs": [
+     [
+      3,
+      3,
+      2.0816681711721685e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     2
+    ],
+    "block_cols": [
+     3
+    ],
+    "complement_concyclic_res": 3.840552688351392e-15,
+    "reduction": "column 3 supported on rows {3,2}",
+    "reduction_rel_error": 1.216838313593435e-10
+   },
+   {
+    "file": "joint5/runs/cB_mixed_0.5_dv0.2.json",
+    "best_index": 0,
+    "zero_pairs": [
+     [
+      3,
+      0,
+      1.1102230246251565e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     1
+    ],
+    "block_cols": [
+     0
+    ],
+    "complement_concyclic_res": 5.757695865599759e-16,
+    "reduction": "column 0 supported on rows {3,1}",
+    "reduction_rel_error": 3.5646086153047504e-10
+   },
+   {
+    "file": "joint5/runs/cB_mixed_0.5_dv0.2.json",
+    "best_index": 1,
+    "zero_pairs": [
+     [
+      4,
+      4,
+      4.847302891456678e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     4
+    ],
+    "complement_concyclic_res": 1.3335780467980864e-16,
+    "reduction": "column 4 supported on rows {4,0}",
+    "reduction_rel_error": 3.2692258159214886e-15
+   },
+   {
+    "file": "joint5/runs/cB_mixed_0.5_dv0.2.json",
+    "best_index": 2,
+    "zero_pairs": [
+     [
+      4,
+      4,
+      3.3306690738754696e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     4
+    ],
+    "complement_concyclic_res": 1.5785106883237438e-16,
+    "reduction": "column 4 supported on rows {4,0}",
+    "reduction_rel_error": 1.5292734815374455e-11
+   },
+   {
+    "file": "joint5/runs/cB_mixed_0.5_dv0.2.json",
+    "best_index": 3,
+    "zero_pairs": [
+     [
+      2,
+      1,
+      8.005932084973443e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     1,
+     4
+    ],
+    "block_cols": [
+     0,
+     1
+    ],
+    "complement_concyclic_res": 1.3729112038140626e-16
+   },
+   {
+    "file": "joint5/runs/cB_mixed_0.5_dv0.2.json",
+    "best_index": 4,
+    "zero_pairs": [
+     [
+      0,
+      4,
+      1.897149936107019e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     1,
+     4
+    ],
+    "block_cols": [
+     1,
+     4
+    ],
+    "complement_concyclic_res": 1.6478168826624942e-16
+   },
+   {
+    "file": "joint5/runs/cB_mixed_0.5_dv0.2.json",
+    "best_index": 6,
+    "zero_pairs": [
+     [
+      1,
+      2,
+      7.216449660063518e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     3
+    ],
+    "block_cols": [
+     2
+    ],
+    "complement_concyclic_res": 1.0855543720052714e-16,
+    "reduction": "column 2 supported on rows {1,3}",
+    "reduction_rel_error": 5.098731701526754e-10
+   },
+   {
+    "file": "joint5/runs/cB_mixed_0.5_dv0.2.json",
+    "best_index": 7,
+    "zero_pairs": [
+     [
+      3,
+      0,
+      8.163159687020606e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     1,
+     3
+    ],
+    "block_cols": [
+     1,
+     4
+    ],
+    "complement_concyclic_res": 1.186244080005206e-16
+   },
+   {
+    "file": "joint5/runs/cB_mixed_0.5_dv0.2.json",
+    "best_index": 9,
+    "zero_pairs": [
+     [
+      4,
+      2,
+      1.498303070619016e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     1,
+     2
+    ],
+    "block_cols": [
+     1,
+     2
+    ],
+    "complement_concyclic_res": 1.0241293291612786e-16
+   },
+   {
+    "file": "joint5/runs/cB_mixed_0.5_dv0.2.json",
+    "best_index": 11,
+    "zero_pairs": [
+     [
+      0,
+      1,
+      6.087272963323595e-16
+     ],
+     [
+      2,
+      3,
+      2.2887833992611187e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 6,
+    "n_small_U_entries": 6,
+    "block_rows": [
+     0
+    ],
+    "block_cols": [
+     4
+    ],
+    "complement_concyclic_res": 0.06769465142825117
+   },
+   {
+    "file": "joint5/runs/cB_mixed_0.5_dv0.2.json",
+    "best_index": 13,
+    "zero_pairs": [
+     [
+      1,
+      4,
+      4.577566798522237e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     0,
+     1
+    ],
+    "block_cols": [
+     1,
+     3
+    ],
+    "complement_concyclic_res": 2.961113745400888e-16
+   },
+   {
+    "file": "joint5/runs/cB_ostar_0.3_dv0.1.json",
+    "best_index": 3,
+    "zero_pairs": [
+     [
+      2,
+      3,
+      2.482534153247273e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 14,
+    "n_small_U_entries": 5
+   },
+   {
+    "file": "joint5/runs/cB_ostar_0.3_dv0.1.json",
+    "best_index": 6,
+    "zero_pairs": [
+     [
+      0,
+      0,
+      6.59532648928019e-16
+     ],
+     [
+      4,
+      2,
+      2.620220423123142e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 26,
+    "n_small_U_entries": 0
+   },
+   {
+    "file": "joint5/runs/cB_ostar_0.3_dv0.1.json",
+    "best_index": 7,
+    "zero_pairs": [
+     [
+      4,
+      2,
+      1.2658490090568385e-15
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 24,
+    "n_small_U_entries": 3,
+    "block_rows": [
+     4
+    ],
+    "block_cols": [
+     3
+    ],
+    "complement_concyclic_res": 2.389617637508281e-16,
+    "reduction": "row 4 supported on columns {2,3}",
+    "reduction_rel_error": 1.2287669526804964e-12
+   },
+   {
+    "file": "joint5/runs/cB_ostar_0.3_dv0.1.json",
+    "best_index": 14,
+    "zero_pairs": [
+     [
+      2,
+      2,
+      5.743899690416659e-16
+     ]
+    ],
+    "n_nonzero_z_on_support_line": 12,
+    "n_small_U_entries": 5,
+    "block_rows": [
+     0,
+     4
+    ],
+    "block_cols": [
+     2,
+     4
+    ],
+    "complement_concyclic_res": 1.1105457706935275e-15
+   }
+  ]
+ },
+ "joint67_n6_zero_factor": [
+  {
+   "restart": 37,
+   "zero_pair": [
+    5,
+    2
+   ],
+   "min_abs_aplusb": 2.424535520216237e-15,
+   "n_nonzero_z_on_support_line": 48,
+   "block_rows": [
+    0,
+    2
+   ],
+   "block_cols": [
+    1,
+    2
+   ],
+   "complement_concyclic_res": 2.1450809194488026e-16
+  }
+ ]
+}

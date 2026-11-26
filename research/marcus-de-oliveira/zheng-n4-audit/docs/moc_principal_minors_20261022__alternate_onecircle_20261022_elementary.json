@@ -1,0 +1,38 @@
+{
+  "doc_id": "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+  "pdf": "proofs/moc_principal_minors_20261022/alternate_onecircle_20261022_elementary.pdf",
+  "pages": 3,
+  "verdict": "confirmed",
+  "statements": [
+    {"label": "lem:increment", "page": 1, "restatement": "For u,v,x,y >= 0: sqrt((u+x)(v+y)) - sqrt(uv) >= sqrt(xy)."},
+    {"label": "thm:scalar", "page": 1, "restatement": "For nonnegative a,b,c,d,A,B,C,D with a+b+c+d = A+B+C+D, s = b+c-B-C, t = a+b-A-B, R = ab+cd+AB+CD-2sqrt(bcAD)-2sqrt(adBC): R + s^2 + |st| >= 0."},
+    {"label": "thm:rotations", "page": 2, "restatement": "For P,Q in SO(3), d0 = P11-Q11, e0 = P33-Q33, G = 2d0^2+P12^2+Q12^2+P21^2+Q21^2+2(P32Q32-P23Q23): G + 2|d0 e0| >= 0."}
+  ],
+  "dependencies": [
+    {"kind": "external", "ref": "unit quaternions -> SO(3) surjective (classical)", "used_for": "Theorem 2 parametrization", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "Lemma 1 square difference", "status": "EXACT"},
+    {"n": 2, "claim": "symmetry (b,a,d,c)", "status": "EXACT"},
+    {"n": 3, "claim": "symmetry (d,c,b,a)", "status": "EXACT"},
+    {"n": 4, "claim": "WLOG s,t >= 0", "status": "PROOF-READ"},
+    {"n": 5, "claim": "(3) F = |h-k|^2 + 2mn", "status": "EXACT"},
+    {"n": 6, "claim": "(4)", "status": "EXACT"},
+    {"n": 7, "claim": "mn >= 0 case", "status": "PROOF-READ"},
+    {"n": 8, "claim": "case split exhaustive", "status": "PROOF-READ"},
+    {"n": 9, "claim": "case b<B,d<D identities", "status": "EXACT"},
+    {"n": 10, "claim": "case b<B,d<D inequality via Lemma 1", "status": "PROOF-READ"},
+    {"n": 11, "claim": "case b>B,d>D identities", "status": "EXACT"},
+    {"n": 12, "claim": "case b>B,d>D inequality via Lemma 1", "status": "PROOF-READ"},
+    {"n": 13, "claim": "(5) hence F >= 0", "status": "PROOF-READ"},
+    {"n": 14, "claim": "quaternion convention = q v q^*", "status": "EXACT"},
+    {"n": 15, "claim": "every rotation representable", "status": "PROOF-READ"},
+    {"n": 16, "claim": "d0 = -2s, e0 = -2t", "status": "EXACT"},
+    {"n": 17, "claim": "G/8 expansion", "status": "EXACT"},
+    {"n": 18, "claim": "reduction to Theorem 1", "status": "PROOF-READ"}
+  ],
+  "gaps": [],
+  "exact_replays": ["Lemma 1 identity", "two symmetries of R,s,t", "identities (3),(4)", "both case parametrizations", "quaternion convention and orthogonality", "d0=-2s, e0=-2t, G/8 expansion", "squared moduli bcAD, adBC"],
+  "numeric_tests": ["Thm 1: 200000 random + 300 Nelder-Mead starts, min -4e-17", "Thm 2: 200000 random + 300 Nelder-Mead starts, min -7e-16", "G alone reaches -0.0696", "quaternion reconstruction of 2000 random rotations"],
+  "unchecked": ["downstream use of Theorem 2 in principal-minors documents / Appendix C (outside this document)"]
+}

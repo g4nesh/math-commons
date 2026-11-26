@@ -1,0 +1,186 @@
+{
+ "doc_id": "blind_inventory49_whole_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_inventory49_whole_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "whole",
+   "page": 1,
+   "paper_cases": [
+    50
+   ],
+   "contact_sets": [
+    [
+     1,
+     3,
+     5,
+     6,
+     10,
+     11
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with Pc(x)>=0 and (Pc(x))_pi=0 for pi in T_50={1,3,5,6,10,11} (non-strict), Phi_{c(x)}(O)>=0 for all O in SO(4); unitary via Thm 1.2. Degenerate spectra via App. B, C (cited)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "branch",
+   "ref": "blind_inventory49_bounded_native_conditional_20261023",
+   "used_for": "whole analytic reduction",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "F=T_7^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    14
+   ],
+   "used_for": "hypothesis; tie 13",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "G=T_10^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    23
+   ],
+   "used_for": "hypothesis; tie 20",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "A=T_9^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    17
+   ],
+   "used_for": "tie 14",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "B=T_8^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    16
+   ],
+   "used_for": "tie 12",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_10 (doc 'T9')",
+   "contact_set": [
+    0,
+    1,
+    3,
+    5,
+    7,
+    8
+   ],
+   "used_for": "tie 0",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_43 (doc 'T42')",
+   "contact_set": [
+    1,
+    2,
+    4,
+    6,
+    7,
+    8
+   ],
+   "used_for": "tie 7",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_66 (doc 'T65')",
+   "contact_set": [
+    2,
+    4,
+    5,
+    6,
+    9,
+    12
+   ],
+   "used_for": "tie 16",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_bounded_bad_harmonic_lemma",
+   "used_for": "harmonic exclusion"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. C Thm C.1 (one-circle)",
+   "used_for": "repeated eigenvalues"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. B (shared zero)",
+   "used_for": "a_i+b_j=0"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Theorem 1.2",
+   "used_for": "unitary to orthogonal"
+  }
+ ],
+ "steps": [
+  "1 contact set/representative EXACT",
+  "2 kernel basis EXACT",
+  "3 ten-source decomposition EXACT/PROOF-READ",
+  "4 minors EXACT",
+  "5 bound (1) PROOF-READ+EXACT instances",
+  "6 tie split EXACT",
+  "7 seven actions EXACT",
+  "8 multiple ties PROOF-READ",
+  "9 degenerate spectra CITED",
+  "10 parametrization identities EXACT (conditional script)",
+  "11 analytic PROOF-READ",
+  "12 assembly PROOF-READ",
+  "13 unitary CITED"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "T=T_50, representative action",
+  "generators(T)=[0,1,2,3,4,8,10,27,30,59]",
+  "seven literal tie actions on all 24 entries",
+  "Table 6 stage order of all inputs",
+  "bound (1) on 30 exact instances"
+ ],
+ "numeric_tests": [
+  "see conditional report: 6 stratum points, worst min Phi -1.0e-15"
+ ],
+ "unchecked": [
+  "supplement certificates (not used)"
+ ]
+}

@@ -1,0 +1,136 @@
+{
+ "doc_id": "root_inventory50_bounded_native_conditional_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_inventory50_bounded_native_conditional_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [],
+   "contact_sets": [
+    [
+     1,
+     3,
+     5,
+     10,
+     11,
+     12
+    ],
+    [
+     0,
+     1,
+     2,
+     7,
+     9,
+     16,
+     23
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "If (*) holds for contact sets containing an image of D={0,1,2,7,9,16,23}, then (*) holds for T_51, non-strict, all O in SO(4); collisions via App. B/C."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "seven-contact",
+   "ref": "D=T_12^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    16,
+    23
+   ],
+   "used_for": "hypothesis; tie 20",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "B=T_8^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    16
+   ],
+   "used_for": "ties 6,13",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "C=T_11^(7)",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    16,
+    17
+   ],
+   "used_for": "tie 14",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_9/T_11/T_17/T_38/T_65/T_76 (unnamed in doc)",
+   "contact_set": [],
+   "used_for": "ties 0,16",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_42/T_65/T_71 (unnamed)",
+   "contact_set": [],
+   "used_for": "tie 7",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_bounded_bad_harmonic_lemma",
+   "used_for": "harmonic exclusion"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. C (one-circle)",
+   "used_for": "repeated eigenvalues"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper App. B (shared zero)",
+   "used_for": "a_i+b_j=0"
+  }
+ ],
+ "steps": [
+  "1-4 cone, d=g4, ties EXACT",
+  "5-7 inverse, H, 105-term curve EXACT",
+  "8 punctures W!=0 PROOF-READ",
+  "9-12 W=0 branches, residues -r EXACT",
+  "13-14 H4+H14 holomorphic, bound (4) PROOF-READ",
+  "15 witness EXACT",
+  "16-17 harmonic PROOF-READ+CITED",
+  "18 Z^2 coeff EXACT, Rouche PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "raw ratios and inverse",
+  "H levels, H4, H0",
+  "curve 105 terms degree (5,2)",
+  "F(0,Z), Z'(0)",
+  "residue -r on both W=0 branches",
+  "lowest weighted polynomial",
+  "Z^2 coefficient"
+ ],
+ "numeric_tests": [
+  "4 stratum points seeds 0-3, worst min Phi +1.3e-15"
+ ],
+ "unchecked": [
+  "direct expansion of H4+H14 (deduced from residues)"
+ ]
+}

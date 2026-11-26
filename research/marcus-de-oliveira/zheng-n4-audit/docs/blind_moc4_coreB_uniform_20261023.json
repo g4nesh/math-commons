@@ -1,0 +1,119 @@
+{
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_coreB_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     7,
+     9,
+     10,
+     16
+    ]
+   ],
+   "restatement": "For x in X with P c(x) >= 0 and (Pc)_s = 0 on T={0,1,2,7,9,10,16} (Table 5 no. 8), Phi_{c(x)}(O) >= 0 for all O in SO(4); all spectra (argument uses only closed conditions on Re X).",
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "global secant-Hessian determinant theorem",
+   "used_for": "realizable => G = 0",
+   "note": "C(Re x)=0 and det Hess C(Re x)=0 for all x in X ('global secant-Hessian theorem'); randomized exact support: rank H(x)=8, rank H(Re x)=12 at 6 Gaussian-rational points"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "sharp SOC atom (f_i,f_j;f26), {i,j} in {2,12,15}",
+   "used_for": "H3 bound (5)",
+   "numeric": "min margin ~ -5e-30"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "old-H atom (f3,f15;f26)",
+   "used_for": "(2)",
+   "numeric": "min margin ~ -8e-30"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "chain atom (f0,f3;f15;f26)",
+   "used_for": "(3)",
+   "numeric": "min margin ~ +8e-30"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (4.2)",
+   "used_for": "d=0 case"
+  }
+ ],
+ "steps": [
+  [
+   "(4) canonical cone, I7",
+   "EXACT"
+  ],
+  [
+   "H3 allocation (5)",
+   "PROOF-READ"
+  ],
+  [
+   "(6),(7)",
+   "PROOF-READ + exact grid"
+  ],
+  [
+   "(8) C, Q",
+   "EXACT"
+  ],
+  [
+   "(9) Hessian identity",
+   "EXACT"
+  ],
+  [
+   "realizable => G=0",
+   "CITED"
+  ],
+  [
+   "(10) u-quadratic, beta identity",
+   "EXACT"
+  ],
+  [
+   "c=0 factor",
+   "EXACT"
+  ],
+  [
+   "charts (11)-(14) exhaustive",
+   "PROOF-READ"
+  ],
+  [
+   "30 tables (15)",
+   "EXACT"
+  ],
+  [
+   "final contradiction",
+   "PROOF-READ"
+  ]
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators/I7",
+  "C and Q",
+  "Q^4 det H = -4Q^2G^2 (own 14x14 Hessian)",
+  "beta = alpha+gamma+a(a+1)b^2c^2t^2",
+  "c=0 factorization",
+  "30 chart tables, all term counts equal the document's",
+  "R1 and chain-chart inverses"
+ ],
+ "numeric_tests": [
+  "capacity atoms over SO(4): 40 Nelder-Mead starts each, seed 2026, minima ~0 (sharp), none negative"
+ ],
+ "unchecked": [
+  "proofs of the SOC/old-H/chain atoms and their group images",
+  "proof of the global secant-Hessian theorem"
+ ],
+ "doc_id": "blind_moc4_coreB_uniform_20261023"
+}

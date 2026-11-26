@@ -1,0 +1,38 @@
+PASS EXACT doc_T_equals_paper_T3
+PASS EXACT source_facets_T3 [0, 1, 2, 3, 4, 5, 6, 11, 15, 16, 17]
+PASS EXACT only_f17_nonminor
+PASS EXACT span_dim_8
+PASS EXACT coords_(4,6,9,10,12,13,16,18)_injective_on_span
+PASS EXACT ten_minor_generators_rank_8
+INFO cone(minor generators) has 12 facets
+PASS EXACT dual_has_12_extreme_rays 12
+PASS EXACT exactly_one_facet_negative_on_f17
+PASS EXACT other_eleven_nonnegative_on_all_sources
+PASS EXACT negative_facet_is_A_(up_to_positive_scale) {Fraction(1, 1), (Fraction(0, 1), 0)}
+INFO A on generators: {0: 1, 1: 0, 2: 1, 3: 0, 4: 0, 5: 1, 6: 0, 11: 0, 15: 0, 16: 0, 17: -1}
+PASS EXACT identity_(3)_profile_decomposition
+PASS EXACT chart_D13/D02=x x
+PASS EXACT chart_D23/D01=c/v
+INFO D01 = -v*(-w + z)*(x - 1)  D02 = (-c + v)*(-w + z)
+PASS EXACT chart_D28=-tv(v-w)(z-1) -t*v*(v - w)*(z - 1)
+PASS EXACT chart_D17=z(v-w)(x-tv) z*(v - w)*(-t*v + x)
+INFO D01 at c=tv: -v*(-w + z)*(x - 1)
+PASS EXACT chart_(6)_inverts_(5)
+PASS EXACT chart_identity_contacts_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_g4_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_g6_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_g9_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_g10_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_g14_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_A_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_k/T_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_A=f-k/T_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_g21_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_(9)_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_(10a)_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_(10b)_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_(11)_at_297_random_rational_points 297/297
+PASS EXACT chart_identity_vreal_at_297_random_rational_points 297/297
+NUMERIC T3 chart: 102473 random chart points (seed 7), 400 with all gaps >= 0, 8 with A<0; min (g6 g22 - A^2) over A<0 = 5.079e-03; min Phi over SO(4) at 25 feasible points (8 BFGS restarts each) = 3.875e-15
+NUMERIC SOC triple (1, 11, 17): min over SO(4) x tau of Phi(tau f1 + f11/tau + f17) = 2.429e-16 (80 BFGS restarts, seed 11); min of Phi(f17)+2sqrt(Phi f1 Phi f11) on 5000 random O = 4.347e-04
+RESULT ALL EXACT CHECKS PASS []

@@ -1,0 +1,28 @@
+{
+ "nonunitary_float": {
+  "m": 0.5730250216767264,
+  "unitarity_defect": 0.69,
+  "ok_flag": false
+ },
+ "nonunitary_exact": {
+  "builder_status": "not-certified",
+  "builder_gap_positive": true,
+  "checker_exit": 1,
+  "checker_msg": "FAIL: U is not unitary (entry 0,0)"
+ },
+ "wrong_hull_float": {
+  "true_m": -0.13841947005096172,
+  "m_with_6_perms_dropped": 0.12448968067682996,
+  "completeness_guard": "raised: incomplete permutation list: 18 != 4!"
+ },
+ "wrong_hull_exact": {
+  "forged_gap": "1944075265130018591119616630676602282149",
+  "forged_gap_positive": true,
+  "checker_exit": 1,
+  "checker_msg": "FAIL: no strict separation: gap = -843071098601103080940084023954104667842064926388992874783673535298462868369489102558514762414804868902139126647618936727046717407733584980552709819764493062463505391"
+ },
+ "near_permutation_noise": {
+  "float_m": 1.697278245801694e-16,
+  "hp_m": "-5.2028132833236219902982062172e-18"
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "doc_id": "blind_inventory84_rank_drop_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_inventory84_rank_drop_uniform_20261023.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    85
+   ],
+   "contact_sets": [
+    [
+     0,
+     5,
+     7,
+     9,
+     14,
+     18
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with Pc(x)>=0 and contacts containing T_85={0,5,7,9,14,18}: Phi_{c(x)}(O)>=0 for all O in SO(4). Curve built directly in X (no coincidence factor), so all spectra are included; identical to paper Section 5."
+  },
+  {
+   "label": "Lemma 2",
+   "page": 3,
+   "contact_sets": [
+    [
+     0,
+     5,
+     7,
+     9,
+     14,
+     18
+    ]
+   ],
+   "restatement": "Through every T_85-point with Im d>0 there is an irreducible algebraic curve in X keeping the five complex differences and d=d0 fixed."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "external",
+   "ref": "HMSV",
+   "used_for": "X = {grad C=0}, irreducible of dim 6"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "six-contact reduction, Lifting and scope",
+   "used_for": "spectral representatives"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_40",
+   "contact_set": [
+    0,
+    1,
+    5,
+    9,
+    14,
+    18
+   ],
+   "used_for": "ties 1,6"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_55",
+   "contact_set": [
+    1,
+    2,
+    3,
+    6,
+    11,
+    12
+   ],
+   "used_for": "ties 4,11,12,15"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_81",
+   "contact_set": [
+    1,
+    2,
+    10,
+    11,
+    12,
+    13
+   ],
+   "used_for": "tie 17"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Lemma 3.5",
+   "used_for": "harmonic completion"
+  }
+ ],
+ "gaps": [],
+ "unchecked": [
+  "cited dependencies not audited",
+  "d>0 branch not sampled numerically"
+ ],
+ "steps": [
+  "see blind_inventory84_rank_drop_uniform_20261023.md section C"
+ ],
+ "exact_replays": [
+  "replay/blind_inventory84_rank_drop_uniform_20261023__check.py: 44 EXACT checks, all pass"
+ ],
+ "numeric_tests": [
+  "INFO NUMERIC T_85 stratum: 6 points (seeds 500.., margin 1e-3), 10 BFGS restarts each; worst min Phi / max gap = 1.325e-15"
+ ]
+}

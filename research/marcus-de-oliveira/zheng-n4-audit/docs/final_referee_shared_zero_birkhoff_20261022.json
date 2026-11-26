@@ -1,0 +1,38 @@
+{
+  "doc_id": "final_referee_shared_zero_birkhoff_20261022",
+  "pdf": "proofs/manin_transfer_20261021/final_referee_shared_zero_birkhoff_20261022.pdf",
+  "pages": 3,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "thm:shared", "page": 1, "restatement": "For every U in U(4) there is a probability law p on S4 (depending only on U, <= 10 weights, sum_{sigma(0)=0} p = |u00|^2) with det(diag(a) - U diag(c) U^*) = sum p_sigma prod (a_i - c_sigma(i)) for all complex labels with a0 = c0 = d. Hence MOC(4) whenever a_i + b_j = 0 for some i,j (paper Theorem B.1). Covers all degenerate spectra."},
+    {"label": "thm:failure", "page": 3, "restatement": "A single law uniform in the remaining labels exists for n <= 4 and fails for every n >= 5 (U = O + I_{n-4}, shared pair a0 = c4 = 0, functional G with G(U) = -158/2401 and G(sigma) >= 0)."}
+  ],
+  "dependencies": [
+    {"kind": "external", "ref": "Birkhoff-von Neumann theorem", "used_for": "decomposition of W", "match_checked": true},
+    {"kind": "external", "ref": "Caratheodory theorem", "used_for": "at most 10 weights", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "translate to a0=c0=0", "status": "PROOF-READ"},
+    {"n": 2, "claim": "row marginals", "status": "PROOF-READ+EXACT instances"},
+    {"n": 3, "claim": "column marginals", "status": "PROOF-READ+EXACT instances"},
+    {"n": 4, "claim": "total 2s", "status": "PROOF-READ+EXACT instances"},
+    {"n": 5, "claim": "W doubly stochastic", "status": "PROOF-READ"},
+    {"n": 6, "claim": "Birkhoff, pi(0) != 0", "status": "CITED"},
+    {"n": 7, "claim": "phi involution, m(phi(pi)) = block of P_pi", "status": "EXACT"},
+    {"n": 8, "claim": "(4) and mass |u00|^2", "status": "PROOF-READ+EXACT instances"},
+    {"n": 9, "claim": "(5) expansion", "status": "PROOF-READ"},
+    {"n": 10, "claim": "(2)+(5) => (6)", "status": "EXACT"},
+    {"n": 11, "claim": "(6) at permutation matrices", "status": "EXACT"},
+    {"n": 12, "claim": "(1) by averaging", "status": "PROOF-READ+EXACT instances"},
+    {"n": 13, "claim": "s=0 case", "status": "PROOF-READ+EXACT instance"},
+    {"n": 14, "claim": "<=10 weights", "status": "CITED (Caratheodory), face dimension EXACT"},
+    {"n": 15, "claim": "MOC consequence", "status": "PROOF-READ"},
+    {"n": 16, "claim": "Thm 2 minor values and G(U) = -158/2401", "status": "EXACT"},
+    {"n": 17, "claim": "Thm 2 G(sigma) >= 0", "status": "PROOF-READ + EXACT n=4..7"},
+    {"n": 18, "claim": "Thm 2 coefficient matching", "status": "EXACT n=5"}
+  ],
+  "gaps": [],
+  "exact_replays": ["(2)+(5)=>(6) symbolic", "24 permutation identities", "phi and block property for 18 perms", "face dimension 8", "law construction and (1) as polynomial identity on 8 exact unitaries incl. s=0, s=1", "all 16 relabeled shared pairs", "Thm 2 numbers and exhaustive G(sigma) >= 0 for n=4..7"],
+  "numeric_tests": ["(1) on 300 Haar unitaries x 5 label sets, max rel err 2.5e-14"],
+  "unchecked": []
+}
