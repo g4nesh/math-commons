@@ -26,3 +26,22 @@ PASS (3) B^2-4AC0 = (b+c+d)^2 (q+d)^2 Phi H6 with H6 a j-free polynomial of 159 
 PASS (2) det H(w) at h=-C/Q equals -4 G^2/Q^2
 PASS 13-minor deleting row/col (0,0): forced numerator divisible by G, quotient 872 terms
 PASS 13-minor deleting row/col (5,5): forced numerator divisible by G, quotient 421 terms
+PASS 13-minor deleting row/col (0,5): forced numerator divisible by G, quotient 613 terms
+part B time 2825 s
+FAILED: none
+exit 0
+== PART C ==
+PASS profile identities f40+f1=f0+f7+f39, f40+f9=f2+f7+f41
+PASS generators of T={0,3,5,6,9,12} = {0,1,2,5,7,9,29,39,40,41}
+PASS F(w) has degree 1 in h, Q = (c+d)(d+e+j) - p(e+j)
+PASS supplement C and Q equal the rebuilt ones
+PASS G: 1772 terms, total degree 9
+PASS P (12-principal deleting 0,5) is height-free with 2784 terms
+PASS deg_j G = 2 and deg_j P = 2
+PASS (3) B^2-4AC0 = (b+c+d)^2 (q+d)^2 Phi H6 with H6 a j-free polynomial of 159 terms
+PASS Res_j(G,P) is a perfect square
+  (sign, H6(u0+-2A rho) square, D*H6(u0+-2A rho) square): [(1, True, False), (-1, False, True)]
+PASS P*H6 is a square in the function field Q(q,p,c,e,d,b,a)[j]/(G)
+part C time 691 s
+FAILED: none
+exit 0
