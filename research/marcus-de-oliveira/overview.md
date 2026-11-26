@@ -4,7 +4,7 @@
 
 | Choose a question | Current finding and limit |
 | --- | --- |
-| [MDO-RED · Which reductions hold?](context/reductions.md) | Independently reviewed reductions give a rational witness if any counterexample exists. A claimed dimension-four proof still lacks a complete audit here. |
+| [MDO-RED · Which reductions hold?](context/reductions.md) | Independently reviewed reductions give a rational witness if any counterexample exists. The dimension-four audit reproduced the finite classification. The 90 contact inequalities still need case-level verdicts. |
 | [MDO-FOREST · When do gate weights work?](context/forest.md) | Pointwise certificates glue across one shared coordinate in any dimension. The fourth-eigenvalue path has an exact algebraic feasibility boundary for uniform weights. Lean now checks the whole ordered product of the local probabilities. |
 | [MDO-MINORS · Which spectra are covered?](context/minors.md) | Theorem D gives a written proof for three distinct eigenvalues on one side with one simple. Independent review and the unrestricted three-value case remain open. |
 | [MDO-TEST · What was searched and certified?](context/witnesses.md) | All 924 exact stress cases in dimensions 4–7 are inside. An earlier 200-sample floating-point search has a separate review. |
