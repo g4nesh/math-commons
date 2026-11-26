@@ -17,21 +17,21 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
 **N1 (numerical). The hard facets of P₅(c) are touched by U(5) but not crossed.** This is the main evidence.
 - **Easy and hard.** Write D(U) for the vector of all squared minors |det U[S,T]|², so that m(U D_c U*) = M_c·D(U) + const. A supporting inequality ℓ·(x − g) ≤ 1 of P(c) is *easy* if it holds on the linear relaxation {D ≥ 0} ∩ aff{D(U)}, i.e. it follows from nonnegativity of squared minors (Farkas), and *hard* otherwise. Only hard inequalities can be violated by a unitary.
 - **Method (`facet_classify.py`).** Shoot rays from the centroid g toward m(U D_c U*), half of them for Haar U and half for slightly perturbed permuted block-diagonal U. The dual of each ray LP is a supporting inequality, kept if valid on all vertices and identified by its vertex set; it is a true facet when that vertex set spans dimension 25. Classify each by the relaxation LP. Maximize every hard one over U(5): L-BFGS from 12 random starts with exact gradients in a Cayley chart (`facet_search.maximize_over_U`, gradient checked against finite differences to 10⁻⁸).
-- **Control (n = 4, c = (0,1,2,3)).** 100 of the 184 facets and 16 of the 96 hard facets are reached (22 hard inequalities in all); every hard maximum over U(4) is 1 to 2·10⁻¹³.
-- **n = 5** (`logs/n5_hard.txt`), 6,000 rays per spectrum:
+- **Control (n = 4, c = (0,1,2,3); `logs/n4_hard_control.txt`).** 100 of the 184 facets and 16 of the 96 hard facets are reached (22 hard inequalities in all); every hard maximum over U(4) is 1 to 2·10⁻¹³.
+- **n = 5** (`logs/n5_hard.txt`), 6,000 rays per spectrum. "Hard" means relaxation overshoot above 10⁻⁶; overshoots between 10⁻⁹ and 10⁻⁶ are within the LP tolerance (the normals come from LP duals) and are listed separately as noise.
 
-  | spectrum c | facets reached | hard facets | hard inequalities | relaxation overshoot | max over U(5) − 1 | min over U(5) − 1 |
-  | --- | --- | --- | --- | --- | --- | --- |
-  | (0, 1/4, 1/2, 3/4, 1) | 342 | 178 | 647 | 0.54 | 2.9·10⁻¹¹ | −1.0·10⁻¹² |
-  | (0, 0.129, 0.499, 0.601, 1) | 393 | 211 | 761 | 0.62 | 4.8·10⁻¹¹ | −2.1·10⁻¹¹ |
-  | (0, 0.36, 0.70, 0.83, 1) | 330 | 187 | 767 | 0.53 | 1.1·10⁻¹⁰ | −1.2·10⁻¹¹ |
-  | (0, 0.1, 0.2, 0.9, 1) | 441 | 245 | 789 | 0.66 | 9.1·10⁻¹¹ | −6.6·10⁻¹² |
+  | spectrum c | facets reached | hard facets | hard inequalities | noise-level | relaxation overshoot | max over U(5) − 1 | min over U(5) − 1 |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | (0, 1/4, 1/2, 3/4, 1) | 342 | 102 | 458 | 189 | 0.54 | 1.6·10⁻¹¹ | −8.4·10⁻¹³ |
+  | (0, 0.129, 0.499, 0.601, 1) | 393 | 140 | 573 | 188 | 0.62 | 2.5·10⁻¹¹ | −1.1·10⁻¹² |
+  | (0, 0.36, 0.70, 0.83, 1) | 330 | 104 | 551 | 216 | 0.53 | 6.0·10⁻¹¹ | −2.5·10⁻¹² |
+  | (0, 0.1, 0.2, 0.9, 1) | 441 | 170 | 609 | 180 | 0.66 | 1.2·10⁻¹⁰ | −6.6·10⁻¹² |
 
-  So 821 hard facets and 2,964 hard inequalities in all. **Every one has maximum exactly 1 over U(5), to 10⁻¹⁰**: each is touched by some unitary and none is crossed. The linear relaxation overshoots them by up to 0.66, so these are genuine tests.
-- **Where they are touched.** For 1,743 of the 2,964 hard inequalities, some maximizer found is irreducible: the graph linking rows that share a column with |U_ij| > 10⁻³ is connected. For the other 1,221 every maximizer found is block-reducible (4+1, 3+2, …). So, numerically, PMSH(5) is tight at genuinely five-dimensional unitaries, and its contact set is not just inherited from dimension four. (At n = 4 the hard facets are likewise touched at irreducible U, which is why (★) is needed there.)
+  So 516 hard facets and 2,191 hard inequalities in all. **Every one has maximum exactly 1 over U(5), to 1.2·10⁻¹⁰**: each is touched by some unitary and none is crossed. The linear relaxation overshoots them by up to 0.66, so these are genuine tests. (A first pass with threshold 10⁻⁹ counted 821 hard facets; the extra ones are the noise-level ones, and their maxima were also exactly 1.)
+- **Where they are touched.** For 1,044 of the 2,191 hard inequalities, some maximizer found is irreducible: the graph linking rows that share a column with |U_ij| > 10⁻³ is connected. For the other 1,147 every maximizer found is block-reducible (4+1, 3+2, …). So, numerically, PMSH(5) is tight at genuinely five-dimensional unitaries, and its contact set is not just inherited from dimension four. (At n = 4 the hard facets are likewise touched at irreducible U, which is why (★) is needed there.)
 - **What this does not show.** The harvest reaches about 330–440 facets per spectrum; P₅(c) has more, and the true facet count is unknown (qhull cannot handle dimension 26 and pycddlib could not be built here). Twelve starts per inequality can miss a narrow violating region. Four spectra are not all spectra.
 
-**N2 (numerical). Broad search over supporting inequalities, n = 5 and n = 6.** `facet_search.py` is the first version of N1 without classification: Haar and near-permutation rays, 6 starts with finite-difference gradients, all supporting inequalities reached (deduplicated by rounded normals, so the counts include near-duplicates and non-facets). No value above 1 + 1.1·10⁻¹⁰ and no candidate:
+**N2 (numerical). Broad search over supporting inequalities, n = 5 and n = 6.** `facet_search.py` is the first version of N1 without classification: Haar and near-permutation rays, 6 starts with finite-difference gradients, all supporting inequalities reached (deduplicated by rounded normals, so the counts include near-duplicates and non-facets). No confirmed candidate; apart from the near-repeated spectrum, no value above 1 + 1.1·10⁻¹⁰. The special spectra are from `run_spectra.sh` (`logs/n5_special.txt`; its last two spectra were not run to the end), the random ones from `logs/n5_random_s*.txt` and `logs/n6_random_s*.txt`:
 
   | n | spectrum c | inequalities | max − 1 |
   | --- | --- | --- | --- |
@@ -43,6 +43,10 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
   | 5 | (0, 0.094, 0.431, 0.567, 1) | 674 | 0 |
   | 5 | (0, 0.811, 0.855, 0.865, 1) | 995 | 6.6·10⁻¹¹ |
   | 5 | (0, 0.189, 0.251, 0.947, 1) | 780 | 1.2·10⁻¹¹ |
+  | 5 | (0, 0.49, 0.5, 0.51, 1) | 1,123 | 2.8·10⁻¹² |
+  | 5 | (0, 0.001, 0.01, 0.1, 1) | 1,445 | 4.5·10⁻¹⁴ |
+  | 5 | (0, 0.01, 0.5, 0.99, 1) | 828 | 1.2·10⁻¹² |
+  | 5 | (0, 0.3, 0.3001, 0.3002, 1) | 1,478 | 4.2·10⁻⁸ (48 values above 1, all inside by the independent LP) |
   | 6 | (0, 0.089, 0.606, 0.710, 0.781, 1) | 851 | 3.6·10⁻¹¹ |
   | 6 | (0, 0.089, 0.199, 0.366, 0.653, 1) | 711 | −7.5·10⁻¹² |
   | 6 | (0, 0.114, 0.129, 0.641, 0.694, 1) | 919 | 1.0·10⁻¹⁰ |
@@ -57,7 +61,7 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
   - (b) the projection of m(H + γI) onto subsets containing t lies in the same projection of P(c + γ). Proof: Jacobi's identity det K[T,T] = det K·det(K⁻¹)[Tᶜ,Tᶜ] for K = H + γI, (a) for K⁻¹, and the fact that scaling a convex hull by the nonzero real det K preserves membership; by continuity also when K is singular.
   These are linear in the squared-minor vector D. Adding them to the nonnegativity relaxation gives a relaxation R_inh; a hard facet *follows linearly from PMSH(n − 1)* if its maximum over R_inh is at most 1. (This uses PMSH(n − 1) only through Lemma C's injection hull, which is weaker than P(s) at the actual compression spectrum s.)
 - **n = 4: none do** (`inherited_n4.py`, `logs/inherited_n4.txt`). With (a) for every t and (b) for every t and eight values of γ, all 96 hard facets of P₄(c) are still exceeded, **by exactly the same amount**, at c = (1,2,3,4), (0.3,1.1,2,3.7), (1,1.01,5,9) and (1,1.27,1.64,2). Control: replacing the vertex sets of the constraints (a) by 12 of the 24 permutations removes all excess (max 1.2·10⁻¹¹), so the constraints are imposed; they just never bind. This is consistent with PMSH(4) needing the genuinely four-dimensional inequality (★) of [`../pmsh/equivalence.md`](../pmsh/equivalence.md).
-- **n = 5: a third do, two thirds do not** (`inherited.py`, c = (0, 1/4, 1/2, 3/4, 1), the hard facets of `hard_n5_seed41_c0_0.25_0.5_0.75_1.npz`). Of the 165 facets there with relaxation overshoot above 10⁻⁹, 73 overshoot by less than 10⁻⁶; that is within the LP tolerance (the normals come from LP duals), so they are treated as easy. The **92 genuinely hard facets** (overshoot 0.02–0.54):
+- **n = 5: a third do, two thirds do not** (`inherited.py`, c = (0, 1/4, 1/2, 3/4, 1), the hard facets of `hard_n5_seed41_c0_0.25_0.5_0.75_1.npz`). Of the 165 facets there with relaxation overshoot above 10⁻⁹, 73 overshoot by less than 10⁻⁶; that is within the LP tolerance (the normals come from LP duals), so they are treated as easy. The **92 genuinely hard facets** (overshoot 0.026–0.54):
 
   | shifts γ used in (b) | cut to ≤ 1 | still exceeded | log |
   | --- | --- | --- | --- |
@@ -89,7 +93,7 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
 
 numpy 2.0.2, scipy 1.13.1 (HiGHS), Python 3.9. Run from this directory.
 
-Set OPENBLAS_NUM_THREADS=1 when running several jobs at once.
+Set OPENBLAS_NUM_THREADS=1 when running several jobs at once. Data: `hard_n5_seed31_c*.npz` are the hard inequalities of the four N1 spectra; `hard_n5_seed41_c0_0.25_0.5_0.75_1*.npz` are those used in N3 (spectrum `c`, normals scaled so that ℓ·(x − g) ≤ 1 on P(c + 1), vertex counts, relaxation values, facet flags).
 
 ```sh
 python3 facet_classify.py 4 0 4000 12 0,1,2,3     # control, about 10 s
