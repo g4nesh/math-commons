@@ -1,0 +1,119 @@
+{
+ "doc_id": "independent_moc4_T39_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T39_uniform_20261022.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    1,
+    5,
+    9,
+    14,
+    18
+   ],
+   "paper_case": 40,
+   "restatement": "for all x in X with Pc(x)>=0, contacts containing T_40: Phi>=0 on O(4); all spectra, zero resources, extra contacts"
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "branch",
+   "ref": "independent_moc4_T39_high_j_uniform_20261022",
+   "used_for": "j>=1 region",
+   "match_checked": true
+  },
+  {
+   "kind": "branch",
+   "ref": "independent_moc4_T39_low_pj_uniform_20261022",
+   "used_for": "p<1,j<1",
+   "match_checked": false
+  },
+  {
+   "kind": "branch",
+   "ref": "independent_moc4_T39_high_p_uniform_20261022",
+   "used_for": "p>=1,pj<1",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "SOC and old-H atoms",
+   "used_for": "capacities (3),(4)",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Theorem 1.2",
+   "used_for": "U(4)",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "generators, nullspace dim 8",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "identities (1)",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "cancellation",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 4,
+   "claim": "App. A completeness formulas and both rewritings",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "transpose action",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "capacity (4) algebra",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "C,Q formulas",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "four-region cover",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 9,
+   "claim": "chamber exclusions",
+   "status": "CITED"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators",
+  "3 identities",
+  "App. A coefficient formula on spanning set",
+  "6 gap identities",
+  "j>=m and j<m rewritings",
+  "inverse action maps g28 to g35 termwise and preserves T_40",
+  "capacity split",
+  "C,Q"
+ ],
+ "numeric_tests": [
+  "12 stratum points satisfy the uniform disjunction",
+  "SOC and H-sum thresholds min Phi>=-1e-12"
+ ],
+ "unchecked": [
+  "low-pj and high-p chamber notes (cited)"
+ ]
+}

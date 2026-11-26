@@ -1,0 +1,168 @@
+{
+ "doc_id": "root_moc4_T24_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T24_uniform_20261022.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     3,
+     4,
+     7,
+     8,
+     10,
+     12
+    ]
+   ],
+   "paper_cases": [
+    25
+   ],
+   "covers_all_spectra": true,
+   "restatement": "(*) for T_25={3,4,7,8,10,12}: all x in X with P c(x)>=0 vanishing on T_25, all O in SO(4); argument uses only cone coefficients and the necessary condition G=0 valid on all of X."
+  },
+  {
+   "label": "Lemma 1",
+   "page": 2,
+   "restatement": "d=1, canonical cost q f0+p f2+j f59+c f6+e f53+f54+b f55+a f67: safe if ab>1,e>0,j>=1/e-(ab-1)/((a+1)(b+1)); or ab<1,b>sqrt(ab),e>0,j>=1/e+b(1-w)^2/(b-w)^2, w=sqrt(ab); at ab=1, ej>=1."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "SOC pj>=d^2, old-H e(j-d)>=d^2, four-coefficient K>=0, double-SOC",
+   "used_for": "thresholds",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "quaternion Gram framework (ten relations, companion data)",
+   "used_for": "Lemma 1",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "root_moc4_T24_full_radial_20261022 (Hessian factorization, JSON G)",
+   "used_for": "G=0 necessity",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper (A.2) cubic, X in Sing C",
+   "used_for": "necessity",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "source facets",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "two facet identities",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "symmetry swapping f54,f70",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "canonical form (1)",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 5,
+   "claim": "rank 8",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "C(Re x)=0, det Hess=0",
+   "status": "PROOF-READ (auditor)"
+  },
+  {
+   "n": 7,
+   "claim": "(2) cubic restriction",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "C*>0",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 9,
+   "claim": "(3) Hessian factorization",
+   "status": "CITED + EXACT at 6 random points"
+  },
+  {
+   "n": 10,
+   "claim": "Lemma 1 (5)",
+   "status": "algebra PROOF-READ, framework CITED, NUMERIC"
+  },
+  {
+   "n": 11,
+   "claim": "Lemma 1 (6)",
+   "status": "algebra PROOF-READ, framework CITED, NUMERIC"
+  },
+  {
+   "n": 12,
+   "claim": "(7) k0 identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "p=e=0 positivity",
+   "status": "EXACT"
+  },
+  {
+   "n": 14,
+   "claim": "Bernstein (8)",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 15,
+   "claim": "(a,b,q,c) swap invariance + group realization",
+   "status": "EXACT"
+  },
+  {
+   "n": 16,
+   "claim": "chart coverage",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 17,
+   "claim": "14 tables",
+   "status": "EXACT"
+  },
+  {
+   "n": 18,
+   "claim": "boundaries",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators, identities, symmetries",
+  "(2) cubic restriction",
+  "(3) at 6 random rational points (ratio exactly 1)",
+  "(7) k0 polynomial identity",
+  "p=e=0 coefficient positivity",
+  "G swap invariance",
+  "all 14 Bernstein numerator tables"
+ ],
+ "numeric_tests": [
+  "boundaries of SOC, old-H, K=0, (5), (6), double-SOC: seed 11, 6 samples, 10 restarts; worst >= -1e-12 (all ~1e-13)"
+ ],
+ "unchecked": [
+  "Gram framework (ten relations)",
+  "symbolic proof of (3) as identity",
+  "main statement numeric search"
+ ]
+}

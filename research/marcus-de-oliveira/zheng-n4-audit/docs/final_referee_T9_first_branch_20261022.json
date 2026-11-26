@@ -1,0 +1,125 @@
+{
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T9_first_branch_20261022.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "lem:branch",
+   "page": 2,
+   "contact_sets": [
+    [
+     0,
+     1,
+     3,
+     5,
+     7,
+     8
+    ]
+   ],
+   "restatement": "Region I (x>1,t<0,r>0,u<0, v nonreal, distinct, d>0, g>=0, g2=1): B0<0."
+  },
+  {
+   "label": "thm:linear",
+   "page": 3,
+   "contact_sets": [
+    [
+     0,
+     1,
+     3,
+     5,
+     7,
+     8
+    ]
+   ],
+   "restatement": "Region I: A0 h g19 - (TX-1) d >= 0."
+  },
+  {
+   "label": "Theorem 2",
+   "page": 4,
+   "contact_sets": [
+    [
+     0,
+     1,
+     3,
+     5,
+     7,
+     8
+    ]
+   ],
+   "restatement": "Region I: g6 g22 >= d^2, hence safety by the SOC orbit on (f1,f11,f28)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "final_referee_moc4_T9_uniform_20261022 chart",
+   "status": "EXACT there"
+  },
+  {
+   "kind": "external",
+   "ref": "global SOC inequality: s f1 + b f11 + d f28 safe when sb >= d^2 (G-orbit)",
+   "status": "CITED, source not named, not in paper; NUMERIC no violation"
+  }
+ ],
+ "steps": [
+  {
+   "step": "(1),(2) gap formulas",
+   "status": "EXACT"
+  },
+  {
+   "step": "sign consequences",
+   "status": "PROOF-READ"
+  },
+  {
+   "step": "(3) and conj(zeta) forms",
+   "status": "EXACT"
+  },
+  {
+   "step": "L,B0 forms",
+   "status": "EXACT"
+  },
+  {
+   "step": "(4)",
+   "status": "PROOF-READ"
+  },
+  {
+   "step": "F affine, dF/de=(T/h)N, F(e*)",
+   "status": "EXACT"
+  },
+  {
+   "step": "Lemma 1 conclusion",
+   "status": "PROOF-READ"
+  },
+  {
+   "step": "R(0),R(e*)",
+   "status": "EXACT"
+  },
+  {
+   "step": "(6)",
+   "status": "EXACT"
+  },
+  {
+   "step": "P convex, P(0)<0, P(c*) expansion",
+   "status": "EXACT/PROOF-READ"
+  },
+  {
+   "step": "Theorem 1 contradiction",
+   "status": "PROOF-READ"
+  },
+  {
+   "step": "Theorem 2 chain",
+   "status": "EXACT/PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "22 exact checks: (1),(2),(3), conj forms, L, B0, F affine, dF/de, F(e*), R(e*), (6), P(c*) expansion, Theorem 2 identity"
+ ],
+ "numeric_tests": [
+  "400000 region-I samples (seed 2026), 14098 supporting with d>0: min (5) 1.2e-2, min g6g22-d^2 2.7e-2"
+ ],
+ "unchecked": [
+  "SOC inequality proof"
+ ],
+ "doc_id": "final_referee_T9_first_branch_20261022"
+}

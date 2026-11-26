@@ -1,0 +1,32 @@
+PASS contact set {2,3,5,7,9,12} == paper T_39
+PASS generators(T_39) == {0,1,2,5,7,12,39,40,67,70}
+PASS non-minor generators are exactly 40, 70
+PASS identity f40+f70 = f0+f5+f12+f39+f67
+PASS identity f1+f40 = f0+f7+f39
+PASS identity f7+f70 = f1+f5+f12+f67
+PASS source bases (1) and (2) have rank 8
+PASS some g in G maps (f59,f53,f55,f67,f54) to (f5,f2,f67,f0,f40) in order : ((0, 3, 1, 2), (1, 2, 3, 0), 0)
+INFO generators of paper T_25 (supplement T24) : [0, 1, 2, 6, 53, 54, 55, 59, 67, 70]
+PASS g40: Q = d^2+de+(d+e)(p+q)-ej
+PASS g40: C has 21 positive coefficients incl. d^3
+PASS g70: C = bc(a-U) - T0
+PASS g70: Q = (a-U)M - dU - as
+PASS g70: -MC = bc(M+1-aM) + rMbc + (MT0 - bc) at d=1
+PASS g70: MT0 - bc (d=1) has nonnegative coefficients and contains b and c
+PASS g70: M=0 gives C = -(1+p+r)(1+q) at d=1
+PASS -(Q^2/4) det Hess at h=-C/Q is a rational square (4 points per source)
+INFO g40 lines 0 : domain1 roots in [0,J]: 0; domain7 roots in [0,J]: 0
+INFO g40 lines 1 : domain1 roots in [0,J]: 0; domain7 roots in [0,J]: 0
+INFO g40 lines 2 : domain1 roots in [0,J]: 0; domain7 roots in [0,J]: 0
+INFO g40 lines 3 : domain1 roots in [0,J]: 0; domain7 roots in [0,J]: 0
+INFO g40 lines 4 : domain1 roots in [0,J]: 0; domain7 roots in [0,J]: 0
+INFO g40 lines 5 : domain1 roots in [0,J]: 0; domain7 roots in [0,J]: 0
+PASS NUMERIC(random lines, exact Sturm): g40: G40 has no root in j on [0,J] (6 domain-1 and 6 domain-7 random lines; exact Sturm)
+INFO g70 line 0 : J~0.7089, as<1 cap 0.7558578987150416, roots of G70 in a on [0,0.7089] = 0
+INFO g70 line 1 : J~0.8222, as<1 cap 3.7313432835820897, roots of G70 in a on [0,0.8222] = 0
+INFO g70 line 2 : J~0.5018, as<1 cap 0.5509641873278237, roots of G70 in a on [0,0.5018] = 0
+INFO g70 line 3 : J~0.8235, as<1 cap 0.5621135469364812, roots of G70 in a on [0,0.5621] = 0
+INFO g70 line 4 : J~0.9531, as<1 cap 1.5197568389057752, roots of G70 in a on [0,0.9531] = 0
+INFO g70 line 5 : J~2.0510, as<1 cap 0.8643042350907519, roots of G70 in a on [0,0.8643] = 0
+PASS NUMERIC(random lines, J numeric, exact Sturm): g70: G70 has no root in a on [0, min(J,1/s)) on 6 random lines (J by numeric 1-D minimization; exact Sturm)
+SUMMARY: 0 failed checks (0 exact)

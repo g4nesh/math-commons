@@ -1,0 +1,57 @@
+# command: MOC4_SUPP=<supplement root> python -I -B final_referee_T35_uniform_20261022__check.py   (exit status 0)
+PASS EXACT doc contact set {2,3,4,6,11,12} equals paper T_36 literally
+PASS EXACT generators(T_36) == source 0,1,2,7,8,9,10,53,67,68,69 | [0, 1, 2, 7, 8, 9, 10, 53, 67, 68, 69]
+PASS EXACT nonminor generators are exactly 68, 69
+PASS EXACT rank of source = 8
+PASS EXACT f68 + f69 = f1 + f9 + f10 + 2 f67
+PASS EXACT f68 + f2 = f0 + f9 + f67
+PASS EXACT f68 + f8 = f7 + f10 + f67
+PASS EXACT f69 + f0 = f1 + f2 + f10 + f67
+PASS EXACT f69 + f7 = f1 + f8 + f9 + f67
+PASS EXACT representation (68) basis independent
+PASS EXACT (68) own C*, Q equal JSON C_terms, Q_terms
+PASS EXACT (68) radial factor0 is +-Q; minus stored G has d^9 coefficient +1; term count | 1864
+PASS EXACT (68) (2) Q^2 det Hess C(c - (C*/Q)kappa) == -4 G^2 at 10 random integer points (exact; Schwartz-Zippel) | 10
+PASS EXACT (68) C* and Q have only positive coefficients, containing d^3 and d^2
+PASS EXACT (5) baseline G68|p=e=a=c=0 == (j+1)^3(b+1)^3(q+1)^3
+PASS EXACT G68 degrees in (q,p,j,c,e,b,a) == (3,2,3,2,2,3,2) | (3, 2, 3, 2, 2, 3, 2)
+PASS EXACT representation (69) basis independent
+PASS EXACT (69) own C*, Q equal JSON C_terms, Q_terms
+PASS EXACT (69) radial factor0 is +-Q; minus stored G has d^9 coefficient +1; term count | 1367
+PASS EXACT (69) (2) Q^2 det Hess C(c - (C*/Q)kappa) == -4 G^2 at 10 random integer points (exact; Schwartz-Zippel) | 10
+PASS EXACT (69) only negative monomial of C* is -a e j | [((0, 0, 1, 0, 1, 0, 0, 1), -1)]
+PASS EXACT (1) C* - (1 + a + e + ae(1-j)) has nonnegative coefficients (d=1)
+PASS EXACT (9)/(10) baseline G69|a=c=b=q=0 == B0
+PASS EXACT G69 degrees in (q,p,j,c,e,b,a) <= (2,2,2,2,2,3,2) | (2, 2, 2, 2, 2, 3, 2)
+PASS EXACT (68) chamber 00: Z term count == 6190 | 6190
+PASS EXACT (68) chamber 00: multiplier M has nonnegative coefficients
+PASS EXACT (68) chamber 00: Z - M H^2 has exactly the three negative monomials of (7), each -1 | [((5, 3, 0, 1, 0, 1, 2), -1), ((7, 3, 0, 1, 0, 2, 1), -1), ((7, 3, 1, 1, 0, 2, 1), -1)]
+PASS EXACT (68) chamber 00: remainder has no negative coefficient (doc count 5893) | (0, 5893)
+PASS EXACT (68) chamber 01: Z term count == 8949 | 8949
+PASS EXACT (68) chamber 01: multiplier M has nonnegative coefficients
+PASS EXACT (68) chamber 01: remainder has no negative coefficient (doc count 8802) | (0, 8802)
+PASS EXACT (68) chamber 10: Z term count == 8705 | 8705
+PASS EXACT (68) chamber 10: multiplier M has nonnegative coefficients
+PASS EXACT (68) chamber 10: remainder has no negative coefficient (doc count 8439) | (0, 8439)
+PASS EXACT (68) chamber 11: Z term count == 12375 | 12375
+PASS EXACT (68) chamber 11: multiplier M has nonnegative coefficients
+PASS EXACT (68) chamber 11: remainder has no negative coefficient (doc count 12197) | (0, 12197)
+PASS EXACT (69) row 'both low v<1': cleared polynomial (minus square (12) in row 1) has no negative coefficient; doc counts (3226, 3199) | (3226, (0, 3199))
+PASS EXACT (69) row 'both low v>1': cleared polynomial (minus square (12) in row 1) has no negative coefficient; doc counts (41018, 41018) | (41018, (0, 41018))
+PASS EXACT (69) row 'j>1 v<1': cleared polynomial (minus square (12) in row 1) has no negative coefficient; doc counts (14406, 14406) | (14406, (0, 14406))
+PASS EXACT (69) row 'j>1 v>1': cleared polynomial (minus square (12) in row 1) has no negative coefficient; doc counts (26220, 26220) | (26220, (0, 26220))
+PASS EXACT (69) row 'p>1 v<1': cleared polynomial (minus square (12) in row 1) has no negative coefficient; doc counts (6760, 6760) | (6760, (0, 6760))
+PASS EXACT (69) row 'p>1 v>1': cleared polynomial (minus square (12) in row 1) has no negative coefficient; doc counts (22059, 22059) | (22059, (0, 22059))
+PASS EXACT chart (11): 1 - La a == 1/(1+A) for j = 1+x
+PASS EXACT chart (11): 1 - Lc c == 1/(1+C) for p = 1+x
+PASS EXACT chart (11): 1 - Lb b == 1/(1+B) for v = je > 1
+NUMERIC (3a) four-coefficient at equality, piece f68 + q f0 + j f7 + p f1 | worst 5.65e-16
+NUMERIC (3b) four-coefficient at equality, piece f68 + j f7 + b f67 + e f53 | worst 3.96e-16
+NUMERIC (4) SOC pj=1, piece f69 + p f2 + j f8 | worst 1.77e-14
+NUMERIC (4) old-H c(p-1)=1, piece f69 + c f9 + p f2 | worst 1.25e-15
+NUMERIC (4) H-sum (a+e)(j-1)=1, piece f69 + a f10 + e f53 + j f8 | worst 1.65e-13
+NUMERIC (4) chain j=1/e+1/b, piece f69 + j f8 + e f53 + b f67 | worst 3.15e-16
+NUMERIC (5) G68 / bound - 1 on 20000 random hard points | min 6.961e-02 (must be >= 0)
+NUMERIC (10) G69 / bound - 1 on 20000 random hard points | min 2.683e-01 (must be >= 0)
+NUMERIC main statement T_36: random_point_on_contact_stratum seeds 0-2, min_phi_over_SO4 restarts 10 | points 3/3, worst normalized min Phi -1.55e-17
+SUMMARY exact failures: 0 []

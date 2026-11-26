@@ -1,0 +1,176 @@
+{
+ "doc_id": "final_referee_T41_bad54_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T41_bad54_uniform_20261022.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     1,
+     2,
+     3,
+     6,
+     7,
+     8
+    ]
+   ],
+   "restatement": "For x in X with c(x) (up to positive scale) = q f6+p f2+j f5+c f53+e f0+d f54+b f3+a f15, all coefficients >= 0 (simplicial 8-dim subcone of N_{T_42}): Phi_{c(x)}(O) >= 0 for all O in SO(4); all spectra and coefficient zeros.",
+   "covers_all_spectra": true
+  },
+  {
+   "label": "Lemma 2",
+   "page": 2,
+   "restatement": "If all capacities (1) fail and Fa,Fb>=0 then G>0 for all q,c>=0."
+  },
+  {
+   "label": "Lemma 3",
+   "page": 3,
+   "restatement": "No spectrally realizable source has Fa<0,Fb<0 or one factor 0 and the other <0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "SOC, old-H [3,5,54], chains [2;0,15;54],[5;0,3;54] capacities (1)",
+   "used_for": "support inequality when a capacity holds",
+   "match_checked": false
+  },
+  {
+   "kind": "external",
+   "ref": "complex rank bound rank H_F<=12 on F=det H_F=0 (HMSV; root_moc4_global_real_Hessian_inertia)",
+   "used_for": "Lemma 3 rank exactly 12",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (A.2), X in Sing C",
+   "used_for": "realizable => G=0 and kernel vector delta",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "capacities (1); stabilizer",
+   "kind": "citation",
+   "status": "CITED; stabilizer EXACT"
+  },
+  {
+   "n": "2",
+   "claim": "C,Q",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": "3",
+   "claim": "det H identity",
+   "kind": "identity",
+   "status": "EXACT (randomized, 8 pts)"
+  },
+  {
+   "n": "4",
+   "claim": "(3) nodal identity, 1011 terms",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": "5",
+   "claim": "(4) Heron identities and discriminants",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": "6",
+   "claim": "delta_a a<1",
+   "kind": "inequality",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": "7",
+   "claim": "(5) six tables + coverage",
+   "kind": "certificate",
+   "status": "EXACT + PROOF-READ"
+  },
+  {
+   "n": "8",
+   "claim": "boundaries by continuity",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": "9",
+   "claim": "Phi(T)>0, Phi'(T)>0",
+   "kind": "identity/inequality",
+   "status": "EXACT + PROOF-READ"
+  },
+  {
+   "n": "10",
+   "claim": "positivity forced",
+   "kind": "inequality",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": "11",
+   "claim": "principal minor, resultant, congruences",
+   "kind": "identity",
+   "status": "EXACT (randomized, 4 pts)"
+  },
+  {
+   "n": "12",
+   "claim": "P<0; rank 12",
+   "kind": "inequality/citation",
+   "status": "EXACT + CITED (auditor alternative via bordered minors)"
+  },
+  {
+   "n": "13",
+   "claim": "weak sign, rank exactly 12",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": "14",
+   "claim": "one-zero boundary",
+   "kind": "identity/analytic",
+   "status": "EXACT + PROOF-READ"
+  },
+  {
+   "n": "15",
+   "claim": "definite-form contradiction",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": "16",
+   "claim": "exhaustive",
+   "kind": "case split",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "notes": [
+  "Table row 6 numerator: 2842 reduced terms vs 4135 stated (term-count convention only)."
+ ],
+ "exact_replays": [
+  "C,Q",
+  "det H identity (randomized exact, 8 pts)",
+  "G (3) 1011 terms",
+  "(4) identities, Disc_q, Disc_c, Disc_a, Disc_b, alpha_q=VW^2",
+  "DT identity, C0 bound, V-p^2je",
+  "six (5) tables and R - lower bound one-signed",
+  "Lemma 3 identities in c at 4 random base points incl. bordered minors divisible by G",
+  "stabilizer (3210,3210,1)"
+ ],
+ "numeric_tests": [
+  "(5): 1,231,647 samples, seed 54, min normalized -3.5e-15 (roundoff)",
+  "rank exactly 12 at 5 real c-roots (mpmath 60 digits)"
+ ],
+ "unchecked": [
+  "capacities (1) (cited)",
+  "HMSV rank bound (cited; replaceable)",
+  "term counts 2176, 437, 339",
+  "main-statement numeric test"
+ ]
+}

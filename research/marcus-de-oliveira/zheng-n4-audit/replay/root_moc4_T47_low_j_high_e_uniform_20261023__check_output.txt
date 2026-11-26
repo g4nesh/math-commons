@@ -1,0 +1,22 @@
+PASS e - kappa t^2 = e N/(D0+eta^2 e)^2 and (1-eta t)^2/(e - kappa t^2) = D0^2/(e N)
+PASS N - D0^2 = eta^2 e (2 D0 - kappa + eta^2 e) > 0 since 2D0 - kappa = kappa + 2 rho^2/p > 0 : PROOF-READ by inspection
+PASS supplement T47 contact set {0,4,5,6,9,12} equals paper T_65 (identity element)
+PASS generators(T_65) are exactly the 8 rays f2,f9,f1,f45,f5,f35,f0,f7 : [0, 1, 2, 5, 7, 9, 35, 45]
+PASS C(w(g,h)) is affine in h
+PASS restored height constant C0 = -d{ab+ad+aq+bd+bp+d^2+de+dp+dq+ep+eq+pq} (as in the T47 negative-Phi note)
+PASS height slope Q = ce-cj-d^2-de-dp-dq-ep-eq+jp-pq
+PASS radial polynomial G: 965 terms, total degree 8 : 3.8 s; per-variable degrees (2, 2, 2, 2, 2, 3, 3)
+PASS G^2 agrees with an independent exact Fraction 14x14 determinant at 5 random rational points
+PASS Phi = H c^2 + J c + K with H=(p+j+1+a)^2, K=(pj+b(p+1+a)-pa)^2
+PASS H G = alpha Phi + u0 + c u1 (polynomial identity)
+PASS K G = gamma Phi + c (v0 - c u0) (polynomial identity)
+PASS disc_p G = H6 * H8 with a 123-term sextic and a 260-term octic factor : content 1
+PASS all chart denominators are polynomials with positive coefficients (positive on the closed chart)
+INFO H6 sign 1: Z has 1289451 terms, 4 negative
+PASS with one choice of the sign of H6, Z has 1,289,451 terms and exactly four negative coefficients : sign of H6 (as returned by flint factor) used: 1
+PASS the four negative coefficients are at (A,P,T,U,V,S,Q) = (0,6,1,u,16,2,2), u=3..0, with -71680,-465920,-1021440,-744960
+PASS R = Z - 1280 P^6 V^16 S^2 Q^2 (28U^3+182U^2+399U+291)(T-1)^2 has 1,289,447 terms, all nonnegative
+PASS R contains the monomial 81285120 T^2
+PASS R positive whenever A,P,T,V > 0 (any of U,S,Q zero)
+PASS degree of Z in T is 2 (so the j = T/(T+Wj) clearing is the degree-2 homogenisation)
+SUMMARY: all exact checks passed

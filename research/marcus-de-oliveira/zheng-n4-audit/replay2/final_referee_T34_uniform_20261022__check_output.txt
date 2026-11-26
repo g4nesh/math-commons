@@ -1,0 +1,73 @@
+PASS EXACT document contact set == paper T_35 (Appendix E), literally
+PASS EXACT generators(T_35) == [0,1,2,5,7,9,53,67,68]
+PASS EXACT only f68 is non-minor
+PASS EXACT rank of the nine generators is 8
+PASS EXACT unique relation is f68 + f2 = f0 + f9 + f67
+PASS EXACT C(g + h kappa) is affine in h
+PASS EXACT C* has only positive coefficients and contains d^3
+PASS EXACT Q == c + ce + cj - cp + 1 + e + j + ej (homogenized with d)
+PASS EXACT symbolic Hessian determinant agrees with Fraction det at 3 integer points
+PASS EXACT (2) Q^4 det Hess C(g - (C*/Q) kappa) == -4 Q^2 G^2 for a polynomial G
+PASS EXACT G: 1475 terms, homogeneous of degree 9, degree 2 in p
+PASS DATA our G equals the supplement's stored G (same sign)
+time 3.7s
+PASS EXACT G00 = G|p=e=j=0 == (1+b)(c+1+b)^2(a+1)^3(q+1)^3
+PASS EXACT k0|b=0 == (a+1)(q+1)(e+1+a)^2(c+1)^2(q+j+1)^2
+PASS EXACT G|c=b=0 == (qp+q+qa+p+pa+1+a)(e+1+a)^2(q+j+1)^2
+PASS EXACT G|c=0,p=e=j=0 == (1+b)^3(a+1)^3(q+1)^3
+PASS EXACT (7) table below/below: nonnegative coefficients  terms=2227
+PASS EXACT (7) table below/below: (E,J)-free part equals the cleared G00
+PASS EXACT (7) table below/above: nonnegative coefficients  terms=3268
+PASS EXACT (7) table below/above: (E,J)-free part equals the cleared G00
+PASS EXACT (7) table above/below: nonnegative coefficients  terms=3268
+PASS EXACT (7) table above/below: (E,J)-free part equals the cleared G00
+PASS EXACT (7) table above/above: nonnegative coefficients  terms=4945
+PASS EXACT (7) table above/above: (E,J)-free part equals the cleared G00
+PASS EXACT (7) term counts == 2227, 3268, 3268, 4945
+PASS EXACT (9) table below/below: nonnegative coefficients (all p)  terms=1419
+PASS EXACT (9) table below/below: (E,J,p)-free part equals cleared (1+b)^3(a+1)^3(q+1)^3
+PASS EXACT (9) table below/above: nonnegative coefficients (all p)  terms=2110
+PASS EXACT (9) table below/above: (E,J,p)-free part equals cleared (1+b)^3(a+1)^3(q+1)^3
+PASS EXACT (9) table above/below: nonnegative coefficients (all p)  terms=2110
+PASS EXACT (9) table above/below: (E,J,p)-free part equals cleared (1+b)^3(a+1)^3(q+1)^3
+PASS EXACT (9) table above/above: nonnegative coefficients (all p)  terms=3211
+PASS EXACT (9) table above/above: (E,J,p)-free part equals cleared (1+b)^3(a+1)^3(q+1)^3
+PASS EXACT (9) term counts == 1419, 2110, 2110, 3211
+PASS EXACT b<=1 (P*=1+1/c) table below/below: middle Bernstein numerator nonnegative  terms=3612
+PASS EXACT b<=1 (P*=1+1/c) table below/below: endpoint Bernstein numerator nonnegative  terms=3612
+PASS EXACT b<=1 (P*=1+1/c) table below/above: middle Bernstein numerator nonnegative  terms=7230
+PASS EXACT b<=1 (P*=1+1/c) table below/above: endpoint Bernstein numerator nonnegative  terms=7230
+PASS EXACT b<=1 (P*=1+1/c) table above/below: middle Bernstein numerator nonnegative  terms=7230
+PASS EXACT b<=1 (P*=1+1/c) table above/below: endpoint Bernstein numerator nonnegative  terms=7230
+PASS EXACT b<=1 (P*=1+1/c) table above/above: middle Bernstein numerator nonnegative  terms=12258
+PASS EXACT b<=1 (P*=1+1/c) table above/above: endpoint Bernstein numerator nonnegative  terms=12258
+PASS EXACT b<=1 term counts == (3612,3612),(7230,7230),(7230,7230),(12258,12258)
+PASS EXACT b>=1 chart (15): base k0 nonnegative  terms=117110
+PASS EXACT b>=1 chart (15): middle Bernstein numerator nonnegative  terms=209489
+PASS EXACT b>=1 chart (15): endpoint Bernstein numerator nonnegative  terms=289848
+PASS EXACT b>=1 term counts == 117110, 209489, 289848
+time 10.8s
+PASS EXACT (11) derivative of E_a
+PASS EXACT (11) E_a(1) = (a+1)(b+1)/(ab-1)
+PASS EXACT (13) holds identically at E = E_a(delta)
+PASS EXACT (13) is (5) for the piece rescaled by 1/delta
+PASS EXACT (5) fails <=> L_e e < 1
+PASS EXACT (14) is (4) for the residual piece rescaled by 1/r
+PASS EXACT (15) X = ab - delta1, Y = bq - delta2, r = 1 - delta1 - delta2
+PASS EXACT (15) e = E_a(delta1) in chart form
+PASS EXACT (16) P* = r^2/c + r/b = (b + C D)/(C b D^2)
+PASS EXACT (10) Bernstein coefficients of k0 + k1 p + k2 p^2 on [0, N/D]
+PASS EXACT (8) above-one chart: ab = 1+X and 1 - L_e e = 1/(1+E)
+PASS EXACT group maps four-coefficient base (f0,f6;f10;f54) to ({7,0};f1;f68)
+PASS EXACT group maps four-coefficient base (f0,f6;f10;f54) to ({7,67};f53;f68)
+PASS EXACT group maps chain base (f2;f0,f12;f70) to (f5;f7,f9;f68)
+PASS EXACT group maps old-H base (f3,f5;f54) to (f9,f5;f68) in this order
+time 11.1s
+NUMERIC pointwise oldH (3) on its boundary: 12 coefficient samples x 12 BFGS restarts (seed 7): worst min Phi = 2.28e-14; at 0.97 x threshold worst = -4.17e-08
+NUMERIC pointwise chain (4) on its boundary: 12 coefficient samples x 12 BFGS restarts (seed 7): worst min Phi = 3.92e-14; at 0.97 x threshold worst = 6.81e-15
+NUMERIC pointwise four (5) on its boundary: 12 coefficient samples x 12 BFGS restarts (seed 7): worst min Phi = 1.83e-15; at 0.97 x threshold worst = -7.82e-11
+NUMERIC pointwise four (6) on its boundary: 12 coefficient samples x 12 BFGS restarts (seed 7): worst min Phi = 5.33e-16; at 0.97 x threshold worst = 2.50e-15
+NUMERIC realizable point (d>0): coefficients/d = [0.6696, 6.0467, 0.663, 1.8355, 274.2988, 1.0, 3.5118, 4.161], relative |G| = 5.5e-14, covering certificate = four
+NUMERIC stratum T_35 (lib random_point_on_contact_stratum, margin 0.01, seeds 7000+): 6 points, 1 with d>0; max relative |G| = 5.5e-14; every d>0 point covered by a certificate: True; worst min Phi = 4.80e-13
+time 202.1s
+ALL EXACT CHECKS PASS

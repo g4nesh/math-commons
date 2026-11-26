@@ -1,0 +1,49 @@
+PASS contact set {1,2,3,8,11,12} == paper T_38
+PASS generators(T_38) == {0,1,2,9,10,15,53,56} : [0, 1, 2, 9, 10, 15, 53, 56]
+PASS only f56 non-minor
+PASS evaluation of (f1,f2,f15,f9,f10,f56,f0,f53) at perms (17,15,4,10,9,6,20,14) is the identity
+PASS contact equations have rank 6
+PASS the 8 generators lie in the nullspace and have rank 8
+PASS zero q: listed image [1, 2, 8, 11, 12, 17] lies in T_38 u {17}
+PASS zero q: image is in the orbit of paper T_46 (supplement historical label T45) : [46]
+PASS zero j: listed image [1, 2, 3, 4, 8, 11] lies in T_38 u {4}
+PASS zero j: image is in the orbit of paper T_4 (supplement historical label T4) : [4]
+PASS zero e: listed image [1, 2, 3, 8, 9, 11] lies in T_38 u {9}
+PASS zero e: image is in the orbit of paper T_8 (supplement historical label T7) : [8]
+PASS zero a: listed image [1, 2, 3, 8, 12, 14] lies in T_38 u {14}
+PASS zero a: image is in the orbit of paper T_11 (supplement historical label T10) : [11]
+PASS cubic is affine in h along kappa
+PASS S*C - ae(dS + d^2 - jS) has nonnegative coefficients : 31 terms
+PASS ... and contains a d^3 and e d^3
+INFO Q (h-coefficient) : a*c + a*d - a*j + a*q + c*d + c*e - c*p + c*q + d**2 + d*e + d*q - e*j + e*q + j*p
+PASS -(Q^2/4) det Hess at h=-C/Q is a nonzero rational square at 6 hard points
+INFO line 0 : t in [-1.180,0.090], deg G^2 = 18, degree certified True, roots of G = 0
+INFO line 1 : t in [-0.060,1.150], deg G^2 = 18, degree certified True, roots of G = 0
+INFO line 2 : t in [-0.070,3.630], deg G^2 = 18, degree certified True, roots of G = 0
+INFO line 3 : t in [-0.080,0.160], deg G^2 = 18, degree certified True, roots of G = 0
+INFO line 4 : t in [-0.170,1.510], deg G^2 = 18, degree certified True, roots of G = 0
+INFO line 5 : t in [-0.070,1.020], deg G^2 = 18, degree certified True, roots of G = 0
+INFO line 6 : t in [-0.360,0.550], deg G^2 = 18, degree certified True, roots of G = 0
+INFO line 7 : t in [-0.450,0.100], deg G^2 = 18, degree certified True, roots of G = 0
+PASS NUMERIC(segments chosen numerically, root count exact): G has no real root on 8 random segments inside the hard region (exact Sturm count; segments chosen numerically)
+INFO stratum seed 0 : d=0.0104 q,p,j,c,e,b,a/d=[np.float64(3.5461), np.float64(8.8245), np.float64(58.8545), np.float64(337.0839), np.float64(4.0447), np.float64(11.4381), np.float64(1.2949)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 1 : d=0.0265 q,p,j,c,e,b,a/d=[np.float64(0.3918), np.float64(5.9986), np.float64(59.0152), np.float64(0.3997), np.float64(5.7597), np.float64(63.2288), np.float64(0.4035)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 2 : d=0.0104 q,p,j,c,e,b,a/d=[np.float64(1.028), np.float64(107.6819), np.float64(16.2302), np.float64(16.438), np.float64(284.5707), np.float64(0.9994), np.float64(0.9587)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 3 : d=0.01 q,p,j,c,e,b,a/d=[np.float64(56.3828), np.float64(21.0663), np.float64(74.2233), np.float64(2.4), np.float64(103.2562), np.float64(113.9436), np.float64(17.9265)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 4 : d=0.01 q,p,j,c,e,b,a/d=[np.float64(1.452), np.float64(6.5958), np.float64(3.0991), np.float64(1.0442), np.float64(413.474), np.float64(1.0366), np.float64(19.4223)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 5 : d=0.0155 q,p,j,c,e,b,a/d=[np.float64(1.0885), np.float64(4.3224), np.float64(207.7796), np.float64(0.6538), np.float64(4.2037), np.float64(45.9559), np.float64(0.6585)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 6 : d=0.011 q,p,j,c,e,b,a/d=[np.float64(0.9085), np.float64(48.2344), np.float64(15.9842), np.float64(0.9078), np.float64(54.061), np.float64(189.3609), np.float64(0.9217)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 7 : d=0.0101 q,p,j,c,e,b,a/d=[np.float64(386.2237), np.float64(3.7967), np.float64(24.8556), np.float64(0.9929), np.float64(8.5852), np.float64(1.0153), np.float64(16.4507)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 8 : d=0.0609 q,p,j,c,e,b,a/d=[np.float64(0.1673), np.float64(17.5954), np.float64(17.6227), np.float64(16.3255), np.float64(18.7884), np.float64(0.1652), np.float64(0.1652)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 9 : d=0.01 q,p,j,c,e,b,a/d=[np.float64(16.7119), np.float64(17.4964), np.float64(33.681), np.float64(17.0695), np.float64(33.2549), np.float64(1.0025), np.float64(326.3297)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 10 : d=0.01 q,p,j,c,e,b,a/d=[np.float64(37.6221), np.float64(21.2408), np.float64(358.9041), np.float64(1.0137), np.float64(1.0657), np.float64(0.9965), np.float64(24.007)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 11 : d=0.0214 q,p,j,c,e,b,a/d=[np.float64(0.4696), np.float64(14.129), np.float64(60.4146), np.float64(117.4366), np.float64(14.0531), np.float64(0.4732), np.float64(0.4716)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 12 : d=0.0108 q,p,j,c,e,b,a/d=[np.float64(53.9826), np.float64(22.8287), np.float64(81.8798), np.float64(10.6741), np.float64(114.8467), np.float64(73.4492), np.float64(19.1314)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 13 : d=0.0119 q,p,j,c,e,b,a/d=[np.float64(5.9468), np.float64(147.123), np.float64(42.9507), np.float64(24.5634), np.float64(20.3787), np.float64(89.4949), np.float64(0.8512)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+INFO stratum seed 14 : d=0.01 q,p,j,c,e,b,a/d=[np.float64(10.4417), np.float64(40.6059), np.float64(76.5594), np.float64(236.9688), np.float64(78.3933), np.float64(1.001), np.float64(0.9967)] capacities=['SOC pj>=1', 'H p>=1+1/c', 'Hsum j>=1+1/(a+e)', 'chain j>=1/e+1/b']
+PASS NUMERIC: every one of 15 stratum points (contact set exactly T_38) satisfies one of (2)-(5)
+PASS NUMERIC capacity (2) at p=j=1: min Phi over SO(4) at threshold >= -1e-9 : 3.623e-13; 10% below threshold: -3.140e-07
+PASS NUMERIC capacity (3) c=1,p=2: min Phi over SO(4) at threshold >= -1e-9 : 4.703e-14; 10% below threshold: -1.681e-06
+PASS NUMERIC capacity (4) a=e=1/2,j=2: min Phi over SO(4) at threshold >= -1e-9 : 7.955e-13; 10% below threshold: 8.011e-13
+PASS NUMERIC capacity (5) e=b=1,j=2: min Phi over SO(4) at threshold >= -1e-9 : 7.570e-15; 10% below threshold: 2.951e-14
+SUMMARY: 0 failed checks (0 exact)

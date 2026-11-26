@@ -1,0 +1,21 @@
+PASS generators(T) = [0,1,2,12,39,67,70,72]
+PASS f2=n13,34 f12=n14,24 f39=n14,13 f70=h4231,+
+PASS W orthogonal
+PASS O^T O = |P|^2|Q|^2 I
+PASS det O = (|P|^2|Q|^2)^2
+PASS Phi(f2) = x2^2
+PASS Phi(f12) = x3^2
+PASS Phi(f39) = x4^2
+PASS x2 = v0 + v1
+PASS x3 = v1 + v2
+PASS KEY: Phi(f2+f70) = 2[(delta^2+Delta^2)|P|^2|Q|^2 - (v0 v2 + v1 v3)]
+PASS sum v_i = 0 identically
+PASS x2 x3 = v0 v2 - v1 v3
+INFO symmetries fixing f2,f70 and sending f12->f39: [((2, 3, 0, 1), (1, 0, 3, 2), 0), ((3, 2, 1, 0), (3, 2, 1, 0), 0), ((0, 3, 1, 2), (1, 2, 0, 3), 1), ((1, 2, 0, 3), (0, 3, 1, 2), 1)] count 4
+PASS such a symmetry exists
+PASS Phi_{g.c}(g.O) = Phi_c(O) for f2,f12,f39,f70 at 5 rational O
+PASS g.O in SO(4) for the chosen g at a rational O
+NUMERIC E1: min over SO(4) (40 Nelder-Mead starts, seed 11) = -6.887e-30
+NUMERIC E2: min over SO(4) (40 Nelder-Mead starts, seed 11) = -2.455e-30
+NUMERIC (H) at equality a=d+d^2/(b+c), d=1, 16 (b,c) pairs x 10 BFGS starts: min = 2.046e-14
+FAILS 0

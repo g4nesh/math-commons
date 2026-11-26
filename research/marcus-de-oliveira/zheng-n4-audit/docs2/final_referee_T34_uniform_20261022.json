@@ -1,0 +1,67 @@
+{
+  "doc_id": "final_referee_T34_uniform_20261022",
+  "pdf": "proofs/manin_transfer_20261021/final_referee_T34_uniform_20261022.pdf",
+  "pages": 4,
+  "auditor": "C14-T35-T37-second (independent second pass)",
+  "verdict": "confirmed-modulo-citations",
+  "paper_case": "T_35 = {2,3,4,6,9,12} (literal, no group element needed)",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "paper_cases": [35], "contact_sets": [[2,3,4,6,9,12]], "covers_all_spectra": true,
+     "restatement": "For every x in X (any a,b in C^4, alpha in C, repeated eigenvalues and a_i+b_j=0 included) with Pc(x)>=0 and (Pc(x))_pi=0 for pi in {2,3,4,6,9,12} (non-strict contacts): Phi_{c(x)}(O)>=0 for all O in SO(4)."}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "paper Lemma 4.2 / Appendix D", "used_for": "source generators", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper eq. (4.2)", "used_for": "minor vectors have Phi = det^2 >= 0", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper Appendix A.1: X subset of {grad C = 0}", "used_for": "realizable => C(Re x)=0 and det Hess C(Re x)=0", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper (4.7) group invariance", "used_for": "transport of cited pointwise inequalities", "match_checked": true},
+    {"kind": "other-doc", "ref": "final_referee_T5_four_budget_capacity_20261022 Theorem 1", "contact_set": [1,2,3,4,6,8], "used_for": "(5) and (6)", "match_checked": true},
+    {"kind": "common-lemma", "ref": "old-H family t f3 + c f5 + d f54, t(c-d)>=d^2", "used_for": "(3)", "match_checked": true},
+    {"kind": "common-lemma", "ref": "chain family (f2; f0,f12; f70), center >= d^2/q + d^2/t", "used_for": "(4) and rescaled (14)", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "T equals paper T_35", "kind": "finite", "status": "EXACT"},
+    {"n": 2, "claim": "source 0,1,2,5,7,9,53,67,68, rank 8, only f68 non-minor", "kind": "finite", "status": "EXACT"},
+    {"n": 3, "claim": "unique relation f68+f2=f0+f9+f67; d=0 or representation (1)", "kind": "identity", "status": "EXACT"},
+    {"n": 4, "claim": "d=0: sum of minors, Phi>=0", "kind": "citation", "status": "PROOF-READ"},
+    {"n": 5, "claim": "Re x = g + h kappa satisfies C=0 and det Hess C=0", "kind": "analytic", "status": "PROOF-READ", "note": "argument supplied by auditor"},
+    {"n": 6, "claim": "C(g+h kappa) = C* + hQ, C*>0, Q as stated", "kind": "identity", "status": "EXACT"},
+    {"n": 7, "claim": "(2) Q^4 det Hess = -4 Q^2 G^2, G degree 9, 1475 terms", "kind": "identity", "status": "EXACT"},
+    {"n": 8, "claim": "pointwise (3)-(6)", "kind": "citation", "status": "CITED"},
+    {"n": 9, "claim": "hard assumptions = L_e e<1, L_j j<1", "kind": "identity", "status": "EXACT"},
+    {"n": 10, "claim": "(7) strict constant bound, b=0 factorization, product-one walls", "kind": "inequality", "status": "EXACT"},
+    {"n": 11, "claim": "(9) c=0 corner, G>0 for all p", "kind": "inequality", "status": "EXACT"},
+    {"n": 12, "claim": "Bernstein criterion (10)", "kind": "identity", "status": "EXACT"},
+    {"n": 13, "claim": "b<=1 tables with P*=1+1/c", "kind": "inequality", "status": "EXACT", "note": "b=0 and walls by continuity, argument supplied by auditor"},
+    {"n": 14, "claim": "allocation (11)-(14)", "kind": "identity", "status": "PROOF-READ"},
+    {"n": 15, "claim": "chart (15)-(16) is complete for b>=1, r>0", "kind": "identity", "status": "PROOF-READ"},
+    {"n": 16, "claim": "b>=1 tables 117110/209489/289848 nonnegative", "kind": "inequality", "status": "EXACT"},
+    {"n": 17, "claim": "finite boundaries a,q->0, e,j=0, r=0, b=1, p=0, c->0", "kind": "case split", "status": "PROOF-READ"},
+    {"n": 18, "claim": "degenerate spectra covered", "kind": "logic", "status": "PROOF-READ"}
+  ],
+  "gaps": [],
+  "exact_replays": [
+    "generators(T_35), rank 8, the unique linear relation",
+    "C(g + h kappa) = C* + hQ from the paper's cubic (A.2); C* positive with d^3; Q matches",
+    "full 14x14 Hessian determinant; Q^4 det = -4 Q^2 G^2; own G (1475 terms) equals the supplement's stored G",
+    "factorizations G00, k0|b=0, G|c=b=0, G|c=0,p=e=j=0",
+    "(7) four tables 2227/3268/3268/4945 nonnegative with correct constant parts",
+    "(9) four tables 1419/2110/2110/3211 nonnegative with correct constant parts",
+    "b<=1 eight Bernstein tables (3612,3612),(7230,7230),(7230,7230),(12258,12258) nonnegative",
+    "b>=1 tables 117110/209489/289848 nonnegative",
+    "allocation identities (10),(11),(13),(14),(15),(16),(8)",
+    "group transports of the cited four-coefficient, chain and old-H families onto (5),(6),(4),(3)"
+  ],
+  "numeric_tests": [
+    "pointwise (3)-(6) on boundaries: 12 samples x 12 BFGS restarts each, seed 7; worst min Phi >= -1e-13 (2.3e-14, 3.9e-14, 1.8e-15, 5.3e-16)",
+    "realizable points on the T_35 stratum (lib sampler, margin 0.01): final run 6 points (1 with d>0), scratch run 12 points (5 with d>0); relative |G| <= 5.7e-14; min Phi over SO(4) >= 2.6e-13; the d>0 point of the final run is covered by a document certificate"
+  ],
+  "unchecked": [
+    "proofs of the cited pointwise families (four-coefficient T5 Theorem 1, old-H, chain); only transported and tested numerically"
+  ],
+  "files": [
+    "docs2/final_referee_T34_uniform_20261022.md",
+    "docs2/final_referee_T34_uniform_20261022.json",
+    "replay2/final_referee_T34_uniform_20261022__check.py",
+    "replay2/final_referee_T34_uniform_20261022__check_output.txt"
+  ]
+}

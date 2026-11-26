@@ -1,0 +1,123 @@
+{
+ "doc_id": "blind_moc4_coreD_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_coreD_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     7,
+     9,
+     16,
+     23
+    ]
+   ],
+   "restatement": "For x in X with P c(x) >= 0 vanishing on T={0,1,2,7,9,16,23} (Table 5 no. 12), Phi_{c(x)}(O) >= 0 for all O in SO(4); all spectra.",
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "blind_moc4_coreD_low_pair_20261023",
+   "used_for": "region 0<a<=c<=b<=1, a+c<=1 (and its a=0 extension)",
+   "status": "audited in this batch: confirmed-modulo-citations"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "global Hessian determinant and inertia theorems on Re X"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "sharp SOC atoms on {f2,f12,f15} with f26"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "old-H atoms (3,15),(5,2),(11,12) with f26"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (4.2)"
+  }
+ ],
+ "steps": [
+  [
+   "(1)-(2), source S3",
+   "EXACT"
+  ],
+  [
+   "(3)",
+   "EXACT"
+  ],
+  [
+   "(5),(6)",
+   "PROOF-READ"
+  ],
+  [
+   "(7)-(9) cap allocation",
+   "EXACT + PROOF-READ"
+  ],
+  [
+   "assembly exhaustive",
+   "PROOF-READ"
+  ],
+  [
+   "(10)-(12) dominant chart onto",
+   "EXACT"
+  ],
+  [
+   "dominant table 180265 terms",
+   "EXACT"
+  ],
+  [
+   "(13) 27 vertices, 81-simplex triangulation coverage",
+   "EXACT + PROOF-READ"
+  ],
+  [
+   "(15) 81 simplex tables + strictness",
+   "EXACT"
+  ],
+  [
+   "two zero mains",
+   "EXACT"
+  ],
+  [
+   "one zero main, b<=1",
+   "EXACT + PROOF-READ (argument supplied by auditor)"
+  ],
+  [
+   "(16) zero-main dominant chart",
+   "EXACT"
+  ]
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators/I7",
+  "S3 (6 elements)",
+  "C, Q",
+  "Q^4 det H = -4Q^2G^2",
+  "cap identity",
+  "dominant chart inverse (sympy)",
+  "dominant table (180265 terms = document)",
+  "zero chart (21497 = document)",
+  "G|a=c=0 positive",
+  "own vertex enumeration = 27",
+  "facet pairing of the 81 simplices",
+  "81 simplex polynomials nonnegative + support strictness",
+  "low-pair a+c<1 tables have nonzero constants"
+ ],
+ "numeric_tests": [
+  "6 capacity atoms x 40 Nelder-Mead starts: minima ~0, none negative",
+  "3 realizable points with contact exactly T: G ~ 1e-14 relative, min Phi >= ~0"
+ ],
+ "unchecked": [
+  "proofs of the capacity atoms",
+  "proofs of the Hessian determinant/inertia theorems"
+ ]
+}

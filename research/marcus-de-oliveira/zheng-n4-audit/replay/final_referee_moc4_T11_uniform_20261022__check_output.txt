@@ -1,0 +1,54 @@
+PASS EXACT contact set {0,2,3,5,9,12} equals paper T_12 (identity element)
+PASS EXACT generators(T) = {0,1,2,5,7,9,12,39,40,41,43}
+PASS EXACT non-minor generators are exactly f40, f43
+PASS EXACT dim W_T = 8
+PASS EXACT (1) y = y23 f0 + y13 f2 + y11 f5 + y16 f7 + y6 f12 + y17 f39 + y7 f41 + d f40 on W_T
+PASS EXACT (2) y = y23 f1 + y21 f5 + y14 f7 + y13 f9 + y19 f12 + y15 f39 + y18 f41 + e f43 on W_T
+PASS EXACT (3a) y1 = y17 + y7 + d on W_T
+PASS EXACT (3b) y1 = y15 + y18 + e on W_T
+PASS EXACT replacement f40+f1 = f0+f7+f39
+PASS EXACT replacement f40+f9 = f2+f7+f41
+PASS EXACT replacement f43+f0 = f1+f5+f12+f41
+PASS EXACT replacement f43+f2 = f5+f9+f12+f39
+PASS EXACT replacement f40+f43 = f5+f7+f12+f39+f41
+INFO (A,B) on generators: {0: (0, 1), 1: (1, 0), 2: (0, 1), 5: (0, 0), 7: (0, 0), 9: (1, 0), 12: (0, 0), 39: (0, 0), 40: (-1, 1), 41: (0, 0), 43: (1, -1)}
+PASS EXACT A+B >= 0 on every generator (hence on N_T by Lemma 4.2)
+PASS EXACT A,B >= 0 => minor decomposition: A(f)<=0 off {1,9,43}, B(f)<=0 off {0,2,40}, A(f1)=A(f9)=B(f0)=B(f2)=1, A(f40)=B(f43)=-1
+PASS EXACT g4 = g1 on W_T
+INFO j= 1 witnesses before stage 3: ['all generators of T+j minor']
+INFO j= 4 witnesses before stage 3: ['all generators of T+j minor']
+INFO j= 6 witnesses before stage 3: ['T_3 (stage 1) via subset (0, 2, 3, 5, 6, 9)', 'T_2 (stage 1) via subset (0, 2, 3, 5, 6, 12)']
+INFO j= 7 witnesses before stage 3: ['T_5 (stage 1) via subset (0, 2, 3, 5, 7, 9)', 'T_4 (stage 1) via subset (0, 2, 3, 5, 7, 12)']
+INFO j= 8 witnesses before stage 3: ['all generators of T+j minor', 'T_2 (stage 1) via subset (0, 2, 3, 5, 8, 9)']
+INFO j=10 witnesses before stage 3: ['all generators of T+j minor', 'T_4 (stage 1) via subset (0, 2, 3, 5, 9, 10)']
+INFO j=11 witnesses before stage 3: ['T_1 (stage 1) via subset (0, 2, 3, 5, 9, 11)', 'T_36 (stage 1) via subset (0, 2, 3, 9, 11, 12)']
+INFO j=13 witnesses before stage 3: ['T_1 (stage 1) via subset (0, 2, 3, 5, 12, 13)', 'T_20 (stage 1) via subset (0, 2, 3, 9, 12, 13)']
+INFO j=14 witnesses before stage 3: ['T_6 (stage 1) via subset (0, 2, 3, 5, 12, 14)', 'T_5 (stage 1) via subset (0, 2, 3, 9, 12, 14)']
+INFO j=15 witnesses before stage 3: ['T_10 (stage 2) via subset (0, 2, 3, 5, 12, 15)', 'T_39 (stage 1) via subset (2, 3, 5, 9, 12, 15)']
+INFO j=16 witnesses before stage 3: ['T_7 (stage 1) via subset (0, 2, 3, 5, 12, 16)', 'T_31 (stage 1) via subset (0, 2, 3, 9, 12, 16)']
+INFO j=17 witnesses before stage 3: ['T_10 (stage 2) via subset (0, 2, 3, 5, 9, 17)', 'T_35 (stage 1) via subset (0, 2, 3, 9, 12, 17)']
+INFO j=18 witnesses before stage 3: ['T_5 (stage 1) via subset (0, 2, 3, 5, 12, 18)', 'T_37 (stage 1) via subset (0, 2, 3, 9, 12, 18)']
+INFO j=19 witnesses before stage 3: ['T_3 (stage 1) via subset (0, 2, 3, 5, 12, 19)', 'T_26 (stage 2) via subset (0, 2, 3, 9, 12, 19)']
+INFO j=20 witnesses before stage 3: ['all generators of T+j minor']
+INFO j=21 witnesses before stage 3: ['T_7 (stage 1) via subset (0, 2, 3, 5, 9, 21)', 'T_39 (stage 1) via subset (0, 2, 3, 9, 12, 21)']
+INFO j=22 witnesses before stage 3: ['all generators of T+j minor']
+INFO j=23 witnesses before stage 3: ['T_6 (stage 1) via subset (0, 2, 3, 5, 9, 23)', 'T_37 (stage 1) via subset (0, 2, 5, 9, 12, 23)']
+PASS EXACT every j outside T has a witness: T+j all-minor or contains an image of a paper case of an earlier stage
+PASS EXACT R2 = t*(x - 1)
+PASS EXACT R3 = -t + x
+PASS EXACT R5 = 1 - t
+PASS EXACT R1 = x*(v - 1)/v
+PASS EXACT (P2-P0)/(P3-P5) = t
+PASS EXACT (6) P9-P0-r v(z-w) = E1
+PASS EXACT (7) P12-P0-u v(z-w) = v E2
+PASS EXACT (9) a(v) E1|z=(8) = quadratic
+PASS EXACT z = w: E2 = t(v-x)(z-1) up to sign
+PASS EXACT z = w: E1 = z(v-z)(tv-x) up to sign
+PASS EXACT quadratic at v=0 is x w (D w - t x)
+PASS EXACT both v=0 roots simple (d/dw = -t x^2, t x^2)
+PASS EXACT branch (z,w)=(0,t*x/(t*(x - 1) - u)): z-w != 0 and residues = -x on [1, 4, 15, 17] exactly
+PASS EXACT   residues of dR = R8-R16-R6 and eR = R7-R13-R18 vanish
+PASS EXACT branch (z,w)=(t*x/(t + u),0): z-w != 0 and residues = -x on [1, 4, 7, 10, 18, 20] exactly
+PASS EXACT   residues of dR = R8-R16-R6 and eR = R7-R13-R18 vanish
+NUMERIC chart sampling (seed 11): 4921 draws, 40 supported points, worst min_O Phi = 9.564e-15
+SUMMARY: 0 EXACT failures

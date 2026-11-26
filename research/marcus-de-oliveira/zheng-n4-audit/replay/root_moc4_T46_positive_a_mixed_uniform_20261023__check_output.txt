@@ -1,0 +1,38 @@
+### run 1: python -I -B root_moc4_T46_positive_a_mixed_uniform_20261023__check.py ../lib =1
+PASS j - kappa t^2 = jN/(D0+eta^2 j)^2 ; (1-eta t)^2/(j-kappa t^2) = D0^2/(jN) ; rho^2 t^2/(j-kappa t^2) = rho^2 eta^2 j/N
+PASS N - (rho^2/c) eta^2 j = D0^2 + D0 eta^2 j + eta^4 j^2 with D0 = kappa + rho^2/c
+PASS (3): for e > e0 = 1+1/b, ab(e-1) >= a+b+e+1 iff a >= (b+e+1)/(b(e-1)-1); for e <= e0 it fails for every a >= 0 : PROOF-READ (b(e-1)-1 > 0 iff e > e0)
+PASS supplement T46 contact set {1,3,5,6,7,8} equals paper T_47 (identity element)
+PASS generators(T_47) = the 8 source rays plus f0, f3 (absorbed in the T46 assembly via f28+f0=f1+f2+f5+f27, f28+f3=f4+f5+f27) : [0, 1, 2, 3, 4, 5, 6, 27, 28, 59]
+PASS C(w(g,h)) is affine in h
+PASS restored height constant C0 = -(q+1)L - jM (d=1 homogenised: -(q+d)L - jM d)
+PASS height slope Q = jp - j(c+e+1) - (c+1)(e+1) (homogenised)
+PASS radial polynomial G: 1556 terms, total degree 9 : 1.4 s; per-variable degrees (3, 2, 2, 2, 2, 3, 3)
+PASS G^2 agrees with an independent exact Fraction 14x14 determinant at 5 random rational points
+PASS T46 chart qb=1 q>b e below e0: cleared G has only negative coefficients and an H-free monomial : terms=19309 (document 19309) pos=0 neg=19309; denominators positive-coefficient=True
+PASS T46 chart qb=1 q>b e equal e0: cleared G has only negative coefficients and an H-free monomial : terms=6782 (document 6782) pos=0 neg=6782; denominators positive-coefficient=True
+PASS T46 chart qb=1 q>b e above e0: cleared G has only negative coefficients and an H-free monomial : terms=34124 (document 34124) pos=0 neg=34124; denominators positive-coefficient=True
+PASS T46 chart qb=1 b>q e below e0: cleared G has only negative coefficients and an H-free monomial : terms=23910 (document 23910) pos=0 neg=23910; denominators positive-coefficient=True
+PASS T46 chart qb=1 b>q e equal e0: cleared G has only negative coefficients and an H-free monomial : terms=8054 (document 8054) pos=0 neg=8054; denominators positive-coefficient=True
+PASS T46 chart qb=1 b>q e above e0: cleared G < 0 by an own AM-GM certificate absorbing the 58 positive terms : terms=50618 (document 45903) pos=58 neg=50560; denominators positive-coefficient=True; pairs used 58; an H-free negative term remains strictly negative=True
+SUMMARY: all exact checks passed
+exit 0
+### run 2: python -I -B root_moc4_T46_positive_a_mixed_uniform_20261023__check.py ../lib '<1'
+PASS j - kappa t^2 = jN/(D0+eta^2 j)^2 ; (1-eta t)^2/(j-kappa t^2) = D0^2/(jN) ; rho^2 t^2/(j-kappa t^2) = rho^2 eta^2 j/N
+PASS N - (rho^2/c) eta^2 j = D0^2 + D0 eta^2 j + eta^4 j^2 with D0 = kappa + rho^2/c
+PASS (3): for e > e0 = 1+1/b, ab(e-1) >= a+b+e+1 iff a >= (b+e+1)/(b(e-1)-1); for e <= e0 it fails for every a >= 0 : PROOF-READ (b(e-1)-1 > 0 iff e > e0)
+PASS supplement T46 contact set {1,3,5,6,7,8} equals paper T_47 (identity element)
+PASS generators(T_47) = the 8 source rays plus f0, f3 (absorbed in the T46 assembly via f28+f0=f1+f2+f5+f27, f28+f3=f4+f5+f27) : [0, 1, 2, 3, 4, 5, 6, 27, 28, 59]
+PASS C(w(g,h)) is affine in h
+PASS restored height constant C0 = -(q+1)L - jM (d=1 homogenised: -(q+d)L - jM d)
+PASS height slope Q = jp - j(c+e+1) - (c+1)(e+1) (homogenised)
+PASS radial polynomial G: 1556 terms, total degree 9 : 0.5 s; per-variable degrees (3, 2, 2, 2, 2, 3, 3)
+PASS G^2 agrees with an independent exact Fraction 14x14 determinant at 5 random rational points
+PASS T46 chart qb<1 q>b e below e0: cleared G has only negative coefficients and an H-free monomial : terms=970413 (document 970413) pos=0 neg=970413; denominators positive-coefficient=True
+PASS T46 chart qb<1 q>b e equal e0: cleared G has only negative coefficients and an H-free monomial : terms=347708 (document 347708) pos=0 neg=347708; denominators positive-coefficient=True
+PASS T46 chart qb<1 q>b e above e0: cleared G has only negative coefficients and an H-free monomial : terms=1861444 (document 1861444) pos=0 neg=1861444; denominators positive-coefficient=True
+PASS T46 chart qb<1 b>q e below e0: cleared G has only negative coefficients and an H-free monomial : terms=986482 (document 986482) pos=0 neg=986482; denominators positive-coefficient=True
+PASS T46 chart qb<1 b>q e equal e0: cleared G has only negative coefficients and an H-free monomial : terms=327932 (document 327932) pos=0 neg=327932; denominators positive-coefficient=True
+PASS T46 chart qb<1 b>q e above e0: cleared G < 0 by an own AM-GM certificate absorbing the 1829 positive terms : terms=1869588 (document 1742432) pos=1829 neg=1867759; denominators positive-coefficient=True; pairs used 1829; an H-free negative term remains strictly negative=True
+SUMMARY: all exact checks passed
+exit 0

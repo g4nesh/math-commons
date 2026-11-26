@@ -1,0 +1,51 @@
+PASS F equals Table 5 seven-set no. 7 literally
+PASS generators(F) = {f0,f1,f2,f11,f12,f15,f21,f26} (eight rays, nonsimplicial)  [0, 1, 2, 11, 12, 15, 21, 26]
+PASS rows of P at F have rank 7
+PASS the 7 listed generators are independent (basis of the 7-dim kernel)
+PASS f0,f1,f2,f11,f12,f15,f21 are minor vectors, f26 is not
+PASS values at rows [23,15,17,8,4,16] are (I_6 | column of f26 = 0): six coefficients are gaps  [[1, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0]]
+PASS (2) f26 + f1 = f0 + f11 + f21 (values at all 24 permutations, hence in V_R)
+PASS gap at 20 = q + d, gap at 11 = v + d, gap at 3 = w + d  ([1, 0, 0, 0, 0, 0, 1], [0, 0, 1, 0, 0, 0, 1], [0, 0, 0, 0, 0, 1, 1])
+PASS d = -delta < 0: g = delta f1 + (q-delta) f0 + p f2 + (v-delta) f11 + b f12 + c f15 + (w-delta) f21
+PASS all 24 gaps of the source are nonnegative combinations when d >= 0 (generator values >= 0)
+PASS SOC: group element maps reference (1, 9, 22) to (2, 15, 26) in order  ((0, 1, 2, 3), (1, 2, 0, 3), 1)
+PASS SOC: group element maps reference (1, 9, 22) to (2, 12, 26) in order  ((0, 1, 3, 2), (0, 2, 1, 3), 0)
+PASS SOC: group element maps reference (1, 9, 22) to (12, 15, 26) in order  ((0, 2, 1, 3), (1, 2, 3, 0), 0)
+INFO old-H: group elements mapping paper f7, f6 to f11, f12: 0 (so the document's 'mother minor indices [7, 6]' are not paper f-indices; they index a local minor list)
+PASS old-H: the named action maps paper (f12, f29; f80) to (f11, f12; f26), f80 = h_{1324,+} non-minor  {11: [12], 12: [29], 26: [80]}
+PASS (5)-(6) C(w(z)) = C + Q z with the document's C and Q
+INFO det H(w(z)) at d=1: 9967 terms, degrees (3, 3, 3, 3, 3, 3, 3), 819 exact divisions, 63.2s
+PASS det H(w(z)) has z-degree <= 4  3
+PASS Q^4 det H(w(-C/Q)) is divisible by -4 (v+d)^2 Q^2
+PASS the quotient is a perfect square G^2
+INFO derived G: 441 terms, degrees (3, 2, 1, 2, 2, 3, 8), coeff of d^8 = 1
+PASS derived G has 441 terms (document: 441, degree 8, coefficient of d^8 = 1)  441
+PASS (8) G(q,p,v,b,c,w,d) = G(q,c,v,b,p,w,d)
+PASS (8) G(q,p,v,b,c,w,d) = G(w,p,v,b,c,q,d)
+PASS derived G equals the document's G (its JSON, read as data)
+PASS chart B> is inverted by the displayed inverse
+PASS chart B= is inverted by P=p/(1-p-c), C=c/(1-p-c)
+PASS chart P>= is inverted by P=p-1, B=pb/(1-p(b+c)), C=pc/(1-p(b+c))
+PASS failure of (4) with b>1 is v < 1/(b-1); chart value v = V/(B(1+V)) < 1/B
+INFO spectral degrees of G (q,p,v,b,c,w): (3, 2, 1, 2, 2, 3)
+PASS table [S]: cleared G has only positive coefficients  852 terms (document 852)
+PASS table [S]: has a monomial in the strictly positive parameters [] only  [((0, 0, 0, 0, 0, 0), 1)]
+PASS table [S]: reduced denominators nonnegative with a strictly positive monomial
+PASS table [B>]: cleared G has only positive coefficients  3075 terms (document 3075)
+PASS table [B>]: has a monomial in the strictly positive parameters ['B'] only  [((0, 6, 0, 0, 0, 0), 1), ((0, 5, 0, 0, 0, 0), 6)]
+PASS table [B>]: reduced denominators nonnegative with a strictly positive monomial
+PASS table [B=]: cleared G has only positive coefficients  478 terms (document 478)
+PASS table [B=]: has a monomial in the strictly positive parameters [] only  [((0, 0, 0, 0, 0, 0), 2)]
+PASS table [B=]: reduced denominators nonnegative with a strictly positive monomial
+PASS table [P>=]: cleared G has only positive coefficients  2855 terms (document 2855)
+PASS table [P>=]: has a monomial in the strictly positive parameters [] only  [((0, 0, 0, 0, 0, 0), 2)]
+PASS table [P>=]: reduced denominators nonnegative with a strictly positive monomial
+INFO total coefficients in the four tables: 7260 (document 7260)
+NUMERIC SOC (3) p f2 + b f12 + f26, pb = 1: N=40, 8 BFGS restarts, worst min Phi/max|Pc| = 4.60e-17 at {2: 1.2743, 12: 0.7847, 26: 1.0}
+NUMERIC SOC (3) p f2 + c f15 + f26, pc = 1: N=40, 8 BFGS restarts, worst min Phi/max|Pc| = 2.40e-18 at {2: 0.5821, 15: 1.718, 26: 1.0}
+NUMERIC SOC (3) b f12 + c f15 + f26, bc = 1: N=40, 8 BFGS restarts, worst min Phi/max|Pc| = 1.71e-16 at {12: 2.3184, 15: 0.4313, 26: 1.0}
+NUMERIC old-H (4) v f11 + b f12 + f26 at v(b-1) = 1: N=60, 8 BFGS restarts, worst min Phi/max|Pc| = -8.86e-17 at {11: 2.1781, 12: 1.4591, 26: 1.0}
+NUMERIC old-H (4) [d scaled by 2.0: sensitivity test]: N=6, 8 BFGS restarts, worst min Phi/max|Pc| = -7.66e-04 at {11: 0.3007, 12: 4.3258, 26: 2.0}
+NUMERIC realizable point (stratum search seed 0, margin 0.01): contact set [0, 1, 2, 7, 9, 10, 14], coefficients [0.0525, 1.2006, 0.0594, 0.0126, 0.01, 2.0107, -0.0424], G/sum|terms| = 2.5e-16, min Phi/max|Pc| = 4.0e-13
+NUMERIC realizable point (stratum search seed 1, margin 0.01): contact set [0, 1, 2, 7, 9, 10, 14], coefficients [1.3012, 0.017, 0.0169, 2.2428, 0.0152, 0.018, -0.0069], G/sum|terms| = 2.4e-14, min Phi/max|Pc| = 4.4e-12
+SUMMARY ALL EXACT CHECKS PASS

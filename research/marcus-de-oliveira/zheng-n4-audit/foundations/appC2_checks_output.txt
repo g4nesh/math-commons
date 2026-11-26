@@ -1,0 +1,87 @@
+[    1.1s] == core: basis, P, kappa, cubic, minor vectors, (C.3), (C.5), (C.6), Moebius
+[    1.1s] PASS EXACT the 14 matching polynomials (A.1) are linearly independent
+[    1.1s] PASS EXACT 14x14 submatrix of P with rows (A.1-list) has det 1 (paper App. A)
+[    1.1s] PASS EXACT P kappa = 1 for kappa = e13 (3.2)
+[    1.1s] PASS EXACT (C.5) C(u + h kappa) = C(u) + h q(u), q = u0 u6 - u1 u5
+[    1.1s] PASS EXACT paper (A.2) equals the supplement's expanded 28-term cubic
+[    2.1s] PASS EXACT grad C vanishes identically on m(z) (X in Sing C), 8 symbolic parameters
+[    4.7s] PASS EXACT test unitary is unitary
+[    5.1s] PASS EXACT (C.3) on 4 rational orthogonal + 1 Gaussian-rational unitary: det(Da+U Db U*) = <rho(U), m(a,-b)>, <rho,kappa>=1, <rho,n_IJ>=|det U[I,J]|^2 (all 70)
+[    6.5s] PASS EXACT (C.6) q(Re(theta m(a,-b))) = 0 for real a (17 symbolic real params)
+[    7.5s] PASS EXACT Moebius: m(f(z)) = (ad-bc)^4/prod(gamma z_j+delta) m(z) (proof of Thm C.1, p.57)
+[    7.5s] == (C.9): (-1)^(i+j) r(O_ij^) = d(O) and det(1/O) prod O = d(O)^2 on SO(4,C) (quaternion chart)
+[    7.5s] PASS EXACT T = L(1,a,b,c) R(1,d,e,f) satisfies T T^t = n I
+[    7.5s]      d(T) has total degree 12 and 256 terms
+[    7.5s] PASS EXACT (C.9a) all 16 signed reciprocal 3x3 cofactors equal d (polynomial identity in 6 params)
+[    7.6s] PASS EXACT (C.9b) det(1/T) prod T = d(T)^2 (degree 24, 0.0s)
+[    7.6s] PASS EXACT d and r are invariant under any row/column sign flip, so (C.9) holds on all of O(4,C)
+[    7.6s] PASS EXACT d(PO), d(OP), d(O^T) = +-d(O) on 6 rational O (ratios seen [-1, 1])
+[    7.6s] == (C.10) in sixteen independent weights
+[    7.6s] PASS EXACT q(c_W) = 0 (16 symbolic weights)
+[    7.7s] PASS EXACT C(c_W) = det(w_ij - w_i0 - w_0j + w_00)_{i,j=1..3}
+[    7.7s] PASS EXACT <rho(O), c_W> = sum w_ij O_ij^2 (rational O)
+[    7.7s] == Lemma C.8 (Cauchy form <-> d = 0)
+[    7.7s] PASS EXACT 40/40 interlaced rational node sets give a real orthogonal Cauchy matrix with d(O) = 0 (d computed as (u1u2u3)^2 (v0v1v2)^2 det[C_rk C_sk])
+[    7.7s] PASS EXACT 40 non-alternating node sets: no real orthogonal Cauchy matrix (consistent with the alternation claim in the proof of Lemma C.10)
+[    7.7s] PASS EXACT nodes a=(0,2,4,6), c=(1,3,5,7): O (with radicals) is orthogonal and d(O)=0
+[    7.9s] PASS NUMERIC 200 real O on d=0 (Brent, seed 80): sigma_3/sigma_1 of (1/O_ij) <= 7.3e-15 (rank two, as Lemma C.8 asserts)
+[    7.9s] PASS NUMERIC 200/200 of those have alternating row/column nodes on RP^1
+[    7.9s] == Lemma C.9: explicit c in K_O with C(c) = d(O) prod xi eta / prod O_ij
+[    8.2s]      (2 rational samples skipped because a minor or xi_i/eta_j vanished)
+[    8.2s] PASS EXACT (C.11) on 12/12 random rational O in SO(4) (all 70 minors nonzero): W o O O^t = xi xi^t, criticality, height, C(c_W - h kappa) = d prod(xi eta)/prod O != 0
+[    8.2s] PASS EXACT Lemma C.9 example: O orthogonal, det 1
+[    8.2s] PASS EXACT Lemma C.9 example: O^t xi = eta
+[    8.2s] PASS EXACT Lemma C.9 example: (W o O) O^t = xi xi^t
+[    8.2s] PASS EXACT Lemma C.9 example: critical
+[    8.2s] PASS EXACT Lemma C.9 example: h = 18
+[    8.2s] PASS EXACT Lemma C.9 example: d(O) = -16/729
+[    8.2s] PASS EXACT Lemma C.9 example: C(c_W - 18 kappa) = -531441/200
+[    8.2s] PASS EXACT Lemma C.9 example: only zero entry is O_00 (indecomposable, stable)
+[    8.2s]      example: vanishing minors [((0,), (0,)), ((0, 1), (2, 3)), ((0, 2), (1, 3)), ((0, 3), (1, 2)), ((1, 2), (0, 3)), ((1, 3), (0, 2)), ((2, 3), (0, 1)), ((1, 2, 3), (1, 2, 3))] (entry O_00 and its complementary 3x3 minor)
+[    8.2s] == (C.8) C|K_O = alpha(O) det S_O, tested on exact orthogonal matrices (part-1 input to Lemma C.9)
+[   12.2s]      [random rational O] dim K_O = 7, gauge rank = 7, gauge directions null: True, C|K_O / det S_O = -27982932961/599628800
+[   16.3s]      [random rational O] dim K_O = 7, gauge rank = 7, gauge directions null: True, C|K_O / det S_O = 41537523/99008
+[   18.6s]      [Lemma C.9 boundary example] dim K_O = 7, gauge rank = 7, gauge directions null: True, C|K_O / det S_O = 729/16
+[   21.9s]      [indecomposable d=0 point, row (3/5,4/5,0,0)] dim K_O = 7, gauge rank = 7, gauge directions null: True, C|K_O / det S_O = 0
+[   21.9s] PASS EXACT on 2 random rational O and the Lemma C.9 example: dim K_O = 7, gauge space has dim 7, C|K_O is a NONZERO constant multiple of det S_O (so (C.8) holds there and alpha(O) != 0)
+[   21.9s]      info: at the d=0 indecomposable point d=0, alpha = 0
+[   21.9s] == Lemma C.10: common weights for ALL squared minors on d(O) = 0
+[   24.0s] PASS EXACT 60/60 exact Cauchy orthogonal matrices on d=0 (20 with two nodes 1/1000 apart): on the 14 permutations of the noncrossing matchings in alternating order (the Lam support) the system is nonsingular and its unique rational solution is STRICTLY positive and reproduces all 70 squared minors (smallest weight 5.56e-11)
+[   24.0s]      same samples, float LP over all 24 permutations: worst L1 residual 0.0e+00
+[   25.5s] PASS NUMERIC 500 real O with d(O)=0 found by root-finding (seeds 80,81): min L1 residual of the weight LP <= 5.0e-16 (all 24 perms), <= 0.0e+00 (14 Lam perms)
+[   25.7s] PASS EXACT 25/25 rational O with a row (a,b,0,0) (d=0, zero entries): exact common weights
+[   25.9s] PASS EXACT 20/20 decomposable rational O (3+1 and 2+2 blocks, permuted): exact common weights
+[   26.4s]      sanity NUMERIC: 57/300 Haar-random O in SO(4) admit no common weights (seed 81)
+[   27.1s] PASS NUMERIC random walk on d=0 (399 points): worst weight-LP residual 0.0e+00
+[   27.1s] == (C.13) and (C.14)
+[   27.1s] PASS EXACT (C.13) d(O) = O01 O02 O03 O10 O20 O30 when O00 = 0, det O = +1 (12 rational samples): ratios {1}
+[   27.1s]      on det O = -1 the ratio is {-1} (the paper normalises det O = 1 first, so this is consistent)
+[   27.3s] PASS EXACT (C.14) dd(E_i O) = s * ab x_j x_k y_i z_i with one common sign s per sample (15 rational samples, signs seen {-1})
+[   27.3s] == Lemma C.11
+[   27.3s] PASS EXACT rank H(kappa) = 4 (3.10)
+[   27.3s] PASS EXACT Lemma C.11 example: Re m(a,-b) equals the printed y
+[   27.4s] PASS EXACT example: q(y) = C(y) = 0 and G(y) != 0
+[   27.5s] PASS EXACT example: det H(y + kappa) = -114105877589169227887017984
+[   31.1s] PASS EXACT example: det(H(y) + h H(kappa)) = -114105877589169227887017984 h^2 exactly (consistent with s(y+h kappa) = beta h)
+[   54.6s] PASS EXACT 6 random rational (distinct real a, nonreal b, theta): q(y)=C(y)=0 and det(H(y)+hH(kappa)) = c*h^2, c != 0
+[   79.5s] PASS EXACT 6 random rational u on {C=0,q=0}: det(H(u)+hH(kappa)) has degree [2, 2, 2, 2, 2, 2] (<=2) and is a constant times a square in h, as the proof of Lemma C.11 requires
+[   79.5s] == Critical points of Re(theta det) on SO(4) (consequence of the Thm C.1 argument)
+[  167.6s]      30 spectra x 40 starts (seed 2026); critical points by class: {'decomposable': 1166, 'd~0': 27, 'ambiguous d': 0, 'value 0 & det 0': 0, 'OTHER': 0, 'not converged': 7}
+[  167.6s]      class d~0 means |d(O)| < 1e-9 (largest seen 2.3e-15); ambiguous means 1e-9 <= |d| < 1e-4
+[  167.6s] PASS NUMERIC every converged indecomposable critical point with d != 0 has f = 0 and det = 0
+[  167.6s] == Numeric attack on Theorem C.1 (margin = hull support - max over the group)
+[  205.3s]      SO(4), real a, random b: worst relative margin -3.202e-15
+[  205.3s]      SO(4), clustered a: worst relative margin 1.289e-14
+[  205.3s]      SO(4), near-collinear b: worst relative margin -1.392e-16
+[  205.3s]      SO(4), large modulus ratio: worst relative margin -7.613e-14
+[  205.3s]      SO(4), b on a circle-ish, a real clustered pairs: worst relative margin -1.598e-13
+[  211.4s]      a on unit circle (U(4)): worst relative margin 0.000e+00
+[  216.9s]      a real (U(4)): worst relative margin -1.303e-17
+[  216.9s]      total optimisations: 1148; overall worst relative margin -1.598e-13 (b on a circle-ish, a real clustered pairs)
+[  216.9s] PASS NUMERIC no violation of the support inequality of Theorem C.1 found
+[  216.9s] == Stronger form: one p (depending on U, a) with det(D_a+U D_b U*) = sum p_s prod(a_i+b_s(i)) for ALL b
+[  218.7s] PASS NUMERIC 300 Haar U(4), real a (1/3 clustered, seed 4): common-weight LP residual <= 9.8e-10
+[  218.7s] PASS NUMERIC 150 Haar U(4), a on a circle: common-weight LP residual <= 0.0e+00
+[  218.7s]      info: for generic non-concyclic a, 2/60 Haar U fail the common-weight LP
+[  218.8s] PASS NUMERIC sanity (LP has teeth): explicit orthogonal O0 with non-concyclic a=(0,1,i,2) gives residual 9.87e-02 / 9.87e-02 (U=O0 / O0^t), while real a=(0,1,-1,2) gives 0.0e+00
+[  218.8s] == done; 0 failing checks

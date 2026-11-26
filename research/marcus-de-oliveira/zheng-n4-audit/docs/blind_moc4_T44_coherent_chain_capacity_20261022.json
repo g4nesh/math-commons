@@ -1,0 +1,114 @@
+{
+ "doc_id": "blind_moc4_T44_coherent_chain_capacity_20261022",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T44_coherent_chain_capacity_20261022.pdf",
+ "pages": 2,
+ "verdict": "gap-found",
+ "statements": [
+  {
+   "label": "Proposition 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     1,
+     2,
+     3,
+     7,
+     11,
+     12
+    ]
+   ],
+   "restatement": "With d=1, real r,k,v, w>0, r!=k, x=(v(2r-k)-1)/(r-k), y=k(1-rv)/(w(r-k)): the cost q f2+p f1+j f53+c f12+e f8+f18+b f7+a f15 is >= 0 on SO(4) if p>=x^2+y^2, j>=r^2(1+v^2), c>=k^2(1+v^2), a,e>=v^2, b>=w^2, q>=0. A pointwise inequality on coefficients, no realizability."
+  },
+  {
+   "label": "Proposition 2",
+   "page": 1,
+   "contact_sets": [
+    [
+     1,
+     2,
+     3,
+     7,
+     11,
+     12
+    ]
+   ],
+   "restatement": "For b,j>0, c>=0: p f1+j f53+c f12+b f7+f18 >= 0 on SO(4) if p >= (b+c)/(b(sqrt j+sqrt c)^2) when jc<=b^2, p >= 1/(j+b) when jc>=b^2; boundary cases j=0 (chain 1/c+1/b), c=0 (SOC 1/j), b=0 (SOC 1/j)."
+  },
+  {
+   "label": "scalar test (1)",
+   "page": 2,
+   "restatement": "With m=min(a,e), J=sqrt j, C=sqrt c, b>0, J+C>0: if some t in [0, sqrt(m/(1+m))] gives p >= [((2J+C)t-1)^2/(1-t^2) + c(1-Jt)^2/b]/(J+C)^2, the cost is >= 0 on SO(4)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "'already independently verified diagonal-coefficient Gram coordinates (J,C,E,A,B,Q,P,D)' and their ten coefficient relations / 160-row quaternion identity",
+   "used_for": "Prop 1",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "id": "S1",
+   "claim": "Gram of the eight listed R^3 vectors yields a nonnegative representation of Phi with the stated diagonal",
+   "kind": "certificate",
+   "status": "GAP",
+   "how": "the map from Gram entries to Phi_O and the ten relations are not given in the document"
+  },
+  {
+   "id": "S2",
+   "claim": "Prop 2 from Prop 1 (v=0, r=sqrt j, k=-z, w=sqrt b), derivative, optimal z, branch values",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy"
+  },
+  {
+   "id": "S3",
+   "claim": "b=0 direct Gram",
+   "kind": "certificate",
+   "status": "GAP",
+   "how": "same missing framework as S1"
+  },
+  {
+   "id": "S4",
+   "claim": "scalar test (1) from Prop 1 with the stated substitution",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy, incl. j=J^2, c=C^2, v^2<=m"
+  },
+  {
+   "id": "S5",
+   "claim": "Props 1 and 2 true",
+   "kind": "inequality",
+   "status": "NUMERIC",
+   "how": "24 + 20 random threshold costs, min Phi/sum(coeffs) >= -1e-16; example 1/2 f1+f53+f12+f7+f18 min ~ 2e-13"
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p.1, proof of Proposition 1 (and the b=0 Gram in Prop 2)",
+   "claim": "the Gram matrix of the eight vectors gives a sum-of-squares representation of the Leibniz sum with the stated diagonal coefficients",
+   "why": "the 'diagonal-coefficient Gram coordinates' and the 'ten original coefficient relations' are cited from elsewhere and not stated; the identity is only asserted to be verified by a companion program",
+   "severity": "substantive",
+   "believed_true": true,
+   "repair": "state the bilinear map from the 3x3 Gram data to Phi_O (or cite the document that defines it) so the 160-row identity can be replayed"
+  }
+ ],
+ "exact_replays": [
+  "Prop 2 from Prop 1",
+  "derivative formula",
+  "both branch values",
+  "scalar test (1) from Prop 1",
+  "generator set of the cost"
+ ],
+ "numeric_tests": [
+  "Prop 1 at threshold: 24 random (r,k,v,w), 8 restarts each, worst min Phi/sum = 7e-17",
+  "Prop 2 at threshold: 20 random (b,j,c), worst 8e-16",
+  "example cost min ~ 2e-13 (20 restarts)"
+ ],
+ "unchecked": [
+  "the Gram construction itself"
+ ],
+ "one_line": "Branch lemma for paper T_45 (sufficient coefficient bounds; not used by the primary T_45 proof): Prop 2 and test (1) follow exactly from Prop 1, and Props 1-2 pass numerical SO(4) minimisation, but Prop 1's Gram identity is not stated in the document (coordinates and ten relations only cited), so it cannot be checked here."
+}

@@ -1,0 +1,4827 @@
+{
+ "documents": {
+  "total": 208,
+  "ok": 110,
+  "missing": 98
+ },
+ "cases": [
+  {
+   "case": 1,
+   "contact_set": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    7
+   ],
+   "group": "I",
+   "stage": 1,
+   "primary": "independent_moc4_six_contact_reduction_20261022",
+   "primary_page": 6,
+   "own_documents": [
+    "independent_moc4_six_contact_reduction_20261022"
+   ],
+   "closure": [
+    "independent_moc4_six_contact_reduction_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 2,
+   "contact_set": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    8
+   ],
+   "group": "II",
+   "stage": 1,
+   "primary": "independent_moc4_six_contact_reduction_20261022",
+   "primary_page": 7,
+   "own_documents": [
+    "independent_moc4_six_contact_reduction_20261022"
+   ],
+   "closure": [
+    "independent_moc4_six_contact_reduction_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 3,
+   "contact_set": [
+    0,
+    1,
+    2,
+    3,
+    7,
+    8
+   ],
+   "group": "III",
+   "stage": 1,
+   "primary": "independent_moc4_T3_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_moc4_T3_uniform_20261022"
+   ],
+   "closure": [
+    "independent_moc4_T3_uniform_20261022",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "final_referee_T2_scalar_compensation_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_coreK_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_complete_negative_mass_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [],
+   "missing": [
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 4,
+   "contact_set": [
+    0,
+    1,
+    4,
+    5,
+    7,
+    8
+   ],
+   "group": "III",
+   "stage": 1,
+   "primary": "root_moc4_T4_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T4_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T4_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 5,
+   "contact_set": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8
+   ],
+   "group": "III",
+   "stage": 1,
+   "primary": "final_referee_moc4_T5_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_moc4_T5_uniform_20261022",
+    "final_referee_T5_four_budget_capacity_20261022"
+   ],
+   "closure": [
+    "final_referee_moc4_T5_uniform_20261022",
+    "final_referee_T5_four_budget_capacity_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 6,
+   "contact_set": [
+    0,
+    1,
+    2,
+    4,
+    6,
+    8
+   ],
+   "group": "III",
+   "stage": 1,
+   "primary": "independent_moc4_T2_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_moc4_T2_uniform_20261022",
+    "final_referee_T2_collision_closure_20261022"
+   ],
+   "closure": [
+    "independent_moc4_T2_uniform_20261022",
+    "final_referee_T2_collision_closure_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 7,
+   "contact_set": [
+    0,
+    1,
+    2,
+    4,
+    7,
+    8
+   ],
+   "group": "II",
+   "stage": 1,
+   "primary": "root_moc4_T6_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T6_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T6_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 8,
+   "contact_set": [
+    0,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "group": "VI",
+   "stage": 4,
+   "primary": "root_moc4_T7_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T7_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T7_uniform_20261022",
+    "root_moc4_T7_boundary16_20261022",
+    "root_moc4_T7_boundary23_20261022"
+   ],
+   "prerequisites": [
+    "S1[S_0,1,2,3,6,15,17]",
+    "S2[S_0,1,2,3,6,15,22]",
+    "T_2",
+    "T_3",
+    "T_6",
+    "T_11"
+   ],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 9,
+   "contact_set": [
+    0,
+    1,
+    2,
+    3,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 3,
+   "primary": "independent_moc4_T8_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_moc4_T8_uniform_20261022",
+    "independent_moc4_T8_double_boundary_20261022",
+    "independent_moc4_T8_polar_reduction_20261022"
+   ],
+   "closure": [
+    "independent_moc4_T8_uniform_20261022",
+    "independent_moc4_T8_double_boundary_20261022",
+    "independent_moc4_T8_polar_reduction_20261022"
+   ],
+   "prerequisites": [
+    "S1[S_0,1,2,3,6,15,17]",
+    "T_4",
+    "T_5",
+    "T_6",
+    "S3[S_0,1,2,3,6,17,19]",
+    "S4[S_0,1,2,3,6,17,22]"
+   ],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 10,
+   "contact_set": [
+    0,
+    1,
+    3,
+    5,
+    7,
+    8
+   ],
+   "group": "III",
+   "stage": 2,
+   "primary": "final_referee_moc4_T9_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_moc4_T9_uniform_20261022"
+   ],
+   "closure": [
+    "final_referee_moc4_T9_uniform_20261022",
+    "final_referee_T9_first_branch_20261022",
+    "final_referee_T9_second_branch_20261022"
+   ],
+   "prerequisites": [
+    "T_10^(1)",
+    "T_10^(2)"
+   ],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 11,
+   "contact_set": [
+    0,
+    1,
+    3,
+    5,
+    6,
+    8
+   ],
+   "group": "III",
+   "stage": 3,
+   "primary": "final_referee_moc4_T10_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_moc4_T10_uniform_20261022"
+   ],
+   "closure": [
+    "final_referee_moc4_T10_uniform_20261022",
+    "final_referee_T10_A_branch_20261022",
+    "root_moc4_T10_B_branch_20261022"
+   ],
+   "prerequisites": [
+    "T_11^(1)",
+    "T_11^(2)"
+   ],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [
+    "root_moc4_T10_B_branch_20261022"
+   ],
+   "status": "first pass complete"
+  },
+  {
+   "case": 12,
+   "contact_set": [
+    0,
+    2,
+    3,
+    5,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 3,
+   "primary": "final_referee_moc4_T11_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_moc4_T11_uniform_20261022"
+   ],
+   "closure": [
+    "final_referee_moc4_T11_uniform_20261022"
+   ],
+   "prerequisites": [
+    "T_1",
+    "T_2",
+    "T_3",
+    "T_4",
+    "T_5",
+    "T_6",
+    "T_7",
+    "T_10"
+   ],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 13,
+   "contact_set": [
+    1,
+    2,
+    3,
+    4,
+    8,
+    12
+   ],
+   "group": "VI",
+   "stage": 4,
+   "primary": "final_referee_moc4_T12_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_moc4_T12_uniform_20261022"
+   ],
+   "closure": [
+    "final_referee_moc4_T12_uniform_20261022"
+   ],
+   "prerequisites": [
+    "T_1",
+    "T_2",
+    "T_3",
+    "T_4",
+    "T_5",
+    "T_6",
+    "T_7",
+    "T_10",
+    "T_11"
+   ],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 14,
+   "contact_set": [
+    0,
+    2,
+    3,
+    5,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 5,
+   "primary": "independent_moc4_T13_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_moc4_T13_uniform_20261022"
+   ],
+   "closure": [
+    "independent_moc4_T13_uniform_20261022"
+   ],
+   "prerequisites": [
+    "T_1",
+    "T_2",
+    "T_4",
+    "T_6",
+    "T_7",
+    "T_11",
+    "T_9",
+    "T_8"
+   ],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 15,
+   "contact_set": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7
+   ],
+   "group": "III",
+   "stage": 1,
+   "primary": "final_referee_moc4_T14_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_moc4_T14_uniform_20261022"
+   ],
+   "closure": [
+    "final_referee_moc4_T14_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 16,
+   "contact_set": [
+    0,
+    2,
+    5,
+    6,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 5,
+   "primary": "root_moc4_T15_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T15_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T15_uniform_20261022"
+   ],
+   "prerequisites": [
+    "T_15",
+    "T_2",
+    "T_3",
+    "T_8"
+   ],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 17,
+   "contact_set": [
+    0,
+    1,
+    4,
+    5,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 4,
+   "primary": "root_moc4_T16_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T16_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T16_uniform_20261022"
+   ],
+   "prerequisites": [
+    "T_15",
+    "T_4",
+    "T_5",
+    "T_9"
+   ],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 18,
+   "contact_set": [
+    0,
+    1,
+    3,
+    6,
+    7,
+    8
+   ],
+   "group": "II",
+   "stage": 1,
+   "primary": "root_moc4_T17_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T17_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T17_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 19,
+   "contact_set": [
+    0,
+    1,
+    4,
+    6,
+    7,
+    8
+   ],
+   "group": "II",
+   "stage": 1,
+   "primary": "root_moc4_T18_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T18_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T18_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 20,
+   "contact_set": [
+    0,
+    1,
+    5,
+    6,
+    7,
+    8
+   ],
+   "group": "II",
+   "stage": 1,
+   "primary": "root_moc4_T19_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T19_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T19_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 21,
+   "contact_set": [
+    0,
+    3,
+    5,
+    9,
+    11,
+    12
+   ],
+   "group": "IV",
+   "stage": 1,
+   "primary": "root_moc4_T20_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T20_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T20_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 22,
+   "contact_set": [
+    2,
+    3,
+    4,
+    8,
+    10,
+    12
+   ],
+   "group": "IV",
+   "stage": 1,
+   "primary": "root_moc4_T21_T22_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T21_T22_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T21_T22_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 23,
+   "contact_set": [
+    2,
+    3,
+    5,
+    9,
+    11,
+    12
+   ],
+   "group": "IV",
+   "stage": 1,
+   "primary": "root_moc4_T21_T22_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T21_T22_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T21_T22_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 24,
+   "contact_set": [
+    2,
+    3,
+    4,
+    6,
+    7,
+    8
+   ],
+   "group": "VI",
+   "stage": 5,
+   "primary": "independent_moc4_T23_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_moc4_T23_uniform_20261022",
+    "independent_moc4_T23_harmonic_reduction_20261022"
+   ],
+   "closure": [
+    "independent_moc4_T23_uniform_20261022",
+    "independent_moc4_T23_harmonic_reduction_20261022",
+    "final_referee_moc4_T11_uniform_20261022",
+    "final_referee_moc4_T12_uniform_20261022",
+    "final_referee_moc4_T14_uniform_20261022",
+    "independent_moc4_T23_g13_uniform_20261022",
+    "independent_moc4_T23_g17_uniform_20261022",
+    "root_moc4_T19_uniform_20261022",
+    "root_moc4_T24_uniform_20261022"
+   ],
+   "prerequisites": [
+    "S5[S_0,1,2,6,9,11,20]",
+    "T_15",
+    "T_20",
+    "T_25",
+    "T_12",
+    "S6[S_0,1,2,6,9,11,23]",
+    "T_13"
+   ],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 25,
+   "contact_set": [
+    3,
+    4,
+    7,
+    8,
+    10,
+    12
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "root_moc4_T24_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T24_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T24_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 26,
+   "contact_set": [
+    2,
+    3,
+    5,
+    7,
+    8,
+    12
+   ],
+   "group": "V",
+   "stage": 2,
+   "primary": "final_referee_T25_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_T25_uniform_20261022"
+   ],
+   "closure": [
+    "final_referee_T25_uniform_20261022"
+   ],
+   "prerequisites": [
+    "T_25"
+   ],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 27,
+   "contact_set": [
+    2,
+    3,
+    4,
+    7,
+    8,
+    12
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "final_referee_T26_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_T26_uniform_20261022",
+    "final_referee_T26_boundary10_uniform_20261022",
+    "final_referee_T26_boundary16_uniform_20261022"
+   ],
+   "closure": [
+    "final_referee_T26_uniform_20261022",
+    "final_referee_T26_boundary10_uniform_20261022",
+    "final_referee_T26_boundary16_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 28,
+   "contact_set": [
+    2,
+    3,
+    5,
+    6,
+    9,
+    12
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "blind_moc4_T27_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_moc4_T27_uniform_20261022"
+   ],
+   "closure": [
+    "blind_moc4_T27_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 29,
+   "contact_set": [
+    0,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "blind_moc4_T28_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_moc4_T28_uniform_20261022"
+   ],
+   "closure": [
+    "blind_moc4_T28_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 30,
+   "contact_set": [
+    2,
+    5,
+    9,
+    12,
+    13,
+    14
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "final_referee_inventory29_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory29_native_uniform_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_complete_negative_mass_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_22",
+    "T_29",
+    "T_4",
+    "T_40",
+    "T_7",
+    "T_9",
+    "T_71",
+    "T_79"
+   ],
+   "missing": [
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 31,
+   "contact_set": [
+    0,
+    1,
+    5,
+    6,
+    9,
+    12
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "root_moc4_T30_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T30_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T30_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 32,
+   "contact_set": [
+    0,
+    2,
+    3,
+    7,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 11,
+   "primary": "blind_inventory31_native_whole_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_inventory31_native_whole_20261023"
+   ],
+   "closure": [
+    "blind_inventory31_native_whole_20261023",
+    "blind_shared_coreJ_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S22[coreJ]",
+    "T_21",
+    "T_29",
+    "T_31",
+    "T_34",
+    "T_9",
+    "T_14",
+    "T_78",
+    "T_79",
+    "T_77",
+    "T_82"
+   ],
+   "missing": [
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 33,
+   "contact_set": [
+    0,
+    3,
+    6,
+    7,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 5,
+   "primary": "blind_inventory32_native_whole_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_inventory32_native_whole_20261023"
+   ],
+   "closure": [
+    "blind_inventory32_native_whole_20261023",
+    "blind_shared_coreJ_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S22[coreJ]",
+    "T_19",
+    "T_22",
+    "T_29",
+    "T_31",
+    "T_4",
+    "T_40",
+    "T_7",
+    "T_13"
+   ],
+   "missing": [
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 34,
+   "contact_set": [
+    2,
+    3,
+    5,
+    9,
+    10,
+    12
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "blind_moc4_bad70_full_safe_disjunction_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_moc4_bad70_full_safe_disjunction_20261022"
+   ],
+   "closure": [
+    "blind_moc4_bad70_full_safe_disjunction_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [
+    "blind_moc4_bad70_full_safe_disjunction_20261022"
+   ],
+   "status": "first pass complete"
+  },
+  {
+   "case": 35,
+   "contact_set": [
+    2,
+    3,
+    4,
+    6,
+    9,
+    12
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "final_referee_T34_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_T34_uniform_20261022"
+   ],
+   "closure": [
+    "final_referee_T34_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 36,
+   "contact_set": [
+    2,
+    3,
+    4,
+    6,
+    11,
+    12
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "final_referee_T35_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_T35_uniform_20261022"
+   ],
+   "closure": [
+    "final_referee_T35_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 37,
+   "contact_set": [
+    0,
+    5,
+    6,
+    7,
+    9,
+    12
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "independent_moc4_T36_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_moc4_T36_uniform_20261022"
+   ],
+   "closure": [
+    "independent_moc4_T36_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 38,
+   "contact_set": [
+    1,
+    2,
+    3,
+    8,
+    11,
+    12
+   ],
+   "group": "V",
+   "stage": 5,
+   "primary": "root_moc4_T37_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T37_uniform_20261022"
+   ],
+   "closure": [
+    "root_moc4_T37_uniform_20261022",
+    "final_referee_T10_A_branch_20261022",
+    "final_referee_moc4_T10_uniform_20261022",
+    "final_referee_moc4_T14_uniform_20261022",
+    "independent_moc4_T45_uniform_20261022",
+    "root_moc4_T10_B_branch_20261022",
+    "root_moc4_T4_uniform_20261022",
+    "root_moc4_T6_uniform_20261022",
+    "root_moc4_T7_boundary16_20261022",
+    "root_moc4_T7_boundary23_20261022",
+    "root_moc4_T7_uniform_20261022"
+   ],
+   "prerequisites": [
+    "T_4",
+    "T_46",
+    "T_11",
+    "T_8"
+   ],
+   "missing": [
+    "independent_moc4_T45_uniform_20261022"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [
+    "root_moc4_T37_uniform_20261022",
+    "root_moc4_T10_B_branch_20261022"
+   ],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 39,
+   "contact_set": [
+    2,
+    3,
+    5,
+    7,
+    9,
+    12
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "blind_moc4_T38_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_moc4_T38_uniform_20261022"
+   ],
+   "closure": [
+    "blind_moc4_T38_uniform_20261022",
+    "blind_moc4_T28_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [
+    "blind_moc4_T38_uniform_20261022"
+   ],
+   "status": "first pass complete"
+  },
+  {
+   "case": 40,
+   "contact_set": [
+    0,
+    1,
+    5,
+    9,
+    14,
+    18
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "independent_moc4_T39_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_moc4_T39_uniform_20261022",
+    "independent_moc4_T39_high_j_uniform_20261022",
+    "independent_moc4_T39_high_p_uniform_20261022",
+    "independent_moc4_T39_low_pj_uniform_20261022"
+   ],
+   "closure": [
+    "independent_moc4_T39_uniform_20261022",
+    "independent_moc4_T39_high_j_uniform_20261022",
+    "independent_moc4_T39_high_p_uniform_20261022",
+    "independent_moc4_T39_low_pj_uniform_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [],
+   "missing": [
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [
+    "independent_moc4_T39_high_j_uniform_20261022",
+    "independent_moc4_T39_high_p_uniform_20261022",
+    "independent_moc4_T39_low_pj_uniform_20261022"
+   ],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 41,
+   "contact_set": [
+    0,
+    1,
+    3,
+    6,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "independent_inventory40_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_inventory40_native_uniform_20261023"
+   ],
+   "closure": [
+    "independent_inventory40_native_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_19",
+    "T_37",
+    "T_40",
+    "T_43",
+    "T_5",
+    "T_9",
+    "T_57",
+    "T_58",
+    "T_71",
+    "T_76",
+    "T_79"
+   ],
+   "missing": [
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 42,
+   "contact_set": [
+    1,
+    2,
+    3,
+    6,
+    7,
+    8
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "final_referee_T41_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_T41_uniform_20261022",
+    "final_referee_T41_bad17_large_product_uniform_20261022",
+    "final_referee_T41_bad17_uniform_20261022",
+    "final_referee_T41_bad54_uniform_20261022",
+    "final_referee_T41_negative_Heron_region_20261022"
+   ],
+   "closure": [
+    "final_referee_T41_uniform_20261022",
+    "final_referee_T41_bad17_large_product_uniform_20261022",
+    "final_referee_T41_bad17_uniform_20261022",
+    "final_referee_T41_bad54_uniform_20261022",
+    "final_referee_T41_negative_Heron_region_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 43,
+   "contact_set": [
+    1,
+    2,
+    4,
+    6,
+    7,
+    8
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "blind_moc4_T42_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_moc4_T42_uniform_20261022"
+   ],
+   "closure": [
+    "blind_moc4_T42_uniform_20261022",
+    "blind_moc4_T28_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 44,
+   "contact_set": [
+    1,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "independent_moc4_T43_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_moc4_T43_uniform_20261022"
+   ],
+   "closure": [
+    "independent_moc4_T43_uniform_20261022"
+   ],
+   "prerequisites": [],
+   "missing": [],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "first pass complete"
+  },
+  {
+   "case": 45,
+   "contact_set": [
+    1,
+    2,
+    3,
+    7,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 7,
+   "primary": "independent_moc4_T44_native_harmonic_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_moc4_T44_native_harmonic_uniform_20261023",
+    "blind_moc4_T44_coherent_chain_capacity_20261022",
+    "blind_moc4_T44_conic_branch_exclusion_20261022",
+    "blind_moc4_T44_native_contact_chart_20261022",
+    "independent_moc4_T44_a_Heron_branch_20261023",
+    "independent_moc4_T44_c_below_j_uniform_20261023",
+    "root_moc4_T44_e_below_p_uniform_20261023"
+   ],
+   "closure": [
+    "independent_moc4_T44_native_harmonic_uniform_20261023",
+    "blind_moc4_T44_coherent_chain_capacity_20261022",
+    "blind_moc4_T44_conic_branch_exclusion_20261022",
+    "blind_moc4_T44_native_contact_chart_20261022",
+    "independent_moc4_T44_a_Heron_branch_20261023",
+    "independent_moc4_T44_c_below_j_uniform_20261023",
+    "root_moc4_T44_e_below_p_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_43",
+    "T_46",
+    "T_9",
+    "T_8",
+    "T_38",
+    "T_65"
+   ],
+   "missing": [
+    "blind_moc4_T44_native_contact_chart_20261022",
+    "independent_moc4_T44_a_Heron_branch_20261023",
+    "independent_moc4_T44_c_below_j_uniform_20261023",
+    "root_moc4_T44_e_below_p_uniform_20261023",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [
+    "blind_moc4_T44_coherent_chain_capacity_20261022",
+    "blind_moc4_T44_conic_branch_exclusion_20261022"
+   ],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 46,
+   "contact_set": [
+    3,
+    4,
+    5,
+    9,
+    10,
+    12
+   ],
+   "group": "V",
+   "stage": 2,
+   "primary": "independent_moc4_T45_uniform_20261022",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_moc4_T45_uniform_20261022"
+   ],
+   "closure": [
+    "independent_moc4_T45_uniform_20261022",
+    "final_referee_moc4_T14_uniform_20261022",
+    "root_moc4_T6_uniform_20261022"
+   ],
+   "prerequisites": [
+    "T_15",
+    "T_34",
+    "T_7"
+   ],
+   "missing": [
+    "independent_moc4_T45_uniform_20261022"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 47,
+   "contact_set": [
+    1,
+    3,
+    5,
+    6,
+    7,
+    8
+   ],
+   "group": "V",
+   "stage": 3,
+   "primary": "root_moc4_T46_whole_assembly_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T46_whole_assembly_20261023",
+    "final_referee_T46_a0_all_small_product_uniform_20261023",
+    "final_referee_T46_a0_balanced_leaf_uniform_20261023",
+    "final_referee_T46_core_coherent_capacity_20261023",
+    "final_referee_T46_negative_j_Heron_uniform_20261023",
+    "final_referee_T46_positive_a_large_product_20261023",
+    "final_referee_T46_positive_a_small_or_balanced_20261023",
+    "final_referee_T46_six_ray_coherent_capacity_20261023",
+    "final_referee_T46_two_Heron_necessity_20261023",
+    "root_moc4_T46_positive_a_mixed_uniform_20261023"
+   ],
+   "closure": [
+    "root_moc4_T46_whole_assembly_20261023",
+    "final_referee_T46_a0_all_small_product_uniform_20261023",
+    "final_referee_T46_a0_balanced_leaf_uniform_20261023",
+    "final_referee_T46_core_coherent_capacity_20261023",
+    "final_referee_T46_negative_j_Heron_uniform_20261023",
+    "final_referee_T46_positive_a_large_product_20261023",
+    "final_referee_T46_positive_a_small_or_balanced_20261023",
+    "final_referee_T46_six_ray_coherent_capacity_20261023",
+    "final_referee_T46_two_Heron_necessity_20261023",
+    "root_moc4_T46_positive_a_mixed_uniform_20261023",
+    "final_referee_T46_a0_uniform_20261023",
+    "final_referee_T47_negative_p_Heron_20261023",
+    "independent_moc4_T47_IIIb_plus_large_pc_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
+    "independent_moc4_T47_I_II_uniform_20261022",
+    "independent_moc4_T47_PCBE_energy_20261022",
+    "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
+    "independent_moc4_T47_high_e_below_core_20261023",
+    "independent_moc4_T47_high_j_small_b_20261022",
+    "independent_moc4_T47_high_j_uniform_20261022",
+    "independent_moc4_T47_low_j_small_pc_20261023",
+    "independent_moc4_T47_merged_C_high_j_uniform_20261022",
+    "root_moc4_T47_IIIa_minus_20261022",
+    "root_moc4_T47_IIIa_plus_20261022",
+    "root_moc4_T47_IIIb_minus_swapped_20261022",
+    "root_moc4_T47_IIIb_plus_swapped_20261022",
+    "root_moc4_T47_low_j_high_e_uniform_20261023",
+    "root_moc4_T47_low_j_low_e_uniform_20261023",
+    "root_moc4_T47_low_j_p_below_uniform_20261023",
+    "root_moc4_T47_negative_Phi_20261022",
+    "root_moc4_T47_whole_assembly_20261023",
+    "root_moc4_T47_zero_q_rational_capacity_20261023",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_1",
+    "T_29",
+    "T_36",
+    "T_39",
+    "T_42",
+    "T_7",
+    "S26[S46a0]"
+   ],
+   "missing": [
+    "root_moc4_T46_whole_assembly_20261023",
+    "final_referee_T46_a0_all_small_product_uniform_20261023",
+    "final_referee_T46_a0_balanced_leaf_uniform_20261023",
+    "final_referee_T46_core_coherent_capacity_20261023",
+    "final_referee_T46_negative_j_Heron_uniform_20261023",
+    "final_referee_T46_positive_a_large_product_20261023",
+    "final_referee_T46_positive_a_small_or_balanced_20261023",
+    "final_referee_T46_six_ray_coherent_capacity_20261023",
+    "final_referee_T46_two_Heron_necessity_20261023",
+    "final_referee_T46_a0_uniform_20261023",
+    "final_referee_T47_negative_p_Heron_20261023",
+    "independent_moc4_T47_IIIb_plus_large_pc_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
+    "independent_moc4_T47_I_II_uniform_20261022",
+    "independent_moc4_T47_PCBE_energy_20261022",
+    "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
+    "independent_moc4_T47_high_e_below_core_20261023",
+    "independent_moc4_T47_high_j_small_b_20261022",
+    "independent_moc4_T47_high_j_uniform_20261022",
+    "independent_moc4_T47_low_j_small_pc_20261023",
+    "independent_moc4_T47_merged_C_high_j_uniform_20261022",
+    "root_moc4_T47_negative_Phi_20261022",
+    "root_moc4_T47_whole_assembly_20261023",
+    "root_moc4_T47_zero_q_rational_capacity_20261023",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 48,
+   "contact_set": [
+    0,
+    2,
+    5,
+    9,
+    12,
+    13
+   ],
+   "group": "VI",
+   "stage": 8,
+   "primary": "root_true_inventory47_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_true_inventory47_native_uniform_20261023"
+   ],
+   "closure": [
+    "root_true_inventory47_native_uniform_20261023",
+    "final_referee_T46_six_ray_coherent_capacity_20261023",
+    "final_referee_T47_negative_p_Heron_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "independent_moc4_T47_IIIb_plus_large_pc_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
+    "independent_moc4_T47_I_II_uniform_20261022",
+    "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
+    "independent_moc4_T47_high_j_small_b_20261022",
+    "independent_moc4_T47_high_j_uniform_20261022",
+    "independent_moc4_T47_low_j_small_pc_20261023",
+    "independent_moc4_T47_merged_C_high_j_uniform_20261022",
+    "root_complete_negative_mass_20261022",
+    "root_moc4_T47_IIIa_minus_20261022",
+    "root_moc4_T47_IIIa_plus_20261022",
+    "root_moc4_T47_IIIb_minus_swapped_20261022",
+    "root_moc4_T47_IIIb_plus_swapped_20261022",
+    "root_moc4_T47_low_j_high_e_uniform_20261023",
+    "root_moc4_T47_low_j_low_e_uniform_20261023",
+    "root_moc4_T47_low_j_p_below_uniform_20261023",
+    "root_moc4_T47_negative_Phi_20261022",
+    "root_moc4_T47_whole_assembly_20261023",
+    "root_moc4_T47_zero_q_rational_capacity_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_25",
+    "T_36",
+    "T_37",
+    "T_4",
+    "T_46",
+    "T_12",
+    "T_47",
+    "T_49",
+    "T_16",
+    "T_70",
+    "T_71",
+    "T_69"
+   ],
+   "missing": [
+    "root_true_inventory47_native_uniform_20261023",
+    "final_referee_T46_six_ray_coherent_capacity_20261023",
+    "final_referee_T47_negative_p_Heron_20261023",
+    "independent_moc4_T47_IIIb_plus_large_pc_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
+    "independent_moc4_T47_I_II_uniform_20261022",
+    "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
+    "independent_moc4_T47_high_j_small_b_20261022",
+    "independent_moc4_T47_high_j_uniform_20261022",
+    "independent_moc4_T47_low_j_small_pc_20261023",
+    "independent_moc4_T47_merged_C_high_j_uniform_20261022",
+    "root_moc4_T47_negative_Phi_20261022",
+    "root_moc4_T47_whole_assembly_20261023",
+    "root_moc4_T47_zero_q_rational_capacity_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 49,
+   "contact_set": [
+    0,
+    3,
+    5,
+    6,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 4,
+   "primary": "root_true_T48_whole_assembly_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_true_T48_whole_assembly_20261023",
+    "blind_moc4_T48_allocation_III_low_j_uniform_20261023",
+    "blind_moc4_T48_allocation_II_uniform_20261023",
+    "blind_moc4_T48_allocation_IV_uniform_20261023",
+    "blind_moc4_T48_allocation_I_low_j_uniform_20261023",
+    "blind_moc4_T48_allocation_I_small_lambda_low_j_uniform_20261023",
+    "blind_moc4_T48_negative_Phi_uniform_20261023",
+    "independent_true_T48_native_harmonic_conditional_20261023"
+   ],
+   "closure": [
+    "root_true_T48_whole_assembly_20261023",
+    "blind_moc4_T48_allocation_III_low_j_uniform_20261023",
+    "blind_moc4_T48_allocation_II_uniform_20261023",
+    "blind_moc4_T48_allocation_IV_uniform_20261023",
+    "blind_moc4_T48_allocation_I_low_j_uniform_20261023",
+    "blind_moc4_T48_allocation_I_small_lambda_low_j_uniform_20261023",
+    "blind_moc4_T48_negative_Phi_uniform_20261023",
+    "independent_true_T48_native_harmonic_conditional_20261023",
+    "blind_moc4_T48_c0_all_j_chain_20261023",
+    "blind_moc4_T48_c0_native_interlacing_20261023",
+    "blind_moc4_T48_c0_upper_Heron_chain_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "independent_true_T48_c0_native_Heron_20261023",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_21",
+    "T_34",
+    "T_37",
+    "T_42",
+    "T_44",
+    "S23[S48c0]",
+    "T_12"
+   ],
+   "missing": [
+    "root_true_T48_whole_assembly_20261023",
+    "blind_moc4_T48_allocation_III_low_j_uniform_20261023",
+    "blind_moc4_T48_allocation_II_uniform_20261023",
+    "blind_moc4_T48_allocation_IV_uniform_20261023",
+    "blind_moc4_T48_allocation_I_low_j_uniform_20261023",
+    "blind_moc4_T48_allocation_I_small_lambda_low_j_uniform_20261023",
+    "blind_moc4_T48_negative_Phi_uniform_20261023",
+    "independent_true_T48_native_harmonic_conditional_20261023",
+    "blind_moc4_T48_c0_all_j_chain_20261023",
+    "blind_moc4_T48_c0_native_interlacing_20261023",
+    "blind_moc4_T48_c0_upper_Heron_chain_20261023",
+    "independent_true_T48_c0_native_Heron_20261023",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 50,
+   "contact_set": [
+    1,
+    3,
+    5,
+    6,
+    10,
+    11
+   ],
+   "group": "VI",
+   "stage": 8,
+   "primary": "blind_inventory49_whole_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_inventory49_whole_20261023",
+    "blind_inventory49_bounded_native_conditional_20261023"
+   ],
+   "closure": [
+    "blind_inventory49_whole_20261023",
+    "blind_inventory49_bounded_native_conditional_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreB_uniform_20261023",
+    "blind_shared_coreF_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "fresh_strong_principal_minors_20261022",
+    "independent_moc4_six_contact_reduction_20261022",
+    "independent_shared_coreG_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_seven_A_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S10[coreG]",
+    "S7[coreF]",
+    "S8[coreB]",
+    "S9[coreA]",
+    "T_43",
+    "T_10",
+    "T_66"
+   ],
+   "missing": [
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 51,
+   "contact_set": [
+    1,
+    3,
+    5,
+    10,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 7,
+   "primary": "root_inventory50_bounded_native_whole_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_inventory50_bounded_native_whole_20261023",
+    "root_inventory50_bounded_native_conditional_20261023"
+   ],
+   "closure": [
+    "root_inventory50_bounded_native_whole_20261023",
+    "root_inventory50_bounded_native_conditional_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreB_uniform_20261023",
+    "blind_moc4_coreC_uniform_20261023",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S11[coreC]",
+    "S12[coreD]",
+    "S8[coreB]",
+    "T_65",
+    "T_76"
+   ],
+   "missing": [
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 52,
+   "contact_set": [
+    1,
+    3,
+    5,
+    10,
+    11,
+    14
+   ],
+   "group": "VI",
+   "stage": 6,
+   "primary": "root_inventory51_bounded_native_whole_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_inventory51_bounded_native_whole_20261023",
+    "root_inventory51_bounded_native_conditional_20261023"
+   ],
+   "closure": [
+    "root_inventory51_bounded_native_whole_20261023",
+    "root_inventory51_bounded_native_conditional_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreC_uniform_20261023",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "independent_shared_coreG_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreH_uniform_20261023",
+    "root_shared_seven_A_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S10[coreG]",
+    "S11[coreC]",
+    "S9[coreA]",
+    "T_39",
+    "T_46",
+    "T_24"
+   ],
+   "missing": [
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 53,
+   "contact_set": [
+    0,
+    1,
+    4,
+    6,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 8,
+   "primary": "blind_moc4_inventory52_whole_assembly_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_moc4_inventory52_whole_assembly_20261023",
+    "blind_moc4_inventory52_native_harmonic_conditional_20261023"
+   ],
+   "closure": [
+    "blind_moc4_inventory52_whole_assembly_20261023",
+    "blind_moc4_inventory52_native_harmonic_conditional_20261023",
+    "blind_moc4_inventory52_plus17_fourth_products_20261023",
+    "blind_moc4_inventory52_plus17_low_products_20261023",
+    "blind_moc4_inventory52_plus17_middle_products_20261023",
+    "blind_moc4_inventory52_plus17_third_products_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022"
+   ],
+   "prerequisites": [
+    "S19[S52]"
+   ],
+   "missing": [
+    "blind_moc4_inventory52_whole_assembly_20261023",
+    "blind_moc4_inventory52_native_harmonic_conditional_20261023",
+    "blind_moc4_inventory52_plus17_fourth_products_20261023",
+    "blind_moc4_inventory52_plus17_low_products_20261023",
+    "blind_moc4_inventory52_plus17_middle_products_20261023",
+    "blind_moc4_inventory52_plus17_third_products_20261023"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 54,
+   "contact_set": [
+    2,
+    3,
+    5,
+    6,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "root_inventory53_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_inventory53_native_uniform_20261023"
+   ],
+   "closure": [
+    "root_inventory53_native_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_18",
+    "T_2",
+    "T_28",
+    "T_35",
+    "T_42",
+    "T_11",
+    "T_47",
+    "T_52",
+    "T_51",
+    "T_50",
+    "T_53"
+   ],
+   "missing": [
+    "root_inventory53_native_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 55,
+   "contact_set": [
+    1,
+    2,
+    3,
+    6,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "independent_inventory54_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_inventory54_native_uniform_20261023"
+   ],
+   "closure": [
+    "independent_inventory54_native_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreC_uniform_20261023",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "independent_shared_coreG_uniform_20261023",
+    "independent_shared_coreM_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_inventory51_bounded_native_conditional_20261023",
+    "root_inventory51_bounded_native_whole_20261023",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreH_uniform_20261023",
+    "root_shared_coreL_uniform_20261023",
+    "root_shared_seven_A_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S13[coreM]",
+    "S14[coreL]",
+    "T_9",
+    "T_38",
+    "T_45",
+    "T_50",
+    "T_73"
+   ],
+   "missing": [
+    "independent_inventory54_native_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 56,
+   "contact_set": [
+    3,
+    4,
+    5,
+    8,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 10,
+   "primary": "independent_inventory55_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_inventory55_native_uniform_20261023"
+   ],
+   "closure": [
+    "independent_inventory55_native_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_19",
+    "T_37",
+    "T_43",
+    "T_44",
+    "T_6",
+    "T_50",
+    "T_41",
+    "T_55"
+   ],
+   "missing": [
+    "independent_inventory55_native_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 57,
+   "contact_set": [
+    0,
+    1,
+    5,
+    7,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 6,
+   "primary": "final_referee_inventory56_57_whole_assembly_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory56_57_whole_assembly_20261023",
+    "final_referee_inventory56_native_harmonic_20261023",
+    "final_referee_inventory56_rank_two_capacity_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory56_57_whole_assembly_20261023",
+    "final_referee_inventory56_native_harmonic_20261023",
+    "final_referee_inventory56_rank_two_capacity_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_inventory56_boundary17_large_product_20261023",
+    "final_referee_inventory56_boundary17_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_inventory57_native_conditional_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_31",
+    "T_39",
+    "T_43",
+    "T_44",
+    "T_26",
+    "T_17",
+    "S20[S56]"
+   ],
+   "missing": [
+    "final_referee_inventory56_57_whole_assembly_20261023",
+    "final_referee_inventory56_native_harmonic_20261023",
+    "final_referee_inventory56_rank_two_capacity_20261023",
+    "final_referee_inventory56_boundary17_large_product_20261023",
+    "final_referee_inventory56_boundary17_uniform_20261023",
+    "root_inventory57_native_conditional_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 58,
+   "contact_set": [
+    0,
+    3,
+    5,
+    7,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 6,
+   "primary": "final_referee_inventory56_57_whole_assembly_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory56_57_whole_assembly_20261023",
+    "root_inventory57_native_conditional_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory56_57_whole_assembly_20261023",
+    "root_inventory57_native_conditional_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_inventory56_boundary17_large_product_20261023",
+    "final_referee_inventory56_boundary17_uniform_20261023",
+    "final_referee_inventory56_native_harmonic_20261023",
+    "final_referee_inventory56_rank_two_capacity_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_19",
+    "T_29",
+    "T_34",
+    "T_43",
+    "T_5",
+    "S20[S56]"
+   ],
+   "missing": [
+    "final_referee_inventory56_57_whole_assembly_20261023",
+    "root_inventory57_native_conditional_20261023",
+    "final_referee_inventory56_boundary17_large_product_20261023",
+    "final_referee_inventory56_boundary17_uniform_20261023",
+    "final_referee_inventory56_native_harmonic_20261023",
+    "final_referee_inventory56_rank_two_capacity_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 59,
+   "contact_set": [
+    3,
+    4,
+    5,
+    6,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 8,
+   "primary": "independent_inventory58_native_harmonic_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_inventory58_native_harmonic_uniform_20261023"
+   ],
+   "closure": [
+    "independent_inventory58_native_harmonic_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_28",
+    "T_34",
+    "T_36",
+    "T_47",
+    "T_49",
+    "T_57",
+    "T_69"
+   ],
+   "missing": [
+    "independent_inventory58_native_harmonic_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 60,
+   "contact_set": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "blind_moc4_inventory59_native_harmonic_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_moc4_inventory59_native_harmonic_uniform_20261023"
+   ],
+   "closure": [
+    "blind_moc4_inventory59_native_harmonic_uniform_20261023",
+    "blind_moc4_inventory52_native_harmonic_conditional_20261023",
+    "blind_moc4_inventory52_plus17_fourth_products_20261023",
+    "blind_moc4_inventory52_plus17_low_products_20261023",
+    "blind_moc4_inventory52_plus17_middle_products_20261023",
+    "blind_moc4_inventory52_plus17_third_products_20261023",
+    "blind_moc4_inventory52_whole_assembly_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022"
+   ],
+   "prerequisites": [
+    "T_20",
+    "T_23",
+    "T_36",
+    "T_4",
+    "T_47",
+    "T_53"
+   ],
+   "missing": [
+    "blind_moc4_inventory59_native_harmonic_uniform_20261023",
+    "blind_moc4_inventory52_native_harmonic_conditional_20261023",
+    "blind_moc4_inventory52_plus17_fourth_products_20261023",
+    "blind_moc4_inventory52_plus17_low_products_20261023",
+    "blind_moc4_inventory52_plus17_middle_products_20261023",
+    "blind_moc4_inventory52_plus17_third_products_20261023",
+    "blind_moc4_inventory52_whole_assembly_20261023"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 61,
+   "contact_set": [
+    1,
+    2,
+    3,
+    9,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "root_inventory60_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_inventory60_native_uniform_20261023"
+   ],
+   "closure": [
+    "root_inventory60_native_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreO_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S15[coreO]",
+    "T_15",
+    "T_8",
+    "T_50",
+    "T_62"
+   ],
+   "missing": [
+    "root_inventory60_native_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 62,
+   "contact_set": [
+    3,
+    5,
+    7,
+    8,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 8,
+   "primary": "final_referee_inventory61_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory61_native_uniform_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory61_native_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_complete_negative_mass_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_26",
+    "T_8",
+    "T_52",
+    "T_51",
+    "T_75"
+   ],
+   "missing": [
+    "final_referee_inventory61_native_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 63,
+   "contact_set": [
+    1,
+    2,
+    3,
+    10,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "independent_inventory62_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_inventory62_native_uniform_20261023"
+   ],
+   "closure": [
+    "independent_inventory62_native_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreC_uniform_20261023",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "independent_shared_coreG_uniform_20261023",
+    "independent_shared_coreM_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_inventory51_bounded_native_conditional_20261023",
+    "root_inventory51_bounded_native_whole_20261023",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreH_uniform_20261023",
+    "root_shared_coreL_uniform_20261023",
+    "root_shared_seven_A_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S13[coreM]",
+    "S14[coreL]",
+    "T_38",
+    "T_71",
+    "T_51",
+    "T_81",
+    "T_73"
+   ],
+   "missing": [
+    "independent_inventory62_native_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 64,
+   "contact_set": [
+    0,
+    3,
+    5,
+    9,
+    14,
+    18
+   ],
+   "group": "VI",
+   "stage": 10,
+   "primary": "independent_inventory63_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_inventory63_native_uniform_20261023"
+   ],
+   "closure": [
+    "independent_inventory63_native_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreO_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S15[coreO]",
+    "T_36",
+    "T_14",
+    "T_54",
+    "T_55"
+   ],
+   "missing": [
+    "independent_inventory63_native_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 65,
+   "contact_set": [
+    0,
+    4,
+    5,
+    6,
+    9,
+    12
+   ],
+   "group": "V",
+   "stage": 6,
+   "primary": "root_moc4_T47_whole_assembly_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T47_whole_assembly_20261023",
+    "final_referee_T47_negative_p_Heron_20261023",
+    "independent_moc4_T47_IIIb_plus_large_pc_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
+    "independent_moc4_T47_I_II_uniform_20261022",
+    "independent_moc4_T47_PCBE_energy_20261022",
+    "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
+    "independent_moc4_T47_high_e_below_core_20261023",
+    "independent_moc4_T47_high_j_small_b_20261022",
+    "independent_moc4_T47_high_j_uniform_20261022",
+    "independent_moc4_T47_low_j_small_pc_20261023",
+    "independent_moc4_T47_merged_C_high_j_uniform_20261022",
+    "root_moc4_T47_IIIa_minus_20261022",
+    "root_moc4_T47_IIIa_plus_20261022",
+    "root_moc4_T47_IIIb_minus_swapped_20261022",
+    "root_moc4_T47_IIIb_plus_swapped_20261022",
+    "root_moc4_T47_low_j_high_e_uniform_20261023",
+    "root_moc4_T47_low_j_low_e_uniform_20261023",
+    "root_moc4_T47_low_j_p_below_uniform_20261023",
+    "root_moc4_T47_negative_Phi_20261022",
+    "root_moc4_T47_zero_q_rational_capacity_20261023"
+   ],
+   "closure": [
+    "root_moc4_T47_whole_assembly_20261023",
+    "final_referee_T47_negative_p_Heron_20261023",
+    "independent_moc4_T47_IIIb_plus_large_pc_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
+    "independent_moc4_T47_I_II_uniform_20261022",
+    "independent_moc4_T47_PCBE_energy_20261022",
+    "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
+    "independent_moc4_T47_high_e_below_core_20261023",
+    "independent_moc4_T47_high_j_small_b_20261022",
+    "independent_moc4_T47_high_j_uniform_20261022",
+    "independent_moc4_T47_low_j_small_pc_20261023",
+    "independent_moc4_T47_merged_C_high_j_uniform_20261022",
+    "root_moc4_T47_IIIa_minus_20261022",
+    "root_moc4_T47_IIIa_plus_20261022",
+    "root_moc4_T47_IIIb_minus_swapped_20261022",
+    "root_moc4_T47_IIIb_plus_swapped_20261022",
+    "root_moc4_T47_low_j_high_e_uniform_20261023",
+    "root_moc4_T47_low_j_low_e_uniform_20261023",
+    "root_moc4_T47_low_j_p_below_uniform_20261023",
+    "root_moc4_T47_negative_Phi_20261022",
+    "root_moc4_T47_zero_q_rational_capacity_20261023",
+    "final_referee_T46_six_ray_coherent_capacity_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_complete_negative_mass_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_4",
+    "T_42",
+    "T_44",
+    "T_8",
+    "T_38"
+   ],
+   "missing": [
+    "root_moc4_T47_whole_assembly_20261023",
+    "final_referee_T47_negative_p_Heron_20261023",
+    "independent_moc4_T47_IIIb_plus_large_pc_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
+    "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
+    "independent_moc4_T47_I_II_uniform_20261022",
+    "independent_moc4_T47_PCBE_energy_20261022",
+    "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
+    "independent_moc4_T47_high_e_below_core_20261023",
+    "independent_moc4_T47_high_j_small_b_20261022",
+    "independent_moc4_T47_high_j_uniform_20261022",
+    "independent_moc4_T47_low_j_small_pc_20261023",
+    "independent_moc4_T47_merged_C_high_j_uniform_20261022",
+    "root_moc4_T47_negative_Phi_20261022",
+    "root_moc4_T47_zero_q_rational_capacity_20261023",
+    "final_referee_T46_six_ray_coherent_capacity_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 66,
+   "contact_set": [
+    2,
+    4,
+    5,
+    6,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 7,
+   "primary": "root_moc4_T65_native_harmonic_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_moc4_T65_native_harmonic_uniform_20261023"
+   ],
+   "closure": [
+    "root_moc4_T65_native_harmonic_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_25",
+    "T_28",
+    "T_46",
+    "T_16",
+    "T_65"
+   ],
+   "missing": [
+    "root_moc4_T65_native_harmonic_uniform_20261023",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 67,
+   "contact_set": [
+    2,
+    4,
+    5,
+    7,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 8,
+   "primary": "root_inventory66_native_whole_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_inventory66_native_whole_20261023"
+   ],
+   "closure": [
+    "root_inventory66_native_whole_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "independent_inventory67_native_harmonic_conditional_20261023",
+    "root_inventory67_g14_uniform_20261023",
+    "root_inventory67_whole_assembly_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_35",
+    "T_36",
+    "T_39",
+    "T_26",
+    "T_47",
+    "T_75"
+   ],
+   "missing": [
+    "root_inventory66_native_whole_20261023",
+    "independent_inventory67_native_harmonic_conditional_20261023",
+    "root_inventory67_g14_uniform_20261023",
+    "root_inventory67_whole_assembly_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 68,
+   "contact_set": [
+    1,
+    4,
+    5,
+    7,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 6,
+   "primary": "root_inventory67_whole_assembly_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_inventory67_whole_assembly_20261023",
+    "independent_inventory67_native_harmonic_conditional_20261023"
+   ],
+   "closure": [
+    "root_inventory67_whole_assembly_20261023",
+    "independent_inventory67_native_harmonic_conditional_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_inventory67_g14_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_29",
+    "T_35",
+    "T_42",
+    "T_26",
+    "T_17",
+    "S27[S67]",
+    "T_38"
+   ],
+   "missing": [
+    "root_inventory67_whole_assembly_20261023",
+    "independent_inventory67_native_harmonic_conditional_20261023",
+    "root_inventory67_g14_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 69,
+   "contact_set": [
+    0,
+    2,
+    5,
+    7,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 7,
+   "primary": "final_referee_inventory68_native_harmonic_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory68_native_harmonic_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory68_native_harmonic_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_44",
+    "T_46",
+    "T_12",
+    "T_16",
+    "T_38",
+    "T_65"
+   ],
+   "missing": [
+    "final_referee_inventory68_native_harmonic_20261023",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 70,
+   "contact_set": [
+    1,
+    3,
+    4,
+    8,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 5,
+   "primary": "final_referee_inventory69_native_harmonic_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory69_native_harmonic_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory69_native_harmonic_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_29",
+    "T_4",
+    "T_42",
+    "T_44",
+    "T_13"
+   ],
+   "missing": [
+    "final_referee_inventory69_native_harmonic_20261023",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 71,
+   "contact_set": [
+    1,
+    3,
+    4,
+    10,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 6,
+   "primary": "independent_inventory70_native_harmonic_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_inventory70_native_harmonic_uniform_20261023"
+   ],
+   "closure": [
+    "independent_inventory70_native_harmonic_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_inventory67_g14_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_29",
+    "T_31",
+    "T_37",
+    "T_40",
+    "T_42",
+    "T_5",
+    "S27[S67]"
+   ],
+   "missing": [
+    "independent_inventory70_native_harmonic_uniform_20261023",
+    "root_inventory67_g14_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 72,
+   "contact_set": [
+    1,
+    3,
+    4,
+    7,
+    8,
+    12
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "final_referee_inventory71_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory71_uniform_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory71_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreC_uniform_20261023",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "independent_shared_coreG_uniform_20261023",
+    "independent_shared_coreM_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_inventory51_bounded_native_conditional_20261023",
+    "root_inventory51_bounded_native_whole_20261023",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreH_uniform_20261023",
+    "root_shared_seven_A_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [],
+   "missing": [
+    "final_referee_inventory71_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 73,
+   "contact_set": [
+    0,
+    4,
+    5,
+    7,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 8,
+   "primary": "root_inventory72_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_inventory72_native_uniform_20261023"
+   ],
+   "closure": [
+    "root_inventory72_native_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreC_uniform_20261023",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "independent_shared_coreG_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_inventory51_bounded_native_conditional_20261023",
+    "root_inventory51_bounded_native_whole_20261023",
+    "root_inventory80_native_uniform_20261023",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreH_uniform_20261023",
+    "root_shared_seven_A_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S17[coreE]",
+    "T_37",
+    "T_17",
+    "T_52",
+    "T_51",
+    "T_69"
+   ],
+   "missing": [
+    "root_inventory72_native_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_inventory80_native_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 74,
+   "contact_set": [
+    3,
+    4,
+    5,
+    7,
+    8,
+    12
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "final_referee_inventory73_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory73_native_uniform_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory73_native_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_coreK_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_complete_negative_mass_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S16[coreK]",
+    "T_25",
+    "T_27",
+    "T_62",
+    "T_73"
+   ],
+   "missing": [
+    "final_referee_inventory73_native_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 75,
+   "contact_set": [
+    3,
+    5,
+    7,
+    8,
+    10,
+    12
+   ],
+   "group": "VI",
+   "stage": 7,
+   "primary": "independent_inventory74_native_harmonic_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_inventory74_native_harmonic_uniform_20261023"
+   ],
+   "closure": [
+    "independent_inventory74_native_harmonic_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_25",
+    "T_28",
+    "T_26",
+    "T_17",
+    "T_65"
+   ],
+   "missing": [
+    "independent_inventory74_native_harmonic_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 76,
+   "contact_set": [
+    0,
+    1,
+    3,
+    10,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 6,
+   "primary": "final_referee_inventory75_whole_assembly_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory75_whole_assembly_20261023",
+    "independent_inventory75_native_harmonic_conditional_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory75_whole_assembly_20261023",
+    "independent_inventory75_native_harmonic_conditional_20261023",
+    "final_referee_inventory75_boundary16_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_inventory67_g14_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_31",
+    "T_40",
+    "T_44",
+    "T_46",
+    "T_11",
+    "S18[S75]",
+    "S27[S67]"
+   ],
+   "missing": [
+    "final_referee_inventory75_whole_assembly_20261023",
+    "independent_inventory75_native_harmonic_conditional_20261023",
+    "final_referee_inventory75_boundary16_uniform_20261023",
+    "root_inventory67_g14_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 77,
+   "contact_set": [
+    0,
+    1,
+    3,
+    10,
+    11,
+    16
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "root_inventory76_bounded_masks_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_inventory76_bounded_masks_uniform_20261023"
+   ],
+   "closure": [
+    "root_inventory76_bounded_masks_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_complete_negative_mass_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_36",
+    "T_11",
+    "T_47",
+    "T_70",
+    "T_76",
+    "T_78",
+    "T_59",
+    "T_67"
+   ],
+   "missing": [
+    "root_inventory76_bounded_masks_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 78,
+   "contact_set": [
+    1,
+    4,
+    5,
+    6,
+    9,
+    12
+   ],
+   "group": "VI",
+   "stage": 6,
+   "primary": "independent_inventory77_native_harmonic_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "independent_inventory77_native_harmonic_uniform_20261023"
+   ],
+   "closure": [
+    "independent_inventory77_native_harmonic_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_inventory56_boundary17_large_product_20261023",
+    "final_referee_inventory56_boundary17_uniform_20261023",
+    "final_referee_inventory56_rank_two_capacity_20261023",
+    "final_referee_inventory75_boundary16_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_29",
+    "T_34",
+    "T_36",
+    "T_11",
+    "S18[S75]",
+    "S20[S56]"
+   ],
+   "missing": [
+    "independent_inventory77_native_harmonic_uniform_20261023",
+    "final_referee_inventory56_boundary17_large_product_20261023",
+    "final_referee_inventory56_boundary17_uniform_20261023",
+    "final_referee_inventory56_rank_two_capacity_20261023",
+    "final_referee_inventory75_boundary16_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 79,
+   "contact_set": [
+    1,
+    3,
+    4,
+    8,
+    11,
+    12
+   ],
+   "group": "VI",
+   "stage": 8,
+   "primary": "final_referee_inventory78_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory78_native_uniform_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory78_native_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory78_boundary15_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_40",
+    "T_13",
+    "T_70",
+    "T_58",
+    "T_71",
+    "T_78",
+    "S25[S78]"
+   ],
+   "missing": [
+    "final_referee_inventory78_native_uniform_20261023",
+    "final_referee_inventory78_boundary15_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 80,
+   "contact_set": [
+    1,
+    3,
+    4,
+    6,
+    8,
+    12
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "final_referee_inventory79_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory79_native_uniform_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory79_native_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreC_uniform_20261023",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "independent_shared_coreG_uniform_20261023",
+    "independent_shared_coreM_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_inventory51_bounded_native_conditional_20261023",
+    "root_inventory51_bounded_native_whole_20261023",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreH_uniform_20261023",
+    "root_shared_seven_A_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S13[coreM]",
+    "T_44",
+    "T_5",
+    "T_69",
+    "T_50",
+    "T_73"
+   ],
+   "missing": [
+    "final_referee_inventory79_native_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 81,
+   "contact_set": [
+    1,
+    2,
+    10,
+    11,
+    12,
+    13
+   ],
+   "group": "VI",
+   "stage": 7,
+   "primary": "root_inventory80_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_inventory80_native_uniform_20261023"
+   ],
+   "closure": [
+    "root_inventory80_native_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreC_uniform_20261023",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "independent_shared_coreG_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_inventory51_bounded_native_conditional_20261023",
+    "root_inventory51_bounded_native_whole_20261023",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreH_uniform_20261023",
+    "root_shared_seven_A_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S21[coreH]",
+    "T_34",
+    "T_37",
+    "T_46",
+    "T_76"
+   ],
+   "missing": [
+    "root_inventory80_native_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 82,
+   "contact_set": [
+    2,
+    5,
+    9,
+    10,
+    12,
+    13
+   ],
+   "group": "VI",
+   "stage": 10,
+   "primary": "final_referee_inventory81_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory81_native_uniform_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory81_native_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022"
+   ],
+   "prerequisites": [
+    "T_31",
+    "T_34",
+    "T_79",
+    "T_60"
+   ],
+   "missing": [
+    "final_referee_inventory81_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 83,
+   "contact_set": [
+    3,
+    5,
+    6,
+    9,
+    14,
+    18
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "final_referee_inventory82_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory82_native_uniform_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory82_native_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreC_uniform_20261023",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "independent_shared_coreG_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_inventory51_bounded_native_conditional_20261023",
+    "root_inventory51_bounded_native_whole_20261023",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreH_uniform_20261023",
+    "root_shared_seven_A_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S21[coreH]",
+    "T_40",
+    "T_76",
+    "T_45",
+    "T_79"
+   ],
+   "missing": [
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 84,
+   "contact_set": [
+    2,
+    5,
+    9,
+    11,
+    12,
+    13
+   ],
+   "group": "VI",
+   "stage": 9,
+   "primary": "final_referee_inventory83_native_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory83_native_uniform_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_complete_negative_mass_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_23",
+    "T_25",
+    "T_28",
+    "T_49",
+    "T_59"
+   ],
+   "missing": [
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 85,
+   "contact_set": [
+    0,
+    5,
+    7,
+    9,
+    14,
+    18
+   ],
+   "group": "VI",
+   "stage": 10,
+   "primary": "blind_inventory84_rank_drop_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_inventory84_rank_drop_uniform_20261023"
+   ],
+   "closure": [
+    "blind_inventory84_rank_drop_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreC_uniform_20261023",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_moc4_six_contact_reduction_20261022",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "independent_inventory54_native_uniform_20261023",
+    "independent_moc4_T39_high_j_uniform_20261022",
+    "independent_moc4_T39_high_p_uniform_20261022",
+    "independent_moc4_T39_low_pj_uniform_20261022",
+    "independent_moc4_T39_uniform_20261022",
+    "independent_shared_coreG_uniform_20261023",
+    "independent_shared_coreM_uniform_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_inventory51_bounded_native_conditional_20261023",
+    "root_inventory51_bounded_native_whole_20261023",
+    "root_inventory80_native_uniform_20261023",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreH_uniform_20261023",
+    "root_shared_coreL_uniform_20261023",
+    "root_shared_seven_A_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_40",
+    "T_81",
+    "T_55"
+   ],
+   "missing": [
+    "fresh_strong_principal_minors_20261022",
+    "independent_inventory54_native_uniform_20261023",
+    "root_inventory80_native_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [
+    "independent_moc4_T39_high_j_uniform_20261022",
+    "independent_moc4_T39_high_p_uniform_20261022",
+    "independent_moc4_T39_low_pj_uniform_20261022"
+   ],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 86,
+   "contact_set": [
+    4,
+    5,
+    8,
+    9,
+    12,
+    13
+   ],
+   "group": "VI",
+   "stage": 8,
+   "primary": "root_inventory85_native_uniform_corrected_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "root_inventory85_native_uniform_corrected_20261023",
+    "final_referee_inventory85_native_uniform_20261023"
+   ],
+   "closure": [
+    "root_inventory85_native_uniform_corrected_20261023",
+    "final_referee_inventory85_native_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_37",
+    "T_57",
+    "T_58",
+    "T_76",
+    "T_75"
+   ],
+   "missing": [
+    "root_inventory85_native_uniform_corrected_20261023",
+    "final_referee_inventory85_native_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 87,
+   "contact_set": [
+    4,
+    5,
+    7,
+    9,
+    12,
+    14
+   ],
+   "group": "VI",
+   "stage": 10,
+   "primary": "blind_inventory86_matching_section_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_inventory86_matching_section_uniform_20261023"
+   ],
+   "closure": [
+    "blind_inventory86_matching_section_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "blind_moc4_coreB_uniform_20261023",
+    "blind_moc4_coreC_uniform_20261023",
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023",
+    "final_referee_T5_four_budget_capacity_20261022",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory29_native_uniform_20261023",
+    "final_referee_inventory83_native_uniform_20261023",
+    "final_referee_moc4_six_contact_reduction_20261022",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023",
+    "independent_inventory67_native_harmonic_conditional_20261023",
+    "root_complete_negative_mass_20261022",
+    "root_inventory50_bounded_native_conditional_20261023",
+    "root_inventory50_bounded_native_whole_20261023",
+    "root_inventory60_native_uniform_20261023",
+    "root_inventory67_g14_uniform_20261023",
+    "root_inventory67_whole_assembly_20261023",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "root_shared_coreO_uniform_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "T_68",
+    "T_51",
+    "T_61"
+   ],
+   "missing": [
+    "blind_inventory86_matching_section_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "independent_inventory67_native_harmonic_conditional_20261023",
+    "root_inventory60_native_uniform_20261023",
+    "root_inventory67_g14_uniform_20261023",
+    "root_inventory67_whole_assembly_20261023",
+    "root_true_inventory47_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 88,
+   "contact_set": [
+    1,
+    5,
+    6,
+    10,
+    13,
+    14
+   ],
+   "group": "V",
+   "stage": 1,
+   "primary": "final_referee_inventory87_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "final_referee_inventory87_uniform_20261023"
+   ],
+   "closure": [
+    "final_referee_inventory87_uniform_20261023",
+    "__workspace____alternate_onecircle_20261022_elementary",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_shared_coreK_uniform_20261023",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "final_referee_single_collision_divisor_compensation_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_complete_negative_mass_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [],
+   "missing": [
+    "final_referee_inventory87_uniform_20261023",
+    "fresh_strong_principal_minors_20261022",
+    "root_true_inventory47_native_uniform_20261023",
+    "root_unitary_two_orthogonals_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 89,
+   "contact_set": [
+    2,
+    5,
+    9,
+    10,
+    13,
+    14
+   ],
+   "group": "VI",
+   "stage": 12,
+   "primary": "blind_inventory88_matching_curve_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_inventory88_matching_curve_uniform_20261023"
+   ],
+   "closure": [
+    "blind_inventory88_matching_curve_uniform_20261023",
+    "blind_inventory31_native_whole_20261023",
+    "blind_shared_coreJ_uniform_20261023",
+    "blind_shared_coreN_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_inventory78_boundary15_uniform_20261023",
+    "final_referee_inventory78_native_uniform_20261023",
+    "final_referee_moc4_six_contact_reduction_20261022",
+    "final_referee_shared_zero_birkhoff_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S24[coreN]",
+    "T_79",
+    "T_32"
+   ],
+   "missing": [
+    "blind_inventory88_matching_curve_uniform_20261023",
+    "final_referee_inventory78_boundary15_uniform_20261023",
+    "final_referee_inventory78_native_uniform_20261023",
+    "moc_one_circle_20261022__one_circle",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "moc_principal_minors_20261022__principal_minors",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "case": 90,
+   "contact_set": [
+    1,
+    5,
+    6,
+    9,
+    14,
+    18
+   ],
+   "group": "VI",
+   "stage": 2,
+   "primary": "blind_inventory89_matching_curve_uniform_20261023",
+   "primary_page": 1,
+   "own_documents": [
+    "blind_inventory89_matching_curve_uniform_20261023"
+   ],
+   "closure": [
+    "blind_inventory89_matching_curve_uniform_20261023",
+    "blind_shared_coreN_uniform_20261023",
+    "final_referee_bounded_bad_harmonic_lemma_20261023",
+    "final_referee_moc4_six_contact_reduction_20261022",
+    "independent_moc4_T39_high_j_uniform_20261022",
+    "independent_moc4_T39_high_p_uniform_20261022",
+    "independent_moc4_T39_low_pj_uniform_20261022",
+    "independent_moc4_T39_uniform_20261022",
+    "root_moc4_global_real_Hessian_inertia_20261022",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "prerequisites": [
+    "S24[coreN]",
+    "T_40"
+   ],
+   "missing": [
+    "blind_inventory89_matching_curve_uniform_20261023",
+    "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+    "principal_minor_result_20261022__principal_minors"
+   ],
+   "flagged": [],
+   "incomplete": [],
+   "settled_or_replayed": [
+    "independent_moc4_T39_high_j_uniform_20261022",
+    "independent_moc4_T39_high_p_uniform_20261022",
+    "independent_moc4_T39_low_pj_uniform_20261022"
+   ],
+   "status": "awaiting first pass"
+  }
+ ],
+ "auxiliary": [
+  {
+   "node": "S1[S_0,1,2,3,6,15,17]",
+   "contacts": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    15,
+    17
+   ],
+   "stage": 1,
+   "documents": [
+    "root_moc4_T7_boundary16_20261022"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S10[coreG]",
+   "contacts": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    23
+   ],
+   "stage": 1,
+   "documents": [
+    "independent_shared_coreG_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S11[coreC]",
+   "contacts": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    16,
+    17
+   ],
+   "stage": 1,
+   "documents": [
+    "blind_moc4_coreC_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S12[coreD]",
+   "contacts": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    16,
+    23
+   ],
+   "stage": 1,
+   "documents": [
+    "blind_moc4_coreD_low_pair_20261023",
+    "blind_moc4_coreD_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S13[coreM]",
+   "contacts": [
+    0,
+    1,
+    2,
+    7,
+    10,
+    16,
+    17
+   ],
+   "stage": 1,
+   "documents": [
+    "independent_shared_coreM_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S14[coreL]",
+   "contacts": [
+    0,
+    1,
+    2,
+    7,
+    10,
+    16,
+    23
+   ],
+   "stage": 1,
+   "documents": [
+    "root_shared_coreL_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S15[coreO]",
+   "contacts": [
+    0,
+    1,
+    2,
+    7,
+    14,
+    16,
+    23
+   ],
+   "stage": 1,
+   "documents": [
+    "root_shared_coreO_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S16[coreK]",
+   "contacts": [
+    0,
+    1,
+    2,
+    9,
+    10,
+    14,
+    17
+   ],
+   "stage": 1,
+   "documents": [
+    "final_referee_shared_coreK_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S17[coreE]",
+   "contacts": [
+    0,
+    1,
+    2,
+    9,
+    10,
+    16,
+    17
+   ],
+   "stage": 1,
+   "documents": [
+    "independent_coreE_four_chain_capacity_20261023",
+    "independent_coreE_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S2[S_0,1,2,3,6,15,22]",
+   "contacts": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    15,
+    22
+   ],
+   "stage": 1,
+   "documents": [
+    "root_moc4_T7_boundary23_20261022"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S21[coreH]",
+   "contacts": [
+    0,
+    1,
+    6,
+    9,
+    16,
+    17,
+    22
+   ],
+   "stage": 1,
+   "documents": [
+    "root_shared_coreH_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S22[coreJ]",
+   "contacts": [
+    0,
+    2,
+    3,
+    7,
+    11,
+    12,
+    23
+   ],
+   "stage": 1,
+   "documents": [
+    "blind_shared_coreJ_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S24[coreN]",
+   "contacts": [
+    0,
+    3,
+    7,
+    11,
+    12,
+    16,
+    20
+   ],
+   "stage": 1,
+   "documents": [
+    "blind_shared_coreN_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S5[S_0,1,2,6,9,11,20]",
+   "contacts": [
+    0,
+    1,
+    2,
+    6,
+    9,
+    11,
+    20
+   ],
+   "stage": 1,
+   "documents": [
+    "independent_moc4_T23_g17_uniform_20261022"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S7[coreF]",
+   "contacts": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    14
+   ],
+   "stage": 1,
+   "documents": [
+    "blind_shared_coreF_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S8[coreB]",
+   "contacts": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    16
+   ],
+   "stage": 1,
+   "documents": [
+    "blind_moc4_coreB_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S9[coreA]",
+   "contacts": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    10,
+    17
+   ],
+   "stage": 1,
+   "documents": [
+    "root_shared_seven_A_uniform_20261023"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "T_10^(1)",
+   "contacts": null,
+   "stage": 1,
+   "documents": [
+    "final_referee_T9_first_branch_20261022"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "T_10^(2)",
+   "contacts": null,
+   "stage": 1,
+   "documents": [
+    "final_referee_T9_second_branch_20261022"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S23[S48c0]",
+   "contacts": [
+    0,
+    3,
+    5,
+    6,
+    9,
+    12,
+    17
+   ],
+   "stage": 2,
+   "documents": [
+    "blind_moc4_T48_c0_all_j_chain_20261023",
+    "blind_moc4_T48_c0_native_interlacing_20261023",
+    "blind_moc4_T48_c0_upper_Heron_chain_20261023",
+    "independent_true_T48_c0_native_Heron_20261023"
+   ],
+   "missing": [
+    "blind_moc4_T48_c0_all_j_chain_20261023",
+    "blind_moc4_T48_c0_native_interlacing_20261023",
+    "blind_moc4_T48_c0_upper_Heron_chain_20261023",
+    "independent_true_T48_c0_native_Heron_20261023"
+   ],
+   "open": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "node": "S26[S46a0]",
+   "contacts": [
+    1,
+    3,
+    5,
+    6,
+    7,
+    8,
+    14
+   ],
+   "stage": 2,
+   "documents": [
+    "final_referee_T46_a0_uniform_20261023"
+   ],
+   "missing": [
+    "final_referee_T46_a0_uniform_20261023"
+   ],
+   "open": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "node": "S3[S_0,1,2,3,6,17,19]",
+   "contacts": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    17,
+    19
+   ],
+   "stage": 2,
+   "documents": [
+    "independent_moc4_T8_polar_reduction_20261022",
+    "independent_moc4_T8_uniform_20261022"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S4[S_0,1,2,3,6,17,22]",
+   "contacts": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    17,
+    22
+   ],
+   "stage": 2,
+   "documents": [
+    "independent_moc4_T8_polar_reduction_20261022",
+    "independent_moc4_T8_uniform_20261022"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "T_11^(1)",
+   "contacts": null,
+   "stage": 2,
+   "documents": [
+    "final_referee_T10_A_branch_20261022"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "T_11^(2)",
+   "contacts": null,
+   "stage": 2,
+   "documents": [
+    "root_moc4_T10_B_branch_20261022"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S18[S75]",
+   "contacts": [
+    0,
+    1,
+    3,
+    10,
+    11,
+    12,
+    16
+   ],
+   "stage": 4,
+   "documents": [
+    "final_referee_inventory75_boundary16_uniform_20261023"
+   ],
+   "missing": [
+    "final_referee_inventory75_boundary16_uniform_20261023"
+   ],
+   "open": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "node": "S6[S_0,1,2,6,9,11,23]",
+   "contacts": [
+    0,
+    1,
+    2,
+    6,
+    9,
+    11,
+    23
+   ],
+   "stage": 4,
+   "documents": [
+    "independent_moc4_T23_g13_uniform_20261022"
+   ],
+   "missing": [],
+   "open": [],
+   "status": "first pass complete"
+  },
+  {
+   "node": "S20[S56]",
+   "contacts": [
+    0,
+    1,
+    5,
+    7,
+    9,
+    12,
+    17
+   ],
+   "stage": 5,
+   "documents": [
+    "final_referee_inventory56_boundary17_large_product_20261023",
+    "final_referee_inventory56_boundary17_uniform_20261023"
+   ],
+   "missing": [
+    "final_referee_inventory56_boundary17_large_product_20261023",
+    "final_referee_inventory56_boundary17_uniform_20261023"
+   ],
+   "open": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "node": "S27[S67]",
+   "contacts": [
+    1,
+    4,
+    5,
+    7,
+    9,
+    12,
+    14
+   ],
+   "stage": 5,
+   "documents": [
+    "root_inventory67_g14_uniform_20261023"
+   ],
+   "missing": [
+    "root_inventory67_g14_uniform_20261023"
+   ],
+   "open": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "node": "S19[S52]",
+   "contacts": [
+    0,
+    1,
+    4,
+    6,
+    9,
+    12,
+    17
+   ],
+   "stage": 7,
+   "documents": [
+    "blind_moc4_inventory52_plus17_fourth_products_20261023",
+    "blind_moc4_inventory52_plus17_low_products_20261023",
+    "blind_moc4_inventory52_plus17_middle_products_20261023",
+    "blind_moc4_inventory52_plus17_third_products_20261023"
+   ],
+   "missing": [
+    "blind_moc4_inventory52_plus17_fourth_products_20261023",
+    "blind_moc4_inventory52_plus17_low_products_20261023",
+    "blind_moc4_inventory52_plus17_middle_products_20261023",
+    "blind_moc4_inventory52_plus17_third_products_20261023"
+   ],
+   "open": [],
+   "status": "awaiting first pass"
+  },
+  {
+   "node": "S25[S78]",
+   "contacts": [
+    1,
+    3,
+    4,
+    8,
+    11,
+    12,
+    15
+   ],
+   "stage": 7,
+   "documents": [
+    "final_referee_inventory78_boundary15_uniform_20261023"
+   ],
+   "missing": [
+    "final_referee_inventory78_boundary15_uniform_20261023"
+   ],
+   "open": [],
+   "status": "awaiting first pass"
+  }
+ ],
+ "documents_without_report": [
+  "blind_inventory86_matching_section_uniform_20261023",
+  "blind_inventory88_matching_curve_uniform_20261023",
+  "blind_inventory89_matching_curve_uniform_20261023",
+  "blind_moc4_T44_native_contact_chart_20261022",
+  "blind_moc4_T48_allocation_III_low_j_uniform_20261023",
+  "blind_moc4_T48_allocation_II_uniform_20261023",
+  "blind_moc4_T48_allocation_IV_uniform_20261023",
+  "blind_moc4_T48_allocation_I_low_j_uniform_20261023",
+  "blind_moc4_T48_allocation_I_small_lambda_low_j_uniform_20261023",
+  "blind_moc4_T48_c0_all_j_chain_20261023",
+  "blind_moc4_T48_c0_native_interlacing_20261023",
+  "blind_moc4_T48_c0_upper_Heron_chain_20261023",
+  "blind_moc4_T48_negative_Phi_uniform_20261023",
+  "blind_moc4_inventory52_native_harmonic_conditional_20261023",
+  "blind_moc4_inventory52_plus17_fourth_products_20261023",
+  "blind_moc4_inventory52_plus17_low_products_20261023",
+  "blind_moc4_inventory52_plus17_middle_products_20261023",
+  "blind_moc4_inventory52_plus17_third_products_20261023",
+  "blind_moc4_inventory52_whole_assembly_20261023",
+  "blind_moc4_inventory59_native_harmonic_uniform_20261023",
+  "final_referee_T46_a0_all_small_product_uniform_20261023",
+  "final_referee_T46_a0_balanced_leaf_uniform_20261023",
+  "final_referee_T46_a0_uniform_20261023",
+  "final_referee_T46_core_coherent_capacity_20261023",
+  "final_referee_T46_negative_j_Heron_uniform_20261023",
+  "final_referee_T46_positive_a_large_product_20261023",
+  "final_referee_T46_positive_a_small_or_balanced_20261023",
+  "final_referee_T46_six_ray_coherent_capacity_20261023",
+  "final_referee_T46_two_Heron_necessity_20261023",
+  "final_referee_T47_negative_p_Heron_20261023",
+  "final_referee_inventory56_57_whole_assembly_20261023",
+  "final_referee_inventory56_boundary17_large_product_20261023",
+  "final_referee_inventory56_boundary17_uniform_20261023",
+  "final_referee_inventory56_native_harmonic_20261023",
+  "final_referee_inventory56_rank_two_capacity_20261023",
+  "final_referee_inventory61_native_uniform_20261023",
+  "final_referee_inventory68_native_harmonic_20261023",
+  "final_referee_inventory69_native_harmonic_20261023",
+  "final_referee_inventory71_uniform_20261023",
+  "final_referee_inventory73_native_uniform_20261023",
+  "final_referee_inventory75_boundary16_uniform_20261023",
+  "final_referee_inventory75_whole_assembly_20261023",
+  "final_referee_inventory78_boundary15_uniform_20261023",
+  "final_referee_inventory78_native_uniform_20261023",
+  "final_referee_inventory79_native_uniform_20261023",
+  "final_referee_inventory81_native_uniform_20261023",
+  "final_referee_inventory85_native_uniform_20261023",
+  "final_referee_inventory87_uniform_20261023",
+  "fresh_strong_principal_minors_20261022",
+  "independent_inventory54_native_uniform_20261023",
+  "independent_inventory55_native_uniform_20261023",
+  "independent_inventory58_native_harmonic_uniform_20261023",
+  "independent_inventory62_native_uniform_20261023",
+  "independent_inventory63_native_uniform_20261023",
+  "independent_inventory67_native_harmonic_conditional_20261023",
+  "independent_inventory70_native_harmonic_uniform_20261023",
+  "independent_inventory74_native_harmonic_uniform_20261023",
+  "independent_inventory75_native_harmonic_conditional_20261023",
+  "independent_inventory77_native_harmonic_uniform_20261023",
+  "independent_moc4_T44_a_Heron_branch_20261023",
+  "independent_moc4_T44_c_below_j_uniform_20261023",
+  "independent_moc4_T45_uniform_20261022",
+  "independent_moc4_T47_IIIb_plus_large_pc_20261022",
+  "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
+  "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
+  "independent_moc4_T47_I_II_uniform_20261022",
+  "independent_moc4_T47_PCBE_energy_20261022",
+  "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
+  "independent_moc4_T47_high_e_below_core_20261023",
+  "independent_moc4_T47_high_j_small_b_20261022",
+  "independent_moc4_T47_high_j_uniform_20261022",
+  "independent_moc4_T47_low_j_small_pc_20261023",
+  "independent_moc4_T47_merged_C_high_j_uniform_20261022",
+  "independent_true_T48_c0_native_Heron_20261023",
+  "independent_true_T48_native_harmonic_conditional_20261023",
+  "moc_one_circle_20261022__one_circle",
+  "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+  "moc_principal_minors_20261022__principal_minors",
+  "principal_minor_result_20261022__principal_minors",
+  "root_inventory53_native_uniform_20261023",
+  "root_inventory57_native_conditional_20261023",
+  "root_inventory60_native_uniform_20261023",
+  "root_inventory66_native_whole_20261023",
+  "root_inventory67_g14_uniform_20261023",
+  "root_inventory67_whole_assembly_20261023",
+  "root_inventory72_native_uniform_20261023",
+  "root_inventory76_bounded_masks_uniform_20261023",
+  "root_inventory80_native_uniform_20261023",
+  "root_inventory85_native_uniform_corrected_20261023",
+  "root_moc4_T44_e_below_p_uniform_20261023",
+  "root_moc4_T46_whole_assembly_20261023",
+  "root_moc4_T47_negative_Phi_20261022",
+  "root_moc4_T47_whole_assembly_20261023",
+  "root_moc4_T47_zero_q_rational_capacity_20261023",
+  "root_moc4_T65_native_harmonic_uniform_20261023",
+  "root_true_T48_whole_assembly_20261023",
+  "root_true_inventory47_native_uniform_20261023",
+  "root_unitary_two_orthogonals_20261022"
+ ],
+ "documents_open": []
+}

@@ -1,0 +1,45 @@
+PASS kappa: P kappa = (1,...,1)
+PASS the eight source rays vanish together exactly on T_40 = {0,1,5,9,14,18} | [0, 1, 5, 9, 14, 18]
+PASS C(g + h kappa) has degree 1 in h
+PASS C = -(A B c + N_j)
+PASS Q = -{(q+e+1+a+b-p)c + (q+b+1)(e+a+1) - j(e+a) + pj}
+PASS Hessian symmetric
+PASS H(kappa) = height part of H(w) has entries only at (0,6),(1,5) and transposes | [(0, 6), (1, 5), (5, 1), (6, 0)]
+INFO Hessian built  [t=0.0s]
+INFO det H: 26218 terms, deg_h 3, deg_c 3  [t=8.0s]
+PASS deg_h det H(g + h kappa) = 3 | deg_h = 3
+PASS Q^3 det H(-C/Q) divisible by -4 Q
+PASS quotient is a perfect square G^2: identity (1) det H(w(c)) = -4 G^2/Q^2
+PASS constant term of G is +-1 | const = -1
+PASS G: 1313 terms, deg_c 2, total degree 9, height free | 1313 terms, deg_c 2, tdeg 9
+INFO G rebuilt  [t=8.2s]
+PASS Q^2 D'(-C/Q) = 4 G P6 Q exactly (so D'(-C/Q) = 4 G P6/Q), P6 has 464 terms | P6 464 terms
+PASS beta^2 - 4 alpha gamma = F+ F- (unit 1, two simple 306-term factors) | unit 1, factors [(306, 1, 8), (306, 1, 8)]
+PASS octics: product equals the discriminant, each total degree 8
+INFO discriminant factored  [t=8.4s]
+PASS P* (delete 0,1): height independent, degree 4 in c, 5188 terms | 5188 terms, deg_c 4
+INFO P* built  [t=8.6s]
+PASS pseudo-division: alpha^3 P* = Quot * G + r1 c + r0 (full polynomial identity) | r0 578728 terms, r1 527140 terms
+INFO pseudo-division done  [t=9.4s]
+PASS r1 = L M with two simple 13576-term factors (unit 1) | unit 1, factors [(13576, 1), (13576, 1)]
+PASS r1 == L*M exactly
+INFO r1 factored  [t=10.7s]
+PASS trace identity 2T = F+ M^2 + F- L^2, T = 2 alpha r0 - beta r1 (for one labelling)
+PASS Z = F+ M^2 - F- L^2 is not the zero polynomial | 1619914 terms
+PASS norm identity 4(T^2 - (beta^2-4 alpha gamma) r1^2) = Z^2
+PASS Vieta numerator: T^2 - disc r1^2 = 4 alpha (alpha r0^2 - beta r0 r1 + gamma r1^2)
+INFO trace-norm identity done  [t=102.5s]
+PASS bordered minor on I u {0}: height degree 2; Q^2 * minor(-C/Q) = G * quotient, quotient 2021 terms | raw 20639 terms, projected 82956, quotient 2021
+PASS bordered minor on I u {1}: height degree 2; Q^2 * minor(-C/Q) = G * quotient, quotient 1091 terms | raw 16186 terms, projected 58973, quotient 1091
+INFO bordered minors done  [t=113.1s]
+PASS N - ea has nonnegative coefficients and constant 1
+PASS high-p certificate gamma: 832 terms (claimed 832), every coefficient < 0, constant -2 (claimed -2)
+PASS data comparison: my gamma equals the supplement's stored table (832 terms)
+PASS high-p certificate AB_beta_minus_Nj_alpha: 3084 terms (claimed 3084), every coefficient < 0, constant -2 (claimed -2)
+PASS data comparison: my AB_beta_minus_Nj_alpha equals the supplement's stored table (3084 terms)
+PASS high-p certificate AB_Fsum_plus_2N_alpha: 1821 terms (claimed 1821), every coefficient < 0, constant -4 (claimed -4)
+PASS data comparison: my AB_Fsum_plus_2N_alpha equals the supplement's stored table (1821 terms)
+INFO chart inverse: P = p - 1 >= 0, J = pj/(1 - pj) >= 0 for p >= 1, 0 <= pj < 1; then (1+P) = p and J/((1+P)(1+J)) = (pj)/p = j.  All P, J >= 0 occur (p>=1, j>=0, pj<1).
+PASS data comparison: my octics F+, F- equal the supplement's stored pair up to order/sign
+PASS data comparison: my factors L, M of r1 equal the supplement's stored pair up to order/sign
+SUMMARY 0 failures; elapsed 113.2 s

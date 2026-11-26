@@ -1,0 +1,86 @@
+{
+ "doc_id": "root_moc4_T47_IIIb_plus_swapped_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_IIIb_plus_swapped_20261022.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "No root of G with Phi>=0 and a>1, 0<=b<1/a, p>0, q>=0, ea/(e+a)<j<=e, j<1/p+1/a, 0<=c<1/j. The wall j=ea/(e+a), a=1 and ab=1 are not claimed."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022 / root_moc4_T47_full_radial (radial necessity: realizable source => C(w)=0 and det Hess C = 0 at w(g,-C0/Q), hence G = 0; rests on the secant-variety rank bound)",
+   "used_for": "G = 0 at every spectrally realizable source",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022 (negative-Heron theorem: Phi < 0, d,e > 0 => no realizable lift)",
+   "used_for": "exclude Phi < 0",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "claim": "Contact set {0,4,5,6,9,12} is paper T_65 (identity element of G); its 8 generators are f2,f9,f1,f45,f5,f35,f0,f7",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "lib generators/CONTACT_SETS"
+  },
+  {
+   "claim": "C(w(g,h)) = C0 + hQ with C0 = -d{ab+ad+aq+bd+bp+d^2+de+dp+dq+ep+eq+pq} < 0 and Q as stated in the negative-Phi note",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own flint computation from (A.2) and App. D"
+  },
+  {
+   "claim": "G: 965-term octic with det Hess C(w(g,-C0/Q)) = -4 d^2 G^2/Q^2",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own Kronecker determinant + 5-point independent Fraction det check"
+  },
+  {
+   "claim": "Realizable source => G = 0 (radial necessity), Q != 0 since C0 < 0",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "secant/Hessian-rank argument of the core notes, not audited here"
+  },
+  {
+   "claim": "three charts (p>=p*; p<p*, j<a; p<p*, j>=a) cover the region",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "j + j^2/(a-j) = aj/(a-j); m + 1/p = a + 1/(p*P) for p = p*P/(1+P) (uses a - 1/a = 1/p*, EXACT)"
+  },
+  {
+   "claim": "alpha, U0, jU0+U1 tables positive with strict markers",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "own replay, identical counts"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "9 tables identical counts"
+ ],
+ "numeric_tests": [
+  "shared 2-point realizability test"
+ ],
+ "unchecked": [
+  "radial necessity, negative-Phi"
+ ],
+ "one_line": "Radial exclusion on the IIIb-plus region replayed exactly (nine tables, identical term counts); rests on cited radial necessity and negative-Phi theorem."
+}

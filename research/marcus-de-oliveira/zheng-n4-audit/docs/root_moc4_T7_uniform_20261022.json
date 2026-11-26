@@ -1,0 +1,62 @@
+{
+ "doc_id": "root_moc4_T7_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T7_uniform_20261022.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "paper_case": "T_8",
+   "restatement": "x in X, g>=0, g=0 on T_8: Phi>=0 for all O including extra contacts and collision layers; harmonic minimum principle on the source curve E in the upper half-plane."
+  }
+ ],
+ "dependencies": [
+  {
+   "ref": "paper B.1, B.2",
+   "status": "CITED"
+  },
+  {
+   "ref": "three-A/three-C common-circle theorem",
+   "status": "CITED, precise reference unresolved"
+  },
+  {
+   "ref": "seven-contact j=4,10,18,19,22 via paper T_2/T_4/T_7, T_3/T_6/T_10/T_11, T_11/T_16, T_2/T_13, T_3/T_12",
+   "status": "CITED (G-maps EXACT)"
+  },
+  {
+   "ref": "boundary16, boundary23",
+   "status": "audited in batch"
+  },
+  {
+   "ref": "SOC atom F03 on (f2,f39;f46)",
+   "status": "CITED, orbit EXACT"
+  },
+  {
+   "ref": "paper Sect. 3 realizability of nonzero x in X",
+   "status": "CITED"
+  }
+ ],
+ "steps": "15 steps; identities EXACT, analytic steps PROOF-READ",
+ "gaps": [],
+ "exact_replays": [
+  "generators, replacements, (1) on W, coefficient signs on N_T with d>=0",
+  "chart differences, R5, R7, (2)",
+  "(4) inverse and exhaustiveness (auditor)",
+  "(5),(6) trace identities",
+  "denominator divisibility, discriminants, D(E3), dR at infinity"
+ ],
+ "numeric_tests": [],
+ "unchecked": [
+  "seven-contact cases themselves",
+  "main statement numeric search (budget)"
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "doc_id": "final_referee_T26_boundary10_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T26_boundary10_uniform_20261022.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     2,
+     3,
+     4,
+     7,
+     8,
+     10,
+     12
+    ],
+    [
+     2,
+     3,
+     4,
+     7,
+     8,
+     12,
+     13
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with P c(x) >= 0 vanishing on T_27 u {10} (or T_27 u {13}), Phi_{c(x)}(O) >= 0 on SO(4); all spectra."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "paper Lemma 4.2"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "X in Sing C",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "four-coefficient capacity (1)",
+   "used_for": "conclusion",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  "1 generators EXACT",
+  "2 identities EXACT",
+  "3 symmetry EXACT",
+  "4 transposition EXACT",
+  "5 reduction PROOF-READ",
+  "6 radial necessity PROOF-READ",
+  "7 C,Q EXACT",
+  "8 factorization (5)-(6) EXACT",
+  "9 sign identity EXACT",
+  "10 K>=0 PROOF-READ",
+  "11 conclusion CITED"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators of T_27 u {10}",
+  "identities (2),(3)",
+  "symmetry and transposition",
+  "C, Q",
+  "factorization with 206-term G6",
+  "sign identity"
+ ],
+ "numeric_tests": [
+  "cited four-coefficient capacity on boundary: 30 samples, worst 1.6e-16"
+ ],
+ "unchecked": [
+  "proof of the cited capacity"
+ ]
+}

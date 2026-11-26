@@ -1,0 +1,17 @@
+PASS A1 contact set equals paper T_42
+PASS B1 generators = 0,1,2,3,4,5,6,15,16,17,53,54  [0, 1, 2, 3, 4, 5, 6, 15, 16, 17, 53, 54]
+PASS B1 non-minor generators exactly 17, 54
+PASS C2 identity f17+f54 = f3+f6+f6+f15+f53 on all 24 values
+PASS C2 identity f17+f0 = f1+f3+f6+f15 on all 24 values
+PASS C2 identity f17+f2 = f4+f6+f15 on all 24 values
+PASS C2 identity f17+f5 = f3+f6+f16 on all 24 values
+PASS C2 identity f54+f1 = f0+f6+f53 on all 24 values
+PASS C2 identity f54+f4 = f2+f3+f6+f53 on all 24 values
+PASS C2 identity f54+f16 = f5+f15+f6+f53 on all 24 values
+PASS C3 every right side of the f17 absorptions lies in the f17 canonical support
+PASS C3 every right side of the f54 absorptions lies in the f54 canonical support
+PASS C3 f17 canonical support = gens minus {0,2,5,54}
+PASS C3 f54 canonical support = gens minus {1,4,16,17}
+PASS C3 reduction on 3000 random integer sources: coefficients stay >= 0, values unchanged, end in a minor sum or a canonical source
+PASS INFO stabilizer of T_42 has order 2; elements sending f17 to f54: 0
+SUMMARY all EXACT checks passed

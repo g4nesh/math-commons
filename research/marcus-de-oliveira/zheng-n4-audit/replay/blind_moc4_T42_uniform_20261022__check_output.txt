@@ -1,0 +1,38 @@
+PASS contact set equals paper T_43 literally
+PASS generators(T) = {0,1,2,3,4,5,6,21,22,23,53,54} :: [0, 1, 2, 3, 4, 5, 6, 21, 22, 23, 53, 54]
+PASS nonminor generators are exactly 22, 54
+PASS identity f22+f54 = f0+f4+f5+f23+f53
+PASS identity f54+f1 = f0+f6+f53
+PASS identity f54+f4 = f2+f3+f6+f53
+PASS identity f54+f21 = f0+f2+f23+f53
+PASS some g in G fixes T and swaps f22<->f54 :: count=2
+INFO swap elements built from the stated row/col perms (0,2,1,3),(1,0,3,2), eps=0 :: [((1, 0, 3, 2), (0, 2, 1, 3), 0)]
+PASS basis of (1) has rank 8
+PASS basis of (1) has exactly the six common zeros T :: [1, 2, 4, 6, 7, 8]
+PASS C(g + z kappa) is affine in z
+PASS C(own) = const * C(doc) :: 1
+PASS Q(own) = const * Q(doc) :: 1
+PASS C and Q constants agree (so -C/Q is the same height)
+PASS -MC = bc(M+1-aM) + rMbc + (MT0-bc) at d=1
+PASS MT0 - bc (d=1) has only nonnegative coefficients
+PASS MT0 - bc (d=1) contains monomials b and c
+PASS M=0: C = -(1+p)(1+q)(1+r)
+INFO base point d=1: -Q^2 detH/4, C, Q :: (1, Fraction(-1, 1), Fraction(-1, 1))
+  pt 0 p r a b c q s = ['13/16', '1/8', '32/49', '67/16', '1/8', '3/8', '5/8'] J=0.9856 G=569.347 bound=0.0398784
+  pt 1 p r a b c q s = ['101/16', '0', '7/37', '3', '3/16', '13/16', '75/16'] J=0.4575 G=32060.4 bound=0.00440524
+  pt 2 p r a b c q s = ['7/4', '1/8', '4/7', '7/4', '7/16', '11/4', '0'] J=0.7984 G=6624.01 bound=0.0808343
+  pt 3 p r a b c q s = ['5/16', '15/2', '2/17', '21/16', '13/8', '3/4', '51/16'] J=1.075 G=52258.5 bound=0.30979
+  pt 4 p r a b c q s = ['53/16', '23/8', '21/52', '9/4', '23/8', '1/8', '1/2'] J=0.6596 G=89551.1 bound=0.0957684
+  pt 5 p r a b c q s = ['37/16', '0', '31/63', '13/16', '7/8', '1/4', '5/16'] J=1.119 G=537.093 bound=0.224631
+  pt 6 p r a b c q s = ['43/16', '7/16', '2/63', '25/16', '93/16', '121/16', '0'] J=0.2339 G=372495 bound=0.747014
+  pt 7 p r a b c q s = ['65/16', '11/8', '21/50', '33/16', '41/8', '19/16', '7/16'] J=0.4288 G=286959 bound=0.000280563
+  pt 8 p r a b c q s = ['7/8', '1/8', '4/59', '9/4', '13/16', '23/4', '1/8'] J=0.7433 G=18215.5 bound=0.811964
+  pt 9 p r a b c q s = ['3/8', '0', '7/60', '7/16', '31/4', '17/16', '29/8'] J=0.7855 G=3759.75 bound=0.24145
+  pt 10 p r a b c q s = ['9/16', '15/16', '5/56', '3/16', '35/16', '11/16', '0'] J=1.164 G=487.346 bound=0.852499
+  pt 11 p r a b c q s = ['3/16', '49/16', '1/4', '15/4', '19/16', '27/16', '5/16'] J=0.8743 G=30423.3 bound=0.433328
+PASS G^2 = -Q^2 detH/4 is a perfect square of a degree-9 polynomial along every sampled line (EXACT, 12 lines)
+PASS NUMERIC-J: G >= (1-as)^2 (1-a/J)^2 at 12 exact hard points :: min G/bound = 571.668
+PASS NUMERIC: rank Hess C(Re x) <= 12 at 5 random x in X (so det = 0 is a valid necessary condition) :: [12, 12, 12, 12, 12]
+INFO NUMERIC realizable sampling (seeds 0-11, margin 1e-3) :: found=12 in-form-(1)-hard=0 min Phi over SO4 = 6.59e-12
+PASS NUMERIC: no sampled realizable T_43 cost lies in the hard region
+SUMMARY failures: []

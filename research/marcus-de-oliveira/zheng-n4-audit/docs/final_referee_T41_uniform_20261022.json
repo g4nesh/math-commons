@@ -1,0 +1,40 @@
+{
+  "doc_id": "final_referee_T41_uniform_20261022",
+  "pdf": "proofs/manin_transfer_20261021/final_referee_T41_uniform_20261022.pdf",
+  "pages": 2,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "contact_sets": [[1, 2, 3, 6, 7, 8]], "paper_cases": [42],
+     "restatement": "For every x in X with P c(x) >= 0 and (P c(x))_pi = 0 for pi in T_42 = {1,2,3,6,7,8} (extra contacts allowed, all spectra), Phi_{c(x)}(O) >= 0 for all O in SO(4). Proved by reducing c(x) to a minor sum or to one of two canonical eight-ray sources and citing the bad17 and bad54 branch theorems.",
+     "covers_all_spectra": true}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "Paper Prop. 4.1 + Lemma 4.2 (generators of N_T)", "used_for": "ray list", "match_checked": true},
+    {"kind": "branch", "ref": "final_referee_T41_bad17_uniform_20261022", "used_for": "canonical source q f3 + p f1 + j f53 + c f6 + e f15 + d f17 + b f16 + a f4", "match_checked": true},
+    {"kind": "branch", "ref": "final_referee_T41_bad54_uniform_20261022", "used_for": "canonical source q f6 + p f2 + j f5 + c f53 + e f0 + d f54 + b f3 + a f15", "match_checked": true},
+    {"kind": "core-doc", "ref": "Paper eq. (4.2) minor vectors", "used_for": "minor terms nonnegative", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "contact set = paper T_42", "kind": "finite", "status": "EXACT"},
+    {"n": 2, "claim": "rays 0,1,2,3,4,5,6,15,16,17,53,54; non-minor 17, 54", "kind": "finite", "status": "EXACT"},
+    {"n": 3, "claim": "seven profile identities", "kind": "identity", "status": "EXACT"},
+    {"n": 4, "claim": "cancellation procedure terminates in a minor sum or one canonical source without regeneration", "kind": "case split", "status": "EXACT"},
+    {"n": 5, "claim": "reduced vector equals c(x)", "kind": "identity", "status": "EXACT"},
+    {"n": 6, "claim": "minor sum has Phi >= 0", "kind": "citation", "status": "CITED"},
+    {"n": 7, "claim": "bad17 canonical source safe", "kind": "citation", "status": "CITED"},
+    {"n": 8, "claim": "bad54 canonical source safe", "kind": "citation", "status": "CITED"}
+  ],
+  "gaps": [],
+  "exact_replays": [
+    "contact set and generator list of T_42",
+    "seven identities on all 24 profile values",
+    "support inclusions of absorption right sides in each canonical support",
+    "reduction run on 3000 random exact sources (seed 5)",
+    "stabilizer of T_42 has order 2 and does not exchange f17 and f54"
+  ],
+  "numeric_tests": [],
+  "unchecked": [
+    "final_referee_T41_bad54_uniform_20261022 (cited branch theorem)",
+    "final_referee_T41_bad17_uniform_20261022 outside the region ab >= d^2"
+  ]
+}

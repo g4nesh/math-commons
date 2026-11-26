@@ -1,0 +1,40 @@
+== stage atoms (EXACT)
+[PASS] f2 = n_{13,34}, f12 = n_{14,24}, f39 = n_{14,13}, f70 = h_{4231,+} (lib Appendix D)
+   master atom f70 + 2 f2 + f12 values: (1, 1, 0, 0, 0, 0, 2, 0, 1, 0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 4, 1, 4, 2, 1)  G-orbit size 288
+[PASS] supplement base 2n_{12,34}+n_{14,23}+h_{3421,-} lies in the G-orbit of f70+2f2+f12
+[PASS] 12 distinct stored atoms, each a G-image of the master atom f70+2f2+f12
+[PASS] each atom value vector lies in im P (exact solve on all 24 rows)
+[PASS] G permutes the 34 minor value vectors
+[PASS] sum of the 34 minor vectors = 7 kappa; minors have rank 14
+   O^T O = |p|^2|q|^2 I: True
+[PASS] KEY quaternion identity Phi(f2+f70) = 2[(d^2+D^2)|P|^2|Q|^2 - (v0v2+v1v3)] and x2 = +-(v0+v1), x3 = +-(v1+v2), as polynomial identities  (signs (1, 1))
+== stage dd (EXACT double description, own code)
+[PASS] stored 72-list (relaxation file) equals the chamber I/II target list, same order
+[PASS] the 24 rows of P (evaluation functionals) are among the 72 and the 86
+   R = {w : w(kappa)=1, w(n) >= 0 for 34 minors}: DD gives 72 vertices (max intermediate rays 222, 0.0s)
+[PASS] R = {w : w(kappa)=1, w(n) >= 0 for 34 minors}: every stored vertex is feasible with an active set of rank 13
+[PASS] R = {w : w(kappa)=1, w(n) >= 0 for 34 minors}: 400 random LPs attain their optimum at a listed vertex (NUMERIC)  (max discrepancy 2.2e-15)
+[PASS] R has exactly the 72 stored vertices (own DD, completeness included)
+   R' = R cut by the 12 atoms: DD gives 86 vertices (max intermediate rays 222, 0.0s)
+[PASS] R' = R cut by the 12 atoms: every stored vertex is feasible with an active set of rank 13
+[PASS] R' = R cut by the 12 atoms: 400 random LPs attain their optimum at a listed vertex (NUMERIC)  (max discrepancy 2.7e-15)
+[PASS] R' has exactly the 86 stored vertices (own DD, completeness included)
+   vertices of R cut off by some atom (indices in the 72-list): [45, 65]
+== stage chambers (EXACT polynomial identities)
+[PASS] each coefficient column of (F_sigma) is P of a real vector, identically in s,t,u
+[PASS] chamber I: negative control (record 0 against a wrong target vertex) is rejected
+[PASS] chamber I: 48 partitions cover all 48 non-ordinary vertices, nonnegative multiaffine weights, sum W = R != 0, 4 column identities exact  (1202 stored terms, 0.2s)
+[PASS] chamber II: negative control (record 0 against a wrong target vertex) is rejected
+[PASS] chamber II: 48 partitions cover all 48 non-ordinary vertices, nonnegative multiaffine weights, sum W = R != 0, 4 column identities exact  (1439 stored terms, 0.1s)
+[PASS] chamber III: negative control (record 0 against a wrong target vertex) is rejected
+[PASS] chamber III: 62 partitions cover all 62 non-ordinary vertices, nonnegative multiaffine weights, sum W = R != 0, 4 column identities exact  (2458 stored terms, 0.1s)
+[PASS] 158 partitions in total (48 + 48 + 62)
+== stage numeric (NUMERIC; floating point)
+[PASS] N1: 4000 random concyclic 3+3 configurations (random circle, random free slots, random direction): gap vector in cone(minors + G-orbit of master atom) by LP  (failures 0; 0 of them are not in the minor cone alone)
+[PASS] N1: min Phi over SO(4) (8 BFGS starts, quaternion chart) on the first 200: worst 2.599e-13
+[PASS] N2: extreme rays of the profile cone at 44 chamber parameters (33347 rays, incl. closure/degenerate points): min over chamber vertices of w(c)  (I: -4.01e-12, II: -6.99e-15, III: -7.20e-15)
+[PASS] N2: min Phi over SO(4) on a subset of those rays (6 starts each): -1.122e-15
+   control N3: chamber III rays tested against the 72 minor-only vertices: min -9.138e-03  (negative means minors alone do not suffice there); 15 such rays
+[PASS] N3: min Phi over SO(4) on 15 profile rays outside the minor cone (8 starts each)  (worst 2.022e-12)
+   control N4: 500 generic (non-concyclic) configurations: 0 outside cone(minors + atom orbit)
+stage all: ALL PASS  (62.3s)

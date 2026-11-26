@@ -1,0 +1,97 @@
+PASS E equals Table 5 seven-set no. 17 literally
+PASS generators(E) = {f0,f2,f3,f12,f13,f15,f26}  [0, 2, 3, 12, 13, 15, 26]
+PASS rows of P at E have rank 7 (kernel of dimension 7)
+PASS f0,f2,f3,f12,f15,f13 are minor vectors and f26 = h_{4132,-} is not  ['n1,4', 'n13,34', 'n14,34', 'n14,24', 'n12,14', 'n2,1', 'h4132,-']
+PASS values of the 7 generators at rows [23,15,14,8,4,7,3] form I_7 (so coefficients = gaps)
+PASS the 7 generators are independent in V_R
+PASS group element maps reference (1, 9, 22) to (2, 12, 26) in order [SOC (p,b)]  ((0, 1, 3, 2), (0, 2, 1, 3), 0)
+PASS group element maps reference (1, 9, 22) to (2, 15, 26) in order [SOC (p,c)]  ((0, 1, 2, 3), (1, 2, 0, 3), 1)
+PASS group element maps reference (1, 9, 22) to (12, 15, 26) in order [SOC (b,c)]  ((0, 2, 1, 3), (1, 2, 3, 0), 0)
+PASS group element maps reference (0, 6, 10, 54) to (0, 13, 3, 26) in order [four-coefficient (q,v,t)]  ((0, 2, 1, 3), (0, 3, 1, 2), 0)
+PASS group element maps reference (2, 0, 12, 70) to (15, 0, 3, 26) in order [chain (c;q,t)]  ((1, 2, 0, 3), (0, 2, 1, 3), 0)
+PASS group element maps reference (2, 0, 12, 70) to (15, 13, 3, 26) in order [chain (c;v,t)]  ((2, 1, 3, 0), (2, 0, 3, 1), 0)
+PASS (8) C(w(z)) = C + Q z with the document's C and Q (paper cubic (A.2), paper coordinates)
+PASS kappa direction: C(kappa)=0 and grad C(kappa)=0 explain linearity in z
+INFO det H(w(z)) at d=1: 7264 terms, degrees (3, 3, 3, 3, 3, 3, 3), 819 exact divisions, 63.0s
+PASS det H(w(z)) has z-degree <= 4 (H(kappa) has rank 4)  3
+PASS Q^4 det H(w(-C/Q)) is divisible by -4 Q^2
+PASS Q^4 det H(w(-C/Q)) / (-4 Q^2) is a perfect square G^2 (d = 1)
+INFO derived G: 408 terms, degrees (3, 2, 2, 2, 2, 3, 8), coefficient of d^8 = 1
+PASS derived G has 408 terms (document: 408 terms, homogeneous of degree 8)  408
+PASS (10) G(q,p,t,b,c,v,d) = G(v,p,t,b,c,q,d)
+PASS (10) G(q,p,t,b,c,v,d) = G(q,b,t,p,c,v,d)
+PASS derived G equals the document's G (its JSON, read as data)
+PASS c = 0 factorization G = d A {(d+q)(d+v) - pb} B (up to sign)
+PASS threshold identity (qv-d^2) B(T_F) = (q+d)(v+d){(p+b)qv+dpb} + pb(d+q+v)(qv-d^2)
+PASS failure of (3) with qv > d^2 is t < T_F
+PASS Lemma 1: qF v (tF - delta) = delta^2 (qF + v + tF + delta)
+PASS Lemma 1: lambda^2/qC + lambda^2/tC = c
+PASS Lemma 1: tF + tC = K + K^2/W = (q+delta)K/W
+PASS Lemma 1: qC = B + (W - X) and W - X = W B / K
+PASS Lemma 1: at delta = dv/(c+v), W = q - d^2/(c+v)
+PASS Lemma 1: at delta = dv/(c+v), (q+delta)K/W = R_d(q,v,c) of (7)
+PASS Lemma 1: R_d(q,0,c) = d^2 q/(cq - d^2) = chain threshold
+PASS (6) splitting: central sum d^2 b/s^2 + d^2 c/s^2 = d^2/s with s=b+c, SOC atoms tight
+PASS (5) splitting: chain atoms with weights q/w, v/w sum to d^2/w + d^2/t
+PASS row P is inverted by P=p-1, B=pb/(1-p(b+c)), C=pc/(1-p(b+c))
+PASS dominant-c map (13) is inverted by C=c-1, P=cp/(1-c(p+b)), B=cb/(1-c(p+b))
+PASS (14) middle row: failure of (5) for w,t>0 is t < w/(cw-1) when cw>1
+PASS (14) middle row: t = w/(cw-1) T/(1+T) with w=(1+Q)/c, cw-1 = Q
+INFO spectral degrees of G (q,p,t,b,c,v): (3, 2, 2, 2, 2, 3)
+PASS table [L (11)]: cleared G has only positive coefficients  11763 terms (document 11763), 0.2s
+PASS table [L (11)]: has a monomial in the strictly positive parameters ['C'] only  [((0, 0, 6, 0, 0, 0), 448), ((0, 0, 5, 0, 0, 0), 1152)]
+PASS table [L (11)]: every reduced denominator has nonnegative coefficients and a strictly positive monomial
+INFO table [L (11)]: numerators have nonnegative coefficients: True; term count matches document: True
+PASS table [L q(c+v)<1]: cleared G has only positive coefficients  4181 terms (document 4181), 0.0s
+PASS table [L q(c+v)<1]: has a monomial in the strictly positive parameters ['C'] only  [((0, 0, 5, 0, 0, 0), 2), ((0, 0, 4, 0, 0, 0), 3)]
+PASS table [L q(c+v)<1]: every reduced denominator has nonnegative coefficients and a strictly positive monomial
+INFO table [L q(c+v)<1]: numerators have nonnegative coefficients: True; term count matches document: True
+PASS table [L q(c+v)>1]: cleared G has only positive coefficients  11409 terms (document 11409), 0.1s
+PASS table [L q(c+v)>1]: has a monomial in the strictly positive parameters ['C', 'Q'] only  [((0, 0, 7, 0, 5, 0), 2), ((0, 0, 7, 0, 4, 0), 12)]
+PASS table [L q(c+v)>1]: every reduced denominator has nonnegative coefficients and a strictly positive monomial
+INFO table [L q(c+v)>1]: numerators have nonnegative coefficients: True; term count matches document: True
+PASS table [L q(c+v)=1]: cleared G has only positive coefficients  1091 terms (document 1091), 0.0s
+PASS table [L q(c+v)=1]: has a monomial in the strictly positive parameters ['C'] only  [((0, 0, 5, 0, 0, 0), 16), ((0, 0, 4, 0, 0, 0), 48)]
+PASS table [L q(c+v)=1]: every reduced denominator has nonnegative coefficients and a strictly positive monomial
+INFO table [L q(c+v)=1]: numerators have nonnegative coefficients: True; term count matches document: True
+PASS table [P (11)]: cleared G has only positive coefficients  84446 terms (document 84446), 1.7s
+PASS table [P (11)]: has a monomial in the strictly positive parameters ['C'] only  [((0, 0, 8, 0, 0, 0), 640), ((0, 0, 7, 0, 0, 0), 3200)]
+PASS table [P (11)]: every reduced denominator has nonnegative coefficients and a strictly positive monomial
+INFO table [P (11)]: numerators have nonnegative coefficients: True; term count matches document: True
+PASS table [P q(c+v)<1]: cleared G has only positive coefficients  23837 terms (document 23837), 0.2s
+PASS table [P q(c+v)<1]: has a monomial in the strictly positive parameters ['C'] only  [((0, 0, 6, 0, 0, 0), 4), ((0, 0, 5, 0, 0, 0), 10)]
+PASS table [P q(c+v)<1]: every reduced denominator has nonnegative coefficients and a strictly positive monomial
+INFO table [P q(c+v)<1]: numerators have nonnegative coefficients: True; term count matches document: True
+PASS table [P q(c+v)>1]: cleared G has only positive coefficients  93285 terms (document 93285), 1.7s
+PASS table [P q(c+v)>1]: has a monomial in the strictly positive parameters ['C', 'Q'] only  [((0, 0, 9, 0, 5, 0), 4), ((0, 0, 9, 0, 4, 0), 20)]
+PASS table [P q(c+v)>1]: every reduced denominator has nonnegative coefficients and a strictly positive monomial
+INFO table [P q(c+v)>1]: numerators have nonnegative coefficients: True; term count matches document: True
+PASS table [P q(c+v)=1]: cleared G has only positive coefficients  6427 terms (document 6427), 0.1s
+PASS table [P q(c+v)=1]: has a monomial in the strictly positive parameters ['C'] only  [((0, 0, 7, 0, 0, 0), 16), ((0, 0, 6, 0, 0, 0), 104)]
+PASS table [P q(c+v)=1]: every reduced denominator has nonnegative coefficients and a strictly positive monomial
+INFO table [P q(c+v)=1]: numerators have nonnegative coefficients: True; term count matches document: True
+PASS table [dominant-c cw<1]: cleared G has only positive coefficients  27531 terms (document 27531), 0.2s
+PASS table [dominant-c cw<1]: has a monomial in the strictly positive parameters [] only  [((0, 0, 0, 0, 0, 0), 2)]
+PASS table [dominant-c cw<1]: every reduced denominator has nonnegative coefficients and a strictly positive monomial
+INFO table [dominant-c cw<1]: numerators have nonnegative coefficients: True; term count matches document: True
+PASS table [dominant-c cw>1]: cleared G has only positive coefficients  23799 terms (document 23799), 0.2s
+PASS table [dominant-c cw>1]: has a monomial in the strictly positive parameters ['Q'] only  [((0, 0, 0, 0, 5, 0), 2), ((0, 0, 0, 0, 4, 0), 12)]
+PASS table [dominant-c cw>1]: every reduced denominator has nonnegative coefficients and a strictly positive monomial
+INFO table [dominant-c cw>1]: numerators have nonnegative coefficients: True; term count matches document: True
+PASS table [dominant-c cw=1]: cleared G has only positive coefficients  3955 terms (document 3955), 0.0s
+PASS table [dominant-c cw=1]: has a monomial in the strictly positive parameters [] only  [((0, 0, 0, 0, 0, 0), 16)]
+PASS table [dominant-c cw=1]: every reduced denominator has nonnegative coefficients and a strictly positive monomial
+INFO table [dominant-c cw=1]: numerators have nonnegative coefficients: True; term count matches document: True
+NUMERIC SOC (2) p f2 + b f12 + f26, pb = 1: N=40, 8 BFGS restarts, worst min Phi/max|Pc| = 4.60e-17 at {2: 1.2743, 12: 0.7847, 26: 1.0}
+NUMERIC SOC (2) p f2 + c f15 + f26, pc = 1: N=40, 8 BFGS restarts, worst min Phi/max|Pc| = 2.40e-18 at {2: 0.5821, 15: 1.718, 26: 1.0}
+NUMERIC SOC (2) b f12 + c f15 + f26, bc = 1: N=40, 8 BFGS restarts, worst min Phi/max|Pc| = 1.71e-16 at {12: 2.3184, 15: 0.4313, 26: 1.0}
+NUMERIC SOC (2) p f2 + b f12 + f26 [d scaled by 2.0: sensitivity test]: N=6, 8 BFGS restarts, worst min Phi/max|Pc| = -1.48e-03 at {2: 1.622, 12: 0.6165, 26: 2.0}
+NUMERIC four (3) q f0 + v f13 + t f3 + f26 at equality: N=40, 8 BFGS restarts, worst min Phi/max|Pc| = -2.03e-18 at {0: 0.3225, 13: 6.1019, 3: 9.7044, 26: 1.0}
+NUMERIC four (3) [d scaled by 2.0: sensitivity test]: N=6, 8 BFGS restarts, worst min Phi/max|Pc| = -9.57e-04 at {0: 3.5819, 13: 1.4879, 3: 2.633, 26: 2.0}
+NUMERIC chain (4) q f0 + t f3 + c f15 + f26 at equality: N=40, 8 BFGS restarts, worst min Phi/max|Pc| = 7.85e-17 at {0: 0.2623, 3: 6.2204, 15: 3.9732, 26: 1.0}
+NUMERIC chain (4) with v f13: N=40, 8 BFGS restarts, worst min Phi/max|Pc| = 2.61e-16 at {13: 8.089, 3: 1.4179, 15: 0.8289, 26: 1.0}
+NUMERIC chain (4) [d scaled by 2.0: sensitivity test]: N=6, 8 BFGS restarts, worst min Phi/max|Pc| = -3.44e-05 at {0: 1.0178, 3: 0.4684, 15: 3.1176, 26: 2.0}
+NUMERIC Lemma 1 at t = R_1(q,v,c), p,b in [0,0.3]: N=40, 8 BFGS restarts, worst min Phi/max|Pc| = -7.07e-17 at {0: 0.9039, 13: 3.4732, 15: 4.5368, 3: 0.9588, 2: 0.2295, 12: 0.1684, 26: 1.0}
+NUMERIC realizable point (stratum search seed 0, margin 0.01): contact set [0, 1, 2, 9, 10, 16, 17], coefficients [1.8336, 1.4054, 0.0184, 0.019, 0.0103, 0.0109, 0.01], G/sum|terms| = 2.5e-14, min Phi/max|Pc| = 1.6e-12
+NUMERIC realizable point (stratum search seed 1, margin 0.01): contact set [0, 1, 2, 9, 10, 16, 17], coefficients [0.8266, 1.4539, 1.3774, 0.01, 0.026, 0.0751, 0.01], G/sum|terms| = 3.2e-15, min Phi/max|Pc| = 7.9e-12
+SUMMARY ALL EXACT CHECKS PASS

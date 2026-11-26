@@ -8,7 +8,7 @@ PASS (8) C = (1+u)(1+q+t)+abc  (d=1)
 PASS (8) Q = (1+u)(1+t)+ab+ac+bc-ub-tc  (d=1)
 PASS JSON G has 397 terms (homogeneous) : 397
 PASS G has no z
-INFO det H(w(z)) : terms 7286, z-degree 3, 1.9s
+INFO det H(w(z)) : terms 7286, z-degree 3, 3.0s
 PASS (9) Q^4 det H(w(-C/Q)) = -4 Q^2 G^2 (own Hessian, d=1)
 PASS (10) G quadratic in u
 PASS (10) beta = alpha + gamma + a(a+1) b^2 c^2 t^2
@@ -56,13 +56,9 @@ NUMERIC capacity ('SOC', 2, 15) : min over SO(4) of the sufficient-condition mar
 NUMERIC capacity ('SOC', 12, 15) : min over SO(4) of the sufficient-condition margin = -4.634e-30 (40 Nelder-Mead starts, seed 2026)
 NUMERIC capacity ('oldH', 3, 15) : min over SO(4) of the sufficient-condition margin = -8.400e-30 (40 Nelder-Mead starts, seed 2026)
 NUMERIC capacity ('chain', 0, 3, 15) : min over SO(4) of the sufficient-condition margin = 7.728e-30 (40 Nelder-Mead starts, seed 2026)
-NUMERIC stratum point 0: contact [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 16, 17], coefficients(d=1) [np.float64(-8753502040597425.0), np.float64(-6543074460698114.0), np.float64(-113135540601008.6), np.float64(-0.9876), np.float64(-3.4717), np.float64(-0.2367), np.float64(1.0)], |Pc-g| 1.9e-15, G/sum|terms| = -2.23e-03, min Phi (20 BFGS) = 2.2936e-15
-NUMERIC stratum point 1: contact [0, 1, 2, 3, 4, 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 23], coefficients(d=1) [np.float64(44.3001), np.float64(1.7513), np.float64(2.1472), np.float64(-0.8547), np.float64(2.1516243040690502e+17), np.float64(14.636), np.float64(1.0)], |Pc-g| 1.5e-15, G/sum|terms| = -6.12e-02, min Phi (20 BFGS) = 0.0000e+00
-replay/blind_moc4_coreB_uniform_20261023__check.py:325: RuntimeWarning: divide by zero encountered in scalar divide
-  x = [cf / sc for cf in coefs]          # normalize d = 1 (homogeneous)
-replay/blind_moc4_coreB_uniform_20261023__check.py:325: RuntimeWarning: invalid value encountered in scalar divide
-  x = [cf / sc for cf in coefs]          # normalize d = 1 (homogeneous)
-NUMERIC stratum point 2: contact [0, 1, 2, 3, 4, 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17], coefficients(d=1) [np.float64(inf), np.float64(nan), np.float64(nan), np.float64(nan), np.float64(inf), np.float64(nan), np.float64(nan)], |Pc-g| 3.1e-15, G/sum|terms| = nan, min Phi (20 BFGS) = 2.3873e-15
-NUMERIC stratum point 3: contact [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 16, 17, 19, 21, 22, 23], coefficients(d=1) [np.float64(2.6098), np.float64(0.9269), np.float64(14603490252.2325), np.float64(1.9989), np.float64(2.0999), np.float64(-2.198), np.float64(1.0)], |Pc-g| 1.7e-09, G/sum|terms| = 7.30e-01, min Phi (20 BFGS) = -1.5847e-10
+NUMERIC stratum point 0: contact [0, 1, 2, 7, 9, 10, 16], coefficients(d=1) [np.float64(35.906), np.float64(43.2461), np.float64(43.9469), np.float64(1.1864), np.float64(0.0647), np.float64(129.1979), np.float64(1.0)], |Pc-g| 1.3e-15, G/sum|terms| = -1.73e-16, min Phi (20 BFGS) = 1.1530e-16
+NUMERIC stratum point 1: contact [0, 1, 2, 7, 9, 10, 16], coefficients(d=1) [np.float64(1.1234), np.float64(6.1432), np.float64(17.1433), np.float64(23.1295), np.float64(14.4454), np.float64(4140.3862), np.float64(1.0)], |Pc-g| 1.1e-15, G/sum|terms| = 4.44e-14, min Phi (20 BFGS) = 5.1160e-12
+INFO stratum point 2 : none found
+NUMERIC stratum point 3: contact [0, 1, 2, 7, 9, 10, 16], coefficients(d=1) [np.float64(147.5771), np.float64(267.5179), np.float64(280.3903), np.float64(1.909), np.float64(0.1972), np.float64(63.7868), np.float64(1.0)], |Pc-g| 7.2e-16, G/sum|terms| = 1.45e-15, min Phi (20 BFGS) = 1.2184e-13
 SUMMARY: 0 EXACT failures []
 exit 0

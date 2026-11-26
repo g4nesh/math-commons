@@ -1,0 +1,49 @@
+PASS generators(T) = [0,1,2,3,4,5,6,53,54,67] (document lists 8 of them; f1,f4 eliminated)
+PASS T is paper T_24 up to G
+PASS decomposition reproduces f0 and g5-g16=g9-g17 (delta=0)
+PASS decomposition reproduces f1 and g5-g16=g9-g17 (delta=-1)
+PASS decomposition reproduces f2 and g5-g16=g9-g17 (delta=0)
+PASS decomposition reproduces f3 and g5-g16=g9-g17 (delta=0)
+PASS decomposition reproduces f4 and g5-g16=g9-g17 (delta=-1)
+PASS decomposition reproduces f5 and g5-g16=g9-g17 (delta=0)
+PASS decomposition reproduces f6 and g5-g16=g9-g17 (delta=0)
+PASS decomposition reproduces f53 and g5-g16=g9-g17 (delta=0)
+PASS decomposition reproduces f54 and g5-g16=g9-g17 (delta=1)
+PASS decomposition reproduces f67 and g5-g16=g9-g17 (delta=0)
+PASS rank of the 10 generators = 8
+PASS f54+f1 = f0+f6+f53 (so delta<=0 gives a minor decomposition)
+PASS f54+f4 = nonnegative minor combination (coefficients [0, 1, 1, 0, 1, 1, 0] on f0,f2,f3,f5,f6,f53,f67)
+PASS H2 = 0
+PASS H3 = 1
+PASS H4 = s
+PASS H6 = r - u
+PASS H7 = r + t - u
+PASS H8 = r
+PASS H9 = r + t - u*(1 - x)
+PASS z-c = XJ/((t-uX) l d)
+PASS z-v = t h (z-c)
+PASS H1 = s + A1/(q(x-1)-t)
+PASS H10 + (tr/q) H1 is a real constant (=> g10 = -(tr/q) g1): (r**2 + r*s*t + r*t - r*u - s*u)/(r - u)
+PASS H5 -> 1 as x -> oo
+PASS every denominator factor of every H_j (j=0..23) is x, q(x-1)-t or J (so nonreal finite poles are zeros of J)
+PASS J divides the denominator of H13 exactly once
+PASS J divides the denominator of H16 exactly once
+PASS res H13/res H16 = z/(z-1) at zeros of J (difference of ratios vanishes mod J)
+PASS raw F16-F2 at c=v=z equals (w-z)(x-z)(z-1)
+PASS raw F13-F2 at c=v=z equals z(w-z)(x-z)
+PASS numerator of z-x is (x-1)(uX-(r+t-1))*(-1) i.e. x=z iff X=0 or d=r
+PASS z = (1-t-qX)/(1-t+uX), Mobius determinant -(1-t)r
+PASS F3-F2 = w(z-c)X (normalization)
+   ratios in point coordinates: s=xx*(vv - 1)/(ww*(xx - 1)), r=(cc - vv)*(zz - 1)/((cc - zz)*(xx - 1)), u=-(cc - ww)*(vv - zz)/(ww*(cc - zz)*(xx - 1)), t=cc*(vv - zz)/(ww*(cc - zz))
+PASS chart is exhaustive: ratios of a configuration give back z
+PASS chart is exhaustive: ratios of a configuration give back w
+PASS chart is exhaustive: ratios of a configuration give back c
+PASS chart is exhaustive: ratios of a configuration give back v
+   d in point coordinates = (cc - vv)/(cc - zz)
+   l in point coordinates = -xx*(cc*zz - cc - vv*zz + zz)/(ww*(cc - zz))
+   h in point coordinates = ww/cc
+   n in point coordinates = -(cc*zz - cc - vv*zz + zz)/(cc - zz)
+   t-uX in point coordinates = (vv - zz)/(cc - zz)
+NUMERIC SOC boundary delta^2=g10*g13 (cost g10 f5+g13 f2+delta f54), 6 samples seed 11, 10 BFGS restarts: worst min Phi = 3.876e-14
+NUMERIC control delta=3*sqrt(g10 g13): min Phi = -4.046e-02 (negative expected)
+ALL EXACT CHECKS PASS

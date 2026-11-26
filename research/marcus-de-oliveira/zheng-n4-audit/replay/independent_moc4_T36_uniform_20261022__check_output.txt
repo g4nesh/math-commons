@@ -1,0 +1,74 @@
+# command: MOC4_SUPP=<supplement root> python -I -B independent_moc4_T36_uniform_20261022__check.py   (exit status 0)
+PASS EXACT doc contact set {0,5,6,7,9,12} equals paper T_37 literally
+PASS EXACT generators(T_37) == {0,1,2,5,7,29,35,39,40,45}, nonminor 35, 40, rank 8 | [0, 1, 2, 5, 7, 29, 35, 39, 40, 45]
+PASS EXACT contact nullspace has dimension 8
+PASS EXACT delta35 + delta40 == -g17
+PASS EXACT identity (1) g = sum coef f_j as linear operators on the contact nullspace
+PASS EXACT identity (2) g = sum coef f_j as linear operators on the contact nullspace
+PASS EXACT identity (3) g = sum coef f_j as linear operators on the contact nullspace
+PASS EXACT (1) uses only minor generators 0,1,2,5,7,29,39,45
+PASS EXACT f35 + f40 = f0 + f7 + f2 + f29 + f45
+PASS EXACT f35 + f39 = f1 + f2 + f29 + f45
+PASS EXACT f40 + f1 = f0 + f7 + f39
+PASS EXACT (35) own C, Q equal JSON C_terms, Q_terms
+PASS EXACT (35) radial factor0 is +-Q; minus stored G has d^9 coefficient +1 | 983
+PASS EXACT (35) (4) Q^2 det Hess C(c - (C/Q)kappa) == -4 G^2 at 10 random integer points (exact; Schwartz-Zippel) | 10
+PASS EXACT (40) own C, Q equal JSON C_terms, Q_terms
+PASS EXACT (40) radial factor0 is +-Q; minus stored G has d^9 coefficient +1 | 1385
+PASS EXACT (40) (4) Q^2 det Hess C(c - (C/Q)kappa) == -4 G^2 at 10 random integer points (exact; Schwartz-Zippel) | 10
+PASS EXACT (35) all coefficients of C negative, including -d^3
+PASS EXACT (35) exchange symmetry G(a,b,q,p) == G(b,a,p,q)
+PASS EXACT (35) G degree 2 in c
+PASS EXACT (35) k0 == Cbar * R90 exactly | 90
+PASS EXACT (35) G|e=j=0 == [(1+a+b)c + (a+1)(b+1)](p+a+1)^2(q+b+1)^2
+PASS EXACT (8) R90 - (a+1)(b+1)(-K), chart a=zR,b=z/R, ab<1: no negative coefficient (doc count 280) | (0, 280)
+PASS EXACT (8) R90 - (a+1)(b+1)(-K), chart a=zR,b=z/R, ab>1: no negative coefficient (doc count 404) | (0, 404)
+PASS EXACT (8) R90 - (a+1)(b+1)(-K), chart exchanged, ab<1: no negative coefficient (doc count 280) | (0, 280)
+PASS EXACT (8) R90 - (a+1)(b+1)(-K), chart exchanged, ab>1: no negative coefficient (doc count 404) | (0, 404)
+PASS EXACT seven intervals row I-: J = N/D with positive N, D; base/middle/endpoint Bernstein numerators have no negative coefficient (doc counts (969, 1704, 2364)) | [(0, 969), (0, 1704), (0, 2364)]
+PASS EXACT seven intervals row I+: J = N/D with positive N, D; base/middle/endpoint Bernstein numerators have no negative coefficient (doc counts (2643, 5745, 10406)) | [(0, 2643), (0, 5745), (0, 10406)]
+PASS EXACT seven intervals row II: J = N/D with positive N, D; base/middle/endpoint Bernstein numerators have no negative coefficient (doc counts (4414, 9616, 16507)) | [(0, 4414), (0, 6832), (0, 9514)]
+PASS EXACT seven intervals row IIIa-: J = N/D with positive N, D; base/middle/endpoint Bernstein numerators have no negative coefficient (doc counts (3779, 4535, 4535)) | [(0, 3779), (0, 4535), (0, 4535)]
+PASS EXACT seven intervals row IIIa+: J = N/D with positive N, D; base/middle/endpoint Bernstein numerators have no negative coefficient (doc counts (4284, 7308, 9756)) | [(0, 4284), (0, 7308), (0, 9756)]
+PASS EXACT seven intervals row IIIb+: J = N/D with positive N, D; base/middle/endpoint Bernstein numerators have no negative coefficient (doc counts (4428, 8448, 12396)) | [(0, 4428), (0, 8448), (0, 12396)]
+PASS EXACT seven intervals row IIIb-: J = N/D with positive N, D; base/middle/endpoint Bernstein numerators have no negative coefficient (doc counts (7028, 13410, 18874)) | [(0, 7028), (0, 13410), (0, 18874)]
+PASS EXACT (5) C == bc(U - a) + U T0
+PASS EXACT (5) M C == bc(dM + d^2 - aM) + rMbc + (MUT0 - d^2 bc), last parenthesis nonnegative coefficients with b d^3, c d^3
+PASS EXACT (5) C|b=c=0 == (d+r)(d+p)(d+q)
+PASS EXACT (40) G degree 2 in s
+PASS EXACT (12) L0|a=0 has only positive coefficients and constant term 1
+PASS EXACT (13) (1+aS)^2 G(S/(1+aS)) == L0 + B1 S + B2 S^2 (symbolic in L0, L1, L2)
+PASS EXACT chart HH: J equals the energy (10) of the feasible allocation beta=(theta,1-theta), delta as in the chart, 0<=delta_i<=beta_i | [T/((T + 1)*(U + 1)), 1/(T*W + T + W + 1)]
+PASS EXACT chart HH L0: all Y^l coefficient polynomials (l=0..2) nonnegative; doc counts (6372, 7776, 7757) | [(0, 6372), (0, 7776), (0, 7757)]
+PASS EXACT chart HH B1: all Y^l coefficient polynomials (l=0..3) nonnegative; doc counts (9408, 11466, 13524, 13502) | [(0, 9408), (0, 11466), (0, 13524), (0, 13502)]
+PASS EXACT chart HH B2: all Y^l coefficient polynomials (l=0..4) nonnegative; doc counts (8832, 15960, 18979, 21801, 21863) | [(0, 8832), (0, 15960), (0, 18979), (0, 21801), (0, 21863)]
+PASS EXACT chart HC: J equals the energy (10) of the feasible allocation beta=(theta,1-theta), delta as in the chart, 0<=delta_i<=beta_i | [T/((T + 1)*(U + 1)), 0]
+PASS EXACT chart HC L0: all Y^l coefficient polynomials (l=0..2) nonnegative; doc counts (6084, 7380, 7379) | [(0, 6084), (0, 7380), (0, 7379)]
+PASS EXACT chart HC B1: all Y^l coefficient polynomials (l=0..3) nonnegative; doc counts (7728, 9366, 11004, 11003) | [(0, 7728), (0, 9366), (0, 11004), (0, 11003)]
+PASS EXACT chart HC B2: all Y^l coefficient polynomials (l=0..4) nonnegative; doc counts (5456, 11550, 13581, 15591, 15599) | [(0, 5456), (0, 11550), (0, 13581), (0, 15591), (0, 15599)]
+PASS EXACT chart CH: J equals the energy (10) of the feasible allocation beta=(theta,1-theta), delta as in the chart, 0<=delta_i<=beta_i | [0, 1/(T*U + T + U + 1)]
+PASS EXACT chart CH L0: all Y^l coefficient polynomials (l=0..2) nonnegative; doc counts (6084, 7380, 7379) | [(0, 6084), (0, 7380), (0, 7379)]
+PASS EXACT chart CH B1: all Y^l coefficient polynomials (l=0..3) nonnegative; doc counts (7728, 9366, 11004, 11003) | [(0, 7728), (0, 9366), (0, 11004), (0, 11003)]
+PASS EXACT chart CH B2: all Y^l coefficient polynomials (l=0..4) nonnegative; doc counts (5456, 11550, 13581, 15591, 15599) | [(0, 5456), (0, 11550), (0, 13581), (0, 15591), (0, 15599)]
+PASS EXACT chart CC: J equals the energy (10) of the feasible allocation beta=(theta,1-theta), delta as in the chart, 0<=delta_i<=beta_i | [0, 0]
+PASS EXACT chart CC L0: all Y^l coefficient polynomials (l=0..2) nonnegative; doc counts (6645, 8394, 8259) | [(0, 6645), (0, 8394), (0, 8259)]
+PASS EXACT chart CC B1: all Y^l coefficient polynomials (l=0..3) nonnegative; doc counts (7029, 8958, 10887, 10887) | [(0, 7029), (0, 8958), (0, 10887), (0, 10887)]
+PASS EXACT chart CC B2: all Y^l coefficient polynomials (l=0..4) nonnegative; doc counts (4252, 9048, 11157, 13266, 13266) | [(0, 4252), (0, 9048), (0, 11157), (0, 13266), (0, 13266)]
+PASS EXACT chart CC': J equals the energy (10) of the feasible allocation beta=(theta,1-theta), delta as in the chart, 0<=delta_i<=beta_i | [0, 0]
+PASS EXACT chart CC' L0: all Y^l coefficient polynomials (l=0..2) nonnegative; doc counts (6645, 8394, 8259) | [(0, 6645), (0, 8394), (0, 8259)]
+PASS EXACT chart CC' B1: all Y^l coefficient polynomials (l=0..3) nonnegative; doc counts (7029, 8958, 10887, 10887) | [(0, 7029), (0, 8958), (0, 10887), (0, 10887)]
+PASS EXACT chart CC' B2: all Y^l coefficient polynomials (l=0..4) nonnegative; doc counts (4252, 9048, 11157, 13266, 13266) | [(0, 4252), (0, 9048), (0, 11157), (0, 13266), (0, 13266)]
+PASS EXACT some g in G realizes the core action (67,55,53,54,59,2) -> (7,0,5,35,45,1) | 1 elements, e.g. (rho, rho2, eps) = ((1, 0, 3, 2), (2, 0, 1, 3), 0)
+PASS EXACT some g in G realizes the transposed core action (4,2,33,5,6,46,45) -> (0,5,2,29,7,40,39) | 1 elements, e.g. (rho, rho2, eps) = ((3, 2, 1, 0), (2, 3, 0, 1), 1)
+PASS EXACT some g in G realizes the SOC action (1,9,22) -> (5,45,40) | 4 elements, e.g. (rho, rho2, eps) = ((0, 2, 1, 3), (1, 0, 2, 3), 1)
+PASS EXACT some g in G realizes the stabilizer (0,7,2,29) -> (7,0,29,2) fixing 1,5,35,45 | 1 elements, e.g. (rho, rho2, eps) = ((3, 2, 1, 0), (2, 3, 0, 1), 0)
+NUMERIC (6) SOC cj=1, piece f35 + j f1 + c f45 | worst 2.46e-15
+NUMERIC (6) old-H c=1+1/e, piece f35 + c f45 + e f5 | worst 2.27e-16
+NUMERIC (6) four-coefficient K=0, piece f35 + e f5 + b f0 + a f7 | worst -2.40e-16
+NUMERIC (7) coherent bound ab>1 at equality, piece f35 + c f45 + e f5 + b f0 + a f7 | worst 2.24e-16
+NUMERIC (7) coherent bound ab<1, b>=a at equality | worst 1.26e-16
+NUMERIC SOC as=1, piece f40 + a f5 + s f45 | worst 2.21e-16
+NUMERIC energy threshold a=J (numerically minimized (10)), piece f40 + a f5 + p f0 + b f2 + c f29 + q f7 | worst 1.01e-15
+NUMERIC (14) G40 - (1-as)^2(1-a/J)^2 with J the numerically minimized energy, 20000 random points (tests tables and KKT chart coverage together) | min 1.712e+00 (must be >= 0)
+NUMERIC main statement T_37: random_point_on_contact_stratum seeds 0-2, min_phi_over_SO4 restarts 10 | points 3/3, worst normalized min Phi -2.20e-17
+SUMMARY exact failures: 0 []

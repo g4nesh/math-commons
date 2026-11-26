@@ -1,0 +1,44 @@
+
+=== A. Proposition C.4 ===
+PASS A0 rho~ consistent on all 70 minor pairings (polynomial identity in 16 entries)
+PASS A0 <rho~(V), m(a,-b)> = det(D_a V + V D_b) (identity in a, b, V: 24 variables)
+PASS A1 rho~(D1 V D2) = det(D1) det(D2) rho~(V) (identity)
+PASS A2 test point: all 16 entries of V0 nonzero and det V0 != 0
+PASS A3 rank((z_i - z_{4+j}) V0_ij) = 2 and rank((w_i - w_{4+j}) V0_ij) = 2
+PASS A4 rank d rho~(V0) = 10  [rank 10]
+PASS A4 conormal space N(V0) = ann(im d rho~(V0)) has dimension 4
+PASS A4 rho~(V0) in im d rho~ (Euler), so N(V0) annihilates rho~(V0)
+PASS A5 rank of d(z,w -> rho~(V(z,w))) together with rho~(V0) = 10 (dominance)  [rank 10]
+PASS A6 m(z) and m(w) lie in N(V0)
+PASS A7 Inc_V0 = {z': rank((z'_i - z'_{4+j}) V0_ij) <= 2} is cut transversally at z and at w (4 independent linear conditions; tangent dimension 4)
+PASS A8 join differential at (z, w, 1, 1) has rank 4 = dim N(V0)  [rank 4]
+PASS A8 the join image lies in N(V0) (consistency)
+PASS A9 tangent space of E = {(V, xi): xi annihilates im d rho~(V)} at (V0, xi0) has dim 20  [dim 20]
+PASS A9 projection (V, xi) -> xi has rank 12 there, so dim (M8')^-hat >= 12  [rank 12]
+   section A time 8.9 s
+
+=== B. Lemma C.11 ===
+PASS B1 dC/du13 = q(u) = u0 u6 - u1 u5 and d2C/du13^2 = 0 (so H(kappa) = Hess q and H(u) e13 = Hess(q) u)
+PASS B2 det(H(u) + h H(kappa)) has degree <= 3 in h at 6 random rational u
+PASS B3 p3(u) = alpha * q(u) * det H(u)[K',K'] with alpha = -beta  [alpha=-2 beta=2]
+PASS B4 y = Re m(a,-b) equals the printed vector; q(y) = C(y) = 0
+PASS B5 rank H(y) = 12 and det(H(y) + h H(kappa)) = p2 h^2 with p2 = -114105877589169227887017984  [rank 12, p2 -114105877589169227887017984]
+PASS B6 dC_y and the differentials of three 13x13 minors of H at y span a space of rank >= 2 (so T_y Z has dimension <= 12)  [rank 2]
+   section B time 0.6 s
+
+=== C. Lemma C.10 (Vandermonde weights) ===
+PASS C1 there are 14 noncrossing perfect matchings of 8 points on a line
+PASS C2 compatibility matrix (70 x 14) has rank 14
+PASS C3 the 14 weights solve all 70 equations Vand(t_S) Vand(t_S^c) = sum_{pi compat S} w_pi (polynomial identity in the gaps s_1..s_7)
+PASS C4 every weight is a nonzero polynomial in s_1..s_7 with nonnegative coefficients  [terms per weight [3144, 1683, 1724, 1563, 564, 1683, 770, 1563, 564, 1515, 654, 654, 465, 64]]
+   section C time 0.0 s
+
+=== D. (C.13), (C.14) ===
+PASS D0 T T^t = n I and det T = n^2 (quaternion parametrisation of SO(4))
+PASS D1 T00 is linear in f with a unique solution
+PASS D1 (C.13): d(O) = O01 O02 O03 O10 O20 O30 on {O00 = 0} in SO(4) (rational identity)
+PASS D2 the block matrix is in SO(4)
+PASS D3 (C.14): dd(E_i O) = s * a b x_j x_k y_i z_i with one common constant s for i = 1,2,3  [s = -1]
+   section D time 3.3 s
+
+SUMMARY: 0 failure(s)

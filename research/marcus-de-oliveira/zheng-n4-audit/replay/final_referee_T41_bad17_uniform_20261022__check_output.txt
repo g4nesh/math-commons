@@ -1,0 +1,37 @@
+PASS bad17: all 8 source generators are generators of paper T_42 = [1, 2, 3, 6, 7, 8] | F_T42=[0, 1, 2, 3, 4, 5, 6, 15, 16, 17, 53, 54]
+PASS bad17: exactly one non-minor generator in the source | non-minor: [(17, 'h3421,+')]
+PASS bad17: the 8 generators are linearly independent; with kappa rank 9
+PASS bad17 p.1: cubic restricted to w = g + h kappa is linear in h
+PASS bad17 p.1: C = -(c+1)(ab+a+ae+b+bq+1+e+j+q+ej+eq+jq) | Q = -e*j - e*q - e + j*p - j*q - j - q - 1
+PASS bad17 p.2: R0 = XY r(e/Y, q/X) is a polynomial
+PASS bad17 p.2: 4V divides R0^2 - Fe Fq, so A0 is a polynomial
+PASS bad17 p.1: A0 and R0 depend only on a,b,p,q,e
+INFO bad17 G = V D^2 + R0 j D + A0 j^2 | terms=1191 total degree=8
+PASS bad17 p.1: det H_F(w) = -4(c+1)^2 G^2/Q^2 at h=-C/Q (exact, 8 random rational points)
+PASS bad17 p.1: radial transformation G(c,j) = (D/(XY))^2 G(0, jXY/D)
+PASS bad17 p.1: G(0,0)=V (XY)^2 > 0 (constant term)
+PASS bad17 p.2: relabeling stabilizer swapping (a,b),(q,e) exists in G and fixes T_42 | [('3210', '3210', 1)]
+PASS bad17 p.2: a group element maps generators [59,53,55,67,54] to [1,53,4,16,17] | [('0321', '2103', 0), ('0321', '2103', 1)]
+PASS bad17 p.3: r00^2 - f(0)k(0) = -4VW/R
+PASS bad17 p.3: H = f(1) = k(1) = r(1,1)
+PASS bad17 p.3: vertex of f at [a(b+1)+p(2a+b+1)]/(b(b+1))
+PASS bad17 p.3: disc_x f = 16ab^2pV/(b+1)^2 > 0 and disc_y k = 16a^2bpV/(a+1)^2 (a,b,p>0)
+PASS bad17 p.4: f(x_r) = -4(Ap-ap-a-p-1)HV/((b+1)D1^2)
+PASS bad17 p.4 (6): J22 = -4[a-(b+1)p]^2 V^2/(b+1)^2 (independent of the level h)
+PASS bad17 p.4: det of the x-quadratic matrix of E equals k(y) y^T J y (auditor check of the 'determinant' step)
+PASS bad17 p.4: edge derivatives at (1,1): 2[(a+1)+p(S+1)/(b+1)] and 2[(b+1)+p(S+1)/(a+1)]
+PASS bad17 p.4 (8): (2b+1)(sa-sb)^2-(a-b) = 2 sb (sa-sb)(sa sb - b - 1)
+PASS bad17 p.4 (7): stationary edge values at one rational sample (float compare of exact roots) | ([-23.722117533511653, -9.858129380068593], [-23.722117533511653, -9.858129380068593])
+PASS bad17 p.4 (8): stationary edge values at one rational sample (float compare of exact roots) | ([-2.1647070634123997, -1.0970473225525126], [-2.1647070634123997, -1.0970473225525126])
+PASS bad17 p.5: G(0,j) at p=0 equals (XY+jT)(RXY+jB0)
+PASS bad17 p.3: 1-z = U^2/[Drho(1+Z)], S-1-z = Z U^2/[rho(1+Z)]
+PASS bad17 p.2-3: kappa0 = (1-z)^2/(S-2z) = a(1-z)^2/(a-z)^2 = rho U^2/[Drho(1+Z)(rho+Drho Z)]
+PASS bad17 p.3: inverse Z = (z Drho - rho)/[Drho(1-z)]
+PASS bad17 p.3 small-product layer 1 H=R(h+r): numerator and denominator one-signed with equal sign | numerator terms 1360 (claimed 1360), denominator terms 436
+PASS bad17 p.3 small-product layer 1 E=H^2-R fN kN: numerator and denominator one-signed with equal sign | numerator terms 14373 (claimed 14373), denominator terms 2754
+PASS bad17 p.3 small-product layer 2 H=R(h+r): numerator and denominator one-signed with equal sign | numerator terms 1330 (claimed 1330), denominator terms 1308
+PASS bad17 p.3 small-product layer 2 E=H^2-R fN kN: numerator and denominator one-signed with equal sign | numerator terms 10831 (claimed 10831), denominator terms 11880
+INFO NUMERIC Lemma 1 (5), seed 2026, a+b<2, p in [1e-4,1e3], (x,y) in D incl. edges | samples in D=3260739, max normalized sqrt(fk)-r = -1.923e-08 (<= ~1e-8 means no violation)
+INFO NUMERIC large-product claim (cited doc), A>=1 | min (h+r)/scale=1.793e-02, min ((h+r)^2-fk)/scale^2=2.468e-08
+INFO bad17 total time | 60.1s
+SUMMARY: 0 checks failed []

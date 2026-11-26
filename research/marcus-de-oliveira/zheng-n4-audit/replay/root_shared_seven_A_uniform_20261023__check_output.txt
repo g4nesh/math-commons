@@ -1,0 +1,54 @@
+PASS  T equals Table 5 auxiliary seven-set no. 9 of the paper
+PASS  generators(T) as listed  [generators=[0, 2, 3, 12, 15, 21, 26]]
+PASS  contact rows have rank 7
+PASS  every basis profile vanishes on T
+PASS  basis profiles independent (rank 7)
+PASS  rows [23, 15, 14, 8, 4, 16, 11] of the basis form I_7
+PASS  generators(T) = basis, only f26 non-minor
+PASS  SOC reference (f1,f9;f22) maps to each pair of {f2,f12,f15} with f26
+PASS  old-H reference (f11,f1;f34) and (f3,f15;f26) map (aux,main,nonminor) to (f3,f15;f26)
+PASS  chain reference (f2,f0,f12;f70) maps to (f15,f0,f3;f26) (main c, auxiliaries q,t)  [g = ((1, 2, 0, 3), (0, 2, 1, 3), 0)]
+PASS  C(w(z)) = C + z Q with C, Q as printed
+PASS  (4): Q^4 det H(w(-C/Q)) = -4 Q^2 G^2 with G a polynomial  [Bareiss exact divisions 819, deg_z det H = 3, 65s]
+PASS  G: 486 terms, homogeneous of degree 9, coordinate degrees (3,2,2,2,2,3,9)
+PASS  G|c=0 = d(p+d)(v+d)^2(q+t+d)^2 {qd(b+v+d) + (b+d)(d^2-pb+vd)}
+PASS  (9) chart R0 x row 0: all coefficients positive, marker present  [terms 1784 (document 1784), marker coefficient 1 (document 1)]
+PASS  (9) chart R0 x row 0: term count equals document
+PASS  (9) chart R0 x row 1: all coefficients positive, marker present  [terms 3234 (document 3234), marker coefficient 1 (document 1)]
+PASS  (9) chart R0 x row 1: term count equals document
+PASS  (9) chart R0 x row 2: all coefficients positive, marker present  [terms 539 (document 539), marker coefficient 1 (document 1)]
+PASS  (9) chart R0 x row 2: term count equals document
+PASS  (9) chart Rp x row 0: all coefficients positive, marker present  [terms 7969 (document 7969), marker coefficient 2 (document 2)]
+PASS  (9) chart Rp x row 0: term count equals document
+PASS  (9) chart Rp x row 1: all coefficients positive, marker present  [terms 19440 (document 19440), marker coefficient 2 (document 2)]
+PASS  (9) chart Rp x row 1: term count equals document
+PASS  (9) chart Rp x row 2: all coefficients positive, marker present  [terms 2780 (document 2780), marker coefficient 2 (document 2)]
+PASS  (9) chart Rp x row 2: term count equals document
+PASS  (9) chart Rb x row 0: all coefficients positive, marker present  [terms 7814 (document 7814), marker coefficient 2 (document 2)]
+PASS  (9) chart Rb x row 0: term count equals document
+PASS  (9) chart Rb x row 1: all coefficients positive, marker present  [terms 18900 (document 18900), marker coefficient 2 (document 2)]
+PASS  (9) chart Rb x row 1: term count equals document
+PASS  (9) chart Rb x row 2: all coefficients positive, marker present  [terms 2695 (document 2695), marker coefficient 2 (document 2)]
+PASS  (9) chart Rb x row 2: term count equals document
+PASS  (9) chart Rc x row 0: all coefficients positive, marker present  [terms 5025 (document 5025), marker coefficient 2 (document 2)]
+PASS  (9) chart Rc x row 0: term count equals document
+PASS  (9) chart Rc x row 1: all coefficients positive, marker present  [terms 8400 (document 8400), marker coefficient 16 (document 16)]
+PASS  (9) chart Rc x row 1: term count equals document
+PASS  (9) chart Rc x row 2: all coefficients positive, marker present  [terms 1260 (document 1260), marker coefficient 16 (document 16)]
+PASS  (9) chart Rc x row 2: term count equals document
+PASS  (9) chart c=1 x row 0: all coefficients positive, marker present  [terms 718 (document 718), marker coefficient 2 (document 2)]
+PASS  (9) chart c=1 x row 0: term count equals document
+PASS  (9) chart c=1 x row 1: all coefficients positive, marker present  [terms 900 (document 900), marker coefficient 16 (document 16)]
+PASS  (9) chart c=1 x row 1: term count equals document
+PASS  (9) chart c=1 x row 2: all coefficients positive, marker present  [terms 180 (document 180), marker coefficient 16 (document 16)]
+PASS  (9) chart c=1 x row 2: term count equals document
+PASS  (5) R_p inverse map
+PASS  (6) middle row inverse map
+PASS  (7) inverse maps (q>1 chain row; q<=1 old-H rows)
+NUMERIC atom SOC f2,f12;f26 at xy=d^2: N=20, restarts 8, worst min Phi = -5.752e-16
+NUMERIC atom SOC f2,f15;f26 at xy=d^2: N=20, restarts 8, worst min Phi = 2.344e-15
+NUMERIC atom SOC f12,f15;f26 at xy=d^2: N=20, restarts 8, worst min Phi = 5.972e-18
+NUMERIC atom old-H f3,f15;f26 at t(c-d)=d^2: N=20, restarts 8, worst min Phi = 2.609e-17
+NUMERIC atom chain f0,f3,f15;f26 at c=d^2/q+d^2/t: N=20, restarts 8, worst min Phi = -3.302e-16
+NUMERIC theorem: 12 floating points with contacts containing T (seeds 0..11), worst min Phi/max gap = -9.063e-12
+SUMMARY: all EXACT checks passed

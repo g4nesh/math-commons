@@ -1,0 +1,41 @@
+{
+  "doc_id": "root_moc4_T17_uniform_20261022",
+  "pdf": "proofs/manin_transfer_20261021/root_moc4_T17_uniform_20261022.pdf",
+  "pages": 3,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "paper_cases": [18], "contact_sets": [[0, 1, 3, 6, 7, 8]],
+     "covers_all_spectra": true,
+     "restatement": "For x in X with P c(x) >= 0 and (P c(x))_pi = 0 on T_18 = {0,1,3,6,7,8} (extra contacts, repeated eigenvalues and a_i+b_j=0 allowed): Phi_{c(x)}(O) >= 0 for all O in SO(4). On the eight-distinct nonreal-v layer c(x) is in the cone of the ten minor generators; collisions go to Appendix B, real v to a common-circle argument."}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "paper Prop 4.1 / Lemma 4.2 (generators), (4.2)", "used_for": "generator list, minor cone gives Phi >= 0", "match_checked": true},
+    {"kind": "common-lemma", "ref": "Appendix B: Theorem B.1, Lemma B.2", "used_for": "collision layer", "match_checked": true},
+    {"kind": "common-lemma", "ref": "three-A/three-C common-circle theorem (supplement, unstated; not paper Thm C.1)", "used_for": "real-v layer; replaced by an auditor-supplied argument", "match_checked": true},
+    {"kind": "core-doc", "ref": "two-orthogonal reduction (paper Thm 1.2 / Cor 2.2)", "used_for": "O(4) to U(4)", "match_checked": false}
+  ],
+  "steps": [
+    {"n": "S1", "claim": "F_T = {0,1,2,3,4,5,6,15,16,17,27,28}, nonminor {17,28}", "status": "EXACT"},
+    {"n": "S2", "claim": "span(minor) = span(all) = imP intersected with {g_T=0}, dim 8", "status": "EXACT"},
+    {"n": "S3", "claim": "minor-cone dual = 10 coordinates + A, B", "status": "EXACT"},
+    {"n": "S4", "claim": "collisions and kappa=0", "status": "CITED"},
+    {"n": "S5", "claim": "F0F7=F1F6 forces H=0", "status": "PROOF-READ"},
+    {"n": "S6", "claim": "chart solves (2)", "status": "EXACT"},
+    {"n": "S7", "claim": "chart exhaustive on the eight-distinct layer", "status": "PROOF-READ"},
+    {"n": "S8", "claim": "contact ratios", "status": "EXACT"},
+    {"n": "S9", "claim": "real v: entry face {sigma(4)=4} joins the contacts, minor-only cone", "status": "PROOF-READ (argument supplied by auditor) + EXACT"},
+    {"n": "S10", "claim": "six sign kernels (3)", "status": "EXACT"},
+    {"n": "S12", "claim": "regions I, II exhaustive (81 cells)", "status": "EXACT"},
+    {"n": "S13", "claim": "signs of e, L, P", "status": "PROOF-READ"},
+    {"n": "S14", "claim": "identities (5)", "status": "EXACT"},
+    {"n": "S15", "claim": "summands of (5) positive", "status": "PROOF-READ"}
+  ],
+  "gaps": [
+    {"location": "p. 2, 'the separate six-circle theorem applies'", "claim": "real-v layer covered by a three-A/three-C common-circle theorem",
+     "why": "theorem not stated and not the paper's Theorem C.1 (whole spectrum on a circle)", "severity": "presentation", "believed_true": true,
+     "repair": "entry face {sigma(4)=4}: F_sigma = (A3-C3) r_sigma, r real; contacts 0,6 with r0 != r6 force Re(kappa(A3-C3))=0, so the whole face is in contact; generators of face u T are minor (checked)"}
+  ],
+  "exact_replays": ["generators", "minor-cone dual (12 rays)", "chart and contact ratios", "sign kernels (3)", "identities (5)", "81-cell sign analysis", "real-v entry-face generators"],
+  "numeric_tests": ["4000 chart samples, seed 20261125: 2040 supported, all in regions I/II, min(A,B)/max|g| = 3.7e-5"],
+  "unchecked": ["companion checker named in the document (not run, by rule)"]
+}

@@ -1,0 +1,42 @@
+{
+  "doc_id": "root_moc4_T16_uniform_20261022",
+  "pdf": "proofs/manin_transfer_20261021/root_moc4_T16_uniform_20261022.pdf",
+  "pages": 4,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "paper_cases": [17], "contact_sets": [[0, 1, 4, 5, 9, 12]],
+     "covers_all_spectra": true,
+     "restatement": "For x in X with P c(x) >= 0 and (P c(x))_pi = 0 on T_17 = {0,1,4,5,9,12} (extra contacts, repeated eigenvalues and a_i+b_j=0 allowed): Phi_{c(x)}(O) >= 0 for all O in SO(4). Simplicial source with the single nonminor f35; a harmonic descent on the curve with fixed real contact values (x,h,r,u); at v=1 the poles are compensated by H2+H7 and H2+H14."}
+  ],
+  "dependencies": [
+    {"kind": "paper-case", "ref": "T_4", "contact_set": [0, 1, 4, 5, 7, 8], "used_for": "extra contacts j=6,17 (G-images {0,1,4,5,6,9}, {0,1,4,5,9,17})", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_5", "contact_set": [1, 2, 3, 4, 6, 8], "used_for": "extra contacts j=7,15", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_9", "contact_set": [0, 1, 2, 3, 11, 12], "used_for": "extra contacts j=14,18", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_15", "contact_set": [1, 2, 3, 4, 6, 7], "used_for": "extra contact j=11", "match_checked": true},
+    {"kind": "common-lemma", "ref": "Appendix B: Theorem B.1, Lemma B.2", "used_for": "collision layer and collision boundary points", "match_checked": true},
+    {"kind": "common-lemma", "ref": "three-A/three-C common-circle theorem (unstated)", "used_for": "real-v layer; replaced by an auditor-supplied argument", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper Prop 4.1 / Lemma 4.2, (4.2)", "used_for": "generators, minor terms >= 0", "match_checked": true},
+    {"kind": "core-doc", "ref": "two-orthogonal reduction", "used_for": "U(4)", "match_checked": false},
+    {"kind": "external", "ref": "minimum principle for harmonic functions on Riemann surfaces", "used_for": "harmonic descent", "match_checked": true}
+  ],
+  "steps": [
+    {"n": "S1-S2", "claim": "simplicial source and expansion (dual basis)", "status": "EXACT"},
+    {"n": "S3-S4", "claim": "bound (1); f35-positive extra contacts are minor", "status": "PROOF-READ"},
+    {"n": "S5", "claim": "seven nontied zeros reduce to T_4, T_5, T_9, T_15", "status": "EXACT embedding + CITED"},
+    {"n": "S7-S8", "claim": "chart, x and h real, kappa form, contact values", "status": "EXACT"},
+    {"n": "S9", "claim": "real v: entry face {sigma(1)=1} becomes all contacts, minor-only", "status": "PROOF-READ (argument supplied by auditor) + EXACT"},
+    {"n": "S10-S14", "claim": "(2), E9, E12, a, D, curve (3), z=w divisor, height", "status": "EXACT"},
+    {"n": "S12, S15", "claim": "finiteness over nonreal v; d -> 0 at real v != 1 and infinity", "status": "PROOF-READ"},
+    {"n": "S16-S17", "claim": "fibre v=1, two smooth branches, residues, compensators regular-real", "status": "EXACT"},
+    {"n": "S18-S19", "claim": "compensated liminf and harmonic descent", "status": "PROOF-READ"},
+    {"n": "S20", "claim": "a1=0 by perturbation", "status": "PROOF-READ (details supplied by auditor)"}
+  ],
+  "gaps": [
+    {"location": "p. 1, 'the exact checker supplies a previously closed family image'", "claim": "each of the seven extra contacts reduces to an earlier case", "why": "the cases are not named in the document", "severity": "presentation", "believed_true": true, "repair": "j=6,17 -> T_4; j=7,15 -> T_5; j=14,18 -> T_9; j=11 -> T_15 (all embeddings found with find_g; all of earlier stages in paper Table 6)"},
+    {"location": "p. 2, 'If v is real ... satisfy the stated support inequality'", "claim": "real-v layer by a common-circle theorem", "why": "theorem unstated; not paper Thm C.1", "severity": "presentation", "believed_true": true, "repair": "entry-face argument supplied by auditor (S9)"},
+    {"location": "p. 3-4, a1 = 0 paragraph", "claim": "perturbation reduces a1=0 to a1!=0", "why": "brief", "severity": "presentation", "believed_true": true, "repair": "details written out by auditor (S20)"}
+  ],
+  "exact_replays": ["generators and expansion", "f35 zero set and seven G-embeddings", "R1, R4, R5, H1, H4, H5, H2, d", "E9, E12 equivalences, a, D, curve (3)", "z=w divisor", "F0 height", "v=1 fibre", "branch series over QQ(x,h,r,u): residues and compensators", "real-v entry-face generators"],
+  "numeric_tests": ["3000 chart samples (both roots), seed 20261125: 33 supported, min expansion coefficient/max|g| = 3.8e-4; min Phi over SO(4) at 12 supported points (6 restarts) = 9.5e-14 (zero up to rounding)"],
+  "unchecked": ["companion checker (not run, by rule)", "the cited cases T_4, T_5, T_9, T_15 themselves"]
+}

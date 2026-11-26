@@ -1,0 +1,180 @@
+{
+ "doc_id": "independent_moc4_T43_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T43_uniform_20261022.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "main (Theorem 1)",
+   "page": 1,
+   "paper_cases": [
+    44
+   ],
+   "contact_sets": [
+    [
+     1,
+     4,
+     5,
+     6,
+     7,
+     8
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For every x in X, pi* with P c(x) >= 0 and contacts containing {1,4,5,6,7,8} (extra ties, zero coefficients, coincident spectral values included), Phi_{c(x)}(O) >= 0 on O(4). The argument uses only C(Re x)=0 and det Hess C(Re x)=0, valid for all x in X."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "'original T24 core' (supplement label; central c, extra e, leaves a,b, SOC endpoint j) transported by g=((2,3,0,1),(1,3,0,2),0) in lib convention",
+   "used_for": "coefficient bounds (2),(3)",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "SOC bound cj>=1, old-H bound c>=1+1/e, four-coefficient bound K>=0, coherent bound (ab>1), parallel bound (ab<1,b>=1), closed coherent bound at ab=1",
+   "used_for": "safe region",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "supplement verifier: 33 Bernstein tables (8) with nonnegative integer coefficients",
+   "used_for": "(9)",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity C=0, det Hess C=0 on Re x",
+   "used_for": "G9=0 for hard realizable costs",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2 (two-orthogonal law)",
+   "used_for": "extension to U(4) (not needed for Prop 4.3)",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "id": "S1",
+   "claim": "generators {0,1,2,3,4,5,6,33,34,59}, nonminor 34",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "lib"
+  },
+  {
+   "id": "S2",
+   "claim": "(1) with coefficients (g14,g13,g16,g0,g10,g3-g13,g15,g19) on the whole 8-dim contact nullspace",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "all 8 nullspace basis vectors"
+  },
+  {
+   "id": "S3",
+   "claim": "d<=0: gap identities g3=p+d, g9=b+d, g18=q+d+a, g22=j+d+a; two f-identities; replacement of -m f34; all coefficients nonnegative",
+   "kind": "identity/inequality",
+   "status": "EXACT + PROOF-READ",
+   "how": "sympy; x=min(a,m), y=m-x bookkeeping checked by auditor"
+  },
+  {
+   "id": "S4",
+   "claim": "profile action (59,53,55,67,54,2)->(59,5,6,0,34,1) is in G",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "element found"
+  },
+  {
+   "id": "S5",
+   "claim": "bounds (2),(3) sufficient",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "other documents"
+  },
+  {
+   "id": "S6",
+   "claim": "(4): C = p{e(d-c)+d^2}+R, R >= 0 coefficientwise with d^3 coefficient 1; hence C>0 in the hard region and Q != 0",
+   "kind": "identity/inequality",
+   "status": "EXACT",
+   "how": "sympy from library cubic"
+  },
+  {
+   "id": "S7",
+   "claim": "(5) Q^4 det H = -4Q^2 G9^2; G9 quadratic in c",
+   "kind": "identity",
+   "status": "NUMERIC",
+   "how": "exact-at-points: 6 points, perfect squares, degree <= 2 in c, G9(base)=1"
+  },
+  {
+   "id": "S8",
+   "claim": "k0 = (b+1)(p+1)^2 P2 H4, H4 = (a+q+1)(-K)+D, D the 16 listed monomials; (7)",
+   "kind": "identity",
+   "status": "NUMERIC",
+   "how": "exact equality at 6 random rational points; (7) then follows since D >= 0"
+  },
+  {
+   "id": "S9",
+   "claim": "seven chart rows cover the hard chamber (ab<1/ab>1, j vs e, leaf order, j-cuts)",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "auditor checked each row's range and the cut values 1/j = 1+1/e, 1/e+1/b"
+  },
+  {
+   "id": "S10",
+   "claim": "33 tables nonnegative",
+   "kind": "certificate",
+   "status": "CITED",
+   "how": "supplement verifier; sampled exactly at 28 chart points (S11)"
+  },
+  {
+   "id": "S11",
+   "claim": "Bernstein numerators (8) >= 0",
+   "kind": "inequality",
+   "status": "NUMERIC",
+   "how": "exact values at 28 chart points, 2 per row and leaf orientation: all >= 0"
+  },
+  {
+   "id": "S12",
+   "claim": "(9) from (8) and k0>0",
+   "kind": "identity",
+   "status": "PROOF-READ",
+   "how": "standard quadratic Bernstein form"
+  },
+  {
+   "id": "S13",
+   "claim": "(10) at e=j=0",
+   "kind": "identity",
+   "status": "NUMERIC",
+   "how": "exact equality at 3 points"
+  },
+  {
+   "id": "S14",
+   "claim": "Section 5 boundary layers (zero leaves, ab=1, b=1, j=e)",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "limits of polynomial inequalities with finite endpoints; k0 strict by (7)"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generator inventory",
+  "operator identity (1) on the contact nullspace",
+  "gap identities and the d<=0 absorption",
+  "core profile action in G",
+  "(4) with R >= 0 and d^3 coefficient 1",
+  "G9(base)=1"
+ ],
+ "numeric_tests": [
+  "G9 degree <= 2 in c and perfect square at 6 exact points",
+  "k0 formula exact at 6 random rational points",
+  "(10) exact at 3 points",
+  "Bernstein numerators (8) >= 0 at 28 exact chart points (seed 44)",
+  "11 realizable T_44 points (seeds 0-11): 2 with d>0, none fails every bound; min Phi ~ 8e-11"
+ ],
+ "unchecked": [
+  "symbolic replay of G9 (1232 terms) and of the 33 tables",
+  "the cited coefficient bounds themselves"
+ ],
+ "one_line": "Primary proof of paper T_44={1,4,5,6,7,8} (literal match): operator identity (1), the d<=0 minor-sum reduction, (4) and the C>0 guard replay exactly; k0 = (b+1)(p+1)^2 P2 H4, (10) and the Bernstein numerators check exactly at sampled points; rests on cited SOC/old-H/four-coefficient/coherent/parallel bounds and the unreplayed 33 tables."
+}

@@ -1,0 +1,64 @@
+PASS kappa: P kappa = (1,...,1)
+PASS the eight source rays vanish together exactly on T_40 = {0,1,5,9,14,18} | [0, 1, 5, 9, 14, 18]
+PASS C(g + h kappa) has degree 1 in h
+PASS C = -(A B c + N_j)
+PASS Q = -{(q+e+1+a+b-p)c + (q+b+1)(e+a+1) - j(e+a) + pj}
+PASS Hessian symmetric
+PASS H(kappa) = height part of H(w) has entries only at (0,6),(1,5) and transposes | [(0, 6), (1, 5), (5, 1), (6, 0)]
+INFO Hessian built  [t=0.0s]
+INFO det H: 26218 terms, deg_h 3, deg_c 3  [t=6.6s]
+PASS deg_h det H(g + h kappa) = 3 | deg_h = 3
+PASS Q^3 det H(-C/Q) divisible by -4 Q
+PASS quotient is a perfect square G^2: identity (1) det H(w(c)) = -4 G^2/Q^2
+PASS constant term of G is +-1 | const = -1
+PASS G: 1313 terms, deg_c 2, total degree 9, height free | 1313 terms, deg_c 2, tdeg 9
+INFO G rebuilt  [t=6.8s]
+PASS Q^2 D'(-C/Q) = 4 G P6 Q exactly (so D'(-C/Q) = 4 G P6/Q), P6 has 464 terms | P6 464 terms
+PASS beta^2 - 4 alpha gamma = F+ F- (unit 1, two simple 306-term factors) | unit 1, factors [(306, 1, 8), (306, 1, 8)]
+PASS octics: product equals the discriminant, each total degree 8
+INFO discriminant factored  [t=6.9s]
+PASS P* (delete 0,1): height independent, degree 4 in c, 5188 terms | 5188 terms, deg_c 4
+INFO P* built  [t=7.1s]
+PASS pseudo-division: alpha^3 P* = Quot * G + r1 c + r0 (full polynomial identity) | r0 578728 terms, r1 527140 terms
+INFO pseudo-division done  [t=7.7s]
+PASS r1 = L M with two simple 13576-term factors (unit 1) | unit 1, factors [(13576, 1), (13576, 1)]
+PASS r1 == L*M exactly
+INFO r1 factored  [t=8.9s]
+PASS trace identity 2T = F+ M^2 + F- L^2, T = 2 alpha r0 - beta r1 (for one labelling)
+PASS Z = F+ M^2 - F- L^2 is not the zero polynomial | 1619914 terms
+PASS norm identity 4(T^2 - (beta^2-4 alpha gamma) r1^2) = Z^2
+PASS Vieta numerator: T^2 - disc r1^2 = 4 alpha (alpha r0^2 - beta r0 r1 + gamma r1^2)
+INFO trace-norm identity done  [t=88.0s]
+PASS bordered minor on I u {0}: height degree 2; Q^2 * minor(-C/Q) = G * quotient, quotient 2021 terms | raw 20639 terms, projected 82956, quotient 2021
+PASS bordered minor on I u {1}: height degree 2; Q^2 * minor(-C/Q) = G * quotient, quotient 1091 terms | raw 16186 terms, projected 58973, quotient 1091
+INFO bordered minors done  [t=97.4s]
+PASS N - (1 + S + ea) has nonnegative coefficients (S = a + e)
+PASS -Q = (q+b+1+S-p)c + 1 - JS + (q+b)(1+S) + pj (J = j - 1)
+PASS high-j certificate gamma: D=4, deg_p=2; 3648 terms (claimed 3648), all coefficients < 0; q=b=V=0 part = -j(j+1)[j(1+P)+P] J^D (L+M)^D
+PASS j=1 wall certificate gamma: 228 terms (claimed 228), all coefficients < 0, constant -2 (claimed -2)
+PASS high-j certificate AB_beta_minus_Nj_alpha: D=6, deg_p=2; 14147 terms (claimed 14147), all coefficients < 0; q=b=V=0 part = -j(j+1)[j(1+P)+P] J^D (L+M)^D
+PASS j=1 wall certificate AB_beta_minus_Nj_alpha: 491 terms (claimed 491), all coefficients < 0, constant -2 (claimed -2)
+PASS high-j certificate AB_Fa_plus_N_alpha: D=6, deg_p=2; 14123 terms (claimed 14123), all coefficients < 0; q=b=V=0 part = -j(j+1)[j(1+P)+P] J^D (L+M)^D
+PASS j=1 wall certificate AB_Fa_plus_N_alpha: 479 terms (claimed 479), all coefficients < 0, constant -2 (claimed -2)
+PASS high-j certificate AB_Fb_plus_N_alpha: D=6, deg_p=2; 14123 terms (claimed 14123), all coefficients < 0; q=b=V=0 part = -j(j+1)[j(1+P)+P] J^D (L+M)^D
+PASS j=1 wall certificate AB_Fb_plus_N_alpha: 479 terms (claimed 479), all coefficients < 0, constant -2 (claimed -2)
+INFO stored certificate names: high_j_gamma, j_equals_one_gamma, high_j_AB_beta_minus_Nj_alpha, j_equals_one_AB_beta_minus_Nj_alpha, high_j_AB_Fa_plus_N_alpha, j_equals_one_AB_Fa_plus_N_alpha, high_j_AB_Fb_plus_N_alpha, j_equals_one_AB_Fb_plus_N_alpha
+PASS data comparison: my high_j_gamma equals the supplement's stored table (3648 terms)
+PASS data comparison: my j_equals_one_gamma equals the supplement's stored table (228 terms)
+PASS data comparison: my high_j_AB_beta_minus_Nj_alpha equals the supplement's stored table (14147 terms)
+PASS data comparison: my j_equals_one_AB_beta_minus_Nj_alpha equals the supplement's stored table (491 terms)
+PASS data comparison: my high_j_F+- certificates equal the supplement's stored pair up to order/sign
+PASS data comparison: my j_equals_one_F+- certificates equal the supplement's stored pair up to order/sign
+PASS data comparison: my octics F+, F- equal the supplement's stored pair up to order/sign
+PASS data comparison: my factors L, M of r1 equal the supplement's stored pair up to order/sign
+PASS chart (5) inverse: P = pj/(1-pj), V = JS/(1-JS), L:M = a:e reproduce (p, S, a, e)
+---- T_40 cone data used by the assembly document, and the four-region cover ----
+PASS generators of N_{T_40} (Lemma 4.2 via library) = {1,2,5,9,11,12,28,29,33,35} | [1, 2, 5, 9, 11, 12, 28, 29, 33, 35]
+PASS non-minor generators are exactly f28, f35
+PASS identity f28 + f12 = f1 + f2 + f11 + f29 (all 24 values)
+PASS identity f35 + f11 = f1 + f5 + f12 + f33
+PASS identity f28 + f35 = 2 f1 + f2 + f5 + f29 + f33
+PASS inversion sigma -> sigma^{-1} maps T_40 onto itself
+PASS inversion maps g28-source (f2,f1,f11,f9,f5,f28,f29,f33) to g35-source (f5,f1,f12,f9,f2,f35,f33,f29) termwise
+PASS four-region cover: every grid point (p, j, a+e) lies in SOC, old-H, high-j, low-p,j or high-p
+SUMMARY 0 failures; elapsed 97.9 s

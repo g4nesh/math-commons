@@ -1,0 +1,119 @@
+==== part contacts
+== doc70 [2, 3, 5, 9, 10, 12]
+paper T_34 = [2, 3, 5, 9, 10, 12] find_g: ((0, 1, 2, 3), (0, 1, 2, 3), 0)
+generators: [0, 1, 2, 12, 39, 67, 70, 72] nonminor: [70] ['n1,4', 'n12,34', 'n13,34', 'n14,24', 'n14,13', 'n2,2', 'h4231,+', 'n12,12']
+  f0 n1,4 values (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1)
+  f1 n12,34 values (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1)
+  f2 n13,34 values (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0)
+  f12 n14,24 values (0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0)
+  f39 n14,13 values (0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0)
+  f67 n2,2 values (1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0)
+  f70 h4231,+ values (1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 2, 1, 1)
+  f72 n12,12 values (1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+ new index 0 nonminor values [1] -> pure minor
+ new index 1 nonminor values [1] -> pure minor
+ new index 4 nonminor values [0] -> [('T', 7, 1, (2, 3, 4, 5, 9, 10)), ('T', 12, 3, (2, 3, 4, 5, 9, 12)), ('T', 12, 3, (2, 3, 4, 5, 10, 12)), ('T', 39, 1, (2, 3, 4, 9, 10, 12)), ('T', 31, 1, (2, 4, 5, 9, 10, 12)), ('T', 46, 2, (3, 4, 5, 9, 10, 12))]
+ new index 6 nonminor values [1] -> pure minor
+ new index 7 nonminor values [0] -> [('T', 29, 1, (2, 3, 5, 7, 9, 10)), ('T', 39, 1, (2, 3, 5, 7, 9, 12)), ('T', 59, 8, (2, 3, 5, 7, 10, 12)), ('T', 49, 4, (2, 3, 7, 9, 10, 12)), ('T', 78, 6, (2, 5, 7, 9, 10, 12)), ('T', 46, 2, (3, 5, 7, 9, 10, 12))]
+ new index 8 nonminor values [0] -> [('T', 7, 1, (2, 3, 5, 8, 9, 10)), ('T', 12, 3, (2, 3, 5, 8, 9, 12)), ('T', 39, 1, (2, 3, 5, 8, 10, 12)), ('T', 12, 3, (2, 3, 8, 9, 10, 12)), ('T', 31, 1, (2, 5, 8, 9, 10, 12)), ('T', 46, 2, (3, 5, 8, 9, 10, 12))]
+ new index 11 nonminor values [1] -> pure minor
+ new index 13 nonminor values [0] -> [('T', 33, 5, (2, 3, 5, 9, 10, 13)), ('T', 22, 1, (2, 3, 5, 9, 12, 13)), ('T', 21, 1, (2, 3, 5, 10, 12, 13)), ('T', 21, 1, (2, 3, 9, 10, 12, 13)), ('T', 82, 10, (2, 5, 9, 10, 12, 13)), ('T', 34, 1, (3, 5, 9, 10, 12, 13))]
+ new index 14 nonminor values [0] -> [('T', 32, 11, (2, 3, 5, 9, 10, 14)), ('T', 41, 9, (2, 3, 5, 9, 12, 14)), ('T', 58, 6, (2, 3, 5, 10, 12, 14)), ('T', 56, 10, (2, 3, 9, 10, 12, 14)), ('T', 79, 8, (2, 5, 9, 10, 12, 14)), ('T', 81, 7, (3, 5, 9, 10, 12, 14))]
+ new index 15 nonminor values [1] -> pure minor
+ new index 16 nonminor values [0] -> [('T', 29, 1, (2, 3, 5, 9, 10, 16)), ('T', 39, 1, (2, 3, 5, 9, 12, 16)), ('T', 49, 4, (2, 3, 5, 10, 12, 16)), ('T', 59, 8, (2, 3, 9, 10, 12, 16)), ('T', 78, 6, (2, 5, 9, 10, 12, 16)), ('T', 46, 2, (3, 5, 9, 10, 12, 16))]
+ new index 17 nonminor values [1] -> pure minor
+ new index 18 nonminor values [0] -> [('T', 32, 11, (2, 3, 5, 9, 10, 18)), ('T', 41, 9, (2, 3, 5, 9, 12, 18)), ('T', 56, 10, (2, 3, 5, 10, 12, 18)), ('T', 58, 6, (2, 3, 9, 10, 12, 18)), ('T', 79, 8, (2, 5, 9, 10, 12, 18)), ('T', 81, 7, (3, 5, 9, 10, 12, 18))]
+ new index 19 nonminor values [1] -> pure minor
+ new index 20 nonminor values [1] -> pure minor
+ new index 21 nonminor values [2] -> pure minor
+ new index 22 nonminor values [1] -> pure minor
+ new index 23 nonminor values [1] -> pure minor
+==== part radial
+OK   generators(T) == doc list (f0,f1,f2,f12,f39,f67,f70,f72)
+OK   only f70 is non-minor
+names: ['n1,4', 'n12,34', 'n13,34', 'n14,24', 'n14,13', 'n2,2', 'h4231,+', 'n12,12']
+OK   P v = sum coef * profile and vanishes on T
+OK   C(v + H kappa) is affine in H
+OK   (2) Q = (a-U)M - dU
+OK   (3) C formula
+OK   M C - b c Q = bcdU - M[...] (Q=0 exclusion identity)
+R9: terms 1381 total degrees {9} uses h: False
+OK   Q^3 det Hess C(v - (C/Q) kappa) = -4 Q R9^2 at 12 random rational points (exact arithmetic)
+OK   C(Re x) = 0 and det Hess C(Re x) = 0 at a Gaussian-rational matching point
+deg_a R9 = 2
+OK   k0 has only positive coefficients and constant term 1
+OK   b=c=0: k2 = 0 and k1 has positive coefficients
+PART radial ALLOK True
+==== part gram
+OK   A^T A = |p|^2 |q|^2 I
+OK   det A = (|p|^2 |q|^2)^2 (so A in SO(4) on the unit spheres)
+Leibniz sums built
+feature blocks: 8
+OK   diag G00 = 2 Phi(f0)
+OK   diag G22 = 2 Phi(f2)
+OK   diag G33 = 2 Phi(f12)
+OK   diag G44 = 2 Phi(f39)
+OK   diag G55 = 2 Phi(f67)
+OK   (PB) G66 - 2 G02 - 2 G23 = 2 Phi(f70)
+OK   (CQ) G66 + 2 G24 - 2 G25 = 2 Phi(f70)
+OK   Schur: det[[p,-d,0],[-d,a,-d],[0,-d,b]] = p b (a - d^2/p - d^2/b)
+OK   Schur: det[[a,d,-d],[d,c,0],[-d,0,q]] = c q (a - d^2/c - d^2/q)
+PART gram ALLOK True
+==== part bernstein
+I p>=q middle terms 24805 negative coefficients 0 OK
+I p>=q endpoint terms 37747 negative coefficients 0 OK
+I q>=p middle terms 24805 negative coefficients 0 OK
+I q>=p endpoint terms 37747 negative coefficients 0 OK
+II p>=q middle terms 25370 negative coefficients 0 OK
+II p>=q endpoint terms 25342 negative coefficients 0 OK
+II q>=p middle terms 25370 negative coefficients 0 OK
+II q>=p endpoint terms 25342 negative coefficients 0 OK
+III p>=q middle terms 6166 negative coefficients 0 OK
+III p>=q endpoint terms 6166 negative coefficients 0 OK
+III q>=p middle terms 6166 negative coefficients 0 OK
+III q>=p endpoint terms 6166 negative coefficients 0 OK
+PART bernstein ALLOK True
+==== summary
+part contacts OK
+part radial OK
+part gram OK
+part bernstein OK
+EXACT CHECKS ALL PASS
+
+==== NUMERIC (separate run of numeric_stratum, T=[2,3,5,9,10,12], seeds 300..307, margin 0.01; killed by the 300 s limit)
+seed 300 no point
+seed 301 contact [2, 3, 5, 9, 10, 12] min gap off T 0.01 min Phi/sum(gaps) = 5.089e-14
+seed 302 contact [2, 3, 5, 9, 10, 12] min gap off T 0.0102 min Phi/sum(gaps) = 1.922e-14
+seed 303 no point
+seed 304 contact [2, 3, 5, 9, 10, 12] min gap off T 0.0111 min Phi/sum(gaps) = 8.109e-14
+seed 305 no point
+seed 306 contact [2, 3, 5, 9, 10, 12] min gap off T 0.0101 min Phi/sum(gaps) = 8.592e-14
+seed 307 contact [2, 3, 5, 9, 10, 12] min gap off T 0.01 min Phi/sum(gaps) = 1.247e-13
+runjob: killed after 300s
+==== NUMERIC (numeric_H, seed 7, 25 samples, 12 BFGS restarts)
+b=0.7075 c=1.025 a=1.577  min Phi = 2.148e-12
+b=20.65 c=0 a=1.048  min Phi = 3.608e-14
+b=0.02809 c=0.005753 a=30.55  min Phi = 7.652e-13
+b=0.3121 c=0.8998 a=1.825  min Phi = 1.089e-13
+b=1.884 c=0.2221 a=1.475  min Phi = 3.000e-12
+b=314.5 c=0 a=1.003  min Phi = -4.584e-13
+b=0.8836 c=0.07506 a=2.043  min Phi = 8.259e-14
+b=0.007729 c=0.02196 a=34.68  min Phi = 5.804e-13
+b=0.5213 c=0 a=2.918  min Phi = 2.375e-12
+b=0.002933 c=0.01014 a=77.48  min Phi = 2.270e-12
+b=1.397 c=0 a=1.716  min Phi = 4.754e-13
+b=35.56 c=307.5 a=1.003  min Phi = 6.991e-13
+b=0.03795 c=0 a=27.35  min Phi = 8.296e-14
+b=30.26 c=23.88 a=1.018  min Phi = 6.026e-13
+b=0.01223 c=0.001272 a=75.05  min Phi = 1.402e-12
+b=0.000687 c=0.000982 a=600.2  min Phi = 4.487e-12
+b=1.874 c=2.696 a=1.219  min Phi = 3.453e-12
+b=0.7635 c=0 a=2.31  min Phi = 2.841e-13
+b=0.02495 c=0 a=41.08  min Phi = -7.401e-14
+b=1.085 c=1.062 a=1.466  min Phi = 2.673e-12
+b=0.005688 c=0 a=176.8  min Phi = 6.521e-13
+b=0.3511 c=1.7 a=1.488  min Phi = 3.343e-12
+b=0.7508 c=0.1114 a=2.16  min Phi = 7.516e-12
+b=0.007279 c=0.0002479 a=133.9  min Phi = 6.010e-12
+b=0.004916 c=0.02952 a=30.04  min Phi = 2.872e-12
+worst (-4.583527324792494e-13, np.float64(314.4673318069906), 0.0)

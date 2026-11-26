@@ -1,0 +1,46 @@
+{
+ "doc_id": "root_moc4_T7_boundary16_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T7_boundary16_20261022.pdf",
+ "pages": 1,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "claim",
+   "page": 1,
+   "contact_set": [
+    0,
+    2,
+    5,
+    6,
+    7,
+    8,
+    16
+   ],
+   "paper_case": "7-set boundary of T_8",
+   "restatement": "x in X, g>=0, contacts contain T_8 u {16}: s=1, and if d>0 then ab>=d^2 so SOC applies; d<=0 minor; collision/circle layers cited."
+  }
+ ],
+ "dependencies": [
+  {
+   "ref": "T_8 chart identities",
+   "status": "audited"
+  },
+  {
+   "ref": "SOC atom F03",
+   "status": "CITED"
+  },
+  {
+   "ref": "collision/circle layers",
+   "status": "CITED"
+  }
+ ],
+ "steps": "5 steps, EXACT + PROOF-READ",
+ "gaps": [],
+ "exact_replays": [
+  "s=1 specialisation, d and g3 formulas",
+  "LV/LG interval derivations (auditor)",
+  "LG-LV identity"
+ ],
+ "numeric_tests": [],
+ "unchecked": []
+}

@@ -1,0 +1,42 @@
+PASS EXACT contact set {1,2,3,4,8,12} equals paper T_13 (identity element)
+PASS EXACT generators(T) = {0,1,2,5,6,9,10,53,54,55,56,57}
+PASS EXACT non-minor generators are exactly f54, f56, f57
+PASS EXACT value at index 0: 1 for f53..f57, 0 for the other generators (so the sum of non-minor coefficients <= g0)
+PASS EXACT f54, f56, f57 are >= 1 at each of 0, 5, 21, 23
+INFO j= 0 witnesses before stage 4: ['all generators of T+j minor']
+INFO j= 5 witnesses before stage 4: ['all generators of T+j minor']
+INFO j= 6 witnesses before stage 4: ['T_5 (stage 1) via subset (1, 2, 3, 4, 6, 8)', 'T_5 (stage 1) via subset (1, 2, 3, 4, 6, 12)']
+INFO j= 7 witnesses before stage 4: ['T_3 (stage 1) via subset (1, 2, 3, 4, 7, 8)', 'T_3 (stage 1) via subset (1, 2, 3, 4, 7, 12)']
+INFO j= 9 witnesses before stage 4: ['T_2 (stage 1) via subset (1, 2, 3, 4, 8, 9)', 'T_35 (stage 1) via subset (1, 2, 4, 8, 9, 12)']
+INFO j=10 witnesses before stage 4: ['T_1 (stage 1) via subset (1, 2, 3, 4, 8, 10)', 'T_12 (stage 3) via subset (1, 2, 3, 4, 10, 12)']
+INFO j=11 witnesses before stage 4: ['T_4 (stage 1) via subset (1, 2, 3, 4, 8, 11)', 'T_9 (stage 3) via subset (1, 2, 3, 4, 11, 12)']
+INFO j=13 witnesses before stage 4: ['T_12 (stage 3) via subset (1, 2, 3, 4, 8, 13)', 'T_1 (stage 1) via subset (1, 2, 3, 4, 12, 13)']
+INFO j=14 witnesses before stage 4: ['T_11 (stage 3) via subset (1, 2, 3, 4, 8, 14)', 'T_11 (stage 3) via subset (1, 2, 3, 4, 12, 14)']
+INFO j=15 witnesses before stage 4: ['T_7 (stage 1) via subset (1, 2, 3, 4, 12, 15)', 'T_29 (stage 1) via subset (1, 2, 3, 8, 12, 15)']
+INFO j=16 witnesses before stage 4: ['T_10 (stage 2) via subset (1, 2, 3, 4, 8, 16)', 'T_10 (stage 2) via subset (1, 2, 3, 4, 12, 16)']
+INFO j=17 witnesses before stage 4: ['T_12 (stage 3) via subset (1, 2, 3, 4, 8, 17)', 'T_6 (stage 1) via subset (1, 2, 3, 4, 12, 17)']
+INFO j=18 witnesses before stage 4: ['T_2 (stage 1) via subset (1, 2, 3, 4, 12, 18)', 'T_35 (stage 1) via subset (1, 2, 3, 8, 12, 18)']
+INFO j=19 witnesses before stage 4: ['T_9 (stage 3) via subset (1, 2, 3, 4, 8, 19)', 'T_4 (stage 1) via subset (1, 2, 3, 4, 12, 19)']
+INFO j=20 witnesses before stage 4: ['T_7 (stage 1) via subset (1, 2, 3, 4, 8, 20)', 'T_36 (stage 1) via subset (1, 2, 3, 8, 12, 20)']
+INFO j=21 witnesses before stage 4: ['all generators of T+j minor']
+INFO j=22 witnesses before stage 4: ['T_6 (stage 1) via subset (1, 2, 3, 4, 8, 22)', 'T_12 (stage 3) via subset (1, 2, 3, 4, 12, 22)']
+INFO j=23 witnesses before stage 4: ['all generators of T+j minor']
+PASS EXACT every j outside T has a witness: T+j all-minor or contains an image of a paper case of an earlier stage
+PASS EXACT T+j all-minor exactly for j in {0,5,21,23}
+PASS EXACT R2 = -t + x
+PASS EXACT R3 = t*(x - 1)
+PASS EXACT R4 = 1 - t
+PASS EXACT R0 = x*(v - 1)/v
+PASS EXACT (P3-P1)/(P2-P4) = t
+PASS EXACT (3) P8-P1-r v(z-w) = E1
+PASS EXACT (4) P12-P1-u v(z-w) = v E2
+PASS EXACT (6) a(v) E1|z=(5) = quadratic
+PASS EXACT z = w: E2 = (tv-x)(z-1)
+PASS EXACT z = w: E1 = z(v-z)(tv-x)
+PASS EXACT quadratic at v=0 is x w (D w - x)
+PASS EXACT d/dw at w=0, x/D are -x^2, x^2
+PASS EXACT branch (z,w)=(0,x/(-t - u + x)): z-w != 0 and residue vector = -x f53
+PASS EXACT branch (z,w)=(x/(t + u),0): z-w != 0 and residue vector = -x f55
+PASS EXACT f53, f55 are minor vectors
+NUMERIC chart sampling (seed 11): 1258 draws, 40 supported points, worst min_O Phi = 1.727e-14, worst L_O + C_O g0 over 50 random O each = 4.359e-03
+SUMMARY: 0 EXACT failures

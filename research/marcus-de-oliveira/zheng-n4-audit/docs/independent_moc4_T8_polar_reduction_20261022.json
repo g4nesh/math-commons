@@ -1,0 +1,112 @@
+{
+ "doc_id": "independent_moc4_T8_polar_reduction_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T8_polar_reduction_20261022.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "restatement": "Fix O in SO(4). If x in X with Pc(x)>=0, contacts containing T_9={0,1,2,3,11,12} and Phi_c(x)(O)<0, then some x' in X with Pc(x')>=0, contacts containing T_9u{18} or T_9u{20}, has Phi(O)<0. Degenerate spectra via Appendix B.",
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     3,
+     11,
+     12
+    ],
+    [
+     0,
+     1,
+     2,
+     3,
+     11,
+     12,
+     18
+    ],
+    [
+     0,
+     1,
+     2,
+     3,
+     11,
+     12,
+     20
+    ]
+   ],
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "Appendix B (Thm B.1, Lemma B.2)",
+   "used_for": "degenerate spectra / collisions",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "T^(7)_1 (= T_9 u {9})",
+   "contact_set": [
+    0,
+    1,
+    2,
+    3,
+    9,
+    11,
+    12
+   ],
+   "used_for": "u=0 and endpoint 9",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_4,T_5,T_6,T_7 (Stage 1)",
+   "used_for": "endpoints 6,7,21,23",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  "chart lemma (auditor proof)",
+  "curve/inverse EXACT",
+  "pivotal formulas EXACT",
+  "residue table EXACT",
+  "source-cone EXACT",
+  "harmonic min PROOF-READ",
+  "nonvanishing EXACT",
+  "perturbation PROOF-READ",
+  "inventory EXACT"
+ ],
+ "gaps": [
+  {
+   "location": "p.1 chart",
+   "claim": "two-circle chart covers all 8-distinct T_9 points",
+   "why": "asserted without proof",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "auditor lemma: contacts 1,2,3 force A4 real and C3/C2 real"
+  },
+  {
+   "location": "p.3-4 inventory",
+   "claim": "endpoints 6,7,21,23 contain T2,T4,T5",
+   "why": "labels inconsistent with paper indices; actual: paper T_4..T_7",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "cite paper T_4,T_5,T_6,T_7"
+  }
+ ],
+ "exact_replays": [
+  "chart contacts H0-H3,H12",
+  "inverse and converse",
+  "H11=u <=> quadratic",
+  "pivotal H formulas mod real constants",
+  "residue table 7 rows with A(R)",
+  "ramified/coalescent cases",
+  "source-cone decomposition",
+  "d,w,z-w nonvanishing identities",
+  "endpoint inventory and orbit containments"
+ ],
+ "numeric_tests": [],
+ "unchecked": []
+}
