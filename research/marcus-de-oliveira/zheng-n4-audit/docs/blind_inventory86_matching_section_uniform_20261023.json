@@ -1,0 +1,54 @@
+{
+  "doc_id": "blind_inventory86_matching_section_uniform_20261023",
+  "pdf": "proofs/manin_transfer_20261021/blind_inventory86_matching_section_uniform_20261023.pdf",
+  "pages": 4,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "whole", "page": 1, "paper_cases": [87], "contact_sets": [[4, 5, 7, 9, 12, 14]], "covers_all_spectra": true,
+     "restatement": "For every x in X (all spectra, incl. repeated eigenvalues and a_i+b_j=0) with P c(x) >= 0 and (P c(x))_s = 0 for s in T_87 = {4,5,7,9,12,14} (non-strict), Phi_{c(x)}(O) >= 0 for all O in O(4)."}
+  ],
+  "dependencies": [
+    {"kind": "paper-case", "ref": "T_68", "contact_set": [1, 4, 5, 7, 9, 12], "used_for": "extra contacts 2, 10, 13", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_51", "contact_set": [1, 3, 5, 10, 11, 12], "used_for": "extra contacts 3, 8, 16", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_61", "contact_set": [1, 2, 3, 9, 11, 12], "used_for": "extra contact 18", "match_checked": true},
+    {"kind": "common-lemma", "ref": "paper Lemma 3.5 (bounded-negative-part / maximum principle)", "used_for": "completion of the curve argument", "match_checked": true},
+    {"kind": "external", "ref": "HMSV: X = {grad C = 0}", "used_for": "curve points lie in X", "match_checked": true},
+    {"kind": "core-doc", "ref": "GIT lift of nonzero points of X + Lemma B.2 (repeated eigenvalue)", "used_for": "spectral realizability of curve points, same-colour collisions", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "kernel dim 8, basis (2)", "status": "EXACT"},
+    {"n": 2, "claim": "first seven coefficients = gaps (18,16,13,10,8,3,2)", "status": "EXACT"},
+    {"n": 3, "claim": "generators(T_87)", "status": "EXACT"},
+    {"n": 4, "claim": "circuit (3)", "status": "EXACT"},
+    {"n": 5, "claim": "negative-side rows b+d,...,k+d", "status": "EXACT"},
+    {"n": 6, "claim": "swap f35<->f70 in stabilizer", "status": "EXACT"},
+    {"n": 7, "claim": "extra-contact table", "status": "EXACT+CITED"},
+    {"n": 8, "claim": "(4) -L <= -Bd", "status": "PROOF-READ"},
+    {"n": 9, "claim": "stabilizer 12, six f70-fixing elements give the edge cycle", "status": "EXACT"},
+    {"n": 10, "claim": "E != 0 unless all F equal", "status": "PROOF-READ"},
+    {"n": 11, "claim": "(5) (dC13 - dC2)(L8x + z kappa) = -d^2", "status": "EXACT"},
+    {"n": 12, "claim": "leaf (6), ranks 5 and 9, real offset", "status": "EXACT"},
+    {"n": 13, "claim": "curve of local dimension >= 1", "status": "PROOF-READ"},
+    {"n": 14, "claim": "(7) z-coefficient -d-e-g+h-u; nonconstancy", "status": "EXACT+PROOF-READ"},
+    {"n": 15, "claim": "(8) G13 - G2 = -d^2 + (h+r+s-u-1)d + r(u-h)", "status": "EXACT"},
+    {"n": 16, "claim": "d constant on the irreducible curve", "status": "PROOF-READ"},
+    {"n": 17, "claim": "-L bounded near punctures", "status": "PROOF-READ"},
+    {"n": 18, "claim": "boundary points safe", "status": "CITED"},
+    {"n": 19, "claim": "Lemma 3.5 conclusion", "status": "CITED+PROOF-READ"},
+    {"n": 20, "claim": "exhaustion of cases", "status": "PROOF-READ"}
+  ],
+  "gaps": [],
+  "exact_replays": [
+    "generators(T_87) = {0,1,2,5,12,35,45,59,70}; kernel basis; gap pattern; circuit (3); negative-side rows",
+    "stabilizer of order 12; 6 elements swap f35/f70; 6 fix f70 and give the edges (4,9),(4,14),(5,7),(5,12),(7,14),(9,12)",
+    "extra-contact table: images of T_68, T_51, T_61; f70 > 0 on the 11 others",
+    "(5) with the paper cubic: dC/dm13 - dC/dm2 = -d^2 on L8 x + z kappa",
+    "leaf ranks; grad C(m + z kappa) = grad C(m) + z H_kappa m; (7) coefficient -d-e-g+h-u verbatim",
+    "(8) verbatim with own v0; unique d-only combination"
+  ],
+  "numeric_tests": [
+    "d-only quadratic (8) at 4000 random complex spectra, seed 7: max residual 9.7e-14",
+    "brief main-statement test: 6 stratum points with contact set exactly T_87, min Phi 1.1e-13"
+  ],
+  "unchecked": ["the cited earlier cases T_68, T_51, T_61 (not audited here)", "the supplement certificate (not opened by design)"]
+}

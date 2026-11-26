@@ -1,0 +1,16 @@
+PASS T65 generators are the eight facets (2,9,1,45,5,35,0,7) of the document
+PASS the eight generators are linearly independent (coefficients of a source are unique)
+PASS only f35 is non-minor
+PASS C(c) = -d(qp+qe+qd+qa+pe+pd+pb+ed+d^2+db+da+ba) (height-equation constant; < 0 when d>0, others >= 0)
+PASS C(c + h kappa) = C(c) + h (m0 m6 - m1 m5) (linear in h)
+PASS det Hess C(c + h kappa) has h-degree <= 3 :: [0, 1, 2, 3]
+PASS at h = -C(c)/Q: det Hess C = -4 d^2 G^2 / Q^2 with G a polynomial (965 terms, multidegree (2,2,2,2,2,8,3,3)) :: 965
+INFO G built in 6.4s :: sign fixed so that G > 0 at (q,p,j,c,e,d,b,a)=(0,2,1/2,1/1000,2/3,1,2,1/10): G = 633.0121937158333
+PASS chart origin: (c+1)/(1-s)^2 - 1/(b+1) == 1/J*  (so (c+1)/K < (1-s)^2 <=> j < J*)
+PASS chart origin: low e (e < b(b+1)) gives 1/e + 1/(b+1) > 1/b, so B = 1/e + 1/(b+1)
+PASS canonical clearing denominator has nonnegative coefficients and is free of Q
+PASS cleared G is quadratic in Q with (40647, 41139, 38301) terms :: (40647, 41139, 38301)
+PASS g1: every coefficient a positive integer; a positive monomial free of P :: (41139, 1)
+PASS reduced denominator D_Phi has nonnegative coefficients (positive on the chart)
+PASS g2 = R + 2 A U^2 V^2 N_Phi with R of 38304 strictly positive coefficients, a positive monomial free of P :: (38304, 1)
+SUMMARY: 0 EXACT check(s) failed []

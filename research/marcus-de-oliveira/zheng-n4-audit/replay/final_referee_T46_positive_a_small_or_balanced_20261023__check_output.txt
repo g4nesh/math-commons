@@ -1,0 +1,21 @@
+[EXACT] PASS  G9 rebuilt (1556 terms; det Hess = -4G^2/Q^2)
+[EXACT] PASS  C0 = -(q+d)L - jM has only negative coefficients (so C0 < 0 when d, b > 0 and the rest >= 0)
+[EXACT] PASS  q,b<1, e<e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 4916 terms (document: 4916 terms)
+[EXACT] PASS  q,b<1, e=e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 1815 terms (document: 1815 terms)
+[EXACT] PASS  q,b<1, e>e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 10809 terms (document: 10809 terms)
+[EXACT] PASS  q=1,b<1 wall, e<e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 1205 terms
+[EXACT] PASS  q=1,b<1 wall, e=e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 450 terms
+[EXACT] PASS  q=1,b<1 wall, e>e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 2712 terms
+[EXACT] PASS  q<1,b=1 wall, e<e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 1043 terms
+[EXACT] PASS  q<1,b=1 wall, e=e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 345 terms
+[EXACT] PASS  q<1,b=1 wall, e>e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 1660 terms
+[EXACT] PASS  q=b=1 wall, e<e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 257 terms
+[EXACT] PASS  q=b=1 wall, e=e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 87 terms
+[EXACT] PASS  q=b=1 wall, e>e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 414 terms
+[EXACT] PASS  q=b>1 outside core, e<e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 4095 terms (document: 4095 terms)
+[EXACT] PASS  q=b>1 outside core, e=e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 1377 terms (document: 1377 terms)
+[EXACT] PASS  q=b>1 outside core, e>e0: every coefficient negative, denominators positive, strict negative monomial free of A, C; 8398 terms (document: 8398 terms)
+[EXACT] PASS  e > e0 iff b(e-1) - 1 > 0 (so a4 > 0 exactly on the e > e0 chart): b(e0+u-1)-1 = b u
+[EXACT] PASS  balanced: lambda = K = (V+2)/V, core threshold max(1/j - (x-1)/(x+1), 0)
+[EXACT] PASS  balanced chart: p = V P/((V+2) J (1+P)) equals cap * P/(1+P) with cap = 1/j - 1/lambda
+summary: 0 EXACT failures

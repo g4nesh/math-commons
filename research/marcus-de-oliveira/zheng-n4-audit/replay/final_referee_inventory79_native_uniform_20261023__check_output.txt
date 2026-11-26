@@ -1,0 +1,80 @@
+== A/B. contact set, generators, boundary ties
+PASS T equals paper T_80 literally
+PASS generators(T) = [0,1,2,5,6,9,10,53,54,59] (eq. (1))
+PASS only f_54 is non-minor
+PASS f_54(5) = 1 and f_54(15) = 1, so delta <= g5 and delta <= g15 (eq. (2))
+  tie j= 0: kills non-minor coeff=True; earlier six-subsets=[(1, 'minor'), (3, 'minor'), (4, 'minor'), (6, 'minor'), (8, 'minor'), (12, 'minor')]; earlier Table-5 set=None
+  tie j= 2: kills non-minor coeff=False; earlier six-subsets=[(1, 'T13'), (3, 'T5'), (4, 'T5'), (6, 'T13'), (8, 'T5'), (12, 'T5')]; earlier Table-5 set=None
+  tie j= 5: kills non-minor coeff=True; earlier six-subsets=[(3, 'minor'), (4, 'minor'), (6, 'minor'), (8, 'minor'), (12, 'minor')]; earlier Table-5 set=None
+  tie j= 7: kills non-minor coeff=False; earlier six-subsets=[(1, 'T72'), (3, 'T50'), (4, 'T50'), (6, 'T72'), (8, 'T50'), (12, 'T50')]; earlier Table-5 set=T7_7 (stage 1)
+  tie j= 9: kills non-minor coeff=True; earlier six-subsets=[(1, 'T70'), (3, 'minor'), (4, 'minor'), (6, 'T70'), (8, 'minor'), (12, 'minor')]; earlier Table-5 set=None
+  tie j=10: kills non-minor coeff=False; earlier six-subsets=[(1, 'T48'), (3, 'T44'), (4, 'T69'), (6, 'T48'), (8, 'T69'), (12, 'T44')]; earlier Table-5 set=None
+  tie j=11: kills non-minor coeff=True; earlier six-subsets=[(3, 'minor'), (4, 'minor'), (6, 'T79'), (8, 'minor'), (12, 'minor')]; earlier Table-5 set=None
+  tie j=13: kills non-minor coeff=False; earlier six-subsets=[(1, 'T48'), (3, 'T69'), (4, 'T44'), (6, 'T48'), (8, 'T44'), (12, 'T69')]; earlier Table-5 set=None
+  tie j=14: kills non-minor coeff=True; earlier six-subsets=[(1, 'minor'), (3, 'minor'), (4, 'minor'), (8, 'minor'), (12, 'minor')]; earlier Table-5 set=None
+  tie j=15: kills non-minor coeff=True; earlier six-subsets=[(1, 'T79'), (3, 'minor'), (4, 'minor'), (8, 'minor'), (12, 'minor')]; earlier Table-5 set=None
+  tie j=16: kills non-minor coeff=False; earlier six-subsets=[(3, 'T73'), (4, 'T73'), (8, 'T73'), (12, 'T73')]; earlier Table-5 set=T7_17 (stage 1)
+  tie j=17: kills non-minor coeff=False; earlier six-subsets=[]; earlier Table-5 set=T7_13 (stage 1)
+  tie j=18: kills non-minor coeff=True; earlier six-subsets=[(1, 'T70'), (3, 'minor'), (4, 'minor'), (6, 'T70'), (8, 'minor'), (12, 'minor')]; earlier Table-5 set=None
+  tie j=19: kills non-minor coeff=True; earlier six-subsets=[(3, 'minor'), (4, 'minor'), (6, 'T79'), (8, 'minor'), (12, 'minor')]; earlier Table-5 set=None
+  tie j=20: kills non-minor coeff=True; earlier six-subsets=[(1, 'T79'), (3, 'minor'), (4, 'minor'), (8, 'minor'), (12, 'minor')]; earlier Table-5 set=None
+  tie j=21: kills non-minor coeff=True; earlier six-subsets=[(1, 'minor'), (3, 'minor'), (4, 'minor'), (6, 'minor'), (8, 'minor'), (12, 'minor')]; earlier Table-5 set=None
+  tie j=22: kills non-minor coeff=False; earlier six-subsets=[]; earlier Table-5 set=T7_13 (stage 1)
+  tie j=23: kills non-minor coeff=True; earlier six-subsets=[(1, 'minor'), (3, 'minor'), (4, 'minor'), (6, 'minor'), (8, 'minor'), (12, 'minor')]; earlier Table-5 set=None
+PASS ties forcing delta = 0 are exactly 0,5,9,11,14,15,18,19,20,21,23
+PASS ties 2,7,10,13,16 contain an earlier-stage six-set
+PASS ties 17,22: no earlier six-set, but T+{j} is an image of Table 5 set 13 (stage 1)
+PASS M = {0,1,2,7,10,16,17} is Table 5 set T7_13
+PASS explicit g with g.M = T+{17}: ((0, 2, 1, 3), (0, 2, 3, 1), 0)
+PASS explicit g with g.M = T+{22}: ((3, 1, 2, 0), (1, 3, 2, 0), 0)
+== C. parametrization in original variables (sympy)
+PASS E = F3-F1 = v t (x-1)(z-w)
+PASS (3) r = (1-t)/(t(x-1))
+PASS (3) s = (z-v)(x-tv)/E
+PASS (3) u = z(1-w)(x-tv)/E
+PASS alpha = (x-tv)/(vt(x-1))
+PASS (4) v = Z((s-a)Z+u-s)/B0
+PASS (4) w = Z(u-a)/B0
+PASS (5) x = 1+(v-1)/(h+u-uv/Z)
+PASS (5) t = 1/(1+r(x-1))
+PASS (6) B0 = a z(1-z)/(z-w)
+PASS (6) (h+u-uv/z)(x-1) = v-1
+  factor alpha numerator: -t*v + x
+  factor h: (t*v**2*z - t*v**2 - t*v*w*z + t*v*w - v*w*x + v*x + w*x*z - x*z)/(t*v*(-w + z)*(x - 1))
+  factor J: (t*v*x - t*v + v - x)/(t*v*(x - 1))
+PASS x = (D+N)/D
+PASS t = D/(D+rN)
+  C terms (in r,s,u,h,J,Z): 49  bidegree (J,Z): 2 2
+PASS (7) C has 49 terms, bidegree (2,2)
+PASS (8) B0 C = D(J B0 - D) + N(r B0 - a D)
+  factor C: irreducible over Q
+PASS [J^2]C = h Z^2
+PASS C(J,0) = gamma
+PASS [J^1 Z^0]C = 0 (no linear term in tangent cone)
+PASS [J Z]C = beta
+PASS (11) tangent cone h Z^2 + beta T0 Z + gamma T0^2
+PASS [J Z^2]C at h=0 is r - s u
+PASS (14) C at h=0, r=su
+PASS [J^2 Z^2]C = h
+PASS H15 -> -1 as J->oo on stratum {h: 0, r: s*u, s: 1}
+PASS H15 -> -1 as J->oo on stratum {h: 0, r: s*u, u: 1}
+== C. the 24 products from the inverse, modulo C (python-flint)
+PASS C irreducible over Q
+PASS (9) H1 holds: identically
+PASS (9) H3 holds: identically
+PASS (9) H4 holds: identically
+PASS (9) H5 holds: mod C
+PASS (9) H6 holds: mod C
+PASS (9) H8 holds: mod C
+PASS (9) H12 holds: mod C
+PASS (13) H15 formula: identically
+  numerator of H5 - J = C * cofactor, cofactor = (-1, [(Z, 1), (r - J + 1, 1), (r*Z - s*Z - u - J*Z + Z, 1), (Z - 1, 2), (r*Z - u - J*Z + Z, 2)])
+== D. NUMERIC main-statement search (library stratum sampler, margin 1e-3)
+  numeric point 0: contact=[1, 3, 4, 6, 8, 12]  P-residual=2.8e-14  min Phi (scaled) = 1.371e-12
+  numeric point 1: contact=[1, 3, 4, 6, 8, 12]  P-residual=1.3e-14  min Phi (scaled) = 4.491e-12
+  numeric point 2: contact=[1, 3, 4, 6, 8, 12]  P-residual=2.0e-14  min Phi (scaled) = 1.062e-11
+  numeric point 3: contact=[1, 3, 4, 6, 8, 12]  P-residual=1.3e-14  min Phi (scaled) = 3.317e-12
+  numeric point 4: contact=[1, 3, 4, 6, 8, 12]  P-residual=1.1e-14  min Phi (scaled) = 1.319e-12
+  numeric point 5: contact=[1, 3, 4, 6, 8, 12]  P-residual=2.5e-14  min Phi (scaled) = 4.505e-12
+  NUMERIC: 6 points found, worst scaled min Phi = 1.3194967078136425e-12
+EXACT failures: []

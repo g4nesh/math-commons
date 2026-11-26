@@ -1,0 +1,46 @@
+{
+  "doc_id": "final_referee_inventory87_uniform_20261023",
+  "pdf": "proofs/manin_transfer_20261021/final_referee_inventory87_uniform_20261023.pdf",
+  "pages": 4,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "whole", "page": 1, "paper_cases": [88], "contact_sets": [[1, 5, 6, 10, 13, 14]], "covers_all_spectra": true,
+     "restatement": "For every x in X with P c(x) >= 0 and (P c(x))_s = 0 for s in T_88 = {1,5,6,10,13,14} (non-strict, any spectrum), Phi_{c(x)}(O) >= 0 for all O in O(4). Proof: d <= H3(a,b,c) is safe by three SOC atoms; H3 < d is impossible for realizable sources since det Hess C(Re x) = -4G^2/Q^2 with G > 0 there."}
+  ],
+  "dependencies": [
+    {"kind": "common-lemma", "ref": "SOC atom family, rep (f1,f9;f22), orbit 144; tuples (1,10;30), (1,59;30), (10,59;30)", "used_for": "(4)-(5) capacity d <= H3", "match_checked": true},
+    {"kind": "common-lemma", "ref": "radial necessity (re-proved in document; brief item 5)", "used_for": "(8)-(9) G = 0", "match_checked": true},
+    {"kind": "core-doc", "ref": "Theorem 1.2", "used_for": "unitary restatement only", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "kernel basis (1)", "status": "EXACT"},
+    {"n": 2, "claim": "(2) exclusive gaps and d = g19 - g20", "status": "EXACT"},
+    {"n": 3, "claim": "generators(T_88)", "status": "EXACT"},
+    {"n": 4, "claim": "(3) circuit and d < 0 rewrite", "status": "EXACT"},
+    {"n": 5, "claim": "transpose swaps f30/f34", "status": "EXACT"},
+    {"n": 6, "claim": "(4) SOC atoms in the proved orbit", "status": "EXACT+CITED"},
+    {"n": 7, "claim": "(5) H3 allocation", "status": "PROOF-READ"},
+    {"n": 8, "claim": "(7) cubic identity", "status": "EXACT"},
+    {"n": 9, "claim": "radial necessity", "status": "PROOF-READ"},
+    {"n": 10, "claim": "(8) Hessian identity, G with 2285 terms", "status": "EXACT"},
+    {"n": 11, "claim": "balanced chart positivity (20241 coefficients)", "status": "EXACT"},
+    {"n": 12, "claim": "six dominant charts (27372 coefficients each, 8X)", "status": "EXACT"},
+    {"n": 13, "claim": "three solo charts (450 coefficients, constant 1)", "status": "EXACT"},
+    {"n": 14, "claim": "chart exhaustion", "status": "PROOF-READ"},
+    {"n": 15, "claim": "conclusion", "status": "PROOF-READ"}
+  ],
+  "gaps": [],
+  "exact_replays": [
+    "generators, basis (1), (2), circuit (3), negative-side rows, transpose action",
+    "SOC orbit membership of (1,10;30), (1,59;30), (10,59;30)",
+    "(7) C(L + H kappa) = C + H Q with the paper cubic, sign +1",
+    "(8) exact Bareiss det (819 divisions), Q^2 division, square root: G 2285 terms, multidegree (3,2,3,2,3,3,2,9), d^9 coefficient 1",
+    "balanced chart 20241 positive coefficients, constant 1; six dominant charts 27372 positive coefficients each with monomial 8X; three solo charts 450 positive coefficients, constant 1"
+  ],
+  "numeric_tests": [
+    "G > 0 at 3000 random sources with H3 < 1 (seed 11): min 0.305",
+    "d <= H3 at stratum points: vacuous (all 6 points found had d ~ 0)",
+    "brief main-statement test: 6 stratum points, min Phi 4.5e-15"
+  ],
+  "unchecked": ["supplement certificate (not opened by design)"]
+}

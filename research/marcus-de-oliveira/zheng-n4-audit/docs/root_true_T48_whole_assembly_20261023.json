@@ -1,0 +1,112 @@
+{
+ "doc_id": "root_true_T48_whole_assembly_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_true_T48_whole_assembly_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1 (whole)",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     3,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "paper_cases": [
+    49
+   ],
+   "covers_all_spectra": true,
+   "restatement": "Every x in X with Pc(x) >= 0 and contacts containing T_49 = {0,3,5,6,9,12} has Phi_{c(x)}(O) >= 0 on SO(4); assembled from a harmonic reduction to the c=0 frontier (T_49+{17}) plus three c=0 sub-theorems."
+  },
+  {
+   "label": "Lemma 2",
+   "page": 2,
+   "restatement": "x,y in Sing F (real cubic) => F(x+y)=0 and H(x+y) singular if x+y != 0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "branch",
+   "ref": "independent_true_T48_native_harmonic_conditional_20261023",
+   "used_for": "reduction to c=0",
+   "match_checked": false
+  },
+  {
+   "kind": "branch",
+   "ref": "independent_true_T48_c0_native_Heron_20261023",
+   "used_for": "F6>=0, sign L = -sign r",
+   "match_checked": false
+  },
+  {
+   "kind": "branch",
+   "ref": "blind_moc4_T48_c0_native_interlacing_20261023",
+   "used_for": "r>0 excluded",
+   "match_checked": false
+  },
+  {
+   "kind": "branch",
+   "ref": "blind_moc4_T48_c0_all_j_chain_20261023",
+   "used_for": "capacity pae>=d^2(a+e)",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "chain atom (5;0,2;40)",
+   "used_for": "safety at capacity",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "T_49+{17} = Table 5 set 23",
+   "contact_set": [
+    0,
+    3,
+    5,
+    6,
+    9,
+    12,
+    17
+   ],
+   "used_for": "frontier",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  "generators EXACT",
+  "substitution identities EXACT",
+  "case split PROOF-READ",
+  "independence EXACT",
+  "Lemma 2 PROOF-READ",
+  "height equation EXACT",
+  "Q0=0 exclusion EXACT",
+  "det identity EXACT pointwise",
+  "zero faces EXACT",
+  "Cramer/orientation CITED",
+  "interlacing CITED",
+  "all-j chain CITED",
+  "harmonic return CITED"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "T=T_49 literally",
+  "generators",
+  "f40+f1=f7+f39+f0, f40+f9=f7+f2+f41",
+  "rank of canonical eight",
+  "Q0 formula",
+  "(e+j)C0 at Q0=0 positive",
+  "det H*Q^2=-4G^2 at random points",
+  "G|c=0 759 terms",
+  "zero faces and ties with stages"
+ ],
+ "numeric_tests": [
+  "Lemma 2 sanity on 50 random realizable responses"
+ ],
+ "unchecked": [
+  "Cramer determinant and relations on p.3 (coordinates defined in cited document)"
+ ]
+}

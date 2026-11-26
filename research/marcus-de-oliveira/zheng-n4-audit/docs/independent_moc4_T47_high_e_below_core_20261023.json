@@ -1,0 +1,77 @@
+{
+ "doc_id": "independent_moc4_T47_high_e_below_core_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_high_e_below_core_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "restatement": "With d=1, b>1, 0<a<1/b, p>=b, q>=0, e>=b(b+1), 0<j<=1, r=sqrt(ab), k=b(1-r)^2/(b-r)^2: if 0<c<=k, Phi>=0 and F6>=0 then G>0 (all non-strict walls included). Purely algebraic; Phi and F6 >= 0 must be supplied by other results in any application.",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ]
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "own derivation of G and of F6 (common setting)",
+   "used_for": "definitions",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "disc_p G has a 123-term degree-6 irreducible factor F6; orientation [c^2]F6=(e-j)^2(q+d+b)^2",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "replay: disc_p G = F6 * (260-term octic)"
+  },
+  {
+   "n": "2",
+   "claim": "chart covers the stated domain exactly",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "r=V/(1+V) in (0,1); j=T/(T+Wj) in (0,1]; c=kS/(S+Ws) in (0,k]"
+  },
+  {
+   "n": "3",
+   "claim": "160 D_G [G - (p-b)F6 - q(e-e0)(q+e-e0+r(177+573r)/(160b))Phi] has nonnegative coefficients (26004 terms at Wj=Ws=1) with 61440 T^2 S^2",
+   "kind": "identity + coefficient-sign",
+   "status": "EXACT",
+   "how": "replay: remainder N/D with N, D nonnegative in all nine variables; count 26004 and coefficient 61440 reproduced"
+  },
+  {
+   "n": "4",
+   "claim": "multipliers nonnegative on the domain",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "P=p-b>=0, U=e-e0>=0, r(177+573r)/(160b) = V(177+750V)/(160b(1+V)^2)"
+  },
+  {
+   "n": "5",
+   "claim": "strict at all walls including P=U=Q=Wj=Ws=0",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "positive monomial in A,T,V,S only, in numerator and denominator"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "F6 factor and orientation",
+  "nine-variable remainder certificate (26004 terms, 61440 T^2 S^2)",
+  "native-form multiplier identity"
+ ],
+ "numeric_tests": [],
+ "unchecked": [],
+ "one_line": "Algebraic exclusion G > 0 on the high-e, below-core region given Phi >= 0 and F6 >= 0; F6, the identity and the remainder certificate replayed exactly; confirmed."
+}

@@ -1,0 +1,26 @@
+[EXACT] PASS  K - lambda = (q-b)^2/((qb-1)(q+b-2))
+[EXACT] PASS  core Thm 1 at beta = -1: threshold = (t-1)^2/(j - lambda t^2)
+[EXACT] PASS  core Thm 1 domain at beta = -1: (1 + (q+b-2beta)/l) = K
+[EXACT] PASS  t = j/lambda is stationary and gives 1/j - 1/lambda
+[EXACT] PASS  t = sqrt(j/K) gives (1 - sqrt(j/K))^2 / (j(1 - lambda/K))
+[EXACT] PASS  middle chart cap = (K - lambda)/(lambda + K J)^2 (with sqrt(j/K) = (lambda+KJ)/(K(1+J)))
+[EXACT] PASS  low chart j = lambda^2 J/(K(1+J)) ranges over (0, lambda^2/K); middle j(J=0) = lambda^2/K, j(J->oo) = K
+[EXACT] PASS  G9 rebuilt (1556 terms; det Hess = -4G^2/Q^2)
+[EXACT] PASS  b>q low e<e0 (our 244551 terms; document 178890): all coefficients negative, denominators positive, strict negative monomial free of C,H
+[EXACT] PASS  b>q low e=e0 (our 81662 terms; document 59765): all coefficients negative, denominators positive, strict negative monomial free of C,H
+[EXACT] PASS  b>q low e>e0 (our 454220 terms; document 344636): all coefficients negative, denominators positive, strict negative monomial free of C,H
+[EXACT] PASS  b>q middle e<e0 (our 930228 terms; document 462252): all coefficients negative, denominators positive, strict negative monomial free of C,H, and one with J-exponent 0
+[EXACT] PASS  b>q middle e=e0 (our 311827 terms; document 155158): all coefficients negative, denominators positive, strict negative monomial free of C,H, and one with J-exponent 0
+summary: 0 EXACT failures
+[EXACT] PASS  G9 rebuilt (1556 terms; det Hess = -4G^2/Q^2)
+[EXACT] PASS  q>b low e<e0 (our 265584 terms; document 196914): all coefficients negative, denominators positive, strict negative monomial free of C,H
+[EXACT] PASS  q>b low e=e0 (our 88840 terms; document 65863): all coefficients negative, denominators positive, strict negative monomial free of C,H
+[EXACT] PASS  q>b low e>e0 (our 544985 terms; document 422404): all coefficients negative, denominators positive, strict negative monomial free of C,H
+[EXACT] PASS  q>b middle e<e0 (our 1033191 terms; document 524880): all coefficients negative, denominators positive, strict negative monomial free of C,H, and one with J-exponent 0
+[EXACT] PASS  q>b middle e=e0 (our 347244 terms; document 176835): all coefficients negative, denominators positive, strict negative monomial free of C,H, and one with J-exponent 0
+[EXACT] PASS  q>b middle e>e0 (our 1996035 terms; document 1066536): all coefficients negative, denominators positive, strict negative monomial free of C,H, and one with J-exponent 0
+summary: 0 EXACT failures
+[EXACT] PASS  G9 rebuilt (1556 terms; det Hess = -4G^2/Q^2)
+[INFO] PASS  b>q middle e>e0 (our 1674701 terms; document 869439): 86 positive coefficients (document: 80 in its clearing)
+[EXACT] PASS  b>q middle e>e0 (our 1674701 terms; document 869439): auditor AM-GM certificate, 86 deficits covered by 86 pairs, remainder >= 0, 93369 strict monomials free of C,H (9456 with J^0)
+summary: 0 EXACT failures

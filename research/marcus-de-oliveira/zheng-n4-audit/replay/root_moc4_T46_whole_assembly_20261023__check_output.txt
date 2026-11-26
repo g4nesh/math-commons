@@ -1,0 +1,21 @@
+PASS contact set equals paper T_47 literally :: [1, 3, 5, 6, 7, 8]
+PASS (1) generators(T) = {f0,f1,f2,f3,f4,f5,f6,f27,f28,f59}; only f28 non-minor
+PASS (2a) f28 + f0 = f1 + f2 + f5 + f27
+PASS (2b) f28 + f3 = f4 + f5 + f27
+PASS absorption: consuming u of f0 and v of f3 raises q,c by u+v, p,e by u, a by v and lowers d by u+v (identity on all 24 values)
+PASS canonical form (3) has common zero set T, and its 8 rays are linearly independent (so they span the 8-dim contact nullspace)
+PASS (4) zero q=0: contact set [1, 3, 5, 6, 7, 8, 18] contains a G-image of paper T_29 (with the a resource present) :: g=((0, 1, 3, 2), (0, 1, 2, 3), 1)
+PASS (4) zero p=0: contact set [1, 3, 5, 6, 7, 8, 22] contains a G-image of paper T_36 (with the a resource present) :: g=((0, 1, 3, 2), (0, 3, 1, 2), 0)
+PASS (4) zero j=0: contact set [0, 1, 3, 5, 6, 7, 8] contains a G-image of paper T_1 (with the a resource present) :: g=((0, 1, 2, 3), (0, 1, 3, 2), 1)
+PASS (4) zero c=0: contact set [1, 3, 5, 6, 7, 8, 20] contains a G-image of paper T_39 (with the a resource present) :: g=((2, 1, 3, 0), (2, 3, 1, 0), 0)
+PASS (4) zero e=0: contact set [1, 3, 5, 6, 7, 8, 19] contains a G-image of paper T_42 (with the a resource present) :: g=((2, 3, 1, 0), (3, 2, 0, 1), 0)
+PASS (4) zero b=0: contact set [1, 3, 5, 6, 7, 8, 9] contains a G-image of paper T_7 (with the a resource present) :: g=((3, 2, 0, 1), (3, 1, 0, 2), 0)
+PASS a=0 face is exactly T u {14} = Table 5 set T^(7)_26 :: [1, 3, 5, 6, 7, 8, 14]
+PASS C0 (d=1) = -(q+1)L - jM, M=(c+1)(a+1+e), L=M+b(a+1); Q (d=1) = jp - j(c+e+1) - (c+1)(e+1) :: C0 = -q*c*e - q*c*d - q*c*a - q*e*d - q*d^2 - q*d*b - q*d*a - q*b*a - j*c*e - j*c*d - j*c*a - j*e*d - j*d^2 - j*d*a - c*e*d - c*d^2 - c*d*a - e*d^2 - d^3 - d^2*b - d^2*a - d*b*a; Q = p*j - j*c - j*e - j*d - c*e - c*d - e*d - d^2
+PASS C0 (d=1) has only negative coefficients and constant -1
+PASS radial identity: Q^4 det Hess C(g - (C0/Q) kappa) = -4 Q^2 G9^2, i.e. det = -4 G9^2/Q^2 :: h-degree 3; factors [(8, 1), (1556, 2)]; content -4; 230s
+PASS G9 is irreducible over Q with 1556 terms :: 1556 terms, degrees (3, 2, 2, 2, 2, 9, 3, 3, 0)
+PASS (6) sectors {q,b<=1 or q=b}, {qb<=1, max>1}, {qb>1, q!=b} cover (0,oo)^2 :: PROOF-READ: if qb<=1 then max(q,b)<=1 or >1; if qb>1 then q=b (sector 1) or q!=b (sector 3)
+NUMERIC necessity: G9 at 10 matching vectors with gaps vanishing on T (seed 7; 8-ray span = contact nullspace): max |G9|/sum|terms| = 2.73e-17; control at random coefficients: min 4.37e-01
+NUMERIC main statement: 4 points on the T_47 stratum (lib, seeds 0-3), 15 BFGS restarts each: worst min Phi / max gap = -6.356e-17
+SUMMARY: all exact checks passed

@@ -1,0 +1,30 @@
+{
+ "doc_id": "blind_moc4_T48_allocation_I_small_lambda_low_j_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_allocation_I_small_lambda_low_j_uniform_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  "Thm 1: eight-role source (d=1), a,e,j,q,b>0, 0<lambda<1/2, j<=1, any x in X: Phi>=0"
+ ],
+ "dependencies": [
+  "chain (f5;f0,f2;f40), (f5;f7,f29;f40), (f5;f29,f41;f40): in proved orbit (EXACT)",
+  "radial necessity (established) + det Hess C = -4G^2/Q0^2 (EXACT, own Bareiss) + 42-term (e+j)C-ejQ0 (EXACT)",
+  "zero faces q,p,j,e,b,a -> paper T_39,T_1,T_3,T_24,T_43,T_44 (embeddings EXACT, proofs CITED)",
+  "large-lambda note (this batch) for lambda=1/2 and the combination remark"
+ ],
+ "steps": [
+  "chain sum EXACT",
+  "chart identities EXACT",
+  "374775-term DG all one sign, marker 65536 T EXACT",
+  "onto PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "G rebuilt from definitions: 1772 terms, degree 9, sha256 c89c8cbc5331fcfdbdc22587fbcf8a017fc692eb8fd1f38edbe8a59ca0550a49; equals -(supplement radial factor)",
+  "DG 374775 terms with the document's D"
+ ],
+ "numeric_tests": [
+  "capacity at p=lambda, 12 points seed 14: worst -1.1e-16"
+ ],
+ "unchecked": []
+}

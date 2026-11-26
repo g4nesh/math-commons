@@ -1,0 +1,87 @@
+{
+ "doc_id": "final_referee_T46_negative_j_Heron_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T46_negative_j_Heron_uniform_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Thm 1",
+   "page": 1,
+   "restatement": "x in X with c(x)=sum of the 8 canonical rays, coefficients >=0, b,j,d>0  =>  H6 >= 0 (necessary condition; all spectra)",
+   "contact_sets": [
+    [
+     1,
+     3,
+     5,
+     6,
+     7,
+     8
+    ]
+   ]
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core",
+   "ref": "radial necessity (paper p.27; audit item 5)",
+   "used_for": "G9 = 0 at realizable costs",
+   "match_checked": true
+  },
+  {
+   "kind": "core",
+   "ref": "paper Cor. C.5 and Prop. C.6",
+   "used_for": "rank<=12 and 12x12 principal minors >=0 at realizable points",
+   "match_checked": true
+  },
+  {
+   "kind": "external",
+   "ref": "paper (C.2) from HMSV: det H|C = gamma0 s^2, zero locus of s = Sigma_2",
+   "used_for": "rank <= 12 at non-realizable approximating points of {C=0, det H=0}",
+   "match_checked": false
+  }
+ ],
+ "steps": "see the step table in final_referee_T46_negative_j_Heron_uniform_20261023.md",
+ "step_counts": {
+  "exact": 11,
+  "proof_read": 6,
+  "cited": 3,
+  "numeric": 1,
+  "gap": 0,
+  "unchecked": 0
+ },
+ "gaps": [
+  {
+   "location": "p.2, proof first paragraph",
+   "claim": "H8 <= 0 at the original point",
+   "why": "case H8 > 0 not stated; it is excluded by (5) at G=0",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "one line: G_j^2 = (q+d)^2 H6 H8 at G=0"
+  },
+  {
+   "location": "p.2, \"separately established global secant facts\"",
+   "claim": "rank <= 12 at every real point of {C=0, det H=0}",
+   "why": "no reference given",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "cite paper (C.2) (HMSV) + Corollary C.5"
+  }
+ ],
+ "exact_replays": [
+  "C(u)=C0+hQ",
+  "det Hess = -4G^2/Q^2, G 1556 terms",
+  "(1) disc = (q+d)^2 H6 H8",
+  "(2) H8 complete square",
+  "(3) wall derivatives",
+  "(4) gcds",
+  "(5)",
+  "principal minor = -j^2 P10",
+  "W^2, S+ = -H8 R8^2, S- = -(q+d)^2 H6 T8^2",
+  "P10 S+- congruences mod G"
+ ],
+ "numeric_tests": [
+  "lib stratum sampler, 77 points (seeds 0-39 margin 0, 100-139 margin 0.02): one point with d>0, H6 = 6.5e17 > 0; no violation"
+ ],
+ "unchecked": [],
+ "replay": "replay/final_referee_T46_negative_j_Heron_uniform_20261023__check.py"
+}

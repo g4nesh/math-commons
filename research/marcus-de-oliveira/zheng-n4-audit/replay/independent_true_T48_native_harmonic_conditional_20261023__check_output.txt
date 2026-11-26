@@ -1,0 +1,70 @@
+[EXACT] PASS  contact set (0,3,5,6,9,12) is literally paper T_49
+[EXACT] PASS  T u {17} is literally Table 5 set #23
+[EXACT] PASS  generators(T) = {0,1,2,5,7,9,29,39,40,41}
+[EXACT] PASS  only f40 is non-minor
+[EXACT] PASS  (1a) f40+f1 = f7+f39+f0 on all 24 values
+[EXACT] PASS  (1b) f40+f9 = f7+f2+f41 on all 24 values
+[EXACT] PASS  the 8 canonical generators are independent (rank 8 = rank of all 10)
+[EXACT] PASS  off-T indices with f40 = 0 are exactly (3) = 2,7,11,13,16,17,23
+[EXACT] PASS  each index of (3) carries exactly one canonical coefficient (2:j 7:b 11:p 13:e 16:q 17:c 23:a), value 1
+[EXACT] PASS  extra zero 2: some g maps paper T_12 into T u {2} (g = ('1234', '1234', 0))
+[EXACT] PASS  extra zero 7: some g maps paper T_37 into T u {7} (g = ('1234', '1234', 0))
+[EXACT] PASS  extra zero 11: some g maps paper T_21 into T u {11} (g = ('1234', '1234', 0))
+[EXACT] PASS  extra zero 13: some g maps paper T_42 into T u {13} (g = ('4231', '4321', 0))
+[EXACT] PASS  extra zero 16: some g maps paper T_34 into T u {16} (g = ('1324', '1342', 0))
+[EXACT] PASS  extra zero 23: some g maps paper T_44 into T u {23} (g = ('3421', '3214', 1))
+[EXACT] PASS  E = F0 - F6 = t(y-z)(w-1)
+[EXACT] PASS  r := -H5 = -C(x-z)
+[EXACT] PASS  s := H3 - H5 = C x (z-w)/(w-1)
+[EXACT] PASS  H0 = 0, H6 = -1 identically
+[EXACT] PASS  inverse (4) gives H3 = s-r, H5 = -r, H12 = -u identically
+[EXACT] PASS  r equation solved for y gives y = t(rz+x-z)/(rt+x-z)
+[EXACT] PASS  after (4): rt + x - z = r z^2 Dy/(V Dt)
+  time 1.8
+[EXACT] PASS  z = -M/ZD inverts J = V/(z(w-1))
+[EXACT] PASS  denominator of H9 is J(W-1)T (up to sign)
+[EXACT] PASS  deg_J C = deg_W C = 2
+[EXACT] PASS  (6) [W^2]C = -RJ{(d-1)J + d(u-1)}
+[EXACT] PASS  (6) [J^2]C = -{(d-1)W+s}{RW-R-1}
+[EXACT] PASS  (6) C(J,0) = s(J+u){(R+1)J+d}
+[EXACT] PASS  [J^2 W^2]C = -R(d-1)
+  time 4.6
+[EXACT] PASS  the complex gap vector (H_sigma) lies in im P (all 24 rows)
+[EXACT] PASS  (7) j_amp equals the printed formula up to a real shift (shift = 0*h + (0))
+[EXACT] PASS  (7) q+d_amp equals the printed formula up to a real shift (shift = -1*h + (-r + s))
+[EXACT] PASS  (7) a+d_amp equals the printed formula up to a real shift (shift = 0*h + (-1))
+[EXACT] PASS  (7) c+d_amp equals the printed formula up to a real shift (shift = 0*h + (0))
+[EXACT] PASS  (7) p_amp equals the printed formula up to a real shift (shift = 1*h + (r))
+[EXACT] PASS  (8) q_amp: denominator factors lie in {J, W, W-1, T} (T handled by (11))
+[EXACT] PASS  (8) p_amp: denominator factors lie in {J, W, W-1, T} (T handled by (11))
+[EXACT] PASS  (8) j_amp: denominator factors lie in {J, W, W-1, T} (T handled by (11))
+[EXACT] PASS  (8) c_amp: denominator factors lie in {J, W, W-1, T} (T handled by (11))
+[EXACT] PASS  (8) e_amp: denominator factors lie in {J, W, W-1, T} (T handled by (11))
+[EXACT] PASS  (8) d_amp: denominator factors lie in {J, W, W-1, T} (T handled by (11))
+[EXACT] PASS  (8) b_amp: denominator factors lie in {J, W, W-1, T} (T handled by (11))
+[EXACT] PASS  (8) a_amp: denominator factors lie in {J, W, W-1, T} (T handled by (11))
+  time 13.4
+[EXACT] PASS  (9) E = Pi0 - Pi6 = J W (W-1)^2 K T
+[EXACT] PASS  (9) Pi0/E = J M / K
+[EXACT] PASS  inverse reproduces all 24 chart functions H_sigma = (Pi_sigma - Pi0)/E
+  time 15.9
+[EXACT] PASS  Res_J(C,J) = printed factorization (ratio 1)
+[EXACT] PASS  Res_W(C,W) = printed factorization (ratio 1)
+[EXACT] PASS  Res_W(C,W-1) = printed factorization (ratio 1)
+[EXACT] PASS  Res_W(C,M) = printed factorization (ratio 1)
+[EXACT] PASS  Res_J(C,J+d) = printed factorization (ratio 1)
+[EXACT] PASS  Res_J(C,T) = printed factorization (ratio 1)
+[EXACT] PASS  Res_W(C,T) = printed factorization (ratio 1)
+[EXACT] PASS  Res_W(C,K) (12) = printed factorization (ratio 1)
+  time 16.0
+[EXACT] PASS  at (2,3,4,5): [W^2]C ~ J(2J+3)
+[EXACT] PASS  at (2,3,4,5): [J^2]C ~ (2W-3)(4W-5)
+[EXACT] PASS  at (2,3,4,5): Q_H = 5J^2 + 2J - 45
+[EXACT] PASS  at (2,3,4,5): gcd([W^2]C, [W^0]C) = 1 (no vertical component)
+[EXACT] PASS  at (2,3,4,5): Q_H squarefree
+[EXACT] PASS  C is not identically zero for any real h when r != s (W^0 coefficient argument)
+  time 16.0
+  numeric: 27 supported strict points of the T_49 stratum found from 4000 chart samples (seed 20261125); min over SO(4) (4 BFGS restarts, first 40 points) worst = 1.6089657786970633e-14
+[NUMERIC] PASS  NUMERIC: no negative Leibniz sum found on sampled T_49 points
+  total time 18.0
+FAILED: none

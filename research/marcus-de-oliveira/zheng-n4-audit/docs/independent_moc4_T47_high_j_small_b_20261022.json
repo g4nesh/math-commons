@@ -1,0 +1,122 @@
+{
+ "doc_id": "independent_moc4_T47_high_j_small_b_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_high_j_small_b_20261022.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "restatement": "In the chamber j>1, b>j, 0<ab<1, p>0, p(j-1)<1, 0<c<1/j-a (d=1), no spectrally realizable source has 1<b<=b* or 0<c<=k (b*=(1+r+sqrt(1-r^2))/2, k=b(1-r)^2/(b-r)^2, r=sqrt(ab)), for any q,e>=0. Mechanism: G>0 there, contradicting G=0.",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ]
+  },
+  {
+   "label": "Lemma 1",
+   "page": 2,
+   "restatement": "In the chamber, with F(u)=A0u^2+B0u+K, any root of G with q,e>=0 has F(u)<=0 and A0<0; if moreover c>k and e<1/(c-k) (old core failure), no root exists when A0+B0(b+1)(c-k)+K(b+1)^2(c-k)^2>=0.",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ]
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (audit item (5)) + auditor's forced-height derivation det Hess = -4d^2G^2/Q^2",
+   "used_for": "G = 0 at realizable sources",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "height constant C<0, so Q != 0 and forced-height determinant is -4G^2/Q^2",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "common setting"
+  },
+  {
+   "n": "2",
+   "claim": "conic identity G = e^2(A0+A1q+A2q^2)+e(q+b+1)(B0+B1q)+(q+b+1)^2K",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "replay (exact division, reassembly)"
+  },
+  {
+   "n": "3",
+   "claim": "A1, A2, B1 > 0 on the broad chart (square part + nonnegative remainder)",
+   "kind": "coefficient-sign",
+   "status": "EXACT",
+   "how": "replay; square parts P^2S^2(V^2-1)^2, PS^2(V^2-1)^2, P^2S^2(1+V)(V^2-1)^2 with multiplier 1"
+  },
+  {
+   "n": "4",
+   "claim": "B0-A0 > 0 and K > 0 on the broad chart",
+   "kind": "coefficient-sign",
+   "status": "EXACT",
+   "how": "replay (3024 terms each)"
+  },
+  {
+   "n": "5",
+   "claim": "broad chart covers chamber (1)",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "1/j-a = (j+A+AV)/(...) > 0; all ranges bijective"
+  },
+  {
+   "n": "6",
+   "claim": "small-b sector: A0, B0, K > 0 including b=b*",
+   "kind": "coefficient-sign",
+   "status": "EXACT",
+   "how": "replay; b*-1 = V/((1+V)^2+V^2) > 0"
+  },
+  {
+   "n": "7",
+   "claim": "below-core sector: A0, B0, K > 0 including c=k",
+   "kind": "coefficient-sign",
+   "status": "EXACT",
+   "how": "replay; chart covers 0<c<=k, a superset of the chamber part"
+  },
+  {
+   "n": "8",
+   "claim": "all six coefficients positive and u,w>=0 => G>0",
+   "kind": "inequality",
+   "status": "PROOF-READ",
+   "how": ""
+  },
+  {
+   "n": "9",
+   "claim": "Lemma 1 (concavity argument)",
+   "kind": "inequality",
+   "status": "PROOF-READ",
+   "how": "F concave, F(0)=K>0, F(U)>=0 => F>0 on [0,U); u<=e/(b+1)<U"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "conic identity",
+  "A1,A2,B1 square + remainder (2195,1360,3234)",
+  "B0-A0 (3024), K (3024)",
+  "small-b A0,B0,K (20490,25008,21798)",
+  "below-core A0,B0,K (4032,6057,6057)"
+ ],
+ "numeric_tests": [],
+ "unchecked": [],
+ "one_line": "Conic decomposition of G and exclusion of the small-b and below-core high-j sectors; every identity and sign table replayed exactly from the auditor's own G; confirmed modulo radial necessity (audit item 5)."
+}

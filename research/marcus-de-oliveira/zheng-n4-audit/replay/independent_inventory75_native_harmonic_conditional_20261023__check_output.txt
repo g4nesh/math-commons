@@ -1,0 +1,70 @@
+== Part A: contact set, complete source, seventh ties
+PASS document tuple equals paper T_76 literally
+PASS complete source = [0,1,2,8,10,12,15,30] : [0, 1, 2, 8, 10, 12, 15, 30]
+PASS only f30 non-minor
+PASS (1) coefficients are exclusive gaps g20,g16,g13,g14,g7,g6,g5,g2 (values 1) : [[20], [16], [13], [14], [7], [6], [5], [2]]
+PASS zeros of f30 outside T = 5,6,7,13,14,16,20 : [5, 6, 7, 13, 14, 16, 20]
+PASS seventh tie 5 closed by a six-case of stage <= 5 (T_76 is stage 6) : [('T7_3', 2), ('T_11', 3), ('T_17', 4), ('T_38', 5), ('T_9', 3)]
+PASS seventh tie 6 closed by a six-case of stage <= 5 (T_76 is stage 6) : [('T_38', 5), ('T_39', 1), ('T_44', 1)]
+PASS seventh tie 7 closed by a six-case of stage <= 5 (T_76 is stage 6) : [('T_29', 1), ('T_31', 1)]
+PASS seventh tie 13 closed by a six-case of stage <= 5 (T_76 is stage 6) : [('T_46', 2)]
+PASS seventh tie 20 closed by a six-case of stage <= 5 (T_76 is stage 6) : [('T_36', 1), ('T_38', 5), ('T_40', 1)]
+PASS seventh tie 14: no closed six-case of stage <= 5; Table 5 set as stated : [('T7_27', 5)]
+PASS seventh tie 16: no closed six-case of stage <= 5; Table 5 set as stated : [('T7_18', 4)]
+PASS T + {16} = Table 5 j=18 literally
+PASS T + {14} = g.(Table 5 j=27 = {1,4,5,7,9,12,14}) for an explicit g : ((0, 2, 1, 3), (0, 3, 1, 2), 0)
+== Part B: algebra (sympy, exact)
+PASS E = F1-F0 = -z(y-t)(x-w)
+PASS r = -(x-z)/(z(x-w))
+PASS s = y(t-1)/(z(y-t))
+PASS w-formula solves r-equation
+PASS y-formula solves s-equation
+PASS t-formula solves H10 = u (after y)
+PASS t numerator - denominator = s(x-1)(w-1)
+INFO H10-u after y-substitution: -(s*t*x - s*t - s*w*x + s*w - t*u*w + t*u*x + t*w - t + u*w - u*x - w + 1)/((t - 1)*(-w + x))
+INFO s-equation: -(-s*t*z + s*y*z - t*y + y)/(z*(-t + y))
+PASS (4) H0=0,H1=1,H3=r+1,H10=u,H11=s+u
+PASS (5) E = s(X-1)(J-r) L K A_N : -s*(-J + r)*(X - 1)*(-J*X + r + 1)*(-J*X + X*r + 1)*(J*X**2*s - J*X*s - J*X*u + J*X + X*r*u - X*s - r + s + u - 1)
+PASS (5) F0/E = (r+1-JX)/K
+PASS (5) H2 = J, H5 = r+1-JX
+PASS new chart keeps H0=0,H1=1,H3=r+1,H10=u,H11=s+u
+PASS all 24 H denominators divide (J-r)(X-1) L A_N
+PASS new chart inverse reproduces every original configuration (B = (t,0,1,oo))
+PASS z = 1/(J-r), w = (JX-1)/r on the original chart
+INFO H12 = (-J**3*X**2*s + J**3*X*s + J**3*X*u - J**3*X + J**2*X**2*r*s - J**2*X**2*s**2 - J**2*X**2*s - J**2*X*r*s - 2*J**2*X*r*u + J**2*X*r + J**2*X*s**2 + J**2*X*s*u + J**2*X*s + J**2*r - J**2*s - J**2*u + J**2 + J*X*r**2*u - J*X*r*s*u + J*X*s**2 - J*X*s*u + 2*J*X*s - J*r**2 + J*r*s + J*r*u - J*r - J*s**2 - J*s*u + r*s*u - r*s + s*u - s)/((-J + r)*(J*X**2*s - J*X*s - J*X*u + J*X + X*r*u - X*s - r + s + u - 1))
+INFO curve terms: 51 (doc 51); bidegree (3, 2) (doc (3,2))
+INFO normalisation constant: -1
+PASS [J^3]C = X(sX-s-u+1) up to constant
+PASS curve has 51 terms, bidegree (3,2)
+PASS [X^2]C = s J f_inf(J)
+PASS [J^3 X^2]C = s
+PASS C(J,1) = -(u-1)(J-r-1)(fL - s) : (u - 1)*(-J + r + 1)*(J**2 - J*h - J*r + J*s + h*r - s)
+PASS (6) ResX(C,L) matches up to a constant : ratio 1 got J*r*(s + u)*(-J + r + 1)*(J**2 - J*h - J*r + J*s + h*r)
+PASS (6) ResX(C,A_N) matches up to a constant : ratio 1 got -J**2*r*s**2*(-J + u)*(s + u)*(u - 1)*(-J + r + 1)*(-J + r - s)
+PASS (6) ResX(C,K) matches up to a constant : ratio 1 got -r*(-J + r + 1)*(-J**3 + J**2*h + 2*J**2*r - J**2*s - 2*J*h*r + J*h*s - J*r**2 + J*r*s - J*s**2 - J*s*u + h*r**2 - h*r*s + r*s*u - r*s)
+PASS X=1: H5 + J = r+1
+PASS H6 reduced denominator does not contain L = JX-r-1 : (-J + r)*(X - 1)
+PASS H13 reduced denominator does not contain L = JX-r-1 : (-J + r)*(J*X**2*s - J*X*s - J*X*u + J*X + X*r*u - X*s - r + s + u - 1)
+PASS H20 reduced denominator does not contain L = JX-r-1 : (-J + r)*(J*X**2*s - J*X*s - J*X*u + J*X + X*r*u - X*s - r + s + u - 1)
+PASS (7) H6 on L=0 : -J*(s + u)/(-J + r)
+PASS (7) H13 on L=0 : (r + 1)*(-J + r - s)/(-J + r)
+PASS (7) H20 on L=0 : -u/(-J + r)
+PASS H12 on L=0 equals h iff fL(J)=0 : (J-r+s)/(J-r) = h/J <=> fL = 0
+PASS |J-r|^2 = rs for conjugate roots of fL
+PASS H6 - r H20 = (s+u) + rs/(J-r)
+INFO lim_{X->oo} (H12 - H6 - J) = 0
+PASS lim_{X->oo}(H12 - H6 - J) vanishes on f_inf(J)=0
+PASS H6 bounded as X->oo (finite J)
+PASS [J^3]C roots X = 0 and X = V/s : X*(X*s - s - u + 1)
+INFO branch X->0: X series coefficients [0, -(r - s - u + 1)/(s + u - 1), -r*(s + u)*(r*u - r - s**2 - 2*s*u + 2*s - u**2 + 2*u - 1)/(s + u - 1)**3]
+PASS branch X->0 leading coefficient (V-r)/V : (-r + s + u - 1)/(s + u - 1)
+PASS branch X->0: H14 + J bounded (tau-order 0 >= 0), leading denominator coefficient nonzero : limit h - s
+INFO branch X->V/s: X series coefficients [(s + u - 1)/s, -(u - 1)*(r*s + r*u + s + u - 1)/(s*(s + u - 1)), (u - 1)*(-h*s**3 - 3*h*s**2*u + 3*h*s**2 - 3*h*s*u**2 + 6*h*s*u - 3*h*s - h*u**3 + 3*h*u**2 - 3*h*u + h + r**2*s**2 + r**2*s*u + r*s**2 + 2*r*s*u - 2*r*s + r*u**2 - 2*r*u + r + s**3 + 3*s**2*u - 3*s**2 + 3*s*u**2 - 6*s*u + 3*s + u**3 - 3*u**2 + 3*u - 1)/(s*(s + u - 1)**3)]
+PASS branch X->V/s: H14 + J bounded (tau-order 0 >= 0), leading denominator coefficient nonzero : limit h - s
+PASS on K=0, r+1-JX = 0 iff J = r+1 : r*(-J + r + 1)/(-J + r)
+PASS H_kappa rank 4
+INFO generic values at (2,3,4,5): [2, 3, 4, 3, 7, 6, 4, -1, 3]
+PASS H12 numerator J-degree 3, denominator J-degree 2 : (3, 2)
+INFO D12 = (-J + r)*(J*X**2*s - J*X*s - J*X*u + J*X + X*r*u - X*s - r + s + u - 1)
+NUMERIC T_76 curve sampling: seed 20261125, 120000 parameter draws, 146 strictly supported points, contact residual 5.5e-10, min over SO(4) (6 BFGS restarts) on 40 of them, worst min Phi / max gap = 2.08e-15
+SUMMARY failures: []

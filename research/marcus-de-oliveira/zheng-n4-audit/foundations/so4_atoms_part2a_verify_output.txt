@@ -1,0 +1,145 @@
+
+=== R: rank-two family, own proof (identities EXACT) ===
+PASS R1 Ohat^T Ohat = |u|^2|v|^2 I
+PASS R1 det Ohat = (|u|^2|v|^2)^2 (so Ohat in SO(4) on S^3 x S^3)
+   names: {2: 'n13,34', 12: 'n14,24', 29: 'n13,12', 35: 'h4312,-'}
+PASS R1 Phi35 = 2 sum u_i^2 v_i^2 + 4(u0u1u2u3 + v0v1v2v3)  (homogenised)
+PASS R1 x12 := det Ohat[14,24] = +-(X33 + Y33)/2, X33 = u0^2-u1^2-u2^2+u3^2 : sign 1
+PASS R1 Phi12 = x12^2
+PASS R1 Phi2 + Phi29 = 2[(u1u2+u0u3)^2 + (v1v2+v0v3)^2]
+PASS R2 Qd = (y^2+z^2)/2 + (delta/2) K
+PASS R2 Qd + h^2 + h(z-y) = (f_u + f_p)/2
+PASS R2 f_u = al*alp*(c1 - k/alp)^2 + (delta/alp)(k^2 - alp*be*c2^2)
+PASS R2 f_p(al,alp,c1',c2') = f_u(1-alp, 1-al, c2', c1')
+PASS R2 x is invariant under (al,alp) -> (1-alp,1-al) up to sign
+PASS R2 (alp-beta)/2 - sqrt(beta)(sqrt(alp)-sqrt(beta)) = (sqrt(alp)-sqrt(beta))^2/2
+PASS R2 a0A0 + a3A3 = [(a0+a3)(A0+A3) + (a0-a3)(A0-A3)]/2
+PASS R2 2 - 2 s s' - c^2 - c'^2 = (s - s')^2 when c^2+s^2 = c'^2+s'^2 = 1
+PASS R2 at t* = sqrt(X/(4S)): t S + X/(4t) = sqrt(S X)
+PASS R2 x(S) + (d^2/(4x)) X - d sqrt(S X) = (sqrt(x S) - d sqrt(X)/(2 sqrt x))^2
+
+=== G: Gram certificates of (R), (F1), (F2), re-verified with own code ===
+PASS G0 inv56: data source order = printed order : [0, 2, 5, 7, 12, 29, 35]
+PASS G0 inv56: Gram sources are generators of the contact set [0, 1, 5, 7, 9, 12, 17] : generators [0, 2, 5, 7, 12, 29, 35]
+   inv56: non-minor Gram sources [35] (['h4312,-']); generators not on the Gram: []
+PASS G0 T24: data source order = printed order : [0, 2, 59, 6, 53, 54, 55, 67]
+PASS G0 T24: Gram sources are generators of the contact set [3, 4, 7, 8, 10, 12] : generators [0, 1, 2, 6, 53, 54, 55, 59, 67, 70]
+   T24: non-minor Gram sources [54] (['h4231,-']); generators not on the Gram: [1, 70]
+PASS G0 T25: data source order = printed order : [0, 1, 2, 5, 6, 39, 67, 70]
+PASS G0 T25: Gram sources are generators of the contact set [2, 3, 5, 7, 8, 12] : generators [0, 1, 2, 5, 6, 39, 67, 70]
+   T25: non-minor Gram sources [70] (['h4231,+']); generators not on the Gram: []
+   inv56: convention g = Tinv F -> proportionality constant 2
+PASS G1 inv56: some congruence convention gives |p|^2 sum G M = kappa Phi_cost (mod N), kappa > 0 : Tinv, kappa = 2
+   inv56: 394 normal-form monomial rows, relation rank 10 (0.1s)
+PASS G1 inv56: relation space has dimension 10
+PASS G1 inv56: own relation space = row space of the data's R
+   T24: convention g = Tinv F -> proportionality constant 2
+PASS G1 T24: some congruence convention gives |p|^2 sum G M = kappa Phi_cost (mod N), kappa > 0 : Tinv, kappa = 2
+   T24: 394 normal-form monomial rows, relation rank 10 (0.1s)
+PASS G1 T24: relation space has dimension 10
+PASS G1 T24: own relation space = row space of the data's R
+   T25: convention g = Tinv F -> proportionality constant 2
+PASS G1 T25: some congruence convention gives |p|^2 sum G M = kappa Phi_cost (mod N), kappa > 0 : Tinv, kappa = 2
+   T25: 394 normal-form monomial rows, relation rank 10 (0.1s)
+PASS G1 T25: relation space has dimension 10
+PASS G1 T25: own relation space = row space of the data's R
+PASS G1 inv56: the ten relations printed on rank-two p.2 are independent
+PASS G1 inv56: printed relations span exactly the own relation space
+PASS G2 inv56 R: G4 = v v^T + d x w w^T: G satisfies the relations identically in its parameters : []
+PASS G2 inv56 R: G4 = v v^T + d x w w^T: end-to-end identity |p|^2 sum G M = kappa Phi_cost mod N at a rational point : cost [Fraction(0, 1), Fraction(16, 25), Fraction(0, 1), Fraction(0, 1), Fraction(57, 20), Fraction(16, 25), Fraction(12, 5)]
+   cost coefficients on [0, 2, 5, 7, 12, 29, 35]: [0, 4*x**2, 0, 0, d*(d + x), 4*x**2, 4*d*x]
+PASS G2 inv56 R: G4 = v v^T + d x w w^T: diagonal/cost as printed
+PASS G2 T24 (5) coherent: G satisfies the relations identically in its parameters : []
+PASS G2 T24 (5) coherent: end-to-end identity |p|^2 sum G M = kappa Phi_cost mod N at a rational point : cost [Fraction(0, 1), Fraction(0, 1), Fraction(1, 3), Fraction(0, 1), Fraction(5, 2), Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]
+   cost coefficients on [0, 2, 59, 6, 53, 54, 55, 67]: [0, 0, j, 0, e, 1, b, a]
+   LDL pivots on order [2, 5, 6, 7, 4]: [j, 1, b, (a*b - 1)/b, -(-a*b*e*j + a*b*j*x**2 + a*b*x**2 - 2*a*b*x + a*b + a*j*x**2 + b*j*x**2 + e*j + j*x**2 - x**2 + 2*x - 1)/(j*(a*b - 1))] (ok)
+PASS G2 T24 (5) j = 0 member: G satisfies the relations identically in its parameters : []
+PASS G2 T24 (5) j = 0 member: end-to-end identity |p|^2 sum G M = kappa Phi_cost mod N at a rational point : cost [Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(7, 1), Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]
+   cost coefficients on [0, 2, 59, 6, 53, 54, 55, 67]: [0, 0, 0, 0, e, 1, b, a]
+   LDL pivots on order [5, 6, 7, 4]: [1, b, (a*b - 1)/b, (a*b*e - a*b - a - b - e - 1)/(a*b - 1)] (ok)
+PASS G2 T24 double-SOC (x = 0 member): G satisfies the relations identically in its parameters : []
+PASS G2 T24 double-SOC (x = 0 member): end-to-end identity |p|^2 sum G M = kappa Phi_cost mod N at a rational point : cost [Fraction(0, 1), Fraction(0, 1), Fraction(2, 1), Fraction(0, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(3, 1)]
+   cost coefficients on [0, 2, 59, 6, 53, 54, 55, 67]: [0, 0, j, 0, e, 1, b, a]
+   LDL pivots on order [2, 4, 5, 6, 7]: [j, (e*j - 1)/j, 1, b, (a*b - 1)/b] (ok)
+PASS G2 T24 (6) parallel: G satisfies the relations identically in its parameters : []
+PASS G2 T24 (6) parallel: end-to-end identity |p|^2 sum G M = kappa Phi_cost mod N at a rational point : cost [Fraction(0, 1), Fraction(0, 1), Fraction(7, 1), Fraction(0, 1), Fraction(2, 1), Fraction(1, 1), Fraction(9, 1), Fraction(1, 25)]
+   cost coefficients on [0, 2, 59, 6, 53, 54, 55, 67]: [0, 0, j, 0, e, 1, r**2, s**2]
+   LDL pivots on order [4, 5, 6, 2, 7]: [e, 1, r**2, -(-e*j*r**2 + 2*e*j*r*s - e*j*s**2 + e*r**2*s**2 - 2*e*r*s + e + r**2 - 2*r*s + s**2)/(e*(r - s)**2), 0] (ok)
+PASS G2 T25 (12) general z: G satisfies the relations identically in its parameters : []
+PASS G2 T25 (12) general z: end-to-end identity |p|^2 sum G M = kappa Phi_cost mod N at a rational point : cost [Fraction(3, 1), Fraction(104, 477), Fraction(23011, 25128), Fraction(0, 1), Fraction(2, 1), Fraction(1, 2), Fraction(5, 1), Fraction(1, 1)]
+   cost coefficients on [0, 1, 2, 5, 6, 39, 67, 70]: [a, t**2*(a*b + a + b - t**2 + 2*t)/(a*b - t**2), (a*c*(t + z - 1)**2*(a*b - a*z + a*(q - z) - t**2) + (t - 1)**2*(a*(b + q - 2*z) - t**2)**2)/(c*(a*(b + q - 2*z) - t**2)**2), 0, b, c, q, 1]
+PASS G2 T25 (9) z = r, P = (r/c)C: G satisfies the relations identically in its parameters : []
+PASS G2 T25 (9) z = r, P = (r/c)C: end-to-end identity |p|^2 sum G M = kappa Phi_cost mod N at a rational point : cost [Fraction(3, 1), Fraction(104, 477), Fraction(8, 9), Fraction(0, 1), Fraction(2, 1), Fraction(1, 2), Fraction(5, 1), Fraction(1, 1)]
+   cost coefficients on [0, 1, 2, 5, 6, 39, 67, 70]: [a, t**2*(a*b + a + b - t**2 + 2*t)/(a*b - t**2), (t - 1)**2/c, 0, b, c, q, 1]
+PASS G2 T25 (10) z = w r, q = w^2 r^2/hb: G satisfies the relations identically in its parameters : []
+PASS G2 T25 (10) z = w r, q = w^2 r^2/hb: end-to-end identity |p|^2 sum G M = kappa Phi_cost mod N at a rational point : cost [Fraction(3, 1), Fraction(104, 477), Fraction(16919, 17424), Fraction(0, 1), Fraction(2, 1), Fraction(1, 2), Fraction(3, 53), Fraction(1, 1)]
+   cost coefficients on [0, 1, 2, 5, 6, 39, 67, 70]: [a, t**2*(a*b + a + b - t**2 + 2*t)/(a*b - t**2), (a*c*(a*b - t**2)*(-t + w*(t - 1) + 1)**2*(a*b + a*w*(t - 1) - t**2)**2 + (t - 1)**2*(a**2*w**2*(t - 1)**2 + a*(b + 2*w*(t - 1))*(a*b - t**2) - t**2*(a*b - t**2))**2)/(c*(a**2*w**2*(t - 1)**2 + a*(b + 2*w*(t - 1))*(a*b - t**2) - t**2*(a*b - t**2))**2), 0, b, c, a*w**2*(t - 1)**2/(a*b - t**2), 1]
+   T25 with P = kappa V + (r/c) C: failing relations 1 solutions for kappa: [{kappa: (a*t + a*z - a)/(-a*b - a*q + 2*a*z + t**2)}]
+PASS G3 T25: exactly one relation constrains kappa, and it forces the PDF choice (12)
+PASS G4 (5): last LDL pivot at x = 1/(1+jL) equals e - 1/(j + 1/L)
+PASS G4 (5): last pivot minus [(1-x)^2/j + L x^2] form
+PASS G4 (5): e >= 1/(j+1/L)  <=>  j >= 1/e - 1/L (e, j, L > 0): difference of the two sides has the sign of e(jL+1) - L
+PASS G4 (5): printed homogeneous threshold = d * normalised threshold at (a,b,e)/d
+PASS G4 (6): LDL on (E,D,B,A,J): pivots e, 1, r^2, 0 (zero residual row), j - 1/e - tau^2 : [e, 1, r**2, 0, -(-e*j*r**2 + 2*e*j*r*s - e*j*s**2 + e*r**2*s**2 - 2*e*r*s + e + r**2 - 2*r*s + s**2)/(e*(r - s)**2)]
+PASS G4 (6): tau^2 = b(1-w)^2/(b-w)^2 = a(1-w)^2/(a-w)^2, b = r^2, a = s^2, w = sqrt(ab)
+PASS G4 (6): printed homogeneous threshold = d * normalised threshold
+PASS G4 double-SOC: pivots j, e - 1/j, 1, b, a - 1/b  (PSD iff ej >= 1 and ab >= 1)
+PASS G4 T25: Gbase pivots a, hb, q - z^2/hb, c, 1
+PASS G4 T25: e-coefficient = e(t) of (8) in (9), (10), (12)
+PASS G4 T25 (12): p-coefficient = r^2/c + (r-z)^2/(hb+q-2z)
+PASS G4 T25 (9): p-coefficient = r^2/c
+PASS G4 T25 (10): p-coefficient = r^2/c + hb r^2 (1-w)^2/(hb - w r)^2, q-coefficient = w^2 r^2/hb
+PASS G4 T25 (10): hb + q - 2z = (hb - w r)^2/hb at z = wr, q = w^2r^2/hb
+PASS G4 T25 (10): third Gbase pivot q - z^2/hb vanishes at z = wr, q = w^2r^2/hb
+PASS G4 T25 usage, region II: q hb = bq(1 - t^2/(ab)) and 1 - t^2 - r^2 = 2t(1-t)
+PASS G4 T25 usage, IIIb- (21): q = W^2(1+X)/((1+W)^2 b D) equals w^2 r^2/hb with w = W/(1+W)
+PASS F3 T41 (3): 1/j <= p + (A-1)/R is T24 (5) with (j_T24, e_T24, b_T24, a_T24) = (p, j, a, b)
+PASS F3 T41 (4): (1-z)^2/(S-2z) = a(1-z)^2/(a-z)^2 when b = z^2/a
+PASS F3 T41 (4): a(1-z)^2/(a-z)^2 is T24 (6)'s tau^2 with b_T24 = a = r^2, a_T24 = b = s^2, z = rs
+PASS F3 T41 (4) at ab = 0: tau^2 = 1/S (s = 0 member of (6))
+PASS F3 T41 large_product (1): d^2/j <= p + d(ab-d^2)/((a+d)(b+d)) is the homogeneous T24 (5)
+PASS F4 inv56 (1): d1 + d2 = d and d1^2(1/q+1/j) + d2^2(1/e+1/a) = Bch
+PASS F4 inv56 large_product (1): b(qj/(q+j) + ea/(e+a)) >= d^2  <=>  b >= Bch
+
+=== T: orbits of the representatives, transports, conic combinations ===
+PASS T0 G acts on the 82 facets by 1152 permutations, preserving minor/non-minor
+   rank-two orbit size (leaf pair unordered): 144
+PASS T1 rank-two orbit has 144 members
+PASS T2 T24 core -> T41_bad17 p.2 (1, 53, 4, 16, 17) (b,a pair unordered)
+PASS T2 T24 core -> T41_bad17 p.2 (1, 53, 4, 16, 17) with the printed order of (b, a)
+PASS T2 T24 core -> T27 p.2 (5, 2, 0, 67, 40) (b,a pair unordered)
+PASS T2 T24 core -> T27 p.2 (5, 2, 0, 67, 40) with the printed order of (b, a)
+PASS T2 T24 core -> T38 p.1 (5, 2, 67, 0, 40) (b,a pair unordered)
+PASS T2 T24 core -> T38 p.1 (5, 2, 67, 0, 40) with the printed order of (b, a)
+PASS T2 T24 core (59,53,{55,67},54) -> T25 (2,39,{6,67},70)
+   ordered T24 core -> (2, 39, 6, 67, 70): True
+   ordered T24 core -> (2, 39, 67, 6, 70): True
+PASS T3 SOC (2,59;54) T24 (4)
+PASS T3 old-H (53,59;54) aux,main T24 (4)
+PASS T3 four (67,55;53;54) T24 (4)
+PASS T3 chain centre 12 leaves (0,2), k 35  inv56 (1)
+PASS T3 chain centre 12 leaves (7,29), k 35  inv56 (1)
+PASS T3 four (7,0;5;35)  inv56 (3)
+PASS T3 old-H (29,12;35) rank-two p.3
+PASS T3 old-H (2,12;35) rank-two p.3
+PASS T3 SOC (2,5;70) T25 (4)
+PASS T3 old-H (39,2;70) T25 (4)
+PASS T3 four (0,6;1;70) T25 (5)
+PASS T3 four (6,67;39;70) T25 (5)
+
+EXACT PART: 96 passed, 0 failed (10 s)
+
+=== N: numeric attack (multistart BFGS over (p,q) in R^8, normalised; NUMERIC only) ===
+(R) b = d/4 + d^2/(4 min(a,j))      25 coeff points x 20 starts =  500 starts: min 1.028e-17 (mpmath 50 digits 1.028e-17) [13s]; weakened variant min -6.151e-02
+(R) pointwise (2)                  500 starts: min 2.185e-16 (mpmath 2.185e-16); weakened (sqrt term x 1/2) min -2.652e-03; variant with |x29| in place of sqrt(Phi2+Phi29) min -1.196e-02
+(F1) (5) coherent boundary          25 coeff points x 20 starts =  500 starts: min 5.675e-18 (mpmath 50 digits 5.675e-18) [10s]; weakened variant min 5.611e-17
+(F1) (6) parallel, all a != b       25 coeff points x 20 starts =  500 starts: min 5.814e-18 (mpmath 50 digits 5.814e-18) [11s]; weakened variant min 9.422e-18
+(F1) double-SOC, ab >= 1, ej = 1    25 coeff points x 20 starts =  500 starts: min 9.065e-18 (mpmath 50 digits 9.065e-18) [10s]; weakened variant min 5.679e-18
+(F2) (9) boundary q hb = r^2        25 coeff points x 20 starts =  500 starts: min 7.561e-18 (mpmath 50 digits 7.561e-18) [12s]; weakened variant min -3.800e-02
+(F2) (10) boundary, w in [0,1]      25 coeff points x 20 starts =  500 starts: min 9.576e-18 (mpmath 50 digits 9.576e-18) [12s]; weakened variant min -4.419e-02
+(F3) T41 (3) boundary               25 coeff points x 20 starts =  500 starts: min 1.814e-17 (mpmath 50 digits 1.814e-17) [11s]; weakened variant min 7.623e-17
+(F3) T41 (4) boundary, incl. ab = 0  25 coeff points x 20 starts =  500 starts: min 5.404e-18 (mpmath 50 digits 5.404e-18) [10s]; weakened variant min -3.946e-02
+(F4) inv56 (1) b = Bch              25 coeff points x 20 starts =  500 starts: min 2.460e-18 (mpmath 50 digits 2.460e-18) [10s]; weakened variant min -3.248e-02
+(F4) inv56 (3) four boundary        25 coeff points x 20 starts =  500 starts: min 7.237e-18 (mpmath 50 digits 7.237e-18) [9s]; weakened variant min -5.018e-02
+NUMERIC: global minimum over all in-region families 2.460e-18 (pointwise (R) 2.185e-16)
+total 149 s

@@ -1,0 +1,129 @@
+{
+ "doc_id": "final_referee_inventory71_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_inventory71_uniform_20261023.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    1,
+    3,
+    4,
+    7,
+    8,
+    12
+   ],
+   "paper_case": 72,
+   "restatement": "x in X, P c(x) >= 0, (Pc)_pi = 0 for pi in T_72 (non-strict) implies Phi_{c(x)}(O) >= 0 for all O in SO(4); proved on T'={0,1,2,10,14,17} = g^{-1}T_72; all spectra (pointwise argument)"
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "SOC atom orbit (1,9;22)",
+   "used_for": "(3) via pairs (2,12;26),(2,15;26),(12,15;26)",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "old-H atom orbit (3,15;26)",
+   "used_for": "(4) as (aux 23, main 15; 26)",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "chain atom orbit (2;0,12;70)",
+   "used_for": "(5) as (15;21,23;26)",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "radial necessity, paper p. 27",
+   "used_for": "(8),(9)",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary assertion",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "g maps T' to T_72",
+   "kind": "finite",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "unique representation (1), identity rows, d=g11-g9",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "circuit (2) and d<=0 minor decomposition",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "SOC/old-H/chain conditions (3)-(7)",
+   "kind": "inequality",
+   "status": "PROOF-READ + CITED"
+  },
+  {
+   "n": 5,
+   "claim": "(8) C(g+z kappa)=C+zQ; C>0, Q>0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "(9) Q^4 detHess = -4Q^2 G9^2, G9 1615 terms; (10) symmetry",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "charts (11)-(16),(19) cover the negative region",
+   "kind": "case split",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 8,
+   "claim": "17 tables all positive, counts and strict markers as printed, total 496798",
+   "kind": "certificate",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "G9>0 contradicts (9)",
+   "kind": "logic",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "group action T'->T_72",
+  "generators(T')",
+  "identity rows and circuit (2)",
+  "atom orbit membership with roles",
+  "C+zQ",
+  "14x14 symbolic Hessian determinant and identity (9)",
+  "G9 term count, degrees, normalization, symmetry (10)",
+  "all 17 positivity tables (term counts, positivity, strict markers, total 496798)",
+  "G9 at a=b=t=0 (used by T_74 doc)"
+ ],
+ "numeric_tests": [
+  "8 T' stratum points (seeds 0-7): |G9| relative 6.6e-16 at sources, 0 in negative region, min Phi 1.8e-12"
+ ],
+ "unchecked": [
+  "atom proofs themselves (foundations)",
+  "Theorem 1.2 (foundations)"
+ ]
+}

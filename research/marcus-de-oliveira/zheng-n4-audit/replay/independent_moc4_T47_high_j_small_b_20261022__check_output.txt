@@ -1,0 +1,30 @@
+PASS T65 generators are the eight facets (2,9,1,45,5,35,0,7) of the document
+PASS the eight generators are linearly independent (coefficients of a source are unique)
+PASS only f35 is non-minor
+PASS C(c) = -d(qp+qe+qd+qa+pe+pd+pb+ed+d^2+db+da+ba) (height-equation constant; < 0 when d>0, others >= 0)
+PASS C(c + h kappa) = C(c) + h (m0 m6 - m1 m5) (linear in h)
+PASS det Hess C(c + h kappa) has h-degree <= 3 :: [0, 1, 2, 3]
+PASS at h = -C(c)/Q: det Hess C = -4 d^2 G^2 / Q^2 with G a polynomial (965 terms, multidegree (2,2,2,2,2,8,3,3)) :: 965
+INFO G built in 7.0s :: sign fixed so that G > 0 at (q,p,j,c,e,d,b,a)=(0,2,1/2,1/1000,2/3,1,2,1/10): G = 633.0121937158333
+PASS conic identity G = e^2(A0+A1q+A2q^2) + e(q+b+d)(B0+B1q) + (q+b+d)^2 K, coefficients free of q and e
+INFO A0 :: terms 68, degrees(q,p,j,c,e,d,b,a) (0, 2, 2, 2, 0, 6, 2, 2)
+INFO A1 :: terms 63, degrees(q,p,j,c,e,d,b,a) (0, 2, 2, 2, 0, 5, 2, 2)
+INFO A2 :: terms 31, degrees(q,p,j,c,e,d,b,a) (0, 1, 2, 2, 0, 4, 2, 2)
+INFO B0 :: terms 104, degrees(q,p,j,c,e,d,b,a) (0, 2, 2, 2, 0, 6, 2, 3)
+INFO B1 :: terms 70, degrees(q,p,j,c,e,d,b,a) (0, 2, 2, 2, 0, 5, 2, 3)
+INFO K :: terms 85, degrees(q,p,j,c,e,d,b,a) (0, 2, 2, 2, 0, 6, 1, 3)
+PASS broad chart: 1/j - a has numerator and denominator with nonnegative coefficients
+PASS broad chart A1: cleared numerator = square part + R, R nonnegative (2195 terms), denominator nonnegative :: (2195, 1)
+PASS broad chart A2: cleared numerator = square part + R, R nonnegative (1360 terms), denominator nonnegative :: (1360, 1)
+PASS broad chart B1: cleared numerator = square part + R, R nonnegative (3234 terms), denominator nonnegative :: (3234, 1)
+PASS broad chart B0mA0: cleared numerator = 0 + R, R nonnegative (3024 terms), denominator nonnegative :: (3024, 1)
+PASS broad chart K: cleared numerator = 0 + R, R nonnegative (n/a terms), denominator nonnegative :: (3024, 1)
+PASS b* - 1 = V/((1+V)^2+V^2) > 0
+PASS small-b sector A0: cleared numerator nonnegative (20490 terms), positive monomial free of W; denominator nonnegative and free-of-W positive :: (20490, 4)
+PASS small-b sector B0: cleared numerator nonnegative (25008 terms), positive monomial free of W; denominator nonnegative and free-of-W positive :: (25008, 8)
+PASS small-b sector K: cleared numerator nonnegative (21798 terms), positive monomial free of W; denominator nonnegative and free-of-W positive :: (21798, 4)
+PASS below-core sector A0: cleared numerator nonnegative (4032 terms), positive monomial free of Z; denominator nonnegative :: (4032, 1)
+PASS below-core sector B0: cleared numerator nonnegative (6057 terms), positive monomial free of Z; denominator nonnegative :: (6057, 2)
+PASS below-core sector K: cleared numerator nonnegative (6057 terms), positive monomial free of Z; denominator nonnegative :: (6057, 1)
+INFO below-core chart covers 0 < c <= k even where k > 1/j - a (superset of the chamber); numerator of 1/j-a-k has a negative coefficient :: True
+SUMMARY: 0 EXACT check(s) failed []
