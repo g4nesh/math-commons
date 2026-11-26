@@ -1,0 +1,137 @@
+====================================================================================================
+Replay of case T_25 = {3,4,7,8,10,12}  (document: root_moc4_T24_uniform_20261022.pdf)
+====================================================================================================
+[INFO] python 3.9.6, sympy 1.14.0, python-flint 0.6.0, numpy 2.0.2, scipy 1.13.1 (NUMERIC parts only)
+
+--- Provenance   [t = 0 s]
+[PASS] [EXACT] sha256 of root_moc4_T24_uniform_20261022.pdf is the one of the file that was read  ::  167f0faa3e9c4cb8...
+[PASS] [EXACT] sha256 of root_moc4_T24_full_radial_20261022.json is the one of the file that was read  ::  460fc8b6e197a32d...
+[PASS] [EXACT] sha256 of root_moc4_T24_budget_PSD8_20261022.json is the one of the file that was read  ::  f77e8c963d9df768...
+[PASS] [EXACT] sha256 of root_moc4_T24_cubic_reduction_20261022.json is the one of the file that was read  ::  4c575e170957f443...
+[PASS] [EXACT] sha256 of root_moc4_T24_uniform_exact_20261022.json is the one of the file that was read  ::  a632f8d06ff4a60a...
+[PASS] [EXACT] MOC4_SUPP is set and the five files are the ones that were read (needed for Lemma 1)
+
+--- Foundations rebuilt from the paper's definitions   [t = 0 s]
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14; P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of the cubic C of (A.2))
+[PASS] [EXACT] 82 vectors f_j of Appendix D: all in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps of the 24 permutation indices; G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+[PASS] [EXACT] for all 1152 g and 3 random Gaussian-rational spectra: the products of the relabelled spectra g_spectra(g, a, b) are the g-image of the products of (a, b)  (G preserves X and kappa)
+[PASS] [EXACT] for all 1152 g, 3 random rational O in SO(4) and random integer value vectors c: Phi_{g.c}(O'') = Phi_c(O) with O'' = transfer_to_SO4(g, O) (a row/column permutation of O or O^t, one column negated if needed)
+[PASS] [EXACT] supplement data (read as JSON): its stored 24 x 14 matrix equals P, its stored cubic equals the paper's C of (A.2) with the same sign, and its 82 facet value vectors equal mine in the same order
+[PASS] [EXACT] audit library moc4lib (imported only for this comparison): PERMS, P, kappa, the 82 value vectors, the minor flags, the coordinates of all f_j, the cubic C and the 1152 group maps agree with mine
+[PASS] [EXACT] audit library: CONTACT_SETS and generators agree for [25, 26]
+
+--- Contact set and numbering   [t = 6 s]
+[PASS] [EXACT] the document's set [3, 4, 7, 8, 10, 12] (its label 'T24') equals the paper's T_25 of Appendix E as a set of lexicographic permutation indices (group element: identity)
+[PASS] [EXACT] orbit representative under G: (0, 1, 2, 6, 9, 18); T_26 (representative (0, 1, 2, 6, 9, 19)) lies in a different orbit
+
+--- Generators of the contact cone   [t = 6 s]
+[PASS] [EXACT] F_T = {j : f_j = 0 on T} equals the document's list  ::  computed [0, 1, 2, 6, 53, 54, 55, 59, 67, 70]
+[PASS] [EXACT] non-minor generators equal the document's list  ::  computed [54, 70] = ['h_{4231,-}', 'h_{4231,+}']
+[PASS] [EXACT] direct enumeration of the extreme rays of N_T = {Pc >= 0, (Pc)_T = 0} (dimension 8, no use of the 82-facet list) gives exactly the 10 vectors f_j, j in F_T  ::  10 rays, 1.1 s
+[INFO] generators: f0 = n_{1,4}, f1 = n_{12,34}, f2 = n_{13,34}, f6 = n_{4,1}, f53 = n_{13,13}, f54 = h_{4231,-}, f55 = n_{3,3}, f59 = n_{14,14}, f67 = n_{2,2}, f70 = h_{4231,+}
+[PASS] [EXACT] Laplace and Jacobi identities for the 8 minor generators [0, 1, 2, 6, 53, 55, 59, 67]: Phi_{f_j}(O) = (minor of O)^2 >= 0 on SO(4)
+
+--- Reduction to the canonical representation (1)  [document p. 1]   [t = 7 s]
+[PASS] [EXACT] f54 + f70 = f0 + f6 + f55 + f67 and f54 + f1 = f0 + f6 + f53 (all 24 values)
+[PASS] [EXACT] the element g = (rho, rho', transpose) = ((1,3,0,2), (1,3,0,2), 1) of G stabilises T_25, exchanges f54 and f70, fixes f2 and f59 and permutes the ten generators  ::  generator map {0: 67, 1: 53, 2: 2, 6: 55, 53: 1, 54: 70, 55: 6, 59: 59, 67: 0, 70: 54}
+[PASS] [EXACT] the stabiliser of T_25 in G has 4 elements; g' = ((3,2,1,0), (3,2,1,0), 0) is in it, fixes f1, f2, f53, f54, f59, f70 and exchanges f0 <-> f6, f55 <-> f67  (the symmetry (a,b,q,c) -> (b,a,c,q) of (1))
+[PASS] [EXACT] the eight value vectors of f_j, j in (0,2,59,6,53,54,55,67), have rank 8 (the canonical coefficients are unique)
+[PASS] [EXACT] randomised exact run of the elimination on 4000 nonnegative rational coefficient vectors (seed 2511): the vector is unchanged (or replaced by its g-image when only f70 survives), coefficients stay >= 0, and the result is a minor decomposition (2210 times) or the canonical form (1) with d > 0 (1790 times; mirror used 1309 times)
+
+--- Radial necessity (PROOF.md 7.3): the real part of a point of X   [t = 9 s]
+[PASS] [EXACT] grad C(u + t v) = grad C(u) + t Hess C(u) v + t^2 grad C(v) identically (t = i: real part grad C(u) - grad C(v), imaginary part Hess C(u) v)
+[PASS] [EXACT] Euler u.grad C(u) = 3 C(u) and polarisation u.grad C(v) = (1/2) v^t Hess C(u) v, identically
+[INFO] hence for x = u + iv with grad C(x) = 0: Hess C(u) v = 0 and 3 C(u) = u.grad C(v) = (1/2) v^t Hess C(u) v = 0; if v = 0 then Hess C(u) u = 2 grad C(u) = 0; so det Hess C(u) = 0 in every case (u = 0 included)
+[PASS] [EXACT] spot check on 10 random Gaussian-rational points x = alpha Psi(a,b) (seed 20261125): (P x)_sigma = alpha z_sigma, C(Re x) = 0 and Hess C(Re x) Im x = 0
+
+--- The cubic on g + h kappa, equation (2)  [p. 1]   [t = 9 s]
+[PASS] [EXACT] C(g + h kappa) = -C_* + h Q with the document's C_* and Q = ej - d(d+e) - pj (g = q f0 + p f2 + j f59 + c f6 + e f53 + d f54 + b f55 + a f67; C is the paper's cubic (A.2))
+[PASS] [EXACT] C_* - d^3 and alpha - d^3 have only nonnegative coefficients: C_* >= alpha >= d^3 > 0 on the closed orthant with d > 0
+[INFO] so C(Re x) = 0 forces h Q = C_* > 0: Q != 0 and h = C_*/Q
+
+--- The full 14 x 14 Hessian determinant, equation (3)  [pp. 1-2]   [t = 9 s]
+[INFO] det Hess C(g + h kappa): 21650 terms, 16233 minors memoised, degrees in (q,p,j,c,e,d,b,a,h) = [3, 3, 3, 3, 3, 11, 3, 3, 3], 5.2 s
+[PASS] [EXACT] the determinant polynomial (Laplace expansion, own code) equals the determinant of the rational matrix Hess C(u) computed by Gaussian elimination at 3 random rational points of (q,...,a,h) (seed 2512)
+[PASS] [EXACT] Q^4 det Hess C(g + (C_*/Q) kappa) is divisible by -4 Q^2 and the quotient is the square of G := gcd(quotient, d quotient / dj): identity (3), Q^4 det = -4 Q^2 G^2 (degree of det in h: 3)
+[PASS] [EXACT] G is homogeneous of degree 9 in the eight coefficients, free of h, of degree 2 in j, with 2095 integer monomials; the sign is fixed by a positive coefficient of d^9  ::  2095 terms, coefficient of d^9 = 1
+[PASS] [EXACT] supplement data: the stored degree-9 polynomial (variables q,p,j,c,e,d,b,a,z) equals the G computed here, with the same sign
+[INFO] consequence: a point of X with canonical coefficients (1), d > 0, has G = 0 (necessary condition only)
+
+--- Cited capacities (4): SOC, old-H, four-coefficient  [p. 2]   [t = 16 s]
+[PASS] [EXACT] SOC, pj >= d^2: (p: f2, j: f59; d: f54): the roles (2, 59, 54) lie in the G-orbit of the representative (1, 9, 22)  ::  g = (rho=(0, 1, 2, 3), rho'=(1, 3, 0, 2), transpose=0); 4 group elements; source roles (1, 9, 22)
+[PASS] [EXACT] old-H, e(j-d) >= d^2: (t = e: f53, c = j: f59; d: f54): the roles (53, 59, 54) lie in the G-orbit of the representative (12, 2, 70)  ::  g = (rho=(0, 3, 2, 1), rho'=(1, 0, 2, 3), transpose=0); 4 group elements; source roles (12, 2, 70)
+[PASS] [EXACT] four-coefficient, K >= 0: (a: f67, b: f55; c = e: f53; d: f54): the roles (67, 55, 53, 54) lie in the G-orbit of the representative (0, 6, 10, 54)  ::  g = (rho=(2, 3, 0, 1), rho'=(1, 0, 3, 2), transpose=0); 2 group elements; source roles (0, 6, 10, 54)
+[INFO] CITED statements (PROOF.md 7.6): a f1 + b f9 + d f22 has Phi >= 0 on SO(4) if ab >= d^2; t f12 + c f2 + d f70 if t(c-d) >= d^2; a f0 + b f6 + c f10 + d f54 if ab(c-d) >= d^2(a+b+c+d); each on its whole G-orbit (6.6, checked above)
+
+--- Lemma 1: the two coherent Gram capacities (5), (6) and the double-SOC endpoint  [p. 2]   [t = 16 s]
+[PASS] [EXACT] certificate data (JSON): source order (0,2,59,6,53,54,55,67); the four signed coordinate maps permute p and q separately (so they preserve |p|^2, |q|^2)
+[PASS] [EXACT] quaternion model M(p,q) = matrix of x -> p x q: M^t M = |p|^2 |q|^2 I and det M = (|p|^2 |q|^2)^2 as polynomial identities (so M(p,q) is in SO(4) for unit p, q)
+[PASS] [EXACT] own linear algebra on (*) (see GramFace; 418 coefficient equations, rank 18): the solutions (Gram matrix, weights) are exactly: 10 independent linear relations on the Gram matrix, and weights w = (G00, G11, G22, G33, G44, G55 - G00, G66, G77) modulo the relations, i.e. Gram diagonal (q, p, j, c, e, q + d, b, a)
+[PASS] [EXACT] the ten relations stored in the supplement span the same space as the ten derived here
+[INFO] relations derived here (Gik = Gram entries, vectors in the order (f0,f2,f59,f6,f53,f54,f55,f67)):
+[INFO]    +1*G00 +1*G04 +1*G12 -1*G24 -2*G36 -1*G45 +2*G46 -1*G55 = 0
+[INFO]    +1*G01 +1*G13 -1*G16 -1*G17 -1*G36 -1*G37 +1*G46 +1*G47 +1*G56 = 0
+[INFO]    +1*G02 +1*G24 -1*G25 +1*G26 -1*G27 +1*G36 -1*G46 +1*G67 = 0
+[INFO]    +1*G03 -1*G04 -1*G35 +1*G36 +1*G45 -1*G46 = 0
+[INFO]    +1*G05 +1*G12 -1*G24 -1*G36 +1*G46 -1*G55 = 0
+[INFO]    +1*G06 +1*G36 -1*G56 = 0
+[INFO]    +1*G07 -1*G36 +1*G46 +1*G47 = 0
+[INFO]    +1*G15 -1*G16 +1*G56 = 0
+[INFO]    +1*G23 -1*G25 +1*G35 = 0
+[INFO]    +1*G57 = 0
+[INFO] consequence (PROOF-READ + CITED surjectivity of (p,q) -> M(p,q) onto SO(4)): if a symmetric PSD matrix satisfies the ten relations, then Phi of the cost with these weights is >= 0 on SO(4)
+[PASS] [EXACT] (5), d = 1, general x, e = (1-x)^2/j + L x^2 + s: the Gram matrix satisfies the ten relations; its weights are ['0', '0', 'j', '0', 's + x**2*(a + 1)*(b + 1)/(a*b - 1) + (1 - x)**2/j', '1', 'b', 'a']; elimination in the order [2, 5, 6, 7, 4] has pivots ['j', '1', 'b', '(a*b - 1)/b', 's'] and zero residual; identity (*) holds directly at the rational instance {'a': '3', 'b': '2', 'j': '1/2', 'x': '1/3', 's': '1/5'}  [L = (a+1)(b+1)/(ab-1)]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] (5): (1-x)^2/j + L x^2 = L/(1+jL) + ((1+jL)/j)(x - 1/(1+jL))^2, so the least |E|^2 is L/(1+jL) = 1/(j + 1/L), at x = 1/(1+jL); and e >= 1/(j+1/L) <=> j >= 1/e - 1/L (e, L > 0); in terms of d: 1/L = d(ab-d^2)/((a+d)(b+d)) after scaling by d
+[PASS] [EXACT] (5) at j = 0 (J = 0, x = 1): the four-coefficient inequality e >= L re-proved on this face: the Gram matrix satisfies the ten relations; its weights are ['0', '0', '0', '0', 's + (a + 1)*(b + 1)/(a*b - 1)', '1', 'b', 'a']; elimination in the order [5, 6, 7, 4] has pivots ['1', 'b', '(a*b - 1)/b', 's'] and zero residual; identity (*) holds directly at the rational instance {'a': '5/2', 'b': '2', 's': '1/7'}  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] (6), d = 1, a = alpha^2, b = beta^2, w = alpha beta, j = 1/e + (1-w)^2/(beta-alpha)^2 + s: the Gram matrix satisfies the ten relations; its weights are ['0', '0', 's + (-alpha*beta + 1)**2/(-alpha + beta)**2 + 1/e', '0', 'e', '1', 'beta**2', 'alpha**2']; elimination in the order [6, 4, 2, 5] has pivots ['beta**2', 'e', 's', '1'] and zero residual; identity (*) holds directly at the rational instance {'alpha': '1/3', 'beta': '3/2', 'e': '2', 's': '1/4'}  [vector A is alpha/beta times vector B: no pivot]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] (6): (1-w)^2/(sqrt b - sqrt a)^2 = b(1-w)^2/(b-w)^2 for w = sqrt(ab) (with a = w^2/b), and the expression is symmetric in a, b: the capacity (6) holds for a != b in either order
+[PASS] [EXACT] double-SOC endpoint: blocks (J,E) with J.E = -1 and (B,A) with B.A = 1, D alone: the Gram matrix satisfies the ten relations; its weights are ['0', '0', 'j', '0', 'e', '1', 'b', 'a']; elimination in the order [2, 4, 5, 6, 7] has pivots ['j', '(e*j - 1)/j', '1', 'b', '(a*b - 1)/b'] and zero residual; identity (*) holds directly at the rational instance {'a': '2', 'b': '1/2', 'j': '3', 'e': '1/3'}  [PSD iff ej >= 1 and ab >= 1]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] SOC pj >= 1 re-proved on this face: block (P,J) with P.J = 1, D alone: the Gram matrix satisfies the ten relations; its weights are ['0', 'p', 'j', '0', '0', '1', '0', '0']; elimination in the order [1, 2, 5] has pivots ['p', '(j*p - 1)/p', '1'] and zero residual; identity (*) holds directly at the rational instance {'p': '2', 'j': '1/2'}  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] the ten relations have no solution with a Gram matrix supported on the vectors (J, E, D) and G55 = 1: the old-H capacity e(j-d) >= d^2 alone (q = p = c = a = b = 0) is NOT certified by this Gram representation; it is a genuine citation
+[INFO] PROOF-READ: all pivots are >= 0 under the stated conditions (j > 0, ab > 1, s >= 0; beta > alpha >= 0, e > 0); limits of PSD matrices are PSD; the weights are homogeneous, so d = 1 loses nothing; adding q f0, p f2, c f6 (minor vectors, Phi >= 0) back keeps Phi >= 0
+
+--- The constant coefficient k0, identity (7), and the layer p = e = 0  [p. 3]   [t = 17 s]
+[PASS] [EXACT] k0 = G|_{j=0} = C_* { alpha beta + c q d^2 p S + H } with the document's beta, H (d kept general)
+[PASS] [EXACT] H and beta + K have only nonnegative coefficients (so beta >= -K > 0 when K < 0, and k0 >= C_* alpha beta >= d^6 (-K) > 0 on {K < 0, d > 0}, all other coefficients >= 0)
+[PASS] [EXACT] G|_{p=e=0} has only nonnegative coefficients (450 terms) and contains d^9: G > 0 there for every j >= 0, so no point of X with d > 0 has p = e = 0
+[PASS] [EXACT] G is invariant under (a,b,q,c) -> (b,a,c,q) (the action of g' above); also K, C_*, Q are
+
+--- Bernstein criterion and the seven charts  [pp. 3-4]   [t = 17 s]
+[PASS] [EXACT] for G = k0 + k1 x + k2 x^2 and x = t N/D: D^2 G = (1-t)^2 D^2 k0 + t(1-t) D (2D k0 + N k1) + t^2 (D^2 k0 + N D k1 + N^2 k2); so D > 0, k0 > 0 and both numerators >= 0 give G > 0 on [0, N/D)
+[INFO] d = 1: G = k2 j^2 + k1 j + k0 with k0, k1, k2 in Z[a,b,e,p,q,c] of [882, 861, 352] terms
+[PASS] [EXACT] chart I-: the middle and endpoint Bernstein numerators, after the substitution and clearing of positive denominators, have only nonnegative integer coefficients; term counts 3218 / 4620 as in the document  ::  min coefficients 1 / 1, 0.0 s, sha256 4caeda7f5391.. / 9a5814e395f1..
+[PASS] [EXACT] chart I-: at 4 random positive rational parameter points (seed 2513) the plain chart map of p. 3 lands in its region, N/D is the stated threshold J*, and the table polynomials equal the Bernstein numerators times a positive product of denominator powers
+[PASS] [EXACT] chart I+: the middle and endpoint Bernstein numerators, after the substitution and clearing of positive denominators, have only nonnegative integer coefficients; term counts 8961 / 16478 as in the document  ::  min coefficients 1 / 1, 0.0 s, sha256 efd4db0bb312.. / b4d570a9c15c..
+[PASS] [EXACT] chart I+: at 4 random positive rational parameter points (seed 2513) the plain chart map of p. 3 lands in its region, N/D is the stated threshold J*, and the table polynomials equal the Bernstein numerators times a positive product of denominator powers
+[PASS] [EXACT] chart II: the middle and endpoint Bernstein numerators, after the substitution and clearing of positive denominators, have only nonnegative integer coefficients; term counts 18810 / 31918 as in the document  ::  min coefficients 1 / 1, 0.1 s, sha256 12d2c18d80db.. / 1739a036db52..
+[PASS] [EXACT] chart II: at 4 random positive rational parameter points (seed 2513) the plain chart map of p. 3 lands in its region, N/D is the stated threshold J*, and the table polynomials equal the Bernstein numerators times a positive product of denominator powers
+[PASS] [EXACT] chart IIIa-: the middle and endpoint Bernstein numerators, after the substitution and clearing of positive denominators, have only nonnegative integer coefficients; term counts 7979 / 7979 as in the document  ::  min coefficients 1 / 1, 0.0 s, sha256 db0f7b3adc33.. / 1121369fd325..
+[PASS] [EXACT] chart IIIa-: at 4 random positive rational parameter points (seed 2513) the plain chart map of p. 3 lands in its region, N/D is the stated threshold J*, and the table polynomials equal the Bernstein numerators times a positive product of denominator powers
+[PASS] [EXACT] chart IIIa+: the middle and endpoint Bernstein numerators, after the substitution and clearing of positive denominators, have only nonnegative integer coefficients; term counts 7980 / 11532 as in the document  ::  min coefficients 1 / 1, 0.0 s, sha256 d63800c6d924.. / 439e65557d6a..
+[PASS] [EXACT] chart IIIa+: at 4 random positive rational parameter points (seed 2513) the plain chart map of p. 3 lands in its region, N/D is the stated threshold J*, and the table polynomials equal the Bernstein numerators times a positive product of denominator powers
+[PASS] [EXACT] chart IIIb+: the middle and endpoint Bernstein numerators, after the substitution and clearing of positive denominators, have only nonnegative integer coefficients; term counts 8852 / 14016 as in the document  ::  min coefficients 1 / 1, 0.0 s, sha256 e37007ce2d72.. / 35ac5de4e32f..
+[PASS] [EXACT] chart IIIb+: at 4 random positive rational parameter points (seed 2513) the plain chart map of p. 3 lands in its region, N/D is the stated threshold J*, and the table polynomials equal the Bernstein numerators times a positive product of denominator powers
+[PASS] [EXACT] chart IIIb-: the middle and endpoint Bernstein numerators, after the substitution and clearing of positive denominators, have only nonnegative integer coefficients; term counts 23897 / 33654 as in the document  ::  min coefficients 1 / 1, 0.0 s, sha256 8ea1c6df0901.. / 42242c95bd0f..
+[PASS] [EXACT] chart IIIb-: at 4 random positive rational parameter points (seed 2513) the plain chart map of p. 3 lands in its region, N/D is the stated threshold J*, and the table polynomials equal the Bernstein numerators times a positive product of denominator powers
+[PASS] [EXACT] supplement data (comparison only): the sha256 of each of my fourteen table polynomials (sorted 'exponents:coefficient' lines, variables A,T,V,U,Q,C) equals the hash recorded in the supplement's result file, in the order I-, I+, II, IIIa-, IIIa+, IIIb+, IIIb-: the polynomials are identical to the author's
+
+--- Cover of the coefficient domain, boundaries included: exact randomised test in the ORIGINAL coefficients   [t = 25 s]
+[PASS] [EXACT] 6000 random rational points of {d = 1, K < 0, (p,e) != (0,0)} (seed 2514; with zeros among a, b, q, c, e, p, and the layers ab = 1, b = 1, a = b, p = e, p = e/(1+e), p = e m/(e+m), both orders of a, b): in the region of the document's cover, with its threshold J* = N/D written in the original coefficients, D > 0, N > 0, k0 > 0, both Bernstein numerators >= 0, and G(j) > 0 at 3 random j in [0, J*) each (17118 values of G)  ::  points per region: {'I': 1637, 'II': 1350, 'IIIa+': 55, 'IIIa-': 1289, 'IIIb+': 175, 'IIIb-': 1200}
+[INFO] PROOF-READ: each region's numerators are polynomials (IIIb-: continuous functions) of the original coefficients; they are >= 0 on the image of the open chart, hence on its closure; the closures cover the domain; at G = 0 the point has j >= J*, where (4), (5), (6) or the double-SOC endpoint applies
+
+--- NUMERIC falsification attempts (floating point; evidence, not proof)   [t = 104 s]
+[PASS] [NUMERIC] capacity (4) SOC pj = d^2 on its boundary: 40 random coefficient vectors (seed 25001, coefficients log-uniform in [10^-1.5, 10^1.5], q, p, c and some others set to 0 at random), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity (4) old-H e(j-d) = d^2 on its boundary: 40 random coefficient vectors (seed 25001, coefficients log-uniform in [10^-1.5, 10^1.5], q, p, c and some others set to 0 at random), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity (4) four K = 0 on its boundary: 40 random coefficient vectors (seed 25001, coefficients log-uniform in [10^-1.5, 10^1.5], q, p, c and some others set to 0 at random), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity (5) on its boundary: 40 random coefficient vectors (seed 25001, coefficients log-uniform in [10^-1.5, 10^1.5], q, p, c and some others set to 0 at random), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity (6) on its boundary: 40 random coefficient vectors (seed 25001, coefficients log-uniform in [10^-1.5, 10^1.5], q, p, c and some others set to 0 at random), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity double-SOC ab = 1, ej = 1 on its boundary: 40 random coefficient vectors (seed 25001, coefficients log-uniform in [10^-1.5, 10^1.5], q, p, c and some others set to 0 at random), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[INFO] control of the minimiser: with q = p = c = 0 and j replaced by 0, Phi takes a negative value in 26 of the first 20 + 20 cases of (5), (6); with j halved, in 0 (the capacities are sufficient conditions; no sharpness is claimed by the document or tested here)
+[PASS] [NUMERIC] every converged stratum point is, within 1e-8, a nonnegative combination of the 8 minor generators, or of the canonical generators (1), or of their mirror images (the trichotomy of the reduction)  ::  0 unclassified
+[INFO] stratum search: 750 free starts (seeds 25101-25103): 636 converged points of X with gaps >= 0 vanishing on T_25; 600 starts with the extra equation d = target (targets 0.005 ... 0.2 for (1) and for its mirror; seeds 25200-25204): 31 converged.  Classification: 620 minor decompositions, 47 points of the form (1) or its mirror with d > 0 (d between 0.000942 and 0.0373; normalisation: sum of gaps = 1)
+[PASS] [NUMERIC] at the 47 canonical stratum points with d > 0: |-C_* + hQ| / (|C_*| + |hQ|) <= 1e-6, |G| / (sum of |terms of G|) <= 1e-6 and smallest/largest singular value of Hess C(Re x) <= 1e-6 (equations (2), (3) on actual points of X)  ::  1.09e-09, 3.56e-10, 2.29e-13
+[PASS] [NUMERIC] every canonical stratum point with d > 0 satisfies at least one of the capacities (4), (5), (6) (tolerance 1e-7 after scaling to d = 1)  ::  capacities met: {'SOC': 47, 'old-H': 27, 'four': 9, '(5)': 14, '(6)': 7, 'double-SOC': 0, 'none': 0}
+
+FINAL: PASS  (80 checks, 227.9 s)

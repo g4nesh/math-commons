@@ -1,0 +1,132 @@
+====================================================================================================
+Case T_35 = {2,3,4,6,9,12}: replay of final_referee_T34_uniform_20261022.pdf
+====================================================================================================
+[INFO] python 3.9.6, sympy 1.14.0, python-flint 0.6.0, numpy 2.0.2, scipy 1.13.1 (NUMERIC part only)
+[PASS] [EXACT] document under MOC4_SUPP is the one that was read (sha256): final_referee_T34_uniform_20261022.pdf  ::  de4600291a448d367c13fcdbcca8d0f9fe89cff9dc647ece9264d844bda9df95
+
+--- Foundations rebuilt from the paper's definitions
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14
+[PASS] [EXACT] P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] kappa = Psi(v) at v_1..4 = (0,1), v_5..8 = (1,1), so kappa is in X
+[PASS] [EXACT] paper's pivot rows 0,1,2,3,4,6,7,8,9,10,12,13,16,18 of P are independent
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of C)
+[PASS] [EXACT] 82 vectors f_j: all lie in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps on the 24 permutation indices
+[PASS] [EXACT] G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+
+--- Radial necessity: the real part of a point of X lies on the cubic
+[PASS] [EXACT] grad C(u + t v) = grad C(u) + t Hess C(u) v + t^2 grad C(v) identically (t = i: real part grad C(u) - grad C(v), imaginary part Hess C(u) v)
+[PASS] [EXACT] Euler: u . grad C(u) = 3 C(u) identically
+[PASS] [EXACT] polarization: u . grad C(v) = (1/2) v^t Hess C(u) v identically
+[INFO] hence grad C(u+iv) = 0 gives grad C(u) = grad C(v) and Hess C(u) v = 0, and 3 C(u) = u.grad C(u) = u.grad C(v) = (1/2) v^t Hess C(u) v = 0
+[PASS] [EXACT] spot check on 12 random Gaussian-rational points x = alpha Psi(a,b) (seed 20261125): (P x)_sigma = alpha z_sigma and C(Re x) = 0
+[PASS] [EXACT] same points: Hess C(Re x) Im x = 0
+[PASS] [EXACT] Hess C(x + y)(x - y) = 2(grad C(x) - grad C(y)) identically (28 variables): for x in X and y = conj(x), x + y = 2 Re x and x - y = 2i Im x, so Hess C(Re x) Im x = 0
+[PASS] [EXACT] Hess C(u) u = 2 grad C(u) identically: if Im x = 0 then u = x in X and Hess C(u) u = 0. Hence det Hess C(Re x) = 0 for every x in X (Im x != 0, or Re x != 0 = Im x, or x = 0)
+[PASS] [EXACT] C(kappa) = 0, grad C(kappa) = 0 and Hess C(kappa) = e0 e6^t + e6 e0^t - e1 e5^t - e5 e1^t, so C(g + h kappa) = C(g) + h dC/dm_13(g) is linear in h and the Hessian is affine in h
+
+--- Supplement data files (read as JSON, untrusted, comparison only)
+[PASS] [EXACT] the supplement's stored 24 x 14 matrix equals P, and its stored cubic equals the paper's C of (A.2) with the same sign (so the documents' 'F' is C)
+[PASS] [EXACT] the supplement's stored 82 facet value vectors equal F_VALUES in the same order (the documents' f_j are the paper's f_j of Appendix D)
+
+--- Contact set and numbering
+[PASS] [EXACT] the document's set [2, 3, 4, 6, 9, 12] (its label 'T34') equals the paper's T_35 of Appendix E as a set of lexicographic permutation indices (group element: identity)
+[PASS] [EXACT] orbit representative under G (1152 maps) of the document's set equals that of T_35: (0, 1, 2, 6, 11, 15); T_35, T_36, T_37 lie in three different orbits
+
+--- Generators of the contact cone
+[PASS] [EXACT] F_T = {j : f_j = 0 on T} equals the document's list [0, 1, 2, 5, 7, 9, 53, 67, 68]  ::  computed [0, 1, 2, 5, 7, 9, 53, 67, 68]
+[PASS] [EXACT] non-minor generators equal the document's list  ::  computed [68] = ['h_{4213,-}']
+[PASS] [EXACT] direct enumeration of the extreme rays of N_T = {Pc >= 0, (Pc)_T = 0} (dimension 8; does not use the 82-facet theorem) gives exactly the 9 vectors f_j, j in F_T  ::  9 rays, 1.0 s
+
+--- Normal form (document p. 1, 'Source and full-height necessity')
+[PASS] [EXACT] f68 + f2 = f0 + f9 + f67: 1 identities sum f_left = sum f_right hold on all 24 values
+[PASS] [EXACT] the nine generators span a space of dimension 8 (= dimension of the contact nullspace), and the eight generators of the normal form (all but f2) are linearly independent: the coefficients (q,p,j,c,e,d,b,a) of (1) are uniquely determined linear functions of the gap vector
+[PASS] [EXACT] f68 is the only non-minor generator of the normal form; it carries the coefficient d
+[PASS] [EXACT] absorbing min(lambda_2, lambda_68) by the identity keeps the vector and all coefficients >= 0 and ends either with lambda_68 = 0 (a nonnegative combination of minor vectors) or with lambda_2 = 0 and d = lambda_68 - lambda_2 > 0 (the normal form (1)); 4000 random nonnegative rational coefficient vectors, seed 3501  ::  2680 minor, 1320 normal form
+[PASS] [EXACT] Laplace and Jacobi identities for the 8 minor generators [0, 1, 2, 5, 7, 9, 53, 67]: Phi_{f_j}(O) = (minor of O)^2 >= 0 on SO(4)
+
+--- Radial necessity in the normal form (document p. 1)
+[PASS] [EXACT] T_35: C(g + h kappa) is of degree <= 1 in h; C* = C(g) has 22 terms, Q = dC/dh has 8 terms
+[PASS] [EXACT] T_35: the full 14 x 14 Hessian of C at g + h kappa has determinant D with 15238 terms, of degree 3 in h (symbolic Laplace expansion; confirmed at 3 random integer points by rational Gaussian elimination)
+[PASS] [EXACT] T_35: N := Q^4 D(h = -C*/Q) = sum_k D_k (-C*)^k Q^(4-k) (218490 terms) is exactly divisible by -4 Q^2
+[PASS] [EXACT] T_35: N / (-4 Q^2) = G^2 for a polynomial G (own exact square root, verified by squaring): identity (2) of the document; G is homogeneous of degree 9 with 1475 terms (document: 1475) and coefficient of d^9 equal to +1
+[PASS] [EXACT] T_35: the degree-nine factor stored in the supplement's final_referee_T34_full_radial_20261022.json (read as data, 1475 terms) equals + G
+[PASS] [EXACT] Q = cd + ce + cj - cp + d^2 + de + dj + ej (the document's Q at d = 1)
+[PASS] [EXACT] C* has 22 terms, all with coefficient +1, among them d^3: C* >= d^3 > 0 on the closed orthant with d > 0.  With C(u) = C* + hQ = 0 this forces Q != 0 and h = -C*/Q
+[PASS] [EXACT] at d = 1, G has degrees [3, 2, 2, 2, 2, 3, 3] in (q,p,j,c,e,b,a); it is quadratic in p: G = k0 + k1 p + k2 p^2 with 814 + 530 + 131 terms
+
+--- Universal inequalities used (CITED: audit PROOF.md 7.6); roles and coefficient conditions (p. 1-2)
+[PASS] [EXACT] the role tuples are the document's: old-H (9,5,68), chain (5;7,9;68), four (7,0;1;68) and (7,67;53;68)
+[PASS] [EXACT] old-H roles (9, 5, 68) [condition (3): c(p - d) >= d^2, t = c on f9, main = p on f5] lie in the orbit of the representative (12, 2, 70) (CITED inequality, orbit size 288)  ::  g = (rho=(1, 3, 2, 0), rho'=(1, 3, 0, 2), inverse=0) maps (12, 2, 70) to (9, 5, 68) position by position (4 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+[PASS] [EXACT] chain roles (5, 7, 9, 68) [condition (4): p >= d^2/b + d^2/c, centre f5, leaves f7, f9] lie in the orbit of the representative (2, 0, 12, 70) (CITED inequality, orbit size 576)  ::  g = (rho=(1, 3, 2, 0), rho'=(1, 3, 0, 2), inverse=0) maps (2, 0, 12, 70) to (5, 7, 9, 68) position by position (2 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+[PASS] [EXACT] four roles (7, 0, 1, 68) [condition (5): ab(e - d) >= d^2(a+b+e+d), f7, f0; f1] lie in the orbit of the representative (0, 6, 10, 54) (CITED inequality, orbit size 288)  ::  g = (rho=(3, 1, 2, 0), rho'=(3, 1, 0, 2), inverse=0) maps (0, 6, 10, 54) to (7, 0, 1, 68) position by position (2 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+[PASS] [EXACT] four roles (7, 67, 53, 68) [condition (6): bq(j - d) >= d^2(b+q+j+d), f7, f67; f53] lie in the orbit of the representative (0, 6, 10, 54) (CITED inequality, orbit size 288)  ::  g = (rho=(1, 2, 3, 0), rho'=(2, 3, 0, 1), inverse=0) maps (0, 6, 10, 54) to (7, 67, 53, 68) position by position (2 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+
+--- From the pointwise forms to the coefficient forms (algebra only)
+[PASS] [EXACT] SOC: a(aX^2 + bY^2 - 2dXY) = (aX - dY)^2 + (ab - d^2)Y^2; so ab >= d^2, a > 0 give a Phi_i + b Phi_j + d Phi_k >= d(Phi_k + 2|x_i x_j|) >= 0  (a = 0 forces d = 0)
+[PASS] [EXACT] old-H: t(tX^2 + (c-d)Y^2 - 2dXY) = (tX - dY)^2 + (t(c-d) - d^2)Y^2; so t(c-d) >= d^2 gives t Phi_t + c Phi_c + d Phi_k >= d(Phi_c + Phi_k + 2|x_t x_c|) >= 0
+[PASS] [EXACT] chain: pb[pX^2 + bY^2 + (d^2/p + d^2/b)Z^2 - 2dZ(X+Y)] = b(pX - dZ)^2 + p(bY - dZ)^2; so a >= d^2/p + d^2/b gives p Phi_l + b Phi_m + a Phi_c + d Phi_k >= d(Phi_k + 2|x_c|(|x_l|+|x_m|)) >= 0
+[PASS] [EXACT] four: the form aX^2 + bY^2 + (c-d)Z^2 - 2d(XY + XZ + YZ) has matrix of determinant ab(c-d) - d^2(a+b+c+d) =: cap, and (ab - d^2)(c-d) = cap + d^2(a+b+2d); so cap >= 0, d > 0 force c > d, ab > d^2, a > 0: all leading minors a, ab - d^2, cap are >= 0 with the first two > 0, the form is positive semidefinite, and a Phi_a + b Phi_b + c Phi_c + d Phi_d >= d(pointwise form) >= 0
+[PASS] [EXACT] (a+1)(b+1) - e(ab-1) = (a+b+e+1) - ab(e-1), and the same with (q, j): (5) fails iff L_e e < 1 and (6) fails iff L_j j < 1, with L_e = max((ab-1)/((a+1)(b+1)), 0), L_j likewise
+
+--- Strict constant coefficient (7) and the corner c = 0 (9) (document p. 2)
+[PASS] [EXACT] G at p = e = j = 0 equals G00 = (1+b)(c+1+b)^2 (a+1)^3 (q+1)^3
+[PASS] [EXACT] k0 at b = 0 equals (a+1)(q+1)(e+1+a)^2 (c+1)^2 (q+j+1)^2 > 0
+[PASS] [EXACT] G at c = b = 0 equals (qp + q + qa + p + pa + 1 + a)(e+1+a)^2 (q+j+1)^2 > 0
+[PASS] [EXACT] chart (8), ab < 1, bq < 1, b = B: every chart value is a quotient of polynomials with nonnegative coefficients whose denominator is > 0 for B > 0 and the other parameters >= 0; ab = X/(1+X), bq = Y/(1+Y); on a product-above-one chart 1 - L e = 1/(1+E)
+[PASS] [EXACT] chart (8), ab < 1, bq < 1: W k0 (W = product of the positive denominators) has 2227 terms (document: 2227), all coefficients >= 0; its part free of E, J equals W0 G00 with W/W0 = (1+E)^0 (1+J)^0.  Hence k0 >= G00 (1 - L_e e)^2 (1 - L_j j)^2 on this chamber: inequality (7)  ::  spot check of the clearing at a random rational point: True
+[PASS] [EXACT] chart (8), ab < 1, bq < 1, c = 0, p = P >= 0 free: W G has 1419 terms (document: 1419), all coefficients >= 0; its part free of E, J, P equals W0 (1+b)^3 (a+1)^3 (q+1)^3 with W/W0 = (1+E)^0 (1+J)^0: inequality (9)
+[PASS] [EXACT] chart (8), ab < 1, bq > 1, b = B: every chart value is a quotient of polynomials with nonnegative coefficients whose denominator is > 0 for B, Y > 0 and the other parameters >= 0; ab = X/(1+X), bq = 1+Y; on a product-above-one chart 1 - L e = 1/(1+E)
+[PASS] [EXACT] chart (8), ab < 1, bq > 1: W k0 (W = product of the positive denominators) has 3268 terms (document: 3268), all coefficients >= 0; its part free of E, J equals W0 G00 with W/W0 = (1+E)^0 (1+J)^2.  Hence k0 >= G00 (1 - L_e e)^2 (1 - L_j j)^2 on this chamber: inequality (7)  ::  spot check of the clearing at a random rational point: True
+[PASS] [EXACT] chart (8), ab < 1, bq > 1, c = 0, p = P >= 0 free: W G has 2110 terms (document: 2110), all coefficients >= 0; its part free of E, J, P equals W0 (1+b)^3 (a+1)^3 (q+1)^3 with W/W0 = (1+E)^0 (1+J)^2: inequality (9)
+[PASS] [EXACT] chart (8), ab > 1, bq < 1, b = B: every chart value is a quotient of polynomials with nonnegative coefficients whose denominator is > 0 for B, X > 0 and the other parameters >= 0; ab = 1+X, bq = Y/(1+Y); on a product-above-one chart 1 - L e = 1/(1+E)
+[PASS] [EXACT] chart (8), ab > 1, bq < 1: W k0 (W = product of the positive denominators) has 3268 terms (document: 3268), all coefficients >= 0; its part free of E, J equals W0 G00 with W/W0 = (1+E)^2 (1+J)^0.  Hence k0 >= G00 (1 - L_e e)^2 (1 - L_j j)^2 on this chamber: inequality (7)  ::  spot check of the clearing at a random rational point: True
+[PASS] [EXACT] chart (8), ab > 1, bq < 1, c = 0, p = P >= 0 free: W G has 2110 terms (document: 2110), all coefficients >= 0; its part free of E, J, P equals W0 (1+b)^3 (a+1)^3 (q+1)^3 with W/W0 = (1+E)^2 (1+J)^0: inequality (9)
+[PASS] [EXACT] chart (8), ab > 1, bq > 1, b = B: every chart value is a quotient of polynomials with nonnegative coefficients whose denominator is > 0 for B, X, Y > 0 and the other parameters >= 0; ab = 1+X, bq = 1+Y; on a product-above-one chart 1 - L e = 1/(1+E)
+[PASS] [EXACT] chart (8), ab > 1, bq > 1: W k0 (W = product of the positive denominators) has 4945 terms (document: 4945), all coefficients >= 0; its part free of E, J equals W0 G00 with W/W0 = (1+E)^2 (1+J)^2.  Hence k0 >= G00 (1 - L_e e)^2 (1 - L_j j)^2 on this chamber: inequality (7)  ::  spot check of the clearing at a random rational point: True
+[PASS] [EXACT] chart (8), ab > 1, bq > 1, c = 0, p = P >= 0 free: W G has 3211 terms (document: 3211), all coefficients >= 0; its part free of E, J, P equals W0 (1+b)^3 (a+1)^3 (q+1)^3 with W/W0 = (1+E)^2 (1+J)^2: inequality (9)
+
+--- Bernstein criterion (10) and the region b <= 1 with the old-H threshold P* = 1 + 1/c (p. 2-3)
+[PASS] [EXACT] for p = s N/D: D^2 G(p) = D^2 k0 (1-s)^2 + D (2D k0 + N k1) s(1-s) + (D^2 k0 + N D k1 + N^2 k2) s^2, so k0 > 0 and nonnegative middle and endpoint numerators give G(p) >= k0 (1 - p/P*)^2 > 0 on 0 <= p < P* = N/D
+[PASS] [EXACT] chart (8), ab < 1, bq < 1, b = B/(1+B) < 1, c = C > 0, P* = (C+1)/C: chart valid; base, middle and endpoint numerators have 2710, 3612, 3612 terms (document: middle and endpoint 3612 each), all coefficients >= 0
+[PASS] [EXACT] chart (8), ab < 1, bq > 1, b = B/(1+B) < 1, c = C > 0, P* = (C+1)/C: chart valid; base, middle and endpoint numerators have 5324, 7230, 7230 terms (document: middle and endpoint 7230 each), all coefficients >= 0
+[PASS] [EXACT] chart (8), ab > 1, bq < 1, b = B/(1+B) < 1, c = C > 0, P* = (C+1)/C: chart valid; base, middle and endpoint numerators have 5324, 7230, 7230 terms (document: middle and endpoint 7230 each), all coefficients >= 0
+[PASS] [EXACT] chart (8), ab > 1, bq > 1, b = B/(1+B) < 1, c = C > 0, P* = (C+1)/C: chart valid; base, middle and endpoint numerators have 9450, 12258, 12258 terms (document: middle and endpoint 12258 each), all coefficients >= 0
+
+--- Shared-coefficient allocation for b >= 1 (document p. 3)
+[PASS] [EXACT] (11): d/d delta of E_a(delta) = delta(b+1)(a+delta)/(ab-delta) equals (b+1)(a^2 b + 2ab delta - delta^2)/(ab-delta)^2; the numerator is a^2 b + delta(2ab - delta) > 0 for a, b > 0, 0 <= delta < ab, so E_a is strictly increasing there, E_a(0) = 0
+[PASS] [EXACT] E_a(1) = (a+1)(b+1)/(ab-1): for ab > 1, E_a maps [0,1) onto the hard interval [0, (a+1)(b+1)/(ab-1)); for ab <= 1 the numerator at delta = ab is ab(b+1)(a+ab) > 0 while the denominator tends to 0+, so E_a maps [0, ab) onto [0, infinity)
+[PASS] [EXACT] (13): a (delta b)(E_a(delta) - delta) - delta^2 (a + delta b + E_a(delta) + delta) = 0: the piece a f0 + (delta b) f7 + E_a(delta) f1 + delta f68 lies on the boundary of the four-coefficient condition (roles (7,0;1;68)); the same with (q, f67, f53) for roles (7,67;53;68)
+[PASS] [EXACT] allocation: [a f0 + d1 b f7 + E_a(d1) f1 + d1 f68] + [q f67 + d2 b f7 + E_q(d2) f53 + d2 f68] + [P* f5 + r b f7 + c f9 + r f68] with r = 1 - d1 - d2 and P* = r^2/c + r/b has total coefficients (a, q, b, 1, e, j, c, P*) on (f0, f67, f7, f68, f1, f53, f9, f5); the third piece is on the boundary of the chain condition (centre f5: P* = r^2/(rb) + r^2/c), which is (14)
+[PASS] [EXACT] chart (15): b = 1+B, D = 1+U+V, delta1 = U/D, delta2 = V/D, r = 1/D, a = (U+XD)/(bD), q = (V+YD)/(bD), c = C gives ab - delta1 = X, bq - delta2 = Y, e = E_a(delta1) = U(b+1)(XD+U(1+b))/(bD^2 X), j = E_q(delta2) = V(b+1)(YD+V(1+b))/(bD^2 Y) and P* = r^2/c + r/b = (b+CD)/(CbD^2)  (16); all chart values have nonnegative coefficients and denominators > 0 for X, Y, C > 0
+[PASS] [EXACT] allocation chamber b >= 1, r > 0, threshold (16): base, middle and endpoint numerators have 117110, 209489, 289848 terms (document: 117110, 209489, 289848), all coefficients >= 0
+[PASS] [EXACT] the three cleared numerators equal W times the Bernstein numerators computed directly from k0, k1, k2 at 3 random rational chart points (guards the substitution code)
+
+--- Exact evaluations on the closed hard region, boundaries included (falsification attempts)
+[PASS] [EXACT] (7) at 1500 random rational points of the closed hard set {L_e e < 1, L_j j < 1} (seed 3504; b = 0, b = 1, a = 0, q = 0, ab = 1, bq = 1, c = 0, e = 0, j = 0 occur with positive probability): k0 >= G00 (1 - L_e e)^2 (1 - L_j j)^2 > 0 every time  ::  smallest ratio k0/bound = 1.000000
+[PASS] [EXACT] (9) at the same points with c = 0 and random p >= 0: G >= (1+b)^3 (a+1)^3 (q+1)^3 (1 - L_e e)^2 (1 - L_j j)^2 > 0 every time
+[PASS] [EXACT] b <= 1, c > 0 at those of the points with b <= 1 (816 points, b = 0 and b = 1 included): k0 > 0, 2k0 + P* k1 >= 0, k0 + P* k1 + P*^2 k2 >= 0 for P* = 1 + 1/c, and G(p) > 0 at a random p in [0, P*)
+[PASS] [EXACT] b >= 1, c > 0, r = 1 - delta1 - delta2 > 0 at 1078 random rational points given by (a, b, q, c, delta1, delta2) with e = E_a(delta1), j = E_q(delta2) (seed 3505; b = 1, delta = 0 and the limit layers a = 0 or q = 0 with delta = 0 and arbitrary e or j, 443 points, are included): k0 > 0, 2k0 + P* k1 >= 0, k0 + P* k1 + P*^2 k2 >= 0 for P* = r^2/c + r/b, and G(p) > 0 at a random p in [0, P*)
+
+--- Comparison of the rebuilt objects with the audit library moc4lib (not used to build anything)
+[PASS] [EXACT] PERMS, P, kappa agree with moc4lib
+[PASS] [EXACT] the 82 value vectors F_VALUES, the minor flags and the coordinates of all f_j agree with moc4lib
+[PASS] [EXACT] the cubic C agrees with moc4lib.cubic_C
+[PASS] [EXACT] T_35, T_36, T_37 agree with moc4lib.CONTACT_SETS; the group has the same 1152 maps
+
+--- NUMERIC falsification attempts (floating point; evidence, not proof)
+[PASS] [NUMERIC] pointwise form of old-H for roles (9, 5, 68) [condition (3): c(p - d) >= d^2, t = c on f9, main = p on f5]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 35001)  ::  smallest value found 6.620e-30
+[PASS] [NUMERIC] pointwise form of chain for roles (5, 7, 9, 68) [condition (4): p >= d^2/b + d^2/c, centre f5, leaves f7, f9]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 35001)  ::  smallest value found 7.440e-32
+[PASS] [NUMERIC] pointwise form of four for roles (7, 0, 1, 68) [condition (5): ab(e - d) >= d^2(a+b+e+d), f7, f0; f1]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 35001)  ::  smallest value found 5.557e-29
+[PASS] [NUMERIC] pointwise form of four for roles (7, 67, 53, 68) [condition (6): bq(j - d) >= d^2(b+q+j+d), f7, f67; f53]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 35001)  ::  smallest value found 2.485e-27
+[PASS] [NUMERIC] control: for the bare non-minor vector f68 the same minimiser finds a negative value of the Leibniz sum on SO(4) (so it can detect a violation)  ::  minimum found -0.06744
+[PASS] [NUMERIC] allocation threshold (14) as an inequality on SO(4): at 60 random coefficient vectors with b >= 1 and p exactly on the threshold P* = r^2/c + r/b (e = E_a(delta1), j = E_q(delta2), seed 35002), the minimum of the Leibniz sum over SO(4) (4 BFGS starts each) is never below -1e-8  ::  smallest minimum found 3.854e-18
+[PASS] [NUMERIC] old-H threshold p = 1 + 1/c (condition (3)) as an inequality on SO(4): 40 random coefficient vectors on the threshold, minimum of the Leibniz sum never below -1e-8  ::  smallest minimum found 1.648e-18
+[PASS] [NUMERIC] b >= 1 in original coordinates (delta1, delta2 obtained by solving (12) in floating point, seed 35003): at 3478 random hard points with r > 0 and p = t P*, t in [0,1), G(p) >= k0 (1-t)^2 (ratio never below 1 - 1e-6); a = 0, q = 0, e = 0, j = 0, b = 1 and near-zero side coefficients are sampled  ::  smallest ratio G/(k0 (1-t)^2) = 1.168554
+[INFO] free stratum search (gaps = 0 on T, gaps >= 0, sum of gaps = 1; 600 starts, seeds 35011, 35012): 435 converged points (max residual 1e-10); their coefficient d lies in [-0.25, 2.49e-05]: the free search finds no point of the hard branch
+[INFO] search with the hinge equation d >= target (targets 0.004, 0.01; then 300 perturbed restarts, seed 35020): 124 stratum points with d > 5e-4, d up to 0.01068 (normalisation: sum of gaps = 1); the contact set is exactly T at 42 of them
+[PASS] [NUMERIC] normal form at the 124 points: all eight coefficients are >= -1e-6 d  ::  smallest coefficient/d = -2.02e-07
+[PASS] [NUMERIC] radial equation G = 0 at the 124 stratum points with d > 0: |G| <= 1e-5 times the sum of the absolute values of its 1475 terms, at the normalised coefficients (the points are known to about 1e-10/d in these coordinates)  ::  largest relative |G| = 1.278e-07; for contrast, with every coefficient multiplied by an independent random factor in [0.9, 1.1] the relative |G| has median 2.65e-02
+[PASS] [NUMERIC] conclusion of the document at these points: each satisfies (5) or (6); else for b <= 1 the old-H condition (3); else for b > 1 either delta1 + delta2 >= 1 (two four pieces) or the allocation threshold (14)  ::  {'(6)': 60, '(5)': 64}
+
+FINAL: PASS  (93 checks, 156.2 s)

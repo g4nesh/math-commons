@@ -1,0 +1,178 @@
+====================================================================================================
+Replay of case T_26 = {2,3,5,7,8,12}  (document: final_referee_T25_uniform_20261022.pdf)
+====================================================================================================
+[INFO] python 3.9.6, sympy 1.14.0, python-flint 0.6.0, numpy 2.0.2, scipy 1.13.1 (NUMERIC parts only)
+
+--- Provenance   [t = 0 s]
+[PASS] [EXACT] sha256 of final_referee_T25_uniform_20261022.pdf is the one of the file that was read  ::  ca7d5b4597c00fe3...
+[PASS] [EXACT] sha256 of final_referee_T25_full_radial_20261022.json is the one of the file that was read  ::  9af0dcd2bb11719f...
+[PASS] [EXACT] sha256 of final_referee_T25_budget_PSD8_20261022.json is the one of the file that was read  ::  b44aad12020e99e3...
+[PASS] [EXACT] sha256 of final_referee_T25_cubic_reduction_20261022.json is the one of the file that was read  ::  19a2e89144b58d75...
+[PASS] [EXACT] MOC4_SUPP is set and the four files are the ones that were read (needed for the Gram constructions)
+[INFO] the document says that a JSON file records the binomial-square certificates of p. 5; no such file (final_referee_T25_uniform_exact_20261022.json) is in the public supplement; the certificates are found here
+
+--- Foundations rebuilt from the paper's definitions   [t = 0 s]
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14; P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of the cubic C of (A.2))
+[PASS] [EXACT] 82 vectors f_j of Appendix D: all in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps of the 24 permutation indices; G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+[PASS] [EXACT] for all 1152 g and 3 random Gaussian-rational spectra: the products of the relabelled spectra g_spectra(g, a, b) are the g-image of the products of (a, b)  (G preserves X and kappa)
+[PASS] [EXACT] for all 1152 g, 3 random rational O in SO(4) and random integer value vectors c: Phi_{g.c}(O'') = Phi_c(O) with O'' = transfer_to_SO4(g, O) (a row/column permutation of O or O^t, one column negated if needed)
+[PASS] [EXACT] supplement data (read as JSON): its stored 24 x 14 matrix equals P, its stored cubic equals the paper's C of (A.2) with the same sign, and its 82 facet value vectors equal mine in the same order
+[PASS] [EXACT] audit library moc4lib (imported only for this comparison): PERMS, P, kappa, the 82 value vectors, the minor flags, the coordinates of all f_j, the cubic C and the 1152 group maps agree with mine
+[PASS] [EXACT] audit library: CONTACT_SETS and generators agree for [25, 26]
+
+--- Contact set and numbering   [t = 6 s]
+[PASS] [EXACT] the document's set [2, 3, 5, 7, 8, 12] (its label 'T25') equals the paper's T_26 of Appendix E as a set of lexicographic permutation indices (group element: identity)
+[PASS] [EXACT] orbit representative under G: (0, 1, 2, 6, 9, 19); T_25 (representative (0, 1, 2, 6, 9, 18)) lies in a different orbit
+
+--- Generators of the contact cone   [t = 6 s]
+[PASS] [EXACT] F_T = {j : f_j = 0 on T} equals the document's list  ::  computed [0, 1, 2, 5, 6, 39, 67, 70]
+[PASS] [EXACT] non-minor generators equal the document's list  ::  computed [70] = ['h_{4231,+}']
+[PASS] [EXACT] direct enumeration of the extreme rays of N_T = {Pc >= 0, (Pc)_T = 0} (dimension 8, no use of the 82-facet list) gives exactly the 8 vectors f_j, j in F_T  ::  8 rays, 1.0 s
+[INFO] generators: f0 = n_{1,4}, f1 = n_{12,34}, f2 = n_{13,34}, f5 = n_{12,24}, f6 = n_{4,1}, f39 = n_{14,13}, f67 = n_{2,2}, f70 = h_{4231,+}
+[PASS] [EXACT] Laplace and Jacobi identities for the 7 minor generators [0, 1, 2, 5, 6, 39, 67]: Phi_{f_j}(O) = (minor of O)^2 >= 0 on SO(4)
+[PASS] [EXACT] the eight generators have rank 8: the representation (1) g = a f0 + e f1 + p f2 + j f5 + b f6 + c f39 + q f67 + d f70 with nonnegative coefficients is unique; d = 0 is a minor decomposition
+[INFO] stabiliser of T_26 in G: 1 element(s) (no symmetry is used by the document)
+
+--- Radial necessity (PROOF.md 7.3): the real part of a point of X   [t = 7 s]
+[PASS] [EXACT] grad C(u + t v) = grad C(u) + t Hess C(u) v + t^2 grad C(v) identically (t = i: real part grad C(u) - grad C(v), imaginary part Hess C(u) v)
+[PASS] [EXACT] Euler u.grad C(u) = 3 C(u) and polarisation u.grad C(v) = (1/2) v^t Hess C(u) v, identically
+[INFO] hence for x = u + iv with grad C(x) = 0: Hess C(u) v = 0 and 3 C(u) = u.grad C(v) = (1/2) v^t Hess C(u) v = 0; if v = 0 then Hess C(u) u = 2 grad C(u) = 0; so det Hess C(u) = 0 in every case (u = 0 included)
+[PASS] [EXACT] spot check on 10 random Gaussian-rational points x = alpha Psi(a,b) (seed 20261125): (P x)_sigma = alpha z_sigma, C(Re x) = 0 and Hess C(Re x) Im x = 0
+
+--- The cubic on g + h kappa, equation (2)  [p. 1]   [t = 7 s]
+[PASS] [EXACT] C(g + h kappa) = -C_* + h Q with C_* = (d+q)(a+d)(b+d) + cd(a+d+e) + de(d+q) and Q = c(p-d-e) - d(d+e) - pj  (the document's formulas are these at d = 1; C is the paper's cubic (A.2))
+[PASS] [EXACT] C_* - d^3 has only nonnegative coefficients: C_* >= d^3 > 0, so C(Re x) = 0 forces Q != 0, h = C_*/Q
+
+--- The full 14 x 14 Hessian determinant, equation (3)  [p. 1]   [t = 7 s]
+[INFO] det Hess C(g + h kappa): 16256 terms, 16037 minors memoised, degrees in (q,p,j,c,e,d,b,a,h) = [3, 3, 3, 3, 3, 11, 3, 3, 3], 2.4 s
+[PASS] [EXACT] the determinant polynomial (Laplace expansion, own code) equals the determinant of the rational matrix Hess C(u) computed by Gaussian elimination at 3 random rational points (seed 2612)
+[PASS] [EXACT] Q^4 det Hess C(g + (C_*/Q) kappa) is divisible by -4 Q^2 and the quotient is the square of G := gcd(quotient, d quotient / dp): identity (3), Q^4 det = -4 Q^2 G^2 (degree of det in h: 3)
+[PASS] [EXACT] G is homogeneous of degree 9 in the eight coefficients, free of h, of degree 2 in p, with 1201 integer monomials; the sign is fixed by a positive coefficient of d^9  ::  1201 terms, coefficient of d^9 = 1
+[PASS] [EXACT] supplement data: the stored degree-9 polynomial (variables q,p,j,c,e,d,b,a,z) equals the G computed here, with the same sign
+[INFO] consequence: a point of X with coefficients (1), d > 0, has G = 0 (necessary condition only)
+
+--- Cited capacities (4), (5): SOC, old-H, two four-coefficient inequalities  [p. 1]   [t = 11 s]
+[PASS] [EXACT] SOC, pj >= 1: (p: f2, j: f5; d: f70): the roles (2, 5, 70) lie in the G-orbit of the representative (1, 9, 22)  ::  g = (rho=(0, 1, 3, 2), rho'=(0, 3, 1, 2), transpose=0); 4 group elements; source roles (1, 9, 22)
+[PASS] [EXACT] old-H, c(p-1) >= 1: (t = c: f39, c-role = p: f2; d: f70): the roles (39, 2, 70) lie in the G-orbit of the representative (12, 2, 70)  ::  g = (rho=(2, 3, 0, 1), rho'=(1, 0, 3, 2), transpose=0); 4 group elements; source roles (12, 2, 70)
+[PASS] [EXACT] four-coefficient, ab(e-1) >= a+b+e+1: (a: f0, b: f6; c-role = e: f1; d: f70): the roles (0, 6, 1, 70) lie in the G-orbit of the representative (0, 6, 10, 54)  ::  g = (rho=(0, 2, 1, 3), rho'=(0, 2, 1, 3), transpose=0); 2 group elements; source roles (0, 6, 10, 54)
+[PASS] [EXACT] four-coefficient, bq(c-1) >= b+q+c+1: (b: f6, q: f67; c: f39; d: f70): the roles (6, 67, 39, 70) lie in the G-orbit of the representative (0, 6, 10, 54)  ::  g = (rho=(1, 2, 3, 0), rho'=(2, 3, 1, 0), transpose=0); 2 group elements; source roles (0, 6, 10, 54)
+[INFO] CITED statements (PROOF.md 7.6): a f1 + b f9 + d f22 has Phi >= 0 on SO(4) if ab >= d^2; t f12 + c f2 + d f70 if t(c-d) >= d^2; a f0 + b f6 + c f10 + d f54 if ab(c-d) >= d^2(a+b+c+d); each on its whole G-orbit
+[PASS] [EXACT] transfer of the T_25 document's family (b: f55, a: f67; e: f53; j: f59; d: f54) to this face: group elements map it to (b: f6, q: f67; c: f39; p: f2; d: f70) and also to (q: f67, b: f6; ...) with b, q exchanged  ::  e.g. g = ((2, 1, 0, 3), (0, 1, 3, 2), 0) and g = ((3, 0, 1, 2), (3, 2, 0, 1), 0)
+[PASS] [EXACT] the layer e = 0: g = (rho, rho', transpose) = ((0,1,3,2), (2,1,0,3), 1) maps f0, f2, f5, f6, f39, f67, f70 to f6, f59, f2, f55, f53, f67, f54, i.e. into the canonical generators of the T_25 document with q = 0 (coefficients (a,p,j,b,c,q,d) -> (c,j,p,b,e,a,d) there); all seven images vanish on T_25
+
+--- Gram constructions: the bounds (6), (7), the double-SOC endpoint and Lemma 1 (9), (10)  [pp. 2-3]   [t = 11 s]
+[PASS] [EXACT] certificate data (JSON): source order (0,1,2,5,6,39,67,70); the four signed coordinate maps permute p and q separately
+[PASS] [EXACT] quaternion model M(p,q) = matrix of x -> p x q: M^t M = |p|^2 |q|^2 I and det M = (|p|^2 |q|^2)^2 as polynomial identities (so M(p,q) is in SO(4) for unit p, q)
+[PASS] [EXACT] own linear algebra on (*) (see GramFace; 418 coefficient equations, rank 18): the solutions are exactly: 10 independent linear relations on the Gram matrix, and weights = its diagonal (a, e, p, j, b, c, q, d)
+[PASS] [EXACT] the ten relations stored in the supplement span the same space as the ten derived here
+[INFO] relations derived here (vectors (A,E,P,J,B,C,Q,D) at positions 0..7):
+[INFO]    +1*G01 -1*G07 -1*G17 = 0
+[INFO]    +1*G02 -1*G07 -1*G27 = 0
+[INFO]    +1*G03 +1*G06 -1*G07 +1*G36 -1*G37 = 0
+[INFO]    +1*G04 -1*G23 +1*G25 -1*G45 -1*G77 = 0
+[INFO]    +1*G14 +1*G23 -1*G25 +1*G45 -1*G47 +1*G77 = 0
+[INFO]    +1*G15 -1*G17 +1*G23 -1*G25 -1*G57 +1*G77 = 0
+[INFO]    +1*G24 -1*G25 -1*G26 +1*G27 +1*G45 +1*G46 -1*G47 = 0
+[INFO]    +1*G34 +1*G37 -1*G47 = 0
+[INFO]    +1*G56 -1*G57 = 0
+[INFO]    +1*G67 = 0
+[PASS] [EXACT] (6), bq > 1, general x, c = (1-x)^2/p + E2 x^2 + s: the Gram matrix satisfies the ten relations; its weights are ['0', '0', 'p', '0', 'b', 's + x**2*(b + 1)*(q + 1)/(b*q - 1) + (1 - x)**2/p', 'q', '1']; elimination in the order [2, 7, 4, 6, 5] has pivots ['p', '1', 'b', '(b*q - 1)/b', 's'] and zero residual; identity (*) holds directly at the rational instance {'b': '3', 'q': '2', 'p': '1/2', 'x': '1/3', 's': '1/5'}  [E2 = (b+1)(q+1)/(bq-1)]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] (6): (1-x)^2/p + E2 x^2 = E2/(1+pE2) + ((1+pE2)/p)(x - 1/(1+pE2))^2: least |C|^2 = 1/(p + 1/E2); so c >= 1/(p + 1/E2), i.e. p >= 1/c - 1/E2, is safe
+[PASS] [EXACT] (6) at p = 0 (x = 1): the four-coefficient inequality c >= E2 re-proved on this face: the Gram matrix satisfies the ten relations; its weights are ['0', '0', '0', '0', 'b', 's + (b + 1)*(q + 1)/(b*q - 1)', 'q', '1']; elimination in the order [7, 4, 6, 5] has pivots ['1', 'b', '(b*q - 1)/b', 's'] and zero residual; identity (*) holds directly at the rational instance {'b': '5/2', 'q': '2', 's': '1/7'}  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] (7), b = beta^2, q = alpha^2, w = alpha beta, p = 1/c + (1-w)^2/(beta-alpha)^2 + s: the Gram matrix satisfies the ten relations; its weights are ['0', '0', 's + (-alpha*beta + 1)**2/(-alpha + beta)**2 + 1/c', '0', 'beta**2', 'c', 'alpha**2', '1']; elimination in the order [4, 5, 2, 7] has pivots ['beta**2', 'c', 's', '1'] and zero residual; identity (*) holds directly at the rational instance {'alpha': '1/3', 'beta': '3/2', 'c': '2', 's': '1/4'}  [vector Q is alpha/beta times vector B: no pivot]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] (7): (1-w)^2/(sqrt b - sqrt q)^2 = b(1-w)^2/(b-w)^2 = q(1-w)^2/(q-w)^2 for w = sqrt(bq): the bound is symmetric in b, q (the document's 'symmetric version')
+[PASS] [EXACT] double-SOC endpoint: blocks (P,C) with P.C = 1 and (B,Q) with B.Q = 1, D alone: the Gram matrix satisfies the ten relations; its weights are ['0', '0', 'p', '0', 'b', 'c', 'q', '1']; elimination in the order [2, 5, 7, 4, 6] has pivots ['p', '(c*p - 1)/p', '1', 'b', '(b*q - 1)/b'] and zero residual; identity (*) holds directly at the rational instance {'b': '2', 'q': '1/2', 'p': '3', 'c': '1/3'}  [PSD iff pc >= 1 and bq >= 1]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] SOC pj >= 1 re-proved on this face: block (P,J) with P.J = -1, D alone: the Gram matrix satisfies the ten relations; its weights are ['0', '0', 'p', 'j', '0', '0', '0', '1']; elimination in the order [2, 3, 7] has pivots ['p', '(j*p - 1)/p', '1'] and zero residual; identity (*) holds directly at the rational instance {'p': '2', 'j': '1/2'}  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] Lemma 1, general z: Gram(A,B,Q) = [[a,t,0],[t,b,z],[0,z,q]], E and P as in the document: the Gram matrix satisfies the ten relations; its weights are ['a', 't**2 + t**2*(a + b + 2*t)/(a*b - t**2)', '(-t - z + 1)**2/(b + q - 2*z - t**2/a) + (1 - t)**2/c', '0', 'b', 'c', 'q', '1']; elimination in the order [0, 4, 6, 7, 5] has pivots ['a', '-(-a*b + t**2)/a', '(-a*b*q + a*z**2 + q*t**2)/(-a*b + t**2)', '1', 'c'] and zero residual; identity (*) holds directly at the rational instance {'a': '2', 'b': '3', 'c': '1/2', 'q': '1', 't': '1/3', 'z': '1/4'}  [E, P are combinations of A, B, Q, D, C: no pivots; h_b = b - t^2/a; PSD iff q h_b >= z^2]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] Lemma 1: E.A = t, E.B = -t, E.D = t, |E|^2 = e(t); |V|^2 = h_b + q - 2z for V = B - (t/a)A - Q; det Gram(A,B,Q) = a (q h_b - z^2)
+[PASS] [EXACT] Lemma 1 (9): z = r = 1 - t, P = (r/c) C: the Gram matrix satisfies the ten relations; its weights are ['a', 't**2 + t**2*(a + b + 2*t)/(a*b - t**2)', '(1 - t)**2/c', '0', 'b', 'c', 'q', '1']; elimination in the order [0, 4, 6, 7, 5] has pivots ['a', '-(-a*b + t**2)/a', '(-a*b*q + a*t**2 - 2*a*t + a + q*t**2)/(-a*b + t**2)', '1', 'c'] and zero residual; identity (*) holds directly at the rational instance {'a': '2', 'b': '3', 'c': '1/2', 'q': '1', 't': '1/3'}  [PSD iff q h_b >= r^2; then e >= e(t), p >= r^2/c is safe]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] Lemma 1 (10): z = w r, q = w^2 r^2 / h_b (vector Q parallel to the part of B orthogonal to A): the Gram matrix satisfies the ten relations; its weights are ['a', 't**2 + t**2*(a + b + 2*t)/(a*b - t**2)', '(1 - t)**2*(1 - w)**2*(b - t**2/a)/(b - w*(1 - t) - t**2/a)**2 + (1 - t)**2/c', '0', 'b', 'c', 'w**2*(1 - t)**2/(b - t**2/a)', '1']; elimination in the order [0, 4, 6, 7, 5] has pivots ['a', '-(-a*b + t**2)/a', '0', '1', 'c'] and zero residual; identity (*) holds directly at the rational instance {'a': '2', 'b': '3', 'c': '1/2', 't': '1/3', 'w': '1/2'}  [pivot of Q is 0; needs h_b != w r]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] (10): with z = wr, q = w^2 r^2/h_b: h_b + q - 2z = (h_b - wr)^2/h_b and r^2/c + (r-z)^2/(h_b+q-2z) = r^2/c + h_b r^2 (1-w)^2/(h_b - wr)^2
+[PASS] [EXACT] the ten relations have no solution with a Gram matrix supported on the vectors (P, C, D) and G77 = 1: the old-H capacity c(p-1) >= 1 alone is NOT certified by this Gram representation; it is a genuine citation
+[PASS] [EXACT] first inequality of (5) re-proved on this face: E.A = 1, E.B = -1, E.D = 1, A.B = 1 (t = 1), e = E1 + s: the Gram matrix satisfies the ten relations; its weights are ['a', 's + (a + 1)*(b + 1)/(a*b - 1)', '0', '0', 'b', '0', '0', '1']; elimination in the order [0, 4, 7, 1] has pivots ['a', '(a*b - 1)/a', '1', 's'] and zero residual; identity (*) holds directly at the rational instance {'a': '5/2', 'b': '2', 's': '1/7'}  [E1 = (a+1)(b+1)/(ab-1)]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] missing region II: with c = E2 V/(1+V) and t = Z/(1+Z): P0 = 1/c - 1/E2 = 1/(E2 V), P1 = (1-t)^2/c = (1+V)/((1+Z)^2 E2 V), and P0 - P1 = (Z(Z+2) - V)/((1+Z)^2 E2 V): P1 <= P0 iff V <= Z(Z+2)
+[INFO] PROOF-READ: pivots >= 0 under a, b, c > 0, 0 <= t < 1, ab > t^2 and q h_b >= z^2; extra norm of E or P is an extra multiple of f1 or f2 (diagonal entries of E, P occur in no relation); j f5 and any minor vector may be added; so (9), (10) are safe for e >= e(t) and p >= the displayed bound
+[PASS] [EXACT] e'(t) = 2t{(ab-t^2)^2 + ab(a+b+3t) - t^3}/(ab-t^2)^2; e(0) = 0; e(1) = E1 = (a+1)(b+1)/(ab-1)
+[INFO] PROOF-READ: for ab > 1 and 0 < t < 1: ab(a+b+3t) > 3t > t^3, so e' > 0; e is a continuous increasing bijection [0,1) -> [0,E1): every e in [0,E1) is e(t) for exactly one t in [0,1)
+[PASS] [EXACT] q h_b - r^2 = (bq - 1)(1 - t^2/(ab)) + [(1 - t^2/(ab)) - (1-t^2)] + 2t(1-t)  and  (1 - t^2/(ab)) - (1 - t^2) = t^2 (ab-1)/(ab): so bq >= 1, ab > 1, 0 <= t < 1 give q h_b >= r^2 (strictly if bq > 1 or t > 0)
+[PASS] [EXACT] h_b - r = (b-1)(1-t^2) + b t^2 (ab-1)/(ab) + t(1-t): so b >= 1, ab > 1, 0 <= t < 1 give h_b >= r, with equality only for b = 1, t = 0; and h_b - b r^2 = b t^2(ab-1)/(ab) + 2bt(1-t) >= 0 (so r^2/h_b <= 1/b)
+
+--- The constant coefficient k0 = C_* G6, its positivity, and the corner j = c = 0  [p. 3]   [t = 14 s]
+[PASS] [EXACT] k0 = G|_{p=0} = C_* G6 (exact division, d general); G6 has degree 6, 122 terms, and degree <= 1 in each of e, c, j  ::  degrees in (q,p,j,c,e,d,b,a,h): [2, 0, 1, 1, 1, 6, 2, 2, 0]
+[PASS] [EXACT] G6|_{e=c=j=0} = (a+1)^2 (b+1)^2 (q+1)^2  (d = 1)
+[PASS] [EXACT] G6|_{b=0} = (e+1+a)(q+c+1)(qj + q + qa + j + ja + 1 + a)  (d = 1)
+[PASS] [EXACT] G6 table (ab < 1, bq < 1), chart (14): after clearing positive denominators all coefficients are >= 0 (269 terms, as in the document); the part free of E, C, J equals the cleared base term (a+1)^2(b+1)^2(q+1)^2 divided by 1: G6 >= (a+1)^2(b+1)^2(q+1)^2 (1 - Le e)(1 - Lc c) > 0 on this chart  ::  min coefficient 1
+[PASS] [EXACT] G6 table (ab < 1, bq > 1), chart (14): after clearing positive denominators all coefficients are >= 0 (337 terms, as in the document); the part free of E, C, J equals the cleared base term (a+1)^2(b+1)^2(q+1)^2 divided by (1+C): G6 >= (a+1)^2(b+1)^2(q+1)^2 (1 - Le e)(1 - Lc c) > 0 on this chart  ::  min coefficient 1
+[PASS] [EXACT] G6 table (ab > 1, bq < 1), chart (14): after clearing positive denominators all coefficients are >= 0 (337 terms, as in the document); the part free of E, C, J equals the cleared base term (a+1)^2(b+1)^2(q+1)^2 divided by (1+E): G6 >= (a+1)^2(b+1)^2(q+1)^2 (1 - Le e)(1 - Lc c) > 0 on this chart  ::  min coefficient 1
+[PASS] [EXACT] G6 table (ab > 1, bq > 1), chart (14): after clearing positive denominators all coefficients are >= 0 (456 terms, as in the document); the part free of E, C, J equals the cleared base term (a+1)^2(b+1)^2(q+1)^2 divided by (1+E)(1+C): G6 >= (a+1)^2(b+1)^2(q+1)^2 (1 - Le e)(1 - Lc c) > 0 on this chart  ::  min coefficient 1
+[INFO] PROOF-READ: 1 - Le e = 1/(1+E) for e = E1 E/(1+E) (ab > 1) and Le = 0 for ab <= 1; the bound is continuous in (a,b,q,e,c,j), so it extends to ab = 1 and bq = 1; with the b = 0 factorisation: k0 > 0 on the closed orthant under strict failure of (5)
+[PASS] [EXACT] identity (15): G|_{j=c=0, d=1} = (a+1)(e+L)(q+1)^2 { (e+L)[pq + (p+q)(b+1)] + (b+1) delta }, L = (a+1)(b+1), delta = L - e(ab-1); it is > 0 when delta > 0 (strict failure of the first inequality of (5)): no point of X with d > 0 has j = c = 0
+
+--- Bernstein criterion; the forty baseline tables  [p. 4]   [t = 14 s]
+[PASS] [EXACT] for G = k0 + k1 x + k2 x^2 and x = t N/D: D^2 G = (1-t)^2 D^2 k0 + t(1-t) D (2D k0 + N k1) + t^2 (D^2 k0 + N D k1 + N^2 k2); so D > 0, k0 > 0 and both numerators >= 0 give G > 0 on [0, N/D)
+[INFO] d = 1: G = k2 p^2 + k1 p + k0 with k0, k1, k2 in Z[q,b,c,j,a,e] of [513, 471, 217] terms
+[PASS] [EXACT] baseline chart I-   , (x,y) = (q,b), ab < 1: middle and endpoint numerators have only nonnegative coefficients (3496 / 5010 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.2 s
+[PASS] [EXACT] baseline chart I-   , (x,y) = (q,b), ab > 1: middle and endpoint numerators have only nonnegative coefficients (8650 / 12507 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.6 s
+[PASS] [EXACT] baseline chart I+   , (x,y) = (q,b), ab < 1: middle and endpoint numerators have only nonnegative coefficients (11372 / 20136 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.8 s
+[PASS] [EXACT] baseline chart I+   , (x,y) = (q,b), ab > 1: middle and endpoint numerators have only nonnegative coefficients (18007 / 31356 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 1.3 s
+[PASS] [EXACT] baseline chart II   , (x,y) = (q,b), ab < 1: middle and endpoint numerators have only nonnegative coefficients (21588 / 33526 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 1.4 s
+[PASS] [EXACT] baseline chart IIIa-, (x,y) = (q,b), ab < 1: middle and endpoint numerators have only nonnegative coefficients (7055 / 7055 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.3 s
+[PASS] [EXACT] baseline chart IIIa-, (x,y) = (q,b), ab > 1: middle and endpoint numerators have only nonnegative coefficients (12960 / 12960 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.7 s
+[PASS] [EXACT] baseline chart IIIa-, (x,y) = (b,q), ab < 1: middle and endpoint numerators have only nonnegative coefficients (9287 / 9287 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.5 s
+[PASS] [EXACT] baseline chart IIIa-, (x,y) = (b,q), ab > 1: middle and endpoint numerators have only nonnegative coefficients (29160 / 29160 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 1.5 s
+[PASS] [EXACT] baseline chart IIIa+, (x,y) = (q,b), ab < 1: middle and endpoint numerators have only nonnegative coefficients (7056 / 10180 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.5 s
+[PASS] [EXACT] baseline chart IIIa+, (x,y) = (q,b), ab > 1: middle and endpoint numerators have only nonnegative coefficients (12960 / 18720 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.8 s
+[PASS] [EXACT] baseline chart IIIa+, (x,y) = (b,q), ab < 1: middle and endpoint numerators have only nonnegative coefficients (9288 / 13404 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.6 s
+[PASS] [EXACT] baseline chart IIIa+, (x,y) = (b,q), ab > 1: middle and endpoint numerators have only nonnegative coefficients (29160 / 42120 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 2.0 s
+[PASS] [EXACT] baseline chart IIIb+, (x,y) = (q,b), ab < 1: middle and endpoint numerators have only nonnegative coefficients (9120 / 14144 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.6 s
+[PASS] [EXACT] baseline chart IIIb+, (x,y) = (q,b), ab > 1: middle and endpoint numerators have only nonnegative coefficients (12816 / 19696 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.8 s
+[PASS] [EXACT] baseline chart IIIb+, (x,y) = (b,q), ab < 1: middle and endpoint numerators have only nonnegative coefficients (9934 / 15532 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 0.7 s
+[PASS] [EXACT] baseline chart IIIb+, (x,y) = (b,q), ab > 1: middle and endpoint numerators have only nonnegative coefficients (29835 / 45630 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 1.9 s
+[PASS] [EXACT] baseline chart IIIb-, (x,y) = (q,b), ab < 1: middle and endpoint numerators have only nonnegative coefficients (23702 / 32271 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 1.3 s
+[PASS] [EXACT] baseline chart IIIb-, (x,y) = (b,q), ab < 1: middle and endpoint numerators have only nonnegative coefficients (25891 / 34715 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 1.5 s
+[PASS] [EXACT] baseline chart IIIb-, (x,y) = (b,q), ab > 1: middle and endpoint numerators have only nonnegative coefficients (72720 / 89910 terms); the encoding agrees with the plain chart map, region and threshold at 3 random rational parameter points  ::  min coefficients 1 / 1, 4.2 s
+[PASS] [EXACT] all forty baseline tables (twenty charts) are nonnegative
+[INFO] for the record: with the baseline thresholds the two charts the document leaves out have negative coefficients: II with ab > 1: 85 / 169; IIIb- with ab > 1 and larger core variable b: 116 / 193 (middle / endpoint)
+
+--- Missing region II (ab > 1, bq > 1, c >= j): charts (18) and the binomial squares (19)  [p. 5]   [t = 37 s]
+[PASS] [EXACT] missing II, V = Z(Z+2)W/(1+W), threshold P1 = (1-t)^2/c: the middle numerator has only nonnegative coefficients; term counts 102873 / 163889 and 2 negative endpoint coefficients, as in the document; encoding agrees with the plain chart map at 3 points  ::  min coefficients 1 / -4, 7.3 s
+[PASS] [EXACT] missing II, endpoint numerator of this chart: twice the polynomial minus 2 binomial squares (k/2) X^(m-|delta|) (X^(delta+) - X^(delta-))^2 has only nonnegative coefficients (certificate found here; k in [8]): the endpoint numerator is >= 0 on the closed orthant
+[INFO]    centre exponent (B,X,Y,Z,W,U) = (19, 1, 4, 4, 6, 0), coefficient of twice the polynomial -8, delta = (-1, 0, 0, -1, 0, 0)
+[INFO]    centre exponent (B,X,Y,Z,W,U) = (19, 2, 4, 4, 6, 0), coefficient of twice the polynomial -8, delta = (-1, 0, 1, -1, 0, 0)
+[PASS] [EXACT] missing II, V = Z(Z+2) + W, threshold P0 = 1/c - 1/E2: the middle numerator has only nonnegative coefficients; term counts 115308 / 184864 and 6 negative endpoint coefficients, as in the document; encoding agrees with the plain chart map at 3 points  ::  min coefficients 1 / -4, 7.9 s
+[PASS] [EXACT] missing II, endpoint numerator of this chart: twice the polynomial minus 6 binomial squares (k/2) X^(m-|delta|) (X^(delta+) - X^(delta-))^2 has only nonnegative coefficients (certificate found here; k in [2, 8]): the endpoint numerator is >= 0 on the closed orthant
+[INFO]    centre exponent (B,X,Y,Z,W,U) = (19, 1, 4, 2, 2, 0), coefficient of twice the polynomial -2, delta = (-1, 0, 0, -1, 0, 0)
+[INFO]    centre exponent (B,X,Y,Z,W,U) = (19, 1, 4, 3, 1, 0), coefficient of twice the polynomial -8, delta = (-1, 0, 0, -1, 0, 0)
+[INFO]    centre exponent (B,X,Y,Z,W,U) = (19, 1, 4, 4, 0, 0), coefficient of twice the polynomial -8, delta = (-1, 0, 0, -1, 0, 0)
+[INFO]    centre exponent (B,X,Y,Z,W,U) = (19, 2, 4, 2, 2, 0), coefficient of twice the polynomial -2, delta = (-1, 0, 1, -1, 0, 0)
+[INFO]    centre exponent (B,X,Y,Z,W,U) = (19, 2, 4, 3, 1, 0), coefficient of twice the polynomial -8, delta = (-1, 0, 1, -1, 0, 0)
+[INFO]    centre exponent (B,X,Y,Z,W,U) = (19, 2, 4, 4, 0, 0), coefficient of twice the polynomial -8, delta = (-1, 0, 1, -1, 0, 0)
+
+--- Missing region IIIb- (b >= 1, ab > 1, bq < 1, j <= cb/(c+b)): charts (20), (21)  [p. 5]   [t = 52 s]
+[PASS] [EXACT] missing IIIb-, chart (20), threshold (9): middle and endpoint numerators have only nonnegative coefficients; term counts 131291 / 147915 as in the document; encoding agrees with the plain chart map at 3 points  ::  min coefficients 1 / 1, 7.2 s
+[PASS] [EXACT] missing IIIb-, chart (21), threshold (10): middle and endpoint numerators have only nonnegative coefficients; term counts 507835 / 1066354 as in the document; encoding agrees with the plain chart map at 3 points  ::  min coefficients 1 / 1, 40.4 s
+[PASS] [EXACT] chart (21): the key factor b D (1+W) - W(1+X)(1+Z), b = 1 + B, D = (1+X)(1+Z)^2 - Z^2, expands to a polynomial in B, X, Z, W with nonnegative coefficients and constant term 1: it is > 0
+
+--- Cover of the coefficient domain, boundaries included: exact randomised test in the ORIGINAL coefficients  [p. 6]   [t = 100 s]
+[PASS] [EXACT] 4000 random rational points of {d = 1, both inequalities of (5) fail strictly, (c,j) != (0,0)} (seed 2614; with zeros among the coefficients and the layers b = 1, bq = 1, ab = 1, j = c, j = c/(1+c), j = cy/(c+y), q h_b = r^2): in the region of the document's cover, with its threshold P* = N/D written in the original coefficients, D > 0, N > 0, k0 > 0, both Bernstein numerators >= 0, and G(p) > 0 at 3 random p in [0, P*) each (12000 values of G; 161 points skipped for an irrational square root)  ::  points per region: {'I': 1100, 'II, ab <= 1 (P0)': 332, 'II, ab > 1 (P0)': 64, 'II, ab > 1 (P1)': 183, 'IIIa+': 101, 'IIIa-': 737, 'IIIb+': 240, 'IIIb- baseline': 359, 'IIIb- new (10)': 437, 'IIIb- new (9)': 447}
+[INFO] PROOF-READ: in every region the two numerators are continuous functions of the original coefficients and of t (ab > 1); they are >= 0 on the image of the open chart, hence on its closure; the closures cover the domain; a zero of G has p >= P*, where one of (4), (6), (7), (9), (10) or the double-SOC endpoint applies
+
+--- NUMERIC falsification attempts (floating point; evidence, not proof)   [t = 132 s]
+[PASS] [NUMERIC] capacity (4) SOC pj = 1 on its boundary: 40 random coefficient vectors (seed 26001, coefficients log-uniform in [10^-1.5, 10^1.5], unused coefficients 0 with probability 0.4), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity (4) old-H c(p-1) = 1 on its boundary: 40 random coefficient vectors (seed 26001, coefficients log-uniform in [10^-1.5, 10^1.5], unused coefficients 0 with probability 0.4), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity (5) ab(e-1) = a+b+e+1 on its boundary: 40 random coefficient vectors (seed 26001, coefficients log-uniform in [10^-1.5, 10^1.5], unused coefficients 0 with probability 0.4), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity (5) bq(c-1) = b+q+c+1 on its boundary: 40 random coefficient vectors (seed 26001, coefficients log-uniform in [10^-1.5, 10^1.5], unused coefficients 0 with probability 0.4), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity (6) on its boundary: 40 random coefficient vectors (seed 26001, coefficients log-uniform in [10^-1.5, 10^1.5], unused coefficients 0 with probability 0.4), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity (7) on its boundary: 40 random coefficient vectors (seed 26001, coefficients log-uniform in [10^-1.5, 10^1.5], unused coefficients 0 with probability 0.4), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity double-SOC bq = 1, pc = 1 on its boundary: 40 random coefficient vectors (seed 26001, coefficients log-uniform in [10^-1.5, 10^1.5], unused coefficients 0 with probability 0.4), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity (9) on its boundary: 40 random coefficient vectors (seed 26001, coefficients log-uniform in [10^-1.5, 10^1.5], unused coefficients 0 with probability 0.4), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[PASS] [NUMERIC] capacity (10) on its boundary: 40 random coefficient vectors (seed 26001, coefficients log-uniform in [10^-1.5, 10^1.5], unused coefficients 0 with probability 0.4), 8 BFGS restarts each over SO(4): smallest Phi / (sum of coefficients) >= -1e-8  ::  smallest value 0.000e+00
+[INFO] control of the minimiser: with p and j replaced by 0, Phi takes a negative value in 10 of the first 20 + 20 cases of (9), (10) (the capacities are sufficient conditions; sharpness is neither claimed nor tested)
+[PASS] [NUMERIC] every converged stratum point is, within 1e-8, a nonnegative combination of the eight generators (Lemma 6.5 for T_26)  ::  0 exceptions
+[INFO] stratum search: 750 free starts (seeds 26101-26103): 640 converged points of X with gaps >= 0 vanishing on T_26; 480 starts with the extra equation d = target (targets 0.003 ... 0.2; seeds 26200-26205): 43 converged.  616 points with d < 1e-7 (minor decompositions), 67 points with d > 1e-7 (d up to 0.0347; normalisation: sum of gaps = 1)
+[PASS] [NUMERIC] at the 67 stratum points with d > 0: |-C_* + hQ| / (|C_*| + |hQ|) <= 1e-6, |G| / (sum of |terms of G|) <= 1e-6 and smallest/largest singular value of Hess C(Re x) <= 1e-6 (equations (2), (3) on actual points of X)  ::  4.74e-09, 3.91e-09, 2.44e-11
+[PASS] [NUMERIC] every stratum point with d > 0 satisfies at least one of the capacities (4)-(7), (9), (10) (tolerance 1e-7 after scaling to d = 1)  ::  capacities met: {'SOC': 59, 'old-H': 34, 'four-1': 15, 'four-2': 4, '(6)': 6, '(7)': 21, 'double-SOC': 0, '(9)/(10)': 22, 'none': 0}
+
+FINAL: PASS  (108 checks, 268.3 s)
