@@ -96,6 +96,8 @@ jobs:
           python3 -B fourier-minor-laws/check.py
           python3 -B fourier-seven/check.py
           python3 -B fourier-composite-laws/check.py
+          python3 -B principally-balanced-local/check.py
+          python3 -B -m unittest discover -s principally-balanced-local -p 'test_*.py' -v
           (cd full-four-cycle && sha256sum --check --quiet SHA256SUMS)
           python3 -B full-four-cycle/check.py
           (cd two-middle-positive-laws && sha256sum --check --quiet SHA256SUMS)
