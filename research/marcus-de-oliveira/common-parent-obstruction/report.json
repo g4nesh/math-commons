@@ -41,7 +41,7 @@
     ]
   ],
   "sphere_dual_upper_bound": "-11955637/4356000000",
-  "two_direction_dual_upper_bound": "-21292081255269448219786028625267161840161/7756298906319090276937437467133400392000000",
+  "two_direction_dual_upper_bound": "-48032426235671/17964300816000000",
   "common_parent_for_these_two_directions": false,
   "separate_positive_laws_for_both": true,
   "individual_mass_floors": [

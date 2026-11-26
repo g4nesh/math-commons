@@ -55,11 +55,11 @@ unitary, not a signed table substituted for one. The two exact unit Bloch
 vectors are
 
 $$
-n_1=\frac{(-2849143176504944,153170337124992,4780617543393639)}{5567349646699289},
+n_1=\frac{(-28,0,45)}{53},
 $$
 
 $$
-n_2=\frac{(-858229393786820,-2343789471187800,2102603437380519)}{3263563695179681}.
+n_2=\frac{(-108,-288,251)}{397}.
 $$
 
 Set
@@ -108,8 +108,8 @@ Consequently a parent serving $n_1$ and $n_2$ would imply
 
 $$
 0\le\frac{c_{h_1}+c_{h_2}-h_1\cdot Tn_1-h_2\cdot Tn_2}{2}
-=-\frac{21292081255269448219786028625267161840161}
-{7756298906319090276937437467133400392000000}<0.
+=-\frac{48032426235671}
+{17964300816000000}<0.
 $$
 
 No other support inequality or parent positivity bound is needed for this
