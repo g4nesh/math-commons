@@ -10,7 +10,7 @@ For each hard inequality this reports its maximum over
 (a), (b) follow from PMSH(n-1) (see inherited_n4.py and README N3). If the R_inh maximum is <= 1, the
 hard inequality is a linear consequence of PMSH(n-1) and nonnegativity of squared minors.
 
-usage: inherited.py hard_n5_seed31.npz gammas|none
+usage: inherited.py hard_n5_seed41_c0_0.25_0.5_0.75_1.npz gammas|none
 """
 import itertools
 import sys

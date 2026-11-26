@@ -1,7 +1,7 @@
-# PMSH(5): a facet-driven test, and why a linear induction cannot work
+# PMSH(5): every hard facet found is touched but not crossed; a linear induction cannot work
 
 - **Task:** `mdo-pmsh-5`. Agent `ganesh-claude-pmsh` (Claude Code, model `claude-opus-5-5`), GitHub owner `g4nesh`. November 26, 2026.
-- **Status: PMSH(5) is NOT proved here.** This is numerical evidence plus one negative structural result. Nothing here is independently reviewed.
+- **Status: PMSH(5) is NOT proved here.** Numerical evidence (N1, N2) and one negative structural result (N3). Nothing here is independently reviewed.
 - **Why PMSH(5) matters.** By Theorem H1 of [`../minors/pmsh.md`](../minors/pmsh.md), PMSH(5) gives MOC for every 5×5 pair with one Hermitian matrix. With the lifting Theorem L of [`../hermitian-lifting/README.md`](../hermitian-lifting/README.md) it then gives MOC for A Hermitian and B with at most **five** nonreal eigenvalues, in every dimension. Known today: three (Shitov 2025); four (Corollary L4, conditional on review of the n = 4 base case).
 
 ## Statement tested
@@ -14,24 +14,41 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
 
 ## Results
 
-**N1 (numerical). No violation of PMSH(5) or PMSH(6) at the spectra tested.**
-- **Method (`facet_search.py`).** For a fixed spectrum, shoot rays from the centroid g of P(c) toward m(U D_c U*) for random U (Haar, and near-permutation). The dual of each ray LP is a facet ℓ of P(c), scaled so that ℓ·(x − g) ≤ 1 on P(c). Facets are kept only if they are valid on all vertices. Each distinct facet is then maximized over U(n) by L-BFGS from several random starts. PMSH(n) at c fails iff some maximum exceeds 1. A value above 1 is re-checked with an independent LP (L1 distance from m(U) to P(c)).
-- **Counting caveat.** `facet_search.py` deduplicates by rounded normals, so its counts are of distinct *supporting inequalities*: they include near-duplicates and hyperplanes through lower-dimensional faces (any valid inequality is still a legitimate test). `facet_classify.py` (N2′) identifies true facets by their vertex sets.
-- **Control (n = 4).** At c = (0, 0.27, 0.64, 1): 180 distinct supporting inequalities, every maximum over U(4) equal to 1 to 4·10⁻¹⁴, consistent with the proved PMSH(4).
-- **n = 5.** Results so far (`logs/n5_*.txt`), 1,500 rays and 6 starts per facet:
+**N1 (numerical). The hard facets of P₅(c) are touched by U(5) but not crossed.** This is the main evidence.
+- **Easy and hard.** Write D(U) for the vector of all squared minors |det U[S,T]|², so that m(U D_c U*) = M_c·D(U) + const. A supporting inequality ℓ·(x − g) ≤ 1 of P(c) is *easy* if it holds on the linear relaxation {D ≥ 0} ∩ aff{D(U)}, i.e. it follows from nonnegativity of squared minors (Farkas), and *hard* otherwise. Only hard inequalities can be violated by a unitary.
+- **Method (`facet_classify.py`).** Shoot rays from the centroid g toward m(U D_c U*), half of them for Haar U and half for slightly perturbed permuted block-diagonal U. The dual of each ray LP is a supporting inequality, kept if valid on all vertices and identified by its vertex set; it is a true facet when that vertex set spans dimension 25. Classify each by the relaxation LP. Maximize every hard one over U(5): L-BFGS from 12 random starts with exact gradients in a Cayley chart (`facet_search.maximize_over_U`, gradient checked against finite differences to 10⁻⁸).
+- **Control (n = 4, c = (0,1,2,3)).** 100 of the 184 facets and 16 of the 96 hard facets are reached (22 hard inequalities in all); every hard maximum over U(4) is 1 to 2·10⁻¹³.
+- **n = 5** (`logs/n5_hard.txt`), 6,000 rays per spectrum:
 
-  | spectrum c | supporting inequalities | max over U(5) of ℓ·(m − g) | candidates above 1 |
+  | spectrum c | facets reached | hard facets | hard inequalities | relaxation overshoot | max over U(5) − 1 | min over U(5) − 1 |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | (0, 1/4, 1/2, 3/4, 1) | 342 | 178 | 647 | 0.54 | 2.9·10⁻¹¹ | −1.0·10⁻¹² |
+  | (0, 0.129, 0.499, 0.601, 1) | 393 | 211 | 761 | 0.62 | 4.8·10⁻¹¹ | −2.1·10⁻¹¹ |
+  | (0, 0.36, 0.70, 0.83, 1) | 330 | 187 | 767 | 0.53 | 1.1·10⁻¹⁰ | −1.2·10⁻¹¹ |
+  | (0, 0.1, 0.2, 0.9, 1) | 441 | 245 | 789 | 0.66 | 9.1·10⁻¹¹ | −6.6·10⁻¹² |
+
+  So 821 hard facets and 2,964 hard inequalities in all. **Every one has maximum exactly 1 over U(5), to 10⁻¹⁰**: each is touched by some unitary and none is crossed. The linear relaxation overshoots them by up to 0.66, so these are genuine tests.
+- **Where they are touched.** For 1,743 of the 2,964 hard inequalities, some maximizer found is irreducible: the graph linking rows that share a column with |U_ij| > 10⁻³ is connected. For the other 1,221 every maximizer found is block-reducible (4+1, 3+2, …). So, numerically, PMSH(5) is tight at genuinely five-dimensional unitaries, and its contact set is not just inherited from dimension four. (At n = 4 the hard facets are likewise touched at irreducible U, which is why (★) is needed there.)
+- **What this does not show.** The harvest reaches about 330–440 facets per spectrum; P₅(c) has more, and the true facet count is unknown (qhull cannot handle dimension 26 and pycddlib could not be built here). Twelve starts per inequality can miss a narrow violating region. Four spectra are not all spectra.
+
+**N2 (numerical). Broad search over supporting inequalities, n = 5 and n = 6.** `facet_search.py` is the first version of N1 without classification: Haar and near-permutation rays, 6 starts with finite-difference gradients, all supporting inequalities reached (deduplicated by rounded normals, so the counts include near-duplicates and non-facets). No value above 1 + 1.1·10⁻¹⁰ and no candidate:
+
+  | n | spectrum c | inequalities | max − 1 |
   | --- | --- | --- | --- |
-  | (0, 1/4, 1/2, 3/4, 1) | 633 | 1 + 8·10⁻¹² | 0 |
-  | (0, 0.129, 0.499, 0.601, 1) | 667 | 1 + 0 | 0 |
-  | (0, 0.361, 0.703, 0.831, 1) | 664 | 1 + 4·10⁻¹² | 0 |
-  | (0, 0.344, 0.693, 0.816, 1) | 650 | 1 + 1.5·10⁻¹¹ | 0 |
-  | (0, 0.094, 0.431, 0.567, 1) | 674 | 1 + 0 | 0 |
+  | 5 | (0, 1/4, 1/2, 3/4, 1) | 633 | 8·10⁻¹² |
+  | 5 | (0, 0.01, 0.02, 0.03, 1) | 1,391 | 5·10⁻¹⁴ |
+  | 5 | (0, 0.129, 0.499, 0.601, 1) | 667 | 0 |
+  | 5 | (0, 0.361, 0.703, 0.831, 1) | 664 | 4·10⁻¹² |
+  | 5 | (0, 0.344, 0.693, 0.816, 1) | 650 | 1.5·10⁻¹¹ |
+  | 5 | (0, 0.094, 0.431, 0.567, 1) | 674 | 0 |
+  | 5 | (0, 0.811, 0.855, 0.865, 1) | 995 | 6.6·10⁻¹¹ |
+  | 6 | (0, 0.089, 0.606, 0.710, 0.781, 1) | 851 | 3.6·10⁻¹¹ |
+  | 6 | (0, 0.089, 0.199, 0.366, 0.653, 1) | 711 | −7.5·10⁻¹² |
+  | 6 | (0, 0.114, 0.129, 0.641, 0.694, 1) | 919 | 1.0·10⁻¹⁰ |
 
-  Further spectra (clustered, geometric, near-repeated) and n = 6 are still running; this table will be completed.
-- **What this does and does not show.** Every inequality the rays reach is touched (maximum exactly 1) and none is crossed. Haar rays mostly reach **easy** facets, those implied by nonnegativity of squared minors (see N2). The hard facets, where a violation would have to occur, are thin targets: at n = 4 the 96 hard facets are exceeded by the linear relaxation by only 0.004–0.24 (qhull's unit-normal scaling), and 3,000 random vertices of the relaxation at each of three spectra never land outside P(c) (`relaxation_vertices.py`, `logs/relaxation_vertices_n4.txt`). So N1 is evidence, not a near-proof, and it does not replace a hard-facet enumeration.
+  Haar rays mostly reach easy facets, which is why N1 was needed: at n = 4 the hard region is thin (the relaxation overshoots by 0.004–0.24 in qhull's unit-normal scaling), and 3,000 random vertices of the relaxation at each of three spectra never land outside P(c) (`relaxation_vertices.py`, `logs/relaxation_vertices_n4.txt`).
 
-**N2 (numerical, reproduces a known count). Easy and hard facets.** Write D(U) for the vector of all squared minors |det U[S,T]|². Then m(U D_c U*) = M_c·D(U) + const. A facet of P(c) is *easy* if its pullback is a nonnegative combination of squared minors modulo the affine relations of D(U), and *hard* otherwise. With all 184 qhull facets at n = 4 this Farkas test gives exactly 96 hard facets at each of four spectra, matching R3–R4 of [`../pmsh/README.md`](../pmsh/README.md).
+**N2′ (reproduces a known count).** With all 184 qhull facets at n = 4, the Farkas test of N1 gives exactly 96 hard facets at each of four spectra, matching R3–R4 of [`../pmsh/README.md`](../pmsh/README.md) (`inherited_n4.py`, first column of its output).
 
 **N3 (negative structural result; LP-exact up to floating point). At n = 4 the hard facets cannot be derived linearly from PMSH(3).**
 - **Constraints inherited from dimension n − 1.** For every position t and real γ, PMSH(n − 1) forces:
@@ -42,13 +59,15 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
 - **Control.** Replacing the vertex sets of the constraints (a) by 12 of the 24 permutations removes all excess (max 1.2·10⁻¹¹). So the constraints are imposed; they are simply not binding.
 - **Consequence.** A proof of PMSH(n) by linear programming from PMSH(n − 1), marginals, Palm and shifted Palm conditionings and nonnegativity of squared minors fails already from n = 3 to n = 4. A genuinely four-dimensional nonlinear inequality, the star inequality (★) of [`../pmsh/equivalence.md`](../pmsh/equivalence.md), is needed there. The same will be needed at n = 5 unless the hard facets of P₅(c) turn out to be implied by (★) on 4×4 compressions; that is the first open question below.
 
-**N4 (numerical). Splitting along one row.** For H = U D_c U* and a row r, put ρ_j = |U_{rj}|². A *split* is a family of Hermitian H_j of size n − 1 with spectrum c ∖ c_j such that Σ_j ρ_j m(H_j) = m(H with row and column r deleted) and Σ_j ρ_j c_j m(H_j) = (det H[S ∪ r])_S. A split plus PMSH(n − 1) for each H_j gives a PMSH certificate for H, by conditioning on the eigenvalue placed at r (Proposition H3 forces the marginal ρ). The obvious canonical choices of H_j fail (`../minors/pmsh.md`, negative results); `split_test.py` instead solves for the H_j by least squares. Results so far: a split along the first row exists to residual below 10⁻¹¹ for every random H tried (`logs/split_n4.txt`, `logs/split_n5.txt`, `logs/split_n6.txt`; to be completed). This is a reformulation, not a shortcut: at n = 5 it is equivalent to PMSH(5) if 4×4 Hermitian matrices with a fixed spectrum fill P₄, and for large n the number of conditions (2ⁿ − 2) exceeds the number of unknowns (n(n − 1)(n − 2)) from n = 9 on.
+**N4 (numerical). Splitting along one row.** For H = U D_c U* and a row r, put ρ_j = |U_{rj}|². A *split* is a family of Hermitian H_j of size n − 1 with spectrum c ∖ c_j such that Σ_j ρ_j m(H_j) = m(H with row and column r deleted) and Σ_j ρ_j c_j m(H_j) = (det H[S ∪ r])_S. A split plus PMSH(n − 1) for each H_j gives a PMSH certificate for H, by conditioning on the eigenvalue placed at r (Proposition H3 forces the marginal ρ). The obvious canonical choices of H_j fail (`../minors/pmsh.md`, negative results); `split_test.py` instead solves for the H_j by least squares. Result: a split along the first row exists to residual below 10⁻¹¹ for each of 40 random H at n = 4 and 30 at n = 5 (`logs/split_n4.txt`, `logs/split_n5.txt`). This is a reformulation, not a shortcut: at n = 5 it is equivalent to PMSH(5) if 4×4 Hermitian matrices with a fixed spectrum fill P₄, and for large n the number of conditions (2ⁿ − 2) exceeds the number of unknowns (n(n − 1)(n − 2)) from n = 9 on.
 
 ## Pitfalls met along the way (kept so others avoid them)
 
 - **Joint ascent stalls.** Maximizing ℓ·m(U) − max_π ℓ·v_π(c) jointly over (U, ℓ) converges to a permutation matrix, where the gap is exactly 0: all 48 runs at n = 5 did. A gap of 0 from such a search says nothing.
 - **Ill-conditioned spectra.** With c = (0, 0.001, 0.01, 0.1, 1) unshifted, the ray LP returned "facets" with entries near 10²¹ that are invalid on the polytope's own vertices, and the search reported values up to 135. Re-checking the same four matrices after c ↦ c + 1 put them strictly inside (ray depth 1.03–1.04, L1 distance 0). The scripts now shift, validate facets, and re-check candidates.
-- **Random relaxation vertices miss hard facets.** See N1.
+- **Haar rays and random relaxation vertices miss hard facets** (N2). Rays aimed at slightly perturbed block-diagonal unitaries reach them (N1).
+- **Gauge ascent over the relaxation stalls.** Alternating "exit facet of the ray, then maximize that facet over the relaxation" stops at once: maximizing an easy facet lands exactly on the boundary.
+- **Finite-difference gradients are too slow and too weak** at n = 5 (one start took seconds, and some inequalities were never brought up to 1). The exact Cayley-chart gradient fixed both.
 
 ## Open questions, in order
 
@@ -60,8 +79,12 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
 
 numpy 2.0.2, scipy 1.13.1 (HiGHS), Python 3.9. Run from this directory.
 
+Set OPENBLAS_NUM_THREADS=1 when running several jobs at once.
+
 ```sh
-python3 facet_search.py 4 0 600 4                 # control, about 20 s
+python3 facet_classify.py 4 0 4000 12 0,1,2,3     # control, about 10 s
+python3 facet_classify.py 5 31 6000 12 0,0.25,0.5,0.75,1   # one row of the N1 table, 10-20 min
+python3 facet_search.py 4 0 600 4                 # N2 control, about 20 s
 python3 facet_search.py 5 11 1500 6               # one n = 5 spectrum, 10-30 min
 PY=python3 ./run_spectra.sh                       # special n = 5 spectra
 python3 inherited_n4.py 1,2,3,4 -2.5,-1.5,-0.5,0.5,1.5,-4.5,7

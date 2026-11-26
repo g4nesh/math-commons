@@ -169,3 +169,64 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def cayley_objective(P, U0, cs, l):
+    """f(y) = l . m(U D U*) with U = U0 (I - X)^-1 (I + X), X skew-Hermitian built from y (n^2 reals),
+    and its exact gradient. Requires every principal submatrix of U D U* to be invertible (true for
+    the shifted spectrum cs >= 1, where U D U* is positive definite)."""
+    n = P.n
+    iu = np.triu_indices(n, 1)
+    D = np.diag(cs)
+    I = np.eye(n)
+
+    def fg(y):
+        X = np.zeros((n, n), complex)
+        a, b, dd = y[: len(iu[0])], y[len(iu[0]):2 * len(iu[0])], y[2 * len(iu[0]):]
+        X[iu] = a + 1j * b
+        X = X - X.conj().T
+        X[np.diag_indices(n)] = 1j * dd
+        Rinv = np.linalg.inv(I - X)
+        C = Rinv @ (I + X)
+        U = U0 @ C
+        H = U @ D @ U.conj().T
+        f = 0.0
+        G = np.zeros((n, n), complex)
+        for ii, TT in P.IDX.values():
+            sub = H[TT[:, :, None], TT[:, None, :]]
+            det = np.linalg.det(sub)
+            adj = np.linalg.inv(sub) * det[:, None, None]
+            f += (l[ii] * det.real).sum()
+            for k, T in enumerate(TT):
+                G[np.ix_(T, T)] += l[ii[k]] * adj[k]
+        # df = 2 Re tr(G dU D U*), dU = U0 Rinv dX (C + I)
+        W = (C + I) @ D @ U.conj().T @ G @ U0 @ Rinv
+        ga = 2 * (W.T[iu] - W[iu]).real
+        gb = -2 * (W.T[iu] + W[iu]).imag
+        gd = -2 * np.diag(W).imag
+        return f, np.r_[ga, gb, gd]
+
+    return fg
+
+
+def maximize_over_U(P, cs, l, g, nstarts, rng, maxiter=3000):
+    """Largest l.(m(U D U*) - g) found over U(n) from nstarts random starts (exact gradients).
+    Returns (value, best U)."""
+    from scipy.optimize import minimize
+    n = P.n
+    best, bestU = -np.inf, None
+    for _ in range(nstarts):
+        U0 = P.unitary(rng.standard_normal(2 * n * n))
+        fg = cayley_objective(P, U0, cs, l)
+        r = minimize(lambda y: tuple(-v for v in fg(y)), rng.standard_normal(n * n) * 0.3, jac=True,
+                     method="L-BFGS-B", options=dict(maxiter=maxiter, ftol=1e-15, gtol=1e-12))
+        val = -r.fun - l @ g
+        if val > best:
+            y = r.x
+            iu = np.triu_indices(n, 1)
+            X = np.zeros((n, n), complex)
+            X[iu] = y[: len(iu[0])] + 1j * y[len(iu[0]):2 * len(iu[0])]
+            X = X - X.conj().T
+            X[np.diag_indices(n)] = 1j * y[2 * len(iu[0]):]
+            best, bestU = val, U0 @ np.linalg.inv(np.eye(n) - X) @ (np.eye(n) + X)
+    return best, bestU

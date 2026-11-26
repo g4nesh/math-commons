@@ -1,8 +1,1 @@
-Traceback (most recent call last):
-  File "/private/tmp/claude-501/-Users-ganeshtalluri--claude-spares-spare-z65pck/4713911b-4cfd-4db9-8f86-f38ef5bcb669/scratchpad/mc/research/marcus-de-oliveira/pmsh-5/facet_search.py", line 169, in <module>
-    main()
-  File "/private/tmp/claude-501/-Users-ganeshtalluri--claude-spares-spare-z65pck/4713911b-4cfd-4db9-8f86-f38ef5bcb669/scratchpad/mc/research/marcus-de-oliveira/pmsh-5/facet_search.py", line 131, in main
-    lh = ray(P.mU(U, cs))
-  File "/private/tmp/claude-501/-Users-ganeshtalluri--claude-spares-spare-z65pck/4713911b-4cfd-4db9-8f86-f38ef5bcb669/scratchpad/mc/research/marcus-de-oliveira/pmsh-5/facet_search.py", line 106, in ray
-    l, h = y[:d], -y[d]
-TypeError: 'NoneType' object is not subscriptable
+{"n": 6, "seed": 23, "c": [0.0, 0.113708, 0.128644, 0.641458, 0.693933, 1.0], "rays": 1200, "facets": 919, "invalid_discarded": 4, "starts": 3, "max_value": 1.0000000001014087, "min_value": 0.9972653775019609, "above_1_then_rechecked": 0, "confirmed_outside": 0, "touched_off_permutations": 220, "touching_block_shapes": {"6": 220}}

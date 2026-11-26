@@ -8,12 +8,13 @@ these are kept (any valid inequality is a test of PMSH) and reported separately 
 (vertex set of affine dimension dim P(c) - 1). Classification: with D = all squared minors |det U[S,T]|^2 (1 <= |S| = |T| <= n-1) and
 m(U D_c U*) = M D + const, a facet l.(x - g) <= 1 is EASY iff its maximum over the linear relaxation
 Q_triv = {D >= 0} on aff{D(U)} is <= 1 (then it follows from nonnegativity of squared minors), and
-HARD otherwise. Only hard facets can be violated; each is maximized over U(n) from nstarts starts.
+HARD otherwise. Only hard facets can be violated; each is maximized over U(n) from nstarts starts
+(L-BFGS with exact gradients in a Cayley chart, facet_search.maximize_over_U).
 PMSH(n) at c fails iff such a maximum exceeds 1 (re-checked by an independent LP).
 Contact shapes: block structures (support components, threshold 1e-3) of maximizers with value
 above 1 - 1e-7.
 
-The hard inequalities are saved to hard_n{n}_seed{seed}.npz (for inherited.py). nstarts = 0 skips
+The hard inequalities are saved to hard_n{n}_seed{seed}_c{spectrum}.npz (for inherited.py). nstarts = 0 skips
 the maximization over U(n).
 
 usage: facet_classify.py n seed nrays nstarts [c1,c2,...]
@@ -25,7 +26,7 @@ import sys
 import numpy as np
 from scipy.optimize import linprog, minimize
 
-from facet_search import PM, blocks
+from facet_search import PM, blocks, maximize_over_U
 
 
 def main():
@@ -133,22 +134,21 @@ def main():
         rv = relax_value(lh)
         if rv > 1 + 1e-9:
             hard.append((lh, nv, rv, isf))
-    np.savez(f"hard_n{n}_seed{seed}.npz", c=c, normals=np.array([h[0] for h in hard]).reshape(len(hard), d),
+    np.savez(f"hard_n{n}_seed{seed}_c{'_'.join(f'{x:g}' for x in c)}.npz", c=c, normals=np.array([h[0] for h in hard]).reshape(len(hard), d),
              vertices=np.array([h[1] for h in hard]), relaxation=np.array([h[2] for h in hard]),
              facet=np.array([h[3] for h in hard]))
     res = []
     for lh, nv, rv, isf in (hard if nstarts > 0 else []):
-        f = lambda x: -(lh @ (P.mU(P.unitary(x), cs) - g))
-        best, bx, shapes = -np.inf, None, []
+        best, bU, shapes = -np.inf, None, []
         for _ in range(nstarts):
-            r = minimize(f, rand_x("haar"), method="L-BFGS-B", options=dict(maxiter=4000))
-            if -r.fun > 1 - 1e-7:
-                shapes.append("+".join(map(str, blocks(P.unitary(r.x), 1e-3))))
-            if -r.fun > best:
-                best, bx = -r.fun, r.x
-        dist = l1dist(P.mU(P.unitary(bx), cs)) if best > 1 + 1e-9 else 0.0
+            val, U = maximize_over_U(P, cs, lh, g, 1, rng)
+            if val > 1 - 1e-7:
+                shapes.append("+".join(map(str, blocks(U, 1e-3))))
+            if val > best:
+                best, bU = val, U
+        dist = l1dist(P.mU(bU, cs)) if best > 1 + 1e-9 else 0.0
         if best > 1 + 1e-9 and not dist <= 1e-9:
-            np.save(f"violation_n{n}_seed{seed}_hard{len(res)}.npy", np.r_[c, bx, lh])
+            np.save(f"violation_n{n}_seed{seed}_hard{len(res)}.npy", np.r_[c, bU.real.ravel(), bU.imag.ravel(), lh])
         res.append(dict(vertices=nv, facet=isf, relaxation=rv, value=best, shapes=sorted(set(shapes)), l1=dist))
     tally = {}
     for r in res:
