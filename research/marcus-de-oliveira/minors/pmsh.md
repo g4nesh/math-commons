@@ -6,8 +6,8 @@
   - Theorem H1 and Propositions H2–H4: complete written proofs.
   - Proposition H5: exact rational certificates.
   - Conjecture PMSH: conjecture with adversarial computational evidence.
-  - None of it has been independently reviewed.
-- **Exact artifact commit:** the commit adding this file on branch `claude/mdo-minors-compound-certificates`.
+  - H1–H5 were checked by an independent reviewer ([`../reviews/mdo-minors.md`](../reviews/mdo-minors.md): all hold; the exact certificates of H5 replay).
+- **Exact artifact commit:** added in 8c1b1fb (branch `claude/mdo-minors-compound-certificates`), on main as 304f790 (PR 20).
 - **Status and known gaps:**
   - PMSH is **unproved** for every n ≥ 4.
   - Two targeted literature searches found no statement of it.
