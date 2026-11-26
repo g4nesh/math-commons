@@ -223,6 +223,7 @@ def report():
         assert elementary == sum((base_minors[a] for a in combinations(range(4),k)),ZERO)
     perms,basis,weights,l1 = construct(spectrum,minors)
     # The general criterion, not only mere nonnegativity, has comfortable exact slack.
+    assert (Q2(F(1,48))-l1).sign()>0
     assert all((w-F(1,48)).sign()>0 for w in weights)
     ranks = {}
     for size in range(1,6):

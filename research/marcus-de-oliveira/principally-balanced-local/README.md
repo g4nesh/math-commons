@@ -1,6 +1,6 @@
 # A local principal-minor law around every simple balanced Hermitian center
 
-**Theorem.** Let $H_0$ be an $n\times n$ Hermitian matrix with distinct eigenvalues, and suppose that all its principal minors of each fixed order are equal. There is an open neighborhood $\mathcal N$ of $H_0$ in the real vector space of **all Hermitian matrices** and continuous strictly positive probabilities $w_p(H)$, $p\in S_n$, such that
+**Theorem.** Let $n\ge1$, and let $H_0$ be an $n\times n$ Hermitian matrix with distinct eigenvalues, and suppose that all its principal minors of each fixed order are equal. There is an open neighborhood $\mathcal N$ of $H_0$ in the real vector space of **all Hermitian matrices** and continuous strictly positive probabilities $w_p(H)$, $p\in S_n$, such that
 
 $$\det H[S,S]=\sum_{p\in S_n}w_p(H)\prod_{i\in S}\lambda_{p(i)}(H)\qquad(S\subseteq[n],\ H\in\mathcal N).$$
 
@@ -108,6 +108,26 @@ $$\lambda_k=\cot\frac{(2k-1)\pi}{2n},\qquad k=1,\ldots,n.$$
 
 The proof of simplicity does not require this formula or a numerical eigenvalue computation.
 
+### A direct unitary neighborhood corollary
+
+Let $T_n$ be the signed cyclic shift $(T_nv)_j=v_{j+1}$ for $j<n$ and $(T_nv)_n=-v_1$. The recurrence and $r^n=-1$, applied to the Hermitian eigenbasis above, show that
+
+$$T_n=(H_n-iI)(H_n+iI)^{-1}.$$
+
+It has no eigenvalue one. For a unitary $B$ sufficiently close to $T_n$, the standard Cayley transform
+
+$$H=i(I+B)(I-B)^{-1}$$
+
+is Hermitian and lies in the neighborhood of $H_n$ from the theorem. It therefore has one strictly positive law $w_p(H)$. If $\lambda_j$ are its eigenvalues, the corresponding eigenvalues of $B$ are $b_j=(\lambda_j-i)/(\lambda_j+i)$. For $D=\operatorname{diag}(a)$ with $D+I$ invertible, direct multiplication gives the signed Möbius identity
+
+$$(D+B)(H+iI)=(D+I)\left[H+i(D+I)^{-1}(D-I)\right].$$
+
+Apply the Hermitian theorem to the diagonal entries $i(a_i-1)/(a_i+1)$ inside the bracket. The scalar determinant factors cancel in each product because
+
+$$\frac{(a_i+1)\lambda_{p(i)}+i(a_i-1)}{\lambda_{p(i)}+i}=a_i+b_{p(i)}.$$
+
+Thus $\det(D+B)=\sum_pw_p(H)\prod_i(a_i+b_{p(i)})$. Both sides are polynomials in $a$, with weights independent of $a$, so the identity extends to every complex $a$, including entries $a_i=-1$. Hence an open neighborhood of the concrete $T_n$ **inside $U(n)$** admits a positive law for every opposing complex diagonal spectrum. The weights may vary with $B$. This corollary uses the established balanced center, the standard Cayley transform and the displayed determinant identity; no priority claim is made.
+
 ## 4. Exact off-center example and replay
 
 The [exact checker](check.py) constructs a non-balanced Hermitian perturbation of $H_4$ by a rational orthogonal rotation of its first two coordinates, with cosine $999999/1000001$ and sine $2000/1000001$. It preserves the distinct spectrum $\{1+\sqrt2,\sqrt2-1,1-\sqrt2,-1-\sqrt2\}$ but changes its order-two principal minors. It constructs the fixed-basis correction in $\mathbb Q(\sqrt2)$, verifies every subset identity and positivity, and exports all 24 probabilities in [witness.json](witness.json), with the coefficient convention stated above.
@@ -126,6 +146,8 @@ python3 -B -m unittest discover -s research/marcus-de-oliveira/principally-balan
 ```
 
 The first command regenerates the exact witness in memory and requires equality with the archived JSON. The optional `--write` flag intentionally rewrites that JSON only after every exact check passes. This source-only contribution does not modify shared CI. An exact off-center witness is not a numerical lower bound on the radius of the whole Hermitian neighborhood.
+
+The tests also transfer the same exact weights to $R T_4 R^T$ and check direct complex determinant mixtures, including the removable case $a_i=-1$.
 
 ## 5. Literature and remaining scope
 

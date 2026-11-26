@@ -60,6 +60,38 @@ class ExactLawTests(unittest.TestCase):
                 mixture=add(mixture,scale(w,term))
             self.assertEqual(actual,mixture)
 
+    def test_signed_cayley_transfer(self):
+        result=c.report()
+        cosine,sine=F(result['rotationCos']),F(result['rotationSin'])
+        rotation=[[F(i==j) for j in range(4)] for i in range(4)]
+        rotation[0][0]=rotation[1][1]=cosine
+        rotation[0][1]=-sine;rotation[1][0]=sine
+        shift=[[F(0) for _ in range(4)] for _ in range(4)]
+        for i in range(3):shift[i][i+1]=F(1)
+        shift[3][0]=F(-1)
+        matrix=c.multiply(c.multiply(rotation,shift),c.transpose(rotation))
+        lambdas=[c.Q2(F(x),F(y)) for x,y in result['spectrum']]
+        eigenvalues=[((x*x-1)/(x*x+1),(-2*x)/(x*x+1)) for x in lambdas]
+        zero=(c.ZERO,c.ZERO);one=(c.ONE,c.ZERO)
+        def add(x,y):return(x[0]+y[0],x[1]+y[1])
+        def mul(x,y):return(x[0]*y[0]-x[1]*y[1],x[0]*y[1]+x[1]*y[0])
+        def scale(w,x):return(w*x[0],w*x[1])
+        diagonal=[(c.Q2(-1),c.ZERO),(c.Q2(2),c.Q2(3)),(c.Q2(F(5,7)),c.Q2(-2)),zero]
+        entries=[[(add(diagonal[i],(c.Q2(matrix[i][j]),c.ZERO)) if i==j else (c.Q2(matrix[i][j]),c.ZERO)) for j in range(4)] for i in range(4)]
+        actual=zero
+        for p in permutations(range(4)):
+            term=one
+            for i in range(4):term=mul(term,entries[i][p[i]])
+            sign=(-1)**sum(p[i]>p[j] for i in range(4) for j in range(i+1,4))
+            actual=add(actual,scale(sign,term))
+        mixture=zero
+        for record in result['weights']:
+            w=c.Q2(*map(F,record['weight']))
+            term=one
+            for i in range(4):term=mul(term,add(diagonal[i],eigenvalues[record['permutation'][i]]))
+            mixture=add(mixture,scale(w,term))
+        self.assertEqual(actual,mixture)
+
 
 if __name__=='__main__':
     unittest.main()
