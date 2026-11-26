@@ -1,0 +1,108 @@
+{
+ "doc_id": "blind_moc4_coreC_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_coreC_uniform_20261023.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     7,
+     9,
+     16,
+     17
+    ]
+   ],
+   "restatement": "For x in X with P c(x) >= 0 vanishing on T={0,1,2,7,9,16,17} (Table 5 no. 11), Phi_{c(x)}(O) >= 0 for all O in SO(4); all spectra.",
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "global secant-Hessian determinant theorem",
+   "note": "det Hess C(Re x)=0 for all x in X ('global secant-Hessian theorem'); randomized exact support at 6 points"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "sharp SOC atoms on {f2,f12,f15} with f26"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "old-H atoms (3,15;26), (5,2;26)"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "chain atoms (0,3;15;26), (0,5;2;26)"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (4.2)"
+  }
+ ],
+ "steps": [
+  [
+   "(1) cone, I7",
+   "EXACT"
+  ],
+  [
+   "(2) involution",
+   "EXACT"
+  ],
+  [
+   "(3)-(7) capacities and failure consequences",
+   "PROOF-READ (atoms CITED)"
+  ],
+  [
+   "(8)",
+   "EXACT"
+  ],
+  [
+   "(9)",
+   "EXACT"
+  ],
+  [
+   "realizable => G8=0",
+   "CITED"
+  ],
+  [
+   "(10)-(13),(15) chart coverage",
+   "PROOF-READ"
+  ],
+  [
+   "(14) double-zero factor",
+   "EXACT"
+  ],
+  [
+   "32 tables",
+   "EXACT"
+  ],
+  [
+   "conclusion",
+   "PROOF-READ"
+  ]
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators/I7",
+  "ordering involution (unique g)",
+  "C0, Q0",
+  "Q0^4 det H = -4 d^2 Q0^2 G8^2 (own Hessian)",
+  "G8 irreducible",
+  "(14) factor, W4 positive",
+  "32 chart tables (22 term counts equal; 10 larger due to unsimplified clearing, still valid)"
+ ],
+ "numeric_tests": [
+  "capacity atoms: 7 tests x 40 Nelder-Mead starts, seed 2026, minima in [-8e-30, 2e-29]",
+  "1 realizable point with contact exactly T: G8 ~ 5e-13 relative, min Phi ~ 1e-12"
+ ],
+ "unchecked": [
+  "proofs of the capacity atoms",
+  "proof of the secant-Hessian theorem"
+ ]
+}

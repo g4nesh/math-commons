@@ -1,0 +1,43 @@
+{
+  "doc_id": "root_complete_negative_mass_20261022",
+  "pdf": "proofs/manin_transfer_20261021/root_complete_negative_mass_20261022.pdf",
+  "pages": 3,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1 (i)", "page": 1, "restatement": "For U in U(4), the minimal negative mass nu(U) of a common signed representation sum_sigma w_sigma 1{sigma(I)=J} = |det U[I,J]|^2 equals rho(U) = max(0, max_{pi,eps} -(t_pi + eps d_pi)/4), d_pi evaluated at the minor-square response."},
+    {"label": "Theorem 1 (ii)", "page": 1, "restatement": "max over U(4) of nu = tau*, the positive root of 32 t^3 + 48 t^2 + 28 t - 1, 0.033721124434 < tau* < 0.033721124435, attained on O(4)."},
+    {"label": "distance corollary", "page": 3, "restatement": "det(D_a + U D_b U*) = (1+nu) z+ - nu z- with z+-, in K = conv{z_sigma}; dist(det, K) <= tau* diam K. Not MOC."}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "paper Prop. 4.1 (82 facets)", "used_for": "zero-obstruction case", "match_checked": true},
+    {"kind": "external", "ref": "Holden [2] Thms 2.1, 3.1 (one-negative-coefficient representation)", "used_for": "nu <= rho when rho > 0", "match_checked": false},
+    {"kind": "external", "ref": "Holden [2] Thm 7.2 (sharp orthogonal bound)", "used_for": "value tau*", "match_checked": false},
+    {"kind": "core-doc", "ref": "paper Theorem 1.2 (two-orthogonal reduction)", "used_for": "max over U(4) = max over O(4)", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "Re of normalized Leibniz coefficients is a signed representation", "kind": "identity", "status": "EXACT"},
+    {"n": 2, "claim": "34 minor facets hold at the response", "kind": "inequality", "status": "PROOF-READ"},
+    {"n": 3, "claim": "facet value of h at response = (t + eps c)/2", "kind": "identity", "status": "EXACT"},
+    {"n": 4, "claim": "minor vectors span V_R, so the polytope is the paper's Q", "kind": "identity", "status": "EXACT"},
+    {"n": 5, "claim": "rho = 0 implies nu = 0", "kind": "polytope", "status": "PROOF-READ", "note": "Prop. 4.1 EXACT in moc4lib"},
+    {"n": 6, "claim": "nu >= rho", "kind": "inequality", "status": "PROOF-READ"},
+    {"n": 7, "claim": "nu <= rho when rho > 0", "kind": "citation", "status": "CITED"},
+    {"n": 8, "claim": "rho convex, so the max over U(4) is attained on O(4)", "kind": "convexity", "status": "PROOF-READ"},
+    {"n": 9, "claim": "max over O(4) of rho = tau*", "kind": "citation", "status": "CITED"},
+    {"n": 10, "claim": "distance corollary", "kind": "inequality", "status": "PROOF-READ"},
+    {"n": 11, "claim": "document's own oriented-cycle certificate", "kind": "topology", "status": "UNCHECKED", "note": "data not used by rule; superseded by the library replay"}
+  ],
+  "gaps": [],
+  "exact_replays": [
+    "signed representation identity on 4 Gaussian-rational unitaries, all |I| = 0..4",
+    "facet value identity for all 48 (pi, eps)",
+    "rank of the 34 minor vectors = 14",
+    "cubic: one positive root, inside the stated interval"
+  ],
+  "numeric_tests": [
+    "LP nu vs rho: 300 samples (150 Haar U(4), 150 SO(4)), seed 99, max |nu - rho| = 3.5e-14",
+    "max rho over O(4): 100 Nelder-Mead starts, best 0.033721124434 = tau*",
+    "max rho over U(4): 50 starts, best 0.033721124434, not above tau*"
+  ],
+  "unchecked": ["the document's 6846-simplex certificate data (not executed or loaded, by rule)", "Holden [2] (not available)"]
+}

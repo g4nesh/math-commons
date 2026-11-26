@@ -1,0 +1,50 @@
+{
+  "doc_id": "independent_moc4_T23_uniform_20261022",
+  "pdf": "proofs/manin_transfer_20261021/independent_moc4_T23_uniform_20261022.pdf",
+  "pages": 4,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "paper_cases": [24], "contact_sets": [[2, 3, 4, 6, 7, 8]], "covers_all_spectra": true,
+     "restatement": "All x in X with Pc(x) >= 0 vanishing on T_24 (extra contacts allowed): Phi_{c(x)}(O) >= 0 for all O in SO(4); real x via Thm C.1, collisions via App. B, extra ties via boundary list, t = 1 via perturbation."}
+  ],
+  "dependencies": [
+    {"kind": "paper-case", "ref": "T_15", "contact_set": [1, 2, 3, 4, 6, 7], "used_for": "tie 1", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_20", "contact_set": [2, 3, 4, 6, 8, 10], "used_for": "tie 10", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_13", "contact_set": [2, 3, 4, 6, 8, 12], "used_for": "tie 12", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_12", "contact_set": [2, 3, 4, 6, 8, 22], "used_for": "tie 22", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_25", "contact_set": [2, 3, 4, 7, 8, 16], "used_for": "tie 16", "match_checked": true},
+    {"kind": "seven-contact", "ref": "independent_moc4_T23_g13_uniform_20261022 (Table 5 set 6)", "contact_set": [2, 3, 4, 6, 7, 8, 13], "used_for": "tie 13", "match_checked": true},
+    {"kind": "seven-contact", "ref": "independent_moc4_T23_g17_uniform_20261022 (Table 5 set 5)", "contact_set": [2, 3, 4, 6, 7, 8, 17], "used_for": "tie 17", "match_checked": true},
+    {"kind": "common-lemma", "ref": "old SOC: Phi_f54 + 2 sqrt(Phi_f5 Phi_f2) >= 0", "used_for": "bound g13 in failing region", "match_checked": false},
+    {"kind": "external", "ref": "paper Thm C.1", "used_for": "real x", "match_checked": true},
+    {"kind": "external", "ref": "paper App. B", "used_for": "collisions", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "generators", "status": "EXACT"},
+    {"n": 2, "claim": "canonical decomposition", "status": "EXACT"},
+    {"n": 3, "claim": "replacements; delta<=0 minor", "status": "EXACT"},
+    {"n": 4, "claim": "extra-tie list", "status": "EXACT"},
+    {"n": 5, "claim": "group witnesses", "status": "EXACT"},
+    {"n": 6, "claim": "L_O >= -M_O delta", "status": "PROOF-READ"},
+    {"n": 7, "claim": "old SOC", "status": "CITED"},
+    {"n": 8, "claim": "chart H formulas", "status": "EXACT"},
+    {"n": 9, "claim": "inverse chart", "status": "EXACT"},
+    {"n": 10, "claim": "z-c formula", "status": "EXACT"},
+    {"n": 11, "claim": "nonreal poles only at J", "status": "EXACT"},
+    {"n": 12, "claim": "H1, H10, H5 limit, pole sets", "status": "EXACT"},
+    {"n": 13, "claim": "residue ratio", "status": "EXACT"},
+    {"n": 14, "claim": "H16 raw numerator", "status": "EXACT"},
+    {"n": 15, "claim": "no approach to nonreal poles", "status": "PROOF-READ (argument supplied by auditor)"},
+    {"n": 16, "claim": "real punctures and infinity", "status": "PROOF-READ"},
+    {"n": 17, "claim": "harmonic minimum principle", "status": "PROOF-READ"},
+    {"n": 18, "claim": "t = 1 perturbation", "status": "PROOF-READ"},
+    {"n": 19, "claim": "qA1 = 0", "status": "PROOF-READ"}
+  ],
+  "gaps": [
+    {"location": "p.3, nonreal-pole paragraph", "claim": "g10 has a strictly positive finite limit because g1 > 0", "why": "positivity inside the region only gives limit >= 0", "severity": "presentation", "believed_true": true, "repair": "H1 is a nonconstant real Mobius function of X, so H1(X0) is nonreal at nonreal X0, g1(X0) != 0"},
+    {"location": "pp.2-3 (and companion g13 doc)", "claim": "kernel form written (X,1)M(X,1)^T", "why": "must be the Hermitian form (X,1)M(Xbar,1)^T", "severity": "presentation", "believed_true": true, "repair": "notation"}
+  ],
+  "exact_replays": ["generators and canonical decomposition", "replacements", "extra-tie list", "5 group witnesses", "chart forward/inverse identities", "z-c=XJ/...", "H1,H10,H5", "pole structure", "residue ratio mod J", "H16 numerator"],
+  "numeric_tests": ["SOC lemma min -3.9e-30 (60 starts, seed 7)", "chart sampling 40000 draws seed 11: 383 supported, none in SOC-failure region", "10 lib stratum points worst min Phi -3.3e-12"],
+  "unchecked": ["old SOC lemma proof", "boundary paper cases T_12,T_13,T_15,T_20,T_25"]
+}

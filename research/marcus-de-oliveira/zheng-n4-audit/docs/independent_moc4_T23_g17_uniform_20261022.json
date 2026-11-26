@@ -1,0 +1,38 @@
+{
+  "doc_id": "independent_moc4_T23_g17_uniform_20261022",
+  "pdf": "proofs/manin_transfer_20261021/independent_moc4_T23_g17_uniform_20261022.pdf",
+  "pages": 4,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "contact_sets": [[2, 3, 4, 6, 7, 8, 17]], "covers_all_spectra": true,
+     "restatement": "All x in X with Pc(x) >= 0 vanishing on T_24+{17} (Table 5 set 5, extra contacts allowed, coefficients may vanish): Phi_{c(x)}(O) >= 0 on SO(4). Uses only C(Re x)=0, det Hess C(Re x)=0, valid on all strata."}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "paper A.1 X subset Sing C", "used_for": "necessary equations", "match_checked": true},
+    {"kind": "common-lemma", "ref": "SOC pj>=d^2, old-H e(j-d)>=d^2, K4>=0", "used_for": "thresholds", "match_checked": false},
+    {"kind": "other-doc", "ref": "T_25 coherent Gram capacities (5),(6) via g=((0,3,1,2),(1,2,0,3),1); double-SOC at ab=1", "used_for": "thresholds", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "sources", "status": "EXACT"},
+    {"n": 2, "claim": "coefficient formulas", "status": "EXACT"},
+    {"n": 3, "claim": "d=0", "status": "PROOF-READ"},
+    {"n": 4, "claim": "necessity lemma", "status": "PROOF-READ"},
+    {"n": 5, "claim": "(2)", "status": "EXACT"},
+    {"n": 6, "claim": "Q != 0", "status": "PROOF-READ"},
+    {"n": 7, "claim": "(3) Hessian factorization", "status": "EXACT at 25 random rational points"},
+    {"n": 8, "claim": "(7)", "status": "EXACT"},
+    {"n": 9, "claim": "p=e=0 positivity", "status": "EXACT"},
+    {"n": 10, "claim": "Bernstein criterion", "status": "PROOF-READ"},
+    {"n": 11, "claim": "28 Bernstein numerators positive", "status": "EXACT"},
+    {"n": 12, "claim": "region cover", "status": "PROOF-READ"},
+    {"n": 13, "claim": "boundary extension", "status": "PROOF-READ"},
+    {"n": 14, "claim": "thresholds imply safety", "status": "CITED"}
+  ],
+  "gaps": [
+    {"location": "p.1 eq (3)", "claim": "Q^4 det Hess = -4 d^2 Q^2 G^2", "why": "auditor checked only by exact evaluation at 25 random points (probabilistic identity test); G taken from supplement JSON", "severity": "presentation", "believed_true": true, "repair": "symbolic expansion of the 14x14 Hessian determinant"},
+    {"location": "p.2 Gram sketches", "claim": "capacities (5),(6)", "why": "the link from Gram configuration to the Leibniz-sum inequality is not given in this document", "severity": "presentation", "believed_true": true, "repair": "cite/audit the T_25 coherent capacity document"}
+  ],
+  "exact_replays": ["sources and coefficients", "(2)", "(7)", "p=e=0 positivity", "capacity transfer group element", "28 Bernstein numerators (7 charts x 2 orientations x 2)", "(3) at 25 random rational points"],
+  "numeric_tests": ["capacities at thresholds, 12 draws seed 5: worst min Phi 1.8e-14 SOC, 2.7e-14 old-H, 2.8e-14 cap5, 1.1e-13 cap6"],
+  "unchecked": ["symbolic proof of (3)", "proofs of capacities (5),(6), SOC, old-H, K4, double-SOC"]
+}

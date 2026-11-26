@@ -1,0 +1,4634 @@
+{
+ "schema": "zheng-n4-audit-manifest-v1",
+ "supplement_commit": "53ec16567d2307266ce52a8e9678410b2457cc27",
+ "note": "One entry per supplementary proof PDF. Paths are relative to the supplement root. 'primary_for' lists the paper cases whose main statement the document proves; 'uses' lists the paper cases whose proofs the supplement's catalogue says use the document. 'assigned' says who audits the batch first.",
+ "batches": [
+  {
+   "id": "F1-one-circle",
+   "assigned": "local, deferred (parallel write-ups of the paper's Section 2 and Appendix C, which are audited in foundations/)",
+   "pages": 20,
+   "docs": [
+    {
+     "id": "moc_one_circle_20261022__one_circle",
+     "pdf": "proofs/moc_one_circle_20261022/one_circle.pdf",
+     "pages": 12,
+     "labels": {
+      "thm:main": 1,
+      "prop:twoO": 3,
+      "prop:dual": 4,
+      "lem:quotient": 5,
+      "lem:Cauchyclass": 6,
+      "lem:kappanonzero": 6,
+      "lem:Fsafe": 7,
+      "lem:radial": 9,
+      "cor:alln": 10
+     },
+     "primary_for": [],
+     "uses": [
+      3,
+      30,
+      41,
+      48,
+      50,
+      51,
+      52,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      61,
+      62,
+      63,
+      64,
+      65,
+      67,
+      68,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89
+     ]
+    },
+    {
+     "id": "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
+     "pdf": "proofs/moc_one_circle_20261022/root_unitary_two_orthogonals_20261022.pdf",
+     "pages": 4,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      3,
+      30,
+      32,
+      33,
+      41,
+      48,
+      49,
+      50,
+      51,
+      52,
+      54,
+      55,
+      56,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      69,
+      70,
+      72,
+      73,
+      74,
+      77,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+     ]
+    },
+    {
+     "id": "root_unitary_two_orthogonals_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_unitary_two_orthogonals_20261022.pdf",
+     "pages": 4,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      3,
+      52,
+      54,
+      55,
+      56,
+      63,
+      72,
+      73,
+      74,
+      80,
+      81,
+      83,
+      85,
+      88
+     ]
+    }
+   ]
+  },
+  {
+   "id": "F2-principal-minors",
+   "assigned": "local, deferred (parallel write-ups of the paper's Section 2 and Appendix C, which are audited in foundations/)",
+   "pages": 37,
+   "docs": [
+    {
+     "id": "principal_minor_result_20261022__principal_minors",
+     "pdf": "proofs/principal_minor_result_20261022/principal_minors.pdf",
+     "pages": 13,
+     "labels": {
+      "thm:principal": 1,
+      "prop:twoO": 2,
+      "lem:fibre": 4,
+      "prop:projection": 4,
+      "lem:increment": 5,
+      "thm:scalar": 5,
+      "thm:rotations": 6,
+      "cor:circle": 9,
+      "prop:sharp": 10
+     },
+     "primary_for": [],
+     "uses": [
+      3,
+      30,
+      40,
+      41,
+      45,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+     ]
+    },
+    {
+     "id": "moc_principal_minors_20261022__principal_minors",
+     "pdf": "proofs/moc_principal_minors_20261022/principal_minors.pdf",
+     "pages": 12,
+     "labels": {
+      "thm:principal": 1,
+      "prop:twoO": 2,
+      "lem:fibre": 4,
+      "prop:projection": 4,
+      "lem:increment": 5,
+      "thm:scalar": 5,
+      "thm:rotations": 6,
+      "cor:circle": 9,
+      "prop:sharp": 9
+     },
+     "primary_for": [],
+     "uses": [
+      32,
+      33,
+      50,
+      51,
+      52,
+      55,
+      61,
+      63,
+      64,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85,
+      87,
+      89
+     ]
+    },
+    {
+     "id": "fresh_strong_principal_minors_20261022",
+     "pdf": "proofs/manin_transfer_20261021/fresh_strong_principal_minors_20261022.pdf",
+     "pages": 12,
+     "labels": {
+      "thm:principal": 1,
+      "prop:twoO": 2,
+      "lem:fibre": 4,
+      "prop:projection": 4,
+      "lem:increment": 5,
+      "thm:scalar": 5,
+      "thm:rotations": 6,
+      "cor:circle": 9,
+      "prop:sharp": 9
+     },
+     "primary_for": [],
+     "uses": [
+      3,
+      50,
+      51,
+      52,
+      55,
+      61,
+      62,
+      63,
+      64,
+      72,
+      73,
+      74,
+      80,
+      81,
+      83,
+      85,
+      87,
+      88
+     ]
+    }
+   ]
+  },
+  {
+   "id": "F3-common-lemmas-a",
+   "assigned": "local",
+   "pages": 15,
+   "docs": [
+    {
+     "id": "__workspace____alternate_onecircle_20261022_elementary",
+     "pdf": "proofs/__workspace__/alternate_onecircle_20261022_elementary.pdf",
+     "pages": 3,
+     "labels": {
+      "lem:increment": 1,
+      "thm:scalar": 1,
+      "thm:rotations": 2
+     },
+     "primary_for": [],
+     "uses": [
+      3,
+      50,
+      51,
+      52,
+      55,
+      61,
+      62,
+      63,
+      64,
+      72,
+      73,
+      74,
+      80,
+      81,
+      83,
+      85,
+      87,
+      88
+     ]
+    },
+    {
+     "id": "principal_minor_result_20261022__alternate_onecircle_20261022_elementary",
+     "pdf": "proofs/principal_minor_result_20261022/alternate_onecircle_20261022_elementary.pdf",
+     "pages": 3,
+     "labels": {
+      "lem:increment": 1,
+      "thm:scalar": 1,
+      "thm:rotations": 2
+     },
+     "primary_for": [],
+     "uses": [
+      3,
+      30,
+      40,
+      41,
+      45,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+     ]
+    },
+    {
+     "id": "moc_principal_minors_20261022__alternate_onecircle_20261022_elementary",
+     "pdf": "proofs/moc_principal_minors_20261022/alternate_onecircle_20261022_elementary.pdf",
+     "pages": 3,
+     "labels": {
+      "lem:increment": 1,
+      "thm:scalar": 1,
+      "thm:rotations": 2
+     },
+     "primary_for": [],
+     "uses": [
+      32,
+      33,
+      50,
+      51,
+      52,
+      55,
+      61,
+      63,
+      64,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85,
+      87,
+      89
+     ]
+    },
+    {
+     "id": "final_referee_shared_zero_birkhoff_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_shared_zero_birkhoff_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "thm:shared": 1,
+      "thm:failure": 3
+     },
+     "primary_for": [],
+     "uses": [
+      3,
+      30,
+      32,
+      33,
+      41,
+      45,
+      48,
+      49,
+      50,
+      51,
+      52,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89
+     ]
+    },
+    {
+     "id": "final_referee_single_collision_divisor_compensation_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_single_collision_divisor_compensation_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      3,
+      41,
+      54,
+      55,
+      56,
+      61,
+      62,
+      63,
+      73,
+      74,
+      81,
+      83,
+      85,
+      86,
+      87,
+      88
+     ]
+    }
+   ]
+  },
+  {
+   "id": "F4-common-lemmas-b",
+   "assigned": "local",
+   "pages": 14,
+   "docs": [
+    {
+     "id": "final_referee_bounded_bad_harmonic_lemma_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_bounded_bad_harmonic_lemma_20261023.pdf",
+     "pages": 2,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      3,
+      30,
+      32,
+      33,
+      41,
+      48,
+      50,
+      51,
+      52,
+      54,
+      55,
+      56,
+      61,
+      62,
+      63,
+      64,
+      65,
+      72,
+      73,
+      74,
+      77,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+     ]
+    },
+    {
+     "id": "root_complete_negative_mass_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_complete_negative_mass_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      3,
+      30,
+      41,
+      48,
+      50,
+      51,
+      52,
+      54,
+      55,
+      56,
+      61,
+      62,
+      63,
+      65,
+      72,
+      73,
+      74,
+      77,
+      80,
+      81,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88
+     ]
+    },
+    {
+     "id": "root_moc4_global_real_Hessian_inertia_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_global_real_Hessian_inertia_20261022.pdf",
+     "pages": 2,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      32,
+      33,
+      42,
+      47,
+      50,
+      51,
+      52,
+      53,
+      55,
+      60,
+      61,
+      63,
+      64,
+      65,
+      72,
+      73,
+      79,
+      80,
+      81,
+      83,
+      85,
+      87,
+      89,
+      90
+     ]
+    },
+    {
+     "id": "final_referee_T5_four_budget_capacity_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T5_four_budget_capacity_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      5,
+      51,
+      52,
+      53,
+      55,
+      57,
+      58,
+      60,
+      61,
+      63,
+      64,
+      72,
+      73,
+      78,
+      80,
+      81,
+      83,
+      85,
+      87
+     ]
+    },
+    {
+     "id": "final_referee_moc4_six_contact_reduction_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_moc4_six_contact_reduction_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      85,
+      87,
+      89,
+      90
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K1-cores-BCD",
+   "assigned": "local",
+   "pages": 16,
+   "docs": [
+    {
+     "id": "blind_moc4_coreB_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_coreB_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      50,
+      51,
+      87
+     ]
+    },
+    {
+     "id": "blind_moc4_coreC_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_coreC_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      51,
+      52,
+      55,
+      63,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85,
+      87
+     ]
+    },
+    {
+     "id": "blind_moc4_coreD_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_coreD_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [],
+     "uses": [
+      51,
+      52,
+      55,
+      61,
+      63,
+      64,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85,
+      87
+     ]
+    },
+    {
+     "id": "blind_moc4_coreD_low_pair_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_coreD_low_pair_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      51,
+      52,
+      55,
+      61,
+      63,
+      64,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85,
+      87
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K2-cores-EF",
+   "assigned": "local",
+   "pages": 11,
+   "docs": [
+    {
+     "id": "independent_coreE_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_coreE_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [],
+     "uses": [
+      51,
+      52,
+      55,
+      61,
+      63,
+      64,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85,
+      87
+     ]
+    },
+    {
+     "id": "independent_coreE_four_chain_capacity_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_coreE_four_chain_capacity_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      51,
+      52,
+      55,
+      61,
+      63,
+      64,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85,
+      87
+     ]
+    },
+    {
+     "id": "blind_shared_coreF_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_shared_coreF_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [],
+     "uses": [
+      50
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K3-cores-GH-sevenA",
+   "assigned": "local",
+   "pages": 12,
+   "docs": [
+    {
+     "id": "independent_shared_coreG_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_shared_coreG_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [],
+     "uses": [
+      50,
+      52,
+      55,
+      63,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85
+     ]
+    },
+    {
+     "id": "root_shared_coreH_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_shared_coreH_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      52,
+      55,
+      63,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85
+     ]
+    },
+    {
+     "id": "root_shared_seven_A_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_shared_seven_A_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      50,
+      52,
+      55,
+      63,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K4-cores-JK",
+   "assigned": "local",
+   "pages": 8,
+   "docs": [
+    {
+     "id": "blind_shared_coreJ_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_shared_coreJ_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [],
+     "uses": [
+      32,
+      33,
+      89
+     ]
+    },
+    {
+     "id": "final_referee_shared_coreK_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_shared_coreK_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [],
+     "uses": [
+      3,
+      74,
+      88
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K5-cores-LM",
+   "assigned": "local",
+   "pages": 9,
+   "docs": [
+    {
+     "id": "root_shared_coreL_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_shared_coreL_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      55,
+      63,
+      85
+     ]
+    },
+    {
+     "id": "independent_shared_coreM_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_shared_coreM_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [],
+     "uses": [
+      55,
+      63,
+      72,
+      80,
+      85
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K6-cores-NO",
+   "assigned": "local",
+   "pages": 7,
+   "docs": [
+    {
+     "id": "blind_shared_coreN_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_shared_coreN_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      89,
+      90
+     ]
+    },
+    {
+     "id": "root_shared_coreO_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_shared_coreO_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      61,
+      64,
+      87
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C01-T1-T3",
+   "assigned": "local",
+   "pages": 14,
+   "docs": [
+    {
+     "id": "independent_moc4_six_contact_reduction_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_six_contact_reduction_20261022.pdf",
+     "pages": 8,
+     "labels": {
+      "lem:curve": 2,
+      "lem:safe": 3,
+      "thm:six": 4,
+      "prop:inventory": 5,
+      "prop:one-safe": 6,
+      "prop:T1-safe": 7
+     },
+     "primary_for": [
+      {
+       "case": 1,
+       "label": "prop:one-safe",
+       "page": 6,
+       "contacts": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7
+       ]
+      },
+      {
+       "case": 2,
+       "label": "prop:T1-safe",
+       "page": 7,
+       "contacts": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      1,
+      2,
+      50
+     ]
+    },
+    {
+     "id": "independent_moc4_T3_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T3_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 3,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      3
+     ]
+    },
+    {
+     "id": "final_referee_T2_scalar_compensation_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T2_scalar_compensation_20261022.pdf",
+     "pages": 2,
+     "labels": {
+      "lem:inc": 1,
+      "thm:scalar": 1,
+      "thm:quat": 2
+     },
+     "primary_for": [],
+     "uses": [
+      3
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C02-T4-T5",
+   "assigned": "local",
+   "pages": 10,
+   "docs": [
+    {
+     "id": "root_moc4_T4_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T4_uniform_20261022.pdf",
+     "pages": 5,
+     "labels": {
+      "thm:full": 1
+     },
+     "primary_for": [
+      {
+       "case": 4,
+       "label": "thm:full",
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        4,
+        5,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      4,
+      38
+     ]
+    },
+    {
+     "id": "final_referee_moc4_T5_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_moc4_T5_uniform_20261022.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 5,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      5
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C03-T6-T8",
+   "assigned": "local",
+   "pages": 16,
+   "docs": [
+    {
+     "id": "independent_moc4_T2_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T2_uniform_20261022.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 6,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      6
+     ]
+    },
+    {
+     "id": "final_referee_T2_collision_closure_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T2_collision_closure_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      6
+     ]
+    },
+    {
+     "id": "root_moc4_T6_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T6_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 7,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        2,
+        4,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      7,
+      38,
+      46
+     ]
+    },
+    {
+     "id": "root_moc4_T7_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T7_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 8,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        2,
+        5,
+        6,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      8,
+      38
+     ]
+    },
+    {
+     "id": "root_moc4_T7_boundary16_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T7_boundary16_20261022.pdf",
+     "pages": 1,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      8,
+      38
+     ]
+    },
+    {
+     "id": "root_moc4_T7_boundary23_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T7_boundary23_20261022.pdf",
+     "pages": 1,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      8,
+      38
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C04-T9",
+   "assigned": "local",
+   "pages": 15,
+   "docs": [
+    {
+     "id": "independent_moc4_T8_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T8_uniform_20261022.pdf",
+     "pages": 8,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 9,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        2,
+        3,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      9
+     ]
+    },
+    {
+     "id": "independent_moc4_T8_double_boundary_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T8_double_boundary_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      9
+     ]
+    },
+    {
+     "id": "independent_moc4_T8_polar_reduction_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T8_polar_reduction_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      9
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C05-T10-T11",
+   "assigned": "local",
+   "pages": 17,
+   "docs": [
+    {
+     "id": "final_referee_moc4_T9_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_moc4_T9_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {
+      "thm:full": 1
+     },
+     "primary_for": [
+      {
+       "case": 10,
+       "label": "thm:full",
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      10
+     ]
+    },
+    {
+     "id": "final_referee_T9_first_branch_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T9_first_branch_20261022.pdf",
+     "pages": 4,
+     "labels": {
+      "lem:branch": 2,
+      "thm:linear": 3
+     },
+     "primary_for": [],
+     "uses": [
+      10
+     ]
+    },
+    {
+     "id": "final_referee_T9_second_branch_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T9_second_branch_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "lem:u": 1,
+      "lem:identity": 2,
+      "thm:region": 2
+     },
+     "primary_for": [],
+     "uses": [
+      10
+     ]
+    },
+    {
+     "id": "final_referee_moc4_T10_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_moc4_T10_uniform_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 11,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      11,
+      38
+     ]
+    },
+    {
+     "id": "final_referee_T10_A_branch_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T10_A_branch_20261022.pdf",
+     "pages": 4,
+     "labels": {
+      "thm:full": 1
+     },
+     "primary_for": [],
+     "uses": [
+      11,
+      38
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C06-T11-T13",
+   "assigned": "local",
+   "pages": 13,
+   "docs": [
+    {
+     "id": "root_moc4_T10_B_branch_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T10_B_branch_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      11,
+      38
+     ]
+    },
+    {
+     "id": "final_referee_moc4_T11_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_moc4_T11_uniform_20261022.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 12,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        0,
+        2,
+        3,
+        5,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      12,
+      24
+     ]
+    },
+    {
+     "id": "final_referee_moc4_T12_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_moc4_T12_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 13,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        1,
+        2,
+        3,
+        4,
+        8,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      13,
+      24
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C07-T14-T16",
+   "assigned": "local",
+   "pages": 12,
+   "docs": [
+    {
+     "id": "independent_moc4_T13_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T13_uniform_20261022.pdf",
+     "pages": 5,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 14,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        2,
+        3,
+        5,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      14
+     ]
+    },
+    {
+     "id": "final_referee_moc4_T14_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_moc4_T14_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "thm": 1
+     },
+     "primary_for": [
+      {
+       "case": 15,
+       "label": "thm",
+       "page": 1,
+       "contacts": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7
+       ]
+      }
+     ],
+     "uses": [
+      15,
+      24,
+      38,
+      46
+     ]
+    },
+    {
+     "id": "root_moc4_T15_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T15_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 16,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        2,
+        5,
+        6,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      16
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C08-T17-T20",
+   "assigned": "local",
+   "pages": 13,
+   "docs": [
+    {
+     "id": "root_moc4_T16_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T16_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 17,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        4,
+        5,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      17
+     ]
+    },
+    {
+     "id": "root_moc4_T17_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T17_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 18,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        3,
+        6,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      18
+     ]
+    },
+    {
+     "id": "root_moc4_T18_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T18_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 19,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        4,
+        6,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      19
+     ]
+    },
+    {
+     "id": "root_moc4_T19_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T19_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 20,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        5,
+        6,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      20,
+      24
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C09-T21-T24",
+   "assigned": "local",
+   "pages": 17,
+   "docs": [
+    {
+     "id": "root_moc4_T20_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T20_uniform_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 21,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        3,
+        5,
+        9,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      21
+     ]
+    },
+    {
+     "id": "root_moc4_T21_T22_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T21_T22_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 22,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        4,
+        8,
+        10,
+        12
+       ]
+      },
+      {
+       "case": 23,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        5,
+        9,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      22,
+      23
+     ]
+    },
+    {
+     "id": "independent_moc4_T23_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T23_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 24,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        4,
+        6,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      24
+     ]
+    },
+    {
+     "id": "independent_moc4_T23_g13_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T23_g13_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      24
+     ]
+    },
+    {
+     "id": "independent_moc4_T23_g17_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T23_g17_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      24
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C10-T24-T26",
+   "assigned": "local",
+   "pages": 13,
+   "docs": [
+    {
+     "id": "independent_moc4_T23_harmonic_reduction_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T23_harmonic_reduction_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      24
+     ]
+    },
+    {
+     "id": "root_moc4_T24_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T24_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 25,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        3,
+        4,
+        7,
+        8,
+        10,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      24,
+      25
+     ]
+    },
+    {
+     "id": "final_referee_T25_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T25_uniform_20261022.pdf",
+     "pages": 6,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 26,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        5,
+        7,
+        8,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      26
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C11-T27-T28",
+   "assigned": "local",
+   "pages": 13,
+   "docs": [
+    {
+     "id": "final_referee_T26_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T26_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 27,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        4,
+        7,
+        8,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      27
+     ]
+    },
+    {
+     "id": "final_referee_T26_boundary10_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T26_boundary10_uniform_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      27
+     ]
+    },
+    {
+     "id": "final_referee_T26_boundary16_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T26_boundary16_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      27
+     ]
+    },
+    {
+     "id": "blind_moc4_T27_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T27_uniform_20261022.pdf",
+     "pages": 5,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 28,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        5,
+        6,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      28
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C12-T29-T31",
+   "assigned": "local",
+   "pages": 14,
+   "docs": [
+    {
+     "id": "blind_moc4_T28_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T28_uniform_20261022.pdf",
+     "pages": 5,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 29,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      29,
+      39,
+      43
+     ]
+    },
+    {
+     "id": "final_referee_inventory29_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory29_native_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 30,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        5,
+        9,
+        12,
+        13,
+        14
+       ]
+      }
+     ],
+     "uses": [
+      30,
+      50,
+      51,
+      52,
+      55,
+      63,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85,
+      87
+     ]
+    },
+    {
+     "id": "root_moc4_T30_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T30_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 31,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        5,
+        6,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      31
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C13-T32-T34",
+   "assigned": "local",
+   "pages": 12,
+   "docs": [
+    {
+     "id": "blind_inventory31_native_whole_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_inventory31_native_whole_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 32,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        0,
+        2,
+        3,
+        7,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      32,
+      89
+     ]
+    },
+    {
+     "id": "blind_inventory32_native_whole_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_inventory32_native_whole_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 33,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        0,
+        3,
+        6,
+        7,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      33
+     ]
+    },
+    {
+     "id": "blind_moc4_bad70_full_safe_disjunction_20261022",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_bad70_full_safe_disjunction_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "thm:contact": 1,
+      "lem:radial": 2
+     },
+     "primary_for": [
+      {
+       "case": 34,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        5,
+        9,
+        10,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      34
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C14-T35-T37",
+   "assigned": "local",
+   "pages": 14,
+   "docs": [
+    {
+     "id": "final_referee_T34_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T34_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 35,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        4,
+        6,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      35
+     ]
+    },
+    {
+     "id": "final_referee_T35_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T35_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 36,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        4,
+        6,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      36
+     ]
+    },
+    {
+     "id": "independent_moc4_T36_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T36_uniform_20261022.pdf",
+     "pages": 6,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 37,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        0,
+        5,
+        6,
+        7,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      37
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C15-T38-T40",
+   "assigned": "local",
+   "pages": 17,
+   "docs": [
+    {
+     "id": "root_moc4_T37_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T37_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 38,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        1,
+        2,
+        3,
+        8,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      38
+     ]
+    },
+    {
+     "id": "blind_moc4_T38_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T38_uniform_20261022.pdf",
+     "pages": 6,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 39,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        5,
+        7,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      39
+     ]
+    },
+    {
+     "id": "independent_moc4_T39_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T39_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 40,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        5,
+        9,
+        14,
+        18
+       ]
+      }
+     ],
+     "uses": [
+      40,
+      85,
+      90
+     ]
+    },
+    {
+     "id": "independent_moc4_T39_high_j_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T39_high_j_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      40,
+      85,
+      90
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C16-T40-T42",
+   "assigned": "local",
+   "pages": 16,
+   "docs": [
+    {
+     "id": "independent_moc4_T39_high_p_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T39_high_p_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      40,
+      85,
+      90
+     ]
+    },
+    {
+     "id": "independent_moc4_T39_low_pj_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T39_low_pj_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      40,
+      85,
+      90
+     ]
+    },
+    {
+     "id": "independent_inventory40_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_inventory40_native_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 41,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        3,
+        6,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      41
+     ]
+    },
+    {
+     "id": "final_referee_T41_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T41_uniform_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 42,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      42
+     ]
+    },
+    {
+     "id": "final_referee_T41_bad17_large_product_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T41_bad17_large_product_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      42
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C17-T42",
+   "assigned": "local",
+   "pages": 14,
+   "docs": [
+    {
+     "id": "final_referee_T41_bad17_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T41_bad17_uniform_20261022.pdf",
+     "pages": 6,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      42
+     ]
+    },
+    {
+     "id": "final_referee_T41_bad54_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T41_bad54_uniform_20261022.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      42
+     ]
+    },
+    {
+     "id": "final_referee_T41_negative_Heron_region_20261022",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T41_negative_Heron_region_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      42
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C18-T43-T45",
+   "assigned": "local",
+   "pages": 17,
+   "docs": [
+    {
+     "id": "blind_moc4_T42_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T42_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 43,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        1,
+        2,
+        4,
+        6,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      43
+     ]
+    },
+    {
+     "id": "independent_moc4_T43_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T43_uniform_20261022.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 44,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      44
+     ]
+    },
+    {
+     "id": "independent_moc4_T44_native_harmonic_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T44_native_harmonic_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 45,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        1,
+        2,
+        3,
+        7,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      45
+     ]
+    },
+    {
+     "id": "blind_moc4_T44_coherent_chain_capacity_20261022",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T44_coherent_chain_capacity_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      45
+     ]
+    },
+    {
+     "id": "blind_moc4_T44_conic_branch_exclusion_20261022",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T44_conic_branch_exclusion_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "thm": 1
+     },
+     "primary_for": [],
+     "uses": [
+      45
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C19-T45",
+   "assigned": "cloud slice A",
+   "pages": 10,
+   "docs": [
+    {
+     "id": "blind_moc4_T44_native_contact_chart_20261022",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T44_native_contact_chart_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      45
+     ]
+    },
+    {
+     "id": "independent_moc4_T44_a_Heron_branch_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T44_a_Heron_branch_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      45
+     ]
+    },
+    {
+     "id": "independent_moc4_T44_c_below_j_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T44_c_below_j_uniform_20261023.pdf",
+     "pages": 2,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      45
+     ]
+    },
+    {
+     "id": "root_moc4_T44_e_below_p_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T44_e_below_p_uniform_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      45
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C20-T46-T47",
+   "assigned": "cloud slice A",
+   "pages": 17,
+   "docs": [
+    {
+     "id": "independent_moc4_T45_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T45_uniform_20261022.pdf",
+     "pages": 6,
+     "labels": {
+      "thm:whole": 1,
+      "lem:26": 4
+     },
+     "primary_for": [
+      {
+       "case": 46,
+       "label": "thm:whole",
+       "page": 1,
+       "contacts": [
+        3,
+        4,
+        5,
+        9,
+        10,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      38,
+      46
+     ]
+    },
+    {
+     "id": "root_moc4_T46_whole_assembly_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T46_whole_assembly_20261023.pdf",
+     "pages": 3,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 47,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        8
+       ]
+      }
+     ],
+     "uses": [
+      47
+     ]
+    },
+    {
+     "id": "final_referee_T46_a0_all_small_product_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T46_a0_all_small_product_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47
+     ]
+    },
+    {
+     "id": "final_referee_T46_a0_balanced_leaf_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T46_a0_balanced_leaf_uniform_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47
+     ]
+    },
+    {
+     "id": "final_referee_T46_a0_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T46_a0_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [],
+     "uses": [
+      47
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C21-T47",
+   "assigned": "cloud slice A",
+   "pages": 17,
+   "docs": [
+    {
+     "id": "final_referee_T46_core_coherent_capacity_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T46_core_coherent_capacity_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      47
+     ]
+    },
+    {
+     "id": "final_referee_T46_negative_j_Heron_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T46_negative_j_Heron_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47
+     ]
+    },
+    {
+     "id": "final_referee_T46_positive_a_large_product_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T46_positive_a_large_product_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47
+     ]
+    },
+    {
+     "id": "final_referee_T46_positive_a_small_or_balanced_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T46_positive_a_small_or_balanced_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47
+     ]
+    },
+    {
+     "id": "final_referee_T46_six_ray_coherent_capacity_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T46_six_ray_coherent_capacity_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C22-T47",
+   "assigned": "cloud slice A",
+   "pages": 16,
+   "docs": [
+    {
+     "id": "final_referee_T46_two_Heron_necessity_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T46_two_Heron_necessity_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47
+     ]
+    },
+    {
+     "id": "final_referee_T47_negative_p_Heron_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_T47_negative_p_Heron_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "independent_moc4_T47_IIIb_plus_large_pc_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_IIIb_plus_large_pc_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "independent_moc4_T47_I_II_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_I_II_uniform_20261022.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C23-T47",
+   "assigned": "cloud slice A",
+   "pages": 17,
+   "docs": [
+    {
+     "id": "independent_moc4_T47_PCBE_energy_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_PCBE_energy_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      65
+     ]
+    },
+    {
+     "id": "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_PCBE_low_e_q_monotone_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "independent_moc4_T47_high_e_below_core_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_high_e_below_core_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      65
+     ]
+    },
+    {
+     "id": "independent_moc4_T47_high_j_small_b_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_high_j_small_b_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "independent_moc4_T47_high_j_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_high_j_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "independent_moc4_T47_low_j_small_pc_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_low_j_small_pc_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "independent_moc4_T47_merged_C_high_j_uniform_20261022",
+     "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_merged_C_high_j_uniform_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C24-T47",
+   "assigned": "local",
+   "pages": 17,
+   "docs": [
+    {
+     "id": "root_moc4_T46_positive_a_mixed_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T46_positive_a_mixed_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47
+     ]
+    },
+    {
+     "id": "root_moc4_T47_IIIa_minus_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_IIIa_minus_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "root_moc4_T47_IIIa_plus_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_IIIa_plus_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "root_moc4_T47_IIIb_minus_swapped_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_IIIb_minus_swapped_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "root_moc4_T47_IIIb_plus_swapped_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_IIIb_plus_swapped_20261022.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "root_moc4_T47_low_j_high_e_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_low_j_high_e_uniform_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "root_moc4_T47_low_j_low_e_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_low_j_low_e_uniform_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "root_moc4_T47_low_j_p_below_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_low_j_p_below_uniform_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C25-T47-T49",
+   "assigned": "cloud slice A",
+   "pages": 16,
+   "docs": [
+    {
+     "id": "root_moc4_T47_negative_Phi_20261022",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_negative_Phi_20261022.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "root_moc4_T47_zero_q_rational_capacity_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_zero_q_rational_capacity_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "root_true_inventory47_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_true_inventory47_native_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 48,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        2,
+        5,
+        9,
+        12,
+        13
+       ]
+      }
+     ],
+     "uses": [
+      3,
+      30,
+      41,
+      48,
+      50,
+      51,
+      52,
+      54,
+      55,
+      56,
+      61,
+      62,
+      63,
+      65,
+      72,
+      73,
+      74,
+      80,
+      81,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88
+     ]
+    },
+    {
+     "id": "root_true_T48_whole_assembly_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_true_T48_whole_assembly_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 49,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        0,
+        3,
+        5,
+        6,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      49
+     ]
+    },
+    {
+     "id": "blind_moc4_T48_allocation_III_low_j_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_allocation_III_low_j_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      49
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C26-T49",
+   "assigned": "cloud slice A",
+   "pages": 16,
+   "docs": [
+    {
+     "id": "blind_moc4_T48_allocation_II_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_allocation_II_uniform_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      49
+     ]
+    },
+    {
+     "id": "blind_moc4_T48_allocation_IV_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_allocation_IV_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      49
+     ]
+    },
+    {
+     "id": "blind_moc4_T48_allocation_I_low_j_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_allocation_I_low_j_uniform_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      49
+     ]
+    },
+    {
+     "id": "blind_moc4_T48_allocation_I_small_lambda_low_j_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_allocation_I_small_lambda_low_j_uniform_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      49
+     ]
+    },
+    {
+     "id": "blind_moc4_T48_c0_all_j_chain_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_c0_all_j_chain_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      49
+     ]
+    },
+    {
+     "id": "blind_moc4_T48_c0_native_interlacing_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_c0_native_interlacing_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      49
+     ]
+    },
+    {
+     "id": "blind_moc4_T48_c0_upper_Heron_chain_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_c0_upper_Heron_chain_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      49
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C27-T49",
+   "assigned": "cloud slice A",
+   "pages": 12,
+   "docs": [
+    {
+     "id": "blind_moc4_T48_negative_Phi_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_negative_Phi_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      49
+     ]
+    },
+    {
+     "id": "independent_true_T48_c0_native_Heron_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_true_T48_c0_native_Heron_20261023.pdf",
+     "pages": 3,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      49
+     ]
+    },
+    {
+     "id": "independent_true_T48_native_harmonic_conditional_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_true_T48_native_harmonic_conditional_20261023.pdf",
+     "pages": 6,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      49
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C28-T50-T52",
+   "assigned": "local",
+   "pages": 15,
+   "docs": [
+    {
+     "id": "blind_inventory49_whole_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_inventory49_whole_20261023.pdf",
+     "pages": 3,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 50,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        1,
+        3,
+        5,
+        6,
+        10,
+        11
+       ]
+      }
+     ],
+     "uses": [
+      50
+     ]
+    },
+    {
+     "id": "blind_inventory49_bounded_native_conditional_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_inventory49_bounded_native_conditional_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      50
+     ]
+    },
+    {
+     "id": "root_inventory50_bounded_native_whole_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory50_bounded_native_whole_20261023.pdf",
+     "pages": 1,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 51,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        1,
+        3,
+        5,
+        10,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      51,
+      87
+     ]
+    },
+    {
+     "id": "root_inventory50_bounded_native_conditional_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory50_bounded_native_conditional_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      51,
+      87
+     ]
+    },
+    {
+     "id": "root_inventory51_bounded_native_whole_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory51_bounded_native_whole_20261023.pdf",
+     "pages": 1,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 52,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        1,
+        3,
+        5,
+        10,
+        11,
+        14
+       ]
+      }
+     ],
+     "uses": [
+      52,
+      55,
+      63,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85
+     ]
+    },
+    {
+     "id": "root_inventory51_bounded_native_conditional_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory51_bounded_native_conditional_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      52,
+      55,
+      63,
+      72,
+      73,
+      80,
+      81,
+      83,
+      85
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C29-T53",
+   "assigned": "cloud slice A",
+   "pages": 16,
+   "docs": [
+    {
+     "id": "blind_moc4_inventory52_whole_assembly_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory52_whole_assembly_20261023.pdf",
+     "pages": 3,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 53,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        4,
+        6,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      53,
+      60
+     ]
+    },
+    {
+     "id": "blind_moc4_inventory52_native_harmonic_conditional_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory52_native_harmonic_conditional_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      53,
+      60
+     ]
+    },
+    {
+     "id": "blind_moc4_inventory52_plus17_fourth_products_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory52_plus17_fourth_products_20261023.pdf",
+     "pages": 3,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      53,
+      60
+     ]
+    },
+    {
+     "id": "blind_moc4_inventory52_plus17_low_products_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory52_plus17_low_products_20261023.pdf",
+     "pages": 3,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      53,
+      60
+     ]
+    },
+    {
+     "id": "blind_moc4_inventory52_plus17_middle_products_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory52_plus17_middle_products_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      53,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C30-T53-T55",
+   "assigned": "cloud slice B",
+   "pages": 12,
+   "docs": [
+    {
+     "id": "blind_moc4_inventory52_plus17_third_products_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory52_plus17_third_products_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      53,
+      60
+     ]
+    },
+    {
+     "id": "root_inventory53_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory53_native_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 54,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        5,
+        6,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      54
+     ]
+    },
+    {
+     "id": "independent_inventory54_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_inventory54_native_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 55,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        1,
+        2,
+        3,
+        6,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      55,
+      85
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C31-T56-T57",
+   "assigned": "cloud slice B",
+   "pages": 17,
+   "docs": [
+    {
+     "id": "independent_inventory55_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_inventory55_native_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 56,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        3,
+        4,
+        5,
+        8,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      56
+     ]
+    },
+    {
+     "id": "final_referee_inventory56_57_whole_assembly_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory56_57_whole_assembly_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 57,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        5,
+        7,
+        9,
+        12
+       ]
+      },
+      {
+       "case": 58,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        3,
+        5,
+        7,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      57,
+      58
+     ]
+    },
+    {
+     "id": "final_referee_inventory56_boundary17_large_product_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory56_boundary17_large_product_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      57,
+      58,
+      78
+     ]
+    },
+    {
+     "id": "final_referee_inventory56_boundary17_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory56_boundary17_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      57,
+      58,
+      78
+     ]
+    },
+    {
+     "id": "final_referee_inventory56_native_harmonic_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory56_native_harmonic_20261023.pdf",
+     "pages": 5,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      57,
+      58
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C32-T57-T59",
+   "assigned": "cloud slice B",
+   "pages": 11,
+   "docs": [
+    {
+     "id": "final_referee_inventory56_rank_two_capacity_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory56_rank_two_capacity_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      57,
+      58,
+      78
+     ]
+    },
+    {
+     "id": "root_inventory57_native_conditional_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory57_native_conditional_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      57,
+      58
+     ]
+    },
+    {
+     "id": "independent_inventory58_native_harmonic_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_inventory58_native_harmonic_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 59,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        3,
+        4,
+        5,
+        6,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      59
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C33-T60-T61",
+   "assigned": "cloud slice B",
+   "pages": 10,
+   "docs": [
+    {
+     "id": "blind_moc4_inventory59_native_harmonic_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory59_native_harmonic_uniform_20261023.pdf",
+     "pages": 6,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 60,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      60
+     ]
+    },
+    {
+     "id": "root_inventory60_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory60_native_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 61,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        1,
+        2,
+        3,
+        9,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      61,
+      87
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C34-T62-T63",
+   "assigned": "cloud slice B",
+   "pages": 11,
+   "docs": [
+    {
+     "id": "final_referee_inventory61_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory61_native_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 62,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        3,
+        5,
+        7,
+        8,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      62
+     ]
+    },
+    {
+     "id": "independent_inventory62_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_inventory62_native_uniform_20261023.pdf",
+     "pages": 6,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 63,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        1,
+        2,
+        3,
+        10,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      63
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C35-T64-T66",
+   "assigned": "cloud slice B",
+   "pages": 12,
+   "docs": [
+    {
+     "id": "independent_inventory63_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_inventory63_native_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 64,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        3,
+        5,
+        9,
+        14,
+        18
+       ]
+      }
+     ],
+     "uses": [
+      64
+     ]
+    },
+    {
+     "id": "root_moc4_T47_whole_assembly_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_whole_assembly_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 65,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        4,
+        5,
+        6,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      47,
+      48,
+      65
+     ]
+    },
+    {
+     "id": "root_moc4_T65_native_harmonic_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_moc4_T65_native_harmonic_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 66,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        2,
+        4,
+        5,
+        6,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      66
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C36-T67-T68",
+   "assigned": "cloud slice B",
+   "pages": 13,
+   "docs": [
+    {
+     "id": "root_inventory66_native_whole_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory66_native_whole_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 67,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        4,
+        5,
+        7,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      67
+     ]
+    },
+    {
+     "id": "independent_inventory67_native_harmonic_conditional_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_inventory67_native_harmonic_conditional_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      67,
+      68,
+      87
+     ]
+    },
+    {
+     "id": "root_inventory67_g14_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory67_g14_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [],
+     "uses": [
+      67,
+      68,
+      71,
+      76,
+      87
+     ]
+    },
+    {
+     "id": "root_inventory67_whole_assembly_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory67_whole_assembly_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 68,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        1,
+        4,
+        5,
+        7,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      67,
+      68,
+      87
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C37-T69-T71",
+   "assigned": "cloud slice B",
+   "pages": 13,
+   "docs": [
+    {
+     "id": "final_referee_inventory68_native_harmonic_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory68_native_harmonic_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 69,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        0,
+        2,
+        5,
+        7,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      69
+     ]
+    },
+    {
+     "id": "final_referee_inventory69_native_harmonic_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory69_native_harmonic_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 70,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        1,
+        3,
+        4,
+        8,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      70
+     ]
+    },
+    {
+     "id": "independent_inventory70_native_harmonic_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_inventory70_native_harmonic_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 71,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        1,
+        3,
+        4,
+        10,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      71
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C38-T72-T74",
+   "assigned": "cloud slice B",
+   "pages": 13,
+   "docs": [
+    {
+     "id": "final_referee_inventory71_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory71_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 72,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        1,
+        3,
+        4,
+        7,
+        8,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      72
+     ]
+    },
+    {
+     "id": "root_inventory72_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory72_native_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 73,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        4,
+        5,
+        7,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      73
+     ]
+    },
+    {
+     "id": "final_referee_inventory73_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory73_native_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 74,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        3,
+        4,
+        5,
+        7,
+        8,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      74
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C39-T75-T76",
+   "assigned": "cloud slice B",
+   "pages": 14,
+   "docs": [
+    {
+     "id": "independent_inventory74_native_harmonic_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_inventory74_native_harmonic_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "main": 1
+     },
+     "primary_for": [
+      {
+       "case": 75,
+       "label": "main",
+       "page": 1,
+       "contacts": [
+        3,
+        5,
+        7,
+        8,
+        10,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      75
+     ]
+    },
+    {
+     "id": "final_referee_inventory75_whole_assembly_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory75_whole_assembly_20261023.pdf",
+     "pages": 2,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 76,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        3,
+        10,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      76
+     ]
+    },
+    {
+     "id": "final_referee_inventory75_boundary16_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory75_boundary16_uniform_20261023.pdf",
+     "pages": 3,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      76,
+      78
+     ]
+    },
+    {
+     "id": "independent_inventory75_native_harmonic_conditional_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_inventory75_native_harmonic_conditional_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [],
+     "uses": [
+      76
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C40-T77-T79",
+   "assigned": "cloud slice B",
+   "pages": 17,
+   "docs": [
+    {
+     "id": "root_inventory76_bounded_masks_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory76_bounded_masks_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 77,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        0,
+        1,
+        3,
+        10,
+        11,
+        16
+       ]
+      }
+     ],
+     "uses": [
+      77
+     ]
+    },
+    {
+     "id": "independent_inventory77_native_harmonic_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/independent_inventory77_native_harmonic_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 78,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        1,
+        4,
+        5,
+        6,
+        9,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      78
+     ]
+    },
+    {
+     "id": "final_referee_inventory78_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory78_native_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "corner": 3
+     },
+     "primary_for": [
+      {
+       "case": 79,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        1,
+        3,
+        4,
+        8,
+        11,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      79,
+      89
+     ]
+    },
+    {
+     "id": "final_referee_inventory78_boundary15_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory78_boundary15_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [],
+     "uses": [
+      79,
+      89
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C41-T80-T82",
+   "assigned": "cloud slice B",
+   "pages": 13,
+   "docs": [
+    {
+     "id": "final_referee_inventory79_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory79_native_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 80,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        1,
+        3,
+        4,
+        6,
+        8,
+        12
+       ]
+      }
+     ],
+     "uses": [
+      80
+     ]
+    },
+    {
+     "id": "root_inventory80_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory80_native_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 81,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        1,
+        2,
+        10,
+        11,
+        12,
+        13
+       ]
+      }
+     ],
+     "uses": [
+      73,
+      81,
+      85
+     ]
+    },
+    {
+     "id": "final_referee_inventory81_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory81_native_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 82,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        5,
+        9,
+        10,
+        12,
+        13
+       ]
+      }
+     ],
+     "uses": [
+      82
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C42-T83-T85",
+   "assigned": "local",
+   "pages": 14,
+   "docs": [
+    {
+     "id": "final_referee_inventory82_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory82_native_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 83,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        3,
+        5,
+        6,
+        9,
+        14,
+        18
+       ]
+      }
+     ],
+     "uses": [
+      83
+     ]
+    },
+    {
+     "id": "final_referee_inventory83_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory83_native_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {},
+     "primary_for": [
+      {
+       "case": 84,
+       "label": null,
+       "page": 1,
+       "contacts": [
+        2,
+        5,
+        9,
+        11,
+        12,
+        13
+       ]
+      }
+     ],
+     "uses": [
+      50,
+      51,
+      52,
+      55,
+      63,
+      72,
+      73,
+      80,
+      81,
+      83,
+      84,
+      85,
+      87
+     ]
+    },
+    {
+     "id": "blind_inventory84_rank_drop_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_inventory84_rank_drop_uniform_20261023.pdf",
+     "pages": 5,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 85,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        0,
+        5,
+        7,
+        9,
+        14,
+        18
+       ]
+      }
+     ],
+     "uses": [
+      85
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C43-T86",
+   "assigned": "cloud slice B",
+   "pages": 14,
+   "docs": [
+    {
+     "id": "root_inventory85_native_uniform_corrected_20261023",
+     "pdf": "proofs/manin_transfer_20261021/root_inventory85_native_uniform_corrected_20261023.pdf",
+     "pages": 7,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 86,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        4,
+        5,
+        8,
+        9,
+        12,
+        13
+       ]
+      }
+     ],
+     "uses": [
+      86
+     ]
+    },
+    {
+     "id": "final_referee_inventory85_native_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory85_native_uniform_20261023.pdf",
+     "pages": 7,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [],
+     "uses": [
+      86
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C44-T87-T89",
+   "assigned": "cloud slice B",
+   "pages": 14,
+   "docs": [
+    {
+     "id": "blind_inventory86_matching_section_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_inventory86_matching_section_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 87,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        4,
+        5,
+        7,
+        9,
+        12,
+        14
+       ]
+      }
+     ],
+     "uses": [
+      87
+     ]
+    },
+    {
+     "id": "final_referee_inventory87_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/final_referee_inventory87_uniform_20261023.pdf",
+     "pages": 4,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 88,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        1,
+        5,
+        6,
+        10,
+        13,
+        14
+       ]
+      }
+     ],
+     "uses": [
+      88
+     ]
+    },
+    {
+     "id": "blind_inventory88_matching_curve_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_inventory88_matching_curve_uniform_20261023.pdf",
+     "pages": 6,
+     "labels": {
+      "whole": 1,
+      "wholeSing": 1
+     },
+     "primary_for": [
+      {
+       "case": 89,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        2,
+        5,
+        9,
+        10,
+        13,
+        14
+       ]
+      }
+     ],
+     "uses": [
+      89
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C45-T90",
+   "assigned": "cloud slice B",
+   "pages": 6,
+   "docs": [
+    {
+     "id": "blind_inventory89_matching_curve_uniform_20261023",
+     "pdf": "proofs/manin_transfer_20261021/blind_inventory89_matching_curve_uniform_20261023.pdf",
+     "pages": 6,
+     "labels": {
+      "whole": 1
+     },
+     "primary_for": [
+      {
+       "case": 90,
+       "label": "whole",
+       "page": 1,
+       "contacts": [
+        1,
+        5,
+        6,
+        9,
+        14,
+        18
+       ]
+      }
+     ],
+     "uses": [
+      90
+     ]
+    }
+   ]
+  }
+ ]
+}

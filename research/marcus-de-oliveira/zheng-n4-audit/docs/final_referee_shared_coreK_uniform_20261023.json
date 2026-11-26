@@ -1,0 +1,137 @@
+{
+ "doc_id": "final_referee_shared_coreK_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_shared_coreK_uniform_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     9,
+     10,
+     14,
+     17
+    ]
+   ],
+   "restatement": "K = AUX7#16. For x in X, pi* in K, Pc(x) >= 0 and zero on K (extra contacts allowed, all spectra): Phi_{c(x)}(O) >= 0 for all O in SO(4)/O(4).",
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "SOC atom (f1=n12,34, f9=n14,23; f22=h3412,+): x,y,delta>=0, xy>=delta^2 => Phi >= 0",
+   "used_for": "(2),(3) region H3 >= d",
+   "status": "CITED, NUMERIC support"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper: X subset Sing C",
+   "status": "EXACT in lib"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (4.2), (4.7), App. D",
+   "status": "EXACT in lib"
+  },
+  {
+   "kind": "external",
+   "ref": "paper Theorem 1.2",
+   "used_for": "unitary remark only",
+   "status": "CITED"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "simplicial source (1), coefficients = gap readings",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "group images of SOC atom for 3 pairs",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "S3 stabilizer, G symmetric",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "(3) H3 resource allocation",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 5,
+   "claim": "(5) C, Q",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "realizable => F=0, det H=0",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 7,
+   "claim": "(6) det identity, G 746 terms",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "balanced chart coverage",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 9,
+   "claim": "balanced chart 5373 positive coefficients",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "dominant chart coverage",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 11,
+   "claim": "dominant chart 7297 positive coefficients, 8X",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "(10) zero-leaf identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "exhaustion of cases",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators(K), I7 rows",
+  "SOC group images",
+  "stabilizer S3 and G symmetry",
+  "(5) C,Q",
+  "(6) det identity and G re-derived (746 terms, multidegree (3,2,2,3,2,3,9))",
+  "(8) chart: 5373 positive coefficients, constant 1",
+  "(9) chart: 7297 positive coefficients, 8X",
+  "(10) zero-leaf factorization",
+  "(3) allocation identities",
+  "chart inverses"
+ ],
+ "numeric_tests": [
+  "SOC atom: min Phi_f22 + 2 sqrt(Phi_f1 Phi_f9) over SO(4) = -1.3e-28 (40 restarts, seed 7)",
+  "conic claim (3) with d = H3: 12 random (a,b,c), min Phi/(a+b+c) = 1.8e-13"
+ ],
+ "unchecked": [
+  "the cited SOC atom inequality itself (only numeric)",
+  "the reductions of six-contact cases T_3, T_74, T_88 to K (not in this document)"
+ ]
+}

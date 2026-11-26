@@ -1,0 +1,53 @@
+
+== Theorem B.1: symbolic (generic) identities ==
+  (B.7) precursor: det(diag(a)-U diag(e) V^T) = sum_{I∋0,J⊂[3]} (-1)^|I| prod a prod e detU[I,J] detV[I,J]  (generic U,V):  True
+  (B.7) and (B.3) imply (B.8) [symbolic, m_ij, |u0j|^2, |ui0|^2, s as free symbols]: True
+  prod(a_i-e_sigma(i)) = sum H_ij m_ij(sigma) for all 24 sigma: True
+  rank of the nine H_ij as polynomials: 9
+  phi properties on the 18 permutations with pi(0)!=0: True
+  affine dimension of face {W00=0}: 8
+
+== Theorem B.1: exact replay on Gaussian-rational unitary matrices ==
+  samples: 60 Cayley + 52 degenerate; greedy Birkhoff terms max 9, after Caratheodory max 9; max nonzero weights 10
+
+== Lemma B.2: exact replay ==
+  samples: 30 Cayley + 12 degenerate (e-coincidence); 10 (a-coincidence); grid of 320 points each
+  rank-two principal-minor formula, all 15 index sets, generic p,q: True
+  expectation-of-placement identity (k=2..4): True
+
+== Corollary B.3: exact divisibility (B.9) for all 28 brackets ==
+  O #0: (B.9) divisible for 28/28 brackets; Delta_O - Pi_id NOT divisible for 28/28 (control)
+    note: Delta_O equals the weighted average identically for bracket AC01
+    note: Delta_O equals the weighted average identically for bracket AC02
+    note: Delta_O equals the weighted average identically for bracket AC10
+    note: Delta_O equals the weighted average identically for bracket AC12
+    note: Delta_O equals the weighted average identically for bracket AC20
+    note: Delta_O equals the weighted average identically for bracket AC21
+    note: Delta_O equals the weighted average identically for bracket AC23
+    note: Delta_O equals the weighted average identically for bracket AC32
+  O #1: (B.9) divisible for 28/28 brackets; Delta_O - Pi_id NOT divisible for 27/28 (control)
+
+[exact sections done at 13.3s]
+
+== Theorem B.1: NUMERIC (floats) ==
+  paper's construction in floats: 20000 Haar + 305 degenerate U; max rel. residual on {0,1}^6 grid 7.55e-13; max |(B.2) defect| 9.12e-13; max Birkhoff terms 9; max nonzero weights 10
+  direct LP (min sup-residual of (B.1) on the 64-point proving grid): 3000 Haar + 305 degenerate U; max min-residual 0.00e+00; LP failures 0; max LP-vertex support 10; max |(B.2) defect| of LP solutions 1.84e-07 (B.2 is forced, see report)
+
+== Lemma B.2: NUMERIC direct LP ==
+  600 Haar + 102 degenerate U, 320-point proving grid: max min-residual 0.00e+00, LP failures 0
+
+== Corollary B.3: NUMERIC curves t -> 0 (single vs. double coincidence) ==
+  real spectra (so the region {all Re g >= 0} is a nonempty sector), complex directions, tau = argmin Pi_sigma(0),
+  t = r exp(i theta), theta on a 6000-point grid plus 4001 points within 200 r of every boundary ray
+  single: 300 random instances; region nonempty at r=1e-3 and 1e-6 in 289; growth ratio (neg. part of min L at r=1e-6)/max(1, neg. part at r=1e-3): max 0, instances with ratio > 100: 0
+    max over instances of sup|L - sum mu Re g| (B.1 law for a0=e0) at r=[0.01, 0.001, 0.0001, 1e-05, 1e-06]: ['9.01', '8.91', '8.9', '8.9', '8.9']
+    example: min L over region at r=[0.01, 0.001, 0.0001, 1e-05, 1e-06]: ['nan', '18.4', '18.5', '19.4', '39.7']
+    example: min L over region at r=[0.01, 0.001, 0.0001, 1e-05, 1e-06]: ['4.59', '4.63', '4.64', '4.64', '4.64']
+  double: 300 random instances; region nonempty at r=1e-3 and 1e-6 in 295; growth ratio (neg. part of min L at r=1e-6)/max(1, neg. part at r=1e-3): max 0, instances with ratio > 100: 0
+    max over instances of sup|L - sum mu Re g| (B.1 law for a0=e0) at r=[0.01, 0.001, 0.0001, 1e-05, 1e-06]: ['518', '5.08e+03', '5.07e+04', '5.07e+05', '5.07e+06']
+    example: min L over region at r=[0.01, 0.001, 0.0001, 1e-05, 1e-06]: ['254', '2.63e+03', '2.64e+04', '2.64e+05', '2.64e+06']
+    example: min L over region at r=[0.01, 0.001, 0.0001, 1e-05, 1e-06]: ['68.5', '919', '9.17e+03', '9.17e+04', '9.17e+05']
+
+Total time 44.1s
+EXACT failures: none
+NUMERIC anomalies: none

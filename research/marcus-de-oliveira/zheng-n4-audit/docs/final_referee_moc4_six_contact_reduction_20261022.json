@@ -1,0 +1,42 @@
+{
+  "doc_id": "final_referee_moc4_six_contact_reduction_20261022",
+  "pdf": "proofs/manin_transfer_20261021/final_referee_moc4_six_contact_reduction_20261022.pdf",
+  "pages": 4,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "eq. (1)-(2)", "page": 1, "restatement": "grad C(x + t kappa) = grad C(x) + t H_kappa x; ker H_kappa = span of the 16 single-entry vectors (dim 10), rank H_kappa = 4."},
+    {"label": "Lemma 1", "page": 2, "restatement": "If the height line x + C kappa lies in X and Pc(x) >= 0, then c(x) = sum a_ij n_ij is a single-entry cost and Phi_c(x)(O) = sum a_ij O_ij^2 >= 0 (Birkhoff)."},
+    {"label": "Lemma 2", "page": 2, "restatement": "On an irreducible affine curve with regular g_j, not all constant, Re sum g_j = 1, c real-linear in Re g, K closed convex: if c in K wherever all Re g_j >= 0 with one zero, then c in K wherever all Re g_j > 0."},
+    {"label": "Theorem 3", "page": 2, "restatement": "If c(x) in K for all x in X with Pc(x) >= 0 and at least six zeros, then c(x) in K for all x in X with Pc(x) >= 0.", "covers_all_spectra": true},
+    {"label": "Theorem 4", "page": 3, "restatement": "For fixed O_0 in SO(4): a feasible x with Phi_c(x)(O_0) < 0 yields a feasible x' with at least six contacts (old ones kept) and Phi_c(x')(O_0) < 0.", "covers_all_spectra": true}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "paper Sect. 3 / moc4lib: X in Sing C, P injective, P kappa = 1, dim X = 6", "used_for": "Lemma 1, Theorem 3", "match_checked": true},
+    {"kind": "external", "ref": "Birkhoff-von Neumann theorem", "used_for": "Lemma 1", "match_checked": true},
+    {"kind": "external", "ref": "one-simple three-value theorem; projection DPPs; HMSV ordered points", "used_for": "lifting commentary only (not used by the theorems)", "match_checked": false}
+  ],
+  "steps": [
+    {"n": 1, "claim": "eq. (1)", "kind": "identity", "status": "EXACT"},
+    {"n": 2, "claim": "eq. (2)", "kind": "identity", "status": "EXACT"},
+    {"n": 3, "claim": "Lemma 1", "kind": "identity+inequality", "status": "EXACT", "note": "plus Birkhoff CITED"},
+    {"n": 4, "claim": "Lemma 2 boundedness on D", "kind": "analytic", "status": "PROOF-READ"},
+    {"n": 5, "claim": "Lemma 2 boundary values", "kind": "analytic", "status": "PROOF-READ"},
+    {"n": 6, "claim": "Lemma 2 subharmonic extension, constancy", "kind": "analytic", "status": "PROOF-READ"},
+    {"n": 7, "claim": "Lemma 2 no poles, contradiction", "kind": "analytic", "status": "PROOF-READ"},
+    {"n": 8, "claim": "Theorem 3 fibre dimension >= 6 - r", "kind": "dimension", "status": "PROOF-READ"},
+    {"n": 9, "claim": "constant gaps imply a height line", "kind": "algebraic", "status": "PROOF-READ"},
+    {"n": 10, "claim": "induction via Lemma 2 on noncontact gaps", "kind": "analytic", "status": "PROOF-READ"},
+    {"n": 11, "claim": "Theorem 4 with a fixed O_0", "kind": "analytic", "status": "PROOF-READ"},
+    {"n": 12, "claim": "lifting/scope paragraph", "kind": "commentary", "status": "UNCHECKED", "note": "not used; representability holds directly by Kempe + surjectivity of the quotient map"}
+  ],
+  "gaps": [],
+  "exact_replays": [
+    "eq. (1) symbolically for the cubic (A.2)",
+    "Hess C(kappa) = (3.10), rank 4, H_kappa kappa = 0, grad C(kappa) = 0",
+    "ker H_kappa = span{n_ij} (dim 10)",
+    "single-entry profile (Pc)_sigma = sum a_{i,sigma(i)} and Phi = sum a_ij O_ij^2 on 20 exact cases",
+    "(O_ij^2) doubly stochastic on 20 exact O; rank P = 14; P kappa = 1"
+  ],
+  "numeric_tests": ["sum a_ij O_ij^2 >= 0 when all permutation sums >= 0: 200 samples, seed 7, min 0.56"],
+  "unchecked": ["external theorems named in the lifting paragraph (not used)"]
+}

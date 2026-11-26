@@ -1,0 +1,56 @@
+PASS T equals Table 5 seven-set AUX7[12]
+PASS generators(T) == source list : [2, 3, 5, 11, 12, 15, 26]
+PASS rank of P rows at T is 7
+PASS exclusive rows form I7
+PASS first six generators minor, f26 non-minor
+PASS source S3: group elements realise all 6 permutations of the (main, opposite auxiliary) pairs : [(0, 1, 2), (0, 2, 1), (1, 0, 2), (1, 2, 0), (2, 0, 1), (2, 1, 0)]
+PASS C(w(v,z)) is affine in z
+PASS low-pair (2): F = N + R v + Q z with N = abc+tu+t+u+1, R = t+u+1
+PASS uniform (2): C = abc+tu+tv+uv+t+u+v+1
+PASS (2) Q = ab+ac+bc-au-tc-vb+tu+tv+uv+t+u+v+1
+PASS JSON G has 385 terms : 385
+PASS G homogeneous of degree 9
+PASS G irreducible over Q : content 1
+INFO G degrees (a,t,u,v,b,c,d) : (2, 2, 2, 2, 2, 2, 9)
+INFO det H(w(v,z)) : terms 7646, z-degree 3, 2.5s
+PASS low-pair (3) / uniform (3): Q^4 det H(w(v,-(N+Rv)/Q)) = -4 Q^2 G^2 (own Hessian, d=1)
+PASS (3) G quadratic in v
+PASS F0, F1 have 77 terms each and are v-free
+PASS (5) beta^2 - 4 alpha gamma = F+ F-
+PASS F0 irreducible octic
+PASS F1 irreducible octic
+PASS F0 != +-F1 (so F+F- is not a square up to sign)
+PASS (4) principal block on I = {0..13}\{0,5} is height-independent
+PASS (4) det H_I = (v+b+1)^2 P (P from certificate, 675 terms)
+PASS (4) P quadratic in v
+PASS (5) U0^2 - U1 (beta p0 - p1 gamma) = W^2
+PASS W, H+- are v-free (so coprime to the irreducible, v-dependent G)
+PASS (6) S_+1 = F_1 H^2
+PASS (6) P S_+1 = (U +1 W)^2 mod G
+PASS (6) S_-1 = F_0 H^2
+PASS (6) P S_-1 = (U -1 W)^2 mod G
+PASS bordered 13-minor on I+{0}: z-degree 2; Q^2 * minor(z=-(N+Rv)/Q) divisible by G
+PASS bordered 13-minor on I+{5}: z-degree 2; Q^2 * minor(z=-(N+Rv)/Q) divisible by G
+INFO rank argument : second derivative of -4G^2/Q^2 at a simple root of G is -8 G_v^2/Q^2 (PROOF-READ)
+PASS table polynomials are v-free
+PASS (8) a+c<1 b<1 gamma has sign +1 with a strict monomial (A>0) : terms 747
+PASS (8) a+c<1 b<1 Rbeta-Nalpha has sign +1 with a strict monomial (A>0) : terms 2843
+PASS (8) a+c<1 b<1 RF0-Nalpha has sign -1 with a strict monomial (A>0) : terms 2844
+PASS (8) a+c<1 b<1 RF1-Nalpha has sign -1 with a strict monomial (A>0) : terms 2832
+PASS (8) a+c<1 b=1 gamma has sign +1 with a strict monomial (A>0) : terms 132
+PASS (8) a+c<1 b=1 Rbeta-Nalpha has sign +1 with a strict monomial (A>0) : terms 359
+PASS (8) a+c<1 b=1 RF0-Nalpha has sign -1 with a strict monomial (A>0) : terms 360
+PASS (8) a+c<1 b=1 RF1-Nalpha has sign -1 with a strict monomial (A>0) : terms 357
+PASS (8) a+c=1 b<1 gamma has sign +1 with a strict monomial (A>0) : terms 180
+PASS (8) a+c=1 b<1 Rbeta-Nalpha has sign +1 with a strict monomial (A>0) : terms 503
+PASS (8) a+c=1 b<1 RF0-Nalpha has sign -1 with a strict monomial (A>0) : terms 504
+PASS (8) a+c=1 b<1 RF1-Nalpha has sign -1 with a strict monomial (A>0) : terms 492
+PASS (8) a+c=1 b=1 gamma has sign +1 with a strict monomial (A>0) : terms 42
+PASS (8) a+c=1 b=1 Rbeta-Nalpha has sign +1 with a strict monomial (A>0) : terms 86
+PASS (8) a+c=1 b=1 RF0-Nalpha has sign -1 with a strict monomial (A>0) : terms 87
+PASS (8) a+c=1 b=1 RF1-Nalpha has sign -1 with a strict monomial (A>0) : terms 84
+NUMERIC stratum point 0: contact [0, 1, 2, 7, 9, 16, 23], coefficients(d=1) [np.float64(7.8847), np.float64(0.2256), np.float64(35.29), np.float64(7.9526), np.float64(875.6965), np.float64(0.6867), np.float64(1.0)], |Pc-g| 4.9e-15, G/sum|terms| = -6.17e-15, min Phi (20 BFGS) = 4.7400e-15
+NUMERIC stratum point 1: contact [0, 1, 2, 7, 9, 16, 23], coefficients(d=1) [np.float64(45.419), np.float64(1.8336), np.float64(647.2372), np.float64(48.7073), np.float64(3471.4073), np.float64(8.273), np.float64(1.0)], |Pc-g| 3.6e-15, G/sum|terms| = -4.57e-14, min Phi (20 BFGS) = 1.7972e-12
+NUMERIC stratum point 2: contact [0, 1, 2, 7, 9, 16, 23], coefficients(d=1) [np.float64(2443.1285), np.float64(1043.6998), np.float64(56.9714), np.float64(0.8604), np.float64(5.2913), np.float64(55.5825), np.float64(1.0)], |Pc-g| 1.8e-15, G/sum|terms| = -4.74e-15, min Phi (20 BFGS) = 1.5917e-13
+SUMMARY: 0 EXACT failures []
+exit 0

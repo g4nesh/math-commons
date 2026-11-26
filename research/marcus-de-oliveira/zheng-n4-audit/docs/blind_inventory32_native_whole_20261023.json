@@ -1,0 +1,201 @@
+{
+ "doc_id": "blind_inventory32_native_whole_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_inventory32_native_whole_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "main (Theorem 1)",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     3,
+     6,
+     7,
+     11,
+     12
+    ]
+   ],
+   "paper_cases": [
+    33
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with Pc(x)>=0 and zero on T={0,3,6,7,11,12} (=T_33 literally), Phi_{c(x)}(O)>=0 for all O in SO(4); extra contacts, collisions and nongeneric walls included (real Z and repeated eigenvalues via Thm C.1, a_i+b_j=0 via Thm B.1)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_19 / T_22",
+   "used_for": "added contact 1",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_7 / T_29 / T_36",
+   "used_for": "added contacts 2, 5, 9, 13",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_4 / T_31",
+   "used_for": "added contacts 10, 14, 18, 21",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_34 / T_21 / T_22",
+   "used_for": "added contact 17",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_40",
+   "used_for": "added contact 20",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "T^(7)_22",
+   "contact_set": [
+    0,
+    2,
+    3,
+    7,
+    11,
+    12,
+    23
+   ],
+   "used_for": "added contacts 16, 23 (orbit)",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix C Thm C.1",
+   "used_for": "Z real; repeated eigenvalues"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix B Thm B.1",
+   "used_for": "cross-spectrum common point"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_bounded_bad_harmonic_lemma (paper Lemma 3.5)",
+   "used_for": "generic curve",
+   "match_checked": true
+  },
+  {
+   "kind": "external",
+   "ref": "paper Theorem 1.2",
+   "used_for": "unitary restatement"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "T = T_33",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "kernel, gaps (1), identities (2)",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "nonnegative representation on 11-list",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 4,
+   "claim": "bound via g8,g19",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "added contacts",
+   "status": "CITED"
+  },
+  {
+   "n": 6,
+   "claim": "E,rE,sE,uE",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "inverse (7) both directions",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "T0,De nonzero, B finite",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 9,
+   "claim": "H values, C41 (41 terms, (2,2)), H8, H19",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "P75 (75 terms, (4,2)) and divisibility by C41",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "discriminant witness",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "P75(Z,0), Z^4 coefficient, derivatives (11),(12)",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "atlas covers all punctures",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 14,
+   "claim": "irreducibility, H8 nonconstant",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 15,
+   "claim": "harmonic lemma",
+   "status": "CITED"
+  },
+  {
+   "n": 16,
+   "claim": "constant stratum (13), H22==0",
+   "status": "EXACT"
+  },
+  {
+   "n": 17,
+   "claim": "Rouche restoration",
+   "status": "PROOF-READ",
+   "note": "density argument supplied by auditor"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators, gap formulas, three identities, nonminor values at 8, 19",
+  "group resolution of all 13 added contacts (all stage 1 inputs; T_33 is stage 5)",
+  "chart, inverse (7) both directions, b(V+1)T0=N0+VN1",
+  "H values; C41 41 terms bidegree (2,2); H8; H19",
+  "P75 75 terms bidegree (4,2); exact divisibility by C41",
+  "P75(Z,0) equals (10) exactly; Z^4 coefficient; (11); (12)",
+  "disc witness at (2,3,5,7); Groebner basis of coefficient ideal; H22==0 on (13)"
+ ],
+ "numeric_tests": [
+  "library stratum sampler seeds 200-205 (margin 0.01): no point found",
+  "own chart sampler (Nelder-Mead in the document's chart), 30 s: no admissible point found; main inequality has no numeric evidence from this audit"
+ ],
+ "unchecked": [
+  "numeric falsification (no samples obtained)",
+  "cited cases and common lemmas"
+ ]
+}

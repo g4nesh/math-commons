@@ -1,0 +1,157 @@
+# generalization_n5.py output, parts run separately (each through the job limiter), in this order: alg, burnside, facets, uo1, uo2, uo3, uo4
+
+### part alg.txt
+==============================================================================
+PART alg: matching cone X_n, Catalan ranks, P_n, kappa, entry subspace, dim X_n
+==============================================================================
+n=3: Catalan C_n=5; #noncrossing=5 rank=5; #bipartite p_sigma=6 rank=5; rank(NC u bip)=5; all 15 perfect matchings rank=5  [EXACT, 0.0s]
+      indicator functions chi_IJ on S_3: rank(all k)=5, rank(k<=2)=5, rank(entry k<=1)=5 (expected (n-1)^2+1=5)  [EXACT]
+n=4: Catalan C_n=14; #noncrossing=14 rank=14; #bipartite p_sigma=24 rank=14; rank(NC u bip)=14; all 105 perfect matchings rank=14  [EXACT, 0.0s]
+      indicator functions chi_IJ on S_4: rank(all k)=14, rank(k<=2)=14, rank(entry k<=1)=10 (expected (n-1)^2+1=10)  [EXACT]
+n=5: Catalan C_n=42; #noncrossing=42 rank=42; #bipartite p_sigma=120 rank=42; rank(NC u bip)=42; all 945 perfect matchings rank=42  [EXACT, 0.0s]
+      indicator functions chi_IJ on S_5: rank(all k)=42, rank(k<=2)=42, rank(entry k<=1)=17 (expected (n-1)^2+1=17)  [EXACT]
+n=6: Catalan C_n=132; #noncrossing=132 rank=132; #bipartite p_sigma=720 rank=132; rank(NC u bip)=132  [EXACT, 0.2s]
+------------------------------------------------------------------------------
+n=4: P_n is an integer 24x14 matrix, entries in [0, 1, 2], rank 14  [EXACT, 0.0s]
+      rank[columns of P ; all chi_IJ] = 14  (= rank P means im P = span of the chi_IJ)  [EXACT]
+      kappa (P kappa = 1) in noncrossing coordinates: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1']  [EXACT]
+      dim X_4: Jacobian rank at integer point [(4, 8), (-3, 7), (-4, 2), (-6, 2), (3, 4), (-6, 7), (-4, 7), (-2, 4)] is 6; the 10 invariance fields are independent (rank 10) and J*K = 0: True; so generic rank = 16 - 10 = 6 = 2n-2  [EXACT]
+      quadrics through X_4: 105 quadratic monomials in 14 coordinates; evaluation rank 91 at 165 random points => dim I_2 = 14, dim R_2 = 91; 0 failures at 40 fresh points  [EXACT mod p=2147483647, randomized; 0.0s]
+      K = common kernel of grad f(kappa), f in I_2: rank of gradients 4, dim K = 10; dim E_4 = 10; rank[K;E] = 10 -> K = E; kappa in K: True  [EXACT mod p]
+      tangent test on X_4 (mod p, random points):
+        random point: dim T_xX = 6, kappa in T_xX: False, x in K: False, x in E: False
+        random point: dim T_xX = 6, kappa in T_xX: False, x in K: False, x in E: False
+        random point: dim T_xX = 6, kappa in T_xX: False, x in K: False, x in E: False
+        a_2=..=a_n (n-1 equal): dim T_xX = 6, kappa in T_xX: True, x in K: True, x in E: True
+------------------------------------------------------------------------------
+n=5: P_n is an integer 120x42 matrix, entries in [0, 1, 2, 3], rank 42  [EXACT, 0.0s]
+      rank[columns of P ; all chi_IJ] = 42  (= rank P means im P = span of the chi_IJ)  [EXACT]
+      kappa (P kappa = 1) in noncrossing coordinates: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1']  [EXACT]
+      dim X_5: Jacobian rank at integer point [(-4, 6), (9, 9), (4, 1), (3, 5), (0, 4), (-4, 2), (3, 8), (-7, 5), (1, 6), (-5, 3)] is 8; the 12 invariance fields are independent (rank 12) and J*K = 0: True; so generic rank = 20 - 12 = 8 = 2n-2  [EXACT]
+      quadrics through X_5: 903 quadratic monomials in 42 coordinates; evaluation rank 603 at 963 random points => dim I_2 = 300, dim R_2 = 603; 0 failures at 40 fresh points  [EXACT mod p=2147483647, randomized; 1.2s]
+      K = common kernel of grad f(kappa), f in I_2: rank of gradients 25, dim K = 17; dim E_5 = 17; rank[K;E] = 17 -> K = E; kappa in K: True  [EXACT mod p]
+      tangent test on X_5 (mod p, random points):
+        random point: dim T_xX = 8, kappa in T_xX: False, x in K: False, x in E: False
+        random point: dim T_xX = 8, kappa in T_xX: False, x in K: False, x in E: False
+        random point: dim T_xX = 8, kappa in T_xX: False, x in K: False, x in E: False
+        a_2=..=a_n (n-1 equal): dim T_xX = 8, kappa in T_xX: True, x in K: True, x in E: True
+
+### part burnside.txt
+==============================================================================
+PART burnside: orbits of k-subsets of S_n under G_n = (S_n x S_n) x| C_2  [EXACT]
+==============================================================================
+n=4: |G| = 1152 (faithful on S_4); 0.0s
+   k= 1: C(24,1) =                   24   orbits = 1
+   k= 2: C(24,2) =                  276   orbits = 4
+   k= 3: C(24,3) =                 2024   orbits = 10
+   k= 4: C(24,4) =                10626   orbits = 34
+   k= 5: C(24,5) =                42504   orbits = 80
+   k= 6: C(24,6) =               134596   orbits = 214
+   k= 7: C(24,7) =               346104   orbits = 447
+   k= 8: C(24,8) =               735471   orbits = 891
+   k= 9: C(24,9) =              1307504   orbits = 1451
+   k=10: C(24,10) =              1961256   orbits = 2143
+   k=11: C(24,11) =              2496144   orbits = 2627
+   k=12: C(24,12) =              2704156   orbits = 2879
+n=5: |G| = 28800 (faithful on S_5); 2.9s
+   k= 1: C(120,1) =                  120   orbits = 1
+   k= 2: C(120,2) =                 7140   orbits = 6
+   k= 3: C(120,3) =               280840   orbits = 36
+   k= 4: C(120,4) =              8214570   orbits = 494
+   k= 5: C(120,5) =            190578024   orbits = 7762
+   k= 6: C(120,6) =           3652745460   orbits = 133816
+   k= 7: C(120,7) =          59487568920   orbits = 2099444
+   k= 8: C(120,8) =         840261910995   orbits = 29342815
+   k= 9: C(120,9) =       10456592670160   orbits = 363781693
+   k=10: C(120,10) =      116068178638776   orbits = 4033092202
+   k=11: C(120,11) =     1160681786387760   orbits = 40312459951
+   k=12: C(120,12) =    10542859559688820   orbits = 366111766736
+
+### part facets.txt
+==============================================================================
+PART facets: dimension of Q_n, minor facets, facet discovery by random rays
+==============================================================================
+n=4: 24 vertices, linear rank 14 => dim Q_4 = 13  [EXACT]
+      distinct minor vectors n_IJ (|I|=1,2, complements identified): 34; facets: 34; not facets: 0  [EXACT]
+      random-ray facet discovery: 400 rays, 400 nondegenerate exits, 28 distinct facets in 2 G-classes (lower bounds)  [LP NUMERIC proposes, facet property EXACT; 0.9s]
+        class: |zero set| = 20, value profile [(0, 20), (1, 4)], minor type: True, distinct facets hit: 18
+        class: |zero set| = 18, value profile [(0, 18), (1, 6)], minor type: True, distinct facets hit: 10
+n=5: 120 vertices, linear rank 42 => dim Q_5 = 41  [EXACT]
+      distinct minor vectors n_IJ (|I|=1,2, complements identified): 125; facets: 125; not facets: 0  [EXACT]
+      random-ray facet discovery: 600 rays, 600 nondegenerate exits, 53 distinct facets in 1 G-classes (lower bounds)  [LP NUMERIC proposes, facet property EXACT; 15.3s]
+        class: |zero set| = 108, value profile [(0, 108), (1, 12)], minor type: True, distinct facets hit: 53
+
+### part uo1.txt
+==============================================================================
+PART uo1: is r_n(U) in conv r_n(O(n))?  support functions and membership LP
+==============================================================================
+n=3: numerical rank of [1, r_n(.)] over 300 Haar samples: U(3) 5, SO(3) 5, joint 5; Catalan 5  [NUMERIC, tol 1e-9 relative]
+n=4: numerical rank of [1, r_n(.)] over 300 Haar samples: U(4) 14, SO(4) 14, joint 14; Catalan 14  [NUMERIC, tol 1e-9 relative]
+n=5: numerical rank of [1, r_n(.)] over 300 Haar samples: U(5) 42, SO(5) 42, joint 42; Catalan 42  [NUMERIC, tol 1e-9 relative]
+n=5: folding k>=3 onto complements and Leibniz sum = sum w det(O[I,J])^2 on SO(5): max error 2.6e-15 over 20 random functionals  [NUMERIC]
+n=5: 84-dim space of k<=2 functionals vanishing at all 120 permutation matrices; max |value| at random U(5): 2.9e-15  [NUMERIC]
+-- controls n = 3, 4
+   n=3 random functional #0: min over perms = -2.8671299884; min SO(3) = -2.8671299884; min U(3) = -2.8671299884; diff U-O = 3.55e-15 -> equal within 1e-7  [NUMERIC, 20/20 starts, seed 900, 1s]
+   n=3 random functional #1: min over perms = -0.9437297927; min SO(3) = -0.9437297927; min U(3) = -0.9437297927; diff U-O = 1.55e-15 -> equal within 1e-7  [NUMERIC, 20/20 starts, seed 901, 1s]
+   n=4 h_(id,-1): min over perms = 0.0000000000; min SO(4) = -0.0674422489; min U(4) = -0.0674422489; diff U-O = 6.94e-16 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 949, 2s]
+   n=4 h_(id,+1): min over perms = 0.0000000000; min SO(4) = -0.0674422489; min U(4) = -0.0674422489; diff U-O = 2.78e-17 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 951, 2s]
+   n=4 h_(id,-1): value vector equals moc4lib values(h_vec(id,-1)): True
+-- n = 5 test functionals
+   E1 h_(id,-1) on block rows1-4 x cols1-4 + 0.5(1 - r_55): values x2 profile [(0, 17), (1, 43), (2, 37), (3, 17), (4, 6)]; zero set 17 vertices spanning a face of dimension 16 of Q_5 (facet iff 40)  [EXACT]
+   E1 h_(id,-1) on block rows1-4 x cols1-4 + 0.5(1 - r_55): min over perms = 0.0000000000; min SO(5) = -0.0674422489; min U(5) = -0.0674422489; diff U-O = 1.21e-15 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 1000, 4s]
+   E1' h_(id,+1) on block rows1-4 x cols1-4 + 0.5(1 - r_55): values x2 profile [(0, 17), (1, 43), (2, 37), (3, 17), (4, 6)]; zero set 17 vertices spanning a face of dimension 16 of Q_5 (facet iff 40)  [EXACT]
+   E1' h_(id,+1) on block rows1-4 x cols1-4 + 0.5(1 - r_55): min over perms = 0.0000000000; min SO(5) = -0.0674422489; min U(5) = -0.0674422489; diff U-O = 1.58e-15 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 1001, 4s]
+   E1'' h_(2143,-1) on block rows1-4 x cols1-4 + 0.5(1 - r_55): values x2 profile [(0, 17), (1, 43), (2, 37), (3, 17), (4, 6)]; zero set 17 vertices spanning a face of dimension 16 of Q_5 (facet iff 40)  [EXACT]
+   E1'' h_(2143,-1) on block rows1-4 x cols1-4 + 0.5(1 - r_55): min over perms = 0.0000000000; min SO(5) = -0.0674422489; min U(5) = -0.0674422489; diff U-O = 6.66e-16 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 1002, 4s]
+   E2 h_(id,-1) with 5 appended to every I,J + 0.5(1 - r_55): values x2 profile [(0, 22), (1, 57), (2, 37), (3, 3), (4, 1)]; zero set 22 vertices spanning a face of dimension 21 of Q_5 (facet iff 40)  [EXACT]
+   E2 h_(id,-1) with 5 appended to every I,J + 0.5(1 - r_55): min over perms = 0.0000000000; min SO(5) = -0.0674422489; min U(5) = -0.0674422489; diff U-O = 2.11e-15 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 1003, 5s]
+   E3 h_(id,-1) on rows1-4 x cols2-5 + 0.5(1 - r_51): values x2 profile [(0, 17), (1, 43), (2, 37), (3, 17), (4, 6)]; zero set 17 vertices spanning a face of dimension 16 of Q_5 (facet iff 40)  [EXACT]
+   E3 h_(id,-1) on rows1-4 x cols2-5 + 0.5(1 - r_51): min over perms = 0.0000000000; min SO(5) = -0.0674422489; min U(5) = -0.0674422489; diff U-O = -2.19e-15 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 1004, 4s]
+   E4 E1 + E2 + 0(1 - r_55): values x2 profile [(0, 65), (2, 40), (4, 14), (8, 1)]; zero set 65 vertices spanning a face of dimension 40 of Q_5 (facet iff 40)  [EXACT]
+   E4 E1 + E2 + 0(1 - r_55): min over perms = 0.0000000000; min SO(5) = -0.1348844977; min U(5) = -0.1348844977; diff U-O = 2.28e-15 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 1005, 7s]
+   E5 E1 + E3 + 0.5(1 - r_55): values x2 profile [(-1, 1), (0, 7), (1, 26), (2, 27), (3, 34), (4, 18), (5, 7)]; zero set 7 vertices spanning a face of dimension 6 of Q_5 (facet iff 40)  [EXACT]
+   E5 E1 + E3 + 0.5(1 - r_55): min over perms = -0.5000000000; min SO(5) = -0.5000000000; min U(5) = -0.5000000000; diff U-O = 7.33e-15 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 1006, 5s]
+
+### part uo2.txt
+==============================================================================
+PART uo2: is r_n(U) in conv r_n(O(n))?  support functions and membership LP
+==============================================================================
+-- n = 5 positive combinations of G-images of the non-minor facet E4 = E1 + E2
+   facet-image combo #0: min over perms = -0.0000000000; min SO(5) = -0.0000000000; min U(5) = 0.0000000000; diff U-O = 3.86e-15 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 1500, 11s]
+   facet-image combo #1: min over perms = -0.0000000000; min SO(5) = -0.0000000000; min U(5) = -0.0000000000; diff U-O = 2.41e-15 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 1501, 7s]
+   facet-image combo #2: min over perms = -0.0000000000; min SO(5) = -0.0000000000; min U(5) = -0.0000000000; diff U-O = 5.55e-16 -> equal within 1e-7  [NUMERIC, 40/40 starts, seed 1502, 8s]
+   facet-image combo #3: min over perms = -0.0000000000; min SO(5) = -0.0000000000; min U(5) = -0.0000019897; diff U-O = -1.99e-06 -> U BELOW O  [NUMERIC, 40/40 starts, seed 1503, 7s]
+-- n = 5 realizable functionals Re(theta det(D_a + U D_b U*))
+   realizable #0: min over perms = -198.9347098365; min SO(5) = -198.9347098365; min U(5) = -198.9347098365; diff U-O = 3.72e-12 -> equal within 1e-7  [NUMERIC, 30/30 starts, seed 2000, 8s]
+   realizable #1: min over perms = -26.2808268784; min SO(5) = -26.2808268784; min U(5) = -26.2808268784; diff U-O = 2.38e-13 -> equal within 1e-7  [NUMERIC, 30/30 starts, seed 2001, 6s]
+   realizable #2: min over perms = -212.4248367757; min SO(5) = -212.4248367757; min U(5) = -212.4248367757; diff U-O = 3.87e-12 -> equal within 1e-7  [NUMERIC, 30/30 starts, seed 2002, 5s]
+   realizable #3: min over perms = -84.1413958532; min SO(5) = -84.1413958532; min U(5) = -84.1413958532; diff U-O = 2.56e-12 -> equal within 1e-7  [NUMERIC, 30/30 starts, seed 2003, 5s]
+   realizable #4: min over perms = -45.4047841724; min SO(5) = -45.4047841724; min U(5) = -45.4047841724; diff U-O = 1.39e-12 -> equal within 1e-7  [NUMERIC, 30/30 starts, seed 2004, 9s]
+   realizable #5: min over perms = -37.1436472112; min SO(5) = -37.1436472112; min U(5) = -37.1436472112; diff U-O = 8.67e-13 -> equal within 1e-7  [NUMERIC, 30/30 starts, seed 2005, 5s]
+
+### part uo3.txt
+==============================================================================
+PART uo3: is r_n(U) in conv r_n(O(n))?  support functions and membership LP
+==============================================================================
+-- membership of r_n(U) for Haar U in conv r_n(O(n)) (column generation)
+   n=3 Haar U #0: affine coords 4; verdict INSIDE (sample hull contains r(U)) after 0 rounds; last LP margin -0.00e+00; gaps [None]  [NUMERIC, 1s]
+   n=4 Haar U #0: affine coords 13; verdict INSIDE (sample hull contains r(U)) after 0 rounds; last LP margin -0.00e+00; gaps [None]  [NUMERIC, 0s]
+   n=4 Haar U #1: affine coords 13; verdict INSIDE (sample hull contains r(U)) after 0 rounds; last LP margin -0.00e+00; gaps [None]  [NUMERIC, 0s]
+   n=5 Haar U #0: affine coords 41; verdict INSIDE (sample hull contains r(U)) after 0 rounds; last LP margin -0.00e+00; gaps [None]  [NUMERIC, 1s]
+   n=5 Haar U #1: affine coords 41; verdict INSIDE (sample hull contains r(U)) after 2 rounds; last LP margin -0.00e+00; gaps [-0.219390331, -0.105758621, None]  [NUMERIC, 7s]
+   n=5 Haar U #2: affine coords 41; verdict INSIDE (sample hull contains r(U)) after 7 rounds; last LP margin -0.00e+00; gaps [-0.066272347, -0.075513688, -0.058996283, None]  [NUMERIC, 23s]
+
+### part uo4.txt
+combo #3 = sum of c_g * (g . E4) over (g index, c_g) = [(23983, 0.398197), (18721, 0.52058), (6770, 0.236985)]
+   value vector at permutations: min 0, #zeros 21
+   SO(5): 600 Haar multistarts: min = -1.990e-06  [14s]
+   U(5): 120 Haar multistarts: min = -1.989686e-06; value at re-unitarized minimizer -1.989686e-06; ||U*U^H - I|| = 8.6e-16  [13s]
+   |U*| entries (rounded):
+[[0.000e+00 0.000e+00 1.000e+00 0.000e+00 0.000e+00]
+ [9.801e-01 9.000e-04 0.000e+00 1.927e-01 4.830e-02]
+ [2.890e-02 9.855e-01 0.000e+00 1.568e-01 5.810e-02]
+ [4.750e-02 5.880e-02 0.000e+00 8.800e-03 9.971e-01]
+ [1.908e-01 1.592e-01 0.000e+00 9.686e-01 8.800e-03]]
+   distance of |U*| to nearest permutation pattern: 0.371
+   SO(5) local searches started from projections of U*: min = -1.990e-06
+   verdict: min_U - min_O <= 1.596e-13  [NUMERIC]

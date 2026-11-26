@@ -1,0 +1,126 @@
+{
+ "doc_id": "independent_moc4_six_contact_reduction_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_six_contact_reduction_20261022.pdf",
+ "pages": 8,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "lem:curve",
+   "page": 2,
+   "restatement": "Bounded-curve principle: on an irreducible affine curve with sum Re f_j = 1 and L bounded, L>=0 on the boundary strata implies L>=0 where all g_j>0."
+  },
+  {
+   "label": "lem:safe",
+   "page": 3,
+   "restatement": "If x + C kappa lies in X then Re Phi_O(x) >= min_sigma Re(Px)_sigma for all O in O(4)."
+  },
+  {
+   "label": "thm:six",
+   "page": 4,
+   "restatement": "For fixed O: the support inequality for all x in X with >=6 contacts implies it for all x in X (paper Thm 3.6)."
+  },
+  {
+   "label": "prop:inventory",
+   "page": 5,
+   "restatement": "214 orbits, 90 with a non-minor generator; 113 exact six-vertex faces; distribution 51/35/3/1; 9 orbits contain an image of {2,7,19,20}."
+  },
+  {
+   "label": "prop:one-safe",
+   "page": 6,
+   "paper_cases": [
+    1
+   ],
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     3,
+     6,
+     7
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "(*) for T_1, all spectra (repeated: one-circle thm; zero contact product: entry face), all O."
+  },
+  {
+   "label": "prop:T1-safe",
+   "page": 7,
+   "paper_cases": [
+    2
+   ],
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     3,
+     6,
+     8
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "(*) for T_2: g7=g9 and the gap is a nonnegative combination of the minor generators."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "paper Sect. 3 (M1): realization by finite spectra, irreducibility, dim X = 6",
+   "status": "CITED (rank P and dim>=6 EXACT via lib)"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "(M2)-(M4): X in Sing C, eq.(2), ker H_kappa = span e_ij, Phi_O properties",
+   "status": "EXACT"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper Prop 1.4(i) / Thm C.1 (one-circle)",
+   "status": "CITED"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Thm 1.2 (two-orthogonal)",
+   "status": "CITED, unitary forms only"
+  },
+  {
+   "kind": "external",
+   "ref": "Birkhoff; subharmonic removability; Mumford curve lemma",
+   "status": "standard"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Prop 4.1 / Lemma 4.2 facet completeness",
+   "status": "EXACT (lib)"
+  }
+ ],
+ "steps": "see the .md step table (L2.1-P13.2)",
+ "gaps": [
+  {
+   "location": "p.4, existence of curve C",
+   "claim": "generic hyperplane sections give a curve with a nonconstant gap",
+   "why": "only sketched",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "curve-connecting lemma (supplied by auditor)"
+  }
+ ],
+ "exact_replays": [
+  "contact sets = paper T_1, T_2",
+  "eq.(2), rank H_kappa = 4, H e_ij = 0",
+  "gap-form kernel = C kappa",
+  "Prop 8 counts 214/90/113/51-35-3-1/9",
+  "entry faces: 15 minor generators",
+  "Prop 10: 6 factorizations, 3 ratios, 2 imaginary numerators, exceptional D01, D02",
+  "Prop 13: D79 D02 = D68 D13, J, f17+f9=f4+f10+f16, ell values, coefficient transfer"
+ ],
+ "numeric_tests": [
+  "T_1 stratum seeds 0-3 (margin 1e-2): every point with exactly T_1 has a_2=a_3 (repeated spectrum), consistent with Prop 10",
+  "T_2 stratum seeds 0-6: nondegenerate, |g7-g9|<=2e-13, min Phi >= 1e-16"
+ ],
+ "unchecked": [
+  "supplement checker scripts (not run by rule)",
+  "the 6846-simplex certificate of Remark 9 (replaced by lib certificate)"
+ ]
+}
