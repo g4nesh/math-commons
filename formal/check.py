@@ -104,6 +104,13 @@ theorems = {
         'scaleSum', 'sumScale', 'weightedGrouping', 'weightedSubsetExpansion',
         'productOnes', 'emptySpectralMonomial', 'fullSpectralMonomial',
         'forestWeightedSubsetExpansion')},
+    'ForestMatrixSumExpansion.lean': {'MathCommons.ForestMatrixSumExpansion.' + n for n in (
+        'filterWithout', 'diagonalRowMinor', 'singleDiagonalUpdate', 'partialDiagonalNil',
+        'partialDiagonalCons', 'remainingInsert', 'diagonalWeightExcluded', 'diagonalWeightIncluded',
+        'partialDiagonalExpansion', 'diagonalSumExpansion', 'complementMember', 'complementTwice',
+        'complementsPerm', 'sumPerm', 'retainedDiagonalExpansion', 'spectralPrincipalExpansion',
+        'matrixMulDiagonal', 'conjugatedDiagonalEntry', 'diagonalDeterminant', 'emptySpectralDeterminant',
+        'singletonSpectralDeterminant')},
 }
 theorems['OrthogonalCube.lean'] = {'MathCommons.OrthogonalCube.' + n for n in (
     'squareNonnegative', 'quadraticNonnegative', 'lagrangeIdentity',
@@ -154,5 +161,12 @@ subprocess.run([sys.executable,
 # published statement inventory and transitive source hashes as well.
 subprocess.run([sys.executable,
                 str(root.parent / 'research/marcus-de-oliveira/forest-spectral-expansion/check.py'),
+                lean], check=True,
+               env={**os.environ, 'ELAN_TOOLCHAIN': f'leanprover/lean4:v{version}'})
+
+# Pin the actual diagonal-update principal-minor expansion and its transitive
+# sources, separately from the declaration inventory.
+subprocess.run([sys.executable,
+                str(root.parent / 'research/marcus-de-oliveira/forest-matrix-sum-expansion/check.py'),
                 lean], check=True,
                env={**os.environ, 'ELAN_TOOLCHAIN': f'leanprover/lean4:v{version}'})

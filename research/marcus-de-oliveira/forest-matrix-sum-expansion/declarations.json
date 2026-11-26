@@ -1,0 +1,27 @@
+{
+  "namespace": "MathCommons.ForestMatrixSumExpansion",
+  "count": 21,
+  "declarations": [
+    "filterWithout",
+    "diagonalRowMinor",
+    "singleDiagonalUpdate",
+    "partialDiagonalNil",
+    "partialDiagonalCons",
+    "remainingInsert",
+    "diagonalWeightExcluded",
+    "diagonalWeightIncluded",
+    "partialDiagonalExpansion",
+    "diagonalSumExpansion",
+    "complementMember",
+    "complementTwice",
+    "complementsPerm",
+    "sumPerm",
+    "retainedDiagonalExpansion",
+    "spectralPrincipalExpansion",
+    "matrixMulDiagonal",
+    "conjugatedDiagonalEntry",
+    "diagonalDeterminant",
+    "emptySpectralDeterminant",
+    "singletonSpectralDeterminant"
+  ]
+}
