@@ -1,0 +1,61 @@
+{
+  "physical_coarse_fixture": "four exact complex Householder reflections",
+  "normal_indices": [
+    9,
+    26
+  ],
+  "normals": [
+    [
+      0,
+      1,
+      1,
+      0,
+      -1,
+      -1
+    ],
+    [
+      2,
+      2,
+      -2,
+      -1,
+      -1,
+      1
+    ]
+  ],
+  "six_repair_rows": [
+    [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      -2,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "sphere_dual_upper_bound": "-11955637/4356000000",
+  "two_direction_dual_upper_bound": "-48032426235671/17964300816000000",
+  "common_parent_for_these_two_directions": false,
+  "separate_positive_laws_for_both": true,
+  "individual_mass_floors": [
+    "484873/1306800000",
+    "484873/1306800000"
+  ],
+  "coarse_entrywise_unitary_radius": "1/100000000",
+  "obstruction_lipschitz_constant": 10752,
+  "individual_lipschitz_constant": 1344,
+  "nearby_individual_floor": "484873/2613600000",
+  "polynomial_coefficients_checked": 384,
+  "squared_minors_checked": 1848,
+  "zero_entries": 0,
+  "nonreal_entries": 36,
+  "discovery_cases_screened": 4,
+  "discovery_seed": 202611260623
+}

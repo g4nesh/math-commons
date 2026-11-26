@@ -1,3 +1,18 @@
-n=3: largest errors at the maximisers: N Hermitian 2.3e-07 ; (A+beta)w = 2 l(z0) v 3.8e-08 ; l(D1) = l(z0) v*(A+beta)^-1 v 9.2e-16 ; compression identities 6.7e-16
-n=4: largest errors at the maximisers: N Hermitian 8.5e-07 ; (A+beta)w = 2 l(z0) v 1.2e-07 ; l(D1) = l(z0) v*(A+beta)^-1 v 4.4e-15 ; compression identities 1.0e-15
-n=5: largest errors at the maximisers: N Hermitian 1.0e-05 ; (A+beta)w = 2 l(z0) v 2.6e-07 ; l(D1) = l(z0) v*(A+beta)^-1 v 1.4e-14 ; compression identities 1.3e-15
+n=3, A + beta definite: 159 critical points found, 16 not of permutation type
+   largest errors there: (i) N Hermitian 4.1e-15 ; (ii) 2.5e-15 ; (iii) 7.7e-16 ; cofactor identity 6.0e-16
+   (iv) largest distance of (p/q) D1 from K: 0.0e+00 ; largest l(z0) - max_K l: -4.4e-02 (relative)
+n=3, A + beta indefinite: 159 critical points found, 13 not of permutation type
+   largest errors there: (i) N Hermitian 2.6e-16 ; (ii) 3.7e-16 ; (iii) 6.7e-17 ; cofactor identity 5.2e-16
+   (p/q) D1 lies outside K at 13 of these points (Lemma I does not apply here; this is why Lemma M is needed)
+n=4, A + beta definite: 79 critical points found, 26 not of permutation type
+   largest errors there: (i) N Hermitian 5.5e-15 ; (ii) 6.2e-15 ; (iii) 1.0e-15 ; cofactor identity 4.9e-16
+   (iv) largest distance of (p/q) D1 from K: 0.0e+00 ; largest l(z0) - max_K l: -3.3e-01 (relative)
+n=4, A + beta indefinite: 82 critical points found, 25 not of permutation type
+   largest errors there: (i) N Hermitian 1.4e-15 ; (ii) 1.7e-15 ; (iii) 3.4e-17 ; cofactor identity 1.9e-15
+   (p/q) D1 lies outside K at 0 of these points (Lemma I does not apply here; this is why Lemma M is needed)
+n=5, A + beta definite: 20 critical points found, 1 not of permutation type
+   largest errors there: (i) N Hermitian 1.3e-16 ; (ii) 2.1e-16 ; (iii) 4.3e-17 ; cofactor identity 1.5e-16
+   (iv) largest distance of (p/q) D1 from K: 0.0e+00 ; largest l(z0) - max_K l: -3.4e-01 (relative)
+n=5, A + beta indefinite: 19 critical points found, 9 not of permutation type
+   largest errors there: (i) N Hermitian 4.6e-16 ; (ii) 4.8e-16 ; (iii) 1.3e-16 ; cofactor identity 1.0e-15
+   (p/q) D1 lies outside K at 5 of these points (Lemma I does not apply here; this is why Lemma M is needed)

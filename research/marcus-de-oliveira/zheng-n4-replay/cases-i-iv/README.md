@@ -21,13 +21,19 @@
 | T₁₀ = {0,1,3,5,7,8} | III | confirmed modulo citations | [T10.md](T10.md) | [`replay_T10.py`](replay_T10.py): 96 exact checks | SOC and four-coefficient inequalities, orbit members and coefficient conditions checked exactly. The cited three-plus-three circle theorem is not needed: for real v the whole gap vector is zero (exact). |
 | T₁₁ = {0,1,3,5,6,8} | III | confirmed modulo citations | [T11.md](T11.md) | [`replay_T11.py`](replay_T11.py): 92 exact checks | The documents use {0,1,2,4,7,9}; exactly one group element maps it to T₁₁, and the transfer is checked for all 82 vectors. Relies on both branch documents and on case T₇ at one boundary. The audit's first pass recorded a presentation gap in the B-branch (reality of four chart parameters); the replay closes it exactly. Theorem C.1 is cited for real v. |
 | T₁₅ = {1,2,3,4,6,7} | III | confirmed modulo citations | [T15.md](T15.md) | [`replay_T15.py`](replay_T15.py): 52 exact checks | SOC inequality. Here the three-plus-three circle theorem is genuinely needed for real v. |
+| T₇ = {0,1,2,4,7,8} | II | confirmed modulo citations | [T7.md](T7.md) | [`replay_T7.py`](replay_T7.py): 67 exact checks | The document cites Theorem C.1 for real v. The replay proves that the citation is not needed: with eight distinct labels and real v the gap vector is zero. |
+| T₁₈ = {0,1,3,6,7,8} | II | confirmed modulo citations | [T18.md](T18.md) | [`replay_T18.py`](replay_T18.py): 59 exact checks | The cited three-plus-three circle theorem is not needed: for real v all labels are real and every gap vanishes. |
+| T₁₉ = {0,1,4,6,7,8} | II | confirmed modulo citations | [T19.md](T19.md) | [`replay_T19.py`](replay_T19.py): 69 exact checks | As T₁₈. In addition the main layer is empty: with eight distinct labels and nonreal v a gap is negative in each of the document's two regions, so the document's positivity identities are correct but apply to no point. |
+| T₂₀ = {0,1,5,6,7,8} | II | confirmed modulo citations | [T20.md](T20.md) | [`replay_T20.py`](replay_T20.py): 77 exact checks | As T₁₈; the interlacing step is confirmed by a root-free exact certificate. |
 
-Cases in progress: T₇, T₁₈–T₂₀.
+All sixteen cases of the request are replayed. **No gap was found in any of them.** Every verdict is "confirmed modulo citations".
 
 ## Citations that the cases share
 
 Every report lists its citations. Across the cases replayed so far they are:
-- **Coincident eigenvalues** (a repeated eigenvalue in one spectrum, or aᵢ + b_j = 0): the paper's Appendix B and Theorem C.1. Not replayed here. For T₁ and T₂ the report gives an elementary replacement. Corollaries P4′ and P4″ of [`../../unitary-factorization/README.md`](../../unitary-factorization/README.md) prove the repeated-eigenvalue case by another route.
+- **Coincident eigenvalues** (a repeated eigenvalue in one spectrum, or aᵢ + b_j = 0): the paper's Appendix B (Theorem B.1, Lemma B.2) and Theorem C.1. Not replayed here. For T₁ and T₂ the report gives an elementary replacement. Corollaries P4′ and P4″ of [`../../unitary-factorization/README.md`](../../unitary-factorization/README.md) prove the repeated-eigenvalue case by another route.
+- **Theorem C.1 beyond coincidences.** Only T₁₁ uses it (for real v, on a set of real codimension two). T₇ cites it but does not need it. This differs from the audit's dependency summary, which lists Theorem C.1 as indispensable for T₇.
+- **The three-plus-three circle theorem.** Cited by T₄, T₁₀, T₁₅, T₁₈, T₁₉ and T₂₀. Among these only T₁₅ needs it; for the other five the replays give exact arguments that avoid it.
 - **The universal inequalities on SO(4)** (SOC and four-coefficient so far): the workers re-verified the identities behind them exactly; the proofs are those of [`../../zheng-n4-audit/foundations/`](../../zheng-n4-audit/foundations/).
 - **Common inputs of the general argument** (finite spectra for points of the matching cone; the parametrization of SO(4) by pairs of unit quaternions): cited.
 
