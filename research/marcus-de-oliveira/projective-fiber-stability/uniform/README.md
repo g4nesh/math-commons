@@ -47,6 +47,16 @@ At a regular point of the compactified plane choose any nonsingular nine-column 
 
 These open parameter patches cover the compact Riemann sphere at the base values of $\delta,U,b$. Choose finitely many. Intersect their neighborhoods of those three parameters; the intersection contains a disk $|\delta|<r$ and neighborhoods of the archived $U,b$. Every $w$ lies in at least one retained patch. This proves the theorem with the same $r$ for the entire sphere, hence for every actual $z$. The proof requires neither a common law across different $z$ nor a single global choice of a nine-column basis.
 
+## Calculate a shared weight vector
+
+For Gaussian-rational inputs at the archived $U,b$, the calculator returns all 24 exact masses. Pass the real and imaginary parts of the actual second and fourth eigenvalues, respectively.
+
+~~~sh
+python3 -B research/marcus-de-oliveira/projective-fiber-stability/uniform/weights.py 3/5 7/10 1/2048 -1/4096
+~~~
+
+The output keys map columns to rows using one-based indices. It checks the original coefficient equations, so the returned law works for every first and third eigenvalue. The exact simplex calculation first enforces feasibility and then maximizes the smallest of the 24 probabilities. With no arguments it checks four covers against dense matrix determinants, including a collision and a large middle eigenvalue.
+
 ## Reproduction and scope
 
 Run from the repository root:
