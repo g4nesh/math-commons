@@ -1,0 +1,18 @@
+{
+  "scope": "finite physical optimization and exact rational endpoint replay only",
+  "classes": 35,
+  "starts_per_class": 4,
+  "completed_runs": 140,
+  "optimizer_successes": 140,
+  "largest_iterations": 152,
+  "approximate_minimum": 1.604903060487639e-20,
+  "approximate_maximum_at_stops": 1.6645792648483773e-11,
+  "max_unitarity_error": 1.3322676295501878e-15,
+  "gradient_max_abs_error": 3.3567055385264055e-11,
+  "exact_endpoints": 35,
+  "exact_negative": 0,
+  "exact_zero": 0,
+  "exact_positive": 35,
+  "smallest_exact_endpoint": "33848530405509407912833144071345782991312897714798314872567441701386433/1270620682230666514631577353846621053802175620603397429399755584522674615008901260000",
+  "universal_sign_claim": false
+}

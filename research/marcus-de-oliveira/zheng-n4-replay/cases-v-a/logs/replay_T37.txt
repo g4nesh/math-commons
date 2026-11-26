@@ -1,0 +1,184 @@
+====================================================================================================
+Case T_37 = {0,5,6,7,9,12}: replay of independent_moc4_T36_uniform_20261022.pdf
+====================================================================================================
+[INFO] python 3.9.6, sympy 1.14.0, python-flint 0.6.0, numpy 2.0.2, scipy 1.13.1 (NUMERIC part only)
+[PASS] [EXACT] document under MOC4_SUPP is the one that was read (sha256): independent_moc4_T36_uniform_20261022.pdf  ::  4b9e286cf7e7742c9ffc96c78388996b7524b83fea1a7f93a8aa3694c666e8dc
+
+--- Foundations rebuilt from the paper's definitions
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14
+[PASS] [EXACT] P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] kappa = Psi(v) at v_1..4 = (0,1), v_5..8 = (1,1), so kappa is in X
+[PASS] [EXACT] paper's pivot rows 0,1,2,3,4,6,7,8,9,10,12,13,16,18 of P are independent
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of C)
+[PASS] [EXACT] 82 vectors f_j: all lie in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps on the 24 permutation indices
+[PASS] [EXACT] G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+
+--- Radial necessity: the real part of a point of X lies on the cubic
+[PASS] [EXACT] grad C(u + t v) = grad C(u) + t Hess C(u) v + t^2 grad C(v) identically (t = i: real part grad C(u) - grad C(v), imaginary part Hess C(u) v)
+[PASS] [EXACT] Euler: u . grad C(u) = 3 C(u) identically
+[PASS] [EXACT] polarization: u . grad C(v) = (1/2) v^t Hess C(u) v identically
+[INFO] hence grad C(u+iv) = 0 gives grad C(u) = grad C(v) and Hess C(u) v = 0, and 3 C(u) = u.grad C(u) = u.grad C(v) = (1/2) v^t Hess C(u) v = 0
+[PASS] [EXACT] spot check on 12 random Gaussian-rational points x = alpha Psi(a,b) (seed 20261125): (P x)_sigma = alpha z_sigma and C(Re x) = 0
+[PASS] [EXACT] same points: Hess C(Re x) Im x = 0
+[PASS] [EXACT] Hess C(x + y)(x - y) = 2(grad C(x) - grad C(y)) identically (28 variables): for x in X and y = conj(x), x + y = 2 Re x and x - y = 2i Im x, so Hess C(Re x) Im x = 0
+[PASS] [EXACT] Hess C(u) u = 2 grad C(u) identically: if Im x = 0 then u = x in X and Hess C(u) u = 0. Hence det Hess C(Re x) = 0 for every x in X (Im x != 0, or Re x != 0 = Im x, or x = 0)
+[PASS] [EXACT] C(kappa) = 0, grad C(kappa) = 0 and Hess C(kappa) = e0 e6^t + e6 e0^t - e1 e5^t - e5 e1^t, so C(g + h kappa) = C(g) + h dC/dm_13(g) is linear in h and the Hessian is affine in h
+
+--- Supplement data files (read as JSON, untrusted, comparison only)
+[PASS] [EXACT] the supplement's stored 24 x 14 matrix equals P, and its stored cubic equals the paper's C of (A.2) with the same sign (so the documents' 'F' is C)
+[PASS] [EXACT] the supplement's stored 82 facet value vectors equal F_VALUES in the same order (the documents' f_j are the paper's f_j of Appendix D)
+
+--- Contact set and numbering
+[PASS] [EXACT] the document's set [0, 5, 6, 7, 9, 12] (its label 'T36') equals the paper's T_37 of Appendix E as a set of lexicographic permutation indices (group element: identity)
+[PASS] [EXACT] orbit representative under G (1152 maps) of the document's set equals that of T_37: (0, 1, 2, 6, 11, 20); T_35, T_36, T_37 lie in three different orbits
+
+--- Generators of the contact cone
+[PASS] [EXACT] F_T = {j : f_j = 0 on T} equals the document's list [0, 1, 2, 5, 7, 29, 35, 39, 40, 45]  ::  computed [0, 1, 2, 5, 7, 29, 35, 39, 40, 45]
+[PASS] [EXACT] non-minor generators equal the document's list  ::  computed [35, 40] = ['h_{4312,-}', 'h_{4213,+}']
+[PASS] [EXACT] direct enumeration of the extreme rays of N_T = {Pc >= 0, (Pc)_T = 0} (dimension 8; does not use the 82-facet theorem) gives exactly the 10 vectors f_j, j in F_T  ::  10 rays, 1.1 s
+
+--- Section 1 of the document: the three-way reduction, as identities on the contact nullspace
+[PASS] [EXACT] the contact nullspace {c : (Pc)_T = 0} has dimension 8
+[PASS] [EXACT] delta35 + delta40 = -g17 on the nullspace, with delta35 = g3 - g1, delta40 = g14 - g16
+[PASS] [EXACT] (1): c = g18 f0 - delta40 f1 + g13 f2 + g11 f5 + g14 f7 + g2 f29 - delta35 f39 + g3 f45 for every c in the nullspace; all eight generators are minor vectors
+[PASS] [EXACT] (2): c = g15 f2 + g4 f29 + g17 f1 + g1 f45 + g11 f5 + delta35 f35 + g18 f0 + g14 f7 for every c in the nullspace; f35 is the only non-minor generator in this list
+[PASS] [EXACT] (3): c = g23 f0 + g17 f39 + g11 f5 + g13 f2 + g2 f29 + g16 f7 + delta40 f40 + g3 f45 for every c in the nullspace; f40 is the only non-minor generator in this list
+[INFO] consequence (PROOF-READ): for c in N_T all gaps are >= 0, so delta35 + delta40 <= 0; if both are <= 0, (1) is a nonnegative combination of minor vectors; if delta35 > 0, (2) has d = delta35 > 0 and nonnegative gaps as the other coefficients; if delta40 > 0, the same for (3).  No list of extreme rays is needed.
+[PASS] [EXACT] the three 'generating identities' of p. 1: 3 identities sum f_left = sum f_right hold on all 24 values
+[PASS] [EXACT] Laplace and Jacobi identities for the 8 minor generators [0, 1, 2, 5, 7, 29, 39, 45]: Phi_{f_j}(O) = (minor of O)^2 >= 0 on SO(4)
+[PASS] [EXACT] reading of the document's 'every O in O(4)': negating one column of O in SO(4) changes the sign of every raw Leibniz sum (each product contains exactly one entry of that column; confirmed for the ten generators on 4 random rational matrices), so nonnegativity can only be meant on SO(4), or for Phi/det on O(4); the case statement and the cited inequalities concern SO(4)
+
+--- Section 2: radial necessity and the two guards
+[PASS] [EXACT] branch delta35 > 0: C(g + h kappa) is of degree <= 1 in h; C* = C(g) has 13 terms, Q = dC/dh has 8 terms
+[PASS] [EXACT] branch delta35 > 0: the full 14 x 14 Hessian of C at g + h kappa has determinant D with 15610 terms, of degree 3 in h (symbolic Laplace expansion; confirmed at 3 random integer points by rational Gaussian elimination)
+[PASS] [EXACT] branch delta35 > 0: N := Q^4 D(h = -C*/Q) = sum_k D_k (-C*)^k Q^(4-k) (144557 terms) is exactly divisible by -4 Q^2
+[PASS] [EXACT] branch delta35 > 0: N / (-4 Q^2) = G^2 for a polynomial G (own exact square root, verified by squaring): identity (2) of the document; G is homogeneous of degree 9 with 983 terms (document: 983) and coefficient of d^9 equal to +1
+[PASS] [EXACT] branch delta35 > 0: the degree-nine factor stored in the supplement's independent_moc4_T36_bad35_full_radial_20261022.json (read as data, 983 terms) equals - G
+[PASS] [EXACT] branch delta40 > 0: C(g + h kappa) is of degree <= 1 in h; C* = C(g) has 19 terms, Q = dC/dh has 10 terms
+[PASS] [EXACT] branch delta40 > 0: the full 14 x 14 Hessian of C at g + h kappa has determinant D with 19668 terms, of degree 3 in h (symbolic Laplace expansion; confirmed at 3 random integer points by rational Gaussian elimination)
+[PASS] [EXACT] branch delta40 > 0: N := Q^4 D(h = -C*/Q) = sum_k D_k (-C*)^k Q^(4-k) (239037 terms) is exactly divisible by -4 Q^2
+[PASS] [EXACT] branch delta40 > 0: N / (-4 Q^2) = G^2 for a polynomial G (own exact square root, verified by squaring): identity (2) of the document; G is homogeneous of degree 9 with 1385 terms (document: 1385) and coefficient of d^9 equal to +1
+[PASS] [EXACT] branch delta40 > 0: the degree-nine factor stored in the supplement's independent_moc4_T36_bad40_full_radial_20261022.json (read as data, 1385 terms) equals - G
+[PASS] [EXACT] branch (2): all 13 coefficients of C* are negative (each equals -1), among them -d^3: C* <= -d^3 < 0 for d > 0, so C* + hQ = 0 forces Q != 0
+[PASS] [EXACT] branch (3): C* = bc(U - a) + U T0 and M C* = bc(dM + d^2 - aM) + rMbc + (M U T0 - d^2 bc), with M = b + c, U = d + r, T0 = b(d+q) + c(d+p) + (d+p)(d+q); the last bracket has only nonnegative coefficients and contains b d^3 and c d^3 (identity (5))
+[PASS] [EXACT] branch (3) at M = b + c = 0: C* = (d+r)(d+p)(d+q) > 0
+[INFO] consequence (PROOF-READ): if M > 0 and a < d + d^2/M then dM + d^2 - aM > 0 and M C* > 0; the energy bound J <= 1 + 1/(b + c) (below) gives a < d + d^2/M whenever a < J.  So C* > 0, hence Q != 0, on the hard set
+
+--- Section 3: the branch delta35 > 0.  Inequalities used (CITED) and their roles
+[PASS] [EXACT] SOC roles (45, 1, 35) [cj >= d^2: f45, f1] lie in the orbit of the representative (1, 9, 22) (CITED inequality, orbit size 144)  ::  g = (rho=(0, 3, 2, 1), rho'=(3, 0, 2, 1), inverse=1) maps (1, 9, 22) to (45, 1, 35) position by position (4 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+[PASS] [EXACT] four roles (7, 0, 5, 35) [K >= 0, i.e. ab(e - d) >= d^2(a+b+e+d): f7, f0; f5] lie in the orbit of the representative (0, 6, 10, 54) (CITED inequality, orbit size 288)  ::  g = (rho=(3, 2, 1, 0), rho'=(3, 1, 0, 2), inverse=0) maps (0, 6, 10, 54) to (7, 0, 5, 35) position by position (2 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+[PASS] [EXACT] old-H roles (5, 45, 35) [c >= d + d^2/e: t = e on f5, main = c on f45] lie in the orbit of the representative (12, 2, 70) (CITED inequality, orbit size 288)  ::  g = (rho=(1, 2, 3, 0), rho'=(2, 1, 0, 3), inverse=0) maps (12, 2, 70) to (5, 45, 35) position by position (4 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+
+--- From the pointwise forms to the coefficient forms (algebra only)
+[PASS] [EXACT] SOC: a(aX^2 + bY^2 - 2dXY) = (aX - dY)^2 + (ab - d^2)Y^2; so ab >= d^2, a > 0 give a Phi_i + b Phi_j + d Phi_k >= d(Phi_k + 2|x_i x_j|) >= 0  (a = 0 forces d = 0)
+[PASS] [EXACT] old-H: t(tX^2 + (c-d)Y^2 - 2dXY) = (tX - dY)^2 + (t(c-d) - d^2)Y^2; so t(c-d) >= d^2 gives t Phi_t + c Phi_c + d Phi_k >= d(Phi_c + Phi_k + 2|x_t x_c|) >= 0
+[PASS] [EXACT] chain: pb[pX^2 + bY^2 + (d^2/p + d^2/b)Z^2 - 2dZ(X+Y)] = b(pX - dZ)^2 + p(bY - dZ)^2; so a >= d^2/p + d^2/b gives p Phi_l + b Phi_m + a Phi_c + d Phi_k >= d(Phi_k + 2|x_c|(|x_l|+|x_m|)) >= 0
+[PASS] [EXACT] four: the form aX^2 + bY^2 + (c-d)Z^2 - 2d(XY + XZ + YZ) has matrix of determinant ab(c-d) - d^2(a+b+c+d) =: cap, and (ab - d^2)(c-d) = cap + d^2(a+b+2d); so cap >= 0, d > 0 force c > d, ab > d^2, a > 0: all leading minors a, ab - d^2, cap are >= 0 with the first two > 0, the form is positive semidefinite, and a Phi_a + b Phi_b + c Phi_c + d Phi_d >= d(pointwise form) >= 0
+[PASS] [EXACT] core action of the document: a group element maps (f67, f55, f53, f54, f59, f2) to (f7, f0, f5, f35, f45, f1) = (a, b, e, d, c, j) position by position; it is unique, equals (rho = (1,0,3,2), rho' = (2,0,1,3), no inverse), i.e. the document's 'row (1,2,0,3), column (1,0,3,2), no transpose' read as row = rho'^(-1), column = rho; Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4); a second element realises the same map with f7 and f0 exchanged
+[INFO] CITED (audit foundations/so4-atoms-part2a.md, item F1; document root_moc4_T24_uniform p. 2): for the cost q f0 + p f2 + j f59 + c f6 + e f53 + d f54 + b f55 + a f67 with d > 0, Phi >= 0 on SO(4) if  (5) ab > d^2, e > 0, j >= d^2/e - d(ab - d^2)/((a+d)(b+d));  (6) ab < d^2, a != b, e > 0, j >= d^2/e + b(d - w)^2/(b - w)^2, w = sqrt(ab);  double-SOC: ab >= d^2, ej >= d^2.  Transferred by the core action: the central coefficient j of f59 becomes the coefficient c of f45, and (a, b, e, d) keep their names
+[PASS] [EXACT] a group element exchanges f7 <-> f0 and f2 <-> f29 and fixes f1, f45, f5, f35 (the document's stabilizer: row (2,3,0,1), column (3,2,1,0)): it exchanges (a, b, q, p) with (b, a, p, q) in (2)
+[PASS] [EXACT] G35 (at d = 1) is invariant under (a, b, q, p) -> (b, a, p, q)
+[PASS] [EXACT] G35 is quadratic in c: G35 = k0 + k1 c + k2 c^2 (419 + 353 + 211 terms); degrees [2, 2, 2, 2, 2, 3, 3] in (q,p,j,c,e,b,a)
+[PASS] [EXACT] k0 = Cbar R90 with Cbar = (a+1)(b+1) + aq + bp + (1+e)(pq+p+q) + e (all coefficients positive, constant term 1) and a polynomial R90 with 90 terms
+[PASS] [EXACT] K = (ab-1)e - (a+1)(b+1) equals ab(e-1) - (a+b+e+1): K >= 0 is the four-coefficient condition
+
+--- Section 3: the strict constant coefficient (8)
+[PASS] [EXACT] (8), chart a = zR, b = z/R, ab < 1 (z = T/(1+T), e = V): chart valid; the cleared difference R90 - (a+1)(b+1)(-K) has 280 terms (document: 280), all coefficients >= 0
+[PASS] [EXACT] (8), chart a = zR, b = z/R, ab > 1 (z = 1+T, e = Emax V/(1+V)): chart valid; the cleared difference R90 - (a+1)(b+1)(-K) has 404 terms (document: 404), all coefficients >= 0
+[PASS] [EXACT] (8), chart b = zR, a = z/R, ab < 1 (z = T/(1+T), e = V): chart valid; the cleared difference R90 - (a+1)(b+1)(-K) has 280 terms (document: 280), all coefficients >= 0
+[PASS] [EXACT] (8), chart b = zR, a = z/R, ab > 1 (z = 1+T, e = Emax V/(1+V)): chart valid; the cleared difference R90 - (a+1)(b+1)(-K) has 404 terms (document: 404), all coefficients >= 0
+[INFO] consequence: k0 >= Cbar (a+1)(b+1)(-K) > 0 whenever K < 0, on the closure of the four charts (all a, b >= 0)
+
+--- Section 3: the seven intervals (Bernstein tables)
+[PASS] [EXACT] row I-, threshold J = SOC 1/j: chart valid (nonnegative coefficients, positive denominators for A > 0; the stated ranges of ab, e and j hold identically); the three Bernstein numerators have 969, 1704, 2364 terms (document: 969, 1704, 2364), all coefficients >= 0
+[PASS] [EXACT] row I+, threshold J = SOC 1/j: chart valid (nonnegative coefficients, positive denominators for A, T > 0; the stated ranges of ab, e and j hold identically); the three Bernstein numerators have 2643, 5745, 10406 terms (document: 2643, 5745, 10406), all coefficients >= 0
+[PASS] [EXACT] row II, threshold J = coherent 1/e - 1/Emax: chart valid (nonnegative coefficients, positive denominators for A, T, V > 0; the stated ranges of ab, e and j hold identically); the three Bernstein numerators have 4414, 9616, 16507 terms (document: 4414, 9616, 16507), all coefficients >= 0
+[PASS] [EXACT] row IIIa-, threshold J = old-H 1 + 1/e: chart valid (nonnegative coefficients, positive denominators for A > 0; the stated ranges of ab, e and j hold identically); the three Bernstein numerators have 3779, 4535, 4535 terms (document: 3779, 4535, 4535), all coefficients >= 0
+[PASS] [EXACT] row IIIa+, threshold J = SOC 1/j: chart valid (nonnegative coefficients, positive denominators for A > 0; the stated ranges of ab, e and j hold identically); the three Bernstein numerators have 4284, 7308, 9756 terms (document: 4284, 7308, 9756), all coefficients >= 0
+[PASS] [EXACT] row IIIb+, threshold J = SOC 1/j: chart valid (nonnegative coefficients, positive denominators for A > 0; the stated ranges of ab, e and j hold identically); the three Bernstein numerators have 4428, 8448, 12396 terms (document: 4428, 8448, 12396), all coefficients >= 0
+[PASS] [EXACT] row IIIb-, threshold J = parallel 1/e + b(1-w)^2/(b-w)^2: chart valid (nonnegative coefficients, positive denominators for A > 0; the stated ranges of ab, e and j hold identically); the three Bernstein numerators have 7028, 13410, 18874 terms (document: 7028, 13410, 18874), all coefficients >= 0
+[PASS] [EXACT] row II again with the threshold as a reduced fraction N/D = AT/(V(A+1)(A+T+1)): the middle and endpoint numerators (6832 and 9514 terms) also have only nonnegative coefficients (the document's fraction carries the extra positive factor (A+1)(A+T+1))
+[PASS] [EXACT] closed layer e = j = 0: G35 = [(1+a+b)c + (a+1)(b+1)](p+a+1)^2 (q+b+1)^2 > 0
+[PASS] [EXACT] the parallel term b(1-w)^2/(b-w)^2: it equals 1/b at w = 0 (chain threshold 1/e + 1/b), equals 1 at b = 1 (old-H threshold 1 + 1/e), and 1/b - b(1-w)^2/(b-w)^2 = w(b-1)(2b - w - bw)/(b(b-w)^2) >= 0 for b >= 1 > w >= 0, so for b >= 1 it never exceeds the chain threshold
+[PASS] [EXACT] remark of p. 4: the chain tuples (45;5,0;35) and (45;5,7;35) (centre f45, leaves f5 and f0, resp. f7) lie in the cited chain orbit, so with a single zero leaf the limit 1/e + 1/b (resp. 1/e + 1/a) of the parallel threshold is also the ordinary chain condition
+
+--- Section 4: the branch delta40 > 0.  Inequalities used (CITED) and their roles
+[PASS] [EXACT] old-H roles (2, 5, 40) [old-H atom of leaf 1: t on f2 (b), main on f5 (a)] lie in the orbit of the representative (12, 2, 70) (CITED inequality, orbit size 288)  ::  g = (rho=(0, 2, 1, 3), rho'=(0, 2, 3, 1), inverse=0) maps (12, 2, 70) to (2, 5, 40) position by position (4 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+[PASS] [EXACT] old-H roles (29, 5, 40) [old-H atom of leaf 2: t on f29 (c), main on f5 (a)] lie in the orbit of the representative (12, 2, 70) (CITED inequality, orbit size 288)  ::  g = (rho=(1, 3, 0, 2), rho'=(1, 3, 2, 0), inverse=0) maps (12, 2, 70) to (29, 5, 40) position by position (4 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+[PASS] [EXACT] chain roles (5, 0, 2, 40) [chain of leaf 1: centre f5 (a), leaves f0 (p), f2 (b)] lie in the orbit of the representative (2, 0, 12, 70) (CITED inequality, orbit size 576)  ::  g = (rho=(0, 2, 1, 3), rho'=(0, 2, 3, 1), inverse=0) maps (2, 0, 12, 70) to (5, 0, 2, 40) position by position (2 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+[PASS] [EXACT] chain roles (5, 29, 7, 40) [chain of leaf 2: centre f5 (a), leaves f29 (c), f7 (q)] lie in the orbit of the representative (2, 0, 12, 70) (CITED inequality, orbit size 576)  ::  g = (rho=(3, 1, 2, 0), rho'=(3, 1, 0, 2), inverse=0) maps (2, 12, 0, 70) to (5, 29, 7, 40) position by position (2 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+[PASS] [EXACT] SOC roles (5, 45, 40) [as >= d^2: f5, f45] lie in the orbit of the representative (1, 9, 22) (CITED inequality, orbit size 144)  ::  g = (rho=(0, 2, 1, 3), rho'=(1, 0, 2, 3), inverse=1) maps (1, 9, 22) to (5, 45, 40) position by position (4 group elements do); Phi_{g.f}(O'') = Phi_f(O) exactly on 5 random rational O in SO(4)
+[PASS] [EXACT] the document's transposed core action exists and is unique: (f4, f2, f33, f5, f6, f46, f45) -> (f0, f5, f2, f29, f7, f40, f39) by (rho = (3,2,1,0), rho' = (2,3,0,1), inverse); its source tuples old-H (33,2;46), (5,2;46) and chain (2;4,33;46), (2;5,6;46) lie in the cited orbits and are mapped to the four tuples above; the SOC action (1,9,22) -> (5,45,40) contains (rho = (0,2,1,3), rho' = (1,0,2,3), inverse)
+
+--- Section 4: the resource energy (10) and its five charts
+[PASS] [EXACT] allocation of one leaf (B, P) with nonminor shares eta = beta - delta (old-H atom, t = B_H = B eta/beta) and delta (chain, leaves B_C = B delta/beta and P): the required central coefficients [eta + eta^2/B_H] + [delta^2/B_C + delta^2/P] equal beta - delta + beta^2/B + delta^2/P, and B_H + B_C = B
+[PASS] [EXACT] x^2/b + y^2/c - (x+y)^2/(b+c) = (cx - by)^2/(bc(b+c)) >= 0, so the energy is >= 1/(b+c); and with delta = 0, beta = (b, c)/(b+c) the objective is 1 + 1/(b+c), so J <= 1 + 1/(b+c)
+[PASS] [EXACT] chart HH (T, L > 0; U, W >= 0; theta = T/(1+T) = beta_1): p, b, c, q have nonnegative coefficients and b, c > 0; the point beta = (theta, 1-theta), delta_i = p_i/2 < beta_i on an H leaf, beta_i <= p_i/2 on a C leaf is feasible; the objective of (10) there equals the stated energy J; the stationarity quantities of the two leaves agree
+[PASS] [EXACT] chart HC (T, L > 0; U, W >= 0; theta = T/(1+T) = beta_1): p, b, c, q have nonnegative coefficients and b, c > 0; the point beta = (theta, 1-theta), delta_i = p_i/2 < beta_i on an H leaf, beta_i <= p_i/2 on a C leaf is feasible; the objective of (10) there equals the stated energy J; the stationarity quantities of the two leaves agree
+[PASS] [EXACT] chart CH (T, L > 0; U, W >= 0; theta = T/(1+T) = beta_1): p, b, c, q have nonnegative coefficients and b, c > 0; the point beta = (theta, 1-theta), delta_i = p_i/2 < beta_i on an H leaf, beta_i <= p_i/2 on a C leaf is feasible; the objective of (10) there equals the stated energy J; the stationarity quantities of the two leaves agree
+[PASS] [EXACT] chart CC (T, L > 0; U, W >= 0; theta = T/(1+T) = beta_1): p, b, c, q have nonnegative coefficients and b, c > 0; the point beta = (theta, 1-theta), delta_i = p_i/2 < beta_i on an H leaf, beta_i <= p_i/2 on a C leaf is feasible; the objective of (10) there equals the stated energy J; the stationarity quantities of the two leaves agree
+[PASS] [EXACT] chart CC' (T, L > 0; U, W >= 0; theta = T/(1+T) = beta_1): p, b, c, q have nonnegative coefficients and b, c > 0; the point beta = (theta, 1-theta), delta_i = p_i/2 < beta_i on an H leaf, beta_i <= p_i/2 on a C leaf is feasible; the objective of (10) there equals the stated energy J; the stationarity quantities of the two leaves agree
+[INFO] consequence (PROOF-READ): at a chart point the stated J is the value of the objective at a feasible allocation, so a f5 + ... is safe for a >= J by the four cited atoms; the reduced objective is strictly convex in beta_1 with derivative < 0 at 0 and > 0 at 1, so every positive (p, b, c, q) has a unique stationary beta and lies in one of the five charts (leaf i is H iff p_i < 2 beta_i)
+
+--- Section 4: projective compensation (tables for L0, B1, B2)
+[PASS] [EXACT] G40 (at d = 1) is quadratic in s: G40 = L0 + s L1 + s^2 L2; L0, B1 = L1 + 2a L0, B2 = L2 + a L1 + a^2 L0 have degrees 2, 3, 4 in a
+[PASS] [EXACT] (13): (1 + aS)^2 [L0 + s L1 + s^2 L2] at s = S/(1 + aS) equals L0 + (L1 + 2a L0) S + (L2 + a L1 + a^2 L0) S^2; and 1 + aS = 1/(1 - as) for S = s/(1 - as)
+[PASS] [EXACT] L0 at a = 0 (a polynomial in p, b, c, q, r with 243 terms) has only positive coefficients and constant term 1: L0(0, r) >= 1
+[PASS] [EXACT] chart HH, L0 (degree 2 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^2 of W d0^2 (1+Y)^2 L0 have [6372, 7776, 7757] terms (document: [6372, 7776, 7757]), all coefficients >= 0; the coefficient of Y^0 is W d0^2 times the value at a = 0
+[PASS] [EXACT] chart HH, B1 (degree 3 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^3 of W d0^3 (1+Y)^3 B1 have [9408, 11466, 13524, 13502] terms (document: [9408, 11466, 13524, 13502]), all coefficients >= 0; the coefficient of Y^0 is W d0^3 times the value at a = 0
+[PASS] [EXACT] chart HH, B2 (degree 4 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^4 of W d0^4 (1+Y)^4 B2 have [8832, 15960, 18979, 21801, 21863] terms (document: [8832, 15960, 18979, 21801, 21863]), all coefficients >= 0; the coefficient of Y^0 is W d0^4 times the value at a = 0
+[PASS] [EXACT] chart HC, L0 (degree 2 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^2 of W d0^2 (1+Y)^2 L0 have [6084, 7380, 7379] terms (document: [6084, 7380, 7379]), all coefficients >= 0; the coefficient of Y^0 is W d0^2 times the value at a = 0
+[PASS] [EXACT] chart HC, B1 (degree 3 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^3 of W d0^3 (1+Y)^3 B1 have [7728, 9366, 11004, 11003] terms (document: [7728, 9366, 11004, 11003]), all coefficients >= 0; the coefficient of Y^0 is W d0^3 times the value at a = 0
+[PASS] [EXACT] chart HC, B2 (degree 4 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^4 of W d0^4 (1+Y)^4 B2 have [5456, 11550, 13581, 15591, 15599] terms (document: [5456, 11550, 13581, 15591, 15599]), all coefficients >= 0; the coefficient of Y^0 is W d0^4 times the value at a = 0
+[PASS] [EXACT] chart CH, L0 (degree 2 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^2 of W d0^2 (1+Y)^2 L0 have [6084, 7380, 7379] terms (document: [6084, 7380, 7379]), all coefficients >= 0; the coefficient of Y^0 is W d0^2 times the value at a = 0
+[PASS] [EXACT] chart CH, B1 (degree 3 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^3 of W d0^3 (1+Y)^3 B1 have [7728, 9366, 11004, 11003] terms (document: [7728, 9366, 11004, 11003]), all coefficients >= 0; the coefficient of Y^0 is W d0^3 times the value at a = 0
+[PASS] [EXACT] chart CH, B2 (degree 4 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^4 of W d0^4 (1+Y)^4 B2 have [5456, 11550, 13581, 15591, 15599] terms (document: [5456, 11550, 13581, 15591, 15599]), all coefficients >= 0; the coefficient of Y^0 is W d0^4 times the value at a = 0
+[PASS] [EXACT] chart CC, L0 (degree 2 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^2 of W d0^2 (1+Y)^2 L0 have [6645, 8394, 8259] terms (document: [6645, 8394, 8259]), all coefficients >= 0; the coefficient of Y^0 is W d0^2 times the value at a = 0
+[PASS] [EXACT] chart CC, B1 (degree 3 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^3 of W d0^3 (1+Y)^3 B1 have [7029, 8958, 10887, 10887] terms (document: [7029, 8958, 10887, 10887]), all coefficients >= 0; the coefficient of Y^0 is W d0^3 times the value at a = 0
+[PASS] [EXACT] chart CC, B2 (degree 4 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^4 of W d0^4 (1+Y)^4 B2 have [4252, 9048, 11157, 13266, 13266] terms (document: [4252, 9048, 11157, 13266, 13266]), all coefficients >= 0; the coefficient of Y^0 is W d0^4 times the value at a = 0
+[PASS] [EXACT] chart CC', L0 (degree 2 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^2 of W d0^2 (1+Y)^2 L0 have [6645, 8394, 8259] terms (document: [6645, 8394, 8259]), all coefficients >= 0; the coefficient of Y^0 is W d0^2 times the value at a = 0
+[PASS] [EXACT] chart CC', B1 (degree 3 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^3 of W d0^3 (1+Y)^3 B1 have [7029, 8958, 10887, 10887] terms (document: [7029, 8958, 10887, 10887]), all coefficients >= 0; the coefficient of Y^0 is W d0^3 times the value at a = 0
+[PASS] [EXACT] chart CC', B2 (degree 4 in a), a = J Y/(1+Y): the coefficients of Y^0..Y^4 of W d0^4 (1+Y)^4 B2 have [4252, 9048, 11157, 13266, 13266] terms (document: [4252, 9048, 11157, 13266, 13266]), all coefficients >= 0; the coefficient of Y^0 is W d0^4 times the value at a = 0
+[PASS] [EXACT] number of coefficient polynomials checked in the five charts: 5 x (3 + 4 + 5) = 60
+[INFO] consequence: for positive p, b, c, q, r >= 0 and 0 <= a < J: L0 >= L0(0, r)(1 - a/J)^2 >= (1 - a/J)^2 > 0, B1 >= 0, B2 >= 0; with (13), G40 >= (1 - as)^2 L0 >= (1 - as)^2 (1 - a/J)^2 > 0 whenever also as < 1: inequality (14)
+
+--- Exact evaluations on the closed hard sets, boundaries included (falsification attempts)
+[PASS] [EXACT] (8) at 2200 random rational points with K < 0 (seed 3702; a = 0, b = 0, ab = 1, e = 0, j = 0, j = e, the j-cuts and a = b occur with positive probability): k0 >= Cbar (a+1)(b+1)(-K) > 0 every time
+[PASS] [EXACT] the same points, each assigned to its row with the row's threshold J (rows I, II, IIIa-, IIIa+, IIIb+, IIIb-; ab = 1 with j < e uses J = 1/e; for ab < 1, j < e the exchange a <-> b, q <-> p makes b >= a): 2k0 + J k1 >= 0, k0 + J k1 + J^2 k2 >= 0 and G35(tJ) >= k0 (1-t)^2 > 0 at a random t in [0,1)  ::  {'I': 607, 'II': 1057, 'IIIa+': 48, 'IIIa-': 68, 'IIIb+': 56, 'IIIb-': 223, 'ab=1': 38, 'e=j=0': 103}
+[PASS] [EXACT] the points with e = j = 0 among them: G35 equals the closed-layer product and is > 0 at a random c
+[PASS] [EXACT] energy at 900 random rational points of the five charts (seed 3703): the stated J equals the objective of (10) with the optimal delta at beta = theta, is <= the objective at four other values of beta_1, and is <= 1 + 1/(b+c)
+[PASS] [EXACT] (14) at 848 of these points with random a in [0, J), s with as < 1 and r >= 0 (p = 0 or q = 0 when U = 0 or W = 0): G40 >= (1 - as)^2 (1 - a/J)^2 > 0 every time
+[PASS] [EXACT] zero core coefficients (seed 3704): with b = 0 < c the extended minimum is J = 1 - delta + 1/c + delta^2/q, delta = min(q/2, 1) (beta = (0,1); p arbitrary), symmetrically for c = 0 < b, and J = infinity for b = c = 0; G40 >= (1 - as)^2 (1 - a/J)^2 > 0 (with 1/J = 0 when J is infinite) at random a < J, as < 1, r, p, q >= 0  ::  {'b=0': 192, 'c=0': 189, 'b=c=0': 173}
+
+--- Comparison of the rebuilt objects with the audit library moc4lib (not used to build anything)
+[PASS] [EXACT] PERMS, P, kappa agree with moc4lib
+[PASS] [EXACT] the 82 value vectors F_VALUES, the minor flags and the coordinates of all f_j agree with moc4lib
+[PASS] [EXACT] the cubic C agrees with moc4lib.cubic_C
+[PASS] [EXACT] T_35, T_36, T_37 agree with moc4lib.CONTACT_SETS; the group has the same 1152 maps
+
+--- NUMERIC falsification attempts (floating point; evidence, not proof)
+[PASS] [NUMERIC] pointwise form of SOC for roles (45, 1, 35) [cj >= d^2: f45, f1]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 37001)  ::  smallest value found 1.398e-28
+[PASS] [NUMERIC] pointwise form of four for roles (7, 0, 5, 35) [K >= 0, i.e. ab(e - d) >= d^2(a+b+e+d): f7, f0; f5]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 37001)  ::  smallest value found 2.359e-16
+[PASS] [NUMERIC] pointwise form of old-H for roles (5, 45, 35) [c >= d + d^2/e: t = e on f5, main = c on f45]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 37001)  ::  smallest value found 1.304e-28
+[PASS] [NUMERIC] pointwise form of old-H for roles (2, 5, 40) [old-H atom of leaf 1: t on f2 (b), main on f5 (a)]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 37001)  ::  smallest value found 1.179e-30
+[PASS] [NUMERIC] pointwise form of old-H for roles (29, 5, 40) [old-H atom of leaf 2: t on f29 (c), main on f5 (a)]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 37001)  ::  smallest value found 5.010e-31
+[PASS] [NUMERIC] pointwise form of chain for roles (5, 0, 2, 40) [chain of leaf 1: centre f5 (a), leaves f0 (p), f2 (b)]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 37001)  ::  smallest value found 1.102e-20
+[PASS] [NUMERIC] pointwise form of chain for roles (5, 29, 7, 40) [chain of leaf 2: centre f5 (a), leaves f29 (c), f7 (q)]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 37001)  ::  smallest value found 3.153e-29
+[PASS] [NUMERIC] pointwise form of SOC for roles (5, 45, 40) [as >= d^2: f5, f45]: no value below -1e-9 on 4000 random matrices of SO(4) plus 4 local minimisations (seed 37001)  ::  smallest value found 2.538e-31
+[PASS] [NUMERIC] control: for the bare non-minor vector f35 the same minimiser finds a negative value of the Leibniz sum on SO(4) (so it can detect a violation)  ::  minimum found -0.06744
+[PASS] [NUMERIC] control: for the bare non-minor vector f40 the same minimiser finds a negative value of the Leibniz sum on SO(4) (so it can detect a violation)  ::  minimum found -0.06744
+[PASS] [NUMERIC] the cited coherent bound (5), transferred to (2), as an inequality on SO(4): 40 random coefficient vectors (a, b, e) with ab > 1 and c exactly on the threshold 1/e - (ab-1)/((a+1)(b+1)), all other coefficients 0 (seed 37002): minimum of the Leibniz sum (4 BFGS starts) never below -1e-8  ::  smallest minimum found 1.223e-17
+[PASS] [NUMERIC] the cited parallel bound (6), transferred to (2), both orientations a < b and a > b, with c on the threshold 1/e + b(1-w)^2/(b-w)^2: 40 random coefficient vectors, minimum never below -1e-8  ::  smallest minimum found 1.121e-17
+[PASS] [NUMERIC] the closed bound c = 1/e at ab = 1: 40 random coefficient vectors, minimum never below -1e-8  ::  smallest minimum found 6.560e-18
+[PASS] [NUMERIC] the energy threshold of (10) as an inequality on SO(4): 50 random positive (p, b, c, q) with a equal to the numerically minimised energy J and r = s = 0 (seed 37002): minimum of the Leibniz sum never below -1e-8  ::  smallest minimum found 1.420e-17
+[PASS] [NUMERIC] (14) in original coordinates with J minimised numerically (seed 37003): at 5000 random points with p, b, c, q >= 0 (zeros and near-zeros included), a = tJ, as < 1, r >= 0 the ratio G40 / [(1 - as)^2 (1 - a/J)^2] is never below 1 - 1e-6  ::  smallest ratio 6.355883
+[INFO] free stratum search (gaps = 0 on T, gaps >= 0, sum of gaps = 1; 600 starts, seeds 37011, 37012): 457 converged points; delta35 in [-0.25, 0.0263], delta40 in [-0.25, 0.0158]
+[INFO] branch delta35 > 0: search with the hinge equation delta >= target (targets 0.004, 0.01; then 300 perturbed restarts, seed 37020): 144 stratum points with delta > 5e-4, delta up to 0.02172; contact set exactly T at 69 of them
+[PASS] [NUMERIC] branch delta35 > 0: radial equation G = 0 at the 144 stratum points: |G| <= 1e-5 times the sum of the absolute values of its terms (the points are known to about 1e-10/delta in these coordinates)  ::  largest relative |G| = 3.286e-09; for contrast, with every coefficient multiplied by an independent random factor in [0.9, 1.1] the relative |G| has median 2.09e-02
+[PASS] [NUMERIC] branch delta35 > 0: conclusion of the document at these points (K >= 0, or c >= the threshold J of the row of (a, b, e, j))  ::  {'row I: SOC': 78, 'row IIIb+: SOC': 14, 'row IIIa+: SOC': 6, 'four (K >= 0)': 37, 'row IIIb-: parallel': 7, 'row II: coherent': 2}
+[INFO] branch delta40 > 0: search with the hinge equation delta >= target (targets 0.004, 0.01; then 300 perturbed restarts, seed 37030): 163 stratum points with delta > 5e-4, delta up to 0.01892; contact set exactly T at 61 of them
+[PASS] [NUMERIC] branch delta40 > 0: radial equation G = 0 at the 163 stratum points: |G| <= 1e-5 times the sum of the absolute values of its terms (the points are known to about 1e-10/delta in these coordinates)  ::  largest relative |G| = 1.302e-06; for contrast, with every coefficient multiplied by an independent random factor in [0.9, 1.1] the relative |G| has median 1.33e-02
+[PASS] [NUMERIC] branch delta40 > 0: conclusion of the document at these points (as >= 1 or a >= J)  ::  {'SOC as >= 1': 163}
+
+FINAL: PASS  (134 checks, 149.8 s)

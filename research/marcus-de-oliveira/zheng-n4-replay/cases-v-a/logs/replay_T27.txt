@@ -1,0 +1,109 @@
+====================================================================================================
+Replay of Case T_27 = [2, 3, 4, 7, 8, 12]  (document final_referee_T26_uniform_20261022, its 'T26')
+====================================================================================================
+       python 3.9.6, python-flint 0.6.0, sympy 1.14.0, numpy 2.0.2, scipy 1.13.1 (NUMERIC part only)
+[PASS] [DATA] file under MOC4_SUPP is the one that was read (sha256): final_referee_T26_uniform_20261022.pdf  ::  c0fd13f3a956e90f50c9aa89a228045bcd6f080ad72862320963c77bc857062a
+
+--- Foundations rebuilt from the paper's definitions
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14; P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] kappa = Psi(v) at v_1..4 = (0,1), v_5..8 = (1,1), so kappa is in X
+[PASS] [EXACT] the cubic (A.2) has 28 monomials; dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13, so X lies in the singular locus of C (only this inclusion is used)
+[PASS] [EXACT] 82 vectors f_j of Appendix D: all lie in the image of P with integer coordinates; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps on the 24 permutation indices; G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+
+--- Contact set and numbering
+[PASS] [EXACT] the document's set [2, 3, 4, 7, 8, 12] (its label 'T26') equals the paper's T_27 of Appendix E as a set of lexicographic indices (group element: identity)
+[PASS] [EXACT] orbit representative under G of the document's set equals that of T_27: (0, 1, 2, 6, 9, 21); T_25 .. T_29 lie in five different orbits, so no other neighbouring case is meant
+       scope: the argument uses only x in X and c(x) in N_T (gaps >= 0, gaps = 0 on T); further contacts, repeated eigenvalues and a_i + b_j = 0 are not excluded anywhere (see T27.md)
+
+--- Generators of the contact cone
+[PASS] [EXACT] F_T = {j : f_j = 0 on T} equals the document's list  ::  computed [0, 1, 2, 5, 6, 53, 54, 55, 67, 70]
+[PASS] [EXACT] non-minor generators equal the document's list  ::  computed [54, 70] = ['h_{4231,-}', 'h_{4231,+}']
+[PASS] [EXACT] direct enumeration of the extreme rays of N_T = {Pc >= 0, (Pc)_T = 0} (dimension 8, no use of the 82-facet list) gives exactly the 10 vectors f_j, j in F_T  ::  10 rays, 1.2 s
+
+--- Source identities, symmetry and normal form (document p. 1)
+[PASS] [EXACT] identities (3): f54 + f70 = f0 + f6 + f55 + f67; f54 + f1 = f0 + f6 + f53 hold on all 24 values
+[PASS] [EXACT] some element of G preserves T and acts on the generators by 0->67, 1->53, 2->2, 5->5, 6->55, 53->1, 54->70, 55->6, 67->0, 70->54  ::  1 elements: [((1, 3, 0, 2), (1, 3, 0, 2), 1)]
+[PASS] [EXACT] the element printed in the document, read as sigma -> rho o sigma^{-1} o rho' with rho = (1, 3, 0, 2), rho' = (1, 3, 0, 2), is one of them
+[PASS] [EXACT] covariance for this element: Phi_{g.f_j}(O'') = Phi_{f_j}(O) for all 82 j on 4 random rational O in SO(4), with O'' = g.O (first column negated if det = -1) in SO(4)
+[PASS] [EXACT] the element maps X to X: the permuted products are the products of relabelled spectra (a' = a o rho', b' = b o rho^{-1}, with a and b exchanged first under transposition), exact on 4 random Gaussian-rational spectra
+[PASS] [EXACT] the eight generators of the normal form (4) are linearly independent, so the coefficients (q,p,j,c,e,d,b,a) of a vector in their span are unique
+[PASS] [EXACT] normalisation run on 4000 random nonnegative rational coefficient vectors (seed 2702): the cost is unchanged (up to the symmetry when it is applied), coefficients stay >= 0, and the result is a minor combination (2247) or the normal form (4) with d > 0 and no f1, f70 (1753); symmetry used 1272 times
+[PASS] [EXACT] the symmetry element acts as an involution on the 24 permutation indices
+
+--- Radial necessity: the real part u of a point of X satisfies C(u) = 0 and det Hess C(u) = 0
+[PASS] [EXACT] grad C(u + t v) = grad C(u) + t Hess C(u) v + t^2 grad C(v) identically in 29 variables (t = i: real part grad C(u) - grad C(v), imaginary part Hess C(u) v)
+[PASS] [EXACT] Euler: u . grad C(u) = 3 C(u) identically
+[PASS] [EXACT] polarization: 2 u . grad C(v) = v^t Hess C(u) v identically
+[PASS] [EXACT] Hess C(u) u = 2 grad C(u) (first component, identically; used when Im x = 0)
+       so grad C(u+iv) = 0 gives grad C(u) = grad C(v), Hess C(u) v = 0, 3 C(u) = u.grad C(v) = (1/2) v^t Hess C(u) v = 0; and Hess C(u) is singular (kernel vector v, or u if v = 0)
+[PASS] [EXACT] spot check on 10 random Gaussian-rational points x = alpha Psi(a,b) (seed 20261127): (P x)_sigma = alpha z_sigma, C(Re x) = 0, Hess C(Re x) Im x = 0 and det Hess C(Re x) = 0
+
+--- The cubic and the Hessian determinant on y0 + z kappa (document p. 2)
+[PASS] [EXACT] C(y0 + z kappa) = C + z Q with C = -(A0 + e T), Q = -d(d+e) - pj, T = (c+d)(d+q), A0 = (c+d+q)(a+d)(b+d) + cq(a+b+d)   (polynomial identity)
+[PASS] [EXACT] all 19 coefficients of C are -1 and C contains -d^3; all 3 coefficients of Q are -1 and Q contains -d^2: so C <= -d^3 < 0 and Q <= -d^2 < 0 on {coefficients >= 0, d > 0}, faces included
+[PASS] [EXACT] det Hess C(y0 + z kappa): 17272 terms, degree <= 4 in z (here z-degrees [1, 2, 3]), homogeneous of degree 14; equal to python-flint's integer determinant at 6 random integer points
+       E := sum_k det_k (-C)^k Q^(4-k) = Q^4 det Hess C(y0 - (C/Q) kappa): 173650 terms, degrees [22]
+[PASS] [EXACT] (5) with (6): Q^4 det Hess C(y0 - (C/Q) kappa) = -4 Q^2 C^2 G6^2 as polynomials, where G6 := alpha beta + cq(d^2 - R) m S + H is the document's compact expression
+[PASS] [EXACT] G6 has 401 monomials, is homogeneous of degree 6 and does not involve z (document: degree six, 401 monomials)
+[PASS] [EXACT] independent of (6): E / (-4 Q^2 C^2) is a polynomial and my own exact square root of it equals +-G6
+
+--- Sign of G6 where both coefficient inequalities fail (document p. 2)
+[PASS] [EXACT] H has 156 monomials, all with positive integer coefficients (document: every factor in H is nonnegative)
+[PASS] [EXACT] U - d^2 = ab + ad + bd, alpha - I(U - R) = cq(a+b+d) and beta + K = (m+c+q)V + (R+cq)S have only nonnegative coefficients; I - d = c + q; V - d^2 >= 0 coefficientwise
+       PROOF-READ: on {q,p,j,c,e,b,a >= 0, d > 0} with R = pj < d^2 and K < 0: I >= d > 0 and U - R >= d^2 - R > 0, so alpha > 0; beta >= -K > 0; cq(d^2 - R)mS >= 0; H >= 0.  Hence G6 >= alpha beta > 0.
+                   No division occurs, so p = 0, j = 0, a = 0, b = 0, e = 0, q = 0, c = 0 are included.
+[PASS] [EXACT] falsification attempt, exact arithmetic: G6 > 0 at 20000 random rational points of the region {pj < d^2, K < 0, d > 0, others >= 0} (seed 2704; up to 70 per cent of the coefficients set to 0, values spread over eight orders of magnitude)  ::  smallest G6/d^6 = 7.236e-01
+[PASS] [EXACT] the sign statement is not vacuous: among 20000 random rational points of the orthant (seed 2705) G6 <= 0 occurs 963 times, every time with pj >= d^2 or K >= 0
+
+--- Side checks against the two seven-contact notes in the same folder (not used by the proof)
+[PASS] [EXACT] G6 at j = 0 equals A0 (A0 - e(ab - T)) + p (a+c+d)(b+d+q)(A0 + eT), 206 monomials (boundary10 note: 206)
+[PASS] [EXACT] G6 at e = 0 has 277 monomials (boundary16 note: 277) and at e = q = c = b = a = 0 equals -d^2 (p+d)(j+d)(pj - d^2)
+
+--- Cited inequalities on SO(4): orbit membership with the roles used (document p. 1, (1) and (2))
+[PASS] [EXACT] SOC: roles (2, 5, 54) lie in the G-orbit of the representative (1, 9, 22)  ::  g = (rho=(0, 1, 3, 2), rho'=(0, 3, 1, 2), transpose=1), 4 group elements, source roles (1, 9, 22)
+[PASS] [EXACT] SOC: orbit size = 144  ::  144
+[PASS] [EXACT] SOC transfer: Phi_{g.f}(O'') = Phi_f(O) with O'' in SO(4), exact on 6 random rational O
+[PASS] [EXACT] four-coefficient: roles (67, 55, 53, 54) lie in the G-orbit of the representative (0, 6, 10, 54)  ::  g = (rho=(2, 3, 0, 1), rho'=(1, 0, 3, 2), transpose=0), 2 group elements, source roles (0, 6, 10, 54)
+[PASS] [EXACT] four-coefficient: orbit size = 288  ::  288
+[PASS] [EXACT] four-coefficient transfer: Phi_{g.f}(O'') = Phi_f(O) with O'' in SO(4), exact on 6 random rational O
+       coefficient forms: SOC  a f_i + b f_j + d f_k >= 0 if ab >= d^2  ->  p f2 + j f5 + d f54 if pj >= d^2;
+         four-coefficient  a f_a + b f_b + c f_c + d f_d >= 0 if ab(c-d) >= d^2(a+b+c+d)  ->  a f67 + b f55 + e f53 + d f54 if K >= 0.  Both statements are CITED (T27.md, citations).
+
+--- SOC representative (f1, f9; f22): identities of the audit's proof (so4-atoms.md 3.1), own code
+[PASS] [EXACT] model x -> p x conj(q): M^t M = |p|^2|q|^2 I and det M = (|p|^2|q|^2)^2 (so M is in SO(4) for unit p, q)
+[PASS] [EXACT] Phi_{f1} = x1^2, Phi_{f9} = x9^2 with x1 = det M[12,34], x9 = det M[14,23]; x1 = v0 + v1 and x9 = v0 + v3 (homogenised)
+[PASS] [EXACT] Phi_{f22} = 2(a0A2 + a2A0 + a1A3 + a3A1) - 4 p0p1p2p3 - 4 q0q1q2q3 on S^3 x S^3 (homogenised)
+[PASS] [EXACT] scalar step: R = 2 delta^2 + 2 Delta^2 - 2(v0v2 + v1v3); st = v1v3 - v0v2 + v2 sum(v); (v0+v1)(v0+v3) = st + (v0-v2) sum(v)
+[PASS] [EXACT] increment lemma: (r^2+u^2)(s^2+w^2) - (rs + uw)^2 = (rw - us)^2
+       the inequality itself (Phi_22 + 2|x1 x9| >= 0, hence a f1 + b f9 + d f22 >= 0 for ab >= d^2) is CITED: audit, foundations/so4-atoms.md 3.1; only its polynomial identities are replayed here
+
+--- Four-coefficient representative (f0, f6; f10; f54): identities of the certificate, own code
+[PASS] [EXACT] bridge: 4 Phi_{f_j}(M(p,q)) = n^2 Q_j mod N for j = 0, 6, 10, 54 with Q = (A-B)^2, (A+B)^2, D^2, H and n = |p|^2 + |q|^2
+[PASS] [EXACT] certificate: n[a(A-B)^2 + b(A+B)^2 + cD^2 + dH] = sum_j l(S_j y)^t Z l(S_j y) + m(S_j y)^t Z m(S_j y) mod N, with each S_j preserving |p|^2 and |q|^2
+[PASS] [EXACT] Schur complements: d (Z[:3,:3] - col col^t / d) = d S3, and (c-d) det of the 2x2 complement = 4 [ab(c-d) - d^2(a+b+c+d)]
+       the inequality itself (a f0 + b f6 + c f10 + d f54 >= 0 on SO(4) when ab(c-d) >= d^2(a+b+c+d)) is CITED: supplement note final_referee_T5_four_budget_capacity and audit, foundations/so4-atoms.md 3.4
+[PASS] [EXACT] minor generators [0, 1, 2, 5, 6, 53, 55, 67]: Laplace and Jacobi identities in a generic 4 x 4 matrix, which give Phi_{f_j}(O) = (minor of O)^2 >= 0 on SO(4) (adj O = O^t); also checked on 3 random rational O
+
+--- Comparison of the rebuilt objects with the audit library moc4lib (not used to build anything)
+[PASS] [EXACT] PERMS, P, kappa agree with moc4lib
+[PASS] [EXACT] the 82 value vectors, the minor flags and the coordinates of all f_j agree with moc4lib
+[PASS] [EXACT] the cubic agrees with moc4lib.cubic_C at 20 random rational points (both are transcriptions of (A.2); a cubic in 14 variables is not determined by 20 values, this is a consistency test)
+[PASS] [EXACT] T_27 agree with moc4lib.CONTACT_SETS, with the same generators; the group has the same 1152 maps
+
+--- Supplement data files (read as JSON, untrusted, comparison only)
+[PASS] [DATA] the supplement's stored 24 x 14 matrix equals P, and its stored cubic equals the paper's C of (A.2) (same sign): the documents' 'matching cubic F' is C
+[PASS] [DATA] the supplement's stored 82 facet value vectors equal F_VALUES in the same order (the documents' f_j are the paper's f_j of Appendix D)
+[PASS] [DATA] file under MOC4_SUPP is the one that was read (sha256): final_referee_T26_full_radial_20261022.json  ::  a4ba38ff4e4a5783668ccb9c5689db272f82c2bbf824c8a03f8565f214ece7ab
+[PASS] [DATA] the supplement's stored radial record (JSON read as data) has the same variable order, C, Q, constant -4 and factors of (degree, multiplicity) (2,2), (3,2), (6,2); its degree-6 factor equals +-G6 rebuilt here
+
+--- NUMERIC falsification attempts (floating point; evidence, not proof)
+[PASS] [NUMERIC] SOC on its boundary pj = d^2 for (f2, f5; f54): min over SO(4) of Phi[tau f2 + f54 + f5/tau] >= -1e-9 for 12 values of tau in [e^-3, e^3] (seed 27001; 16 BFGS starts each)  ::  smallest value found 7.68e-19
+[PASS] [NUMERIC] the test has power: with pj = d^2/4 the minimum is negative  ::  -0.0049
+[PASS] [NUMERIC] four-coefficient on its boundary K = 0 for (f67, f55; f53; f54): min over SO(4) of Phi[a f67 + b f55 + e f53 + f54] >= -1e-9 at 12 random (a, b) with ab > 1 (seed 27001)  ::  smallest value found 3.61e-18
+[PASS] [NUMERIC] the test has power: at (a, b, e, d) = (2, 2, 1, 1), where K < 0, the minimum is negative  ::  -0.0026
+       stratum search: 1500 starts (seeds 27300-27302, repulsion 0.02, 0.2, 1.0), 1336 points with residual < 1e-10; largest distance of a gap vector from the cone of the ten generators 2.8e-10; 1314 points are minor combinations or are absorbed by f1, 22 reach the normal form (4) with d > 0
+[PASS] [NUMERIC] radial equation at stratum points in normal form (d = 1): |G6| <= 1e-6 times the sum of the absolute values of its terms, at all 22 points  ::  largest relative |G6| = 1.98e-12
+[PASS] [NUMERIC] Lemma 1 at these points: pj >= d^2 or K >= 0 (tolerance 1e-6); pj >= d^2 at 22, K >= 0 at 1 of 22 points  ::  smallest max(pj - d^2, K) = 1.725e+00
+
+PASS: all 65 checks passed (5 DATA, 54 EXACT, 6 NUMERIC) in 99 s: Replay of Case T_27 = [2, 3, 4, 7, 8, 12]  (document final_referee_T26_uniform_20261022, its 'T26')
