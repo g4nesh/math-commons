@@ -1,0 +1,156 @@
+MathCommons.ForestSpectralExpansion.productCongr {V : Type} (xs : List V)
+  (f g : V → MathCommons.ForestGateMagnitude.Gaussian) (same : ∀ (x : V), x ∈ xs → f x = g x) :
+  MathCommons.ForestSpectralExpansion.product xs f = MathCommons.ForestSpectralExpansion.product xs g
+MathCommons.ForestSpectralExpansion.productMap {V W : Type} (xs : List V) (p : V → W)
+  (f : W → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestSpectralExpansion.product (List.map p xs) f =
+    MathCommons.ForestSpectralExpansion.product xs fun x => f (p x)
+MathCommons.ForestSpectralExpansion.productPerm {V : Type} (xs ys : List V)
+  (f : V → MathCommons.ForestGateMagnitude.Gaussian) (perm : xs.Perm ys) :
+  MathCommons.ForestSpectralExpansion.product xs f = MathCommons.ForestSpectralExpansion.product ys f
+MathCommons.ForestSpectralExpansion.subsetOutside {V : Type} [DecidableEq V] (xs : List V)
+  (s : MathCommons.ForestTrajectory.Subset V) (member : s ∈ MathCommons.ForestSpectralExpansion.subsets xs) (x : V)
+  (outside : ¬x ∈ xs) : s x = false
+MathCommons.ForestSpectralExpansion.subsetsNodup {V : Type} [DecidableEq V] (xs : List V) (unique : xs.Nodup) :
+  (MathCommons.ForestSpectralExpansion.subsets xs).Nodup
+MathCommons.ForestSpectralExpansion.subsetMember {V : Type} [DecidableEq V] (xs : List V)
+  (s : MathCommons.ForestTrajectory.Subset V) (supported : ∀ (x : V), ¬x ∈ xs → s x = false) :
+  s ∈ MathCommons.ForestSpectralExpansion.subsets xs
+MathCommons.ForestSpectralExpansion.subsetsComplete {V : Type} [DecidableEq V] (xs : List V)
+  (complete : ∀ (x : V), x ∈ xs) (s : MathCommons.ForestTrajectory.Subset V) :
+  s ∈ MathCommons.ForestSpectralExpansion.subsets xs
+MathCommons.ForestSpectralExpansion.productOfSums {V : Type} [DecidableEq V] (xs : List V) (unique : xs.Nodup)
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) :
+  (MathCommons.ForestSpectralExpansion.product xs fun x =>
+      MathCommons.ForestGateSupport.gaussianArithmetic.add (a x) (b x)) =
+    MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map (fun s => MathCommons.ForestSpectralExpansion.selectionTerm xs s a b)
+        (MathCommons.ForestSpectralExpansion.subsets xs))
+MathCommons.ForestSpectralExpansion.productPointwise {V : Type} (xs : List V)
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) :
+  (MathCommons.ForestSpectralExpansion.product xs fun x =>
+      MathCommons.ForestGateSupport.gaussianArithmetic.mul (a x) (b x)) =
+    MathCommons.ForestGateSupport.gaussianArithmetic.mul (MathCommons.ForestSpectralExpansion.product xs a)
+      (MathCommons.ForestSpectralExpansion.product xs b)
+MathCommons.ForestSpectralExpansion.selectionSplit {V : Type} (xs : List V) (s : MathCommons.ForestTrajectory.Subset V)
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestSpectralExpansion.selectionTerm xs s a b =
+    MathCommons.ForestGateSupport.gaussianArithmetic.mul
+      (MathCommons.ForestSpectralExpansion.product xs fun x =>
+        if s x = true then MathCommons.ForestGateSupport.gaussianArithmetic.one else a x)
+      (MathCommons.ForestSpectralExpansion.product xs fun x =>
+        if s x = true then b x else MathCommons.ForestGateSupport.gaussianArithmetic.one)
+MathCommons.ForestSpectralExpansion.permutationList {V : Type} [DecidableEq V] (xs : List V) (unique : xs.Nodup)
+  (complete : ∀ (x : V), x ∈ xs) (p : MathCommons.ForestPermutationLaw.VertexPermutation V) :
+  (List.map p.forward xs).Perm xs
+MathCommons.ForestSpectralExpansion.productReindex {V : Type} [DecidableEq V] (xs : List V) (unique : xs.Nodup)
+  (complete : ∀ (x : V), x ∈ xs) (p : MathCommons.ForestPermutationLaw.VertexPermutation V)
+  (a : V → MathCommons.ForestGateMagnitude.Gaussian) :
+  (MathCommons.ForestSpectralExpansion.product xs fun x => a (p.forward x)) =
+    MathCommons.ForestSpectralExpansion.product xs a
+MathCommons.ForestSpectralExpansion.selectionAsMonomial {V : Type} [DecidableEq V] (xs : List V) (unique : xs.Nodup)
+  (complete : ∀ (x : V), x ∈ xs) (p : MathCommons.ForestPermutationLaw.VertexPermutation V)
+  (s : MathCommons.ForestTrajectory.Subset V) (a b : V → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestSpectralExpansion.selectionTerm xs s (fun x => a (p.forward x)) b =
+    MathCommons.ForestSpectralExpansion.spectralMonomial xs s (MathCommons.ForestPermutationLaw.subsetImage p s) a b
+MathCommons.ForestSpectralExpansion.pairingProductAsRows {V : Type} [DecidableEq V] (xs : List V) (unique : xs.Nodup)
+  (complete : ∀ (x : V), x ∈ xs) (p : MathCommons.ForestPermutationLaw.VertexPermutation V)
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestSpectralExpansion.pairingProduct xs p a b =
+    MathCommons.ForestSpectralExpansion.product xs fun row =>
+      MathCommons.ForestGateSupport.gaussianArithmetic.add (a row) (b (p.inverse row))
+MathCommons.ForestSpectralExpansion.pairingSubsetExpansion {V : Type} [DecidableEq V] (xs : List V) (unique : xs.Nodup)
+  (complete : ∀ (x : V), x ∈ xs) (p : MathCommons.ForestPermutationLaw.VertexPermutation V)
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestSpectralExpansion.pairingProduct xs p a b =
+    MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map
+        (fun s =>
+          MathCommons.ForestSpectralExpansion.spectralMonomial xs s (MathCommons.ForestPermutationLaw.subsetImage p s) a
+            b)
+        (MathCommons.ForestSpectralExpansion.subsets xs))
+MathCommons.ForestSpectralExpansion.scaleZero (z : MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestSpectralExpansion.scale 0 z = MathCommons.ForestGateSupport.gaussianArithmetic.zero
+MathCommons.ForestSpectralExpansion.scaleAdd (q : Rat) (z w : MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestSpectralExpansion.scale q (MathCommons.ForestGateSupport.gaussianArithmetic.add z w) =
+    MathCommons.ForestGateSupport.gaussianArithmetic.add (MathCommons.ForestSpectralExpansion.scale q z)
+      (MathCommons.ForestSpectralExpansion.scale q w)
+MathCommons.ForestSpectralExpansion.scaleSum {X : Type} (xs : List X) (q : Rat)
+  (f : X → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestSpectralExpansion.scale q
+      (MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic (List.map f xs)) =
+    MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map (fun x => MathCommons.ForestSpectralExpansion.scale q (f x)) xs)
+MathCommons.ForestSpectralExpansion.sumScale {X : Type} (xs : List X) (weight : X → Rat)
+  (z : MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map (fun x => MathCommons.ForestSpectralExpansion.scale (weight x) z) xs) =
+    MathCommons.ForestSpectralExpansion.scale (MathCommons.ForestPathNormalization.sumWith weight xs) z
+MathCommons.ForestSpectralExpansion.weightedGrouping {X K : Type} (xs : List X) (keys : List K) (key : X → K)
+  (weight : X → Rat) (f : K → MathCommons.ForestGateMagnitude.Gaussian) (unique : keys.Nodup)
+  (complete : ∀ (x : X), x ∈ xs → key x ∈ keys) :
+  MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map (fun x => MathCommons.ForestSpectralExpansion.scale (weight x) (f (key x))) xs) =
+    MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map
+        (fun k =>
+          MathCommons.ForestSpectralExpansion.scale
+            (MathCommons.ForestPathNormalization.sumWith (fun x => if key x = k then weight x else 0) xs) (f k))
+        keys)
+MathCommons.ForestSpectralExpansion.weightedSubsetExpansion {V : Type} [DecidableEq V] (xs : List V) (unique : xs.Nodup)
+  (complete : ∀ (x : V), x ∈ xs) (law : List (MathCommons.ForestPermutationLaw.VertexPermutation V × Rat))
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestSpectralExpansion.weightedPairings xs law a b =
+    MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+      (List.map
+        (fun start =>
+          MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+            (List.map
+              (fun finish =>
+                MathCommons.ForestSpectralExpansion.scale
+                  (MathCommons.ForestPathNormalization.sumWith
+                    (fun entry =>
+                      if MathCommons.ForestPermutationLaw.subsetImage entry.fst start = finish then entry.snd else 0)
+                    law)
+                  (MathCommons.ForestSpectralExpansion.spectralMonomial xs start finish a b))
+              (MathCommons.ForestSpectralExpansion.subsets xs)))
+        (MathCommons.ForestSpectralExpansion.subsets xs))
+MathCommons.ForestSpectralExpansion.productOnes {V : Type} (xs : List V) :
+  (MathCommons.ForestSpectralExpansion.product xs fun x => MathCommons.ForestGateSupport.gaussianArithmetic.one) =
+    MathCommons.ForestGateSupport.gaussianArithmetic.one
+MathCommons.ForestSpectralExpansion.emptySpectralMonomial {V : Type} (xs : List V)
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestSpectralExpansion.spectralMonomial xs (fun x => false) (fun x => false) a b =
+    MathCommons.ForestSpectralExpansion.product xs a
+MathCommons.ForestSpectralExpansion.fullSpectralMonomial {V : Type} (xs : List V)
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) :
+  MathCommons.ForestSpectralExpansion.spectralMonomial xs (fun x => true) (fun x => true) a b =
+    MathCommons.ForestSpectralExpansion.product xs b
+MathCommons.ForestSpectralExpansion.forestWeightedSubsetExpansion {V : Type} [DecidableEq V] {vertices : List V}
+  (edges : Nat → MathCommons.ForestTrajectory.Edge vertices)
+  (as bs cs ds : Nat → MathCommons.ForestGateMagnitude.Gaussian) (n : Nat)
+  (bridges : MathCommons.ForestTrajectory.EveryEdgeIsBridge edges n)
+  (unitary : ∀ (k : Nat), k < n → MathCommons.ForestGateMagnitude.UnitaryBlock (as k) (bs k) (cs k) (ds k))
+  (a b : V → MathCommons.ForestGateMagnitude.Gaussian) :
+  (∀ (entry : MathCommons.ForestPermutationLaw.VertexPermutation V × Rat),
+      entry ∈ MathCommons.ForestPermutationLaw.coinLaw edges bs n → 0 ≤ entry.snd) ∧
+    MathCommons.ForestPathNormalization.sumWith (fun entry => entry.snd)
+          (MathCommons.ForestPermutationLaw.coinLaw edges bs n) =
+        1 ∧
+      MathCommons.ForestSpectralExpansion.weightedPairings vertices
+          (MathCommons.ForestPermutationLaw.coinLaw edges bs n) a b =
+        MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+          (List.map
+            (fun start =>
+              MathCommons.ForestGateSupport.scalarSum MathCommons.ForestGateSupport.gaussianArithmetic
+                (List.map
+                  (fun finish =>
+                    MathCommons.ForestSpectralExpansion.scale
+                      (MathCommons.ForestGateMagnitude.normSq
+                        (MathCommons.ForestGateSupport.minorDet MathCommons.ForestGateSupport.gaussianArithmetic
+                          (MathCommons.ForestProductMinor.matrixProduct vertices
+                            (MathCommons.ForestPathProbability.gateSchedule edges as bs cs ds) n)
+                          (List.filter finish vertices) (List.filter start vertices)))
+                      (MathCommons.ForestSpectralExpansion.spectralMonomial vertices start finish a b))
+                  (MathCommons.ForestSpectralExpansion.subsets vertices)))
+            (MathCommons.ForestSpectralExpansion.subsets vertices))
