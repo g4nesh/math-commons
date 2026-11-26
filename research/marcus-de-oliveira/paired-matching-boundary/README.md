@@ -1,0 +1,48 @@
+# Three paired eigenspaces and perfect matchings
+
+Let a normal matrix have eigenvalues $b_1,b_2,b_3$, each twice. Its relative eigenbasis $U\in U(6)$ has column pairs $J_1,J_2,J_3$. Write $a_1,\ldots,a_6$ for the arbitrary complex eigenvalues of the other normal matrix. For a pair of rows $e$ set
+$$x_e=\sum_{j=1}^3|\det U[e,J_j]|^2.$$
+
+We prove that $x$ is the edge-marginal vector of a random perfect matching. If $x$ lies on the relative boundary of the perfect-matching polytope, the three edges can be labeled so that a single probability law certifies the Marcus–de Oliveira inclusion for **every** choice of the $a_i,b_j$. In the interior we prove the inclusion averaged over permutations of the three eigenvalue labels and give a continuous family where the averaging can be removed. The general interior labeling problem remains open.
+
+## What a law must reproduce
+
+For a row set $S$, draw a column set $T$ of size $|S|$ with probability $|\det U[S,T]|^2$. Cauchy–Binet normalizes this law. Let $h_U(S)$ be the distribution of the ordered triple $(|T\cap J_1|,|T\cap J_2|,|T\cap J_3|)$. A coloring assigns each color to two rows. Its histogram on $S$ counts the rows of each color. One random coloring with histogram law $h_U(S)$ for every $S$ gives the polynomial identity
+$$\det(D_a+UD_bU^*)=\mathbb E\prod_{i=1}^{6}(a_i+b_{\mathrm{color}(i)}).$$
+Here $D_b$ repeats each $b_j$ on its column pair. Expand in the $a_i$ and apply Cauchy–Binet to the complementary principal minors to see the identity coefficient by coefficient. This gives the original convex-hull inclusion even when eigenvalues coincide.
+
+## 1. Forgetting the labels works in every even dimension
+
+For $m$ disjoint column pairs of a unitary on $2m$ sites use the same formula for $x$. Fix rows $S$, write $V=U[S,:]$, and use the column-subset law above. The probability that $T$ contains both columns of $J_j$ is
+$$\det(V_{:,J_j}^*V_{:,J_j})=\sum_{e\subset S,\ |e|=2}|\det U[e,J_j]|^2.$$
+Indeed $\det(V\operatorname{diag}(z)V^*)=\sum_T|\det V_{:,T}|^2\prod_{t\in T}z_t$. Set all $z$ to one except the two selected coordinates, set those to $1+s,1+t$, and compute the $st$ coefficient by the matrix determinant lemma using $VV^*=I$. The last equality is Cauchy–Binet. This is the two-site inclusion identity for a projection determinantal measure. [Lyons, *Determinantal probability measures*](https://arxiv.org/abs/math/0204325)
+
+Thus $x(E(S))$, the sum on edges entirely inside $S$, is the expected number of full column pairs in $T$. It is at most $\lfloor|S|/2\rfloor$. On all rows that number is $m$, and after deleting any one row it is $m-1$. Subtraction gives degree one at every vertex. Edmonds' matching polytope theorem now applies: nonnegativity, degree one and the odd-set inequalities describe precisely the convex hull of perfect matchings. Hence there is a matching with the asserted edge marginals. [Edmonds, *Maximum matching and a polyhedron with 0,1-vertices*](https://www.math.u-szeged.hu/~hajnal/courses/MSc_Optimalizalas/Edmonds.pdf)
+
+## 2. Physical boundary points split into smaller unitaries
+
+On six vertices the only inequalities that can distinguish relative boundary from interior are $x_e\ge0$ and $x(E(S))\le1$ for triples. The odd sets of size one and five give identities under the degree equations. The uniform law on all 15 matchings has $x_e=1/5$ and is strict in all the listed inequalities.
+
+**Zero edge.** If $x_{\{p,q\}}=0$, each two-column color block restricted to these two rows has rank at most one. Choose one unit vector in its kernel and complete it to an orthonormal basis within that block. Doing this in all three blocks gives a $2\times3$ zero rectangle. Right rotations within a color preserve every $h_U(S)$: the generating polynomial is $\det(V\operatorname{diag}(z_1 I_2,z_2 I_2,z_3 I_2)V^*)$.
+
+**Saturated triple.** If $x(E(S))=1$, every nonzero three-column minor on $S$ contains a full pair. In particular all minors choosing one column per color vanish. Write $L_j\subset\mathbb C^3$ for the span of the two restricted columns of color $j$. Together the $L_j$ span $\mathbb C^3$ because the three rows are orthonormal. Vanishing on all choices of columns, by multilinearity, means these spaces have no three independent representatives. Rado's independent-transversal theorem then implies one $L_j=0$, or $\dim(L_i+L_j)\le1$ for some two colors. In the first case a complete color eigenspace is supported on $S^c$. In the second, at least two dimensions of the coordinate space on $S$ are orthogonal to all four columns of those two colors. Their entire orthogonal complement is the remaining two-dimensional eigenspace, so this last color is supported on $S$. Either case gives a $3\times2$ zero rectangle. Conversely a color supported on either side forces that cut tight: on the other side all rainbow minors vanish, and the two sides have equal internal edge sums by the degree equations. [Rado, *A theorem on independence relations*](https://doi.org/10.1093/qmath/os-13.1.83)
+
+**One shared coordinate.** If $r$ rows and $c$ columns form a zero rectangle with $r+c=5$, independently reorder rows and columns to name those rows $R$ and those columns $L$. The remaining shared site is $v$. Complete the columns on $L$ to a unitary $X$ on $L\cup\{v\}$, extending by the identity on $R$. Then $Y=X^*U$ fixes $L$, and $U=XY$ with $Y$ supported on $\{v\}\cup R$. The factors have orders three and four. In the Cauchy–Binet expansion of any minor of $XY$, an intermediate set $K$ with nonzero term must agree with the outer row set on $R$ and the outer column set on $L$. Its size determines membership of $v$. Squaring therefore introduces no cross terms. [One-coordinate factorization](../pointwise-gluing/README.md)
+
+In a three-site unitary a single permutation law realizes every squared minor. Apply Birkhoff's theorem to the squared entries for one-site minors. Two-site minors are the complementary one-site minors by unitarity, and sizes zero and three are automatic. Extend the permutations by the identity. The preceding squared-minor formula permits replacing the three-site factor by such a random permutation before treating the four-site factor. If the three-site factor is on the left this permutes rows. If it is on the right it permutes the assignment of column colors. In each realization the four remaining active sites have at most three colors. Conditional on the permutation, the four-site factor has its own law for that color pattern and the inactive coordinates keep their assigned colors. Averaging gives every $h_U(S)$ simultaneously.
+
+For completeness the needed four-site law is explicit. With at most two colors, sample the locations of all columns of one color by the projection determinantal law; its restriction counts have generating function $\det(I+(z-1)V_{:,J}V_{:,J}^*)$ on any selected rows, which is also the required histogram. With three colors, write $u,v$ for the two singleton columns. Give each edge $\{i,j\}$ mass $d_{ij}=|u_i v_j-u_j v_i|^2$. Orient each edge randomly so that the first endpoint has marginals $|u_i|^2$. A fractional edge-to-endpoint flow with those demands exists: for every set $H$ the mass that can go only to $H$ is
+$$\sum_{i<j\in H}d_{ij}=\|u_H\|^2\|v_H\|^2-|\langle u_H,v_H\rangle|^2\le\|u_H\|^2.$$
+Both totals are one, so these are the sufficient max-flow/min-cut conditions. The combined endpoint marginals are $|u_i|^2+|v_i|^2$ by orthonormality, giving $|v_i|^2$ at the second endpoint. The two singleton hits in any $S$ are binary. Their individual probabilities and joint hit probability $\sum_{e\subset S}d_e$ give their entire joint distribution, which coincides with the determinantal law by Section 1. Assign the repeated color to the remaining rows. This also follows from Claude's more general three-color theorem. [Theorem D](../minors/theorem-d.md)
+
+## 3. What averaging proves throughout the interior
+
+Take any matching law supplied by Section 1, then label the three edges by a uniformly random permutation of the colors. For $|S|\le3$ the number of edges entirely inside $S$ is zero or one, and its expectation is $x(E(S))$. The same holds for the number of full pairs in the random column set $T$. Given $|S|$ and that number, the unordered histogram is fixed: there are that many twos, $|S|$ minus twice that many ones, and the other entries are zeros. Uniform relabeling makes the ordered distributions identical. Larger sets follow by complementation of matching edges and the identity $|\det U[S,T]|=|\det U[S^c,T^c]|$.
+
+Consequently the average of the six determinants obtained by permuting the three block eigenvalues belongs to the common permutation-product hull, for every $U,a,b$. If $h_U(S)$ is already invariant under permuting the colors for every $S$, this proves the desired unaveraged inclusion with spectrum-independent weights.
+
+For an explicit family with this symmetry, index the rows by $(r,i)$ and the columns by $(s,j)$ with $r,s\in\mathbb Z/3$ and $i,j\in\{1,2\}$. Set
+$$U_{(r,i),(s,j)}=3^{-1/2}\zeta^{rs}(W_r)_{ij},\qquad \zeta=e^{2\pi i/3},\quad W_0,W_1,W_2\in O(2).$$
+This is a block orthogonal matrix times $F_3\otimes I_2$, so is unitary. Translating $s$ multiplies each row by a phase. Reflecting $s$ conjugates every entry because the $W_r$ are real. These permutations generate all six color relabelings and preserve every squared minor under the corresponding column permutation. This proves the unaveraged result for every member of the family.
+
+The missing condition for general $U$ is one nonnegative joint law that keeps the three **individual** color labels and their correlations. A matching law alone loses that information.
