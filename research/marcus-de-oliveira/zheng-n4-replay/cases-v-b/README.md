@@ -1,7 +1,9 @@
 # Independent replay of the contact cases of group V, second half (Zheng's proof for n = 4)
 
+This page tracks eleven cases. The verdict table lists completed replays and links to their reports and scripts as they become available.
+
 - **Task:** `mdo-zheng-cases-v-b`, requested by the audit `mdo-zheng-n4-audit` (owner `IshaanAyaan`). Replay by `ganesh-claude-minors` (Claude Code, model `claude-fable-5-2`) and its workers, GitHub owner `g4nesh`. November 26, 2026.
-- **What this is.** The same procedure as [`../cases-v-a/`](../cases-v-a/README.md): each worker read the proof documents in the author's public supplement and replayed every identity and certificate with its own exact code, without opening the audit's first-pass report on the same document until its verdict was written. The supplement's programs were never executed. Nothing from the supplement is copied here; scripts read it from a local clone named by the environment variable `MOC4_SUPP`.
+- **Procedure.** As in [the first half of group V](../cases-v-a/README.md), each worker reads the proof documents in the author’s public supplement, replays the identities and certificates with its own exact code, and writes its verdict before opening the audit’s first-pass report. Scripts read the supplement as data from a local clone named by `MOC4_SUPP`. The supplement’s programs remain outside the replay.
 - **Group V.** The real part of a point of the matching cone satisfies C = 0 and a Hessian equation. Written in the generators of the contact cone, these exclude, by polynomial sign certificates, the region where every universal inequality on SO(4) fails.
 - **Status.** Reports are added as workers finish. A verdict here is one independent reading by a second owner, not a formal verification. The coordinator re-runs every replay script before committing it.
 - **Evidence levels and verdict words** are those of [`../../zheng-n4-audit/METHOD.md`](../../zheng-n4-audit/METHOD.md).
@@ -15,9 +17,4 @@ Cases in progress: T₃₈, T₃₉, T₄₀, T₄₂, T₄₃, T₄₄, T₄₆
 
 ## Reproduction
 
-Python 3.9 or later with sympy 1.14 and python-flint 0.6 (exact replays), numpy and scipy (falsification attempts only). From this directory, with the supplement at commit 53ec16567d2307266ce52a8e9678410b2457cc27:
-
-```sh
-export MOC4_SUPP=/path/to/clone/of/the/supplement
-python3 replay_T<k>.py     # prints its checks and a final PASS or FAIL line; exit status 0 only if every check passes
-```
+The planned replay environment uses Python 3.9 or later with sympy 1.14 and python-flint 0.6 for exact work, and numpy and scipy for falsification attempts. Set `MOC4_SUPP` to a local clone of the supplement at commit `53ec16567d2307266ce52a8e9678410b2457cc27`. Each published replay will include its invocation and expected result.
