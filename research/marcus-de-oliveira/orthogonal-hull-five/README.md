@@ -83,6 +83,7 @@ At an orthogonal matrix O the identity gives 13/10 − Φ(O) = Σ_b v_b(O)ᵀ·G
 | The maximum of Φ over U(5) is 37/25 | 60 local searches from Haar starts, all ending at 1.4800000000 | numerical |
 | No certificate of the same shape proves a bound below 1.1365 | smallest β in the semidefinite program ([`logs/build_certificate.txt`](logs/build_certificate.txt)) | numerical |
 | Certificates built from quadratic monomials cannot separate V at all | a separate semidefinite program over all functionals returned separation 0 (exploratory script, not committed) | numerical |
+| Unitaries outside the hull are rare under Haar measure | the largest value of Φ over all relabellings of rows and columns exceeds 1 for 1 of 200 Haar unitaries and exceeds 13/10 for none ([`logs/haar_fraction.txt`](logs/haar_fraction.txt)) | numerical |
 | The conjecture and PMSH(5) hold at V | linear programs for 400 random and 20 optimized complex spectra, and 100 random and 10 optimized real spectra: distance 0 from the hull every time ([`logs/stress.txt`](logs/stress.txt)) | numerical |
 
 The sharp inequality Φ ≤ 1 on O(5) is therefore open as a theorem. Only the weaker bound 13/10 is proved, and it is all that Theorem N5 needs.
@@ -90,7 +91,7 @@ The sharp inequality Φ ≤ 1 on O(5) is therefore open as a theorem. Only the w
 ## Consequences for the programme
 
 - **Dimension four is special.** There, every unitary is a real orthogonal matrix times one complex reflection up to phases, and squared minors are two-point mixtures of orthogonal ones. For n ≥ 5 no mixture of any number of orthogonal matrices works in general.
-- **Reduction to real orthogonal matrices.** In dimension four the conjecture for all unitaries follows from the conjecture for real orthogonal ones, because the determinant is an affine function of the squared minors. That argument is not available for n ≥ 5. Whether the determinant functionals themselves always attain their extreme values on O(n) is a different question, and it is open.
+- **Reduction to real orthogonal matrices.** In dimension four the conjecture for all unitaries follows from the conjecture for real orthogonal ones, because the determinant is an affine function of the squared minors. That argument is not available for n ≥ 5: a reduction of the conjecture to real orthogonal matrices there would have to use a property special to the determinant functionals, since it fails for general linear functionals of the squared minors.
 - **A test matrix.** V lies as far outside the orthogonal hull as the search found. It is a natural fixture for dimension-five experiments; `stress.py` runs two.
 
 ## Files
@@ -103,6 +104,7 @@ The sharp inequality Φ ≤ 1 on O(5) is therefore open as a theorem. Only the w
 | `verify_certificate.py` | exact verifier, standard library only |
 | `common.py`, `build_certificate.py` | construction of the certificate: exact reduction modulo the orthogonality relations, a semidefinite program, rounding, exact correction |
 | `stress.py` | the conjecture and PMSH(5) at V |
+| `haar_fraction.py` | how often a Haar-random unitary is separated by a relabelling of Φ |
 
 ## Reproduction
 
@@ -125,5 +127,5 @@ python3 stress.py 0 400            # tests at V (several minutes)
 
 1. Independent review by another GitHub owner: run `verify_certificate.py`, read its 100 lines, and check the three short proofs above.
 2. Prove the sharp bound Φ ≤ 1 on O(5), or find the true maximum. The 6-dimensional maximizer set rules out the simplest certificates.
-3. Decide whether the determinant functionals of the conjecture attain their extreme values on O(5).
+3. Decide whether the conjecture for real orthogonal relative eigenbases implies it for all unitaries in dimension five by some other route.
 4. Formalize Proposition B in Lean from the certificate.
