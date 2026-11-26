@@ -1,0 +1,69 @@
+{
+  "radiusPowerOfTen": -100,
+  "radius": "1/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "domain": "max(abs(Re delta),abs(Im delta)) <= radius; fixed archived real U,b; all x,z,y complex",
+  "T": "25",
+  "poleHalfwidth": "1/4096",
+  "bezoutCoefficientL1": [
+    "711714149881211/4131941952000000000",
+    "1584356200063/48802464000000000"
+  ],
+  "infinityDeterminantLoss": "153348616/3125",
+  "signedTotalVariation": "10718023/9765625",
+  "bounds": {
+    "finiteDeterminantLower": "1/720575940379279360000000000000000000",
+    "finiteInverseRowBound": "398990779487354880000000000000000000000000000000000000000000000000000",
+    "infinityInverseRowBound": "7257600000000000000000000",
+    "baseMassFloor": "1/1210000000",
+    "massFloorAfterMotion": "1/2420000000",
+    "finiteNeumannBound": "10206/5684341886080801486968994140625",
+    "finiteMassChangeRelativeToFloor": "35126784/2910383045673370361328125",
+    "infinityNeumannBound": "5103/390625000000000000000000000000000000000000000000000000000000000000000000000",
+    "infinityMassChangeRelativeToFloor": "68607/781250000000000000000000000000000000000000000000000000000000000000"
+  },
+  "exactRegressions": [
+    {
+      "case": "zero",
+      "support": 24,
+      "massAboveHalfFloor": true,
+      "weightsSha256": "af1c9e73a2e9acd31393cf4991e3f2cf89580163f9b38eb20271274d92c59bca"
+    },
+    {
+      "case": "ordinary",
+      "support": 24,
+      "massAboveHalfFloor": true,
+      "weightsSha256": "2f6baca10049b52a4a134ec5e5d6cfd6fe5a5ee9151591523019db120ddc171a"
+    },
+    {
+      "case": "reciprocal",
+      "support": 24,
+      "massAboveHalfFloor": true,
+      "weightsSha256": "d75881da36eecb45e6b2b7ae225d2aef99405fd582266dc2a7ae226f177716fc"
+    },
+    {
+      "case": "pole-1",
+      "support": 24,
+      "massAboveHalfFloor": true,
+      "weightsSha256": "9b0653481266ad40ccfb70766c110a286e523312aa1466ff1ecbf216c0f7366c"
+    },
+    {
+      "case": "pole-2",
+      "support": 24,
+      "massAboveHalfFloor": true,
+      "weightsSha256": "c0d7442a3b9ad226380879a85c8d24d6071fea1f3721f1d53c05741b2f90be0f"
+    },
+    {
+      "case": "pole-3",
+      "support": 24,
+      "massAboveHalfFloor": true,
+      "weightsSha256": "4b9c3dcccd767c00cd56c7e656590d56761b96405aeb3bef27967bf01ef9b092"
+    },
+    {
+      "case": "pole-4",
+      "support": 24,
+      "massAboveHalfFloor": true,
+      "weightsSha256": "da427bdb8b182130fea31e0a1dc09416352358a5077ed48c08c8a01c7866f599"
+    }
+  ],
+  "scope": "Exact rational replay plus written continuous bounds; not Lean, not universal MDO, independent-owner review pending"
+}
