@@ -1,0 +1,6 @@
+2000 random pairs per class; largest relative distance from the hull:
+   line                   0.0e+00
+   circle                 0.0e+00
+   unitary B              0.0e+00
+   repeated eigenvalue    0.0e+00
+   control: general b     0.0e+00
