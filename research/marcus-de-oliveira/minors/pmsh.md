@@ -9,7 +9,7 @@
   - H1–H5 were checked by an independent reviewer ([`../reviews/mdo-minors.md`](../reviews/mdo-minors.md): all hold; the exact certificates of H5 replay).
 - **Exact artifact commit:** added in 8c1b1fb (branch `claude/mdo-minors-compound-certificates`), on main as 304f790 (PR 20).
 - **Status and known gaps:**
-  - PMSH is **unproved** for every n ≥ 4.
+  - **Update, November 26, 2026.** PMSH(4) is now **proved**: Theorem P4 of [`../unitary-factorization/README.md`](../unitary-factorization/README.md) (computer-assisted through Theorem EQ; not yet independently reviewed). PMSH(n) is unproved for every n ≥ 5. The statements below that call PMSH(4) open describe the state before that result.
   - Two targeted literature searches found no statement of it.
   - Kovačec, LAA 289 (1999), recasts "A Hermitian, B normal, n = 4" via bilinear forms on ℝ¹⁶ × ℂ¹⁶ and may consider the same 16-dimensional minor vector. It was **not read**.
 
@@ -30,6 +30,14 @@ Case status:
 - Shitov 2025 settles the subcase where B has ≤ 3 nonreal eigenvalues.
 - Drury 2006 and Bebiano–Kovačec–da Providência 1994 need **both** spectra on lines or circles.
 - By [`../literature/`](../literature/README.md), Shitov's Theorem 19 lifts a proof for the class 𝒜(4,4) to 𝒜(n,4), n ≥ 4. So PMSH(4) alone would give MOC for Hermitian A with at most four nonreal eigenvalues of B, in **every** dimension.
+
+> **Corollary H6 (conditional on Shitov's Theorem 19 as cited).** For every n ≥ 4, let A be a Hermitian n×n matrix and B a normal n×n matrix with at most four nonreal eigenvalues. Then det(A + B) lies in the convex hull of the products ∏(aᵢ + b_σ(i)), σ ∈ S_n.
+
+- **Proof, given the citation.** The class 𝒜(4,4) is the case n = 4 with A Hermitian and B any normal matrix. MOC holds on it by Corollary P4′ of [`../unitary-factorization/README.md`](../unitary-factorization/README.md). Theorem 19 with m = k = 4 lifts this to 𝒜(n,4) for every n ≥ 4.
+- **What it would add.** Shitov's Theorem 1 covers at most three nonreal eigenvalues of B. Corollary H6 adds the fourth, in every dimension.
+- **Status of the two inputs.**
+  - *The case n = 4.* Two proofs by different routes: Corollary P4′ here (Theorem F, Theorem O, Theorem EQ, Theorem H1; not yet reviewed by another owner), and Theorem C.1 of Zheng's preprint, for which the audit in [`../zheng-n4-audit/FINDINGS.md`](../zheng-n4-audit/FINDINGS.md) reports no error.
+  - *Theorem 19.* Y. Shitov, *A further sufficient condition for the determinantal conjecture*, Izv. Math. 89:4 (2025), 862–869. Its statement is taken from the reading recorded in [`../literature/README.md`](../literature/README.md) by another agent of this owner, who read the theorem and the structure of its proof and did not certify the argument. I could not re-read it: mathnet.ru refused connections on November 26, 2026. **Until someone reads Definition 5 and Theorem 19 at the source and confirms that m = k = 4 is allowed and that the hypothesis is the plain inclusion on 𝒜(4,4), Corollary H6 is conditional.**
 
 ## Definitions
 
@@ -131,9 +139,9 @@ All runs used Python 3.9.6, numpy 2.0.2, scipy 1.13.1 (HiGHS) and sympy 1.14.0. 
 - The known cases (H4).
 - Exact strictness against compound Birkhoff (H5).
 
-**Not established:** PMSH itself for any n ≥ 4. The numerical evidence for n = 4, 5, 6 is finite-run evidence only.
+**Not established:** PMSH(n) for any n ≥ 5 (PMSH(4) is proved since November 26, 2026, see the status lines at the top). The numerical evidence for n = 5, 6 is finite-run evidence only.
 
-**Most valuable next step:** a proof of PMSH(4). With Shitov's Theorem 19 it would settle MOC for Hermitian A whenever B has at most four nonreal eigenvalues, in every dimension.
+**Most valuable next step:** an independent reading of Shitov's Theorem 19 and its proof. With PMSH(4) proved, that turns Corollary H6 into a theorem: MOC for Hermitian A whenever B has at most four nonreal eigenvalues, in every dimension. After that: PMSH(5).
 
 ## Independent review
 
