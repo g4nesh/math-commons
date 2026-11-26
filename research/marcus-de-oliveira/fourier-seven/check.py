@@ -44,6 +44,8 @@ def orbit_counts(seed):
 
 
 def check():
+    if not __debug__:
+        raise SystemExit('Run with Python assertions enabled')
     # alpha is the unique positive root of x^3+x^2-2x-1.
     lo, hi = Fraction(12469, 10000), Fraction(12470, 10000)
     f = lambda x: x**3+x*x-2*x-1
