@@ -6,4 +6,6 @@
 
 **Open cases.** The analogous three-value claim without a simple eigenvalue is Conjecture F. The pattern (2,2,2) is a suggested first case. Finite optimizations over dimensions 4–7 produced no outside candidate. For the separate Hermitian four-dimensional route, follow the PMSH investigation. [Full compound-polytope report](../minors/report.md) · [replay commands and limitations](../minors/README.md) · [PMSH work](work.md)
 
+**Three pairs in dimension six.** For three eigenvalues each of multiplicity two, forgetting the eigenvalue labels gives perfect-matching marginals for every relative unitary. On the relative boundary, the labels can always be restored, giving one distribution that works for all complex eigenvalues of both matrices. Color symmetry gives interior neighborhoods, and a residual matching test also certifies some nonsymmetric unitaries. Four fixtures each replay all 358 grouped coefficients. The remaining question is whether all interior points coming from unitaries admit the required joint labeling. [Proof, tests and remaining condition](../paired-matching-boundary/README.md)
+
 [Research overview](../overview.md)
