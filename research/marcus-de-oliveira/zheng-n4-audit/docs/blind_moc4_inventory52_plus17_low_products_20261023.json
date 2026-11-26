@@ -1,0 +1,50 @@
+{
+ "doc_id": "blind_moc4_inventory52_plus17_low_products_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory52_plus17_low_products_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "main",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     4,
+     6,
+     9,
+     12,
+     17
+    ]
+   ],
+   "restatement": "Realizable x with c(x) on the T7 face, all seven coefficients >0: max(ab,bc,ca)>d^2."
+  }
+ ],
+ "dependencies": [
+  "radial necessity",
+  "Prop C.6 (12x12 principal minors >=0), Cor C.5",
+  "S3 stabilizer"
+ ],
+ "steps": [
+  "F=-N-RB+Qz EXACT",
+  "H_I z-free EXACT",
+  "det identities EXACT-pointwise",
+  "Delta=F+F- EXACT",
+  "(7),(8), bordered EXACT-pointwise",
+  "three chart tables EXACT",
+  "real-branch argument PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "Q,N,R symbolic",
+  "Delta=F+F- polynomial identity",
+  "gamma 9772/+, Rbeta-Nalpha 13819/+, RF*-Nalpha 14549/- tables and markers"
+ ],
+ "numeric_tests": [
+  "see whole_assembly"
+ ],
+ "unchecked": [
+  "symbolic (not pointwise) proofs of det H=-4G^2/Q^2, det H_I=-dA^2P, (7),(8)"
+ ]
+}

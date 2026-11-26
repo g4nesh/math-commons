@@ -1,0 +1,35 @@
+PASS A1 paper T_88 = {1,5,6,10,13,14}
+PASS B1 generators(T_88) = {0,1,6,10,27,30,34,36,59} (the nine profiles of the document)  [[0, 1, 6, 10, 27, 30, 34, 36, 59]]
+PASS B2 non-minor generators are exactly f30, f34
+PASS B3 kernel of P[T,:] has dimension 8 and the eight profiles of (1) are a basis
+PASS B4 (2): q,a,v,b,w,t,c are exactly the gaps g20,g16,g11,g7,g12,g3,g0
+PASS B5 (2): g19 = q + d, hence d = g19 - g20  [{'q': 1, 'd': 1}]
+PASS B6 circuit (3): f30 + f34 = f0 + f6 + f27 + f36
+PASS B7 gaps g19, g15, g4, g8 are exactly q+d, v+d, w+d, t+d
+PASS B8 the pure transpose (identity row/column, eps = 1) preserves T, swaps f30 and f34, permutes the seven minors
+PASS B9 SOC orbit of (f1,f9;f22) has 144 elements (pair unordered)  [144]
+PASS B10 SOC tuple (1,10;30) lies in the proved SOC orbit with f30 as the compensated term
+PASS B10 SOC tuple (1,59;30) lies in the proved SOC orbit with f30 as the compensated term
+PASS B10 SOC tuple (10,59;30) lies in the proved SOC orbit with f30 as the compensated term
+PASS C1 H3 allocation (5): resources sum exactly to a,b,c; capacities x*y = (alloc)^2 (2000 exact rational samples)
+PASS C2 (7): C(L + H kappa) = +-(C + H Q) with the displayed C and Q (paper cubic C)  [sign 1]
+INFO det Hess C(L + H kappa): 35335 terms, 819 exact divisions, 36s
+PASS C3 Bareiss: 819 exact divisions
+PASS C4 det Hess C(L + H kappa) has degree <= 4 in H (H_kappa has rank 4)  [3]
+PASS C5 (8): Q^4 det Hess(L - C kappa / Q) is divisible by -4 Q^2
+PASS C6 (8): the quotient is a perfect square G^2 (at d = 1)
+PASS C6b dehomogenized G has total degree <= 9
+PASS C7 G has d^9 coefficient +1 after sign normalization  [1]
+PASS C8 G has 2285 terms  [2285]
+PASS C9 individual degrees of G in (q,a,v,b,w,t,c,d) are (3,2,3,2,3,3,2,9)  [(3, 2, 3, 2, 3, 3, 2, 9)]
+INFO G has 795 negative coefficients in the original variables
+PASS C10 G is homogeneous of degree 9 (by construction from the homogeneous identity)
+PASS D1 balanced chart: cleared G has only positive coefficients and constant 1  [20241 terms, D^6]
+PASS D2 six dominant charts: every cleared G has only positive coefficients and a monomial in X alone  [a:b,c:27372terms,pureX=[((0, 0, 0, 0, 1, 0, 0), 8), ((0, 0, 0, 0, 2, 0, 0), 28)]; a:c,b:27372terms,pureX=[((0, 0, 0, 0, 1, 0, 0), 8), ((0, 0, 0, 0, 2, 0, 0), 28)]; b:a,c:27372terms,pureX=[((0, 0, 0, 0, 1, 0, 0), 8), ((0, 0, 0, 0, 2, 0, 0), 28)]; b:c,a:27372terms,pureX=[((0, 0, 0, 0, 1, 0, 0), 8), ((0, 0, 0, 0, 2, 0, 0), 28)]; c:a,b:27372terms,pureX=[((0, 0, 0, 0, 1, 0, 0), 8), ((0, 0, 0, 0, 2, 0, 0), 28)]; c:b,a:27372terms,pureX=[((0, 0, 0, 0, 1, 0, 0), 8), ((0, 0, 0, 0, 2, 0, 0), 28)]]
+PASS D3 three solo charts: positive coefficients and constant 1  [a:450terms, b:450terms, c:450terms]
+PASS D4 chart inverses (10) and (12) recover a,b,c exactly (500 rational samples)
+PASS NUMERIC E1 G > 0 at 3000 random nonnegative sources with H3 < d = 1 (seed 11)  [min 3.048e-01]
+INFO total time 45s
+PASS NUMERIC D8 at stratum points with d > 0, d <= H3(a,b,c) (the document says realizable sources never have H3 < d)  [[(-0.0, 0.0), (-0.0, nan), (0.0, 0.0), (0.0, 0.426), (-0.0, nan), (0.0, 0.0)]]
+PASS NUMERIC D9 main statement: stratum points found by least squares (seeds 0-5, 40 tries, margin 0: contacts contain T), min Phi over SO(4) by 8-start BFGS >= -1e-9  [6 points, worst min Phi 4.465156521195396e-15]
+SUMMARY all EXACT checks pass

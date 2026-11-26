@@ -1,0 +1,42 @@
+PASS paper T_49 = {0,3,5,6,9,12}
+PASS generators(T_49) = f0,f1,f2,f5,f7,f9,f29,f39,f40,f41 (ten)  [0, 1, 2, 5, 7, 9, 29, 39, 40, 41]
+PASS the eight role generators vanish together exactly on T_49
+PASS d = f40 is the only non-minor role
+PASS f1 = f7 + f39 + f0 + -f40 (so a ten-generator source has an eight-role form with d replaced by d - x1 - x9)
+PASS f9 = f7 + f2 + f41 + -f40 (so a ten-generator source has an eight-role form with d replaced by d - x1 - x9)
+PASS Q0 = (c+d)(d+e+j) - p(e+j)
+PASS (e+j)C - ejQ0 has 42 terms, all positive, including d^3 e and d^3 j
+PASS c = 0, Q0 = 0: (e+j)C0 is a 27-term polynomial with nonnegative coefficients containing d^3(e+j)
+PASS zero face q = 0: contacts [0, 3, 5, 6, 9, 12, 16] contain an image of paper T_39  image (0, 3, 5, 6, 9, 16) via g=((1, 3, 0, 2), (1, 3, 2, 0), 0)
+PASS zero face p = 0: contacts [0, 3, 5, 6, 9, 11, 12] contain an image of paper T_1  image (0, 3, 5, 6, 9, 11) via g=((2, 3, 0, 1), (3, 1, 0, 2), 1)
+PASS zero face j = 0: contacts [0, 2, 3, 5, 6, 9, 12] contain an image of paper T_3  image (0, 2, 3, 5, 6, 9) via g=((0, 1, 3, 2), (0, 2, 3, 1), 0)
+PASS zero face e = 0: contacts [0, 3, 5, 6, 9, 12, 13] contain an image of paper T_24  image (0, 3, 5, 6, 9, 13) via g=((3, 2, 1, 0), (3, 2, 0, 1), 0)
+PASS zero face b = 0: contacts [0, 3, 5, 6, 7, 9, 12] contain an image of paper T_43  image (0, 3, 5, 6, 7, 9) via g=((0, 1, 2, 3), (0, 1, 3, 2), 0)
+PASS zero face a = 0: contacts [0, 3, 5, 6, 9, 12, 23] contain an image of paper T_44  image (0, 3, 5, 6, 9, 23) via g=((2, 3, 1, 0), (2, 1, 0, 3), 1)
+PASS chain orbit has 576 members, old-H orbit 288
+PASS chain (centre f5; leaves f0, f2; non-minor f40) is in the proved chain orbit
+PASS chain (centre f5; leaves f7, f29; non-minor f40) is in the proved chain orbit
+PASS chain (centre f5; leaves f29, f41; non-minor f40) is in the proved chain orbit
+PASS both-chain allocation: requirements sum to lambda; currents u + v = 1; j shares jq/Q + jb/Q = j
+PASS u(1/a+1/e) - v/j = v/Q identically (so = 1/2 exactly on Q = 2v)
+PASS cached G has the hash of the from-scratch computation
+PASS G: 1772 terms, homogeneous of degree 9, sha256 c89c8cbc5331fcfdbdc22587fbcf8a017fc692eb8fd1f38edbe8a59ca0550a49 (cache)
+PASS c1: Tj = 2/(1+L) - B0/(1+B0); lambda = (1+T)/2; u = lambda Ea; v = lambda JQ; a = 2u(1+A); Q = 2v(1+B0)
+PASS c1: (1 - j)(B0 + T + B0 T) = (1+B0)(T - Tj)  [so j <= 1 iff T >= Tj]
+INFO c1: cleared by prod den^deg; remaining factors removed {'2+X': 2}; 245193 terms; sha256 a2fbe1b6ed66aa1217f30e90755fca66a1f34ab04b83399ee3e3bd3145a81512; t=1
+PASS c1: substituted G (positive denominators cleared) has all 245193 coefficients of one sign (supplement table: 245193 terms)
+PASS c1: marker monomial 1 present with positive coefficient (supplement: -10616832)  coef 10616832
+PASS c2: Tj = 2/(1+L) - B0/(1+B0); lambda = (1+T)/2; u = lambda Ea; v = lambda JQ; a = 2u(1+A); Q = 2v(1+B0)
+PASS c2: (1 - j)(B0 + T + B0 T) = (1+B0)(T - Tj)  [so j <= 1 iff T >= Tj]
+PASS c2: Tj = (2 - B0 X)/((2+X)(1+B0)) <= 0 and B0(L-1) = 2 + BX
+INFO c2: cleared by prod den^deg; remaining factors removed {'2+X': 4}; 166518 terms; sha256 a3118854cfdfbcbfed3bab52a83f7e5e246c89df716175382500fb81acee6f97; t=3
+PASS c2: substituted G (positive denominators cleared) has all 166518 coefficients of one sign (supplement table: 166518 terms)
+PASS c2: marker monomial {'X': 3} present with positive coefficient (supplement: -131072)  coef 131072
+PASS c3: Tj = 2/(1+L) - B0/(1+B0); lambda = (1+T)/2; u = lambda Ea; v = lambda JQ; a = 2u(1+A); Q = 2v(1+B0)
+PASS c3: (1 - j)(B0 + T + B0 T) = (1+B0)(T - Tj)  [so j <= 1 iff T >= Tj]
+PASS c3: B0(L-1) = 2B/(1+B)
+INFO c3: cleared by prod den^deg; remaining factors removed {'XB+X+B': 2}; 457338 terms; sha256 67b9a86ec36cf6e14231c8200994c8610f293a70049ab8660030c53c69ee4e63; t=5
+PASS c3: substituted G (positive denominators cleared) has all 457338 coefficients of one sign (supplement table: 457338 terms)
+PASS c3: marker monomial {'X': 13} present with positive coefficient (supplement: -1296)  coef 1296
+NUMERIC both-chain capacity at p = lambda (large-lambda low-j cell, not necessarily realizable): 12 samples, seed 13, restarts 8, worst min Phi / scale = -1.056e-16
+SUMMARY: 0 EXACT check(s) failed

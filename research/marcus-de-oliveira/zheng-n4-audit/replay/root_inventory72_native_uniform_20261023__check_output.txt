@@ -1,0 +1,41 @@
+PASS T_73 = {0,4,5,7,9,12}; generators = [0,1,2,5,7,12,35,45] (doc (1))
+PASS rank 8, all minor except f35 = h4312,-
+PASS (2) f35 = 1 at rows 2, 8, 10 and every generator is >= 0 on all rows, so 0 <= theta <= g2, g8, g10
+PASS extra ties not forcing theta = 0 are exactly 1, 6, 11, 14, 15, 17, 18
+info tie 1: paper cases T_k with g.T_k inside T u {1}: [5, 10, 17, 26, 57, 68]; Table-5 seven-sets equal to an image: []
+PASS tie 1 is covered by some paper case T_k with k < 73
+info tie 6: paper cases T_k with g.T_k inside T u {6}: [24, 26, 37, 44, 65, 67]; Table-5 seven-sets equal to an image: [5]
+PASS tie 6 is covered by some paper case T_k with k < 73
+info tie 11: paper cases T_k with g.T_k inside T u {11}: [50, 52, 56, 62, 72, 74]; Table-5 seven-sets equal to an image: [9]
+PASS tie 11 is covered by some paper case T_k with k < 73
+info tie 14: paper cases T_k with g.T_k inside T u {14}: [51, 52, 63, 87]; Table-5 seven-sets equal to an image: [11]
+PASS tie 14 is covered by some paper case T_k with k < 73
+info tie 15: paper cases T_k with g.T_k inside T u {15}: [74, 80]; Table-5 seven-sets equal to an image: [17]
+info tie 17: paper cases T_k with g.T_k inside T u {17}: [65, 66, 67, 69, 75, 86]; Table-5 seven-sets equal to an image: []
+PASS tie 17 is covered by some paper case T_k with k < 73
+info tie 18: paper cases T_k with g.T_k inside T u {18}: [50, 51, 55, 61, 62, 63]; Table-5 seven-sets equal to an image: [8]
+PASS tie 18 is covered by some paper case T_k with k < 73
+PASS tie 15: T u {15} is an image of E = {0,1,2,9,10,16,17} = Table 5 set #17
+PASS (1) E = F5 - F0 = (w-z)(x+1)(a+t)
+PASS (2) F4 - F5 = (x-w)(a+t)
+PASS (4) F9 - F7 = a(t-1)(z-w)
+PASS F7 = a(z+t)(w+1), F0 = (a+t)z(x+1)
+PASS (6) J = H2 = (x-z)/((w-z)(x+1)) and J - r = 1/(x+1)
+PASS raw identity a(t-1)/(a+t) = -s/q and N/D = a/(a+t) (7)
+PASS inverse (6),(8): H0 = 0, H5 = 1, H4 = 1+r, H7 = u, H9 = u+s identically
+PASS (3) H2 = J, H3 = 1 - wJ
+PASS (9) H8 formula
+PASS (10) H10 formula
+PASS last equation C(J,w): bidegree (3,2), 60 terms, [J^3]C = (u-1)(w+1)
+PASS (11) [w^2]C = J s ((1-h)J + h r)
+PASS [J^2]C at w = -1 equals r - u + 1
+PASS (13) V0 - 1 = -r/(u-1)
+PASS (14) (V0 - r - 1)/(V0 - 1) = u
+PASS C~(tau,w) = tau^3 C(1/tau,w) vanishes at (0,-1) with dC~/dw(0,-1) = u-1
+PASS branch at (J,w) = (inf,-1): w + 1 = V0/J + O(J^-2)
+PASS H10 -> u along that branch (leading terms of numerator/denominator)
+PASS (12) rewritten H8 = (-J(s+1) + (r-u+1)/(w+1))/(r-J)
+info exact part time 6.5
+NUMERIC T_73 stratum points found 6/6 (seeds 0-5, margin 1e-2): min Phi over SO(4) (8 restarts each) = 1.019e-13; max relative residual of C(J,w)=0 and of Im(contact H) at these points = 6.50e-13
+time 46.1
+SUMMARY all EXACT checks passed

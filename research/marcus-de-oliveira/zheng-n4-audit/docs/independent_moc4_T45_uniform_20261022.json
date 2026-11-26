@@ -1,0 +1,135 @@
+{
+ "doc_id": "independent_moc4_T45_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T45_uniform_20261022.pdf",
+ "pages": 6,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "thm:whole",
+   "page": 1,
+   "paper_case": "T_46",
+   "contact_set": [
+    3,
+    4,
+    5,
+    9,
+    10,
+    12
+   ],
+   "restatement": "x in X, Pc(x)>=0 vanishing on {3,4,5,9,10,12} (extra contacts allowed) => Phi_c(x)(O)>=0 for all O in O(4); all spectra"
+  },
+  {
+   "label": "lem:26",
+   "page": 4,
+   "restatement": "d=1, a,c,r>0: on the 26 sign domains of (ab-1,cr-1,cs-1) other than (+,+,-), charts (11)-(14) make G9 a nonnegative-coefficient polynomial with a strict monomial, so G9>0"
+  },
+  {
+   "label": "sec3.1",
+   "page": 5,
+   "restatement": "G9>0 on x>1,y>1,z<1 of the failure region (Bernstein certificate on M^2<=L and M^2>=L)"
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "SOC(2,59;70), chain(2;0,12;70), chain(59;0,1;70), chain(59;67,72;70), old-H H(1,59;70)+H(72,59;70)",
+   "status": "CITED foundations so4-atoms-part2b G2",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_34 (hist T33) for a=0",
+   "contact_set": [
+    2,
+    3,
+    5,
+    9,
+    10,
+    12
+   ],
+   "status": "CITED",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_7 (hist T6) for c=0",
+   "contact_set": [
+    0,
+    1,
+    2,
+    4,
+    7,
+    8
+   ],
+   "status": "CITED",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_15 (hist T14) for r=0",
+   "contact_set": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7
+   ],
+   "status": "CITED",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (audit item 5)",
+   "status": "CITED"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2 (U(4) extension)",
+   "status": "CITED"
+  }
+ ],
+ "steps": [
+  "(1) source identity EXACT",
+  "d=0 PROOF-READ",
+  "capacities (2)-(6) CITED",
+  "zero faces EXACT+CITED",
+  "(7) EXACT",
+  "(8) EXACT",
+  "C<0 => Q!=0 PROOF-READ",
+  "(9) EXACT",
+  "region (10) PROOF-READ",
+  "charts (11)-(14) PROOF-READ+EXACT denominators",
+  "Lemma 1 26 domains EXACT",
+  "(15) EXACT",
+  "Sec 3.1 Bernstein EXACT",
+  "conclusion PROOF-READ"
+ ],
+ "gaps": [
+  {
+   "location": "p.2 old-H (row,col) table",
+   "claim": "literal actions",
+   "why": "not reproduced under tried conventions; orbit membership with roles holds",
+   "severity": "presentation",
+   "believed_true": true
+  }
+ ],
+ "exact_replays": [
+  "generators and identity evaluation matrix",
+  "zero faces a,c,r with group elements",
+  "(7) C and Q",
+  "(8) identity and P>0",
+  "(9) Q^4 det Hess = -4Q^2 G9^2, G9 1158 terms",
+  "Lemma 1: 26 domains nonnegative with strict monomial",
+  "(15)",
+  "Sec 3.1 Bernstein-type lists on PB and PR sides"
+ ],
+ "numeric_tests": [
+  "necessity: G9 ~ 0 (<=1.9e-14 rel.) at 10 matching vectors with gaps vanishing on T, seed 7",
+  "main statement: 4 stratum points, worst min Phi/max gap 9.0e-17"
+ ],
+ "unchecked": [
+  "capacity Gram proofs themselves (foundations)",
+  "supplement JSON hashes"
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "doc_id": "independent_moc4_T47_merged_C_high_j_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_merged_C_high_j_uniform_20261022.pdf",
+ "pages": 3,
+ "verdict": "gap-found",
+ "statements": [
+  {
+   "label": "Lemma 1",
+   "page": 1,
+   "restatement": "For d>0, A0=a+b: c >= d^2(A0+e)/(A0(sqrt j+sqrt e)^2) if je<=A0^2, c >= d^2/(j+A0) if je>=A0^2, and (e>=j) c >= d^2/(4j)+d^2/(4A0), are each sufficient for Phi_c >= 0 on SO(4) (pointwise, all spectra).",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ]
+  },
+  {
+   "label": "Theorem 2",
+   "page": 2,
+   "restatement": "With d=1, b>1, 0<a<1/b, p,c>0, q>=0, e>=j>=b: every spectrally realizable source satisfies the support inequality (including j=b, q=0, e=j, je=(a+b)^2).",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ]
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "audit foundation so4-atoms-part2b G4 (merged-C Lemma 1: six Grams and the allocation)",
+   "used_for": "Lemma 1",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "old-H atom",
+   "used_for": "j>=1+1/p",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "independent_moc4_T47_IIIb_plus_large_pc_20261022 (high-j large-pc theorem for j>=b; not audited here)",
+   "used_for": "range 3, pc>=a^2",
+   "match_checked": false
+  },
+  {
+   "kind": "branch",
+   "ref": "negative-Heron exclusion (Phi<0)",
+   "used_for": "range 3",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (audit item 5)",
+   "used_for": "G=0",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "L1",
+   "claim": "six Grams and proportional allocation",
+   "kind": "identity",
+   "status": "CITED",
+   "how": "foundation G4 (PROVED IN THE DOCUMENT AND CHECKED)"
+  },
+  {
+   "n": "T.1",
+   "claim": "case split j>=A0 / b<=j<A0 with je<=A0^2 / je>=A0^2 is exhaustive on e>=j>=b",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "for j<A0, A0^2/j>j so range 3 has e>=j"
+  },
+  {
+   "n": "T.2",
+   "claim": "range j>=A0: cleared G has 109050 positive coefficients, strict at T=U=Q=0",
+   "kind": "coefficient-sign",
+   "status": "EXACT",
+   "how": "replay, count matches"
+  },
+  {
+   "n": "T.3",
+   "claim": "range b<=j<A0, je<=A0^2: 1810026 positive coefficients",
+   "kind": "coefficient-sign",
+   "status": "EXACT",
+   "how": "replay mode r2: 1810026 positive coefficients, strict monomial free of T,U,Q"
+  },
+  {
+   "n": "T.4",
+   "claim": "endpoint R=A0/j positive",
+   "kind": "coefficient-sign",
+   "status": "EXACT",
+   "how": "own reduced clearing: 80874 positive terms"
+  },
+  {
+   "n": "T.5",
+   "claim": "range 3: pc>=a^2 -> large-pc theorem; Phi<0 -> negative-Heron",
+   "kind": "citation",
+   "status": "CITED",
+   "how": ""
+  },
+  {
+   "n": "T.6",
+   "claim": "range 3, pc<=a^2, Phi>=0: 9990288000 G~ = R0 + Mpc Fpc + MPhi FPhi",
+   "kind": "identity",
+   "status": "GAP",
+   "how": "multipliers \"embedded in the standalone verifier\", not in the document; NUMERIC only"
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p.2-3, range b<=j<A0, je>=A0^2, identity 9990288000 G~ = R0 + Mpc Fpc + MPhi FPhi",
+   "claim": "G>0 when pc<=a^2 and Phi>=0 in range 3",
+   "why": "The twelve- and fourteen-monomial multipliers are not printed, so the certificate cannot be checked from the document.",
+   "believed_true": true,
+   "repair": "print the multipliers and replay the identity",
+   "severity": "substantive"
+  }
+ ],
+ "exact_replays": [
+  "range j>=A0 certificate (109050 terms)",
+  "range b<=j<A0, je<=A0^2 certificate (1810026 terms)",
+  "endpoint je=A0^2 (own clearing, 80874 terms)"
+ ],
+ "numeric_tests": [
+  "range 2 interior (b<=j<A0, 1<=R<A0/j, c below crossing bound, p<1/(j-1)): 20000 samples, seed 11, min G = 89.8 > 0",
+  "range 3 (e>=A0^2/j, c<1/(j+A0), p<1/(j-1)): 20000 samples, seed 11, min G = 86.7 overall and 109.7 on the 11790-sample pc<=a^2, Phi>=0 subset (no violation)"
+ ],
+ "unchecked": [
+  "large-pc theorem for j>=b (other document)",
+  "negative-Heron exclusion",
+  "range-3 identity (multipliers not in the document)"
+ ],
+ "one_line": "Merged coherent-C capacity (cited, proved in the foundation) and the j >= b high-j sector; the two positive-coefficient range certificates (109050 and 1810026 terms) replayed exactly, the third range rests on an identity whose multipliers are not in the document: gap-found (substantive, believed true)."
+}

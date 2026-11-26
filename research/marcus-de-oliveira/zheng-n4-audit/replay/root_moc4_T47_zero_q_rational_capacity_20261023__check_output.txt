@@ -1,0 +1,9 @@
+PASS c*(t) = Crat at t = eta e/(D0 + eta^2 e)
+PASS e - kappa t^2 = e N/(D0+eta^2 e)^2 (positive denominator)
+PASS N - (rho^2/p) eta^2 e = D0^2 + D0 eta^2 e + eta^4 e^2
+PASS p - p* = p (N - rho^2 eta^2 e/p)/N  (so p* < p)
+PASS N - D0^2 = eta^2 e (kappa + 2 rho^2/p + eta^2 e) > 0
+INFO G(q=0,d=1) has 431 terms (document: 431 "original terms")
+INFO pointwise exact evaluation (seed 11): 2500 points of the Theorem-1 region (1316 on at least one wall p=b, j=1, e=bj/(b-j), c=0); min G(0,p,j,c,e,1,b,a) = 6.7459e+01; all positive: True
+INFO outside the region (c = 1.01, 2, 10 times Crat; seed 12): 14 of 1200 points have G < 0
+SUMMARY: all EXACT checks passed

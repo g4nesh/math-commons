@@ -1,0 +1,59 @@
+{
+  "doc_id": "blind_inventory88_matching_curve_uniform_20261023",
+  "pdf": "proofs/manin_transfer_20261021/blind_inventory88_matching_curve_uniform_20261023.pdf",
+  "pages": 6,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "whole", "page": 1, "paper_cases": [89], "contact_sets": [[2, 5, 9, 10, 13, 14]], "covers_all_spectra": true,
+     "restatement": "For every x in X (all spectra) with P c(x) >= 0 and (P c(x))_s = 0 for s in T_89 = {2,5,9,10,13,14} (non-strict), Phi_{c(x)}(O) >= 0 for all O in O(4)."},
+    {"label": "wholeSing", "page": 1, "covers_all_spectra": true,
+     "restatement": "Inputs (1) {grad C = 0} = cone over (P^1)^8//SL_2 in the paper's coordinates (HMSV, cited), and (2) C(w) = 0 and det Hess C(w) = 0 for every real w = Re(nu m), m in X (radial necessity)."}
+  ],
+  "dependencies": [
+    {"kind": "paper-case", "ref": "T_32", "contact_set": [0, 2, 3, 7, 11, 12], "used_for": "extra contacts 3, 8, 16 (and b = 0 in the full-complex-equal case)", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_79", "contact_set": [1, 3, 4, 8, 11, 12], "used_for": "extra contacts 4, 7, 12", "match_checked": true},
+    {"kind": "seven-contact", "ref": "Table 5 j = 24", "contact_set": [0, 3, 7, 11, 12, 16, 20], "used_for": "extra contact 18", "match_checked": true},
+    {"kind": "common-lemma", "ref": "paper Lemma 3.5", "used_for": "completion", "match_checked": true},
+    {"kind": "common-lemma", "ref": "radial necessity det Hess C(Re x) = 0 (paper p.27; established)", "used_for": "pole bound via (14)", "match_checked": true},
+    {"kind": "external", "ref": "HMSV ideal generation", "used_for": "curve points in X", "match_checked": true},
+    {"kind": "core-doc", "ref": "GIT lift + Lemma B.2", "used_for": "spectral realizability, collisions", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "kernel basis (3), gap pattern", "status": "EXACT"},
+    {"n": 2, "claim": "generators(T_89)", "status": "EXACT"},
+    {"n": 3, "claim": "circuit (4), negative-side rows", "status": "EXACT"},
+    {"n": 4, "claim": "printed row/col action swaps f42/f70", "status": "EXACT"},
+    {"n": 5, "claim": "extra-contact table", "status": "EXACT+CITED"},
+    {"n": 6, "claim": "(5) bounds after perturbing O", "status": "PROOF-READ"},
+    {"n": 7, "claim": "stabilizer edges", "status": "EXACT"},
+    {"n": 8, "claim": "full-complex-equal identities and conclusion", "status": "EXACT+PROOF-READ"},
+    {"n": 9, "claim": "offset v0, real coefficients", "status": "EXACT"},
+    {"n": 10, "claim": "solve chain with raw coefficients (8)", "status": "EXACT"},
+    {"n": 11, "claim": "nonvanishing of coefficients/denominators at strict points", "status": "PROOF-READ"},
+    {"n": 12, "claim": "(9) common factor C211, degrees, [b^3d^2]=16", "status": "EXACT"},
+    {"n": 13, "claim": "F6*C211 and R47*C211 numerators", "status": "EXACT"},
+    {"n": 14, "claim": "(10) and C211 = 0 at strict points", "status": "EXACT+PROOF-READ"},
+    {"n": 15, "claim": "C211 = 0 maps into X", "status": "EXACT+CITED"},
+    {"n": 16, "claim": "curve component, nonconstancy", "status": "PROOF-READ"},
+    {"n": 17, "claim": "(11) e, g formulas", "status": "EXACT"},
+    {"n": 18, "claim": "poles of d have finite b", "status": "PROOF-READ"},
+    {"n": 19, "claim": "e, g bounded at poles of d", "status": "PROOF-READ"},
+    {"n": 20, "claim": "(13) normalized limit and height", "status": "EXACT+PROOF-READ"},
+    {"n": 21, "claim": "(14) det Hess = -4 d^4 K2^2 (a+d)^6", "status": "EXACT+PROOF-READ"},
+    {"n": 22, "claim": "Lemma 3.5 completion", "status": "CITED+PROOF-READ"}
+  ],
+  "gaps": [],
+  "exact_replays": [
+    "generators, basis, gap pattern, circuit (4), negative-side rows, printed action, stabilizer edges, extra-contact table",
+    "three full-complex-equal gradient identities with the paper cubic",
+    "offset v0; solve chain with all seven raw coefficients of (8); (11)",
+    "gcd of the 7 nonzero substituted numerators = C211 (211 terms, deg_b 3, deg_d 2, [b^3d^2] = 16)",
+    "F6*C211 (index 9) and R47*C211 (index 13, R47 47 terms); identity (10)",
+    "(13) on the face b=e=g=0; (14) by exact Bareiss determinant"
+  ],
+  "numeric_tests": [
+    "C211 = 0 at (r,s,u,h,b,d) of 3000 random complex spectra, seed 3: max relative residual 4.3e-15, control (b+0.1) min 1.8e-8",
+    "brief main-statement test: 6 stratum points, min Phi -4.7e-15 (zero to rounding)"
+  ],
+  "unchecked": ["cited cases T_32, T_79, T7_24 (not audited here)", "supplement certificates (not opened by design)"]
+}

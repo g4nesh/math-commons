@@ -1,0 +1,25 @@
+[EXACT] PASS  T24 roles -> T46 roles [59, 53, 55, 67, 54] -> [1, 59, 6, 27, 28] realised in order by some g in G (#g=2)
+[INFO] FAIL  T24 roles -> T46 roles: literal reading of the printed action in moc4lib convention
+[EXACT] PASS  T46 roles -> T47 roles [1, 59, 6, 27, 28] -> [45, 5, 7, 0, 35] realised in order by some g in G (#g=2)
+[INFO] FAIL  T46 roles -> T47 roles: literal reading of the printed action in moc4lib convention
+[EXACT] PASS  core roles (p,j,q,b,d) = (f1,f59,f27,f6,f28): four minor, f28 non-minor; all generators of T46 = paper T_47
+[EXACT] PASS  T47 images (45,5,7,0,35) = (c,e,a,b,d) of historical T47 face q f2 + p f9 + j f1 + c f45 + e f5 + d f35 + b f0 + a f7
+[EXACT] PASS  Thm 1: Gram of (Q+B, J0) is [[s,-2t],[-2t,j-t^2]] with determinant Delta
+[EXACT] PASS  Thm 1: P.(Q+B) = -h, P.J0 = t - 1, |P|^2 = threshold (1)
+[EXACT] PASS  Thm 1 / Thm 2: the seven displayed completion relations hold (|D|^2 = 1)
+[EXACT] PASS  Thm 1: leaf Schur complement: det(3x3)/l = (j - t^2) - t^2 (q + b - 2 beta)/l, i.e. j > (1 + (q+b-2beta)/l) t^2
+[EXACT] PASS  Thm 2: template (order Q,P,J,D,B) is positive definite, |D|^2 = 1 and satisfies the seven equations
+[EXACT] PASS  u - 4/s = (q - b)^2/(s l) with u = (q+b-2beta)/l
+[EXACT] PASS  form (2): threshold = h^2/s + (s + k t)^2/(s{sj - (s+4)t^2})
+[EXACT] PASS  derivative of (2) = 2(s + kt){kj + (s+4)t}/{sj - (s+4)t^2}^2
+[EXACT] PASS  stationary quadratic: d/dt (At^2+Bt+C)/(D-Et^2) = (B E t^2 + 2(AD + EC) t + B D)/(D-Et^2)^2 with the displayed A..E
+[EXACT] PASS  (1) numerator equals A t^2 + B t + C with the displayed A, B, C
+[EXACT] PASS  value at t* = -kj/(s+4) = 1/j + (s + 2k)/4 + k^2/(4(s+4))
+[EXACT] PASS  beta = 1-q-b (s = k): value = 1/j + k(k+3)/(k+4); the t=0 value is 1/j + k
+[EXACT] PASS  t = 0 threshold = 1/j + (1+beta)^2/s; d/dt at 0 = 2(2-q-b)/(s j)
+[EXACT] PASS  Cor 3: at t = 0, beta = 1 - S: s = h = 2 - S and threshold = 1/j + 2 - S
+[EXACT] PASS  Cor 3: d/dbeta (1+beta)^2/(S+2beta) = 2(1+beta)(S+beta-1)/(S+2beta)^2
+[EXACT] PASS  Cor 3: discriminant in q of (q + b - 1)^2 - q b is b(4 - 3b)
+[EXACT] PASS  example q=1/8, b=4, j=4, beta=-1/2, t=1/4: l>0, Schur condition, threshold = 399/1543 < 13/50 < 1/4 + (1-1/sqrt2)^2/(33/8-sqrt2)
+[INFO] PASS  the "preceding parallel" value equals the t = 0 optimum over beta at these q, b, j (1/j + min_beta (1+beta)^2/(q+b+2beta))
+summary: 0 EXACT failures

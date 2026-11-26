@@ -1,0 +1,59 @@
+{
+ "doc_id": "blind_moc4_inventory52_native_harmonic_conditional_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory52_native_harmonic_conditional_20261023.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "main",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     4,
+     6,
+     9,
+     12
+    ],
+    [
+     0,
+     1,
+     4,
+     6,
+     9,
+     12,
+     17
+    ]
+   ],
+   "restatement": "If (*) holds for contacts containing T7=T6+{17}, then (*) holds for T6=T_53."
+  }
+ ],
+ "dependencies": [
+  "seven-contact hypothesis",
+  "T_4, T_18, T_26, T_42/T_48 for ties",
+  "Appendix B",
+  "Birkhoff, Rouche (classical)"
+ ],
+ "steps": [
+  "chart identities EXACT",
+  "amplitudes EXACT",
+  "curve restrictions/resultants EXACT",
+  "infinity branches EXACT+PROOF-READ",
+  "Lemma 2 PROOF-READ",
+  "harmonic argument PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "E, (3), J inverse",
+  "amplitudes f35,f9,f0,f21,f7",
+  "(6), Res_W(C,L), Res_W(C,H), Q_H example",
+  "E(0,T), corner formula",
+  "F0/E=-rT/H"
+ ],
+ "numeric_tests": [],
+ "unchecked": [
+  "inverse (7) divisor formula",
+  "(10),(11) explicit real-Taylor forms"
+ ]
+}

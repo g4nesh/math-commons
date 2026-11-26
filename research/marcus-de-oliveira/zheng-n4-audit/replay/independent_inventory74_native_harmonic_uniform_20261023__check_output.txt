@@ -1,0 +1,77 @@
+== Part A: contact set, complete source, seventh ties (paper definitions, library)
+PASS document tuple equals paper T_75 literally
+PASS complete source = [0,1,2,6,39,59,67,70] : [0, 1, 2, 6, 39, 59, 67, 70]
+PASS only f70 non-minor
+PASS exclusive gaps (value 1) g18,g16,g13,g9,g4,g2,g14,g6 : [[18], [16], [13], [9], [4], [2], [14], [6]]
+PASS (1) f70(pi_0) >= 1 and f70(pi_1) >= 1, so g0 >= d and g1 >= d
+PASS (2) zeros of f70 outside T = 2,4,9,13,14,16,18 : [2, 4, 9, 13, 14, 16, 18]
+PASS seventh tie 2: T+{2} contains a closed case of stage <= 6 (T_75 is stage 7) : [('T_26', 2), ('T_28', 1), ('T_39', 1), ('T_47', 3)]
+PASS seventh tie 4: T+{4} contains a closed case of stage <= 6 (T_75 is stage 7) : [('T_24', 5), ('T_25', 1), ('T_26', 2)]
+PASS seventh tie 9: T+{9} contains a closed case of stage <= 6 (T_75 is stage 7) : [('T_15', 1), ('T_16', 5), ('T_17', 4), ('T_46', 2)]
+PASS seventh tie 13: T+{13} contains a closed case of stage <= 6 (T_75 is stage 7) : [('T_26', 2), ('T_28', 1), ('T_39', 1), ('T_47', 3)]
+PASS seventh tie 14: T+{14} contains a closed case of stage <= 6 (T_75 is stage 7) : [('T_65', 6)]
+PASS seventh tie 16: T+{16} contains a closed case of stage <= 6 (T_75 is stage 7) : [('T_24', 5), ('T_25', 1), ('T_26', 2)]
+PASS seventh tie 18: T+{18} contains a closed case of stage <= 6 (T_75 is stage 7) : [('T_65', 6)]
+== Part B: algebra of the charts, curve, atlas (sympy, exact)
+PASS orig E = x(y-t)(z-w)
+PASS D = -y(x-1)/(x(y-t))
+PASS k = (t-w)(x-z)/((x-1)(z-w))
+PASS y-formula solves D-equation
+PASS k-expression independent of y
+PASS t-formula solves k-equation
+PASS raw contact equation E(H10-u) = x(x-1)t/((x-z)(x(D+1)-1)) [(w-z)L-(x-z)(z-1)] after y,t substitution
+PASS w-formula solves H10=u
+PASS (5) E = -Z(Z-1)L(Y+1)K : -Z*(Y + 1)*(Z - 1)*(-D*k + Z*u - u)*(-D*Y*k - D*Z*k + Y*Z*u - Y*u + Z**2*u - Z**2 - Z*k - Z*u + Z)
+PASS (5) H3=0,H5=1,H7=D+u,H8=Dk+u,H10=u
+PASS height F3/E = -L/(Z-1)
+PASS (7) H0 : -(-D*k - Y + Z*u - Z - u)/(Y + 1)
+PASS (7) H1 : Y*(-D*k + Z*u - u)/(Z*(Y + 1))
+PASS (7) H2 : -(-D*k + Z*u - Z - u)/(Y + 1)
+PASS (7) H4 : (-D*Y*k + Y*Z*u - Y*u + Z)/(Z*(Y + 1))
+PASS (7) H9 : D**2*k - D*Z*u + D*Z + D*k + D*u + u
+PASS (7) H6 : (-D**2*Z*k - D**2*k**2 + D*Z**2*u - D*Z**2 + D*Z*k*u - D*Z*k - D*Z*u + D*Z - 2*D*k*u + Z*u**2 - u**2)/(-D*k + Z*u - u)
+PASS H6 leading term D(u-1)Z/u
+PASS all 24 H denominators divide Z L (Y+1) K
+PASS new chart inverse reproduces Mobius image (x->Y(xi-1)) of every original 8-point config
+INFO H12 = (D**3*Y**2*Z*k**2 + D**3*Y**2*k**3 + D**3*Y*Z**2*k**2 + D**3*Y*Z*k**3 + D**3*Y*Z*k**2 + D**3*Y*k**3 + D**3*Z**2*k**2 + D**3*Z*k**3 - 2*D**2*Y**2*Z**2*k*u + D**2*Y**2*Z**2*k - 2*D**2*Y**2*Z*k**2*u + 2*D**2*Y**2*Z*k**2 + 2*D**2*Y**2*Z*k*u - D**2*Y**2*Z*k + D**2*Y**2*k**3 + 3*D**2*Y**2*k**2*u - D**2*Y**2*k**2 - 2*D**2*Y*Z**3*k*u + 2*D**2*Y*Z**3*k - 2*D**2*Y*Z**2*k**2*u + 3*D**2*Y*Z**2*k**2 - D**2*Y*Z**2*k + D**2*Y*Z*k**3 + D**2*Y*Z*k**2*u + 2*D**2*Y*Z*k*u - D**2*Y*Z*k + 3*D**2*Y*k**2*u - 2*D**2*Z**3*k*u + 2*D**2*Z**3*k - 2*D**2*Z**2*k**2*u + 3*D**2*Z**2*k**2 + 2*D**2*Z**2*k*u - 2*D**2*Z**2*k + D**2*Z*k**3 + 3*D**2*Z*k**2*u - D**2*Z*k**2 + D*Y**2*Z**3*u**2 - D*Y**2*Z**3*u + D*Y**2*Z**2*k*u**2 - 2*D*Y**2*Z**2*k*u - 2*D*Y**2*Z**2*u**2 + 2*D*Y**2*Z**2*u - D*Y**2*Z*k**2*u - 4*D*Y**2*Z*k*u**2 + 4*D*Y**2*Z*k*u + D*Y**2*Z*u**2 - D*Y**2*Z*u + 2*D*Y**2*k**2*u + 3*D*Y**2*k*u**2 - 2*D*Y**2*k*u + D*Y*Z**4*u**2 - 2*D*Y*Z**4*u + D*Y*Z**4 + D*Y*Z**3*k*u**2 - 3*D*Y*Z**3*k*u + 2*D*Y*Z**3*k - D*Y*Z**3*u**2 + 3*D*Y*Z**3*u - 2*D*Y*Z**3 - D*Y*Z**2*k**2*u + D*Y*Z**2*k**2 - 3*D*Y*Z**2*k*u**2 + 5*D*Y*Z**2*k*u - 3*D*Y*Z**2*k - D*Y*Z**2*u**2 + D*Y*Z**2 + 3*D*Y*Z*k**2*u - D*Y*Z*k**2 - D*Y*Z*k*u**2 - 2*D*Y*Z*k*u + D*Y*Z*k + D*Y*Z*u**2 - D*Y*Z*u + 3*D*Y*k*u**2 + D*Z**4*u**2 - 2*D*Z**4*u + D*Z**4 + D*Z**3*k*u**2 - 3*D*Z**3*k*u + 2*D*Z**3*k - 2*D*Z**3*u**2 + 4*D*Z**3*u - 2*D*Z**3 - D*Z**2*k**2*u + D*Z**2*k**2 - 4*D*Z**2*k*u**2 + 5*D*Z**2*k*u - 2*D*Z**2*k + D*Z**2*u**2 - 2*D*Z**2*u + D*Z**2 + 2*D*Z*k**2*u + 3*D*Z*k*u**2 - 2*D*Z*k*u + Y**2*Z**2*u**3 - Y**2*Z**2*u**2 - Y**2*Z*k*u**2 - 2*Y**2*Z*u**3 + 2*Y**2*Z*u**2 + Y**2*k*u**2 + Y**2*u**3 - Y**2*u**2 + Y*Z**3*u**3 - 2*Y*Z**3*u**2 + Y*Z**3*u - 2*Y*Z**2*k*u**2 + Y*Z**2*k*u - Y*Z**2*u**3 + 4*Y*Z**2*u**2 - 2*Y*Z**2*u + 2*Y*Z*k*u**2 - Y*Z*k*u - Y*Z*u**3 - 2*Y*Z*u**2 + Y*Z*u + Y*u**3 + Z**3*u**3 - Z**3*u**2 - Z**2*k*u**2 - 2*Z**2*u**3 + 2*Z**2*u**2 + Z*k*u**2 + Z*u**3 - Z*u**2)/((Y + 1)*(-D*k + Z*u - u)*(-D*Y*k - D*Z*k + Y*Z*u - Y*u + Z**2*u - Z**2 - Z*k - Z*u + Z))
+PASS curve bidegree (2,4) : (2, 4)
+INFO curve terms in (Y,Z,D,k,u,h): 160  (doc: 160)
+INFO [Z^4]C = D*(Y + 1)*(u - 1)**2
+INFO normalisation constant of C relative to doc ([Z^4] = -D(u-1)^2(Y+1)): -1
+PASS [Z^4]C = -D(u-1)^2(Y+1) (after constant normalisation)
+INFO [Y^2Z^2] = 2*D**2*k*u - D**2*k - D*k*u**2 + 2*D*k*u + 2*D*u**2 - 2*D*u + h*u**2 - u**3 + u**2  [Y^0Z^2] = -D**3*k**2 + 2*D**2*k**2*u - 3*D**2*k**2 - 2*D**2*k*u + 2*D**2*k - 2*D*h*k*u + D*h*k + D*k**2*u - D*k**2 + 4*D*k*u**2 - 5*D*k*u + 2*D*k - D*u**2 + 2*D*u - D - h*k*u - 2*h*u**2 + 2*h*u + k*u**2 + 2*u**3 - 2*u**2  [Y^1Z^2] = -D**3*k**2 + 2*D**2*k**2*u - 3*D**2*k**2 + D**2*k - 2*D*h*k*u + D*h*k + D*k**2*u - D*k**2 + 3*D*k*u**2 - 5*D*k*u + 3*D*k + D*u**2 - D - h*k*u - h*u**2 + 2*h*u + 2*k*u**2 - k*u + u**3 - 4*u**2 + 2*u
+PASS Lemma2: u=1 => [Y^2Z^2] forces h=-Dk(D+1)
+PASS Lemma2: then [Y^0Z^2] = k(D+1)(Dk+1) (up to sign) : k*(D + 1)*(D*k + 1)
+PASS Lemma2: D=-1,h=0 => [Y^1Z^2] = k-1 (up to sign) : k - 1
+PASS VN - L = (Z-1)((u-1)Z - s)
+INFO C at u=1, s=0 (k=-1/D): Z**2*(Y + 1)*(-D + h - 1)*(D*Y + D + 1)/D
+INFO parameter solutions making C identically 0: [{h: D + 1, k: -1/D, u: 1}]
+PASS (8) ResZ(C,Z) matches up to a constant : ratio 1 ; got -Y*(D*k + u)**2*(D*Y*k + D*k - Y*h + Y*k + Y*u - Y - h + u)
+PASS (8) ResY(C,Y+1) matches up to a constant : ratio 1 ; got -(Z + k - 1)*(-D*k + Z*u - u)*(-D*k + Z*u - Z - u)
+PASS (8) ResZ(C,L) matches up to a constant : ratio 1 ; got -D*k**2*(D + u)**2*(Y + 1)*(D*k + u)**2
+PASS (8) ResY(C,K) matches up to a constant : ratio 1 ; got Z**2*k*(Z + k - 1)*(-D*k + Z*u - u)*(-D*k + Z*u - Z - k - u + 1)*(-D**2*k + D*Z*u - D*Z - D*k - D*u - u)
+PASS point (Y,Z)=(-1,s/u) on curve
+INFO C_Y, C_Z at that point: -D*k**2*(D + u)**2*(D*k + u)**2/u**4 k*(D + u)*(D*k + u)/u
+PASS C_Y = -Dk^2r^2s^2/u^4
+PASS C_Z = krs/u
+PASS (Y+1)/L -> u^2/(Dkrs)
+PASS H1 -> -Dkr/u
+PASS H6(0) finite real (L(0) != 0) : D*k + u
+PASS L(1) = -Dk
+PASS Y=oo: H0 -> 1
+PASS [Z^3]C at Y=-1 = -u(u-1)
+PASS (10) tau^5 C(V/tau,1/tau)|_0 = -D(u-1)V(uV+u-1) : -D*V*(u - 1)*(V*u + u - 1)
+PASS second branch: H0 -> 1+u
+PASS branch (9): tau^0 coefficient vanishes
+PASS branch (9): tau^1 coefficient vanishes for ell=-u/(D(u-1))
+INFO c2 = [(-D**2*k - D*k*u - h*u**2 + u**3 - u**2)/(D**2*(u**2 - 2*u + 1))]
+INFO H4+(1-u)H6 on branch (9), series to O(tau): -D**2*k + D**2*k/u - D*k*u + D*k - D*u + D - h*u + h + 1
+PASS H4+(1-u)H6 has no pole on branch (9)
+PASS 1/tau coeffs: H4 -> (1-u)/ell, H6 -> -1/ell : (D*(u - 1)**2/u, D*(u - 1)/u)
+PASS H6 + H9/u finite at Z=oo : (D**2*k*u - D**2*k + D*k*u**2 + D*u**2 + u**3 + u**2)/u**2
+PASS generic exclusions at (2,3,4,5) : ([2, 3, 4, 3, 6, 10, 7], 2)
+INFO [Y^2]C = -(-D*k + Z*u - u)*(-D**2*Z*k - D**2*k**2 + D*Z**2*u - D*Z**2 + D*Z*k*u - 2*D*Z*k - D*Z*u + D*Z + D*h*k - D*k**2 - 2*D*k*u + D*k - Z*h*u + Z*u**2 - Z*u + h*u - k*u - u**2 + u)
+INFO [Y^0]C = -Z*(-D*k + Z*u - Z - k - u + 1)*(-D**2*Z*k - D**2*k**2 + D*Z**2*u - D*Z**2 + D*Z*k*u - D*Z*k - D*Z*u + D*Z + D*h*k - 2*D*k*u - Z*h*u + Z*u**2 + h*u - u**2)
+INFO [Y^1]C = -D**3*Z**2*k**2 - D**3*Z*k**3 - D**3*Z*k**2 - D**3*k**3 + 2*D**2*Z**3*k*u - 2*D**2*Z**3*k + 2*D**2*Z**2*k**2*u - 3*D**2*Z**2*k**2 + D**2*Z**2*k + D**2*Z*h*k**2 - D**2*Z*k**3 - D**2*Z*k**2*u - 2*D**2*Z*k*u + D**2*Z*k + D**2*h*k**2 - 3*D**2*k**2*u - D*Z**4*u**2 + 2*D*Z**4*u - D*Z**4 - D*Z**3*k*u**2 + 3*D*Z**3*k*u - 2*D*Z**3*k + D*Z**3*u**2 - 3*D*Z**3*u + 2*D*Z**3 - 2*D*Z**2*h*k*u + D*Z**2*h*k + D*Z**2*k**2*u - D*Z**2*k**2 + 3*D*Z**2*k*u**2 - 5*D*Z**2*k*u + 3*D*Z**2*k + D*Z**2*u**2 - D*Z**2 + D*Z*h*k**2 - D*Z*h*k - 3*D*Z*k**2*u + D*Z*k**2 + D*Z*k*u**2 + 2*D*Z*k*u - D*Z*k - D*Z*u**2 + D*Z*u + 2*D*h*k*u - 3*D*k*u**2 + Z**3*h*u**2 - Z**3*h*u - Z**3*u**3 + 2*Z**3*u**2 - Z**3*u - Z**2*h*k*u - Z**2*h*u**2 + 2*Z**2*h*u + 2*Z**2*k*u**2 - Z**2*k*u + Z**2*u**3 - 4*Z**2*u**2 + 2*Z**2*u + Z*h*k*u - Z*h*u**2 - Z*h*u - 2*Z*k*u**2 + Z*k*u + Z*u**3 + 2*Z*u**2 - Z*u + h*u**2 - u**3
+NUMERIC T_75 curve sampling: seed 20261125, 120000 parameter draws, 269 strictly supported points, contact residual 6.3e-09, min over SO(4) (6 BFGS restarts) on 40 of them, worst min Phi / max gap = -3.77e-15
+SUMMARY failures: []

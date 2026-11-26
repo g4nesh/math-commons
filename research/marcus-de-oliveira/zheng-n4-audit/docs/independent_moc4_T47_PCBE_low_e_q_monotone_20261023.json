@@ -1,0 +1,85 @@
+{
+ "doc_id": "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_PCBE_low_e_q_monotone_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed",
+ "statements": [
+  {
+   "label": "Lemma 1",
+   "page": 1,
+   "restatement": "On the rational chart b=1+A, p=b+P, r=V/(1+V), a=r^2/b, s=S/(1+S), e=b(b+1)U/(1+U), c=s^2(1/e+1/(b+1)), j=J* T/(1+T), J*=(b+1)(1-s)^2/(b+2s+(b+1)s^2/e), with A,T,U,V,S>0, P>=0, d=1: if Phi>=0 then G is strictly increasing in q>=0. Purely algebraic (no realizability claim, no claim about G(0)).",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ]
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "own derivation of G (common setting); radial necessity is not used by the lemma itself",
+   "used_for": "definition of G",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "canonical clearing denominator is positive and independent of q",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "replay: nonnegative coefficients, free of Q, positive monomial free of P"
+  },
+  {
+   "n": "2",
+   "claim": "cleared G = g0 + Q g1 + Q^2 g2 with 40647, 41139, 38301 terms",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "replay, counts match"
+  },
+  {
+   "n": "3",
+   "claim": "every coefficient of g1 is a positive integer; survives P=0",
+   "kind": "coefficient-sign",
+   "status": "EXACT",
+   "how": "replay"
+  },
+  {
+   "n": "4",
+   "claim": "g2 = R + 2AU^2V^2 N_Phi, R with 38304 positive integer coefficients, D_Phi positive",
+   "kind": "identity + coefficient-sign",
+   "status": "EXACT",
+   "how": "replay (N_Phi = reduced numerator of Phi)"
+  },
+  {
+   "n": "5",
+   "claim": "Phi>=0 => dG/dQ = g1 + 2Q g2 > 0 for Q>=0",
+   "kind": "inequality",
+   "status": "PROOF-READ",
+   "how": "immediate"
+  },
+  {
+   "n": "6",
+   "claim": "chart origin: failure of (2) at L=b, low e <=> s in (0,1), j<J*",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy: (c+1)/(1-s)^2 - 1/(b+1) = 1/J*; B=1/e+1/(b+1) when e<b(b+1)"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "g0,g1,g2 term counts",
+  "g1 positivity",
+  "g2 - 2AU^2V^2 N_Phi positivity (38304 terms)",
+  "chart-origin identities"
+ ],
+ "numeric_tests": [],
+ "unchecked": [],
+ "one_line": "Strict q-monotonicity of the radial octic G on the low-e PCBE-failure chart when Phi >= 0; every certificate replayed exactly from the auditor's own G; confirmed."
+}

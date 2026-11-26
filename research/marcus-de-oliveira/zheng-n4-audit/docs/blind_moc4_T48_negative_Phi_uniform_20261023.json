@@ -1,0 +1,64 @@
+{
+  "doc_id": "blind_moc4_T48_negative_Phi_uniform_20261023",
+  "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_negative_Phi_uniform_20261023.pdf",
+  "pages": 3,
+  "verdict": "gap-found",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "contact_sets": [[0, 3, 5, 6, 9, 12]],
+     "restatement": "No realizable source with canonical form g = q f7 + p f5 + j f29 + c f39 + e f2 + d f40 + b f41 + a f0 on T_49, q,p,j,e,b,a,d > 0, c >= 0, has Phi = {(q+d)Vb+pT}^2 + 4dp^2(a+d)(q-e)V < 0 (V = a+d+e, T = qV-(a+d)(d+e)). Support inequality not claimed; Phi >= 0 sector left open.",
+     "covers_all_spectra": true, "paper_cases": []}
+  ],
+  "dependencies": [
+    {"kind": "common-lemma", "ref": "unnamed global Hessian theorem: principal 12-minors of Hess C >= 0 at realizable sources", "used_for": "only sign input", "match_checked": false},
+    {"kind": "core-doc", "ref": "radial necessity (paper p.27)", "used_for": "h = -C/Q and G = 0", "match_checked": true},
+    {"kind": "other-doc", "ref": "companion verifier (absent from supplement)", "used_for": "congruences P S+- = L+-^2 mod G, 13-minor quotients", "match_checked": false},
+    {"kind": "paper-case", "ref": "T_47 (remark only)", "used_for": "remaining-scope transport, g=(4213,3421,1)", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "profile identities and form (1)", "status": "EXACT"},
+    {"n": 2, "claim": "C(m+h kappa) = C + hQ, Q formula", "status": "EXACT"},
+    {"n": 3, "claim": "(2) det H = -4G^2/Q^2", "status": "EXACT-SAMPLED"},
+    {"n": 4, "claim": "(e+j)C - ejQ 42 positive coefficients", "status": "EXACT"},
+    {"n": 5, "claim": "(0,5)-deleted block height-free", "status": "EXACT"},
+    {"n": 6, "claim": "13-minors divisible by G, rank <= 12", "status": "NUMERIC"},
+    {"n": 7, "claim": "gcd(G,G_j)=1", "status": "EXACT"},
+    {"n": 8, "claim": "gcd(G,P)=1", "status": "EXACT"},
+    {"n": 9, "claim": "(3) discriminant identity, H6 159 terms", "status": "EXACT"},
+    {"n": 10, "claim": "Phi<0 implies H6<0", "status": "PROOF-READ"},
+    {"n": 11, "claim": "P S+- = L+-^2 mod G and coprimality", "status": "GAP"},
+    {"n": 12, "claim": "rank factorization", "status": "PROOF-READ"},
+    {"n": 13, "claim": "conic structure, (4), identity mod W", "status": "EXACT"},
+    {"n": 14, "claim": "smoothness incl. e=b, c=0", "status": "PROOF-READ"},
+    {"n": 15, "claim": "density and continuity", "status": "PROOF-READ (conditional on step 11)"},
+    {"n": 16, "claim": "global Hessian theorem", "status": "CITED"},
+    {"n": 17, "claim": "second-derivative rank argument", "status": "PROOF-READ"}
+  ],
+  "gaps": [
+    {"location": "p.2, Signed quadratic classes; p.2 Height and rank charts",
+     "claim": "P S+- = L+-^2 (mod G) with S+ = Y^2p^2(q+d)^2 H6 R7^2, S- = Y^2p^2(q+d)^2 Phi R~7^2; R7, R~7, H6 coprime to G; three 13-minors divisible by G",
+     "why": "R7, R~7, L+- and the minor quotients are neither printed nor present in the supplement; only G is supplied. The sign argument rests entirely on these finite polynomial facts.",
+     "severity": "substantive", "believed_true": true,
+     "repair": "publish the polynomials and an exact check; numerically, rank <= 12 at 4604 real points of G=0 and every 12-minor <= 0 at 568 points with Phi < 0"}
+  ],
+  "exact_replays": [
+    "f40+f1 = f0+f7+f39, f40+f9 = f2+f7+f41; T = paper T_49",
+    "Q = (c+d)(d+e+j) - p(e+j) and C equal to companion C_terms in the paper normalization",
+    "(e+j)C - ejQ: 42 terms, all positive",
+    "(2) at 12 exact rational points",
+    "gcd(G,G_j) = 1 (flint), gcd(G,P) = 1 (line restriction)",
+    "(3) B^2-4AC0 = (b+c+d)^2(q+d)^2 Phi H6, H6 159 terms, j-free",
+    "conic structure of G; (4) det M = -2(e-b)pW(q+d)^2 Phi^2; identity modulo W",
+    "role transport (27,1,59,5,28,6) -> (7,5,29,39,40,41) by exactly one g"
+  ],
+  "numeric_tests": [
+    "4604 real points of G=0, Q!=0 (seed 2026): numerical rank <= 12 at all",
+    "568 of them with Phi<0: no positive principal 12-minor",
+    "cited Hessian theorem: 300 random realizable sources (seed 99), no negative principal 12-minor"
+  ],
+  "unchecked": [
+    "term counts of P (2784) and of the 13-minor quotients",
+    "R7, R~7, L+- congruences (data absent)",
+    "gcd(G,H6), gcd(G,R7), gcd(G,R~7)",
+    "identity of the cited global Hessian theorem's source document"
+  ]
+}

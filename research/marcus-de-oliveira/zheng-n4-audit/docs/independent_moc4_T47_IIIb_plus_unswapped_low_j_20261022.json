@@ -1,0 +1,100 @@
+{
+ "doc_id": "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "one_line": "For the T_65 face on b > 1, a < 1/b, 0 < j <= 1, j <= e < bj/(b-j), 0 <= c < 1/j: Phi >= 0 implies G > 0. Fully replayed EXACT, with all four positive tables (1320/6332/28758/28038) matching; the no-lift conclusion cites the negative-Phi theorem.",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [],
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "d = 1; b > 1, 0 < a < 1/b, p > 0, q >= 0, 0 < j <= 1, j <= e < bj/(b-j), 0 <= c < 1/j. If Phi = [(p-c)j + (b-c)(p+1+a) - pa]^2 - 4ac(p-b)(p+1+a) >= 0, then G > 0. With the negative-Phi theorem and G = 0 necessity, no realizable cost of the T_65 face lies in this region."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (paper p.27): for x = u + iv in X, C(u) = 0 and det Hess C(u) = 0",
+   "used_for": "G = 0 at every spectrally realizable point, via det H(w(g,-C/Q)) = -4 d^2 G^2/Q^2 (replayed EXACT) and C < 0 (EXACT), so Q != 0 and h = -C/Q",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022 (no realizable point with Phi < 0, coefficients >= 0, e > 0)",
+   "used_for": "the no-lift corollary for Phi < 0",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "G = alpha c^2 + beta c + gamma; Phi = H c^2 + J c + K with H = (p+j+1+a)^2, K = [pj + b(p+1+a) - pa]^2",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "flint"
+  },
+  {
+   "n": "2",
+   "claim": "HG = alpha Phi + U0 + c U1 and KG = gamma Phi + c(V0 - c U0)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "flint"
+  },
+  {
+   "n": "3",
+   "claim": "alpha >= 0, gamma > 0, V0 >= 0, EJ = jU0 + U1 > 0 imply G > 0 on 0 <= c < 1/j when Phi >= 0 (two cases on the sign of U0)",
+   "kind": "inequality",
+   "status": "PROOF-READ",
+   "how": "interpolation of the affine remainder; K > 0 when U0 < 0"
+  },
+  {
+   "n": "4",
+   "claim": "chart b = 1+B, a = V/(b(1+V)), p = P, q = Q, j = T/(T+W), e = T[Z(1+U)+TU]/((T+W)Z(1+U)) covers the region exactly (j = 1 at W = 0)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy: e = j + j^2 U/((b-j)(1+U)), limit bj/(b-j)"
+  },
+  {
+   "n": "5",
+   "claim": "cleared alpha, gamma, V0, EJ have 1320, 6332, 28758, 28038 coefficients, all positive",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "flint; counts identical to the document"
+  },
+  {
+   "n": "6",
+   "claim": "gamma and EJ keep positive monomials free of W, U, Q (84 and 270)",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "flint"
+  },
+  {
+   "n": "7",
+   "claim": "no-lift: G = 0 necessity plus negative-Phi exclusion",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "root_moc4_T47_negative_Phi"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "alpha, beta, gamma and H, J, K",
+  "both comparison identities",
+  "chart map identities",
+  "four positive tables 1320/6332/28758/28038 and strict markers"
+ ],
+ "numeric_tests": [],
+ "unchecked": []
+}

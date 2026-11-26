@@ -1,0 +1,65 @@
+{
+ "doc_id": "final_referee_T46_a0_all_small_product_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T46_a0_all_small_product_uniform_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Lemma 1",
+   "page": 1,
+   "restatement": "d=1, q,b,c,j>0, q!=b, r=sqrt(qb): p>=P*=k+D0^2/(jN) => Phi>=0 on SO(4) (universal)"
+  },
+  {
+   "label": "Theorem 2",
+   "page": 2,
+   "contact_set": [
+    1,
+    3,
+    5,
+    6,
+    7,
+    8,
+    14
+   ],
+   "restatement": "realizable cost on the a=0 face with qb<=d^2 => Phi>=0 on SO(4); zero coefficients and the wall included"
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "foundations so4-atoms-part2b G3 (T46 face Gram constructions)",
+   "status": "CITED"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_29,T_36,T_1,T_39,T_7 for q,p,j,c,b=0",
+   "status": "CITED",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (audit item 5)",
+   "status": "CITED"
+  }
+ ],
+ "steps": [
+  "Lemma 1 algebra EXACT",
+  "Lemma 1 Gram CITED",
+  "zero faces EXACT+CITED",
+  "C0,Q,G8 EXACT",
+  "double-small table EXACT",
+  "q=b=1 EXACT",
+  "four rows EXACT",
+  "split PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "G8 380 terms with Q^3 det = -4Q(q+d)^2G8^2",
+  "tables 815, 815(W=1), 60, 210747, 196734, 3897, 4650 all negative",
+  "Lemma 1 section identities"
+ ],
+ "numeric_tests": [
+  "Lemma 1 at p=P*: 12 samples seed 11, worst 2.1e-16; control -1.2e-2"
+ ],
+ "unchecked": []
+}

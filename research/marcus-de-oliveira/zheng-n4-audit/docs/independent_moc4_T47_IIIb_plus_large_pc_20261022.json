@@ -1,0 +1,134 @@
+{
+ "doc_id": "independent_moc4_T47_IIIb_plus_large_pc_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_IIIb_plus_large_pc_20261022.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "one_line": "Lemma 1 (Gram capacity pc >= a^2, j >= d^2/(a+c)) and Theorem 2 (support inequality on the high-j large-pc plus region of T_65). Both chart certificates replayed EXACT with identical term counts. Lemma 1 is CITED to so4-atoms-part2b G4, where it is proved.",
+ "statements": [
+  {
+   "label": "Lemma 1",
+   "page": 1,
+   "paper_cases": [],
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For the T_65 face cost c = q f2 + p f9 + j f1 + c f45 + e f5 + d f35 + b f0 + a f7: if a, p, c, d > 0, pc >= a^2 and j >= d^2/(a+c), then Phi_c(O) >= 0 for all O in SO(4), for every q, e, b >= 0. This is a pointwise inequality and does not use realizability."
+  },
+  {
+   "label": "Theorem 2",
+   "page": 1,
+   "paper_cases": [],
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "d = 1, b > 1, 0 < a < 1/b, p > 0, q >= 0, j > 1, j <= e, j > eb/(e+b), j < 1 + 1/p, pc >= a^2. Every x in X with c(x) of this form has Phi_{c(x)} >= 0 on SO(4). Proof: Lemma 1 if j >= 1/(a+c); otherwise G > 0, which contradicts G = 0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (paper p.27): for x = u + iv in X, C(u) = 0 and det Hess C(u) = 0",
+   "used_for": "G = 0 at every spectrally realizable point, via det H(w(g,-C/Q)) = -4 d^2 G^2/Q^2 (replayed EXACT) and C < 0 (EXACT), so Q != 0 and h = -C/Q",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2 / Corollary 2.2 (audited in foundations)",
+   "used_for": "transfer of the orthogonal support inequality to unitary matrices",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "foundations/so4-atoms-part2b.md G4 (IIIb_plus_large_pc Lemma 1: PROVED IN THE DOCUMENT AND CHECKED)",
+   "used_for": "Lemma 1",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "Lemma 1 Gram construction",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "so4-atoms-part2b G4 (same face, same roles)"
+  },
+  {
+   "n": "2",
+   "claim": "split: j >= 1/(a+c) uses Lemma 1; otherwise 0 < c < 1/j - a, a < 1/j",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "exhaustive"
+  },
+  {
+   "n": "3",
+   "claim": "C < 0 so Q != 0 and G = 0 is necessary",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "C and det identity replayed"
+  },
+  {
+   "n": "4",
+   "claim": "chart 1 (1 < j < b) covers the hard region: j = 1+T, b = j+A, a = V/(b(1+V)), p = theta(P)/T, e = j + j^2 theta(U)/A, c = (1/j - a) theta(S)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy limits and identities; b(1+V) - jV = b + AV > 0"
+  },
+  {
+   "n": "5",
+   "claim": "chart 2 (j >= b): b = 1+A, j = b+T, a = theta(V)/j, p = theta(P)/(A+T), e = j+U, c = S/(j(1+V)(1+S))",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy"
+  },
+  {
+   "n": "6",
+   "claim": "chart 1: cleared G~ has 45504 terms, exactly 10 negative coefficients, all -2, with V exponent >= 2; R = G~ - (V^2-1)^2 W has 45474 terms, all positive; a positive monomial free of U, Q",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "flint, coefficient by coefficient"
+  },
+  {
+   "n": "7",
+   "claim": "chart 2: 31086 terms, 12 negative (-2), R has 31050 positive terms; a positive monomial free of T, U, Q",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "flint"
+  },
+  {
+   "n": "8",
+   "claim": "G~ > 0 on both closed chart domains (walls e = j, q = 0, j = b included), so G > 0, contradicting G = 0",
+   "kind": "inequality",
+   "status": "PROOF-READ",
+   "how": "positive denominators; strict markers"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "G (965 terms) and det identity",
+  "chart 1 certificate (45504 / 10 x -2 / R 45474 >= 0 / markers)",
+  "chart 2 certificate (31086 / 12 x -2 / R 31050 >= 0 / markers)",
+  "chart coverage identities"
+ ],
+ "numeric_tests": [
+  "Lemma 1 on its boundary pc = a^2, j = d^2/(a+c), q = e = b = 0: 12 samples (seed 20261125, 8 BFGS restarts each), min Phi over SO(4) >= 2.9e-14 (no violation)"
+ ],
+ "unchecked": [
+  "the high-j small-pc subregion, which the document says it does not prove"
+ ]
+}
