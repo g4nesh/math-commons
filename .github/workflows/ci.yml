@@ -98,6 +98,11 @@ jobs:
           python3 -B fourier-composite-laws/check.py
           (cd full-four-cycle && sha256sum --check --quiet SHA256SUMS)
           python3 -B full-four-cycle/check.py
+          (cd two-middle-positive-laws && sha256sum --check --quiet SHA256SUMS)
+          python3 -B two-middle-positive-laws/check.py
+          python3 -B -m unittest discover -s two-middle-positive-laws -p 'test_*.py' -v
+          python3 -B second-bernstein-segment/check.py
+          python3 -B second-bernstein-segment/check.py 1/2 -7/3 11/5 > /dev/null
           python3 -B -m unittest discover -s full-four-cycle -p 'test_*.py' -v
           python3 -B two-free-rank-one/check.py
           python3 -B rankone-quantitative/radius.py
