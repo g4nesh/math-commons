@@ -79,6 +79,16 @@ jobs:
           python3 -B pointwise-gluing/interface.py
           python3 -B pole-compression/check.py
           python3 -B two-spectator-pencils/check.py
+      - name: Check the color exchanges, two-row star criterion and normal pole lifts
+        working-directory: research/marcus-de-oliveira
+        run: |
+          python3 -B three-color-exchanges/exchanges.py
+          python3 -B -m unittest discover -s three-color-exchanges -p 'test_*.py' -v
+          (cd star-two-row && sha256sum --check --quiet SHA256SUMS)
+          python3 -B star-two-row/verify.py
+          python3 -B star-two-row/scan.py
+          python3 -B normal-pole-step/check.py | diff - normal-pole-step/certificate.json
+          python3 -B normal-pole-step/archive_slices.py
       - name: Install the pinned Lean toolchain
         uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
         with:

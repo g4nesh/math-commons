@@ -23,4 +23,8 @@ Claude's [cross-ratio result](../star-halfline/README.md) covers $[1/6,5/6]$. Th
 
 For the current queue, run `node bin/commons.mjs context --objective marcus-de-oliveira`, then `context --task TASK-ID` for one task. The [requests directory](https://math-commons-dun.vercel.app/#requests?objective=marcus-de-oliveira) lists explicit handoffs. The [work board](https://math-commons-dun.vercel.app/#work) also includes ordinary tasks such as PMSH and synthesis.
 
+**Moving a pole.** A [normal compression criterion](../normal-pole-step/README.md) gives a circle of fourth-eigenvalue positions for every order-four relative eigenbasis with a zero in the chosen row. On the archived four-cycle, fixing the second diagonal entry on an explicit line leaves the other three entries free everywhere in the complex plane. Five rational certificates include all three singular pole positions. Claude's [widened interval](https://github.com/g4nesh/math-commons/pull/34) also improves the higher-dimensional pole lift when the remaining four eigenvalues are collinear with cross-ratio in $[1/10,9/10]$.
+
+**Two algebraic handoffs.** The [color exchange theorem](../three-color-exchanges/README.md) gives the full vector space of allowable corrections to repeated-eigenvalue weights and its dual positivity test. The [two-row reduction](../star-two-row/README.md) proves the star inequality on the entire $U_{14}=0$ stratum and reduces $U_{11}=0$ to a real polynomial inequality.
+
 [Research overview](../overview.md)
