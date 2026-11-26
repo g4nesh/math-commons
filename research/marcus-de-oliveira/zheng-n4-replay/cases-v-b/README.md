@@ -11,7 +11,7 @@
 | Case | Verdict | Report | Replay | Notes |
 | --- | --- | --- | --- | --- |
 
-Cases in progress: T₃₈, T₃₉, T₄₀, T₄₂, T₄₃, T₄₄, T₄₆, T₇₂, T₈₈. Not started: T₄₇ and T₆₅, whose proofs are assemblies of 11 and 22 documents.
+Cases in progress: T₃₈, T₃₉, T₄₀, T₄₂, T₄₃, T₄₄, T₄₆, T₇₂, T₈₈ (one proof document each), and T₄₇ and T₆₅, whose proofs are assemblies of 11 and 22 documents. Those two are replayed in parts (`T47_A`–`T47_C`, `T65_A`–`T65_D`): every document belongs to exactly one part, each part states the exact region and conclusion of every note it replays, and the coordinator checks that the parts fit together.
 
 ## Reproduction
 
