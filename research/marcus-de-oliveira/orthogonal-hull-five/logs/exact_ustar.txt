@@ -1,0 +1,5 @@
+V V^* = I exactly: True
+Phi(V) = 37/25 + 0 * sqrt6   (expected 37/25 + 0)
+squared moduli of entries: ['1/25', '6/25'] (sqrt6 parts: ['0', '0'] )
+squared 2x2 minors (value: count): {'8/125': 10, '12/125': 40, '3/125': 20, '18/125': 20, '27/125': 10}
+EXACT CHECK PASSED

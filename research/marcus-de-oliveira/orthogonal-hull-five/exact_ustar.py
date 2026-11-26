@@ -1,0 +1,41 @@
+"""Exact check: the matrix V below is unitary and Phi(V) = 37/25.  Arithmetic in Q(sqrt6, i sqrt15) with Fractions.
+An element is (a, b, c, d) = a + b*s + c*t + d*s*t with s = sqrt(6), t = i*sqrt(15); s^2 = 6, t^2 = -15; conj(t) = -t."""
+import itertools
+from fractions import Fraction as Fr
+from phi import TERMS          # the definition of Phi; the same list is rebuilt independently in verify_certificate.py
+class K:
+    __slots__ = ('v',)
+    def __init__(self, a=0, b=0, c=0, d=0): self.v = (Fr(a), Fr(b), Fr(c), Fr(d))
+    def __add__(self, o): return K(*[x + y for x, y in zip(self.v, o.v)])
+    def __sub__(self, o): return K(*[x - y for x, y in zip(self.v, o.v)])
+    def __mul__(self, o):
+        a, b, c, d = self.v; e, f, g, h = o.v
+        return K(a*e + 6*b*f - 15*c*g - 90*d*h, a*f + b*e - 15*c*h - 15*d*g, a*g + c*e + 6*b*h + 6*d*f, a*h + d*e + b*g + c*f)
+    def conj(self): a, b, c, d = self.v; return K(a, b, -c, -d)
+    def __eq__(self, o): return self.v == o.v
+    def __repr__(self): return "K%s" % (tuple(str(x) for x in self.v),)
+def E(a, c=0): return K(Fr(a, 20), 0, Fr(c, 20), 0)          # (a + c i sqrt15) / 20
+S6 = K(0, Fr(4, 20), 0, 0)                                   # 4 sqrt6 / 20
+V = [[E(4), S6, S6, S6, S6],
+     [S6, E(-1, -1), E(-6, -2), E(-6, 2), E(9, 1)],
+     [S6, E(-6, -2), E(-1, 1), E(9, -1), E(-6, 2)],
+     [S6, E(-6, 2), E(9, -1), E(-1, 1), E(-6, -2)],
+     [S6, E(9, 1), E(-6, 2), E(-6, -2), E(-1, -1)]]
+n = 5; ZERO = K(); ONE = K(1)
+ok_unitary = all(sum((V[i][k] * V[j][k].conj() for k in range(n)), ZERO) == (ONE if i == j else ZERO) for i in range(n) for j in range(n))
+def det(S, T):
+    if len(S) == 1: return V[S[0]][T[0]]
+    return V[S[0]][T[0]] * V[S[1]][T[1]] - V[S[0]][T[1]] * V[S[1]][T[0]]
+total = ZERO; vals = {}
+for S, T, c in TERMS:
+    d = det(S, T); m = d * d.conj(); assert m.v[2] == 0 and m.v[3] == 0; total = total + K(c) * m
+    if len(S) == 2: vals[m.v[:2]] = vals.get(m.v[:2], 0) + 1
+print("V V^* = I exactly:", ok_unitary)
+print("Phi(V) =", total.v[0], "+", total.v[1], "* sqrt6   (expected 37/25 + 0)")
+sq = sorted({(V[i][j] * V[i][j].conj()).v[:2] for i in range(n) for j in range(n)}); print("squared moduli of entries:", [str(a) for a, b in sq], "(sqrt6 parts:", [str(b) for a, b in sq], ")")
+allm = {}
+for S in itertools.combinations(range(n), 2):
+    for T in itertools.combinations(range(n), 2):
+        d = det(S, T); m = (d * d.conj()).v; assert m[1] == 0 and m[2] == 0 and m[3] == 0; allm[str(m[0])] = allm.get(str(m[0]), 0) + 1
+print("squared 2x2 minors (value: count):", allm)
+print("EXACT CHECK PASSED" if ok_unitary and total.v == (Fr(37, 25), 0, 0, 0) else "EXACT CHECK FAILED")
