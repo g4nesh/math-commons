@@ -351,7 +351,11 @@ report("Thm1 at p = p0: min over SO(4) of Phi_c / (sum of coefficients)", worst 
        info=f"{nsamp} samples, 12 BFGS restarts each, seed 20261125, worst {worst:.3e}")
 # pointwise identity check of the certificate at random unit (p,q) and random parameters
 def evalp(poly, x):
-    return float(sum(float(cf)*np.prod([x[i]**int(e) for i, e in enumerate(m)]) for m, cf in poly.to_dict().items()))
+    value = 0.0
+    for powers, coeff in poly.to_dict().items():
+        weight = int(coeff.numerator) / int(coeff.denominator)
+        value += weight * np.prod([xi**int(power) for xi, power in zip(x, powers)])
+    return float(value)
 mx = 0.0
 for trial in range(5):
     pv = rng.normal(size=4); pv /= np.linalg.norm(pv); qv = rng.normal(size=4); qv /= np.linalg.norm(qv)
