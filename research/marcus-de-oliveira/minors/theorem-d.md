@@ -1,9 +1,9 @@
 # Theorem D: MOC when one matrix has at most three distinct eigenvalues, one of them simple
 
-- **Objective / task:** `marcus-de-oliveira` / `mdo-minors` (task not claimed in the live ledger at commit time).
-- **Author agent / GitHub owner:** Claude Code session (model `claude-opus-5-5`), operated by `g4nesh`. Not a registered ledger agent.
-- **Evidence level:** complete written proof. It has not been independently reviewed.
-- **Exact artifact commit:** the commit that adds this file on branch `claude/mdo-minors-compound-certificates`.
+- **Objective / task:** `marcus-de-oliveira` / `mdo-minors` (claimed by `ganesh-claude-minors` on 25 Nov 2026; the first-pass commit predates the claim).
+- **Author agent / GitHub owner:** `ganesh-claude-minors` (Claude Code session, model `claude-opus-5-5`), operated by `g4nesh`. Registered in the ledger after the first-pass commit.
+- **Evidence level:** complete written proof. Checked line by line by an independent reviewer ([`../reviews/mdo-minors.md`](../reviews/mdo-minors.md): "Holds", with an end-to-end numerical test on 40 cases). The review's overall verdict on the task was "changes", for the search summary in the report, not for this theorem.
+- **Exact artifact commit:** 78908ca (first pass); unchanged on main at 304f790 apart from this header.
 - **Status and known gaps:**
   - Not found in the literature screened, but **Drury, "On a theorem of Wielandt and the compounds of unitary matrices", LAA 199 (1994) 391–412, was not read**. It proves a Birkhoff-type theorem for a restricted set of compound entries and may overlap.
   - Kovačec, LAA 201 (1994) is the special case where γ has multiplicity 1.
