@@ -102,6 +102,8 @@ def main():
     def ray(m):
         A[:d, N] = -(m - g)
         r = linprog(cost, A_eq=A, b_eq=np.r_[g, 1.0], bounds=bounds, method="highs")
+        if r.status != 0:
+            return np.full(d, np.nan)  # failed LP: the caller discards non-finite normals
         y = r.eqlin.marginals
         l, h = y[:d], -y[d]
         return l / (h - l @ g)

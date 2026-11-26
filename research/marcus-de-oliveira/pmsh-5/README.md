@@ -16,10 +16,11 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
 
 **N1 (numerical). No violation of PMSH(5) or PMSH(6) at the spectra tested.**
 - **Method (`facet_search.py`).** For a fixed spectrum, shoot rays from the centroid g of P(c) toward m(U D_c U*) for random U (Haar, and near-permutation). The dual of each ray LP is a facet ℓ of P(c), scaled so that ℓ·(x − g) ≤ 1 on P(c). Facets are kept only if they are valid on all vertices. Each distinct facet is then maximized over U(n) by L-BFGS from several random starts. PMSH(n) at c fails iff some maximum exceeds 1. A value above 1 is re-checked with an independent LP (L1 distance from m(U) to P(c)).
-- **Control (n = 4).** At c = (0, 0.27, 0.64, 1) the method reaches 180 of the 184 facets known from qhull (`../pmsh/README.md`, R3). Every maximum is 1 to 4·10⁻¹⁴, consistent with the proved PMSH(4).
+- **Counting caveat.** `facet_search.py` deduplicates by rounded normals, so its counts are of distinct *supporting inequalities*: they include near-duplicates and hyperplanes through lower-dimensional faces (any valid inequality is still a legitimate test). `facet_classify.py` (N2′) identifies true facets by their vertex sets.
+- **Control (n = 4).** At c = (0, 0.27, 0.64, 1): 180 distinct supporting inequalities, every maximum over U(4) equal to 1 to 4·10⁻¹⁴, consistent with the proved PMSH(4).
 - **n = 5.** Results so far (`logs/n5_*.txt`), 1,500 rays and 6 starts per facet:
 
-  | spectrum c | facets reached | max over U(5) of ℓ·(m − g) | candidates above 1 |
+  | spectrum c | supporting inequalities | max over U(5) of ℓ·(m − g) | candidates above 1 |
   | --- | --- | --- | --- |
   | (0, 1/4, 1/2, 3/4, 1) | 633 | 1 + 8·10⁻¹² | 0 |
   | (0, 0.129, 0.499, 0.601, 1) | 667 | 1 + 0 | 0 |
@@ -28,7 +29,7 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
   | (0, 0.094, 0.431, 0.567, 1) | 674 | 1 + 0 | 0 |
 
   Further spectra (clustered, geometric, near-repeated) and n = 6 are still running; this table will be completed.
-- **What this does and does not show.** Every facet the rays reach is touched (maximum exactly 1) and none is crossed. The rays mostly reach **easy** facets, those implied by nonnegativity of squared minors (see N2). The hard facets, where a violation would have to occur, are thin targets: at n = 4 the 96 hard facets are exceeded by the linear relaxation by only 0.004–0.24 (qhull's unit-normal scaling), and 3,000 random vertices of the relaxation at each of three spectra never land outside P(c) (`relaxation_vertices.py`, `logs/relaxation_vertices_n4.txt`). So N1 is evidence, not a near-proof, and it does not replace a hard-facet enumeration.
+- **What this does and does not show.** Every inequality the rays reach is touched (maximum exactly 1) and none is crossed. Haar rays mostly reach **easy** facets, those implied by nonnegativity of squared minors (see N2). The hard facets, where a violation would have to occur, are thin targets: at n = 4 the 96 hard facets are exceeded by the linear relaxation by only 0.004–0.24 (qhull's unit-normal scaling), and 3,000 random vertices of the relaxation at each of three spectra never land outside P(c) (`relaxation_vertices.py`, `logs/relaxation_vertices_n4.txt`). So N1 is evidence, not a near-proof, and it does not replace a hard-facet enumeration.
 
 **N2 (numerical, reproduces a known count). Easy and hard facets.** Write D(U) for the vector of all squared minors |det U[S,T]|². Then m(U D_c U*) = M_c·D(U) + const. A facet of P(c) is *easy* if its pullback is a nonnegative combination of squared minors modulo the affine relations of D(U), and *hard* otherwise. With all 184 qhull facets at n = 4 this Farkas test gives exactly 96 hard facets at each of four spectra, matching R3–R4 of [`../pmsh/README.md`](../pmsh/README.md).
 
