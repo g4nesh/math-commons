@@ -1,0 +1,374 @@
+{
+  "status": "PASS",
+  "half_products": [
+    [
+      36,
+      -26
+    ],
+    [
+      -84,
+      -108
+    ],
+    [
+      51,
+      17
+    ],
+    [
+      36,
+      42
+    ],
+    [
+      4,
+      -52
+    ],
+    [
+      -37,
+      -107
+    ]
+  ],
+  "half_hull": [
+    1,
+    5,
+    0,
+    2,
+    3
+  ],
+  "half_hull_minimum_strict_gap": 694,
+  "product_hull": [
+    20,
+    1,
+    7,
+    8,
+    17,
+    11,
+    6,
+    10
+  ],
+  "product_vertices": [
+    [
+      -10080,
+      7918
+    ],
+    [
+      -5832,
+      -1704
+    ],
+    [
+      -2448,
+      -6936
+    ],
+    [
+      1512,
+      -7416
+    ],
+    [
+      3162,
+      -5406
+    ],
+    [
+      2312,
+      1734
+    ],
+    [
+      -4608,
+      18144
+    ],
+    [
+      -8448,
+      12984
+    ]
+  ],
+  "all_relative_unitaries": true,
+  "open_spectral_neighborhood": true,
+  "explicit_neighborhood_radius": null,
+  "edges": [
+    {
+      "ends": [
+        20,
+        1
+      ],
+      "pair_labels": [
+        [
+          5,
+          5
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "allowed_generators": 31,
+      "face_rank": 13,
+      "intersection_dimension": 13,
+      "minimum_positive_gap": 10335312,
+      "minimum_positive_weight": "645957",
+      "fixed_basis": [
+        0,
+        1,
+        2,
+        6,
+        9,
+        10,
+        14,
+        21,
+        24,
+        25,
+        26,
+        27,
+        39
+      ]
+    },
+    {
+      "ends": [
+        1,
+        7
+      ],
+      "pair_labels": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "allowed_generators": 27,
+      "face_rank": 13,
+      "intersection_dimension": 13,
+      "minimum_positive_gap": 4975152,
+      "minimum_positive_weight": "187272",
+      "fixed_basis": [
+        0,
+        1,
+        2,
+        6,
+        9,
+        10,
+        14,
+        17,
+        21,
+        24,
+        25,
+        26,
+        39
+      ]
+    },
+    {
+      "ends": [
+        7,
+        8
+      ],
+      "pair_labels": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "allowed_generators": 30,
+      "face_rank": 13,
+      "intersection_dimension": 13,
+      "minimum_positive_gap": 4508400,
+      "minimum_positive_weight": "322028",
+      "fixed_basis": [
+        0,
+        1,
+        2,
+        6,
+        9,
+        10,
+        11,
+        14,
+        17,
+        18,
+        21,
+        30,
+        39
+      ]
+    },
+    {
+      "ends": [
+        8,
+        17
+      ],
+      "pair_labels": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "allowed_generators": 30,
+      "face_rank": 13,
+      "intersection_dimension": 13,
+      "minimum_positive_gap": 5370300,
+      "minimum_positive_weight": "383592",
+      "fixed_basis": [
+        0,
+        1,
+        6,
+        9,
+        10,
+        11,
+        14,
+        17,
+        19,
+        22,
+        28,
+        30,
+        39
+      ]
+    },
+    {
+      "ends": [
+        17,
+        11
+      ],
+      "pair_labels": [
+        [
+          3,
+          5
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "allowed_generators": 31,
+      "face_rank": 13,
+      "intersection_dimension": 13,
+      "minimum_positive_gap": 441660,
+      "minimum_positive_weight": "31547",
+      "fixed_basis": [
+        0,
+        1,
+        3,
+        6,
+        9,
+        10,
+        11,
+        14,
+        17,
+        19,
+        22,
+        24,
+        27
+      ]
+    },
+    {
+      "ends": [
+        11,
+        6
+      ],
+      "pair_labels": [
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "allowed_generators": 33,
+      "face_rank": 13,
+      "intersection_dimension": 13,
+      "minimum_positive_gap": 6766200,
+      "minimum_positive_weight": "37050",
+      "fixed_basis": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        9,
+        10,
+        11,
+        14,
+        17,
+        18,
+        21,
+        27
+      ]
+    },
+    {
+      "ends": [
+        6,
+        10
+      ],
+      "pair_labels": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "allowed_generators": 33,
+      "face_rank": 13,
+      "intersection_dimension": 13,
+      "minimum_positive_gap": 11032320,
+      "minimum_positive_weight": "919359",
+      "fixed_basis": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        9,
+        10,
+        11,
+        14,
+        17,
+        21,
+        27,
+        39
+      ]
+    },
+    {
+      "ends": [
+        10,
+        20
+      ],
+      "pair_labels": [
+        [
+          1,
+          5
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "allowed_generators": 33,
+      "face_rank": 13,
+      "intersection_dimension": 13,
+      "minimum_positive_gap": 11032320,
+      "minimum_positive_weight": "919360",
+      "fixed_basis": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        9,
+        10,
+        11,
+        14,
+        21,
+        24,
+        27,
+        39
+      ]
+    }
+  ]
+}
