@@ -1,0 +1,106 @@
+====================================================================================================
+replay_T20: Case T_20 = {0,1,5,6,7,8}, document root_moc4_T19_uniform_20261022.pdf
+====================================================================================================
+
+--- 1. Objects (EXACT)
+[ok  ] sha256 of root_moc4_T19_uniform_20261022.pdf is the one of the document that was read   | d045da12e70c3ef1904e15866bc21a6b932b1d986f3b7cee35823e05cb6a7a7c
+[ok  ] Appendix D: 34 minor vectors and 48 vectors h, all 82 value vectors distinct
+[ok  ] the 34 listed minor vectors are exactly the 16 + 18 distinct n_{I,J}
+[ok  ] the 48 listed h are exactly all h_{pi,eps}; profile thirteen 0, ten 1, one 2
+[ok  ] all 82 vectors are >= 0 on the 24 permutations
+[ok  ] cross-check: own 82 value vectors = moc4lib.F_VALUES (same numbering)
+[ok  ] cross-check: own PERMS = moc4lib.PERMS; minor flags agree
+[ok  ] cross-check: T_7, T_18, T_19, T_20 of Appendix E agree with moc4lib.CONTACT_SETS
+[ok  ] cross-check: each own value vector lies in the image of moc4lib.P
+[ok  ] document's contact set 'T19' = paper's T_20 (identical set, same indexing; group element = identity)
+
+--- 2. Contact cone and complete minor dual, doc p.1 (EXACT)
+[ok  ] generators F_T recomputed = document's list   | F_T = [0, 1, 2, 3, 4, 5, 6, 27, 28, 33, 34]
+[ok  ] non-minor generators = document's   | f_28 = h_{3421,-}, f_34 = h_{4321,+}
+[ok  ] rank of all generators = rank of the minor generators = 8 (so every source profile lies in the span of the minor generators)   | 9 minor generators
+[ok  ] minor cone has exactly 10 facets (dual extreme rays)   | found 10; coordinates used [2, 3, 9, 10, 12, 13, 16, 18]
+[ok  ] exactly two facet functionals are negative on some non-minor generator
+[ok  ] document's A is one of the two (as a functional on the span)   | values on minor generators ['1', '0', '0', '1', '0', '0', '0', '0', '0']; on non-minor ['-1', '1']
+[ok  ] document's B is one of the two (as a functional on the span)   | values on minor generators ['0', '0', '1', '0', '1', '0', '0', '0', '0']; on non-minor ['1', '-1']
+[ok  ] the document's A and B are the two distinct exceptional facets
+[ok  ] the other 8 facets are exactly the document's coordinate inequalities g_j >= 0, j in [3, 4, 9, 10, 14, 16, 19, 22]
+[ok  ] double-dual check: the facet functionals have rank 8 and every extreme ray of {all facet inequalities} is a positive multiple of a minor generator   | 9 extreme rays; 9 minor generators
+[ok  ] the minor cone has nine generators
+
+--- 3. Rectangle argument, the curve (2) and its parametrization (3), doc p.1-2 (EXACT)
+[ok  ] rectangle: F0 F7 = F1 F6 for general labels
+[ok  ] F0 - F1 = (A0-C0)(A1-C1)(A2-A3)(C2-C3)   (nonzero for distinct labels)
+[ok  ] F0 - F6 = (A2-C2)(A3-C3)(A0-A1)(C0-C1)   (nonzero for distinct labels)
+[ok  ] F6/F0 = (A0-C1)(A1-C0)/((A0-C0)(A1-C1))   (a cross-ratio of A0, A1, C0, C1)
+[ok  ] F8/F6 = (A1-C2)(A2-C0)/((A1-C0)(A2-C2))
+[ok  ] F1/F0 = (A2-C3)(A3-C2)/((A2-C2)(A3-C3))
+[ok  ] (H+iq0)(H+iq7) - (H+iq1)(H+iq6) = (q1 q6 - q0 q7) + i H (q0 + q7 - q1 - q6)
+[ok  ] with q7 = q1 + q6 - q0:  q1 q6 - q0 q7 = (q0 - q1)(q0 - q6)   (so H != 0 forces F0 = F1 or F0 = F6)
+[ok  ] F5/F0 = (A1-C3)(A3-C1)/((A1-C1)(A3-C3))
+[ok  ] F5 - F0 = (A0-C0)(A2-C2)(A1-A3)(C3-C1)   (nonzero for distinct labels, so h != 1)
+[ok  ] normalized labels A = (x,1,A2,A3), C = (inf,0,v,w): F6/F0 = x, F8/F6 = (1-v)/(A2-v)
+[ok  ] F5/F0 = (1 - w) A3/(A3 - w)
+[ok  ] F1/F0 = (A2 - w)(A3 - v)/((A2 - v)(A3 - w))
+[ok  ] A3 = hw/(h-1+w) is the solution of F5/F0 = h
+[ok  ] curve (2): F1/F0 - l = -[l(a2-v)w(1-w) - (a2-w){(h-v)w - v(h-1)}] / ((a2-v) w (1-w))
+[ok  ] with w = 1 + q(v-1): lhs(2) - rhs(2) = -(v-1)^2 [ v q T(q) - (q-1){h(q-k) + l(k-1)q} ], linear in v
+[ok  ] at T(q) = 0 (q = k/c): (q-1){h(q-k)+l(k-1)q} = k l (h-1)(k-1)^2 (l-1)/c^2  (nonzero, so T(q) != 0)
+
+--- 4. Ratios, kernels (4), Pick identities (5), (6), obstruction functions (8), doc p.2-3 (EXACT)
+[ok  ] (R0,R1,R5,R6,R7,R8) = (1, l, h, x, lx, -x/(k-1))
+[ok  ] the chart satisfies all six contacts and no other gap vanishes identically
+[ok  ] R14 = (x - v)/((k-1)(v-1)) and R16 = h R14
+[ok  ] hence g14 = mu (x-1) Im v / ((k-1)|v-1|^2) and g16 = h g14
+[ok  ] (4) g3 = mu h k Im q / ((k-1)|q|^2)
+[ok  ] (4) g4/g3 = -l (h-1)(k-1)^2 (l-1)|q|^2 / (h |T(q)|^2)
+[ok  ] (4) g9/g3 = -x (l-1)(k-1)|q|^2 / (h k |q-1|^2)
+[ok  ] (4) g10/g3 = l x (k-1)|q|^2 / (h |q-k|^2)
+[ok  ] (5) Pick identity: Im v / Im q = h/|q|^2 - l (h-1)(k-1)^2 (l-1)/|T(q)|^2
+[ok  ] g14/g3 = (x-1)|q|^2 (Im v/Im q) / (h k |v-1|^2)
+[ok  ] (6) Im w / Im q = ((h-1)/c) {1 - k l (k-1)^2 (l-1)/|T(q)|^2}
+[ok  ] R19 = h - h(x-1)/(w-1), hence g19 = -mu h (x-1) Im w / |w-1|^2
+[ok  ] v - 1 = J(q)/(q T(q))
+[ok  ] (8) R3 - R2 + R18 = A_R exactly (A = g3 - g2 + g18 = -mu Im A_R)
+[ok  ] (8) R13 - R3 = B_R exactly (B = g13 - g3 = -mu Im B_R)
+[ok  ] J(0) = hk,  J(p) = k l (h-1)(k-1)^2 (l-1)/c^2,  J(1) = -(k-1)(l-1)   (p = k/c)
+[ok  ] slope of S = hk + (k-1)(l-1),  S(0) = -hk,  S(p) = k (h-1)(k-c)/c
+[ok  ] zero z0 of S:  J(z0) = -h k (h-1)(k-1)(l-1)/(hk + c - k)^2
+[ok  ] T(q) = c (q - p)
+
+--- 5. Sign analysis, doc p.2-3 (EXACT: complete enumeration of sign cells; certificates)
+[ok  ] the premises, stripped of squared moduli, are free of q and have a certified sign on each of the 81 cells
+[ok  ] the sign cells compatible with h > 0 and the three positive ratios of (4) are exactly the four rows of the document's table (each x > 0 row splits into 0<x<1 and x>1)   | 6 cells
+[ok  ] adding (x-1)/k > 0 (from g14/g3 > 0 and the Pick identity) leaves exactly: (k>1, x>1, 0<l<1, h>1), (k<0, 0<x<1, l<0, 0<h<1), (k<0, x<0, l>1, 0<h<1)
+[ok  ] first case: c > 1 and -k l (l-1) > 0 (so the bracket of (6) exceeds 1); h k/(k-1) > 0 (mu Im q > 0)
+[ok  ] first case: g19/g3 = -(x-1)(k-1)|q|^2 (Im w/Im q)/(k |w-1|^2) has the sign of -(x-1)(k-1)(h-1)/(k c) < 0
+[ok  ] third case: c > 1 and -k l (l-1) > 0 (so the bracket of (6) exceeds 1); h k/(k-1) > 0 (mu Im q > 0)
+[ok  ] third case: g19/g3 = -(x-1)(k-1)|q|^2 (Im w/Im q)/(k |w-1|^2) has the sign of -(x-1)(k-1)(h-1)/(k c) < 0
+       => only region (7): 0 < h < 1, k < 0, l > 1, x < 0, mu Im q > 0 can be supported
+[ok  ] region (7): c < 0, 0 < p < 1 (p = k/c), h k/(k-1) > 0
+[ok  ] region (7): J(0) < 0, J(p) > 0, J(1) > 0, leading coefficient h - 1 < 0
+[ok  ] region (7): slope of S < 0, S(0) > 0, S(p) < 0, J(z0) > 0
+[ok  ] region (7): prefactors (1-x) l > 0 and -h(1-x)/(k-1) > 0
+
+--- 6. Second, root-free proof of A > 0 and B > 0 on region (7) (EXACT; own argument)
+[ok  ] region (7): (A/(mu Im q)) |J(q)|^2 = a|q|^2 + b(q+conj q) + c0 with a > 0 and a c0 - b^2 > 0 (certificates), so A > 0 for every nonreal q with mu Im q > 0
+[ok  ] region (7): (B/(mu Im q)) |J(q)|^2 = a|q|^2 + b(q+conj q) + c0 with a > 0 and a c0 - b^2 > 0 (certificates), so B > 0 for every nonreal q with mu Im q > 0
+
+--- 6b. Observation, not in the document: v real forces q real, i.e. all eight labels real (EXACT)
+[ok  ] Im v/Im q = h [ 1/|q|^2 + (g4/g3)/|q|^2 ]:  it is nonzero whenever g3, g4 > 0
+       => for distinct labels and all gaps >= 0: Im q != 0 gives g3 != 0 and g4 != 0 by (4), hence Im v != 0.
+          So v real implies q real; then w = 1 + q(v-1), A2 and A3 are real: all eight labels are real,
+          every ratio R_j is real and g_j = -mu Im R_j = 0 for all j.  No circle theorem is needed there.
+
+--- 7. Exact evaluation at Gaussian-rational points, directly from the 24 products (EXACT)
+[ok  ] at 6 Gaussian-rational chart points: 24 gaps from the products = mu Im q * (polarized formula), contacts vanish exactly, labels distinct
+[ok  ] at 2 chart points with q real (all labels real, distinct): all 24 gaps are exactly 0
+[ok  ] exactly the 3 points of region (7) are supported; there A > 0 and B > 0
+
+--- 8. NUMERIC falsification attempts (floating point prefilter, exact confirmation)
+       N1a: 100000 unrestricted chart samples (seed 20261125): 758 float-supported candidates re-evaluated exactly
+       N1b: 6000 exact samples in region (7) (with mass near the boundary values)
+[ok  ] N1 (EXACT at sampled points): contacts vanish; every supported sample lies in region (7) with mu Im q > 0, g3,g4,g9,g10,g14,g16 > 0, A > 0, B > 0 and all 10 facet inequalities; on region (7) A/g3 > 0, B/g3 > 0 and the kernel ratios are positive   | supported 3767; region (7) samples 6741 (supported 3767); min A/g3 = 3.219e-09, min B/g3 = 1.752e-06
+[ok  ] N2 (NUMERIC): at chart-free solutions of the six contact equalities with well separated labels: Re(kappa F0) = 0, the parameters x, h, k, l are real, and the chart (with q = (w-1)/(v-1)) reproduces all 24 gaps   | 300 searches, 300 converged, 66 usable; max |Re(kappa F0)|/|F0| = 2.0e-12; max |Im(x,h,k,l)|/(1+|.|) = 5.4e-12; max relative gap mismatch = 1.9e-10
+[ok  ] N3 (NUMERIC): on 3000 random points of the contact cone, 'A >= 0 and B >= 0' agrees with a nonnegative-least-squares test of membership in the minor cone   | 1697 inside, mismatches 0
+
+PASS: all 77 checks passed (replay_T20: Case T_20 = {0,1,5,6,7,8}, document root_moc4_T19_uniform_20261022.pdf)
