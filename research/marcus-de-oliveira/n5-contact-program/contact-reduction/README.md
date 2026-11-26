@@ -1,14 +1,15 @@
 # The contact reduction in every dimension, for a fixed unitary matrix
 
 - **Task:** `mdo-contact-reduction-all-n`. Agent `ishaan-n5` (GitHub owner `IshaanAyaan`). November 26, 2026.
-- **Status:** complete written proof. Textbook facts are cited by name. The identities were checked exactly and the deformation was run numerically at n = 4 and n = 5 (see "Checks"). One independent re-derivation by a fresh agent under the same owner. **Not independently reviewed by another owner.**
+- **Status:** complete written proof. Textbook facts are cited by name. The identities were checked exactly at n = 3, 4, 5 (see "Checks"). A fresh agent under the same owner re-derived every statement independently from the statements alone and found no error. **Not independently reviewed by another owner.**
 - **Evidence levels:** PROVED (a complete written argument here) and CITED (a named textbook theorem), marked per step. The checks are EXACT or NUMERIC as labelled.
 
 ## Deviations and limits
 
 - The statement is proved for *admissible weights* (defined below), which include the Leibniz weights of every unitary matrix. This is more general than the task asked. The unitary case is Corollary A1.
 - Classical facts from algebraic geometry, complex analysis and combinatorics are cited, not re-proved: the affine dimension theorem, a curve through two points, normalization and completion of curves, Chevalley's theorem, density of Zariski-open sets in the classical topology, dimension as transcendence degree, the Laplace expansion, Jacobi's complementary-minor identity, Hall's theorem and the Birkhoff–von Neumann theorem. Everything else is proved here. In particular, the closedness of the realizable cone (Lemma D) and Zheng's Lemma 3.4 for every n (Lemma B) need neither geometric invariant theory nor any description of the ideal of the cone.
-- Nothing here addresses the case analysis that would follow the reduction at n = 5. That is the subject of the tasks `mdo-n5-contact-strata` and `mdo-n5-high-contact-search`.
+- Nothing here addresses the case analysis that would follow the reduction at n = 5.
+- A numerical run of the deformation itself (following the curves of Lemma E with fake admissible weights at n = 4, 5) was planned but not finished. The local optimizer used stalls on positive-dimensional level sets, which is a limitation of that code rather than of the argument. No numerical deformation result is claimed here.
 
 ## Statement
 
@@ -28,7 +29,7 @@ So the conjecture for U is the statement "D_μ(a,b) ∈ conv{z_σ(a,b)} for all 
 >   Re(θ D_μ(a′,b′)) < m and #{σ : Re(θ z_σ(a′,b′)) = m} ≥ 2n − 2.
 > (b) (Variational and rigid form.) In the homogeneous setting of Section 2, let x ∈ X with S_μ(x) false, π ∈ T(x), the gaps normalized by ∑_σ Re g_σ(x) = 1, and L(y) = ∑_σ μ_σ Re g_σ(y). Then some x′ ∈ X has T(x′) ⊇ T(x), ∑_σ Re g_σ(x′) = 1, L(x′) ≤ L(x) < 0, |T(x′)| ≥ 2n − 2, and x′ is an isolated point of X ∩ Λ(x′).
 
-> **Corollary A1 (the unitary case).** Let n ≥ 2 and U ∈ U(n). If the conjecture fails for U at some spectra, it fails for the same U at spectra (a′, b′) where some supporting line of conv{z_σ(a′,b′)} strictly separates d_U(a′,b′) from the hull and contains z_σ(a′,b′) for at least 2n − 2 permutations σ, counted by permutation.
+> **Corollary A1 (the unitary case).** Let n ≥ 2 and U ∈ U(n). If the conjecture fails for U at some spectra, it fails for the same U at spectra (a′, b′) where some supporting line of conv{z_σ(a′,b′)} has d_U(a′,b′) in the open half-plane on the side away from the hull and contains z_σ(a′,b′) for at least 2n − 2 permutations σ, counted by permutation.
 
 *Proof of Corollary A1.* Apply Theorem A(a) to μ(U), which is admissible by Lemma 1(c). Then D_μ = d_U by Lemma 1(b), and {w : Re(θw) = m} is the line. ∎
 
@@ -157,7 +158,7 @@ In both cases put x′ = ν(p′) ∈ C ⊆ X. Then g_σ(x′) = g_σ(x) for σ 
 ## 6. What this gives for n = 5
 
 - Any violation of the conjecture at n = 5, for any U ∈ U(5), can be moved, with the same U, to spectra at which at least 8 products lie on the separating supporting line. The configuration is then rigid: it is isolated in its level set, and the normalized support gap is no larger. No orthogonal reduction and no knowledge of the ideal of X₅ is used.
-- What remains is a statement about rigid contact configurations. For a contact set T, the gap vector lies in the cone N_T = {p in the 42-dimensional span of the squared-minor vectors : p ≥ 0, p_T = 0}. If every generator of N_T is a squared-minor vector, the support inequality holds for every unitary, by Lemma 1(a) (the "automatic" strata). The numbers of rigid patterns and of automatic ones at n = 5 are not known. They are being sampled in `mdo-n5-contact-strata`, and the same strata are being searched for violations in `mdo-n5-high-contact-search`.
+- What remains is a statement about rigid contact configurations. For a contact set T, the gap vector lies in the cone N_T = {p in the 42-dimensional span of the squared-minor vectors : p ≥ 0, p_T = 0}. If every generator of N_T is a squared-minor vector, the support inequality holds for every unitary, by Lemma 1(a) (the "automatic" strata). The numbers of rigid patterns and of automatic ones at n = 5 are not known and are not computed here.
 
 ## Citations
 
@@ -176,4 +177,4 @@ In both cases put x′ = ν(p′) ∈ C ⊆ X. Then g_σ(x′) = g_σ(x) for σ 
 
 ## Checks
 
-See [`check_identities.py`](check_identities.py) and [`deformation_test.py`](deformation_test.py), with their outputs. Reproduce from the repository root with `python -I -B research/marcus-de-oliveira/n5-contact-program/contact-reduction/<script>.py`.
+[`check_identities.py`](check_identities.py), output in [`check_identities_output.txt`](check_identities_output.txt): 97 checks, 0 failures, 14 s. It covers Lemma 1 (EXACT, Gaussian-rational unitaries), the line example in Section 3 (EXACT, n = 4, 5), rank [vec P_σ] = (n − 1)² + 1 for n = 3, 4, 5 (EXACT), and the minimum-norm descent of Lemma D, including a strictly semistable case where the minimum is reached only in the limit (NUMERIC). Reproduce from the repository root with `python -I -B research/marcus-de-oliveira/n5-contact-program/contact-reduction/check_identities.py`.
