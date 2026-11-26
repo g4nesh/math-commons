@@ -1,0 +1,278 @@
+{
+  "leanVersion": "4.24.0",
+  "fatalWarnings": true,
+  "baseMainCommit": "043afc871697b2828c3183d655585cbaef22e49e",
+  "completeRunDeclarationCount": 192,
+  "newDeclarationCount": 52,
+  "sourceSha256": {
+    "formal/MathCommons.lean": "2081110542f5560fe2d09cd31e89de22fcaf85b931adc37a44c469a55d04f3be",
+    "formal/ForestCut.lean": "0bfc29b6c4470e3c11cfdbdb561616f55bc3d73af78d53e8edc68feb44b1b5ae",
+    "formal/ForestTrajectory.lean": "b5dcffb2a165702ef46a2a67e5a7d9049a5f5ba3af3cfd9cc2491af5e0fc5910",
+    "formal/ForestGateSupport.lean": "e5f1c920b17e385ad58dffb070f0647d5d937a06c4916a2a2a417aaccdda286f",
+    "formal/ForestGateMagnitude.lean": "02448676c0da705b368ae51aaab0e9771245ab406e7cd22a8eba99bf2589895a",
+    "formal/ForestPathProbability.lean": "4f01a43913a197c11c1904e3eedfb3161e6b8eec64bb7abb5bfd01a234ecdeca",
+    "formal/ForestPathNormalization.lean": "09df64b8c0941ac9f686017fe3cc82cc52e510af2e830384b5edae10821d8fff",
+    "formal/ForestEndpointMass.lean": "a2a6cec51910d33cc3d22c40001215fb41cd8b3c610327a517898d1b024b9e2d",
+    "formal/ForestProductMinor.lean": "797a22634b38e8f614d1994ad7100a4d3780f48334575fb6d25a0c4ad08b8e25"
+  },
+  "axiomReports": {
+    "MathCommons.ForestProductMinor.cauchyBinetOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.cauchyBinetTwo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gateAsRowUpdates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gateMinorBothExpansion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gateMinorBothOfAlternation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gateMinorLeftOnly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gateMinorNeither": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gateMinorRightOnly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gateMulLeft": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gateMulRight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gateMulSpectator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gateProductOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gateProductTwoMinorRecurrence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianAddAssoc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianAddComm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianAddMul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianMulAdd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianMulAssoc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianMulComm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianSumAdd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianSumAppend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianSumCongr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianSumDelta": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianSumFlatMap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianSumPairs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianSumScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianSumScaleRight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.gaussianSumSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.iteratedCauchyBinetTwo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.laplaceSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.laplaceTailSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.matrixIdentityMul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.matrixMulIdentity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.minorAsRows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.minorCongrRows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.minorReplaceAbsent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.minorRowAdd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.minorRowLinearCombination": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.minorRowScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.oneGateProductMagnitude": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.productEmptyMinor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.productMinorTupleExpansion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.productMinorTwoRows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.productSingletonMinor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.replaceOtherOwnRow": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.replaceOwnRow": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.replaceRowsCommute": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.rowDetHeadSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.rowDetTailSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.signedAdd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.signedScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestProductMinor.signedSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "scope": "Actual tuple expansion; full Cauchy-Binet and iteration in minor order two; general forest endpoint bridge still open."
+}
