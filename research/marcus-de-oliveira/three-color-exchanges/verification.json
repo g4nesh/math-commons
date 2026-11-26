@@ -1,0 +1,113 @@
+{
+  "main": {
+    "pattern": [
+      2,
+      2,
+      2
+    ],
+    "colorings": 90,
+    "statisticRows": 358,
+    "statisticRank": 43,
+    "localMoves": 120,
+    "exchangeRank": 47,
+    "kernelDimension": 47
+  },
+  "degenerateAndSmallerPatterns": [
+    {
+      "pattern": [
+        0,
+        0,
+        0
+      ],
+      "colorings": 1,
+      "statisticRows": 1,
+      "statisticRank": 1,
+      "localMoves": 0,
+      "exchangeRank": 0,
+      "kernelDimension": 0
+    },
+    {
+      "pattern": [
+        0,
+        2,
+        2
+      ],
+      "colorings": 6,
+      "statisticRows": 36,
+      "statisticRank": 6,
+      "localMoves": 0,
+      "exchangeRank": 0,
+      "kernelDimension": 0
+    },
+    {
+      "pattern": [
+        1,
+        1,
+        1
+      ],
+      "colorings": 6,
+      "statisticRows": 20,
+      "statisticRank": 5,
+      "localMoves": 1,
+      "exchangeRank": 1,
+      "kernelDimension": 1
+    },
+    {
+      "pattern": [
+        2,
+        1,
+        1
+      ],
+      "colorings": 12,
+      "statisticRows": 50,
+      "statisticRank": 9,
+      "localMoves": 4,
+      "exchangeRank": 3,
+      "kernelDimension": 3
+    },
+    {
+      "pattern": [
+        2,
+        2,
+        1
+      ],
+      "colorings": 30,
+      "statisticRows": 132,
+      "statisticRank": 19,
+      "localMoves": 20,
+      "exchangeRank": 11,
+      "kernelDimension": 11
+    },
+    {
+      "pattern": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "colorings": 24,
+      "statisticRows": 70,
+      "statisticRank": 14,
+      "localMoves": 16,
+      "exchangeRank": 10,
+      "kernelDimension": 10
+    }
+  ],
+  "interiorRepairDirections": 47,
+  "interiorRepairCoordinatesChecked": 90,
+  "gaugeRotationsChecked": 3,
+  "unchangedNegativeCanonicalMasses": 21,
+  "normalizedDualPolytopeDimension": 42,
+  "knownFourColorDual": {
+    "pattern": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "nonnegativeDualEntries": 24,
+    "exchangeDirectionsAnnihilated": 16,
+    "canonicalDualValue": "-672/15625"
+  },
+  "scope": "Complete linear repair space and cone-dual reduction. No universal positivity theorem or Conjecture F counterexample."
+}

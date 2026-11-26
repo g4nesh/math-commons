@@ -45,6 +45,15 @@ theorems = {
         'stepMagnitudeRightFirst', 'stepMagnitude', 'spectatorsAgreeSpec', 'spectatorsAgreeOfStep',
         'stepMagnitudeGeneral', 'pathMagnitude', 'emptySchedule', 'zeroStepPath', 'collisionStay',
         'nonzeroProbabilityUnique')},
+    'ForestPathNormalization.lean': {'MathCommons.ForestPathNormalization.' + n for n in (
+        'sumWithAppend', 'sumWithMap', 'sumWithFlatMap', 'sumWithScale', 'sumWithCongr',
+        'successorMass', 'stepProbabilityNonnegative', 'successorLegal', 'everyLegalSuccessor',
+        'successorsNodup', 'pathProbabilityPrefixCongr', 'extendedPathProbability',
+        'historyLegal', 'everyLegalPrefix', 'historyFuture', 'historyDeterminedByPrefix',
+        'historiesNodup', 'pathMassOne', 'pathProbabilityNonnegative', 'pathSquaredMagnitudeMassOne')},
+    'ForestEndpointMass.lean': {'MathCommons.ForestEndpointMass.' + n for n in (
+        'sumWithZero', 'normSumUnique', 'endpointMember', 'endpointHistoriesNodup',
+        'endpointNonzeroUnique', 'endpointMagnitude', 'emptyEndpointFiber')},
 }
 allowed = {'propext', 'Classical.choice', 'Quot.sound'}
 lean = sys.argv[1] if len(sys.argv) == 2 else 'lean'

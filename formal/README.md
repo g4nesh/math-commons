@@ -72,3 +72,11 @@ Both the empty and the full subset occur in the first row. Occupied spectator co
 A natural next lemma is the relation between the rational interpolation constructor and convexity of subsets of the complex plane over the reals. A separate, larger direction is to formalize the coefficient identity in the [forest-rotation argument](../research/marcus-de-oliveira/baselines/README.md). Neither the finite witness nor that restricted family establishes the unrestricted conjecture.
 
 [ForestPathProbability.lean](ForestPathProbability.lean) proves that the squared amplitude of each ordered path equals the product of its gate transition probabilities. The required check compiles this module after its dependencies and audits the transitive axioms of all fourteen printed declarations, including `pathMagnitude` and `nonzeroProbabilityUnique`. Connecting these finite path products to standard complex matrix minors by Cauchy–Binet remains open.
+
+## Total probability over finite histories
+
+[ForestPathNormalization.lean](ForestPathNormalization.lean) enumerates legal occupied-subset histories for any finite gate schedule and any starting subset. It counts a stay once when a swap leaves the same subset. `pathMassOne` gives total mass one. For unitary Gaussian-rational gates, `pathProbabilityNonnegative` proves each mass is nonnegative and `pathSquaredMagnitudeMassOne` gives total squared path amplitude one. Cyclic schedules are allowed. Connecting amplitudes that have the same endpoint to the minor of a matrix product still requires an interference argument and Cauchy–Binet. [Statements, assumptions and replay](../research/marcus-de-oliveira/forest-path-normalization/README.md)
+
+## Squared amplitude at a fixed forest endpoint
+
+[ForestEndpointMass.lean](ForestEndpointMass.lean) restricts the canonical histories to one final subset. For a forest gate schedule, at most one of those histories has a nonzero amplitude. `endpointMagnitude` proves that the squared norm of their signed sum equals their total probability, including zero for an unreachable endpoint. The next matrix identity is to identify that signed sum with the corresponding minor of the gate product by iterated Cauchy–Binet. [Exact hypotheses and proof](../research/marcus-de-oliveira/forest-endpoint-mass/README.md)
