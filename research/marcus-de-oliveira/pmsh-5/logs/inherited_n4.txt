@@ -1,0 +1,5 @@
+c=[1.0, 2.0, 3.0, 4.0] gammas=[-2.5, -1.5, -0.5, 0.5, 1.5, -4.5, 7.0] control=False: facets 184; exceeded by R_triv 96 (max excess 9.8583e-02); still exceeded by R_inh 96 (max excess 9.8583e-02)
+c=[0.3, 1.1, 2.0, 3.7] gammas=[-2.5, -1.5, -0.5, 0.5, 1.5, -4.5, 7.0] control=False: facets 184; exceeded by R_triv 96 (max excess 2.3918e-01); still exceeded by R_inh 96 (max excess 2.3918e-01)
+c=[1.0, 1.01, 5.0, 9.0] gammas=[-2.5, -1.5, -0.5, 0.5, 1.5, -4.5, 7.0] control=False: facets 184; exceeded by R_triv 96 (max excess 8.5192e-03); still exceeded by R_inh 96 (max excess 8.5192e-03)
+c=[1.0, 1.27, 1.64, 2.0] gammas=[-2.5, -1.5, -0.5, 0.5, 1.5, -4.5, 7.0] control=False: facets 184; exceeded by R_triv 96 (max excess 1.2568e-02); still exceeded by R_inh 96 (max excess 1.2568e-02)
+c=[1.0, 2.0, 3.0, 4.0] gammas=[] control=True: facets 184; exceeded by R_triv 96 (max excess 9.8583e-02); still exceeded by R_inh 0 (max excess 1.2367e-11)
