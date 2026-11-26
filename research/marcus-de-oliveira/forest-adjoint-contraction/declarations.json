@@ -1,0 +1,26 @@
+{
+  "namespace": "MathCommons.ForestAdjointContraction",
+  "count": 20,
+  "declarations": [
+    "conjugateAdd",
+    "conjugateMul",
+    "conjugateSigned",
+    "conjugateSum",
+    "conjugateMinor",
+    "columnScaleMinor",
+    "minorCongrEntries",
+    "rightDiagonalMinor",
+    "adjointMinorZero",
+    "adjointMinorOne",
+    "adjointMinorTwo",
+    "squaredFactor",
+    "conjugatedMinorOne",
+    "conjugatedMinorTwoMixed",
+    "conjugatedMinorTwo",
+    "conjugatedMinorZero",
+    "conjugatedTwoSubset",
+    "twoDiagonalSum",
+    "twoSpectralPencil",
+    "forestTwoContraction"
+  ]
+}
