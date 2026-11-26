@@ -117,6 +117,11 @@ theorems = {
         'adjointMinorZero', 'adjointMinorOne', 'adjointMinorTwo', 'squaredFactor',
         'conjugatedMinorOne', 'conjugatedMinorTwoMixed', 'conjugatedMinorTwo', 'conjugatedMinorZero',
         'conjugatedTwoSubset', 'twoDiagonalSum', 'twoSpectralPencil', 'forestTwoContraction')},
+    'ForestGeneralContraction.lean': {'MathCommons.ForestGeneralContraction.' + n for n in (
+        'signedMulSum', 'signedCross', 'minorHeadSplit', 'firstColumnExpansion',
+        'transposeMinor', 'adjointMinor', 'matrixMulAssoc', 'gateProductContraction',
+        'matrixDiagonalMul', 'leftDiagonalMinor', 'productFilter', 'gateConjugatedMinor',
+        'mulScale', 'gateSpectralDeterminant', 'forestDeterminantLaw', 'forestCommonDeterminantLaw')},
 }
 theorems['OrthogonalCube.lean'] = {'MathCommons.OrthogonalCube.' + n for n in (
     'squareNonnegative', 'quadraticNonnegative', 'lagrangeIdentity',
@@ -180,5 +185,11 @@ subprocess.run([sys.executable,
 # Pin actual low-order adjoint contraction and its complete dependency sources.
 subprocess.run([sys.executable,
                 str(root.parent / 'research/marcus-de-oliveira/forest-adjoint-contraction/check.py'),
+                lean], check=True,
+               env={**os.environ, 'ELAN_TOOLCHAIN': f'leanprover/lean4:v{version}'})
+
+# Audit the actual all-order rational forest determinant law and its dependencies.
+subprocess.run([sys.executable,
+                str(root.parent / 'research/marcus-de-oliveira/forest-general-contraction/check.py'),
                 lean], check=True,
                env={**os.environ, 'ELAN_TOOLCHAIN': f'leanprover/lean4:v{version}'})
