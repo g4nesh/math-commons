@@ -89,6 +89,8 @@ jobs:
           (cd star-two-row && sha256sum --check --quiet SHA256SUMS)
           python3 -B star-two-row/verify.py
           python3 -B star-two-row/scan.py
+          (cd star-zero-sector && sha256sum --check --quiet SHA256SUMS)
+          python3 -B star-zero-sector/verify.py
           python3 -B normal-pole-step/check.py | diff - normal-pole-step/certificate.json
           python3 -B normal-pole-step/archive_slices.py
           python3 -B two-free-rank-one/check.py

@@ -1,0 +1,27 @@
+{
+  "symbolic": {
+    "bernstein_identity": true,
+    "quadratic_form_assembly": true,
+    "determinant_square_identity_modulo_V_plus_W_plus_Z_equals_1": true,
+    "nonnegative_certificate_coefficients": true,
+    "arithmetic": "Sparse integer polynomials; no sampling or tolerance."
+  },
+  "regression": {
+    "exact_unitary_frames": 19,
+    "q_zero_frames": 3,
+    "s_one_nonzero_q_frames": 5,
+    "middle_normalized_frames": 11,
+    "t_values": [
+      "1/100",
+      "1/5",
+      "1",
+      "5"
+    ],
+    "earlier_negative_coefficient_witness_replayed": true,
+    "helper_sha256": "9b50005b4bbd40b0b985c54af5c7b0a0ce91e7bd3860d57015c2718a9a3ee6f5",
+    "scope": "Finite regression of the universal symbolic proof, not a search."
+  },
+  "python": "3.9.6",
+  "cpu_seconds": 0.15116200000000002,
+  "claim": "U11=0 only; global star and MDO remain open."
+}
