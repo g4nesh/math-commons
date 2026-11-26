@@ -1,0 +1,4 @@
+(P') interval3_51-100_1.json: degree 3, [a,b] = [51/100, 1], d = 3, 302 amplitudes, 400 blocks, end variant: True ; all coefficients symmetric with positive pivots and c_v >= 0: True  [0s]
+(I') identity as a polynomial in s (checked at 7 values of s: -3/2, -1/3, 0, 2/7, 1/2, 5/7, 1) fails at 0 of 2240 (unitary, s) pairs ; largest common denominator of a unitary has 79 bits  [2s]
+(E') dim W = 1488 ; rank modulo 65521 of (evaluations at these 320 unitaries) x (random 1488 x 320 matrix): 261  [2s]
+RESULT interval3_51-100_1.json: P' True, I' True, rank 261
