@@ -1,0 +1,30 @@
+{
+  "leanVersion": "4.24.0",
+  "namespace": "MathCommons.ForestMinorAlternation",
+  "count": 23,
+  "declarations": [
+    "gaussianNegNeg",
+    "gaussianNegAdd",
+    "gaussianMulNeg",
+    "signedNeg",
+    "gaussianSumNeg",
+    "doubleChoiceCons",
+    "doubleChoiceSwap",
+    "rowDetTwoChoices",
+    "rowDetHeadSwap",
+    "rowDetAdjacentSwap",
+    "rowDetAdjacentDuplicate",
+    "rowDetPrefixNeg",
+    "rowDetSeparatedHeadSwap",
+    "rowDetExchange",
+    "rowDetDuplicate",
+    "minorEqualRowsZero",
+    "minorDuplicateRow",
+    "twoEndpointAvoids",
+    "minorExchangeRows",
+    "gateMinorBoth",
+    "rowDetMove",
+    "parityMap",
+    "minorMoveRow"
+  ]
+}
