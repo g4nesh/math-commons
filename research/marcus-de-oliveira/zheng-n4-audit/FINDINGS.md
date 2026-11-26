@@ -6,7 +6,7 @@ The architecture of the proof is Zheng's: the reduction of unitary to orthogonal
 
 ## Bottom line
 
-**No error has been found in any part examined.** The conjecture for $n=4$ is **not yet established by this audit as a whole**: 98 of the 208 supplementary proof documents still await a first-pass report, five documents have large polynomial certificates that were not replayed, and no case has yet received its final verdict.
+**No error has been found in any part examined.** The conjecture for $n=4$ is **not yet established by this audit as a whole**: 98 of the 208 supplementary proof documents still await a first-pass report (in progress), and no review by another owner has taken place. The assembled proof, with the status of every step and of each of the ninety cases, is in [PROOF.md](PROOF.md).
 
 | Part of the proof | Result | Evidence |
 | --- | --- | --- |
@@ -17,7 +17,7 @@ The architecture of the proof is Zheng's: the reduction of unitary to orthogonal
 | Appendix C, one spectrum on a circle or line | No error found. One step was only sketched in the paper; the audit supplies a proof. See finding 3. | [Part 1](foundations/appendix-c-part1.md) · [part 2](foundations/appendix-c-part2.md) · [open items](foundations/appendix-c-open-items.md) |
 | Universal inequalities on SO(4) used by the cases | All that were examined hold. Several are not proved in any public document; the audit supplies proofs. See finding 2. | [Inventory and proofs](foundations/so4-atoms.md) · [independent re-verification](foundations/so4-atoms-verification.md) · [part 2a](foundations/so4-atoms-part2a.md) · [part 2b](foundations/so4-atoms-part2b.md) |
 | Three-plus-three circle theorem | Holds. Its proof note is absent from the public supplement; the audit supplies a proof. See finding 1. | [Proof](foundations/three-plus-three-circle.md) · [independent re-verification](foundations/three-plus-three-circle-verification.md) |
-| The 208 supplementary proof documents | 110 first-passed here: 101 confirmed or confirmed modulo citations, 4 with a step flagged and then settled (finding 4), 5 with certificates not replayed (finding 5). 92 are with cloud workers. 6 parallel write-ups are deferred. | [Reports](docs/) · [second pass](docs2/) · [manifest](manifest.json) |
+| The 208 supplementary proof documents | 110 first-passed here, all confirmed or confirmed modulo citations after the second pass: 4 had a step flagged and then settled (finding 4), and 5 had large certificates that were replayed afterwards (finding 5). 98 are in progress. | [Reports](docs/) · [second pass](docs2/) · [manifest](manifest.json) · [status per case](cases/TABLE.md) |
 
 ## Finding 1. A theorem cited by twelve cases has no public proof; the audit supplies one
 
@@ -62,10 +62,9 @@ Seven documents were audited a second time from scratch by auditors who did not 
 
 ## Finding 5. What is not yet checked
 
-- **Large certificates not replayed.** Five documents for $T_{38}$, $T_{39}$ and $T_{40}$ (`root_moc4_T37_uniform`, `blind_moc4_T38_uniform`, `independent_moc4_T39_high_j_uniform`, `…_high_p_uniform`, `…_low_pj_uniform`) rest on coefficient tables and Sturm sequences that the first pass tested only at sampled points. Their logic was read and found sound.
-- **92 documents with cloud workers.** No report yet. See [CLOUD-WORKER.md](CLOUD-WORKER.md).
-- **Six parallel write-ups** of the paper's Section 2 and Appendix C are deferred.
-- **Dependency graph.** The supplement's graph is acyclic and agrees with the paper's Table 6, and all ten conditional theorems are discharged at the level of statements. Seven citations found in the texts are missing from the supplement's graph, and one possible two-way dependence between $T_8$ and a seven-contact set is not yet resolved. [Map](deps/dependency-map.md) · [conditional theorems](deps/conditional-tracing.md)
+- **Large certificates, now replayed.** Five documents for $T_{38}$, $T_{39}$ and $T_{40}$ rest on coefficient tables and Sturm sequences that the first pass tested only at sampled points. A second pass rebuilt every polynomial from the paper's definitions and replayed all certificates exactly: 17 chart certificates for $T_{38}$; 40 coefficient tables, 799 Sturm sequences, five optimality charts and 60 peeling tables for $T_{39}$; and the shared identities and all coefficient certificates of the three branch documents of $T_{40}$, with the chamber cover. All five documents are now confirmed modulo citations. Notes: `docs2/*__certificates.md`.
+- **98 documents in progress.** Slices A and B of [CLOUD-WORKER.md](CLOUD-WORKER.md) (92 documents) and six parallel write-ups of the paper's Section 2 and Appendix C. They are being first-passed here as well; reports from cloud workers, if they arrive, will serve as an independent second pass.
+- **Dependency graph.** The supplement's graph is acyclic and agrees with the paper's Table 6, and all ten conditional theorems are discharged at the level of statements. Seven citations found in the texts are missing from the supplement's graph. The follow-ups are resolved: the reuse between $T_8$ and a seven-contact set is at the level of identities, not a logical circle, and no new contact lacks an argument in the cases examined. [Map](deps/dependency-map.md) · [conditional theorems](deps/conditional-tracing.md) · [follow-ups](deps/followups.md)
 - **Independent review.** Nothing here has been reviewed by another owner. Nine requests for independent replays are open in the ledger.
 - **Machine checking.** Nothing here is formalized.
 
