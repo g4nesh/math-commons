@@ -11,8 +11,10 @@
 | Case | Verdict | Report | Replay | Notes |
 | --- | --- | --- | --- | --- |
 | T₃₄ = {2,3,5,9,10,12} | confirmed modulo citations | [T34.md](T34.md) | [`replay_T34.py`](replay_T34.py): 90 exact and 11 numeric checks | The paper's representative of the group. The document does not state or prove the two "endpoint inequalities" behind its condition (H); they are the old-H inequality on SO(4), which is inequality (★) of [`../../star-orthogonal/README.md`](../../star-orthogonal/README.md) (Theorem O) and is also proved in the audit's notes. The chain inequality is verified exactly from the supplement's certificate data; no PDF contains it. The degree-9 polynomial of the exclusion is rebuilt here from the 14×14 Hessian determinant by a full symbolic expansion (1,381 terms), and the twelve Bernstein numerators have positive integer coefficients. |
+| T₂₇ = {2,3,4,7,8,12} | confirmed modulo citations | [T27.md](T27.md) | [`replay_T27.py`](replay_T27.py): 54 exact, 6 numeric, 5 data comparisons | A direct proof; the two boundary documents of the supplement are not needed by the main one. The factorization of the 14×14 Hessian determinant is verified with the document's degree-6 polynomial (401 terms). Ends with the SOC and four-coefficient inequalities (cited; orbit members and coefficient conditions exact). |
+| T₂₈ = {2,3,5,6,9,12} | confirmed modulo citations | [T28.md](T28.md) | [`replay_T28.py`](replay_T28.py): 84 exact, 5 numeric, 5 data comparisons | The degree-9 polynomial (2,124 terms), all 16 constant-term tables, all 24 Bernstein tables (up to 100,982 terms) and 302 Sturm groups are recomputed; every term count matches the document. **One citation is not replayed:** Lemma 1 of the document for the paper's T₂₅ (coherent, parallel and double-SOC bounds), tested numerically only here. No point of the matching cone was found in the hard chamber, so the endpoint inequalities were tested on the coefficient region. |
 
-Cases in progress: T₂₅–T₂₉, T₃₁, T₃₅–T₃₇.
+Cases in progress: T₂₅, T₂₆, T₂₉, T₃₁, T₃₅–T₃₇.
 
 ## Reproduction
 
