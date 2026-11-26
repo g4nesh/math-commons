@@ -159,7 +159,7 @@ They have negative individual canonical coefficients but positive target sums;
 these two cases are convention checks, not a universal sign proof.
 
 The optional `probe.py` reproduces the only numerical exploration: seed 71,
-12 Haar starts, at most 120 manifold-gradient iterations each. It needs NumPy
+12 complex Gaussian QR starts, at most 120 manifold-gradient iterations each. It needs NumPy
 and SciPy; the recorded run used Python 3.9.6, NumPy 2.0.2 and SciPy 1.13.1.
 The smallest value was about `-7e-16`, at rounding scale. No negative
 matrix was certified, and this search gives no verdict on the inequality.
