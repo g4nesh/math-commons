@@ -81,6 +81,18 @@ jobs:
           sha256sum --check --quiet SHA256SUMS
           python3 -B check.py
           python3 -B -m unittest discover -p 'test_*.py' -v
+      - name: Verify the two-sided paired-spectrum results and their limits
+        working-directory: research/marcus-de-oliveira
+        run: |
+          python3 -I -B double-paired-contingencies/check.py
+          python3 -I -B quaternionic-paired-spectra/check.py
+          python3 -I -B grouped-contact-reduction/check.py
+          python3 -I -B contact-reduction-review/sanity.py
+          (cd paired-pointwise-cone && sha256sum --check --quiet SHA256SUMS)
+          python3 -B paired-pointwise-cone/check.py
+          python3 -B -m unittest discover -s paired-pointwise-cone -p 'test_*.py' -v
+          python3 -I -B double-paired-five-term/check.py | diff - double-paired-five-term/replay.json
+          python3 -I -B paired-triangular-spectra/check.py
       - name: Verify rank-one rotations and the small-minor boundary
         working-directory: research/marcus-de-oliveira
         run: |
