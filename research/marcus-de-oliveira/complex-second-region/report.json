@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "secondRealInterval": [
+    "1/4",
+    "3/4"
+  ],
+  "secondImaginaryHeight": "1/16384",
+  "unrestrictedComplexEntries": [
+    1,
+    3,
+    4
+  ],
+  "polynomialRelations": 26,
+  "globalRankUpperBound": 54,
+  "realLawTerms": 446,
+  "power": 5,
+  "bounds": {
+    "tailUpperBound": "13/50",
+    "inverseBound": "20",
+    "imaginaryOperatorBound": "28",
+    "forcingBound": "314",
+    "imaginaryContraction": "35/1024",
+    "numeratorDisplacement": "785/989"
+  },
+  "positiveNumeratorFloor": "(1+|a4|^2)/5",
+  "uniformMassLowerBound": "1/40447",
+  "centerEnergyUpperBound": 8075,
+  "allowedPermutations": 18,
+  "zeroPermutations": 6,
+  "directChecks": [
+    {
+      "second": [
+        "1/4",
+        "1/16384"
+      ],
+      "fourth": [
+        "100",
+        "-100"
+      ],
+      "determinant": [
+        "-1668532392233/256000000",
+        "7362022286597/320000000"
+      ]
+    },
+    {
+      "second": [
+        "3/4",
+        "-1/16384"
+      ],
+      "fourth": [
+        "0",
+        "1"
+      ],
+      "determinant": [
+        "-97481906893/200000000",
+        "30438754343/100000000"
+      ]
+    },
+    {
+      "second": [
+        "1/2",
+        "1/16384"
+      ],
+      "fourth": [
+        "7/3",
+        "-11/5"
+      ],
+      "determinant": [
+        "-2041439863009/4000000000",
+        "31847780576819/32000000000"
+      ]
+    },
+    {
+      "second": [
+        "2/5",
+        "-1/49152"
+      ],
+      "fourth": [
+        "-5",
+        "7"
+      ],
+      "determinant": [
+        "-2417818145587/9600000000",
+        "-21527881914769/19200000000"
+      ]
+    }
+  ]
+}
