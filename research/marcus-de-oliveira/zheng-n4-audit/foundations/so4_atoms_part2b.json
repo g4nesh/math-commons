@@ -1,0 +1,1502 @@
+{
+ "exact": [
+  {
+   "check": "T28: generators vanishing on contact set (0, 4, 5, 6, 7, 8) are [0, 1, 2, 3, 4, 5, 6, 33, 34, 45, 46]",
+   "pass": true,
+   "info": "[0, 1, 2, 3, 4, 5, 6, 33, 34, 45, 46]"
+  },
+  {
+   "check": "T38: generators vanishing on contact set (2, 3, 5, 7, 9, 12) are [0, 1, 2, 5, 7, 12, 39, 40, 67, 70]",
+   "pass": true,
+   "info": "[0, 1, 2, 5, 7, 12, 39, 40, 67, 70]"
+  },
+  {
+   "check": "T42: generators vanishing on contact set (1, 2, 4, 6, 7, 8) are [0, 1, 2, 3, 4, 5, 6, 21, 22, 23, 53, 54]",
+   "pass": true,
+   "info": "[0, 1, 2, 3, 4, 5, 6, 21, 22, 23, 53, 54]"
+  },
+  {
+   "check": "T27: generators vanishing on contact set (2, 3, 5, 6, 9, 12) are [0, 1, 2, 5, 7, 9, 39, 40, 41, 67, 68]",
+   "pass": true,
+   "info": "[0, 1, 2, 5, 7, 9, 39, 40, 41, 67, 68]"
+  },
+  {
+   "check": "T28 response identity {34: 1, 46: 1} = {3: 1, 6: 2, 33: 1, 45: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T28 response identity {2: 1, 34: 1} = {0: 1, 6: 1, 33: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T28 response identity {4: 1, 34: 1} = {1: 1, 3: 1, 6: 1, 33: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T28 response identity {0: 1, 46: 1} = {2: 1, 3: 1, 6: 1, 45: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T28 response identity {1: 1, 46: 1} = {4: 1, 6: 1, 45: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T38 response identity {40: 1, 70: 1} = {0: 1, 5: 1, 12: 1, 39: 1, 67: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T38 response identity {1: 1, 40: 1} = {0: 1, 7: 1, 39: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T38 response identity {7: 1, 70: 1} = {1: 1, 5: 1, 12: 1, 67: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T42 response identity {22: 1, 54: 1} = {0: 1, 4: 1, 5: 1, 23: 1, 53: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T42 response identity {54: 1, 1: 1} = {0: 1, 6: 1, 53: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T42 response identity {54: 1, 4: 1} = {2: 1, 3: 1, 6: 1, 53: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T42 response identity {54: 1, 21: 1} = {0: 1, 2: 1, 23: 1, 53: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 response identity {35: 1, 40: 1} = {0: 1, 7: 1, 2: 1, 29: 1, 45: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 response identity {35: 1, 39: 1} = {1: 1, 2: 1, 29: 1, 45: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 response identity {40: 1, 1: 1} = {0: 1, 7: 1, 39: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T27 response identity {40: 1, 68: 1} = {0: 1, 7: 1, 41: 1, 67: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T27 response identity {40: 1, 1: 1} = {0: 1, 7: 1, 39: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T27 response identity {40: 1, 9: 1} = {2: 1, 7: 1, 41: 1}",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T42 some g in G preserves T42 and exchanges f22, f54 (literal row (0,2,1,3), col (1,0,3,2))",
+   "pass": true,
+   "info": "literal readings matching: [((1, 0, 3, 2), (0, 2, 1, 3), 0), ((1, 0, 3, 2), (0, 2, 1, 3), 0), ((1, 0, 3, 2), (0, 2, 1, 3), 0), ((1, 0, 3, 2), (0, 2, 1, 3), 0)]"
+  },
+  {
+   "check": "T36 contact nullspace has dimension 8",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 identity delta35 + delta40 = -g17 on the contact nullspace",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 (1) minor representation holds on the whole contact nullspace",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 (2) delta35 representation holds on the whole contact nullspace",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 (3) delta40 representation holds on the whole contact nullspace",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T38 transport T24 core (59,53,55,67,54) -> (5,2,67,0,40) is realised by some g in G",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T27 transport T24 core (59,53,55,67,54) -> (5,2,0,67,40) is realised by some g in G",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 transport T24 core (67,55,53,54,59,2) -> (7,0,5,35,45,1) is realised by some g in G",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 transport T28 face (4,2,33,5,6,46,45) -> (0,5,2,29,7,40,39) is realised by some g in G",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 transport SOC (1,9,22) -> (5,45,40) is realised by some g in G",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 stabiliser exchanging (a,b,q,p) = (f7,f0,f2,f29) with (f0,f7,f29,f2), fixing f1,f45,f5,f35 and T36",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(33, 2, 46) in proved orbit with stated roles [T28 Lemma 2 p.3]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(5, 2, 46) in proved orbit with stated roles [T28 Lemma 2 p.3]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(2, 4, 33, 46) in proved orbit with stated roles [T28 Lemma 2 p.3]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(2, 5, 6, 46) in proved orbit with stated roles [T28 Lemma 2 p.3]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "H/chain allocation (6): atoms at their thresholds sum exactly to the target cost [T28 Lemma 2 p.3]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(12, 2, 70) in proved orbit with stated roles [T38 gen.70 p.4]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(39, 2, 70) in proved orbit with stated roles [T38 gen.70 p.4]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(2, 0, 12, 70) in proved orbit with stated roles [T38 gen.70 p.4]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(2, 39, 67, 70) in proved orbit with stated roles [T38 gen.70 p.4]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "H/chain allocation (6): atoms at their thresholds sum exactly to the target cost [T38 gen.70 p.4]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom SOC(2, 5, 70) in proved orbit with stated roles [T38 gen.70 p.4 (as >= d^2)]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(3, 5, 54) in proved orbit with stated roles [T42 p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(23, 5, 54) in proved orbit with stated roles [T42 p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 0, 3, 54) in proved orbit with stated roles [T42 p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 23, 6, 54) in proved orbit with stated roles [T42 p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "H/chain allocation (6): atoms at their thresholds sum exactly to the target cost [T42 p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom SOC(5, 2, 54) in proved orbit with stated roles [T42 p.1 (as >= d^2)]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(2, 5, 40) in proved orbit with stated roles [T36 (10) p.4]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(29, 5, 40) in proved orbit with stated roles [T36 (10) p.4]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 0, 2, 40) in proved orbit with stated roles [T36 (10) p.4]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 29, 7, 40) in proved orbit with stated roles [T36 (10) p.4]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "H/chain allocation (6): atoms at their thresholds sum exactly to the target cost [T36 (10) p.4]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom SOC(5, 45, 40) in proved orbit with stated roles [T36 (10) p.4 (as >= d^2)]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "KKT chart HH: energy = stated J, stationarity at beta1 = theta, leaf types feasible",
+   "pass": true,
+   "info": "leaf slacks 2*theta/(U + 1), -2*(theta - 1)/(W + 1)"
+  },
+  {
+   "check": "KKT chart HC: energy = stated J, stationarity at beta1 = theta, leaf types feasible",
+   "pass": true,
+   "info": "leaf slacks 2*theta/(U + 1), -2*W*(theta - 1)"
+  },
+  {
+   "check": "KKT chart CC: energy = stated J, stationarity at beta1 = theta, leaf types feasible",
+   "pass": true,
+   "info": "leaf slacks 2*U*theta, -2*(U + W)*(theta - 1)"
+  },
+  {
+   "check": "atom H(45, 1, 34) in proved orbit with stated roles [T28 (3) j>=1+1/e]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(1, 0, 45, 34) in proved orbit with stated roles [T28 (3) j>=1/e+1/b]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom four(6, 0, 5, 34) in proved orbit with stated roles [T28 (3) bp(a-1)>=b+p+a+1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(2, 5, 40) in proved orbit with stated roles [T38 gen.40 j>=1+1/e]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom four(0, 67, 2, 40) in proved orbit with stated roles [T38/T27 e>=E_ab]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom four(0, 7, 12, 40) in proved orbit with stated roles [T38 p>=P_ac]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom four(67, 41, 39, 40) in proved orbit with stated roles [T27 p>=P_ac]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom SOC(45, 1, 35) in proved orbit with stated roles [T36 (6) cj>=1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(5, 45, 35) in proved orbit with stated roles [T36 (6) c>=1+1/e]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom four(7, 0, 5, 35) in proved orbit with stated roles [T36 (6) K>=0]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T28 (3) four atom (6,0;5;34) condition = bp(a-1) - (b+p+a+1)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T36 (6) four atom (7,0;5;35): slack = K = (ab-1)e - (a+1)(b+1)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T38/T27 eighth chamber: four atom (delta a, c, p, delta) is exactly on its boundary at p = p(delta)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T38/T27 eighth chamber: coherent (5) scaled to the piece (r a, b, e, j, r) has threshold r^2/e - r^2/E_r",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T38/T27 eighth chamber: four atom on the piece holds iff e >= E_r (slack = (ab-r) r (e - E_r))",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T38/T27 p(delta) strictly increasing on [0,1) when ac >= 1 (derivative factor)",
+   "pass": true,
+   "info": "(a + 1)*(a*c**2 + 2*a*c*delta - delta**2)/(a*c - delta)**2"
+  },
+  {
+   "check": "atom H(2, 5, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_IV p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 0, 2, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_IV p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(29, 5, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_IV p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 7, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_IV p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 41, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_IV p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T48 allocation IV (a <= 2e/S, Q <= 2j/S): atoms at their thresholds sum exactly to the target cost [blind_moc4_T48_allocation_IV p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 0, 2, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_II p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(29, 5, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_II p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 7, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_II p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 41, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_II p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T48 allocation II (0<u<1, 2u<=a, Q<=2v): atoms at their thresholds sum exactly to the target cost [blind_moc4_T48_allocation_II p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 7, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_III_low_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 41, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_III_low_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(2, 5, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_III_low_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 0, 2, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_III_low_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T48 allocation III (0<u<1, Q>=2u, a<=2v): atoms at their thresholds sum exactly to the target cost [blind_moc4_T48_allocation_III_low_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 0, 2, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_I_low_j p.1, I_small_lambda_low_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 7, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_I_low_j p.1, I_small_lambda_low_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(5, 41, 29, 40) in proved orbit with stated roles [blind_moc4_T48_allocation_I_low_j p.1, I_small_lambda_low_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T48 allocation I (both chains, p >= lambda): atoms at their thresholds sum exactly to the target cost [blind_moc4_T48_allocation_I_low_j p.1, I_small_lambda_low_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T48 Cor. 2: e-side requirement = s - alpha + alpha^2/a + s^2/e (min over alpha gives s - phi_a(s) + s^2/e)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[bad70] face sources [0, 1, 2, 12, 39, 67, 70, 72] are generators of contact set [2, 3, 5, 9, 10, 12]",
+   "pass": true,
+   "info": "generators [0, 1, 2, 12, 39, 67, 70, 72]"
+  },
+  {
+   "check": "GRAM[bad70] linear system built: 419 reduced monomials, rank 18, solution space dim 26",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[bad70] control: minor f0 = |u_f|^2 (diagonal coordinate)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[bad70] control: minor f1 = |u_f|^2 (diagonal coordinate)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[bad70] control: minor f2 = |u_f|^2 (diagonal coordinate)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[bad70] control: minor f12 = |u_f|^2 (diagonal coordinate)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[bad70] control: minor f39 = |u_f|^2 (diagonal coordinate)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[bad70] control: minor f67 = |u_f|^2 (diagonal coordinate)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[bad70] control: minor f72 = |u_f|^2 (diagonal coordinate)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[bad70] control: (PB) 2Phi_70 = |u70|^2 - 2<u0,u2> - 2<u2,u12> reproduced by the engine",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T44] face sources [2, 1, 53, 12, 8, 18, 7, 15] are generators of contact set [1, 2, 3, 7, 11, 12]",
+   "pass": true,
+   "info": "generators [0, 1, 2, 7, 8, 12, 15, 18, 53]"
+  },
+  {
+   "check": "GRAM[T44] linear system built: 418 reduced monomials, rank 18, solution space dim 26",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T44 face source order is (q,p,j,c,e,d,b,a) = (f2,f1,f53,f12,f8,f18,f7,f15)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T44] Prop. 1 (r,k,v,w family): Gram of real vectors (PSD) satisfies the exact degree-six identity with the stated weights [blind_moc4_T44_coherent_chain_capacity p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T44 Prop. 2: Prop. 1 specialisation gives p(z) = (1 + z^2/b)/(sqrt j + z)^2",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T44 Prop. 2: dp/dz = 2(z sqrt j - b)/(b (sqrt j + z)^3)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T44 Prop. 2: p(sqrt c) = (b+c)/(b (sqrt j + sqrt c)^2) and p(b/sqrt j) = 1/(j+b)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T44 Prop. 2 at j = 0: threshold 1/c + 1/b",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T44] Prop. 2 b = 0 direct Gram (p = 1/j): Gram of real vectors (PSD) satisfies the exact degree-six identity with the stated weights [blind_moc4_T44_coherent_chain_capacity p.2]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T44 example r=1,k=-1,v=0,w=1 gives (1/2)f1 + f53 + f12 + f7 + f18",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T44 scalar test (1): Prop. 1 at the stated substitution has p = (1), j = J^2, c = C^2, a,e >= t^2/(1-t^2)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom SOC(1, 53, 18) in proved orbit with stated roles [T44 SOC pj >= d^2]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(15, 53, 18) in proved orbit with stated roles [T44 conic branch p.1, e_below_p p.1, c_below_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(8, 53, 18) in proved orbit with stated roles [T44 conic branch p.1, e_below_p p.1, c_below_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T44 Hsum j >= d + d^2/(a+e) (old-H on a and on e, d split a:e): atoms at their thresholds sum exactly to the target cost [T44 conic branch p.1, e_below_p p.1, c_below_j p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T44 c_below_j transport (1,53,12,7,18) -> (53,1,8,7,18) is realised by some g in G",
+   "pass": true,
+   "info": "literal row/col (1,3,0,2)+transpose matches: True"
+  },
+  {
+   "check": "GRAM[T46] face sources [27, 1, 59, 5, 2, 28, 6, 4] are generators of contact set [1, 3, 5, 6, 7, 8]",
+   "pass": true,
+   "info": "generators [0, 1, 2, 3, 4, 5, 6, 27, 28, 59]"
+  },
+  {
+   "check": "GRAM[T46] linear system built: 413 reduced monomials, rank 18, solution space dim 26",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 face source order is (q,p,j,c,e,d,b,a) = (f27,f1,f59,f5,f2,f28,f6,f4)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T46] core coherent Thm 1: Gram identity with the stated weights [final_referee_T46_core_coherent_capacity p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 core: |P|^2 equals the threshold (1); P.(Q+B) = -h, P.J0 = t-1",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 core: G0 PD iff q > 0, l > 0 and j > (1 + (q+b-2beta)/l) t^2 (Schur complement)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 core: threshold (1) equals form (2) h^2/s + (s+kt)^2/(s(sj-(s+4)t^2)), k = 2-q-b",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 core: at t* = -kj/(s+4) the threshold is 1/j + (s+2k)/4 + k^2/(4(s+4))",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 core: u - 4/s = (q-b)^2/(s l)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 core Cor. 3: t=0, beta=1-q-b gives threshold 1/j + 2 - q - b",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 beta=-1: threshold = (t-1)^2/(j - lambda t^2), lambda = (q+b+2)/(q+b-2)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 beta=-1: leaf Schur condition is j > K t^2, K = (q+1)(b+1)/(qb-1); K - lambda = (q-b)^2/((qb-1)(q+b-2))",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 beta=-1: t = j/lambda gives 1/j - 1/lambda (valid when j < lambda^2/K)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 balanced q=b=x>1: lambda = K = (x+1)/(x-1) and t = j/lambda gives 1/j - (x-1)/(x+1)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 core transport T24 [59,53,55,67,54] -> T46 [1,59,6,27,28] realised in G",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 core transport T46 [1,59,6,27,28] -> T47 [45,5,7,0,35] realised in G",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T46] six-ray Thm 1: Gram identity with the stated weights [final_referee_T46_six_ray_coherent_capacity p.1]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 six-ray: |P|^2 = p*, |C|^2 = c*",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 six-ray: G0 PD iff q>0, l>0, j - t^2 > (bt^2 - 2beta t v + q v^2)/l",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 singular leaf: the 3x3 leaf/J0 block equals the Gram of explicit real vectors when j >= kappa t^2, kappa = 1+1/q",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 singular leaf: p* = k + (1-eta t)^2/(j - kappa t^2) and c* = rho^2 t^2/(j - kappa t^2) (q != b)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 a0_all_small Lemma 1 / positive_a_mixed (1): at t = eta j/(D0+A0): j - kappa t^2 = jN/(D0+A0)^2, consumed p = k + D0^2/(jN), consumed c = rho^2 A0/N, N - (rho^2/c)A0 = D0^2 + D0 A0 + A0^2",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom four(4, 6, 2, 28) in proved orbit with stated roles [T46 positive_a_small_or_balanced, positive_a_mixed (2), whole_assembly (5)]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T46 six-ray transport [27,1,59,5,2,28,6,4] -> T47 [0,45,5,9,29,35,7,36] realised in G",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "six-ray Cor. 2: t = eta e/kappa gives consumed c = 1/e + k - eta^2/kappa and consumed p = rho^2 eta^2 e/(kappa(kappa - eta^2 e))",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "six-ray Cor. 4 (A<=D0): t = eta e/D0 gives consumed c = k + (D0-A)^2/(e(D0^2 - kappa A)), unused p = p D0(D0-A)/N0",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "six-ray Cor. 4 (A>=D0): t = 1/eta gives consumed c = k and consumed p = rho^2/(A - kappa)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T47[V T^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12]",
+   "pass": true,
+   "info": "generators [0, 1, 2, 5, 7, 9, 35, 45]"
+  },
+  {
+   "check": "GRAM[T47[V T^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T47[V^-1 T^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12]",
+   "pass": true,
+   "info": "generators [0, 1, 2, 5, 7, 9, 35, 45]"
+  },
+  {
+   "check": "GRAM[T47[V^-1 T^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T47[V^T T^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12]",
+   "pass": true,
+   "info": "generators [0, 1, 2, 5, 7, 9, 35, 45]"
+  },
+  {
+   "check": "GRAM[T47[V^T T^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T47[V^-T T^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12]",
+   "pass": true,
+   "info": "generators [0, 1, 2, 5, 7, 9, 35, 45]"
+  },
+  {
+   "check": "GRAM[T47[V^-T T^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T47[T^-1 V]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12]",
+   "pass": true,
+   "info": "generators [0, 1, 2, 5, 7, 9, 35, 45]"
+  },
+  {
+   "check": "GRAM[T47[T^-1 V]] linear system built: 418 reduced monomials, rank 18, solution space dim 26",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T47[T^-1 V^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12]",
+   "pass": true,
+   "info": "generators [0, 1, 2, 5, 7, 9, 35, 45]"
+  },
+  {
+   "check": "GRAM[T47[T^-1 V^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T47[budget T^-1]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12]",
+   "pass": true,
+   "info": "generators [0, 1, 2, 5, 7, 9, 35, 45]"
+  },
+  {
+   "check": "GRAM[T47[budget T^-1]] linear system built: 418 reduced monomials, rank 18, solution space dim 26",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T47 PCBE: spectral coordinates (budget congruence composed with native V^-1) found in which the PCBE matrix satisfies every coefficient relation identically in x, y, z, w, L",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T47 PCBE: rows P and B coincide (P = B) and the Schur complement over {B, D} is the displayed 3x3 matrix on J, E, C",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T47 PCBE (3): (A+Bt)^2/(J-k t^2) - (A^2/J - B^2/k) = (kAt+BJ)^2/(kJ(J-k t^2))",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T47 PCBE: x^2/L + [(1-x)^2/j - (1+x/L)^2/kappa] = K(1-x)^2 - 1 and x^2/L + x^2(1/e - 1/(L(L+1))) = (1/e+1/(L+1)) x^2",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T47 PCBE: x* = (K-1)/(K+sqrt(K+B(K-1))) solves K(1-x)^2 - 1 = B x^2",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T47 PCBE (1) <=> (2) on 400 random (K, B, c) [NUMERIC consistency, not exact]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "GRAM[T47[budget]] face sources [2, 9, 1, 45, 5, 35, 0, 7] are generators of contact set [0, 4, 5, 6, 9, 12]",
+   "pass": true,
+   "info": "generators [0, 1, 2, 5, 7, 9, 35, 45]"
+  },
+  {
+   "check": "GRAM[T47[budget]] linear system built: 418 reduced monomials, rank 18, solution space dim 26",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T47 IIIb_plus_large_pc Lemma 1: Gram (A perp P,C; <P,C>=-a; J=d(C-A)/(a+c); D perp) satisfies every coefficient relation, and is realised by explicit vectors when pc >= a^2",
+   "pass": true,
+   "info": "coordinates: spectral"
+  },
+  {
+   "check": "T47 merged-C Lemma 1: crossing, stationary and half-energy Grams for leaf a and leaf b satisfy every coefficient relation",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T47 merged-C: crossing value x^2/L + x^2/e at x = d sqrt(e)/(sqrt j + sqrt e) equals d^2 (L+e)/(L (sqrt j + sqrt e)^2)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T47 merged-C: the three bounds are homogeneous of degree one in (d, j, e, L), so the proportional split sums to the A0 = a+b bound",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(9, 1, 35) in proved orbit with stated roles [T47]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom SOC(45, 1, 35) in proved orbit with stated roles [T47]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(1, 7, 9, 35) in proved orbit with stated roles [T47]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom four(0, 7, 5, 35) in proved orbit with stated roles [T47]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T47 transport T24 core (59,53,55,67,54,2) -> (45,5,7,0,35,1) is realised by some g in G",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T45 contact nullspace has dimension 8",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T45 the eight sources vanish on the contacts",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T45 evaluations of (f0,f1,f2,f12,f59,f67,f70,f72) at (18,16,13,8,2,14,11,7) form the identity matrix",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T45 (1): every contact-nullspace cost equals sum_f g_(ev f) f on the whole nullspace",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T45 the seven sources other than f70 are minors",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom SOC(2, 59, 70) in proved orbit with stated roles [T45 (2)-(6)]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(2, 0, 12, 70) in proved orbit with stated roles [T45 (2)-(6)]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(59, 0, 1, 70) in proved orbit with stated roles [T45 (2)-(6)]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom chain(59, 67, 72, 70) in proved orbit with stated roles [T45 (2)-(6)]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(1, 59, 70) in proved orbit with stated roles [T45 (2)-(6)]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(72, 59, 70) in proved orbit with stated roles [T45 (2)-(6)]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(1, 59, 70) in proved orbit with stated roles [T45]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "atom H(72, 59, 70) in proved orbit with stated roles [T45]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T45 (6) old-H split c >= d + d^2/(r+s): atoms at their thresholds sum exactly to the target cost [T45]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T45 zero face a=0: T33 contact set is carried by some g in G onto [3, 5, 9, 10, 12, 13]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T45 zero face c=0: T6 contact set is carried by some g in G onto [2, 3, 4, 5, 9, 10]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "T45 zero face r=0: T14 contact set is carried by some g in G onto [3, 4, 5, 9, 10, 16]",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "check": "NUMERIC G5 H/chain allocation (6), T42 roles, minimised RHS: no violation beyond -1e-9 (evidence only)",
+   "pass": true,
+   "info": "1.360e-18"
+  },
+  {
+   "check": "NUMERIC G1 T44 Prop. 1 family: no violation beyond -1e-9 (evidence only)",
+   "pass": true,
+   "info": "2.870e-20"
+  },
+  {
+   "check": "NUMERIC G1 T44 Prop. 2 threshold: no violation beyond -1e-9 (evidence only)",
+   "pass": true,
+   "info": "6.230e-19"
+  },
+  {
+   "check": "NUMERIC G2 T45 (6) old-H split: no violation beyond -1e-9 (evidence only)",
+   "pass": true,
+   "info": "1.666e-18"
+  },
+  {
+   "check": "NUMERIC G3 T46 core threshold (1): no violation beyond -1e-9 (evidence only)",
+   "pass": true,
+   "info": "1.094e-18"
+  },
+  {
+   "check": "NUMERIC G3 T46 six-ray p*, c*: no violation beyond -1e-9 (evidence only)",
+   "pass": true,
+   "info": "2.112e-18"
+  },
+  {
+   "check": "NUMERIC G4 T47 PCBE threshold (1), L = p = b: no violation beyond -1e-9 (evidence only)",
+   "pass": true,
+   "info": "3.343e-18"
+  },
+  {
+   "check": "NUMERIC G4 T47 large_pc Lemma 1 at pc = a^2: no violation beyond -1e-9 (evidence only)",
+   "pass": true,
+   "info": "5.152e-18"
+  },
+  {
+   "check": "NUMERIC G4 T47 merged-C Lemma 1 (crossing / stationary): no violation beyond -1e-9 (evidence only)",
+   "pass": true,
+   "info": "8.120e-18"
+  },
+  {
+   "check": "NUMERIC control old-H H(1,59;70) with main coefficient lowered 10%: attack finds a violation (sensitivity control)",
+   "pass": true,
+   "info": "-7.287e-07"
+  },
+  {
+   "check": "NUMERIC control T44 Prop. 2 with p set to 0: attack finds a violation (sensitivity control)",
+   "pass": true,
+   "info": "-3.854e-02"
+  },
+  {
+   "check": "NUMERIC control T46 core with p set to 0: attack finds a violation (sensitivity control)",
+   "pass": true,
+   "info": "-5.444e-02"
+  },
+  {
+   "check": "NUMERIC control T47 large_pc with j set to 0: attack finds a violation (sensitivity control)",
+   "pass": true,
+   "info": "-5.553e-02"
+  }
+ ],
+ "statements": {
+  "G5-identities": {
+   "status": "PROVED HERE (EXACT)",
+   "docs": [
+    "T28 p.1",
+    "T38 p.1",
+    "T42 p.1",
+    "T36 p.1",
+    "T27 p.1"
+   ],
+   "claim": "source identities, T36 three-way decomposition, transports and stabilisers"
+  },
+  "G5-HC-allocation": {
+   "status": "REDUCES TO PROVED ATOMS (old-H x2, chain x2; EXACT bookkeeping)",
+   "generators": "aux b, aux c (old-H), central a, leaves p, q, nonminor d",
+   "region": "beta1+beta2=1, 0<=delta_i<=beta_i, a >= 1 - d1 - d2 + b1^2/b + b2^2/c + d1^2/p + d2^2/q (d=1)",
+   "docs": [
+    "T28 Lemma 2 p.3",
+    "T38 gen.70 p.4",
+    "T42 p.1",
+    "T36 (10) p.4"
+   ],
+   "numeric_min_normalised": 1.3597907366350132e-18,
+   "numeric_samples": 20
+  },
+  "G5-eighth-chamber": {
+   "status": "REDUCES TO four-coefficient atom + T24 coherent (5) (part 2a)",
+   "docs": [
+    "blind_moc4_T27_uniform p.4 (10)-(11)",
+    "blind_moc4_T38_uniform p.3"
+   ],
+   "region": "ab>=1, ac>=1, p<P_ac, delta in [0,1) solving (10), e<E_r: j >= r^2/e - r^2/E_r"
+  },
+  "G5-T48": {
+   "status": "REDUCES TO PROVED ATOMS (old-H x2, chain x3; EXACT bookkeeping)",
+   "docs": [
+    "blind_moc4_T48_allocation_I_low_j",
+    "I_small_lambda_low_j",
+    "II",
+    "III_low_j (Thm 1, Cor. 2)",
+    "IV"
+   ]
+  },
+  "G1-T44-P1": {
+   "status": "PROVED HERE (EXACT identity + PROOF-READ)",
+   "generators": "q f2, p f1, j f53, c f12, e f8, d f18 (nonminor h), b f7, a f15",
+   "region": "r != k, w > 0: p >= x^2+y^2, j >= r^2(1+v^2), c >= k^2(1+v^2), a,e >= v^2, b >= w^2, q >= 0, d = 1",
+   "docs": [
+    "blind_moc4_T44_coherent_chain_capacity p.1",
+    "root_moc4_T44_e_below_p p.1",
+    "independent_moc4_T44_c_below_j p.1"
+   ],
+   "numeric_min_normalised": 2.870023746438747e-20,
+   "numeric_samples": 20
+  },
+  "G1-T44-P2": {
+   "status": "PROVED HERE (EXACT, specialisation of P1 + 1-D calculus; b=0 Gram checked)",
+   "region": "b,j>0, c>=0: p >= (b+c)/(b(sqrt j+sqrt c)^2) if jc<=b^2, 1/(j+b) if jc>=b^2; j=0: 1/b+1/c; b=0: 1/j",
+   "docs": [
+    "blind_moc4_T44_coherent_chain_capacity p.1-2",
+    "root_moc4_T44_e_below_p (1)",
+    "independent_moc4_T44_c_below_j (1)"
+   ],
+   "numeric_min_normalised": 6.229994769197237e-19,
+   "numeric_samples": 20
+  },
+  "G1-T44-scalar": {
+   "status": "PROVED HERE (EXACT, specialisation of P1)",
+   "region": "m=min(a,e), 0<=t<=sqrt(m/(1+m)), J+C>0, b>0: p >= (1)",
+   "docs": [
+    "blind_moc4_T44_coherent_chain_capacity p.2"
+   ]
+  },
+  "G1-T44-SOC-Hsum": {
+   "status": "REDUCES TO PROVED ATOMS (SOC; old-H x2)",
+   "docs": [
+    "blind_moc4_T44_conic_branch_exclusion p.1",
+    "independent_moc4_T44_a_Heron_branch p.1",
+    "independent_moc4_T44_c_below_j p.1",
+    "root_moc4_T44_e_below_p p.1"
+   ]
+  },
+  "G1-T44-Jstar": {
+   "status": "PROVED HERE (G-image of P2; covariance EXACT in part 1)",
+   "region": "j >= J*(b,p,e) (Prop. 2 with (p,j,c) -> (j,p,e))",
+   "docs": [
+    "independent_moc4_T44_c_below_j p.1 (1)"
+   ]
+  },
+  "G1-T44-native-chart": {
+   "status": "no universal SO(4) inequality in this note (spectral chart only)",
+   "docs": [
+    "blind_moc4_T44_native_contact_chart"
+   ]
+  },
+  "G3-T46-core": {
+   "status": "PROVED HERE (EXACT identity + PROOF-READ PSD)",
+   "generators": "p f1, j f59, q f27, b f6, d f28 (nonminor)",
+   "region": "q,b>0, l=qb-beta^2>0, j>(1+(q+b-2beta)/l)t^2, d=1: p >= (1); finite limits by closedness",
+   "docs": [
+    "final_referee_T46_core_coherent_capacity p.1-5 (Thm 1, Cor. 3, (2))",
+    "T46 a0_balanced_leaf Lemma 1",
+    "T46 a0_uniform Lemma 2",
+    "T46 positive_a_large_product",
+    "T46 positive_a_small_or_balanced",
+    "T47 transports"
+   ],
+   "numeric_min_normalised": 1.094449291226775e-18,
+   "numeric_samples": 20
+  },
+  "G3-T46-six-ray": {
+   "status": "PROVED HERE (EXACT identity + PROOF-READ PSD)",
+   "generators": "q f27, p f1, j f59, c f5, d f28 (nonminor), b f6",
+   "region": "q,b>0, l>0, j-t^2 > (bt^2-2beta tv+qv^2)/l, d=1: p >= p*, c >= c*; finite limits by closedness",
+   "docs": [
+    "final_referee_T46_six_ray_coherent_capacity p.1-4",
+    "T46 a0_all_small_product Lemma 1",
+    "root_moc4_T46_positive_a_mixed (1)",
+    "T47 zero_q_rational_capacity",
+    "T47 low_j_high_e",
+    "T47 low_j_low_e"
+   ],
+   "numeric_min_normalised": 2.112038645350479e-18,
+   "numeric_samples": 20
+  },
+  "G3-T46-singular-leaf": {
+   "status": "PROVED HERE (EXACT; specialisation of six-ray with explicit PSD vectors)",
+   "region": "q != b, r = sqrt(qb), j > kappa t^2: p >= k + (1-eta t)^2/(j-kappa t^2), c >= rho^2 t^2/(j-kappa t^2); rational section p >= k + D0^2/(jN)",
+   "docs": [
+    "final_referee_T46_a0_all_small_product Lemma 1",
+    "root_moc4_T46_positive_a_mixed (1)",
+    "final_referee_T46_six_ray Cor. 2-4 (T47 roles)"
+   ]
+  },
+  "G3-T46-four": {
+   "status": "REDUCES TO PROVED ATOM (four-coefficient (4,6;2;28))",
+   "docs": [
+    "final_referee_T46_positive_a_small_or_balanced p.1",
+    "root_moc4_T46_positive_a_mixed (2)",
+    "root_moc4_T46_whole_assembly (5)"
+   ]
+  },
+  "G3-T46-other": {
+   "status": "no universal SO(4) inequality stated",
+   "docs": [
+    "final_referee_T46_two_Heron_necessity",
+    "final_referee_T46_negative_j_Heron_uniform"
+   ]
+  },
+  "G3-six-ray-Cor2-4": {
+   "status": "PROVED HERE (EXACT; T47 roles via G-transport)",
+   "docs": [
+    "final_referee_T46_six_ray_coherent_capacity p.2-4",
+    "root_moc4_T47_zero_q_rational_capacity",
+    "root_moc4_T47_low_j_high_e"
+   ]
+  },
+  "G4-PCBE": {
+   "status": "PROVED IN THE DOCUMENT AND CHECKED",
+   "generators": [
+    2,
+    9,
+    1,
+    45,
+    5,
+    35,
+    0,
+    7
+   ],
+   "region": "d=1, p,b,j,e>0, 0<L<=min(p,b); c >= min_x max{K(1-x)^2-1, Bx^2}",
+   "docs": [
+    "T47 PCBE_energy p.1-2",
+    "T47 PCBE_low_e_q_monotone",
+    "T47 whole_assembly"
+   ],
+   "evidence": "EXACT Gram relations + Schur + (3) + simplification; PSD completion and closure PROOF-READ",
+   "numeric_min_normalised": 3.3426018506473295e-18,
+   "numeric_samples": 20
+  },
+  "G4-largepc-L1": {
+   "status": "PROVED IN THE DOCUMENT AND CHECKED",
+   "generators": [
+    2,
+    9,
+    1,
+    45,
+    5,
+    35,
+    0,
+    7
+   ],
+   "region": "a,p,c,d>0, pc>=a^2, j>=d^2/(a+c)",
+   "docs": [
+    "T47 IIIb_plus_large_pc p.1",
+    "T47 merged_C Thm 2"
+   ],
+   "evidence": "EXACT",
+   "numeric_min_normalised": 5.151513417703085e-18,
+   "numeric_samples": 20
+  },
+  "G4-mergedC-L1": {
+   "status": "PROVED IN THE DOCUMENT AND CHECKED",
+   "generators": [
+    1,
+    45,
+    5,
+    35,
+    0,
+    7
+   ],
+   "region": "A0=a+b>0, d>0; crossing (je<=A0^2), stationary (je>=A0^2), half-energy (e>=j)",
+   "docs": [
+    "T47 merged_C p.1",
+    "T47 IIIb_plus_unswapped",
+    "T47 whole_assembly"
+   ],
+   "evidence": "EXACT",
+   "numeric_min_normalised": 8.120150820953786e-18,
+   "numeric_samples": 20
+  },
+  "G4-atoms": {
+   "status": "REDUCES TO PROVED ATOMS",
+   "docs": [
+    "T47 I_II",
+    "T47 high_j_uniform",
+    "T47 high_j_small_b"
+   ],
+   "generators": [
+    9,
+    1,
+    45,
+    7,
+    0,
+    5,
+    35
+   ],
+   "evidence": "EXACT orbit membership"
+  },
+  "G2-T45": {
+   "status": "REDUCES TO PROVED ATOMS",
+   "generators": [
+    0,
+    1,
+    2,
+    12,
+    59,
+    67,
+    70,
+    72
+   ],
+   "region": "p,r,a,b,c,q,d,s >= 0; capacities (2)-(6)",
+   "docs": [
+    "T45 uniform p.1-2"
+   ],
+   "evidence": "EXACT (nullspace identity, orbit membership, threshold allocation)",
+   "numeric_min_normalised": 1.6656930133597356e-18,
+   "numeric_samples": 20
+  }
+ },
+ "numeric": {
+  "G5 H/chain allocation (6), T42 roles, minimised RHS": {
+   "samples": 20,
+   "min_normalised": 1.3597907366350132e-18,
+   "mp40_at_worst": 1.3597907191782723e-18,
+   "worst_coeffs": {
+    "3": 0.05398824589085497,
+    "23": 0.17898498024871676,
+    "5": 5.1748781225151514,
+    "0": 0.2657648748206142,
+    "6": 0.20413384198896992,
+    "54": 1.0
+   },
+   "seed": 1000
+  },
+  "G1 T44 Prop. 1 family": {
+   "samples": 20,
+   "min_normalised": 2.870023746438747e-20,
+   "mp40_at_worst": 2.8700237460062824e-20,
+   "worst_coeffs": {
+    "1": 1311.3967211167314,
+    "53": 0.7432192630133593,
+    "12": 0.6054784250017549,
+    "8": 0.9163952508299676,
+    "15": 0.9163952508299676,
+    "7": 0.3852636481457672,
+    "18": 1.0
+   },
+   "seed": 1001
+  },
+  "G1 T44 Prop. 2 threshold": {
+   "samples": 20,
+   "min_normalised": 6.229994769197237e-19,
+   "mp40_at_worst": 6.229994722828987e-19,
+   "worst_coeffs": {
+    "1": 9.244928577198053,
+    "53": 0.05062293042444459,
+    "12": 1.7947502819713246,
+    "7": 0.05754448175723822,
+    "18": 1.0
+   },
+   "seed": 1002
+  },
+  "G2 T45 (6) old-H split": {
+   "samples": 20,
+   "min_normalised": 1.6656930133597356e-18,
+   "mp40_at_worst": 1.665693103820249e-18,
+   "worst_coeffs": {
+    "1": 0.2755957391731887,
+    "72": 0.08267414486380811,
+    "59": 3.7911919046389477,
+    "70": 1.0
+   },
+   "seed": 1003
+  },
+  "G3 T46 core threshold (1)": {
+   "samples": 20,
+   "min_normalised": 1.094449291226775e-18,
+   "mp40_at_worst": 1.0944492906614026e-18,
+   "worst_coeffs": {
+    "27": 0.2464158624258444,
+    "1": 16.37390674053959,
+    "59": 0.07422119280368152,
+    "28": 1.0,
+    "6": 3.741101007599586
+   },
+   "seed": 1004
+  },
+  "G3 T46 six-ray p*, c*": {
+   "samples": 20,
+   "min_normalised": 2.112038645350479e-18,
+   "mp40_at_worst": 2.1120386445796485e-18,
+   "worst_coeffs": {
+    "27": 0.07102159791848728,
+    "1": 2.460648705425475,
+    "59": 60.193070624375395,
+    "5": 0.0676740925931831,
+    "28": 1.0,
+    "6": 0.3284716187077249
+   },
+   "seed": 1005
+  },
+  "G4 T47 PCBE threshold (1), L = p = b": {
+   "samples": 20,
+   "min_normalised": 3.3426018506473295e-18,
+   "mp40_at_worst": 3.3426018764607835e-18,
+   "worst_coeffs": {
+    "9": 0.10590920469784101,
+    "0": 0.10590920469784101,
+    "1": 0.0730815394438588,
+    "45": 2.474678412808259,
+    "5": 3.0846293396588584,
+    "35": 1.0
+   },
+   "seed": 1006
+  },
+  "G4 T47 large_pc Lemma 1 at pc = a^2": {
+   "samples": 20,
+   "min_normalised": 5.151513417703085e-18,
+   "mp40_at_worst": 5.1515134059065735e-18,
+   "worst_coeffs": {
+    "9": 18.393214611139623,
+    "1": 0.7259704962140483,
+    "45": 0.09010399334497082,
+    "35": 1.0,
+    "7": 1.2873624535905748
+   },
+   "seed": 1007
+  },
+  "G4 T47 merged-C Lemma 1 (crossing / stationary)": {
+   "samples": 20,
+   "min_normalised": 8.120150820953786e-18,
+   "mp40_at_worst": 8.120150934103606e-18,
+   "worst_coeffs": {
+    "7": 2.473299813360123,
+    "0": 0.06695704766153551,
+    "1": 0.19049779960549595,
+    "5": 0.0781038009787513,
+    "35": 1.0,
+    "45": 2.0109874798896086
+   },
+   "seed": 1008
+  },
+  "control old-H H(1,59;70) with main coefficient lowered 10%": {
+   "samples": 6,
+   "min_normalised": -7.287442979629902e-07,
+   "mp40_at_worst": -7.287442979629828e-07,
+   "worst_coeffs": {
+    "1": 0.31927062223120184,
+    "59": 3.7189251917711976,
+    "70": 1.0
+   },
+   "seed": 2000
+  },
+  "control T44 Prop. 2 with p set to 0": {
+   "samples": 6,
+   "min_normalised": -0.038537339637742266,
+   "mp40_at_worst": -0.03853733963774223,
+   "worst_coeffs": {
+    "1": 0.0,
+    "53": 0.12208887378046761,
+    "12": 0.4009853840668551,
+    "7": 0.32007500670159694,
+    "18": 1.0
+   },
+   "seed": 2001
+  },
+  "control T46 core with p set to 0": {
+   "samples": 6,
+   "min_normalised": -0.054440853842657906,
+   "mp40_at_worst": -0.054440853842657864,
+   "worst_coeffs": {
+    "27": 0.07952441330170686,
+    "1": 0.0,
+    "59": 0.0707116445592544,
+    "28": 1.0,
+    "6": 0.367424579445562
+   },
+   "seed": 2002
+  },
+  "control T47 large_pc with j set to 0": {
+   "samples": 6,
+   "min_normalised": -0.055525852462889984,
+   "mp40_at_worst": -0.05552585246288995,
+   "worst_coeffs": {
+    "9": 0.033771558233837186,
+    "1": 0.0,
+    "45": 0.08733716381804055,
+    "35": 1.0,
+    "7": 0.05430941091430779
+   },
+   "seed": 2003
+  }
+ },
+ "sections": [
+  "G1",
+  "G2",
+  "G3",
+  "G4",
+  "G5",
+  "GRAM",
+  "NUM"
+ ],
+ "n_fail": 0
+}

@@ -1,0 +1,155 @@
+{
+ "doc_id": "root_moc4_T4_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T4_uniform_20261022.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "thm:full",
+   "page": 1,
+   "paper_cases": [
+    4
+   ],
+   "contact_sets": [
+    [
+     0,
+     1,
+     4,
+     5,
+     7,
+     8
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "x in X, reference pi_0, Pc(x)>=0, (Pc)_s=0 for s in T4={0,1,4,5,7,8} (extra contacts allowed) => Phi_c(O)>=0 for all O in SO(4) (U(4) via Thm 1.2); all complex spectra incl. repeated values and a_i+b_j=0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2 / Corollary 2.2",
+   "used_for": "U(4) -> SO(4)",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Proposition 4.1 facet list",
+   "used_for": "generators",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Theorem B.1",
+   "used_for": "shared value a_i = c_j",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Theorem C.1 / Prop 1.4",
+   "used_for": "repeated values (<=3 distinct)",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "final_referee_T5_four_budget_capacity_20261022",
+   "used_for": "inequality (1); replayed exactly by auditor + group transport",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "three-plus-three generalized-circle theorem",
+   "used_for": "v real case; not in paper, replaced by auditor argument + Thm C.1",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "n": "S1-S3",
+   "claim": "generators, f34 relation, two relations, decomposition (2)",
+   "status": "EXACT"
+  },
+  {
+   "n": "S4",
+   "claim": "inequality (1)",
+   "status": "EXACT (auditor route); doc's arrowhead link unexplained"
+  },
+  {
+   "n": "S5",
+   "claim": "d<=0 replacement",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": "S6",
+   "claim": "collision strata",
+   "status": "CITED"
+  },
+  {
+   "n": "S7-S9",
+   "claim": "chart, reality, unique z,w, nonzero denominators",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": "S9'",
+   "claim": "v real case",
+   "status": "GAP presentation, repaired by auditor"
+  },
+  {
+   "n": "S10-S17",
+   "claim": "gap formulas, (3),(4), Hermitian forms (6),(7), E identity, final identity, sign logic",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": "S18",
+   "claim": "U(4) conclusion",
+   "status": "CITED"
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p.2 eq.(1) and arrowhead Z",
+   "claim": "(1) follows independently from PSD of Z",
+   "why": "no w(O) with Phi = w^T Z w is given",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "auditor replayed companion quaternion certificate exactly and transported it by g=((3,2,1,0),(3,1,2,0),0) with column flip"
+  },
+  {
+   "location": "p.2 'If v is real ... three-plus-three generalized-circle theorem'",
+   "claim": "v real case covered by a 3+3 circle theorem",
+   "why": "paper has only Thm C.1 (whole spectrum on circle)",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "v real => z real (linear eq.) => w real (nondegenerate real Mobius) => all 8 points real => C.1 / all gaps vanish"
+  },
+  {
+   "location": "p.4 L>0 argument",
+   "claim": "D(v,vbar)=d|Q(v)|^2>0",
+   "why": "Q(v)!=0 not stated",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "Q(v) divides numerator of z-w (EXACT), z != w"
+  }
+ ],
+ "exact_replays": [
+  "T4 = paper T_4; generators == lib",
+  "f34 and two relations",
+  "decomposition (2) on 8-dim face space",
+  "d<=0 replacement coefficients",
+  "contact ratios; z,w solution; resultant uniqueness",
+  "g2,g6,g10,g9,a formulas",
+  "(3),(4), E identity",
+  "M_D, M_P bidegree, determinants, evaluations at x/t",
+  "Q(v) | (z-w)",
+  "final capacity identity",
+  "quaternion link Phi_f0,f6,f10,f54; companion Gram identity mod N; Schur chains; arrowhead Schur formula; group transport"
+ ],
+ "numeric_tests": [
+  "chart sampling seeds 0/1, 2x200000 draws: 63 / 3067 supported, none with d>0, no violations",
+  "capacity boundary min Phi 5.7e-14 (3x4 restarts); sanity a=b=c=d=1 gives -0.0084"
+ ],
+ "unchecked": [
+  "page images not opened",
+  "doc's own arrowhead-pencil derivation of (1)",
+  "d>0 branch not exercised numerically (no samples)"
+ ]
+}

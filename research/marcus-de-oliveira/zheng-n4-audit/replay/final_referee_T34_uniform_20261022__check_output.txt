@@ -1,0 +1,49 @@
+# command: MOC4_SUPP=<supplement root> python -I -B final_referee_T34_uniform_20261022__check.py   (exit status 0)
+PASS EXACT doc contact set {2,3,4,6,9,12} equals paper T_35 literally
+PASS EXACT generators(T_35) == source 0,1,2,5,7,9,53,67,68 | [0, 1, 2, 5, 7, 9, 53, 67, 68]
+PASS EXACT only nonminor generator is 68
+PASS EXACT rank of source = 8
+PASS EXACT profile identity f68 + f2 = f0 + f9 + f67
+PASS EXACT representation (1) basis {67,5,53,9,1,68,7,0} independent (coefficients unique)
+PASS EXACT C(c + h kappa) is linear in h; own C*, Q equal the JSON C_terms, Q_terms
+PASS EXACT Q|d=1 == c + ce + cj - cp + 1 + e + j + ej
+PASS EXACT C* has only positive coefficients and contains d^3
+PASS EXACT JSON radial factor 0 is +-Q; G has 1475 terms, degree 9, d^9 coefficient +1
+PASS EXACT (2) Q^2 det Hess C(c - (C*/Q) kappa) == -4 G^2 at 12 random integer points in [-1e6,1e6]^8 (exact arithmetic; Schwartz-Zippel) | 12
+PASS EXACT (7) G00 = G|p=e=j=0 == (1+b)(c+1+b)^2(a+1)^3(q+1)^3
+PASS EXACT k0|b=0 == (a+1)(q+1)(e+1+a)^2(c+1)^2(q+j+1)^2
+PASS EXACT (9) baseline G|c=p=e=j=0 == (1+b)^3(a+1)^3(q+1)^3
+PASS EXACT G|c=b=0 == (qp+q+qa+p+pa+1+a)(e+1+a)^2(q+j+1)^2
+PASS EXACT G has degree 2 in p
+PASS EXACT (8) k0 chart ab<1,bq<1: cleared polynomial has no negative coefficient (doc count 2227) | (0, 2227)
+PASS EXACT (8) k0 chart ab<1,bq>1: cleared polynomial has no negative coefficient (doc count 3268) | (0, 3268)
+PASS EXACT (8) k0 chart ab>1,bq<1: cleared polynomial has no negative coefficient (doc count 3268) | (0, 3268)
+PASS EXACT (8) k0 chart ab>1,bq>1: cleared polynomial has no negative coefficient (doc count 4945) | (0, 4945)
+PASS EXACT (9) G|c=0 chart ab<1,bq<1: no negative coefficient (doc count 1419) | (0, 1419)
+PASS EXACT (9) G|c=0 chart ab<1,bq>1: no negative coefficient (doc count 2110) | (0, 2110)
+PASS EXACT (9) G|c=0 chart ab>1,bq<1: no negative coefficient (doc count 2110) | (0, 2110)
+PASS EXACT (9) G|c=0 chart ab>1,bq>1: no negative coefficient (doc count 3211) | (0, 3211)
+PASS EXACT b<=1 Bernstein middle numerator, P*=1+1/c, chart ab<1,bq<1: no negative coefficient (doc count 3612) | (0, 3612)
+PASS EXACT b<=1 Bernstein endpoint numerator, P*=1+1/c, chart ab<1,bq<1: no negative coefficient (doc count 3612) | (0, 3612)
+PASS EXACT b<=1 Bernstein middle numerator, P*=1+1/c, chart ab<1,bq>1: no negative coefficient (doc count 7230) | (0, 7230)
+PASS EXACT b<=1 Bernstein endpoint numerator, P*=1+1/c, chart ab<1,bq>1: no negative coefficient (doc count 7230) | (0, 7230)
+PASS EXACT b<=1 Bernstein middle numerator, P*=1+1/c, chart ab>1,bq<1: no negative coefficient (doc count 7230) | (0, 7230)
+PASS EXACT b<=1 Bernstein endpoint numerator, P*=1+1/c, chart ab>1,bq<1: no negative coefficient (doc count 7230) | (0, 7230)
+PASS EXACT b<=1 Bernstein middle numerator, P*=1+1/c, chart ab>1,bq>1: no negative coefficient (doc count 12258) | (0, 12258)
+PASS EXACT b<=1 Bernstein endpoint numerator, P*=1+1/c, chart ab>1,bq>1: no negative coefficient (doc count 12258) | (0, 12258)
+PASS EXACT (13) a(delta b)(E_a(delta)-delta) - delta^2(a + delta b + E_a(delta) + delta) == 0
+PASS EXACT (11) derivative of E_a == (b+1)(a^2 b + 2ab delta - delta^2)/(ab-delta)^2
+PASS EXACT E_a(1) == (a+1)(b+1)/(ab-1) (the four-coefficient threshold)
+PASS EXACT (15) chart: X = ab - delta1, Y = bq - delta2
+PASS EXACT (15) e == E_a(delta1) in the chart
+PASS EXACT (16) r^2/c + r/b == (b + C D)/(C b D^2)
+PASS EXACT b>=1 allocation chart (15)-(16) Bernstein base: no negative coefficient (doc count 117110) | (0, 117110)
+PASS EXACT b>=1 allocation chart (15)-(16) Bernstein middle: no negative coefficient (doc count 209489) | (0, 209489)
+PASS EXACT b>=1 allocation chart (15)-(16) Bernstein endpoint: no negative coefficient (doc count 289848) | (0, 289848)
+NUMERIC (3) old-H at equality c(p-1)=1, piece f68 + c f9 + p f5, 6 samples x 6 restarts | worst min Phi/l1 5.45e-15
+NUMERIC (4) chain at equality p=1/b+1/c, piece f68 + p f5 + b f7 + c f9 | worst 5.37e-15
+NUMERIC (5) four-coefficient at equality, piece f68 + b f7 + a f0 + e f1 | worst 2.50e-16
+NUMERIC (6) four-coefficient at equality, piece f68 + b f7 + q f67 + j f53 | worst 2.03e-15
+NUMERIC G > 0 below the selected threshold P* (old-H for b<=1, allocation (14) for b>=1) on 20000 random hard points (log-uniform in [0.02,20], seed 2026) | min G = 3.635e+00
+NUMERIC main statement T_35: random_point_on_contact_stratum seeds 0-2, min_phi_over_SO4 restarts 10 | points 3/3, worst normalized min Phi 9.95e-17
+SUMMARY exact failures: 0 []

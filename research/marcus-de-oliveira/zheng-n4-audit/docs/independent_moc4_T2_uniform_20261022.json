@@ -1,0 +1,58 @@
+{
+ "doc_id": "independent_moc4_T2_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T2_uniform_20261022.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    1,
+    2,
+    4,
+    6,
+    8
+   ],
+   "paper_case": "T_6",
+   "restatement": "x in X, g>=0, g=0 on T: Phi_{c(x)}(O)>=0 for all O in O(4); all spectra (cross collisions internal, repeated via Lemma B.2, v real gives g=0)."
+  }
+ ],
+ "dependencies": [
+  {
+   "ref": "F03 final_referee_T2_scalar_compensation (SOC atom a f1+b f9+c f22, ab>=c^2)",
+   "status": "CITED"
+  },
+  {
+   "ref": "paper Lemma B.2",
+   "status": "CITED"
+  },
+  {
+   "ref": "paper Theorem 1.2",
+   "status": "CITED"
+  },
+  {
+   "ref": "paper Prop 4.1/Lemma 4.2",
+   "status": "lib EXACT"
+  }
+ ],
+ "steps": "see md table: 22 steps; identities EXACT (flint/sympy), sign logic PROOF-READ, SOC CITED",
+ "gaps": [],
+ "exact_replays": [
+  "generator list, 8-dim reconstruction, 18 dual rays, A,B",
+  "four collision decompositions",
+  "four cross-ratio circles",
+  "chart (3) contacts, 14 gap formulas, A,B forms",
+  "(4),(5),(7), A+B, AB-g21g23",
+  "Case I/II/III scaled formulas",
+  "label swap symmetry",
+  "(6) and (8) in all 24 coordinates, eta free",
+  "SOC margins"
+ ],
+ "numeric_tests": [],
+ "unchecked": [
+  "positive-direction identity C(p,q) on p.4 (not used)",
+  "main statement numeric search (budget)"
+ ]
+}

@@ -1,0 +1,22 @@
+PASS EXACT L1: g10 N0 NY = M = -x h {kL - tL(v+vb) + t(t+u)N0}
+PASS EXACT L1: d |Qv|^2 = r^2 D2 + r t u L Nx
+PASS EXACT L1: D2 = M/h - t u (1-x) N0
+PASS EXACT L1: D2 + L NY = M/x
+PASS EXACT L1: g9 = x y {r/Nx - t u/NY}
+PASS EXACT L1: g10 = g20 + d
+PASS EXACT L1: d|Qv|^2/r = (r-r0) D2 + r0 (D2 + L NY)
+PASS EXACT (2) g14 = T m - d
+PASS EXACT (2) g19 = m + G
+PASS EXACT (2) g9 = X (G + H)
+PASS EXACT (3) g18 = 1 - d
+PASS EXACT (3) g22 = (X m - X H - d)/A0
+PASS EXACT (4) d C0 = N (m S0 + G H)
+PASS EXACT Q/(zeta(zeta+T)) = C0 + S0 conj(zeta)
+PASS EXACT K = -d - m conj(zeta)
+PASS EXACT (5): (Xm-XH)C0 - N(mS0+GH) = A0[m(XV-NH) - H(GN+XV)]
+PASS EXACT capacity difference aB(c-d) - d^2(a+B+c+d) = X(G+H) D0 - L0 d^2
+PASS EXACT T m (G+H) - L0 = G(Tm-1) + m(TH-t)
+PASS EXACT (G+H) D0 - L0 d (m-H) = (m+G){T m (G+H) - L0 d}
+PASS NUMERIC region II u<0 sample (seed 7, 400000 draws, 71 supporting with d>0): min capacity difference 9.220e+01
+PASS NUMERIC region x<0, t>1, u>0 sample (Lemma 1 says empty): 0 supporting with d>0
+RESULT ALL EXACT CHECKS PASS []

@@ -1,0 +1,19 @@
+PASS Lemma 1 identities Hg = alpha f + u0 + t u1 and Kg = gamma f + t(v0 - t u0)
+PASS supplement T47 contact set {0,4,5,6,9,12} equals paper T_65 (identity element)
+PASS generators(T_65) are exactly the 8 rays f2,f9,f1,f45,f5,f35,f0,f7 : [0, 1, 2, 5, 7, 9, 35, 45]
+PASS C(w(g,h)) is affine in h
+PASS restored height constant C0 = -d{ab+ad+aq+bd+bp+d^2+de+dp+dq+ep+eq+pq} (as in the T47 negative-Phi note)
+PASS height slope Q = ce-cj-d^2-de-dp-dq-ep-eq+jp-pq
+PASS radial polynomial G: 965 terms, total degree 8 : 2.9 s; per-variable degrees (2, 2, 2, 2, 2, 3, 3)
+PASS G^2 agrees with an independent exact Fraction 14x14 determinant at 5 random rational points
+PASS Phi = H c^2 + J c + K with H=(p+j+1+a)^2, K=(pj+b(p+1+a)-pa)^2
+PASS H G = alpha Phi + u0 + c u1 (polynomial identity)
+PASS K G = gamma Phi + c (v0 - c u0) (polynomial identity)
+PASS IIIa-minus chart a<=b: al >= 0 coefficientwise : terms=1439 (document 1439) pos=1439 neg=0
+PASS IIIa-minus chart a<=b: ga >= 0 coefficientwise : terms=3635 (document 3635) pos=3635 neg=0 strict on every allowed zero pattern=True
+PASS IIIa-minus chart a<=b: v0 >= 0 coefficientwise : terms=33089 (document 33089) pos=33089 neg=0
+PASS IIIa-minus chart a<=b: Eend >= 0 coefficientwise : terms=31893 (document 31893) pos=31893 neg=0 strict on every allowed zero pattern=True
+PASS IIIa-minus chart a>=b: al >= 0 coefficientwise : terms=1439 (document 1439) pos=1439 neg=0
+PASS IIIa-minus chart a>=b: u0 >= 0 coefficientwise : terms=27768 (document 27768) pos=27768 neg=0 strict on every allowed zero pattern=True
+PASS IIIa-minus chart a>=b: Eend >= 0 coefficientwise : terms=31893 (document 31893) pos=31893 neg=0 strict on every allowed zero pattern=True
+SUMMARY: all exact checks passed

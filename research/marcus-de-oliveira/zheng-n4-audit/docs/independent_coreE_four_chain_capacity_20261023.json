@@ -1,0 +1,123 @@
+{
+ "doc_id": "independent_coreE_four_chain_capacity_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_coreE_four_chain_capacity_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "restatement": "q,v,c,d>0, p,b,t>=0: if some delta in [0,d] has P(delta) = cvt(q+delta) - (t+q+delta){cv delta + c delta^2 + v(d-delta)^2} >= 0 then the source q f0+p f2+t f3+b f12+c f15+v f13+d f26 has Phi >= 0 on SO(4) (pointwise); also with q,v swapped."
+  },
+  {
+   "label": "capacity matrix",
+   "page": 2,
+   "restatement": "P(delta) = det M(delta); Schur complement [[W,K],[K,t-K]]; equivalent PSD certificate."
+  },
+  {
+   "label": "simple section",
+   "page": 2,
+   "restatement": "delta = dv/(c+v): q(c+v)>d^2 and t >= d(v+d){q(c+v)+dv}/((c+v){q(c+v)-d^2}) suffices."
+  },
+  {
+   "label": "example",
+   "page": 2,
+   "restatement": "d=1, q=100, v=c=1/50: t >= 680/19 suffices for all p,b >= 0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "external",
+   "ref": "four-coefficient reference (f0,f6,f10;f54)",
+   "status": "CITED",
+   "match_checked": true,
+   "used_for": "q f0 + v f13 + t f3 + d f26 safe if qv(t-d) >= d^2(q+v+t+d); ordered action onto (f0,f13,f3;f26) EXACT"
+  },
+  {
+   "kind": "external",
+   "ref": "chain reference (f2;f0,f12;f70)",
+   "status": "CITED",
+   "match_checked": true,
+   "used_for": "q f0 + t f3 + c f15 + d f26 safe if c >= d^2/q + d^2/t (and with v f13); ordered actions EXACT"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "(1) iff tW >= (q+delta)K",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "W>0, X in (0,W)",
+   "kind": "inequality",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 3,
+   "claim": "allocation identities and total",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "allocations positive and finite",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "sum of four atom, chain atom, minor remainders",
+   "kind": "citation",
+   "status": "CITED"
+  },
+  {
+   "n": 6,
+   "claim": "endpoints delta=0 (chain), delta=d (four)",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "capacity matrix Schur complement and determinant",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "rational section gives R_d",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "minimization inequality",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "worked example",
+   "kind": "identity",
+   "status": "EXACT"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "P(delta) = cv(tW-(q+delta)K)",
+  "allocation identities",
+  "endpoint reductions",
+  "det M = P, Schur complement",
+  "section delta=dv/(c+v)",
+  "minimization identity",
+  "example in exact rationals; 680/19 below both separate thresholds 5151/50 and 100"
+ ],
+ "numeric_tests": [
+  "60 boundary draws P(delta)=0 (seed 11): worst min Phi/max|Pc| = 1.7e-18",
+  "example t=680/19: 2.2e-17"
+ ],
+ "unchecked": [
+  "source proofs of the four-coefficient and chain reference inequalities"
+ ]
+}

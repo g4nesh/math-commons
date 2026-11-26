@@ -1,0 +1,182 @@
+{
+ "doc_id": "blind_moc4_T28_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T28_uniform_20261022.pdf",
+ "pages": 5,
+ "paper_case": "T_29 = {0,4,5,6,7,8} (literal)",
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "restatement": "For x in X with Pc(x)>=0 and zero gaps on T_29 (non-strict, extra contacts allowed): Phi_{c(x)}(O)>=0 for all O in SO(4). Algebraic proof on the closed cone; all spectra included."
+  },
+  {
+   "label": "Lemma 2",
+   "page": 3,
+   "restatement": "Cost (2) with d=1 satisfies the support inequality if a >= 1-d1-d2+b1^2/b+b2^2/c+d1^2/p+d2^2/q for some b1+b2=1, 0<=di<=bi (conventions 0/0=0, x^2/0=inf); no realizability used."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "old-H, chain, four-coefficient pointwise inequalities (transported: (45,1,34),(1;0,45;34),(6,0,5,34),(33,2,46),(5,2,46),(2;4,33;46),(2;5,6;46))",
+   "status": "CITED, source unnamed in PDF; NUMERIC tight"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Lemma 4.2/Prop 4.1",
+   "status": "generators EXACT; lemma CITED"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper App. A: X in Sing C",
+   "status": "lib EXACT"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Thm 1.2",
+   "status": "CITED"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "generators 0-6,33,34,45,46; nonminor 34,46",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "five cone identities",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "reduction to basis (1) or (2) or minors; ranks 8",
+   "status": "PROOF-READ+EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "radial necessity",
+   "status": "PROOF-READ (argument supplied by auditor)"
+  },
+  {
+   "n": 5,
+   "claim": "C+zQ, C positive coefficients with d^3, Q formula (1)",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "Q formula (2), MC-bcQ>=0",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "Q^4 det H = -4Q^2G^2 both bases",
+   "status": "EXACT at 10 random integer points (randomized, error<1e-42)"
+  },
+  {
+   "n": 8,
+   "claim": "k0=(p+1)F8, F8 a^0 coefficient 204 positive terms const 1",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "(4) identity, La<1",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 10,
+   "claim": "F8 transformed coefficients >=0, k0>=(p+1)(1-La)^2",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "G34(b) transformed >=0 on b<=1, a^0 coefficient >0",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "e=0: k2=0, k1>=0",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "b<=1 Bernstein with cut j=b",
+   "status": "EXACT"
+  },
+  {
+   "n": 14,
+   "claim": "b>=1 Bernstein, grouping in e",
+   "status": "EXACT"
+  },
+  {
+   "n": 15,
+   "claim": "closures/strictness",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 16,
+   "claim": "Lemma 2",
+   "status": "PROOF-READ+EXACT Cauchy; rests on CITED bounds"
+  },
+  {
+   "n": 17,
+   "claim": "KKT chart J formulas",
+   "status": "EXACT"
+  },
+  {
+   "n": 18,
+   "claim": "chart coverage",
+   "status": "PROOF-READ (KKT) + NUMERIC (400 samples)"
+  },
+  {
+   "n": 19,
+   "claim": "G46 k0 612 positive terms const 1",
+   "status": "EXACT"
+  },
+  {
+   "n": 20,
+   "claim": "G46 chart certificates (CH, CC, CC', HH, HC)",
+   "status": "EXACT"
+  },
+  {
+   "n": 21,
+   "claim": "(8)",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 22,
+   "claim": "zero-coefficient limits 46 branch",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators and five identities",
+  "C, Q vs own cubic (A.2)",
+  "radial identity at 10 random integer points per basis",
+  "F8 and G34(b) transformed-coefficient tables (12)",
+  "b<=1 interval tables (8)",
+  "b>=1 tables with grouped univariate certificates",
+  "G46 k0",
+  "five KKT chart J identities (sympy)",
+  "G46 chart certificates incl. 2x2 discriminant groups"
+ ],
+ "numeric_tests": [
+  "7 transported cited bounds at boundary: 6 samples x 12 BFGS restarts, worst -7e-16 (round-off)",
+  "KKT coverage: 400 random quadruples seed 3, 0 uncovered",
+  "main statement: 4 degenerate stratum points, worst min Phi -1.2e-10 (residual level; scratch run)"
+ ],
+ "unchecked": [
+  "symbolic (non-randomized) proof of Q^4 det H = -4Q^2G^2",
+  "the cited pointwise inequalities themselves"
+ ]
+}

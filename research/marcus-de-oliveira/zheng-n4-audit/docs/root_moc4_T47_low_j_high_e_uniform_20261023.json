@@ -1,0 +1,132 @@
+{
+ "doc_id": "root_moc4_T47_low_j_high_e_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_low_j_high_e_uniform_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "Every realizable source on T_65 (d=1) with b>1, 0<a<1/b, p>b, q>=0, e>=b(b+1), 0<j<=1, c>0 satisfies Phi_c(O)>=0 for all O in SO(4). Proof: c>=Crat by cited capacity; for c<Crat, G - (p-b)H6 - M Phi > 0 with M>=0 contradicts G=0 given the cited Phi>=0, H6>=0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022 / root_moc4_T47_full_radial (radial necessity: realizable source => C(w)=0 and det Hess C = 0 at w(g,-C0/Q), hence G = 0; rests on the secant-variety rank bound)",
+   "used_for": "G = 0 at every spectrally realizable source",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022 (negative-Heron theorem: Phi < 0, d,e > 0 => no realizable lift)",
+   "used_for": "exclude Phi < 0",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "final_referee_T47_negative_p_Heron_20261023 corollary: H6 >= 0 at realizable sources with a,c,d,e>0, p>=b",
+   "used_for": "H6 >= 0",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_T46_six_ray_coherent_capacity_20261023 Corollary 3 (c >= Crat => support inequality)",
+   "used_for": "capacity",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "claim": "Contact set {0,4,5,6,9,12} is paper T_65 (identity element of G); its 8 generators are f2,f9,f1,f45,f5,f35,f0,f7",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "lib generators/CONTACT_SETS"
+  },
+  {
+   "claim": "C(w(g,h)) = C0 + hQ with C0 = -d{ab+ad+aq+bd+bp+d^2+de+dp+dq+ep+eq+pq} < 0 and Q as stated in the negative-Phi note",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own flint computation from (A.2) and App. D"
+  },
+  {
+   "claim": "G: 965-term octic with det Hess C(w(g,-C0/Q)) = -4 d^2 G^2/Q^2",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own Kronecker determinant + 5-point independent Fraction det check"
+  },
+  {
+   "claim": "Realizable source => G = 0 (radial necessity), Q != 0 since C0 < 0",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "secant/Hessian-rank argument of the core notes, not audited here"
+  },
+  {
+   "claim": "H6 is the 123-term sextic factor of disc_p G = H6 H8",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "flint factor"
+  },
+  {
+   "claim": "Crat algebra: N > D0^2 > 0",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "sympy + inspection"
+  },
+  {
+   "claim": "Z identity, four negative coefficients, R >= 0, strict T^2 monomial",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own replay; counts identical (Z 1289451, R 1289447)"
+  },
+  {
+   "claim": "sign convention of H6",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "identity holds only for one sign of H6 (the sign returned by flint's factorisation relative to my normalised G); the document fixes the sign only by reference to companion arrays"
+  },
+  {
+   "claim": "j=1 wall by homogenisation",
+   "kind": "analytic-topological",
+   "status": "PROOF-READ",
+   "how": "argument supplied by auditor: Z has degree 2 in T, j enters only through n=T, d=1+T; replacing d by T+Wj is the standard homogenisation W^2 Z(T/W), which keeps coefficients"
+  },
+  {
+   "claim": "M >= 0, p-b > 0, H6>=0, Phi>=0 => G > 0, contradiction",
+   "kind": "inequality",
+   "status": "PROOF-READ",
+   "how": "-"
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p.1, definition of H6",
+   "claim": "H6 is defined only as 'the primitive sextic in disc_p G = H6 H8, with the sign fixed by the companion exact arrays'.",
+   "why": "A polynomial factor is defined only up to sign; the identity needs one specific sign and the cited corollary must use the same one. The note does not state it.",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "State H6 explicitly or fix its sign by one coefficient; check the cited corollary uses that sign."
+  }
+ ],
+ "exact_replays": [
+  "H6 factorisation",
+  "Z identity (1.29M terms) exactly as stated"
+ ],
+ "numeric_tests": [
+  "2 realizable points: H6 > 0 with the sign that makes the identity work (consistent with the cited corollary)"
+ ],
+ "unchecked": [
+  "cited H6>=0 corollary, Crat capacity, necessity, negative-Phi"
+ ],
+ "one_line": "The 1.29M-term certificate is replayed exactly, including the four negative coefficients and the square; the H6 sign convention is not stated in the note (presentation); rests on the cited H6>=0, Phi>=0, radial necessity and Crat capacity."
+}

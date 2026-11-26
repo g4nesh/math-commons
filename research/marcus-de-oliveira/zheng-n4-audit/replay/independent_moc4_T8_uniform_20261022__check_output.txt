@@ -1,0 +1,37 @@
+PASS EXACT c0 = P^{-1} g (zero-height lift) reproduces all 24 gaps
+PASS EXACT Q1 = be - cd + df in pivotal coordinates (a..h) = (g4,g6,g7,g8,g9,g13,g16,g18)
+PASS EXACT C(c0 + z kappa) is affine in z with constant term a Q1
+PASS EXACT Q2 = dC/dm13 (c0) = m0 m6 - m1 m5 at c0 Q2=A**2 + A*B + A*L + A*Q + A*h - B*K + B*L + B*Q + B*h + C*K - C*L + L*Q + L*h
+PASS EXACT Euler: m . grad C = 3 C
+PASS EXACT-mod-p mod-p: the ratio Q2^4 det H/(-4 a^4 Q1^2 Q2^2) is a perfect square of a quintic on 820 lines
+INFO G = -A**5 - A**4*B - A**4*C - 2*A**4*J - A**4*K - A**4*L - A**4*Q - A**3*B*C - A**3*B*J - A**3*B*K - A**3*B*L - A**3*B*Q - 2*A**3*C*J - A**3*C*L - A**3*C*Q - A**3*J**2 - 2*A**3*J*K - 2*A**3*J*L - A**3*J*Q - A**3*K*L - A**3*K*Q - A**3*L*Q - A**2*B*C*J - A**2*B*C*L - A**2*B*C*Q - A**2*B*J*L - A**2*B*J*Q - A**2*B*K**2 - A**2*B*K*L - A**2*B*K*Q + A**2*C**2*K - A**2*C**2*L - A**2*C*J**2 - A**2*C*J*K - 2*A**2*C*J*L - A**2*C*J*Q + A**2*C*K**2 - A**2*C*L*Q - A**2*J**2*K - A**2*J**2*L - 2*A**2*J*K*L - A**2*J*K*Q - A**2*J*L*Q - A**2*K*L*Q + A*B*C**2*K - A*B*C**2*L - A*B*C*J*L - A*B*C*J*Q - A*B*C*K**2 + A*B*C*K*L + A*B*J**2*K - A*B*J**2*Q - A*B*J*K**2 + A*B*J*K*Q - A*B*K**2*L - A*B*K**2*Q + A*C**2*J*K - A*C**2*J*L + A*C**2*K**2 - A*C**2*K*L + A*C**2*K*Q - A*C**2*L*Q - A*C*J**2*K - A*C*J**2*L + A*C*J*K**2 - A*C*J*K*L - A*C*J*K*Q - A*C*J*L*Q + A*C*K**2*L + A*C*K**2*Q - A*J**2*K*L - A*J*K*L*Q + B*C**2*K*Q - B*C**2*L*Q - B*C*J*K**2 + B*C*J*K*L + B*C*J*K*Q - 2*B*C*J*L*Q - B*C*K**2*Q + 2*B*C*K*L*Q + B*J**2*K*L - B*J**2*L*Q - B*J*K**2*L + 2*B*J*K*L*Q - B*K**2*L*Q + C**2*J*K**2 - C**2*J*K*L + C**2*K**2*Q - C**2*K*L*Q - C*J**2*K*L + C*J*K**2*L - C*J*K*L*Q + C*K**2*L*Q
+PASS EXACT-randomized exact rational test at 25 random rational points: Q2^4 det H = -4 a^4 Q1^2 Q2^2 G^2
+PASS EXACT G is independent of h and affine in B
+PASS EXACT (C+D)^2 G0(K = A^2/(C+D)) has only negative coefficients 81 terms
+PASS EXACT ... and equals -A^4 D (A+C)(A+C+D) at Q=J=L=0
+PASS EXACT -G_B|_{J=0} = displayed positive expression
+PASS EXACT G_B is quadratic in J with leading coefficient (K-Q)(A+L)
+PASS EXACT (A+L)^2 G_B(J*) = -A(A+L)(A+Q+L)F(A+K)^2
+PASS EXACT linear coefficient of G_B in J equals -H1 identically lin + H1 = 0
+PASS EXACT Thm3 chart: H12 = 1-t-r and H18 = s identically under the inverse formulas
+PASS EXACT Thm3 chart: r = z(v-1)(tv-w)/(v(z-w)) (same r as the polar chart)
+PASS EXACT Thm3 g4 = rho x/N
+PASS EXACT Thm3 g7 = rho B/O
+PASS EXACT Thm3 g13 = rho r(x-1)/O
+PASS EXACT Thm3 g23 = rho r t x M H/Dp
+PASS EXACT Thm3 M g4 + s g7 - Q g20 - M g11 = 0
+PASS EXACT Thm3 (s-P) g7 - M g23 - D g20 = 0
+PASS EXACT Thm3 (5): (x-t) g6/g7 = P(1 + t x (x-1) M O/(B Dt))
+PASS EXACT Thm3: x(A+Q+J) - (Q-C) = lam_x * g11 with lam_x free of v (so x = (Q-C)/(A+Q+J) when g11=0) lam_x=x
+PASS EXACT Thm3: t(A+Q) - (Q-K) = lam_t * g11 with lam_t free of v (so t = (Q-K)/(A+Q) when g11=0) lam_t=t
+PASS EXACT Thm3: F = g13 = A + C + ell (forms, g18 = 0)
+PASS EXACT Thm3 Lemma 2: r R2 + P F K = 0 after substituting (3)-(4)
+PASS EXACT Thm3: H9 = 1 + H11 + H11/(tv-1) on the chart
+PASS EXACT Thm3: Pi(v) is a real polynomial of degree <= 3 deg=3
+PASS EXACT Thm3 (6): Pi(0)=x^2(r+t), Pi(1)=(t-1)H B, Pi(1/t)=-u(t-1)Q0/t^2
+PASS EXACT Thm3 (7): Pi(p) = r x^2 (r+t) M H Q0/(t^2 L^3), p = x(r+t)/(tL)
+PASS EXACT Thm3 Lemma 3: z - c0 = z(w-1)(x-tw)/(w(M+t)-x) at a point w
+PASS EXACT Thm3 Lemma 3: H11(w) = (tw-1){z(c0-w) - x(z-w)}/(w(z-c0))
+NUMERIC Thm3: 6 supported chart points of T u {18} with A=g4>0 (seed 2026); min (CK - A^2)/A^2 = 6.719
+NUMERIC Lemma 4 branch (seed 4): 990 chart points of T u {18}, 0 supported; best normalized min gap = -0.5102
+SUMMARY all EXACT checks passed

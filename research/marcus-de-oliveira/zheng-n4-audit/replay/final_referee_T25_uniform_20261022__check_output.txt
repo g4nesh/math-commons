@@ -1,0 +1,88 @@
+PASS generators(T25-doc) = {0,1,2,5,6,39,67,70}
+PASS rank 8
+PASS symbolic preimage
+PASS (2) C(g+h kappa)|_{d=1} = lambda(-C*+hQ), lambda=1
+   JSON vars [q, p, j, c, e, d, b, a, z] terms 1201 deg 9
+PASS JSON G has 1201 terms, homogeneous deg 9
+   ratios {1}
+PASS (3) det Hess*Q^4 = -4Q^2G^2 at 6 random rational points
+PASS (13) C* divides k0
+PASS G6 multiaffine in e,c,j; total degree 6
+PASS G6(e=c=j=0) = (a+1)^2(b+1)^2(q+1)^2
+PASS G6(b=0) = (e+1+a)(q+c+1)(qj+q+qa+j+ja+1+a)
+PASS (15) G(j=c=0) = (a+1)(e+L)(q+1)^2{(e+L)[pq+(p+q)(b+1)]+(b+1)delta}
+PASS e'(t) formula
+PASS e(1) = E1
+PASS q h_b = bq(1-t^2/(ab))
+PASS E.A=t, E.B=-t, E.D=t (as stated); also E.C=0
+   NOTE E.Q = t*zz*(a + t)/(-a*b + t**2) (not stated in the document; its admissibility depends on the uncited ten Gram relations)
+PASS |E|^2 = e(t)
+PASS |V|^2 = h_b+q-2z
+PASS |P|^2 = r^2/c + (r-z)^2/(h_b+q-2z)
+   P.A,P.B,P.Q,P.C,P.D,P.E = [0, (t + zz - 1)*(-a*b + a*zz + t**2)/(a*b + a*q - 2*a*zz - t**2), a*(q - zz)*(t + zz - 1)/(a*b + a*q - 2*a*zz - t**2), 1 - t, 0, t*(a + t)*(t + zz - 1)*(-a*b + a*zz + t**2)/((-a*b + t**2)*(a*b + a*q - 2*a*zz - t**2))]
+PASS Gram(A,B,Q) PSD iff q h_b >= z^2 (det = a(q h_b - z^2))
+PASS (10) at z=wr,q=w^2r^2/h_b: h_b+q-2z=(h_b-wr)^2/h_b and |P|^2 = r^2/c + h_b r^2(1-w)^2/(h_b-wr)^2
+PASS (14) G6 table ('below', 'below'): 269 terms, all coefficients >= 0
+PASS (14) G6 table ('above', 'below'): 337 terms, all coefficients >= 0
+PASS (14) G6 table ('below', 'above'): 337 terms, all coefficients >= 0
+PASS (14) G6 table ('above', 'above'): 456 terms, all coefficients >= 0
+T25 baseline I- ab<1 middle: 3496 terms, 0 negative -> PASS
+T25 baseline I- ab<1 endpoint: 5010 terms, 0 negative -> PASS
+T25 baseline I- ab>1 middle: 8650 terms, 0 negative -> PASS
+T25 baseline I- ab>1 endpoint: 12507 terms, 0 negative -> PASS
+T25 baseline I+ ab<1 middle: 14290 terms, 0 negative -> PASS
+T25 baseline I+ ab<1 endpoint: 24676 terms, 0 negative -> PASS
+T25 baseline I+ ab>1 middle: 22383 terms, 0 negative -> PASS
+T25 baseline I+ ab>1 endpoint: 38069 terms, 0 negative -> PASS
+NUMERIC tests below: seed 11, BFGS 10 restarts per sample (lib min_phi_over_SO4); not proofs
+NUMERIC doc3 (4) SOC pj=1                                                      worst min Phi = 3.589e-14
+NUMERIC doc3 (4) old-H c(p-1)=1                                                worst min Phi = 7.435e-14
+NUMERIC doc3 (5) ab(e-1)=a+b+e+1                                               worst min Phi = 1.099e-13
+NUMERIC doc3 (5) bq(c-1)=b+q+c+1                                               worst min Phi = 1.965e-15
+NUMERIC doc3 (6) p=1/c-1/E2                                                    worst min Phi = 9.201e-16
+NUMERIC doc3 (7) boundary                                                      worst min Phi = 9.006e-14
+NUMERIC doc3 Lemma1 (9) boundary                                               worst min Phi = 3.809e-14
+NUMERIC doc3 Lemma1 (10) boundary                                              worst min Phi = 6.773e-14
+NUMERIC doc3 Lemma1 (9) control p=0.6*r^2/c                                    worst min Phi = 2.004e-13
+T25 II orient1 ab<1 middle: 16459 terms, 0 negative -> PASS
+T25 II orient1 ab<1 endpoint: 21367 terms, 0 negative -> PASS
+T25 IIIa- orient1 ab<1 middle: 7055 terms, 0 negative -> PASS
+T25 IIIa- orient1 ab<1 endpoint: 7055 terms, 0 negative -> PASS
+T25 IIIa- orient1 ab>1 middle: 12960 terms, 0 negative -> PASS
+T25 IIIa- orient1 ab>1 endpoint: 12960 terms, 0 negative -> PASS
+T25 IIIa- orient2 ab<1 middle: 9287 terms, 0 negative -> PASS
+T25 IIIa- orient2 ab<1 endpoint: 9287 terms, 0 negative -> PASS
+T25 IIIa- orient2 ab>1 middle: 29160 terms, 0 negative -> PASS
+T25 IIIa- orient2 ab>1 endpoint: 29160 terms, 0 negative -> PASS
+T25 IIIa+ orient1 ab<1 middle: 11368 terms, 0 negative -> PASS
+T25 IIIa+ orient1 ab<1 endpoint: 15264 terms, 0 negative -> PASS
+T25 IIIa+ orient1 ab>1 middle: 20880 terms, 0 negative -> PASS
+T25 IIIa+ orient1 ab>1 endpoint: 28080 terms, 0 negative -> PASS
+T25 IIIa+ orient2 ab<1 middle: 14964 terms, 0 negative -> PASS
+T25 IIIa+ orient2 ab<1 endpoint: 20100 terms, 0 negative -> PASS
+T25 IIIa+ orient2 ab>1 middle: 46980 terms, 0 negative -> PASS
+T25 IIIa+ orient2 ab>1 endpoint: 63180 terms, 0 negative -> PASS
+T25 IIIb+ orient1 ab<1 middle: 15440 terms, 0 negative -> PASS
+T25 IIIb+ orient1 ab<1 endpoint: 22144 terms, 0 negative -> PASS
+T25 IIIb+ orient1 ab>1 middle: 21508 terms, 0 negative -> PASS
+T25 IIIb+ orient1 ab>1 endpoint: 30616 terms, 0 negative -> PASS
+T25 IIIb+ orient2 ab<1 middle: 16792 terms, 0 negative -> PASS
+T25 IIIb+ orient2 ab<1 endpoint: 24284 terms, 0 negative -> PASS
+T25 IIIb+ orient2 ab>1 middle: 49680 terms, 0 negative -> PASS
+T25 IIIb+ orient2 ab>1 endpoint: 70470 terms, 0 negative -> PASS
+T25 IIIb- orient1 ab<1 middle: 23702 terms, 0 negative -> PASS
+T25 IIIb- orient1 ab<1 endpoint: 32271 terms, 0 negative -> PASS
+T25 IIIb- orient2 ab<1 middle: 25891 terms, 0 negative -> PASS
+T25 IIIb- orient2 ab<1 endpoint: 34715 terms, 0 negative -> PASS
+T25 IIIb- orient2 ab>1 middle: 72720 terms, 0 negative -> PASS
+T25 IIIb- orient2 ab>1 endpoint: 89910 terms, 0 negative -> PASS
+T25 regionII P1 middle: 102873 terms, 0 negative -> PASS
+T25 regionII P1 endpoint: 163889 terms, 2 negative -> PASS ; 2 negative coefficients, auditor AM-GM repair succeeds
+T25 regionII P0 middle: 115308 terms, 0 negative -> PASS
+T25 regionII P0 endpoint: 184864 terms, 6 negative -> PASS ; 6 negative coefficients, auditor AM-GM repair succeeds
+T25 IIIb- missing (20) middle: 131291 terms, 0 negative -> PASS
+T25 IIIb- missing (20) endpoint: 147915 terms, 0 negative -> PASS
+T25 IIIb- missing (21) middle: 507835 terms, 0 negative -> PASS
+T25 IIIb- missing (21) endpoint: 1066354 terms, 0 negative -> PASS
+remaining 32 baseline tables and 8 new-region tables: PASS
+ALL EXACT CHECKS PASS

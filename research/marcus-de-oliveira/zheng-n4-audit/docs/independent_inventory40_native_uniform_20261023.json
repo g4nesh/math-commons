@@ -1,0 +1,60 @@
+{
+  "doc_id": "independent_inventory40_native_uniform_20261023",
+  "pdf": "proofs/manin_transfer_20261021/independent_inventory40_native_uniform_20261023.pdf",
+  "pages": 5,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "contact_sets": [[0, 1, 3, 6, 11, 12]], "paper_cases": [41],
+     "restatement": "For every x in X with P c(x) >= 0 and (P c(x))_pi = 0 for pi in T_41 = {0,1,3,6,11,12} (extra contacts allowed; all spectra, collisions via Appendix B), Phi_{c(x)}(O) >= 0 for all O in O(4); unitary version by Theorem 1.2.",
+     "covers_all_spectra": true}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "Prop. 4.1 / Lemma 4.2", "used_for": "rays (1)", "match_checked": true},
+    {"kind": "common-lemma", "ref": "Theorem B.1, Lemma B.2", "used_for": "repeated eigenvalues and a_i+b_j=0", "match_checked": true},
+    {"kind": "common-lemma", "ref": "Corollary B.3", "used_for": "two punctures over v=0", "match_checked": true},
+    {"kind": "core-doc", "ref": "Lemma 3.5", "used_for": "bounded negative part, compact curve maximum principle", "match_checked": false},
+    {"kind": "core-doc", "ref": "Theorem 1.2", "used_for": "unitary responses", "match_checked": false},
+    {"kind": "paper-case", "ref": "T_5", "contact_set": [0, 1, 2, 3, 6, 11], "used_for": "extra contacts 2, 21", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_6", "contact_set": [0, 1, 3, 5, 6, 11], "used_for": "extra contact 5", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_19", "contact_set": [0, 1, 3, 6, 7, 11], "used_for": "extra contact 7", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_43", "contact_set": [0, 1, 3, 6, 9, 11], "used_for": "extra contact 9", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_44", "contact_set": [0, 1, 3, 6, 10, 11], "used_for": "extra contacts 10, 13", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_37", "contact_set": [0, 1, 3, 6, 11, 14], "used_for": "extra contact 14", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_58", "contact_set": [0, 1, 3, 6, 12, 16], "used_for": "extra contacts 16, 23", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_57", "contact_set": [0, 1, 3, 6, 11, 18], "used_for": "extra contact 18", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_40", "contact_set": [0, 1, 3, 11, 12, 20], "used_for": "extra contact 20", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "T = T_41", "status": "EXACT"},
+    {"n": 2, "claim": "rays (1), non-minor 18 and 30, dims 8 and 6", "status": "EXACT"},
+    {"n": 3, "claim": "(2) theta <= g17", "status": "EXACT"},
+    {"n": 4, "claim": "(3) -L_O <= M g17", "status": "PROOF-READ"},
+    {"n": 5, "claim": "list (4) kills both non-minor coefficients", "status": "EXACT"},
+    {"n": 6, "claim": "list (5) reductions to earlier cases", "status": "CITED"},
+    {"n": 7, "claim": "E = (z-x)(w-t), F0/E = v-1", "status": "EXACT"},
+    {"n": 8, "claim": "(6)-(7) r,s,u,h nonzero brackets", "status": "EXACT"},
+    {"n": 9, "claim": "(8)-(9) edge equations and inverse", "status": "EXACT"},
+    {"n": 10, "claim": "inverse denominators nonzero at eight-distinct points", "status": "PROOF-READ"},
+    {"n": 11, "claim": "(10) last contact = 28-term C(v,z)", "status": "EXACT"},
+    {"n": 12, "claim": "(11) H17 = 1+u+h+uh/v", "status": "EXACT"},
+    {"n": 13, "claim": "punctures with v != 0 bounded", "status": "PROOF-READ"},
+    {"n": 14, "claim": "(12),(14) fibre over v=0, two simple points", "status": "EXACT"},
+    {"n": 15, "claim": "branch 1 limits and E' factors", "status": "EXACT"},
+    {"n": 16, "claim": "branch 2 limits and E factors", "status": "EXACT"},
+    {"n": 17, "claim": "(17) transposition identity", "status": "EXACT"},
+    {"n": 18, "claim": "Corollary B.3 at both branches (three hypotheses checked)", "status": "CITED"},
+    {"n": 19, "claim": "compact exclusion via Lemma 3.5", "status": "CITED"},
+    {"n": 20, "claim": "constant case impossible via (11),(19),(20)", "status": "EXACT"},
+    {"n": 21, "claim": "walls restored by Rouche perturbation", "status": "PROOF-READ"}
+  ],
+  "gaps": [],
+  "exact_replays": [
+    "contact set, rays, non-minor rays, span dimension, contact-row rank",
+    "(2) values at pi_17; lists (4) and (5)",
+    "12 extra-contact reductions to earlier-stage cases via the group",
+    "E, F0/E, r,s,u,h factorizations, (8), (9), (10) 28-term curve, (11), (12), (14), (15)",
+    "branch 1 and branch 2 limits and E-factor limits; (17) for free spinors; (19); (20)"
+  ],
+  "numeric_tests": [],
+  "unchecked": ["Lemma 3.5 and Theorem 1.2 themselves (cited)", "the earlier cases themselves (cited)"]
+}

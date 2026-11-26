@@ -1,0 +1,18 @@
+PASS EXACT T equals paper T_8
+PASS EXACT generators of T u {23} = {2,3,4,5,39,45,46} [2, 3, 4, 5, 39, 45, 46]
+PASS EXACT f46 is the only nonminor generator
+PASS EXACT lift reproduces all 24 values
+PASS EXACT library cubic has 14 variables m0..m13 [m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13]
+PASS EXACT C(c0 + z kappa) is affine in z
+PASS EXACT C(c0 + z kappa) = lam (C + zQ) with one constant lam (document's C, Q) lam=1
+PASS PROOF C = (d+v)(d+w)(c+d+h) > 0 and Q != 0 forced (d > 0, coefficients >= 0) by inspection
+PASS EXACT the JSON lists exactly one quintic factor (G), with 40 terms
+PASS EXACT JSON C and Q terms equal the document's C and Q
+INFO JSON factor list (degree, multiplicity): [(1, 2), (1, 2), (2, 2), (5, 2), (1, 4)] constant -4
+PASS EXACT-RANDOMIZED det Hess C(c0 - (C/Q) kappa) = const * (-4)(d+v)^2(d+w)^2(c+d+h)^4 G^2 / Q^2 at 8 random rational points ratio=1
+PASS EXACT G with a=0: every coefficient positive, d^5 present 18 terms
+PASS EXACT G with b=0: every coefficient positive, d^5 present 18 terms
+PASS EXACT a^2(1+u)^2 G(a,c,h,v,d^2/(a(1+u)),w,d) is a polynomial with all coefficients positive integers 66 terms (document: 66)
+PASS EXACT G(a,c,0,0,b,0,d) = -d(a+d)(b+d)(ab-d^2)
+PASS NUMERIC NUMERIC min G over 2000 random points with ab < d^2 is > 0 min=1.825e-04
+SUMMARY failures=0

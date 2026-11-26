@@ -1,0 +1,134 @@
+{
+ "doc_id": "root_moc4_T46_positive_a_mixed_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T46_positive_a_mixed_uniform_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "contact_sets": [
+    [
+     1,
+     3,
+     5,
+     6,
+     7,
+     8
+    ]
+   ],
+   "paper_cases": [],
+   "covers_all_spectra": false,
+   "restatement": "For x in X with c(x) in N_{T_47} written as the canonical source g = q f27 + p f1 + j f59 + c f5 + e f2 + d f28 + b f6 + a f4 (all >= 0), if qb <= d^2 and max(q,b) > d, then Phi_{c(x)}(O) >= 0 for all O in SO(4), for every a >= 0. Proof covers d>0 and q,p,j,c,e,b>0 itself; zero coefficients and d=0 are delegated (transfers, minor sum). Spectra: all realizable ones (no genericity assumed), via the necessity G=0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "T46 radial necessity (det Hess = -4 G9^2/Q^2 => G9 = 0 at realizable sources, incl. collision loci)",
+   "used_for": "contradiction in the hard region",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_T46_six_ray_coherent_capacity_20261023 (six-ray coherent coefficient bound with beta=-r, v=-rt/q)",
+   "used_for": "capacity (1) p >= P*",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "root_moc4_T46_old_four_capacity (capacity (2) ab(e-1) >= a+b+e+1)",
+   "used_for": "capacity (2)",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "T46 assembly: zero-coefficient transfers (to T28,T35,T0,T38,T41,T6) and the a=0 face T u {14}",
+   "used_for": "zero coefficients",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "claim": "Contact set {1,3,5,6,7,8} = paper T_47; source rays are 8 of the 10 generators",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "lib"
+  },
+  {
+   "claim": "C0 = -(q+1)L - jM, M=(c+1)(a+1+e), L=M+b(a+1); Q = jp - j(c+e+1) - (c+1)(e+1)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own computation"
+  },
+  {
+   "claim": "G9 has 1556 terms, degree 9",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own Kronecker determinant + point checks"
+  },
+  {
+   "claim": "Realizable => G9 = 0",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "not audited"
+  },
+  {
+   "claim": "Capacity (1) follows from the cited six-ray bound with t = eta j/(D0+eta^2 j): thresholds become P* and rho^2 eta^2 j/N < c",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy simplification of the three substitutions and of N - (rho^2/c)eta^2 j"
+  },
+  {
+   "claim": "Cited six-ray bound itself (both mixed orders, r=1 limit)",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "-"
+  },
+  {
+   "claim": "Capacity (2)",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "-"
+  },
+  {
+   "claim": "Charts (3)-(4) with S>0 are onto the complement of (1),(2) in the sector (12 charts)",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "b(e-1)-1 > 0 iff e > e0; (q,b)=(1+A, r^2/(1+A)) or swapped covers qb=r^2<=1, max>1; p = P* S/(1+S)"
+  },
+  {
+   "claim": "Ten cleared tables have only negative coefficients and an H-free monomial",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "own clearing; term counts 970413, 347708, 1861444, 986482, 327932, 19309, 6782, 34124, 23910, 8054 equal the document's"
+  },
+  {
+   "claim": "Two 'above, b>q' tables are negative via squares",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "own AM-GM certificate on my clearing (different from the document's squares)"
+  },
+  {
+   "claim": "All chart denominators positive",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "positive-coefficient polynomials in chart variables"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "G9 (1556 terms) and C0, Q from definitions",
+  "capacity substitution algebra",
+  "12 chart sign tables (10 count-identical) + 2 own AM-GM certificates",
+  "f0/f3 absorption relations"
+ ],
+ "numeric_tests": [
+  "none for T46 within budget (the exact tables settle the radial claim)"
+ ],
+ "unchecked": [
+  "cited six-ray coherent capacity and capacity (2)",
+  "radial necessity",
+  "zero-coefficient transfers and a=0 face (assembly)"
+ ],
+ "one_line": "Proves the qb<=1, max(q,b)>1 sector of supplement T46 (= paper T_47) by excluding realizable sources below two cited capacities; all 12 chart sign tables replayed exactly (10 with identical term counts, 2 by own AM-GM certificates); rests on cited radial necessity and capacities."
+}

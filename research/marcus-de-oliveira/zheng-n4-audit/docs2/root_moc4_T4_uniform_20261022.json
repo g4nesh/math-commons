@@ -1,0 +1,58 @@
+{
+  "doc_id": "root_moc4_T4_uniform_20261022",
+  "auditor": "C02-T4-T5-second",
+  "pdf": "proofs/manin_transfer_20261021/root_moc4_T4_uniform_20261022.pdf",
+  "pages": 5,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "thm:full (Theorem 1)", "page": 1, "paper_cases": [4], "contact_sets": [[0, 1, 4, 5, 7, 8]],
+     "covers_all_spectra": true,
+     "restatement": "For x in X with P c(x) >= 0 and (P c(x))_sigma = 0 for sigma in {0,1,4,5,7,8} (reference pi* = 0), Phi_{c(x)}(O) >= 0 for all O in SO(4), hence the support inequality for all U in U(4); all complex spectra, repeated values and a_i + b_j = 0 included; contacts non-strict."},
+    {"label": "(1) four-coefficient bound", "page": 2, "contact_sets": [],
+     "restatement": "For a,b,c,d >= 0 with ab(c-d) >= d^2(a+b+c+d): Phi_{a f6 + b f0 + c f5 + d f34}(O) >= 0 for all O in SO(4), f0=n_{1,4}, f5=n_{12,24}, f6=n_{4,1}, f34=h_{4321,+}."}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "paper Theorem C.1 / Prop 1.4(i)", "used_for": "repeated eigenvalue within a spectrum", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper Theorem B.1 / Prop 1.4(ii)", "used_for": "shared value a_i = c_j", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper Theorem 1.2 / Corollary 2.2", "used_for": "SO(4) to U(4)", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper eq (4.2)", "used_for": "Phi of minor vectors = squared minors", "match_checked": true},
+    {"kind": "other-doc", "ref": "final_referee_T5_four_budget_capacity_20261022 identity (4)", "used_for": "inequality (1); certificate replayed EXACT by auditor, transport g=(id,(0 2 1 3),0) checked", "match_checked": true},
+    {"kind": "external", "ref": "classical: SO(4) = {x -> p x q, |p|=|q|=1}", "used_for": "surjectivity of quaternion parametrization in proof of (1)", "match_checked": true},
+    {"kind": "other-doc", "ref": "unidentified 'three-plus-three generalized-circle theorem'", "used_for": "case v real; replaced by auditor argument via minor-only face {0..5}", "match_checked": false}
+  ],
+  "steps": [
+    {"n": "S1", "claim": "gap convention equals paper c(x), pi*=0", "kind": "identity", "status": "PROOF-READ"},
+    {"n": "S2", "claim": "face generators and minor table", "kind": "finite", "status": "EXACT", "checks": ["A2", "A3"]},
+    {"n": "S3", "claim": "f34 relation and two linear relations", "kind": "identity", "status": "EXACT", "checks": ["A4", "A5", "A6"]},
+    {"n": "S4", "claim": "decomposition (2) on W (dim 8)", "kind": "identity", "status": "EXACT", "checks": ["C1", "C2"]},
+    {"n": "S5", "claim": "d <= 0 minor replacement", "kind": "identity+inequality", "status": "EXACT", "checks": ["C3", "C4", "C5", "C6"]},
+    {"n": "S6", "claim": "inequality (1)", "kind": "certificate", "status": "EXACT", "checks": ["C7", "C8", "C9", "C10", "C11"], "note": "doc's own arrowhead argument incomplete (P1); companion certificate replayed"},
+    {"n": "S7", "claim": "degenerate split to C.1 / B.1", "kind": "case split", "status": "CITED"},
+    {"n": "S8", "claim": "Moebius normalization", "kind": "analytic", "status": "PROOF-READ", "note": "argument supplied by auditor"},
+    {"n": "S9", "claim": "contact ratios; reality of x,t,r,u; kappa v(z-w) in iR", "kind": "identity+argument", "status": "EXACT", "checks": ["C13", "C14"]},
+    {"n": "S10", "claim": "z,w formulas invert (r,u); denominators nonzero", "kind": "identity", "status": "EXACT", "checks": ["C15", "C16", "C17"]},
+    {"n": "S11", "claim": "v real reduces to minor-only face {0..5}", "kind": "case", "status": "PROOF-READ", "checks": ["C36", "C37", "C38"], "note": "argument supplied by auditor"},
+    {"n": "S12", "claim": "gap formulas g2,g6,c,g9,a and sign consequences", "kind": "identity+signs", "status": "EXACT", "checks": ["C19", "C20", "C21", "C22"]},
+    {"n": "S13", "claim": "(3),(4); t<0 excluded; 0<t<1", "kind": "identity+signs", "status": "EXACT", "checks": ["C23", "C24", "C25"]},
+    {"n": "S14", "claim": "K>0 when E>=0", "kind": "inequality", "status": "PROOF-READ"},
+    {"n": "S15", "claim": "Hermitian forms (6),(7); Q(v) != 0", "kind": "identity", "status": "EXACT", "checks": ["C18", "C27", "C28", "C29", "C30", "C31"]},
+    {"n": "S16", "claim": "E<0: L>0, y>h, M_P positive definite, K>0", "kind": "inequality", "status": "PROOF-READ", "checks": ["C32", "C33"]},
+    {"n": "S17", "claim": "capacity condition holds strictly; (1) applies", "kind": "identity+inequality", "status": "EXACT", "checks": ["C34", "C35"]},
+    {"n": "S18", "claim": "SO(4) to U(4)", "kind": "citation", "status": "CITED"}
+  ],
+  "gaps": [
+    {"location": "p.2, arrowhead pencil Z", "claim": "(1) follows independently from Z >= 0", "why": "no vector w(O) with Phi = w^T Z w is given", "severity": "presentation", "believed_true": true, "repair": "companion certificate (4) replayed exactly by auditor (C7-C11)"},
+    {"location": "p.3, case v real", "claim": "an earlier three-plus-three generalized-circle theorem applies", "why": "the cited theorem is not a paper statement and is not identified", "severity": "presentation", "believed_true": true, "repair": "auditor argument: contact 1 forces contacts {0..5}; that face is minor-only (C36-C38)"},
+    {"location": "p.4, L>0 step", "claim": "D(v,vbar) = d|Q(v)|^2 > 0", "why": "Q(v) != 0 not stated", "severity": "presentation", "believed_true": true, "repair": "Q(v) = -(z-v)(v-w)(x-tv)(tv-1)/(v(z-w)) != 0 (C18)"},
+    {"location": "p.3, z and w formulas", "claim": "denominators nonzero", "why": "stated reason is loose", "severity": "presentation", "believed_true": true, "repair": "factorizations of the denominators (C17)"},
+    {"location": "p.3, line 2", "claim": "differences have real ratio t", "why": "the ratio is -t", "severity": "presentation", "believed_true": true, "repair": "cosmetic"}
+  ],
+  "exact_replays": ["A1-A6", "C1-C38 (44 exact checks, all pass)"],
+  "numeric_tests": [
+    "D1: inequality (1) at 40 random boundary capacity tuples, 12 BFGS restarts, seed 20261125: worst normalized min Phi 2.7e-18",
+    "D2: 200000 chart samples, 2033 admissible (none with d>0); 15 minimized: worst min Phi/sum(gaps) -2e-15",
+    "D3: lib stratum point seed 7, contact exactly T4: min Phi -2e-10",
+    "D4: 4 lib stratum points with d>0 (seeds 0..39): chart gaps a positive multiple of lib gaps (spread 1.4e-10); x>1, 0<t<1, r>0, u<0, K>0, capacity strict; worst min Phi/sum 5e-16"
+  ],
+  "unchecked": ["proofs of the cited paper Theorems B.1, C.1, 1.2 (outside this document)", "surjectivity of x -> pxq onto SO(4) (classical)"]
+}

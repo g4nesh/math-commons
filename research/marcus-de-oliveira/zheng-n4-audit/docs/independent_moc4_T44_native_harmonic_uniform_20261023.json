@@ -1,0 +1,241 @@
+{
+ "doc_id": "independent_moc4_T44_native_harmonic_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T44_native_harmonic_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "main (Theorem 1)",
+   "page": 1,
+   "paper_cases": [
+    45
+   ],
+   "contact_sets": [
+    [
+     1,
+     2,
+     3,
+     7,
+     11,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For every x in X with P c(x) >= 0 and contacts containing {1,2,3,7,11,12}, Phi_{c(x)}(O) >= 0 for all O in O(4). Degenerate spectra (collisions) and extra contacts are reduced to Appendix B / one-circle theorem and to earlier six-sets; the curve argument is run on eight-distinct, exactly-six-contact configurations."
+  },
+  {
+   "label": "Lemma 2",
+   "page": 2,
+   "restatement": "If m(tau) = f(tau) kappa + v(tau) in Sing C with f divergent and v holomorphic at 0, then H_kappa v(0) = 0; if -eta Im P v(0) >= 0 then its Leibniz sum is >= 0 on O(4)."
+  },
+  {
+   "label": "Lemma 3",
+   "page": 3,
+   "restatement": "An eight-distinct counterexample with exactly these six contacts can be perturbed (Rouche on H11 - h) to one with generic real (r,s,u,h), keeping strict gaps and Phi_O < 0."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_7 (stage 1)",
+   "used_for": "seventh tie 0",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_36 (stage 1)",
+   "used_for": "seventh ties 6 and 9",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_42 (stage 1)",
+   "used_for": "seventh tie 18",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_40 (stage 1)",
+   "used_for": "seventh tie 20",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_46 (stage 2)",
+   "used_for": "seventh tie 21",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_29 (stage 1)",
+   "used_for": "seventh tie 23",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Appendix B (Thm B.1, Lemma B.2) and one-circle theorem (App. C)",
+   "used_for": "collision points on the boundary of Omega",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "earlier 'original chart' document: every eight-distinct source with these contacts is in the chart with real nonzero r,s,u",
+   "used_for": "chart coverage",
+   "match_checked": false
+  },
+  {
+   "kind": "external",
+   "ref": "Birkhoff-von Neumann",
+   "used_for": "Lemma 2 (singleton span)",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (3.10)-(3.11): ker H_kappa = E (library-replayed)",
+   "used_for": "Lemma 2",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary extension",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "id": "S1",
+   "claim": "generators {0,1,2,7,8,12,15,18,53}; f18+f0=f2+f1+f7+f15; form (2)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "lib; the 8 generators are independent"
+  },
+  {
+   "id": "S2",
+   "claim": "coefficients of (2) are gaps: q=g21,p=g23,j=g0,c=g6,e=g9,b=g20,a=g18; d=g4-g18; q+d,p+d,b+d,a+d are gaps g13,g17,g10,g4 (so d<=0 is a minor sum)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy on profiles"
+  },
+  {
+   "id": "S3",
+   "claim": "extra zeros of f18 are {0,6,9,18,20,21,23}; a new contact where f18>0 forces d=0",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "zero set"
+  },
+  {
+   "id": "S4",
+   "claim": "each of the seven 7-sets contains a six-set in the orbit of an earlier case",
+   "kind": "citation",
+   "status": "EXACT (resolution) / CITED (cases)",
+   "how": "orbit_rep against Appendix E; stage from Table 6"
+  },
+  {
+   "id": "S5",
+   "claim": "spinor chart: H1=0,H2=u(r-1),H3=-u,H7=1,H12=u(r-1)+1/s,H0=ruZ,H4=-uWY,H6=beta+r(u+1)Z+r/W; D=H4-H18; H21-H11+D identity; E=-sA2WKL; F1/E=uZW/K",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "24 spinor products, bracket a_i+b_j"
+  },
+  {
+   "id": "S6",
+   "claim": "denominators of all 24 H_sigma lie in W*A2*L",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "factored denominators"
+  },
+  {
+   "id": "S7",
+   "claim": "curve (3): H11 L = N polynomial; quadratic in W; A(Z) as stated; C(Z) linear; basepoint (0,1)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy"
+  },
+  {
+   "id": "S8",
+   "claim": "Res_W(C,L), Res_W(C,A2), Res_W(C,K) = -Z Q2; Q2 at (2,3,4,5)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy resultants"
+  },
+  {
+   "id": "S9",
+   "claim": "finite poles real; D polynomial so d=-eta Im D -> 0 there",
+   "kind": "analytic",
+   "status": "EXACT + PROOF-READ",
+   "how": "all factors linear in Z and W over R; 20 random parameter points"
+  },
+  {
+   "id": "S10",
+   "claim": "W=inf: three real roots of A; (W-1)/A2 -> 1/Y; at Y=0, WY -> real limit",
+   "kind": "analytic",
+   "status": "EXACT + PROOF-READ",
+   "how": "limit (-hr+h-ru+r+u)/(ru-u-1) computed"
+  },
+  {
+   "id": "S11",
+   "claim": "Z=inf: (5) and no other branch; no (inf,inf)",
+   "kind": "analytic",
+   "status": "EXACT",
+   "how": "Newton polygon: all monomials have i-k<=1; Z^3W^2 coefficient -r^2 s(u+1)"
+  },
+  {
+   "id": "S12",
+   "claim": "K=0 points: Lemma 2",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "0 = grad C(v) + f H_kappa v; Birkhoff"
+  },
+  {
+   "id": "S13",
+   "claim": "spinors vanish only on W A2 K L = 0",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy solve"
+  },
+  {
+   "id": "S14",
+   "claim": "Lemma 3 (Rouche, genericity) and (2,3,4,5) generic",
+   "kind": "analytic",
+   "status": "PROOF-READ + EXACT",
+   "how": "simple roots of A and (5), gcd(A,C)=1, Q2 nonreal at (2,3,4,5)"
+  },
+  {
+   "id": "S15",
+   "claim": "harmonic completion",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "see report; boundary types: L_O=0, tie, collision, puncture"
+  },
+  {
+   "id": "S16",
+   "claim": "chart covers every eight-distinct source",
+   "kind": "citation",
+   "status": "CITED + NUMERIC",
+   "how": "9 realizable points reproduced (error 1e-9)"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "T_45 inventory and identity (1)",
+  "gap expressions of all eight coefficients",
+  "seventh-tie resolution to T_7,T_36,T_42,T_40,T_46,T_29",
+  "24 spinor products: H_0,H_2,H_3,H_4,H_6,H_7,H_12, D, H21-H11+D, E, F1/E",
+  "denominator divisors of all H_sigma",
+  "curve (3), A(Z), deg C(Z)=1, basepoint",
+  "three resultants and Q2 at (2,3,4,5)",
+  "equation (5) and the Newton polygon",
+  "spinor zeros lie on the divisors"
+ ],
+ "numeric_tests": [
+  "finite-pole and Z=inf projections real at 20 random rational parameter points",
+  "chart formulas reproduce 9 realizable T_45 points (max error 1.3e-9), r,s,u,h real",
+  "min Phi over SO(4) at those points ~ 2e-13"
+ ],
+ "unchecked": [
+  "the cited earlier six-set cases and Appendix B / one-circle theorem",
+  "the earlier proof that the chart's denominators are nonzero for eight-distinct sources (supported numerically)"
+ ],
+ "one_line": "Primary proof of paper T_45={1,2,3,7,11,12} (literal match): all chart identities (H_sigma, E, F1/E, D, curve (3), resultants, (5), Newton polygon) re-derived exactly from the stated spinors; every puncture is listed and d->0 or Lemma 2 applies at each; seventh ties reduce to T_7,T_36,T_42,T_40,T_46,T_29 (stages 1-2); no gap found."
+}

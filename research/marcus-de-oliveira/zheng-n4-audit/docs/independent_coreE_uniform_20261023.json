@@ -1,0 +1,187 @@
+{
+ "doc_id": "independent_coreE_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_coreE_uniform_20261023.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    1,
+    2,
+    9,
+    10,
+    16,
+    17
+   ],
+   "table5_seven_set": 17,
+   "restatement": "For every x in X (all spectra incl. degenerate) and pi*, if Pc(x) >= 0 and (Pc(x))_s = 0 on E={0,1,2,9,10,16,17} (non-strict), then Phi_{c(x)}(O) >= 0 for all O in SO(4)."
+  },
+  {
+   "label": "eq (1)",
+   "page": 1,
+   "restatement": "c(x) = q f0 + p f2 + t f3 + b f12 + c f15 + v f13 + d f26 uniquely; coefficients = gaps at [23,15,14,8,4,7,3] >= 0."
+  },
+  {
+   "label": "Lemma 1",
+   "page": 2,
+   "restatement": "c,d>0, v>=0, q(c+v)>d^2, p,b>=0: t >= R_d(q,v,c) = d(v+d){q(c+v)+dv}/((c+v){q(c+v)-d^2}) implies Phi >= 0 on SO(4) for the full source (pointwise); also with q,v swapped."
+  },
+  {
+   "label": "eqs (8)-(10)",
+   "page": 3,
+   "restatement": "C(c+z kappa) = Cst + Qz; Q^4 det H(w(-C/Q)) = -4 d^2 Q^2 G^2 with G of degree 8, 408 terms; G symmetric under q<->v and p<->b."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "external",
+   "ref": "sharp SOC reference (f1,f9;f22): x f1 + y f9 + d f22 safe if xy >= d^2",
+   "status": "CITED",
+   "match_checked": true,
+   "used_for": "tests (2)/(6) (core E) and (3) (core F); ordered group actions onto (f2,f12;f26),(f2,f15;f26),(f12,f15;f26) replayed EXACT"
+  },
+  {
+   "kind": "external",
+   "ref": "four-coefficient reference (f0,f6,f10;f54)",
+   "status": "CITED",
+   "match_checked": true,
+   "used_for": "q f0 + v f13 + t f3 + d f26 safe if qv(t-d) >= d^2(q+v+t+d); ordered action onto (f0,f13,f3;f26) EXACT"
+  },
+  {
+   "kind": "external",
+   "ref": "chain reference (f2;f0,f12;f70)",
+   "status": "CITED",
+   "match_checked": true,
+   "used_for": "q f0 + t f3 + c f15 + d f26 safe if c >= d^2/q + d^2/t (and with v f13); ordered actions EXACT"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (A.2): X contained in Sing C",
+   "status": "EXACT (moc4lib)",
+   "match_checked": true,
+   "used_for": "realizability necessity C(w)=0, det H(w)=0 by polarization"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Theorem 1.2",
+   "status": "CITED",
+   "match_checked": false,
+   "used_for": "unitary remark only; not needed for (*)"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "generator decomposition, I7 rows, coefficients are gaps",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "d=0 is a minor sum",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "reference inequalities (2)-(4)",
+   "kind": "citation",
+   "status": "CITED"
+  },
+  {
+   "n": 4,
+   "claim": "(5),(6) by splitting",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "Lemma 1 allocation identities and total = R_d; v=0 = chain",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "realizable w satisfies C(w)=0, det H(w)=0 (polarization)",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 7,
+   "claim": "(8) C(w(z)) = Cst + Qz, Cst>0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "(9) determinant identity with 408-term G",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "(10) symmetries",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "c=0 factorization, threshold identity and sign argument",
+   "kind": "identity+case split",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "main partition L / P / dominant-c is exhaustive",
+   "kind": "case split",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 12,
+   "claim": "auxiliary sectors (11),(12) exhaustive",
+   "kind": "case split",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 13,
+   "claim": "dominant-c maps (13),(14) exhaustive",
+   "kind": "case split",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 14,
+   "claim": "eleven cleared tables all-positive with strict markers and positive denominators",
+   "kind": "certificate",
+   "status": "EXACT"
+  },
+  {
+   "n": 15,
+   "claim": "conclusion",
+   "kind": "logic",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators(E) and I7 rows",
+  "ordered group actions for 3 SOC, four, 2 chain families",
+  "C(w(z)) = Cst + Qz in paper coordinates",
+  "det H(w(z)) by own Bareiss (819 exact divisions), Q^4 det H(w(-C/Q)) = -4 d^2 Q^2 G^2, G derived as exact square root, equals document's 408 coefficients",
+  "G symmetries",
+  "c=0 factorization and threshold identity",
+  "Lemma 1 identities",
+  "inverse maps of rows P and (13)",
+  "eleven tables: all coefficients positive, term counts equal document (11763, 84446, 4181, 11409, 1091, 23837, 93285, 6427, 27531, 23799, 3955)"
+ ],
+ "numeric_tests": [
+  "reference inequalities at equality (40 draws each, seed 2026, 8 restarts): worst min Phi/max|Pc| >= -7e-17; d doubled gives about -1e-3 (sensitivity)",
+  "realizable points with contact set exactly E, d>0 (2 seeds): G ~ 1e-14 relative, min Phi ~ +1e-12"
+ ],
+ "unchecked": [
+  "source proofs of the SOC, four-coefficient and chain reference inequalities",
+  "unitary remark via Theorem 1.2"
+ ]
+}

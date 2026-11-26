@@ -1,0 +1,41 @@
+{
+  "doc_id": "final_referee_moc4_T14_uniform_20261022",
+  "pdf": "proofs/manin_transfer_20261021/final_referee_moc4_T14_uniform_20261022.pdf",
+  "pages": 3,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "thm (Theorem 1)", "page": 1, "paper_cases": [15], "contact_sets": [[1, 2, 3, 4, 6, 7]], "covers_all_spectra": true,
+     "restatement": "For x in X with g = Re(F - F_{pi1}) >= 0 and g = 0 on T_15 = {1,2,3,4,6,7} (more contacts allowed), Phi_{c(x)}(O) >= 0 for all O. Collisions go to App. B; v real goes to the six-point circle theorem; otherwise T >= X forces ab >= d^2 and the SOC applies."}
+  ],
+  "dependencies": [
+    {"kind": "core-doc", "ref": "Lemma 4.2 / App. D", "used_for": "source cone", "match_checked": true},
+    {"kind": "common-lemma", "ref": "Theorem B.1, Lemma B.2", "used_for": "collisions", "match_checked": true},
+    {"kind": "common-lemma", "ref": "old SOC: a f2 + b f5 + d f54 safe if ab >= d^2 (source not named; not in the paper)", "used_for": "final step", "match_checked": false},
+    {"kind": "common-lemma", "ref": "six-point circle theorem (three A and three C points on one generalized circle; supplement only, not in the paper's App. F)", "used_for": "v real stratum", "match_checked": false},
+    {"kind": "core-doc", "ref": "Theorem 1.2", "used_for": "unitary form", "match_checked": true}
+  ],
+  "steps": [
+    {"n": 1, "claim": "generators {0..8,53,54}", "status": "EXACT"},
+    {"n": 2, "claim": "g16-g0 functional and 3 replacement identities", "status": "EXACT"},
+    {"n": 3, "claim": "d<=0 gives a minor decomposition", "status": "PROOF-READ"},
+    {"n": 4, "claim": "(2) decomposition", "status": "EXACT"},
+    {"n": 5, "claim": "(3)", "status": "EXACT"},
+    {"n": 6, "claim": "chart exhaustive", "status": "PROOF-READ"},
+    {"n": 7, "claim": "(4), t, x real, kappa", "status": "EXACT"},
+    {"n": 8, "claim": "J formula, J=0, (5)", "status": "EXACT"},
+    {"n": 9, "claim": "(6)", "status": "EXACT"},
+    {"n": 10, "claim": "signs and (7)", "status": "PROOF-READ"},
+    {"n": 11, "claim": "mu>0 wlog", "status": "PROOF-READ"},
+    {"n": 12, "claim": "p,q,K,L,U,V identities", "status": "EXACT"},
+    {"n": 13, "claim": "Im U, Im V, Im D1, Im D2", "status": "EXACT"},
+    {"n": 14, "claim": "(8)", "status": "EXACT"},
+    {"n": 15, "claim": "(9) and positive-weight identity", "status": "EXACT"},
+    {"n": 16, "claim": "T >= X and ab >= d^2", "status": "PROOF-READ"},
+    {"n": 17, "claim": "SOC (1)", "status": "CITED"},
+    {"n": 18, "claim": "six-point circle theorem", "status": "CITED"}
+  ],
+  "gaps": [],
+  "exact_replays": ["generators", "replacement identities and functional", "(2),(3)", "(4), J and R7 relations", "(6)", "p,q,K,L,U,V chart", "(8)", "(9)", "positive-weight identity", "Im D1, Im D2"],
+  "numeric_tests": ["SOC: min Phi_f54 + 2|m1 m2| = -3.7e-30 (80 Nelder-Mead starts, seed 7)", "40 chart sources: worst min Phi 1.6e-14; 3 with d>0 all had ab >= d^2, T >= X", "40 v-real circle-stratum sources: worst min Phi 1.8e-16"],
+  "unchecked": ["proof of the SOC (1)", "proof of the six-point circle theorem"]
+}

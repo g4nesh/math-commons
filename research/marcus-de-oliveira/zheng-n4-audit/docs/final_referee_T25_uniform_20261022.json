@@ -1,0 +1,156 @@
+{
+ "doc_id": "final_referee_T25_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T25_uniform_20261022.pdf",
+ "pages": 6,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     2,
+     3,
+     5,
+     7,
+     8,
+     12
+    ]
+   ],
+   "paper_cases": [
+    26
+   ],
+   "covers_all_spectra": true,
+   "restatement": "(*) for T_26={2,3,5,7,8,12}, all x in X, all O in SO(4), all nonnegative coefficient boundaries; cost a f0+e f1+p f2+j f5+b f6+c f39+q f67+d f70."
+  },
+  {
+   "label": "Lemma 1",
+   "page": 2,
+   "restatement": "d=1, a,b,c>0, 0<=t<1, ab>t^2, r=1-t, h_b=b-t^2/a, e(t)=t^2+t^2(a+b+2t)/(ab-t^2): if q h_b>=r^2 then e>=e(t), p>=r^2/c safe; if q=w^2r^2/h_b, 0<=w<=1, h_b>wr then e>=e(t), p>=r^2/c+h_b r^2(1-w)^2/(h_b-wr)^2 safe."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "SOC, old-H, two four-coefficient atoms, coherent bounds (6),(7), double-SOC",
+   "used_for": "thresholds",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "quaternion Gram framework",
+   "used_for": "Lemma 1",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "final_referee_T25_full_radial_20261022 (Hessian factorization, JSON G)",
+   "used_for": "G=0 necessity",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_25 (root_moc4_T24_uniform_20261022) coherent family",
+   "used_for": "(6),(7) by group transport",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "source facets, rank",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "(2)",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "(3)",
+   "status": "CITED + EXACT at 6 points"
+  },
+  {
+   "n": 4,
+   "claim": "(4)-(7)",
+   "status": "CITED + NUMERIC"
+  },
+  {
+   "n": 5,
+   "claim": "Lemma 1 vector algebra",
+   "status": "EXACT; framework CITED"
+  },
+  {
+   "n": 6,
+   "claim": "e(t) monotone, q h_b, h_b>r",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 7,
+   "claim": "(13) k0=C*G6, b=0 factorization",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "four G6 tables (14)",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "(15) corner",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "Bernstein (16)",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 11,
+   "claim": "chart coverage",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 12,
+   "claim": "40 baseline tables",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "region II tables with square repair",
+   "status": "EXACT (auditor AM-GM certificate)"
+  },
+  {
+   "n": 14,
+   "claim": "region IIIb- tables",
+   "status": "EXACT"
+  },
+  {
+   "n": 15,
+   "claim": "closed boundaries",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators",
+  "(2)",
+  "(3) at 6 random points",
+  "(13), G6 at e=c=j=0 and b=0, (15), e'(t), e(1)=E1",
+  "Lemma 1 inner products and norms",
+  "4 G6 tables",
+  "40 baseline tables",
+  "region II (4 numerators, AM-GM repair of 2 and 6 negatives)",
+  "region IIIb- (4 numerators, counts match)"
+ ],
+ "numeric_tests": [
+  "boundaries of (4),(5) atoms,(6),(7),(9),(10): seed 11, 6-8 samples, 10 restarts; worst >= 1e-15 scale"
+ ],
+ "unchecked": [
+  "Gram framework (ten relations), including whether E.Q=-tz(a+t)/(ab-t^2) is admissible",
+  "group transport of T_25 coherent family to (6),(7)",
+  "e=0 layer cross-check",
+  "main statement numeric search"
+ ]
+}

@@ -1,0 +1,1480 @@
+{
+ "evidence_level": "EXACT identities (own code) + PROOF-READ arguments for SOC, old-H, chain, four-coefficient; NUMERIC only for rank-two and the face-specific Gram families",
+ "conventions": {
+  "f_j": "paper Appendix D numbering (= supplement numbering, checked on all cited tuples)",
+  "group": "G of order 1152 acting on f_j via lib g_act_values; covariance Phi^{O(4)}_{g.c}(g.O) = Phi^{O(4)}_c(O) EXACT",
+  "roles": "SOC (i,j;k) pair unordered; H (aux t, main c; k) ordered; chain (centre; leaf, leaf; k); four (a,b;c;d) with a,b symmetric; rank2 (leaf,leaf;centre;k)"
+ },
+ "families": {
+  "SOC": {
+   "representative": [
+    1,
+    9,
+    22
+   ],
+   "rep_names": [
+    "n12,34",
+    "n14,23",
+    "h3412,+"
+   ],
+   "orbit_size": 144,
+   "pointwise_form": "Phi_k + 2|x_i x_j| >= 0",
+   "coefficient_form": "a f_i + b f_j + d f_k safe if ab >= d^2",
+   "cited_tuples": {
+    "(1, 11, 17)": {
+     "docs": [
+      "independent_moc4_T3_uniform p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(1, 9, 22)": {
+     "docs": [
+      "T2 note, coreB, coreF, coreG, coreK, coreM, coreO, inventory87, independent_coreE"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(2, 12, 26)": {
+     "docs": [
+      "final_referee_T10_A_branch p.1",
+      "final_referee_moc4_T10_uniform p.2",
+      "coreB/C/D/F/G (pair images)"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(2, 15, 26)": {
+     "docs": [
+      "coreB/C/D/F/G pair images"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(12, 15, 26)": {
+     "docs": [
+      "coreB/C/D/F/G pair images"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(5, 2, 54)": {
+     "docs": [
+      "blind_moc4_T42_uniform p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(2, 5, 70)": {
+     "docs": [
+      "blind_moc4_T38_uniform p.4"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(1, 9, 18)": {
+     "docs": [
+      "independent_moc4_T8_uniform p.4",
+      "independent_moc4_T8_double_boundary p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(2, 39, 46)": {
+     "docs": [
+      "root_moc4_T7_boundary23 p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(2, 8, 69)": {
+     "docs": [
+      "final_referee_T35_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(2, 15, 56)": {
+     "docs": [
+      "root_moc4_T37_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(1, 12, 35)": {
+     "docs": [
+      "root_inventory67_g14_uniform p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    }
+   },
+   "numeric": {
+    "n_atoms_tested": 35,
+    "orbit_size": 144,
+    "min": 3.7013510648708875e-32,
+    "argmin_tuple": [
+     1,
+     9,
+     22
+    ],
+    "mp50_at_worst": "4.1637626e-32",
+    "max_of_minima": 1.1529189404615519e-12
+   },
+   "status": "proved here: EXACT bridge identities (own code) + PROOF-READ scalar compensation (Theorem 2 of final_referee_T2_scalar_compensation, re-derived)",
+   "documents_naming_family_keyword_scan": {
+    "blind_moc4_T27_uniform": [
+     1,
+     2
+    ],
+    "blind_moc4_T38_uniform": [
+     2,
+     4,
+     5,
+     6
+    ],
+    "blind_moc4_T42_uniform": [
+     1,
+     3
+    ],
+    "blind_moc4_T44_coherent_chain_capacity": [
+     2
+    ],
+    "blind_moc4_T44_conic_branch_exclusion": [
+     1
+    ],
+    "blind_moc4_coreB_uniform": [
+     1,
+     2
+    ],
+    "blind_moc4_coreC_uniform": [
+     1,
+     2
+    ],
+    "blind_moc4_coreD_uniform": [
+     2,
+     4
+    ],
+    "blind_shared_coreF_uniform": [
+     2
+    ],
+    "final_referee_T10_A_branch": [
+     1,
+     4
+    ],
+    "final_referee_T25_uniform": [
+     1,
+     2,
+     3,
+     6
+    ],
+    "final_referee_T26_boundary16_uniform": [
+     1,
+     2
+    ],
+    "final_referee_T26_uniform": [
+     1
+    ],
+    "final_referee_T2_scalar_compensation": [
+     1,
+     2
+    ],
+    "final_referee_T35_uniform": [
+     2
+    ],
+    "final_referee_T41_bad17_large_product_uniform": [
+     1
+    ],
+    "final_referee_T41_bad17_uniform": [
+     2
+    ],
+    "final_referee_T41_bad54_uniform": [
+     1
+    ],
+    "final_referee_T41_uniform": [
+     2
+    ],
+    "final_referee_T5_four_budget_capacity": [
+     3
+    ],
+    "final_referee_T9_first_branch": [
+     1,
+     4
+    ],
+    "final_referee_inventory56_rank_two_capacity": [
+     3
+    ],
+    "final_referee_inventory71_uniform": [
+     1
+    ],
+    "final_referee_inventory87_uniform": [
+     2,
+     4
+    ],
+    "final_referee_moc4_T10_uniform": [
+     2
+    ],
+    "final_referee_moc4_T11_uniform": [
+     1
+    ],
+    "final_referee_moc4_T12_uniform": [
+     1
+    ],
+    "final_referee_moc4_T14_uniform": [
+     1,
+     3
+    ],
+    "final_referee_moc4_T5_uniform": [
+     1
+    ],
+    "final_referee_moc4_T9_uniform": [
+     1
+    ],
+    "final_referee_shared_coreK_uniform": [
+     1,
+     3
+    ],
+    "independent_coreE_uniform": [
+     1,
+     2
+    ],
+    "independent_inventory67_native_harmonic_conditional": [
+     4
+    ],
+    "independent_moc4_T23_g17_uniform": [
+     2,
+     4
+    ],
+    "independent_moc4_T23_harmonic_reduction": [
+     1
+    ],
+    "independent_moc4_T23_uniform": [
+     2
+    ],
+    "independent_moc4_T2_uniform": [
+     1
+    ],
+    "independent_moc4_T36_uniform": [
+     1,
+     4,
+     5,
+     6
+    ],
+    "independent_moc4_T39_high_j_uniform": [
+     1
+    ],
+    "independent_moc4_T39_high_p_uniform": [
+     1
+    ],
+    "independent_moc4_T39_uniform": [
+     1,
+     2,
+     3
+    ],
+    "independent_moc4_T3_uniform": [
+     1,
+     4
+    ],
+    "independent_moc4_T43_uniform": [
+     1,
+     2,
+     4
+    ],
+    "independent_moc4_T44_a_Heron_branch": [
+     3
+    ],
+    "independent_moc4_T44_c_below_j_uniform": [
+     1,
+     2
+    ],
+    "independent_moc4_T45_uniform": [
+     2
+    ],
+    "independent_moc4_T47_IIIb_plus_unswapped_uniform": [
+     1,
+     3
+    ],
+    "independent_moc4_T47_I_II_uniform": [
+     1
+    ],
+    "independent_moc4_T8_double_boundary": [
+     1,
+     3
+    ],
+    "independent_moc4_T8_uniform": [
+     4,
+     5,
+     6,
+     8
+    ],
+    "independent_shared_coreG_uniform": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "independent_shared_coreM_uniform": [
+     2,
+     3,
+     5
+    ],
+    "root_inventory67_g14_uniform": [
+     1
+    ],
+    "root_moc4_T24_uniform": [
+     2,
+     4
+    ],
+    "root_moc4_T37_uniform": [
+     1,
+     2
+    ],
+    "root_moc4_T44_e_below_p_uniform": [
+     1
+    ],
+    "root_moc4_T47_IIIa_plus": [
+     1,
+     2
+    ],
+    "root_moc4_T7_boundary16": [
+     1
+    ],
+    "root_moc4_T7_boundary23": [
+     1
+    ],
+    "root_moc4_T7_uniform": [
+     3
+    ],
+    "root_shared_coreH_uniform": [
+     1,
+     3
+    ],
+    "root_shared_coreL_uniform": [
+     1,
+     4
+    ],
+    "root_shared_coreO_uniform": [
+     1,
+     3
+    ],
+    "root_shared_seven_A_uniform": [
+     1,
+     4
+    ]
+   }
+  },
+  "H": {
+   "representative": [
+    3,
+    15,
+    26
+   ],
+   "rep_names": [
+    "n14,34",
+    "n12,14",
+    "h4132,-"
+   ],
+   "orbit_size": 288,
+   "pointwise_form": "Phi_c + Phi_k + 2|x_t x_c| >= 0",
+   "coefficient_form": "t f_t + c f_c + d f_k safe if t(c - d) >= d^2",
+   "cited_tuples": {
+    "(3, 15, 26)": {
+     "docs": [
+      "coreB, coreH, coreL, coreM, inventory71 (reference)"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(23, 15, 26)": {
+     "docs": [
+      "inventory71, coreL, coreM"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(12, 2, 70)": {
+     "docs": [
+      "blind_moc4_T38_uniform p.4",
+      "bad70 (H) endpoints (E1)"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(39, 2, 70)": {
+     "docs": [
+      "blind_moc4_T38_uniform p.4",
+      "bad70 (E2)"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(3, 5, 54)": {
+     "docs": [
+      "blind_moc4_T42_uniform p.1",
+      "final_referee_T41_bad54_uniform p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(23, 5, 54)": {
+     "docs": [
+      "blind_moc4_T42_uniform p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(9, 2, 69)": {
+     "docs": [
+      "final_referee_T35_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(10, 8, 69)": {
+     "docs": [
+      "final_referee_T35_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(53, 8, 69)": {
+     "docs": [
+      "final_referee_T35_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(29, 12, 35)": {
+     "docs": [
+      "independent_moc4_T39_uniform p.2",
+      "inventory56_rank_two p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(2, 12, 35)": {
+     "docs": [
+      "independent_moc4_T39_uniform p.2",
+      "inventory56_rank_two p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(9, 5, 68)": {
+     "docs": [
+      "final_referee_T34_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(11, 12, 26)": {
+     "docs": [
+      "blind_shared_coreF_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(15, 10, 30)": {
+     "docs": [
+      "final_referee_inventory75_boundary16 p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(8, 10, 30)": {
+     "docs": [
+      "final_referee_inventory75_boundary16 p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(33, 2, 46)": {
+     "docs": [
+      "blind_moc4_T28_uniform p.4"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(5, 2, 46)": {
+     "docs": [
+      "blind_moc4_T28_uniform p.4"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(9, 2, 56)": {
+     "docs": [
+      "root_moc4_T37_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(10, 15, 56)": {
+     "docs": [
+      "root_moc4_T37_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(53, 15, 56)": {
+     "docs": [
+      "root_moc4_T37_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    }
+   },
+   "numeric": {
+    "n_atoms_tested": 43,
+    "orbit_size": 288,
+    "min": 3.4723197532200386e-31,
+    "argmin_tuple": [
+     3,
+     15,
+     26
+    ],
+    "mp50_at_worst": "3.5017542e-31",
+    "max_of_minima": 1.075746316944808e-12
+   },
+   "status": "proved here: EXACT bridge identities (own code, Hadamard coordinates) + PROOF-READ increment argument (as in docs2 gapcheck, re-read)",
+   "documents_naming_family_keyword_scan": {
+    "blind_moc4_T27_uniform": [
+     1
+    ],
+    "blind_moc4_T28_uniform": [
+     2,
+     3,
+     5
+    ],
+    "blind_moc4_T38_uniform": [
+     2,
+     4
+    ],
+    "blind_moc4_T42_uniform": [
+     1
+    ],
+    "blind_moc4_T44_conic_branch_exclusion": [
+     1
+    ],
+    "blind_moc4_T48_allocation_III_low_j_uniform": [
+     1
+    ],
+    "blind_moc4_T48_allocation_II_uniform": [
+     1
+    ],
+    "blind_moc4_T48_allocation_IV_uniform": [
+     1
+    ],
+    "blind_moc4_bad70_full_safe_disjunction": [
+     1,
+     2
+    ],
+    "blind_moc4_coreB_uniform": [
+     1,
+     3
+    ],
+    "blind_moc4_coreC_uniform": [
+     1,
+     2,
+     3
+    ],
+    "blind_moc4_coreD_uniform": [
+     2,
+     4
+    ],
+    "blind_shared_coreF_uniform": [
+     2
+    ],
+    "final_referee_T25_uniform": [
+     1
+    ],
+    "final_referee_T34_uniform": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "final_referee_T35_uniform": [
+     1,
+     2,
+     3
+    ],
+    "final_referee_T41_bad54_uniform": [
+     1
+    ],
+    "final_referee_T41_uniform": [
+     2
+    ],
+    "final_referee_inventory56_rank_two_capacity": [
+     3
+    ],
+    "final_referee_inventory71_uniform": [
+     2,
+     4
+    ],
+    "final_referee_inventory75_boundary16_uniform": [
+     1
+    ],
+    "final_referee_inventory75_whole_assembly": [
+     1
+    ],
+    "fresh_strong_principal_minors": [
+     8
+    ],
+    "independent_moc4_T23_g17_uniform": [
+     2,
+     4
+    ],
+    "independent_moc4_T36_uniform": [
+     1,
+     4
+    ],
+    "independent_moc4_T39_high_j_uniform": [
+     1
+    ],
+    "independent_moc4_T39_high_p_uniform": [
+     1
+    ],
+    "independent_moc4_T39_uniform": [
+     1,
+     2,
+     3
+    ],
+    "independent_moc4_T43_uniform": [
+     1,
+     2
+    ],
+    "independent_moc4_T44_a_Heron_branch": [
+     2,
+     3
+    ],
+    "independent_moc4_T44_c_below_j_uniform": [
+     1,
+     2
+    ],
+    "independent_moc4_T45_uniform": [
+     1,
+     2,
+     3,
+     4,
+     6
+    ],
+    "independent_moc4_T47_IIIb_plus_large_pc": [
+     1
+    ],
+    "independent_moc4_T47_IIIb_plus_unswapped_uniform": [
+     1,
+     2,
+     3
+    ],
+    "independent_moc4_T47_I_II_uniform": [
+     2
+    ],
+    "independent_moc4_T47_high_j_uniform": [
+     1,
+     3
+    ],
+    "independent_moc4_T47_merged_C_high_j_uniform": [
+     2
+    ],
+    "independent_shared_coreG_uniform": [
+     2,
+     5
+    ],
+    "independent_shared_coreM_uniform": [
+     2,
+     5
+    ],
+    "root_moc4_T24_uniform": [
+     2,
+     4
+    ],
+    "root_moc4_T30_uniform": [
+     1
+    ],
+    "root_moc4_T37_uniform": [
+     1,
+     3
+    ],
+    "root_moc4_T44_e_below_p_uniform": [
+     1
+    ],
+    "root_moc4_T47_IIIa_plus": [
+     1
+    ],
+    "root_moc4_T47_whole_assembly": [
+     2
+    ],
+    "root_shared_coreH_uniform": [
+     1
+    ],
+    "root_shared_coreL_uniform": [
+     2
+    ],
+    "root_shared_seven_A_uniform": [
+     1,
+     4
+    ],
+    "moc_principal_minors__principal_minors": [
+     8
+    ],
+    "principal_minor_result__principal_minors": [
+     9
+    ]
+   }
+  },
+  "chain": {
+   "representative": [
+    2,
+    0,
+    12,
+    70
+   ],
+   "rep_names": [
+    "n13,34",
+    "n1,4",
+    "n14,24",
+    "h4231,+"
+   ],
+   "orbit_size": 576,
+   "pointwise_form": "Phi_k + 2|x_c|(|x_l| + |x_m|) >= 0",
+   "coefficient_form": "p f_l + b f_m + a f_c + d f_k safe if a >= d^2/p + d^2/b",
+   "cited_tuples": {
+    "(2, 0, 12, 70)": {
+     "docs": [
+      "bad70 (PB), coreB/coreC reference, T38"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(2, 39, 67, 70)": {
+     "docs": [
+      "bad70 (CQ), T38"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(15, 0, 3, 26)": {
+     "docs": [
+      "coreB, independent_coreE_four_chain"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(5, 0, 3, 54)": {
+     "docs": [
+      "blind_moc4_T42_uniform p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(5, 23, 6, 54)": {
+     "docs": [
+      "blind_moc4_T42_uniform p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(5, 7, 9, 68)": {
+     "docs": [
+      "final_referee_T34_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(2, 0, 15, 54)": {
+     "docs": [
+      "final_referee_T41_bad54_uniform p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(15, 0, 10, 56)": {
+     "docs": [
+      "root_moc4_T37_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(2, 4, 33, 46)": {
+     "docs": [
+      "blind_moc4_T28_uniform p.4"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(2, 5, 6, 46)": {
+     "docs": [
+      "blind_moc4_T28_uniform p.4"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(59, 53, 55, 54)": {
+     "docs": [
+      "root_moc4_T24 (supplement orbit script source check)"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(59, 53, 67, 54)": {
+     "docs": [
+      "root_moc4_T24 (idem)"
+     ],
+     "in_orbit_with_stated_roles": true
+    }
+   },
+   "numeric": {
+    "n_atoms_tested": 36,
+    "orbit_size": 576,
+    "min": 1.7941637865408636e-31,
+    "argmin_tuple": [
+     59,
+     55,
+     72,
+     70
+    ],
+    "mp50_at_worst": "1.7960725e-31",
+    "max_of_minima": 1.5191812875694796e-15
+   },
+   "status": "proved here: EXACT Gram identity verified by own code from the supplement certificate DATA (bad70 face cubic features), + PROOF-READ Cauchy-Schwarz; no supplement PDF contains this proof",
+   "documents_naming_family_keyword_scan": {
+    "blind_moc4_T28_uniform": [
+     2,
+     3,
+     5
+    ],
+    "blind_moc4_T38_uniform": [
+     4
+    ],
+    "blind_moc4_T42_uniform": [
+     1,
+     2
+    ],
+    "blind_moc4_T44_coherent_chain_capacity": [
+     1,
+     2
+    ],
+    "blind_moc4_T48_allocation_III_low_j_uniform": [
+     1,
+     2
+    ],
+    "blind_moc4_T48_allocation_II_uniform": [
+     1
+    ],
+    "blind_moc4_T48_allocation_IV_uniform": [
+     1
+    ],
+    "blind_moc4_T48_allocation_I_low_j_uniform": [
+     1,
+     2
+    ],
+    "blind_moc4_T48_allocation_I_small_lambda_low_j_uniform": [
+     1,
+     2
+    ],
+    "blind_moc4_T48_c0_all_j_chain": [
+     1,
+     2
+    ],
+    "blind_moc4_T48_c0_native_interlacing": [
+     3
+    ],
+    "blind_moc4_T48_c0_upper_Heron_chain": [
+     1
+    ],
+    "blind_moc4_coreB_uniform": [
+     1,
+     3
+    ],
+    "blind_moc4_coreC_uniform": [
+     1,
+     2,
+     4
+    ],
+    "final_referee_T34_uniform": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "final_referee_T35_uniform": [
+     2,
+     3
+    ],
+    "final_referee_T41_bad54_uniform": [
+     1
+    ],
+    "final_referee_T41_uniform": [
+     2
+    ],
+    "final_referee_inventory56_57_whole_assembly": [
+     1
+    ],
+    "final_referee_inventory56_boundary17_large_product": [
+     1
+    ],
+    "final_referee_inventory56_boundary17_uniform": [
+     1
+    ],
+    "final_referee_inventory56_rank_two_capacity": [
+     3
+    ],
+    "final_referee_inventory71_uniform": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "final_referee_inventory75_boundary16_uniform": [
+     1
+    ],
+    "final_referee_inventory75_whole_assembly": [
+     1
+    ],
+    "independent_coreE_four_chain_capacity": [
+     1,
+     2
+    ],
+    "independent_coreE_uniform": [
+     1,
+     2,
+     4
+    ],
+    "independent_inventory67_native_harmonic_conditional": [
+     4
+    ],
+    "independent_moc4_T23_g17_uniform": [
+     4
+    ],
+    "independent_moc4_T36_uniform": [
+     1,
+     4
+    ],
+    "independent_moc4_T43_uniform": [
+     4
+    ],
+    "independent_moc4_T45_uniform": [
+     2,
+     4
+    ],
+    "independent_moc4_T47_I_II_uniform": [
+     1
+    ],
+    "independent_shared_coreM_uniform": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "independent_true_T48_c0_native_Heron": [
+     3
+    ],
+    "root_complete_negative_mass": [
+     2
+    ],
+    "root_inventory67_g14_uniform": [
+     1,
+     3
+    ],
+    "root_moc4_T24_uniform": [
+     4
+    ],
+    "root_moc4_T30_uniform": [
+     1,
+     2,
+     4
+    ],
+    "root_moc4_T37_uniform": [
+     1,
+     2
+    ],
+    "root_moc4_T47_whole_assembly": [
+     2
+    ],
+    "root_shared_seven_A_uniform": [
+     1,
+     3,
+     4
+    ],
+    "root_true_T48_whole_assembly": [
+     2,
+     3
+    ]
+   }
+  },
+  "four": {
+   "representative": [
+    0,
+    6,
+    10,
+    54
+   ],
+   "rep_names": [
+    "n1,4",
+    "n4,1",
+    "n13,24",
+    "h4231,-"
+   ],
+   "orbit_size": 288,
+   "pointwise_form": "Phi_d + Phi_c + 2(|x_a x_b| + |x_a x_c| + |x_b x_c|) >= 0",
+   "coefficient_form": "a f_a + b f_b + c f_c + d f_d safe if ab(c - d) >= d^2(a + b + c + d)",
+   "cited_tuples": {
+    "(0, 6, 10, 54)": {
+     "docs": [
+      "final_referee_T5_four_budget_capacity p.1-2",
+      "final_referee_moc4_T5_uniform"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(6, 0, 5, 34)": {
+     "docs": [
+      "root_moc4_T4_uniform p.1 (1)"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(0, 13, 3, 26)": {
+     "docs": [
+      "independent_coreE_four_chain_capacity p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(0, 7, 12, 40)": {
+     "docs": [
+      "blind_moc4_T38_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(7, 0, 1, 68)": {
+     "docs": [
+      "final_referee_T34_uniform p.2",
+      "final_referee_T35_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(7, 67, 53, 68)": {
+     "docs": [
+      "final_referee_T34_uniform p.2",
+      "final_referee_T35_uniform p.2"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(0, 67, 2, 40)": {
+     "docs": [
+      "blind_moc4_T27_uniform p.3"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(67, 41, 39, 40)": {
+     "docs": [
+      "blind_moc4_T27_uniform p.3"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(7, 21, 9, 35)": {
+     "docs": [
+      "blind_moc4_inventory52_plus17_middle_products p.3"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(4, 6, 2, 28)": {
+     "docs": [
+      "final_referee_T9_second_branch p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(4, 7, 3, 22)": {
+     "docs": [
+      "final_referee_moc4_T10_uniform p.2",
+      "root_moc4_T10_B_branch p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(0, 6, 1, 70)": {
+     "docs": [
+      "final_referee_T25_uniform p.1 (5) first"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(6, 67, 39, 70)": {
+     "docs": [
+      "final_referee_T25_uniform p.1 (5) second"
+     ],
+     "in_orbit_with_stated_roles": true
+    },
+    "(67, 55, 53, 54)": {
+     "docs": [
+      "root_moc4_T24_uniform p.1 (K >= 0)"
+     ],
+     "in_orbit_with_stated_roles": true
+    }
+   },
+   "numeric": {
+    "n_atoms_tested": 37,
+    "orbit_size": 288,
+    "min": 1.0054172428323512e-28,
+    "argmin_tuple": [
+     55,
+     67,
+     5,
+     78
+    ],
+    "mp50_at_worst": "1.0054172e-28",
+    "max_of_minima": 9.052480628024604e-06
+   },
+   "status": "proved in the supplement (final_referee_T5_four_budget_capacity, explicit certificate) and checked: certificate and bridge replayed EXACT here (and in the first-pass audit)",
+   "documents_naming_family_keyword_scan": {
+    "blind_moc4_T27_uniform": [
+     1,
+     2,
+     4
+    ],
+    "blind_moc4_T28_uniform": [
+     2,
+     5
+    ],
+    "blind_moc4_T38_uniform": [
+     2,
+     3,
+     4
+    ],
+    "blind_moc4_T44_coherent_chain_capacity": [
+     2
+    ],
+    "blind_moc4_inventory52_plus17_fourth_products": [
+     1,
+     3
+    ],
+    "blind_moc4_inventory52_plus17_middle_products": [
+     1,
+     2
+    ],
+    "blind_moc4_inventory52_plus17_third_products": [
+     1,
+     3
+    ],
+    "blind_moc4_inventory52_whole_assembly": [
+     2
+    ],
+    "final_referee_T25_uniform": [
+     1,
+     2
+    ],
+    "final_referee_T26_boundary10_uniform": [
+     1
+    ],
+    "final_referee_T26_uniform": [
+     1
+    ],
+    "final_referee_T34_uniform": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "final_referee_T35_uniform": [
+     2
+    ],
+    "final_referee_T46_positive_a_large_product": [
+     2
+    ],
+    "final_referee_T46_positive_a_small_or_balanced": [
+     1
+    ],
+    "final_referee_T5_four_budget_capacity": [
+     1,
+     3
+    ],
+    "final_referee_T9_second_branch": [
+     1,
+     2
+    ],
+    "final_referee_inventory56_57_whole_assembly": [
+     1
+    ],
+    "final_referee_inventory56_boundary17_large_product": [
+     1
+    ],
+    "final_referee_inventory56_boundary17_uniform": [
+     2
+    ],
+    "final_referee_inventory56_rank_two_capacity": [
+     3
+    ],
+    "final_referee_moc4_T10_uniform": [
+     2
+    ],
+    "final_referee_moc4_T11_uniform": [
+     1
+    ],
+    "final_referee_moc4_T12_uniform": [
+     1
+    ],
+    "final_referee_moc4_T9_uniform": [
+     1
+    ],
+    "independent_coreE_four_chain_capacity": [
+     1,
+     2
+    ],
+    "independent_coreE_uniform": [
+     1
+    ],
+    "independent_moc4_T23_g17_uniform": [
+     2,
+     4
+    ],
+    "independent_moc4_T23_uniform": [
+     1
+    ],
+    "independent_moc4_T43_uniform": [
+     1,
+     2,
+     3
+    ],
+    "independent_moc4_T44_c_below_j_uniform": [
+     1
+    ],
+    "root_moc4_T10_B_branch": [
+     1,
+     3
+    ],
+    "root_moc4_T24_uniform": [
+     2,
+     4
+    ],
+    "root_moc4_T30_uniform": [
+     1,
+     2
+    ],
+    "root_moc4_T4_uniform": [
+     1,
+     2
+    ]
+   }
+  },
+  "rank2": {
+   "representative": [
+    2,
+    29,
+    12,
+    35
+   ],
+   "rep_names": [
+    "n13,34",
+    "n13,12",
+    "n14,24",
+    "h4312,-"
+   ],
+   "orbit_size": 144,
+   "pointwise_form": "Phi_k + Phi_c/4 + |x_c| sqrt(Phi_a + Phi_b) >= 0",
+   "coefficient_form": "j f_a + a f_b + b f_c + d f_k safe if b >= d/4 + d^2/(4 min(a, j))",
+   "cited_tuples": {
+    "(2, 29, 12, 35)": {
+     "docs": [
+      "final_referee_inventory56_rank_two_capacity p.1"
+     ],
+     "in_orbit_with_stated_roles": true
+    }
+   },
+   "numeric": {
+    "n_atoms_tested": 25,
+    "orbit_size": 144,
+    "min": 2.205763840340916e-26,
+    "argmin_tuple": [
+     12,
+     39,
+     29,
+     80
+    ],
+    "mp50_at_worst": "2.2047654e-26",
+    "max_of_minima": 6.829701609821718e-14
+   },
+   "status": "NOT proved here: Gram completion construction (final_referee_inventory56_rank_two_capacity) relies on a cubic basis that exists only in supplement checker data; NUMERIC only",
+   "documents_naming_family_keyword_scan": {
+    "final_referee_inventory56_rank_two_capacity": [
+     1,
+     2,
+     3
+    ]
+   }
+  }
+ },
+ "face_specific_gram_families": {
+  "status": "NOT proved here (each rests on a degree-six quaternion Gram identity whose cubic basis is only in supplement checker data); NUMERIC boundary tests below",
+  "boundary_tests_min_Phi": {
+   "T24 Lemma 1 (5) [root_moc4_T24_uniform p.2]": 6.31308753560372e-31,
+   "T24 Lemma 1 (6) [root_moc4_T24_uniform p.2]": 2.4218570634820078e-30,
+   "T24 double-SOC endpoint ab=d^2, ej=d^2": 5.459939312217323e-31,
+   "T25 Lemma 1 (9) [final_referee_T25_uniform p.2]": 1.3203970267913472e-32,
+   "T44 Prop. 1 [blind_moc4_T44_coherent_chain_capacity p.1]": 3.205586902547231e-29,
+   "T44 Prop. 2 [blind_moc4_T44_coherent_chain_capacity p.1]": 6.877811488909226e-32,
+   "T46 core coherent Thm 1 [final_referee_T46_core_coherent_capacity p.1]": 6.080288132019322e-31,
+   "T46 six-ray Thm 1 [final_referee_T46_six_ray_coherent_capacity p.1]": 5.470112472359321e-29,
+   "inventory56 rank-two (1) [final_referee_inventory56_rank_two_capacity p.1]": 1.431904204082765e-31,
+   "coreE four-chain simple section [independent_coreE_four_chain_capacity p.2]": 6.128451782234993e-30
+  },
+  "documents_naming_keyword_scan": {
+   "blind_moc4_T27_uniform": [
+    1,
+    2,
+    4
+   ],
+   "blind_moc4_T38_uniform": [
+    2,
+    3
+   ],
+   "blind_moc4_T44_coherent_chain_capacity": [
+    1,
+    2
+   ],
+   "blind_moc4_T48_negative_Phi_uniform": [
+    3
+   ],
+   "blind_moc4_bad70_full_safe_disjunction": [
+    1,
+    2
+   ],
+   "final_referee_T25_uniform": [
+    1,
+    2,
+    6
+   ],
+   "final_referee_T34_uniform": [
+    1
+   ],
+   "final_referee_T41_bad17_large_product_uniform": [
+    1,
+    3
+   ],
+   "final_referee_T41_bad17_uniform": [
+    2
+   ],
+   "final_referee_T46_a0_balanced_leaf_uniform": [
+    1
+   ],
+   "final_referee_T46_a0_uniform": [
+    2
+   ],
+   "final_referee_T46_core_coherent_capacity": [
+    1,
+    2,
+    5
+   ],
+   "final_referee_T46_positive_a_large_product": [
+    1
+   ],
+   "final_referee_T46_positive_a_small_or_balanced": [
+    2
+   ],
+   "final_referee_T46_six_ray_coherent_capacity": [
+    1,
+    4
+   ],
+   "final_referee_inventory29_native_uniform": [
+    4
+   ],
+   "final_referee_inventory56_57_whole_assembly": [
+    1
+   ],
+   "final_referee_inventory56_boundary17_uniform": [
+    2,
+    3
+   ],
+   "final_referee_inventory56_rank_two_capacity": [
+    1,
+    2,
+    3
+   ],
+   "final_referee_inventory75_boundary16_uniform": [
+    3
+   ],
+   "final_referee_inventory78_native_uniform": [
+    4
+   ],
+   "final_referee_inventory81_native_uniform": [
+    4
+   ],
+   "final_referee_inventory87_uniform": [
+    1,
+    4
+   ],
+   "final_referee_single_collision_divisor_compensation": [
+    2
+   ],
+   "independent_coreE_uniform": [
+    5
+   ],
+   "independent_moc4_T23_g17_uniform": [
+    2,
+    4
+   ],
+   "independent_moc4_T23_uniform": [
+    1,
+    2
+   ],
+   "independent_moc4_T36_uniform": [
+    1,
+    2,
+    4
+   ],
+   "independent_moc4_T43_uniform": [
+    1,
+    2,
+    4
+   ],
+   "independent_moc4_T44_c_below_j_uniform": [
+    1,
+    2
+   ],
+   "independent_moc4_T45_uniform": [
+    2
+   ],
+   "independent_moc4_T47_IIIb_plus_unswapped_uniform": [
+    1,
+    3
+   ],
+   "independent_moc4_T47_I_II_uniform": [
+    1,
+    2
+   ],
+   "independent_moc4_T47_high_j_small_b": [
+    1
+   ],
+   "independent_moc4_T47_high_j_uniform": [
+    1,
+    3
+   ],
+   "independent_moc4_T47_merged_C_high_j_uniform": [
+    1
+   ],
+   "root_moc4_T24_uniform": [
+    2,
+    4
+   ],
+   "root_moc4_T44_e_below_p_uniform": [
+    1,
+    2
+   ],
+   "root_moc4_T46_positive_a_mixed_uniform": [
+    1
+   ],
+   "root_moc4_T46_whole_assembly": [
+    2
+   ],
+   "root_moc4_T47_IIIb_minus_swapped": [
+    1
+   ],
+   "root_moc4_T47_low_j_high_e_uniform": [
+    1
+   ],
+   "root_moc4_T47_low_j_p_below_uniform": [
+    1
+   ],
+   "root_moc4_T47_zero_q_rational_capacity": [
+    1
+   ],
+   "root_true_inventory47_native_uniform": [
+    4
+   ],
+   "moc_one_circle__one_circle": [
+    6
+   ]
+  },
+  "not_tested_numerically": [
+   "T25 Lemma 1 (10)",
+   "T41 bad17 negative coherent bound (4)",
+   "T45 Gram capacities",
+   "T47 merged-C, PCBE energy, IIIb large-pc Grams, coherent-J stationary family",
+   "T46 whole-assembly rational capacity",
+   "T47 zero-q rational capacity",
+   "inventory56 boundary17 Grams"
+  ]
+ },
+ "derived_families": {
+  "old-H sum / Hsum / (H) of bad70": "conic sums of two H atoms with Cauchy split of d; reduce to the proved H family",
+  "H/chain resource allocation (T28, T38, T42, T36, T48 allocations)": "conic sums of H and chain atoms; reduce to proved families (allocation algebra not audited here)",
+  "coreE four-chain capacity": "conic sum of one four atom and one chain atom (first-pass audit EXACT/PROOF-READ); reduces to proved families",
+  "scalar compensation / two rotations (SO(3)xSO(3))": "scalar theorems of final_referee_T2_scalar_compensation and alternate_onecircle_elementary (first-pass confirmed); SOC and H bridges supplied here"
+ },
+ "numeric": {
+  "sensitivity_0.9": {
+   "SOC(1,9;22)": -2.1532797730116878e-05,
+   "H(3,15;26)": -8.860949316156846e-06,
+   "chain(2;0,12;70)": 6.913503013240337e-27
+  },
+  "SOC_tau_explicit": 7.617426823355991e-30,
+  "gram_face_boundary_tests": {
+   "T24 Lemma 1 (5) [root_moc4_T24_uniform p.2]": 6.31308753560372e-31,
+   "T24 Lemma 1 (6) [root_moc4_T24_uniform p.2]": 2.4218570634820078e-30,
+   "T24 double-SOC endpoint ab=d^2, ej=d^2": 5.459939312217323e-31,
+   "T25 Lemma 1 (9) [final_referee_T25_uniform p.2]": 1.3203970267913472e-32,
+   "T44 Prop. 1 [blind_moc4_T44_coherent_chain_capacity p.1]": 3.205586902547231e-29,
+   "T44 Prop. 2 [blind_moc4_T44_coherent_chain_capacity p.1]": 6.877811488909226e-32,
+   "T46 core coherent Thm 1 [final_referee_T46_core_coherent_capacity p.1]": 6.080288132019322e-31,
+   "T46 six-ray Thm 1 [final_referee_T46_six_ray_coherent_capacity p.1]": 5.470112472359321e-29,
+   "inventory56 rank-two (1) [final_referee_inventory56_rank_two_capacity p.1]": 1.431904204082765e-31,
+   "coreE four-chain simple section [independent_coreE_four_chain_capacity p.2]": 6.128451782234993e-30
+  }
+ },
+ "n_exact_checks": 97,
+ "n_exact_failures": 0,
+ "stronger_use_found": []
+}

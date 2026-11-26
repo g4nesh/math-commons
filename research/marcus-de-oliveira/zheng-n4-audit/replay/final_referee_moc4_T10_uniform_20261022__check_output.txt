@@ -1,0 +1,22 @@
+PASS EXACT document set {0,1,2,4,7,9} is mapped onto paper T_11 = {0,1,3,5,6,8} by g = ((0, 1, 2, 3), (0, 1, 3, 2), 0)
+PASS EXACT generators(T) = {0,1,2,3,4,5,7,11,12,21,22,26}
+PASS EXACT non-minor generators are exactly f22, f26
+PASS EXACT A = g16 - g3: +1 on f1,f4,f7,f22; -1 on f26; 0 otherwise
+PASS EXACT B: +1 on f0,f2,f12,f26; -1 on f22; 0 otherwise
+PASS EXACT A + B >= 0 on every generator (sum is c0+c1+c2+c4+c7+c12)
+PASS EXACT minor replacement f22+f26 = f3+f5+f11+2f21 (right side all minor)
+PASS EXACT minor replacement f26+f1 = f0+f11+f21 (right side all minor)
+PASS EXACT minor replacement f26+f4 = f2+f3+f11+f21 (right side all minor)
+PASS EXACT minor replacement f26+f7 = f3+f5+f12+f21 (right side all minor)
+PASS EXACT minor replacement f22+f0 = f1+f3+f5+f21 (right side all minor)
+PASS EXACT minor replacement f22+f2 = f4+f5+f21 (right side all minor)
+PASS EXACT minor replacement f22+f12 = f7+f11+f21 (right side all minor)
+PASS EXACT A-branch identity g = g23 f0 + g15 f2 + g14 f3 + g10 f5 + g17 f11 + g8 f12 + g16 f21 + e f26 on all generators
+PASS EXACT B-branch identity g = g23 f1 + g18 f3 + g15 f4 + g21 f5 + g8 f7 + g6 f11 + g19 f21 + d f22 on all generators
+PASS EXACT generators span the 8-dim space {Pc : (Pc)_T = 0}
+PASS EXACT real-v stratum: generators of {0..5} u T all minor
+PASS EXACT b = g8 = 0 boundary: T u {8} contains paper T_7 = {0,1,2,4,7,8}
+PASS EXACT SOC orbit: some g maps (f1,f11,f28) to (f2,f12,f26): ((0, 1, 3, 2), (0, 3, 1, 2), 0)
+PASS EXACT four-coefficient orbit: some g maps (f4,f6,f2,f28) to (f4,f7,f3,f22) with roles (a,B,c,d): ((0, 1, 2, 3), (0, 1, 3, 2), 0)
+PASS INFO image of paper T_10 under that g: [0, 1, 2, 4, 6, 9]
+RESULT ALL EXACT CHECKS PASS []

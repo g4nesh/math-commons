@@ -1,0 +1,37 @@
+[EXACT] PASS  T = {sigma^-1 : sigma in paper T_16} (transpose), and some g in G maps T_16 onto T
+[EXACT] PASS  generators(T) = {1,2,4,5,6,9,39,45,46,47}   [1, 2, 4, 5, 6, 9, 39, 45, 46, 47]
+[EXACT] PASS  only f46 is non-minor
+[EXACT] PASS  f46 + f1 = f4 + f6 + f45
+[EXACT] PASS  f46 + f9 = f4 + f5 + f47
+[EXACT] PASS  d = g12 - g16 is 1 on f46, -1 on f1 and f9, 0 on the other generators
+[EXACT] PASS  (1) g = a f2 + g16 f4 + g10 f5 + (g9-g7-d) f6 + b f39 + (g3-g7-d) f45 + d f46 + g7 f47 (24 coords)
+[EXACT] PASS  the seven coefficients other than d are >= 0 on every generator (hence on N_T)
+[EXACT] PASS  (2) hence 0 < d <= g3 - g7 <= g3 when d > 0 (coefficient of f45 and g7 >= 0)
+[EXACT] PASS  f46 vanishes off T exactly at {4,7,10,16,19,22,23}   [4, 7, 10, 16, 19, 22, 23]
+[EXACT] PASS  f46 > 0 at every other index j not in T
+[EXACT] PASS  new contact j=4: T u {j} contains an image of paper T_2 (stage 1 < 5)
+[EXACT] PASS  new contact j=7: T u {j} contains an image of paper T_8 (stage 4 < 5)
+[EXACT] PASS  new contact j=10: T u {j} contains an image of paper T_3 (stage 1 < 5)
+[EXACT] PASS  new contact j=16: T u {j} contains an image of paper T_15 (stage 1 < 5)
+[EXACT] PASS  new contact j=19: T u {j} contains an image of paper T_2 (stage 1 < 5)
+[EXACT] PASS  new contact j=22: T u {j} contains an image of paper T_3 (stage 1 < 5)
+[EXACT] PASS  new contact j=23: T u {j} contains an image of paper T_8 (stage 4 < 5)
+[EXACT] PASS  R2 = 1 - x, R6 = x(r-1), R8 = r - x
+[EXACT] PASS  R5 = -s x
+[EXACT] PASS  (3) R1 - R3 = E and R9 - R7 = -rE
+[EXACT] PASS  w = v(E-sx)/(vE-s), z = (w(s+v)-v)/(s-1+w) invert s and E
+[EXACT] PASS  (3) (R12 - R16) + sr/v is a real constant in (x, r, s)   r*x - r + s*x - x + 1
+[EXACT] PASS  (3) R16 - (1-s) R12 is a real constant in (x, r, s)   r*s*x - r*x + r - 2*s*x + s + x - 1
+[EXACT] PASS  (3) (R13-R7-R12) + x(R12-R16+R7) - (x-1)R18 is a real constant in (x, r, s)   x*(x - 1)*(r + s - 1)
+[EXACT] PASS  (4) Q = vD(R18 - u) = v(v-r)E^2 + B(v)E + C(v)
+[EXACT] PASS  (5) Q(v, E_D) = -s(r-v)(vx-1)^2(s+v-1)/(v-1)^2
+[EXACT] PASS  D(v=1) = s(x-1)
+[EXACT] PASS  every denominator factor of the 24 R_j(v,E) is v, vx-1 or D   []
+[EXACT] PASS  F0/D = -x(v-1) (full height), on the chart
+[EXACT] PASS  Q(0, E) = rs(E - sx + 1)
+[EXACT] PASS  D at (v,E) = (0, sx-1) equals 1 - s
+[EXACT] PASS  R3 has denominator D only; R3(0, sx-1) = 1 - sx - x (real)
+[EXACT] PASS  zeta = 1/E branch at (v,zeta)=(0,0): Q=0, dQ/dzeta = rs, dQ/dv = -r (smooth, zeta = v/s + O(v^2))
+[EXACT] PASS  R3 regular at (v,zeta) = (0,0) with value 1 - s - x   (s*v*x**2*zeta - s*v*x*zeta - s*v*x - s*x**2*zeta + s*x*zeta + s - v*x + v + x - 1)/(s*x*zeta - s*zeta + v - 1)
+[NUMERIC] PASS  main statement on 41 realizable sources on the curve (seed 31): min Phi >= -1e-9   worst = 1.170e-18, tried 186
+EXACT failures: 0

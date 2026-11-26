@@ -1,0 +1,21 @@
+PASS C0 restriction is affine in h
+PASS C0 restricted cubic C equals the displayed formula
+PASS C3 Fe / Y^2 = f(e/Y)
+PASS C3 Fq / X^2 = g(q/X)
+PASS C3 R0 = r(e/Y, q/X) XY (polynomial, 48 terms)
+PASS C3 A0 := (R0^2 - Fe Fq)/(4V) is a polynomial (zero remainder; 101 terms); so R0^2 - 4VA0 = Fe Fq and A0/(X^2Y^2) = (r^2 - fg)/(4V)
+PASS C2 G(0,J) = V X^2Y^2 + R0 J XY + A0 J^2 (form (2) at c = 0)
+PASS C2 Lemma 1 transfer D^2 G(0, jXY/D) = (XY)^2 G(c,j)
+PASS C2 D - XY = c(XY + T j)
+PASS C4 swap (a,b),(x,y): r invariant, f <-> g
+PASS C1 at 25 random rational points -det H(w) Q^2 / 4 = k (c+1)^2 G(c,j)^2 with one constant k (the factor (c+1)^2 > 0 is not displayed in the document)  k = {1}
+PASS C5 Lemma 2 chart b>=1: H numerator has 135 coefficients, all of one strict sign matching the (single-signed) denominator  denominator = (eta + 1)*(xi + 1)
+PASS C5 Lemma 2 chart b>=1: E numerator has 1454 coefficients, all of one strict sign matching the (single-signed) denominator  denominator = (eta + 1)**2*(xi + 1)**2
+PASS C5 Lemma 2 chart b<=1: H numerator has 183 coefficients, all of one strict sign matching the (single-signed) denominator  denominator = (B + 1)**3*(eta + 1)*(xi + 1)
+PASS C5 Lemma 2 chart b<=1: E numerator has 1828 coefficients, all of one strict sign matching the (single-signed) denominator  denominator = (B + 1)**5*(eta + 1)**2*(xi + 1)**2
+PASS B2 some group element maps [f59,f53,f55,f67,f54] to [f1,f53,f4,f16,f17] in order  2 elements, e.g. [((0, 3, 2, 1), (2, 1, 0, 3), 0), ((0, 3, 2, 1), (2, 1, 0, 3), 1)]
+INFO common zero set of the T24 core rays [3, 4, 7, 8, 10, 12, 13, 17, 22] T_25 = [3, 4, 7, 8, 10, 12] contains T_25: True
+PASS C4 the nontrivial stabilizer element of T_42 fixes f1,f53,f6,f17 and swaps f4<->f16, f3<->f15  [1, 53, 6, 17, 16, 4, 15, 3]
+PASS NUMERIC capacity (1) 1/j <= p + L at 279 positive roots j of the compact G (400 samples, seed 3, ab >= 1)  min slack = -3.3306690738754696e-16
+PASS NUMERIC min over SO(4) of Phi for p f1 + j f53 + a f4 + b f16 + f17 at equality in (1): 12 samples x 12 restarts  min = 3.679920609989936e-14
+SUMMARY all EXACT checks passed

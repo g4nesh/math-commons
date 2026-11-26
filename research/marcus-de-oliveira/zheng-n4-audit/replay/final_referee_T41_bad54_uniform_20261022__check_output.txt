@@ -1,0 +1,31 @@
+PASS bad54: all 8 source generators are generators of paper T_42 = [1, 2, 3, 6, 7, 8] | F_T42=[0, 1, 2, 3, 4, 5, 6, 15, 16, 17, 53, 54]
+PASS bad54: exactly one non-minor generator in the source | non-minor: [(54, 'h4231,-')]
+PASS bad54: the 8 generators are linearly independent; with kappa rank 9
+PASS bad54 p.1: stabilizer exchanging (p,j),(a,b) and fixing f6,f53,f0,f54 exists and fixes T_42 | [('3210', '3210', 1)]
+PASS bad54 p.1: cubic restriction linear in h
+PASS bad54 p.1: C = -(q+1)(ab+ac+a+bc+b+c+ce+1+e)
+PASS bad54 p.1: Q = -ab-ac-a+ap-bc-b+bj-c-1-jp
+PASS bad54 p.2 (3): (c+1)^2{VL^2-B0L-pjeC0} is a polynomial of degree 8 with 1011 terms | terms=1011
+PASS bad54 p.1 (2): det H_F(w) = -4(q+1)^2 G^2/Q^2 at h=-C/Q (exact, 8 random rational points)
+PASS bad54 p.2 (4): B0^2 + 4VpjeC0 = Fa Fb
+PASS bad54 p.2 (4): Disc_q G = (c+1)^2 W^2 Fa Fb and alpha_q = V W^2
+PASS bad54 p.2 (4): Disc_c G = a^2 b^2 (q+1)^2 Fa Fb
+PASS bad54 p.2: Disc_a Fa = 16epj^2V, Disc_b Fb = 16ejp^2V
+PASS bad54 p.3: D T = V T^2 + F + pjeC0
+PASS bad54 p.3: C0 + T(pa+jb) = Tpj + eab (so C0 >= -T(pa+jb))
+PASS bad54 p.3: V - p^2 je = ep(1-pj) + e(j+1) + p + j + 1 + pj
+PASS bad54 p.2: (c+1)(L - T) is a polynomial with nonnegative coefficients
+PASS bad54 p.2 (5) table row 1: R positive certificate and R - R00(1-da a)^2(1-db b)^2 has one-signed coefficients | R numerator terms 213 (claimed 213)
+PASS bad54 p.2 (5) table row 2: R positive certificate and R - R00(1-da a)^2(1-db b)^2 has one-signed coefficients | R numerator terms 473 (claimed 473)
+PASS bad54 p.2 (5) table row 3: R positive certificate and R - R00(1-da a)^2(1-db b)^2 has one-signed coefficients | R numerator terms 372 (claimed 372)
+PASS bad54 p.2 (5) table row 4: R positive certificate and R - R00(1-da a)^2(1-db b)^2 has one-signed coefficients | R numerator terms 957 (claimed 957)
+PASS bad54 p.2 (5) table row 5: R positive certificate and R - R00(1-da a)^2(1-db b)^2 has one-signed coefficients | R numerator terms 1161 (claimed 1161)
+PASS bad54 p.2 (5) table row 6: R positive certificate and R - R00(1-da a)^2(1-db b)^2 has one-signed coefficients | R numerator terms 2842 (claimed 4135)
+PASS bad54 p.3 Lemma 3 identities at random base point 0 (block I height-free, =(c+1)^2 P(c), P quadratic, Res_c(G,P) square, S+-=Fa b^2(q+1)^2 L^2 / Fb a^2(q+1)^2 M^2, P S+- = (U1+-W)^2 mod G, U1 = alpha P - a2 G; plus bordered I+{0}, I+{1} numerators divisible by G) | {'interp': True, 'height_free': True, 'factor': True, 'degP': 2, 'res_square': True, 'square_classes_and_congruences': True, 'U_eq_alphaP_minus_a2G': True, 'bordered_div_G': True}
+PASS bad54 p.3 Lemma 3 identities at random base point 1 (block I height-free, =(c+1)^2 P(c), P quadratic, Res_c(G,P) square, S+-=Fa b^2(q+1)^2 L^2 / Fb a^2(q+1)^2 M^2, P S+- = (U1+-W)^2 mod G, U1 = alpha P - a2 G; plus bordered I+{0}, I+{1} numerators divisible by G) | {'interp': True, 'height_free': True, 'factor': True, 'degP': 2, 'res_square': True, 'square_classes_and_congruences': True, 'U_eq_alphaP_minus_a2G': True, 'bordered_div_G': True}
+PASS bad54 p.3 Lemma 3 identities at random base point 2 (block I height-free, =(c+1)^2 P(c), P quadratic, Res_c(G,P) square, S+-=Fa b^2(q+1)^2 L^2 / Fb a^2(q+1)^2 M^2, P S+- = (U1+-W)^2 mod G, U1 = alpha P - a2 G; plus bordered I+{0}, I+{1} numerators divisible by G) | {'interp': True, 'height_free': True, 'factor': True, 'degP': 2, 'res_square': True, 'square_classes_and_congruences': True, 'U_eq_alphaP_minus_a2G': True, 'bordered_div_G': True}
+PASS bad54 p.3 Lemma 3 identities at random base point 3 (block I height-free, =(c+1)^2 P(c), P quadratic, Res_c(G,P) square, S+-=Fa b^2(q+1)^2 L^2 / Fb a^2(q+1)^2 M^2, P S+- = (U1+-W)^2 mod G, U1 = alpha P - a2 G; plus bordered I+{0}, I+{1} numerators divisible by G) | {'interp': True, 'height_free': True, 'factor': True, 'degP': 2, 'res_square': True, 'square_classes_and_congruences': True, 'U_eq_alphaP_minus_a2G': True, 'bordered_div_G': True}
+INFO NUMERIC rank of H_F at real c-roots of G (mpmath 60 digits), 3 smallest singular values | ['1.6e-52 1.1e-50 4.3e+00', '1.6e-51 3.0e-51 7.7e-01', '4.0e-51 4.0e-50 2.2e-01', '2.1e-51 3.3e-51 5.1e-01', '7.4e-52 5.9e-51 3.1e-01']
+INFO NUMERIC (5) under failure of all capacities (1), seed 54 | samples=1231647, min (R-lower)/scale=-3.45e-15 (roundoff level)
+INFO bad54 total time | 41.7s
+SUMMARY: 0 checks failed []

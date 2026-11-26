@@ -1,0 +1,24 @@
+PASS EXACT (1) g14 = h n - d
+PASS EXACT (1) g19 = G - n
+PASS EXACT (1) g9 = A0 (H - G)
+PASS EXACT (1) g18 = 1 - d
+PASS EXACT (1) g6 = h G/T
+PASS EXACT (1) g22 = [d + A0 (H - n)]/X
+PASS EXACT (2) g20 = A0 h {T X (1+H) - H|zeta-1|^2}/(T|zeta-A0|^2) - d
+PASS EXACT (3) N L = M
+PASS EXACT (3) 2 xi B0 = Ec - G N (T n + H)
+PASS EXACT Q/(zeta(zeta-h)) = G N - X(T+hH) + S conj(zeta)
+PASS EXACT numerator/(zeta(zeta-h)) = G{X - H(N - 2xi + h)/T} conj(zeta) + G N H
+PASS EXACT K = -d + n conj(zeta)
+PASS EXACT L = G d + G c + e(G + X n)
+PASS EXACT B0 = e(k n - c) - G(c + h n)
+PASS EXACT F is affine in e
+PASS EXACT dF/de = (T/h) N with the displayed N
+PASS EXACT F(e*) = T h G^2 (A0 a + X d){A0 G a + X(a+d+c)}/q
+PASS EXACT R(e*) = A0 G^2 (A0 a + X d)/q
+PASS EXACT (6) L B0 F20 = -T R P(c) (after N = M/L, 2 xi L B0 = EL)
+PASS EXACT W = X h when T = (k+1)/X
+PASS EXACT P(c*) equals the displayed quadratic in e
+PASS EXACT Thm 2: (d+hc)(d+A0c) = T X d^2 + (c+d){A0 h c - (TX-1) d}
+PASS NUMERIC region I sample (seed 2026, 400000 draws, 14098 supporting with d>0): min (5) = 1.155e-02, min g6 g22 - d^2 = 2.719e-02
+RESULT ALL EXACT CHECKS PASS []

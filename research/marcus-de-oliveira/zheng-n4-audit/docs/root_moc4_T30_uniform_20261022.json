@@ -1,0 +1,139 @@
+{
+ "doc_id": "root_moc4_T30_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T30_uniform_20261022.pdf",
+ "pages": 4,
+ "paper_case": "T_31 = {0,1,5,6,9,12} (literal)",
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    1,
+    5,
+    6,
+    9,
+    12
+   ],
+   "restatement": "For x in X with all gaps >=0 and zero gaps on T_31 (non-strict, extra contacts, zero coefficients): Phi_{c(x)}(O)>=0 for all real orthogonal O. Algebraic; all spectra."
+  },
+  {
+   "label": "Lemma 1",
+   "page": 2,
+   "restatement": "a,b,c>0, 0<=t<min(ab,1): cost (1) with d=1 is safe if e>=t(a+1)(b+t)/(ab-t) and j>=(1-t)/a+(1-t)^2/c."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "four-coefficient (0,6,10,54)->(7,0,5,35); old-H (3,5,54)->(9,1,35); chain (2,0,12,70)->(1,7,9,35)",
+   "status": "CITED, source unnamed; witnesses EXACT; NUMERIC tight"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper App. A X in Sing C",
+   "status": "lib EXACT"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Thm 1.2",
+   "status": "CITED"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "simplicial cone via identity-matrix values",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "only f35 nonminor",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "bounds (2)-(4)",
+   "status": "CITED + EXACT witnesses + NUMERIC"
+  },
+  {
+   "n": 4,
+   "claim": "Lemma 1, E'(t), Emax",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 5,
+   "claim": "radial necessity",
+   "status": "PROOF-READ (argument supplied)"
+  },
+  {
+   "n": 6,
+   "claim": "C negative coefficients with -d^3",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "Q^4 det H=-4Q^2G9^2",
+   "status": "EXACT at 10 random integer points (randomized, error<1e-42)"
+  },
+  {
+   "n": 8,
+   "claim": "k2>=0, k0 boundary values",
+   "status": "EXACT"
+  },
+  {
+   "n": 9,
+   "claim": "(5) four charts",
+   "status": "EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "seven-domain coverage",
+   "status": "PROOF-READ+EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "Bernstein domains 2-7 incl. domain-3 grouping",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "domain 1 cut and (7)",
+   "status": "EXACT"
+  },
+  {
+   "n": 13,
+   "claim": "(6) strict positivity",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 14,
+   "claim": "closures and zero coefficients",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 15,
+   "claim": "conclusion",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators, identity-matrix cone",
+  "C,Q vs own cubic; radial identity at 10 points",
+  "k0,k1,k2 boundary checks",
+  "(5) four charts",
+  "seven domains incl. cut and 88 univariate certificates",
+  "orbit witnesses of cited bounds",
+  "Lemma 1 algebra"
+ ],
+ "numeric_tests": [
+  "3 cited bounds at boundary: 6 samples x 12 restarts, worst 1.7e-17..8.3e-15",
+  "main statement: 4 degenerate stratum points, worst min Phi +2.6e-18 (scratch run)"
+ ],
+ "unchecked": [
+  "symbolic proof of the radial identity",
+  "the cited pointwise inequalities themselves"
+ ]
+}

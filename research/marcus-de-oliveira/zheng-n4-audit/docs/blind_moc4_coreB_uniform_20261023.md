@@ -10,7 +10,7 @@ PDF: `proofs/manin_transfer_20261021/blind_moc4_coreB_uniform_20261023.pdf` (4 p
 - My chart clearing is "multiply by each coordinate denominator to the degree of the polynomial in that coordinate". It is the document's recipe. All 30 term counts equal the document's table (15) exactly.
 - The three capacity inequalities (1)-(3) are atoms proved elsewhere ("sharp SOC", "old-H", "chain"). I did not audit those proofs or the claimed group images. I tested the inequalities themselves numerically over SO(4).
 - The input "det H(Re x) = 0 for every x in X" (the "global secant-Hessian theorem") is CITED. I checked it exactly at 6 random Gaussian-rational points of X. I did not prove it.
-- The numeric search for realizable points on the stratum, using the library's least-squares helper, gave degenerate output. It is not used as evidence. The main statement was not searched numerically beyond that.
+- Outside the capacity atoms, the only numeric search is a brief stratum check (section D).
 
 ## A. Statements
 
@@ -52,7 +52,7 @@ The numeric minima are about 0. The atoms are sharp, with equality attained, and
 ## D. Falsification
 
 - Capacity atoms (NUMERIC, seed 2026, 40 Nelder-Mead starts each): no negative margin. The minima are about ±1e-29, so the atoms are tight.
-- Main statement: not searched meaningfully. The library's stratum helper returned degenerate points, which were rejected or are reported only as diagnostics. The brief advises against relying on such searches.
+- Realizable points: 3 floating-point points with contact set exactly T, from the library's stratum search with margin 1e-3. G is about 0 at all three, relative size at most 4e-14. This independently confirms the radial necessity G = 0. min Phi over SO(4) is >= about 0 (20 BFGS starts). This is NUMERIC only. It is not evidence for the theorem, which is a special case of the conjecture.
 
 ## E. Verdict
 

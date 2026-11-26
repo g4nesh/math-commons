@@ -1,0 +1,82 @@
+{
+ "doc_id": "root_moc4_T10_B_branch_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T10_B_branch_20261022.pdf",
+ "pages": 4,
+ "verdict": "gap-found",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     4,
+     7,
+     9
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For x in X with P c(x) >= 0, contacts containing T={0,1,2,4,7,9} (image of paper T_11 under sigma -> sigma o (34)), pi*=pi_0, and B = -g3+g6-g12+g13+g18 < 0: Phi_{c(x)}(O) >= 0 on SO(4); in the 8-distinct nonreal chart with g8>0, ab(c-d) > d^2(a+b+c+d), a=g15,b=g8,c=g18,d=-B. Branch A<0 not covered."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "four-coefficient inequality on (f4,f7,f3,f22) (supplement, unnamed)",
+   "used_for": "final conclusion",
+   "match_checked": false
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_7 = {0,1,2,4,7,8}",
+   "used_for": "boundary b=0",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper Thm C.1",
+   "used_for": "v real (A spectrum real) and repeated eigenvalues"
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper Thm B.1",
+   "used_for": "cross collisions"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Thm 1.2",
+   "used_for": "unitary extension"
+  }
+ ],
+ "steps": "see .md section C (17 steps)",
+ "gaps": [
+  {
+   "location": "p.1, 'the original product differences give the real ratios'",
+   "claim": "contacts T force h,t,s,l real (chart is onto the contact stratum)",
+   "why": "which contact differences have these quotients is not shown; auditor verified exactly only kappa (contact 2) and k real (contact 1)",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "display each of t,s,l as a quotient of contact differences; numeric check on 12 stratum points supports realness"
+  }
+ ],
+ "exact_replays": [
+  "generators, canonical profile, A+B>=0 on W_T",
+  "g19=G-d, g21=V-b-d linear",
+  "b=0 -> T_7",
+  "N(h,Y) bilinear, four endpoint identities, LV k-pole removal (symbolic)",
+  "final factorization (symbolic)",
+  "identities (1)-(4), delta=P-Y eta, (l-1)NP+(h-l)N0=C, W=-N0 Dn, R, G/a, k g21, g19/g21 formulas: exact at 12 random rational points (v, vb independent), not symbolic"
+ ],
+ "numeric_tests": [
+  "four-coefficient lemma seed 11: 120 samples (2/3 on boundary), worst normalized min Phi +7e-17; control outside region -0.0065",
+  "chart sampling seed 11: 200000 draws, 4 supported B<0 points, worst coefficient margin 1.0e-2, worst min Phi -1e-12",
+  "surjectivity probe: 12 stratum points with contact set exactly T, h,t,s,l real to rounding"
+ ],
+ "unchecked": [
+  "symbolic (non-pointwise) proof of the spectral chart identities (sympy timed out)",
+  "four-coefficient lemma (CITED)",
+  "A<0 branch (out of scope)"
+ ]
+}

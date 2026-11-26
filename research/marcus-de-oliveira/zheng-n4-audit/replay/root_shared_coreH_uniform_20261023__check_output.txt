@@ -1,0 +1,33 @@
+PASS  T equals Table 5 auxiliary seven-set no. 21 of the paper
+PASS  generators(T) as listed  [generators=[2, 3, 5, 15, 29, 31, 33]]
+PASS  contact rows have rank 7
+PASS  every basis profile vanishes on T
+PASS  basis profiles independent (rank 7)
+PASS  rows [5, 14, 15, 11, 8, 3, 7] of the basis form I_7
+PASS  generators(T) = {2,3,5,15,29,31,33} = basis, only f31 non-minor
+PASS  SOC reference (f1,f9;f22) maps to (f15,f3;f31)
+PASS  old-H reference (f3,f15;f26) maps (aux,main,nonminor) to (f2,f15;f31),(f29,f15;f31),(f5,f3;f31),(f33,f3;f31)
+PASS  (5): C(w(z)) = C + Q z with C, Q as printed
+PASS  (6) decomposition: C = P(a-d) + R(b-d) - P psi - R xi - d xi psi - d^2 (xi+psi) - d^3
+PASS  (7): Q^4 det H(w(-C/Q)) = -4 d^2 Q^2 G^2 with G a polynomial  [Bareiss exact divisions 819, deg_z det H = 3, 27s]
+PASS  G: 499 terms, homogeneous of degree 8, coefficient 1 at d^8
+PASS  (8): G symmetric under q<->u, t<->v, (a,b,q,t,u,v)<->(b,a,t,q,v,u)
+PASS  (9) a,b<1: all coefficients positive, marker present  [terms 709 (document 709), marker coefficient 1 (document 1)]
+PASS  (9) a,b<1: term count equals document
+PASS  (9) wall a=1, b<1: all coefficients positive, marker present  [terms 235 (document 235), marker coefficient 2 (document 2)]
+PASS  (9) wall a=1, b<1: term count equals document
+PASS  (10): V_n and V_D have positive coefficients
+PASS  (11) dominant a>1, b>0: all coefficients positive, marker present  [terms 476039 (document 476039), marker coefficient 2 (document 2)]
+PASS  (11) dominant a>1, b>0: term count equals document
+PASS  (13) a>1, b=0: all coefficients positive, marker present  [terms 2356 (document 2356), marker coefficient 2 (document 2)]
+PASS  (13) a>1, b=0: term count equals document
+PASS  cap(X,m) solves X = lam^2/(m-lam)
+PASS  (12): D = 1+L+Y and the inverse map recovers all seven normalized coefficients
+PASS  (13): K^2/D0 = lam^2/(a-lam) with K = lam/(1-lam)
+NUMERIC atom SOC f15,f3;f31 at ab=d^2: N=20, restarts 8, worst min Phi = 9.140e-17
+NUMERIC atom old-H f2,f15;f31 at X(m-d)=d^2: N=20, restarts 8, worst min Phi = -2.002e-17
+NUMERIC atom old-H f29,f15;f31 at X(m-d)=d^2: N=20, restarts 8, worst min Phi = 2.383e-17
+NUMERIC atom old-H f5,f3;f31 at X(m-d)=d^2: N=20, restarts 8, worst min Phi = 2.076e-16
+NUMERIC atom old-H f33,f3;f31 at X(m-d)=d^2: N=20, restarts 8, worst min Phi = 2.585e-16
+NUMERIC theorem: 12 floating points with contacts containing T (seeds 0..11), worst min Phi/max gap = -1.152e-10
+SUMMARY: all EXACT checks passed

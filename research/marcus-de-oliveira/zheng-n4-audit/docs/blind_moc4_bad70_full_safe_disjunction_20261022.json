@@ -1,0 +1,172 @@
+{
+ "doc_id": "blind_moc4_bad70_full_safe_disjunction_20261022",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_bad70_full_safe_disjunction_20261022.pdf",
+ "pages": 3,
+ "verdict": "gap-found",
+ "statements": [
+  {
+   "label": "thm:contact (Theorem 1)",
+   "page": 1,
+   "contact_sets": [
+    [
+     2,
+     3,
+     5,
+     9,
+     10,
+     12
+    ]
+   ],
+   "paper_cases": [
+    34
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with Pc(x) = p f0+r f1+a f2+b f12+c f39+q f67+d f70+s f72, coefficients >=0 (T={2,3,5,9,10,12}=T_34), Phi_{c(x)}(O)>=0 for all O in SO(4); uses only C(Re x)=0 and det Hess C(Re x)=0, valid for every x in X, so all spectra are covered."
+  },
+  {
+   "label": "lem:radial (Lemma 2)",
+   "page": 2,
+   "contact_sets": [
+    [
+     2,
+     3,
+     5,
+     9,
+     10,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For p,r,a,b,c,q,s>=0, d>0: R9=0 implies a>=d+d^2/(b+c) (H) or a>=d^2/p+d^2/b (PB) or a>=d^2/c+d^2/q (CQ)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "paper pp.26-27 (Re x satisfies C=0, det Hess C=0) and X in Sing C",
+   "used_for": "radial equation",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "supplement JSON data: R9 polynomial, Gram feature cubics, 8x8 matrix T (loaded as data, identities re-checked by own code)",
+   "used_for": "R9, (PB), (CQ)",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "endpoint inequalities for (H) (unnamed, not in document)",
+   "used_for": "sufficiency of (H)",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "T=T_34; generators; f70 only nonminor",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "(PB) Gram identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 3,
+   "claim": "(CQ) Gram identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "Schur thresholds",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "(H) sufficient via endpoint inequalities",
+   "status": "GAP"
+  },
+  {
+   "n": 6,
+   "claim": "restricted cubic (2),(3)",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "Re x on {C=0, det Hess=0}",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 8,
+   "claim": "Q^3 det Hess C(v-(C/Q)kappa) = -4Q R9^2",
+   "status": "NUMERIC",
+   "note": "exact arithmetic at 12 random rational points (randomised identity test)"
+  },
+  {
+   "n": 9,
+   "claim": "d>0 implies Q!=0",
+   "status": "PROOF-READ",
+   "note": "identity EXACT"
+  },
+  {
+   "n": 10,
+   "claim": "R9 homogeneous deg 9, quadratic in a, k0>0 coefficientwise const 1, b=c=0 case",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "threshold logic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 12,
+   "claim": "regions I-III exhaustive",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 13,
+   "claim": "12 Bernstein numerators nonnegative",
+   "status": "EXACT"
+  },
+  {
+   "n": 14,
+   "claim": "boundary limits",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 15,
+   "claim": "assembly",
+   "status": "PROOF-READ",
+   "note": "inherits gap of step 5"
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p.1, Section 1, paragraph on (H)",
+   "claim": "a>=d+d^2/(b+c) suffices for Phi_O(g)>=0",
+   "why": "the two endpoint inequalities Phi(a' f2+b f12+d' f70)>=0 for a'>=d'+d'^2/b (and with f39, c) are used but neither stated nor proved; they do not follow from the (PB)/(CQ) Gram identities, which need p>0 or q>0",
+   "severity": "substantive",
+   "believed_true": true,
+   "repair": "state and prove the endpoint inequalities, e.g. by an explicit SOS/Gram identity for Phi(a' f2 + b f12 + d' f70) at threshold a'=d'+d'^2/b; numerically min Phi = 0 to rounding on 25 samples"
+  }
+ ],
+ "exact_replays": [
+  "generators(T)",
+  "PB and CQ Gram identities modulo unit-sphere ideal against own Leibniz sums (features from supplement JSON as data)",
+  "Schur complements",
+  "restricted cubic C, Q (2),(3) from library cubic (A.2)",
+  "Q=0 exclusion identity",
+  "R9 homogeneity and k0/k1/k2 sign claims",
+  "12 Bernstein numerators: 0 negative coefficients (region I term counts 24805/37747 match the document)",
+  "C(Re x)=0, det Hess=0 at a Gaussian-rational matching point"
+ ],
+ "numeric_tests": [
+  "Hessian/R9 identity at 12 random rational points, exact arithmetic: pass",
+  "(H) test: 25 samples (seed 7), worst min Phi over SO(4) -4.6e-13",
+  "stratum sampler seeds 300-307 (margin 0.01): 5 points, worst min Phi/sum(gaps) 1.9e-14"
+ ],
+ "unchecked": [
+  "symbolic expansion of the Hessian determinant identity",
+  "the supplement's spin-coordinate 'scalar compensation' argument for (H) (not in this document)"
+ ]
+}

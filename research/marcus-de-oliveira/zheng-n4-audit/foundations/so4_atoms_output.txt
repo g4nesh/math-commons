@@ -1,0 +1,123 @@
+PASS A0[bar] O^T O = |p|^2|q|^2 I and det O = (|p|^2|q|^2)^2
+PASS A0[bar] Phi_f = x_f^2 (2x2) and |p|^2|q|^2 x_f^2 (entries) for all 34 minor f
+PASS A0[plain] O^T O = |p|^2|q|^2 I and det O = (|p|^2|q|^2)^2
+PASS A0[plain] Phi_f = x_f^2 (2x2) and |p|^2|q|^2 x_f^2 (entries) for all 34 minor f
+PASS A1 covariance w_{g.s}(g.O) = det-sign * w_s(O), all 1152 g, generic symbolic O
+PASS A1 G permutes the 82 f_j (1152 distinct permutations), preserving minor/non-minor
+family SOC: rep (1, 9, 22) ['n12,34', 'n14,23', 'h3412,+'] orbit size 144
+family H: rep (3, 15, 26) ['n14,34', 'n12,14', 'h4132,-'] orbit size 288
+family chain: rep (2, 0, 12, 70) ['n13,34', 'n1,4', 'n14,24', 'h4231,+'] orbit size 576
+family four: rep (0, 6, 10, 54) ['n1,4', 'n4,1', 'n13,24', 'h4231,-'] orbit size 288
+family rank2: rep (2, 29, 12, 35) ['n13,34', 'n13,12', 'n14,24', 'h4312,-'] orbit size 144
+PASS A2 cited SOC tuple (1, 11, 17) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited SOC tuple (1, 9, 22) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited SOC tuple (2, 12, 26) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited SOC tuple (2, 15, 26) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited SOC tuple (12, 15, 26) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited SOC tuple (5, 2, 54) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited SOC tuple (2, 5, 70) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited SOC tuple (1, 9, 18) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited SOC tuple (2, 39, 46) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited SOC tuple (2, 8, 69) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited SOC tuple (2, 15, 56) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited SOC tuple (1, 12, 35) lies in the orbit of (1, 9, 22) (roles as printed)
+PASS A2 cited H tuple (3, 15, 26) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (23, 15, 26) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (12, 2, 70) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (39, 2, 70) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (3, 5, 54) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (23, 5, 54) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (9, 2, 69) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (10, 8, 69) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (53, 8, 69) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (29, 12, 35) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (2, 12, 35) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (9, 5, 68) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (11, 12, 26) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (15, 10, 30) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (8, 10, 30) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (33, 2, 46) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (5, 2, 46) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (9, 2, 56) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (10, 15, 56) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited H tuple (53, 15, 56) lies in the orbit of (3, 15, 26) (roles as printed)
+PASS A2 cited chain tuple (2, 0, 12, 70) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited chain tuple (2, 39, 67, 70) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited chain tuple (15, 0, 3, 26) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited chain tuple (5, 0, 3, 54) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited chain tuple (5, 23, 6, 54) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited chain tuple (5, 7, 9, 68) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited chain tuple (2, 0, 15, 54) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited chain tuple (15, 0, 10, 56) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited chain tuple (2, 4, 33, 46) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited chain tuple (2, 5, 6, 46) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited chain tuple (59, 53, 55, 54) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited chain tuple (59, 53, 67, 54) lies in the orbit of (2, 0, 12, 70) (roles as printed)
+PASS A2 cited four tuple (0, 6, 10, 54) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (6, 0, 5, 34) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (0, 13, 3, 26) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (0, 7, 12, 40) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (7, 0, 1, 68) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (7, 67, 53, 68) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (0, 67, 2, 40) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (67, 41, 39, 40) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (7, 21, 9, 35) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (4, 6, 2, 28) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (4, 7, 3, 22) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (0, 6, 1, 70) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (6, 67, 39, 70) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited four tuple (67, 55, 53, 54) lies in the orbit of (0, 6, 10, 54) (roles as printed)
+PASS A2 cited rank2 tuple (2, 29, 12, 35) lies in the orbit of (2, 29, 12, 35) (roles as printed)
+PASS A2 chain is not a consequence of a 144-orbit SOC: (2,0;70) and (2,12;70) are not SOC triples
+PASS A3 SOC bridge x1 = (a0+a1)|q|^2 - (A0+A1)|p|^2
+PASS A3 SOC bridge x9 = (a0+a3)|q|^2 - (A0+A3)|p|^2
+PASS A3 SOC bridge Phi_22 = 2(a0A2+a2A0+a1A3+a3A1)|p|^2|q|^2 - 4p0p1p2p3|q|^4 - 4q0q1q2q3|p|^4
+PASS A3 scalar: R = 2 delta^2 + 2 Delta^2 - 2(v0 v2 + v1 v3) (no constraint needed)
+PASS A3 scalar: s t - (v1 v3 - v0 v2) = v2 * (sum v) (so equal on sum v = 0)
+PASS A3 bridge: x1 x9 = s t on S^3 x S^3 (polynomial identity in v modulo sum v)
+PASS A3 increment lemma identity (r+u)(s+v) - (sqrt(rs)+sqrt(uv))^2 = (sqrt(rv)-sqrt(su))^2
+PASS A4 W orthogonal and W^2 = I
+PASS A4 old-H bridge x2 = v0 + v1 (homogenised)
+PASS A4 old-H bridge x12 = v1 + v2 (homogenised)
+PASS A4 old-H bridge Phi2 + Phi70 = 2[delta^2 + Delta^2 - (v0v2 + v1v3)] (homogenised, (4,4))
+PASS A4 bridge x2 x12 = v0 v2 - v1 v3 on sum v = 0 (sympy)
+PASS A5 certificate face: source order is generators of contact set {2,3,5,9,10,12} :: [0, 1, 2, 12, 39, 67, 70, 72]
+PASS A5 chain: 2 Phi_f0 = |p|^2 |u_f0|^2 mod N
+PASS A5 chain: 2 Phi_f1 = |p|^2 |u_f1|^2 mod N
+PASS A5 chain: 2 Phi_f2 = |p|^2 |u_f2|^2 mod N
+PASS A5 chain: 2 Phi_f12 = |p|^2 |u_f12|^2 mod N
+PASS A5 chain: 2 Phi_f39 = |p|^2 |u_f39|^2 mod N
+PASS A5 chain: 2 Phi_f67 = |p|^2 |u_f67|^2 mod N
+PASS A5 chain: 2 Phi_f72 = |p|^2 |u_f72|^2 mod N
+PASS A5 chain (PB): 2 Phi_70 = |p|^2(|u70|^2 - 2<u0,u2> - 2<u2,u12>) mod N
+PASS A5 chain (CQ): 2 Phi_70 = |p|^2(|u70|^2 + 2<u2,u39> - 2<u2,u67>) mod N
+PASS A6 four bridge: 4 Phi_f0 = n^2 Q (mod N)
+PASS A6 four bridge: 4 Phi_f6 = n^2 Q (mod N)
+PASS A6 four bridge: 4 Phi_f10 = n^2 Q (mod N)
+PASS A6 four bridge: 4 Phi_f54 = n^2 Q (mod N)
+PASS A6 four certificate (4), coefficient a: n*Q = sum_j l^T Z l + m^T Z m (mod N)
+PASS A6 four certificate (4), coefficient b: n*Q = sum_j l^T Z l + m^T Z m (mod N)
+PASS A6 four certificate (4), coefficient c: n*Q = sum_j l^T Z l + m^T Z m (mod N)
+PASS A6 four certificate (4), coefficient d: n*Q = sum_j l^T Z l + m^T Z m (mod N)
+PASS A6 det Z = 4 d [ab(c-d) - d^2(a+b+c+d)] * (positive factor) consistency :: 4*d*(a*b*c - a*b*d - a*d**2 - b*d**2 - c*d**2 - d**3)
+exact part done, 3.6 s, failures 0
+B SOC: 35 atoms (rep 24 starts, others 4; orbit 144), min over all = 3.701e-32 at (1, 9, 22), mpmath(50) = 4.16376e-32, largest per-atom minimum = 1.153e-12
+B H: 43 atoms (rep 24 starts, others 4; orbit 288), min over all = 3.472e-31 at (3, 15, 26), mpmath(50) = 3.50175e-31, largest per-atom minimum = 1.076e-12
+B chain: 36 atoms (rep 24 starts, others 4; orbit 576), min over all = 1.794e-31 at (59, 55, 72, 70), mpmath(50) = 1.79607e-31, largest per-atom minimum = 1.519e-15
+B four: 37 atoms (rep 24 starts, others 4; orbit 288), min over all = 1.005e-28 at (55, 67, 5, 78), mpmath(50) = 1.00542e-28, largest per-atom minimum = 9.052e-06
+B rank2: 25 atoms (rep 24 starts, others 4; orbit 144), min over all = 2.206e-26 at (12, 39, 29, 80), mpmath(50) = 2.20477e-26, largest per-atom minimum = 6.830e-14
+B sensitivity SOC(1,9;22) with compensation x0.9: min = -2.153e-05 (negative = test can detect a violation)
+B sensitivity H(3,15;26) with compensation x0.9: min = -8.861e-06 (negative = test can detect a violation)
+B sensitivity chain(2;0,12;70) with compensation x0.9: min = 6.914e-27 (negative = test can detect a violation)
+B SOC with explicit tau (f1, f9; f22): min over (O, tau) = 7.617e-30
+B2 T24 Lemma 1 (5) [root_moc4_T24_uniform p.2]: 6 boundary coefficient sets, min Phi = 6.313e-31
+B2 T24 Lemma 1 (6) [root_moc4_T24_uniform p.2]: 6 boundary coefficient sets, min Phi = 2.422e-30
+B2 T24 double-SOC endpoint ab=d^2, ej=d^2: 6 boundary coefficient sets, min Phi = 5.460e-31
+B2 T25 Lemma 1 (9) [final_referee_T25_uniform p.2]: 6 boundary coefficient sets, min Phi = 1.320e-32
+B2 T44 Prop. 1 [blind_moc4_T44_coherent_chain_capacity p.1]: 6 boundary coefficient sets, min Phi = 3.206e-29
+B2 T44 Prop. 2 [blind_moc4_T44_coherent_chain_capacity p.1]: 6 boundary coefficient sets, min Phi = 6.878e-32
+B2 T46 core coherent Thm 1 [final_referee_T46_core_coherent_capacity p.1]: 6 boundary coefficient sets, min Phi = 6.080e-31
+B2 T46 six-ray Thm 1 [final_referee_T46_six_ray_coherent_capacity p.1]: 6 boundary coefficient sets, min Phi = 5.470e-29
+B2 inventory56 rank-two (1) [final_referee_inventory56_rank_two_capacity p.1]: 6 boundary coefficient sets, min Phi = 1.432e-31
+B2 coreE four-chain simple section [independent_coreE_four_chain_capacity p.2]: 6 boundary coefficient sets, min Phi = 6.128e-30
+TOTAL exact checks 97, failures 0, 114.0 s

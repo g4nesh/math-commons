@@ -1,0 +1,106 @@
+{
+ "doc_id": "root_moc4_T47_IIIb_minus_swapped_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_IIIb_minus_swapped_20261022.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "No root of G with Phi>=0 and a>1, 0<=b<1/a, e,p>0, q>=0, 0<=j<=ea/(e+a), j<1/p+1/a, 0<=c<C* := 1/e + a(1-sqrt(ab))^2/(a-sqrt(ab))^2 (walls included)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022 / root_moc4_T47_full_radial (radial necessity: realizable source => C(w)=0 and det Hess C = 0 at w(g,-C0/Q), hence G = 0; rests on the secant-variety rank bound)",
+   "used_for": "G = 0 at every spectrally realizable source",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "root_moc4_T47_negative_Phi_20261022 (negative-Heron theorem: Phi < 0, d,e > 0 => no realizable lift)",
+   "used_for": "exclude Phi < 0",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "T24 negative-product coherent capacity under ray map [59,53,55,67,54,2] -> [45,5,7,0,35,1]",
+   "used_for": "c >= C* => support inequality (used by the assembly)",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  {
+   "claim": "Contact set {0,4,5,6,9,12} is paper T_65 (identity element of G); its 8 generators are f2,f9,f1,f45,f5,f35,f0,f7",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "lib generators/CONTACT_SETS"
+  },
+  {
+   "claim": "C(w(g,h)) = C0 + hQ with C0 = -d{ab+ad+aq+bd+bp+d^2+de+dp+dq+ep+eq+pq} < 0 and Q as stated in the negative-Phi note",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own flint computation from (A.2) and App. D"
+  },
+  {
+   "claim": "G: 965-term octic with det Hess C(w(g,-C0/Q)) = -4 d^2 G^2/Q^2",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "own Kronecker determinant + 5-point independent Fraction det check"
+  },
+  {
+   "claim": "Realizable source => G = 0 (radial necessity), Q != 0 since C0 < 0",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "secant/Hessian-rank argument of the core notes, not audited here"
+  },
+  {
+   "claim": "chart identities sqrt(ab)=V/(1+V), C*=1/e+a/F^2",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy"
+  },
+  {
+   "claim": "charts p>=p*, p<p* with e = aj/(a-j)+U cover the region, (T,U) != (0,0)",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "a - 1/a = 1/p* (EXACT); j<k<=a when p>=p*"
+  },
+  {
+   "claim": "endpoint polynomial en F^2 u0 + (ed F^2 + en a) u1 is a positive multiple of U0 + C* U1",
+   "kind": "identity",
+   "status": "PROOF-READ",
+   "how": "C* = (ed F^2 + en a)/(en F^2)"
+  },
+  {
+   "claim": "alpha, U0, endpoint tables all positive with strict markers",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "own replay, identical term counts; denominators positive-coefficient"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "6 tables identical counts",
+  "chart algebra"
+ ],
+ "numeric_tests": [
+  "shared 2-point realizability test"
+ ],
+ "unchecked": [
+  "T24 capacity and its ray map (not checked with the group)",
+  "radial necessity, negative-Phi"
+ ],
+ "one_line": "Radial exclusion on the IIIb-minus (a>1) region replayed exactly, all six tables with identical term counts; depends on the cited T24 capacity (ray map not checked), radial necessity and negative-Phi theorem."
+}

@@ -1,0 +1,133 @@
+{
+ "doc_id": "independent_moc4_T8_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T8_uniform_20261022.pdf",
+ "pages": 8,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "restatement": "= polar reduction"
+  },
+  {
+   "label": "Theorem 2",
+   "restatement": "x in X, Pc>=0, contacts >= T_9u{20} => Phi>=0 on SO(4); proof uses only X in Sing C, all spectra.",
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     3,
+     11,
+     12,
+     20
+    ]
+   ],
+   "covers_all_spectra": true
+  },
+  {
+   "label": "Lemma 1",
+   "restatement": "On X cap N_T9 with A=g4-g18>0: G=B G_B+G_0=0, G_0<0 on A,C,K>0, CK<A^2, Q,J,L>=0."
+  },
+  {
+   "label": "Theorem 3",
+   "restatement": "same for contacts >= T_9u{18}; 8-distinct via chart, degenerate via App. B",
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     3,
+     11,
+     12,
+     18
+    ]
+   ],
+   "covers_all_spectra": true
+  },
+  {
+   "label": "combined",
+   "restatement": "(*) for T_9 for all O in SO(4), non-strict contacts, all spectra mod App. B",
+   "paper_cases": [
+    9
+   ],
+   "contact_sets": [
+    [
+     0,
+     1,
+     2,
+     3,
+     11,
+     12
+    ]
+   ],
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "Appendix B (Thm B.1, Lemma B.2)",
+   "used_for": "degenerate spectra / collisions",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "SOC (f1,f9,f18)"
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_4"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "independent_moc4_T8_polar_reduction_20261022 (Section 1)"
+  }
+ ],
+ "steps": [
+  "Sec 1 as polar",
+  "c0, C(c0+z kappa)=aQ1+zQ2 EXACT",
+  "det identity EXACT-randomized",
+  "G claims EXACT",
+  "Thm3 chart (3)-(5) EXACT",
+  "x,t identities EXACT (mod g11)",
+  "Lemma 2 identities EXACT",
+  "A>K auditor argument",
+  "(6),(7), Lemma 3 identities EXACT",
+  "Lemma 4 (8) UNCHECKED"
+ ],
+ "gaps": [
+  {
+   "location": "p.7 Lemma 2",
+   "claim": "t>0 implies A>K",
+   "why": "not justified in text",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "if A<=K<C then CK>A^2, contradiction"
+  },
+  {
+   "location": "p.5 Lemma 1",
+   "claim": "G given by companion script",
+   "why": "G not displayed",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "auditor reconstructed G; printed in replay output"
+  }
+ ],
+ "exact_replays": [
+  "zero-height lift and C along kappa",
+  "G reconstruction + 25-point exact rational identity test",
+  "G_0 coefficient signs",
+  "-G_B(J=0) identity",
+  "Lemma 2 J-quadratic data",
+  "Thm3 (3),(4),(5),(6),(7)",
+  "Lemma 3 formulas"
+ ],
+ "numeric_tests": [
+  "Thm3 CK>=A^2 on 6 supported chart points (seed 2026), min ratio 6.7",
+  "Lemma 4 branch: 990 points, 0 supported (seed 4)"
+ ],
+ "unchecked": [
+  "Lemma 4 identities (8) and -N identity (numeric support only)",
+  "symbolic expansion of the Hessian determinant identity (randomized exact test instead)"
+ ]
+}

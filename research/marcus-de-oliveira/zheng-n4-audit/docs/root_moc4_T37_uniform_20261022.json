@@ -1,0 +1,124 @@
+{
+ "doc_id": "root_moc4_T37_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T37_uniform_20261022.pdf",
+ "pages": 4,
+ "verdict": "could-not-check",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    1,
+    2,
+    3,
+    8,
+    11,
+    12
+   ],
+   "paper_case": 38,
+   "restatement": "for all x in X with Pc(x)>=0 and contacts containing T_38, Phi_{c(x)}(O)>=0 for all O in SO(4); all spectra; extra contacts and zero coefficients included"
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_46 (supp T45)",
+   "used_for": "zero q, new contact 17",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_4 (supp T4)",
+   "used_for": "zero j, contact 4",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_8 (supp T7)",
+   "used_for": "zero e, contact 9",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_11 (supp T10)",
+   "used_for": "zero a, contact 14",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "SOC/old-H/chain atoms",
+   "used_for": "capacities (2)-(5)",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Theorem 1.2",
+   "used_for": "U(4)",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "source cone and gap coordinates",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "zero-face reductions",
+   "status": "EXACT+CITED"
+  },
+  {
+   "n": 3,
+   "claim": "capacities",
+   "status": "CITED"
+  },
+  {
+   "n": 4,
+   "claim": "radial necessity",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 5,
+   "claim": "C,Q and SC-ae(...) nonneg, Q!=0",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "Hessian = -4G9^2/Q^2",
+   "status": "UNCHECKED (square property EXACT at 6 pts)"
+  },
+  {
+   "n": 7,
+   "claim": "chamber split and chart coverage",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 8,
+   "claim": "17 chart certificates",
+   "status": "UNCHECKED"
+  },
+  {
+   "n": 9,
+   "claim": "conclusion",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "contact set and generators",
+  "identity-matrix evaluation at (17,15,4,10,9,6,20,14)",
+  "zero-face images and orbits",
+  "C, Q formulas; S C - ae(dS+d^2-jS) nonneg (31 terms)",
+  "-(Q^2/4)det Hess is a rational square at 6 hard points"
+ ],
+ "numeric_tests": [
+  "G no root on 8 random hard-region segments (exact Sturm)",
+  "15 stratum points satisfy a capacity",
+  "capacity thresholds min Phi>=-1e-12"
+ ],
+ "unchecked": [
+  "G9 polynomial and Hessian identity",
+  "17 chart certificates, square absorptions, lower-b factorization"
+ ]
+}

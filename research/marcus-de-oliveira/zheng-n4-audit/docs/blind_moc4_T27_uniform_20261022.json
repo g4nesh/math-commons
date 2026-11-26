@@ -1,0 +1,93 @@
+{
+ "doc_id": "blind_moc4_T27_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T27_uniform_20261022.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    28
+   ],
+   "contact_sets": [
+    [
+     2,
+     3,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with P c(x) >= 0 vanishing on T_28 = {2,3,5,6,9,12} (non-strict), Phi_{c(x)}(O) >= 0 for all O in SO(4); all spectra (radial necessity holds on all of X)."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "paper Lemma 4.2"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "X in Sing C",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "T24 core (= core of paper T_25) capacities (3)-(6) on (f5,f2,f0,f67,f40)",
+   "used_for": "capacity endpoints J",
+   "match_checked": true
+  },
+  {
+   "kind": "other-doc",
+   "ref": "double SOC at ab=1, j >= 1/e",
+   "used_for": "boundary ab=1"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "four-coefficient inequality, base (f0,f6,f10,f54) -> (0,67,2,40) and (67,41,39,40)",
+   "used_for": "E_ab, P_ac tests and chamber 8 split",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  "1 generators EXACT",
+  "2 identities EXACT",
+  "3 symmetry EXACT",
+  "4 cancellation PROOF-READ",
+  "5 radial necessity PROOF-READ",
+  "6 C,Q EXACT",
+  "7 Q != 0 PROOF-READ",
+  "8 G9 factorization EXACT",
+  "9 k-split, k0 = C G6 EXACT",
+  "10 (8) four chambers EXACT",
+  "11 k0>0 PROOF-READ",
+  "12 e=0 EXACT",
+  "13 Bernstein identity PROOF-READ",
+  "14 charts 1-7 EXACT (incl. 105+197 E-groups by exact root count)",
+  "15 chart 8 EXACT + split PROOF-READ",
+  "16 exhaustiveness and boundaries PROOF-READ",
+  "17 conclusion CITED"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators, identities, symmetry, orbit witnesses",
+  "C (25 positive terms), Q",
+  "Q^4 det H = -4Q^2 G9^2, G9 2124 terms degree 9",
+  "k0 = C G6, G6 196 terms bilinear",
+  "(8) on four chambers",
+  "e=0: k2=0, k1 375 nonnegative",
+  "all 24 Bernstein tables with document term counts; row-4 mixed groups 105 and 197 with no root in [0,inf)"
+ ],
+ "numeric_tests": [
+  "cited capacities (3),(4),(5),(6), double SOC, 4-coef #1, #2 on boundaries: 30 samples each, worst >= -1e-15 scale (max 4e-16)",
+  "power check (3) at 0.9 bound: -1.7e-6",
+  "main statement T_28: 8 stratum points, worst -2.5e-15"
+ ],
+ "unchecked": [
+  "proofs of the cited capacities",
+  "document's own Sturm sequences (replaced by sympy exact root counts)"
+ ]
+}

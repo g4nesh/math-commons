@@ -1,0 +1,94 @@
+{
+ "doc_id": "independent_moc4_T39_high_j_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T39_high_j_uniform_20261022.pdf",
+ "pages": 3,
+ "verdict": "could-not-check",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_set": [
+    0,
+    1,
+    5,
+    9,
+    14,
+    18
+   ],
+   "paper_case": null,
+   "restatement": "canonical g35 source, d=1: no point with j>=1, pj<1, (j-1)(a+e)<1 is a real part of a singular matching vector with height restored; includes j=1 and zero resources"
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "SOC and old-H atoms",
+   "used_for": "reduction to chamber",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "X in Sing C",
+   "used_for": "radial necessity",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "C,Q, Nj bound, C<0,Q<0",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 2,
+   "claim": "Hessian square identity",
+   "status": "UNCHECKED (square property EXACT at 15 pts)"
+  },
+  {
+   "n": 3,
+   "claim": "chart (5) coverage",
+   "status": "EXACT"
+  },
+  {
+   "n": 4,
+   "claim": "strict tables for (4)",
+   "status": "UNCHECKED"
+  },
+  {
+   "n": 5,
+   "claim": "sign logic",
+   "status": "PROOF-READ"
+  },
+  {
+   "n": 6,
+   "claim": "trace-norm P*<=0",
+   "status": "PROOF-READ (identities UNCHECKED)"
+  },
+  {
+   "n": 7,
+   "claim": "bordered minor divisibility",
+   "status": "UNCHECKED"
+  },
+  {
+   "n": 8,
+   "claim": "rank 12, extension, Schur contradiction",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "C, -Q formulas",
+  "N-(1+S+ea) nonneg",
+  "chart inverse"
+ ],
+ "numeric_tests": [
+  "gamma<0 and AB beta - Nj alpha<0 at 15 chamber points",
+  "at 7 alpha>0 points: rank 12, P*<0, bordered minors 0, binary form definite"
+ ],
+ "unchecked": [
+  "G, P6, F+-, P*, L16, M16 polynomials",
+  "8 strict tables",
+  "pseudo-remainder identity",
+  "bordered-minor divisibility"
+ ]
+}

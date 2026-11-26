@@ -1,0 +1,54 @@
+PASS working contacts {2,5,9,12,13,14} are the paper's T_30 literally
+PASS stated contact set {0,1,3,7,11,12} is G-equivalent to T_30 (g = ((2, 0, 1, 3), (0, 1, 3, 2), 0))
+PASS S = (0,1,5,12,39,41,43,45,70,72) = lib generators(T_30)
+PASS non-minor generators are exactly 43 and 70
+PASS contact kernel has dimension 8
+PASS (2) Theta <= g11: every f_i in S has value >= [i in {43,70}] there
+PASS (2) Theta <= g6: every f_i in S has value >= [i in {43,70}] there
+PASS (2) Theta <= g15+g16: every f_i in S has value >= [i in {43,70}] there
+PASS (2) Theta <= g19+g16: every f_i in S has value >= [i in {43,70}] there
+PASS stage table covers T_1..T_90 once
+PASS extra contact 0 (f43=0, f70=1): T_30 + {0} contains a G-image of T_4 (stage 1 < 9)
+PASS extra contact 1: f43, f70 both positive there, so both non-minor coefficients vanish
+PASS extra contact 3 (f43=0, f70=0): T_30 + {3} contains a G-image of T_19 (stage 1 < 9)
+PASS extra contact 4 (f43=1, f70=0): T_30 + {4} contains a G-image of T_29 (stage 1 < 9)
+PASS extra contact 6: f43, f70 both positive there, so both non-minor coefficients vanish
+PASS extra contact 7 (f43=1, f70=0): T_30 + {7} contains a G-image of T_29 (stage 1 < 9)
+PASS extra contact 8 (f43=1, f70=0): T_30 + {8} contains a G-image of T_4 (stage 1 < 9)
+PASS extra contact 10 (f43=2, f70=0): T_30 + {10} contains a G-image of T_79 (stage 8 < 9)
+PASS extra contact 11: f43, f70 both positive there, so both non-minor coefficients vanish
+PASS extra contact 15 (f43=0, f70=1): T_30 + {15} contains a G-image of T_4 (stage 1 < 9)
+PASS extra contact 16 (f43=1, f70=0): T_30 + {16} contains a G-image of T_4 (stage 1 < 9)
+PASS extra contact 17: f43, f70 both positive there, so both non-minor coefficients vanish
+PASS extra contact 18 (f43=0, f70=0): T_30 + {18} contains a G-image of T_40 (stage 1 < 9)
+PASS extra contact 19 (f43=0, f70=1): T_30 + {19} contains a G-image of T_29 (stage 1 < 9)
+PASS extra contact 20: f43, f70 both positive there, so both non-minor coefficients vanish
+PASS extra contact 21 (f43=0, f70=2): T_30 + {21} contains a G-image of T_79 (stage 8 < 9)
+PASS extra contact 22: f43, f70 both positive there, so both non-minor coefficients vanish
+PASS extra contact 23 (f43=0, f70=1): T_30 + {23} contains a G-image of T_29 (stage 1 < 9)
+PASS E = F12 - F2 = (z-v)(w-t)
+PASS H2 = -1, H12 = 0, F12/E = x
+PASS H14 = x(1-z)/(z-v)
+PASS F5/F13 = -(1-t)(z-x)/(x(z-t)) and F9/F13 = v(1-x)/(x(w-v))
+PASS Td - Tn = x(x+s)(1-z)
+PASS under (4): H14 = h identically
+PASS under (4): (H5+x)/(H13+x) = (x+s)/(x+r) and (H9+x)/(H13+x) = (x+u)/(x+r) identically
+PASS numerator of H13 - r = const * (x+r) * C, C of bidegree (3,2) in (x,z) with 61 terms
+PASS C is irreducible over Q(r,s,u,h)[x,z]
+PASS H5 = s, H9 = u, H13 = r hold modulo C
+PASS (5) H11 = x(x+s)(x+u)/((x-1)(x+r)) - x modulo C
+PASS (5) H11 -> s+u-r+1 (real) as x -> oo
+PASS (7) C(1,z) = (u+1)(z-1)((r+1)(h+1)(z-1)+s+1) (up to the global sign of C)
+PASS (8) C(-r,z) = -r^3 (r-u)(r-s)(z-1) (same global sign)
+PASS (9) H6 formula holds identically under (4)
+PASS (10)-(12) H15, H16, H19 formulas hold modulo C
+PASS C_x(1,1) = -h(s+1)(r+1), C_z(1,1) = (s+1)(u+1)
+PASS z'(1) = h(r+1)/(u+1)
+PASS H6 -> (u+1)/(r+1) - h - 1 at x=z=1 along the branch (0/0 of first order)
+PASS H6 at x=1, z=z* is real: -z*(h+1)
+PASS x=-r, z=1: w -> 1, H15 -> r, H16 -> r(s+1)/(r+1)
+PASS x=-r, z->oo: H16 -> r, H19 -> s
+PASS x F0 = (x - z) F14
+PASS walls: [x^2 z^0]C = s+1 at r=u=-1 and [x^3 z^0]C = h(u+1) at r=s=-1
+PASS walls: H11 is the real constant s, 0, u, 0 at (u,r)=(-1,0), (u=-1,r=s), (s,r)=(-1,0), (s=-1,r=u); 0 at r=s=u=-1
+SUMMARY: ALL EXACT CHECKS PASSED

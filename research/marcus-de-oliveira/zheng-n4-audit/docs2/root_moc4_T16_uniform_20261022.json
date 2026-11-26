@@ -1,0 +1,157 @@
+{
+ "doc_id": "root_moc4_T16_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T16_uniform_20261022.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "paper_case": "T_17 = {0,1,4,5,9,12} (identity group element)",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     4,
+     5,
+     9,
+     12
+    ]
+   ],
+   "paper_cases": [
+    17
+   ],
+   "restatement": "For every x in X with P c(x) >= 0 (pi* = pi_0) and (P c(x))_sigma = 0 for sigma in {0,1,4,5,9,12} (non-strict; extra contacts allowed): Phi_{c(x)}(O) >= 0 for all O in SO(4); all spectra including collisions.",
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_4",
+   "contact_set": [
+    0,
+    1,
+    4,
+    5,
+    7,
+    8
+   ],
+   "used_for": "extra contacts j=6,17 (Stage 1)",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_5",
+   "contact_set": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8
+   ],
+   "used_for": "extra contacts j=7,15 (Stage 1)",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_15",
+   "contact_set": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7
+   ],
+   "used_for": "extra contact j=11 (Stage 1)",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_9",
+   "contact_set": [
+    0,
+    1,
+    2,
+    3,
+    11,
+    12
+   ],
+   "used_for": "extra contacts j=14,18 (Stage 3)",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper Prop 1.4 (Thm C.1, Thm B.1)",
+   "used_for": "spectral collisions",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Thm 1.2 / Cor 2.2",
+   "used_for": "unitary to SO(4) reduction",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper Prop 4.1 / Lemma 4.2, Sect 4.2 group action",
+   "used_for": "generators of N_T, transport of cases",
+   "match_checked": true
+  }
+ ],
+ "steps": "see md table C1-C28",
+ "gaps": [
+  {
+   "location": "p.2, 'If v is real'",
+   "claim": "real-v stratum safe by the three-A/three-C common-circle theorem",
+   "why": "no such theorem in the paper or foundation entries",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "Repaired by auditor: F_0..F_5 = (z-w)*real; contact 1 forces Re(kappa(z-w))=0, so 0..5 become contacts; generators(T u {0..5}) all minor (EXACT)."
+  },
+  {
+   "location": "p.1, extra contacts",
+   "claim": "the checker supplies an earlier case inside T u {j} for j in {6,7,11,14,15,17,18}",
+   "why": "witnesses not stated in the PDF",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "Repaired by auditor: 6,17->T_4; 7,15->T_5; 11->T_15; 14,18->T_9 (find_g, EXACT), all Stage <= 3."
+  },
+  {
+   "location": "p.1, Inputs",
+   "claim": "inputs include supplement T15 = paper T_16",
+   "why": "T_16 is Stage 5, after T_17 (Stage 4) in Table 6",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "Not used: j=11 is covered by T_15 (Stage 1)."
+  },
+  {
+   "location": "p.3, no hidden zero of z-w",
+   "claim": "E12 = t(v-x)(z-1) forces z=1",
+   "why": "uses t != 0 silently",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "t=0 only at real v=-h/(1-h) (EXACT)."
+  }
+ ],
+ "exact_replays": [
+  "generators(T) and the source expansion on all of V_T",
+  "f35 zero set; minor-only cones for 11 positive indices and for T u {0..5}",
+  "orbit witnesses for the 7 extra contacts",
+  "R1, R4, R5, h, t, tv, H1, H4, H5, H2, d, F0 height",
+  "E9 and E12 vs H9=r, H12=u",
+  "a, D, x-tv formulas, curve (3)",
+  "z=w divisor",
+  "v=1 fiber",
+  "series on both v=1 branches: pole orders of all H_j and residues of H2, H7, H14"
+ ],
+ "numeric_tests": [
+  "8 stratum points (seeds 0-7, margin 1e-3), 30 BFGS restarts each: worst min Phi = 5.3e-15",
+  "chart sampling, seed 2026: 25 supported out of 2786 draws, worst normalized min Phi = 6.5e-15"
+ ],
+ "unchecked": [
+  "proofs of the cited cases T_4, T_5, T_9, T_15, Thm B.1, Thm C.1, Thm 1.2"
+ ]
+}

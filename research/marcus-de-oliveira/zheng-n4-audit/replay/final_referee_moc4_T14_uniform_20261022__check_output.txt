@@ -1,0 +1,33 @@
+[EXACT] PASS  T is paper T_15 (identity group element)
+[EXACT] PASS  generators(T) = {0,...,8,53,54}   [0, 1, 2, 3, 4, 5, 6, 7, 8, 53, 54]
+[EXACT] PASS  only f54 is non-minor
+[EXACT] PASS  g16 - g0 is 1 on f1,f4,f7, -1 on f54, 0 on the other generators
+[EXACT] PASS  f54 + f1 = f0 + f6 + f53
+[EXACT] PASS  f54 + f4 = f2 + f3 + f6 + f53
+[EXACT] PASS  f54 + f7 = f0 + f5 + f8 + f53
+[EXACT] PASS  (2) g = g22 f0 + g13 f2 + g12 f3 + g10 f5 + g17 f6 + g8 f8 + g16 f53 + d f54 (24 coords)
+[EXACT] PASS  (3) g11 = b + r + d
+[EXACT] PASS  (3) g19 = a + s + d
+[EXACT] PASS  (4) R2 = x - t, R3 = t(x-1), R4 = 1 - t
+[EXACT] PASS  (P3 - P1)/(P2 - P4) = t
+[EXACT] PASS  J = (x - tv)[z(v+1-w) - v]/(v(z-w))
+[EXACT] PASS  R7 + t = tv/(x - tv) J
+[EXACT] PASS  (6) R11 - (1-x) R10 is a real constant (gives g11 = (1-x) b)   -t*x + x
+[EXACT] PASS  (6) R19 - (t-1)/t R13 is a real constant (gives g19 = (t-1)/t a)   x - 1
+[EXACT] PASS  K = R10 = pq - pt - t + 1
+[EXACT] PASS  z = p/(p-1) and z - w = (pq-p+1)/(qp(p-1))
+[EXACT] PASS  R13 = -t(L+1)
+[EXACT] PASS  U = -p(T+q), V = p(Xq+1)/(pq-p+1)
+[EXACT] PASS  (8) R12 = (T-X) - Z/D1
+[EXACT] PASS  (8) R8 = (T-X) + Z/D2
+[EXACT] PASS  (9) Z = (X-T)/(CH) D1 D2 - TC/H D1 + XH/C D2
+[EXACT] PASS  positive-weight identity T C^2 |D1|^2 m + X H^2 |D2|^2 n = (T-X)(T C A |D1|^2 + X H B |D2|^2)
+[EXACT] PASS  Im D1 = C B and Im D2 = -H A
+f2, f5, f54 = ('n', '13', '34') ('n', '12', '24') ('h', '4231', -1)
+[NUMERIC] PASS  cited SOC (1): Phi_f54 >= -2 |det O[13,34] det O[12,24]| (80 Nelder-Mead starts, seed 7); with Phi_f2 = det O[13,34]^2, Phi_f5 = det O[12,24]^2 this gives (1)   min = -3.663e-30
+[INFO] min Phi_f54 + 1*2 m1 m2 = -0.5000 (neither signed bound alone holds)
+[INFO] min Phi_f54 + -1*2 m1 m2 = -0.5000 (neither signed bound alone holds)
+[NUMERIC] PASS  main statement on 40 realizable sources from the chart (seed 7): min Phi >= -1e-9   worst = 1.587e-14, tried 966
+[NUMERIC] PASS  ab >= d^2 and T >= X on the 3 sampled sources with d > 0   min (ab-d^2)/d^2 = 268, min T-X = 1.56
+[NUMERIC] PASS  six-circle stratum (v real) of T_15: 40 sampled realizable sources (seed 7 stream), min Phi >= -1e-9   worst = 1.797e-16, tried 1569, min (ab-d^2)/d^2 over d>0 = inf
+EXACT failures: 0
