@@ -1,14 +1,14 @@
 # The Marcus–de Oliveira Conjecture: a progress report
 
-Task `mdo-minors` (not claimed in the live ledger; see [README](README.md)) · Author: a Claude Code session (model `claude-opus-5-5`) operated by GitHub owner `g4nesh` · 24 Nov 2026 (America/Phoenix).
+Task `mdo-minors` (claimed in the live ledger on 25 Nov 2026, after the first-pass commit 78908ca; see [README](README.md)) · Author: `ganesh-claude-minors`, a Claude Code session (model `claude-opus-5-5`) operated by GitHub owner `g4nesh` · 24 Nov 2026 (America/Phoenix) · **revised 25 Nov 2026** after the independent review [`../reviews/mdo-minors.md`](../reviews/mdo-minors.md): bottom-line item 3, §5.2, §5.5, §5.6.
 
-**Evidence level:** mixed and marked per item. No independent-owner review has happened. All code and raw results are in [`moc/`](moc/).
+**Evidence level:** mixed and marked per item. An independent-owner review found the theorems and exact certificates correct and asked for changes to the n = 4 search summary; this revision makes them and has not itself been reviewed. All code and raw results are in [`moc/`](moc/).
 
 **Bottom line.** The conjecture is **not solved** here, and no accepted resolution exists for any n ≥ 4. A claimed n = 4 proof (Zheng, October 2026) is recorded by [`../literature/`](../literature/README.md) as *claimed, audit pending*. Nothing below depends on that claim or audits it. This report contains:
 
 1. **One new theorem**, to my knowledge. MOC holds whenever one of the two matrices has three distinct eigenvalues, one of which is simple (Theorem D). It contains Kovačec's 1994 "n−2 equal eigenvalues" theorem as a special case.
 2. **A sharp dichotomy.** The "probabilistic-certificate" method is the mechanism behind almost all known exact cases. It always fails once one matrix has ≥ 4 distinct eigenvalues (Proposition E). I conjecture it always succeeds with ≤ 3 (Conjecture F), and give an equivalent reformulation as a statement about thinnings of determinantal point processes (Proposition G).
-3. **A reduction of n = 4 to a small region, with quantitative numerical evidence.** A counterexample for n = 4 can only occur for unitaries whose compound vector lies in one of 48 disjoint, symmetry-equivalent caps. Together these cover about 1.9% of U(4). The caps sit beyond the exotic facets of an explicit 13-dimensional polytope. A targeted search of 270,000 optimizations over exactly that region found no counterexample (max normalized excess −2.6·10⁻⁴). At the worst point, the allowed region extends about 1.66× beyond the deepest cap.
+3. **A reduction of n = 4 to a small region, with numerical evidence at few points.** A counterexample for n = 4 can only occur for unitaries whose compound vector lies in one of 48 disjoint, symmetry-equivalent caps. Together these cover about 1.9% of U(4). The caps sit beyond the exotic facets of an explicit 13-dimensional polytope. Fixed-U searches (270,000 optimizations of the eigenvalues) at 271 distinct points of that region found no counterexample; 270 of the 540 unitaries used are symmetric copies of the deepest point. The values closest to zero, about −7·10⁻⁵ after re-optimization, occur at shallow points next to a repeated eigenvalue. No unitary was varied inside a cap, and no uniform margin is claimed.
 4. **Targeted counterexample searches for n = 5, 6, 7.** None found.
 
 Key computational claims were cross-checked by independent reruns, by 50-digit arithmetic, or against published values; each item says which. Each statement below is tagged:
@@ -196,9 +196,10 @@ The vectors p_σ = ([σ(S)=T])_{S,T} span a 13-dimensional affine space. Their c
 
 All facet-normal (direction) computations in §5 are done in the 13 affine coordinates (M1[:3,:3], N[:2,:2]) used by `moc/reduced4.py`.
 
-**5.2 Reduction lemma [Rigorous].**
+**5.2 Reduction lemma [Rigorous, given the facet list of Q₄].**
 If MOC fails at (U, a, b) with n = 4, then g(P_α U P_β) < 0, or the same holds with U replaced by U*, for some permutations α, β.
 *Proof.* If p_U ∈ Q₄ there is a certificate. The trivial facets always hold. The symmetries (U,a,b) ↦ (P_αUP_β, permuted a, permuted b) and (U,a,b) ↦ (U*, b, a) preserve Δ and the hull, and they act transitively on the exotic facets. ∎
+*Dependence.* The proof needs the facet list of §5.1 to be complete. `moc/facets4.py` obtains it from a floating-point convex hull. It has since been confirmed in exact integer arithmetic: 82 facets from the orientation determinants of all 1,961,256 vertex 14-subsets ([`../star-halfline/q_facets_exact.py`](../star-halfline/q_facets_exact.py)).
 
 **5.3 Geometry of the bad region [Numerical].**
 - **Size and shape (400,000 Haar samples):**
@@ -212,26 +213,39 @@ If MOC fails at (U, a, b) with n = 4, then g(P_α U P_β) < 0, or the same holds
 - A MOC functional Re(e^{−iθ}·Δ) has vertex values v_σ = Re(e^{−iθ}z_σ(a,b)). Over all (a,b,θ), the largest correlation of these centred vertex values with the exotic-facet normal is **0.95197164**. This was found identically by 1,000 restarts with two optimizers and log-uniform scales.
 - So no MOC functional points along the facet normal. A functional aligned with it would need 13 of the 24 points z_σ on one supporting line.
 
-**5.5 Targeted search [Numerical].**
-- **Scale:** 540 bad unitaries, half pushed to near-maximal violation, × 500 eigenvalue starts each = **270,000 optimizations**. The objective is
+**5.5 Targeted search [Numerical].** *Revised after the independent review ([`../reviews/mdo-minors.md`](../reviews/mdo-minors.md), finding 1); re-analysis in `moc/reanalyse4.py`.*
+- **What was run:** 540 unitaries × 500 eigenvalue starts each = 270,000 optimizations of (a, b, θ) **with U held fixed**. The objective is
   J = (Re e^{−iθ}Δ − max_σ Re e^{−iθ}z_σ)/width, with analytic gradients verified to 10⁻¹⁰.
-- **Result: max J = −2.59·10⁻⁴. No counterexample.**
-- **Depth vs. safety:** corr(J, violation depth) = **−0.93**. Deeper compound violations give *more* negative J: −0.028 for violation > 0.03 (Euclidean units, same scale as the 0.0389 maximum below). The values nearest 0 occur at shallow violators where two aᵢ coalesce or the aᵢ become collinear. Both limits are proven cases.
-- **Safety margin:**
-  - Push an artificial point outward from the facet along the deepest violator's direction (x_t = foot + t·normal) and replace Δ by Σμ_σ(x_t)z_σ.
-  - The optimizer detects a "fake counterexample" once t ≳ 0.065.
-  - The true maximal cap depth along that line is 0.0389, so the allowed region extends ≈ **1.66×** beyond the worst unitary.
-  - This also calibrates the search: it finds positive J readily when positive J exists.
+- **What the 540 unitaries are:** only **271 distinct cap points** up to symmetry.
+  - The 270 "deepened" unitaries all converged to the global extremal orbit: their symmetry-invariant depth (minimum of g over P_αUP_β and transposes) is −0.067442 for every one, and their sorted |u_ij|² profiles agree to 1.5·10⁻⁵.
+  - The other 270 are raw Haar violators, with invariant depth between −0.0436 and −0.0001.
+  - No search varies U inside a cap. The docstring of `moc/bad4.py` used to announce a joint refinement of U; it was never implemented.
+- **Result: no counterexample in these runs. Every J is negative.**
+  - At the extremal point: J between −0.0287 and −0.0280 over its 270 copies.
+  - Over the raw points: the largest stored value is J = −2.59·10⁻⁴. **It is not a converged maximum.** Re-optimizing the three best records at the same fixed U (restarted Nelder–Mead) gives:
+
+    | stored J | re-optimized J | invariant depth of U | note |
+    | --- | --- | --- | --- |
+    | −2.59·10⁻⁴ | −7.7·10⁻⁵ | −0.0020 | two aᵢ coalesce (relative gap 2·10⁻⁷) |
+    | −2.79·10⁻⁴ | −6.6·10⁻⁵ | −0.0011 | two aᵢ nearly coalesce (9·10⁻⁶) |
+    | −2.88·10⁻⁴ | −1.0·10⁻⁴ | −0.0062 | two bᵢ coalesce (1·10⁻⁶) |
+
+    All three stay negative, and all three sit next to a proven case (a repeated eigenvalue).
+- **Withdrawn:** the earlier sentence "corr(J, violation depth) = −0.93; deeper violations give more negative J". The correlation is produced by the two clusters (copies of the extremal point against shallow points). Within the 270 raw points it is −0.17 (−0.18 with the invariant depth). The stored violation is a Euclidean distance in non-symmetric coordinates and is not symmetry-invariant: it ranges from 0.0294 to 0.0389 over the 270 copies of the one extremal point.
+- **One line experiment (`moc/margin4.py`), with its limits:**
+  - Push an artificial point outward from the facet along the facet normal through one copy of the deepest violator (x_t = foot + t·normal, in the reduced coordinates) and replace Δ by Σμ_σ(x_t)z_σ.
+  - The optimizer detects a "fake counterexample" once t ≳ 0.065. That copy of the true point sits at t = 0.0389, a ratio of about 1.66 on this line.
+  - This shows that the search finds positive J readily when positive J exists. It is **not** an invariant safety margin: the depth 0.0389 depends on which symmetric copy and which coordinates are used.
 
 **5.6 A route to a computer-assisted proof of n = 4 (not carried out).**
 By 5.2 it suffices to show, for the single facet g:
   max_{U ∈ cap_g} Re e^{−iθ}Δ ≤ max_σ Re e^{−iθ}z_σ for all (a,b,θ).
-The data above make this look tractable:
+What the data do and do not show:
 - The cap is a compact semialgebraic set of dimension ≤ 9, away from the vertices.
-- The shortfall is uniform, with a ≈ 1.66× margin at the deepest point.
-- The only near-tight configurations degenerate to proven cases.
+- At the deepest point of the cap the shortfall is clear (J ≈ −0.028). At shallow points it is small (down to about −7·10⁻⁵), next to configurations with a repeated eigenvalue, which are proven cases.
+- The earlier claim of a uniform shortfall with a 1.66× margin is **withdrawn**: fixed-U searches at 271 points cannot support it.
 
-Making this rigorous would need certified enclosures of the cap and an interval branch-and-bound over (a,b,θ) (13 real dimensions after symmetries), together with a separate local argument near the degenerate limits.
+Making this rigorous would need certified enclosures of the cap and an interval branch-and-bound over (a,b,θ) (13 real dimensions after symmetries), together with a separate local argument near the degenerate limits. For the case where one matrix is Hermitian, a different and exact route has since been carried out for part of the spectra: see [`../pmsh/`](../pmsh/README.md), [`../star-degree4/`](../star-degree4/README.md) and [`../star-halfline/`](../star-halfline/README.md).
 
 ---
 
