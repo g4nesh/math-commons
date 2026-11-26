@@ -1,0 +1,14 @@
+{
+  "certifiedPatches": 6,
+  "strictlyPositiveTerms": 384,
+  "commonRadius": "1/4194304",
+  "invariantKernelDimensions": [
+    46,
+    46,
+    46,
+    46,
+    46,
+    46
+  ],
+  "scope": "Both angular charts k in [-1,1/2], a1 and a3 arbitrary complex; the two missing sectors are not asserted here."
+}

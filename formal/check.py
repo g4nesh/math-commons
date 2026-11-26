@@ -54,6 +54,20 @@ theorems = {
     'ForestEndpointMass.lean': {'MathCommons.ForestEndpointMass.' + n for n in (
         'sumWithZero', 'normSumUnique', 'endpointMember', 'endpointHistoriesNodup',
         'endpointNonzeroUnique', 'endpointMagnitude', 'emptyEndpointFiber')},
+    'ForestProductMinor.lean': {'MathCommons.ForestProductMinor.' + n for n in (
+        'gaussianAddAssoc', 'gaussianAddComm', 'gaussianMulAdd', 'gaussianAddMul',
+        'gaussianMulComm', 'gaussianMulAssoc', 'gaussianSumCongr', 'gaussianSumAdd',
+        'gaussianSumScale', 'gaussianSumDelta', 'gaussianSumAppend', 'gaussianSumFlatMap',
+        'gaussianSumSwap', 'gaussianSumScaleRight', 'matrixMulIdentity', 'matrixIdentityMul',
+        'gateProductOne', 'gateMulSpectator', 'gateMulLeft', 'gateMulRight',
+        'minorCongrRows', 'minorReplaceAbsent', 'signedAdd', 'signedScale',
+        'minorRowAdd', 'minorRowScale', 'minorRowLinearCombination', 'replaceOwnRow',
+        'gateMinorNeither', 'gateMinorLeftOnly', 'gateMinorRightOnly', 'productEmptyMinor',
+        'productSingletonMinor', 'oneGateProductMagnitude', 'replaceRowsCommute', 'replaceOtherOwnRow',
+        'gateAsRowUpdates', 'gateMinorBothExpansion', 'gateMinorBothOfAlternation', 'signedSum',
+        'laplaceSum', 'laplaceTailSum', 'minorAsRows', 'rowDetHeadSum',
+        'rowDetTailSum', 'productMinorTupleExpansion', 'gaussianSumPairs', 'productMinorTwoRows',
+        'cauchyBinetTwo', 'iteratedCauchyBinetTwo', 'gateProductTwoMinorRecurrence', 'cauchyBinetOne')},
 }
 allowed = {'propext', 'Classical.choice', 'Quot.sound'}
 lean = sys.argv[1] if len(sys.argv) == 2 else 'lean'
