@@ -57,7 +57,7 @@ A two-endpoint list decomposition translates the row-vector identities to actual
 
 ## Replay and audit
 
-[Source](../../../../formal/ForestMinorAlternation.lean), [declaration manifest](declarations.json), and [audit manifest](audit.json). The source has 23 named theorem reports. The source-commit fresh rebuild checks 243 declarations including all 220 existing reports. Transitive axioms are restricted to `propext`, `Classical.choice`, and `Quot.sound`; no `sorry`, `admit`, `native_decide`, or new axiom is used. Source and dependency hashes identify exactly what was checked.
+[Source](../../../formal/ForestMinorAlternation.lean), [declaration manifest](declarations.json), and [audit manifest](audit.json). The source has 23 named theorem reports. The source-commit fresh rebuild checks 243 declarations including all 220 existing reports. Transitive axioms are restricted to `propext`, `Classical.choice`, and `Quot.sound`; no `sorry`, `admit`, `native_decide`, or new axiom is used. Source and dependency hashes identify exactly what was checked.
 
 With this PR's checker registration present, from the repository root:
 

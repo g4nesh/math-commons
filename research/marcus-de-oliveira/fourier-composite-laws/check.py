@@ -4,6 +4,12 @@ from fractions import Fraction
 from itertools import combinations, permutations, product
 from math import comb, gcd
 
+if not __debug__:
+    raise SystemExit(
+        "The Fourier certificate checker requires assertions. From the repository root run "
+        "python3 -E -B research/marcus-de-oliveira/fourier-composite-laws/check.py"
+    )
+
 # Coefficients are (r, s), representing mass (r + s*sqrt(2))/denominator.
 LAWS = {
     4: (1, [((3, 2, 0, 1), (1, 0))]),
