@@ -1,0 +1,22 @@
+{
+  "namespace": "MathCommons.ForestGeneralContraction",
+  "count": 16,
+  "declarations": [
+    "signedMulSum",
+    "signedCross",
+    "minorHeadSplit",
+    "firstColumnExpansion",
+    "transposeMinor",
+    "adjointMinor",
+    "matrixMulAssoc",
+    "gateProductContraction",
+    "matrixDiagonalMul",
+    "leftDiagonalMinor",
+    "productFilter",
+    "gateConjugatedMinor",
+    "mulScale",
+    "gateSpectralDeterminant",
+    "forestDeterminantLaw",
+    "forestCommonDeterminantLaw"
+  ]
+}

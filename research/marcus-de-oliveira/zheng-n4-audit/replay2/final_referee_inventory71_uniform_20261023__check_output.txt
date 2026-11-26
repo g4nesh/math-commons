@@ -1,0 +1,49 @@
+== mode: exact ==
+PASS T equals paper T_72 (Appendix E)
+PASS literal action rho=0213, chi=0231 maps T' onto T
+PASS that action permutes the 82 generators
+PASS generators(T') = [0,2,10,12,13,15,21,23,26] | [0, 2, 10, 12, 13, 15, 21, 23, 26]
+PASS all but f26 are minor vectors; f26 = h4132,- is not
+PASS relation f10 + f26 = f0 + f13 + f23
+PASS contact rows of P have rank 6
+PASS the 8 basis profiles are independent
+PASS coefficients q,a,b,v,c,w,t are the gaps at 23,15,8,7,4,16,9
+PASS (2): g20 = q+d, g12 = v+d, g11 = t+d, g9 = t
+PASS SOC (f1,f9;f22) has images (f2,f12;f26), (f2,f15;f26), (f12,f15;f26)
+PASS old-H (f3,f15;f26) -> (f23,f15;f26) with f3->f23, f15->f15
+PASS chain (f2; f0,f12; f70) -> (f15; f21,f23; f26) role by role
+PASS (8): C(g + z kappa) = C + z Q with the stated C, Q (paper cubic (A.2))
+PASS z enters the Hessian only at (0,6),(1,5),(5,1),(6,0) (H_kappa of (3.10))
+PASS det Hess C(g + z kappa) computed by fraction-free elimination | 27680 terms, degree 14, z-degree 3, 290s
+PASS (9): Q^4 det H(g - C kappa/Q) = -4 Q^2 G9^2 for a polynomial G9
+PASS G9: 1615 terms, homogeneous of degree 9, [d^9] = 1, degree profile (3,2,2,3,2,3,2,9)
+PASS (10): G9(q,a,b,v,..) = G9(v,b,a,q,..); C and Q also symmetric
+PASS table (11) low: 28693 terms (paper 28693), all coefficients > 0, strict marker present
+PASS table (11) eq: 10012 terms (paper 10012), all coefficients > 0, strict marker present
+PASS table (11) high: 93570 terms (paper 93570), all coefficients > 0, strict marker present
+PASS table (12) low: 27186 terms (paper 27186), all coefficients > 0, strict marker present
+PASS table (12) eq: 10665 terms (paper 10665), all coefficients > 0, strict marker present
+PASS table (12) high: 70122 terms (paper 70122), all coefficients > 0, strict marker present
+PASS table (13) low: 36773 terms (paper 36773), all coefficients > 0, strict marker present
+PASS table (13) eq: 13175 terms (paper 13175), all coefficients > 0, strict marker present
+PASS table (13) high: 70650 terms (paper 70650), all coefficients > 0, strict marker present
+PASS table (14) low: 38081 terms (paper 38081), all coefficients > 0, strict marker present
+PASS table (14) eq: 12700 terms (paper 12700), all coefficients > 0, strict marker present
+PASS table (14) high: 79550 terms (paper 79550), all coefficients > 0, strict marker present
+PASS table solo low: 703 terms (paper 703), all coefficients > 0, strict marker present
+PASS table solo eq: 271 terms (paper 271), all coefficients > 0, strict marker present
+PASS table solo high: 1674 terms (paper 1674), all coefficients > 0, strict marker present
+PASS table (19a): 1293 terms (paper 1293), all coefficients > 0, constant term > 0
+PASS table (19b): 1680 terms (paper 1680), all coefficients > 0, constant term > 0
+PASS total coefficients = 496798 | 496798
+PASS chart inverses (11),(12),(13),(14),(15),(16),(19) recover the chart parameters
+done (exact) in 291s; EXACT failures: 0
+== mode: numeric ==
+NUMERIC SOC image: Phi_f26 + 2|m2 m12| >= 0 on SO(4): min ~ -2.61e-28 (100 BFGS+NM restarts, seed 1)
+NUMERIC SOC image: Phi_f26 + 2|m2 m15| >= 0 on SO(4): min ~ -3.94e-28 (100 BFGS+NM restarts, seed 1)
+NUMERIC SOC image: Phi_f26 + 2|m12 m15| >= 0 on SO(4): min ~ -1.86e-28 (100 BFGS+NM restarts, seed 1)
+NUMERIC old-H image: Phi_f26 + m15^2 + 2|m23 m15| >= 0 on SO(4): min ~ -1.74e-28 (100 BFGS+NM restarts, seed 1)
+NUMERIC chain image: Phi_f26 + 2|m15|(|m21|+|m23|) >= 0 on SO(4): min ~ -1.69e-31 (100 BFGS+NM restarts, seed 1)
+NUMERIC Phi_f26 alone takes negative values: min ~ -0.067442
+NUMERIC stratum points with contacts containing T' (seeds 0-29, margins 0 and 1e-2): 60 found; worst min Phi over SO(4) = -7.20e-10; points with d > 0: 8, of which satisfying (3), (4) or (5): 8; max |G9|/sum|terms| at exact-contact points = 1.2e-13
+done (numeric) in 2855s; EXACT failures: 0

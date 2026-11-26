@@ -1,0 +1,40 @@
+[PASS] EXACT O(p,q) O(p,q)^T = |p|^2|q|^2 I (so O in O(4) on the unit torus)
+[PASS] EXACT det O(p,q) = (|p|^2|q|^2)^2
+[INFO] coefficient rows 413, unknowns 44 (36 Gram + 8 cost), rank 18
+[INFO] number of independent completion relations on G: 10
+[PASS] EXACT cost columns independent (cost of a Gram is unique)
+[PASS] EXACT cost of an allowed Gram = budget diagonal (q,p,j,c,e,c+d,b,a)
+[PASS] EXACT Thm 2: restricted relations = the seven displayed equations (ranks) ranks 7,7,7
+[PASS] EXACT Thm1: P.(Q+B) = -h
+[PASS] EXACT Thm1: P.J0 = t-1
+[PASS] EXACT Thm1: diag = (q,p0,j,0,0,1,b,0)
+[PASS] EXACT Thm1: Gram of (Q+B,J0) = [[s,-2t],[-2t,j-t^2]], det = Delta
+[PASS] EXACT Thm1: det of 3x3 block = ell*(j-(1+u)t^2) (Schur complement)
+[PASS] EXACT Thm1: u - 4/s = (q-b)^2/(s ell)  (so Delta>0 follows)
+[PASS] EXACT Thm1 CERTIFICATE: |p|^2 * sum G psi psi == 2 Delta^2 Phi_c mod (|p|^2-|q|^2), c = p0 f1 + j f59 + q f27 + b f6 + f28, all 5 parameters symbolic
+[PASS] EXACT t=0 threshold
+[PASS] EXACT d/dt at 0
+[PASS] EXACT witness hypotheses and 399/1543 < 13/50
+[PASS] EXACT old parallel threshold > 13/50 (exact, a + c sqrt2 sign test) a=25839/96100, c=-168/961
+[PASS] EXACT threshold = (At^2+Bt+C)/(D-Et^2)
+[PASS] EXACT stationary quadratic
+[PASS] EXACT (2) decomposition
+[PASS] EXACT (2) derivative
+[PASS] EXACT product of the two critical |t| = sj/(s+4)
+[PASS] EXACT threshold at t*
+[PASS] EXACT beta=1-q-b: s=h=k; t* threshold = 1/j + k(k+3)/(k+4)
+[PASS] EXACT t* allowed <=> j < (k+4)^2/(k^2(1+u)) (at beta=1-q-b)
+[PASS] EXACT Cor3: t=0, beta=1-S threshold = 1/j + 2 - S
+[PASS] EXACT Cor3: d/dbeta (1+beta)^2/(S+2beta)
+[PASS] EXACT Cor3: discriminant b(4-3b)
+[PASS] EXACT Cor3: q=b=1-eps strict for small eps (= 2eps-3eps^2)
+[PASS] EXACT Thm2 template positive definite and satisfies the seven equations [1, 7/4, 3/4, 3/4, 1/2]
+[PASS] EXACT T24 roles [59,53,55,67,54] -> [1,59,6,27,28] by some g in G 2 elements
+[PASS] EXACT T46 roles [1,59,6,27,28] -> [45,5,7,0,35] by some g in G 2 elements
+[INFO] group elements (rho, rho', eps) in lib convention, 1-based one-line: [('4213', '1423', 0), ('4213', '1423', 1)] [('1423', '3241', 0), ('3241', '2314', 1)]
+[PASS] EXACT T47 roles lie in the generators of paper T_65 [0, 1, 2, 5, 7, 9, 35, 45]
+[PASS] EXACT T46 roles lie in the generators of paper T_47
+[PASS] NUMERIC Thm1 at p = p0: min over SO(4) of Phi_c / (sum of coefficients) 40 samples, 12 BFGS restarts each, seed 20261125, worst 1.077e-15
+[PASS] NUMERIC pointwise S_G(p,q) = 2 Phi_c(O(p,q)) at 5 random unit points max err 3.55e-15
+[PASS] NUMERIC Cor 3 on the boundary (S-1)^2 = qb: min Phi_c / (sum of |coefficients|) 37 points, 12 restarts each, worst 3.630e-16
+SUMMARY: ALL EXACT CHECKS PASS

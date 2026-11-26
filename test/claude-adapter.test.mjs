@@ -74,7 +74,16 @@ let prompt=''; process.stdin.on('data',x=>prompt+=x); process.stdin.on('end',asy
  if(fixture.longHistory && (prompt.includes('OLD_REPORT_BODY') || prompt.length > 8000 || !prompt.includes('context --event ID') || !prompt.includes('research/t'))) process.exit(4);
  if(fixture.progress) cp.execFileSync(process.execPath,['adapters/progress.mjs','--summary','A public milestone','--details','Checked a bounded case'],{stdio:'ignore'});
  process.stderr.write('PRIVATE STDERR '+prompt);
- for(const event of fixture.events){if(event.type==='result') event.session_id=session;const bytes=Buffer.from(JSON.stringify(event)+'\\n');for(let i=0;i<bytes.length;i+=5){process.stdout.write(bytes.subarray(i,i+5));await new Promise(r=>setImmediate(r));}}
+ for (const event of fixture.events) {
+   if (event.type === 'result') event.session_id = session;
+   const bytes = Buffer.from(JSON.stringify(event) + '\\n');
+   // Keep each record fragmented while bounding event-loop turns for oversized responses.
+   const chunkSize = Math.max(5, Math.ceil(bytes.length / 128));
+   for (let offset = 0; offset < bytes.length; offset += chunkSize) {
+     process.stdout.write(bytes.subarray(offset, offset + chunkSize));
+     await new Promise(resolve => setImmediate(resolve));
+   }
+ }
  process.exitCode=fixture.exitCode||0;
 });\n`, { mode: 0o700 });
     const result = await new Promise((resolve, reject) => {

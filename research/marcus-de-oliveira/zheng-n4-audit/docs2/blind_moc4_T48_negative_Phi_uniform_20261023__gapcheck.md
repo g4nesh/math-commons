@@ -10,6 +10,7 @@ Replay: `replay2/blind_moc4_T48_negative_Phi_uniform_20261023__gapcheck.py` (par
 - The first auditor's files were not opened. Nothing from the supplement was executed or imported.
 - One supplement JSON was read as data: `blind_moc4_T48_native_full_radial_20261023.json`, for G, C and Q. C and Q are compared with my own rebuild and agree exactly. G is accepted only because the exact identity (2), det H = -4G^2/Q^2, is replayed with it.
 - **I did not reconstruct the note's polynomials R7, R~7 and L±.** They are not printed, and the note's verifier and its companion files (`..._negative_Phi_exact_...json`, `..._native_j_squareclass_...json`, `..._native_rank12_borders_...json`) are absent from the supplement. In their place I prove the property the argument actually uses: P·H6 (equivalently P·Φ) is a nonzero square in the function field of G. The certificate is a different one, and it is complete (see step 5). The literal congruences P S± ≡ L±^2 (mod G), with the note's specific R7 and R~7, remain unverified as printed objects.
+- Run times in the output file (part B 2825 s, part C 691 s wall clock) were inflated by machine contention. Unloaded, the same computations took about 250 s and 230 s. All three parts exited 0.
 - The rest of the note (smoothness, eq. (4), the second-derivative completion, the global spectrally realizable Hessian sign theorem it cites) is outside this gap and was not examined.
 
 ## The reported gap

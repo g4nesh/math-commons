@@ -3,7 +3,7 @@ Evidence level: EXACT (every identity of p.2 eqs (3)-(7) and p.3 eqs (8)-(10) re
 # Second-pass gap check: independent_true_T48_c0_native_Heron_20261023
 
 Label C27-T49-gapcheck. Document: `proofs/manin_transfer_20261021/independent_true_T48_c0_native_Heron_20261023.pdf` (3 pp.).
-Replay: `replay2/independent_true_T48_c0_native_Heron_20261023__gapcheck.py`, output in `replay2/independent_true_T48_c0_native_Heron_20261023__gapcheck_output.txt`.
+Replay: `replay2/independent_true_T48_c0_native_Heron_20261023__gapcheck.py`. Part 1 covers the chart, the amplitudes and the representative, and part 2 covers the rows and eqs (4)-(10). All 20 checks pass, and both parts exit 0. Output in `replay2/independent_true_T48_c0_native_Heron_20261023__gapcheck_output.txt`.
 
 ## Deviations and limits
 
