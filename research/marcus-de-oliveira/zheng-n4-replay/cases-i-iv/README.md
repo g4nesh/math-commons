@@ -16,7 +16,19 @@
 | T₂₂ = {2,3,4,8,10,12} | IV | confirmed modulo citations | [T22.md](T22.md) | [`replay_T22.py`](replay_T22.py): 64 exact checks | As T₂₁ for the delegated coincidences. With distinct labels a seventh contact (index 13) is forced (exact). |
 | T₂₃ = {2,3,5,9,11,12} | IV | confirmed modulo citations | [T23.md](T23.md) | [`replay_T23.py`](replay_T23.py): 52 exact checks | As T₂₂. |
 
-Cases in progress: T₃–T₇, T₁₀, T₁₁, T₁₅, T₁₈–T₂₀.
+| T₃ = {0,1,2,3,7,8} | III | confirmed modulo citations | [T3.md](T3.md) | [`replay_T3.py`](replay_T3.py): 70 exact checks | Ends with the SOC inequality, member (f1, f11; f17); orbit membership and the coefficient condition checked exactly. |
+| T₄ = {0,1,4,5,7,8} | III | confirmed modulo citations | [T4.md](T4.md) | [`replay_T4.py`](replay_T4.py): 84 exact checks | Ends with the four-coefficient inequality. The document cites the three-plus-three circle theorem; the report shows by two exact identities that this citation is not needed. Three omissions in the document are filled by exact identities. |
+| T₅ = {1,2,3,4,6,8} | III | confirmed modulo citations | [T5.md](T5.md) | [`replay_T5.py`](replay_T5.py): 110 exact checks | SOC on two branches and the four-coefficient inequality on the third; the four-budget note's certificate is replayed exactly. |
+| T₆ = {0,1,2,4,6,8} | III | confirmed modulo citations | [T6.md](T6.md) | [`replay_T6.py`](replay_T6.py): 98 exact checks | Ends with the SOC representative itself. The stratum aᵢ + b_j = 0 is proved in the document and replayed exactly. |
+
+Cases in progress: T₇, T₁₀, T₁₁, T₁₅, T₁₈–T₂₀.
+
+## Citations that the cases share
+
+Every report lists its citations. Across the cases replayed so far they are:
+- **Coincident eigenvalues** (a repeated eigenvalue in one spectrum, or aᵢ + b_j = 0): the paper's Appendix B and Theorem C.1. Not replayed here. For T₁ and T₂ the report gives an elementary replacement. Corollaries P4′ and P4″ of [`../../unitary-factorization/README.md`](../../unitary-factorization/README.md) prove the repeated-eigenvalue case by another route.
+- **The universal inequalities on SO(4)** (SOC and four-coefficient so far): the workers re-verified the identities behind them exactly; the proofs are those of [`../../zheng-n4-audit/foundations/`](../../zheng-n4-audit/foundations/).
+- **Common inputs of the general argument** (finite spectra for points of the matching cone; the parametrization of SO(4) by pairs of unit quaternions): cited.
 
 ## A cross-check between two lines of work
 
