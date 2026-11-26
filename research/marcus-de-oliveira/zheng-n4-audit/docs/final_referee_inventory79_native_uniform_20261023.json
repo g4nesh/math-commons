@@ -1,0 +1,125 @@
+{
+ "doc_id": "final_referee_inventory79_native_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_inventory79_native_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    80
+   ],
+   "contact_sets": [
+    [
+     1,
+     3,
+     4,
+     6,
+     8,
+     12
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with Pc(x)>=0 and (Pc(x))_pi=0 on T={1,3,4,6,8,12} (pi*=1), Phi_{c(x)}(O)>=0 for all O in O(4); includes extra contacts, collisions (Appendix B) and all parameter walls."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_5/T_13",
+   "used_for": "tie 2",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_72/T_50",
+   "used_for": "tie 7",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_44/T_48/T_69",
+   "used_for": "tie 10,13",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_73",
+   "used_for": "tie 16",
+   "match_checked": true
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "Table 5 T7_13",
+   "contact_set": [
+    0,
+    1,
+    2,
+    7,
+    10,
+    16,
+    17
+   ],
+   "used_for": "ties 17, 22",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix C one-circle",
+   "used_for": "invoked p.1, not needed",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix B (Theorem B.1, Lemma B.2)",
+   "used_for": "collisions satisfy the support inequality; reduction to eight-distinct",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper Lemma 3.5 (bounded-negative-part compact pasting)",
+   "used_for": "curve exclusion",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary form",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  "1 T=T_80 EXACT",
+  "2 generators EXACT",
+  "3 delta<=g5,g15 EXACT+PROOF-READ",
+  "4 tie reductions EXACT",
+  "5-8 parametrization and inverse EXACT",
+  "9 C 49 terms, (8) EXACT",
+  "10 (9) modulo C EXACT",
+  "11 (13) H15 EXACT",
+  "12 finite-J punctures PROOF-READ",
+  "13-15 J=oo fibre, tangent cone, H15 bounded EXACT+PROOF-READ",
+  "16 J nonconstant PROOF-READ",
+  "17 compact pasting CITED",
+  "18-19 identically-zero walls EXACT",
+  "20 Rouche restoration PROOF-READ (auditor-supplied)"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "contact set and generators",
+  "tie reductions with stage order",
+  "E, r, s, u, alpha, inverse (4)-(6)",
+  "C 49 terms, bidegree (2,2), irreducible; identity (8)",
+  "(9) all 24 products modulo C",
+  "(13) H15 identity",
+  "[J^2]C=hZ^2, C(J,0)=gamma, tangent cone (11)",
+  "(14)-(15) zero-polynomial classification, H15->-1"
+ ],
+ "numeric_tests": [
+  "6 stratum points (seeds 8000-8005, margin 1e-3), min Phi over SO(4) 8 restarts: worst scaled +1.3e-12"
+ ],
+ "unchecked": [
+  "supplement certificate script (not run by rule)"
+ ]
+}

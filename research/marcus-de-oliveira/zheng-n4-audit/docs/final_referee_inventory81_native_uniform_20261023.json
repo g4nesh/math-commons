@@ -1,0 +1,104 @@
+{
+ "doc_id": "final_referee_inventory81_native_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_inventory81_native_uniform_20261023.pdf",
+ "pages": 5,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "paper_cases": [
+    82
+   ],
+   "contact_sets": [
+    [
+     2,
+     5,
+     9,
+     10,
+     12,
+     13
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with Pc(x)>=0 and (Pc(x))_pi=0 on T={2,5,9,10,12,13} (pi*=12), Phi_{c(x)}(O)>=0 for all real orthogonal O; includes collisions (Appendix B) and all walls."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_34 (label T33)",
+   "used_for": "tie 3",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_60 (label T59)",
+   "used_for": "tie 4,7,16",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_31 (label T30)",
+   "used_for": "tie 8",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_79 (label T78)",
+   "used_for": "tie 14,18",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Lemma 3.4, (3.11), radial necessity",
+   "used_for": "constant-coordinate component",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Appendix B (Theorem B.1, Lemma B.2)",
+   "used_for": "collisions satisfy the support inequality; reduction to eight-distinct",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "paper Lemma 3.5 (bounded-negative-part compact pasting)",
+   "used_for": "curve exclusion",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary form",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  "1-4 cone, barriers, ties EXACT",
+  "5-7 inverse EXACT",
+  "8-10 curve 355 terms, contacts, H11/H19/H15/H6 EXACT",
+  "11-14 four branches EXACT",
+  "15 d bounded PROOF-READ",
+  "16 constant components PROOF-READ+CITED",
+  "17 pasting CITED",
+  "18 zero-polynomial classification EXACT",
+  "19 Rouche PROOF-READ (auditor-supplied)"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "generators, coefficient rows, barriers g6,g15,g19",
+  "tie reductions and label resolution",
+  "inverse (4), Td-Tn",
+  "C 355 terms (6,2), contacts mod C",
+  "H11, H19, H15, H6 formulas",
+  "sections (7),(8), simple points, kappa, branch limits",
+  "constant-germ coefficient claims and H11 on each leaf"
+ ],
+ "numeric_tests": [
+  "3 stratum points (seeds 8200-8205), worst scaled min Phi +9.5e-13"
+ ],
+ "unchecked": [
+  "supplement verifier (not run by rule)"
+ ]
+}

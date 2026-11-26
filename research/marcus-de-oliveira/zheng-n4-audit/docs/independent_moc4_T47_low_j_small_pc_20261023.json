@@ -1,0 +1,83 @@
+{
+ "doc_id": "independent_moc4_T47_low_j_small_pc_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_low_j_small_pc_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "restatement": "No spectrally realizable T_65 source (d=1) has b>1, 0<a<1/b, p>=b, q>=0, e>0, 0<j<=1, j<=eb/(e+b), 0<c<=a^2/p. Hence the support inequality holds vacuously in that sector. Zero layers c=0, j=0 excluded (stated).",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ]
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (audit item 5) + forced-height derivation",
+   "used_for": "G=0",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "height constant C<0 (the -d^3 term)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "common setting"
+  },
+  {
+   "n": "2",
+   "claim": "chart covers the sector exactly, walls j=1, pc=a^2, p=b, j=eb/(e+b) at Wj=Ws=P=U=0",
+   "kind": "case split",
+   "status": "PROOF-READ",
+   "how": "e>=bj/(b-j) <=> j<=eb/(e+b); a=V^2/(b(1+V)^2) in (0,1/b)"
+  },
+  {
+   "n": "3",
+   "claim": "e = En/Ed with Ed=bWj+AT, En=bT+U Ed",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "replay"
+  },
+  {
+   "n": "4",
+   "claim": "cleared G has 137198 positive integer coefficients; T^4S^2 coefficient 18",
+   "kind": "coefficient-sign",
+   "status": "EXACT",
+   "how": "replay, counts match"
+  },
+  {
+   "n": "5",
+   "claim": "strict at all five simultaneous walls",
+   "kind": "inequality",
+   "status": "EXACT",
+   "how": "positive monomial free of P,U,Q,Wj,Ws; denominators positive likewise"
+  },
+  {
+   "n": "6",
+   "claim": "G>0 contradicts G=0",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "radial necessity"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "chart identity for e",
+  "nine-variable positivity (137198 terms, 18 T^4 S^2)"
+ ],
+ "numeric_tests": [],
+ "unchecked": [],
+ "one_line": "Exclusion of the low-j minus, p>=b, small-pc sector by G>0; the 137198-term certificate replayed exactly from the auditor's own G; confirmed modulo radial necessity."
+}

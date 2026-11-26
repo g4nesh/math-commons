@@ -1,0 +1,95 @@
+{
+ "doc_id": "independent_moc4_T47_PCBE_energy_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_PCBE_energy_20261022.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "restatement": "For the cost qf2+pf9+jf1+cf45+ef5+df35+bf0+af7 with d=1, p,b,j,e>0, all coefficients >=0, and 0<L<=min(p,b): if c >= min_x max{K(1-x)^2-1, Bx^2}, K=1/j+1/(L+1), B=max{1/e+1/(L+1),1/L} (equivalently sqrt((c+1)/K)+sqrt(c/B) >= 1), then Phi_c(O) >= 0 for every O in SO(4). Pointwise coefficient statement: no spectral hypothesis, so it covers all spectra. General d>0 by scaling.",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ]
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "audit foundation so4-atoms-part2b.md G4 (PCBE Gram identity, Schur complement, completion, closure)",
+   "used_for": "Gram matrix M satisfies the ten spectral relations / 160 coefficients; PSD completion argument",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "1",
+   "claim": "Gram matrix M with diagonal (0,L,j,c,e,1,L,0) and displayed off-diagonals represents the cost",
+   "kind": "identity",
+   "status": "CITED",
+   "how": "foundation so4-atoms-part2b G4 (EXACT there, in the identified spectral coordinates)"
+  },
+  {
+   "n": "2",
+   "claim": "Schur complement over D,B gives the displayed 3x3 matrix on J,E,C",
+   "kind": "identity",
+   "status": "CITED",
+   "how": "foundation G4 (EXACT there)"
+  },
+  {
+   "n": "3",
+   "claim": "free JE entry w makes Schur complement of C0 diagonal (path-graph completion)",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "foundation G4 and re-read: AJ, AE as displayed; completion valid iff both 2x2 blocks PSD"
+  },
+  {
+   "n": "4",
+   "claim": "ratio identity (3)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy in replay"
+  },
+  {
+   "n": "5",
+   "claim": "three expressions simplify to K(1-x)^2-1 and Bx^2 in (1)",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy in replay"
+  },
+  {
+   "n": "6",
+   "claim": "x* is the crossing point when K>1",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy in replay"
+  },
+  {
+   "n": "7",
+   "claim": "equality cases by closure of a fixed-diagonal slice; clamping x to [0,1]; L=min(p,b) optimal",
+   "kind": "analytic",
+   "status": "PROOF-READ",
+   "how": "bounded fixed-diagonal PSD slices are compact; K,B decreasing in L"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "ratio identity (3)",
+  "simplification to (1)",
+  "crossing formula x*"
+ ],
+ "numeric_tests": [
+  "300 random (p,b,j,e) ~ lognormal, c at the threshold of (1), q=a=0, lib min_phi_over_SO4 with 4 restarts each, seed 7: worst min Phi = -4.2e-16 (no violation)"
+ ],
+ "unchecked": [
+  "160-coefficient Gram identity not re-derived in this report (cited from the foundation)"
+ ],
+ "one_line": "PCBE Gram capacity: sufficient coefficient bound for Phi >= 0 on the T_65 face; Gram identity is the one proved in the audit foundation, scalar steps re-derived exactly; confirmed modulo that citation."
+}

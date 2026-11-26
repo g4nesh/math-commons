@@ -1,0 +1,229 @@
+{
+ "doc_id": "independent_inventory75_native_harmonic_conditional_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_inventory75_native_harmonic_conditional_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1 (conditional)",
+   "page": 1,
+   "paper_cases": [
+    76
+   ],
+   "contact_sets": [
+    [
+     0,
+     1,
+     3,
+     10,
+     11,
+     12
+    ],
+    [
+     0,
+     1,
+     3,
+     10,
+     11,
+     12,
+     16
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "If (*) holds for contacts containing S16 = {0,1,3,10,11,12,16}, then for every x in X with Pc(x) >= 0 vanishing on {0,1,3,10,11,12} (non-strict), Phi_{c(x)}(O) >= 0 on O(4), hence U(4). Non-eight-distinct spectra by the collision theorems."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "seven-contact",
+   "ref": "Table 5 j=18 (hypothesis; boundary16 document)",
+   "used_for": "seventh tie 16",
+   "match_checked": true,
+   "contact_set": [
+    0,
+    1,
+    3,
+    10,
+    11,
+    12,
+    16
+   ]
+  },
+  {
+   "kind": "seven-contact",
+   "ref": "Table 5 j=27",
+   "used_for": "seventh tie 14",
+   "match_checked": true,
+   "contact_set": [
+    1,
+    4,
+    5,
+    7,
+    9,
+    12,
+    14
+   ]
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_9,T_11,T_17,T_38",
+   "used_for": "tie 5",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_39,T_44,T_38",
+   "used_for": "tie 6",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_29,T_31",
+   "used_for": "tie 7",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_46",
+   "used_for": "tie 13",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_36,T_40,T_38",
+   "used_for": "tie 20",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Appendix B, one-circle",
+   "used_for": "collisions",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (3.8),(3.11),(3.12), Birkhoff",
+   "used_for": "height-only divisor K = 0",
+   "match_checked": true
+  },
+  {
+   "kind": "external",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "claim": "source (1)",
+   "kind": "finite",
+   "status": "EXACT"
+  },
+  {
+   "n": 2,
+   "claim": "seventh ties",
+   "kind": "citation",
+   "status": "EXACT+CITED"
+  },
+  {
+   "n": 3,
+   "claim": "E, r, s, inverse (3), coverage",
+   "kind": "identity",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 4,
+   "claim": "(4)",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 5,
+   "claim": "J,X chart and (5); onto-ness",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 6,
+   "claim": "denominators",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 7,
+   "claim": "curve and (6)",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 8,
+   "claim": "J-r, A_N, X=1 barriers",
+   "kind": "identity",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 9,
+   "claim": "L=0 nonreal J exclusion (7),(8)",
+   "kind": "identity",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 10,
+   "claim": "X = oo barrier",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 11,
+   "claim": "J = oo branches (9)-(11)",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "n": 12,
+   "claim": "height K = 0 via kernel of H_kappa and Birkhoff",
+   "kind": "argument",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 13,
+   "claim": "nonconstancy, Rouche",
+   "kind": "analytic",
+   "status": "EXACT+PROOF-READ"
+  },
+  {
+   "n": 14,
+   "claim": "harmonic completion",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p.2 and p.4 (generic exclusions)",
+   "claim": "the generic exclusions are proper algebraic conditions verified at (2,3,4,5)",
+   "why": "the list of exclusions is not printed in the PDF",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "exclusions needed: u != 1, s+u != 0, s+u-1 != 0 (r, s != 0 automatic); all nonzero at (2,3,4,5)"
+  }
+ ],
+ "exact_replays": [
+  "source, ties, S14 = g.T7_27",
+  "original chart and inverse (3)",
+  "J,X inverse, (5), all denominators, onto-ness",
+  "curve 51 terms, (6) resultants and sections",
+  "(7),(8) on L=0",
+  "X=oo limit",
+  "J=oo branches to O(tau^4); H14+J -> h-s",
+  "K=0 numerator, H_kappa rank 4",
+  "H12 degrees"
+ ],
+ "numeric_tests": [
+  "120000 curve draws (seed 20261125): 146 strictly supported; min Phi on 40: worst min Phi/max gap = 2.1e-15"
+ ],
+ "unchecked": [
+  "Table 5 j=27 proof, earlier cases, Appendix B not re-audited here"
+ ]
+}

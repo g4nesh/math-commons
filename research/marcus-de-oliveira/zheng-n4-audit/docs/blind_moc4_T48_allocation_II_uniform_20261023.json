@@ -1,0 +1,44 @@
+{
+ "doc_id": "blind_moc4_T48_allocation_II_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_allocation_II_uniform_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  "Thm 1: eight-role source of T_49 (d=1), cell 0<u<1, 2u<=a, Q<=2v (u=(1+2/j)/(2(1/a+1/e+1/j))), any x in X: Phi>=0 on SO(4); walls, c=0 included; zeros delegated"
+ ],
+ "dependencies": [
+  "chain (f5;f0,f2;f40), (f5;f7,f29;f40), (f5;f29,f41;f40): in proved orbit (EXACT)",
+  "old-H (aux f29, main f5; f40) in proved orbit (EXACT)",
+  "radial necessity (established) + det Hess C = -4G^2/Q0^2 (EXACT, own Bareiss) + 42-term (e+j)C-ejQ0 (EXACT)",
+  "zero faces q,p,j,e,b,a -> paper T_39,T_1,T_3,T_24,T_43,T_44 (embeddings EXACT, proofs CITED)"
+ ],
+ "steps": [
+  "allocation algebra EXACT",
+  "p* identity EXACT",
+  "chart onto PROOF-READ+EXACT inversions",
+  "149933-term DG with 18 (C1-1)^2R groups EXACT",
+  "Q=2v wall via homogenization EXACT",
+  "A=0, c=0 walls EXACT",
+  "zero faces CITED"
+ ],
+ "gaps": [
+  {
+   "location": "p.2 last paragraph",
+   "claim": "'The face c = 0 is not covered and was stated throughout'",
+   "why": "contradicts Thm 1; c=0 is in fact covered (marker independent of c)",
+   "severity": "presentation"
+  }
+ ],
+ "exact_replays": [
+  "G rebuilt from definitions: 1772 terms, degree 9, sha256 c89c8cbc5331fcfdbdc22587fbcf8a017fc692eb8fd1f38edbe8a59ca0550a49; equals -(supplement radial factor)",
+  "DG 149933 terms, 54 wrong-sign coefficients in 18 groups, marker 432 B^6 S^2, sha256(mine) 75be44d6..."
+ ],
+ "numeric_tests": [
+  "capacity at p=p*, 12 cell points seed 11: worst min Phi -2.3e-16",
+  "12 seeds on T_49 stratum: G=0 to 1e-15; all f40 coordinates negative (none in scope)"
+ ],
+ "unchecked": [
+  "coverage of the eight-coefficient face by the union of cells (assembly)",
+  "f1/f9 absorption"
+ ]
+}

@@ -1,0 +1,154 @@
+{
+  "4": [
+    {
+      "order": 1,
+      "monomials": 7,
+      "minimum_coefficient": 2,
+      "sha256": "670309a72a1287bd8f93a71edb8d9bd017af960a43360ac0afa5590fd5c74382"
+    },
+    {
+      "order": 2,
+      "monomials": 47,
+      "minimum_coefficient": 4,
+      "sha256": "6480185c55e64d54d84b02009f76671e4f69f874b467b7a033d10b9b911647db"
+    },
+    {
+      "order": 3,
+      "monomials": 166,
+      "minimum_coefficient": 8,
+      "sha256": "14b02fc6ad74bb8a00af3dd033eb317060b0ae1e6a7e4302bcc9d65e1ca10c31"
+    },
+    {
+      "order": 4,
+      "monomials": 475,
+      "minimum_coefficient": 16,
+      "sha256": "64a95ebae48614acc8ecad6bdfb8919340fa387abd53c0e2c2c927eecdb01c9a"
+    },
+    {
+      "order": 5,
+      "monomials": 1111,
+      "minimum_coefficient": 32,
+      "sha256": "ede328e284d0d1b61324614ac18ebf80315d84715afb72499a9e1a6d9433ae1a"
+    },
+    {
+      "order": 6,
+      "monomials": 1545,
+      "minimum_coefficient": 64,
+      "sha256": "d08c9af8d618dda10ff0f62b84d9948633866e4e4088ef215e7cbe5986b83672"
+    }
+  ],
+  "5": [
+    {
+      "order": 1,
+      "monomials": 3,
+      "minimum_coefficient": 4,
+      "sha256": "2d5a663cdd229377aca5979d2a5f41bfe77a99dd3f471eadb11db4e1b366df98"
+    },
+    {
+      "order": 2,
+      "monomials": 33,
+      "minimum_coefficient": 8,
+      "sha256": "3aa9b943a6408442bed0ce2005846c02763a7f5badc036e4c671e4ca2009dde1"
+    },
+    {
+      "order": 3,
+      "monomials": 147,
+      "minimum_coefficient": 16,
+      "sha256": "143b92142c0828f356b1d60ad95818b23af128edb886eac90ef953f0f47e0888"
+    },
+    {
+      "order": 4,
+      "monomials": 558,
+      "minimum_coefficient": 32,
+      "sha256": "9e59b31a9e45309659c2f2adec3f7f2eb9a91c85735b492925953d3a350e6364"
+    },
+    {
+      "order": 5,
+      "monomials": 1386,
+      "minimum_coefficient": 64,
+      "sha256": "0d48afa5ffd03c84d039ac9a08813d8c2a74ad5463acd2966f7e0b475e8c787a"
+    },
+    {
+      "order": 6,
+      "monomials": 2834,
+      "minimum_coefficient": 128,
+      "sha256": "e8930e59e701dae6b8fd24b9ab247b379cf73717b0c9bf68fbaf10938b29c404"
+    }
+  ],
+  "6": [
+    {
+      "order": 1,
+      "monomials": 14,
+      "minimum_coefficient": 2,
+      "sha256": "5eb610ddb9e1c1772ad863ff40cbbff8a9c0ffcf2e6115451cafc87eaafebd67"
+    },
+    {
+      "order": 2,
+      "monomials": 99,
+      "minimum_coefficient": 4,
+      "sha256": "53cd00723886dc29f598989a49dec659b20e5afae71ea948d0f742bd0cb09e9a"
+    },
+    {
+      "order": 3,
+      "monomials": 282,
+      "minimum_coefficient": 8,
+      "sha256": "5521b51169d821fcf43a11fbd6cbf520ded26bf5f6cef08ecafd0808168b451e"
+    },
+    {
+      "order": 4,
+      "monomials": 755,
+      "minimum_coefficient": 16,
+      "sha256": "ecdd476c83ae034663bc0a067eb6d69c2dbafbbf783396c0cec7899f3e67e5bc"
+    },
+    {
+      "order": 5,
+      "monomials": 1344,
+      "minimum_coefficient": 32,
+      "sha256": "136ca16eba0a3df167a1a01298e218ac88bc7e9236705474d2bd20179bfbe252"
+    },
+    {
+      "order": 6,
+      "monomials": 2557,
+      "minimum_coefficient": 64,
+      "sha256": "184484570971c5e43f4a90a9d84661ecf426fcf56f45a3e9788fca7955ee0684"
+    }
+  ],
+  "7": [
+    {
+      "order": 1,
+      "monomials": 15,
+      "minimum_coefficient": 2,
+      "sha256": "2c3d1a4885abc3da55b9ecab7a011ec976000eb8e273a0d9862fa31930884659"
+    },
+    {
+      "order": 2,
+      "monomials": 120,
+      "minimum_coefficient": 4,
+      "sha256": "0478011eaba80fec39eb317f80330444c7b7633468a5d9fd3fab9afeab85f2e7"
+    },
+    {
+      "order": 3,
+      "monomials": 381,
+      "minimum_coefficient": 8,
+      "sha256": "478c9bc1d1e69e4ba0a7c37cd271dcc641acbb8e6a01f988a678377c85fa8c17"
+    },
+    {
+      "order": 4,
+      "monomials": 1329,
+      "minimum_coefficient": 16,
+      "sha256": "c896f3780d663d98c43c2998258e1dd97309703e7a74efca619d290dfea06088"
+    },
+    {
+      "order": 5,
+      "monomials": 2964,
+      "minimum_coefficient": 32,
+      "sha256": "514fcc0eb64b9ec8a3ccc134a4383f875ad9b20516cdcb32fdd4ba36ae5f76b5"
+    },
+    {
+      "order": 6,
+      "monomials": 5568,
+      "minimum_coefficient": 64,
+      "sha256": "967201cee12c26fa8af14bcecb69d86747d166f3f6281692c8d206f262784331"
+    }
+  ]
+}

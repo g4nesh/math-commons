@@ -1,0 +1,42 @@
+{
+ "doc_id": "blind_moc4_T48_c0_native_interlacing_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_c0_native_interlacing_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  "Thm 1: realizable eight-distinct canonical source, c=0, q,p,j,e,d,b,a>0 => chart parameter r<0",
+  "Cor 2: realizable canonical c=0 sources satisfy the support inequality"
+ ],
+ "dependencies": [
+  "chart formulas (1)-(2), identity (3), cubic P and its values (4)-(6), s!=0: CITED (not derivable from this document)",
+  "allocation III low-j CITED",
+  "coordinate Heron CITED",
+  "upper-Heron chain (this batch)",
+  "C.1 CITED, B.1 established",
+  "zero faces q,p,j,e,b,a -> paper T_39,T_1,T_3,T_24,T_43,T_44 (embeddings EXACT, proofs CITED)"
+ ],
+ "steps": [
+  "r>0 case analysis PROOF-READ with EXACT rearrangements",
+  "ordering of -u, -delta, -t/v EXACT+PROOF-READ",
+  "P(-u)>0 decomposition EXACT",
+  "two real roots => no nonreal root PROOF-READ",
+  "wall l=r by Hurwitz PROOF-READ"
+ ],
+ "gaps": [
+  {
+   "location": "pp.1-2",
+   "claim": "equation labels (4),(5) reused",
+   "why": "labels (4),(5) denote both the scalar inequalities and the P values",
+   "severity": "presentation"
+  }
+ ],
+ "exact_replays": [
+  "8 sympy identities of the sign argument"
+ ],
+ "numeric_tests": [
+  "2000 random points of region (4)-(5): sign pattern 2000/2000"
+ ],
+ "unchecked": [
+  "chart inputs (1)-(6) and the realizable root J (cited from the Heron/retained chart documents)"
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "doc_id": "independent_inventory77_native_harmonic_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_inventory77_native_harmonic_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "contact_set": [
+    1,
+    4,
+    5,
+    6,
+    9,
+    12
+   ],
+   "paper_case": "T_78",
+   "restatement": "(*) for T_78; proof on working set {0,1,3,10,11,23} via sigma -> R o sigma^-1, R=(0,3,2,1)."
+  }
+ ],
+ "dependencies": [
+  "bounded-negative-part lemma (CITED)",
+  "Appendix B (CITED)",
+  "ties: +5 T4/T11/T17/T31; +7 T29/T38/T70; +9 T29/T31/T35/T47; +20 T31/T36; +21 T29/T34/T39/T46/T49; +16 A18; +22 A20"
+ ],
+ "steps": [
+  "action and sources EXACT",
+  "exclusive-gap decomposition EXACT",
+  "chart (4),(6) EXACT",
+  "176-term curve, [J^4]C, [X^3]C EXACT",
+  "(7) C(J,1) EXACT up to sign",
+  "(10)-(13) EXACT symbolic",
+  "finite punctures PROOF-READ (d=-eta Im J bounded)",
+  "restoration PROOF-READ",
+  "exclusion CITED"
+ ],
+ "gaps": [
+  {
+   "location": "p.2 eq.(7), line C(J,1)",
+   "claim": "C(J,1) = -(u-1)(J-r-1)^2[...]",
+   "severity": "presentation",
+   "note": "correct sign is +; same zero set"
+  }
+ ],
+ "exact_replays": [
+  "literal action",
+  "sources",
+  "kernel decomposition",
+  "chart ratios and inverse",
+  "denominator factors",
+  "curve coefficients",
+  "(7) partial",
+  "(8) at one parameter point",
+  "(10)",
+  "(11)-(13) symbolic",
+  "V=0 coefficient -r"
+ ],
+ "numeric_tests": [],
+ "unchecked": [
+  "Res_X(C,AN) (not needed)",
+  "Birkhoff height argument replay (not needed)",
+  "numeric main-statement minimization"
+ ]
+}

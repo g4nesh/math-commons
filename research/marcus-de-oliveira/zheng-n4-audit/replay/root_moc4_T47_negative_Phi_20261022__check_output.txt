@@ -1,0 +1,19 @@
+PASS source roles f2,f9,f1,f45,f5,f35,f0,f7 are exactly the generators of their common zero set :: [0, 4, 5, 6, 9, 12]
+PASS common zero set {0,4,5,6,9,12} is literally paper T_65
+PASS only f35 is non-minor
+PASS F(w(g,h)) is affine in h
+PASS C = -d{ab+ad+aq+bd+bp+d^2+de+dp+dq+ep+eq+pq}
+PASS Q = ce-cj-d^2-de-dp-dq-ep-eq+jp-pq
+PASS supplement JSON C,Q equal own C,Q
+PASS G (supplement data) has 965 terms, total degree 8
+PASS det HF(w(g,-C/Q)) * Q^2 == -4 d^2 G^2 at 25 random rational points (own Hessian; pointwise exact, identity only with high probability)
+PASS principal block deleting coordinates 0,5 is independent of the height
+PASS G has degree 2 in q and 2 in e
+PASS q-content gcd(A,B,C0) = 1
+PASS B^2 - 4 A C0 = e^2 Phi Psi with Psi a polynomial (162 terms) :: 162
+PASS G = e^2 A2(q) + e(q+d+b)B1(q) + (q+d+b)^2 K with K free of q,e; deg A2 = 2, deg B1 = 1
+PASS conic: det(2H) = -2 a c d^2 L^2 Phi^2
+PASS Phi at b = j = 0 is the square [c(p+d+a) - pa]^2
+INFO NUMERIC P-sign test (seed 7, 1500 draws, dps 40): Phi<0 draws 324, real roots q of G=0 tested 132, #P>0 = 0, max P = -0.0202374 at [0.11179658613626647, 2.773158097063811, 0.33646069445605237, 0.9116100758560944, 2.150416121448131, 0.0678061706850644, 0.0, 0.3886629725798159]
+INFO NUMERIC cited global facts (seed 3, 200 random spectra): #rank>12 = 0, #negative order-12 principal minor (rel < -1e-8) = 0, min rel = 2.73e-13
+SUMMARY: all EXACT checks passed

@@ -1,0 +1,26 @@
+PASS canonical a=0 source (f27,f1,f59,f5,f2,f28,f6) has common zero set T46 u {14} = Table 5 set T^(7)_26 :: [1, 3, 5, 6, 7, 8, 14]
+PASS generators(T46 u {14}) = {f0,f1,f2,f5,f6,f27,f28,f59}, only f28 non-minor
+PASS (1) f28 + f0 = f27 + f1 + f5 + f2 on all 24 permutations
+PASS zero coefficient q=0: contact set [1, 3, 5, 6, 7, 8, 14, 18] contains a G-image of paper T_29 :: g=((3, 2, 1, 0), (2, 3, 1, 0), 0)
+PASS zero coefficient p=0: contact set [1, 3, 5, 6, 7, 8, 14, 22] contains a G-image of paper T_36 :: g=((0, 1, 3, 2), (0, 3, 1, 2), 0)
+PASS zero coefficient j=0: contact set [0, 1, 3, 5, 6, 7, 8, 14] contains a G-image of paper T_1 :: g=((3, 2, 0, 1), (2, 3, 1, 0), 0)
+PASS zero coefficient c=0: contact set [1, 3, 5, 6, 7, 8, 14, 20] contains a G-image of paper T_39 :: g=((2, 1, 3, 0), (2, 3, 1, 0), 0)
+PASS zero coefficient b=0: contact set [1, 3, 5, 6, 7, 8, 9, 14] contains a G-image of paper T_7 :: g=((3, 2, 0, 1), (3, 1, 0, 2), 0)
+PASS C0 (d=1) = -(q+1){(c+1)(e+1)+b} - j(c+1)(e+1); Q (d=1) = jp - j(c+e+1) - (c+1)(e+1) :: C0 = -q*c*e - q*c*d - q*e*d - q*d^2 - q*d*b - j*c*e - j*c*d - j*e*d - j*d^2 - c*e*d - c*d^2 - e*d^2 - d^3 - d^2*b; Q = p*j - j*c - j*e - j*d - c*e - c*d - e*d - d^2
+PASS C0 (d=1) has only negative coefficients and constant term -1 (so C0 < 0 on the closed orthant)
+PASS radial identity: Q^3 det Hess C(g - (C0/Q) kappa) = -4 Q (q+d)^2 G8^2, i.e. det = -4 (q+d)^2 G8^2 / Q^2 :: h-degree 3; factors [(8, 1), (2, 2), (380, 2)]; content -4; 47s
+PASS G8 has 380 terms, degrees (2,2,2,2,2,8,3) in (q,p,j,c,e,d,b) :: 380 (2, 2, 2, 2, 2, 8, 3, 0)
+PASS Lemma 1: j - kappa t^2 = jN/(D0+A0)^2 at t = eta j/(D0+A0)
+PASS Lemma 1: consumed p = k + D0^2/(jN) = P*
+PASS Lemma 1: c - consumed c = c (N - rho^2 A0/c)/N and N - rho^2 A0/c = D0^2 + D0 A0 + A0^2
+PASS Lemma 1: N - D0^2 = A0 (2 D0 - kappa + A0) with 2 D0 - kappa = kappa + 2 rho^2/c > 0
+PASS G8 table double-small homogenised q=A/(A+Wq), b=V/(V+Wb), A,V>0, Wq,Wb>=0 : single strict sign with a strict monomial :: terms 815, negative 815, positive 0, strict monomial (exponents ('A', 'V', 'Wq', 'Wb', 'S', 'J', 'C1', 'E')) ((2, 3, 0, 0, 0, 0, 0, 0), -32)
+PASS G8 table double-small at Wq=Wb=1 : single strict sign with a strict monomial :: terms 815, negative 815, positive 0, strict monomial (exponents ('A', 'V', 'Wq', 'Wb', 'S', 'J', 'C1', 'E')) ((2, 3, 0, 0, 0, 0, 0, 0), -32)
+PASS G8 table q=b=1 direct : single strict sign with a strict monomial :: terms 60, negative 60, positive 0, strict monomial (exponents ('A', 'V', 'Wq', 'Wb', 'S', 'J', 'C1', 'E')) ((0, 0, 0, 0, 0, 0, 0, 0), -32)
+PASS G8 table q>1, qb<1: q=1+A, b=r^2/q, r=V/(1+V); p = P* S/(1+S) : single strict sign with a strict monomial :: terms 210747, negative 210747, positive 0, strict monomial (exponents ('A', 'V', 'Wq', 'Wb', 'S', 'J', 'C1', 'E')) ((25, 26, 0, 0, 0, 2, 6, 0), -1)
+PASS G8 table b>1, qb<1: b=1+A, q=r^2/b, r=V/(1+V); p = P* S/(1+S) : single strict sign with a strict monomial :: terms 196734, negative 196734, positive 0, strict monomial (exponents ('A', 'V', 'Wq', 'Wb', 'S', 'J', 'C1', 'E')) ((25, 24, 0, 0, 0, 7, 5, 0), -1)
+PASS G8 table q>1, qb=1: q=1+A, b=1/(1+A); p = P* S/(1+S) : single strict sign with a strict monomial :: terms 3897, negative 3897, positive 0, strict monomial (exponents ('A', 'V', 'Wq', 'Wb', 'S', 'J', 'C1', 'E')) ((13, 0, 0, 0, 0, 2, 6, 0), -1)
+PASS G8 table b>1, qb=1: b=1+A, q=1/(1+A); p = P* S/(1+S) : single strict sign with a strict monomial :: terms 4650, negative 4650, positive 0, strict monomial (exponents ('A', 'V', 'Wq', 'Wb', 'S', 'J', 'C1', 'E')) ((13, 0, 0, 0, 0, 7, 5, 0), -1)
+NUMERIC Lemma 1 boundary p = P*: 12 samples (seed 11, q,b,j,c uniform in [0.05,3], 20 BFGS restarts): worst min Phi / max coef = 2.082e-16
+NUMERIC control (p removed, q=b=j=c=1/2): min Phi / max coef = -1.177e-02
+SUMMARY: all exact checks passed

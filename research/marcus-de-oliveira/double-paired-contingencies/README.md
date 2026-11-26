@@ -1,6 +1,6 @@
 # Three double eigenvalues on both sides
 
-Assume both spectra have multiplicities $(2,2,2)$ in dimension six. This note reduces the stronger, spectrum-independent determinant certificate for a fixed unitary to **four universal inequality types**. Each type has 36 row/column relabelings. Three additional types hold for every unitary by Cauchy–Binet. We give an exact algorithm that produces the 21 nonnegative weights whenever the inequalities pass. The four remaining universal signs are open.
+Assume both spectra have multiplicities $(2,2,2)$ in dimension six. This note reduces the stronger, spectrum-independent determinant certificate for a fixed unitary to **four universal inequality types**. Each type has 36 row/column relabelings. Three additional types hold for every unitary by Cauchy–Binet. We give an exact algorithm that produces the 21 nonnegative weights whenever the inequalities pass. All four signs are now proved for every complex $U(6)$ by the [Grassmann compression and exact polynomial certificates](../double-paired-five-term/GRASSMANN.md). That written proof awaits independent-owner mathematical review. The reduction and solver below are unchanged.
 
 ## The 21 possible products and their complete kernel
 
@@ -34,17 +34,17 @@ In the table $ij$ means $q_{ij}$, and each displayed sum must be nonnegative. Ev
 | 9 | $22+25+55$ | A grouped squared-minor coefficient |
 | 18 | $2(22)+24+25+45$ | A grouped squared-minor coefficient |
 | 18 | $12+15+24+45$ | A grouped squared-minor coefficient |
-| 36 | $12+15+24+44+55$ | Open |
-| 36 | $2(12)+2(15)+23+24+34+2(55)$ | Open |
-| 36 | $02+05+11+14+23+34+55$ | Open |
-| 36 | $02+05+12+14+2(23)+2(33)+45$ | Open |
+| 36 | $12+15+24+44+55$ | Grassmann polynomial certificate |
+| 36 | $2(12)+2(15)+23+24+34+2(55)$ | Grassmann polynomial certificate |
+| 36 | $02+05+11+14+23+34+55$ | Grassmann polynomial certificate |
+| 36 | $02+05+12+14+2(23)+2(33)+45$ | Grassmann polynomial certificate |
 
 To verify the first three rows, compute the vector of coefficients contributed by the 21 pairing polynomials to each monomial. Its dot product with $q$ is that monomial's coefficient in the physical determinant, a sum of squared minors of $U$ by Cauchy–Binet. After division by their positive integer content, the 141 rows give 71 distinct vectors. Exactly 45 of them are extreme rays, consisting of the first three entire orbits.
 
-The four remaining types are independent obstacles in the abstract data. For each of their representatives the checker constructs a normalized signed coefficient vector that satisfies every other extreme inequality and every monomial-positivity test, but violates the chosen inequality. It does this by placing initial mass on all coordinates missing from the chosen support and making one coordinate of the support slightly negative. These artificial vectors do not establish that any unitary violates an inequality. Additional properties of unitary minors are essential for a universal proof along this route.
+The four non-Cauchy–Binet types are independent obstacles in the abstract data. For each of their representatives the checker constructs a normalized signed coefficient vector that satisfies every other extreme inequality and every monomial-positivity test, but violates the chosen inequality. It does this by placing initial mass on all coordinates missing from the chosen support and making one coordinate of the support slightly negative. These artificial vectors do not establish that any unitary violates an inequality. The Grassmann proof supplies the additional properties of unitary minors needed along this route.
 
 ## Exact checks and handoff
 
 Run `python3 -I -B research/marcus-de-oliveira/double-paired-contingencies/check.py` using Python 3 and its standard library. The verifier rebuilds the polynomial matrix, kernel, graph, symmetry group, extreme supports and seven orbits. It tests proof independence on abstract signed data and reconstructs nonnegative pairing laws on complex unitary fixtures, checking the polynomial coefficients directly against all 924 squared minors. [Exact classifier and constructive solver](check.py)
 
-A next mathematical target is the five-term representative $q_{12}+q_{15}+q_{24}+q_{44}+q_{55}$. Express its signed sum as a sum of nonnegative quantities on unitary matrices, or find a rigorously negative unitary example. A negative example would defeat simultaneous weights for this pattern; a pointwise counterexample would also require explicit spectra and separation from the pairing hull.
+The five-term representative $q_{12}+q_{15}+q_{24}+q_{44}+q_{55}$ and the other three signs are covered by the [universal two-sided proof](../double-paired-five-term/GRASSMANN.md). Its separate `grassmann.py` and `grassmann_fixtures.py` replays verify the 24 leading-minor polynomial certificates and the complex-frame conventions. Review of that proof is pending. The case of only one $(2,2,2)$ spectrum opposite an unrestricted spectrum remains open; this reduction concerns both spectra paired.

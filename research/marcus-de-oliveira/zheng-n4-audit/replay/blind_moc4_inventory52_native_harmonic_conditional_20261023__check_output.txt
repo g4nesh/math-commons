@@ -1,0 +1,26 @@
+PASS E = F0 - F6 = t(y - z)(w - 1)
+PASS (3) solves the tree equation for r
+PASS (3) solves the tree equation for s
+PASS (3) solves the tree equation for u
+PASS J = V/(z(w-1)) inverts to z = r W/(r + s - T) :: [W*r/(-J*W + J + r + s)]
+PASS H_2 - J is a constant in r, s, u (so d = -eta Im J) :: 0
+PASS f9 amplitude: H_7 - (-r - s/T) is constant in r,s,u :: 0
+PASS f0 amplitude: H_18 - (-r - s/T + s u/J) constant :: 0
+PASS f21 amplitude: H_5 - (-J - r + (J+r+s)/W) constant :: -s
+PASS f7 amplitude: H_14 - (-u((J+r)(W-1) - s)/L) constant :: -u
+INFO H9 = -(-J**3*W**2*r + J**3*W**2 + 2*J**3*W*r - 2*J**3*W - J**3*r + J**3 + J**2*W**3*r**2 - J**2*W**3*r - 3*J**2*W**2*r**2 - J**2*W**2*r*s - J**2*W**2*r*u + 2*J**2*W**2*r + J**2*W**2*s + J**2*W**2*u + J**2*W**2 + 3*J**2*W*r**2 + 2*J**2*W*r*s + 2*J**2*W*r*u - J**2*W*r - 3*J**2*W*s - 2*J**2*W*u - 2*J**2*W - J**2*r**2 - J**2*r*s - J**2*r*u + 2*J**2*s + J**2*u + J**2 + J*W**3*r**2*u - 3*J*W**2*r**2*u - J*W**2*r**2 - J*W**2*r*s*u + J*W**2*r*s + J*W**2*r*u + J*W**2*r + J*W**2*s*u + 3*J*W*r**2*u + 2*J*W*r**2 + 2*J*W*r*s*u - J*W*r*s - 2*J*W*r*u - 2*J*W*r - J*W*s**2 - 3*J*W*s*u - 2*J*W*s - J*r**2*u - J*r**2 - J*r*s*u + J*r*u + J*r + J*s**2 + 2*J*s*u + 2*J*s + W**2*r*s*u - 2*W*r*s*u - W*r*s - W*s**2*u + r*s*u + r*s + s**2*u + s**2)/(J*W*(W - 1)*(J*W*r - J*W - J*r + J + W*r*u - r*u + s))
+INFO bidegree of C in (J, W): 3 3
+PASS C(J,1) is a nonzero constant multiple of -s^2 (normalization factor found) :: 1
+PASS bidegree (3,3)
+PASS C(0,W) = -s(rW - r - s)(uW - u - 1)
+PASS C(J,0) = (J+r+s)(J+u+1)((r-1)J - s)
+PASS C(J,1) = -s^2
+PASS [J^3]C = (r-1)(W-1)^2
+PASS [W^3]C = -J(h+r)((r-1)J + r u)
+PASS Res_W(C, L) = r s^2 u (J+r+s)(J+u+1)((r-1)J + r u) up to sign :: r*s**2*u*(J + r + s)*(J + u + 1)*(J*r - J + r*u)
+PASS Res_W(C, H) = -J r s^2 Q_H(J) up to sign :: -J*r*s**2*(-J**3 + J**2*h - J**2*s - J**2*u + J*h*s + J*h*u + J*r*s - J*r - J*s*u + J*u + h*s*u + r*s*u + s*u)
+PASS E(eps,T) polynomial and E(0,T) = T((r-1)T + s)
+PASS [eps^5 C(1/eps, K/eps)]_{eps=0} = -K^2 (r-1)(K(h+r) - 1)
+PASS Q_H at (2,3,4,5) = -J^3 - 2J^2 + 31J + 96, disc -15616
+PASS F0/E = -r T / H :: -J*r*(W - 1)/(-J*W + J + s)
+RESULT all EXACT checks passed

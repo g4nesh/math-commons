@@ -1,0 +1,174 @@
+{
+ "doc_id": "independent_inventory70_native_harmonic_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/independent_inventory70_native_harmonic_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "one_line": "Proves T_71 via a relabelled tuple and a harmonic curve argument with barriers d=eta v k Im Q and d<=g3=-eta Im(r/Q); all identities replay exactly; confirmed modulo citations (incl. Table 5 #27).",
+ "statements": [
+  {
+   "label": "main",
+   "page": 1,
+   "paper_cases": [
+    71
+   ],
+   "contact_sets": [
+    [
+     1,
+     3,
+     4,
+     10,
+     11,
+     12
+    ],
+    [
+     1,
+     4,
+     5,
+     7,
+     9,
+     14
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For all x in X with Pc(x)>=0 and zero gaps on T_71={1,3,4,10,11,12} (non-strict): Phi_{c(x)}(O)>=0 for all O in SO(4). Proved on the relabelled tuple {1,4,5,7,9,14} (sigma -> sigma o (12)); tie 12 via the seven-contact theorem on Table 5 #27; other ties via earlier cases; rest by harmonic curve argument."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "seven-contact",
+   "ref": "Table 5 #27 {1,4,5,7,9,12,14} (root_inventory67_g14_uniform_20261023)",
+   "contact_set": [
+    1,
+    4,
+    5,
+    7,
+    9,
+    12,
+    14
+   ],
+   "used_for": "tie 12",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_5 (or T_9,T_12,T_37)",
+   "used_for": "tie 0",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_29 (or T_31)",
+   "used_for": "tie 6",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_42",
+   "used_for": "tie 11",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_5 (or T_9,T_12,T_37)",
+   "used_for": "tie 15",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_29 (or T_31)",
+   "used_for": "tie 17",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_9 (or T_14,T_40)",
+   "used_for": "tie 18",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Lemma 4.2 / Prop 4.1 (cone generators)",
+   "used_for": "source list",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "Theorem 1.2",
+   "used_for": "unitary to orthogonal",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "Thm B.1 / Lemma B.2 (Appendix B)",
+   "used_for": "pointwise inequality at coincident labels / shared zeros",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "(3.10)-(3.11) ker Hess C(kappa) = E",
+   "used_for": "height-puncture lemma",
+   "match_checked": true
+  },
+  {
+   "kind": "external",
+   "ref": "Birkhoff-von Neumann",
+   "used_for": "Phi of E(Q) >= 0",
+   "match_checked": true
+  }
+ ],
+ "steps": "see the step table in the .md report (EXACT/PROOF-READ/CITED as marked)",
+ "step_counts": {
+  "exact": 13,
+  "proof_read": 5,
+  "cited": 2,
+  "numeric": 1,
+  "gap": 0,
+  "unchecked": 0
+ },
+ "gaps": [
+  {
+   "location": "p.2 extra ties",
+   "claim": "ties 0,6,11,15,17,18 contain earlier six-tuples",
+   "why": "not named",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "auditor table (EXACT)"
+  },
+  {
+   "location": "p.2 eq. for E",
+   "claim": "E=F7-F1=t(y-z)(x-1)",
+   "why": "sign is that of the homogeneous difference convention; affine form gives -t(y-z)(x-1)",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "global sign, ratios unchanged"
+  },
+  {
+   "location": "p.4 harmonic completion",
+   "claim": "all punctures controlled",
+   "why": "compressed",
+   "severity": "presentation",
+   "believed_true": true,
+   "repair": "denominators of all 24 H lie in {Q,Z,N}; each projection checked; supplied by auditor"
+  }
+ ],
+ "exact_replays": [
+  "relabelling image and source pullback",
+  "source, relation f35+f11=f1+f5+f12+f33, readouts, d<=g3",
+  "tie covering, T+{12}=AUX7#27",
+  "r,k,v formulas, inverse (5) round trip",
+  "homogeneous inverse = (5); E_hom=-QZKN; H3=r/Q; F1/E",
+  "denominators in {Q,Z,N}",
+  "C bidegree (2,2), 33 terms, Z^2 coeff",
+  "H14-H12 and H3-H12 identities",
+  "C(Z=0), Res_Q(C,N), N common-zero condition, [Z^2Q^2]=k^2 v",
+  "Z=-1,K=0 point",
+  "specialization (2,3,4,5)"
+ ],
+ "numeric_tests": [
+  "40000 trials seed 20261125: 156 supported points, d=eta v k Im Q and d<=g3 hold, worst min Phi/|g| = +4.2e-14"
+ ],
+ "unchecked": [
+  "supplement's companion exact program (not used as evidence)",
+  "cited earlier cases and seven-contact theorems (audited elsewhere)"
+ ]
+}

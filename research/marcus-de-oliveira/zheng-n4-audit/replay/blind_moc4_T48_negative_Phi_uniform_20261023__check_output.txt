@@ -1,0 +1,31 @@
+[EXACT] PASS  T = (0,3,5,6,9,12) is paper T_49; generators {0,1,2,5,7,9,29,39,40,41}
+[EXACT] PASS  f40+f1 = f0+f7+f39 and f40+f9 = f2+f7+f41
+[EXACT] PASS  remaining scope: exactly one g maps the roles (27,1,59,5,28,6) of paper T_47 to (7,5,29,39,40,41) in order (g = [('4213', '3421', 1)])
+[EXACT] PASS  C(m + h kappa) is affine in h
+[EXACT] PASS  Q = (c+d)(d+e+j) - p(e+j) exactly (paper normalization of the cubic)
+[EXACT] PASS  data: variable order is (q,p,j,c,e,d,b,a,z) and z never occurs
+[EXACT] PASS  our C(m) equals the companion C_terms (same normalization)
+[EXACT] PASS  (e+j)C - ejQ has 42 terms, all positive (claim: 42); contains d^3 e and d^3 j
+  time 0.1
+[EXACT-SAMPLED] PASS  (2) det H(w) Q^2 = -4 G^2 at h = -C/Q on 12 random positive rational points (probabilistic identity test)
+  time 0.9
+[EXACT] PASS  G has 1772 terms and total degree 9
+[EXACT] PASS  gcd(G, G_j) = 1
+[EXACT] PASS  G has degree 2 in j
+[EXACT] PASS  (3) B^2 - 4AC0 = (b+c+d)^2 (q+d)^2 Phi H6 exactly; H6 has 159 terms (claim 159) and no j
+[EXACT] PASS  G = (A2 c^2 + A1 c + A0) j^2 - (q+d) Y (L1 c + L0) j - K Y^2 with A_i, L_i, K free of c and j
+[EXACT] PASS  (4) det M = -2 (e-b) p W (q+d)^2 Phi^2
+[EXACT] PASS  e^2 (a+d)^2 Phi = b^2 V^2 {...}^2 modulo W
+  time 1.0
+[EXACT] PASS  H_kappa is supported on rows/columns {0,5} only after deleting (0,5): the (0,5)-deleted principal block is height-free
+  line seed 11: G_top(v) = -9402223320, deg P|line = 12, gcd of restrictions = 28*(t + 1)
+  line seed 1: G_top(v) = -19775193904, deg P|line = 12, gcd of restrictions = 1
+[EXACT] PASS  gcd(G, P) = 1: on some rational line with G_top(v) != 0 the restrictions of G and P are coprime (a common factor would restrict to a nonconstant common factor)
+  time 17.2
+  numeric (seed 2026): 4604 real points of G = 0 with Q != 0 (positive orthant except j), 4604 have numerical rank <= 12, 4599 exactly 12; 568 have Phi < 0, of which 0 have a positive 12-principal minor
+[NUMERIC] PASS  NUMERIC: rank of H(w) is <= 12 at real points of G = 0 (claim)
+[NUMERIC] PASS  NUMERIC: at real points of G = 0 with Phi < 0 every 12-principal minor is <= 0
+  numeric (seed 99): cited Hessian theorem, 300 random complex spectra and phases: 0 with a negative 12-principal minor of Hess C(Re x); worst relative value 0.000e+00
+[NUMERIC] PASS  NUMERIC: cited global theorem (all 12-principal minors of Hess C(Re x) >= 0) not falsified
+  total time 34.3
+FAILED: none

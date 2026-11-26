@@ -1,0 +1,29 @@
+{
+ "doc_id": "blind_moc4_T48_c0_upper_Heron_chain_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_c0_upper_Heron_chain_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  "Display: Disc_p(G|c=0) = (a+d+e)^2 F6 F8",
+  "Thm 1: c=0, coefficients>=0, d,e>0, j>=d, G=0, F6>=0, L>=0 => a>0 and p>=d^2(1/a+1/e)"
+ ],
+ "dependencies": [
+  "chain (f5;f0,f2;f40) EXACT orbit (proved atom)"
+ ],
+ "steps": [
+  "root existence PROOF-READ",
+  "a formula EXACT",
+  "46874-term certificate, E^2 coef EXACT",
+  "walls J,P,Q,B=0 EXACT"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "G rebuilt from definitions: 1772 terms, degree 9, sha256 c89c8cbc5331fcfdbdc22587fbcf8a017fc692eb8fd1f38edbe8a59ca0550a49; equals -(supplement radial factor)",
+  "discriminant factorization (F8 321 terms)",
+  "46874-term table"
+ ],
+ "numeric_tests": [
+  "chain at p=d^2(1/a+1/e), 10 points seed 17: worst -1.4e-16"
+ ],
+ "unchecked": []
+}

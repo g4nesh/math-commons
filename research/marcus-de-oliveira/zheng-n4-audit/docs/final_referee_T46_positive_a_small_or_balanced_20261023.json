@@ -1,0 +1,72 @@
+{
+ "doc_id": "final_referee_T46_positive_a_small_or_balanced_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T46_positive_a_small_or_balanced_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Thm 1",
+   "page": 1,
+   "restatement": "realizable nonnegative T46 cost (paper T_47) with (q<=d and b<=d) or q=b, any a>=0: Phi >= 0 on SO(4)",
+   "contact_sets": [
+    [
+     1,
+     3,
+     5,
+     6,
+     7,
+     8
+    ]
+   ],
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "zero-coefficient transfers for q,p,j,c,e,b and the closed a=0 face of historical T46",
+   "used_for": "reduce to positive coefficients",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "four-coefficient atom four(4,6;2;28) (foundations/so4-atoms.md)",
+   "used_for": "ab(e-1) >= a+b+e+1 => SAFE",
+   "match_checked": true
+  },
+  {
+   "kind": "branch",
+   "ref": "final_referee_T46_core_coherent_capacity_20261023 Thm 1 at beta=-1 (foundations part2b G3)",
+   "used_for": "core capacity and finite closure",
+   "match_checked": true
+  },
+  {
+   "kind": "core",
+   "ref": "radial necessity (paper p.27; audit item 5)",
+   "used_for": "G9 = 0 at realizable costs",
+   "match_checked": true
+  }
+ ],
+ "steps": "see the step table in final_referee_T46_positive_a_small_or_balanced_20261023.md",
+ "step_counts": {
+  "exact": 6,
+  "proof_read": 1,
+  "cited": 4,
+  "numeric": 1,
+  "gap": 0,
+  "unchecked": 0
+ },
+ "gaps": [],
+ "exact_replays": [
+  "G9 rebuilt",
+  "six tables all negative, term counts 4916/1815/10809/4095/1377/8398 match",
+  "nine wall evaluations q=1 and/or b=1",
+  "balanced lambda=K and chart identities",
+  "a4>0 iff e>e0"
+ ],
+ "numeric_tests": [
+  "stratum sample: no d>0 point in this sector"
+ ],
+ "unchecked": [],
+ "replay": "replay/final_referee_T46_positive_a_small_or_balanced_20261023__check.py"
+}

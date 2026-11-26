@@ -1,0 +1,48 @@
+{
+ "doc_id": "blind_moc4_inventory52_plus17_fourth_products_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory52_plus17_fourth_products_20261023.pdf",
+ "pages": 3,
+ "verdict": "could-not-check",
+ "statements": [
+  {
+   "label": "main",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     4,
+     6,
+     9,
+     12,
+     17
+    ]
+   ],
+   "restatement": "Realizable strictly positive T7 face with a<=b<=c, d^2<ab: A>=capA or B>=capB or C>=capC."
+  }
+ ],
+ "dependencies": [
+  "real-branch criterion (low products)",
+  "G, F* data",
+  "Prop C.6",
+  "four-coefficient atom"
+ ],
+ "steps": [
+  "chart coverage EXACT/PROOF-READ",
+  "exhaustion PROOF-READ",
+  "all coefficient tables UNCHECKED"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "chart coverage identities (4),(6),(7); m-abc identity"
+ ],
+ "numeric_tests": [
+  "region-4 samples within whole_assembly numeric test"
+ ],
+ "unchecked": [
+  "9 L_ij tables",
+  "12+12 controller tables",
+  "27 three-capacity coefficients with factor removal",
+  "box tables and L00 sub-certificate"
+ ]
+}

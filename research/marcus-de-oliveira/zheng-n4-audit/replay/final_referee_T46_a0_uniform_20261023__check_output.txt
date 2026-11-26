@@ -1,0 +1,25 @@
+PASS canonical a=0 source (f27,f1,f59,f5,f2,f28,f6) has common zero set T46 u {14} = Table 5 set T^(7)_26 :: [1, 3, 5, 6, 7, 8, 14]
+PASS generators(T46 u {14}) = {f0,f1,f2,f5,f6,f27,f28,f59}, only f28 non-minor
+PASS (1) f28 + f0 = f27 + f1 + f5 + f2 on all 24 permutations
+PASS zero coefficient q=0: contact set [1, 3, 5, 6, 7, 8, 14, 18] contains a G-image of paper T_29 :: g=((3, 2, 1, 0), (2, 3, 1, 0), 0)
+PASS zero coefficient p=0: contact set [1, 3, 5, 6, 7, 8, 14, 22] contains a G-image of paper T_36 :: g=((0, 1, 3, 2), (0, 3, 1, 2), 0)
+PASS zero coefficient j=0: contact set [0, 1, 3, 5, 6, 7, 8, 14] contains a G-image of paper T_1 :: g=((3, 2, 0, 1), (2, 3, 1, 0), 0)
+PASS zero coefficient c=0: contact set [1, 3, 5, 6, 7, 8, 14, 20] contains a G-image of paper T_39 :: g=((2, 1, 3, 0), (2, 3, 1, 0), 0)
+PASS zero coefficient e=0: contact set [1, 3, 5, 6, 7, 8, 14, 19] contains a G-image of paper T_42 :: g=((2, 3, 1, 0), (3, 2, 0, 1), 0)
+PASS zero coefficient b=0: contact set [1, 3, 5, 6, 7, 8, 9, 14] contains a G-image of paper T_7 :: g=((3, 2, 0, 1), (3, 1, 0, 2), 0)
+PASS C0 (d=1) = -(q+1){(c+1)(e+1)+b} - j(c+1)(e+1); Q (d=1) = jp - j(c+e+1) - (c+1)(e+1) :: C0 = -q*c*e - q*c*d - q*e*d - q*d^2 - q*d*b - j*c*e - j*c*d - j*e*d - j*d^2 - c*e*d - c*d^2 - e*d^2 - d^3 - d^2*b; Q = p*j - j*c - j*e - j*d - c*e - c*d - e*d - d^2
+PASS C0 (d=1) has only negative coefficients and constant term -1 (so C0 < 0 on the closed orthant)
+PASS radial identity: Q^3 det Hess C(g - (C0/Q) kappa) = -4 Q (q+d)^2 G8^2, i.e. det = -4 (q+d)^2 G8^2 / Q^2 :: h-degree 3; factors [(8, 1), (2, 2), (380, 2)]; content -4; 50s
+PASS G8 has 380 terms, degrees (2,2,2,2,2,8,3) in (q,p,j,c,e,d,b) :: 380 (2, 2, 2, 2, 2, 8, 3, 0)
+PASS Lemma 2: K - lambda = (q-b)^2/((qb-1)(q+b-2))
+PASS Lemma 2: qb > 1 implies q + b > 2 (AM-GM: q + b >= 2 sqrt(qb)) :: PROOF-READ
+PASS Lemma 2: t = j/lambda gives threshold 1/j - 1/lambda; leaf condition j > K t^2 iff j < lambda^2/K
+PASS (6): t^2 = j/K and (1-t)^2/(j - lambda t^2) = (K-lambda)/(lambda+KJ)^2
+PASS (6): j(0) = lambda^2/K, j -> K as J -> oo, dj/dJ = 2(lambda+KJ)(K-lambda)/(K(1+J)^3) > 0
+PASS (4) chart: j = lambda^2 J/(K(1+J)) covers exactly (0, lambda^2/K) :: monotone in J, PROOF-READ
+PASS G8 table q>b: q=r+A, b=r^2/q, r=1+V, low j = lambda^2 J/(K(1+J)), p = P* S/(1+S), P* = 1/j - 1/lambda : single strict sign with a strict monomial :: terms 53537, negative 53537, positive 0, strict monomial (exponents ('A', 'V', 'J', 'S', 'C1', 'E')) ((27, 4, 4, 0, 2, 0), -1)
+PASS G8 table q>b: q=r+A, b=r^2/q, r=1+V, middle j = (lambda+KJ)^2/(K(1+J)^2) with J >= 0, p = P* S/(1+S), P* = (K-lambda)/(lambda+KJ)^2 : single strict sign with a strict monomial :: terms 215772, negative 215772, positive 0, strict monomial (exponents ('A', 'V', 'J', 'S', 'C1', 'E')) ((31, 12, 0, 0, 2, 0), -1)
+PASS G8 table b>q: b=r+A, q=r^2/b, r=1+V, low j = lambda^2 J/(K(1+J)), p = P* S/(1+S), P* = 1/j - 1/lambda : single strict sign with a strict monomial :: terms 50282, negative 50282, positive 0, strict monomial (exponents ('A', 'V', 'J', 'S', 'C1', 'E')) ((27, 4, 4, 0, 0, 0), -1)
+PASS G8 table b>q: b=r+A, q=r^2/b, r=1+V, middle j = (lambda+KJ)^2/(K(1+J)^2) with J >= 0, p = P* S/(1+S), P* = (K-lambda)/(lambda+KJ)^2 : single strict sign with a strict monomial :: terms 207473, negative 207473, positive 0, strict monomial (exponents ('A', 'V', 'J', 'S', 'C1', 'E')) ((31, 12, 0, 0, 0, 0), -1)
+NUMERIC Lemma 2 boundary (c=e=a=0, p = P*): 12 samples (seed 13, 20 BFGS restarts): worst min Phi / max coef = 9.649e-17
+SUMMARY: all exact checks passed

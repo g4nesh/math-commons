@@ -1,0 +1,91 @@
+== combinatorics (A25 = {1,3,4,8,11,12,15}, stage 7; document labels are paper index minus one)
+PASS S is Table-5 set A25
+   +0: all generators minor
+   +2: earlier cases contained: ['A22', 'T4', 'T7', 'T9', 'T13', 'T14', 'T29', 'T31', 'T33', 'T36', 'T38', 'T70', 'T78'] ; document cites T13
+PASS added tie 2 is covered by an earlier-stage case and the cited one (T13) is among them
+   +5: all generators minor
+   +6: all generators minor
+   +7: all generators minor
+   +9: earlier cases contained: ['A22', 'T4', 'T7', 'T9', 'T13', 'T14', 'T29', 'T31', 'T33', 'T36', 'T38', 'T70', 'T78'] ; document cites T70
+PASS added tie 9 is covered by an earlier-stage case and the cited one (T70) is among them
+   +10: earlier cases contained: ['A18', 'T29', 'T31', 'T36', 'T71', 'T76', 'T78'] ; document cites T71
+PASS added tie 10 is covered by an earlier-stage case and the cited one (T71) is among them
+   +13: all generators minor
+   +14: earlier cases contained: ['A18', 'T29', 'T31', 'T36', 'T71', 'T76', 'T78'] ; document cites T76
+PASS added tie 14 is covered by an earlier-stage case and the cited one (T76) is among them
+   +16: all generators minor
+   +17: earlier cases contained: ['A22', 'T19', 'T21', 'T22', 'T33', 'T34', 'T58'] ; document cites T21
+PASS added tie 17 is covered by an earlier-stage case and the cited one (T21) is among them
+   +18: all generators minor
+   +19: all generators minor
+   +20: earlier cases contained: ['A22', 'A24', 'T33', 'T40', 'T90'] ; document cites T40
+PASS added tie 20 is covered by an earlier-stage case and the cited one (T40) is among them
+   +21: all generators minor
+   +22: all generators minor
+   +23: all generators minor
+PASS generators(S) = {0,1,9,10,56,53,59}
+PASS only f56 nonminor
+PASS ray f0 has exclusive gap 20
+PASS ray f1 has exclusive gap 17
+PASS ray f9 has exclusive gap 10
+PASS ray f10 has exclusive gap 9
+PASS ray f56 has exclusive gap 6
+PASS ray f53 has exclusive gap 14
+PASS ray f59 has exclusive gap 2
+degree in z of C(w0+z kappa): 1
+paper cubic vs doc: C sign 1  Q sign 1
+PASS C(w0+z kappa) = eps (Cdoc + z Qdoc), eps=+-1, linear in z
+point (3): Q = 101/10  restored vector (paper coords) = ['151/35', '-2', '-81/35', '1', '-5/2', '-5/2', '7/2', '1', '-2', '-2', '3/2', '1/2', '-127/70', '7156/3535']
+PASS Q = 101/10 at (3)
+elimination at (3): pos 7 neg 5 remaining 2 remainder zero? True  remainder [[Fraction(0, 1), Fraction(0, 1)], [Fraction(0, 1), Fraction(0, 1)]]
+PASS inertia at (3) is (7,5,2) or (5,7,2) and rank 12
+det of principal 12x12 on coords 2..13 at (3): -4239165411/12005000
+det H at (3): 0
+  sample -detH*Q^2 = 83175331073218258302481/6191736422400
+  sample -detH*Q^2 = 1553551132802769/390625
+  sample -detH*Q^2 = 814019925655158784/625
+  sample -detH*Q^2 = 7803154935046373785600/81
+  sample -detH*Q^2 = 391456809571670259609024001/8100000000
+  sample -detH*Q^2 = 14245892691233281/1296
+  sample -detH*Q^2 = 495998651073252045889/576
+  sample -detH*Q^2 = 4388468102865703324224/3814697265625
+  sample -detH*Q^2 = 92573339222016/625
+  sample -detH*Q^2 = 2156369032735850724045849/671088640000
+  sample -detH*Q^2 = 1278373395607187049/1024000000000000
+  sample -detH*Q^2 = 9544249999638051999407089/549316406250000
+PASS -detH*Q^2 is a rational square at 12 random positive rational points (exact arithmetic; identity test only)
+exact part: ALL EXACT CHECKS PASS
+sample 0 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 1 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 2 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 3 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: True  #positive q-roots: 1 OK
+sample 4 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: True  #positive q-roots: 1 OK
+sample 5 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 6 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 7 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 8 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 9 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 10 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 11 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: True  #positive q-roots: 1 OK
+sample 12 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: True  #positive q-roots: 1 OK
+sample 13 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 14 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: True  #positive q-roots: 1 OK
+sample 15 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 16 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 17 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 18 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 19 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 20 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: True  #positive q-roots: 1 OK
+sample 21 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 22 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 23 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+sample 24 degq(G)= 3 q^k>=1 coeffs positive: True  G(0)=dC P(d): True  P(d)<0: False  #positive q-roots: 0 OK
+SUMMARY univariate-in-q tests (exact arithmetic at 25 random rational points of the other six variables): all consistent
+sheet point 1 q*=0.185609  G | Q^2 det H_00: True  G | Q^2 det H_11: True  inertia (num, 60 digits): (7, 5, 2)  smallest |eig|=1.76e-61 OK
+sheet point 2 q*=0.0633856  G | Q^2 det H_00: True  G | Q^2 det H_11: True  inertia (num, 60 digits): (7, 5, 2)  smallest |eig|=4.02e-61 OK
+sheet point 3 q*=0.0122434  G | Q^2 det H_00: True  G | Q^2 det H_11: True  inertia (num, 60 digits): (7, 5, 2)  smallest |eig|=1.59e-61 OK
+sheet point 4 q*=0.030094  G | Q^2 det H_00: True  G | Q^2 det H_11: True  inertia (num, 60 digits): (7, 5, 2)  smallest |eig|=2.83e-61 OK
+sheet point 5 q*=0.171831  G | Q^2 det H_00: True  G | Q^2 det H_11: True  inertia (num, 60 digits): (7, 5, 2)  smallest |eig|=2.09e-61 OK
+sheet point 6 q*=0.161436  G | Q^2 det H_00: True  G | Q^2 det H_11: True  inertia (num, 60 digits): (7, 5, 2)  smallest |eig|=9.49e-61 OK
+SUMMARY sheet-point tests: all consistent
+EXACT checks: ALL PASS
