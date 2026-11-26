@@ -1,0 +1,37 @@
+PASS contact set equals paper T_49 (identity group element)
+PASS generators(T_49) = [0,1,2,5,7,9,29,39,40,41] : [0, 1, 2, 5, 7, 9, 29, 39, 40, 41]
+PASS the eight roles all vanish on T
+PASS only f40 (d) is non-minor among the 10 generators
+PASS the eight role vectors are linearly independent (rank 8)
+PASS f1 = q + c + a - d (in role vectors)
+PASS f9 = q + e + b - d (in role vectors)
+PASS j resources sum to j
+PASS sum of atom requirements = p* (first display)
+PASS non-minor currents sum to d = 1
+PASS u(1/a+1/e) - v/j = 1/2
+PASS p* = 1 - u/2 + v/j - Q/4
+PASS p* - (1/2 + v/j) = (2v - Q)/4
+PASS chart: u recomputed from (a,e,j) equals L/(1+L)
+PASS chart: e denominator times (1+L) = E_N
+PASS chart inverse: L=u/v, A=a/(2u)-1, B=Q/(2v-Q), C1=q/b, P=p/(p*-p)
+PASS Q0 = m0 m6 - m1 m5 at the source = (c+1)(1+e+j) - p(e+j)
+PASS C(c + r kappa) = C(c) + r Q0
+PASS (e+j)C - ejQ0 has 42 terms, all positive, containing e and j : 42
+PASS det H(c + r kappa) has degree 3 in r : (3, 3, 3, 3, 3, 3, 3, 3)
+PASS Q0^2 det H(c - (C/Q0) kappa) = -4 G^2 for a polynomial G
+PASS G has 1772 terms and content 1 : 1772
+PASS D*G is a polynomial in (L,A,B,C1,S,P,c)
+PASS D*G has 149933 monomials : 149933
+PASS exactly 18 C1-groups of -DG contain a negative coefficient : 18
+PASS each such group = (C1-1)^2 R(C1), R with nonnegative integer coefficients
+PASS -DG coefficient of B^6 S^2 is 432
+PASS -DG has degree <= 6 in B (homogenization with W_B of degree 6 is valid)
+PASS B^6 slice: its negative coefficients lie in complete square groups (18 of them)
+PASS zero face q=0: contact set [0, 3, 5, 6, 9, 12, 16] contains a G-image of paper T_39
+PASS zero face p=0: contact set [0, 3, 5, 6, 9, 11, 12] contains a G-image of paper T_1
+PASS zero face j=0: contact set [0, 2, 3, 5, 6, 9, 12] contains a G-image of paper T_3
+PASS zero face e=0: contact set [0, 3, 5, 6, 9, 12, 13] contains a G-image of paper T_24
+PASS zero face b=0: contact set [0, 3, 5, 6, 7, 9, 12] contains a G-image of paper T_43
+PASS zero face a=0: contact set [0, 3, 5, 6, 9, 12, 23] contains a G-image of paper T_44
+elapsed 496.8 s
+ALL EXACT CHECKS PASSED

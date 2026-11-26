@@ -1,0 +1,25 @@
+== PART 2 ==
+PASS [W^2]C, [J^2]C, C(J,0) equal the harmonic note eq. (6)
+PASS P(J,Z) and CN are polynomials
+PASS rows are polynomials in Y=y^2 and linear in (RK,R,K)
+PASS (4) det M3 = -s N^2 m Fp TN (row normalization as above)
+PASS N_R = -s N Fp TN R0 with R0 a polynomial
+PASS (5) m N + v R0 = t H
+PASS (6) H+(r-1)Fp = -rm and (r-1)(Dn+r^2)-H = r^2 m
+PASS (9) m*(L numerator at the Cramer solution)*det = -A t Dn (m-H) det
+PASS (10) F6/y^6 = L^2/y^6 - 4 (d/y)^2 B/y^2 = t^2 Dn^2 (m+H)^2/(m^2 N^4)
+FAILED: none
+exit 0
+== PART 1 ==
+PASS contact values H0=0,H3=s-r,H5=-r,H6=-1,H12=-u
+PASS [W^2]C, [J^2]C, C(J,0) equal the harmonic note eq. (6)
+PASS j_amp = H_2 = J
+PASS (c+d)_amp = H_1 - H_7 = (J-s)/Z
+PASS b_amp = H_7 = ((r-1)J+s)/Z-(r-s)
+PASS (a+d)_amp = H19-H13 = -(u-1)(J-s)/J + (u-1)
+PASS (q+d)_amp = H14 = -(RZ+J+r-s)/r + (1-u) on the surface
+PASS p_amp = H11 equals the note formula up to a real function of (r,s,u,h) (Jacobian test)
+PASS supplied c amplitude = H_17 + real function of (r,s,u,h) on the surface (Jacobian test)
+PASS supplied curve array equals the rebuilt curve C
+FAILED: none
+exit 0
