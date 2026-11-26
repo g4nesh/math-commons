@@ -1,0 +1,8 @@
+orbit 9: facet present at 25 of 25 spectra; max over U(5) - 1 = +1.38e-11 at (s, t) = (30.0, 900.0)
+orbit 10: facet present at 25 of 25 spectra; max over U(5) - 1 = +1.64e-11 at (s, t) = (1.1, 1.2100000000000002)
+orbit 11: facet present at 25 of 25 spectra; max over U(5) - 1 = +2.79e-11 at (s, t) = (1.1, 1.2100000000000002)
+orbit 12: facet present at 25 of 25 spectra; max over U(5) - 1 = +1.05e-10 at (s, t) = (30.0, 45.0)
+orbit 13: facet present at 16 of 25 spectra; max over U(5) - 1 = +9.18e-12 at (s, t) = (1.5, 1.6500000000000001)
+orbit 14: facet present at 25 of 25 spectra; max over U(5) - 1 = +8.62e-12 at (s, t) = (30.0, 45.0)
+orbit 15: facet present at 25 of 25 spectra; max over U(5) - 1 = +1.01e-10 at (s, t) = (30.0, 900.0)
+orbit 16: facet present at 25 of 25 spectra; max over U(5) - 1 = +2.89e-10 at (s, t) = (30.0, 900.0)

@@ -1,0 +1,2 @@
+orbit 20: min of envelope over U(5) +9.001e-12 (facet E alone there +3.622e-12); minimizer blocks [5]
+orbit 21: min of envelope over U(5) +4.573e-11 (facet E alone there +4.461e-11); minimizer blocks [5]

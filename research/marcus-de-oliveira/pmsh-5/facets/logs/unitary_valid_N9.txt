@@ -1,0 +1,1 @@
+N9: min over U(5) -6.744e-02  (starts below -1e-6: 37/40)

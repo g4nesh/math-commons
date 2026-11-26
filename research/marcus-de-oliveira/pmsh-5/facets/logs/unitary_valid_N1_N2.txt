@@ -1,0 +1,2 @@
+N1: min over U(5) -1.349e-01  (starts below -1e-6: 34/40)
+N2: min over U(5) -5.228e-02  (starts below -1e-6: 33/40)

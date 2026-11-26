@@ -1,0 +1,2 @@
+B: min over U(5) -6.744e-02  (starts below -1e-6: 30/40)
+C: min over U(5) -8.943e-02  (starts below -1e-6: 38/40)
