@@ -1,0 +1,146 @@
+{
+  "leanVersion": "4.24.0",
+  "fatalWarnings": true,
+  "baseMainCommit": "b48a7ca896ca3f4ce9bd288b6cd109c067709745",
+  "completeRunDeclarationCount": 286,
+  "newDeclarationCount": 25,
+  "sourceSha256": {
+    "formal/ForestCut.lean": "0bfc29b6c4470e3c11cfdbdb561616f55bc3d73af78d53e8edc68feb44b1b5ae",
+    "formal/ForestEndpointMass.lean": "a2a6cec51910d33cc3d22c40001215fb41cd8b3c610327a517898d1b024b9e2d",
+    "formal/ForestGateMagnitude.lean": "02448676c0da705b368ae51aaab0e9771245ab406e7cd22a8eba99bf2589895a",
+    "formal/ForestGateSupport.lean": "e5f1c920b17e385ad58dffb070f0647d5d937a06c4916a2a2a417aaccdda286f",
+    "formal/ForestMinorAlternation.lean": "31c0794ad790a674c670c2eecf1afeebbf3f9228667a92e6f315c02269df08e1",
+    "formal/ForestPairHistory.lean": "c65a52bef4d9c1674cd163d7a5338dcfabd5baa075cd68257120695a249590bf",
+    "formal/ForestPathNormalization.lean": "09df64b8c0941ac9f686017fe3cc82cc52e510af2e830384b5edae10821d8fff",
+    "formal/ForestPathProbability.lean": "4f01a43913a197c11c1904e3eedfb3161e6b8eec64bb7abb5bfd01a234ecdeca",
+    "formal/ForestProductMinor.lean": "797a22634b38e8f614d1994ad7100a4d3780f48334575fb6d25a0c4ad08b8e25",
+    "formal/ForestSubsetExchange.lean": "de55c98f761fc21a8a2e094e6380646d3f3740095ab1eef95f0698637a498313",
+    "formal/ForestTrajectory.lean": "b5dcffb2a165702ef46a2a67e5a7d9049a5f5ba3af3cfd9cc2491af5e0fc5910",
+    "formal/MathCommons.lean": "2081110542f5560fe2d09cd31e89de22fcaf85b931adc37a44c469a55d04f3be",
+    "formal/OrthogonalCube.lean": "3b721e325f8f7ab9fa4c5b57116a65bbb7fb1017a02c64f7bcf63896784346c8"
+  },
+  "axiomReports": {
+    "MathCommons.ForestSubsetExchange.signedTwice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.swapInvolutive": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.stepSymmetric": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.reverseSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.filterSwapAvoids": [
+      "propext"
+    ],
+    "MathCommons.ForestSubsetExchange.replaceRowList": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.leftReplacementForward": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.leftReplacementBackward": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.rightReplacementForward": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.rightReplacementBackward": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.leftReplacementSign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.rightReplacementSign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.signedMulLeft": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.gateTwoCoefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.gateMinorPredecessors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.predecessorMinorSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.productEndpointAmplitude": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.productMagnitude": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.productEmptyFiber": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.distinctListMember": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.distinctListNodup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.reachableEndpointsNodup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.historyEndpointMember": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.endpointMassOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestSubsetExchange.productMassOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "scope": "Actual canonical single-exchange signs and sparse gate-minor recurrence at arbitrary subset size; actual product minor equals signed canonical endpoint amplitude without unitarity or forest hypotheses; squared actual minor equals endpoint probability and normalized reachable-endpoint law under explicit unitary/forest premises. Gaussian rational scalar domain; not MDO or a general complex-library bridge."
+}

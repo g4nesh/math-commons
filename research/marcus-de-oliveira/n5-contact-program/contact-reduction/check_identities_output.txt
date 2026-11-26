@@ -1,0 +1,114 @@
+== (a) Lemma 1, rational Cayley unitaries ==
+PASS [EXACT] n=3 seed=1: U U^* = I
+PASS [EXACT] n=3 seed=1: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 20 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=3 seed=1: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=3 seed=1: sum mu = 1
+PASS [EXACT] n=3 seed=1: |mu_sigma| <= 1 (0 of 6 mu_sigma negative)
+PASS [EXACT] n=3 seed=1: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.0s]
+PASS [EXACT] n=3 seed=2: U U^* = I
+PASS [EXACT] n=3 seed=2: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 20 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=3 seed=2: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=3 seed=2: sum mu = 1
+PASS [EXACT] n=3 seed=2: |mu_sigma| <= 1 (0 of 6 mu_sigma negative)
+PASS [EXACT] n=3 seed=2: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.0s]
+PASS [EXACT] n=3 seed=3: U U^* = I
+PASS [EXACT] n=3 seed=3: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 20 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=3 seed=3: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=3 seed=3: sum mu = 1
+PASS [EXACT] n=3 seed=3: |mu_sigma| <= 1 (1 of 6 mu_sigma negative)
+PASS [EXACT] n=3 seed=3: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.0s]
+PASS [EXACT] n=4 seed=1: U U^* = I
+PASS [EXACT] n=4 seed=1: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 70 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=4 seed=1: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=4 seed=1: sum mu = 1
+PASS [EXACT] n=4 seed=1: |mu_sigma| <= 1 (5 of 24 mu_sigma negative)
+PASS [EXACT] n=4 seed=1: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.0s]
+PASS [EXACT] n=4 seed=2: U U^* = I
+PASS [EXACT] n=4 seed=2: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 70 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=4 seed=2: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=4 seed=2: sum mu = 1
+PASS [EXACT] n=4 seed=2: |mu_sigma| <= 1 (5 of 24 mu_sigma negative)
+PASS [EXACT] n=4 seed=2: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.0s]
+PASS [EXACT] n=4 seed=3: U U^* = I
+PASS [EXACT] n=4 seed=3: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 70 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=4 seed=3: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=4 seed=3: sum mu = 1
+PASS [EXACT] n=4 seed=3: |mu_sigma| <= 1 (7 of 24 mu_sigma negative)
+PASS [EXACT] n=4 seed=3: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.0s]
+PASS [EXACT] n=5 seed=1: U U^* = I
+PASS [EXACT] n=5 seed=1: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 252 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=5 seed=1: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=5 seed=1: sum mu = 1
+PASS [EXACT] n=5 seed=1: |mu_sigma| <= 1 (38 of 120 mu_sigma negative)
+PASS [EXACT] n=5 seed=1: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.0s]
+PASS [EXACT] n=5 seed=2: U U^* = I
+PASS [EXACT] n=5 seed=2: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 252 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=5 seed=2: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=5 seed=2: sum mu = 1
+PASS [EXACT] n=5 seed=2: |mu_sigma| <= 1 (38 of 120 mu_sigma negative)
+PASS [EXACT] n=5 seed=2: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.0s]
+PASS [EXACT] n=5 seed=3: U U^* = I
+PASS [EXACT] n=5 seed=3: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 252 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=5 seed=3: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=5 seed=3: sum mu = 1
+PASS [EXACT] n=5 seed=3: |mu_sigma| <= 1 (43 of 120 mu_sigma negative)
+PASS [EXACT] n=5 seed=3: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.0s]
+PASS [EXACT] n=6 seed=1: U U^* = I
+PASS [EXACT] n=6 seed=1: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 924 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=6 seed=1: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=6 seed=1: sum mu = 1
+PASS [EXACT] n=6 seed=1: |mu_sigma| <= 1 (282 of 720 mu_sigma negative)
+PASS [EXACT] n=6 seed=1: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.2s]
+PASS [EXACT] n=6 seed=2: U U^* = I
+PASS [EXACT] n=6 seed=2: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 924 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=6 seed=2: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=6 seed=2: sum mu = 1
+PASS [EXACT] n=6 seed=2: |mu_sigma| <= 1 (265 of 720 mu_sigma negative)
+PASS [EXACT] n=6 seed=2: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.2s]
+PASS [EXACT] n=6 seed=3: U U^* = I
+PASS [EXACT] n=6 seed=3: |det U[K,J]|^2 = sum_(sigma(K)=J) lambda_sigma for all 924 pairs (K,J) incl. empty/full (imag parts cancel)
+PASS [EXACT] n=6 seed=3: M(mu(U)) = (|U_ij|^2)
+PASS [EXACT] n=6 seed=3: sum mu = 1
+PASS [EXACT] n=6 seed=3: |mu_sigma| <= 1 (293 of 720 mu_sigma negative)
+PASS [EXACT] n=6 seed=3: det(D_a + U D_b U^*) = sum mu_sigma z_sigma = sum lambda_sigma z_sigma (Gaussian-rational a,b) [0.2s]
+== (b) rank of the Jacobian of Phi at a random integer point ==
+PASS [EXACT] n=3: rank of d Phi (6 x 12) at a random integer configuration = 4 (expected 2n-2 = 4)
+PASS [EXACT] n=4: rank of d Phi (24 x 16) at a random integer configuration = 6 (expected 2n-2 = 6)
+PASS [EXACT] n=5: rank of d Phi (120 x 20) at a random integer configuration = 8 (expected 2n-2 = 8)
+PASS [EXACT] n=6: rank of d Phi (720 x 24) at a random integer configuration = 10 (expected 2n-2 = 10)
+PASS [EXACT] n=7: rank of d Phi (5040 x 28) at a random integer configuration = 12 (expected 2n-2 = 12)
+== (c) slice formulas (sympy) ==
+PASS [EXACT] n=4: F_sigma/F_tau = 1/q_j for tau = sigma o (1 2), sigma(1)=1, sigma(2)=j (6 cases)
+PASS [EXACT] n=4: F_sigma/F_tau = (p_i - q_2)/(q_2 (p_i - 1)) for tau = sigma o (1 i), sigma(1)=1, sigma(i)=2 (4 cases)
+PASS [EXACT] n=4: F_id = -s prod_(i>=3) (p_i - q_i)
+PASS [EXACT] n=5: F_sigma/F_tau = 1/q_j for tau = sigma o (1 2), sigma(1)=1, sigma(2)=j (24 cases)
+PASS [EXACT] n=5: F_sigma/F_tau = (p_i - q_2)/(q_2 (p_i - 1)) for tau = sigma o (1 i), sigma(1)=1, sigma(i)=2 (18 cases)
+PASS [EXACT] n=5: F_id = -s prod_(i>=3) (p_i - q_i)
+== (d) kappa line and rank of A ==
+PASS [EXACT] n=4 trial=0: alpha' z(a',b) = z(a,b) + t(1,...,1) for all sigma (Gaussian-rational c, a_n, b, t)
+PASS [EXACT] n=4 trial=1: alpha' z(a',b) = z(a,b) + t(1,...,1) for all sigma (Gaussian-rational c, a_n, b, t)
+PASS [EXACT] n=4 trial=2: alpha' z(a',b) = z(a,b) + t(1,...,1) for all sigma (Gaussian-rational c, a_n, b, t)
+PASS [EXACT] n=5 trial=0: alpha' z(a',b) = z(a,b) + t(1,...,1) for all sigma (Gaussian-rational c, a_n, b, t)
+PASS [EXACT] n=5 trial=1: alpha' z(a',b) = z(a,b) + t(1,...,1) for all sigma (Gaussian-rational c, a_n, b, t)
+PASS [EXACT] n=5 trial=2: alpha' z(a',b) = z(a,b) + t(1,...,1) for all sigma (Gaussian-rational c, a_n, b, t)
+PASS [EXACT] n=3: rank [vec P_sigma] (9 x 6) = 5 (expected (n-1)^2+1 = 5)
+PASS [EXACT] n=4: rank [vec P_sigma] (16 x 24) = 10 (expected (n-1)^2+1 = 10)
+PASS [EXACT] n=5: rank [vec P_sigma] (25 x 120) = 17 (expected (n-1)^2+1 = 17)
+== (e) NUMERIC Kempf-Ness descent ==
+PASS [NUMERIC] n=4 trial=0: converged in 551 steps, ||v||^2 13.06 -> 5.61029; |u_k|^2 spread 6.2e-13; sum u u^* - (tr/2)I rel 2.1e-14; Phi(u) vs Phi(v) rel 3.1e-14
+PASS [NUMERIC] n=4 trial=1: converged in 559 steps, ||v||^2 39.68 -> 10.5917; |u_k|^2 spread 6.4e-13; sum u u^* - (tr/2)I rel 2.2e-14; Phi(u) vs Phi(v) rel 1.1e-14
+PASS [NUMERIC] n=5 trial=0: converged in 558 steps, ||v||^2 156.3 -> 18.2668; |u_k|^2 spread 7.8e-13; sum u u^* - (tr/2)I rel 2.1e-14; Phi(u) vs Phi(v) rel 4.3e-14
+PASS [NUMERIC] n=5 trial=1: converged in 657 steps, ||v||^2 99.94 -> 18.0617; |u_k|^2 spread 7.2e-13; sum u u^* - (tr/2)I rel 1.8e-14; Phi(u) vs Phi(v) rel 4.4e-14
+  semistable n=4 (v1,v2,w1,w2 parallel): Phi(v) has 4 nonzero entries of 24, max |Phi| = 0.343
+    step       0: ||g.v||^2 = 30.2758965404  gradient norm = 5.097e-01
+    step   50000: ||g.v||^2 = 6.1209189869  gradient norm = 3.166e-05
+    step  100000: ||g.v||^2 = 6.1207656870  gradient norm = 1.582e-05
+    step  150000: ||g.v||^2 = 6.1207146267  gradient norm = 1.055e-05
+    step  200000: ||g.v||^2 = 6.1206891043  gradient norm = 7.908e-06
+    step  250000: ||g.v||^2 = 6.1206737934  gradient norm = 6.326e-06
+    step  300000: ||g.v||^2 = 6.1206635872  gradient norm = 5.272e-06
+    step  350000: ||g.v||^2 = 6.1206562977  gradient norm = 4.518e-06
+    step  399000: ||g.v||^2 = 6.1206509267  gradient norm = 3.963e-06
+    after 399999 steps: |u_k|^2 = [0.76507 0.76507 0.76509 0.76509 0.76507 0.76507 0.76509 0.76509]; singular values of (v3,v4,w3,w4) = [1.749 0.006]
+PASS [NUMERIC] n=4 strictly semistable: Phi(v) != 0 preserved to rel 1.3e-12; descent does NOT reach the tolerance (gradient decays only polynomially, fitted exponent -1.00); the remaining 4 vectors collapse toward one line (smallest/largest singular value 3.54e-03), i.e. the infimum is approached only in the limit (polystable limit: two lines of 4)
+== summary: 97 PASS, 0 FAIL, 13.5s ==
