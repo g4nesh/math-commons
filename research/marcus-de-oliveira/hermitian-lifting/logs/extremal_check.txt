@@ -1,0 +1,3 @@
+n=3: largest errors at the maximisers: N Hermitian 2.3e-07 ; (A+beta)w = 2 l(z0) v 3.8e-08 ; l(D1) = l(z0) v*(A+beta)^-1 v 9.2e-16 ; compression identities 6.7e-16
+n=4: largest errors at the maximisers: N Hermitian 8.5e-07 ; (A+beta)w = 2 l(z0) v 1.2e-07 ; l(D1) = l(z0) v*(A+beta)^-1 v 4.4e-15 ; compression identities 1.0e-15
+n=5: largest errors at the maximisers: N Hermitian 1.0e-05 ; (A+beta)w = 2 l(z0) v 2.6e-07 ; l(D1) = l(z0) v*(A+beta)^-1 v 1.4e-14 ; compression identities 1.3e-15

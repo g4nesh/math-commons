@@ -218,7 +218,7 @@ def main():
     rays = classify(rows)
     physical_checks(rows,rays)
     print("21 products, 6 independent repairs; 573 cycles give 189 rays in 7 orbits.")
-    print("45 ray inequalities are grouped squared minors; 4 universal orbit signs remain.")
+    print("45 ray inequalities are grouped squared minors; the other 4 universal orbit signs have separate Grassmann certificates (see double-paired-five-term/GRASSMANN.md).")
 
 
 if __name__ == "__main__":

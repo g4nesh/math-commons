@@ -1,0 +1,2 @@
+n=5: 1500 random triples (A Hermitian, B with four nonreal eigenvalues): smallest depth 2.122e-03, fraction below 1e-9: 0.000
+n=5: 12 adversarial runs over spectra and U (Nelder-Mead on the depth): smallest depth reached 8.967e-04

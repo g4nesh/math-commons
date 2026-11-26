@@ -1,0 +1,124 @@
+# Splitting one eigenvalue pair: an exact criterion and an open subclass
+
+For the multiplicities $(2,2,1,1)\times(2,2,2)$, existence of one nonnegative determinant law valid for **all spectral values** is equivalent to feasibility of **83 explicit linear inequalities in six real variables**. The reduction uses a six-dimensional zonotope with 12 generators and exactly 31 pairs of facet normals.
+
+We also give a dense Gaussian-rational unitary $U_0$ and an explicit law throughout the closed entrywise unitary ball
+
+$$\boxed{\max_{i,j}|U_{ij}-(U_0)_{ij}|\le\frac1{1344000}.}$$
+
+Every one of the 33 masses is at least $1/2000$ there. The law works simultaneously for every
+
+$$a=(\alpha,\alpha,\beta,\beta,\gamma,\delta),\qquad
+b=(u,u,v,v,w,w)\quad\text{in }\mathbb C^6.$$
+
+In particular, with the other values fixed, $\gamma=c+t$ and $\delta=c-t$ may split by **any complex $t$**. The neighborhood restriction is on the relative unitary, not on the size of the spectral splitting. This is an explicit open subclass, not a proof for every $U(6)$.
+
+## Coordinates and the even law
+
+Row colors are $(0,0,1,1,2,3)$; column colors are $(0,0,1,1,2,2)$. A table $T$ records how many rows of each color are assigned to each column color. There are 33 such $4\times3$ tables. Its vertex polynomial is
+
+$$P_T(x,y)=\prod_{r=0}^3\prod_{s=0}^2(x_r+y_s)^{T_{rs}}.$$
+
+The coefficient matrix $A$ has 192 monomial rows, 33 columns and rank 21. Tables and monomials are lexicographically ordered in [certificate.json](certificate.json); the checker reconstructs them from all 720 permutations.
+
+For a unitary $U$, use the canonical signed table
+
+$$q_T(U)=\Re\left(\overline{\det U}\sum_{\pi:\,T(\pi)=T}\operatorname{sgn}(\pi)\prod_{i=0}^5U_{i,\pi(i)}\right).$$
+
+Then $\sum_Tq_T=1$, and $Aq$ is the determinant polynomial's coefficient vector. This follows from $\det(D_xU+UD_y)/\det U$ and the grouped Cauchy–Binet expansion, whose coefficients are real. A nonnegative $w$ with $Aw=Aq$ is therefore a shared law for every complex spectral value. Repeated values cause no exception.
+
+Merge singleton colors 2 and 3. The 33 tables become 21 parents: nine have one child, and twelve have two children interchanged by swapping the singleton colors. Parent order is the unordered-pair order from [PR81](https://github.com/g4nesh/math-commons/pull/81), using its three even then three odd $S_3$ permutations. Within a double fiber, the lexicographically first table is called $+$.
+
+Let $q^0_p$ be the sum of canonical child masses. Every possible even parent law is
+
+$$m_p=q^0_p+\sum_{v=0}^5K_{vp}r_v,\qquad r\in\mathbb R^6.$$
+
+For parent $p=(i,j)$, with $\epsilon=(1,1,1,-1,-1,-1)$,
+
+$$K_{v,(i,i)}=\mathbf1_{v=i},\qquad
+K_{v,(i,j)}=\epsilon_i\epsilon_j\mathbf1_{v\in\{i,j\}}\quad(i<j).$$
+
+These six vectors are independent and span the coarse polynomial kernel. The checker verifies their **polarized lifts** lie in $\ker A$. Conversely, a symmetric polynomial that has degree at most one in each singleton variable is determined by its diagonal restriction: its dependence is $a+b(x_2+x_3)+c x_2x_3$. Thus coalescing loses no even constraint.
+
+## Six odd moments and twelve mass bounds
+
+For each double fiber $j$, define $d_j=w_{j,+}-w_{j,-}$ and $d^0_j=q_{j,+}-q_{j,-}$. Then
+
+$$w_{j,\pm}=\frac{m_{p(j)}\pm d_j}{2},\qquad |d_j|\le m_{p(j)}.$$
+
+A singleton child has weight $m_p$. The odd coefficient matrix consists of the differences between the two child columns of $A$; it has rank six. Taking its first six independent rows gives the following exact matrix, whose column order is the double fibers in parent order:
+
+$$B=\begin{pmatrix}
+1&0&0&1&1&1&1&0&1&0&1&1\\
+0&1&1&0&-1&-1&0&1&-1&1&-1&0\\
+0&0&0&0&1&0&1&0&1&0&0&1\\
+1&1&0&2&-1&0&0&2&0&1&1&1\\
+0&1&1&0&0&0&0&0&-1&0&-1&0\\
+0&0&0&0&0&0&0&1&1&0&0&1
+\end{pmatrix}.$$
+
+Write $t=Bd^0$. The complete criterion before eliminating odd variables is
+
+$$\boxed{\exists r\in\mathbb R^6,\ d\in\mathbb R^{12}:quad
+m=q^0+K^Tr\ge0,\quad Bd=t,\quad |d_j|\le m_{p(j)}.}$$
+
+**Proof of equivalence.** Taking symmetric and antisymmetric parts separates the full polynomial identity into two independent parts. The preceding polarization argument gives exactly the six even repairs. The selected six odd rows span every odd row, so $Bd=t$ is equivalent to every odd coefficient identity. The displayed bounds are precisely nonnegativity of the two child weights. The singleton bounds are precisely $m_p\ge0$. Normalization follows from the all-$x$ coefficient. This proves necessity and sufficiency, not just a sufficient construction.
+
+## The finite zonotope test
+
+For fixed parent masses, the possible odd moments form
+
+$$Z(m)=\sum_{j=0}^{11}[-m_{p(j)},m_{p(j)}]B_j.$$
+
+Here $B_j$ is column $j$. Enumerate all $\binom{12}{5}=792$ sets of five columns. Whenever they have rank five, their signed $5\times5$ cofactors give a normal; divide by the integer gcd and identify opposite signs. This gives exactly **31** primitive directions $\mathcal N$, recorded and regenerated by the checker. Their entries have absolute value at most three.
+
+For strictly positive lengths, a zonotope facet has a five-dimensional span of generators perpendicular to its normal. Conversely, every such span produces a facet. Therefore the enumeration is complete, and
+
+$$t\in Z(m)\quad\Longleftrightarrow\quad
+|h\cdot t|\le\sum_jm_{p(j)}|h\cdot B_j|\quad\text{for every }h\in\mathcal N.$$
+
+Zero lengths are also covered. If these inequalities hold for $m\ge0$, they hold for the double-fiber lengths increased by any $\varepsilon>0$. The positive-length criterion gives membership in each enlarged zonotope; compactness and passage to the limit give membership in $Z(m)$.
+
+Substitute $m=q^0+K^Tr$. Each absolute inequality gives two linear inequalities in $r$, and the 21 parent bounds give 21 more: **62 + 21 = 83 inequalities in six unknowns**. `repair_inequalities(q)` returns their exact rational coefficients and bounds. `lift(q, repairs, imbalances)` verifies the six moments and twelve bounds and returns the 33 masses.
+
+## One exact physical law and a uniform neighborhood
+
+Let $H(v)=I-2vv^*/(v^*v)$ and $U_0=H(v_4)H(v_3)H(v_2)H(v_1)$, where
+
+$$\begin{aligned}
+v_1&=(1+i,2-i,-1+2i,3,i,2+2i),\\
+v_2&=(2,-1+i,1-2i,2i,3+i,-2+i),\\
+v_3&=(1-i,1+2i,2,-1+3i,2-2i,1),\\
+v_4&=(2+i,i,-1-i,1+2i,2,-2+3i).
+\end{aligned}$$
+
+All entries of $U_0$ are nonzero, and its canonical table has three negative masses. The certificate gives 33 rational masses $w^0_T\ge1/1000$, the six repairs and the twelve imbalances. Exact replay checks unitarity, the lift, all 83 inequalities and all 192 polynomial coefficients. Independently grouping **all 924 squared minors** reproduces those same coefficients.
+
+Put $c=w^0-q(U_0)\in\ker A$. For any nearby unitary, use the explicit formula
+
+$$w(U)=q(U)+c.$$
+
+The polynomial identities and normalization remain exact. Only positivity needs a bound. If $\max|U_{ij}-V_{ij}|\le\rho$ for two unitaries, a six-entry product changes by at most $6\rho$. A column-by-column determinant telescope and Hadamard's inequality give
+
+$$|\det U-\det V|\le6\sqrt6\rho<15\rho.$$
+
+A table contains at most 32 permutation terms, as counted exactly. Since all unitary entries and determinants have modulus at most one,
+
+$$|q_T(U)-q_T(V)|\le(6+15)\,32\rho=672\rho.$$
+
+At $\rho=1/1344000$, this is at most $1/2000$. Consequently every $w_T(U)\ge1/2000$ on the **closed** stated unitary ball. Its relative interior is a nonempty open set in $U(6)$. No rank-stability assumption or spectral smallness is used. `weights_at(U)` evaluates this law on exact Gaussian-rational inputs and rejects matrices outside the certified ball.
+
+## Replay and limits
+
+From the repository root, Python 3.9+ standard library:
+
+```sh
+python3 -B research/marcus-de-oliveira/split-one-eigenvalue-pair/check.py
+python3 -B -m unittest discover -s research/marcus-de-oliveira/split-one-eigenvalue-pair -p 'test_*.py'
+```
+
+The replay uses the repository's [exact Gaussian-rational verifier](../certificates/verify.py). Discovery used one rational fixture and a numerical LP followed by exact reconstruction; the published checker uses no solver. The 31-normal enumeration and open-set bounds are exact. No large sample search was performed.
+
+[PR94](https://github.com/g4nesh/math-commons/pull/94) established the paired even problem and motivated this extension. The six-repair kernel is from [PR81](https://github.com/g4nesh/math-commons/pull/81). The local fixture and radius above are verified directly and do not depend on accepting the universal PR94 proof. Earlier [three-color coupling](../three-color-coupling/README.md) also contains a different open physical subclass; this result supplies the refined finite criterion and a new explicitly checked center, without a novelty claim.
+
+The unresolved question is whether the 83-inequality system is feasible for **every** physical $U(6)$. A useful next task is an exact Farkas classification of this six-variable system, exploiting the 31 normals and physical grouped-minor identities. Failure would obstruct a spectrum-independent law; it would not by itself disprove pointwise MDO. This is written exact evidence with replay, pending independent-owner review, not a Lean proof.
