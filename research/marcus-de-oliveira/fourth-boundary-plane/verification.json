@@ -1,0 +1,52 @@
+{
+  "coordinates": "a3=s*(1-i)+t*(1+i)",
+  "sInterval": [
+    "1/10",
+    "31/200"
+  ],
+  "tInterval": [
+    "-1/50",
+    "1/50"
+  ],
+  "boundaryPolynomial": "1808*(s^2+t^2)+2187*s+1079*t-350",
+  "originalComplexCoordinates": "904*(x^2+y^2)+1633*x-554*y-350",
+  "feasibleSide": "q>=0, including the circle",
+  "excludedSide": "q<0; uniform weights only",
+  "positiveMassesOnBoundary": 11,
+  "zeroMassesOnBoundary": 1,
+  "coefficientIdentities": 17,
+  "cofactorPolynomials": 37,
+  "cofactorTotalDegreeBound": 12,
+  "exactGridPoints": 169,
+  "minimumPrimalBernsteinControl": "105343029509223175756317/5000000000000000000",
+  "minimumNonzeroDualBernsteinControl": "13312509834903552/1220703125",
+  "zeroDualColumns": 11,
+  "boundarySlopeInterval": [
+    "-1/2",
+    "-1/3"
+  ],
+  "transverseEndpointRootBrackets": [
+    {
+      "t": "-1/50",
+      "sBracket": [
+        "34767228130861896107/230584300921369395200",
+        "17383614065430948059/115292150460684697600"
+      ]
+    },
+    {
+      "t": "0",
+      "sBracket": [
+        "6599608846474489069/46116860184273879040",
+        "8249511058093111339/57646075230342348800"
+      ]
+    },
+    {
+      "t": "1/50",
+      "sBracket": [
+        "31085864103795875097/230584300921369395200",
+        "7771466025948968777/57646075230342348800"
+      ]
+    }
+  ],
+  "scope": "Fixed archived U and noncollinear b; weights uniform over three other arbitrary complex eigenvalues. No pointwise MDO counterexample or classification outside the rectangle."
+}
