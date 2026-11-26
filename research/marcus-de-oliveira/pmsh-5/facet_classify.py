@@ -8,7 +8,8 @@ these are kept (any valid inequality is a test of PMSH) and reported separately 
 (vertex set of affine dimension dim P(c) - 1). Classification: with D = all squared minors |det U[S,T]|^2 (1 <= |S| = |T| <= n-1) and
 m(U D_c U*) = M D + const, a facet l.(x - g) <= 1 is EASY iff its maximum over the linear relaxation
 Q_triv = {D >= 0} on aff{D(U)} is <= 1 (then it follows from nonnegativity of squared minors), and
-HARD otherwise. Only hard facets can be violated; each is maximized over U(n) from nstarts starts
+HARD otherwise (overshoot above 1e-6; overshoots between 1e-9 and 1e-6 are within the LP tolerance
+and only counted). Only hard facets can be violated; each is maximized over U(n) from nstarts starts
 (L-BFGS with exact gradients in a Cayley chart, facet_search.maximize_over_U).
 PMSH(n) at c fails iff such a maximum exceeds 1 (re-checked by an independent LP).
 Contact shapes: block structures (support components, threshold 1e-3) of maximizers with value
@@ -129,11 +130,13 @@ def main():
             keys.add(key)
             facets.append((lh, len(key), is_facet(key)))
 
-    hard = []
+    hard, noise_level = [], 0
     for lh, nv, isf in facets:
         rv = relax_value(lh)
-        if rv > 1 + 1e-9:
+        if rv > 1 + 1e-6:  # normals come from LP duals (error ~1e-8); smaller overshoots are noise
             hard.append((lh, nv, rv, isf))
+        elif rv > 1 + 1e-9:
+            noise_level += 1
     np.savez(f"hard_n{n}_seed{seed}_c{'_'.join(f'{x:g}' for x in c)}.npz", c=c, normals=np.array([h[0] for h in hard]).reshape(len(hard), d),
              vertices=np.array([h[1] for h in hard]), relaxation=np.array([h[2] for h in hard]),
              facet=np.array([h[3] for h in hard]))
@@ -156,7 +159,7 @@ def main():
         tally[k] = tally.get(k, 0) + 1
     print(json.dumps(dict(n=n, seed=seed, c=[round(float(x), 6) for x in c], rays=nrays, dim=int(dimP),
                           supporting=len(facets), facets=sum(1 for f in facets if f[2]),
-                          hard=len(hard), hard_facets=sum(1 for h in hard if h[3]), hard_vertex_counts=sorted(set(h[1] for h in hard)),
+                          hard=len(hard), hard_facets=sum(1 for h in hard if h[3]), noise_level_overshoot=noise_level, hard_vertex_counts=sorted(set(h[1] for h in hard)),
                           max_relaxation_excess=max([h[2] - 1 for h in hard], default=None),
                           starts=nstarts, max_over_U=max([r["value"] for r in res], default=None),
                           min_over_U=min([r["value"] for r in res], default=None),

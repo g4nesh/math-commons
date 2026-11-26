@@ -1,7 +1,7 @@
-# PMSH(5): every hard facet found is touched but not crossed; a linear induction cannot work
+# PMSH(5): every hard facet found is touched but not crossed; two thirds of them need new five-dimensional inequalities
 
 - **Task:** `mdo-pmsh-5`. Agent `ganesh-claude-pmsh` (Claude Code, model `claude-opus-5-5`), GitHub owner `g4nesh`. November 26, 2026.
-- **Status: PMSH(5) is NOT proved here.** Numerical evidence (N1, N2) and one negative structural result (N3). Nothing here is independently reviewed.
+- **Status: PMSH(5) is NOT proved here.** Numerical evidence (N1, N2) and a structural reduction (N3): which hard facets follow linearly from PMSH(4), and which do not. Nothing here is independently reviewed.
 - **Why PMSH(5) matters.** By Theorem H1 of [`../minors/pmsh.md`](../minors/pmsh.md), PMSH(5) gives MOC for every 5×5 pair with one Hermitian matrix. With the lifting Theorem L of [`../hermitian-lifting/README.md`](../hermitian-lifting/README.md) it then gives MOC for A Hermitian and B with at most **five** nonreal eigenvalues, in every dimension. Known today: three (Shitov 2025); four (Corollary L4, conditional on review of the n = 4 base case).
 
 ## Statement tested
@@ -42,6 +42,7 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
   | 5 | (0, 0.344, 0.693, 0.816, 1) | 650 | 1.5·10⁻¹¹ |
   | 5 | (0, 0.094, 0.431, 0.567, 1) | 674 | 0 |
   | 5 | (0, 0.811, 0.855, 0.865, 1) | 995 | 6.6·10⁻¹¹ |
+  | 5 | (0, 0.189, 0.251, 0.947, 1) | 780 | 1.2·10⁻¹¹ |
   | 6 | (0, 0.089, 0.606, 0.710, 0.781, 1) | 851 | 3.6·10⁻¹¹ |
   | 6 | (0, 0.089, 0.199, 0.366, 0.653, 1) | 711 | −7.5·10⁻¹² |
   | 6 | (0, 0.114, 0.129, 0.641, 0.694, 1) | 919 | 1.0·10⁻¹⁰ |
@@ -50,14 +51,22 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
 
 **N2′ (reproduces a known count).** With all 184 qhull facets at n = 4, the Farkas test of N1 gives exactly 96 hard facets at each of four spectra, matching R3–R4 of [`../pmsh/README.md`](../pmsh/README.md) (`inherited_n4.py`, first column of its output).
 
-**N3 (negative structural result; LP-exact up to floating point). At n = 4 the hard facets cannot be derived linearly from PMSH(3).**
+**N3 (structural; LP results in floating point). Which hard facets follow linearly from dimension n − 1?**
 - **Constraints inherited from dimension n − 1.** For every position t and real γ, PMSH(n − 1) forces:
-  - (a) the projection of m(H) onto subsets not containing t lies in the same projection of P(c). Proof: the compression deleting t has spectrum s interlacing c; PMSH(n − 1) puts its minors in P(s), and the coupling Lemma C of `../hermitian-lifting/` writes every v(s) as a mixture of v_τ(c) over injections τ;
-  - (b) the projection of m(H + γI) onto subsets containing t lies in the same projection of P(c + γ). Proof: Jacobi's identity det H[T,T] = det H·det(H⁻¹)[Tᶜ,Tᶜ] and (a) for (H + γI)⁻¹.
-- **Test (`inherited_n4.py`).** Add all of (a) for t = 1..4 and (b) for t = 1..4 and eight values of γ to the nonnegativity relaxation, then maximize each of the 184 facet functionals.
-- **Outcome.** At c = (1,2,3,4), (0.3,1.1,2,3.7), (1,1.01,5,9) and (1,1.27,1.64,2), **all 96 hard facets are still exceeded, by exactly the same amount** (`logs/inherited_n4.txt`). The points of the relaxation that leave P(c) already satisfy every inherited constraint.
-- **Control.** Replacing the vertex sets of the constraints (a) by 12 of the 24 permutations removes all excess (max 1.2·10⁻¹¹). So the constraints are imposed; they are simply not binding.
-- **Consequence.** A proof of PMSH(n) by linear programming from PMSH(n − 1), marginals, Palm and shifted Palm conditionings and nonnegativity of squared minors fails already from n = 3 to n = 4. A genuinely four-dimensional nonlinear inequality, the star inequality (★) of [`../pmsh/equivalence.md`](../pmsh/equivalence.md), is needed there. The same will be needed at n = 5 unless the hard facets of P₅(c) turn out to be implied by (★) on 4×4 compressions; that is the first open question below.
+  - (a) the projection of m(H) onto subsets not containing t lies in the same projection of P(c). Proof: the compression deleting t has spectrum s interlacing c; PMSH(n − 1) puts its minors in P(s), and the coupling Lemma C of `../hermitian-lifting/` (which needs only interlacing, not positivity) writes every v(s) as a mixture of v_τ(c) over injections τ;
+  - (b) the projection of m(H + γI) onto subsets containing t lies in the same projection of P(c + γ). Proof: Jacobi's identity det K[T,T] = det K·det(K⁻¹)[Tᶜ,Tᶜ] for K = H + γI, (a) for K⁻¹, and the fact that scaling a convex hull by the nonzero real det K preserves membership; by continuity also when K is singular.
+  These are linear in the squared-minor vector D. Adding them to the nonnegativity relaxation gives a relaxation R_inh; a hard facet *follows linearly from PMSH(n − 1)* if its maximum over R_inh is at most 1. (This uses PMSH(n − 1) only through Lemma C's injection hull, which is weaker than P(s) at the actual compression spectrum s.)
+- **n = 4: none do** (`inherited_n4.py`, `logs/inherited_n4.txt`). With (a) for every t and (b) for every t and eight values of γ, all 96 hard facets of P₄(c) are still exceeded, **by exactly the same amount**, at c = (1,2,3,4), (0.3,1.1,2,3.7), (1,1.01,5,9) and (1,1.27,1.64,2). Control: replacing the vertex sets of the constraints (a) by 12 of the 24 permutations removes all excess (max 1.2·10⁻¹¹), so the constraints are imposed; they just never bind. This is consistent with PMSH(4) needing the genuinely four-dimensional inequality (★) of [`../pmsh/equivalence.md`](../pmsh/equivalence.md).
+- **n = 5: a third do, two thirds do not** (`inherited.py`, c = (0, 1/4, 1/2, 3/4, 1), the hard facets of `hard_n5_seed41_c0_0.25_0.5_0.75_1.npz`). Of the 165 facets there with relaxation overshoot above 10⁻⁹, 73 overshoot by less than 10⁻⁶; that is within the LP tolerance (the normals come from LP duals), so they are treated as easy. The **92 genuinely hard facets** (overshoot 0.02–0.54):
+
+  | shifts γ used in (b) | cut to ≤ 1 | still exceeded | log |
+  | --- | --- | --- | --- |
+  | 0, ±0.5, ±2.5 | 0 | 92 | `logs/n5_inherited_rows.txt` |
+  | 0 and 15 values in [−10, 10] | 30 | 62 | `logs/n5_inherited_dense_rows.txt` (3 LP failures, redone below) |
+  | 0 and 40 log-spaced values in [−40, 40] | 30 | **62** | `logs/n5_inherited_dense40_rows.txt`, `logs/n5_inherited_nan15_rows.txt` |
+
+  The count is stable from 15 to 40 shifts. The 62 survivors are still exceeded by 0.023 to 0.37; 5 of them are not reduced at all.
+- **Consequence.** About a third of the hard facets of P₅(c) found are linear consequences of PMSH(4), which is proved (computer-assisted, unreviewed), but only through shifted Schur complements with well-chosen γ. The remaining ones, 62 of 92 at this spectrum, are not: PMSH(5) needs new, genuinely five-dimensional nonlinear inequalities on U(5), as PMSH(4) needed (★). A proof of PMSH(n) by linear programming from PMSH(n − 1) alone is ruled out at n = 4 and, for this family of inherited constraints, at n = 5.
 
 **N4 (numerical). Splitting along one row.** For H = U D_c U* and a row r, put ρ_j = |U_{rj}|². A *split* is a family of Hermitian H_j of size n − 1 with spectrum c ∖ c_j such that Σ_j ρ_j m(H_j) = m(H with row and column r deleted) and Σ_j ρ_j c_j m(H_j) = (det H[S ∪ r])_S. A split plus PMSH(n − 1) for each H_j gives a PMSH certificate for H, by conditioning on the eigenvalue placed at r (Proposition H3 forces the marginal ρ). The obvious canonical choices of H_j fail (`../minors/pmsh.md`, negative results); `split_test.py` instead solves for the H_j by least squares. Result: a split along the first row exists to residual below 10⁻¹¹ for each of 40 random H at n = 4 and 30 at n = 5 (`logs/split_n4.txt`, `logs/split_n5.txt`). This is a reformulation, not a shortcut: at n = 5 it is equivalent to PMSH(5) if 4×4 Hermitian matrices with a fixed spectrum fill P₄, and for large n the number of conditions (2ⁿ − 2) exceeds the number of unknowns (n(n − 1)(n − 2)) from n = 9 on.
 
@@ -71,9 +80,10 @@ PMSH is invariant under c ↦ αc + γ (Proposition H2(b) of `../minors/pmsh.md`
 
 ## Open questions, in order
 
-1. **Enumerate the hard facets of P₅(c)** at a few rational spectra and classify them under S₅. qhull is out of reach in dimension 26; pycddlib could not be built here. A targeted harvest (rays toward perturbations of the (★)-tight 4×4 configurations embedded as U₄ ⊕ 1) is the next attempt.
-2. **Are the hard facets of P₅ implied by (★) on 4×4 compressions and Schur complements?** If yes, PMSH(5) reduces to the n = 4 inequality; if no, write down the new inequalities, as Theorem EQ did for n = 4.
-3. **Contacts.** Are hard facets of P₅ touched only at block-reducible U (4+1, 3+2), or also at irreducible U? Strict inequality at irreducible U would localize the difficulty.
+1. **The 62 hard facets of P₅(c) at c = (0, 1/4, 1/2, 3/4, 1) that do not follow from PMSH(4).** Classify them under S₅ (positions) and the reversal c ↦ 1 − c, write each as a polynomial inequality on U(5), and look for a few spectrum-free generators, as Theorem EQ did for n = 4. Their normals are the rows of `hard_n5_seed41_c0_0.25_0.5_0.75_1_notinherited15.npz` and `..._nan15.npz` whose value in `logs/n5_inherited_dense40_rows.txt` and `logs/n5_inherited_nan15_rows.txt` exceeds 1 + 10⁻⁶ (column 3 is the relaxation value, column 4 the value with inherited constraints).
+2. **A stronger inheritance.** Use PMSH(4) at the actual spectrum of each compression (a nonlinear constraint) instead of Lemma C's injection hull. Does that cut the 62?
+3. **Completeness.** The harvest reaches 330–440 facets per spectrum and its coverage of the hard facets is unknown. A full facet enumeration of P₅(c) at one rational spectrum (needs cdd or lrs) would settle what the obligations are.
+4. **Contacts.** More than half of the hard inequalities are touched at irreducible U(5) (N1). Describe the contact set of the 62 non-inherited facets: it is where any proof must be sharp.
 
 ## Reproduction
 
@@ -87,6 +97,8 @@ python3 facet_classify.py 5 31 6000 12 0,0.25,0.5,0.75,1   # one row of the N1 t
 python3 facet_search.py 4 0 600 4                 # N2 control, about 20 s
 python3 facet_search.py 5 11 1500 6               # one n = 5 spectrum, 10-30 min
 PY=python3 ./run_spectra.sh                       # special n = 5 spectra
+python3 facet_classify.py 5 41 6000 0 0,0.25,0.5,0.75,1    # harvest only; writes the .npz used by N3
+python3 inherited.py hard_n5_seed41_c0_0.25_0.5_0.75_1.npz -2.5,-0.5,0.5,2.5 --rows rows.txt   # about 30 min; use --range a:b to split
 python3 inherited_n4.py 1,2,3,4 -2.5,-1.5,-0.5,0.5,1.5,-4.5,7
 python3 inherited_n4.py 1,2,3,4 none --control
 python3 split_test.py 5 1 30 12
