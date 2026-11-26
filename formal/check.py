@@ -119,4 +119,5 @@ with TemporaryDirectory(prefix='math-commons-lean-') as build_dir:
 # declaration inventory above. This checker uses only temporary build artifacts.
 subprocess.run([sys.executable,
                 str(root.parent / 'research/marcus-de-oliveira/orthogonal-cube-lean/check.py'),
-                lean], check=True)
+                lean], check=True,
+               env={**os.environ, 'ELAN_TOOLCHAIN': f'leanprover/lean4:v{version}'})
