@@ -96,6 +96,14 @@ theorems = {
         'subsetImageIdentity', 'subsetImageSwap', 'successorExpectation', 'lawExpectationStep',
         'historyExpectationStep', 'commonPushforward', 'coinLawMassOne', 'coinWeightsNonnegative',
         'unitaryCoinWeightsNonnegative', 'commonEndpointLaw', 'commonSquaredMinorLaw')},
+    'ForestSpectralExpansion.lean': {'MathCommons.ForestSpectralExpansion.' + n for n in (
+        'productCongr', 'productMap', 'productPerm', 'subsetOutside', 'subsetsNodup',
+        'subsetMember', 'subsetsComplete', 'productOfSums', 'productPointwise',
+        'selectionSplit', 'permutationList', 'productReindex', 'selectionAsMonomial',
+        'pairingProductAsRows', 'pairingSubsetExpansion', 'scaleZero', 'scaleAdd',
+        'scaleSum', 'sumScale', 'weightedGrouping', 'weightedSubsetExpansion',
+        'productOnes', 'emptySpectralMonomial', 'fullSpectralMonomial',
+        'forestWeightedSubsetExpansion')},
 }
 theorems['OrthogonalCube.lean'] = {'MathCommons.OrthogonalCube.' + n for n in (
     'squareNonnegative', 'quadraticNonnegative', 'lagrangeIdentity',
@@ -139,5 +147,12 @@ with TemporaryDirectory(prefix='math-commons-lean-') as build_dir:
 # declaration inventory above. This checker uses only temporary build artifacts.
 subprocess.run([sys.executable,
                 str(root.parent / 'research/marcus-de-oliveira/orthogonal-cube-lean/check.py'),
+                lean], check=True,
+               env={**os.environ, 'ELAN_TOOLCHAIN': f'leanprover/lean4:v{version}'})
+
+# Check the scalar side of the forest determinant bridge against its exact
+# published statement inventory and transitive source hashes as well.
+subprocess.run([sys.executable,
+                str(root.parent / 'research/marcus-de-oliveira/forest-spectral-expansion/check.py'),
                 lean], check=True,
                env={**os.environ, 'ELAN_TOOLCHAIN': f'leanprover/lean4:v{version}'})

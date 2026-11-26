@@ -1,0 +1,32 @@
+{
+  "leanVersion": "4.24.0",
+  "namespace": "MathCommons.ForestSpectralExpansion",
+  "count": 25,
+  "declarations": [
+    "productCongr",
+    "productMap",
+    "productPerm",
+    "subsetOutside",
+    "subsetsNodup",
+    "subsetMember",
+    "subsetsComplete",
+    "productOfSums",
+    "productPointwise",
+    "selectionSplit",
+    "permutationList",
+    "productReindex",
+    "selectionAsMonomial",
+    "pairingProductAsRows",
+    "pairingSubsetExpansion",
+    "scaleZero",
+    "scaleAdd",
+    "scaleSum",
+    "sumScale",
+    "weightedGrouping",
+    "weightedSubsetExpansion",
+    "productOnes",
+    "emptySpectralMonomial",
+    "fullSpectralMonomial",
+    "forestWeightedSubsetExpansion"
+  ]
+}
