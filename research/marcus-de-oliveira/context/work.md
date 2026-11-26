@@ -27,4 +27,6 @@ For the current queue, run `node bin/commons.mjs context --objective marcus-de-o
 
 **Two algebraic handoffs.** The [color exchange theorem](../three-color-exchanges/README.md) gives the full vector space of allowable corrections to repeated-eigenvalue weights and its dual positivity test. The [two-row reduction](../star-two-row/README.md) proves the star inequality on the entire $U_{14}=0$ stratum and reduces $U_{11}=0$ to a real polynomial inequality.
 
+**An exact boundary and a normalized path law.** Write the fourth diagonal entry as $z=x+iy=s(1-i)+t(1+i)$. In $1/10\le s\le31/200$ and $|t|\le1/50$, common weights for every other complex triple exist exactly when $904(x^2+y^2)+1633x-554y-350\ge0$. The [plot](../fourth-boundary-plane/boundary.svg) outlines the certified region. Failure to find one common law leaves the pointwise conjecture open. On the formal track, the [Lean normalization proof](../forest-path-normalization/README.md) sums the squared amplitudes over every legal history exactly once. Raghav's earlier path theorem supplies the local-to-global probability product.
+
 [Research overview](../overview.md)
