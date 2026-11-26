@@ -1,0 +1,2 @@
+F: min over U(5) -6.744e-02  (starts below -1e-6: 34/40)
+G: min over U(5) -6.744e-02  (starts below -1e-6: 25/40)

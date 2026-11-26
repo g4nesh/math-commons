@@ -1,0 +1,59 @@
+orbit A: 900 facets, gap values [0, 1]
+orbit B: 14400 facets, gap values [0, 1, 2]
+orbit C: 2880 facets, gap values [0, 1, 2, 3, 5]
+orbit D: 14400 facets, gap values [0, 1, 2]
+orbit E: 3600 facets, gap values [0, 1, 2]
+orbit F: 7200 facets, gap values [0, 1, 2, 3]
+orbit G: 14400 facets, gap values [0, 1, 2]
+  new non-minor facet orbit: 64 vertices, orbit size 7200, gap values [0, 1, 2]
+  new non-minor facet orbit: 74 vertices, orbit size 3600, gap values [0, 1, 2]
+  new non-minor facet orbit: 66 vertices, orbit size 28800, gap values [0, 1, 2]
+  new non-minor facet orbit: 72 vertices, orbit size 3600, gap values [0, 1]
+  new non-minor facet orbit: 59 vertices, orbit size 28800, gap values [0, 1, 2, 3]
+  new non-minor facet orbit: 66 vertices, orbit size 14400, gap values [0, 1, 2]
+  new non-minor facet orbit: 54 vertices, orbit size 28800, gap values [0, 1, 2, 3, 4]
+  new non-minor facet orbit: 68 vertices, orbit size 3600, gap values [0, 1, 2]
+  new non-minor facet orbit: 58 vertices, orbit size 14400, gap values [0, 1, 2, 3]
+{"orbit": 0, "status": ["not inherited"], "vertices": 52, "candidates_nonminor": 2, "candidates_minor": 9, "feasible": true, "nonminor": [["A", "3"]], "minor_terms": 9}
+{"orbit": 1, "status": ["inherited", "not inherited"], "vertices": 72, "candidates_nonminor": 1, "candidates_minor": 4, "feasible": true, "nonminor": [["A", "1"]], "minor_terms": 4}
+{"orbit": 2, "status": ["inherited", "not inherited"], "vertices": 72, "candidates_nonminor": 1, "candidates_minor": 4, "feasible": true, "nonminor": [["A", "6"]], "minor_terms": 4}
+{"orbit": 3, "status": ["not inherited"], "vertices": 52, "candidates_nonminor": 2, "candidates_minor": 7, "feasible": true, "nonminor": [["A", "4"], ["A", "5"]], "minor_terms": 4}
+{"orbit": 4, "status": ["not inherited"], "vertices": 26, "candidates_nonminor": 14, "candidates_minor": 13, "feasible": true, "nonminor": [["A", "888"], ["B", "621"], ["D", "52"], ["D", "59"], ["N4", "177"], ["N4", "795"]], "minor_terms": 10}
+{"orbit": 5, "status": ["inherited"], "vertices": 72, "candidates_nonminor": 1, "candidates_minor": 4, "feasible": true, "nonminor": [["A", "6"]], "minor_terms": 4}
+{"orbit": 6, "status": ["inherited", "not inherited"], "vertices": 72, "candidates_nonminor": 1, "candidates_minor": 4, "feasible": true, "nonminor": [["A", "1"]], "minor_terms": 4}
+{"orbit": 7, "status": ["not inherited"], "vertices": 52, "candidates_nonminor": 2, "candidates_minor": 7, "feasible": true, "nonminor": [["A", "4"]], "minor_terms": 7}
+{"orbit": 8, "status": ["inherited", "not inherited"], "vertices": 72, "candidates_nonminor": 1, "candidates_minor": 4, "feasible": true, "nonminor": [["A", "8"]], "minor_terms": 4}
+{"orbit": 9, "status": ["not inherited"], "vertices": 52, "candidates_nonminor": 1, "candidates_minor": 6, "feasible": true, "nonminor": [["A", "3"]], "minor_terms": 6}
+{"orbit": 10, "status": ["not inherited"], "vertices": 32, "candidates_nonminor": 7, "candidates_minor": 12, "feasible": true, "nonminor": [["B", "8"]], "minor_terms": 12}
+{"orbit": 11, "status": ["not inherited"], "vertices": 44, "candidates_nonminor": 2, "candidates_minor": 8, "feasible": true, "nonminor": [["A", "4"], ["A", "12"]], "minor_terms": 8}
+{"orbit": 12, "status": ["not inherited"], "vertices": 50, "candidates_nonminor": 1, "candidates_minor": 7, "feasible": true, "nonminor": [["A", "12"]], "minor_terms": 7}
+{"orbit": 13, "status": ["not inherited"], "vertices": 42, "candidates_nonminor": 8, "candidates_minor": 11, "feasible": true, "nonminor": [["B", "6"], ["E", "3"]], "minor_terms": 9}
+{"orbit": 14, "status": ["not inherited"], "vertices": 60, "candidates_nonminor": 1, "candidates_minor": 6, "feasible": true, "nonminor": [["A", "8"]], "minor_terms": 6}
+{"orbit": 15, "status": ["not inherited"], "vertices": 42, "candidates_nonminor": 2, "candidates_minor": 8, "feasible": true, "nonminor": [["A", "1"]], "minor_terms": 8}
+{"orbit": 16, "status": ["not inherited"], "vertices": 58, "candidates_nonminor": 3, "candidates_minor": 2, "feasible": true, "nonminor": [["A", "1"], ["E", "2"], ["N9", "6"]], "minor_terms": 2}
+{"orbit": 17, "status": ["not inherited"], "vertices": 40, "candidates_nonminor": 3, "candidates_minor": 8, "feasible": true, "nonminor": [["A", "4"], ["E", "8"]], "minor_terms": 8}
+{"orbit": 18, "status": ["not inherited"], "vertices": 46, "candidates_nonminor": 1, "candidates_minor": 7, "feasible": true, "nonminor": [["A", "24"]], "minor_terms": 7}
+{"orbit": 19, "status": ["not inherited"], "vertices": 31, "candidates_nonminor": 9, "candidates_minor": 10, "feasible": true, "nonminor": [["A", "288"], ["N8", "16"], ["N3", "32"]], "minor_terms": 10}
+{"orbit": 20, "status": ["not inherited"], "vertices": 56, "candidates_nonminor": 1, "candidates_minor": 5, "feasible": true, "nonminor": [["E", "3"]], "minor_terms": 5}
+{"orbit": 21, "status": ["not inherited"], "vertices": 46, "candidates_nonminor": 2, "candidates_minor": 7, "feasible": true, "nonminor": [["E", "9"]], "minor_terms": 6}
+{"orbit": 22, "status": ["not inherited"], "vertices": 52, "candidates_nonminor": 1, "candidates_minor": 6, "feasible": true, "nonminor": [["E", "6"]], "minor_terms": 6}
+{"orbit": 23, "status": ["not inherited"], "vertices": 47, "candidates_nonminor": 2, "candidates_minor": 6, "feasible": true, "nonminor": [["A", "6"], ["B", "18"]], "minor_terms": 6}
+{"orbit": 24, "status": ["not inherited"], "vertices": 56, "candidates_nonminor": 1, "candidates_minor": 5, "feasible": true, "nonminor": [["A", "12"]], "minor_terms": 5}
+{"orbit": 25, "status": ["not inherited"], "vertices": 56, "candidates_nonminor": 1, "candidates_minor": 5, "feasible": true, "nonminor": [["E", "8"]], "minor_terms": 5}
+{"orbit": 26, "status": ["not inherited"], "vertices": 56, "candidates_nonminor": 1, "candidates_minor": 7, "feasible": true, "nonminor": [["A", "3"]], "minor_terms": 7}
+{"orbit": 27, "status": ["not inherited"], "vertices": 44, "candidates_nonminor": 6, "candidates_minor": 13, "feasible": true, "nonminor": [["N8", "3"]], "minor_terms": 12}
+{"orbit": 28, "status": ["not inherited"], "vertices": 36, "candidates_nonminor": 4, "candidates_minor": 7, "feasible": true, "nonminor": [["A", "3"], ["E", "45"], ["N4", "3"], ["N5", "6"]], "minor_terms": 7}
+{"orbit": 29, "status": ["not inherited"], "vertices": 30, "candidates_nonminor": 5, "candidates_minor": 12, "feasible": true, "nonminor": [["B", "12"], ["D", "8"], ["N1", "26"], ["N7", "8"]], "minor_terms": 10}
+{"orbit": 30, "status": ["not inherited"], "vertices": 40, "candidates_nonminor": 4, "candidates_minor": 6, "feasible": true, "nonminor": [["A", "3"], ["N9", "8"], ["N8", "1"]], "minor_terms": 6}
+{"orbit": 31, "status": ["not inherited"], "vertices": 60, "candidates_nonminor": 1, "candidates_minor": 6, "feasible": true, "nonminor": [["A", "3"]], "minor_terms": 6}
+{"orbit": 32, "status": ["not inherited"], "vertices": 56, "candidates_nonminor": 1, "candidates_minor": 5, "feasible": true, "nonminor": [["E", "6"]], "minor_terms": 5}
+{"orbit": 33, "status": ["not inherited"], "vertices": 50, "candidates_nonminor": 3, "candidates_minor": 2, "feasible": true, "nonminor": [["E", "1"], ["N9", "5"], ["N2", "3"]], "minor_terms": 2}
+N1: 54 vertices, orbit size 28800, gap values [0, 1, 2, 3, 4], canonical vertex set [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 24, 25, 26, 27, 30, 31, 32, 34, 37, 43, 44, 46, 48, 49, 51, 53, 54, 55, 60, 61, 62, 68, 72, 77, 84, 86, 88, 92, 101, 102, 103, 106, 107, 108, 110, 112, 114, 116]
+N2: 58 vertices, orbit size 14400, gap values [0, 1, 2, 3], canonical vertex set [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 24, 25, 26, 27, 28, 29, 30, 31, 32, 34, 37, 40, 43, 46, 49, 51, 52, 53, 55, 58, 61, 64, 66, 68, 90, 92, 99, 101, 105, 107, 108, 109, 110, 112, 114, 115, 116, 117, 118, 119]
+N3: 59 vertices, orbit size 28800, gap values [0, 1, 2, 3], canonical vertex set [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 24, 25, 26, 27, 30, 31, 32, 34, 36, 37, 38, 40, 44, 46, 48, 49, 51, 53, 54, 55, 58, 59, 61, 67, 68, 69, 72, 77, 78, 82, 83, 101, 102, 104, 106, 107, 108, 109, 110, 112, 115]
+N4: 64 vertices, orbit size 7200, gap values [0, 1, 2], canonical vertex set [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 18, 20, 24, 25, 26, 27, 28, 29, 30, 32, 36, 37, 38, 39, 40, 41, 43, 46, 49, 51, 52, 53, 60, 62, 66, 68, 79, 81, 82, 83, 84, 86, 90, 92, 96, 98, 99, 101, 103, 105, 106, 107, 108, 109, 110, 112, 114, 116, 117, 119]
+N5: 66 vertices, orbit size 14400, gap values [0, 1, 2], canonical vertex set [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 38, 42, 44, 49, 51, 52, 53, 55, 57, 58, 59, 60, 62, 66, 68, 73, 75, 76, 77, 84, 86, 90, 92, 99, 101, 102, 104, 105, 107, 108, 110, 114, 115, 116, 118]
+N6: 66 vertices, orbit size 28800, gap values [0, 1, 2], canonical vertex set [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 24, 25, 26, 27, 30, 32, 33, 35, 39, 41, 45, 46, 47, 48, 49, 50, 52, 54, 56, 58, 59, 60, 62, 63, 65, 68, 69, 72, 73, 74, 84, 86, 87, 92, 93, 98, 103, 104, 105, 106, 108, 109, 110, 111, 114, 116, 117, 119]
+N7: 68 vertices, orbit size 3600, gap values [0, 1, 2], canonical vertex set [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 24, 25, 26, 27, 28, 29, 30, 32, 35, 36, 38, 39, 41, 43, 44, 45, 46, 49, 51, 52, 63, 68, 73, 74, 75, 76, 80, 81, 82, 83, 84, 86, 87, 89, 92, 96, 98, 99, 101, 104, 105, 106, 107, 109, 110, 111, 112, 117]
+N8: 72 vertices, orbit size 3600, gap values [0, 1], canonical vertex set [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 38, 42, 44, 60, 62, 66, 68, 73, 75, 76, 77, 84, 85, 86, 87, 88, 89, 90, 91, 92, 94, 97, 99, 100, 101, 108, 109, 110, 111, 112, 113, 114, 115, 116, 118]
+N9: 74 vertices, orbit size 3600, gap values [0, 1, 2], canonical vertex set [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 66, 67, 68, 69, 76, 77, 82, 83, 100, 101, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117]

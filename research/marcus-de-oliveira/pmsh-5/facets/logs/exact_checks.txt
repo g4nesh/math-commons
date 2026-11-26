@@ -1,0 +1,45 @@
+R1: aff(Q5) has 84 independent affine relations (dim Q5 = 41); the unitary identities have rank 84; together rank 84 -> spanned
+N1: 54 vertices, affine rank 40, facet of Q5: True
+N2: 58 vertices, affine rank 40, facet of Q5: True
+N3: 59 vertices, affine rank 40, facet of Q5: True
+N4: 64 vertices, affine rank 40, facet of Q5: True
+N5: 66 vertices, affine rank 40, facet of Q5: True
+N6: 66 vertices, affine rank 40, facet of Q5: True
+N7: 68 vertices, affine rank 40, facet of Q5: True
+N8: 72 vertices, affine rank 40, facet of Q5: True
+N9: 74 vertices, affine rank 40, facet of Q5: True
+orbit 0: exact decomposition True (A 3; 9 squared minors)
+orbit 1: exact decomposition True (A 1; 4 squared minors)
+orbit 2: exact decomposition True (A 6; 4 squared minors)
+orbit 3: exact decomposition True (A 4, A 5; 4 squared minors)
+orbit 4: exact decomposition True (A 888, B 621, D 52, D 59, N4 177, N4 795; 10 squared minors)
+orbit 5: exact decomposition True (A 6; 4 squared minors)
+orbit 6: exact decomposition True (A 1; 4 squared minors)
+orbit 7: exact decomposition True (A 4; 7 squared minors)
+orbit 8: exact decomposition True (A 8; 4 squared minors)
+orbit 9: exact decomposition True (A 3; 6 squared minors)
+orbit 10: exact decomposition True (B 8; 12 squared minors)
+orbit 11: exact decomposition True (A 4, A 12; 8 squared minors)
+orbit 12: exact decomposition True (A 12; 7 squared minors)
+orbit 13: exact decomposition True (B 6, E 3; 9 squared minors)
+orbit 14: exact decomposition True (A 8; 6 squared minors)
+orbit 15: exact decomposition True (A 1; 8 squared minors)
+orbit 16: exact decomposition True (A 1, E 2, N9 6; 2 squared minors)
+orbit 17: exact decomposition True (A 4, E 8; 8 squared minors)
+orbit 18: exact decomposition True (A 24; 7 squared minors)
+orbit 19: exact decomposition True (A 288, N8 16, N3 32; 10 squared minors)
+orbit 20: exact decomposition True (E 3; 5 squared minors)
+orbit 21: exact decomposition True (E 9; 6 squared minors)
+orbit 22: exact decomposition True (E 6; 6 squared minors)
+orbit 23: exact decomposition True (A 6, B 18; 6 squared minors)
+orbit 24: exact decomposition True (A 12; 5 squared minors)
+orbit 25: exact decomposition True (E 8; 5 squared minors)
+orbit 26: exact decomposition True (A 3; 7 squared minors)
+orbit 27: exact decomposition True (N8 3; 12 squared minors)
+orbit 28: exact decomposition True (A 3, E 45, N4 3, N5 6; 7 squared minors)
+orbit 29: exact decomposition True (B 12, D 8, N1 26, N7 8; 10 squared minors)
+orbit 30: exact decomposition True (A 3, N9 8, N8 1; 6 squared minors)
+orbit 31: exact decomposition True (A 3; 6 squared minors)
+orbit 32: exact decomposition True (E 6; 5 squared minors)
+orbit 33: exact decomposition True (E 1, N9 5, N2 3; 2 squared minors)
+ALL EXACT CHECKS PASSED

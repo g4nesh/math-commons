@@ -1,0 +1,2 @@
+N7: min over U(5) -6.744e-02  (starts below -1e-6: 30/40)
+N8: min over U(5) +3.080e-11  (starts below -1e-6: 0/40)

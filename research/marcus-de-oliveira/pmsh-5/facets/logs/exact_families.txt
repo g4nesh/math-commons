@@ -1,0 +1,10 @@
+orbit 15, (s, t) = (7/2, 413/20): family member is the facet through Z: True
+orbit 15, (s, t) = (37/10, 481/100): family member is the facet through Z: True
+orbit 15, (s, t) = (27/10, 1161/100): family member is the facet through Z: True
+orbit 20, (s, t) = (21/5, 378/25): family member is the facet through Z: True
+orbit 20, (s, t) = (3, 123/10): family member is the facet through Z: True
+orbit 20, (s, t) = (33/10, 396/25): family member is the facet through Z: True
+orbit 21, (s, t) = (12/5, 258/25): family member is the facet through Z: True
+orbit 21, (s, t) = (19/10, 551/100): family member is the facet through Z: True
+orbit 21, (s, t) = (19/10, 1121/100): family member is the facet through Z: True
+ALL FAMILY CHECKS PASSED

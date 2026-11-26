@@ -1,0 +1,2 @@
+D: min over U(5) -7.589e-02  (starts below -1e-6: 36/40)
+E: min over U(5) -6.744e-02  (starts below -1e-6: 34/40)

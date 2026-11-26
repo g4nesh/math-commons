@@ -1,0 +1,1 @@
+A: min over U(5) +3.979e-11  (starts below -1e-6: 0/40)
