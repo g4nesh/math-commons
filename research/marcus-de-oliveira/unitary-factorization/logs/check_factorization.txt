@@ -1,0 +1,3 @@
+(J)(P)(T)(F) on 300 Gaussian-rational unitaries: failures {'J': 0, 'P': 0, 'T': 0, 'F': 0}  [2s]
+(U) entries of S S^* for S = Lambda + x x^T: off-diagonal formula True ; diagonal formula True
+ALL CHECKS PASSED
