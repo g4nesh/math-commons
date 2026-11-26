@@ -93,6 +93,7 @@ jobs:
           python3 -B star-zero-sector/verify.py
           python3 -B normal-pole-step/check.py | diff - normal-pole-step/certificate.json
           python3 -B normal-pole-step/archive_slices.py
+          python3 -B fourier-minor-laws/check.py
           python3 -B two-free-rank-one/check.py
           python3 -B rankone-quantitative/radius.py
           python3 -B -m unittest discover -s rankone-quantitative -p 'test_*.py' -v
