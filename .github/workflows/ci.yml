@@ -106,6 +106,45 @@ jobs:
           python3 -I -B -m unittest discover -s paired-spectral-hull-edges -p 'test_*.py' -v
       - name: Verify independent eigenvalue and unitary perturbations
         run: python3 -I -B research/marcus-de-oliveira/paired-stability-all-eigenvalues/check.py
+      - name: Verify the split-pair criterion and uniform row orientations
+        working-directory: research/marcus-de-oliveira
+        run: |
+          (cd split-one-eigenvalue-pair && sha256sum --check --quiet SHA256SUMS)
+          python3 -I -B split-one-eigenvalue-pair/check.py
+          python3 -B -m unittest discover -s split-one-eigenvalue-pair -p 'test_*.py' -v
+          (cd split-row-orientations && sha256sum --check --quiet SHA256SUMS)
+          python3 -I -B split-row-orientations/check.py
+          python3 -B -m unittest discover -s split-row-orientations -p 'test_*.py' -v
+      - name: Verify exact split dual rays and coarsening certificates
+        working-directory: research/marcus-de-oliveira
+        run: |
+          (cd split-dual-rays && sha256sum --check --quiet SHA256SUMS)
+          python3 -I -B split-dual-rays/check.py
+          python3 -I -O -B split-dual-rays/check.py
+          python3 -I -B split-dual-rays/test_check.py
+          (cd split-dual-coarsening && sha256sum --check --quiet SHA256SUMS)
+          python3 -I -B split-dual-coarsening/check.py
+          python3 -I -O -B split-dual-coarsening/check.py
+          python3 -I -B split-dual-coarsening/test_check.py
+      - name: Verify orientation-dependent parent laws and their obstruction
+        working-directory: research/marcus-de-oliveira
+        run: |
+          (cd common-parent-obstruction && sha256sum --check --quiet SHA256SUMS)
+          python3 -I -B common-parent-obstruction/check.py
+          python3 -B -m unittest discover -s common-parent-obstruction -p 'test_*.py' -v
+      - name: Verify balanced and unequal isoclinic split planes
+        working-directory: research/marcus-de-oliveira
+        run: |
+          python3 -I -O -B split-physical-compression/check.py
+          python3 -I -O -B isoclinic-split-planes/check.py
+      - name: Replay archived exact split-ray endpoints
+        working-directory: research/marcus-de-oliveira
+        run: |
+          (cd split-physical-ray-search && sha256sum --check --quiet SHA256SUMS)
+          python3 -I -B split-physical-ray-search/check.py
+          python3 -B -m unittest discover -s split-physical-ray-search -p 'test_*.py' -v
+      - name: Verify the common-minor neighborhood and exact obstruction fixture
+        run: python3 -I -B research/marcus-de-oliveira/common-minor-neighborhood/check.py
       - name: Verify rank-one rotations and the small-minor boundary
         working-directory: research/marcus-de-oliveira
         run: |
