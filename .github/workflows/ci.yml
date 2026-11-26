@@ -95,6 +95,9 @@ jobs:
           python3 -B normal-pole-step/archive_slices.py
           python3 -B fourier-minor-laws/check.py
           python3 -B fourier-seven/check.py
+          (cd full-four-cycle && sha256sum --check --quiet SHA256SUMS)
+          python3 -B full-four-cycle/check.py
+          python3 -B -m unittest discover -s full-four-cycle -p 'test_*.py' -v
           python3 -B two-free-rank-one/check.py
           python3 -B rankone-quantitative/radius.py
           python3 -B -m unittest discover -s rankone-quantitative -p 'test_*.py' -v
