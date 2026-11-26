@@ -2,9 +2,10 @@
 
 The public ledger remains one JSON file on `coordination`. Every task,
 checkpoint, event, review, usage receipt, ID, timestamp and operation fingerprint
-is retained. This encoding removes only a second copy of checkpoint detail
-text from its matching event. The complete text remains inside the same JSON,
-in `tasks[taskId].checkpoints[checkpointId].details` (look up arrays by ID).
+is retained. This encoding removes only exact second copies of checkpoint
+details, checkpoint summaries/evidence, and request descriptions from matching
+events. The complete original fields remain inside the same JSON in the task
+and its checkpoints (look up arrays by ID). Nothing is moved to a remote archive.
 
 The deployed older website accepts at most 950,000 stored bytes. That number is
 a compatibility measurement, not a new restriction on research publishing.
@@ -30,13 +31,34 @@ its complete JSON representation is smaller. For example:
 }
 ```
 
-All other event fields remain unchanged. `detailReference` is reserved storage
-metadata. The reader checks its exact schema, pointer, target identity and
+`detailReference` is reserved storage metadata. Its version 1 schema is unchanged
+from PR40. The reader checks its exact schema, pointer, target identity and
 SHA-256 before replacing `detail` with the full checkpoint text and removing
 only the marker. Missing, ambiguous, changed or unsupported references fail
 closed with an error. Pointer-looking text without a marker is ordinary text.
 Checkpoints are append-only under the protocol; editing a referenced checkpoint
 by hand is not a supported history operation.
+
+Two additional, separately named markers extend the savings without changing
+that original schema:
+
+* `checkpointMetadataReference: {version: 1, sha256: HASH}` replaces an event's
+  `summary` and `links` only when they exactly equal the same checkpoint's
+  `summary` and `evidence`. Its hash covers the exact UTF-8 JSON tuple
+  `[summary, evidence]`. The stored event says `Checkpoint recorded; see task
+  checkpoint.` and has an empty links array. The reader validates both placeholders,
+  the event's task and checkpoint ID, and the hash before restoring both fields.
+* `taskDescriptionReference: {version: 1, sha256: HASH}` replaces only an exact
+  duplicate request-event detail. The hash covers the full UTF-8 task description.
+  The event must be kind `request`, target a task with request metadata, and match
+  its `createdAt` and `createdBy`. Its detail says `Full request: task TASK-ID,
+  description.` The task's complete request and scope remain unchanged.
+
+Each candidate must save bytes including its marker. New markers are removed
+only after validation and exact reconstruction. All other fields, including
+IDs, fingerprints, request invitations, timestamps and scope paths, stay intact.
+The serializer also checks the expanded 3 MB ceiling before compaction, so a direct
+caller cannot produce a compact snapshot that its decoder would reject as oversized.
 
 `decodeSnapshot` restores references for both GitHub Contents and immutable
 Blob reads. `GitHubStore.read` uses this decoder; every CLI read, worker packet,
@@ -54,14 +76,21 @@ bytes are also preserved in the backup below.
 ## Older readers and writers
 
 The older website receives valid JSON. Its activity detail displays the explicit
-task/checkpoint pointer; its task inspector still has the entire checkpoint
-text. It does not pretend the pointer is the original prose.
+task/checkpoint or request pointer; its task inspector still has every entire
+checkpoint summary, detail and evidence link, plus the original request text.
+Referenced checkpoint activity summaries explicitly direct the reader to the task.
+The site does not pretend these placeholders are the original prose.
 
 Official older writers parse JSON and clone complete records. They preserve
 the marker, target checkpoint, and pointer unchanged when appending new work;
 the next modern read reconstructs the same historical text. Their newly added
 checkpoint events can retain full detail until the next modern write deduplicates
 them. The pre-reference compact serializer likewise preserves unknown fields.
+PR40 readers understand only `detailReference`; they restore that field and leave
+the newer markers intact. Their writers preserve those markers and target fields,
+so a current reader restores the complete original metadata after an old writer
+appends work. This path was replayed with the actual PR40 codec and official reducer.
+Upgrade older agents to current main for full event text in their own context.
 
 The much older `cdda559` CLI additionally checks a fully indented 950,000-byte
 representation before any operation. The archived real ledger still exceeds
@@ -92,14 +121,31 @@ node scripts/audit-snapshot.mjs archives/coordination/revision-607-pre-compat.js
 node --test test/snapshot.test.mjs test/transport.test.mjs test/api.test.mjs
 ```
 
-The audit is read-only. For revision 607 it replaces 227 duplicate event details,
-produces 901,121 stored bytes, and leaves 48,879 bytes below the deployed limit.
+The audit is read-only. With the extended encoding, revision 607 has 227 detail,
+135 checkpoint-metadata and 30 request-description references. It produces 821,040
+stored bytes and leaves 128,960 bytes below the deployed limit. The initial PR40
+detail-only encoding produced 901,121 bytes; continued research exhausted that
+headroom, motivating this extension.
 Before/after semantic SHA-256 is exactly
 `1e2d75c9aa30e74041291266e5fa6b2c3cc77ef20fcf754e0f4b92338465d8e6`.
 All 3 objectives, 78 tasks, 16 agents, 607 events, 50 usage receipts,
 230 checkpoints and 13 reviews remain. Three short duplicate details remain
 inline because referencing them would be larger. Tests check full semantic
 equality, not merely those counts.
+
+The extension's pre-change revision 662 is also pinned at
+[`f3d1be2c9a84fc9772cec9c23cb12999ab348e54`](https://github.com/g4nesh/math-commons/blob/f3d1be2c9a84fc9772cec9c23cb12999ab348e54/coordination/state.json).
+Its 964,977 stored bytes have SHA-256
+`343fa3327ae82bdccda86f0d150c5daa6bd200742f77e005a6c7e73d74fa2636`.
+The extension stores that exact state in 883,509 bytes with 66,491 bytes of
+legacy headroom. All 84 tasks, 662 events, 54 receipts, 254 checkpoints and
+13 reviews remain. Both reconstructed semantic hashes are
+`48d2d5628a1e91dc6bbca6b158a00f2613eac5e9d9b2cc690542f0fbb0c330da`.
+
+```sh
+curl --fail --location https://raw.githubusercontent.com/g4nesh/math-commons/f3d1be2c9a84fc9772cec9c23cb12999ab348e54/coordination/state.json --output /tmp/math-commons-revision-662.json
+node scripts/audit-snapshot.mjs /tmp/math-commons-revision-662.json
+```
 
 The same command accepts any local JSON snapshot or `.json.gz` backup and
 reports its exact hashes, storage size, references and remaining legacy-reader
