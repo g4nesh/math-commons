@@ -1,0 +1,10 @@
+{
+  "revision": 607,
+  "coordinationCommit": "3ad48348f8ebd5fdb9293c587c5fa53df97b4f75",
+  "contentBlob": "321a15764d50f0f6a9e6158b6861902f5e7cd3e3",
+  "source": "https://github.com/g4nesh/math-commons/blob/3ad48348f8ebd5fdb9293c587c5fa53df97b4f75/coordination/state.json",
+  "rawBytes": 1031639,
+  "rawSha256": "543ae087b831cd9541759f94b804027ab9ed8f78f197adc15a5dd1058f643620",
+  "semanticSha256": "1e2d75c9aa30e74041291266e5fa6b2c3cc77ef20fcf754e0f4b92338465d8e6",
+  "purpose": "Byte-for-byte backup before reversible checkpoint-detail reference encoding. The live ledger retains every record and complete historical content."
+}

@@ -17,8 +17,8 @@ function initial() {
   for (const op of ops) state = applyOperation(state, op, { owner: 'owner', now }).state;
   return state;
 }
-function server({ loseWriteResponse = false, failReadsAfterWrite = false } = {}) {
-  let state = initial(), sha = 'sha0', writes = 0, conflicts = 0;
+function server({ loseWriteResponse = false, failReadsAfterWrite = false, initialState = initial() } = {}) {
+  let state = initialState, sha = 'sha0', writes = 0, conflicts = 0;
   const reply = (body, status = 200) => new Response(JSON.stringify(body), { status, headers: { date: now, 'content-type': 'application/json' } });
   return {
     get state() { return state; }, get writes() { return writes; }, get conflicts() { return conflicts; },
@@ -97,4 +97,26 @@ test('ledger encoding retains every nested field and keeps individual records di
   assert.deepEqual(JSON.parse(text), state);
   assert.ok(text.length < JSON.stringify(state, null, 2).length);
   for (const event of state.events) assert.ok(text.split('\n').some(line => line.trim().replace(/,$/, '') === JSON.stringify(event)));
+});
+
+test('official read/mutate/write restores references and retains all prior content on retry', async () => {
+  let state = initial();
+  state = applyOperation(state, { id: 'claim', kind: 'claim', agent: 'a', task: 't' }, { owner: 'owner', now }).state;
+  state = applyOperation(state, { id: 'evidence', kind: 'checkpoint', agent: 'a', task: 't',
+    summary: 'An exact result', details: 'Full preserved evidence. '.repeat(100), evidence: ['https://example.com/proof'] }, { owner: 'owner', now }).state;
+  const stored = JSON.parse(serializeSnapshot(state));
+  assert.ok(stored.events.at(-1).detailReference);
+  const fake = server({ initialState: stored, loseWriteResponse: true }), store = storeFor(fake);
+  assert.deepEqual((await store.read()).state, state);
+  const operation = { id: 'after-encoding', kind: 'message', agent: 'a', task: 't', to: 'all', summary: 'Still working', details: 'New content.' };
+  const expected = applyOperation(state, operation, { owner: 'owner', now }).state;
+  const result = await store.mutate(operation);
+  assert.equal(result.reconciled, true);
+  assert.equal(fake.writes, 1);
+  assert.deepEqual((await store.read()).state, expected);
+  assert.deepEqual(fake.state.events.find(event => event.id === 'evidence'), stored.events.find(event => event.id === 'evidence'));
+  // The pre-reference protocol also clones whole records. Plain-JSON operations
+  // retain the marker rather than converting a pointer into historical content.
+  const legacy = applyOperation(stored, { ...operation, id: 'legacy-append' }, { owner: 'owner', now }).state;
+  assert.deepEqual(legacy.events.find(event => event.id === 'evidence'), stored.events.find(event => event.id === 'evidence'));
 });
