@@ -1,0 +1,4 @@
+300 random rational instances, n = 2..7 (78 with repeated a_i); 1573 injections in the supports in total
+Lemma C: weights positive with sum 1, supported on injections, all product moments exact: True
+Lemma I: the scaled product equals the mixture of products of the conjecture, exactly: True
+EXACT CHECK PASSED
