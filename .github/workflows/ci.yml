@@ -137,6 +137,11 @@ jobs:
         run: |
           python3 -I -O -B split-physical-compression/check.py
           python3 -I -O -B isoclinic-split-planes/check.py
+      - name: Verify aligned projection triples and the nonscalar orientation family
+        working-directory: research/marcus-de-oliveira
+        run: |
+          python3 -I -O -B commuting-split-projections/check.py
+          python3 -I -O -B commuting-split-projections/orientations.py
       - name: Replay archived exact split-ray endpoints
         working-directory: research/marcus-de-oliveira
         run: |
