@@ -1,0 +1,8 @@
+{
+  "process_exit": 0,
+  "rays": 935,
+  "exact_archived_set_equal": true,
+  "binary_sha256": "4c132a44055af0b682cbd04a30b031f54ecb6723b098604b802461acb3736a40",
+  "elapsed_seconds": 9.704,
+  "tool": "lrsmgmp:lrslib_v.7.3_2024.5.30(64bit,lrsgmp.h,mini-gmp)"
+}

@@ -1,0 +1,104 @@
+{
+  "spaces": {
+    "row01": {
+      "rank": 8,
+      "coefficient_rows": 96
+    },
+    "row02": {
+      "rank": 12,
+      "coefficient_rows": 122
+    },
+    "row03": {
+      "rank": 12,
+      "coefficient_rows": 122
+    },
+    "row12": {
+      "rank": 12,
+      "coefficient_rows": 122
+    },
+    "row13": {
+      "rank": 12,
+      "coefficient_rows": 122
+    },
+    "row23": {
+      "rank": 15,
+      "coefficient_rows": 141
+    },
+    "column01": {
+      "rank": 8,
+      "coefficient_rows": 96
+    },
+    "column02": {
+      "rank": 8,
+      "coefficient_rows": 96
+    },
+    "column12": {
+      "rank": 8,
+      "coefficient_rows": 96
+    }
+  },
+  "covered_orbits": 26,
+  "covered_rays": 245,
+  "covered_noncoefficient_orbits": [
+    3,
+    8,
+    9,
+    13,
+    14,
+    17,
+    21,
+    23,
+    24,
+    25,
+    27,
+    29,
+    32,
+    47,
+    48,
+    49,
+    50
+  ],
+  "covered_noncoefficient_rays": 186,
+  "remaining_noncoefficient_orbits": [
+    10,
+    11,
+    12,
+    15,
+    16,
+    19,
+    20,
+    22,
+    26,
+    28,
+    30,
+    31,
+    33,
+    34,
+    35,
+    36,
+    37,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    51,
+    52,
+    53,
+    54,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "remaining_noncoefficient_rays": 684,
+  "uncovered_coefficient_orbits": [
+    38
+  ],
+  "interpretation": "exact linear-conic coarsening coverage; no physical negativity asserted"
+}
