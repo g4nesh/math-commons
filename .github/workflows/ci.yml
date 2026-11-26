@@ -68,6 +68,19 @@ jobs:
           python3 -B -m unittest discover -s three-color-coupling -p 'test_*.py' -v
       - name: Check the six-site paired matching and coloring laws
         run: python3 -I -B research/marcus-de-oliveira/paired-matching-boundary/check.py
+      - name: Check the five alternating triple correlations
+        run: python3 -I -B research/marcus-de-oliveira/five-alternating-triples/check.py
+      - name: Replay the complex qubit Fourier coloring certificate
+        working-directory: research/marcus-de-oliveira/qubit-fourier-orientation
+        run: |
+          python3 -B verify.py
+          python3 -B -m unittest discover -p 'test_*.py' -v
+      - name: Verify the complex second-eigenvalue rectangle
+        working-directory: research/marcus-de-oliveira/complex-second-region
+        run: |
+          sha256sum --check --quiet SHA256SUMS
+          python3 -B check.py
+          python3 -B -m unittest discover -p 'test_*.py' -v
       - name: Verify rank-one rotations and the small-minor boundary
         working-directory: research/marcus-de-oliveira
         run: |

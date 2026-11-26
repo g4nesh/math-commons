@@ -8,7 +8,7 @@ Task `mdo-minors` (claimed in the live ledger on 25 Nov 2026, after the first-pa
 
 1. **One new theorem**, to my knowledge. MOC holds whenever one of the two matrices has three distinct eigenvalues, one of which is simple (Theorem D). It contains Kovačec's 1994 "n−2 equal eigenvalues" theorem as a special case.
 2. **A sharp dichotomy.** The "probabilistic-certificate" method is the mechanism behind almost all known exact cases. It always fails once one matrix has ≥ 4 distinct eigenvalues (Proposition E). I conjecture it always succeeds with ≤ 3 (Conjecture F), and give an equivalent reformulation as a statement about thinnings of determinantal point processes (Proposition G).
-3. **A reduction of n = 4 to a small region, with numerical evidence at few points.** A counterexample for n = 4 can only occur for unitaries whose compound vector lies in one of 48 disjoint, symmetry-equivalent caps. Together these cover about 1.9% of U(4). The caps sit beyond the exotic facets of an explicit 13-dimensional polytope. Fixed-U searches (270,000 optimizations of the eigenvalues) at 271 distinct points of that region found no counterexample; 270 of the 540 unitaries used are symmetric copies of the deepest point. The values closest to zero, about −7·10⁻⁵ after re-optimization, occur at shallow points next to a repeated eigenvalue. No unitary was varied inside a cap, and no uniform margin is claimed.
+3. **A reduction of n = 4 to a small region, with numerical evidence at few points.** A counterexample for n = 4 can only occur for unitaries whose compound vector lies in one of 48 disjoint, symmetry-equivalent caps. Together these cover about 1.9% of U(4). The caps sit beyond the exotic facets of an explicit 13-dimensional polytope. Fixed-U searches (270,000 optimizations of the eigenvalues) at 271 distinct points of that region found no counterexample; 270 of the 540 unitaries used are symmetric copies of the deepest point. The values closest to zero, about −4·10⁻⁵ after re-optimization, occur at shallow points next to a repeated eigenvalue. No unitary was varied inside a cap, and no uniform margin is claimed.
 4. **Targeted counterexample searches for n = 5, 6, 7.** None found.
 
 Key computational claims were cross-checked by independent reruns, by 50-digit arithmetic, or against published values; each item says which. Each statement below is tagged:
@@ -227,10 +227,10 @@ If MOC fails at (U, a, b) with n = 4, then g(P_α U P_β) < 0, or the same holds
     | stored J | re-optimized J | invariant depth of U | note |
     | --- | --- | --- | --- |
     | −2.59·10⁻⁴ | −7.7·10⁻⁵ | −0.0020 | two aᵢ coalesce (relative gap 2·10⁻⁷) |
-    | −2.79·10⁻⁴ | −6.6·10⁻⁵ | −0.0011 | two aᵢ nearly coalesce (9·10⁻⁶) |
+    | −2.79·10⁻⁴ | −3.6·10⁻⁵ (longer re-optimization by the re-reviewer; `reanalyse4.py` gives −4.1·10⁻⁵ to −6.6·10⁻⁵ depending on the environment) | −0.0011 | two aᵢ coalesce |
     | −2.88·10⁻⁴ | −1.0·10⁻⁴ | −0.0062 | two bᵢ coalesce (1·10⁻⁶) |
 
-    All three stay negative, and all three sit next to a proven case (a repeated eigenvalue).
+    All three stay negative, and all three sit next to a proven case (a repeated eigenvalue). The re-optimized values are optimizer outputs, not certified maxima; line (c) of `moc/runs/reanalyse4.txt` depends on the environment ([re-review](../reviews/mdo-minors-rereview.md), finding R1).
 - **Withdrawn:** the earlier sentence "corr(J, violation depth) = −0.93; deeper violations give more negative J". The correlation is produced by the two clusters (copies of the extremal point against shallow points). Within the 270 raw points it is −0.17 (−0.18 with the invariant depth). The stored violation is a Euclidean distance in non-symmetric coordinates and is not symmetry-invariant: it ranges from 0.0294 to 0.0389 over the 270 copies of the one extremal point.
 - **One line experiment (`moc/margin4.py`), with its limits:**
   - Push an artificial point outward from the facet along the facet normal through one copy of the deepest violator (x_t = foot + t·normal, in the reduced coordinates) and replace Δ by Σμ_σ(x_t)z_σ.
@@ -242,7 +242,7 @@ By 5.2 it suffices to show, for the single facet g:
   max_{U ∈ cap_g} Re e^{−iθ}Δ ≤ max_σ Re e^{−iθ}z_σ for all (a,b,θ).
 What the data do and do not show:
 - The cap is a compact semialgebraic set of dimension ≤ 9, away from the vertices.
-- At the deepest point of the cap the shortfall is clear (J ≈ −0.028). At shallow points it is small (down to about −7·10⁻⁵), next to configurations with a repeated eigenvalue, which are proven cases.
+- At the deepest point of the cap the shortfall is clear (J ≈ −0.028). At shallow points it is small (down to about −4·10⁻⁵), next to configurations with a repeated eigenvalue, which are proven cases.
 - The earlier claim of a uniform shortfall with a 1.66× margin is **withdrawn**: fixed-U searches at 271 points cannot support it.
 
 Making this rigorous would need certified enclosures of the cap and an interval branch-and-bound over (a,b,θ) (13 real dimensions after symmetries), together with a separate local argument near the degenerate limits. For the case where one matrix is Hermitian, a different and exact route has since been carried out for part of the spectra: see [`../pmsh/`](../pmsh/README.md), [`../star-degree4/`](../star-degree4/README.md) and [`../star-halfline/`](../star-halfline/README.md).
@@ -306,7 +306,8 @@ Requires `numpy`, `scipy` and `mpmath`. Run from `research/marcus-de-oliveira/mi
 | `reduced4.py`, `facets4*.py`, `exotic4.py` | n = 4 polytope, 82 facets, exotic facet formula |
 | `orbit_align.py`, `align4.py` | single-orbit check; 0.95197 alignment bound |
 | `crosscheck_zheng.py` | ψ from Zheng's Example 1.3 is one of the 48 exotic facets; reproduces −158/2401 |
-| `geom4.py`, `bad4.py`, `analyse4.py`, `margin4*.py` | bad-region geometry, 270k targeted search, depth correlation, safety margin |
+| `geom4.py`, `bad4.py`, `analyse4.py`, `margin4*.py` | bad-region geometry; 270k fixed-U search; line experiment (§5.5) |
+| `reanalyse4.py`, `zheng_on_family.py` | re-analysis of the search records (§5.5); Zheng's example on the extremal family ([drury-constant.md](drury-constant.md)) |
 | `bsearch.py`, `gradcheck.py`, `verify_best.py` | batched analytic-gradient search; gradient check; 50-digit re-verification |
 | `badn.py`, `fixedU.py` | targeted searches, n = 5, 6, 7 |
 | `pattern_lp.py`, `pattern_adv.py` | pattern certificates (random and adversarial) |
