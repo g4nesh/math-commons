@@ -1,0 +1,314 @@
+{
+  "3": {
+    "checked_polynomials": 63,
+    "collected_monomials": 1539,
+    "zero_polynomials": 4,
+    "sha256": "5a005922f383acfb127d6da060252feea0f5d51c4f2b6c07eb035454d5abc439"
+  },
+  "8": {
+    "checked_polynomials": 9,
+    "collected_monomials": 126,
+    "zero_polynomials": 0,
+    "sha256": "7566ef79de8df6fb186ad5df4da76eaa2557888cd3a561ae32241a10ecad90cb"
+  },
+  "9": {
+    "checked_polynomials": 6,
+    "collected_monomials": 119,
+    "zero_polynomials": 0,
+    "sha256": "221f8ea612e5a0befaa12f3ce6dfbbc35f89961e87a0502aab0f1db21b12e00c"
+  },
+  "10": {
+    "checked_polynomials": 9,
+    "collected_monomials": 148,
+    "zero_polynomials": 0,
+    "sha256": "7aca1e5713c410d59023cf9d73faf1b93c59cabd0ee7c6be9b3979c8f9b38b51"
+  },
+  "11": {
+    "checked_polynomials": 9,
+    "collected_monomials": 130,
+    "zero_polynomials": 0,
+    "sha256": "d1912263f4cf6305e3763b63a9ceb57d6ec40b808ca5a740a31dff7a05d0626c"
+  },
+  "12": {
+    "checked_polynomials": 6,
+    "collected_monomials": 107,
+    "zero_polynomials": 0,
+    "sha256": "09cecb88cc864ee67c5850a9b7a02104f52bc2fcbec9c62a6395c86deef804e6"
+  },
+  "13": {
+    "checked_polynomials": 6,
+    "collected_monomials": 132,
+    "zero_polynomials": 0,
+    "sha256": "3dc4139a7159ad5f50ec6624113a5118b348ad855227633d032aac813965f7a6"
+  },
+  "14": {
+    "checked_polynomials": 9,
+    "collected_monomials": 110,
+    "zero_polynomials": 0,
+    "sha256": "326fb4cbd1de6fda2f680e38cfa1f6763aee94c2ea4561a3771d5aa094bdbca4"
+  },
+  "15": {
+    "checked_polynomials": 6,
+    "collected_monomials": 72,
+    "zero_polynomials": 0,
+    "sha256": "748b47525a355b6e24570b933713d69d46b1160c2a8db34966b7385ce7532490"
+  },
+  "16": {
+    "checked_polynomials": 9,
+    "collected_monomials": 173,
+    "zero_polynomials": 0,
+    "sha256": "69d493280906cf39903195ba376a273e92ea6dcbae170d558412ec030c3b0ea4"
+  },
+  "17": {
+    "checked_polynomials": 9,
+    "collected_monomials": 158,
+    "zero_polynomials": 0,
+    "sha256": "0f5c9bc259eb329af8065f5838f232ad085f3ab82ff8df2aef839121e9c37d85"
+  },
+  "19": {
+    "checked_polynomials": 6,
+    "collected_monomials": 103,
+    "zero_polynomials": 0,
+    "sha256": "7680d4706b2f55e460122d5f5dae294d6cd923f0f98029707861c885acd34ba4"
+  },
+  "20": {
+    "checked_polynomials": 6,
+    "collected_monomials": 95,
+    "zero_polynomials": 0,
+    "sha256": "926d71c4aec515928914293662370008cb21806d1a17d85d2176debb955a1454"
+  },
+  "21": {
+    "checked_polynomials": 6,
+    "collected_monomials": 75,
+    "zero_polynomials": 0,
+    "sha256": "6ea78e10f462199cf809c6182e71ccd918744de14e33479fe37885961d2bd71a"
+  },
+  "22": {
+    "checked_polynomials": 6,
+    "collected_monomials": 95,
+    "zero_polynomials": 0,
+    "sha256": "30f77ff245fa3230618490541df3748cf07f90262f857533555b9d28559e2310"
+  },
+  "23": {
+    "checked_polynomials": 6,
+    "collected_monomials": 109,
+    "zero_polynomials": 0,
+    "sha256": "0511bb4c826c732bb9d2dd4fea430d409e0f12b996ce1c0e762606ac4fc5a52b"
+  },
+  "24": {
+    "checked_polynomials": 6,
+    "collected_monomials": 107,
+    "zero_polynomials": 0,
+    "sha256": "2f942f474214ad2af7306ac8d31a4e661dbb114441d80269bf469a5d1cc526f8"
+  },
+  "25": {
+    "checked_polynomials": 6,
+    "collected_monomials": 128,
+    "zero_polynomials": 0,
+    "sha256": "bbf92d38ecf06b950b9e84cce9967ea4f95976c8284e8f813b33eeb57b934225"
+  },
+  "26": {
+    "checked_polynomials": 6,
+    "collected_monomials": 131,
+    "zero_polynomials": 0,
+    "sha256": "98a1101dde8eeef39ab984e227c51ebcb931739ad850f0246b582097ed63a41d"
+  },
+  "27": {
+    "checked_polynomials": 6,
+    "collected_monomials": 150,
+    "zero_polynomials": 0,
+    "sha256": "041e0877e28636869840f6b75d5ba2cc03209c16ef4a518776ca43c27704d987"
+  },
+  "28": {
+    "checked_polynomials": 6,
+    "collected_monomials": 140,
+    "zero_polynomials": 0,
+    "sha256": "28348f8537b44cfdeaf40bdbc8dff597f8ac6442089784fe0f4ac214cd6c6c6a"
+  },
+  "29": {
+    "checked_polynomials": 9,
+    "collected_monomials": 192,
+    "zero_polynomials": 0,
+    "sha256": "84b741d74d0fe28e70539a06c2b370e7b23f5f3c2d16799b4495a43c55e2c1bb"
+  },
+  "30": {
+    "checked_polynomials": 6,
+    "collected_monomials": 107,
+    "zero_polynomials": 0,
+    "sha256": "96d66af5eb8fd016bae671ad48a95594ba2aa106264b7c7a9ba3a9f1e38ead8e"
+  },
+  "31": {
+    "checked_polynomials": 6,
+    "collected_monomials": 98,
+    "zero_polynomials": 0,
+    "sha256": "8378b795931c73a7a6f0185de2a341ee7cd10ed4a2c6dc2c7f31cecc5ffc4c96"
+  },
+  "32": {
+    "checked_polynomials": 6,
+    "collected_monomials": 161,
+    "zero_polynomials": 0,
+    "sha256": "77d6dfd96e3ae7e255ee452c89e56e0e8e60aa78ca99a26c7e66d523eb9d6235"
+  },
+  "33": {
+    "checked_polynomials": 6,
+    "collected_monomials": 154,
+    "zero_polynomials": 0,
+    "sha256": "bc4870abececaf62e421d4a1d927fe700b84d970de39d8f1fafd12ca7e101ab7"
+  },
+  "34": {
+    "checked_polynomials": 6,
+    "collected_monomials": 159,
+    "zero_polynomials": 0,
+    "sha256": "f41c069fbb8231f350d48a89e88eb9c15067f0ec5083ea727ee12c041ac36d70"
+  },
+  "35": {
+    "checked_polynomials": 6,
+    "collected_monomials": 106,
+    "zero_polynomials": 0,
+    "sha256": "e66aab11cebd8f80599532709c4a33e1a833f767e55ab89181356f92bf4381d0"
+  },
+  "36": {
+    "checked_polynomials": 9,
+    "collected_monomials": 172,
+    "zero_polynomials": 0,
+    "sha256": "4cb606cd4e3a450622ee0870e744d2e12ab7eaa244f0f0c6bf688a32f90cb3ee"
+  },
+  "37": {
+    "checked_polynomials": 6,
+    "collected_monomials": 155,
+    "zero_polynomials": 0,
+    "sha256": "827231b89ba75173aacfa3347e438b44676f8ecaee34d6e3885febae8249daa0"
+  },
+  "39": {
+    "checked_polynomials": 6,
+    "collected_monomials": 176,
+    "zero_polynomials": 0,
+    "sha256": "ceb23a266f1c7d84baec5b57f5a11e35ccdaa6257ade92782209ee1fd52f8734"
+  },
+  "40": {
+    "checked_polynomials": 6,
+    "collected_monomials": 172,
+    "zero_polynomials": 0,
+    "sha256": "8043e004a9a1433c65f40dde4721ef9764dcee8d33e1b9077627895897ca17b1"
+  },
+  "41": {
+    "checked_polynomials": 6,
+    "collected_monomials": 93,
+    "zero_polynomials": 0,
+    "sha256": "89958a8594a8d1878792da109f2c6cb9bb279c485d7110090407abf5059c37c9"
+  },
+  "42": {
+    "checked_polynomials": 6,
+    "collected_monomials": 155,
+    "zero_polynomials": 0,
+    "sha256": "4023f5e633fe3d80a9651af22551716d10ef19b9d4400059f3059aa6c19cf554"
+  },
+  "43": {
+    "checked_polynomials": 6,
+    "collected_monomials": 155,
+    "zero_polynomials": 0,
+    "sha256": "d0ad0a3ef837bafeca28cf6cf2d432d56ddfc790687a573748147b21f105a7aa"
+  },
+  "44": {
+    "checked_polynomials": 6,
+    "collected_monomials": 150,
+    "zero_polynomials": 0,
+    "sha256": "7b1fa1fa4784b32e9f2bbf49595ed196e3360e8c7f967679ba395a12d567956c"
+  },
+  "45": {
+    "checked_polynomials": 6,
+    "collected_monomials": 155,
+    "zero_polynomials": 0,
+    "sha256": "2f8b50fe73a4a19d77b5d4f0aa5542ebf0b58eddeb24f1c7e0281bed33b00ba0"
+  },
+  "46": {
+    "checked_polynomials": 9,
+    "collected_monomials": 183,
+    "zero_polynomials": 0,
+    "sha256": "67f3c3b778099cacb2dca50abe14d4fc4ddda3dd6ba0de9bf8612af3fa125575"
+  },
+  "47": {
+    "checked_polynomials": 9,
+    "collected_monomials": 145,
+    "zero_polynomials": 0,
+    "sha256": "3d4c0537e908c20c5f2d0c6b58ab347a4e67c700c7e5672c179404203ba27b99"
+  },
+  "48": {
+    "checked_polynomials": 6,
+    "collected_monomials": 86,
+    "zero_polynomials": 0,
+    "sha256": "43b4a783b5c68e637258c07b3cc27b39a0c6d3c26c721b803183b674dbe06cf5"
+  },
+  "49": {
+    "checked_polynomials": 9,
+    "collected_monomials": 212,
+    "zero_polynomials": 0,
+    "sha256": "115e9743d60de4d86ac81716e2e958e5424be5c9ba1ee324d49875fff87f92df"
+  },
+  "50": {
+    "checked_polynomials": 6,
+    "collected_monomials": 167,
+    "zero_polynomials": 0,
+    "sha256": "4f4c608ea6b6f3f06a3bf6d7453ba8662fc13f506ffb9a5f5e81b22a7def9ed1"
+  },
+  "51": {
+    "checked_polynomials": 6,
+    "collected_monomials": 150,
+    "zero_polynomials": 0,
+    "sha256": "f75b59b30e88019036849fa73918048f0cbf847d1a0368eb226cefee86830322"
+  },
+  "52": {
+    "checked_polynomials": 6,
+    "collected_monomials": 177,
+    "zero_polynomials": 0,
+    "sha256": "dfbd6a2d48efb109a515a6e49d6d0ef68ea5b8eab9998b33c264541c285708ba"
+  },
+  "53": {
+    "checked_polynomials": 6,
+    "collected_monomials": 174,
+    "zero_polynomials": 0,
+    "sha256": "2a2220587dde2c9f4904d78ea1aa07ff7ace3e102e0c6d89c640f13437998efd"
+  },
+  "54": {
+    "checked_polynomials": 6,
+    "collected_monomials": 157,
+    "zero_polynomials": 0,
+    "sha256": "5ebdb284fe62c7db8147068365d69dc97ade4bae9a1a96b991351ba2fbab09eb"
+  },
+  "56": {
+    "checked_polynomials": 6,
+    "collected_monomials": 199,
+    "zero_polynomials": 0,
+    "sha256": "df0d2976bc52e2445628487a9159a2a5f90c3cc414ce1718b092573b3fd9c9a8"
+  },
+  "57": {
+    "checked_polynomials": 6,
+    "collected_monomials": 198,
+    "zero_polynomials": 0,
+    "sha256": "050ff342552d70efd1f131d758c3a8740b356efcd75cc52b1362bf31a7c431d0"
+  },
+  "58": {
+    "checked_polynomials": 6,
+    "collected_monomials": 202,
+    "zero_polynomials": 0,
+    "sha256": "5176483399f89ebc03400eec8a0a21144daa64640041a279809ba105655dcf91"
+  },
+  "59": {
+    "checked_polynomials": 6,
+    "collected_monomials": 173,
+    "zero_polynomials": 0,
+    "sha256": "86172efbce0176acdf6c2c22097a3801d96f76cf4c1b6b21c8bccf3399278013"
+  },
+  "60": {
+    "checked_polynomials": 6,
+    "collected_monomials": 143,
+    "zero_polynomials": 0,
+    "sha256": "f6c297d7a7eb75cb164ac026e87d6532c67ffebee86f4a903d80d287ab6349dd"
+  },
+  "61": {
+    "checked_polynomials": 6,
+    "collected_monomials": 143,
+    "zero_polynomials": 0,
+    "sha256": "e6e2d643d81b4d5ff9978ed7cc82d3108e5cb03dcec5d46937d5dbdd381e0462"
+  }
+}
