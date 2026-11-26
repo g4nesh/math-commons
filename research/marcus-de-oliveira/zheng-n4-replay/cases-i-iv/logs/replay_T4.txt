@@ -1,0 +1,144 @@
+==============================================================================
+replay_T4: Case T_4 = {0,1,4,5,7,8} (root_moc4_T4_uniform_20261022.pdf)
+==============================================================================
+
+--- Facet numbering: own transcription of Appendix D vs supplement data vs audit lib
+[ok  ] 82 distinct value vectors; 34 minor (16 with 18 zeros, 18 with 20 zeros), 48 h with profile 13x0, 10x1, 1x2
+[ok  ] the 1152 elements of G act as distinct permutations of the 24 indices, permute the 82 facet vectors and map minors to minors
+[ok  ] supplement data: permutations listed lexicographically
+[ok  ] supplement data: facet j has the values of the paper's f_j for all 82 j (documents' numbering = Appendix D numbering)
+[ok  ] audit lib: PERMS identical
+[ok  ] audit lib: F_VALUES identical to own values for all 82 facets
+[ok  ] audit lib: its 1152 group index maps are the same set as mine
+[ok  ] audit lib: the column space of its matrix P (rank 14) is the span of my 34 minor value vectors
+[ok  ] audit lib: CONTACT_SETS[3] = [0, 1, 2, 3, 7, 8] and generators agree
+[ok  ] audit lib: CONTACT_SETS[4] = [0, 1, 4, 5, 7, 8] and generators agree
+[ok  ] audit lib: CONTACT_SETS[5] = [1, 2, 3, 4, 6, 8] and generators agree
+[ok  ] audit lib: CONTACT_SETS[6] = [0, 1, 2, 4, 6, 8] and generators agree
+
+--- A. contact set, generators, the table of minors (document p. 1)
+[ok  ] document's T_4 = {0,1,4,5,7,8} is literally the paper's T_4 (identity of G)
+[ok  ] generators vanishing on T_4: {0,1,2,3,4,5,6,11,33,34} :: [0, 1, 2, 3, 4, 5, 6, 11, 33, 34]
+[ok  ] only f34 is not a minor vector
+[ok  ] N_T directly: {g in im P : g|T = 0} has dimension 8 and the cone {g >= 0} in it has exactly 10 extreme rays, the value vectors of f_j, j in [0, 1, 2, 3, 4, 5, 6, 11, 33, 34] (own exhaustive enumeration; Lemma 4.2 for this T without Prop. 4.1)
+[ok  ] the document's table f_j = m_{I,J} (0-based I, J) agrees with Appendix D for j = 0..6, 11, 33
+[ok  ] f34 = f0 - f2 + f6 + f33 (values at all 24 permutations)
+[ok  ] f0 - f1 - f2 - f3 + f4 = 0
+[ok  ] span of the generators has dimension 8
+
+--- A. the face decomposition (2) and the case d <= 0 (document p. 2)
+[ok  ] (2): g = g19 f0 + g16 f1 + g14 f3 + g10 f5 + g15 f6 + g6 f11 + g13 f33 + d f34, d = g2 - g13, on the span
+[ok  ] g22 = g16 + g19 + d, g18 = g14 + g19 + d, g9 = g15 + d on the span
+[ok  ] d <= 0 replacement at tau = 0: g = (g19 + d) f0 + g16 f1 + (-d) f2 + g14 f3 + g10 f5 + g9 f6 + g6 f11 + g2 f33 on the span
+       PROOF-READ: with A = -d >= 0, b = g19, tau = max(0, A - b), adding tau (f0 - f1 - f2 - f3 + f4) = 0 gives coefficients
+         (b-A+tau, g16-tau, A-tau, g14-tau, tau) on (f0..f4): all >= 0 because g22 = g16+b-A >= 0, g18 = g14+b-A >= 0;
+         the others are g10, g9, g6, g2 >= 0.  So d <= 0 gives a minor decomposition.
+
+--- B. four-coefficient member used: a f6 + b f0 + c f5 + d f34 (document p. 2, eq. (1))
+[ok  ] four-coefficient: roles (6, 0, 5, 34) lie in the G-orbit of the proved representative (0, 6, 10, 54) :: g = (rho=(3, 2, 1, 0), rho'=(3, 1, 2, 0), transpose=0), 2 group elements, source roles (0, 6, 10, 54)
+[ok  ] four-coefficient: orbit size (pair in positions (0, 1) unordered) = 288 :: 288
+[ok  ] four (0,6;10;54) -> (6,0;5;34): Phi_{g.f}(O'') = Phi_f(O) with O'' in SO(4), exact on 6 random rational O
+[ok  ] the document's transport 'transposition and the swap (1 2)', i.e. sigma -> sigma^{-1} o (1 2), maps (f0, f6, f10, f54) to (f6, f0, f5, f34)
+[ok  ] the document's group element: Phi_{g.f}(O'') = Phi_f(O) with O'' in SO(4), exact on 6 random rational O
+
+--- Four-coefficient representative (f0, f6; f10; f54): replay of the four-budget note, own code
+[ok  ] model x -> p x q: M^t M = |p|^2|q|^2 I and det M = (|p|^2|q|^2)^2
+[ok  ] bridge: 4 Phi_{f0}(M(p,q)) = n^2 Q mod N, Q = (A-B)^2
+[ok  ] bridge: 4 Phi_{f6}(M(p,q)) = n^2 Q mod N, Q = (A+B)^2
+[ok  ] bridge: 4 Phi_{f10}(M(p,q)) = n^2 Q mod N, Q = D^2
+[ok  ] bridge: 4 Phi_{f54}(M(p,q)) = n^2 Q mod N, Q = H
+[ok  ] certificate (4): n[a(A-B)^2 + b(A+B)^2 + cD^2 + dH] = sum_j l(S_j y)^t Z l(S_j y) + m(S_j y)^t Z m(S_j y) mod N
+[ok  ] each S_j preserves |p|^2 and |q|^2 (signed coordinate permutations within p and within q)
+[ok  ] Schur complement of the entry Z44 = d: d * (Z[:3,:3] - col col^t / d) = d * S3 with S3 as in the note
+[ok  ] second Schur complement (of c - d): (c-d) * det of the 2x2 block = 4[ab(c-d) - d^2(a+b+c+d)]
+[ok  ] det Z = 4 d [ab(c-d) - d^2(a+b+c+d)]
+       PROOF-READ: d = 0: Z = [[a+b, a-b],[a-b, a+b]] + [c] + [0] is PSD.  d > 0 and capacity: ab(c-d) >= d^2(..) > 0
+         forces c > d; Z44 = d > 0, S3 has (3,3) entry c-d > 0, the 2x2 complement has positive (1,1) entry and det >= 0.
+         So Z >= 0, each quadratic form in (4) is >= 0, and n = 2 on S^3 x S^3: a Phi_0 + b Phi_6 + c Phi_10 + d Phi_54 >= 0.
+         CITED (classical): every O in SO(4) is the matrix of x -> p x q for unit quaternions p, q.
+
+--- B. the 'arrowhead pencil' of p. 2 (alternative derivation named by the document)
+[ok  ] d (a+d) c (b+d) - d^2 [c(b+d) + (a+d)(b+d) + (a+d)c] = d [ab(c-d) - d^2(a+b+c+d)]  (Schur complement formula)
+       The PDF gives no identity linking this 4x4 pencil to the Leibniz sums (it refers to its checker); the
+       inequality (1) is therefore taken from the four-budget note (replayed above) plus the G-transport.
+
+--- C. normalisation and contact ratios (document pp. 2-3)
+[ok  ] point C_2 at infinity with its factor dropped: all 24 products change by one common factor
+[ok  ] contact ratios R_sigma = (F_sigma - F_0)/(v(z-w)) on T_4 = (0,1,4,5,7,8): 0, 1-x, t-x, x(t-1), r-x+1, u (identities in complex z, w, v, x, t; r, u as defined on p. 3)
+       PROOF-READ: kappa = i m/(v(z-w)), m in C*: contacts 1,4,5 <=> m(1-x), m(t-x), m x(t-1) real; then m(t-1) real,
+         x real (t != 1), m real (x != 1), t real; contacts 7, 8 <=> r, u real.
+[ok  ] chart-free identity: (F_2 - F_0)/(v(z-w)) = t - x/v, hence g2 = Re(i mu (t - x/v)) = -mu x Im(v)/|v|^2 for ALL z, w
+       FINDING (a): for real v this gives g2 = 0, so d = g2 - g13 = -g13 <= 0: real-v configurations fall under the case
+         d <= 0 already settled by minors on p. 2.  The document's appeal to the three-plus-three circle theorem (p. 3) is
+         therefore not needed: d > 0 forces Im v != 0.
+[ok  ] with lam = (z-v)/(z-w):  r v/(1 - t v) = z (lam - 1)  and  r v/(1 - t v) - u v/(x - t v) = lam  (identities)
+       FINDING (b): for real v, x, t and real r, u these give lam real and z (lam - 1) real; lam = 1 is the collision w = v,
+         so z is real, then w = z - (z - v)/lam is real, kappa is imaginary and ALL gaps vanish.  With eight distinct
+         points the real-v case is thus trivial, exactly as in the documents for T_3, T_5, T_6.
+[ok  ] exhaustiveness: z * den_z = r v (t v - x) and w * den_w = (x - t v)(r - t v + 1) identically for r, u defined from z, w
+[ok  ] in terms of the points: den_z = -(v-w)(x-tv)(tv-1)/(z-w) and den_w = -(z-v)(x-tv)(tv-1)/(v(z-w)): nonzero for distinct points
+       PROOF-READ: den_z = 0 would force r v (tv - x) = 0 (collision); den_w = 0 would force r + 1 = t v, impossible for
+         real r, t != 0 and nonreal v.  (For real v the chart is not used.)
+[ok  ] the chart inverts the definitions of r and u
+[ok  ] on the chart R_sigma on T_4 is 0, 1-x, t-x, x(t-1), r-x+1, u and the gaps vanish identically exactly on T_4
+[ok  ] the chart's gap vector satisfies (2) in all 24 entries (so it lies in the span)
+
+--- C. basic identities (document p. 3); g_sigma = rho * gamma_sigma, rho = mu Im v
+[ok  ] g2 = -rho x/|v|^2
+[ok  ] g6 = -rho r t (x-1)/|tv-1|^2
+[ok  ] c = g10 = rho t u x/|tv-x|^2
+[ok  ] g9 = (x-1) c
+[ok  ] a = g15 = g9 - d
+
+--- C. the two source identities (3), (4) and E = (h-y)(H+hy) + hyL (document pp. 3-4)
+[ok  ] (3a) k = h c - t (b + d)
+[ok  ] (3b) E e = t y H b - J d
+[ok  ] (4)  J = E + h y (r+1) and J - x h H = -u y
+[ok  ] E = (h - y)(H + h y) + h y L
+[ok  ] (h - y)(1 + y) = 1 - t x - y^2  (used for E >= H(h-y)(1+y) when r <= H y/h)
+[ok  ] y - H y/h + u = -u (y - h)/h  (used for L > 0)
+
+--- C. the Hermitian forms (document p. 4)
+[ok  ] Q(v) v = (z - v) den_z: Q(v) != 0 on the chart (it vanishes only for the collision A_0 = C_1)
+[ok  ] D = d |Q(v)|^2 is a polynomial of bidegree <= (1,1) in (v, conj v), symmetric, with coefficients in Q[x,t,u,r]
+[ok  ] (6) det M_D = -r^3 t^2 u x y L E
+[ok  ] (6) D(x/t, x/t) = r u x y (h r - H y)
+[ok  ] P = K |Q(v)|^2, K = t y b - x h d is a polynomial of bidegree <= (1,1) in (v, conj v), symmetric, with coefficients in Q[x,t,u,r]
+[ok  ] (7) det M_P = -r^2 t^2 u^2 x^2 h y L E
+[ok  ] (7) P(x/t, x/t) = r u^2 x^2 y (y - h)
+       PROOF-READ: a real symmetric 2x2 matrix with det >= 0 and a negative (positive) value on a real vector is negative
+         semidefinite (positive definite if det > 0); its Hermitian form at (1, v) is m00 + m01(v + conj v) + m11 |v|^2.
+
+--- C. the closing identities (document p. 4)
+[ok  ] with a = y c - d: ab(c-d) - d^2(a+b+c+d) = c {y b c - x d (b+d)}
+[ok  ] h {y b c - x d (b+d)} = (b+d)(t y b - x h d) + y b (h c - t(b+d))   [= (b+d) K + y b k]
+       => capacity = (c/h) [(b+d) K + y b k] > 0 for c, h, d > 0, b, k >= 0, y > 0, K > 0; a, b, c, d >= 0: (1) applies to
+          a f6 + b f0 + c f5 + d f34 with a = g15, b = g19, c = g10, d = g2 - g13, the four terms of (2).
+
+--- C'. EXACT instances built from the paper's definitions (finite Gaussian-rational spectra)
+[ok  ] instance (x,t,u,r,v) = (2,1/2,-1/4,1/4,7/2+i/4): all 24 gaps >= 0 (exact) and the contact set contains T; contact set = [0, 1, 4, 5, 7, 8]
+[ok  ] instance (x,t,u,r,v) = (2,1/2,-1/4,1/4,7/2+i/4): d = 0.00272577 > 0 (the non-minor term is present); (2) reproduces all 24 gaps with coefficients >= 0; capacity ab(c-d) - d^2(a+b+c+d) = 0.000102239 > 0
+[ok  ] instance (x,t,u,r,v) = (2,1/2,-1/4,1/4,7/2+i/4): E = -1/8 (E<0); rho := -g2 |v|^2/x < 0; g6, g10 formulas, k = hc - t(b+d), E e = t y H b - J d hold; K = t y b - x h d > 0; L > 0 and y > h
+[ok  ] instance (x,t,u,r,v) = (2,1/4,-3/8,1/8,21/4+3i/4): all 24 gaps >= 0 (exact) and the contact set contains T; contact set = [0, 1, 4, 5, 7, 8]
+[ok  ] instance (x,t,u,r,v) = (2,1/4,-3/8,1/8,21/4+3i/4): d = 0.00241886 > 0 (the non-minor term is present); (2) reproduces all 24 gaps with coefficients >= 0; capacity ab(c-d) - d^2(a+b+c+d) = 1.67094e-05 > 0
+[ok  ] instance (x,t,u,r,v) = (2,1/4,-3/8,1/8,21/4+3i/4): E = 3/32 (E>0); rho := -g2 |v|^2/x < 0; g6, g10 formulas, k = hc - t(b+d), E e = t y H b - J d hold; K = t y b - x h d > 0
+[ok  ] boundary instance (x,t,u,r,v) = (2,1/4,-3/8,1/4,21/4+i/2): all 24 gaps >= 0 (exact) and the contact set contains T; contact set = [0, 1, 4, 5, 7, 8]
+[ok  ] boundary instance (x,t,u,r,v) = (2,1/4,-3/8,1/4,21/4+i/2): d = 0.00267654 > 0 (the non-minor term is present); (2) reproduces all 24 gaps with coefficients >= 0; capacity ab(c-d) - d^2(a+b+c+d) = 1.10187e-05 > 0
+[ok  ] boundary instance (x,t,u,r,v) = (2,1/4,-3/8,1/4,21/4+i/2): E = 0 (E=0); rho := -g2 |v|^2/x < 0; g6, g10 formulas, k = hc - t(b+d), E e = t y H b - J d hold; K = t y b - x h d > 0
+
+--- D. NUMERIC falsification attempts on the intermediate claims (numpy, seeds printed)
+[ok  ] NUMERIC broad chart sample: seed 41001, 200000 samples on the contact locus, 134 supporting, 0 with d > 0 (0 with E < 0); no violation of the intermediate claims :: []
+          min K inf | min capacity (normalised gaps) inf | min L (E<0) inf | min y-h (E<0) inf
+[ok  ] NUMERIC region x>1, 0<t<1, r>0, u<0: seed 41002, 200000 samples on the contact locus, 8111 supporting, 1 with d > 0 (1 with E < 0); no violation of the intermediate claims :: []
+          min K 5.487e-02 | min capacity (normalised gaps) 1.690e-02 | min L (E<0) 7.102e-01 | min y-h (E<0) 1.005e+00
+[ok  ] NUMERIC d>0 region (Re v in (x, x/t), small r, |u|, |Im v|): seed 41003, 400000 samples on the contact locus, 45681 supporting, 28046 with d > 0 (21155 with E < 0); no violation of the intermediate claims :: []
+          min K 6.792e-09 | min capacity (normalised gaps) 2.170e-14 | min L (E<0) 7.193e-03 | min y-h (E<0) 1.597e-02
+[ok  ] NUMERIC d>0 region with E = 0 exactly: seed 41004, 200000 samples on the contact locus, 17189 supporting, 6580 with d > 0 (1167 with E < 0); no violation of the intermediate claims :: []
+          min K 2.593e-09 | min capacity (normalised gaps) 7.140e-19 | min L (E<0) 6.959e-03 | min y-h (E<0) 5.083e-03
+[ok  ] NUMERIC d>0 region with y = h exactly: seed 41005, 200000 samples on the contact locus, 5542 supporting, 5524 with d > 0 (0 with E < 0); no violation of the intermediate claims :: []
+          min K 6.159e-13 | min capacity (normalised gaps) 7.818e-17 | min L (E<0) inf | min y-h (E<0) inf
+[ok  ] NUMERIC d>0 region with L = 0 exactly: seed 41006, 200000 samples on the contact locus, 2 supporting, 0 with d > 0 (0 with E < 0); no violation of the intermediate claims :: []
+          min K inf | min capacity (normalised gaps) inf | min L (E<0) inf | min y-h (E<0) inf
+[ok  ] NUMERIC: tests not vacuous (many supporting samples with d > 0, with E < 0 and with E >= 0) :: (28046, 21155)
+
+PASS: all 84 checks passed in replay_T4: Case T_4 = {0,1,4,5,7,8} (root_moc4_T4_uniform_20261022.pdf)

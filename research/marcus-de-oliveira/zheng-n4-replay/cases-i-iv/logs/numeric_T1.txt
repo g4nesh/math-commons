@@ -1,0 +1,36 @@
+====================================================================================================
+NUMERIC falsification attempts, case T_1 = {0,1,2,3,6,7}  (floating point; seeds printed)
+====================================================================================================
+[ok] control of the cone test: distance of f_17 = 0.1250, of f_17 + f_9/2 = 0.0625 (both outside the minor cone), of f_17 + f_9 = 0.0e+00 (inside)
+       the linear programme has feasibility tolerance about 1e-7, so a reported distance 0.000e+00 means 'below about 1e-7 of the largest gap'
+       E1: solutions of 'Re F equal on T_1' only (no inequalities), all distances and factors >= 0.05; seed 101, 24369 starts
+[no violation] E1a first cross-ratio (A2,A3;C2,C3) is real [relative imaginary part] :: samples 2000, worst value 1.471e-11, tolerance 1.0e-07
+[no violation] E1b A1,A2,A3,C1,C2,C3 concyclic [max relative imaginary part over all quadruples of distinct points] :: samples 2000, worst value 1.486e-11, tolerance 1.0e-07
+[no violation] E1c Re F_0 = 0 [relative] :: samples 2000, worst value 1.240e-12, tolerance 1.0e-07
+[no violation] E1d Re F_4 = Re F_5 = Re F_0 [relative] :: samples 2000, worst value 8.464e-12, tolerance 1.0e-07
+       E2: same, on the collision A1 = C3 that the proof treats separately; seed 102, 2697 starts
+[no violation] E2a first cross-ratio real :: samples 500, worst value 3.233e-12, tolerance 1.0e-07
+[no violation] E2b six points concyclic :: samples 500, worst value 7.354e-12, tolerance 1.0e-07
+[no violation] E2c Re F_0 = 0 :: samples 500, worst value 6.256e-13, tolerance 1.0e-07
+[no violation] E2d Re F_4 = Re F_5 = Re F_0 :: samples 500, worst value 6.256e-13, tolerance 1.0e-07
+[no violation] E3 A3 - A2 = eps (towards a repeated eigenvalue), eps = 1e-02: max of the four errors :: samples 200, worst value 1.689e-11, tolerance 1.0e-06 :: errors (first, six, Re F_0, F_4/F_5) = 2.0e-15 1.7e-11 1.0e-12 9.8e-13; seed 103
+[no violation] E3 A3 - A2 = eps (towards a repeated eigenvalue), eps = 1e-04: max of the four errors :: samples 200, worst value 3.567e-09, tolerance 1.0e-05 :: errors (first, six, Re F_0, F_4/F_5) = 2.8e-15 3.6e-09 3.0e-11 7.1e-11; seed 103
+[no violation] E3 A1 - A2 = eps, eps = 1e-02: max of the four errors :: samples 200, worst value 1.790e-13, tolerance 1.0e-06 :: errors (first, six, Re F_0, F_4/F_5) = 3.7e-15 1.8e-13 3.9e-14 1.8e-15; seed 104
+[no violation] E3 A1 - A2 = eps, eps = 1e-04: max of the four errors :: samples 200, worst value 2.742e-13, tolerance 1.0e-05 :: errors (first, six, Re F_0, F_4/F_5) = 2.6e-14 2.7e-13 8.1e-14 1.3e-15; seed 104
+[no violation] E3 C0 - C1 = eps, eps = 1e-02: max of the four errors :: samples 200, worst value 2.892e-12, tolerance 1.0e-06 :: errors (first, six, Re F_0, F_4/F_5) = 3.2e-13 2.9e-12 1.9e-12 3.1e-13; seed 105
+[no violation] E3 C0 - C1 = eps, eps = 1e-04: max of the four errors :: samples 200, worst value 2.211e-10, tolerance 1.0e-05 :: errors (first, six, Re F_0, F_4/F_5) = 6.3e-11 2.2e-10 8.0e-11 4.7e-11; seed 105
+[no violation] E3 A0 - C0 = eps (towards a zero contact product), eps = 1e-02: max of the four errors :: samples 200, worst value 1.517e-13, tolerance 1.0e-06 :: errors (first, six, Re F_0, F_4/F_5) = 4.1e-14 1.5e-13 5.1e-15 2.9e-14; seed 106
+[no violation] E3 A0 - C0 = eps (towards a zero contact product), eps = 1e-04: max of the four errors :: samples 200, worst value 4.535e-13, tolerance 1.0e-05 :: errors (first, six, Re F_0, F_4/F_5) = 1.7e-14 4.5e-13 1.4e-17 5.6e-17; seed 106
+[no violation] E3 A1 - C3 = eps (towards the exceptional collision), eps = 1e-02: max of the four errors :: samples 200, worst value 2.819e-13, tolerance 1.0e-06 :: errors (first, six, Re F_0, F_4/F_5) = 5.7e-14 2.8e-13 1.0e-14 1.2e-14; seed 107
+[no violation] E3 A1 - C3 = eps (towards the exceptional collision), eps = 1e-04: max of the four errors :: samples 200, worst value 1.868e-11, tolerance 1.0e-05 :: errors (first, six, Re F_0, F_4/F_5) = 3.9e-14 1.9e-11 1.4e-14 1.4e-14; seed 107
+       E4: nondegenerate points with contact set containing T_1 (all 24 real parts on one side; gap vector normalised to mean 1); seed 108, 79185 starts; 300 of them have contact set exactly {0,..,7}
+[no violation] E4a the gaps at indices 4 and 5 vanish :: samples 300, worst value 6.284e-12, tolerance 1.0e-07
+[no violation] E4b gap vector lies in the cone of the 34 minor profiles [relative distance, linear programme] :: samples 300, worst value 0.000e+00, tolerance 1.0e-07
+       E4x: points returned by the penalised solver for 'contact set contains T_1' (seed 118, 269 solves): repeated eigenvalue 170, zero contact product 24, neither 6
+[no violation] E4x gap vector lies in the cone of the 34 minor profiles :: samples 200, worst value 0.000e+00, tolerance 1.0e-07
+       E5: points with A2 = A3 and contact set containing T_1; seed 109, 347 solves; 254 of them have contact set exactly T_1; largest gap min(g_4, g_5) seen: 4.145 (so the main-branch conclusion fails there, as expected)
+[no violation] E5 gap vector lies in the cone of the 34 minor profiles :: samples 300, worst value 0.000e+00, tolerance 1.0e-07
+[no violation] E6 zero contact product (A0 = C0): gap vector in the cone of minor profiles; seed 110 :: samples 200, worst value 0.000e+00, tolerance 1.0e-07
+[no violation] E6 zero contact product (A2 = C2): gap vector in the cone of minor profiles; seed 111 :: samples 200, worst value 0.000e+00, tolerance 1.0e-07
+
+FINAL: NO VIOLATION FOUND (numeric evidence only)

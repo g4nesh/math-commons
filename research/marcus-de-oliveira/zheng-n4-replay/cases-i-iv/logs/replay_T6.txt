@@ -1,0 +1,139 @@
+==============================================================================
+replay_T6: Case T_6 = {0,1,2,4,6,8} (independent_moc4_T2_uniform_20261022.pdf)
+==============================================================================
+
+--- Facet numbering: own transcription of Appendix D vs supplement data vs audit lib
+[ok  ] 82 distinct value vectors; 34 minor (16 with 18 zeros, 18 with 20 zeros), 48 h with profile 13x0, 10x1, 1x2
+[ok  ] the 1152 elements of G act as distinct permutations of the 24 indices, permute the 82 facet vectors and map minors to minors
+[ok  ] supplement data: permutations listed lexicographically
+[ok  ] supplement data: facet j has the values of the paper's f_j for all 82 j (documents' numbering = Appendix D numbering)
+[ok  ] audit lib: PERMS identical
+[ok  ] audit lib: F_VALUES identical to own values for all 82 facets
+[ok  ] audit lib: its 1152 group index maps are the same set as mine
+[ok  ] audit lib: the column space of its matrix P (rank 14) is the span of my 34 minor value vectors
+[ok  ] audit lib: CONTACT_SETS[3] = [0, 1, 2, 3, 7, 8] and generators agree
+[ok  ] audit lib: CONTACT_SETS[4] = [0, 1, 4, 5, 7, 8] and generators agree
+[ok  ] audit lib: CONTACT_SETS[5] = [1, 2, 3, 4, 6, 8] and generators agree
+[ok  ] audit lib: CONTACT_SETS[6] = [0, 1, 2, 4, 6, 8] and generators agree
+
+--- A. contact set, generators, finite linear algebra (document pp. 1-2)
+[ok  ] document's T = {0,1,2,4,6,8} is literally the paper's T_6 (identity of G); it is NOT the paper's T_2 = {0,1,2,3,6,8}
+[ok  ] (the paper's T_2 is in a different G-orbit, so the file name refers to the older numbering)
+[ok  ] generators vanishing on T: {0,1,2,3,4,5,6,9,10,21,22,23,25} :: [0, 1, 2, 3, 4, 5, 6, 9, 10, 21, 22, 23, 25]
+[ok  ] only f22, f25 are not minor vectors
+[ok  ] N_T directly: {g in im P : g|T = 0} has dimension 8 and the cone {g >= 0} in it has exactly 13 extreme rays, the value vectors of f_j, j in [0, 1, 2, 3, 4, 5, 6, 9, 10, 21, 22, 23, 25] (own exhaustive enumeration; Lemma 4.2 for this T without Prop. 4.1)
+[ok  ] span has dimension 8 and q = (g3,g7,g9,g10,g12,g13,g16,g18) are coordinates on it
+[ok  ] the ten linear formulas for g5, g11, g14, g15, g17, g19, g20, g21, g22, g23 in terms of q hold on the span
+[ok  ] the eleven minor generators have rank 8
+[ok  ] cone of the eleven minors has exactly 18 facets :: 18
+[ok  ] two of the facet functionals are A and B of (2)
+[ok  ] each of the other sixteen is >= 0 on all thirteen generators
+       => for g in N_T: g in cone(minors) <=> A(g) >= 0 and B(g) >= 0.
+[ok  ] on the two non-minor generators: A(f22) = 1, A(f25) = -1, B(f22) = -1, B(f25) = 1
+
+--- B. SOC member a f1 + b f9 + c f22, ab >= c^2 (document p. 1, eq. (1)): the representative itself
+[ok  ] SOC: roles (1, 9, 22) lie in the G-orbit of the proved representative (1, 9, 22) :: g = (rho=(0, 1, 2, 3), rho'=(0, 1, 2, 3), transpose=0), 4 group elements, source roles (1, 9, 22)
+[ok  ] SOC: orbit size (pair in positions (0, 1) unordered) = 144 :: 144
+[ok  ] the label swap A_1 <-> A_2 (sigma -> sigma o (1 2)) preserves T and fixes E02 = f4, E31 = f21, f3, f9, f23; it exchanges f1<->f2, f5<->f10, f22<->f25
+[ok  ] swap: (f1,f9;f22) <-> (f2,f9;f25): Phi_{g.f}(O'') = Phi_f(O) with O'' in SO(4), exact on 6 random rational O
+
+--- SOC representative (f1, f9; f22): identities of the audit's proof (so4-atoms.md 3.1), own code
+[ok  ] model x -> p x conj(q): M^t M = |p|^2|q|^2 I and det M = (|p|^2|q|^2)^2 (so M in SO(4) for unit p, q)
+[ok  ] Phi_{f1} = x1^2, Phi_{f9} = x9^2 with x1 = det M[12,34], x9 = det M[14,23] (polynomial identities)
+[ok  ] x1 = v0 + v1 and x9 = v0 + v3 (homogenised with |p|^2, |q|^2)
+[ok  ] Phi_{f22} = 2(a0A2 + a2A0 + a1A3 + a3A1) - 4 p0p1p2p3 - 4 q0q1q2q3 on S^3 x S^3 (homogenised)
+[ok  ] bridge for the supplement's Theorem 3 (scalar-compensation note; not in any PDF), model x -> p x q: Phi_{f1} = S^2, Phi_{f9} = T^2, Phi_{f22} = H (homogenised)
+[ok  ] scalar step 1: R = 2 delta^2 + 2 Delta^2 - 2(v0v2 + v1v3) identically
+[ok  ] scalar step 1: st = (v2+v3)(v1+v2) = v1v3 - v0v2 + v2 sum(v), and (v0+v1)(v0+v3) = st + (v0-v2) sum(v)
+[ok  ] increment lemma: (r^2+u^2)(s^2+w^2) - (rs + uw)^2 = (rw - us)^2
+       PROOF-READ (scalar-compensation note, Theorem 2 = so4-atoms.md 3.1 steps 1-5): R + 2|st| = 2delta^2 + 2Delta^2 - 4 min(v0v2, v1v3);
+         if the min is > 0, after a <-> A, Delta - delta >= sqrt(alpha gamma) + sqrt(MN), so 2delta^2 + 2Delta^2 >= (Delta-delta)^2
+         >= 4 sqrt(alpha gamma M N) >= 4 min.  With -4p0p1p2p3 >= -4 sqrt(a0a1a2a3): Phi_22 + 2|x1 x9| >= 0 on SO(4);
+         then a x1^2 + b x9^2 + d Phi_22 >= d(2|x1x9| + Phi_22) >= 0 for ab >= d^2, d >= 0.
+
+--- C. closed collision strata (document p. 2)
+[ok  ] the pairs (i, j) not used by a contact are exactly (0,2), (0,3), (3,0), (3,1)
+[ok  ] for every block {sigma(i) = j}, all facet vectors vanishing on the block are minors (all 16 blocks)
+[ok  ] N_T directly: {g in im P : g|T = 0} has dimension 9 and the cone {g >= 0} in it has exactly 15 extreme rays, the value vectors of f_j, j in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] (own exhaustive enumeration; Lemma 4.2 for this T without Prop. 4.1)
+[ok  ] G is transitive on the 16 blocks (so the block cone of every (i,j) is generated by its minor facet vectors)
+       PROOF-READ: A_i = C_j with (i,j) used by a contact sigma_0 gives F_sigma0 = 0, so Re kappa F_0 = 0 and the whole block is
+         contact; g then lies in the cone of that block, which is generated by minors.
+[ok  ] A_0 = C_2: g = g19 f0 + g12 f4 + g10 f5 + g7 f10 + g3 f23 on {g in span: g constant on the block} (dim 5); all f are minors
+[ok  ] A_0 = C_3: g = g18 f0 + g12 f4 + g7 f9 + g3 f23 on {g in span: g constant on the block} (dim 4); all f are minors
+[ok  ] A_3 = C_0: g = g12 f3 + g9 f6 + g7 f9 + g3 f21 on {g in span: g constant on the block} (dim 4); all f are minors
+[ok  ] A_3 = C_1: g = g12 f3 + g10 f5 + g15 f6 + g7 f10 + g3 f21 on {g in span: g constant on the block} (dim 5); all f are minors
+
+--- D. the four circles and the chart (document pp. 2-3)
+[ok  ] point A_0 at infinity with its factor dropped: all 24 products change by one common factor
+[ok  ] D06 = (z-c)(v-C0)(C2-1), D28 = C2 (z-c)(v-C0), D02 = -(z-c)(v-C2), D68 = -(z-c)(C0-C2), D24 = -z (c-C2)(v-1), D01 = -v (c-C2)(z-1), D14 = -(v-c)(z-C2): all nonzero for distinct points
+[ok  ] D06/D28 = (C2-1)/C2, D02/D68 = 1/s, D24/D01 = h, D14/D02 = 1 - 1/t  (s, h, t the document's cross-ratios)
+       PROOF-READ: the eight indices are contacts, so kappa D_ij is imaginary and the four ratios are real: C2 = r real,
+         s, h, t real.  These are the four circles (A0,A1,A2,C2), (A0,C0,C1,C2), (A1,A2,A3,C1), (A3,C1,C2,C3).
+[ok  ] chart (3) is exhaustive: z (1 + (h-1) v) = h v and c ((v-r) - t (v-z)) = z (v-r) - t r (v-z) identically for h, t defined from the points; 1 + (h-1)v = (v-1)/(z-1), (v-r) - t(v-z) = (v-r)(z-r)/(c-r)
+[ok  ] inverse chart formulas: h = z(v-1)/(v(z-1)), t = (c-z)(v-r)/((c-r)(v-z))
+[ok  ] contact ratios R_sigma = (F_sigma - F_0)/((z-c)(v-r)) on T: 0, -tau/(h-1), 1, 1 - h tau/(h-1), (1-r)(1-s), 1 - r(1-s) (all real)
+[ok  ] on the chart the gaps vanish identically exactly on T
+[ok  ] the chart's gap vector satisfies the ten linear formulas (so it lies in the span)
+
+--- D. gap formulas (document p. 3); g_sigma = rho * gamma_sigma
+[ok  ] g3 = rho K (tau-1), g7 = rho L tau (s-1), g10 = rho M tau (s-1), g12 = -rho s
+[ok  ] g9 = g7 + s g3, g11 = g10 + s g3, g18 = g7 + E, g20 = g10 + E
+[ok  ] g15 = g12 + E J, g17 = g12 + E h J
+[ok  ] g19 = g3 + E (alpha - K), g22 = g3 + E (beta - K)
+[ok  ] g21 = g10 + E alpha, g23 = g7 + E beta
+[ok  ] A = g10 + E beta, B = g7 + E alpha
+[ok  ] (4): K + a J = 1 and M - L = J D/((h-1) N O1)
+[ok  ] L M = H/((h-1)^2 N O1) with H = h r (r-1): L M > 0 <=> H > 0 <=> K > 0
+[ok  ] A + B = g21 + g23 and A B - g21 g23 = -E (g7/L) J^2 D/(N O1)
+
+--- D. Case III (document p. 3): p = -tau, q = 1/(s-1), scale q/(-rho)
+[ok  ] g19 = (p+1)((q+1) alpha - K), g22 = (p+1)((q+1) beta - K)
+[ok  ] in these units E = (p+1)(q+1) > 0 and A = g10 + E beta, B = g7 + E alpha
+
+--- D. Case I (document p. 4): p = 1/(tau-1), q = -1/s, l = -L, m = -M, scale p q/rho
+[ok  ] g3 = K q, g12 = p, g7 = b, g10 = c, g9 = b - K, g11 = c - K, g18 = b - 1, g20 = c - 1
+[ok  ] g15 = p - J, g17 = p - h J, g19 = K q - (alpha - K), g22 = K q - (beta - K), g21 = c - alpha, g23 = b - beta, A = c - beta, B = b - alpha
+[ok  ] positive-direction identity: g - p E02 - K q E31 - R (l f10 + m f5) does not depend on (p, q) (i.e. on s, tau)
+[ok  ] K + L alpha = r^2 (r-1) |1+(h-1)v|^2/((h-1) N D) and K + M beta = h r (r-1)^2 |1+(h-1)v|^2/((h-1) O1 D)
+[ok  ] label swap A_1 <-> A_2: (r, h, v) -> (1-r, 1/h, 1-v) sends (J, L, M, K) to (h J, M, L, K)
+[ok  ] label swap: the chart point (1-r, s, 1/h, t, 1-v) with the SAME rho has gaps g'_sigma = g_{sigma o (1 2)} (all 24)
+[ok  ] (5): K - l T1 = (l/m)(K - m alpha)
+[ok  ] l T1 - m alpha = (m - l)(K/m - alpha)
+[ok  ] f1 + f3 + f9 - f10 - f22 + f23 = 0 (the eta-freedom in (6) and (8))
+[ok  ] (6): g - (p-J) E02 - [Kq - (alpha-K)] E31 = (eta - hJ) f1 + eta f3 + (c-alpha) f5 + (eta+1) f9 + (b-eta-1) f10 + (J-eta) f22 + (eta+1-K) f23, all 24 entries, eta free
+[ok  ] (eta - hJ)(eta + 1) - (J - eta)^2 = T1 eta - J (J + h)
+[ok  ] alpha^2/T1 - 1 = J (J + h)/T1 and K - 1 = -a J with -a = r + h (1 - r)
+
+--- D. Case II (document p. 5): p = tau/(1-tau), q = s/(1-s), scale (1+p)(1+q)/(-rho)
+[ok  ] g3 = K (1+q), g12 = q (1+p), g7 = L p, g10 = M p, g15 = q (p + alpha), g17 = q (p + beta), g19 = K + q alpha, g22 = K + q beta
+[ok  ] g21 = c + q alpha, g23 = b + q beta, A = c + q beta, B = b + q alpha (b = L p, c = M p)
+[ok  ] alpha = 1 - x, beta = -P, T2 = 2P + alpha = (2h-1) x - 1, P + alpha = (h-1) x  (x = -J, P = h x - 1)
+[ok  ] (7): K - M T2 = (M/L)(K - L P)
+[ok  ] M T2 - L P = (L - M)(K/L - P)
+[ok  ] (8): [g - q(p-P) E02 - (K - qP) E31] with A_1, A_2 swapped, divided by q, = (eta+alpha) f1 + (eta+1) f3 + (C*-P) f5 + eta f9 + (B*-eta) f10 + (P-eta) f22 + (eta+K) f23, all 24 entries, eta free
+[ok  ] eta = P^2/T2: eta + alpha = (P+alpha)^2/T2, P - eta = P (P+alpha)/T2, eta (eta+alpha) = (P - eta)^2
+
+--- D'. EXACT instances built from the paper's definitions (finite Gaussian-rational spectra)
+[ok  ] instance (r,s,h,t,v) = (3/4,-1/4,-1,1/2,1+i): all 24 gaps >= 0 (exact) and the contact set contains T; contact set = [0, 1, 2, 4, 6, 8]
+[ok  ] instance (r,s,h,t,v) = (3/4,-1/4,-1,1/2,1+i): A = -3.83611e-06, B = 1.16827e-05, one of them < 0 (not in the minor cone); g3, g7, g10 formulas hold with rho := -g12/s
+[ok  ] instance (r,s,h,t,v) = (3/4,-1/4,-1,1/2,1+i): case I (after the label swap); the document's decomposition reproduces all 24 entries exactly, all coefficients >= 0, SOC margin (coef f1)(coef f9) - (coef f22)^2 = 0.16 >= 0
+[ok  ] instance (r,s,h,t,v) = (1/2,-1/4,-1,3/4,1+i): all 24 gaps >= 0 (exact) and the contact set contains T; contact set = [0, 1, 2, 4, 6, 8]
+[ok  ] instance (r,s,h,t,v) = (1/2,-1/4,-1,3/4,1+i): A = 9.63418e-05, B = -8.02848e-06, one of them < 0 (not in the minor cone); g3, g7, g10 formulas hold with rho := -g12/s
+[ok  ] instance (r,s,h,t,v) = (1/2,-1/4,-1,3/4,1+i): case I; the document's decomposition reproduces all 24 entries exactly, all coefficients >= 0, SOC margin (coef f1)(coef f9) - (coef f22)^2 = 0 >= 0
+[ok  ] instance (r,s,h,t,v) = (2,1/4,2,2,-1/2-2i): all 24 gaps >= 0 (exact) and the contact set contains T; contact set = [0, 1, 2, 4, 6, 8, 17]
+[ok  ] instance (r,s,h,t,v) = (2,1/4,2,2,-1/2-2i): A = -0.000236327, B = 0.00834097, one of them < 0 (not in the minor cone); g3, g7, g10 formulas hold with rho := -g12/s
+[ok  ] instance (r,s,h,t,v) = (2,1/4,2,2,-1/2-2i): case II; the document's decomposition reproduces all 24 entries exactly, all coefficients >= 0, SOC margin (coef f1)(coef f9) - (coef f22)^2 = 0 >= 0
+[ok  ] instance (r,s,h,t,v) = (5/2,1/2,2,7/2,-1/2+3i/2): all 24 gaps >= 0 (exact) and the contact set contains T; contact set = [0, 1, 2, 4, 6, 8]
+[ok  ] instance (r,s,h,t,v) = (5/2,1/2,2,7/2,-1/2+3i/2): A = -0.00241839, B = 0.0266023, one of them < 0 (not in the minor cone); g3, g7, g10 formulas hold with rho := -g12/s
+[ok  ] instance (r,s,h,t,v) = (5/2,1/2,2,7/2,-1/2+3i/2): case II; the document's decomposition reproduces all 24 entries exactly, all coefficients >= 0, SOC margin (coef f1)(coef f9) - (coef f22)^2 = 0 >= 0
+
+--- E. NUMERIC falsification attempts (numpy, seeds printed): build the document's certificate for every supporting sample
+[ok  ] NUMERIC broad chart sample: seed 61001, 300000 samples on the contact locus, 15704 supporting; certificate confirmed for all :: []
+          EL<=0: 7380, I inner: 168, I inner (SOC needed): 16, I outer: 1752, II beta<0: 201, II beta<0 (SOC needed): 6, II beta>=0: 2508, III: 3673
+[ok  ] NUMERIC case I region 0<r<1, h<0, s<0, 0<t<1: seed 61002, 300000 samples on the contact locus, 12392 supporting; certificate confirmed for all :: []
+          I inner: 11084, I inner (SOC needed): 1308
+[ok  ] NUMERIC case II region (both (r,h) regions), 0<s<1, t>1: seed 61003, 300000 samples on the contact locus, 218071 supporting; certificate confirmed for all :: []
+          II beta<0: 21036, II beta<0 (SOC needed): 580, II beta>=0: 196455
+[ok  ] NUMERIC: tests not vacuous (supporting samples that need the SOC inequality, in case I and in case II) :: (1308, 580)
+
+PASS: all 98 checks passed in replay_T6: Case T_6 = {0,1,2,4,6,8} (independent_moc4_T2_uniform_20261022.pdf)
