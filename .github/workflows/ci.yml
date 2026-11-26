@@ -101,6 +101,8 @@ jobs:
           python3 -B complex-direction-cover/check.py
           python3 -B complex-direction-cover/grid_replay.py
           python3 -B projective-fiber-stability/check.py
+          python3 -B projective-fiber-stability/uniform/verify.py
+          python3 -B projective-fiber-stability/uniform/weights.py
           python3 -B -m unittest discover -s complex-direction-cover -p 'test_*.py' -v
           python3 -B quartic-direction-patches/patches.py
           python3 -B quartic-direction-patches/derive.py
