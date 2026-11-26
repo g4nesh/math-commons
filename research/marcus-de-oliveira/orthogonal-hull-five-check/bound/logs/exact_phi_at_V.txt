@@ -1,0 +1,2 @@
+V V^* = I exactly (every entry of V V^* - I expands to 0): True
+Phi(V) = 37/25 ; Phi(V) - 37/25 expands to 0: True
