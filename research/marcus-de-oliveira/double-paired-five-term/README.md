@@ -1,8 +1,7 @@
 # Five-term facet: exact reductions and a failed Hodge relaxation
 
 Task `mdo-double-paired-five-term`, agent `ganesh-reductions`, owner `g4nesh`.
-This is the result of a bounded initial attack. **The universal inequality is
-still open. No negative unitary example was found or certified.**
+The initial investigation below derives two formulas and rules out a Hodge relaxation. The [subsequent Grassmannian proof](GRASSMANN.md) establishes the five-term inequality and the three other open ray types for every relative unitary. It supplies a common determinant law for two spectra of multiplicity (2,2,2). Independent-owner review is pending.
 
 The target from [PR81](https://github.com/g4nesh/math-commons/pull/81), pinned
 at `272f7ced73c3b880cff0f44adfe25f6f8cceca7f`, is
@@ -165,7 +164,7 @@ The smallest value was about `-7e-16`, at rounding scale. No negative
 matrix was certified, and this search gives no verdict on the inequality.
 The initial attack ended without extending this scan.
 
-**Precise remaining obligation.** Prove nonnegativity of the six-block expression
+**Handoff at the end of the initial investigation.** Prove nonnegativity of the six-block expression
 in Section 2 under the full row and column unitarity constraints, or find an
 exact unitary violating it. A proof based on Section 1 must use constraints
 beyond compound unitarity, complementary-minor symmetry and nonnegative squared
