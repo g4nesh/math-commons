@@ -1,0 +1,6 @@
+degree 4, s in [1/10, 1/6] (t in [1/9, 1/5]), Bernstein degree 2: unknowns 16443, conditions 2557, F outside the range 3.3e-15 ; best common margin lambda = +1.9541e-04 (optimal)  [1862s]
+degree 4, s in [1/10, 1/6], Bernstein degree 2: unknowns 16443 ; equations 5500 (nodes 1/10, 7/60, 2/15, 3/20, 1/6)  [4s]
+rank 2557 ; free unknowns 13886  [78s]
+  bits 32: pivot unknowns lifted from 3 primes, confirmed by 2 more ; largest denominator has 42 bits  [127s]
+  bits 32: max deviation from the numerical point 1.14e-06 ; all Bernstein coefficients positive definite: True (smallest leading minor 4.206e-32)  [127s]
+certificate written: interval4_1-10_1-6.json
