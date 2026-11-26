@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/private/tmp/claude-501/-Users-ganeshtalluri--claude-spares-spare-z65pck/4713911b-4cfd-4db9-8f86-f38ef5bcb669/scratchpad/mc/research/marcus-de-oliveira/pmsh-5/facet_search.py", line 169, in <module>
+    main()
+  File "/private/tmp/claude-501/-Users-ganeshtalluri--claude-spares-spare-z65pck/4713911b-4cfd-4db9-8f86-f38ef5bcb669/scratchpad/mc/research/marcus-de-oliveira/pmsh-5/facet_search.py", line 131, in main
+    lh = ray(P.mU(U, cs))
+  File "/private/tmp/claude-501/-Users-ganeshtalluri--claude-spares-spare-z65pck/4713911b-4cfd-4db9-8f86-f38ef5bcb669/scratchpad/mc/research/marcus-de-oliveira/pmsh-5/facet_search.py", line 106, in ray
+    l, h = y[:d], -y[d]
+TypeError: 'NoneType' object is not subscriptable

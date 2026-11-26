@@ -1,0 +1,10 @@
+trial 0: c=[0.0, 0.1442, 0.5118, 0.9505, 1.0] rows tried 1, smallest residual 1.229e-12
+trial 1: c=[0.0, 0.0816, 0.1913, 0.8552, 1.0] rows tried 1, smallest residual 5.378e-12
+trial 2: c=[0.0, 0.1963, 0.2432, 0.9961, 1.0] rows tried 1, smallest residual 5.551e-16
+trial 3: c=[0.0, 0.5215, 0.6253, 0.6936, 1.0] rows tried 1, smallest residual 6.627e-13
+trial 4: c=[0.0, 0.0339, 0.1868, 0.6747, 1.0] rows tried 1, smallest residual 3.331e-16
+trial 5: c=[0.0, 0.1322, 0.3379, 0.3867, 1.0] rows tried 1, smallest residual 8.024e-13
+trial 6: c=[0.0, 0.0584, 0.3658, 0.64, 1.0] rows tried 1, smallest residual 8.952e-12
+trial 7: c=[0.0, 0.6913, 0.833, 0.9658, 1.0] rows tried 1, smallest residual 1.361e-13
+trial 8: c=[0.0, 0.2762, 0.4204, 0.4727, 1.0] rows tried 1, smallest residual 6.661e-16
+trial 9: c=[0.0, 0.0199, 0.2888, 0.7807, 1.0] rows tried 1, smallest residual 5.111e-12
