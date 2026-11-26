@@ -1,0 +1,112 @@
+Replay of T_11 = {0,1,3,5,6,8}  (documents: final_referee_moc4_T10_uniform, root_moc4_T10_B_branch, final_referee_T10_A_branch)
+===============================================================================================================================
+
+-- 0. objects (own construction) and cross-check with the audit library
+[ok] 24 permutations, lexicographic; identity is pi_0
+[ok] 82 distinct facet profiles; 34 minor and 48 non-minor
+[ok] value profiles: minors 0/1; non-minors take 0 thirteen times, 1 ten times, 2 once
+[ok] G has 1152 elements acting by 1152 distinct permutations of the 24 indices
+[ok] G permutes the 82 profiles and preserves minor/non-minor
+[ok] 4 exact rational matrices are in SO(4)
+[ok] Phi_{f_j}(O) = x_j(O)^2 for all 34 minor vectors at these matrices (Lemma 6.2)
+[ok] library: PERMS identical to mine
+[ok] library: Appendix D table identical to my transcription
+[ok] library: all 82 profiles P f_j equal my profiles built from the definitions
+[ok] library: 1152 index maps of G equal mine
+[ok] library: Appendix E contact set T_11 = [0, 1, 3, 5, 6, 8]
+[ok] library: generators(T_11) equal mine
+[ok] library: Appendix E contact set T_7 = [0, 1, 2, 4, 7, 8]
+[ok] library: generators(T_7) equal mine
+
+-- 1. correspondence with the paper's T_11; generators; minor case; canonical decompositions (uniform p.1-2)
+[ok] exactly one element of G maps the document's set {0,1,2,4,7,9} to the paper's T_11 = {0,1,3,5,6,8}: sigma -> sigma o (3 4) (a relabelling of the rows, i.e. of the A-spectrum) :: [((0, 1, 2, 3), (0, 1, 3, 2), 0)]
+[ok] generators vanishing on {0,1,2,4,7,9} are exactly {0,1,2,3,4,5,7,11,12,21,22,26} :: [0, 1, 2, 3, 4, 5, 7, 11, 12, 21, 22, 26]
+[ok] this group element maps them onto the generators of the paper's T_11
+[ok] Leibniz covariance for this group element on all 82 vectors: Phi_{g.f}(O') = sgn(g) Phi_f(O) identically in O
+[ok] f_22 and f_26 are the only non-minor generators
+[ok] A = g16 - g3 is 1 on f_1, f_4, f_7, f_22, -1 on f_26, 0 on the other generators :: {0: 0, 1: 1, 2: 0, 3: 0, 4: 1, 5: 0, 7: 1, 11: 0, 12: 0, 21: 0, 22: 1, 26: -1}
+[ok] B = -g3 + g6 - g12 + g13 + g18 is 1 on f_0, f_2, f_12, f_26, -1 on f_22, 0 on the other generators :: {0: 1, 1: 0, 2: 1, 3: 0, 4: 0, 5: 0, 7: 0, 11: 0, 12: 1, 21: 0, 22: -1, 26: 1}
+[ok] the seven minor replacement identities of p.1 hold, with minor vectors only on the right
+[ok] A-branch identity: g = g23 f0 + g15 f2 + g14 f3 + g10 f5 + g17 f11 + g8 f12 + g16 f21 + e f26 (e = -A) on the span of the generators
+[ok] B-branch identity: g = g23 f1 + g18 f3 + g15 f4 + g21 f5 + g8 f7 + g6 f11 + g19 f21 + d f22 (d = -B) on the span of the generators
+[ok] the span of the generators has dimension 8
+[ok] linear identities on the span: g19 = g3 - d, g21 = g10 - g8 - d, g16 = g3 - e, g17 = g6 - g8 - e, d = -(g15 + g8 + g23 + e)
+
+-- 2. the universal inequalities invoked (uniform p.2; A-branch p.1; B-branch p.1)
+[ok] orbit sizes: SOC 144 (pair unordered), four-coefficient 288 (a, b unordered)
+[ok] SOC (f_2, f_12; f_26): used tuple (2, 12, 26) is in the G-orbit of the representative (1, 9, 22) with the same roles (8 group elements)
+[ok] SOC (f_2, f_12; f_26): Phi_{g.f}(O') = sgn(g) Phi_f(O) as polynomial identities in the 16 entries of O, for the 3-4 vectors of the tuple (g = (((0, 1, 3, 2), (0, 2, 1, 3), 0),))
+[ok] SOC (f_2, f_12; f_26): the minors of the used tuple are, up to sign and complementation, the minors of the representative evaluated at O'
+[ok] four-coefficient (f_4, f_7; f_3; f_22): used tuple (4, 7, 3, 22) is in the G-orbit of the representative (0, 6, 10, 54) with the same roles (4 group elements)
+[ok] four-coefficient (f_4, f_7; f_3; f_22): Phi_{g.f}(O') = sgn(g) Phi_f(O) as polynomial identities in the 16 entries of O, for the 3-4 vectors of the tuple (g = (((0, 3, 1, 2), (0, 1, 3, 2), 0),))
+[ok] four-coefficient (f_4, f_7; f_3; f_22): the minors of the used tuple are, up to sign and complementation, the minors of the representative evaluated at O'
+[ok] roles: A-branch a = g15 on f_2, b = g8 on f_12, e on f_26; B-branch a = g15 on f_4, b = g8 on f_7, c = g18 on f_3, d on f_22
+[ok] sanity (6 exact rational SO(4) points, not a proof): Phi_26 + 2|x_2 x_12| >= 0 and Phi_22 + Phi_3 + 2(|x_4 x_7| + |x_4 x_3| + |x_7 x_3|) >= 0
+
+-- 3. the boundary b = g_8 = 0 (both branch documents): the cited family {0,1,2,4,7,8}
+[ok] {0,1,2,4,7,9} + {8} contains {0,1,2,4,7,8}, which is literally the paper's T_7 (Appendix E)
+
+-- 4. the chart (B-branch p.1-2; A-branch p.1)
+[ok] for EVERY configuration, with h, t, s, l defined by the cross-ratio formulas of B-branch p.1: R_1 = -1/(t(h-1)), R_2 = 1, R_4 = 1 + h R_1, R_7 = R_1 - s, R_9 = R_1 + s(l-1); hence real contacts force h, t, s, l real
+[ok] so the four parameters are quotients of contact differences: h = (F_4 - F_2)/(F_1 - F_0), t (h-1) = -(F_2 - F_0)/(F_1 - F_0), s = (F_1 - F_7)/(F_2 - F_0), l - 1 = (F_9 - F_1)/(F_1 - F_7)
+[ok] for EVERY configuration the chart formulas hold identically: z = h v/(1+(h-1)v), c = (z(v-r) - t r(v-z))/((v-r) - t(v-z)), w = v + s(z-c)(v-r)/((1-c)(z-r)), r = h v((k-1)s(l-1)-k)/(((h-1) l s (k-1) - h(k-1)) v + l s (k-1) - h)
+[ok] degenerations are collisions: h = 1 iff z = v; t = 1 iff (v-c)(z-r) = 0; k = 1 iff (z-c)(v-r) = 0 (numerators of h-1, t-1, k-1 factor accordingly)
+[ok] on the chart (R_0,R_1,R_2,R_4,R_7,R_9) = (0, -1/(tH), 1, 1 - h/(tH), -s - 1/(tH), s(l-1) - 1/(tH)): all real
+[ok] every R_j is in Q(h,t,s,l,v) with denominator a product of h, h-1, t, v-1, M_1(v), M_2(v): for real v with M_1(v) M_2(v) != 0 every R_j is real, i.e. the whole gap vector vanishes
+[ok] C - J0 = h k, so M_2 = C v - J0 vanishes identically in v only if k = 0 and l D = h, i.e. (D = h at k = 0) l = 1, where N0 = k - s(k-1)(l-1) = 0; and M_1 = 0 identically would need D(1 + H) = D h = 0
+[ok] B (1): g18 = (t-1)(a + d), g19 = G - d, g21 = V - b - d  (a = g15, b = g8, G = g3, V = g10, d = -B)
+[ok] B (2) = A (3): q = (h-k) a - k d - h b and J0 g6 = -h b  (q = g23)
+[ok] B (3) = A (4): a = -rho l s (h-1)/h, G = rho h s D N0/|M1|^2, b = -rho h J0 N0/|M2|^2  (g = -rho ghat)
+[ok] B (4) = A (5): k V = -rho h s/|v-1|^2 - D b (cross-multiplied, no division by k)
+[ok] A (2): g16 = G - e, g17 = g6 - b - e, g14 = b - t(b + q + e), g18 = (1-t)(b + q + e); A (3): d = -(a + b + q + e)
+
+-- 5. branch B < 0 (root_moc4_T10_B_branch): four-coefficient capacity
+[ok] B p.2: D = (t-1)(1-h); q/a = (t-1)(1+delta) - h(t-1+eta+t delta) for a = 1 (delta = d/a, eta = b/a)
+[ok] B p.2: C = h k + J0;  d = P a - Y b with P = D(h + s(k-1)(h-l))/(s C (k-1)), Y = h(h-1)/C;  (l-1) N_P + (h-l) N0 = C
+[ok] B p.2: Y < 1/t iff l D < 0 given C < 0:  t h (h-1) - C = -l D
+[ok] B p.3: E = p + k Y = p Z + Y;  W = T0 p - k delta - k Y eta = -N0 Dn;  h Z = -l T0 Y
+[ok] B p.3: R = |xi|^2 = t Y E W/(Z eta) with xi = p v - E;  G/a = h Y W Dn/(Z |J xi - Y W|^2)
+[ok] B p.3: k g21/a = h^2 p/((-l)|xi + k Y|^2) - B0, B0 = h eta + k delta; and xi + k Y = p (v - 1)
+[ok] B p.3: the reduced denominator of L_V is 2 eta (tY - 1) B0 up to sign: no factor k :: 2*eta*(Y*t - 1)*(delta*h*t - delta*t + delta + eta*h)
+[ok] B p.3: g19 = G - d = 2 delta J Y W (Re xi - L_G)/|J xi - Y W|^2 and g21 = 2 Y B0 (L_V - Re xi)/|xi + k Y|^2 (a = 1; |J xi - YW|^2 = J^2 R - 2 J Y W Re xi + Y^2 W^2, |xi + kY|^2 = R + 2 k Y Re xi + k^2 Y^2)
+[ok] B p.3: L_V - L_G = -h N(h,Y)/(2 eta delta Z J B0) with N a polynomial
+[ok] B p.3: N is affine in h and affine in Y
+[ok] B p.3: N_h(h,0) = -(eta + t delta)(eta + delta)(delta + 1);  N_h(h,1/t) = -eta (eta + t delta)(eta + t(delta+1) - 1)/t
+[ok] B p.3: N(h*,0) = -(eta + delta)(delta + 1) K/(eta + t delta + t - 1);  N(h*,1/t) = (eta + delta)(t delta - K)/t, K = eta (t - 1 - delta) - t delta^2, h* = (t-1)(1+delta)/(t-1+eta+t delta)
+[ok] B p.3: a b (c - d) - d^2 (a + b + c + d) = (a + d)(b((t-1)a - d) - t d^2) for c = (t-1)(a + d)
+
+-- 6. branch A < 0 (final_referee_T10_A_branch): SOC bound g15 g8 >= e^2
+[ok] A p.2: t = (b - f)/M (M = b + q + e, f = g14); g6 = b/beta (theta = l D/h, beta = 1 - theta); h(1-f) + e + f = 0; H(1-f) = -(1+e); D = H(1-t); J0 = -h beta
+[ok] A p.3: alpha = tH + theta = C/h;  (8): (1-t)/s = t Delta and W = -N0 Delta  (Delta = 1 + e - theta M, W = -k Delta - D + theta h)
+[ok] A p.3: R = |xi|^2 = t beta W/(theta b) with xi = alpha v + beta
+[ok] A p.3 (9): M_1 = (D/(Delta alpha))(gamma xi + W);  G = eta Delta alpha^2 W/(theta |gamma xi + W|^2);  k V = D (eta alpha^2/(theta |xi - k|^2) - b)   (gamma = Delta + H, eta = h/H)
+[ok] A p.3-4: gamma = -(f(1+e) + theta M (1-f))/(1-f);  W = -Delta - H + theta h + t H (1 - Delta)
+[ok] A p.3: the reduced denominator of L_V is 2 b theta (1+e)(f-1) M up to sign: no factor k :: 2*M*b*theta*(e + 1)*(f - 1)
+[ok] A (10): G - e = 2 e gamma W (L_G - Re xi)/|gamma xi + W|^2 and V = 2 D b (Re xi - L_V)/|xi - k|^2
+[ok] A (11): L_G - L_V = -eta L alpha^2/(2 b e theta gamma), L = theta (b+e) M - b (1+e);  L - (e^2 - b) = (theta (b+e) - e) M + e q, q = M - b - e
+[ok] A p.4: with Delta = -delta: t = -theta (f-b)/E, W = delta - H + theta h - theta (f-b) H (1+delta)/E, E = 1 + e + delta
+[ok] A p.4: E = f H at delta = H; W(delta = H) = theta h b/f; dW/ddelta = 1 - theta (f-b) H e/E^2
+[ok] A p.4: at delta0 = (1-b) H: E = (f-b) H and W = -beta b H
+[ok] A p.4: W E = (1+delta) E - theta (f-b) H (1+delta) - beta h E is a quadratic in delta with leading coefficient 1
+[ok] A p.4 (SOS): L_V^2 - R = alpha^2 Pcal/(4 b^2 theta^2 (1+e)^2), Pcal = [(1+e-e theta)(f-b) - (b(1+e) - theta(b+e))]^2 + 4 b (1+e)^2 (1-theta)(f-b)
+[ok] A p.4: along the auxiliary segment the reduced denominator of L_V is 2 b (1+e)(f-1) E up to sign
+[ok] A p.4: at delta0: alpha = 0, R = beta^2, L_V = beta
+[ok] A p.4: R = -beta (f-b) W/(b E) on the segment (positive when W < 0 < E, f > b)
+[ok] merged stratum: C = h(k-1) + l D = 0 for l = h(1-k)/D, and then theta = l D/h = 1 - k
+[ok] merged stratum: the six contacts still hold
+[ok] merged (7): D = s H theta (1-b);  k e = b H theta (1 - 2 Re v) - h;  k (e + (H theta/D) V |v-1|^2) = -b H theta |v|^2
+[ok] merged: G = p (p-1) beta b (1-b)/(theta N_w);  2 theta Re w = beta e + (2 theta - 1)(p-1) - p b theta;  theta q = -(p-1)(1-b) + beta (b+e)   (p = -H, w = p b v + p(1-b) - 1)
+[ok] merged: w - (p-1) = p b (v-1);  D = -(p - theta) for h = 1 - p, k = beta
+[ok] merged: N_w - 2(p-1) Re w + (p-1)^2 - p b (p-1)/theta = N_w - ((p-1) beta/theta)(e - p(1-b) + 1)
+[ok] merged: e (e - p(1-b) + 1) <= p b (1-b) is e^2 + e <= p (1-b)(e + b)
+
+-- 7. NUMERIC falsification attempts (floating point; evidence only)
+[ok] NUMERIC global: 4,000,000 chart points (seed 20261127; h, t, s, l = random sign * lognormal(0, 1.1); v complex normal(0, 1.5); mu = +-1; gaps normalised to max 1): max |g| on the contact set = 1.5e-08; supporting: 54985; min(A+B) there = 9.66e-04; supporting with A < -1e-7, b > 0: 179 (outside the A-branch sign region 0<t<1, 0<theta<1, s,l>0, rho<0: 0; min(g15 g8 - e^2) = 7.090e-07); with B < -1e-7, b > 0: 180 (outside 0<h<1, t>1, l<0, s>0, rho<0: 0; min capacity = 1.289e-03)
+[ok] NUMERIC B-branch region: 4,000,000 points with 0<h<1, t>1, l<0, s>0, rho<0: supporting with B < -1e-7: 20961; min of a b (c-d) - d^2 (a+b+c+d) = 2.117e-04 (claim: > 0)
+[ok] NUMERIC A-branch region: 4,000,000 points with 0<t<1, 0<theta<1, s>0, rho<0, h<0 or h>1: supporting with A < -1e-7: 10233; min(g15 g8 - e^2) = 8.122e-08 (tolerance -1e-9)
+[ok] NUMERIC A-branch, t < 0: 4,000,000 points with t<0, 0<theta<1, s>0, rho<0: supporting with A < -1e-7 and b > 0: 0 (claim: none)
+[ok] NUMERIC merged stratum C = 0: 2,000,000 points with theta = 1 - k in (0,1), s > 0, rho < 0: supporting with A < -1e-7: 1167, all with 0 < t < 1: True; min(g15 g8 - e^2) = 1.132e-02
+[ok] NUMERIC real v: 200,000 chart points with v real: max |gap| / max |R_j| = 0.0e+00 (the gap vector is zero)
+[ok] NUMERIC atoms on SO(4) (20000 random points + 6 Nelder-Mead runs each, seeds 1102, 1103): min of Phi_26 + 2|x_2 x_12| = 1.223e-29; min of Phi_22 + Phi_3 + 2(|x_4 x_7| + |x_4 x_3| + |x_7 x_3|) = 8.665e-32 (tolerance -1e-9)
+
+PASS: all 92 checks passed
