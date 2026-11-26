@@ -58,7 +58,8 @@ def load():
 
 
 def numerators(data):
-    if data.get('schemaVersion') != 1 or data.get('family') != 'a=(x,0,y,s+i*t)':
+    fixed_second = data.get('fixedSecond', 0)
+    if type(fixed_second) is not int or fixed_second not in (0, 1) or data.get('schemaVersion') != 1 or data.get('family') != f'a=(x,{fixed_second},y,s+i*t)':
         raise ValueError('Unknown certificate schema or family')
     if data.get('U') != [[v.encode() for v in row] for row in sp.U] or data.get('b') != [v.encode() for v in sp.B_SPECTRUM]:
         raise ValueError('Certificate fixture does not match archived U,b')
@@ -101,8 +102,10 @@ def verify_plane(data):
     for free in FREE:
         residual = {}
         for poly, column in zip(polys, gaps()):
-            slope = column[free | {3}]
-            gap = {(0, 0): column[free], (1, 0): slope, (0, 1): Q(0, 1) * slope}
+            fixed_second = data.get('fixedSecond', 0)
+            constant = column[free] + fixed_second * column[free | {1}]
+            slope = column[free | {3}] + fixed_second * column[free | {1, 3}]
+            gap = {(0, 0): constant, (1, 0): slope, (0, 1): Q(0, 1) * slope}
             for key, value in multiply(poly, gap).items():
                 residual[key] = residual.get(key, Z) + value
         if any(value != Z for value in residual.values()):
@@ -114,6 +117,7 @@ def verify_plane(data):
         'realCoefficientEquations': 90,
         'denominator': '1+s^2+t^2',
         'domain': 'all real s,t; all complex x,y',
+        'fixedSecond': data.get('fixedSecond', 0),
         'strictMassClaim': False,
     }
 
@@ -157,6 +161,10 @@ def direct_check(a, weights):
 
 def report(data):
     positive = verify_plane(data)
+    second_data = json.loads((HERE / 'certificate-one.json').read_text())
+    second_plane = verify_plane(second_data)
+    for s, t in ((0, 0), (0, 1), (100, -100), (F(7, 3), F(-11, 5))):
+        direct_check([Q(-3, 2), O, Q(5, -7), Q(s, t)], weights_at(s, t, second_data))
     repeated = verify_repeated(data)
     previous = archived.check_certificate(json.loads((HERE.parent / 'four-cycle-spectral/fiber_certificate.json').read_text()))
     samples = []
@@ -172,7 +180,7 @@ def report(data):
     expected = [[v.real*v.real + v.imag*v.imag for v in row] for row in sp.U]
     if singleton_marginals(weights_at(1, 0, data)) == expected:
         raise ArithmeticError('Unexpected violation of singleton obstruction')
-    return {'schemaVersion': 1, 'plane': positive, 'repeatedMiddle': repeated, 'archivedAllFourConstantLawSeparator': previous, 'directChecks': samples}
+    return {'schemaVersion': 1, 'plane': positive, 'nonzeroSecondPlane': second_plane, 'repeatedMiddle': repeated, 'archivedAllFourConstantLawSeparator': previous, 'directChecks': samples}
 
 
 def main():

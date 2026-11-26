@@ -2,9 +2,9 @@
 
 For the archived four-cycle, there are explicit convex weights proving Marcus–de Oliveira for
 
-$$A=\operatorname{diag}(x,0,y,z),\qquad x,y,z\in\mathbb C,$$
+$$A=\operatorname{diag}(x,\eta,y,z),\qquad x,y,z\in\mathbb C,\quad \eta\in\{0,1\},$$
 
-with $B=U\operatorname{diag}(b)U^*$ fixed. The weights depend on $z$ and work simultaneously for every $x,y$. This permits **unbounded complex motion of the fourth eigenvalue**, while the second eigenvalue stays zero. It does not prove the conjecture for four independently varying complex entries.
+with $B=U\operatorname{diag}(b)U^*$ fixed. The weights depend on $z$ and work simultaneously for every $x,y$. This permits **unbounded complex motion of the fourth eigenvalue**, while the second eigenvalue is fixed at either zero or one. It does not prove the conjecture for four independently varying complex entries.
 
 The fixture and pairing convention are
 
@@ -20,17 +20,19 @@ Write $z=s+it$, with $s,t$ real. [certificate.json](certificate.json) gives 58 t
 
 $$N_p(s,t)=\sum_{\text{terms assigned to }p}c(v_0+v_1s+v_2t)^2,\qquad w_p(s,t)=\frac{N_p(s,t)}{1+s^2+t^2}.$$
 
+[certificate-one.json](certificate-one.json) supplies a separate 56-term law of the same form for the nonzero slice $a_2=1$; its minimum square coefficient is $2883/16250000$. Both certificates use the identical fixed $U,b$. These are two slices, not the interval $a_2\in[0,1]$.
+
 These are actual executable weights, not an existence oracle. The smallest square coefficient is $2895468812/4308762109375$. There are 15 supported permutations; nine masses vanish identically. Positivity of the **square coefficients** gives nonnegative masses, not a claim that every mass is strictly positive.
 
 The exact checker reconstructs all principal-minor coefficients of
 
-$$g_p(x,y,s,t)=V_p(x,0,y,s+it)-\det(\operatorname{diag}(x,0,y,s+it)+B).$$
+$$g_p(x,y,s,t)=V_p(x,\eta,y,s+it)-\det(\operatorname{diag}(x,\eta,y,s+it)+B).$$
 
 This polynomial is multi-affine in the complex variables $x,y$ and affine in the real variables $s,t$. It then proves the polynomial identities
 
 $$\sum_pN_p=1+s^2+t^2,\qquad \sum_pN_pg_p=0.$$
 
-Specifically, it checks the four complex coefficient polynomials belonging to $1,x,y,xy$, each of total real degree at most three in $s,t$, and the normalization polynomial: 90 real coefficient equations including zero coefficients. Thus the identities hold for **all** parameters, not just sampled values. The denominator is everywhere positive. Dividing gives nonnegative masses summing to one and the required convex combination. No rank-continuation or unproved row-span stability assumption enters this proof.
+For each $\eta\in\{0,1\}$ separately, it checks the four complex coefficient polynomials belonging to $1,x,y,xy$, each of total real degree at most three in $s,t$, and the normalization polynomial: 90 real coefficient equations including zero coefficients. Thus the identities hold for **all** parameters, not just sampled values. The denominator is everywhere positive. Dividing gives nonnegative masses summing to one and the required convex combination. No rank-continuation or unproved row-span stability assumption enters this proof.
 
 For example, run the following from the repository root to obtain all 24 exact masses at $z=7/3-11i/5$:
 
@@ -44,6 +46,8 @@ four_cycle = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(four_cycle)
 print(four_cycle.weights_at(Fraction(7, 3), Fraction(-11, 5)))
 ```
+
+The default evaluator uses `certificate.json` ($a_2=0$). Pass the parsed `certificate-one.json` as its optional `data` argument for $a_2=1$.
 
 The exact API rejects floats and booleans. Integer or `Fraction` inputs are required. Rational input restrictions concern the evaluator; the polynomial proof applies to all real $s,t$ and complex $x,y$.
 
@@ -81,7 +85,7 @@ They therefore certify $a=(x,d,y,d)$ for every complex $x,y,d$, but are not a fi
 
 ## Relation to the current disk and collaborators' work
 
-[PR45](https://github.com/g4nesh/math-commons/pull/45) proved qualitative uniform fourth-entry stability of the previous three-free result. [PR46](https://github.com/g4nesh/math-commons/pull/46) supplied explicit radii for six sectors. [PR49](https://github.com/g4nesh/math-commons/pull/49) supplied a uniform square $|\Re a_4|,|\Im a_4|\le10^{-100}$ with **all three other entries arbitrary**. The present result removes the restriction on $a_4$ completely **on the slice $a_2=0$**. These are complementary statements; the whole-plane slice does not enlarge that uniform all-three-free radius.
+[PR45](https://github.com/g4nesh/math-commons/pull/45) proved qualitative uniform fourth-entry stability of the previous three-free result. [PR46](https://github.com/g4nesh/math-commons/pull/46) supplied explicit radii for six sectors. [PR49](https://github.com/g4nesh/math-commons/pull/49) supplied a uniform square $|\Re a_4|,|\Im a_4|\le10^{-100}$ with **all three other entries arbitrary**. The present result removes the restriction on $a_4$ completely **on the slices $a_2=0$ and $a_2=1$**. These are complementary statements; the whole-plane slice does not enlarge that uniform all-three-free radius.
 
 The archived [complex-direction cover](../complex-direction-cover/README.md) treats $a_4=0$ with the other three entries free. The present orientation is different and is explicitly checked on the same $U,b$. The affine coefficient construction reuses the principal-minor reduction in [projective-fiber-stability](../projective-fiber-stability/check.py), and the exact arithmetic and fixture come from [four-cycle-spectral](../four-cycle-spectral/spectral.py). Claude's current [PR48](https://github.com/g4nesh/math-commons/pull/48) concerns a unitary-minor inequality and real-symmetric/Hermitian spectral hypotheses. Our fixed $b$ is noncollinear, so that guarantee is not used as a premise. Main `b02605f6e8c18e4b2fac1d329ccd4971dcd8d4d4` and open PR48/51 were checked before construction.
 
@@ -100,4 +104,4 @@ The first command recomputes and compares [report.json](report.json). Tests incl
 
 The evidence level is a written proof with exact polynomial replay and same-owner tests; it is not a Lean proof or an independent-owner review. Four independently varying complex diagonal entries remain unresolved. Neither the singleton obstruction nor the archived fixed-law separator is a pointwise MDO counterexample.
 
-A concrete next task is to construct a parameter-dependent law for $a=(x,z,y,\delta)$ with $z$ nonzero while $\delta$ remains unbounded, or give an exact obstruction to a specified polynomial degree/support. The present weights contain identically zero masses, so an automatic strict-positivity perturbation argument does not establish a uniform tube around $a_2=0$.
+The nonzero $a_2=1$ law is an additional exact asymmetric slice; it does not by itself give a neighborhood in $a_2$. A concrete next task is to construct a parameter-dependent law for $a=(x,z,y,\delta)$ with $z$ varying in an open set while $\delta$ remains unbounded, or give an exact obstruction to a specified polynomial degree/support. The present weights contain identically zero masses, so an automatic strict-positivity perturbation argument does not establish a uniform tube around $a_2=0$.

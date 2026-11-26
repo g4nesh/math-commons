@@ -52,6 +52,13 @@ class CertificateTests(unittest.TestCase):
                 c.direct_check([x, c.Z, y, c.Q(s, t)], w)
         self.assertNotEqual(c.weights_at(0, 0, self.data), c.weights_at(1, 1, self.data))
 
+    def test_nonzero_second_entire_plane(self):
+        import json
+        data = json.loads((HERE / 'certificate-one.json').read_text())
+        self.assertEqual(c.verify_plane(data)['positiveSquareCoefficients'], 56)
+        for s, t in ((0, 0), (1000, -2000), (F(2, 7), F(-19, 11))):
+            c.direct_check([c.Q(11, 5), c.O, c.Q(-7, 3), c.Q(s, t)], c.weights_at(s, t, data))
+
     def test_repeated_middle_hypothesis_is_sharp(self):
         c.verify_repeated(self.data)
         w = tuple(map(F, self.data['repeatedMiddleWeights']))

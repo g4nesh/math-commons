@@ -7,6 +7,17 @@
     "realCoefficientEquations": 90,
     "denominator": "1+s^2+t^2",
     "domain": "all real s,t; all complex x,y",
+    "fixedSecond": 0,
+    "strictMassClaim": false
+  },
+  "nonzeroSecondPlane": {
+    "positiveSquareCoefficients": 56,
+    "supportedPermutations": 15,
+    "minimumSquareCoefficient": "2883/16250000",
+    "realCoefficientEquations": 90,
+    "denominator": "1+s^2+t^2",
+    "domain": "all real s,t; all complex x,y",
+    "fixedSecond": 1,
     "strictMassClaim": false
   },
   "repeatedMiddle": {
