@@ -14,7 +14,8 @@ import spectral as s
 class CoverTests(unittest.TestCase):
     def test_actual_matrix_determinants_at_patch_boundaries_and_negative_radii(self):
         for a, b in [(0, 0), (2, 0), (0, -2), (2, 1), (-2, 2), (1, 2),
-                     (F(-3, 2), F(1, 2)), (F(-1, 3), F(-2, 1))]:
+                     (F(-3, 2), F(1, 2)), (F(-1, 3), F(-2, 1)),
+                     (1, 1), (-4, -3), (7, 9), (0, F(1, 500))]:
             weights = c.weights_at(a, b)
             self.assertEqual(sum(weights.values()), 1)
             self.assertTrue(all(w > 0 for w in weights.values()))
@@ -25,11 +26,11 @@ class CoverTests(unittest.TestCase):
                            for word, w in weights.items()), s.Z)
                 self.assertEqual(direct, mix)
 
-    def test_inexact_input_and_uncovered_direction(self):
+    def test_inexact_input_and_incomplete_archive(self):
         with self.assertRaises(TypeError):
             c.weights_at(0.5, 2)
         with self.assertRaises(ValueError):
-            c.weights_at(1, 1)
+            c.weights_at(1, 1, patches=[])
 
     def test_changed_mixed_weight_breaks_the_certificate(self):
         patch = json.loads((c.HERE / "patches.json").read_text())[0]
