@@ -61,6 +61,16 @@ The checked declaration `MathCommons.ForestGateMagnitude.orderedGateMagnitudes` 
 
 Both the empty and the full subset occur in the first row. Occupied spectator coordinates may precede, separate or follow the two gate endpoints. An exchange picks up the parity of the occupied spectators between the endpoints in the signed minor. Squaring the norm removes that sign. The local result and the forest path-uniqueness theorem have different hypotheses. The order-two matrix-product identity is proved below by Cauchy–Binet in this same minor convention; general minor orders remain open.
 
+## An unconditional quadratic lemma on the closed unit cube
+
+[`OrthogonalCube.lean`](OrthogonalCube.lean) proves Claude's Lemma L over an arbitrary field with a compatible lawful linear order. For nonnegative $p,q,r,u$ satisfying $p+q=r+u$, put
+
+$$Q(a,b,c,d)=pr(a^2+c^2)+qu(b^2+d^2)-2pqab-2rucd.$$
+
+`MathCommons.OrthogonalCube.lemmaL` proves that, for every $(a,b,c,d)\in[0,1]^4$, at least one of $Q(a,b,c,d)$ and $Q(1-a,1-b,1-c,1-d)$ is nonnegative. `lemmaLMax` gives the equivalent maximum statement. All four auxiliary facts F1–F4 and the symmetry removing the product-order case assumption are proved internally. Zero parameters and all cube boundaries are included.
+
+The standard `Lean.Grind.Field` and compatible ordered-ring hierarchy supply the algebra and order laws. This is a generic ordered-field proof, not a rational-only check; it does not import a concrete Mathlib `Real` instance. The required checker audits all 18 declarations, pins the source hash, checks the exact generic theorem type, and compiles a rational instance. Only `propext`, `Classical.choice`, and `Quot.sound` are allowed. The matrix, SO(3)/SO(4), Hodge, and PMSH reductions are **not formalized by this result**. [Proof organization, precise domain and reproducible audit](../research/marcus-de-oliveira/orthogonal-cube-lean/README.md)
+
 ## Contributing a theorem
 
 1. Claim the specific lemma or translation in the live ledger. State its quantifiers, all hypotheses, the Lean declaration you intend to prove and the source file you own. Separate mathematical hypotheses from any unproved bridge from the paper's statement.

@@ -1,0 +1,32 @@
+{
+  "source": "formal/OrthogonalCube.lean",
+  "sourceSha256": "3b721e325f8f7ab9fa4c5b57116a65bbb7fb1017a02c64f7bcf63896784346c8",
+  "leanVersion": "4.24.0",
+  "declarations": [
+    "squareNonnegative",
+    "quadraticNonnegative",
+    "lagrangeIdentity",
+    "quadraticCauchy",
+    "quadraticReverseCauchy",
+    "firstPartNonnegative",
+    "firstPartCauchy",
+    "secondPartReverseCauchy",
+    "complementPolarization",
+    "totalAtOne",
+    "strictOrderOfSquares",
+    "weightedCauchy",
+    "strictWeightedCross",
+    "contradictionFromParts",
+    "lemmaLOrdered",
+    "cubeFormSwap",
+    "lemmaL",
+    "lemmaLMax"
+  ],
+  "allowedAxioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sourceProofCommit": "41ca275e7354043979278d72f8db897b9e2905a0",
+  "scope": "Unconditional ordered-field Lemma L; no formal matrix or PMSH bridge"
+}
