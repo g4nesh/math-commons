@@ -38,4 +38,11 @@ for S in itertools.combinations(range(n), 2):
     for T in itertools.combinations(range(n), 2):
         d = det(S, T); m = (d * d.conj()).v; assert m[1] == 0 and m[2] == 0 and m[3] == 0; allm[str(m[0])] = allm.get(str(m[0]), 0) + 1
 print("squared 2x2 minors (value: count):", allm)
-print("EXACT CHECK PASSED" if ok_unitary and total.v == (Fr(37, 25), 0, 0, 0) else "EXACT CHECK FAILED")
+# spectral structure: V is symmetric, (V - I)(V + I)(V^2 + V + I) = 0 and tr V = 0, so the eigenvalues are 1, 1, -1, w, w^2 (w^3 = 1)
+def mmul(A, B): return [[sum((A[i][k] * B[k][j] for k in range(n)), ZERO) for j in range(n)] for i in range(n)]
+def madd(A, B, c=1): return [[A[i][j] + K(c) * B[i][j] for j in range(n)] for i in range(n)]
+I5 = [[ONE if i == j else ZERO for j in range(n)] for i in range(n)]; V2 = mmul(V, V)
+Pm = mmul(mmul(madd(V, I5, -1), madd(V, I5)), madd(madd(V2, V), I5))
+ok_sym = all(V[i][j] == V[j][i] for i in range(n) for j in range(n)); ok_min = all(Pm[i][j] == ZERO for i in range(n) for j in range(n)); ok_tr = sum((V[i][i] for i in range(n)), ZERO) == ZERO
+print("V symmetric: %s ; (V - I)(V + I)(V^2 + V + I) = 0: %s ; trace 0: %s" % (ok_sym, ok_min, ok_tr))
+print("EXACT CHECK PASSED" if ok_unitary and ok_sym and ok_min and ok_tr and total.v == (Fr(37, 25), 0, 0, 0) else "EXACT CHECK FAILED")

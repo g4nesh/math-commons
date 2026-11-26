@@ -42,6 +42,8 @@ with v running over ℤ₅. It is a linear function of r₅(M), with 5 + 10 + 20
 
 **Proposition A.** [`exact_ustar.py`](exact_ustar.py) computes V·V* and Φ(V) in ℚ(√6, i√15) with rational arithmetic ([`logs/exact_ustar.txt`](logs/exact_ustar.txt)). The squared moduli of the entries of V are 1/25 on the diagonal and 6/25 elsewhere. The squared 2×2 minors are 3/125, 8/125, 12/125, 18/125 and 27/125. ∎
 
+**What V is.** The same script checks exactly that V is symmetric, that (V − I)(V + I)(V² + V + I) = 0 and that tr V = 0. The eigenvalues are therefore among 1, −1, ω, ω², and the trace fixes their multiplicities. A symmetric unitary matrix has a real orthonormal eigenbasis, so V = Q·diag(1, 1, −1, ω, ω²)·Qᵀ with Q real orthogonal and ω = e^{2πi/3}. In words: V is a real reflection times two commuting complex reflections with real axes and angles ±2π/3. One complex reflection with a real axis keeps the squared minors on a segment between two orthogonal matrices (Proposition S of [`../star-orthogonal/README.md`](../star-orthogonal/README.md)), so two is the smallest number that can leave the hull.
+
 **Proposition B.** Write x_ij for the entries of a real 5×5 matrix; then Φ is a polynomial of degree 4 in the x_ij. The certificate [`certificate.json`](certificate.json) consists of rational data for an identity of polynomials in the 25 variables:
 
   13/10 − Φ(x) = Σ_b v_b(x)ᵀ·G_b·v_b(x) + R(x).
