@@ -28,8 +28,8 @@ U21=0. That map is not used below.
 ## 2. Exact reduction
 
 Column phases make the first row x = (u, 0, w, z) real and nonnegative. If
-z = 0 the [U14=0 stratum](../star-two-row/README.md) applies. If w = z = 0
-then q = 0; that case is not treated here. Assume q² = w² + z² > 0. A real
+z = 0, including q = 0 (w = z = 0), the proved
+[U14=0 stratum](../star-two-row/README.md) applies. Assume q² = w² + z² > 0. A real
 orthonormal basis of x⊥ is
 
     e2,   G = (0, 0, z, −w)/q,   J = (q, 0, −uw/q, −uz/q).
