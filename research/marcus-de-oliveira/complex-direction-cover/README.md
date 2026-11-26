@@ -20,6 +20,16 @@ Each equation here is a polynomial identity in $x,y,u$. The checker expands ever
 
 The six half-unit patches each use 64 primitive coefficients indexed by endpoint, pairing and real center. A numerical linear program found small supports. On each support the exact linear equations were solved over the rationals. The archived replay requires only Python's standard library. It verifies the positivity, normalization, common-root condition, coefficient identities and interval coverage. [Positive coefficients](patches.json) · [Exact replay](check.py)
 
+## Changing spectral coordinates
+
+The same weights apply in any common Möbius coordinate on the signed spectra. This standard symmetry gives versions where the fourth eigenvalue is nonzero and the radial lines become generalized circles. Write $C=-B$ and $f(t)=(pt+q)/(rt+s)$ with $ps-qr\ne0$. Assume the spectra of $A,C$ avoid the pole. Without requiring $AC=CA$,
+$$
+(rA+sI)[f(A)-f(C)](rC+sI)
+=(pA+qI)(rC+sI)-(rA+sI)(pC+qI)
+=(ps-qr)(A-C).
+$$
+After taking determinants, $T$ and **every** pairing vertex acquire the same nonzero complex multiplier $(ps-qr)^4/[\det(rA+sI)\det(rC+sI)]$. Every pointwise weight identity therefore transports to the pair with spectra $f(a_i),-f(-b_j)$ and the same relative eigenbasis. For fixed $z$, the weights remain independent of the first and third complex eigenvalues. This transports the entire configuration together. Applying the map to the four diagonal entries alone would change the problem.
+
 ~~~sh
 python3 -B research/marcus-de-oliveira/complex-direction-cover/check.py
 ~~~
