@@ -6,7 +6,7 @@
 
 - This is numerical evidence. It is not a proof, and it does not decide the conjecture for any n ≥ 5.
 - Coverage is uneven. Most compute went to n = 5. n = 6 and 7 got about 1,800 restarts between them. n = 8 and 9 were covered only by a few fixed structured unitaries (one to three starts per U).
-- The shared library `lib/moc_core.py` has a known defect, which was not fixed. When many z_σ nearly coincide, its hull routine can return a wrong hull, and then `margin` reports false positive values or the wrong sign. The lanes that worked near such configurations used their own robust hull (`lifted/lift_lib.py`, `hermitian/robust.py`). Every value quoted here was rechecked at 50 or 60 digits with the full n! point set.
+- The shared library `lib/moc_core.py` has a known defect, which was not fixed. When many z_σ nearly coincide, its hull routine can return a wrong hull, and then `margin` reports false positive values or the wrong sign. The lanes that worked near such configurations used their own robust hull (`lifted/lift_lib.py`, `hermitian/robust.py`). The tables distinguish floating-point values from the selected 50- and 60-digit rechecks using the full n! point set.
 - This synthesis disagrees with two interpretations in the lane reports. (1) The hermitian lane's "edge contacts away from the trivial sets" are approaches to degenerate spectra (Section 6.3). (2) The structured lane's "possible new structured degeneracy" for the Fourier matrix F_5 is the known concyclic family. Both re-readings come from `synthesis/degeneracy_check.py`, which only reads saved run files.
 
 ## 1. The question
@@ -57,16 +57,16 @@ Near these sets, floating point produces spurious m up to about 1e-13. It also p
 - *High precision.* `moc_hp.hp_margin` recomputes m at 60 digits on an exactly unitary Cayley(K).
 - *Exact path.* `moc_exact.build_certificate` builds the exact certificate and `check_cert.py` checks it independently.
 
-**Search lanes.** Each lane has its own folder, and five of them have their own README.
+**Search lanes.** Open the lane report or search driver for the family you want to inspect.
 
 | lane | n | idea |
 |---|---|---|
-| `joint5/` | 5 | Joint ascent over (a, b, U) from eight start families: Haar, O* ⊕ 1 rotated out of block form, circle, line, cluster, roots of unity, nearly Hermitian, mixed. First unconstrained, then with sep = dperm = dblock up to 0.5 and a bound keeping d away from every z_σ. |
-| `joint67/` | 6, 7 | Joint ascent from six start families: Haar, O*/7 ⊕ Haar, Fourier with phases, U₂ ⊗ U₃, rotated direct sums, points on transposition edges. Free runs and runs with dperm = dblock = 0.15. A second-order test along transposition-edge curves. |
-| `lifted/` | 4 → 5 | Lifts of n = 4 boundary configurations U₄ ⊕ 1. Exact second variation in the off-block directions, adversarial maximization of its top eigenvalue over the spectra, then direct ascent from the lifts. Also a search for nontrivial n = 4 contacts at fixed nondegenerate spectra. |
-| `structured/` | 5–9 | U held fixed and structured; spectra and θ optimized. U ranges over Fourier F₅…F₉, circulants, twisted complex Hadamards, Sylvester H₈, O* ⊕ {I, F, O*} rotated, and plane-rotation cycles. Runs are free or guarded (eigenvalue gap, non-collinearity, bounded common offset). |
-| `hermitian/` | 5, 6, 7 | Joint ascent restricted to spectral classes: a real with b having k = 4 to 7 nonreal entries; line/circle; two circles; unitary pairs; three-valued a; one outlier. Each class unconstrained, with `sep`, and with dperm = dblock = 0.15. A τ → 1e-6 continuation of the constrained optima. |
-| `synthesis/` | 5–7 | No optimization. Degeneracy diagnostics of the saved near-contacts, and a numerical check of the reduction lemma in Section 6.2. |
+| [joint5](joint5/README.md) | 5 | Joint ascent over (a, b, U) from eight start families: Haar, O* ⊕ 1 rotated out of block form, circle, line, cluster, roots of unity, nearly Hermitian, mixed. First unconstrained, then with sep = dperm = dblock up to 0.5 and a bound keeping d away from every z_σ. |
+| [joint67](joint67/joint67.py) | 6, 7 | Joint ascent from six start families: Haar, O*/7 ⊕ Haar, Fourier with phases, U₂ ⊗ U₃, rotated direct sums, points on transposition edges. Free runs and runs with dperm = dblock = 0.15. A second-order test along transposition-edge curves. |
+| [lifted](lifted/README.md) | 4 → 5 | Lifts of n = 4 boundary configurations U₄ ⊕ 1. Exact second variation in the off-block directions, adversarial maximization of its top eigenvalue over the spectra, then direct ascent from the lifts. Also a search for nontrivial n = 4 contacts at fixed nondegenerate spectra. |
+| [structured](structured/README.md) | 5–9 | U held fixed and structured; spectra and θ optimized. U ranges over Fourier F₅…F₉, circulants, twisted complex Hadamards, Sylvester H₈, O* ⊕ {I, F, O*} rotated, and plane-rotation cycles. Runs are free or guarded (eigenvalue gap, non-collinearity, bounded common offset). |
+| [hermitian](hermitian/hsearch.py) | 5, 6, 7 | Joint ascent restricted to spectral classes: a real with b having k = 4 to 7 nonreal entries; line/circle; two circles; unitary pairs; three-valued a; one outlier. Each class unconstrained, with `sep`, and with dperm = dblock = 0.15. A τ → 1e-6 continuation of the constrained optima. |
+| [synthesis](synthesis/degeneracy_check.py) | 5–7 | No optimization. Degeneracy diagnostics of the saved near-contacts, and a numerical check of the reduction lemma in Section 6.2. |
 
 All runs used `nice -n 10`, one process at a time, each run at most 10 minutes. Restart r of a run with seed S uses `numpy.random.default_rng([S, r])`. The structured lane uses `default_rng([seed, family_id, n, instance, restart, guard])`.
 
@@ -116,7 +116,7 @@ Totals:
 | structured | 5–9 | 266 | not tallied |
 | hermitian | 5, 6, 7 | 2219 | 2.80e6 |
 
-Unconstrained joint ascent ends at a generalized permutation every time, at every n tested:
+Most unconstrained runs ended at a generalized permutation. The counts by lane were
 
 - joint5: 3970 of 4000 runs; 27 others end at repeated eigenvalues and 3 in the interior.
 - joint67: all 948 runs at n = 6 and all 85 at n = 7.
@@ -226,7 +226,7 @@ So the hermitian lane's conclusion that "the contact set seems to reach out from
 
   The obstacle is the codimension-one walls of C2, where the second variation off the block vanishes. There, third- and fourth-order terms decide. A related analytic handle: at a critical point of Re(e^{−iθ}d) on U(n), the matrix e^{−iθ}[B, adj(A + B)] must be Hermitian, where B = U D_b U*. When A + B is invertible, this is the same as e^{i(arg d − θ)}(A + B)^{−1}[A, B](A + B)^{−1} being Hermitian. A contact at a non-block U would have to solve this equation with d on the support line.
 
-- **For a disproof.** A counterexample, if one exists, cannot be found by the generic joint ascent used here. That ascent is pulled into C1 to C5. Two places are left uncovered:
+- **For a disproof.** In this finite search, generic joint ascent did not produce a counterexample. Its observed near-contacts fell into C1 to C5. Two places are left uncovered:
   1. *The walls of C2.* These are spectra where three or more z_σ lie on a supporting edge and λ_max = 0, so the second variation does not decide.
   2. *High-contact strata.* The contact reduction (Theorem 3.6) in Zheng's n = 4 paper moves a counterexample at a fixed orthogonal matrix to one with at least six (= 2n − 2) permutation products on the supporting line. The repository's audit of that paper reads the argument as extending verbatim to n = 5, with at least 8 contacts, and to a fixed unitary U. That reading is proof-read only; it has not been verified. The searches here reached such strata only in degenerate form: segment hulls have all n! points on the line, and C5 has (n−1)! + 12 or 24.
 
@@ -267,13 +267,17 @@ It does not show the following:
 
 ## 10. Reproduction
 
-Environment: Python 3 with numpy, scipy, sympy and mpmath. Run each command from the named folder with `nice -n 10` and `python -I -B`. Every run file stores its own command and seeds in its `summary`. Each lane README gives the full list.
+Use Python 3 with NumPy, SciPy, SymPy and mpmath. For a bounded replay, run `python -I -B test_toolkit.py` from [lib/](lib/) for 45 checks. From [joint5/](joint5/), run `python -I -B hpcheck.py runs/cA_0.4.json 4 60`. All four archived positive floating-point margins become negative at 60 digits.
+
+The longer examples below run from their named folders. Use a scratch checkout because several commands overwrite archived outputs. The joint search files store the command and seed in their summaries. Structured runs record their arguments in `argv`; the [structured report](structured/README.md) documents historical code differences. The Hermitian runs record seeds and options in their summaries, with batch arguments in the [list files](hermitian/). Time-limited searches can complete different numbers of restarts on different machines.
 
 ```
 # toolkit (lib/)
 python test_toolkit.py                          # 45 checks
-python calibrate.py n2|n3|n4|n4c|psi|fakes|hp   # calibration/*.json
-python calibrate.py verifier OUT SCRATCH <path to certificates/verify.py>
+calibration_dir=$(mktemp -d)
+python -I -B calibrate.py fakes "$calibration_dir"
+python -I -B calibrate.py verifier "$calibration_dir" "$calibration_dir" ../../certificates/verify.py
+# Other stages include n2, n3, n4, n4c, and psi. The hp stage reads saved calibration runs.
 
 # joint5/  (seed 501 unconstrained; 502-504 constrained)
 python joint5.py --family haar --restarts 500 --seed 501 --time 140 --out runs/u_haar.json
@@ -303,13 +307,14 @@ python run_lift.py direct 509 400 adv_s508.json,edge_s501.json,vertex_s502.json
 python hp_lift.py 50
 
 # structured/  (full argument lists in structured/README.md)
-python run.py runs/r2_guard.json 502 540 fourier:5:1:6 fourier:6:1:5 ...
 MOC_FREE_EVERY=0 python run.py runs/r5_n9_fourier.json 505 150 fourier:9:1:2
 python hpcheck.py runs/hpcheck.json runs/r2_guard.json runs/r3_n9_ostar_cycle.json
 
 # hermitian/
-sh batch.sh <python> list_n5.txt     # likewise list_n5b, list_n6, list_n7, list_cs
-python hprobust.py runs/TAG.json 2; python recheck.py; python cont.py runs/TAG.json 2 runs/cont_TAG.json
+sh batch.sh python list_n5.txt     # likewise list_n5b.txt, list_n6.txt, list_n7.txt, list_cs.txt
+python hprobust.py runs/n5_herm_k4_c.json 2
+python recheck.py
+python cont.py runs/n5_herm_k4_c.json 2 runs/cont_n5_herm_k4_c.json
 
 # synthesis/  (reads saved files only, a few seconds)
 python degeneracy_check.py           # writes degeneracy_check.json
