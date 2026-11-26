@@ -1,0 +1,22 @@
+{
+  "leanVersion": "4.24.0",
+  "namespace": "MathCommons.ForestPermutationLaw",
+  "count": 15,
+  "declarations": [
+    "permutationInjective",
+    "permutationSurjective",
+    "subsetImageForward",
+    "vertexSwapInvolution",
+    "subsetImageIdentity",
+    "subsetImageSwap",
+    "successorExpectation",
+    "lawExpectationStep",
+    "historyExpectationStep",
+    "commonPushforward",
+    "coinLawMassOne",
+    "coinWeightsNonnegative",
+    "unitaryCoinWeightsNonnegative",
+    "commonEndpointLaw",
+    "commonSquaredMinorLaw"
+  ]
+}

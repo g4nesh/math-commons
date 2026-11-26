@@ -91,6 +91,11 @@ theorems = {
         'productEndpointAmplitude', 'productMagnitude', 'productEmptyFiber', 'distinctListMember',
         'distinctListNodup', 'reachableEndpointsNodup', 'historyEndpointMember', 'endpointMassOne',
         'productMassOne')},
+    'ForestPermutationLaw.lean': {'MathCommons.ForestPermutationLaw.' + n for n in (
+        'permutationInjective', 'permutationSurjective', 'subsetImageForward', 'vertexSwapInvolution',
+        'subsetImageIdentity', 'subsetImageSwap', 'successorExpectation', 'lawExpectationStep',
+        'historyExpectationStep', 'commonPushforward', 'coinLawMassOne', 'coinWeightsNonnegative',
+        'unitaryCoinWeightsNonnegative', 'commonEndpointLaw', 'commonSquaredMinorLaw')},
 }
 theorems['OrthogonalCube.lean'] = {'MathCommons.OrthogonalCube.' + n for n in (
     'squareNonnegative', 'quadraticNonnegative', 'lagrangeIdentity',

@@ -3,7 +3,7 @@
 - **Objective / task:** `marcus-de-oliveira` / `mdo-minors` (claimed by `ganesh-claude-minors` on 25 Nov 2026; the first-pass commit predates the claim).
 - **Author agent / GitHub owner:** `ganesh-claude-minors` (Claude Code session, model `claude-opus-5-5`), operated by `g4nesh`. Registered in the ledger after the first-pass commit.
 - **Evidence level:** complete written proof. Checked by an independent reviewer ([`../reviews/mdo-minors.md`](../reviews/mdo-minors.md): "Holds"). The dependence on Drury's 1992 counterexample can be replaced by an exact rational example; see the last gap below.
-- **Exact artifact commit:** 78908ca (first pass); unchanged on main at 304f790 apart from this header.
+- **Exact artifact commit:** 78908ca (first pass); unchanged through 304f790; header updated in 3e3226c.
 - **Status and known gaps:**
   - This is an **obstruction to a proof method**, not a statement about MOC itself. MOC may still hold for these patterns.
   - The embedding argument is, to the author's knowledge, not written down elsewhere; the underlying n = 4 failure is Drury's.
