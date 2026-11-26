@@ -1,0 +1,110 @@
+====================================================================================================
+Replay of Case T_23 = [2, 3, 5, 9, 11, 12]  (document root_moc4_T21_T22_uniform_20261022, family '22')
+====================================================================================================
+[INFO] python 3.9.6, sympy 1.14.0, numpy 2.0.2, scipy 1.13.1 (NUMERIC part only)
+[PASS] [EXACT] document under MOC4_SUPP is the one that was read (sha256)  ::  016d9480cfb547dc5d4e96658caa8ee8d57d2ac8c85138a5d87271a12fa3c989
+
+--- Foundations rebuilt from the paper's definitions
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14
+[PASS] [EXACT] P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] kappa = Psi(v) at v_1..4 = (0,1), v_5..8 = (1,1), so kappa is in X
+[PASS] [EXACT] paper's pivot rows 0,1,2,3,4,6,7,8,9,10,12,13,16,18 of P are independent
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of C)
+[PASS] [EXACT] 82 vectors f_j: all lie in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps on the 24 permutation indices
+[PASS] [EXACT] G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+
+--- Contact set and scope
+[PASS] [EXACT] the document's set [2, 3, 5, 9, 11, 12] (its label 'T22') equals the paper's T_23 of Appendix E as a set of lexicographic indices (group element: identity)
+[PASS] [EXACT] orbit representative under G of the document's set equals that of T_23: (0, 1, 2, 6, 7, 23); T_21, T_22, T_23 lie in three different orbits
+[INFO] scope: the argument uses only c(x) in N_T (gaps >= 0, gaps = 0 on T), so further contacts are allowed; coincident labels are delegated (see T23.md, citations)
+
+--- Generators of the contact cone
+[PASS] [EXACT] F_T = {j : f_j = 0 on T} equals the document's list  ::  computed [0, 1, 2, 7, 9, 12, 39, 40, 41, 67, 68, 72]
+[PASS] [EXACT] non-minor generators equal the document's list  ::  computed [40, 68] = ['h_{4213,+}', 'h_{4213,-}']
+[PASS] [EXACT] direct enumeration of the extreme rays of N_T = {Pc >= 0, (Pc)_T = 0} (dimension 8, no use of the 82-facet list) gives exactly the 12 vectors f_j, j in F_T  ::  12 rays, 0.9 s
+
+--- Multiplicative relation among the contact products (document p. 1)
+[PASS] [EXACT] the four permutations of the relation are contacts
+[PASS] [EXACT] p_3 p_11 = p_5 p_9 identically in 16 variables
+[PASS] [EXACT] p_3 - p_5 = +[15][23][46][78] identically: a product of four brackets, each joining two different labels (2 within one spectrum, 2 across)
+[PASS] [EXACT] p_3 - p_9 = +[14][27][38][56] identically: a product of four brackets, each joining two different labels (2 within one spectrum, 2 across)
+[INFO] F_sigma(x) = alpha p_sigma(v); with alpha != 0 and eight distinct labels each bracket is nonzero, hence F_3 != F_5 and F_3 != F_9
+
+--- Coincident labels: what is delegated, and the identity that makes the delegation work
+[PASS] [EXACT] the argument for H = 0 uses only the non-vanishing of the 8 brackets of the two factorisations: 4 of type a_i + b_j (Theorem B.1 if one vanishes) and 4 inside one spectrum (Lemma B.2 if one vanishes)  ::  a_1 = a_4; a_1 + b_1 = 0; a_2 = a_3; a_2 + b_3 = 0; a_3 + b_4 = 0; a_4 + b_2 = 0; b_1 = b_2; b_3 = b_4  (1-based)
+[PASS] [EXACT] identity (3.5): Phi_{c(x)}(O) = Re(alpha det(D_a + O D_b O^t)) - Re F_pi*(x) on 8 random rational O in SO(4) (Cayley transforms) with Gaussian-rational spectra and alpha (seed 20261126)
+[INFO] with det = sum mu_sigma z_sigma this gives Phi_{c(x)}(O) = sum mu_sigma gap_sigma >= 0; Theorem B.1 and Lemma B.2 themselves are CITED, not replayed here
+
+--- Common real part of a multiplicative rectangle
+[PASS] [EXACT] Im(F_a F_d - F_b F_c) = H (q_a + q_d - q_b - q_c)
+[PASS] [EXACT] Re(F_a F_d - F_b F_c) = -(q_a q_d - q_b q_c)
+[PASS] [EXACT] (q_a - q_b)(q_a - q_c) = q_a (q_a + q_d - q_b - q_c) - (q_a q_d - q_b q_c), so H != 0 and the relation force F_a = F_b or F_a = F_c
+[PASS] [EXACT] closed form: (H^2 + q_a^2)(Re(F_b F_c / F_a) - H) = -H (q_a - q_b)(q_a - q_c)
+[INFO] applied with (a,b,c,d) = (3,5,9,11): H != 0 would give F_3 = F_5 or F_3 = F_9; so H = 0, and Re x = c(x) + H kappa = c(x)
+
+--- Radial necessity: the real part of a point of X lies on the cubic
+[PASS] [EXACT] grad C(u + t v) = grad C(u) + t Hess C(u) v + t^2 grad C(v) identically (t = i: real part grad C(u) - grad C(v), imaginary part Hess C(u) v)
+[PASS] [EXACT] Euler: u . grad C(u) = 3 C(u) identically
+[PASS] [EXACT] polarization: u . grad C(v) = (1/2) v^t Hess C(u) v identically
+[INFO] hence grad C(u+iv) = 0 gives grad C(u) = grad C(v) and Hess C(u) v = 0, and 3 C(u) = u.grad C(u) = u.grad C(v) = (1/2) v^t Hess C(u) v = 0
+[PASS] [EXACT] spot check on 12 random Gaussian-rational points x = alpha Psi(a,b) (seed 20261125): (P x)_sigma = alpha z_sigma and C(Re x) = 0
+[PASS] [EXACT] same points: Hess C(Re x) Im x = 0
+
+--- Finite elimination of the non-minor generators (document p. 2)
+[PASS] [EXACT] pair replacement: 1 identities sum f_left = sum f_right hold on all 24 values
+[PASS] [EXACT] absorption replacements: 6 identities sum f_left = sum f_right hold on all 24 values
+[PASS] [EXACT] a replacement is listed for every pair of non-minor generators (1 pairs) and its right side has only minor generators of the cone
+[PASS] [EXACT] absorptions: every resource is a minor generator, and no right side contains a non-minor generator or a resource of the same non-minor generator
+[PASS] [EXACT] after exhausting the resources of the surviving non-minor generator k, the support is F_T minus the other non-minor generators minus the resources of k, which is the document's eight-element list for each k
+[PASS] [EXACT] randomised exact run of the elimination, in random order, on 6000 nonnegative rational coefficient vectors (seed 2301): the vector is unchanged, all coefficients stay >= 0, and the result is a minor decomposition (4533 times) or one of the listed normal forms with d > 0 (1467 times)
+
+--- The cubic on the two normal forms (document pp. 2-3)
+[PASS] [EXACT] normal form 40: the designated coefficient d = r_6 multiplies the non-minor generator f_40
+[PASS] [EXACT] T_23, surviving f_40, P33: +1 * C(sum r_i f_lambda_i) = claimed polynomial, lambda = [12, 7, 2, 0, 67, 41, 40, 39]
+[PASS] [EXACT] T_23, surviving f_40, P33: all 33 coefficients of the polynomial are positive integers, the coefficient of d^3 (d = r6, the coefficient of f_40) is 1, and polynomial - d^3 has only nonnegative coefficients: so it is >= d^3 > 0 on {r >= 0, d > 0}, boundary included
+[PASS] [EXACT] T_23, surviving f_40: 10000 random rational points of {r >= 0, d > 0} incl. faces (seed 2340): sigma*C(g) >= d^3 always  ::  min of sigma*C(g)/d^3 = 1.0
+[PASS] [EXACT] normal form 68: the designated coefficient d = r_6 multiplies the non-minor generator f_68
+[PASS] [EXACT] T_23, surviving f_68, P33: +1 * C(sum r_i f_lambda_i) = claimed polynomial, lambda = [1, 0, 9, 7, 41, 67, 68, 72]
+[PASS] [EXACT] T_23, surviving f_68, P33: all 33 coefficients of the polynomial are positive integers, the coefficient of d^3 (d = r6, the coefficient of f_68) is 1, and polynomial - d^3 has only nonnegative coefficients: so it is >= d^3 > 0 on {r >= 0, d > 0}, boundary included
+[PASS] [EXACT] T_23, surviving f_68: 10000 random rational points of {r >= 0, d > 0} incl. faces (seed 2368): sigma*C(g) >= d^3 always  ::  min of sigma*C(g)/d^3 = 1.0
+[INFO] so C(c(x)) >= d^3 > 0 on every normal form, against C(Re x) = C(c(x)) = 0: no non-minor generator survives for eight distinct labels, and c(x) is a nonnegative combination of minor vectors
+
+--- Minor decomposition implies Phi >= 0 on SO(4)
+[PASS] [EXACT] Laplace and Jacobi identities for the 10 minor generators [0, 1, 2, 7, 9, 12, 39, 41, 67, 72]: Phi_{f_j}(O) = (minor of O)^2 >= 0 on SO(4)
+
+--- Observation, not part of the document: the relation p_2 p_13 = p_3 p_12
+[PASS] [EXACT] p_2 p_13 = p_3 p_12 identically; 2, 3, 12 are contacts and 13 is not in T; the closure of T under the 18 two-transposition relations is T + {13}
+[INFO] so for eight distinct labels (H = 0, all products nonzero) alpha z_13 = (alpha z_3)(alpha z_12)/(alpha z_2) is purely imaginary and 13 is a contact as well: the layer of eight distinct labels has no point with exactly the six contacts T
+
+--- Comparison of the rebuilt objects with the audit library moc4lib (not used to build anything)
+[PASS] [EXACT] PERMS, P, kappa agree with moc4lib
+[PASS] [EXACT] the 82 value vectors F_VALUES and the minor flags agree with moc4lib
+[PASS] [EXACT] coordinates of all f_j in V_R agree with moc4lib
+[PASS] [EXACT] the cubic C agrees with moc4lib.cubic_C
+[PASS] [EXACT] T_21, T_22, T_23 agree with moc4lib.CONTACT_SETS; the group has the same 1152 maps
+
+--- Supplement data files (read as JSON, untrusted, comparison only)
+[PASS] [EXACT] the supplement's stored 24 x 14 matrix equals P, and its stored cubic equals the paper's C of (A.2) (same sign)
+[PASS] [EXACT] the supplement's stored 82 facet value vectors equal F_VALUES in the same order (the documents' f_j are the paper's f_j of Appendix D)
+
+--- NUMERIC falsification attempts (floating point; evidence, not proof)
+[INFO] free search, repulsion eps = 0.02: 400 starts (seed 23001), 364 converged (max residual < 1e-10): 127 covered, of which 31 8-distinct; 235 delegated
+[INFO] covered points: max |H| = 7.891e-11, max distance from the minor cone = 1.066e-10, smallest named distance in [0.00154, 0.834]; most frequent contact sets: [2, 3, 5, 9, 11, 12, 13] x33; [2, 3, 4, 5, 9, 11, 12, 17, 18, 23] x23; [0, 2, 3, 5, 6, 8, 9, 11, 12, 14] x12
+[PASS] [NUMERIC] T_23 (a): no covered point has |H| > 1e-7 (normalisation: sum of gaps = 1)  ::  127 points tested
+[PASS] [NUMERIC] T_23 (b): no covered point is farther than 1e-7 from the cone of the minor generators  ::  127 points tested
+[INFO] all converged points (delegated ones included; the document claims nothing there): max |H| = 1.447e-01, max distance from the minor cone = 1.066e-10
+[INFO] forced H = +0.3: 80 starts (seed 23101), 71 converged; largest value of the smallest named distance 1.684e-09
+[INFO] forced H = -0.3: 80 starts (seed 23102), 70 converged; largest value of the smallest named distance 3.789e-10
+[INFO] forced H = +1.0: 80 starts (seed 23103), 61 converged; largest value of the smallest named distance 4.500e-10
+[INFO] forced H = -1.0: 80 starts (seed 23104), 69 converged; largest value of the smallest named distance 3.695e-10
+[PASS] [NUMERIC] T_23 (a'), (a''): every converged point with |H| > 1e-6 (192 from the free search, 271 from the searches with H = h imposed, h in [0.3, -0.3, 1.0, -1.0]) is delegated: one of the eight named brackets vanishes (normalised distance < 1e-4)  ::  largest value of the smallest named distance 1.684e-09
+[PASS] [NUMERIC] T_23: every converged point with eight distinct labels has the seventh contact 13 (the observation above)  ::  31 points tested
+
+--- NUMERIC evidence for the CITED Theorem B.1 and Lemma B.2 (common weights; not a proof)
+[PASS] [NUMERIC] Theorem B.1, a_1 + b_1 = 0: common weights found by linear programming for all 121 matrices (the paper's O_* of Example 1.3, 60 random in SO(4), 60 Haar unitary; seed 23900), and they reproduce the determinant at 3 random spectra with the coincidence (tolerance 1e-7: the weights come from a floating-point LP solver)  ::  121 feasible; max LP equation residual 1.67e-15; max relative determinant mismatch 1.67e-15
+[PASS] [NUMERIC] Lemma B.2, b_3 = b_4: common weights found by linear programming for all 121 matrices (the paper's O_* of Example 1.3, 60 random in SO(4), 60 Haar unitary; seed 23900), and they reproduce the determinant at 3 random spectra with the coincidence (tolerance 1e-7: the weights come from a floating-point LP solver)  ::  121 feasible; max LP equation residual 1.55e-15; max relative determinant mismatch 1.55e-15
+[PASS] [NUMERIC] Lemma B.2 with the spectra interchanged, a_3 = a_4: common weights found by linear programming for all 121 matrices (the paper's O_* of Example 1.3, 60 random in SO(4), 60 Haar unitary; seed 23900), and they reproduce the determinant at 3 random spectra with the coincidence (tolerance 1e-7: the weights come from a floating-point LP solver)  ::  121 feasible; max LP equation residual 1.55e-15; max relative determinant mismatch 1.55e-15
+[INFO] negative control without a coincidence: the programme is feasible for 113 of the same 121 matrices, and it is infeasible at O_*
+
+FINAL: PASS  (59 checks, 30.4 s)

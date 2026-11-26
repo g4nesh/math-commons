@@ -1,0 +1,161 @@
+==============================================================================
+replay_T5: Case T_5 = {1,2,3,4,6,8} (final_referee_moc4_T5_uniform_20261022.pdf)
+==============================================================================
+
+--- Facet numbering: own transcription of Appendix D vs supplement data vs audit lib
+[ok  ] 82 distinct value vectors; 34 minor (16 with 18 zeros, 18 with 20 zeros), 48 h with profile 13x0, 10x1, 1x2
+[ok  ] the 1152 elements of G act as distinct permutations of the 24 indices, permute the 82 facet vectors and map minors to minors
+[ok  ] supplement data: permutations listed lexicographically
+[ok  ] supplement data: facet j has the values of the paper's f_j for all 82 j (documents' numbering = Appendix D numbering)
+[ok  ] audit lib: PERMS identical
+[ok  ] audit lib: F_VALUES identical to own values for all 82 facets
+[ok  ] audit lib: its 1152 group index maps are the same set as mine
+[ok  ] audit lib: the column space of its matrix P (rank 14) is the span of my 34 minor value vectors
+[ok  ] audit lib: CONTACT_SETS[3] = [0, 1, 2, 3, 7, 8] and generators agree
+[ok  ] audit lib: CONTACT_SETS[4] = [0, 1, 4, 5, 7, 8] and generators agree
+[ok  ] audit lib: CONTACT_SETS[5] = [1, 2, 3, 4, 6, 8] and generators agree
+[ok  ] audit lib: CONTACT_SETS[6] = [0, 1, 2, 4, 6, 8] and generators agree
+
+--- A. contact set, generators, A0, the three replacements (document pp. 1-2)
+[ok  ] document's T_5 = {1,2,3,4,6,8} is literally the paper's T_5 (identity of G); reference permutation pi_1 is in T_5
+[ok  ] generators vanishing on T_5: {0,1,2,3,4,5,6,9,10,53,54} :: [0, 1, 2, 3, 4, 5, 6, 9, 10, 53, 54]
+[ok  ] only f54 is not a minor vector
+[ok  ] N_T directly: {g in im P : g|T = 0} has dimension 8 and the cone {g >= 0} in it has exactly 11 extreme rays, the value vectors of f_j, j in [0, 1, 2, 3, 4, 5, 6, 9, 10, 53, 54] (own exhaustive enumeration; Lemma 4.2 for this T without Prop. 4.1)
+[ok  ] span of the generators has dimension 8
+[ok  ] A0 = g16 - g0 is -1 on f54, +1 on f1, f4, f9 and 0 on the other generators
+[ok  ] f54 + f1 = f0 + f6 + f53
+[ok  ] f54 + f4 = f2 + f3 + f6 + f53
+[ok  ] f54 + f9 = f2 + f5 + f10 + f53
+       PROOF-READ: g = sum lam_j f_j, lam >= 0 (Lemma 4.2); A0 = lam1 + lam4 + lam9 - lam54 >= 0 lets lam54 be split
+         against lam1, lam4, lam9 and replaced by minors: A0 >= 0 => minor decomposition.
+[ok  ] f54 is positive at the permutation indices 0, 9, 11 (so A0 < 0 forces g0, g9, g11 > 0) :: [1, 1, 1]
+[ok  ] (3): g = g22 f0 + g13 f2 + g12 f3 + g10 f5 + g17 f6 + g7 f10 + g16 f53 + d f54, d = g0 - g16, on the span
+       (4) is the SOC condition for (f5: g10, f2: g13; f54: d); (5) is the four-coefficient condition for
+       (f0: g22, f6: g17; f10: g7; f54: d).  The remaining terms of (3) are minors with gap coefficients.
+
+--- B. SOC member a f5 + b f2 + d f54 (document p. 1, eq. (1))
+[ok  ] SOC: roles (5, 2, 54) lie in the G-orbit of the proved representative (1, 9, 22) :: g = (rho=(0, 2, 3, 1), rho'=(0, 1, 3, 2), transpose=0), 4 group elements, source roles (1, 9, 22)
+[ok  ] SOC: orbit size (pair in positions (0, 1) unordered) = 144 :: 144
+[ok  ] SOC (1,9;22) -> (5,2;54): Phi_{g.f}(O'') = Phi_f(O) with O'' in SO(4), exact on 6 random rational O
+
+--- SOC representative (f1, f9; f22): identities of the audit's proof (so4-atoms.md 3.1), own code
+[ok  ] model x -> p x conj(q): M^t M = |p|^2|q|^2 I and det M = (|p|^2|q|^2)^2 (so M in SO(4) for unit p, q)
+[ok  ] Phi_{f1} = x1^2, Phi_{f9} = x9^2 with x1 = det M[12,34], x9 = det M[14,23] (polynomial identities)
+[ok  ] x1 = v0 + v1 and x9 = v0 + v3 (homogenised with |p|^2, |q|^2)
+[ok  ] Phi_{f22} = 2(a0A2 + a2A0 + a1A3 + a3A1) - 4 p0p1p2p3 - 4 q0q1q2q3 on S^3 x S^3 (homogenised)
+[ok  ] bridge for the supplement's Theorem 3 (scalar-compensation note; not in any PDF), model x -> p x q: Phi_{f1} = S^2, Phi_{f9} = T^2, Phi_{f22} = H (homogenised)
+[ok  ] scalar step 1: R = 2 delta^2 + 2 Delta^2 - 2(v0v2 + v1v3) identically
+[ok  ] scalar step 1: st = (v2+v3)(v1+v2) = v1v3 - v0v2 + v2 sum(v), and (v0+v1)(v0+v3) = st + (v0-v2) sum(v)
+[ok  ] increment lemma: (r^2+u^2)(s^2+w^2) - (rs + uw)^2 = (rw - us)^2
+       PROOF-READ (scalar-compensation note, Theorem 2 = so4-atoms.md 3.1 steps 1-5): R + 2|st| = 2delta^2 + 2Delta^2 - 4 min(v0v2, v1v3);
+         if the min is > 0, after a <-> A, Delta - delta >= sqrt(alpha gamma) + sqrt(MN), so 2delta^2 + 2Delta^2 >= (Delta-delta)^2
+         >= 4 sqrt(alpha gamma M N) >= 4 min.  With -4p0p1p2p3 >= -4 sqrt(a0a1a2a3): Phi_22 + 2|x1 x9| >= 0 on SO(4);
+         then a x1^2 + b x9^2 + d Phi_22 >= d(2|x1x9| + Phi_22) >= 0 for ab >= d^2, d >= 0.
+
+--- B. four-coefficient member a f0 + b f6 + c f10 + d f54 (document p. 1, eq. (2)): the representative itself
+[ok  ] four-coefficient: roles (0, 6, 10, 54) lie in the G-orbit of the proved representative (0, 6, 10, 54) :: g = (rho=(0, 1, 2, 3), rho'=(0, 1, 2, 3), transpose=0), 2 group elements, source roles (0, 6, 10, 54)
+[ok  ] four-coefficient: orbit size (pair in positions (0, 1) unordered) = 288 :: 288
+
+--- Four-coefficient representative (f0, f6; f10; f54): replay of the four-budget note, own code
+[ok  ] model x -> p x q: M^t M = |p|^2|q|^2 I and det M = (|p|^2|q|^2)^2
+[ok  ] bridge: 4 Phi_{f0}(M(p,q)) = n^2 Q mod N, Q = (A-B)^2
+[ok  ] bridge: 4 Phi_{f6}(M(p,q)) = n^2 Q mod N, Q = (A+B)^2
+[ok  ] bridge: 4 Phi_{f10}(M(p,q)) = n^2 Q mod N, Q = D^2
+[ok  ] bridge: 4 Phi_{f54}(M(p,q)) = n^2 Q mod N, Q = H
+[ok  ] certificate (4): n[a(A-B)^2 + b(A+B)^2 + cD^2 + dH] = sum_j l(S_j y)^t Z l(S_j y) + m(S_j y)^t Z m(S_j y) mod N
+[ok  ] each S_j preserves |p|^2 and |q|^2 (signed coordinate permutations within p and within q)
+[ok  ] Schur complement of the entry Z44 = d: d * (Z[:3,:3] - col col^t / d) = d * S3 with S3 as in the note
+[ok  ] second Schur complement (of c - d): (c-d) * det of the 2x2 block = 4[ab(c-d) - d^2(a+b+c+d)]
+[ok  ] det Z = 4 d [ab(c-d) - d^2(a+b+c+d)]
+       PROOF-READ: d = 0: Z = [[a+b, a-b],[a-b, a+b]] + [c] + [0] is PSD.  d > 0 and capacity: ab(c-d) >= d^2(..) > 0
+         forces c > d; Z44 = d > 0, S3 has (3,3) entry c-d > 0, the 2x2 complement has positive (1,1) entry and det >= 0.
+         So Z >= 0, each quadratic form in (4) is >= 0, and n = 2 on S^3 x S^3: a Phi_0 + b Phi_6 + c Phi_10 + d Phi_54 >= 0.
+         CITED (classical): every O in SO(4) is the matrix of x -> p x q for unit quaternions p, q.
+
+--- C. normalisation and contact ratios (document p. 2)
+[ok  ] point C_2 at infinity with its factor dropped: all 24 products change by one common factor
+[ok  ] contact ratios R_sigma = (F_sigma - F_1)/(v(z-w)) on T_5 = (1,2,3,4,6,8): 0, x-t, t(x-1), 1-t, x-t-r-u, x-t-r (identities in complex z, w, v, x, t; r, u as defined on p. 2)
+[ok  ] the four transposition differences of p. 2, up to one common sign: F_3-F_1, F_4-F_1, F_3-F_2, F_4-F_2 = +-(-t v (z-w)(x-1), v (t-1)(z-w), -v x (t-1)(z-w), v (x-1)(z-w))
+       PROOF-READ: kappa = i m/(v(z-w)), m in C*: contacts 2,3,4 <=> m(x-t), m t(x-1), m(1-t) real; the first minus
+         the third gives m(x-1) real, so t real (x != 1), m real (t != 1), x real; contacts 8, 6 <=> r, u real.
+[ok  ] exhaustiveness: z (x - (t+u) v) = r v and u w = x - r - t v identically for r, u defined from z, w
+[ok  ] the chart (6) inverts the definitions of r and u
+[ok  ] on the chart the gaps vanish identically exactly on T_5
+[ok  ] the chart's gap vector satisfies (3) in all 24 entries (so it lies in the span)
+[ok  ] F = 0 with nonreal v needs t + u = 0, r = x, and then z = v: collision
+
+--- C. identities (7) (document p. 3); g_sigma = rho * gamma_sigma, sigma = rho/E
+[ok  ] g0 = -rho x/N
+[ok  ] g7 = -sigma t x (r+u)
+[ok  ] g9 = -sigma t x (r + u x)
+[ok  ] g10 = -sigma r t (x-1)
+[ok  ] x g11 = (x-1) g9
+[ok  ] g12 = -rho r u L/F
+[ok  ] g17 = A0 - sigma t u x (x-1)
+[ok  ] H g13 = t L A0 + sigma t u x (t-1) W
+[ok  ] H g22 = (t-1)(x-r) A0 + sigma r t x (t-1)(x-r-u-1)
+[ok  ] D0 A0 = sigma r u [x t (t-1)(x-1) - J H E/F]
+[ok  ] H = t L + (t-1)(t+u) and W = H + r(t-1)
+
+--- C. negative branch x = -X, t = -T, r = -R, u = U, sigma = 1 (document pp. 3-4)
+[ok  ] specialisation: L, H, W of (7) become R+T-X-U, T(X+1-R)-U, R-U+T(X+1)
+[ok  ] (8): g10 = R T (X+1), g17 = B - d, H g13 = T[L d - U X (T+1) W], H g22 = (T+1)[(R-X) d + R T X (R-X-U-1)]
+[ok  ] g7 = T X (R - U) and g12 = (rho/F) R U L at sigma = 1 (signs of the support conditions R >= U, L >= 0)
+[ok  ] d_a - B = T X (R + U X)(X + 1 - R)/(R - X)
+[ok  ] H - (T - U) = T (X - R)   (so R <= X would give H >= T - U >= 0)
+[ok  ] Psi(d) = g10 g13 - d^2 with g13 from (8)
+[ok  ] Psi(0) = -R T^2 (X+1) U X (T+1) W/H  (> 0 for H < 0, W > 0)
+[ok  ] Psi(B) = T^2 U X (R + U X)(X+1) Q/H, Q = -(X+1)H - R(T+1)
+[ok  ] Psi(d_a) = R T^2 X (R + U X) P/(R-X)^2, P = R(R-U) + (X+1)[R T - (T+1) X]
+[ok  ] Q = -X(T+1)(X+1-R) - (X+1) L   (so L >= 0 gives Q <= -X(T+1)(X+1-R))
+[ok  ] P = X(T+1)(R-X-1) + R L        (so L >= 0 gives P >= X(T+1)(R-X-1))
+
+--- C. positive branch x > 1, sigma = -1 (document pp. 4-5)
+[ok  ] t = -T, r = -R, u = -U, sigma = -1: H g22 = (T+1)[(x+R) d + R T x (x+R+U-1)], H = U - T(R+x-1)
+[ok  ] D0 = R T - U x = -T(x-1)(R+x) - x H and J = -R - (T+U+1) x
+       (7) at sigma = -1, A0 = -d reads D0 d = r u [x t (t-1)(x-1) - J H E/F]; with t = -T etc.: d = (R U/D0)[x T (T+1)(x-1) - J H E/F].
+[ok  ] sign bookkeeping: r u x t (t-1)(x-1) at t=-T, r=-R, u=-U equals R U x T (T+1)(x-1)
+[ok  ] (9): H g13 = t[u x h W - L d], H a = h[(x-r) d + r t x (y-r-u)], g17 = B - d, B = t u x y, g7 = C = t x (r+u), g10 = r t y
+[ok  ] H = t L - h (t+u), W = H - r h, W = t L + (t-1)(r+t+u)
+       H = 0 (sigma = -1): (7) gives D0 d = r u x t (t-1)(x-1) < 0 with D0 = r t + u x > 0: impossible.
+[ok  ] H < 0: Psi(d) = g10 g13 - d^2; Psi(0) = r t^2 y u x h W/H
+[ok  ] Psi(d_a) = -r t^2 x (r + u x) P/(x-r)^2, P = r(r+u) - y(r t + h x)
+[ok  ] Psi(B) = -t^2 u x (r + u x) y Q/H, Q = y H + r h
+[ok  ] d_a - B = t x (r - y)(r + u x)/(x - r)
+[ok  ] P = -h x (y - r) - r L   (L >= 0, r < y => P < 0)
+[ok  ] Q = (r - y) h (y+1) + y L (L >= 0, r >= y => Q >= 0)
+[ok  ] K = B C/(B + C) = t u x y (r+u)/(r + u x)
+[ok  ] the difference in (5): a (B-d)(C-d) - d^2 (a + (B-d) + C + d) = (B + C) chi(d), chi = a (K - d) - d^2
+[ok  ] h (x - r) + H = L, hence the d^2-coefficient of chi is -L/H
+[ok  ] chi(0) = (h/H) r t x (y-r-u) K
+[ok  ] with x = 1 + (r+u+W)/t: W(x) = W and y - r - u = ((r+u)(1-t) + W)/t
+[ok  ] chi(d*) = u x^2 (r+u) h P*/((r + u x) L) with t P* = r W^2 + (r+u)[r(2-t) + u(1-t)] W + (r+u)^2 (1-t)(r+t+u), d* = u x h W/L
+       PROOF-READ: all coefficients of t P* are > 0 for r, u, W > 0, 0 < t < 1; chi concave, chi(0) > 0, chi(d*) > 0.
+
+--- C'. EXACT instances built from the paper's definitions (finite Gaussian-rational spectra)
+[ok  ] instance (x,t,u,r,v) = (-3,-1,2,-4,-3/2+i/2): all 24 gaps >= 0 (exact) and the contact set contains T; contact set = [1, 2, 3, 4, 6, 8, 12]
+[ok  ] instance (x,t,u,r,v) = (-3,-1,2,-4,-3/2+i/2): d = -A0 = 2.75184e-06 > 0 (not in the minor cone); (3) reproduces all 24 gaps with coefficients >= 0
+[ok  ] instance (x,t,u,r,v) = (-3,-1,2,-4,-3/2+i/2): branch x<0, H = -2; SOC margin g10 g13 - d^2 = 1.72395e-10, four-coefficient margin = -1.39287e-16; the document's inequality for this branch holds
+[ok  ] instance (x,t,u,r,v) = (-3,-1,2,-4,-3/2+i/2): with rho := -g0 N/x, sigma = rho/E: formulas (7) for g7, g9, g10, g17 hold at this point
+[ok  ] instance (x,t,u,r,v) = (2,1/4,3/4,1,-1-5i/4): all 24 gaps >= 0 (exact) and the contact set contains T; contact set = [1, 2, 3, 4, 6, 8, 12]
+[ok  ] instance (x,t,u,r,v) = (2,1/4,3/4,1,-1-5i/4): d = -A0 = 0.000161631 > 0 (not in the minor cone); (3) reproduces all 24 gaps with coefficients >= 0
+[ok  ] instance (x,t,u,r,v) = (2,1/4,3/4,1,-1-5i/4): branch x>1,H<0, H = -3/4; SOC margin g10 g13 - d^2 = 1.6829e-07, four-coefficient margin = 2.19522e-11; the document's inequality for this branch holds
+[ok  ] instance (x,t,u,r,v) = (2,1/4,3/4,1,-1-5i/4): with rho := -g0 N/x, sigma = rho/E: formulas (7) for g7, g9, g10, g17 hold at this point
+[ok  ] instance (x,t,u,r,v) = (6,1/2,1/4,1/4,6+i/4): all 24 gaps >= 0 (exact) and the contact set contains T; contact set = [1, 2, 3, 4, 6, 8]
+[ok  ] instance (x,t,u,r,v) = (6,1/2,1/4,1/4,6+i/4): d = -A0 = 0.000475123 > 0 (not in the minor cone); (3) reproduces all 24 gaps with coefficients >= 0
+[ok  ] instance (x,t,u,r,v) = (6,1/2,1/4,1/4,6+i/4): branch x>1,H>0, H = 17/8; SOC margin g10 g13 - d^2 = -2.01837e-07, four-coefficient margin = 1.98944e-08; the document's inequality for this branch holds
+[ok  ] instance (x,t,u,r,v) = (6,1/2,1/4,1/4,6+i/4): with rho := -g0 N/x, sigma = rho/E: formulas (7) for g7, g9, g10, g17 hold at this point
+       in the H > 0 instance the SOC margin is -2.01837e-07: the SOC condition (4) does not hold there, so the four-coefficient inequality is genuinely needed for this decomposition
+
+--- D. NUMERIC falsification attempts on the intermediate claims (numpy, seeds printed)
+[ok  ] NUMERIC broad chart sample: seed 51001, 300000 samples on the contact locus, 6239 supporting; with A0 < 0: 104 (x<0), 63 (x>1, H<0), 0 (x>1, H>0); no violation :: []
+          min g10 g13 - d^2: 1.701e-02 (x<0), 1.252e-09 (x>1, H<0) | min four-coefficient margin (x>1, H>0): inf
+[ok  ] NUMERIC negative branch region (incl. R = U, L = 0): seed 51002, 263595 samples on the contact locus, 66551 supporting; with A0 < 0: 2362 (x<0), 0 (x>1, H<0), 0 (x>1, H>0); no violation :: []
+          min g10 g13 - d^2: 8.146e-05 (x<0), inf (x>1, H<0) | min four-coefficient margin (x>1, H>0): inf
+[ok  ] NUMERIC positive branch region (incl. r = y): seed 51003, 300000 samples on the contact locus, 70024 supporting; with A0 < 0: 0 (x<0), 4568 (x>1, H<0), 39 (x>1, H>0); no violation :: []
+          min g10 g13 - d^2: inf (x<0), 6.232e-13 (x>1, H<0) | min four-coefficient margin (x>1, H>0): 6.928e-03
+[ok  ] NUMERIC positive branch, H > 0 region: seed 51004, 399999 samples on the contact locus, 339264 supporting; with A0 < 0: 0 (x<0), 0 (x>1, H<0), 17790 (x>1, H>0); no violation :: []
+          min g10 g13 - d^2: inf (x<0), inf (x>1, H<0) | min four-coefficient margin (x>1, H>0): 1.197e-07
+[ok  ] NUMERIC: tests not vacuous (supporting samples with A0 < 0 in all three branches) :: (2362, 4568, 17790)
+
+PASS: all 110 checks passed in replay_T5: Case T_5 = {1,2,3,4,6,8} (final_referee_moc4_T5_uniform_20261022.pdf)
