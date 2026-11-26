@@ -1,0 +1,117 @@
+Replay of T_10 = {0,1,3,5,7,8}  (documents: final_referee_moc4_T9_uniform, T9_first_branch, T9_second_branch)
+=============================================================================================================
+
+-- 0. objects (own construction) and cross-check with the audit library
+[ok] 24 permutations, lexicographic; identity is pi_0
+[ok] 82 distinct facet profiles; 34 minor and 48 non-minor
+[ok] value profiles: minors 0/1; non-minors take 0 thirteen times, 1 ten times, 2 once
+[ok] G has 1152 elements acting by 1152 distinct permutations of the 24 indices
+[ok] G permutes the 82 profiles and preserves minor/non-minor
+[ok] 4 exact rational matrices are in SO(4)
+[ok] Phi_{f_j}(O) = x_j(O)^2 for all 34 minor vectors at these matrices (Lemma 6.2)
+[ok] library: PERMS identical to mine
+[ok] library: Appendix D table identical to my transcription
+[ok] library: all 82 profiles P f_j equal my profiles built from the definitions
+[ok] library: 1152 index maps of G equal mine
+[ok] library: Appendix E contact set T_10 = [0, 1, 3, 5, 7, 8]
+[ok] library: generators(T_10) equal mine
+
+-- 1. contact set, generators, minor case, canonical decomposition (uniform p.1)
+[ok] the document's contact set {0,1,3,5,7,8} is literally the paper's T_10 (Appendix E); identity group element
+[ok] generators vanishing on T_10 are exactly {0,1,2,3,4,5,6,11,27,28} :: [0, 1, 2, 3, 4, 5, 6, 11, 27, 28]
+[ok] f_28 is the only non-minor generator
+[ok] d = g_2 - g_18 equals 1 on f_28, -1 on f_0 and f_3, 0 on the other generators :: {0: -1, 1: 0, 2: 0, 3: -1, 4: 0, 5: 0, 6: 0, 11: 0, 27: 0, 28: 1}
+[ok] f_28 + f_0 = f_1 + f_2 + f_5 + f_27
+[ok] f_28 + f_3 = f_4 + f_5 + f_27
+[ok] the right-hand sides use minor vectors only
+[ok] (3): g = g22 f1 + g19 f2 + g14 f4 + g20 f5 + g9 f6 + g6 f11 + g18 f27 + d f28 on the span of the generators
+[ok] f_28(pi_2) = 1 > 0 and f_28(pi_18) = 0
+[ok] (7c): g_10 = g_20 + d on the span of the generators
+[ok] the span of the generators has dimension 8
+
+-- 2. the universal inequalities invoked (uniform p.1 eqs.(1),(2); p.3)
+[ok] orbit sizes: SOC 144 (pair unordered), four-coefficient 288 (a, b unordered)
+[ok] SOC (f_1, f_11; f_28): used tuple (1, 11, 28) is in the G-orbit of the representative (1, 9, 22) with the same roles (8 group elements)
+[ok] SOC (f_1, f_11; f_28): Phi_{g.f}(O') = sgn(g) Phi_f(O) as polynomial identities in the 16 entries of O, for the 3-4 vectors of the tuple (g = (((0, 1, 2, 3), (0, 1, 3, 2), 0),))
+[ok] SOC (f_1, f_11; f_28): the minors of the used tuple are, up to sign and complementation, the minors of the representative evaluated at O'
+[ok] four-coefficient (f_4, f_6; f_2; f_28): used tuple (4, 6, 2, 28) is in the G-orbit of the representative (0, 6, 10, 54) with the same roles (4 group elements)
+[ok] four-coefficient (f_4, f_6; f_2; f_28): Phi_{g.f}(O') = sgn(g) Phi_f(O) as polynomial identities in the 16 entries of O, for the 3-4 vectors of the tuple (g = (((0, 3, 1, 2), (0, 1, 2, 3), 0),))
+[ok] four-coefficient (f_4, f_6; f_2; f_28): the minors of the used tuple are, up to sign and complementation, the minors of the representative evaluated at O'
+[ok] roles in (3): region I uses s = g22 (on f_1), b = g6 (on f_11); region II uses a = g14 (on f_4), B = g9 (on f_6), c = g19 (on f_2)
+[ok] pointwise four-coefficient form => coefficient form: det [[a,-d,-d],[-d,b,-d],[-d,-d,c-d]] = a b (c-d) - d^2 (a+b+c+d)
+[ok] sanity (6 exact rational SO(4) points, not a proof): Phi_28 + 2|x_1 x_11| >= 0 and Phi_28 + Phi_2 + 2(|x_4 x_6| + |x_4 x_2| + |x_6 x_2|) >= 0
+
+-- 3. the chart (uniform p.2)
+[ok] F_1 - F_0 = (z-w)(q-v)(x-1), F_3 - F_5 = -(z-w)(q-v), F_5 - F_0 = -x(z-w)(v-1)
+[ok] r := R_7 - R_1 = t z (v-x)/(z-w) and u := R_8 = -Y (v z - v + w - z)/((v-1)(z-w)), Y = x - q
+[ok] (4) holds for EVERY configuration (z, w free): z Q = r v Y and w = z [1 - t (v-x)/r] with r, u as defined
+[ok] general contact responses: R_1 = (t-1)(x-1), R_3 = 1-t-x, R_5 = -x (z, w free)
+[ok] on the chart (R_0,R_1,R_3,R_5,R_7,R_8) = (0, (t-1)(x-1), 1-t-x, -x, r+(t-1)(x-1), u): all real, so the six contacts hold
+[ok] every R_j is in Q(x,t,r,u,v) with denominator a product of t, v, v-1, v-x, Y, Q (all nonzero for eight distinct points): for real v every R_j is real, i.e. the whole gap vector vanishes
+[ok] (5): ghat_2 = -y/|v-1|^2, ghat_6 = r y h/(t |v-x|^2), ghat_9 = x y (r/|v-x|^2 - t u/|Y|^2)
+[ok] (6): (x+t-1) ghat_10 = -x h ((x+t+u-1)/|v|^2 + t u y/|Y|^2)
+[ok] (7a),(7b): g14 + d + t g6 + h g19 = 0 and g9 + d + x g19 - y g22 = 0 on the chart
+[ok] the chart gap vector satisfies the linear identity g10 = g20 + d (consistency of numbering)
+[ok] ghat_6/ghat_2 = -r h |v-1|^2/(t |v-x|^2)
+
+-- 4. exclusion of x < 0, t < 0 (uniform p.3) and of x < 0, t > 1, u >= 0 (second branch, Lemma 1)
+[ok] with rho = -1: g14 = -(1+X)(1+T) m + T d and g22 = -d + X m - X T u/|Y|^2  (x = -X, t = -T, m = Im C(v)/Im v, C(v) = -r(Y+u)/Q)
+[ok] d/X <= T d/((1+X)(1+T)) is impossible for d > 0: (1+X)(1+T) - T X = 1 + X + T > 0
+[ok] Q is a quadratic in v with leading coefficient t(u - r + t) and constant term t x (u + x - 1 + t)
+[ok] Y(a0) = 0 for a0 = 1 + (x-1)/t; Q(x) = r x Y(x); Q(a0) = u t (a0-1)(a0-x)
+[ok] R_2 - R_18 = -r P(v)/Q(v) + (a real constant, namely x(1-t))
+[ok] R_14 = u - r Y (Y+u)/Q
+[ok] P(v) - (Y(v)+u)(v-x) = Q(v) identically, so P(theta) = (Y(theta)+u)(theta-x) at the roots of Q
+[ok] f(theta) = Y(theta)/(theta - x) has derivative (1-x)(1-t)/(theta-x)^2 (> 0 for x, t < 0), and f = t (a0 - theta)/(theta - x)
+[ok] Y(theta) + u vanishes at theta = a0 + u/t (= a0 + U/T)
+[ok] second branch L.1: N_Y = |k - t v|^2 = |Y|^2; M := ghat_10 N_0 N_Y = -x h (k L - t L (v+vb) + t (t+u) N_0)
+[ok] second branch L.1: (ghat_2 - ghat_18) |Q|^2 = r^2 D_2 + r t u L N_x
+[ok] second branch L.1: D_2 = M/h - t u (1-x) N_0 and D_2 + L N_Y = M/x
+[ok] second branch L.1: d|Q|^2/r = (r - r0) D_2 + r0 (D_2 + L N_Y) with r0 = t u N_x/N_Y
+
+-- 5. region I: x > 1, t < 0, r > 0, u < 0 (first branch document)
+[ok] I: Q(zeta) = (x-1) Q_v/(v-1)^2 (so Q(zeta) != 0 on the chart)
+[ok] I: d := -Im(zeta K)/Im zeta equals g_2 - g_18 (normalised g_2 = 1)
+[ok] I (1): g14 = h n - d, g19 = G - n, g9 = A0 (H - G), g18 = 1 - d, g6 = h G/T, g22 = (d + A0 (H - n))/X
+[ok] I (2): g20 = A0 h (T X (1+H) - H |zeta-1|^2)/(T |zeta-A0|^2) - d
+[ok] I: Q/(zeta(zeta-h)) = G N - X (T + h H) + S conj(zeta), S = X H - A0 G
+[ok] I: r((X-U) zeta - (hX-U))/(zeta(zeta-h)) = G (X - H (N - 2 xi + h)/T) conj(zeta) + G N H
+       K = -d + n conj(zeta) by the definitions of n, d (K - conj K = n (conj zeta - zeta), zeta K - conj(zeta K) = -d (zeta - conj zeta)); comparing the coefficients of 1 and conj(zeta) (zeta nonreal) gives two real equations.
+[ok] I (3): N L - M and 2 xi B0 - (Ec - G N (T n + H)) are exactly the two coefficient equations of (-d + n conj zeta)(G N - X(T+hH) + S conj zeta) = E1 conj zeta + G N H (polynomial identities in G,H,n,d,X,T,N,xi)
+[ok] I (4): F + L B0 |zeta-h|^2 = h (E_L - 2 xi L B0) - B0 (M - L N), so (3) gives F = -L B0 |zeta-h|^2
+[ok] I (3): N L = M, 2 xi B0 = Ec - G N (T n + H), 2 xi L B0 = E_L at 3 exact rational chart points
+[ok] I L.1: L = G d + G c + e (G + X n) and B0 = e (k n - c) - G (c + h n)  (variables a, c, d, e, X, T; n = (a+d)/h, G = c + n, H = G + e, k = T X - 1)
+[ok] I L.1: F is affine in e with dF/de = (T/h) Ncal (Ncal as displayed in the document)
+[ok] I L.1: F(e*) = T h G^2 (A0 a + X d)(A0 G a + X (a + d + c))/q, e* = G (c + h n)/q, q = k n - c
+[ok] I L.1: Ncal has nonnegative coefficients as a polynomial in a, c, X, T, d, d1 = 1 - d, and contains X d^2
+[ok] I (6): L B0 F20 = -T R P(c), where L B0 F20 is expanded with N L = M and 2 xi L B0 = E_L (F20 = A0 h (T X (1+H) - H (N - 2 xi + 1)) - d T (N - 2 A0 xi + A0^2)); polynomial identity in n, c, e, d, X, T
+[ok] I Thm 1: R(e*) = A0 G^2 (A0 a + X d)/q
+[ok] I Thm 1: W = X h, and P(c*) equals the displayed quadratic in e with coefficients built from Q0, Q1, Q2, R0 (c* = k d/(A0 h), T = (k+1)/X, a = h n - d)
+[ok] I Thm 2: (d + h c)(d + A0 c) = T X d^2 + (c + d)(A0 h c - (T X - 1) d)
+[ok] uniform p.3: x (1-t) g19 - (-t(x-1) - 1) d is A0 h g19 - (T X - 1) d
+
+-- 6. region II: x < 0, t > 1, r > 0, u < 0 (second branch document)
+[ok] II: d := -Im(zeta K)/Im zeta equals g_2 - g_18 (normalised g_2 = 1)
+[ok] II (2): g14 = T m - d, g19 = m + G, g9 = X (G + H)
+[ok] II (3): g18 = 1 - d, g22 = (X m - X H - d)/A0
+[ok] II L.2: Q/(zeta(zeta+T)) = r - t A0 + X r/zeta + A0 t U/(zeta+T) = C0 + S0 conj(zeta)
+[ok] II L.2: -r((A0+U) zeta + T A0 - U)/(zeta(zeta+T)) = E0 conj(zeta) - G N H, E0 = G (H (2 Re zeta + T - N)/t - A0)
+[ok] II L.2 (4): the constant coefficient of (-d - m conj zeta)(C0 + S0 conj zeta) - (E0 conj zeta - G N H) is -d C0 + m S0 N + G N H, i.e. d C0 = N (m S0 + G H)
+[ok] II L.2 (4): d C0 = N (m S0 + G H) at 3 exact rational chart points
+[ok] II Thm 1 (5): (X m - X H) C0 - N (m S0 + G H) = A0 (m (X V - N H) - H (G N + X V))
+[ok] II Thm 1: T m (G + H) - L0 = G (T m - 1) + m (T H - t)
+[ok] II Thm 1: a B (c - d) - d^2 (a + B + c + d) = X (G + H) D0 - L0 d^2
+[ok] II Thm 1: (G + H) D0 - L0 d (m - H) = (m + G)(T m (G + H) - L0 d)
+[ok] II Thm 1: D0 - (T m (G+H) - L0) = T m (m - H) + L0 (1 - d)  (so m > H, d <= 1 give D0 > 0)
+
+-- 7. NUMERIC falsification attempts (floating point; evidence only)
+[ok] NUMERIC global: 3,000,000 chart points (seed 20261126; x, t, r, u = random sign * lognormal(0, 1.1); v complex normal(0, 1.5); mu = +-1; gaps normalised to max 1): max |g| on T_10 = 6.3e-13; supporting (all gaps >= -1e-9): 4128; of these with d > 1e-7: 1368 (region I: 1365, region II: 3, elsewhere: 0); min(g6 g22 - d^2) in I = 2.147e-08, min(A0 h g19 - (TX-1) d) in I = 3.323e-05, min capacity in II = 2.151e-02
+[ok] NUMERIC region I: 4,000,000 points with x > 1, t < 0, r > 0, u < 0: 146151 supporting with d > 1e-7; min(g6 g22 - d^2) = 1.440e-11, min(A0 h g19 - (TX-1) d) = 8.160e-07 (tolerance -1e-9)
+[ok] NUMERIC first branch Lemma 1 under its own hypotheses only (g14, g19, g9, g18 >= 0, d > 0; 147870 of these points): max of B0/(sum of |terms|) = -1.822e-02 (claim: B0 < 0)
+[ok] NUMERIC region II: 8,000,000 points with x < 0, t > 1, r > 0, u < 0: 404 supporting with d > 1e-7; min of a B (c-d) - d^2 (a+B+c+d) = 6.730e-05 (claim: > 0)
+[ok] NUMERIC second branch Theorem 1 under its own hypotheses only (d > 0, g18 >= 0, g22 >= 0; 404 points): min relative capacity = 3.831e-01 and min(g14, g9, g19) = 3.895e-04 (claims: all > 0)
+[ok] NUMERIC exclusions, 2,000,000 points each, r > 0, sign of rho fixed by g_2 > 0: (x<0, t<0, u>0): d > 0, g14 >= 0, g22 >= 0 together: 0; (x<0, t<0, u<0): d > 0 and g14 >= 0: 0; (x<0, t>1, u>0): d > 0, g9 >= 0, g10 > 0: 0; (x>1, t>1): g9 >= 0, g10 >= 0, d > 0: 0  (claims: all 0)
+[ok] NUMERIC real v: 200,000 chart points with v real: max |gap| / max |R_j| = 0.0e+00 (the gap vector is zero)
+[ok] NUMERIC atoms on SO(4) (20000 random points + 6 Nelder-Mead runs each, seeds 1002, 1003): min of Phi_28 + 2|x_1 x_11| = 8.580e-30; min of Phi_28 + Phi_2 + 2(|x_4 x_6| + |x_4 x_2| + |x_6 x_2|) = 4.468e-30 (tolerance -1e-9)
+
+PASS: all 96 checks passed

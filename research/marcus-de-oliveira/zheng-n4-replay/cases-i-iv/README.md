@@ -18,8 +18,11 @@
 | T₄ = {0,1,4,5,7,8} | III | confirmed modulo citations | [T4.md](T4.md) | [`replay_T4.py`](replay_T4.py): 84 exact checks | Ends with the four-coefficient inequality. The document cites the three-plus-three circle theorem; the report shows by two exact identities that this citation is not needed. Three omissions in the document are filled by exact identities. |
 | T₅ = {1,2,3,4,6,8} | III | confirmed modulo citations | [T5.md](T5.md) | [`replay_T5.py`](replay_T5.py): 110 exact checks | SOC on two branches and the four-coefficient inequality on the third; the four-budget note's certificate is replayed exactly. |
 | T₆ = {0,1,2,4,6,8} | III | confirmed modulo citations | [T6.md](T6.md) | [`replay_T6.py`](replay_T6.py): 98 exact checks | Ends with the SOC representative itself. The stratum aᵢ + b_j = 0 is proved in the document and replayed exactly. |
+| T₁₀ = {0,1,3,5,7,8} | III | confirmed modulo citations | [T10.md](T10.md) | [`replay_T10.py`](replay_T10.py): 96 exact checks | SOC and four-coefficient inequalities, orbit members and coefficient conditions checked exactly. The cited three-plus-three circle theorem is not needed: for real v the whole gap vector is zero (exact). |
+| T₁₁ = {0,1,3,5,6,8} | III | confirmed modulo citations | [T11.md](T11.md) | [`replay_T11.py`](replay_T11.py): 92 exact checks | The documents use {0,1,2,4,7,9}; exactly one group element maps it to T₁₁, and the transfer is checked for all 82 vectors. Relies on both branch documents and on case T₇ at one boundary. The audit's first pass recorded a presentation gap in the B-branch (reality of four chart parameters); the replay closes it exactly. Theorem C.1 is cited for real v. |
+| T₁₅ = {1,2,3,4,6,7} | III | confirmed modulo citations | [T15.md](T15.md) | [`replay_T15.py`](replay_T15.py): 52 exact checks | SOC inequality. Here the three-plus-three circle theorem is genuinely needed for real v. |
 
-Cases in progress: T₇, T₁₀, T₁₁, T₁₅, T₁₈–T₂₀.
+Cases in progress: T₇, T₁₈–T₂₀.
 
 ## Citations that the cases share
 
