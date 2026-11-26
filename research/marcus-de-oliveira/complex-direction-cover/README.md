@@ -1,24 +1,29 @@
-# Common radial weights over complex directions
+# Three arbitrary complex eigenvalues on the archived four-cycle
 
-Fix the archived four-cycle $U$, $b=(3-2i,2,1+2i,-i)$, and $A=\operatorname{diag}(x,z,y,0)$. The first and third eigenvalues $x,y$ can be arbitrary complex numbers. For the second eigenvalue $z$, this report proves the inclusion for every radius along the following real lines:
+Fix the archived four-cycle $U$, $b=(3-2i,2,1+2i,-i)$, and $B=U\operatorname{diag}(b)U^*$. For **every** $x,z,y\in\mathbb C$, put $A=\operatorname{diag}(x,z,y,0)$. We prove that $\det(A+B)$ lies in its permutation pairing hull. For every $z$ the certificate constructs one probability vector that works for both other complex variables simultaneously. An earlier exact separator proves that no constant vector works for the full three-variable family. This result concerns the indicated relative eigenbasis, fixed spectrum $b$ and fixed fourth eigenvalue. [Original four-cycle and obstruction](../moving-fourth-spectrum/README.md) · [Real-line precursor](../two-free-real-atlas/README.md)
 
-$$z=u(1+ik)\quad\text{or}\quad z=u(k+i),
-\qquad u\in\mathbb R,\quad -1\le k\le\tfrac12.$$
+Write the second diagonal entry in one of two charts:
 
-The covered directions include the real and imaginary axes and both orientations of every indicated line. In ordinary slope coordinates these six patches cover every line outside the open positive-slope range $(1/2,2)$. The statement holds also at $z=0$. Thus three eigenvalues here can vary over a region with nonempty interior in $\mathbb C^3$. On the full three-variable family, the earlier exact separator at fourth eigenvalue zero rules out one common law. The weights below can change with $z$ and work for every $x,y$. [Three-variable obstruction](../moving-fourth-spectrum/README.md) · [Real-line precursor](../two-free-real-atlas/README.md)
+$$z=u(1+ik)\quad\text{or}\quad z=u(k+i),\qquad u\in\mathbb R,\quad -1\le k\le1.$$
+
+For $z=a+ib\ne0$, use the first chart with $u=a,k=b/a$ if $|a|\ge|b|$, and the second with $u=b,k=a/b$ otherwise. For $z=0$ take $u=k=0$. Both charts have four closed slope intervals with endpoints $-1,-1/2,0,1/2,1$. There are no gaps between them.
 
 ## How to read a patch
 
-Let $D_p(x,z,y)$ be the pairing vertex minus the actual determinant. Its coefficients come from the exact polynomial expansion of the unitary fixture. On a patch $[l,h]$ write $k=(1-\lambda)l+\lambda h$, with $0\le\lambda\le1$. Define $\omega(k)=1+ik$ for the horizontal chart and $\omega(k)=k+i$ for the vertical chart. We construct nonnegative polynomial numerators
-$$N_p(\lambda,u)=(1-\lambda)\sum_r c_{0,p,r}(u-r)^2+
-                      \lambda\sum_r c_{1,p,r}(u-r)^2.$$
-Every stored $c$ is a positive rational. Within each endpoint list the centers do not have a common root, so $H=\sum_p N_p$ is positive for every finite $u$, including either endpoint in $\lambda$. The weights are $N_p/H$.
+Let $D_p(x,z,y)$ be the pairing vertex minus the actual determinant. Its coefficients come from the exact polynomial expansion of the unitary fixture. On a patch $[l,h]$ write $k=(1-\lambda)l+\lambda h$, with $0\le\lambda\le1$. Define $\omega(k)=1+ik$ for the horizontal chart and $\omega(k)=k+i$ for the vertical chart. Let $B_{j,d}(\lambda)=\binom dj(1-\lambda)^{d-j}\lambda^j$ and $H_R(u)=\prod_{r\in R}(u-r)^2$, including the empty product. We construct
+$$N_p(\lambda,u)=\sum_{j,R} c_{j,p,R}\,B_{j,d}(\lambda)\,H_R(u).$$
+Every stored $c$ is a positive rational. For each control index $j$, all its radial products have no common real root: the intersection of their sets of centers is empty. At least one Bernstein factor is positive for every $\lambda$, so $H=\sum_p N_p$ is positive for every finite $u$, including both endpoints in $\lambda$. The weights are $N_p/H$. The executable function <code>weights_at(real, imag)</code> returns them as exact fractions for any Gaussian-rational $z$. Permutation words map columns to one-based diagonal rows.
 
-The gap $D_p(x,\omega(k)u,y)$ is itself affine in $\lambda$. Consequently the identity $\sum_p N_p D_p=0$ can be checked by expanding a degree-two polynomial in the Bernstein basis in $\lambda$. For the two endpoint coefficient lists $C_0,C_1$ and their gap operators $M_l,M_h$, its three coefficients vanish exactly when
-$$M_l C_0=0,\qquad M_l C_1+M_h C_0=0,\qquad M_h C_1=0.$$
-Each equation here is a polynomial identity in $x,y,u$. The checker expands every one over Gaussian rationals, including the mixed angular coefficient. Agreement at just the two ends would miss the middle equation.
+The gap $D_p(x,\omega(k)u,y)$ is affine in $\lambda$. Thus $\sum_p N_pD_p$ has angular degree at most $d+1$. Denote the gap operators at the two ends by $M_l,M_h$, and the coefficient blocks of the numerators by $C_0,\ldots,C_d$. Multiplication in the Bernstein basis gives the cleared coefficients
+$$ (d+1-j)M_l C_j+jM_h C_{j-1}=0,\qquad 0\le j\le d+1,$$
+omitting out-of-range blocks. Each equality is a polynomial identity in $x,y,u$. The checker expands every coefficient over Gaussian rationals, including the mixed terms. At degree one this includes the middle equation $M_lC_1+M_hC_0=0$.
 
-The six half-unit patches each use 64 primitive coefficients indexed by endpoint, pairing and real center. A numerical linear program found small supports. On each support the exact linear equations were solved over the rationals. The archived replay requires only Python's standard library. It verifies the positivity, normalization, common-root condition, coefficient identities and interval coverage. [Positive coefficients](patches.json) · [Exact replay](check.py)
+| Slopes in each chart | Angular degree | Maximum radial degree | Positive coefficients per patch |
+|---|---:|---:|---:|
+| $[-1,-1/2],[-1/2,0],[0,1/2]$ | 1 | 2 | 64 |
+| $[1/2,1]$ | 4 | 4 | 247 |
+
+The last two patches use products with centers in $\{-2,-1,0,1,2\}$. The construction grew out of a quartic identity along $z=(1+i)u$ supplied by the quantitative-weight agent. Numerical linear programming selected supports. We solved each resulting system over the rationals and retained only supports with positive exact solutions. The public replay checks all **878** positive coefficients directly using Python's standard library. It also checks normalization, absence of a common radial root, all polynomial identities and full interval coverage. [Positive coefficients](patches.json) · [Exact replay](check.py) · [Independent determinant examples](test_cover.py)
 
 ## Changing spectral coordinates
 
@@ -32,4 +37,5 @@ After taking determinants, $T$ and **every** pairing vertex acquire the same non
 
 ~~~sh
 python3 -B research/marcus-de-oliveira/complex-direction-cover/check.py
+python3 -B -m unittest discover -s research/marcus-de-oliveira/complex-direction-cover -p 'test_*.py' -v
 ~~~
