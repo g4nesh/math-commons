@@ -1,0 +1,2 @@
+200 Haar unitaries: largest relabelled Phi: median 0.474, maximum 1.058
+   above 13/10 (certified outside the orthogonal hull): 0 ; above 1 (outside if the observed maximum over O(5) is right): 1
