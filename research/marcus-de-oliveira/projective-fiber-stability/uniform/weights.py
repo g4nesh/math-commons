@@ -3,6 +3,7 @@ import argparse
 from fractions import Fraction as F
 import importlib.util
 import json
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -91,7 +92,14 @@ def replay():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("coordinates", nargs="*", type=F, metavar="RATIONAL")
-    args = parser.parse_args()
+    tokens = sys.argv[1:]
+    if tokens in (["-h"], ["--help"]):
+        parser.print_help()
+        sys.exit(0)
+    if tokens[:1] == ["--"]:
+        tokens = tokens[1:]
+    # argparse otherwise treats negative fractions such as -1/4096 as options.
+    args = parser.parse_args(["--", *tokens])
     if not args.coordinates:
         replay()
     elif len(args.coordinates) != 4:
