@@ -1,0 +1,70 @@
+{
+  "facet": {
+    "vertices": 120,
+    "affine_dimension": 41,
+    "face_dimension": 40,
+    "zero_vertices": 84,
+    "positive_vertices": 36,
+    "physical_symmetry_orbit": 900
+  },
+  "fixtures": {
+    "block_zero_contact": {
+      "gap": "0",
+      "tau": "0",
+      "rhs": "9/16",
+      "zero_rhs": false,
+      "block_zero": true,
+      "column_supported": false,
+      "connected_row_overlap": true,
+      "cross_squared": [
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "column_supported_contact": {
+      "gap": "0",
+      "tau": "0",
+      "rhs": "10/121",
+      "zero_rhs": false,
+      "block_zero": false,
+      "column_supported": true,
+      "connected_row_overlap": true,
+      "cross_squared": [
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "zero_rhs_contact": {
+      "gap": "0",
+      "tau": "75/121",
+      "rhs": "0",
+      "zero_rhs": true,
+      "block_zero": false,
+      "column_supported": false,
+      "connected_row_overlap": true,
+      "cross_squared": [
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "strict_dense": {
+      "gap": "17008/75625",
+      "tau": "18528/75625",
+      "rhs": "18717/75625",
+      "zero_rhs": false,
+      "block_zero": false,
+      "column_supported": false,
+      "connected_row_overlap": true,
+      "cross_squared": [
+        "110150344/1143828125",
+        "81629704/5719140625",
+        "491296/9150625"
+      ]
+    }
+  },
+  "theorem": "orbit A is nonnegative on every U(5); all900 symmetry copies inherit it",
+  "limits": "not PMSH5, not a classification of rigid spectral8-contact sets"
+}
