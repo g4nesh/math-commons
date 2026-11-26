@@ -1,0 +1,125 @@
+{
+  "leanVersion": "4.24.0",
+  "fatalWarnings": true,
+  "moduleCount": 14,
+  "transitiveDeclarationCount": 324,
+  "newDeclarationCount": 21,
+  "sourceSha256": {
+    "formal/ForestCut.lean": "0bfc29b6c4470e3c11cfdbdb561616f55bc3d73af78d53e8edc68feb44b1b5ae",
+    "formal/ForestTrajectory.lean": "b5dcffb2a165702ef46a2a67e5a7d9049a5f5ba3af3cfd9cc2491af5e0fc5910",
+    "formal/ForestGateSupport.lean": "e5f1c920b17e385ad58dffb070f0647d5d937a06c4916a2a2a417aaccdda286f",
+    "formal/ForestGateMagnitude.lean": "02448676c0da705b368ae51aaab0e9771245ab406e7cd22a8eba99bf2589895a",
+    "formal/ForestPathProbability.lean": "4f01a43913a197c11c1904e3eedfb3161e6b8eec64bb7abb5bfd01a234ecdeca",
+    "formal/ForestPathNormalization.lean": "09df64b8c0941ac9f686017fe3cc82cc52e510af2e830384b5edae10821d8fff",
+    "formal/ForestEndpointMass.lean": "a2a6cec51910d33cc3d22c40001215fb41cd8b3c610327a517898d1b024b9e2d",
+    "formal/ForestProductMinor.lean": "797a22634b38e8f614d1994ad7100a4d3780f48334575fb6d25a0c4ad08b8e25",
+    "formal/ForestMinorAlternation.lean": "31c0794ad790a674c670c2eecf1afeebbf3f9228667a92e6f315c02269df08e1",
+    "formal/ForestPairHistory.lean": "c65a52bef4d9c1674cd163d7a5338dcfabd5baa075cd68257120695a249590bf",
+    "formal/ForestSubsetExchange.lean": "de55c98f761fc21a8a2e094e6380646d3f3740095ab1eef95f0698637a498313",
+    "formal/ForestPermutationLaw.lean": "dd55c7954f9eff122cfc5d466860e658d5c4f3a1e3f52fa891cdad3ac87dc744",
+    "formal/ForestSpectralExpansion.lean": "a21c54527482ddba500487a6b677fe9f53bbb308d3212c818ce8ed8167e7e8cd",
+    "formal/ForestMatrixSumExpansion.lean": "196960defdfa18f081e4943b7f8ce8c7587d5c23363ae5f4f38d5280f6b06640"
+  },
+  "axiomReports": {
+    "MathCommons.ForestMatrixSumExpansion.filterWithout": [
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.diagonalRowMinor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.singleDiagonalUpdate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.partialDiagonalNil": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.partialDiagonalCons": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.remainingInsert": [
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.diagonalWeightExcluded": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.diagonalWeightIncluded": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.partialDiagonalExpansion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.diagonalSumExpansion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.complementMember": [
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.complementTwice": [
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.complementsPerm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.sumPerm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.retainedDiagonalExpansion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.spectralPrincipalExpansion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.matrixMulDiagonal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.conjugatedDiagonalEntry": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.diagonalDeterminant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.emptySpectralDeterminant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MathCommons.ForestMatrixSumExpansion.singletonSpectralDeterminant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  }
+}
