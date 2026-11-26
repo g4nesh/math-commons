@@ -16,6 +16,12 @@ class ExactLawTests(unittest.TestCase):
             with self.assertRaises(TypeError):
                 c.Q2(value)
 
+    def test_mixed_rational_subset_minors(self):
+        minors = {(): 1, (0,): F(1, 2), (1,): c.Q2(F(1, 2)), (0, 1): 0}
+        _, _, weights, correction = c.construct([0, 1], minors)
+        self.assertEqual(weights, [c.Q2(F(1, 2)), c.Q2(F(1, 2))])
+        self.assertEqual(correction, c.ZERO)
+
     def test_invalid_data_is_rejected(self):
         data={():c.ONE,(0,):c.Q2(F(1,2)),(1,):c.Q2(F(1,2)),(0,1):c.ZERO}
         with self.assertRaises(ValueError):
