@@ -1,7 +1,7 @@
 """Replay nonnegative radial weights uniformly over closed angular intervals."""
 from fractions import Fraction as F
 from functools import lru_cache
-from itertools import product
+from math import comb
 from pathlib import Path
 import importlib.util
 import json
@@ -77,6 +77,41 @@ def verify_patch(patch):
     assert {k: v for k, v in totals.items() if v} == {("mass", j): F(1) for j in roots}
     assert all(r == set() for r in roots.values())
     return chart, lo, hi
+
+
+def weights_at(real, imag, patches=None):
+    """Return column-to-row pairing weights for a Gaussian rational middle eigenvalue."""
+    if any(isinstance(v, bool) or not isinstance(v, (int, F)) for v in (real, imag)):
+        raise TypeError("Use integers or fractions for the real and imaginary parts")
+    a, b = F(real), F(imag)
+    if a == b == 0:
+        choices = [("h", F(0), F(0))]
+    else:
+        choices = []
+        if a:
+            choices.append(("h", b/a, a))
+        if b:
+            choices.append(("v", a/b, b))
+    if patches is None:
+        patches = json.loads((HERE / "patches.json").read_text())
+    for chart, slope, radius in choices:
+        for patch in patches:
+            lo, hi = map(F, patch["interval"])
+            if patch["chart"] != chart or not lo <= slope <= hi:
+                continue
+            verify_patch(patch)
+            alpha = (slope-lo)/(hi-lo)
+            degree = patch["degree"]
+            result = {}
+            for j, word, origin, mass in patch["terms"]:
+                w = F(mass)*comb(degree, j)*alpha**j*(1-alpha)**(degree-j)
+                for center in origin:
+                    w *= (radius-F(center))**2
+                result[word] = result.get(word, F(0))+w
+            total = sum(result.values())
+            assert total > 0
+            return {word: w/total for word, w in result.items() if w}
+    raise ValueError("Outside the six archived quadratic direction patches")
 
 
 def main():
