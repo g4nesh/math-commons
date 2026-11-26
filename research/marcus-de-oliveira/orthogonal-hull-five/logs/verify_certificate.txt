@@ -1,0 +1,5 @@
+(A) polynomial form of Phi agrees with the definition on 20 rational matrices: True
+(D) the 40 symmetries permute the 30 orthogonality relations: True ; relations vanish on rational orthogonal test matrices: True
+(B) Gram blocks (size: count) {41: 25, 13: 100, 6: 100} all positive definite: True
+(C) beta - Phi - sum of squares equals the averaged combination of 149 multiples of relations: True (polynomial with 6121 monomials)
+VERIFIED: Phi(O) <= 13/10 for every real orthogonal 5x5 matrix O

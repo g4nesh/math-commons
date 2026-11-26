@@ -1,0 +1,12 @@
+cubic monomials 2925, blocks 225, pair orbits 890  [0s]
+generators of J: 8310  [0s]
+invariant trivial-character monomial orbits of degree <= 6 in play: 203
+rank of J: 149 ; quotient dimension 54  [0s]
+reduced features  [0s]
+identity conditions: 54 independent of 54 ; rhs consistent to 1.6e-14
+smallest beta with a degree-6 certificate of this shape (floating point): 1.136544 (optimal_inaccurate)
+SDP status optimal ; smallest eigenvalue margin t = 0.005808  [6s]
+largest exact correction: 2.92e-06  [7s]
+all 225 Gram blocks positive definite (exact): True  [10s]
+multipliers: 149 generators used  [13s]
+wrote certificate.json  [13s]
