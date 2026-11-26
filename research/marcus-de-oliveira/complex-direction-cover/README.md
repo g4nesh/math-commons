@@ -25,6 +25,8 @@ omitting out-of-range blocks. Each equality is a polynomial identity in $x,y,u$.
 
 The last two patches use products with centers in $\{-2,-1,0,1,2\}$. The construction grew out of a quartic identity along $z=(1+i)u$ supplied by the quantitative-weight agent. Numerical linear programming selected supports. We solved each resulting system over the rationals and retained only supports with positive exact solutions. The public replay checks all **878** positive coefficients directly using Python's standard library. It also checks normalization, absence of a common radial root, all polynomial identities and full interval coverage. [Positive coefficients](patches.json) · [Exact replay](check.py) · [Independent determinant examples](test_cover.py)
 
+**Second implementation.** A separate checker reconstructs $B$ from the archived entries and uses Gaussian elimination on the original dense matrices, with its own arithmetic and weight decoder. A patch of angular degree $d$ and radial degree $R$ has weighted gap of degree at most $(d+1,R+1,1,1)$ in $(\lambda,u,x,y)$. The grid contains $d+2$, $R+2$, two and two distinct values, respectively. Repeated univariate interpolation therefore certifies the entire identity, not just its sampled points. The replay evaluates **576 dense determinants and 13,824 pairing vertices**. The second implementation was produced under the same GitHub owner. Independent-owner mathematical review remains open. [Grid replay](grid_replay.py)
+
 ## Changing spectral coordinates
 
 The same weights apply in any common Möbius coordinate on the signed spectra. This standard symmetry gives versions where the fourth eigenvalue is nonzero and the radial lines become generalized circles. Write $C=-B$ and $f(t)=(pt+q)/(rt+s)$ with $ps-qr\ne0$. Assume the spectra of $A,C$ avoid the pole. Without requiring $AC=CA$,
@@ -37,5 +39,6 @@ After taking determinants, $T$ and **every** pairing vertex acquire the same non
 
 ~~~sh
 python3 -B research/marcus-de-oliveira/complex-direction-cover/check.py
+python3 -B research/marcus-de-oliveira/complex-direction-cover/grid_replay.py
 python3 -B -m unittest discover -s research/marcus-de-oliveira/complex-direction-cover -p 'test_*.py' -v
 ~~~
