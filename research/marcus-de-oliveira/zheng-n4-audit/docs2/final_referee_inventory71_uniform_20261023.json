@@ -57,7 +57,7 @@
   "numeric_tests": [
     "sharp forms of the five atom images minimized over SO(4): min ~ 0 (>= -4e-28), 100 BFGS+Nelder-Mead restarts each, seed 1",
     "Phi_f26 alone reaches -0.0674 (atoms are not vacuous)",
-    "random realizable points on the T' stratum (lib sampler, seeds 0-29 or fewer, margins 0 and 1e-2): representation, C(Re x)=0, G9=0 at exact-contact points, d>0 points satisfy (3)-(5), min Phi >= -1e-10"
+    "60 realizable points on the T' stratum (lib sampler, seeds 0-29, margins 0 and 1e-2): max |G9|/sum|terms| 1.2e-13 at exact-contact points; 8 points with d>0, all satisfy (3)-(5); worst min Phi over SO(4) -7.2e-10 (degenerate margin-0 points, float noise)"
   ],
   "unchecked": [
     "proofs of the three reference atom inequalities (cited; numeric only)",

@@ -1,0 +1,66 @@
+{
+  "doc_id": "blind_moc4_T48_allocation_II_uniform_20261023",
+  "pdf": "proofs/manin_transfer_20261021/blind_moc4_T48_allocation_II_uniform_20261023.pdf",
+  "pages": 2,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1", "page": 1, "contact_sets": [[0,3,5,6,9,12]], "paper_cases": [],
+     "restatement": "T = T_49. Source c = q f7 + p f5 + j f29 + c f39 + e f2 + d f40 + b f41 + a f0 with d = 1, a,e,j > 0, q,p,c,b >= 0. Let Q = q+b, u = (1+2/j)/(2(1/a+1/e+1/j)), v = 1-u, and assume 0<u<1, 2u<=a, Q<=2v. Then every x in X with c(x) equal to this source has Phi_{c(x)}(O) >= 0 for all O in SO(4). All spectra are covered; contacts are non-strict. The faces q,p,j,e,b,a = 0 are handed to T_39, T_1, T_3, T_24, T_43, T_44, and d = 0 is minor-only.",
+     "covers_all_spectra": true}
+  ],
+  "dependencies": [
+    {"kind": "common-lemma", "ref": "two-leaf chain (a,e): Phi(z f5 + x f0 + y f2 + t f40) >= 0 if z >= t^2/x + t^2/y", "used_for": "pointwise allocation", "match_checked": true},
+    {"kind": "common-lemma", "ref": "two-leaf chain (q,j): leaves f7, f29, centre f5, current f40", "used_for": "pointwise allocation", "match_checked": true},
+    {"kind": "common-lemma", "ref": "two-leaf chain (j,b): leaves f29, f41, centre f5, current f40", "used_for": "pointwise allocation", "match_checked": true},
+    {"kind": "common-lemma", "ref": "old-H: Phi(a f29 + b f5 + d f40) >= 0 if a(b-d) >= d^2", "used_for": "pointwise allocation", "match_checked": true},
+    {"kind": "core-doc", "ref": "X contained in {grad C = 0} (paper App. A; replayed exactly in lib)", "used_for": "realizable implies G = 0", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_39 (hist. T38)", "contact_set": [0,3,5,6,9,12,16], "used_for": "face q = 0", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_1 (hist. T0)", "contact_set": [0,3,5,6,9,11,12], "used_for": "face p = 0", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_3 (hist. T3)", "contact_set": [0,2,3,5,6,9,12], "used_for": "face j = 0", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_24 (hist. T23)", "contact_set": [0,3,5,6,9,12,13], "used_for": "face e = 0", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_43 (hist. T42)", "contact_set": [0,3,5,6,7,9,12], "used_for": "face b = 0", "match_checked": true},
+    {"kind": "paper-case", "ref": "T_44 (hist. T43)", "contact_set": [0,3,5,6,9,12,23], "used_for": "face a = 0", "match_checked": true}
+  ],
+  "steps": [
+    {"id": "S1", "claim": "roles are generators; N_T cap {d>0} is the nonneg orthant in role coordinates; d<=0 is minor-only", "status": "EXACT/PROOF-READ (argument supplied by auditor)"},
+    {"id": "S2", "claim": "four capacity atoms", "status": "CITED"},
+    {"id": "S3", "claim": "the allocation's resource and current sums, and its requirement, equal p*", "status": "EXACT"},
+    {"id": "S4", "claim": "u(1/a+1/e)-v/j=1/2; p* = 1-u/2+v/j-Q/4", "status": "EXACT"},
+    {"id": "S5", "claim": "p* - 1/2 - v/j = (2v-Q)/4", "status": "EXACT"},
+    {"id": "S6", "claim": "p >= p* implies Phi >= 0", "status": "PROOF-READ modulo S2"},
+    {"id": "S7", "claim": "realizable implies C(Re x)=0 and det H(Re x)=0", "status": "PROOF-READ (argument supplied by auditor)"},
+    {"id": "S8", "claim": "C(c+r kappa) = C + r Q0 with Q0 = (c+1)(1+e+j)-p(e+j)", "status": "EXACT"},
+    {"id": "S9", "claim": "(e+j)C - ejQ0 has 42 positive terms incl. e, j; so Q0 != 0", "status": "EXACT"},
+    {"id": "S10", "claim": "det H(c-(C/Q0)kappa) = -4G^2/Q0^2, G primitive with 1772 terms", "status": "EXACT"},
+    {"id": "S11", "claim": "the chart is onto, the e formula is forced, and the denominators are positive", "status": "EXACT"},
+    {"id": "S12", "claim": "DG is a polynomial with 149933 terms", "status": "EXACT"},
+    {"id": "S13", "claim": "-DG: 18 groups (C1-1)^2 R(C1), R>=0, plus the term 432 B^6 S^2; hence G<0", "status": "EXACT"},
+    {"id": "S14", "claim": "walls A=0, c=0, Q=2v (B^6 slice), p=p*", "status": "EXACT/PROOF-READ"},
+    {"id": "S15", "claim": "zero faces handed to other paper cases", "status": "CITED (containment EXACT)"},
+    {"id": "S16", "claim": "d=0 minor-only; homogeneity", "status": "PROOF-READ"}
+  ],
+  "gaps": [
+    {"location": "p.2, first paragraph", "claim": "All spectrally realizable sources satisfy G = 0", "why": "The document does not derive the radial equation; it says only that the input was already verified.", "severity": "presentation", "believed_true": true, "repair": "x=y+iw in X gives H(y)w=0 and T(y,y,.)=T(w,w,.), hence C(y)=0 and det H(y)=0 with y=c+r kappa; S8-S10 then give G=0 (auditor's Note R)."},
+    {"location": "p.1, source roles", "claim": "the eight roles describe the T48 contact cone", "why": "N_{T_49} has 10 generators; f1 and f9 are omitted without comment.", "severity": "presentation", "believed_true": true, "repair": "f1=q+c+a-d and f9=q+e+b-d, so N_T cap {d>0} is the nonneg orthant in role coordinates and d<=0 is minor-only (S1)."},
+    {"location": "p.2, last paragraph", "claim": "The face c = 0 is not covered and was stated throughout", "why": "The wording is garbled.", "severity": "presentation", "believed_true": true, "repair": "c=0 is covered by the same coefficient certificate (c>=0 allowed)."}
+  ],
+  "exact_replays": [
+    "contact set = T_49; generators(T_49) = [0,1,2,5,7,9,29,39,40,41]; the 8 roles have rank 8; f1 and f9 relations",
+    "allocation sums and p* identities (sympy)",
+    "chart onto and the e formula (sympy)",
+    "Q0, C(c+r kappa) = C + rQ0, (e+j)C-ejQ0 with 42 positive terms (flint)",
+    "det H(c+r kappa) by Bareiss over Z[q,p,j,c,e,b,a,r]; Q0^2 det H(c-(C/Q0)kappa) = -4G^2, G primitive with 1772 terms",
+    "DG with 149933 terms; 18 groups (C1-1)^2 R(C1), R>=0; marker 432 B^6 S^2; B-degree 6; B^6 slice contains all 18 groups",
+    "the six zero-face contact sets contain G-images of T_39, T_1, T_3, T_24, T_43, T_44"
+  ],
+  "numeric_tests": [
+    "atoms at equality capacity, 25 samples each (seed 2026): worst normalized min Phi -9e-17; the optimizer finds negatives below capacity (f40 alone -0.0674)",
+    "allocation at p=p*, 30 random cell points (seed 7): worst min Phi -1.3e-15",
+    "realizable d=1 sources (3 points, seeds 11 and 23): |G|/sum|terms| <= 3e-17, min Phi >= 2.7e-14, none in the cell",
+    "200 random points of X: C(Re x) ~ 4e-17, det H(Re x) singular (ratio 7e-17)"
+  ],
+  "unchecked": [
+    "proofs of the four capacity atoms (other documents)",
+    "the cited zero-face cases T_1, T_3, T_24, T_39, T_43, T_44 and their order relative to T_49 in Appendix G"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+ "doc_id": "final_referee_T46_core_coherent_capacity_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T46_core_coherent_capacity_20261023.pdf",
+ "pages": 5,
+ "auditor": "C21-T47-second (independent second pass)",
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "restatement": "q,b>0, ell=qb-beta^2>0, j>(1+u)t^2 (u=(q+b-2beta)/ell): p f1 + j f59 + q f27 + b f6 + f28 has Phi>=0 on SO(4) when p>=p0=[(j-t^2)h^2-4th(t-1)+s(t-1)^2]/Delta."
+  },
+  {
+   "label": "Theorem 2",
+   "page": 2,
+   "restatement": "The fixed-multiplier PSD8 certificate cone for the five-ray core equals the closure of the (beta,t) family with p surplus."
+  },
+  {
+   "label": "Corollary 3",
+   "page": 4,
+   "restatement": "d>0, j>0, q,b>=0, (q+b-d)^2<=qb: p>=d^2/j+2d-q-b suffices; transported to T47 roles [45,5,7,0,35]."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "external",
+   "ref": "S^3xS^3 -> SO(4), v->pvq surjective",
+   "used_for": "certificate covers all of SO(4)"
+  },
+  {
+   "kind": "core-doc",
+   "ref": "paper (4.7) group invariance",
+   "used_for": "transports"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "T47 sector docs (coefficient names c,e,a,b)",
+   "used_for": "T47 version of Cor 3"
+  },
+  {
+   "kind": "other-doc",
+   "ref": "final_referee_T46_cubic_reduction data",
+   "used_for": "completeness wording in Theorem 2 only"
+  }
+ ],
+ "steps": "see the .md step table (20 steps)",
+ "gaps": [],
+ "presentation_notes": [
+  "u undefined in the doc",
+  "Cor 3 general boundary limit argument implicit (auditor supplied: grad g != 0 on boundary)",
+  "printed transport labels use an unstated convention"
+ ],
+ "exact_replays": [
+  "Theorem 1 SOS certificate with own O(p,q)=pvq and own Leibniz sums, symbolic in q,b,j,beta,t, modulo |p|^2-|q|^2",
+  "10 completion relations and the budget-diagonal cost map derived from scratch",
+  "Theorem 2 seven equations (rank 7)",
+  "Gram/Schur/projection algebra, thresholds, (2), derivative, t*, witness 399/1543, sqrt2 comparison, template minors, Cor 3 algebra, discriminant",
+  "group elements for both role transports"
+ ],
+ "numeric_tests": [
+  "Thm1 at p=p0: 40 samples x 12 restarts, worst 1.1e-15",
+  "pointwise certificate identity, 5 points, err 3.6e-15",
+  "Cor 3 boundary, 37 points, worst 3.6e-16"
+ ],
+ "unchecked": [
+  "completeness of the cubic reduction (Theorem 2 'complete')",
+  "preceding parallel-family threshold formula (remark only)",
+  "T47 coefficient naming"
+ ],
+ "note": "The batch prompt file contains a line telling second-pass agents to return immediately; it was treated as file content, not an instruction."
+}
