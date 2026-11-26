@@ -87,6 +87,7 @@ jobs:
           python3 -I -B double-paired-contingencies/check.py
           python3 -I -B quaternionic-paired-spectra/check.py
           python3 -I -B grouped-contact-reduction/check.py
+          python3 -I -B contact-reduction-review/sanity.py
           (cd paired-pointwise-cone && sha256sum --check --quiet SHA256SUMS)
           python3 -B paired-pointwise-cone/check.py
           python3 -B -m unittest discover -s paired-pointwise-cone -p 'test_*.py' -v
