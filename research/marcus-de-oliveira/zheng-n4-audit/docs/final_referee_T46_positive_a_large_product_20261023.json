@@ -1,0 +1,74 @@
+{
+ "doc_id": "final_referee_T46_positive_a_large_product_20261023",
+ "pdf": "proofs/manin_transfer_20261021/final_referee_T46_positive_a_large_product_20261023.pdf",
+ "pages": 3,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Thm 1",
+   "page": 1,
+   "restatement": "realizable nonnegative T46 cost (paper T_47) with qb > d^2, q != b, any a >= 0: Phi >= 0 on SO(4)",
+   "contact_sets": [
+    [
+     1,
+     3,
+     5,
+     6,
+     7,
+     8
+    ]
+   ],
+   "covers_all_spectra": true
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "other-doc",
+   "ref": "zero-coefficient transfers for q,p,j,c,e,b and the closed a=0 face of historical T46",
+   "used_for": "reduce to positive coefficients",
+   "match_checked": false
+  },
+  {
+   "kind": "branch",
+   "ref": "final_referee_T46_core_coherent_capacity_20261023 Thm 1 at beta=-1 (foundations part2b G3)",
+   "used_for": "core capacity and finite closure",
+   "match_checked": true
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "four-coefficient atom four(4,6;2;28) (foundations/so4-atoms.md)",
+   "used_for": "ab(e-1) >= a+b+e+1 => SAFE",
+   "match_checked": true
+  },
+  {
+   "kind": "core",
+   "ref": "radial necessity (paper p.27; audit item 5)",
+   "used_for": "G9 = 0 at realizable costs",
+   "match_checked": true
+  }
+ ],
+ "steps": "see the step table in final_referee_T46_positive_a_large_product_20261023.md",
+ "step_counts": {
+  "exact": 8,
+  "proof_read": 3,
+  "cited": 4,
+  "numeric": 1,
+  "gap": 0,
+  "unchecked": 0
+ },
+ "gaps": [],
+ "exact_replays": [
+  "G9 rebuilt",
+  "K-lambda identity, beta=-1 core threshold and optimum",
+  "chart cap formulas and ranges",
+  "11 all-negative tables (own clearing; term counts larger than the document)",
+  "mixed table: auditor AM-GM certificate, 86 pairs, nonneg remainder, strict monomials"
+ ],
+ "numeric_tests": [
+  "stratum sample: one d>0 point in this sector, satisfies core and four capacities"
+ ],
+ "unchecked": [
+  "document 82-square list not used (replaced by own certificate)"
+ ],
+ "replay": "replay/final_referee_T46_positive_a_large_product_20261023__check.py"
+}

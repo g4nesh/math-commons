@@ -1,0 +1,93 @@
+== combinatorics (T79 = {1,3,4,8,11,12}, stage 8; document labels are paper index minus one)
+PASS T is paper T_79
+PASS zero set of f56 outside T = {2,9,10,14,15,17,20}
+PASS T+15 equals Table-5 set A25 literally
+   +0: all generators minor
+   +2: earlier cases contained: ['T4', 'T9', 'T13', 'T31', 'T33', 'T38'] ; document cites T13
+PASS added tie 2 is covered by an earlier-stage case and the cited one (T13) is among them
+   +5: all generators minor
+   +6: all generators minor
+   +7: all generators minor
+   +9: earlier cases contained: ['T29', 'T38', 'T45', 'T70', 'T78'] ; document cites T70
+PASS added tie 9 is covered by an earlier-stage case and the cited one (T70) is among them
+   +10: earlier cases contained: ['T29', 'T31', 'T71', 'T76'] ; document cites T71
+PASS added tie 10 is covered by an earlier-stage case and the cited one (T71) is among them
+   +13: all generators minor
+   +14: earlier cases contained: ['A18', 'T76', 'T78'] ; document cites T78
+PASS added tie 14 is covered by an earlier-stage case and the cited one (T78) is among them
+   +15: earlier cases contained: ['A25'] ; document cites A25
+PASS added tie 15 is covered by an earlier-stage case and the cited one (A25) is among them
+   +16: all generators minor
+   +17: earlier cases contained: ['T34', 'T58', 'T81'] ; document cites T58
+PASS added tie 17 is covered by an earlier-stage case and the cited one (T58) is among them
+   +18: all generators minor
+   +19: all generators minor
+   +20: earlier cases contained: ['T40', 'T90'] ; document cites T40
+PASS added tie 20 is covered by an earlier-stage case and the cited one (T40) is among them
+   +21: all generators minor
+   +22: all generators minor
+   +23: all generators minor
+E fwd z*(v - w)*(x - 1)
+PASS E = (w-v)z(1-x)
+H4 fwd (k - 1)/(x - 1)
+PASS H4 = (k-1)/(x-1), i.e. k = 1+s(x-1)
+H8-r numerator factor: r*x*y - r*y + s*v*x**2 - s*v*x*z - s*v*x + s*v*z + s*x**2*y - s*x**2 - 2*s*x*y + s*x*z + s*x + s*y - s*z + v*x - v*z - x + z
+H11-t numerator factor: s*v*x**2*z - s*v*x*z + s*x**2*y*z - s*x**2*z**2 - 2*s*x*y*z + s*x*z**2 + s*y*z + t*x*y*z - t*y*z + v*x*z - v*x - x*z**2 + x*z
+PASS H8=r <=> linear eq 1 (up to nonzero factor)
+PASS H11=t <=> linear eq 2 (up to nonzero factor)
+PASS Cramer solution satisfies eq1
+PASS Cramer solution satisfies eq2
+PASS F1/E = s(x-1)
+PASS H3 = 1
+PASS H4 = s
+PASS H8 = r
+PASS H11 = t
+PASS (4) H2
+PASS (5) H5
+PASS (6) H6
+PASS (7) H10
+PASS generators(T79) as listed
+contact kernel dim 8
+PASS (1) contact kernel (dim 8): Pc = sum_j (Pc)_exc(j) f_j for a basis, hence for all real gap vectors vanishing on T
+f_j(5): {0: 0, 1: 0, 9: 0, 10: 0, 56: 1, 53: 1, 59: 0, 2: 0}
+C terms (in x,z,r,s,t,u): 282  bideg 5 3
+[x5z3]C raw s**3*(r + s - u - 1)
+normalising const 1
+PASS (8) C(x,1) = (x-1)^3 B(x)^2
+PASS (9) C(1,z) = -(r+t)(z-1)^3
+PASS (11) [z^3]C at x=0 = -(s-1)^2(s-t)^2
+   C(0,z) = -z**3*(s - 1)**2*(s - t)**2
+PASS (12) [x^5]C at z=1 = s^2(r+s-t-1)^2
+   B linear coefficient s*(r + s - t - 1)
+min weighted degree 6
+PASS initial form at (0,0)
+H5 along (x,z)=(cT^3,T^2) limit: s
+K=0 section -s**2*z*(r - 1)**2*(s - 1)**2
+PASS K=0 section = -s^2(r-1)^2(s-1)^2 z
+PASS k = K at x=(s-1+K)/s
+H6+H10 on k=K chart: (-2*K**3*r*z + K**3*r - K**3*s*z**2 + K**3*t + K**3*z + K**2*r*s*z**2 - 4*K**2*r*s*z + 2*K**2*r*s + 5*K**2*r*z - 2*K**2*r - 2*K**2*s*t*z + 2*K**2*s*t + 2*K**2*s*z**2 + K**2*s*z - 2*K**2*t - 3*K**2*z + K*r*s**2*z**2 - 2*K*r*s**2*z + K*r*s**2 - K*r*s*z**2 + 5*K*r*s*z - 2*K*r*s - 4*K*r*z + K*r + K*s**2*t*z**2 - 2*K*s**2*t*z + K*s**2*t + 2*K*s*t*z - 2*K*s*t - K*s*z**2 - 2*K*s*z + K*t + 3*K*z - r*s*z + r*z + s*z - z)/(K*(z - 1)*(K + s - 1)*(-K + s*z - s + 1))
+  den factors (1, [(K + s - 1, 1), (K, 1), (z - 1, 1), (-K + s*z - s + 1, 1)])
+  num at K=0,z=0: 0
+  z ~ c1 K, c1 = [(s + u - 2)/(r - 1)]
+  lim (H6+H10) along graph (first order) = (r*s - r + s*t - s - t - u + 2)/(s - 1)
+  lim with 2nd order = (r*s - r + s*t - s - t - u + 2)/(s - 1)
+PASS H6+H10 bounded with real limit on k=0 graph (first vs second order agree)
+least total degree at (1,1): 3
+slope cubic (Y*r + Y*t + r*s - t)*(-Y**2 + Y*t - Y*u + Y + r*s - t)
+PASS slope cubic (Yr+Yt+rs-t)(-Y^2+Y(t-u+1)+rs-t) up to const
+H6 num at (1,1): 0  den factors (1, [(z - 1, 1), (x, 1), (s*x - s + 1, 1)])
+H6 on slope branches limit: (Y*r + Y*t + r*s - t)/Y
+H6 limit z->inf: (r*x + s*x - s + t)/x
+PASS H6 -> r + (t+s(x-1))/x as z->inf
+H6 limit x->inf: (r*z + s*z - t - 1)/(z - 1)
+PASS H6 -> r+s+(r+s-t-1)/(z-1) as x->inf
+k=0,z=inf lowest degree 2  quadratic s**2*(-K**2*r*s**3 - K**2*r*s**2*t + 3*K**2*r*s**2 + K**2*r*s*t - 2*K**2*r*s - K**2*s**3*t + 2*K**2*s**3 - K**2*s**2*t**2 + K**2*s**2*t*u + 3*K**2*s**2*t - K**2*s**2*u - 4*K**2*s**2 - K**2*s*t*u + K**2*s*u + K**2*s + K*r**2*s**2*tau - 2*K*r**2*s*tau + K*r**2*tau + K*r*s**3*tau + 2*K*r*s**2*t*tau - 6*K*r*s**2*tau - 2*K*r*s*t*tau + 7*K*r*s*tau - 2*K*r*tau - K*s**3*tau - 2*K*s**2*t*tau + 5*K*s**2*tau + 2*K*s*t*tau - 5*K*s*tau + K*tau - r**2*s**2*tau**2 + 2*r**2*s*tau**2 - r**2*tau**2 + 2*r*s**2*tau**2 - 4*r*s*tau**2 + 2*r*tau**2 - s**2*tau**2 + 2*s*tau**2 - tau**2)
+   coefficients K^2: -s**3*(r*s**2 + r*s*t - 3*r*s - r*t + 2*r + s**2*t - 2*s**2 + s*t**2 - s*t*u - 3*s*t + s*u + 4*s + t*u - u - 1)  tau^2: -s**2*(r - 1)**2*(s - 1)**2  disc: s**4*(r - 1)**2*(s - 1)**3*(r**2*s - r**2 - 2*r*s**2 + 2*r + s**3 + s**2 + 4*s*t*u - 4*s*t - 4*s*u + 3*s - 1)
+   H6 limit along K=lam*tau: (lam*r*s - lam*r + lam*s*t - lam*s - r*s + r + s - 1)/(lam*(s - 1))
+witness (2,3,5,7): r+s-u-1 -3  (s-1)(s-t) -4  r+s-t-1 -1  r+t 7  (s-1)(s-u)(r-s) 8  (r-1) 1  discq 191808
+C at (0,1,0,0): x**2*(x - 1)*(x - z)*(3*x - 1)*(z - 1)**2
+PASS [x^5 z^2]C = 3 at (r,s,t,u)=(0,1,0,0)
+PASS C == 0 at (1,-1,-1,-1)
+PASS H6 == 0 at (1,-1,-1,-1)
+constant candidates [{r: 0, s: 1, t: 0, u: 0}, {r: 1, s: -1, t: -1, u: -1}]
+ALL EXACT CHECKS PASS

@@ -1,0 +1,28 @@
+INFO radial octic rebuilt from the cubic in 71.4 s
+PASS height equation C(c(g)+h kappa) is affine in h
+PASS constant C = -d{ab+ad+aq+bd+bp+d^2+de+dp+dq+ep+eq+pq}
+PASS det H(w(g,-C/Q)) = -4 d^2 G^2/Q^2 (prefactor of the multiplicity-one part is d^2) : d^2
+PASS G has 965 terms and total degree 8
+PASS G quadratic in p
+PASS B^2 - 4AC0 = H6*H8 with primitive factors of 123 and 260 terms : [(123, 6, 1), (260, 8, 1)]
+PASS Cor 2: 4 L G + H6 Phi is a perfect square K5^2 (with H6 sign +1 as factored) : 193
+PASS K5 has 193 terms : 193
+PASS gcd(G, G_p) = 1
+PASS G is irreducible over Q
+PASS principal minor P (delete coordinates 6,1) is independent of the height h
+PASS P has 3376 monomials and degree 2 in p : (3376, 0.8)
+INFO norm before square extraction: 620533 monomials
+PASS u0^2 - u1(B gamma - beta C0) = W18^2, W18 with 15999 monomials, degree 18 : (15999, 18)
+PASS S+ = H8 R8^2 and S- = d^2 H6 T8^2 for one sign choice of W18 : 1
+PASS R8, T8 have 465 and 595 monomials : (465, 595)
+PASS W18, R8, T8 are free of p
+PASS congruence P S+ = (u1 p + u0 + W18)^2 mod G (exact multiple of G with p-free cofactor) : 150891
+PASS congruence P S- = (u1 p + u0 - W18)^2 mod G (exact multiple of G with p-free cofactor) : 159898
+PASS Phi|_{c=p} = R^2
+PASS Phi_c|_{c=p} = 4ap(j+p+d) + 2(j+p+d-a)R
+PASS Phi|_{p=b} = Xb^2
+PASS Phi_p|_{p=b} = 2Xb(j+b-c-a) - 4ac(b+d+a)
+PASS Phi_j = 2X(p-c)
+NUMERIC 15 realizable points on the T_65 stratum (seeds 5000.., margin 1e-2): max |G|/scale = 2.0e-13; points with H6<0 and H8<0: 0; points in the Cor. 2 region with H6<0: 0
+NUMERIC secant rank bound: 8 random real points of G=0 (seed 7, coefficients uniform in [0.1,3], p solved): max sigma_13/sigma_1 = 1.6e-16 (corank >= 2 numerically)
+SUMMARY: all EXACT checks passed

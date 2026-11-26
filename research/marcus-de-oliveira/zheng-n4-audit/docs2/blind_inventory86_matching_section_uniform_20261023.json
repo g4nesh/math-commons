@@ -1,0 +1,240 @@
+{
+ "doc_id": "blind_inventory86_matching_section_uniform_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_inventory86_matching_section_uniform_20261023.pdf",
+ "pages": 4,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "whole",
+   "page": 1,
+   "paper_cases": [
+    87
+   ],
+   "contact_sets": [
+    [
+     4,
+     5,
+     7,
+     9,
+     12,
+     14
+    ]
+   ],
+   "covers_all_spectra": true,
+   "restatement": "For every x in X with P c(x) >= 0 and (P c(x))_pi = 0 for pi in T = {4,5,7,9,12,14} (non-strict, extra contacts allowed), Phi_{c(x)}(O) >= 0 for all real orthogonal O; all spectra including collisions. T equals paper T_87 literally."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "paper-case",
+   "ref": "T_68",
+   "contact_set": [
+    1,
+    4,
+    5,
+    7,
+    9,
+    12
+   ],
+   "used_for": "extra ties j=2,10,13",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_51",
+   "contact_set": [
+    1,
+    3,
+    5,
+    10,
+    11,
+    12
+   ],
+   "used_for": "extra ties j=3,8,16",
+   "match_checked": true
+  },
+  {
+   "kind": "paper-case",
+   "ref": "T_61",
+   "contact_set": [
+    1,
+    2,
+    3,
+    9,
+    11,
+    12
+   ],
+   "used_for": "extra tie j=18",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "final_referee_moc4_six_contact_reduction_20261022 (Lifting and scope) / paper Sect. 3",
+   "used_for": "spectral realizability of nonzero points of X",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_bounded_bad_harmonic_lemma_20261023",
+   "used_for": "subharmonic extension; argument supplied by auditor, dependency not needed",
+   "match_checked": true
+  },
+  {
+   "kind": "external",
+   "ref": "Howard-Millson-Snowden-Vakil ideal generation",
+   "used_for": "{grad C=0}=X; not needed if curve chosen in X",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "id": "S1",
+   "claim": "nonzero points of X spectrally realizable or collided-safe",
+   "kind": "citation",
+   "status": "CITED"
+  },
+  {
+   "id": "S2",
+   "claim": "ker P[T,:] dim 8, basis f0,f1,f2,f5,f12,f45,f59,f70; generators(T) adds f35",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "id": "S3",
+   "claim": "minor coefficients = gaps at 18,16,13,10,8,3,2",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "id": "S4",
+   "claim": "circuit f35+f70=f1+f2+f5+f12+f45+f59",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "id": "S5",
+   "claim": "d<0: gaps 17,15,11,6,1,0 = coeff+d; absorption",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "id": "S6",
+   "claim": "stabilizer swap f35<->f70 permuting minors",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "id": "S7",
+   "claim": "d=0 minor sum nonnegative",
+   "kind": "inequality",
+   "status": "PROOF-READ"
+  },
+  {
+   "id": "S8",
+   "claim": "extra ties 2,10,13 / 3,8,16 / 18 covered by T68, T51, T61 (containment exact)",
+   "kind": "citation",
+   "status": "CITED"
+  },
+  {
+   "id": "S9",
+   "claim": "f70(j)>0 at the other 11 noncontacts forces d=0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "id": "S10",
+   "claim": "B=f70(O)<0 and 0<-L<=-Bd on supported negative set",
+   "kind": "inequality",
+   "status": "PROOF-READ"
+  },
+  {
+   "id": "S11",
+   "claim": "Stab(T)=12 actions, f70-preserving 6 map {4,9} to a 6-cycle of edges; E!=0 unless full equality",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "id": "S12",
+   "claim": "(5) full complex equality forces d=0",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "id": "S13",
+   "claim": "affine leaf (6), real v0, real coefficients -eta Im w",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "id": "S14",
+   "claim": "curve through y0 in X cap leaf",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "id": "S15",
+   "claim": "(7) z-linear partial; some H nonconstant",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "id": "S16",
+   "claim": "compact normalization, meromorphic coordinates",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "id": "S17",
+   "claim": "(8) monic quadratic in d; d constant on curve",
+   "kind": "identity",
+   "status": "EXACT"
+  },
+  {
+   "id": "S18",
+   "claim": "strict point forces nonreal root",
+   "kind": "algebra",
+   "status": "PROOF-READ"
+  },
+  {
+   "id": "S19",
+   "claim": "boundary of D: L=0",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "id": "S20",
+   "claim": "subharmonic extension and constancy (argument supplied by auditor)",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "id": "S21",
+   "claim": "positive constant -> no poles -> constant curve, contradiction",
+   "kind": "analytic",
+   "status": "PROOF-READ"
+  },
+  {
+   "id": "S22",
+   "claim": "case exhaustion",
+   "kind": "case split",
+   "status": "PROOF-READ"
+  }
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "T = paper T_87 literally; generators(T) = {0,1,2,5,12,35,45,59,70}",
+  "kernel dim 8; exclusive-gap rows (18,16,13,10,8,3,2); d<0 rows (17,15,11,6,1,0); circuit (3)",
+  "stabilizer: 12 actions, 6 swap f35/f70 permuting minors, 6 fix f70 and map {4,9} onto the 6 listed edges (6-cycle)",
+  "extra-tie table: witnesses g with g.T_k in T u {j} for all 7 listed j; f70(j)>0 for the 11 others; 18 noncontacts covered",
+  "(5), (7), (8) coordinate-free in paper coordinates with own v0, and literally with the document's leaf data (read as JSON data)",
+  "quadratic relation vanishes on 6 exact Gaussian-rational matching vectors"
+ ],
+ "numeric_tests": [
+  "random_point_on_contact_stratum(T) margin 0 seeds 0-9: worst normalized min Phi -2.6e-11 (roundoff)",
+  "margin 0.02 seeds 0-7 (contact set exactly T): worst normalized min Phi +7e-14; only 2 of 8 points with |d| ~ 1e-2"
+ ],
+ "unchecked": [
+  "cited cases T_68, T_51, T_61 themselves",
+  "spectral-lift statement of ref [2]"
+ ]
+}

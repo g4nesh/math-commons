@@ -1,0 +1,41 @@
+{
+ "doc_id": "blind_moc4_inventory52_plus17_middle_products_20261023",
+ "pdf": "proofs/manin_transfer_20261021/blind_moc4_inventory52_plus17_middle_products_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "main",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     1,
+     4,
+     6,
+     9,
+     12,
+     17
+    ]
+   ],
+   "restatement": "Realizable strictly positive T7 face, a<=b<=c, ac<=d^2<bc: A>=d(b+d)(c+d)/(bc-d^2)."
+  }
+ ],
+ "dependencies": [
+  "real-branch criterion (low products)",
+  "four-coefficient atom (7,21;9;35)"
+ ],
+ "steps": [
+  "chart coverage PROOF-READ",
+  "twelve tables EXACT",
+  "conclusion PROOF-READ"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "12 F-coefficient tables: counts, signs, markers all as stated"
+ ],
+ "numeric_tests": [
+  "see whole_assembly"
+ ],
+ "unchecked": []
+}

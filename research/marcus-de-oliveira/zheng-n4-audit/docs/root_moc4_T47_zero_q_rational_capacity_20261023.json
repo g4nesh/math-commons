@@ -1,0 +1,69 @@
+{
+ "doc_id": "root_moc4_T47_zero_q_rational_capacity_20261023",
+ "pdf": "proofs/manin_transfer_20261021/root_moc4_T47_zero_q_rational_capacity_20261023.pdf",
+ "pages": 2,
+ "verdict": "confirmed-modulo-citations",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ],
+   "paper_cases": [],
+   "restatement": "d=1, b>1, 0<a<1/b, p>=b, 0<j<=1, e>=bj/(b-j), 0<=c<Crat: G(0,p,j,c,e,1,b,a) > 0, G the 965-term T_65 radial octic. Pure algebraic inequality."
+  },
+  {
+   "label": "six-ray capacity claim",
+   "page": 1,
+   "restatement": "c >= Crat is safe for every p,e>0 via the six-ray Gram family at t = eta e/(D0+eta^2 e), with c*(t) = Crat, p*(t) < p."
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "common-lemma",
+   "ref": "final_referee_T46_six_ray_coherent_capacity_20261023",
+   "used_for": "safety at c >= Crat",
+   "match_checked": false
+  },
+  {
+   "kind": "other-doc",
+   "ref": "root_moc4_T47_zero_q_rational_capacity_exact (1675982-term certificate)",
+   "used_for": "Theorem 1",
+   "match_checked": false
+  }
+ ],
+ "steps": [
+  "c*=Crat EXACT",
+  "denominators positive EXACT",
+  "p*<p EXACT",
+  "N>D0^2 EXACT",
+  "six-ray safety CITED",
+  "chart coverage PROOF-READ",
+  "positivity certificate CITED/UNCHECKED",
+  "431-term count EXACT"
+ ],
+ "gaps": [],
+ "exact_replays": [
+  "c*(t)=Crat",
+  "e-kappa t^2 = eN/(D0+eta^2e)^2",
+  "N-(rho^2/p)eta^2e identity",
+  "p-p* identity",
+  "N-D0^2 identity",
+  "G(q=0,d=1) has 431 terms"
+ ],
+ "numeric_tests": [
+  "exact rational evaluation at 2500 region points (1316 on walls), min G = 67.46 > 0 (seed 11)",
+  "outside region (c = 1.01,2,10 Crat): 14 of 1200 points have G<0, so the bound is not vacuous"
+ ],
+ "unchecked": [
+  "rebuild of the 1675982-term cleared polynomial and its j=1 homogenization"
+ ]
+}

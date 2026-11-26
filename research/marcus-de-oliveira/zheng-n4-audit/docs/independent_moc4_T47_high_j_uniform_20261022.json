@@ -1,0 +1,202 @@
+{
+ "doc_id": "independent_moc4_T47_high_j_uniform_20261022",
+ "pdf": "proofs/manin_transfer_20261021/independent_moc4_T47_high_j_uniform_20261022.pdf",
+ "pages": 3,
+ "verdict": "gap-found",
+ "statements": [
+  {
+   "label": "Theorem 1",
+   "page": 1,
+   "restatement": "Every spectrally realizable T_65 source (d=1) with q>=0, a,p,c,e>0, 0<ab<1, 1<j<b, pc>=a^2 satisfies Phi_c(O)>=0 on SO(4).",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ]
+  },
+  {
+   "label": "Theorem 2",
+   "page": 2,
+   "restatement": "Same with pc>=a^2 replaced by e>=j (1<j<b): every realizable source satisfies the support inequality.",
+   "contact_sets": [
+    [
+     0,
+     4,
+     5,
+     6,
+     9,
+     12
+    ]
+   ]
+  }
+ ],
+ "dependencies": [
+  {
+   "kind": "core-doc",
+   "ref": "old-H atom j >= 1+1/p (audit foundation so4-atoms)",
+   "used_for": "capacity",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "coherent-J stationary family j >= 1/(a+c) when pc >= a^2",
+   "used_for": "capacity",
+   "match_checked": false
+  },
+  {
+   "kind": "core-doc",
+   "ref": "old stated core capacity c >= 1/e + k (foundation part2b: UNCHECKED)",
+   "used_for": "capacity",
+   "match_checked": false
+  },
+  {
+   "kind": "branch",
+   "ref": "independent_moc4_T47_high_j_small_b_20261022 (this batch, confirmed-modulo-citations)",
+   "used_for": "conic identity, eleven signs, exclusion of c<=k and b<=b*",
+   "match_checked": true
+  },
+  {
+   "kind": "core-doc",
+   "ref": "merged coherent-C capacity (independent_moc4_T47_merged_C_high_j_uniform Lemma 1; foundation part2b G4)",
+   "used_for": "Theorem 2 capacity",
+   "match_checked": true
+  },
+  {
+   "kind": "branch",
+   "ref": "IIIb_low_j_cross_exact and IIIb_low_j_stationary_exact verifiers (not audited)",
+   "used_for": "Theorem 2 failure region",
+   "match_checked": false
+  },
+  {
+   "kind": "branch",
+   "ref": "negative-Phi (negative-Heron) exclusion theorem (not in this batch)",
+   "used_for": "Theorem 2, Phi<0",
+   "match_checked": false
+  },
+  {
+   "kind": "common-lemma",
+   "ref": "radial necessity (audit item 5)",
+   "used_for": "G=0",
+   "match_checked": true
+  }
+ ],
+ "steps": [
+  {
+   "n": "T1.1",
+   "claim": "capacities cover j>=1+1/p, j>=1/(a+c) (pc>=a^2), c>=1/e+k",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "see dependencies"
+  },
+  {
+   "n": "T1.2",
+   "claim": "hard part = chamber (1) of high_j_small_b; that theorem excludes c<=k and b<=b*",
+   "kind": "citation",
+   "status": "EXACT",
+   "how": "same chamber; replayed in this batch"
+  },
+  {
+   "n": "T1.3",
+   "claim": "1/b-a-k = r(1-r){2b^2-2b(r+1)+r^2+r}/(b(b-r)^2), b* the larger root; hence 1/j-a-k>0 on the chart",
+   "kind": "identity",
+   "status": "EXACT",
+   "how": "sympy, and chart numerator/denominator nonnegative"
+  },
+  {
+   "n": "T1.4",
+   "claim": "root => A0<0, F concave; old core failure => u<U",
+   "kind": "inequality",
+   "status": "PROOF-READ",
+   "how": "as Lemma 1 of high_j_small_b"
+  },
+  {
+   "n": "T1.5",
+   "claim": "E>0 on p<=b chart (p=bP/(P+W)), 144810 nonnegative coefficients",
+   "kind": "coefficient-sign",
+   "status": "EXACT",
+   "how": "replay mode le: 144810 terms reproduced, strict monomial free of W"
+  },
+  {
+   "n": "T1.6",
+   "claim": "E>0 on b<=p<H chart (p=(b+PH)/(1+P)), 186813 nonnegative coefficients",
+   "kind": "coefficient-sign",
+   "status": "EXACT",
+   "how": "replay mode ge: 186813 terms reproduced, strict monomial free of P"
+  },
+  {
+   "n": "T2.1",
+   "claim": "merged coherent-C capacity with L=a+b",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "merged_C Lemma 1 (foundation G4)"
+  },
+  {
+   "n": "T2.2",
+   "claim": "failure region handled by cross and stationary certificates",
+   "kind": "citation",
+   "status": "CITED",
+   "how": "other documents, not audited"
+  },
+  {
+   "n": "T2.3",
+   "claim": "j<=e<=L^2/j: cleared G has 1232529 positive coefficients; endpoint 142167",
+   "kind": "coefficient-sign",
+   "status": "GAP",
+   "how": "chart not displayed in the document; NUMERIC only"
+  },
+  {
+   "n": "T2.4",
+   "claim": "e>=L^2/j, pc<=a^2, Phi>=0: 42 G~ = R + M_pc num(a^2-pc) + M_Phi num(Phi)",
+   "kind": "identity",
+   "status": "GAP",
+   "how": "multipliers not given; NUMERIC only"
+  },
+  {
+   "n": "T2.5",
+   "claim": "pc>=a^2 -> Theorem 1; Phi<0 -> negative-Phi exclusion",
+   "kind": "citation",
+   "status": "CITED",
+   "how": ""
+  }
+ ],
+ "gaps": [
+  {
+   "location": "p.3, Thm 2 proof, \"For j <= e <= L^2/j, the original cleared G has 1232529 positive coefficients\"",
+   "claim": "G>0 on the merged-C failure region j<=e<=L^2/j, 1<j<b",
+   "why": "The chart (how e and c are parametrised, which bounds on p) is not stated, so the certificate cannot be replayed from the document; it is a pointer to a companion verifier.",
+   "believed_true": true,
+   "repair": "state the chart (presumably j=1+(b-1)theta(T), e=jR^2, c=theta(S)(L+e)/(L j (1+R)^2), p=theta(P)/(j-1) as in merged_C Thm 2) and replay",
+   "severity": "presentation"
+  },
+  {
+   "location": "p.3, Thm 2 proof, identity 42 G~ = R + M_pc num(a^2-pc) + M_Phi num(Phi)",
+   "claim": "G>0 when e>=L^2/j, c<1/(L+j), pc<=a^2, Phi>=0",
+   "why": "The multipliers M_pc and M_Phi are not printed; the identity cannot be checked from the document.",
+   "believed_true": true,
+   "repair": "print the multipliers (5 and 6 monomials) so the identity can be replayed",
+   "severity": "substantive"
+  }
+ ],
+ "exact_replays": [
+  "1/b-a-k identity and b* root",
+  "b* in v-parametrisation",
+  "E endpoint certificate p<=b (144810 terms)",
+  "E endpoint certificate p>=b (186813 terms)"
+ ],
+ "numeric_tests": [
+  "Thm 2 middle range (j<=e<=L^2/j, c below the merged-C crossing bound, p<1/(j-1)): 20000 samples, seed 11, min G = 107.9 > 0",
+  "Thm 2 high range (e>=L^2/j, c<1/(L+j)): 20000 samples, seed 11, min G = 104.3 > 0 (144.1 on the pc<=a^2, Phi>=0 subset)",
+  "Thm 1 endpoint E (b>b*, 1<j<b, k<c<1/j-a, 0<p<1/(j-1)): 20000 samples, seed 12, min E = 4.77 > 0 (consistent with the exact certificates)"
+ ],
+ "unchecked": [
+  "cited capacities (old-H, coherent-J stationary, old core)",
+  "cross and stationary certificates",
+  "negative-Phi exclusion"
+ ],
+ "one_line": "Theorem 1 (high-j large-pc) reduces exactly to the endpoint inequality E>0, replayed exactly; Theorem 2 rests on two certificates whose chart or multipliers are not given in the document (numeric evidence only) plus uncited-here companion results: gap-found (substantive, believed true)."
+}

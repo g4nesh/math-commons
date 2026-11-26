@@ -1,0 +1,61 @@
+INFO point at infinity factor -1  F12-F2 = -(t - w)*(-v + z)  F12/E = x
+INFO point at infinity factor 1  F12-F2 = (t - w)*(-v + z)  F12/E = x
+PASS E = F12-F2 = (z-v)(w-t)
+PASS F12/E = x
+PASS F13-F12 = x(t-v)(z-w)
+PASS F0-F2 = (v-x)(z-1)(w-t)
+PASS H2 = -1, H12 = 0
+INFO H5 = s tested modulo C below
+INFO H9 = u tested modulo C below
+PASS inverse (3) gives H0 = h identically
+progress
+PASS TD - TN = x(x+s)(1-z)
+PASS Nv - (x+h+1)(z+h) = -(h+1)(x+h)
+H13 - r cleared numerator factors: [(z - 1, 1), (x - z, 1), (r + x, 1), ('deg5', 1)] -1
+C(0,z)/(r^2(h+1)z^2) = -1
+curve C: bidegree (3, 2)  terms in (x,z,r,s,u,h): 55
+PASS (x+r) divides cleared H13-r numerator
+PASS C(0,z) = r^2(h+1) z^2
+PASS C(-r,z) = -r^2(r-u)(r-s)(z-1)(z+r)
+PASS C(1,z) = A(z-1)^2
+PASS Cx(1,1) = B
+PASS Cz(1,1) = 0 and Czz(1,1)/2 = A
+PASS every monomial of C has (x,z)-degree >= 2 :: 2
+PASS initial form P(Y) as displayed
+PASS P(1) = h r (s-h)
+PASS z-leading coefficient of C vanishes at none of x = 0, 1, -r generically :: [r**2*(h + 1), (u + 1)*(h*r + h + r - s), -r**2*(r - s)*(r - u)]
+INFO z-leading coefficient of C: -h*r**2*x + h*r**2 + h*r*u*x + h*r*x + h*u*x**2 + h*x**3 - r**2*x**2 + r**2 + r*u*x**2 + r*x - s*u*x**2 - s*x**3  x-leading coefficient: h**2*z + h*r*z - h*s*z - h*u*z + h*u + h*z**2 - h*z + h + r**2*z - r**2 - r*s*z + r*s - r*u*z + r*u + r + s*u*z - s*u - s*z**2 + s*z - s
+PASS inverse (3) gives H5 = s modulo C (mod C: pseudo-remainder in z is zero)
+INFO H5 = s cleared numerator factors: [(z - 1, 1), (x - z, 1), (s + x, 1), ('deg5', 1)]
+PASS inverse (3) gives H9 = u modulo C (mod C: pseudo-remainder in z is zero)
+INFO H9 = u cleared numerator factors: [(z - 1, 1), (x - z, 1), (u + x, 1), ('deg5', 1)]
+PASS H11 identity (2) (mod C: pseudo-remainder in z is zero)
+PASS H14 = x(h+z)/(x-z) after inverse (3), without C
+PASS H19 identity (4) (mod C: pseudo-remainder in z is zero)
+PASS H1 identity (5) (mod C: pseudo-remainder in z is zero)
+PASS H19 rewrite
+PASS x F0 = (x-z) F14 (raw)
+v,w at (x,z)=(-r,1): 1 1
+v,w at (x,z)=(-r,-r): -r -r
+v,w at (1,1): 1 1
+H11 at x->oo: -r + s + u + 1  H14 z->oo: -x  H14 x->oo: h + z
+at r,s,u,h=2,3,5,7: A,B = 120 96  disc P(Y) = 18404  r(r+1)(r-u)(h-r)(h+1) = -720
+profile values f40 at 1,11,14,19: [1, 0, 1, 1]  f43: [1, 1, 0, 0]
+other generators at 1,11,14,19 (all >=0 by facet property): {0: [0, 0, 0, 1], 1: [0, 0, 0, 0], 5: [0, 1, 0, 0], 7: [0, 0, 1, 0], 12: [0, 0, 0, 1], 39: [1, 0, 0, 0], 40: [1, 0, 1, 1], 41: [1, 0, 0, 0], 43: [1, 1, 0, 0], 45: [1, 0, 0, 0]}
+PASS document contact set {0,2,5,9,12,13} is literally paper T_48
+PASS generators(T_48) = {0,1,5,7,12,39,40,41,43,45}, non-minor exactly {40,43}
+PASS inequality (1): f40 and f43 are >= 1 at 1, at 11 or 14, and at 11 or 19 (all other generators >= 0)
+PASS ties forcing both non-minor coefficients to vanish are exactly {1,4,8,10,20,22} :: [1, 4, 8, 10, 20, 22]
+PASS tie 3: T_48+{3} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T1', 1), ('T12', 3), ('T13', 4), ('T20', 1), ('T22', 1), ('T39', 1)]
+PASS tie 6: T_48+{6} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T10', 2), ('T16', 5), ('T25', 1), ('T3', 1), ('T66', 7), ('T72', 1)]
+PASS tie 7: T_48+{7} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T44', 1), ('T69', 7)]
+PASS tie 11: T_48+{11} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T49', 4)]
+PASS tie 14: T_48+{14} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T4', 1), ('T45', 7), ('T7', 1), ('T9', 3)]
+PASS tie 15: T_48+{15} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T47', 3)]
+PASS tie 16: T_48+{16} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T43', 1), ('T46', 2), ('T57', 6)]
+PASS tie 17: T_48+{17} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T24', 5), ('T25', 1), ('T26', 2), ('T66', 7), ('T75', 7)]
+PASS tie 18: T_48+{18} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T29', 1), ('T31', 1), ('T71', 6), ('T76', 6)]
+PASS tie 19: T_48+{19} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T42', 1), ('T65', 6), ('T70', 5)]
+PASS tie 21: T_48+{21} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T31', 1), ('T36', 1), ('T78', 6)]
+PASS tie 23: T_48+{23} contains a six-set of an earlier stage (Appendix G stage < 8) :: [('T37', 1), ('T39', 1)]
+SUMMARY: all EXACT checks passed

@@ -1,0 +1,5 @@
+blocks (size: count): {2: 100, 5: 20, 6: 100, 13: 100, 26: 1, 42: 25} ; all positive definite: True
+multipliers for 30 distinct relations ; residual R: 4804 coefficients, sum of absolute values 8.170e-06, largest 2.36e-07
+c = 1137021/1000000 ; B = c + ||R||_1 = 1.1370291700 ; B < 11371/10000: True ; B < 37/25: True
+Phi on permutation matrices takes the values [-5, 1] ; |S| = 60 ; Phi = 1 - 6 det(O) E_S(O) and Phi <= B at 12 rational orthogonal matrices (6 of each determinant): True
+RE-CHECK PASSED

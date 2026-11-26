@@ -1,0 +1,84 @@
+{
+  "leanVersion": "4.24.0",
+  "fatalWarnings": true,
+  "baseMainCommit": "64e1338edadfc0420548424f70de52dc738f6f0d",
+  "completeRunDeclarationCount": 301,
+  "newDeclarationCount": 15,
+  "sourceSha256": {
+    "formal/ForestCut.lean": "0bfc29b6c4470e3c11cfdbdb561616f55bc3d73af78d53e8edc68feb44b1b5ae",
+    "formal/ForestEndpointMass.lean": "a2a6cec51910d33cc3d22c40001215fb41cd8b3c610327a517898d1b024b9e2d",
+    "formal/ForestGateMagnitude.lean": "02448676c0da705b368ae51aaab0e9771245ab406e7cd22a8eba99bf2589895a",
+    "formal/ForestGateSupport.lean": "e5f1c920b17e385ad58dffb070f0647d5d937a06c4916a2a2a417aaccdda286f",
+    "formal/ForestMinorAlternation.lean": "31c0794ad790a674c670c2eecf1afeebbf3f9228667a92e6f315c02269df08e1",
+    "formal/ForestPairHistory.lean": "c65a52bef4d9c1674cd163d7a5338dcfabd5baa075cd68257120695a249590bf",
+    "formal/ForestPathNormalization.lean": "09df64b8c0941ac9f686017fe3cc82cc52e510af2e830384b5edae10821d8fff",
+    "formal/ForestPathProbability.lean": "4f01a43913a197c11c1904e3eedfb3161e6b8eec64bb7abb5bfd01a234ecdeca",
+    "formal/ForestPermutationLaw.lean": "dd55c7954f9eff122cfc5d466860e658d5c4f3a1e3f52fa891cdad3ac87dc744",
+    "formal/ForestProductMinor.lean": "797a22634b38e8f614d1994ad7100a4d3780f48334575fb6d25a0c4ad08b8e25",
+    "formal/ForestSubsetExchange.lean": "de55c98f761fc21a8a2e094e6380646d3f3740095ab1eef95f0698637a498313",
+    "formal/ForestTrajectory.lean": "b5dcffb2a165702ef46a2a67e5a7d9049a5f5ba3af3cfd9cc2491af5e0fc5910",
+    "formal/MathCommons.lean": "2081110542f5560fe2d09cd31e89de22fcaf85b931adc37a44c469a55d04f3be",
+    "formal/OrthogonalCube.lean": "3b721e325f8f7ab9fa4c5b57116a65bbb7fb1017a02c64f7bcf63896784346c8"
+  },
+  "axiomReports": {
+    "MathCommons.ForestPermutationLaw.permutationInjective": [],
+    "MathCommons.ForestPermutationLaw.permutationSurjective": [],
+    "MathCommons.ForestPermutationLaw.subsetImageForward": [
+      "propext"
+    ],
+    "MathCommons.ForestPermutationLaw.vertexSwapInvolution": [
+      "propext"
+    ],
+    "MathCommons.ForestPermutationLaw.subsetImageIdentity": [],
+    "MathCommons.ForestPermutationLaw.subsetImageSwap": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPermutationLaw.successorExpectation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPermutationLaw.lawExpectationStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPermutationLaw.historyExpectationStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPermutationLaw.commonPushforward": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPermutationLaw.coinLawMassOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPermutationLaw.coinWeightsNonnegative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPermutationLaw.unitaryCoinWeightsNonnegative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPermutationLaw.commonEndpointLaw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathCommons.ForestPermutationLaw.commonSquaredMinorLaw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "scope": "One finite weighted list of inverse-certified vertex permutations, independent of both selected subsets, with nonnegative weights summing to one and representing all actual squared forest gate-product minors simultaneously. Push-forward and normalization are internally proved, including collision aggregation. Gaussian-rational scalar domain and existing Edge enumeration; no complex-library or determinant-of-sum/MDO bridge claimed."
+}

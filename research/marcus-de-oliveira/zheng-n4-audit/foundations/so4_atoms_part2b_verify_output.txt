@@ -1,0 +1,284 @@
+atoms2b-verify: own re-verification of so4-atoms-part2b; sections ['ROLES', 'SRC', 'GRAM44', 'GRAM46', 'GRAM47', 'ALG', 'NUM']
+
+=== ROLES: atom memberships with the roles used (G acting on f_j)  [t=0.3s]
+PASS old-H representatives (12,2;70) and (3,15;26) in one orbit
+PASS membership T44 SOC(1,53;18)
+PASS membership T44 H(15,53;18)
+PASS membership T44 H(8,53;18)
+PASS membership T45 (2) SOC(2,59;70)
+PASS membership T45 (3) chain(2;0,12;70)
+PASS membership T45 (4) chain(59;0,1;70)
+PASS membership T45 (5) chain(59;67,72;70)
+PASS membership T45 (6) H(1,59;70)
+PASS membership T45 (6) H(72,59;70)
+PASS membership T46 four(4,6;2;28)
+PASS membership T47 H(9,1;35)
+PASS membership T47 SOC(45,1;35)
+PASS membership T47 chain(1;7,9;35)
+PASS membership T47 four(0,7;5;35)
+PASS membership T28 (3) H(45,1;34)
+PASS membership T28 (3) chain(1;0,45;34)
+PASS membership T28 (3) four(6,0;5;34)
+PASS membership T38 H(2,5;40)
+PASS membership T38 four(0,7;12;40)
+PASS membership T38 four(0,67;2;40)
+PASS membership T38 SOC(2,5;70)
+PASS membership T27 four(67,41;39;40)
+PASS membership T27 four(0,67;2;40)
+PASS membership T27 H(2,5;40)
+PASS membership T42 SOC(5,2;54)
+PASS membership T36 (6) SOC(45,1;35)
+PASS membership T36 (6) H(5,45;35)
+PASS membership T36 (6) four(7,0;5;35)
+PASS membership T36 SOC(5,45;40)
+PASS membership T48 H(2,5;40)
+PASS membership T48 H(29,5;40)
+PASS membership T48 chain(5;0,2;40)
+PASS membership T48 chain(5;7,29;40)
+PASS membership T48 chain(5;41,29;40)
+PASS membership T28 Lemma 2 H(b=33,a=2;46)
+PASS membership T28 Lemma 2 H(c=5,a=2;46)
+PASS membership T28 Lemma 2 chain(a;p,b)
+PASS membership T28 Lemma 2 chain(a;c,q)
+PASS membership T38 gen.70 H(b=12,a=2;70)
+PASS membership T38 gen.70 H(c=39,a=2;70)
+PASS membership T38 gen.70 chain(a;p,b)
+PASS membership T38 gen.70 chain(a;c,q)
+PASS membership T42 H(b=3,a=5;54)
+PASS membership T42 H(c=23,a=5;54)
+PASS membership T42 chain(a;p,b)
+PASS membership T42 chain(a;c,q)
+PASS membership T36 (10) H(b=2,a=5;40)
+PASS membership T36 (10) H(c=29,a=5;40)
+PASS membership T36 (10) chain(a;p,b)
+PASS membership T36 (10) chain(a;c,q)
+PASS control: reversed old-H roles (53,15;18) NOT in orbit
+PASS control: reversed old-H roles (5,29;40) NOT in orbit
+
+=== ROLES: transports  [t=0.3s]
+PASS transport T44 J*: (1,53,12,7,18) -> (53,1,8,7,18)
+PASS transport T46 core -> T47: [1,59,6,27,28] -> [45,5,7,0,35]
+PASS transport T24 core -> T46: [59,53,55,67,54] -> [1,59,6,27,28]
+PASS transport six-ray T46 -> T47: [27,1,59,5,28,6] -> [0,45,5,9,35,7]
+PASS transport T24 core -> T38: [59,53,55,67,54] -> [5,2,67,0,40]
+PASS transport T24 core -> T27: [59,53,55,67,54] -> [5,2,0,67,40]
+PASS transport T24 core -> T36: (67,55,53,54,59,2) -> (7,0,5,35,45,1)
+PASS transport T24 core -> T47: (59,53,55,67,54,2) -> (45,5,7,0,35,1)
+PASS transport T28 face -> T36: (4,2,33,5,6,46,45) -> (0,5,2,29,7,40,39)
+PASS transport T36 stabiliser (7,0,2,29,45,1,5,35) -> (0,7,29,2,45,1,5,35)
+PASS T42: a contact-set stabiliser exchanges f22 and f54
+PASS T27: a contact-set stabiliser exchanges f40 and f68
+PASS T36: the (a,b,q,p) exchange is a contact-set stabiliser
+PASS T45 zero face a=0: T33 maps onto [3, 5, 9, 10, 12, 13] inside T45+{13}
+PASS T45 zero face c=0: T6 maps onto [2, 3, 4, 5, 9, 10] inside T45+{2}
+PASS T45 zero face r=0: T14 maps onto [3, 4, 5, 9, 10, 16] inside T45+{16}
+
+=== SRC: face generator lists and response identities (values at 24 permutations; P is injective)  [t=0.3s]
+PASS T28 generators of contact set [0, 4, 5, 6, 7, 8] :: [0, 1, 2, 3, 4, 5, 6, 33, 34, 45, 46]
+PASS T42 generators of contact set [1, 2, 4, 6, 7, 8] :: [0, 1, 2, 3, 4, 5, 6, 21, 22, 23, 53, 54]
+PASS T38 generators of contact set [2, 3, 5, 7, 9, 12] :: [0, 1, 2, 5, 7, 12, 39, 40, 67, 70]
+PASS T27 generators of contact set [2, 3, 5, 6, 9, 12] :: [0, 1, 2, 5, 7, 9, 39, 40, 41, 67, 68]
+INFO T44 generators [0, 1, 2, 7, 8, 12, 15, 18, 53] nonminor [18]
+INFO T46 generators [0, 1, 2, 3, 4, 5, 6, 27, 28, 59] nonminor [28]
+INFO T47 generators [0, 1, 2, 5, 7, 9, 35, 45] nonminor [35]
+INFO T48 generators [0, 1, 2, 5, 7, 9, 29, 39, 40, 41] nonminor [40]
+INFO T45 generators [0, 1, 2, 12, 59, 67, 70, 72] nonminor [70]
+INFO T36 generators [0, 1, 2, 5, 7, 29, 35, 39, 40, 45] nonminor [35, 40]
+PASS T44 face: 8 generators, rank 8, vanish on contacts, one non-minor [18]
+PASS T46 face: 8 generators, rank 8, vanish on contacts, one non-minor [28]
+PASS T47 face: 8 generators, rank 8, vanish on contacts, one non-minor [35]
+PASS T48 face: 8 generators, rank 8, vanish on contacts, one non-minor [40]
+PASS T45 face: 8 generators, rank 8, vanish on contacts, one non-minor [70]
+PASS T28 g34 face: 8 generators, rank 8, vanish on contacts, one non-minor [34]
+PASS T28 g46 face: 8 generators, rank 8, vanish on contacts, one non-minor [46]
+PASS T38 g40 face: 8 generators, rank 8, vanish on contacts, one non-minor [40]
+PASS T38 g70 face: 8 generators, rank 8, vanish on contacts, one non-minor [70]
+PASS T42 face: 8 generators, rank 8, vanish on contacts, one non-minor [54]
+PASS T27 face: 8 generators, rank 8, vanish on contacts, one non-minor [40]
+PASS T36 (2) face: 8 generators, rank 8, vanish on contacts, one non-minor [35]
+PASS T36 (3) face: 8 generators, rank 8, vanish on contacts, one non-minor [40]
+PASS T28 identity f34+f46 = f3+2f6+f33+f45
+PASS T28 identity f2+f34 = f0+f6+f33
+PASS T28 identity f4+f34 = f1+f3+f6+f33
+PASS T28 identity f0+f46 = f2+f3+f6+f45
+PASS T28 identity f1+f46 = f4+f6+f45
+PASS T42 identity f22+f54 = f0+f4+f5+f23+f53
+PASS T42 identity f54+f1 = f0+f6+f53
+PASS T42 identity f54+f4 = f2+f3+f6+f53
+PASS T42 identity f54+f21 = f0+f2+f23+f53
+PASS T38 identity f40+f70 = f0+f5+f12+f39+f67
+PASS T38 identity f1+f40 = f0+f7+f39
+PASS T38 identity f7+f70 = f1+f5+f12+f67
+PASS T36 identity f35+f40 = f0+f7+f2+f29+f45
+PASS T36 identity f35+f39 = f1+f2+f29+f45
+PASS T36 identity f40+f1 = f0+f7+f39
+PASS T27 identity f40+f68 = f0+f7+f41+f67
+PASS T27 identity f40+f1 = f0+f7+f39
+PASS T27 identity f40+f9 = f2+f7+f41
+PASS T36 contact nullspace dimension 8 :: 8
+PASS T36: delta35 + delta40 = -g17 on the nullspace
+PASS T36: decomposition (1) holds on the nullspace
+PASS T36: decomposition (2) holds on the nullspace
+PASS T36: decomposition (3) holds on the nullspace
+PASS T45 (1): nullspace dim 8; generators vanish on contacts; values at (18,16,13,8,2,14,11,7) = identity
+PASS T45 (1): f70 is the only non-minor
+
+=== GRAM44: historical T44 face q f2 + p f1 + j f53 + c f12 + e f8 + d f18 + b f7 + a f15  [t=0.3s]
+PASS T44: costs lie in the span of the Gram columns; ranks (gram, cost, total) = (18, 8, 18) :: (18, 8, 18), 418 monomials, solution space dim 26
+INFO T44 unit Gram E_ii -> cost (g order J,C,E,A,B,Q,P,D): ['j', 'c', 'e', None, 'b', 'q', 'p', None]
+PASS T44 Prop. 1 (vectors J,C,E,A,B,Q,P,D in R^3): Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T44 Prop. 1 (vectors J,C,E,A,B,Q,P,D in R^3): exact rational-point check SOS = 2*Phi :: (1.9129512116844658, 1.9129512116844658)
+PASS T44 control: Prop. 1 Gram with d read off as |D|^2 = 1+v^2 is rejected
+PASS T44 Prop. 2 b=0 direct Gram (p=1/j): Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T44 Prop. 2 b=0 direct Gram (p=1/j): exact rational-point check SOS = 2*Phi :: (3.997236154152688, 3.997236154152688)
+
+=== GRAM46: historical T46 face q f27 + p f1 + j f59 + c f5 + e f2 + d f28 + b f6 + a f4  [t=0.8s]
+PASS T46: costs lie in the span of the Gram columns; ranks (gram, cost, total) = (18, 8, 18) :: (18, 8, 18), 413 monomials, solution space dim 26
+INFO T46 unit Gram E_ii -> cost (g order q,p,j,c,e,d,b,a): ['q', 'p', 'j', None, 'e', None, 'b', 'a']
+PASS T46 core: |P|^2 equals threshold (1)
+PASS T46 core coherent Thm 1: Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T46 core coherent Thm 1: exact rational-point check SOS = 2*Phi :: (2.2612927525795383, 2.2612927525795383)
+PASS T46 core: det of leaf+J0 block = l*(j - (1+(q+b-2beta)/l) t^2)
+PASS T46 core: Gram of (Q+B, J0) has det Delta
+PASS T46 six-ray: |P|^2 = p* and |C|^2 = c*
+PASS T46 six-ray Thm 1: Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T46 six-ray Thm 1: exact rational-point check SOS = 2*Phi :: (6.455481419496976, 6.455481419496976)
+PASS T46 six-ray: det of (Q,B,J0) block = l*(j - t^2) - (b t^2 - 2 beta t v + q v^2)
+PASS T46 singular leaf: p* = k + (1-eta t)^2/(j - kappa t^2), c* = rho^2 t^2/(j - kappa t^2)
+PASS T46 singular leaf: Delta = (q+b-2r)(j - kappa t^2) after substitution (so Delta > 0 when q != b)
+PASS T46 singular leaf: j - t^2 - v^2/b = j - kappa t^2
+PASS T46 singular leaf: leaf block singular, (t,v) = (t/u)(u,-w) in its range
+PASS T46 singular-leaf six-ray (beta=-r, v=-rt/q): Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T46 singular-leaf six-ray (beta=-r, v=-rt/q): exact rational-point check SOS = 2*Phi :: (2.543096424009324, 2.543096424009324)
+
+=== GRAM47: historical T47 face q f2 + p f9 + j f1 + c f45 + e f5 + d f35 + b f0 + a f7  [t=26.7s]
+PASS T47: costs lie in the span of the Gram columns; ranks (gram, cost, total) = (18, 8, 18) :: (18, 8, 18), 418 monomials, solution space dim 26
+PASS T47: det V = +-1 and det T != 0 (W = V^-1 T^-1 invertible) :: (1, 1/4)
+INFO T47 W = T^-1: unit Gram E_ii -> cost: ['c', None, None, None, 'e', 'q', 'j', 'b']
+INFO T47 W = V^-1 T^-1: unit Gram E_ii -> cost: ['q', 'p', 'j', 'c', 'e', None, 'b', 'a']
+PASS T47 PCBE Thm 1 matrix (identically in x,y,z,w,L,j,c,e): Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T47 PCBE Thm 1 matrix (identically in x,y,z,w,L,j,c,e): exact rational-point check SOS = 2*Phi :: (6.0137752776800655, 6.0137752776800655)
+INFO PCBE matrix read in budget coordinates T^-1: 18 of 18 relations violated
+PASS PCBE: vectors P and B coincide (equal rows, M_PP = M_BB = M_PB = L)
+PASS PCBE: Schur complement over {B,D} equals the displayed 3x3 matrix
+PASS PCBE: chosen JE entry makes the Schur complement of C0 diagonal
+PASS large_pc: |J|^2 = d^2/(a+c); <J,P>=<J,A>=-da/(a+c); <J,C>=dc/(a+c)
+PASS T47 IIIb_plus_large_pc Lemma 1: Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T47 IIIb_plus_large_pc Lemma 1: exact rational-point check SOS = 2*Phi :: (1.1000595669558089, 1.1000595669558089)
+PASS large_pc: base Gram of (P,C,A) PSD iff pc >= a^2 (det = a(pc - a^2))
+PASS merged-C crossing leaf a: <C,J>=d-x, <C,E>=-x, <C,leaf>=+x with x = d sqrt(e)/(sqrt j+sqrt e)
+PASS merged-C crossing leaf a: |C|^2 = d^2(L+e)/(L(sqrt j+sqrt e)^2)
+PASS T47 merged-C crossing leaf a: Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T47 merged-C crossing leaf a: exact rational-point check SOS = 2*Phi :: (1.9607480667107444, 1.9607480667107444)
+PASS merged-C stationary leaf a: |C|^2 = d^2/(j+L)
+PASS T47 merged-C stationary leaf a: Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T47 merged-C stationary leaf a: exact rational-point check SOS = 2*Phi :: (2.8907759433342206, 2.8907759433342206)
+PASS merged-C half-energy leaf a: |C|^2 = d^2/(4j) + d^2/(4L)
+PASS T47 merged-C half-energy leaf a: Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T47 merged-C half-energy leaf a: exact rational-point check SOS = 2*Phi :: (1.357000832162175, 1.357000832162175)
+PASS merged-C crossing leaf b: <C,J>=d-x, <C,E>=-x, <C,leaf>=-x with x = d sqrt(e)/(sqrt j+sqrt e)
+PASS merged-C crossing leaf b: |C|^2 = d^2(L+e)/(L(sqrt j+sqrt e)^2)
+PASS T47 merged-C crossing leaf b: Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T47 merged-C crossing leaf b: exact rational-point check SOS = 2*Phi :: (2.0512913300588944, 2.0512913300588944)
+PASS merged-C stationary leaf b: |C|^2 = d^2/(j+L)
+PASS T47 merged-C stationary leaf b: Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T47 merged-C stationary leaf b: exact rational-point check SOS = 2*Phi :: (2.1280615781675376, 2.1280615781675376)
+PASS merged-C half-energy leaf b: |C|^2 = d^2/(4j) + d^2/(4L)
+PASS T47 merged-C half-energy leaf b: Leibniz sum == quadratic form (all relations, symbolic) :: nonzero residuals: 0
+PASS T47 merged-C half-energy leaf b: exact rational-point check SOS = 2*Phi :: (1.5807225899017252, 1.5807225899017252)
+
+=== ALG G1: T44 Prop. 2, scalar test, SOC/Hsum  [t=27.6s]
+PASS Prop.2: Prop.1 at v=0, r=sqrt j, k=-z, w=sqrt b gives (1+z^2/b)/(sqrt j+z)^2
+PASS Prop.2: derivative = 2(z sqrt j - b)/(b (sqrt j+z)^3)
+PASS Prop.2: at z = sqrt c value (b+c)/(b(sqrt j+sqrt c)^2)
+PASS Prop.2: at z = b/sqrt j value 1/(j+b)
+PASS Prop.2: branches agree at jc = b^2
+PASS Prop.2: j=0 case (r=0,k=-sqrt c): threshold 1/c+1/b
+PASS Prop.2 example r=1,k=-1,v=0,w=1: p = 1/2, j=c=b=1
+PASS scalar test (1): Prop.1 substitution gives the displayed p-threshold
+PASS scalar test (1): j and c thresholds become exactly j, c
+PASS scalar test (1): v^2 <= m iff t^2 <= m/(1+m)
+PASS Hsum: old-H atoms (15,53;18),(8,53;18) at threshold with d split a:e sum to j = d + d^2/(a+e)
+
+=== ALG G3: T46 core (2), t*, Cor. 3; six-ray Cor. 2-4 and singular-leaf section  [t=27.6s]
+PASS T46 core (2): threshold (1) = h^2/s + (s+kt)^2/(s(sj-(s+4)t^2))
+PASS T46 core: derivative of (2) = 2(s+kt)(kj+(s+4)t)/(sj-(s+4)t^2)^2
+PASS T46 core: u - 4/s = (q-b)^2/(s l)
+PASS T46 core: t* = -kj/(s+4) gives 1/j + (s+2k)/4 + k^2/(4(s+4))
+PASS T46 core: at t=0 threshold 1/j + (1+beta)^2/(q+b+2beta); derivative at 0 = 2(2-q-b)/((q+b+2beta) j)
+PASS T46 Cor.3: beta = 1-S, t = 0 gives 1/j + 2 - S
+PASS T46 example q=1/8,b=4,j=4,beta=-1/2,t=1/4: threshold 399/1543
+PASS T46 core: beta=1-q-b, t*: 1/j + k(k+3)/(k+4) with s=k
+PASS T46 Cor.3 closure: only critical point of qb-(q+b-1)^2 is (2/3,2/3), value 1/3 != 0, so every boundary point is a limit of strict points
+PASS six-ray Cor.3 (T47 roles): t = eta e/M0 gives consumed c = k + D0^2/(eN)
+PASS six-ray Cor.3: e - kappa t^2 = eN/M0^2 and N - rho^2 A/p = D0^2 + D0 A + A^2
+PASS six-ray Cor.3: consumed p = rho^2 A/N (< p by the previous identity)
+PASS six-ray Cor.4 branch A<=D0: consumed c = k + (D0-A)^2/(e(D0^2-kappa A)), unused p = p D0(D0-A)/(D0^2-kappa A)
+PASS six-ray Cor.4 branch A>=D0: t=1/eta gives consumed c = k and consumed p = rho^2/(A-kappa)
+PASS six-ray Cor.4: residual difference vs Cor.3 = A^2(2D0(D0-kappa)+kappa A - A^2)/(e(D0^2-kappa A)((D0+A)^2-kappa A))
+PASS six-ray Cor.2: t = eta e/kappa gives c* = 1/e + k - eta^2/kappa and p* = rho^2 eta^2 e/(kappa(kappa - eta^2 e))
+PASS six-ray Cor.2: p* <= p  <=>  e <= p kappa^2/(eta^2 (p kappa + rho^2))  (difference identity)
+PASS T47 old core c >= 1/e + k: core threshold at t=0, beta=-sqrt(ab) equals 1/e + b(1-r)^2/(b-r)^2
+PASS T47 old core: Gram at beta=-r, t=0 is PSD with rank-one leaf block (det 0), and Delta = s e > 0 for a != b
+PASS PCBE_low_e chart: B = 1/e + 1/(b+1) >= 1/b  iff  e <= b(b+1)
+PASS PCBE_low_e chart: with c = s^2 B, failure of (2) is j < J* = (b+1)(1-s)^2/(b + 2s + (b+1)s^2/e)
+
+=== ALG G4: PCBE scalar identity (3), simplification, x*; merged-C allocation  [t=38.5s]
+PASS PCBE (3): (A+Bt)^2/(J-kt^2) - (A^2/J - B^2/k) = (kAt+BJ)^2/(kJ(J-kt^2))
+PASS PCBE: x^2/L + (1-x)^2/j - (1+x/L)^2/kappa = K(1-x)^2 - 1
+PASS PCBE: x^2/L + x^2(1/e - 1/(L(L+1))) = x^2(1/e + 1/(L+1))
+PASS PCBE: x* solves K(1-x)^2 - 1 = B x^2
+PASS merged-C: proportional merge of crossing bounds gives the A0 formula
+PASS merged-C: proportional merge of stationary bounds gives d^2/(j+A0); j_i e_i - L_i^2 = delta_i^2 (je - A0^2)
+PASS merged-C: proportional merge of half-energy bounds gives d^2/(4j)+d^2/(4A0)
+PASS merged-C: at crossing x the two max-branches agree
+PASS merged-C: stationary choice x = dL/(j+L) gives x^2/L + (d-x)^2/j = d^2/(j+L)
+
+=== ALG G2: T45 (6) split  [t=38.5s]
+PASS T45 (6): H(1,59;70)+H(72,59;70) at threshold with d split r:s sum to c = d + d^2/(r+s)
+
+=== ALG G5: H/chain allocation lemma (6), T48 allocations, eighth chamber  [t=38.6s]
+PASS H/chain (6): sum of the four atoms at threshold uses b, c exactly and needs a = RHS of (6) (beta1+beta2=1)
+PASS T48: e-side/j-side atom sums = s - alpha + alpha^2/a + s^2/e, and (1-s) - gamma + gamma^2/Q + (1-s)^2/j (Q=q+b)
+PASS T48 Cor.2: optimal alpha = min(s, a/2): value s - phi_a(s) with phi_a(t) = t - t^2/a (t<=a/2), a/4 (t>=a/2)
+PASS T48 allocation I: u+v = 1 and u^2(1/a+1/e) + v^2(1/j+1/Q) = lambda
+PASS T48 allocation II: p* = 1 - u/2 + v/j - Q/4
+PASS T48 allocation III: p* = 1 - u/2 + v/e - a/4
+PASS T48 allocation IV: currents sum to 1 and p* = 1 + 1/S - (a+Q)/4
+PASS eighth chamber: four atom (a2=delta a, c, p, d2=delta) at p(delta) is exactly on ab(c-d) = d^2(a+b+c+d)
+PASS eighth chamber: rescaled coherent bound r0*(r0/e - 1/E(a, b/r0)) = r0^2/e - r0^2/E_r0
+PASS eighth chamber: e >= E_r0 is the rescaled four-coefficient condition
+PASS eighth chamber: p(delta) increasing on [0,1) for ac >= 1 (derivative numerator positive)
+
+=== NUM: attacks on the stated regions, coefficients exactly on the thresholds  [t=38.7s]
+PASS NUM G1 T44 Prop.1: 8 boundary samples x 300 starts, min Phi/max|coef| = 5.365e-18 (mpmath 5.365e-18)
+PASS NUM control G1 T44 Prop.1 (p and j set to 0) is detected: min = -2.483e-02
+PASS NUM G1 T44 Prop.2 (incl. j=0, b=0): 8 boundary samples x 300 starts, min Phi/max|coef| = 3.036e-18 (mpmath 3.036e-18)
+PASS NUM control G1 T44 Prop.2 (incl. j=0, b=0) (p set to 0) is detected: min = -5.842e-02
+PASS NUM G1 T44 J* (transported Prop.2): 6 boundary samples x 300 starts, min Phi/max|coef| = 1.272e-18 (mpmath 1.272e-18)
+PASS NUM G1 T44 SOC pj=1: 4 boundary samples x 300 starts, min Phi/max|coef| = 5.106e-18 (mpmath 5.106e-18)
+PASS NUM control G1 T44 SOC pj=1 (pj=0.9) is detected: min = -3.515e-07
+PASS NUM G1 T44 Hsum j=1+1/(a+e): 4 boundary samples x 300 starts, min Phi/max|coef| = 5.027e-17 (mpmath 5.027e-17)
+PASS NUM G3 T46 core Thm 1: 8 boundary samples x 300 starts, min Phi/max|coef| = 2.321e-18 (mpmath 2.321e-18)
+PASS NUM control G3 T46 core Thm 1 (p set to 0) is detected: min = -5.013e-02
+PASS NUM G3 T46 Cor.3 on the boundary (S-1)^2 = qb: 6 boundary samples x 300 starts, min Phi/max|coef| = 3.124e-17 (mpmath 3.124e-17)
+PASS NUM G3 T46 six-ray Thm 1: 8 boundary samples x 300 starts, min Phi/max|coef| = 2.555e-17 (mpmath 2.555e-17)
+PASS NUM control G3 T46 six-ray Thm 1 (p set to 0) is detected: min = -4.978e-03
+PASS NUM G3 T46 singular-leaf section p = P*: 8 boundary samples x 300 starts, min Phi/max|coef| = 7.351e-18 (mpmath 7.351e-18)
+PASS NUM G3 six-ray Cor.4 (T47 roles): 6 boundary samples x 300 starts, min Phi/max|coef| = 4.651e-18 (mpmath 4.651e-18)
+PASS NUM G4 T47 PCBE Thm 1: 8 boundary samples x 300 starts, min Phi/max|coef| = 5.708e-18 (mpmath 5.708e-18)
+PASS NUM control G4 T47 PCBE Thm 1 (p and b set to 0) is detected: min = -5.956e-04
+PASS NUM G4 T47 large_pc Lemma 1 (pc=a^2, j=1/(a+c)): 6 boundary samples x 300 starts, min Phi/max|coef| = 6.307e-18 (mpmath 6.307e-18)
+PASS NUM control G4 T47 large_pc Lemma 1 (pc=a^2, j=1/(a+c)) (j set to 0) is detected: min = -2.353e-02
+PASS NUM G4 T47 merged-C Lemma 1 (crossing/stationary/half-energy): 9 boundary samples x 300 starts, min Phi/max|coef| = 8.763e-18 (mpmath 8.763e-18)
+PASS NUM G2 T45 (6) c = 1 + 1/(r+s): 4 boundary samples x 300 starts, min Phi/max|coef| = 5.258e-17 (mpmath 5.258e-17)
+PASS NUM G2 T45 (2)-(5): 8 boundary samples x 300 starts, min Phi/max|coef| = 2.284e-18 (mpmath 2.284e-18)
+PASS NUM G5 H/chain (6) T28 roles: 4 boundary samples x 300 starts, min Phi/max|coef| = 3.271e-17 (mpmath 3.271e-17)
+PASS NUM G5 H/chain (6) T38 roles: 4 boundary samples x 300 starts, min Phi/max|coef| = 3.687e-17 (mpmath 3.687e-17)
+PASS NUM G5 H/chain (6) T42 roles: 4 boundary samples x 300 starts, min Phi/max|coef| = 3.591e-17 (mpmath 3.591e-17)
+PASS NUM control G5 H/chain (6) T42 roles (a set to 0) is detected: min = -3.397e-02
+PASS NUM G5 H/chain (6) T36 roles: 4 boundary samples x 300 starts, min Phi/max|coef| = 9.683e-17 (mpmath 9.683e-17)
+PASS NUM G5 T48 allocations I-IV (p = min_s T(s)): 6 boundary samples x 300 starts, min Phi/max|coef| = 4.956e-17 (mpmath 4.956e-17)
+PASS NUM sharp control: old-H (15,53;18) with main coefficient lowered 10% is detected: min = -3.498e-06
+
+TOTAL: 246 PASS, 0 FAIL, 184.1 s

@@ -1,0 +1,55 @@
+{
+  "doc_id": "blind_inventory89_matching_curve_uniform_20261023",
+  "pdf": "proofs/manin_transfer_20261021/blind_inventory89_matching_curve_uniform_20261023.pdf",
+  "pages": 6,
+  "verdict": "confirmed-modulo-citations",
+  "statements": [
+    {"label": "Theorem 1 (whole)", "page": 1, "paper_cases": [90], "contact_sets": [[1, 5, 6, 9, 14, 18]],
+     "covers_all_spectra": true,
+     "restatement": "For all x in X and pi* in T with P c(x) >= 0 and (P c(x))_pi = 0 for pi in T = {1,5,6,9,14,18} (= paper T_90 literally; extra contacts allowed): Phi_{c(x)}(O) >= 0 for all O in SO(4). No restriction on spectra (the argument works on X directly; 'spectrally realizable' = x in X via paper Sect. 3)."},
+    {"label": "Lemma 2", "page": 3, "contact_sets": [[1, 5, 6, 9, 14, 18]],
+     "restatement": "Through every strict point (off-T gaps > 0, real d > 0, E = F5 - F1 = 1) there is an irreducible algebraic curve in X keeping the five complex differences F_i - F_1 (i in T) fixed, on which some anchored coordinate is nonconstant."},
+    {"label": "Lemma 3", "page": 4,
+     "restatement": "If 2(d+r)b = ra - d^2 + L0 d + B0 with real r, L0, B0, Im d = y != 0 and Im a/y, Im b/y bounded, then |b| <= C(1+|d|), |ra| <= C(1+|d|^2); if also f+g+d = (-(r-u+1)ra + P2(d))/(2(d+Af)(d+Ag)), deg P2 <= 2, then f+g+d is bounded as |d| -> infinity."}
+  ],
+  "dependencies": [
+    {"kind": "paper-case", "ref": "T_40", "contact_set": [0, 1, 5, 9, 14, 18], "used_for": "extra contacts 0,4,7,11,12,15 (explicit g with g(T_40) in T u {j})", "match_checked": true},
+    {"kind": "seven-contact", "ref": "T^(7)_24", "contact_set": [0, 3, 7, 11, 12, 16, 20], "used_for": "extra contact 17 (T u {17} = g(T^(7)_24), g = (1243,2143,0))", "match_checked": true},
+    {"kind": "core-doc", "ref": "paper Section 3 / HMSV: X irreducible, dim 6, X = {grad C = 0}, finite spectral representation", "used_for": "Lemma 2 dimension count; identities use only X in Sing C (lib EXACT)", "match_checked": false},
+    {"kind": "core-doc", "ref": "paper (4.7) G-equivariance", "used_for": "transposition and K_{2,4} normalization, boundary table", "match_checked": true},
+    {"kind": "common-lemma", "ref": "final_referee_bounded_bad_harmonic_lemma [3]", "used_for": "removable singularity of bounded-above subharmonic function at punctures (standard; supplied by auditor)", "match_checked": true}
+  ],
+  "steps": [
+    {"id": "S1", "claim": "Sect.1 lifting / X = {grad F = 0}", "status": "CITED"},
+    {"id": "S2", "claim": "ker P[T,:] dim 8, basis of 8 generators", "status": "EXACT"},
+    {"id": "S3", "claim": "exclusive gaps 17,15,11,7,4,12,0", "status": "EXACT"},
+    {"id": "S4", "claim": "circuit (3)", "status": "EXACT"},
+    {"id": "S5", "claim": "d<0 bounds from gaps 22,19,20,8,3", "status": "EXACT"},
+    {"id": "S6", "claim": "transposition fixes T, swaps f28/f35, permutes minors", "status": "EXACT"},
+    {"id": "S7", "claim": "d = 0 gives minor sum", "status": "EXACT"},
+    {"id": "S8", "claim": "boundary table split and witnesses", "status": "EXACT+CITED"},
+    {"id": "S9", "claim": "O perturbation and bounds (4)", "status": "PROOF-READ"},
+    {"id": "S10", "claim": "stabilizer 16, 8 fixing f35, K_{2,4} edges, connected", "status": "EXACT"},
+    {"id": "S11", "claim": "(5) and full-complex-equal exclusion", "status": "EXACT"},
+    {"id": "S12", "claim": "affine form (6), v0 real, coefficients -eta Im w", "status": "EXACT"},
+    {"id": "S13", "claim": "4x4 linear system, determinant (7)", "status": "EXACT"},
+    {"id": "S14", "claim": "solutions (8)", "status": "EXACT"},
+    {"id": "S15", "claim": "(9) triangular coefficients; 7x7 Jacobian = (7) x prod (9)", "status": "EXACT"},
+    {"id": "S16", "claim": "(7),(9) nonzero on D", "status": "PROOF-READ"},
+    {"id": "S17", "claim": "Lemma 2", "status": "PROOF-READ"},
+    {"id": "S18", "claim": "Lemma 3", "status": "EXACT+PROOF-READ"},
+    {"id": "S19", "claim": "(10) and P2", "status": "EXACT"},
+    {"id": "S20", "claim": "real d bounded near punctures along D", "status": "PROOF-READ"},
+    {"id": "S21", "claim": "u subharmonic; L = 0 on boundary of D", "status": "PROOF-READ"},
+    {"id": "S22", "claim": "extension, constancy, exclusion of D", "status": "PROOF-READ"},
+    {"id": "S23", "claim": "case exhaustion", "status": "PROOF-READ"}
+  ],
+  "gaps": [
+    {"location": "p.3 eq (6)", "claim": "P v0 realizes H = (0,1,r,s,u,h)", "why": "P v0 on T equals (0,1,r,s,u,h) - h*1; only differences are prescribed and z*kappa absorbs the shift", "severity": "presentation", "believed_true": true},
+    {"location": "p.1 Sect.1", "claim": "strictly semistable representatives satisfy the support inequality", "why": "asserted without argument; unnecessary given the paper's representation of every nonzero x in X", "severity": "presentation", "believed_true": true},
+    {"location": "p.2", "claim": "uses the fixed list of 76 preceding cases", "why": "only T_40 and T^(7)_24 are used (both Stage 1)", "severity": "presentation", "believed_true": true}
+  ],
+  "exact_replays": ["T = T_90", "generators(T)", "kernel dim 8 and basis", "exclusive gaps", "circuit (3)", "d<0 bounds", "transposition action", "stabilizer/K_{2,4}", "boundary table split + group witnesses", "(5)", "(6) v0", "(7)", "(8) incl. B0", "(9) and triangularity", "7x7 Jacobian", "(10) and P2", "Lemma 3 imaginary-part identity"],
+  "numeric_tests": ["30 points of X with the five real contact equations (seed 2026): (6),(8),(10), E imaginary, H real, coefficient = gap all to <= 1e-9", "4 lib stratum points (margin 0, seeds 0..3), min Phi over SO(4) worst -6.3e-15 (6 restarts)"],
+  "unchecked": ["paper Section 3 facts about X (cited)", "content of [3] (standard fact supplied instead)", "proofs of T_40 and T^(7)_24"]
+}

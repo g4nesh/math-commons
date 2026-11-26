@@ -1,8 +1,9 @@
 {
  "documents": {
   "total": 208,
-  "ok": 110,
-  "missing": 98
+  "ok": 174,
+  "missing": 32,
+  "incomplete": 2
  },
  "cases": [
   {
@@ -96,7 +97,6 @@
    "prerequisites": [],
    "missing": [
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -945,7 +945,6 @@
     "T_79"
    ],
    "missing": [
-    "root_true_inventory47_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
@@ -1224,16 +1223,14 @@
     "T_11",
     "T_8"
    ],
-   "missing": [
-    "independent_moc4_T45_uniform_20261022"
-   ],
+   "missing": [],
    "flagged": [],
    "incomplete": [],
    "settled_or_replayed": [
     "root_moc4_T37_uniform_20261022",
     "root_moc4_T10_B_branch_20261022"
    ],
-   "status": "awaiting first pass"
+   "status": "first pass complete"
   },
   {
    "case": 39,
@@ -1349,7 +1346,6 @@
     "T_79"
    ],
    "missing": [
-    "root_true_inventory47_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
@@ -1535,13 +1531,11 @@
     "T_34",
     "T_7"
    ],
-   "missing": [
-    "independent_moc4_T45_uniform_20261022"
-   ],
+   "missing": [],
    "flagged": [],
    "incomplete": [],
    "settled_or_replayed": [],
-   "status": "awaiting first pass"
+   "status": "first pass complete"
   },
   {
    "case": 47,
@@ -1617,36 +1611,17 @@
     "S26[S46a0]"
    ],
    "missing": [
-    "root_moc4_T46_whole_assembly_20261023",
-    "final_referee_T46_a0_all_small_product_uniform_20261023",
-    "final_referee_T46_a0_balanced_leaf_uniform_20261023",
-    "final_referee_T46_core_coherent_capacity_20261023",
-    "final_referee_T46_negative_j_Heron_uniform_20261023",
-    "final_referee_T46_positive_a_large_product_20261023",
-    "final_referee_T46_positive_a_small_or_balanced_20261023",
-    "final_referee_T46_six_ray_coherent_capacity_20261023",
-    "final_referee_T46_two_Heron_necessity_20261023",
-    "final_referee_T46_a0_uniform_20261023",
-    "final_referee_T47_negative_p_Heron_20261023",
-    "independent_moc4_T47_IIIb_plus_large_pc_20261022",
-    "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
-    "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
-    "independent_moc4_T47_I_II_uniform_20261022",
-    "independent_moc4_T47_PCBE_energy_20261022",
-    "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
-    "independent_moc4_T47_high_e_below_core_20261023",
-    "independent_moc4_T47_high_j_small_b_20261022",
-    "independent_moc4_T47_high_j_uniform_20261022",
-    "independent_moc4_T47_low_j_small_pc_20261023",
-    "independent_moc4_T47_merged_C_high_j_uniform_20261022",
-    "root_moc4_T47_negative_Phi_20261022",
     "root_moc4_T47_whole_assembly_20261023",
-    "root_moc4_T47_zero_q_rational_capacity_20261023",
     "principal_minor_result_20261022__principal_minors"
    ],
    "flagged": [],
-   "incomplete": [],
-   "settled_or_replayed": [],
+   "incomplete": [
+    "independent_moc4_T47_I_II_uniform_20261022"
+   ],
+   "settled_or_replayed": [
+    "independent_moc4_T47_high_j_uniform_20261022",
+    "independent_moc4_T47_merged_C_high_j_uniform_20261022"
+   ],
    "status": "awaiting first pass"
   },
   {
@@ -1712,28 +1687,19 @@
     "T_69"
    ],
    "missing": [
-    "root_true_inventory47_native_uniform_20261023",
-    "final_referee_T46_six_ray_coherent_capacity_20261023",
-    "final_referee_T47_negative_p_Heron_20261023",
-    "independent_moc4_T47_IIIb_plus_large_pc_20261022",
-    "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
-    "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
-    "independent_moc4_T47_I_II_uniform_20261022",
-    "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
-    "independent_moc4_T47_high_j_small_b_20261022",
-    "independent_moc4_T47_high_j_uniform_20261022",
-    "independent_moc4_T47_low_j_small_pc_20261023",
-    "independent_moc4_T47_merged_C_high_j_uniform_20261022",
-    "root_moc4_T47_negative_Phi_20261022",
     "root_moc4_T47_whole_assembly_20261023",
-    "root_moc4_T47_zero_q_rational_capacity_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
    ],
    "flagged": [],
-   "incomplete": [],
-   "settled_or_replayed": [],
+   "incomplete": [
+    "independent_moc4_T47_I_II_uniform_20261022"
+   ],
+   "settled_or_replayed": [
+    "independent_moc4_T47_high_j_uniform_20261022",
+    "independent_moc4_T47_merged_C_high_j_uniform_20261022"
+   ],
    "status": "awaiting first pass"
   },
   {
@@ -1788,24 +1754,15 @@
     "T_12"
    ],
    "missing": [
-    "root_true_T48_whole_assembly_20261023",
-    "blind_moc4_T48_allocation_III_low_j_uniform_20261023",
-    "blind_moc4_T48_allocation_II_uniform_20261023",
-    "blind_moc4_T48_allocation_IV_uniform_20261023",
-    "blind_moc4_T48_allocation_I_low_j_uniform_20261023",
-    "blind_moc4_T48_allocation_I_small_lambda_low_j_uniform_20261023",
-    "blind_moc4_T48_negative_Phi_uniform_20261023",
-    "independent_true_T48_native_harmonic_conditional_20261023",
-    "blind_moc4_T48_c0_all_j_chain_20261023",
-    "blind_moc4_T48_c0_native_interlacing_20261023",
-    "blind_moc4_T48_c0_upper_Heron_chain_20261023",
-    "independent_true_T48_c0_native_Heron_20261023",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
    ],
    "flagged": [],
    "incomplete": [],
-   "settled_or_replayed": [],
+   "settled_or_replayed": [
+    "blind_moc4_T48_negative_Phi_uniform_20261023",
+    "independent_true_T48_c0_native_Heron_20261023"
+   ],
    "status": "awaiting first pass"
   },
   {
@@ -1861,7 +1818,6 @@
    ],
    "missing": [
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "moc_principal_minors_20261022__principal_minors",
@@ -1925,7 +1881,6 @@
    ],
    "missing": [
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "moc_principal_minors_20261022__principal_minors",
@@ -1993,7 +1948,6 @@
    ],
    "missing": [
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -2037,15 +1991,12 @@
     "S19[S52]"
    ],
    "missing": [
-    "blind_moc4_inventory52_whole_assembly_20261023",
-    "blind_moc4_inventory52_native_harmonic_conditional_20261023",
-    "blind_moc4_inventory52_plus17_fourth_products_20261023",
-    "blind_moc4_inventory52_plus17_low_products_20261023",
-    "blind_moc4_inventory52_plus17_middle_products_20261023",
     "blind_moc4_inventory52_plus17_third_products_20261023"
    ],
    "flagged": [],
-   "incomplete": [],
+   "incomplete": [
+    "blind_moc4_inventory52_plus17_fourth_products_20261023"
+   ],
    "settled_or_replayed": [],
    "status": "awaiting first pass"
   },
@@ -2094,7 +2045,6 @@
    ],
    "missing": [
     "root_inventory53_native_uniform_20261023",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -2167,7 +2117,6 @@
    "missing": [
     "independent_inventory54_native_uniform_20261023",
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -2221,7 +2170,6 @@
    ],
    "missing": [
     "independent_inventory55_native_uniform_20261023",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -2423,15 +2371,12 @@
    ],
    "missing": [
     "blind_moc4_inventory59_native_harmonic_uniform_20261023",
-    "blind_moc4_inventory52_native_harmonic_conditional_20261023",
-    "blind_moc4_inventory52_plus17_fourth_products_20261023",
-    "blind_moc4_inventory52_plus17_low_products_20261023",
-    "blind_moc4_inventory52_plus17_middle_products_20261023",
-    "blind_moc4_inventory52_plus17_third_products_20261023",
-    "blind_moc4_inventory52_whole_assembly_20261023"
+    "blind_moc4_inventory52_plus17_third_products_20261023"
    ],
    "flagged": [],
-   "incomplete": [],
+   "incomplete": [
+    "blind_moc4_inventory52_plus17_fourth_products_20261023"
+   ],
    "settled_or_replayed": [],
    "status": "awaiting first pass"
   },
@@ -2485,7 +2430,6 @@
    "missing": [
     "root_inventory60_native_uniform_20261023",
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "moc_principal_minors_20261022__principal_minors",
@@ -2537,7 +2481,6 @@
    "missing": [
     "final_referee_inventory61_native_uniform_20261023",
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
@@ -2609,7 +2552,6 @@
    "missing": [
     "independent_inventory62_native_uniform_20261023",
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -2759,29 +2701,18 @@
    ],
    "missing": [
     "root_moc4_T47_whole_assembly_20261023",
-    "final_referee_T47_negative_p_Heron_20261023",
-    "independent_moc4_T47_IIIb_plus_large_pc_20261022",
-    "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
-    "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
-    "independent_moc4_T47_I_II_uniform_20261022",
-    "independent_moc4_T47_PCBE_energy_20261022",
-    "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
-    "independent_moc4_T47_high_e_below_core_20261023",
-    "independent_moc4_T47_high_j_small_b_20261022",
-    "independent_moc4_T47_high_j_uniform_20261022",
-    "independent_moc4_T47_low_j_small_pc_20261023",
-    "independent_moc4_T47_merged_C_high_j_uniform_20261022",
-    "root_moc4_T47_negative_Phi_20261022",
-    "root_moc4_T47_zero_q_rational_capacity_20261023",
-    "final_referee_T46_six_ray_coherent_capacity_20261023",
-    "root_true_inventory47_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
    ],
    "flagged": [],
-   "incomplete": [],
-   "settled_or_replayed": [],
+   "incomplete": [
+    "independent_moc4_T47_I_II_uniform_20261022"
+   ],
+   "settled_or_replayed": [
+    "independent_moc4_T47_high_j_uniform_20261022",
+    "independent_moc4_T47_merged_C_high_j_uniform_20261022"
+   ],
    "status": "awaiting first pass"
   },
   {
@@ -2954,7 +2885,6 @@
     "T_65"
    ],
    "missing": [
-    "final_referee_inventory68_native_harmonic_20261023",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
    ],
@@ -2995,7 +2925,6 @@
     "T_13"
    ],
    "missing": [
-    "final_referee_inventory69_native_harmonic_20261023",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
    ],
@@ -3039,7 +2968,6 @@
     "S27[S67]"
    ],
    "missing": [
-    "independent_inventory70_native_harmonic_uniform_20261023",
     "root_inventory67_g14_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "principal_minor_result_20261022__principal_minors"
@@ -3099,9 +3027,7 @@
    ],
    "prerequisites": [],
    "missing": [
-    "final_referee_inventory71_uniform_20261023",
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -3171,10 +3097,7 @@
     "T_69"
    ],
    "missing": [
-    "root_inventory72_native_uniform_20261023",
     "fresh_strong_principal_minors_20261022",
-    "root_inventory80_native_uniform_20261023",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -3227,9 +3150,7 @@
     "T_73"
    ],
    "missing": [
-    "final_referee_inventory73_native_uniform_20261023",
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -3272,7 +3193,6 @@
     "T_65"
    ],
    "missing": [
-    "independent_inventory74_native_harmonic_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "principal_minor_result_20261022__principal_minors"
    ],
@@ -3319,9 +3239,6 @@
     "S27[S67]"
    ],
    "missing": [
-    "final_referee_inventory75_whole_assembly_20261023",
-    "independent_inventory75_native_harmonic_conditional_20261023",
-    "final_referee_inventory75_boundary16_uniform_20261023",
     "root_inventory67_g14_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "principal_minor_result_20261022__principal_minors"
@@ -3369,7 +3286,6 @@
     "T_67"
    ],
    "missing": [
-    "root_inventory76_bounded_masks_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
@@ -3417,11 +3333,9 @@
     "S20[S56]"
    ],
    "missing": [
-    "independent_inventory77_native_harmonic_uniform_20261023",
     "final_referee_inventory56_boundary17_large_product_20261023",
     "final_referee_inventory56_boundary17_uniform_20261023",
     "final_referee_inventory56_rank_two_capacity_20261023",
-    "final_referee_inventory75_boundary16_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "principal_minor_result_20261022__principal_minors"
    ],
@@ -3467,14 +3381,14 @@
     "S25[S78]"
    ],
    "missing": [
-    "final_referee_inventory78_native_uniform_20261023",
-    "final_referee_inventory78_boundary15_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "principal_minor_result_20261022__principal_minors"
    ],
    "flagged": [],
    "incomplete": [],
-   "settled_or_replayed": [],
+   "settled_or_replayed": [
+    "final_referee_inventory78_boundary15_uniform_20261023"
+   ],
    "status": "awaiting first pass"
   },
   {
@@ -3534,9 +3448,7 @@
     "T_73"
    ],
    "missing": [
-    "final_referee_inventory79_native_uniform_20261023",
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -3604,9 +3516,7 @@
     "T_76"
    ],
    "missing": [
-    "root_inventory80_native_uniform_20261023",
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -3649,7 +3559,6 @@
     "T_60"
    ],
    "missing": [
-    "final_referee_inventory81_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022"
    ],
@@ -3715,7 +3624,6 @@
    ],
    "missing": [
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -3763,7 +3671,6 @@
     "T_59"
    ],
    "missing": [
-    "root_true_inventory47_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
@@ -3838,8 +3745,6 @@
    "missing": [
     "fresh_strong_principal_minors_20261022",
     "independent_inventory54_native_uniform_20261023",
-    "root_inventory80_native_uniform_20261023",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -3894,16 +3799,15 @@
     "T_75"
    ],
    "missing": [
-    "root_inventory85_native_uniform_corrected_20261023",
-    "final_referee_inventory85_native_uniform_20261023",
-    "root_true_inventory47_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
    ],
    "flagged": [],
    "incomplete": [],
-   "settled_or_replayed": [],
+   "settled_or_replayed": [
+    "final_referee_inventory85_native_uniform_20261023"
+   ],
    "status": "awaiting first pass"
   },
   {
@@ -3963,13 +3867,11 @@
     "T_61"
    ],
    "missing": [
-    "blind_inventory86_matching_section_uniform_20261023",
     "fresh_strong_principal_minors_20261022",
     "independent_inventory67_native_harmonic_conditional_20261023",
     "root_inventory60_native_uniform_20261023",
     "root_inventory67_g14_uniform_20261023",
     "root_inventory67_whole_assembly_20261023",
-    "root_true_inventory47_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "moc_principal_minors_20261022__principal_minors",
@@ -4015,9 +3917,7 @@
    ],
    "prerequisites": [],
    "missing": [
-    "final_referee_inventory87_uniform_20261023",
     "fresh_strong_principal_minors_20261022",
-    "root_true_inventory47_native_uniform_20261023",
     "root_unitary_two_orthogonals_20261022",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
@@ -4069,9 +3969,6 @@
     "T_32"
    ],
    "missing": [
-    "blind_inventory88_matching_curve_uniform_20261023",
-    "final_referee_inventory78_boundary15_uniform_20261023",
-    "final_referee_inventory78_native_uniform_20261023",
     "moc_one_circle_20261022__one_circle",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "moc_principal_minors_20261022__principal_minors",
@@ -4079,7 +3976,9 @@
    ],
    "flagged": [],
    "incomplete": [],
-   "settled_or_replayed": [],
+   "settled_or_replayed": [
+    "final_referee_inventory78_boundary15_uniform_20261023"
+   ],
    "status": "awaiting first pass"
   },
   {
@@ -4118,7 +4017,6 @@
     "T_40"
    ],
    "missing": [
-    "blind_inventory89_matching_curve_uniform_20261023",
     "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
     "principal_minor_result_20261022__principal_minors"
    ],
@@ -4498,14 +4396,9 @@
     "blind_moc4_T48_c0_upper_Heron_chain_20261023",
     "independent_true_T48_c0_native_Heron_20261023"
    ],
-   "missing": [
-    "blind_moc4_T48_c0_all_j_chain_20261023",
-    "blind_moc4_T48_c0_native_interlacing_20261023",
-    "blind_moc4_T48_c0_upper_Heron_chain_20261023",
-    "independent_true_T48_c0_native_Heron_20261023"
-   ],
+   "missing": [],
    "open": [],
-   "status": "awaiting first pass"
+   "status": "first pass complete"
   },
   {
    "node": "S26[S46a0]",
@@ -4522,11 +4415,9 @@
    "documents": [
     "final_referee_T46_a0_uniform_20261023"
    ],
-   "missing": [
-    "final_referee_T46_a0_uniform_20261023"
-   ],
+   "missing": [],
    "open": [],
-   "status": "awaiting first pass"
+   "status": "first pass complete"
   },
   {
    "node": "S3[S_0,1,2,3,6,17,19]",
@@ -4605,11 +4496,9 @@
    "documents": [
     "final_referee_inventory75_boundary16_uniform_20261023"
    ],
-   "missing": [
-    "final_referee_inventory75_boundary16_uniform_20261023"
-   ],
+   "missing": [],
    "open": [],
-   "status": "awaiting first pass"
+   "status": "first pass complete"
   },
   {
    "node": "S6[S_0,1,2,6,9,11,23]",
@@ -4693,12 +4582,11 @@
     "blind_moc4_inventory52_plus17_third_products_20261023"
    ],
    "missing": [
-    "blind_moc4_inventory52_plus17_fourth_products_20261023",
-    "blind_moc4_inventory52_plus17_low_products_20261023",
-    "blind_moc4_inventory52_plus17_middle_products_20261023",
     "blind_moc4_inventory52_plus17_third_products_20261023"
    ],
-   "open": [],
+   "open": [
+    "blind_moc4_inventory52_plus17_fourth_products_20261023"
+   ],
    "status": "awaiting first pass"
   },
   {
@@ -4716,62 +4604,21 @@
    "documents": [
     "final_referee_inventory78_boundary15_uniform_20261023"
    ],
-   "missing": [
-    "final_referee_inventory78_boundary15_uniform_20261023"
-   ],
+   "missing": [],
    "open": [],
-   "status": "awaiting first pass"
+   "status": "first pass complete"
   }
  ],
  "documents_without_report": [
-  "blind_inventory86_matching_section_uniform_20261023",
-  "blind_inventory88_matching_curve_uniform_20261023",
-  "blind_inventory89_matching_curve_uniform_20261023",
   "blind_moc4_T44_native_contact_chart_20261022",
-  "blind_moc4_T48_allocation_III_low_j_uniform_20261023",
-  "blind_moc4_T48_allocation_II_uniform_20261023",
-  "blind_moc4_T48_allocation_IV_uniform_20261023",
-  "blind_moc4_T48_allocation_I_low_j_uniform_20261023",
-  "blind_moc4_T48_allocation_I_small_lambda_low_j_uniform_20261023",
-  "blind_moc4_T48_c0_all_j_chain_20261023",
-  "blind_moc4_T48_c0_native_interlacing_20261023",
-  "blind_moc4_T48_c0_upper_Heron_chain_20261023",
-  "blind_moc4_T48_negative_Phi_uniform_20261023",
-  "blind_moc4_inventory52_native_harmonic_conditional_20261023",
-  "blind_moc4_inventory52_plus17_fourth_products_20261023",
-  "blind_moc4_inventory52_plus17_low_products_20261023",
-  "blind_moc4_inventory52_plus17_middle_products_20261023",
   "blind_moc4_inventory52_plus17_third_products_20261023",
-  "blind_moc4_inventory52_whole_assembly_20261023",
   "blind_moc4_inventory59_native_harmonic_uniform_20261023",
-  "final_referee_T46_a0_all_small_product_uniform_20261023",
-  "final_referee_T46_a0_balanced_leaf_uniform_20261023",
-  "final_referee_T46_a0_uniform_20261023",
-  "final_referee_T46_core_coherent_capacity_20261023",
-  "final_referee_T46_negative_j_Heron_uniform_20261023",
-  "final_referee_T46_positive_a_large_product_20261023",
-  "final_referee_T46_positive_a_small_or_balanced_20261023",
-  "final_referee_T46_six_ray_coherent_capacity_20261023",
-  "final_referee_T46_two_Heron_necessity_20261023",
-  "final_referee_T47_negative_p_Heron_20261023",
   "final_referee_inventory56_57_whole_assembly_20261023",
   "final_referee_inventory56_boundary17_large_product_20261023",
   "final_referee_inventory56_boundary17_uniform_20261023",
   "final_referee_inventory56_native_harmonic_20261023",
   "final_referee_inventory56_rank_two_capacity_20261023",
   "final_referee_inventory61_native_uniform_20261023",
-  "final_referee_inventory68_native_harmonic_20261023",
-  "final_referee_inventory69_native_harmonic_20261023",
-  "final_referee_inventory71_uniform_20261023",
-  "final_referee_inventory73_native_uniform_20261023",
-  "final_referee_inventory75_boundary16_uniform_20261023",
-  "final_referee_inventory75_whole_assembly_20261023",
-  "final_referee_inventory78_boundary15_uniform_20261023",
-  "final_referee_inventory78_native_uniform_20261023",
-  "final_referee_inventory79_native_uniform_20261023",
-  "final_referee_inventory81_native_uniform_20261023",
-  "final_referee_inventory85_native_uniform_20261023",
-  "final_referee_inventory87_uniform_20261023",
   "fresh_strong_principal_minors_20261022",
   "independent_inventory54_native_uniform_20261023",
   "independent_inventory55_native_uniform_20261023",
@@ -4779,26 +4626,8 @@
   "independent_inventory62_native_uniform_20261023",
   "independent_inventory63_native_uniform_20261023",
   "independent_inventory67_native_harmonic_conditional_20261023",
-  "independent_inventory70_native_harmonic_uniform_20261023",
-  "independent_inventory74_native_harmonic_uniform_20261023",
-  "independent_inventory75_native_harmonic_conditional_20261023",
-  "independent_inventory77_native_harmonic_uniform_20261023",
   "independent_moc4_T44_a_Heron_branch_20261023",
   "independent_moc4_T44_c_below_j_uniform_20261023",
-  "independent_moc4_T45_uniform_20261022",
-  "independent_moc4_T47_IIIb_plus_large_pc_20261022",
-  "independent_moc4_T47_IIIb_plus_unswapped_low_j_20261022",
-  "independent_moc4_T47_IIIb_plus_unswapped_uniform_20261022",
-  "independent_moc4_T47_I_II_uniform_20261022",
-  "independent_moc4_T47_PCBE_energy_20261022",
-  "independent_moc4_T47_PCBE_low_e_q_monotone_20261023",
-  "independent_moc4_T47_high_e_below_core_20261023",
-  "independent_moc4_T47_high_j_small_b_20261022",
-  "independent_moc4_T47_high_j_uniform_20261022",
-  "independent_moc4_T47_low_j_small_pc_20261023",
-  "independent_moc4_T47_merged_C_high_j_uniform_20261022",
-  "independent_true_T48_c0_native_Heron_20261023",
-  "independent_true_T48_native_harmonic_conditional_20261023",
   "moc_one_circle_20261022__one_circle",
   "moc_one_circle_20261022__root_unitary_two_orthogonals_20261022",
   "moc_principal_minors_20261022__principal_minors",
@@ -4809,19 +4638,13 @@
   "root_inventory66_native_whole_20261023",
   "root_inventory67_g14_uniform_20261023",
   "root_inventory67_whole_assembly_20261023",
-  "root_inventory72_native_uniform_20261023",
-  "root_inventory76_bounded_masks_uniform_20261023",
-  "root_inventory80_native_uniform_20261023",
-  "root_inventory85_native_uniform_corrected_20261023",
   "root_moc4_T44_e_below_p_uniform_20261023",
-  "root_moc4_T46_whole_assembly_20261023",
-  "root_moc4_T47_negative_Phi_20261022",
   "root_moc4_T47_whole_assembly_20261023",
-  "root_moc4_T47_zero_q_rational_capacity_20261023",
   "root_moc4_T65_native_harmonic_uniform_20261023",
-  "root_true_T48_whole_assembly_20261023",
-  "root_true_inventory47_native_uniform_20261023",
   "root_unitary_two_orthogonals_20261022"
  ],
- "documents_open": []
+ "documents_open": [
+  "blind_moc4_inventory52_plus17_fourth_products_20261023",
+  "independent_moc4_T47_I_II_uniform_20261022"
+ ]
 }

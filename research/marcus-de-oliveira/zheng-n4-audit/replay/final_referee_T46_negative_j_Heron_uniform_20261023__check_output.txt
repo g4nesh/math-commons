@@ -1,0 +1,22 @@
+[EXACT] PASS  contact set {1,3,5,6,7,8} is paper T_47 (identity group element)
+[EXACT] PASS  generators(T) = {0,1,2,3,4,5,6,27,28,59}; the eight canonical rays are among them; only f28 non-minor
+[EXACT] PASS  C(sum coef f + h kappa) == C0 + h Q with C0 = -(q+d)L - jM, Q = jp - j(c+e+d) - (c+d)(e+d)
+[EXACT] PASS  det Hess C at h = -C0/Q equals -4 G^2 / Q^2 for a polynomial G (deg_h det = 3)
+[EXACT] PASS  G has 1556 terms, total degree 9, degree 2 in j
+[EXACT] PASS  H6 (printed formula) has 150 terms and is irreducible over Q
+[EXACT] PASS  (1) B^2 - 4AC = (q+d)^2 H6 H8 with H8 a polynomial of 279 terms
+[EXACT] PASS  (2) H8 = W0^2 + 4 d D b^2 L Xi
+[EXACT] PASS  (3) dH8/dp = 2 W0 (q+d) L when the formula (2) is differentiated (L, D, Xi free of p)
+[EXACT] PASS  (3) at Xi = 0, W0 = 0: dH8/dq = 4 d D b^2 L (c+e+d+b) (identity dH8/dq = 2 W0 W0_q + 4dDb^2 L Xi_q)
+[EXACT] PASS  (4) gcd(A,B,C) = 1
+[EXACT] PASS  (4) gcd(G, G_j) = 1
+[EXACT] PASS  (5) G_j^2 - 4 A G = (q+d)^2 H6 H8
+[EXACT] PASS  principal 12-minor deleting coordinates 0,1 is height-free and equals -j^2 P10, P10 quadratic in j
+[EXACT] PASS  u0^2 - u1(B gamma - beta C) = W^2 for a polynomial W independent of j
+[EXACT] PASS  S+ = 2Au0 - Bu1 + 2AW = -H8 R8^2 (sign of W fixed by this), R8 independent of j
+[EXACT] PASS  S- = 2Au0 - Bu1 - 2AW = -(q+d)^2 H6 T8^2, T8 independent of j
+[EXACT] PASS  P10 S+ == (u1 j + u0 + W)^2 mod G (exact division)
+[EXACT] PASS  P10 S- == (u1 j + u0 - W)^2 mod G (exact division)
+summary: 0 EXACT failures
+[NUMERIC] PASS  stratum sampler seeds 0-39 margin 0: 40 points (0 with d>0), max |G|/sum|terms| = 5.3e-02, min H6 at d>0 points = None, region violations of the positive-a notes = 0
+[NUMERIC] PASS  stratum sampler seeds 100-139 margin 0.02: 37 points (1 with d>0), max |G|/sum|terms| = 6.4e-14, min H6 at d>0 points = 6.526145801383649e+17, region violations of the positive-a notes = 0
