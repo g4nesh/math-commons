@@ -5,6 +5,7 @@
   - **Theorem O (unconditional):** inequality (★) holds for every real orthogonal 4×4 matrix. The proof is one page and uses no parameter t and no sum-of-squares search.
   - **Corollary 1 (unconditional, given Theorem EQ):** PMSH(4) for every real symmetric 4×4 matrix. This contains the four-variable case of the Schur–Horn conjecture of Blekherman, Kummer, Sanyal, Shu and Sun.
   - **Corollary 2 (unconditional, given Theorem EQ):** the Marcus–de Oliveira inclusion for 4×4 normal matrices A, B that are both complex symmetric, when the eigenvalues of one of them lie on a line.
+  - **Theorem W (unconditional):** (★), and PMSH for U·D_c·U*, hold for every unitary U that is, up to diagonal phases, an orthogonal matrix times one complex rotation I + (e^{iψ} − 1)yyᵀ. Numerically every 4×4 unitary has this form (200 of 200 random ones), but that is not proved.
   - **Theorem H (conditional on one external theorem):** if Zheng's Theorem 1.2 holds, then (★) holds for every 4×4 unitary, so PMSH(4) holds for **every** Hermitian 4×4 matrix. This removes the restriction to cross-ratios in [1/10, 9/10] of [`../star-halfline/`](../star-halfline/README.md).
   - **Not claimed:** (★) for complex unitaries without Zheng's theorem; the conjecture for general normal pairs; anything for n ≥ 5.
 - **Evidence levels:** marked per item.
@@ -143,12 +144,32 @@ Its status in this repository: two referee reports by another GitHub owner in [p
 
 **What Theorem H uses from Zheng's paper.** Only Theorem 1.2 (his Section 2). It does not use his reduction to contact configurations or the 90 case inequalities of his supplement. His Appendix C claims the n = 4 inclusion when one spectrum lies on a line or circle, by a different argument; PMSH(4) says more than that inclusion, because the weights do not depend on the second matrix.
 
+### An explicit form of the reduction to orthogonal matrices
+
+> **Proposition S (segments; exact, any n).** Let O ∈ O(n), let y ∈ ℝⁿ be a unit vector, ψ ∈ ℝ, and U = O·(I + (e^{iψ} − 1)·yyᵀ). Then U is unitary, and for all index sets S, T of equal size
+>
+>   |det U[S,T]|² = cos²(ψ/2)·det O[S,T]² + sin²(ψ/2)·det (O·R_y)[S,T]²,  R_y = I − 2yyᵀ.
+
+*Proof.* The k-th compound of I + μ·yyᵀ is I + μ·P_k, where P_k is the orthogonal projection onto the k-vectors divisible by y. So the k-th compound of U is a + e^{iψ}·b with the real matrices a = Λᵏ(O)·(I − P_k) and b = Λᵏ(O)·P_k. Entrywise |a + e^{iψ}b|² = (a+b)²·cos²(ψ/2) + (a−b)²·sin²(ψ/2). Finally a + b = Λᵏ(O) and a − b = Λᵏ(O)·(I − 2P_k) = Λᵏ(O·R_y). ∎
+
+Let 𝒲₄ be the set of 4×4 unitaries of the form D₁·O·(I + (e^{iψ} − 1)yyᵀ)·D₂ with D₁, D₂ diagonal unitary. It is closed, and it is invariant under row and column permutations and under transposition.
+
+> **Theorem W (unconditional).** (★) holds for every U ∈ 𝒲₄, and PMSH holds for H = U·D_c·U* for every U ∈ 𝒲₄ and every real c.
+
+*Proof.* Diagonal factors do not change squared minors. By Proposition S each L_t(U) is a convex combination of L_t(O) and L_t(O·R_y), which are ≥ 0 by Theorem O. The rest is Theorem EQ at the symmetric images of U, which lie in 𝒲₄. ∎
+
+**Observation (numerical, `factorize.py`).** 𝒲₄ appears to be all of U(4). A matrix V = D₁UD₂ has the required form exactly when Im V has rank ≤ 1. Solving for the phases succeeds for 200 of 200 Haar unitaries (rank-one residual ≤ 10⁻¹², squared-minor formula exact to 5·10⁻¹⁵ over all 164 minors), and for the Fourier matrix and a near-permutation matrix. A dimension count allows it: 𝒲₄ has 17 parameters against 16, and the solutions do come in one-parameter families.
+
+**How this relates to Zheng's theorem.** "𝒲₄ = U(4)" implies Zheng's Theorem 1.2 and adds that the two orthogonal endpoints can be taken a reflection apart, O₋ = O₊·R_y, with weight cos²(ψ/2). I have no proof that 𝒲₄ = U(4); Zheng's existence argument is non-constructive. What the observation gives now is a check per matrix: for any given U one can compute D₁, D₂, O, y, ψ and verify the decomposition, and with it (★) at U, directly.
+
 ## What the proofs rest on
 
 | Result | Rests on | Level |
 | --- | --- | --- |
 | Lemma L, Theorem O′, Theorem O | this file | written proof; identities checked exactly (`check_orthogonal.py`); not reviewed |
 | Corollaries 1, 1′, 2 | Theorem O and Theorem EQ, Steps 1, 2, 4, 5, 6 (same author, in review; computational inputs exact) | computer-assisted via Theorem EQ |
+| Proposition S, Theorem W | this file; Theorem O; Theorem EQ | written proof; unconditional, on the explicit set 𝒲₄ |
+| 𝒲₄ = U(4) | `factorize.py` | **numerical observation only** |
 | Theorem H | Theorem O, Theorem EQ, and Zheng's Theorem 1.2 (external; two positive referee reports in PR 25) | conditional |
 
 **Checks (`check_orthogonal.py`, exact arithmetic; log in [`logs/check_orthogonal.txt`](logs/check_orthogonal.txt)).**
@@ -156,6 +177,7 @@ Its status in this repository: two referee reports by another GitHub owner in [p
 - 3,000 rational orthogonal matrices in and near the hard region, of which 1,063 have g0 + D[12,12] < 0, so that the square-root term is needed: (★) holds at all of them.
 - The algebraic identities of Steps 1–4 and of facts (F1)–(F4) of the Lemma, symbolically.
 - Lemma L at 200,000 random rational points, including vertices and faces of the cube.
+- Proposition S at 1,758 minors of rational examples with n = 4 and 5.
 
 Numerical sanity checks, not part of the proof (`numeric_orthogonal.py`): the minimum of E over SO(3) × SO(3) is 0 to 10⁻¹⁴; the PMSH certificate LP is feasible for random real symmetric matrices, including spectra with cross-ratio far below 1/10.
 
@@ -172,11 +194,12 @@ Python 3.9.6, sympy 1.14.0, numpy 2.0.2, scipy 1.13.1. Run from this directory.
 ```sh
 python3 check_orthogonal.py      # exact checks (15 seconds)
 python3 numeric_orthogonal.py    # numerical sanity checks (about 2 minutes)
+python3 factorize.py 0 200       # factorisation of 200 Haar unitaries (about 1 minute)
 ```
 
 ## Next steps
 
 1. Independent review by another GitHub owner: the proof of Lemma L and Steps 1–4 fit on one page.
-2. Make Theorem H unconditional: prove min over U(4) of L_t equals min over O(4) directly, or merge and cite the audited Theorem 1.2.
+2. Make Theorem H unconditional. Either merge and cite the audited Theorem 1.2, or prove 𝒲₄ = U(4): for every 4×4 unitary U there are diagonal unitaries D₁, D₂ with rank Im(D₁UD₂) ≤ 1. Equivalently, some real vector y lies in all four real planes span(Re ũᵢ, Im ũᵢ) of the rows ũᵢ of U·D₂.
 3. Formalize Lemma L and Theorem O′ in Lean.
 4. Dimension five: Zheng's Section 7 asks whether squared minors of 5×5 unitaries lie in the hull of those of orthogonal matrices; the proof here is specific to the splitting of SO(4).

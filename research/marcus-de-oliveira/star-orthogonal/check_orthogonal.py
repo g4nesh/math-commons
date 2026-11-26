@@ -9,7 +9,8 @@ README; this script only confirms its algebra, in exact arithmetic.
      the inequality (star) itself, in the square-root-free form  w >= 0  or  w^2 <= 4 D[12,12] D[13,14],  w = g0 + D[12,12].
  (2) Symbolic identities (sympy): the expansion of E/2, the shift identity for Qf, Qf(1,1,1,1) = 2k^2, the identity
      behind the reversed Cauchy-Schwarz inequality, and the identities of facts (F1)-(F4) in the proof of the lemma.
- (3) The lemma  max(Qf(w), Qf(1-w)) >= 0  on random rational data, including vertices and faces of the cube."""
+ (3) The lemma  max(Qf(w), Qf(1-w)) >= 0  on random rational data, including vertices and faces of the cube.
+ (4) Proposition S (squared minors of O (I + (e^{i psi} - 1) y y^T)) on rational data, n = 4 and 5."""
 import itertools, random, sys, time
 from fractions import Fraction as Fr
 import sympy as sp
@@ -131,4 +132,34 @@ for trial in range(200000):
     m = max(Qn(w, p_, r_), Qn([1 - v for v in w], p_, r_)); viol += m < 0; n3 += 1; smallest = m if smallest is None else min(smallest, m)
 ok3 = viol == 0
 print("(3) lemma: max(Qf(w), Qf(1-w)) < 0 in %d of %d random rational cases ; smallest value %s  [%.0fs]" % (viol, n3, smallest, time.time() - t0))
-print("ALL CHECKS PASSED" if (ok1 and ok2 and ok3) else "A CHECK FAILED")
+# (4) Proposition S on rational data, n = 4 and 5: U = O (I + (e^{i psi} - 1) y y^T) with rational cos psi, sin psi
+def cayley_n(n):
+    K = [[Fr(0)] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(i + 1, n):
+            v = Fr(rng.randint(-4, 4), rng.choice([1, 2, 3])); K[i][j] = v; K[j][i] = -v
+    I = [[Fr(int(i == j)) for j in range(n)] for i in range(n)]
+    return matmul([[I[i][j] - K[i][j] for j in range(n)] for i in range(n)], inv([[I[i][j] + K[i][j] for j in range(n)] for i in range(n)]))
+def cdet(Mx):
+    """determinant of a matrix of (re, im) pairs"""
+    if len(Mx) == 1: return Mx[0][0]
+    tot = (Fr(0), Fr(0))
+    for j in range(len(Mx)):
+        m = cdet([row[:j] + row[j + 1:] for row in Mx[1:]]); a = Mx[0][j]; sg = (-1) ** j
+        tot = (tot[0] + sg * (a[0] * m[0] - a[1] * m[1]), tot[1] + sg * (a[0] * m[1] + a[1] * m[0]))
+    return tot
+bad4 = 0; n4 = 0
+for n in (4, 5):
+    for trial in range(6):
+        O = cayley_n(n); y = cayley_n(n)[0]; t = Fr(rng.randint(1, 5), rng.randint(1, 5)); c, sn = (1 - t * t) / (1 + t * t), 2 * t / (1 + t * t)
+        Ur = matmul(O, [[Fr(int(i == j)) + (c - 1) * y[i] * y[j] for j in range(n)] for i in range(n)]); Ui = matmul(O, [[sn * y[i] * y[j] for j in range(n)] for i in range(n)])
+        Op = matmul(O, [[Fr(int(i == j)) - 2 * y[i] * y[j] for j in range(n)] for i in range(n)]); c2 = (1 + c) / 2
+        for k in (1, 2, 3):
+            for S in itertools.combinations(range(n), k):
+                for T in itertools.combinations(range(n), k):
+                    z = cdet([[(Ur[i][j], Ui[i][j]) for j in T] for i in S])
+                    d0 = cdet([[(O[i][j], Fr(0)) for j in T] for i in S])[0]; d1 = cdet([[(Op[i][j], Fr(0)) for j in T] for i in S])[0]
+                    bad4 += (z[0] ** 2 + z[1] ** 2) != c2 * d0 ** 2 + (1 - c2) * d1 ** 2; n4 += 1
+ok4 = bad4 == 0
+print("(4) Proposition S: %d minors of sizes 1 to 3 for n = 4 and 5 (12 rational examples): mismatches %d  [%.0fs]" % (n4, bad4, time.time() - t0))
+print("ALL CHECKS PASSED" if (ok1 and ok2 and ok3 and ok4) else "A CHECK FAILED")
