@@ -83,6 +83,14 @@ theorems = {
         'rowDetSeparatedHeadSwap', 'rowDetExchange', 'rowDetDuplicate', 'minorEqualRowsZero',
         'minorDuplicateRow', 'twoEndpointAvoids', 'minorExchangeRows', 'gateMinorBoth',
         'rowDetMove', 'parityMap', 'minorMoveRow')},
+    'ForestSubsetExchange.lean': {'MathCommons.ForestSubsetExchange.' + n for n in (
+        'signedTwice', 'swapInvolutive', 'stepSymmetric', 'reverseSwap',
+        'filterSwapAvoids', 'replaceRowList', 'leftReplacementForward', 'leftReplacementBackward',
+        'rightReplacementForward', 'rightReplacementBackward', 'leftReplacementSign', 'rightReplacementSign',
+        'signedMulLeft', 'gateTwoCoefficients', 'gateMinorPredecessors', 'predecessorMinorSum',
+        'productEndpointAmplitude', 'productMagnitude', 'productEmptyFiber', 'distinctListMember',
+        'distinctListNodup', 'reachableEndpointsNodup', 'historyEndpointMember', 'endpointMassOne',
+        'productMassOne')},
 }
 theorems['OrthogonalCube.lean'] = {'MathCommons.OrthogonalCube.' + n for n in (
     'squareNonnegative', 'quadraticNonnegative', 'lagrangeIdentity',

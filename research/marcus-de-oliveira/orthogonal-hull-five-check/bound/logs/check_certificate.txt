@@ -1,0 +1,10 @@
+Phi on the 120 permutation matrices: value 1 x 60 , value -5 x 60 , other 0
+Gram blocks: 346 ; positive definite (exact): 346 ; sizes [2, 5, 6, 13, 26, 42]
+multiplier terms: 8310
+c = 1137021/1000000 = 1.137021
+remainder R: nonzero coefficients 4804 ; sum of |coefficients| = 8.17e-06 ; largest |coefficient| = 2.36e-07
+bound B = c + |R|_1 = 1.13702917
+B < 37/25 : True
+B <= 13/10: True
+B <= 11371/10000 : True
+checked in 2.9s

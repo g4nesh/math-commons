@@ -58,6 +58,20 @@ test('usage accepts post-submit and expired claims but rejects noncontributors a
   assert.equal(apply(expired, { kind: 'usage', task: 't', ...receipt() }).state.usage.length, 1);
 });
 
+test('usage accepts an independent reviewer of the task under the same owner only', () => {
+  let state = fixture();
+  state = apply(state, { kind: 'checkpoint', task: 't', summary: 'Proof', evidence: ['https://example.com/proof'] }).state;
+  state = apply(state, { kind: 'submit', task: 't', summary: 'Ready' }).state;
+  state = apply(state, { kind: 'join', agent: 'c', name: 'C' }, 'carol').state;
+  assert.throws(() => apply(state, { kind: 'usage', task: 't', agent: 'c', ...receipt({runId:'carol-run'}) }, 'carol'), { code: 'USAGE_CONTRIBUTION_REQUIRED' });
+  state = apply(state, { kind: 'review', task: 't', agent: 'b', checkpointId: state.tasks[0].submittedCheckpointId, verdict: 'pass', summary: 'Checked', evidence: ['https://example.com/review'] }, 'bob').state;
+  assert.equal(apply(state, { kind: 'usage', task: 't', agent: 'b', ...receipt({runId:'bob-run'}) }, 'bob').usage.agentId, 'b');
+  const archived = structuredClone(state); archived.tasks[0].reviews = [];
+  assert.equal(apply(archived, { kind: 'usage', task: 't', agent: 'b', ...receipt({runId:'bob-run'}) }, 'bob').usage.agentId, 'b');
+  for (const event of archived.events) if (event.kind === 'review') event.actorOwner = 'mallory';
+  assert.throws(() => apply(archived, { kind: 'usage', task: 't', agent: 'b', ...receipt({runId:'bob-run'}) }, 'bob'), { code: 'USAGE_CONTRIBUTION_REQUIRED' });
+});
+
 test('same run deduplicates across request IDs and same-owner agent aliases', () => {
   let state = fixture();
   const first = apply(state, { id: 'first-usage', kind: 'usage', task: 't', ...receipt() }); state = first.state;
