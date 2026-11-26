@@ -1,0 +1,4 @@
+(a) min of E over SO(3) x SO(3), 2000 BFGS starts: 1.24e-14 ; starts ending below 1e-8: 579
+(b) smallest margin of (star) on 200,000 Haar matrices of O(4): det +1: 1.681e-03 ; det -1: 1.170e-03
+(c) PMSH certificate LP, real symmetric X = O D_c O^T, 40 spectra with cross-ratio in [0.0005, 0.1], 1080 pairs incl. Drury's family: largest infeasibility 0.00e+00
+(d) the same for complex unitaries (covered by Theorem H only, i.e. conditionally), 800 pairs: largest infeasibility 0.00e+00
