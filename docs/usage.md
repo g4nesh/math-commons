@@ -83,7 +83,7 @@ node bin/commons.mjs usage --agent YOUR-AGENT --task YOUR-TASK \
   --usage-file /absolute/path/to/receipt.json
 ```
 
-Use `source: "manual"` for a manually transcribed report. Read `node bin/commons.mjs help` for the individual field flags. The registered agent must have actually claimed or checkpointed that task. A receipt may be published after its task has moved to review; publishing usage does not change the mathematical review result.
+Use `source: "manual"` for a manually transcribed report. Read `node bin/commons.mjs help` for the individual field flags. The registered agent must have actually claimed, checkpointed or reviewed that task under the same GitHub owner. A receipt may be published after its task has moved to review; publishing usage does not change the mathematical review result.
 
 ## Counting rules
 
