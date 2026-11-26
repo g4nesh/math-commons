@@ -5,7 +5,8 @@ Claim checked:  for every real orthogonal 5x5 matrix O,   Phi(O) <= beta   (beta
 The certificate gives rational Gram matrices G_b, one for each of the 225 sign-character blocks of cubic monomials, and
 rational multipliers mu_k for products (monomial m_k) x (orthogonality relation r_k).  The script checks, in exact arithmetic:
 
- (A) Phi, expanded as a polynomial in the 25 entries, agrees with its definition by minors (on integer test matrices);
+ (A) Phi, expanded as a polynomial in the 25 entries, agrees with its definition by minors on rational test matrices
+     (both are coded from the list phi_terms(), which is the formula of README.md);
  (B) every G_b is symmetric positive definite (all pivots of Gaussian elimination are positive);
  (C) the polynomial identity   beta - Phi(x) - sum_b v_b(x)^T G_b v_b(x)  =  (1/40) sum_{g in GAMMA} g.( sum_k mu_k m_k r_k )
      holds coefficient by coefficient, as polynomials in 25 variables;
@@ -87,6 +88,7 @@ def char(m):
 blocks = {}
 for m in itertools.combinations_with_replacement(range(25), 3): blocks.setdefault(char(m), []).append(m)
 theta = {(tuple(k[0]), tuple(k[1])): Fr(*t) for k, t in zip(cert["orbit_keys"], cert["theta"])}
+if len(cert["orbit_keys"]) != len(cert["theta"]) or len(theta) != len(cert["theta"]): raise SystemExit("VERIFICATION FAILED: malformed certificate (orbit keys)")
 def orbit_key(m1, m2):
     best = None
     for g in GAMMA:
@@ -106,7 +108,10 @@ SOS = {}; okB = True; sizes = {}
 for ch, ms in blocks.items():
     s = len(ms); G = [[None] * s for _ in range(s)]
     for a in range(s):
-        for b in range(a, s): G[a][b] = G[b][a] = theta[orbit_key(ms[a], ms[b])]
+        for b in range(a, s):
+            kk = orbit_key(ms[a], ms[b])
+            if kk not in theta: raise SystemExit("VERIFICATION FAILED: the certificate has no entry for a pair of monomials")
+            G[a][b] = G[b][a] = theta[kk]
     okB &= positive_definite(G); sizes[s] = sizes.get(s, 0) + 1
     for a in range(s):
         for b in range(a, s):
@@ -116,7 +121,9 @@ print("(B) Gram blocks (size: count) %s all positive definite:" % sizes, okB)
 # identity
 lhs = add(add({(): beta}, PHI, -1), {m: c for m, c in SOS.items() if c}, -1)
 T = {}
-for ri, m, num, den in cert["multipliers"]: T = add(T, mul({tuple(m): Fr(1)}, RELS[ri]), Fr(num, den))
+for ri, m, num, den in cert["multipliers"]:
+    if not (0 <= ri < len(RELS)) or not all(0 <= x < 25 for x in m): raise SystemExit("VERIFICATION FAILED: malformed multiplier")
+    T = add(T, mul({tuple(sorted(m)): Fr(1)}, RELS[ri]), Fr(num, den))
 rhs = {}
 for g in GAMMA: rhs = add(rhs, act(g, T), Fr(1, 40))
 okC = lhs == rhs

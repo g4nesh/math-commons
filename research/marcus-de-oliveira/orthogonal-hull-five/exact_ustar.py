@@ -1,8 +1,16 @@
 """Exact check: the matrix V below is unitary and Phi(V) = 37/25.  Arithmetic in Q(sqrt6, i sqrt15) with Fractions.
+Standard library only.
 An element is (a, b, c, d) = a + b*s + c*t + d*s*t with s = sqrt(6), t = i*sqrt(15); s^2 = 6, t^2 = -15; conj(t) = -t."""
 import itertools
 from fractions import Fraction as Fr
-from phi import TERMS          # the definition of Phi; the same list is rebuilt independently in verify_certificate.py
+def terms():                 # the definition of Phi (README.md); rebuilt independently in verify_certificate.py and phi.py
+    out = [((v,), (v,), -1) for v in range(5)]
+    for v in range(5):
+        a = tuple(sorted(((v + 1) % 5, (v - 1) % 5))); b = tuple(sorted(((v + 2) % 5, (v - 2) % 5))); out += [(a, b, 1), (b, a, 1)]
+        for d in (1, 2):
+            s_ = tuple(sorted((v, (v + d) % 5))); t_ = tuple(sorted((v, (v - d) % 5))); out += [(s_, t_, -1), (t_, s_, -1)]
+    return out
+TERMS = terms()
 class K:
     __slots__ = ('v',)
     def __init__(self, a=0, b=0, c=0, d=0): self.v = (Fr(a), Fr(b), Fr(c), Fr(d))
@@ -38,6 +46,15 @@ for S in itertools.combinations(range(n), 2):
     for T in itertools.combinations(range(n), 2):
         d = det(S, T); m = (d * d.conj()).v; assert m[1] == 0 and m[2] == 0 and m[3] == 0; allm[str(m[0])] = allm.get(str(m[0]), 0) + 1
 print("squared 2x2 minors (value: count):", allm)
+# Phi on the 120 permutation matrices, exactly
+cnt = {}
+for p in itertools.permutations(range(n)):
+    val = 0
+    for S, T, c in TERMS:
+        dd = (1 if p[S[0]] == T[0] else 0) if len(S) == 1 else (1 if (p[S[0]], p[S[1]]) == T else 0) - (1 if (p[S[0]], p[S[1]]) == (T[1], T[0]) else 0)
+        val += c * dd * dd
+    cnt[val] = cnt.get(val, 0) + 1
+print("Phi on the 120 permutation matrices (value: count):", cnt)
 # spectral structure: V is symmetric, (V - I)(V + I)(V^2 + V + I) = 0 and tr V = 0, so the eigenvalues are 1, 1, -1, w, w^2 (w^3 = 1)
 def mmul(A, B): return [[sum((A[i][k] * B[k][j] for k in range(n)), ZERO) for j in range(n)] for i in range(n)]
 def madd(A, B, c=1): return [[A[i][j] + K(c) * B[i][j] for j in range(n)] for i in range(n)]
