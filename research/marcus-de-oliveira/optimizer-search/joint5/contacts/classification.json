@@ -1,0 +1,2935 @@
+{
+ "counts": {
+  "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)": 61,
+  "sliver-hull (z nearly collinear: degenerate hull, trivial)": 87
+ },
+ "records": [
+  {
+   "file": "runs/cA_0.05.json",
+   "best_index": 0,
+   "seed": 502,
+   "restart": 20,
+   "m_float": 2.135287286662351e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.06045661750456127,
+   "zero_pairs": [
+    [
+     3,
+     1,
+     4.440892098500626e-16
+    ]
+   ],
+   "dist_genperm": 0.07806159156057535,
+   "dist_blockdiag": 0.04974707935288514,
+   "sep": [
+    0.049158425517818564,
+    0.05693051225016866
+   ],
+   "vertex_dist": 0.030695546384426932
+  },
+  {
+   "file": "runs/cA_0.05.json",
+   "best_index": 1,
+   "seed": 502,
+   "restart": 29,
+   "m_float": 4.0869666564044156e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.48059885088028065,
+   "zero_pairs": [
+    [
+     1,
+     0,
+     9.694605782913356e-16
+    ]
+   ],
+   "dist_genperm": 0.07871470433741601,
+   "dist_blockdiag": 0.04987245529447559,
+   "sep": [
+    0.06285001134513057,
+    0.05730455190127616
+   ],
+   "vertex_dist": 0.0007208702896914021
+  },
+  {
+   "file": "runs/cA_0.05.json",
+   "best_index": 2,
+   "seed": 502,
+   "restart": 53,
+   "m_float": -2.2612964722212794e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.925788469802373e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.04949979677067007,
+   "dist_blockdiag": 0.04936661618807703,
+   "sep": [
+    0.5193716445724172,
+    0.8796620680458391
+   ],
+   "vertex_dist": 0.016682293742804614
+  },
+  {
+   "file": "runs/cA_0.05.json",
+   "best_index": 3,
+   "seed": 502,
+   "restart": 13,
+   "m_float": -4.582768956734433e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.15680746727130823,
+   "zero_pairs": [
+    [
+     0,
+     1,
+     5.594315114139763e-16
+    ]
+   ],
+   "dist_genperm": 0.081322697014933,
+   "dist_blockdiag": 0.04993009464644338,
+   "sep": [
+    1.3337726442838684,
+    0.050830695270996894
+   ],
+   "vertex_dist": 0.0015937388574472303
+  },
+  {
+   "file": "runs/cA_0.1.json",
+   "best_index": 0,
+   "seed": 502,
+   "restart": 39,
+   "m_float": 5.695021637915387e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.6561653701577137e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.09861448567711795,
+   "dist_blockdiag": 0.09707778276257306,
+   "sep": [
+    0.10087039185652422,
+    0.4327328938578724
+   ],
+   "vertex_dist": 0.0009506916662760079
+  },
+  {
+   "file": "runs/cA_0.1.json",
+   "best_index": 1,
+   "seed": 502,
+   "restart": 36,
+   "m_float": 3.263776415347238e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.4016161931898947e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.11648080088025081,
+   "dist_blockdiag": 0.09034376655865528,
+   "sep": [
+    0.09998078676178969,
+    1.0543529692408027
+   ],
+   "vertex_dist": 0.004967666206645961
+  },
+  {
+   "file": "runs/cA_0.1.json",
+   "best_index": 2,
+   "seed": 502,
+   "restart": 34,
+   "m_float": 2.3134557035880013e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.14693559879219342,
+   "zero_pairs": [
+    [
+     4,
+     0,
+     3.376611507232129e-16
+    ]
+   ],
+   "dist_genperm": 0.15285035354384036,
+   "dist_blockdiag": 0.09976400548304909,
+   "sep": [
+    0.41255104752167826,
+    0.1695564886117938
+   ],
+   "vertex_dist": 0.04052508924249919
+  },
+  {
+   "file": "runs/cA_0.1.json",
+   "best_index": 3,
+   "seed": 502,
+   "restart": 43,
+   "m_float": 2.0977261793587607e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 7.394553088505644e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.147122725096143,
+   "dist_blockdiag": 0.09985029552188651,
+   "sep": [
+    0.10040304797313826,
+    0.10071320898446626
+   ],
+   "vertex_dist": 0.011905926698257541
+  },
+  {
+   "file": "runs/cA_0.1.json",
+   "best_index": 4,
+   "seed": 502,
+   "restart": 55,
+   "m_float": 2.0564499116417629e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.0043076280646232e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.10219789795437184,
+   "dist_blockdiag": 0.09909178323349677,
+   "sep": [
+    0.09949049593548982,
+    0.18097793240501373
+   ],
+   "vertex_dist": 0.019431729021181503
+  },
+  {
+   "file": "runs/cA_0.1.json",
+   "best_index": 5,
+   "seed": 502,
+   "restart": 8,
+   "m_float": 1.260807135867568e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.3748991365988123e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.09764201069761602,
+   "dist_blockdiag": 0.09317285731070069,
+   "sep": [
+    0.10034390960792573,
+    1.0532510702851148
+   ],
+   "vertex_dist": 0.056697924367397595
+  },
+  {
+   "file": "runs/cA_0.1.json",
+   "best_index": 6,
+   "seed": 502,
+   "restart": 31,
+   "m_float": 1.2376554592746078e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.2395646560647443e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.09947577008744746,
+   "dist_blockdiag": 0.09789296200867215,
+   "sep": [
+    0.1428904902170122,
+    1.155749104285844
+   ],
+   "vertex_dist": 0.00033373225081903795
+  },
+  {
+   "file": "runs/cA_0.1.json",
+   "best_index": 7,
+   "seed": 502,
+   "restart": 3,
+   "m_float": -1.755180766296448e-18,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 4.2203428690254244e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.13367263886720182,
+   "dist_blockdiag": 0.09901551169546785,
+   "sep": [
+    0.10002756451406136,
+    0.09967569371240842
+   ],
+   "vertex_dist": 0.00025385948897281964
+  },
+  {
+   "file": "runs/cA_0.1.json",
+   "best_index": 8,
+   "seed": 502,
+   "restart": 53,
+   "m_float": -8.281575951988045e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 8.920282706676447e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.09951006648980376,
+   "dist_blockdiag": 0.0994167654479714,
+   "sep": [
+    0.6399256871192978,
+    0.9259073827384995
+   ],
+   "vertex_dist": 0.03288189729801044
+  },
+  {
+   "file": "runs/cA_0.1.json",
+   "best_index": 9,
+   "seed": 502,
+   "restart": 0,
+   "m_float": -1.380892857312333e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 4.721053883122707e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.10254385316217329,
+   "dist_blockdiag": 0.09770732917259295,
+   "sep": [
+    0.24146862785950682,
+    0.29362638430232785
+   ],
+   "vertex_dist": 0.0010041149853265308
+  },
+  {
+   "file": "runs/cA_0.1.json",
+   "best_index": 10,
+   "seed": 502,
+   "restart": 26,
+   "m_float": -1.5929654997254562e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 3.3796561018942373e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.10028077365419341,
+   "dist_blockdiag": 0.10007168300005742,
+   "sep": [
+    0.3974508871786301,
+    0.12688976885600048
+   ],
+   "vertex_dist": 0.03932017725677342
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 0,
+   "seed": 502,
+   "restart": 20,
+   "m_float": 4.871871077630163e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.11415070013875096,
+   "zero_pairs": [
+    [
+     2,
+     1,
+     2.865687575934818e-15
+    ]
+   ],
+   "dist_genperm": 0.35875820290523175,
+   "dist_blockdiag": 0.19966110885888955,
+   "sep": [
+    0.20240926687163538,
+    0.202157374418561
+   ],
+   "vertex_dist": 0.08668691564733173
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 1,
+   "seed": 502,
+   "restart": 59,
+   "m_float": 4.586036407006926e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 4.861962339311211e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.20158513808562317,
+   "dist_blockdiag": 0.1946254481399763,
+   "sep": [
+    0.6853301965721181,
+    0.2002144856766647
+   ],
+   "vertex_dist": 0.005997133639750398
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 2,
+   "seed": 502,
+   "restart": 44,
+   "m_float": 3.5869731430209923e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 3.9723381159253277e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.3045271071957705,
+   "dist_blockdiag": 0.19999631235216464,
+   "sep": [
+    0.20004876521743045,
+    1.2478208793984695
+   ],
+   "vertex_dist": 0.0004900295439414348
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 3,
+   "seed": 502,
+   "restart": 45,
+   "m_float": 2.7948652705800727e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.006332106702181e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.2943537457279414,
+   "dist_blockdiag": 0.18722573867521097,
+   "sep": [
+    0.19993419845455376,
+    0.8370726111664177
+   ],
+   "vertex_dist": 0.006309105141651782
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 4,
+   "seed": 502,
+   "restart": 8,
+   "m_float": 2.5117210852714104e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.1528755281175581e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.19096633249152073,
+   "dist_blockdiag": 0.18128325458398897,
+   "sep": [
+    0.19997403595811786,
+    1.147414068470813
+   ],
+   "vertex_dist": 0.0010135322496150553
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 5,
+   "seed": 502,
+   "restart": 43,
+   "m_float": 2.137163022889526e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.0286076380594054e-14,
+   "zero_pairs": [],
+   "dist_genperm": 0.289360103309507,
+   "dist_blockdiag": 0.19946084695300392,
+   "sep": [
+    0.20027547495350898,
+    0.26076911497810407
+   ],
+   "vertex_dist": 0.0029623718845538287
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 6,
+   "seed": 502,
+   "restart": 53,
+   "m_float": 1.905186830827569e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 4.014711626599331e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.19912663959738064,
+   "dist_blockdiag": 0.19891933609015444,
+   "sep": [
+    0.5412339398660324,
+    1.0236668590486122
+   ],
+   "vertex_dist": 0.012783422942188009
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 7,
+   "seed": 502,
+   "restart": 10,
+   "m_float": 1.7031866797411836e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 4.864489471502359e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.2985083751601151,
+   "dist_blockdiag": 0.19786714400994798,
+   "sep": [
+    0.1999861501146416,
+    0.5195701923136599
+   ],
+   "vertex_dist": 0.004180684411705465
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 8,
+   "seed": 502,
+   "restart": 42,
+   "m_float": 1.553387586776715e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.10957473785210552,
+   "zero_pairs": [
+    [
+     3,
+     0,
+     2.0053283331865004e-15
+    ]
+   ],
+   "dist_genperm": 0.3175588291293415,
+   "dist_blockdiag": 0.1981032535578735,
+   "sep": [
+    0.31066025673767333,
+    0.1972054428364159
+   ],
+   "vertex_dist": 0.0009226381767842262
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 9,
+   "seed": 502,
+   "restart": 55,
+   "m_float": 1.1482266197173027e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 4.13193038469269e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.20030603634068922,
+   "dist_blockdiag": 0.198017994470436,
+   "sep": [
+    0.20016922845685775,
+    0.24834216469244955
+   ],
+   "vertex_dist": 0.0010048816222787452
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 10,
+   "seed": 502,
+   "restart": 2,
+   "m_float": 1.0499276268644831e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.108413157003705e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.28843750578715655,
+   "dist_blockdiag": 0.19665140312963725,
+   "sep": [
+    0.22645226779341593,
+    0.20016745510118994
+   ],
+   "vertex_dist": 0.0013967717841553032
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 11,
+   "seed": 502,
+   "restart": 46,
+   "m_float": 8.772906218708117e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 3.8988862827767467e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.19974526667586578,
+   "dist_blockdiag": 0.19971510366089773,
+   "sep": [
+    0.20006371022207334,
+    0.20054499606871679
+   ],
+   "vertex_dist": 0.001339841794977218
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 12,
+   "seed": 502,
+   "restart": 25,
+   "m_float": 8.435557142843335e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.18917094904955978,
+   "zero_pairs": [
+    [
+     0,
+     0,
+     1.1102230246251565e-16
+    ],
+    [
+     4,
+     3,
+     1.669954059090464e-15
+    ]
+   ],
+   "dist_genperm": 0.2002215778329649,
+   "dist_blockdiag": 0.1989301411907256,
+   "sep": [
+    0.19579353709445546,
+    0.4156208682573237
+   ],
+   "vertex_dist": 0.0070618259397264085
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 13,
+   "seed": 502,
+   "restart": 31,
+   "m_float": 6.055953414150994e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 4.056336445695464e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.29738267132078655,
+   "dist_blockdiag": 0.19564975414102515,
+   "sep": [
+    0.2000310571234175,
+    1.109492650515392
+   ],
+   "vertex_dist": 0.004505523911855528
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 14,
+   "seed": 502,
+   "restart": 29,
+   "m_float": 4.2099200149326505e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.21776475760412933,
+   "zero_pairs": [
+    [
+     1,
+     0,
+     4.248326105049101e-15
+    ]
+   ],
+   "dist_genperm": 0.2819266575324233,
+   "dist_blockdiag": 0.1979474202457262,
+   "sep": [
+    0.20144168222611247,
+    0.2349992947406069
+   ],
+   "vertex_dist": 0.01021602156216089
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 15,
+   "seed": 502,
+   "restart": 13,
+   "m_float": 3.9368485503996374e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.169582898251118,
+   "zero_pairs": [
+    [
+     0,
+     4,
+     3.242090044628961e-15
+    ]
+   ],
+   "dist_genperm": 0.28996102121888234,
+   "dist_blockdiag": 0.19192391834529143,
+   "sep": [
+    0.3025893216544336,
+    0.5870984586388822
+   ],
+   "vertex_dist": 0.0022514232937641803
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 16,
+   "seed": 502,
+   "restart": 37,
+   "m_float": -4.983363953813322e-18,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.05974363303757304,
+   "zero_pairs": [
+    [
+     0,
+     0,
+     8.881784197001252e-16
+    ]
+   ],
+   "dist_genperm": 0.2303343448098628,
+   "dist_blockdiag": 0.19678719937172373,
+   "sep": [
+    0.1964108080554856,
+    0.20375436454399393
+   ],
+   "vertex_dist": 0.0011279067203694578
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 17,
+   "seed": 502,
+   "restart": 5,
+   "m_float": -3.163501075382114e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.06890733590413475,
+   "zero_pairs": [
+    [
+     3,
+     2,
+     2.5823128856601332e-15
+    ]
+   ],
+   "dist_genperm": 0.3019000165998865,
+   "dist_blockdiag": 0.19273662669095204,
+   "sep": [
+    0.4808883480138005,
+    0.19717814402241704
+   ],
+   "vertex_dist": 0.0040973453600792326
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 18,
+   "seed": 502,
+   "restart": 48,
+   "m_float": -7.37101220829647e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.0802437376424662,
+   "zero_pairs": [
+    [
+     2,
+     1,
+     2.0933390557824786e-15
+    ]
+   ],
+   "dist_genperm": 0.3099778031244591,
+   "dist_blockdiag": 0.1983599501374067,
+   "sep": [
+    0.1983801581088053,
+    0.21426462581810204
+   ],
+   "vertex_dist": 0.007918355131907065
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 19,
+   "seed": 502,
+   "restart": 49,
+   "m_float": -1.1823769471865625e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.8879002293712804e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.26735451138231325,
+   "dist_blockdiag": 0.19969103036103197,
+   "sep": [
+    0.20027871563398084,
+    0.9151435952100111
+   ],
+   "vertex_dist": 0.00027064295291125015
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 20,
+   "seed": 502,
+   "restart": 0,
+   "m_float": -1.2489039917313194e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.0341785113860375e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.2038100839711815,
+   "dist_blockdiag": 0.19417467534958677,
+   "sep": [
+    0.2934388165856421,
+    0.19703766584599175
+   ],
+   "vertex_dist": 0.057247610607625274
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 21,
+   "seed": 502,
+   "restart": 58,
+   "m_float": -1.9166448613747027e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 5.498712845208955e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.19856247429441376,
+   "dist_blockdiag": 0.19672997024633787,
+   "sep": [
+    0.20054226992659943,
+    0.22146500045437786
+   ],
+   "vertex_dist": 0.005155059695437423
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 22,
+   "seed": 502,
+   "restart": 7,
+   "m_float": -1.962059134439868e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.2236899170250257e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.2639980199286137,
+   "dist_blockdiag": 0.19948162930831215,
+   "sep": [
+    0.20138322309646023,
+    0.20252262702414264
+   ],
+   "vertex_dist": 0.00225336302736787
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 23,
+   "seed": 502,
+   "restart": 11,
+   "m_float": -2.3225509721568e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.5573303612794529e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.3078546490331622,
+   "dist_blockdiag": 0.19918302894930484,
+   "sep": [
+    0.1997668990708496,
+    0.204692112288721
+   ],
+   "vertex_dist": 0.0033903637830138282
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 24,
+   "seed": 502,
+   "restart": 9,
+   "m_float": -2.8974339962019407e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.54911685829888,
+   "zero_pairs": [
+    [
+     0,
+     3,
+     1.716587549445839e-16
+    ],
+    [
+     3,
+     4,
+     2.3714374201337736e-16
+    ]
+   ],
+   "dist_genperm": 0.19599885458333333,
+   "dist_blockdiag": 0.19371026005448766,
+   "sep": [
+    0.20052435834917218,
+    0.20002729389542742
+   ],
+   "vertex_dist": 0.04968726656106698
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 25,
+   "seed": 502,
+   "restart": 32,
+   "m_float": -3.7207754980621565e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.7052397160865215e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.29188648449581867,
+   "dist_blockdiag": 0.19958017015048535,
+   "sep": [
+    0.9264625816240929,
+    0.19966957226022208
+   ],
+   "vertex_dist": 0.001727693060886032
+  },
+  {
+   "file": "runs/cA_0.2.json",
+   "best_index": 26,
+   "seed": 502,
+   "restart": 22,
+   "m_float": -2.4408522844371298e-15,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.11996412290387183,
+   "zero_pairs": [
+    [
+     2,
+     1,
+     3.421288751228479e-14
+    ]
+   ],
+   "dist_genperm": 0.2840121804316178,
+   "dist_blockdiag": 0.18416963595873126,
+   "sep": [
+    0.19386019137669597,
+    0.20733373347625725
+   ],
+   "vertex_dist": 0.00616224773280228
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 0,
+   "seed": 502,
+   "restart": 20,
+   "m_float": 9.069762339136864e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.03921903773041642,
+   "zero_pairs": [
+    [
+     2,
+     1,
+     1.3484525896502376e-14
+    ]
+   ],
+   "dist_genperm": 0.4258292704438429,
+   "dist_blockdiag": 0.27769057475069914,
+   "sep": [
+    0.28911266226303295,
+    0.3020058021827306
+   ],
+   "vertex_dist": 0.03848731631893229
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 1,
+   "seed": 502,
+   "restart": 60,
+   "m_float": 8.218927676717033e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.645614201791868,
+   "zero_pairs": [
+    [
+     4,
+     2,
+     2.482534153247273e-16
+    ]
+   ],
+   "dist_genperm": 0.41304243789957995,
+   "dist_blockdiag": 0.29983494367259733,
+   "sep": [
+    0.3478799339335893,
+    0.6074895950412157
+   ],
+   "vertex_dist": 0.10149760612092941
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 2,
+   "seed": 502,
+   "restart": 45,
+   "m_float": 5.326790719359696e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 3.2393453543717505e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.4176839809562911,
+   "dist_blockdiag": 0.2978883240352981,
+   "sep": [
+    0.30924748555724885,
+    0.3346658221875033
+   ],
+   "vertex_dist": 0.005973734186312525
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 3,
+   "seed": 502,
+   "restart": 59,
+   "m_float": 5.227786735068894e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.9192335136866547e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.299798739190279,
+   "dist_blockdiag": 0.2991194078289725,
+   "sep": [
+    0.7426619968361097,
+    0.6864749677016867
+   ],
+   "vertex_dist": 0.0037637154802413852
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 4,
+   "seed": 502,
+   "restart": 63,
+   "m_float": 2.9122942931925515e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.10189751492527377,
+   "zero_pairs": [
+    [
+     4,
+     0,
+     2.931072891608563e-15
+    ]
+   ],
+   "dist_genperm": 0.385832023233146,
+   "dist_blockdiag": 0.3006629733829458,
+   "sep": [
+    0.2997773882914095,
+    0.6278964874365249
+   ],
+   "vertex_dist": 0.0030767518728452687
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 5,
+   "seed": 502,
+   "restart": 55,
+   "m_float": 1.833872255467809e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 5.765484952114546e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.2995875683429947,
+   "dist_blockdiag": 0.2982281958506352,
+   "sep": [
+    0.3188667049937361,
+    0.31161433152649204
+   ],
+   "vertex_dist": 0.0030683812507244874
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 6,
+   "seed": 502,
+   "restart": 44,
+   "m_float": 1.721316089119813e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.09346220887448592,
+   "zero_pairs": [
+    [
+     3,
+     1,
+     4.965068306494546e-16
+    ]
+   ],
+   "dist_genperm": 0.4258301609295264,
+   "dist_blockdiag": 0.29978794543766907,
+   "sep": [
+    0.3006477051607751,
+    1.2416799691549822
+   ],
+   "vertex_dist": 0.006999392921752548
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 7,
+   "seed": 502,
+   "restart": 46,
+   "m_float": 8.049898504028901e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 4.625933415297226e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.2987607661854892,
+   "dist_blockdiag": 0.2982992780417927,
+   "sep": [
+    0.30052212702578934,
+    0.3058154982454748
+   ],
+   "vertex_dist": 0.0024420653761728786
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 8,
+   "seed": 502,
+   "restart": 9,
+   "m_float": 7.183385265401716e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.606828176867201e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.34334305448725355,
+   "dist_blockdiag": 0.29739348590529524,
+   "sep": [
+    0.5027535861508269,
+    0.3181843234712008
+   ],
+   "vertex_dist": 0.0010787229308566637
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 9,
+   "seed": 502,
+   "restart": 38,
+   "m_float": 5.139464350834651e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 5.900525643616783e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.4297555579916523,
+   "dist_blockdiag": 0.2984241781103445,
+   "sep": [
+    0.30248279816188783,
+    0.31055796842823946
+   ],
+   "vertex_dist": 0.004838828622036829
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 10,
+   "seed": 502,
+   "restart": 41,
+   "m_float": 4.8626605241937885e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 7.64260920258379e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.432987376060068,
+   "dist_blockdiag": 0.2939407619429818,
+   "sep": [
+    0.3959372585981467,
+    0.3068396999414895
+   ],
+   "vertex_dist": 0.0008590143922866696
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 11,
+   "seed": 502,
+   "restart": 15,
+   "m_float": 4.7598712833328846e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 8.340583707944488e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.29752376416912263,
+   "dist_blockdiag": 0.29422679731608126,
+   "sep": [
+    0.29989971268159726,
+    0.30560163524138434
+   ],
+   "vertex_dist": 0.00022979980188382197
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 12,
+   "seed": 502,
+   "restart": 53,
+   "m_float": 4.4055613632472466e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.250477907292172e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.2992614219920101,
+   "dist_blockdiag": 0.29911275200862963,
+   "sep": [
+    0.5057010109180532,
+    0.9876340540151927
+   ],
+   "vertex_dist": 0.00030831163613340514
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 13,
+   "seed": 502,
+   "restart": 11,
+   "m_float": 3.6628951578734795e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.0505457879011108e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.30252502011169213,
+   "dist_blockdiag": 0.29952765857139063,
+   "sep": [
+    0.7598569446931183,
+    0.3024161643435403
+   ],
+   "vertex_dist": 0.0009146232891252046
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 14,
+   "seed": 502,
+   "restart": 2,
+   "m_float": 2.609800343472073e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.5763674614518962e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.39266832851651645,
+   "dist_blockdiag": 0.29457744910904005,
+   "sep": [
+    0.4472287359806935,
+    0.30101018802574553
+   ],
+   "vertex_dist": 0.005298040295501229
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 15,
+   "seed": 502,
+   "restart": 47,
+   "m_float": 2.2597824107535093e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.1490480735911997e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.2985590937780316,
+   "dist_blockdiag": 0.29580547658869016,
+   "sep": [
+    0.29978147384593784,
+    0.3002954556461685
+   ],
+   "vertex_dist": 0.0025851750674459415
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 16,
+   "seed": 502,
+   "restart": 49,
+   "m_float": 2.0867398499350705e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.775119657878487e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.38038339593554893,
+   "dist_blockdiag": 0.29749247352809904,
+   "sep": [
+    0.2999959986479342,
+    0.9949552801024756
+   ],
+   "vertex_dist": 3.8397257434998705e-05
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 17,
+   "seed": 502,
+   "restart": 27,
+   "m_float": 2.072010395861221e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.5550612702149792,
+   "zero_pairs": [
+    [
+     0,
+     3,
+     5.578801654593729e-16
+    ]
+   ],
+   "dist_genperm": 0.42248223756514436,
+   "dist_blockdiag": 0.30019495382786254,
+   "sep": [
+    0.29953461671186055,
+    0.30068077462824155
+   ],
+   "vertex_dist": 0.007880637213182804
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 18,
+   "seed": 502,
+   "restart": 7,
+   "m_float": 1.571071642196977e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.2827496157392325e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.41635567752387026,
+   "dist_blockdiag": 0.29955458425720427,
+   "sep": [
+    0.2998556566526596,
+    0.30018794094376317
+   ],
+   "vertex_dist": 0.00014246618590539717
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 19,
+   "seed": 502,
+   "restart": 48,
+   "m_float": 1.2822695043135752e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.12430553234778612,
+   "zero_pairs": [
+    [
+     2,
+     3,
+     8.539351410930557e-16
+    ]
+   ],
+   "dist_genperm": 0.4187885078876399,
+   "dist_blockdiag": 0.27928245362080784,
+   "sep": [
+    0.30314926591671565,
+    0.2970842086998747
+   ],
+   "vertex_dist": 0.0056232699243797075
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 20,
+   "seed": 502,
+   "restart": 18,
+   "m_float": 4.374123121146212e-18,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.1917699058257873,
+   "zero_pairs": [
+    [
+     3,
+     4,
+     4.191610292504107e-16
+    ]
+   ],
+   "dist_genperm": 0.37352002680500074,
+   "dist_blockdiag": 0.2950989298531347,
+   "sep": [
+    0.46289062362765354,
+    0.29931433350643816
+   ],
+   "vertex_dist": 0.006269691417766636
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 21,
+   "seed": 502,
+   "restart": 43,
+   "m_float": 0.0,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 6.638936926088761e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.414362937608876,
+   "dist_blockdiag": 0.29973632785456994,
+   "sep": [
+    0.3001894120650277,
+    0.3014757583582285
+   ],
+   "vertex_dist": 0.001609903779496221
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 22,
+   "seed": 502,
+   "restart": 10,
+   "m_float": -7.688530680198487e-18,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.1879781059237997e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.4258176085725548,
+   "dist_blockdiag": 0.2981052285568304,
+   "sep": [
+    0.29993149779560596,
+    0.7072853790326338
+   ],
+   "vertex_dist": 0.0615693354506276
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 23,
+   "seed": 502,
+   "restart": 37,
+   "m_float": -1.1123381807159802e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.13204014940437536,
+   "zero_pairs": [
+    [
+     0,
+     0,
+     7.947987303456223e-16
+    ]
+   ],
+   "dist_genperm": 0.3372862191003415,
+   "dist_blockdiag": 0.28467913565442593,
+   "sep": [
+    0.3386577411064371,
+    0.41768054735029597
+   ],
+   "vertex_dist": 0.0014216461853703082
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 24,
+   "seed": 502,
+   "restart": 32,
+   "m_float": -4.753253256506114e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.12052716614683379,
+   "zero_pairs": [
+    [
+     1,
+     4,
+     4.220764384040162e-16
+    ]
+   ],
+   "dist_genperm": 0.4088623107297259,
+   "dist_blockdiag": 0.29128576840125975,
+   "sep": [
+    1.1024091711241315,
+    0.3004298133557285
+   ],
+   "vertex_dist": 0.012608753387139675
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 25,
+   "seed": 502,
+   "restart": 58,
+   "m_float": -5.598740345153218e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.61514897523396e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.29772593068242836,
+   "dist_blockdiag": 0.2947894777608684,
+   "sep": [
+    0.3010355560583558,
+    0.42724279364459194
+   ],
+   "vertex_dist": 0.007629057776541673
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 26,
+   "seed": 502,
+   "restart": 42,
+   "m_float": -6.912269351749006e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.14550587512070828,
+   "zero_pairs": [
+    [
+     3,
+     0,
+     5.117875266520903e-16
+    ]
+   ],
+   "dist_genperm": 0.4359302862222677,
+   "dist_blockdiag": 0.29828144320537375,
+   "sep": [
+    0.4612478017323035,
+    0.29819530845113995
+   ],
+   "vertex_dist": 0.003779547841916824
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 27,
+   "seed": 502,
+   "restart": 3,
+   "m_float": -1.069127677289561e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.14711130192244148,
+   "zero_pairs": [
+    [
+     2,
+     0,
+     1.884928529521895e-15
+    ]
+   ],
+   "dist_genperm": 0.413361319125532,
+   "dist_blockdiag": 0.28616586765323504,
+   "sep": [
+    0.29506540610429954,
+    0.29637829702942725
+   ],
+   "vertex_dist": 0.0008029222491916478
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 28,
+   "seed": 502,
+   "restart": 25,
+   "m_float": -2.0183483210953943e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 8.091911989433516e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.3056966577411814,
+   "dist_blockdiag": 0.29946349120466564,
+   "sep": [
+    0.44787259699849985,
+    0.3105775484526411
+   ],
+   "vertex_dist": 0.0006936037196273153
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 29,
+   "seed": 502,
+   "restart": 34,
+   "m_float": -2.1435361880479905e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 7.504345556389169e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.3463755149523635,
+   "dist_blockdiag": 0.29776800307636186,
+   "sep": [
+    0.3003800650099773,
+    0.3221253376193578
+   ],
+   "vertex_dist": 0.0001246334293959609
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 30,
+   "seed": 502,
+   "restart": 24,
+   "m_float": -2.371768337146134e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.20642537883902154,
+   "zero_pairs": [
+    [
+     3,
+     3,
+     4.965068306494546e-16
+    ]
+   ],
+   "dist_genperm": 0.4248904690554961,
+   "dist_blockdiag": 0.2973439085868871,
+   "sep": [
+    0.2981535106810127,
+    0.29989575119679274
+   ],
+   "vertex_dist": 0.04665498564134523
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 31,
+   "seed": 502,
+   "restart": 12,
+   "m_float": -2.5808033032629623e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.0806652341586105,
+   "zero_pairs": [
+    [
+     0,
+     3,
+     5.273559366969494e-16
+    ],
+    [
+     2,
+     0,
+     4.976227170553342e-15
+    ]
+   ],
+   "dist_genperm": 0.30176092722623626,
+   "dist_blockdiag": 0.28983215641017823,
+   "sep": [
+    0.30101861492060333,
+    0.3000470282790653
+   ],
+   "vertex_dist": 0.00898920296469555
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 32,
+   "seed": 502,
+   "restart": 1,
+   "m_float": -3.745355566803616e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.23013272531103932,
+   "zero_pairs": [
+    [
+     0,
+     0,
+     1.2474579732659882e-15
+    ],
+    [
+     2,
+     3,
+     8.082545620880531e-16
+    ]
+   ],
+   "dist_genperm": 0.42095236837953065,
+   "dist_blockdiag": 0.29126183279161855,
+   "sep": [
+    0.30021869537601004,
+    1.2483636440311567
+   ],
+   "vertex_dist": 0.00011508412663985153
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 33,
+   "seed": 502,
+   "restart": 39,
+   "m_float": -4.39960334238773e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.140387142537509e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.2993319674812469,
+   "dist_blockdiag": 0.29728719029398665,
+   "sep": [
+    0.30022754490826237,
+    0.29994412761163597
+   ],
+   "vertex_dist": 0.004701522620250527
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 34,
+   "seed": 502,
+   "restart": 61,
+   "m_float": -5.047467041815305e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 4.833427025171646e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.41396288624349264,
+   "dist_blockdiag": 0.2951458083631917,
+   "sep": [
+    0.3007399274907493,
+    0.30006171400402726
+   ],
+   "vertex_dist": 0.001992304050792534
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 35,
+   "seed": 502,
+   "restart": 19,
+   "m_float": -6.886553311644106e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.10684510128109699,
+   "zero_pairs": [
+    [
+     0,
+     4,
+     2.5894628196555746e-15
+    ],
+    [
+     1,
+     2,
+     1.6401643046719713e-15
+    ]
+   ],
+   "dist_genperm": 0.42876409873401466,
+   "dist_blockdiag": 0.27864590512716436,
+   "sep": [
+    0.39819483258538835,
+    0.2740965578963996
+   ],
+   "vertex_dist": 0.0022866668170040717
+  },
+  {
+   "file": "runs/cA_0.3.json",
+   "best_index": 36,
+   "seed": 502,
+   "restart": 52,
+   "m_float": -1.1355832928672974e-15,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.03334203266439609,
+   "zero_pairs": [
+    [
+     0,
+     3,
+     1.3394761424494089e-15
+    ]
+   ],
+   "dist_genperm": 0.39889494666741876,
+   "dist_blockdiag": 0.28710533244608194,
+   "sep": [
+    0.3064598596725401,
+    0.307094663749267
+   ],
+   "vertex_dist": 0.003153889613946288
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 0,
+   "seed": 502,
+   "restart": 50,
+   "m_float": 5.865958298470184e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.4418172886884763e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.5243135883037107,
+   "dist_blockdiag": 0.39291956135886963,
+   "sep": [
+    0.40950493377454056,
+    0.40221749121583994
+   ],
+   "vertex_dist": 0.0013265887573017446
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 1,
+   "seed": 502,
+   "restart": 58,
+   "m_float": 4.68785347248041e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.887176840488672e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.3974500557354641,
+   "dist_blockdiag": 0.39413693461944943,
+   "sep": [
+    0.40283441152838684,
+    0.4073153026353754
+   ],
+   "vertex_dist": 0.004725226158627519
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 2,
+   "seed": 502,
+   "restart": 49,
+   "m_float": 3.0659650385635736e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.750021289419846e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.5318487097901303,
+   "dist_blockdiag": 0.3973017543308748,
+   "sep": [
+    0.4030387525215163,
+    0.677163807978444
+   ],
+   "vertex_dist": 0.0008095521426802928
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 3,
+   "seed": 502,
+   "restart": 15,
+   "m_float": 2.972895553449171e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.19123145558979182,
+   "zero_pairs": [
+    [
+     3,
+     0,
+     2.482534153247273e-16
+    ]
+   ],
+   "dist_genperm": 0.4929057418572341,
+   "dist_blockdiag": 0.38442132515648075,
+   "sep": [
+    0.40233505196487357,
+    0.40065923378001883
+   ],
+   "vertex_dist": 0.08780785446600534
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 4,
+   "seed": 502,
+   "restart": 44,
+   "m_float": 2.934698681634517e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.0359499748695287e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.5293607643723182,
+   "dist_blockdiag": 0.3984649121452123,
+   "sep": [
+    0.40079192570710853,
+    0.8043288927135978
+   ],
+   "vertex_dist": 0.0004612656455419605
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 5,
+   "seed": 502,
+   "restart": 20,
+   "m_float": 2.8117580612917573e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 7.125781298803443e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.5329714944529649,
+   "dist_blockdiag": 0.3857376626500759,
+   "sep": [
+    0.3996044669086631,
+    0.398976122498785
+   ],
+   "vertex_dist": 0.0077451681267622545
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 6,
+   "seed": 502,
+   "restart": 63,
+   "m_float": 2.613554281354535e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 3.0732032099230283e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.44991651784449893,
+   "dist_blockdiag": 0.4003219622986123,
+   "sep": [
+    0.4015986411211408,
+    0.4501226793808062
+   ],
+   "vertex_dist": 0.00022382010103610522
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 7,
+   "seed": 502,
+   "restart": 24,
+   "m_float": 2.6008580830740187e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.33357469885396734,
+   "zero_pairs": [
+    [
+     3,
+     3,
+     3.1401849173675503e-16
+    ]
+   ],
+   "dist_genperm": 0.5534993140630947,
+   "dist_blockdiag": 0.3996335306998895,
+   "sep": [
+    0.40327013610961554,
+    0.39971334630337724
+   ],
+   "vertex_dist": 0.11767655022043277
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 8,
+   "seed": 502,
+   "restart": 30,
+   "m_float": 2.129613799660597e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 3.651418149192518e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.5069021359124426,
+   "dist_blockdiag": 0.39822797075227223,
+   "sep": [
+    0.40757029004462064,
+    0.4308971852924261
+   ],
+   "vertex_dist": 0.001853455468029301
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 9,
+   "seed": 502,
+   "restart": 53,
+   "m_float": 1.5902847516100202e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 9.60687931128915e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.4022901449680856,
+   "dist_blockdiag": 0.4005473278847588,
+   "sep": [
+    0.3999904576018274,
+    0.5893611489537054
+   ],
+   "vertex_dist": 0.004949178738849623
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 10,
+   "seed": 502,
+   "restart": 46,
+   "m_float": 1.4875947963888245e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.457243046614071e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.3990126540718446,
+   "dist_blockdiag": 0.39822521690624146,
+   "sep": [
+    0.40123068666411227,
+    0.4209873081302089
+   ],
+   "vertex_dist": 0.00032525873456844555
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 11,
+   "seed": 502,
+   "restart": 21,
+   "m_float": 1.1622222781470685e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.21014810674319298,
+   "zero_pairs": [
+    [
+     2,
+     3,
+     3.510833468576701e-16
+    ]
+   ],
+   "dist_genperm": 0.5578157302432192,
+   "dist_blockdiag": 0.376833214704109,
+   "sep": [
+    0.4001388630091415,
+    0.41384145484050866
+   ],
+   "vertex_dist": 0.004613433836469032
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 12,
+   "seed": 502,
+   "restart": 10,
+   "m_float": 1.1475836486039547e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.3871573552638001e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.5430574092437975,
+   "dist_blockdiag": 0.3988614797380339,
+   "sep": [
+    0.40306701497720093,
+    0.4904699106987237
+   ],
+   "vertex_dist": 0.005396055057863166
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 13,
+   "seed": 502,
+   "restart": 59,
+   "m_float": 8.292412300804814e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 3.752648221273096e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.4514168170437458,
+   "dist_blockdiag": 0.4009093225481001,
+   "sep": [
+    0.7116401206214075,
+    0.48785814382576614
+   ],
+   "vertex_dist": 0.000979131446127425
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 14,
+   "seed": 502,
+   "restart": 18,
+   "m_float": 7.529260429688185e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.1955265139300713,
+   "zero_pairs": [
+    [
+     3,
+     4,
+     1.3092278833360675e-16
+    ]
+   ],
+   "dist_genperm": 0.4777279254203407,
+   "dist_blockdiag": 0.39608137062347437,
+   "sep": [
+    0.5024677495089012,
+    0.40099064545994606
+   ],
+   "vertex_dist": 0.004315691943462967
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 15,
+   "seed": 502,
+   "restart": 7,
+   "m_float": 7.058276666564401e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 5.678212656401083e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.4493888598706949,
+   "dist_blockdiag": 0.397616241905268,
+   "sep": [
+    0.40020013361185003,
+    0.4027468114220824
+   ],
+   "vertex_dist": 0.002548608317506815
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 16,
+   "seed": 502,
+   "restart": 37,
+   "m_float": 5.929073375612056e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.09779878417074415,
+   "zero_pairs": [
+    [
+     0,
+     0,
+     2.3843961910368667e-15
+    ]
+   ],
+   "dist_genperm": 0.4773756344962792,
+   "dist_blockdiag": 0.39834814430349286,
+   "sep": [
+    0.3990808844089491,
+    0.4031237583760224
+   ],
+   "vertex_dist": 7.848231737343184e-05
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 17,
+   "seed": 502,
+   "restart": 52,
+   "m_float": 4.5219946296339996e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.7438292462472943,
+   "zero_pairs": [
+    [
+     4,
+     3,
+     7.021666937153402e-16
+    ]
+   ],
+   "dist_genperm": 0.5361637641989329,
+   "dist_blockdiag": 0.39902370944058596,
+   "sep": [
+    0.40094705351257537,
+    0.4009692825527379
+   ],
+   "vertex_dist": 0.08814460850837688
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 18,
+   "seed": 502,
+   "restart": 55,
+   "m_float": 3.648462751921093e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.1938712197343335e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.3992639682181841,
+   "dist_blockdiag": 0.39796033431348343,
+   "sep": [
+    0.40012644498563166,
+    0.40956891478257557
+   ],
+   "vertex_dist": 0.0033225804519427314
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 19,
+   "seed": 502,
+   "restart": 41,
+   "m_float": -2.9624700772758658e-18,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 6.249854015826127e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.5486412796413432,
+   "dist_blockdiag": 0.39768251288961864,
+   "sep": [
+    0.40017043998277435,
+    0.3994750770044362
+   ],
+   "vertex_dist": 0.0002571516205297311
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 20,
+   "seed": 502,
+   "restart": 42,
+   "m_float": -1.3043503188829234e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.13743024166739157,
+   "zero_pairs": [
+    [
+     3,
+     0,
+     2.334110243043934e-15
+    ]
+   ],
+   "dist_genperm": 0.4595625856699268,
+   "dist_blockdiag": 0.3874020743627753,
+   "sep": [
+    0.4086249704135853,
+    0.4201876405884335
+   ],
+   "vertex_dist": 0.0009818893579735298
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 22,
+   "seed": 502,
+   "restart": 33,
+   "m_float": -3.5513356826238735e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.053926503927948e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.5315974254562278,
+   "dist_blockdiag": 0.4035940187288064,
+   "sep": [
+    0.40614187508244537,
+    0.40050327828637544
+   ],
+   "vertex_dist": 0.0003235601715469024
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 23,
+   "seed": 502,
+   "restart": 5,
+   "m_float": -3.708194571475942e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.24659581807856684,
+   "zero_pairs": [
+    [
+     3,
+     1,
+     6.753223014464258e-16
+    ]
+   ],
+   "dist_genperm": 0.5472875407828417,
+   "dist_blockdiag": 0.40029989647211783,
+   "sep": [
+    0.6446453158068577,
+    0.39959322529591934
+   ],
+   "vertex_dist": 0.0038462635503684066
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 24,
+   "seed": 502,
+   "restart": 36,
+   "m_float": -3.7377620675593397e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 3.6946657131755153e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.4236119831657963,
+   "dist_blockdiag": 0.3919918694543234,
+   "sep": [
+    0.4040174676669568,
+    0.4064420025927708
+   ],
+   "vertex_dist": 0.000104881221332632
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 25,
+   "seed": 502,
+   "restart": 25,
+   "m_float": -4.231435695837344e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.04496299082033111,
+   "zero_pairs": [
+    [
+     4,
+     4,
+     1.8031561955316103e-14
+    ]
+   ],
+   "dist_genperm": 0.5433191782573685,
+   "dist_blockdiag": 0.3950932633805855,
+   "sep": [
+    0.4043100083150364,
+    0.42900132700648885
+   ],
+   "vertex_dist": 0.011490480284149599
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 26,
+   "seed": 502,
+   "restart": 60,
+   "m_float": -4.3350297003543966e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.667812487257035,
+   "zero_pairs": [
+    [
+     4,
+     2,
+     3.775166431889533e-16
+    ]
+   ],
+   "dist_genperm": 0.5324424362478396,
+   "dist_blockdiag": 0.3927390033830287,
+   "sep": [
+    0.4586758682113342,
+    0.45433145604017755
+   ],
+   "vertex_dist": 0.03708339066523865
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 27,
+   "seed": 502,
+   "restart": 45,
+   "m_float": -4.3879034970113406e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 5.466193257662777e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.4464607726911851,
+   "dist_blockdiag": 0.39625547188318544,
+   "sep": [
+    0.40154187136965586,
+    0.4053443249761156
+   ],
+   "vertex_dist": 0.006024704538106824
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 28,
+   "seed": 502,
+   "restart": 13,
+   "m_float": -4.533826850457607e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.055269736506181784,
+   "zero_pairs": [
+    [
+     3,
+     1,
+     3.219646771412954e-15
+    ]
+   ],
+   "dist_genperm": 0.5356380150378824,
+   "dist_blockdiag": 0.3830210923412851,
+   "sep": [
+    0.3841187109751452,
+    0.40250106587766443
+   ],
+   "vertex_dist": 0.004546176279360612
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 29,
+   "seed": 502,
+   "restart": 14,
+   "m_float": -4.659784838840066e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.2914506574399436,
+   "zero_pairs": [
+    [
+     1,
+     1,
+     1.386134676818572e-14
+    ],
+    [
+     4,
+     2,
+     5.551115123125783e-17
+    ]
+   ],
+   "dist_genperm": 0.5429418009011678,
+   "dist_blockdiag": 0.3883961185174122,
+   "sep": [
+    0.4057095300645302,
+    0.404136005865168
+   ],
+   "vertex_dist": 0.006088284764095011
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 30,
+   "seed": 502,
+   "restart": 40,
+   "m_float": -6.36271661081727e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.15040058428339526,
+   "zero_pairs": [
+    [
+     4,
+     2,
+     1.1102230246251565e-15
+    ]
+   ],
+   "dist_genperm": 0.5456211027512327,
+   "dist_blockdiag": 0.3881868259406147,
+   "sep": [
+    0.4102576359308507,
+    0.39809429535503393
+   ],
+   "vertex_dist": 0.0007100908581408991
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 31,
+   "seed": 502,
+   "restart": 34,
+   "m_float": -6.392238777526276e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.969566494147663e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.40473150084045073,
+   "dist_blockdiag": 0.39851211309373147,
+   "sep": [
+    0.3999577185204584,
+    0.6019902454996637
+   ],
+   "vertex_dist": 0.014223800486670058
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 32,
+   "seed": 502,
+   "restart": 2,
+   "m_float": -6.87764338255278e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.3534000216522936,
+   "zero_pairs": [
+    [
+     0,
+     1,
+     5.117875266520904e-16
+    ]
+   ],
+   "dist_genperm": 0.5239507478231002,
+   "dist_blockdiag": 0.38761486912343757,
+   "sep": [
+    0.40125042743130757,
+    0.3990695642610082
+   ],
+   "vertex_dist": 0.0006977503448569871
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 33,
+   "seed": 502,
+   "restart": 26,
+   "m_float": -7.441281244682943e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.9604427560416778e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.49665840656031346,
+   "dist_blockdiag": 0.3975872825945185,
+   "sep": [
+    0.586647635644265,
+    0.4000392903192572
+   ],
+   "vertex_dist": 0.005249759689023625
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 34,
+   "seed": 502,
+   "restart": 23,
+   "m_float": -8.246543201814737e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.20632656070409802,
+   "zero_pairs": [
+    [
+     0,
+     2,
+     2.7755575615628914e-17
+    ],
+    [
+     3,
+     4,
+     6.866350197783356e-16
+    ]
+   ],
+   "dist_genperm": 0.5095112903126798,
+   "dist_blockdiag": 0.3982697007680778,
+   "sep": [
+    0.39543564649565865,
+    0.3929082198498085
+   ],
+   "vertex_dist": 0.010526035206612255
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 35,
+   "seed": 502,
+   "restart": 62,
+   "m_float": -1.1544253166086023e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.1882448150647519e-14,
+   "zero_pairs": [],
+   "dist_genperm": 0.5455761405555185,
+   "dist_blockdiag": 0.3933792303952566,
+   "sep": [
+    0.4012512145861542,
+    0.40196119243436357
+   ],
+   "vertex_dist": 0.0018828641907243184
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 36,
+   "seed": 502,
+   "restart": 57,
+   "m_float": -1.268150370623124e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.2608132094813179,
+   "zero_pairs": [
+    [
+     2,
+     0,
+     1.4602703977091184e-15
+    ]
+   ],
+   "dist_genperm": 0.5408356803647612,
+   "dist_blockdiag": 0.3975644542076753,
+   "sep": [
+    0.4002647514103462,
+    0.39973441339338933
+   ],
+   "vertex_dist": 0.035072439030577315
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 37,
+   "seed": 502,
+   "restart": 38,
+   "m_float": -1.307150861574552e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 8.392724817649318e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.5495572035472114,
+   "dist_blockdiag": 0.3993670333527356,
+   "sep": [
+    0.4020325770549386,
+    0.4010957527099477
+   ],
+   "vertex_dist": 0.02571661389313677
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 38,
+   "seed": 502,
+   "restart": 3,
+   "m_float": -1.678926534649864e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 7.407890503564631e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.5524999029416028,
+   "dist_blockdiag": 0.39706034375943533,
+   "sep": [
+    0.40043483375254457,
+    0.4017419764318159
+   ],
+   "vertex_dist": 0.0009772798478890024
+  },
+  {
+   "file": "runs/cA_0.4.json",
+   "best_index": 39,
+   "seed": 502,
+   "restart": 64,
+   "m_float": -2.238634258597839e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.15551151339994804,
+   "zero_pairs": [
+    [
+     3,
+     3,
+     2.0816681711721685e-16
+    ]
+   ],
+   "dist_genperm": 0.543798378747233,
+   "dist_blockdiag": 0.3974875017617512,
+   "sep": [
+    0.3995092312720383,
+    0.3997047303457183
+   ],
+   "vertex_dist": 0.0005254884798904514
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 0,
+   "seed": 504,
+   "restart": 25,
+   "m_float": 8.427896218791344e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.3516446026702983,
+   "zero_pairs": [
+    [
+     3,
+     0,
+     1.1102230246251565e-15
+    ]
+   ],
+   "dist_genperm": 0.5914038094824131,
+   "dist_blockdiag": 0.48483698648902274,
+   "sep": [
+    0.4995521548431604,
+    0.4996665524006337
+   ],
+   "vertex_dist": 0.14317455338851462
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 1,
+   "seed": 504,
+   "restart": 7,
+   "m_float": 7.903325427032643e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.11760157466704163,
+   "zero_pairs": [
+    [
+     4,
+     4,
+     4.847302891456678e-16
+    ]
+   ],
+   "dist_genperm": 0.6175598594148007,
+   "dist_blockdiag": 0.4971711204755267,
+   "sep": [
+    0.4994709759039507,
+    0.5028224887573715
+   ],
+   "vertex_dist": 0.05213568805782624
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 2,
+   "seed": 504,
+   "restart": 12,
+   "m_float": 5.873836177440774e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.1858421222505821,
+   "zero_pairs": [
+    [
+     4,
+     4,
+     3.3306690738754696e-16
+    ]
+   ],
+   "dist_genperm": 0.6409099924367442,
+   "dist_blockdiag": 0.4923218717095468,
+   "sep": [
+    0.5011821656512041,
+    0.49945404094000284
+   ],
+   "vertex_dist": 0.07224807197348719
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 3,
+   "seed": 504,
+   "restart": 8,
+   "m_float": 3.5540092894485973e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.390470564177818,
+   "zero_pairs": [
+    [
+     2,
+     1,
+     8.005932084973443e-16
+    ]
+   ],
+   "dist_genperm": 0.6241991684129012,
+   "dist_blockdiag": 0.49883369491950313,
+   "sep": [
+    0.5001827418688242,
+    0.5001747409423306
+   ],
+   "vertex_dist": 0.05765379162976237
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 4,
+   "seed": 504,
+   "restart": 22,
+   "m_float": 2.3095017740355826e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.11855452543031035,
+   "zero_pairs": [
+    [
+     0,
+     4,
+     1.897149936107019e-15
+    ]
+   ],
+   "dist_genperm": 0.6228243912925728,
+   "dist_blockdiag": 0.4974130586947634,
+   "sep": [
+    0.5000583083223114,
+    0.548874068346094
+   ],
+   "vertex_dist": 0.05136027146539088
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 5,
+   "seed": 504,
+   "restart": 24,
+   "m_float": 1.891585432002402e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.4077683178725813e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.581485728606541,
+   "dist_blockdiag": 0.49847264278293524,
+   "sep": [
+    0.6395212913547482,
+    0.6498996254705447
+   ],
+   "vertex_dist": 0.03060008911212409
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 6,
+   "seed": 504,
+   "restart": 9,
+   "m_float": 1.0254161807865092e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.4345457630475682,
+   "zero_pairs": [
+    [
+     1,
+     2,
+     7.216449660063518e-16
+    ]
+   ],
+   "dist_genperm": 0.5858591909897759,
+   "dist_blockdiag": 0.4952343955390792,
+   "sep": [
+    0.4998011309432771,
+    0.4998764655814292
+   ],
+   "vertex_dist": 0.055533620455006455
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 7,
+   "seed": 504,
+   "restart": 2,
+   "m_float": -3.9041792207021627e-20,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.15859747320263692,
+   "zero_pairs": [
+    [
+     3,
+     0,
+     8.163159687020606e-16
+    ]
+   ],
+   "dist_genperm": 0.5883294323100038,
+   "dist_blockdiag": 0.49697936096244755,
+   "sep": [
+    0.5002066386928689,
+    0.5394741002846015
+   ],
+   "vertex_dist": 0.05836686300457391
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 8,
+   "seed": 504,
+   "restart": 14,
+   "m_float": -5.975661044376451e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 3.609507538863824e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.5882941975047589,
+   "dist_blockdiag": 0.49632088928197415,
+   "sep": [
+    0.500640298379292,
+    0.5022722582679844
+   ],
+   "vertex_dist": 0.0310049794914607
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 9,
+   "seed": 504,
+   "restart": 5,
+   "m_float": -6.266316525893517e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.3597212117572012,
+   "zero_pairs": [
+    [
+     4,
+     2,
+     1.498303070619016e-16
+    ]
+   ],
+   "dist_genperm": 0.5749239352618866,
+   "dist_blockdiag": 0.4993240529839026,
+   "sep": [
+    0.5002314851055557,
+    0.5000093579968635
+   ],
+   "vertex_dist": 0.05308546946557769
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 10,
+   "seed": 504,
+   "restart": 11,
+   "m_float": -7.382174345342005e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 5.923284579375088e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.623985081246151,
+   "dist_blockdiag": 0.4986707002518085,
+   "sep": [
+    0.499907539383523,
+    0.6011435785592928
+   ],
+   "vertex_dist": 0.03807580046322171
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 11,
+   "seed": 504,
+   "restart": 0,
+   "m_float": -1.2579946531933848e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.35337834571626375,
+   "zero_pairs": [
+    [
+     0,
+     1,
+     6.087272963323595e-16
+    ],
+    [
+     2,
+     3,
+     2.2887833992611187e-16
+    ]
+   ],
+   "dist_genperm": 0.6107793562965393,
+   "dist_blockdiag": 0.49152901035554486,
+   "sep": [
+    0.5010545568450463,
+    0.49936745040749286
+   ],
+   "vertex_dist": 0.04707844505312265
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 12,
+   "seed": 504,
+   "restart": 6,
+   "m_float": -1.9580894902332915e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 4.27690666647457e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.5547161700332067,
+   "dist_blockdiag": 0.5007430331483858,
+   "sep": [
+    0.5292056353809892,
+    0.50036230938207
+   ],
+   "vertex_dist": 0.027321438439354574
+  },
+  {
+   "file": "runs/cB_mixed_0.5_dv0.2.json",
+   "best_index": 13,
+   "seed": 504,
+   "restart": 15,
+   "m_float": -4.0665688417732586e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.31476193294155613,
+   "zero_pairs": [
+    [
+     1,
+     4,
+     4.577566798522237e-16
+    ]
+   ],
+   "dist_genperm": 0.620252717356844,
+   "dist_blockdiag": 0.4868764449308045,
+   "sep": [
+    0.49951927829594367,
+    0.5302600810167073
+   ],
+   "vertex_dist": 0.055427384112310726
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 0,
+   "seed": 503,
+   "restart": 28,
+   "m_float": 5.671236111302417e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 5.494696727677667e-15,
+   "zero_pairs": [],
+   "dist_genperm": 0.4252266203418692,
+   "dist_blockdiag": 0.29659305464539854,
+   "sep": [
+    0.3009407239163225,
+    0.3524194789971459
+   ],
+   "vertex_dist": 0.02109976436525589
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 1,
+   "seed": 503,
+   "restart": 20,
+   "m_float": 1.313435376199814e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 5.515438300001014e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.3000615852401374,
+   "dist_blockdiag": 0.29976059709947744,
+   "sep": [
+    0.38784962096689657,
+    0.30737803554631465
+   ],
+   "vertex_dist": 0.017455293087101423
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 2,
+   "seed": 503,
+   "restart": 9,
+   "m_float": 1.0240870666136299e-16,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 4.189960461757242e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.3099758528914739,
+   "dist_blockdiag": 0.3009941039159112,
+   "sep": [
+    0.3000424031306365,
+    0.5523488882895429
+   ],
+   "vertex_dist": 0.018652480186563663
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 3,
+   "seed": 503,
+   "restart": 17,
+   "m_float": 8.648363342029767e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.30461560446037256,
+   "zero_pairs": [
+    [
+     2,
+     3,
+     2.482534153247273e-16
+    ]
+   ],
+   "dist_genperm": 0.45439883817279714,
+   "dist_blockdiag": 0.29524918023398783,
+   "sep": [
+    0.30655703724171784,
+    0.6546457282461999
+   ],
+   "vertex_dist": 0.02093932612994826
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 4,
+   "seed": 503,
+   "restart": 24,
+   "m_float": 5.691366223372913e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 3.710037568313767e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.40955150024790343,
+   "dist_blockdiag": 0.2990774954343074,
+   "sep": [
+    0.3756262535684451,
+    0.29993778775946156
+   ],
+   "vertex_dist": 0.017392640832259658
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 5,
+   "seed": 503,
+   "restart": 12,
+   "m_float": 4.985420059334455e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 3.1104945075042163e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.42382800098861273,
+   "dist_blockdiag": 0.2976979818174632,
+   "sep": [
+    0.2997308351938514,
+    0.47560892913314134
+   ],
+   "vertex_dist": 0.018353929770436324
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 6,
+   "seed": 503,
+   "restart": 18,
+   "m_float": 4.542245891328195e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.12941197806335733,
+   "zero_pairs": [
+    [
+     0,
+     0,
+     6.59532648928019e-16
+    ],
+    [
+     4,
+     2,
+     2.620220423123142e-15
+    ]
+   ],
+   "dist_genperm": 0.41613153706385564,
+   "dist_blockdiag": 0.3000693587325387,
+   "sep": [
+    0.30029191249354126,
+    0.6981718578080314
+   ],
+   "vertex_dist": 0.017584594844419352
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 7,
+   "seed": 503,
+   "restart": 27,
+   "m_float": 2.3373068499587418e-17,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.1450282163928517,
+   "zero_pairs": [
+    [
+     4,
+     2,
+     1.2658490090568385e-15
+    ]
+   ],
+   "dist_genperm": 0.42769721583910447,
+   "dist_blockdiag": 0.29893510514467403,
+   "sep": [
+    0.300072374682698,
+    0.29992331008749185
+   ],
+   "vertex_dist": 0.024341476360928024
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 8,
+   "seed": 503,
+   "restart": 13,
+   "m_float": 0.0,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.491007635757584e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.30497773015870433,
+   "dist_blockdiag": 0.2999468612337397,
+   "sep": [
+    0.30833459829817056,
+    0.3011297722531992
+   ],
+   "vertex_dist": 0.021660801394348315
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 9,
+   "seed": 503,
+   "restart": 23,
+   "m_float": -1.3920890829165732e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 5.236722300359284e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.4290908573193588,
+   "dist_blockdiag": 0.29806006652010764,
+   "sep": [
+    0.6342685860509292,
+    0.3362789995525984
+   ],
+   "vertex_dist": 0.01975880538992459
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 10,
+   "seed": 503,
+   "restart": 6,
+   "m_float": -4.474614259409445e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.1110432771274918e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.32731442490957774,
+   "dist_blockdiag": 0.29974735547148934,
+   "sep": [
+    0.2998795401611295,
+    0.30058222829090114
+   ],
+   "vertex_dist": 0.017131311929077023
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 11,
+   "seed": 503,
+   "restart": 21,
+   "m_float": -5.356319149346164e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 2.9676587377909116e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.3642198128546883,
+   "dist_blockdiag": 0.2995414698184029,
+   "sep": [
+    0.30096378131749624,
+    0.47150169923905944
+   ],
+   "vertex_dist": 0.020937675265807913
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 12,
+   "seed": 503,
+   "restart": 29,
+   "m_float": -7.47192827915375e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.8994372885271398e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.30046361439675784,
+   "dist_blockdiag": 0.29938615219534914,
+   "sep": [
+    0.29993573848550614,
+    0.300762920264668
+   ],
+   "vertex_dist": 0.020516441087617868
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 13,
+   "seed": 503,
+   "restart": 14,
+   "m_float": -8.397740665161721e-17,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 7.618341821620081e-16,
+   "zero_pairs": [],
+   "dist_genperm": 0.3000914464071217,
+   "dist_blockdiag": 0.29967535214993823,
+   "sep": [
+    0.6547252324214604,
+    0.4189101712734984
+   ],
+   "vertex_dist": 0.015664525396569186
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 14,
+   "seed": 503,
+   "restart": 7,
+   "m_float": -2.0931683574212148e-16,
+   "cls": "zero-factor edge contact (a_i + b_j ~ 0, d on a hull edge through 0)",
+   "hull_width_over_diam": 0.18612307973626357,
+   "zero_pairs": [
+    [
+     2,
+     2,
+     5.743899690416659e-16
+    ]
+   ],
+   "dist_genperm": 0.47712690956914283,
+   "dist_blockdiag": 0.29936116228287,
+   "sep": [
+    0.30179132326511954,
+    0.29987747154711447
+   ],
+   "vertex_dist": 0.025472617439202188
+  },
+  {
+   "file": "runs/cB_ostar_0.3_dv0.1.json",
+   "best_index": 15,
+   "seed": 503,
+   "restart": 22,
+   "m_float": -1.3434697187864384e-15,
+   "cls": "sliver-hull (z nearly collinear: degenerate hull, trivial)",
+   "hull_width_over_diam": 1.0602911762326838e-14,
+   "zero_pairs": [],
+   "dist_genperm": 0.29896999826237847,
+   "dist_blockdiag": 0.29840868134022047,
+   "sep": [
+    0.5439459319977302,
+    0.3440610882088365
+   ],
+   "vertex_dist": 0.016129778910077535
+  }
+ ]
+}

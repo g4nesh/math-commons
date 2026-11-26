@@ -1,0 +1,14 @@
+{
+  "positiveSquareTerms": 29,
+  "usedPermutations": 14,
+  "allPermutationsChecked": 24,
+  "complexCoefficientSlots": 16,
+  "denominatorAscending": [
+    "721641819716/79985617449",
+    "67729206836/79985617449",
+    "1"
+  ],
+  "fourACMinusBSquared": "226296620649383138167040/6397698998697773267601",
+  "realLineCovered": true,
+  "projectiveInfinityCovered": true
+}
