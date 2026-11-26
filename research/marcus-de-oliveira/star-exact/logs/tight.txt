@@ -1,0 +1,6 @@
+t = 1    tolerance 1e-08 : best gamma (f scaled to max 1) = -9.3292e-09  (optimal)  [2s]
+t = 1    tolerance 1e-10 : best gamma (f scaled to max 1) = -7.3717e-09  (optimal_inaccurate)  [2s]
+t = 1    tolerance 1e-12 : best gamma (f scaled to max 1) = -7.3717e-09  (optimal_inaccurate)  [3s]
+t = 3    tolerance 1e-08 : best gamma (f scaled to max 1) = -9.4453e-09  (optimal)  [2s]
+t = 3    tolerance 1e-10 : best gamma (f scaled to max 1) = -1.8927e-09  (optimal_inaccurate)  [2s]
+t = 3    tolerance 1e-12 : best gamma (f scaled to max 1) = -1.8927e-09  (optimal_inaccurate)  [2s]

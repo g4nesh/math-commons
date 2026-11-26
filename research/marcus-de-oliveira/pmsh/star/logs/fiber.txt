@@ -1,0 +1,1 @@
+tested 182 unitaries (82 in exotic caps): certificate-LP vs fiber-LP disagreements: 0; min fiber margin 4.100e-04

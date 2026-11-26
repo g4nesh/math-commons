@@ -1,0 +1,3 @@
+self-test: 300 random 12 x 12 integer matrices (120 of them degenerate or needing pivoting) agree with big-integer elimination
+12-subsets: 2704156 ; exact determinants at rho = 0, 1, -1 that differ from the stored quadratics: 0 ; largest intermediate 32 (< 2^31)  [62s]
+STORED ORIENTATION QUADRATICS ARE EXACT

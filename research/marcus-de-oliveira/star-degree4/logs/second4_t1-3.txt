@@ -1,0 +1,3 @@
+t = 1/3: dropped 56 directions ; amplitudes kept 2249 ; max rounding move 3.9e-05
+   distinct entries of the null directions: {'0': 204, '1/4': 20, '1': 56}
+strict feasibility on the amplitude spaces: unknowns 5481, conditions 821, f outside the range 3.1e-15 ; best lambda = +1.9061e-03 (optimal_inaccurate)  [64s]

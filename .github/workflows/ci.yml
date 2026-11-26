@@ -48,6 +48,52 @@ jobs:
           python3 -B spectral.py --check certificate.json
           python3 -B fiber_certificate.py
           python3 -B -m unittest discover -p 'test_*.py' -v
+      - name: Replay moving fourth-eigenvalue weights and their limits
+        working-directory: research/marcus-de-oliveira/moving-fourth-spectrum
+        run: |
+          sha256sum --check --quiet SHA256SUMS
+          python3 -B moving.py --check derived.json
+          python3 -B positive_box.py
+          python3 -B zero_fiber.py
+          python3 -B claude_star.py
+          python3 -B -m unittest discover -p 'test_*.py' -v
+      - name: Verify the four-cycle transition and three-color coupling
+        working-directory: research/marcus-de-oliveira
+        run: |
+          python3 -B fourth-boundary/boundary.py
+          python3 -B -m unittest discover -s fourth-boundary -p 'test_*.py' -v
+          python3 -B fourth-boundary-plane/plane.py
+          python3 -B -m unittest discover -s fourth-boundary-plane -p 'test_*.py' -v
+          python3 -B three-color-coupling/coupling.py
+          python3 -B -m unittest discover -s three-color-coupling -p 'test_*.py' -v
+      - name: Verify rank-one rotations and the small-minor boundary
+        working-directory: research/marcus-de-oliveira
+        run: |
+          python3 -B reflection-angles/check.py | diff - reflection-angles/results.json
+          python3 -B reflection-angles/check_packing.py | diff - reflection-angles/packing-results.json
+          (cd star-small-ratio && sha256sum --check --quiet SHA256SUMS)
+          python3 -B star-small-ratio/verify.py
+          python3 -B star-small-ratio/verify_zero_stratum.py
+      - name: Replay gluing, nonnormal interfaces and pole compression
+        working-directory: research/marcus-de-oliveira
+        run: |
+          python3 -B pointwise-gluing/check.py
+          python3 -B pointwise-gluing/interface.py
+          python3 -B pole-compression/check.py
+          python3 -B two-spectator-pencils/check.py
+      - name: Check the color exchanges, two-row star criterion and normal pole lifts
+        working-directory: research/marcus-de-oliveira
+        run: |
+          python3 -B three-color-exchanges/exchanges.py
+          python3 -B -m unittest discover -s three-color-exchanges -p 'test_*.py' -v
+          (cd star-two-row && sha256sum --check --quiet SHA256SUMS)
+          python3 -B star-two-row/verify.py
+          python3 -B star-two-row/scan.py
+          (cd star-zero-sector && sha256sum --check --quiet SHA256SUMS)
+          python3 -B star-zero-sector/verify.py
+          python3 -B normal-pole-step/check.py | diff - normal-pole-step/certificate.json
+          python3 -B normal-pole-step/archive_slices.py
+          python3 -B two-free-rank-one/check.py
       - name: Install the pinned Lean toolchain
         uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
         with:

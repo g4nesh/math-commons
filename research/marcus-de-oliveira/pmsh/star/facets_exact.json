@@ -1,0 +1,511 @@
+{
+ "critical_values": [
+  "-sqrt(21)/2 - 3/2",
+  "-3",
+  "-sqrt(2) - 1",
+  "-2",
+  "-sqrt(5)/2 - 1/2",
+  "-sqrt(2)",
+  "-1",
+  "-sqrt(2)/2",
+  "1/2 - sqrt(5)/2",
+  "-1/2",
+  "1 - sqrt(2)",
+  "-1/3",
+  "1/2 - sqrt(21)/6",
+  "0",
+  "5/2 - sqrt(21)/2",
+  "1/4",
+  "1 - sqrt(2)/2",
+  "1/3",
+  "3/2 - sqrt(5)/2",
+  "-1 + sqrt(2)",
+  "1/2",
+  "2 - sqrt(2)",
+  "-1/2 + sqrt(5)/2",
+  "2/3",
+  "sqrt(2)/2",
+  "3/4",
+  "-3/2 + sqrt(21)/2",
+  "1",
+  "1/2 + sqrt(21)/6",
+  "4/3",
+  "sqrt(2)",
+  "3/2",
+  "1/2 + sqrt(5)/2",
+  "sqrt(2)/2 + 1",
+  "2",
+  "1 + sqrt(2)",
+  "sqrt(5)/2 + 3/2",
+  "3",
+  "sqrt(2) + 2",
+  "4",
+  "sqrt(21)/2 + 5/2"
+ ],
+ "intervals": [
+  {
+   "interval": [
+    "-inf",
+    "-sqrt(21)/2 - 3/2"
+   ],
+   "sample": "-5",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-sqrt(21)/2 - 3/2",
+    "-3"
+   ],
+   "sample": "-309/91",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-3",
+    "-sqrt(2) - 1"
+   ],
+   "sample": "-268/99",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-sqrt(2) - 1",
+    "-2"
+   ],
+   "sample": "-373/169",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-2",
+    "-sqrt(5)/2 - 1/2"
+   ],
+   "sample": "-161/89",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-sqrt(5)/2 - 1/2",
+    "-sqrt(2)"
+   ],
+   "sample": "-47/31",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-sqrt(2)",
+    "-1"
+   ],
+   "sample": "-204/169",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-1",
+    "-sqrt(2)/2"
+   ],
+   "sample": "-169/198",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-sqrt(2)/2",
+    "1/2 - sqrt(5)/2"
+   ],
+   "sample": "-108/163",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "1/2 - sqrt(5)/2",
+    "-1/2"
+   ],
+   "sample": "-90/161",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-1/2",
+    "1 - sqrt(2)"
+   ],
+   "sample": "-16/35",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "1 - sqrt(2)",
+    "-1/3"
+   ],
+   "sample": "-37/99",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-1/3",
+    "1/2 - sqrt(21)/6"
+   ],
+   "sample": "-20/67",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "1/2 - sqrt(21)/6",
+    "0"
+   ],
+   "sample": "-12/91",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "0",
+    "5/2 - sqrt(21)/2"
+   ],
+   "sample": "12/115",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "5/2 - sqrt(21)/2",
+    "1/4"
+   ],
+   "sample": "25/109",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "1/4",
+    "1 - sqrt(2)/2"
+   ],
+   "sample": "19/70",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "1 - sqrt(2)/2",
+    "1/3"
+   ],
+   "sample": "31/99",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "1/3",
+    "3/2 - sqrt(5)/2"
+   ],
+   "sample": "49/137",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "3/2 - sqrt(5)/2",
+    "-1 + sqrt(2)"
+   ],
+   "sample": "41/103",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-1 + sqrt(2)",
+    "1/2"
+   ],
+   "sample": "16/35",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "1/2",
+    "2 - sqrt(2)"
+   ],
+   "sample": "19/35",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "2 - sqrt(2)",
+    "-1/2 + sqrt(5)/2"
+   ],
+   "sample": "62/103",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-1/2 + sqrt(5)/2",
+    "2/3"
+   ],
+   "sample": "88/137",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "2/3",
+    "sqrt(2)/2"
+   ],
+   "sample": "68/99",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "sqrt(2)/2",
+    "3/4"
+   ],
+   "sample": "51/70",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "3/4",
+    "-3/2 + sqrt(21)/2"
+   ],
+   "sample": "84/109",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "-3/2 + sqrt(21)/2",
+    "1"
+   ],
+   "sample": "103/115",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "1",
+    "1/2 + sqrt(21)/6"
+   ],
+   "sample": "103/91",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "1/2 + sqrt(21)/6",
+    "4/3"
+   ],
+   "sample": "87/67",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "4/3",
+    "sqrt(2)"
+   ],
+   "sample": "136/99",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "sqrt(2)",
+    "3/2"
+   ],
+   "sample": "51/35",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "3/2",
+    "1/2 + sqrt(5)/2"
+   ],
+   "sample": "251/161",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "1/2 + sqrt(5)/2",
+    "sqrt(2)/2 + 1"
+   ],
+   "sample": "271/163",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "sqrt(2)/2 + 1",
+    "2"
+   ],
+   "sample": "367/198",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "2",
+    "1 + sqrt(2)"
+   ],
+   "sample": "373/169",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "1 + sqrt(2)",
+    "sqrt(5)/2 + 3/2"
+   ],
+   "sample": "78/31",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "sqrt(5)/2 + 3/2",
+    "3"
+   ],
+   "sample": "250/89",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "3",
+    "sqrt(2) + 2"
+   ],
+   "sample": "542/169",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "sqrt(2) + 2",
+    "4"
+   ],
+   "sample": "367/99",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "4",
+    "sqrt(21)/2 + 5/2"
+   ],
+   "sample": "400/91",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  },
+  {
+   "interval": [
+    "sqrt(21)/2 + 5/2",
+    "+inf"
+   ],
+   "sample": "6",
+   "facets": 184,
+   "trivial": 88,
+   "hard": 96,
+   "unexplained": 0
+  }
+ ],
+ "all_ok": true,
+ "distinct_triples": 288
+}

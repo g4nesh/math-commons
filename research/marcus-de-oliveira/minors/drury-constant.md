@@ -4,7 +4,7 @@
 - **Evidence level:**
   - Exact symbolic computation on an explicit one-parameter family.
   - That this family attains the global extremum over U(4) is **computational evidence**, not a proof.
-- **Exact artifact commit:** the commit adding this file on branch `claude/mdo-minors-compound-certificates`.
+- **Exact artifact commit:** added in 8c1b1fb (branch `claude/mdo-minors-compound-certificates`), on main as 304f790 (PR 20). Items 1 and 5 reworded on 25 Nov 2026 after the independent review [`../reviews/mdo-minors.md`](../reviews/mdo-minors.md), finding 2.
 
 ## Statement
 
@@ -18,7 +18,7 @@ which is ≥ 0 on all permutation matrices. Drury's functional is 1 − g. Let S
 
 and let O(y) := y·I + √((1−y²)/3)·S for y ∈ [−1,1]. Then:
 
-1. **Orthogonal family.** O(y) is orthogonal, and {O(y)} is the one-parameter subgroup exp(φS/√3).
+1. **Orthogonal family.** O(y) is orthogonal, and {O(y)} is the half φ ∈ [0, π] of the one-parameter subgroup exp(φS/√3) = cos φ·I + sin φ·S/√3 (the positive root is taken in the definition). The other half gives the same minimum (numerically, on a 2001-point grid by the reviewer).
 2. **Closed form on the family.** g(O(y)) = 2y² − (4√3/9)·y·(1−y²)^{3/2}.
 3. **Minimum on the family.** The minimum over y is attained where y*² is the root near 0.028 of 16u³ − 24u² + 36u − 1, so y* ≈ 0.168231070580. The minimum value g_min ≈ −0.0674422488681229 is the unique real root of 4G³ − 12G² + 14G + 1.
 4. **Drury's constant.** D := 1 − g_min is the real root of **4D³ + 2D − 7 = 0**:
@@ -26,7 +26,7 @@ and let O(y) := y·I + √((1−y²)/3)·S for y ∈ [−1,1]. Then:
    D = ∛(7/8 + 11√33/72) + ∛(7/8 − 11√33/72) ≈ 1.0674422488681232.
 
    The radicand is clean because 49/64 + 1/216 = 1331/1728 = (11/12)³.
-5. **Zheng's example lies on the family.** It is y = 1/7, giving g(O(1/7)) = −158/2401.
+5. **Zheng's example lies on the family up to symmetry.** g(O(1/7)) = −158/2401. O(1/7) = (I + 4S)/7 is not Zheng's O* itself: O(1/7) = D₁ P_α V P_β D₂ with V ∈ {O*, O*ᵀ}, permutation matrices P and diagonal sign matrices D (24 such representations; exact check in `moc/zheng_on_family.py`). These maps preserve all squared minors up to relabelling, and −158/2401 is the minimum of g over the 1,152 symmetric images of O*.
 
 ## Proof of 1–5, and the computational part
 

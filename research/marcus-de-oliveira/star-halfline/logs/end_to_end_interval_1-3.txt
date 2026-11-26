@@ -1,0 +1,1 @@
+40 random spectra with cross-ratio in [0.3333, 0.6667] (observed range 0.335 .. 0.661), 1400 (U, c) pairs incl. 15 cap unitaries each: largest LP infeasibility 0.00e+00

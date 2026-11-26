@@ -1,0 +1,6 @@
+(A) positive control F: best lambda = +1.0000e+00 (expected > 0) ; F outside the range: 4.4e-13
+(B) f + 1e-06 * F: best lambda = -1.5878e-05
+(B) f + 1e-05 * F: best lambda = -6.8785e-06
+(B) f + 1e-04 * F: best lambda = +8.3122e-05
+(B) f + 1e-03 * F: best lambda = +9.8312e-04
+(C) 60 fresh polished zeros: max |c . m(U)| over all complement polynomials = 2.8e-15

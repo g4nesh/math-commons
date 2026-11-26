@@ -1,0 +1,4 @@
+(P) degree 3, s in [5/6, 9/10], i.e. t in [5, 9] ; 302 amplitudes ; 3 Bernstein coefficients per block ; all symmetric with positive leading principal minors: True (smallest 3.750e-11)  [0s]
+(I) nodes chosen here: 38/97, 44/97, 50/97, 52/97, 83/97 ; identity fails at 0 of 1500 (node, unitary) pairs (seed 777): exact identity HOLDS  [3s]
+(E) dim W = 1488 ; rank of the evaluation functionals at these unitaries modulo 32749: 261 (needed: 261)  [3s]
+CHECKS (P), (I), (E) PASSED: F_s >= 0 on U(4) for every s in [5/6, 9/10]

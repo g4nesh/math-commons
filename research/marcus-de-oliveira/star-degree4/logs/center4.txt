@@ -1,0 +1,12 @@
+scan t = 0.5   best lambda = -6.009e-11 (optimal)  [42s]
+scan t = 0.2   best lambda = -2.437e-11 (optimal)  [82s]
+scan t = 0.1   best lambda = -5.678e-12 (optimal)  [132s]
+scan t = 0.05  best lambda = -2.545e-05 (optimal)  [191s]
+centre t = 1 (optimal): 2305 eigenvalues, min -1.70e-11 ; by decade:
+   1e-13 .. 1e-12 : 3
+   1e-12 .. 1e-11 : 23
+   1e-11 .. 1e-10 : 30
+   1e-3 .. 1e-2 : 124
+   1e-2 .. 1e-1 : 1767
+   1e-1 .. 1e0 : 343
+   1e0 .. 1e1 : 15

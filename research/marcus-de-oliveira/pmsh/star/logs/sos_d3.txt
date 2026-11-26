@@ -1,0 +1,5 @@
+degree 3: 816 monomials, 400 blocks (max size 6), 1488 Gram unknowns, constraint rank 261 from 3000 samples  [1s]
+  best certified lower bound for g0 at this degree: -0.067442 (status optimal); true minimum -0.067442  [4s]
+  t=0.3: best certified lower bound for t*g0+(1+t)*D[12,12]+t^2*D[13,14]: -1.574e-03 (optimal)  [6s]
+  t=1: best certified lower bound for t*g0+(1+t)*D[12,12]+t^2*D[13,14]: -7.157e-08 (optimal)  [8s]
+  t=3: best certified lower bound for t*g0+(1+t)*D[12,12]+t^2*D[13,14]: -2.415e-07 (optimal)  [10s]

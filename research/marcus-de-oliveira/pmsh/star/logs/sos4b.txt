@@ -1,0 +1,4 @@
+degree 4: 3876 monomials, 1225 blocks, 11208 Gram unknowns, constraint rank 954 from 5000 samples  [16s]
+  t = 0.3   certified lower bound / t = -1.137e-08  (optimal)  [151s]
+  t = 0.15  certified lower bound / t = -2.712e-09  (optimal)  [310s]
+  t = 0.1   certified lower bound / t = +6.712e-09  (optimal)  [484s]

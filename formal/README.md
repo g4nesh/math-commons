@@ -44,7 +44,22 @@ In [ForestTrajectory.lean](ForestTrajectory.lean), an occupied subset is a Boole
 
 `MathCommons.ForestGateSupport.twoCoordinateNonzeroMinorStep` accepts four arbitrary block entries. Its scalar interface specifies addition, multiplication, negation, zero and one, with the zero identities used in the proof. The support implication applies to singular blocks. Rational and Gaussian-rational instances instantiate the interface.
 
-`MathCommons.ForestGateSupport.nonzeroAmplitudesUnique` combines this support result and the forest theorem. For fixed endpoint subsets, at most one history has a nonzero ordered product of its gate minors. Empty and full subsets, repeated occupancy and vanishing factors are covered. The checker audits all 23 named results in the module. The remaining steps identify the ordered expansion with the standard complex determinant, compute the squared transition magnitudes for a unitary block, and compose the minors by Cauchy–Binet. [Written forest argument](../research/marcus-de-oliveira/baselines/README.md)
+`MathCommons.ForestGateSupport.nonzeroAmplitudesUnique` combines this support result and the forest theorem. For fixed endpoint subsets, at most one history has a nonzero ordered product of its gate minors. Empty and full subsets, repeated occupancy and vanishing factors are covered. The checker audits all 23 named results in the module. The local unitary computation below supplies the transition magnitudes. Identifying the ordered expansion with the standard complex determinant and composing the minors by Cauchy–Binet remain open. [Written forest argument](../research/marcus-de-oliveira/baselines/README.md)
+
+## Squared probabilities for a single gate
+
+[ForestGateMagnitude.lean](ForestGateMagnitude.lean) uses Gaussian-rational entries and the ordered Laplace expansion in `ForestGateSupport`. For the gate with block entries $a,b,c,d$ in row order, let $p=|b|^2$. Unitarity gives $|c|^2=p$, $|a|^2=|d|^2=1-p$, and $|ad-bc|^2=1$. The following table describes occupied **subsets**, so a transposition acting on two occupied endpoints produces the same subset.
+
+| Occupied endpoints in the input | Output subset | Squared minor |
+| --- | --- | --- |
+| Neither or both | Same subset | 1 |
+| Exactly one | Same subset | $1-p$ |
+| Exactly one | Occupied endpoint exchanged | $p$ |
+| Any | A change outside the gate, or another illegal transition | 0 by the [support theorem](ForestGateSupport.lean) |
+
+The checked declaration `MathCommons.ForestGateMagnitude.orderedGateMagnitudes` takes three lists of occupied spectators, covering those before the first endpoint, between the endpoints and after the second. `decomposeTwoEndpoints` and `filterTwoEndpoints` express the corresponding ordered-list decompositions; `reverseGate` and `reverseUnitary` handle the opposite endpoint order. The subsequent path module assembles the cases for arbitrary Boolean subset histories. The module also checks $0≤p≤1$.
+
+Both the empty and the full subset occur in the first row. Occupied spectator coordinates may precede, separate or follow the two gate endpoints. An exchange picks up the parity of the occupied spectators between the endpoints in the signed minor. Squaring the norm removes that sign. The local result and the forest path-uniqueness theorem have different hypotheses. To combine them into a matrix-product identity still requires a Cauchy–Binet expansion in the same minor convention.
 
 ## Contributing a theorem
 
@@ -55,3 +70,13 @@ In [ForestTrajectory.lean](ForestTrajectory.lean), an occupied subset is a Boole
 5. Checkpoint the declaration names, exact commit, local checker result, and unresolved dependencies. Submit the evidence to a different GitHub owner, who should rebuild it and compare the formal statement against the mathematical claim. Merging the source makes it available to collaborators. A ledger review records the independent verdict.
 
 A natural next lemma is the relation between the rational interpolation constructor and convexity of subsets of the complex plane over the reals. A separate, larger direction is to formalize the coefficient identity in the [forest-rotation argument](../research/marcus-de-oliveira/baselines/README.md). Neither the finite witness nor that restricted family establishes the unrestricted conjecture.
+
+[ForestPathProbability.lean](ForestPathProbability.lean) proves that the squared amplitude of each ordered path equals the product of its gate transition probabilities. The required check compiles this module after its dependencies and audits the transitive axioms of all fourteen printed declarations, including `pathMagnitude` and `nonzeroProbabilityUnique`. Connecting these finite path products to standard complex matrix minors by Cauchy–Binet remains open.
+
+## Total probability over finite histories
+
+[ForestPathNormalization.lean](ForestPathNormalization.lean) enumerates legal occupied-subset histories for any finite gate schedule and any starting subset. It counts a stay once when a swap leaves the same subset. `pathMassOne` gives total mass one. For unitary Gaussian-rational gates, `pathProbabilityNonnegative` proves each mass is nonnegative and `pathSquaredMagnitudeMassOne` gives total squared path amplitude one. Cyclic schedules are allowed. Connecting amplitudes that have the same endpoint to the minor of a matrix product still requires an interference argument and Cauchy–Binet. [Statements, assumptions and replay](../research/marcus-de-oliveira/forest-path-normalization/README.md)
+
+## Squared amplitude at a fixed forest endpoint
+
+[ForestEndpointMass.lean](ForestEndpointMass.lean) restricts the canonical histories to one final subset. For a forest gate schedule, at most one of those histories has a nonzero amplitude. `endpointMagnitude` proves that the squared norm of their signed sum equals their total probability, including zero for an unreachable endpoint. The next matrix identity is to identify that signed sum with the corresponding minor of the gate product by iterated Cauchy–Binet. [Exact hypotheses and proof](../research/marcus-de-oliveira/forest-endpoint-mass/README.md)

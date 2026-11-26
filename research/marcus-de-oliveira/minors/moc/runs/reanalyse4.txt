@@ -1,0 +1,12 @@
+records: 540 (deepened 270, raw 270)
+(a) invariant depth of the deepened unitaries: min -0.067442, max -0.067442  (global minimum of g over U(4): -0.067442)
+    sorted |u_ij|^2 profiles of the deepened unitaries: largest standard deviation over the 16 positions 1.5e-05
+    invariant depth of the raw unitaries: from -0.043558 to -0.000108
+    stored (non-invariant) violation of the deepened unitaries: from 0.0294 to 0.0389
+(b) corr(J, stored violation): all -0.93 ; raw only -0.17 ; deepened only -0.06
+    corr(J, -invariant depth): all -0.94 ; raw only -0.18
+    J over the deepened copies of the extremal point: from -0.0287 to -0.0280 ; J over raw points: from -2.50e-02 to -2.59e-04
+(c) best stored J re-optimised at the same fixed U (Nelder-Mead, 12 restarts each):
+    file s19, raw point, invariant depth -0.0020: stored J = -2.592e-04 -> re-optimised J = -7.734e-05 (still negative: True) ; smallest relative gap among a: 2.0e-07, among b: 1.1e-01
+    file s17, raw point, invariant depth -0.0011: stored J = -2.786e-04 -> re-optimised J = -6.646e-05 (still negative: True) ; smallest relative gap among a: 9.1e-06, among b: 1.8e-02
+    file s11, raw point, invariant depth -0.0062: stored J = -2.880e-04 -> re-optimised J = -1.004e-04 (still negative: True) ; smallest relative gap among a: 2.2e-03, among b: 1.4e-06

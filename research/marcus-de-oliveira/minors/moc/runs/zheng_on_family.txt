@@ -1,0 +1,4 @@
+O(1/7) == O*: False
+representations O(1/7) = D1 P_alpha V P_beta D2 (D1 normalised to start with +1): 24 ; one of them: transposed=False, alpha=(0, 1, 3, 2), beta=(0, 1, 3, 2), D1=[1, 1, 1, -1], D2=[1, 1, 1, -1]
+g(O(1/7)) = -158/2401 (exact)
+min of g over the 1152 images P_alpha O* P_beta and transposes: -158/2401 ; attained 24 times

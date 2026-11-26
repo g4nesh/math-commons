@@ -1,0 +1,13 @@
+generators of K4: 43728 ; dim W4 = 11208 ; nonzeros 231072 ; max |entry| 1  [0s]
+B = A * Kmat * Omega assembled (10254 x 10254) ; largest intermediate 8.108e+14 (must stay below 2^53 = 9.007e+15)  [16s]
+   LU reached column 128  [23s]
+   LU reached column 1408  [84s]
+   LU reached column 2688  [132s]
+   LU reached column 3968  [168s]
+   LU reached column 5248  [197s]
+   LU reached column 6528  [215s]
+   LU reached column 7808  [227s]
+   LU reached column 9088  [233s]
+   LU reached column 10254  [235s]
+B invertible modulo 524287: True  [235s]
+HENCE rank K4 >= 10254 ; with evaluation rank 954:  10254 + 954 = 11208 = dim W4: True

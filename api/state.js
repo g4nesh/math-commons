@@ -1,3 +1,4 @@
+import { decodeSnapshot } from '../lib/snapshot.mjs';
 import config from '../commons.config.json' with { type: 'json' };
 
 export async function loadSnapshot({ fetchImpl = fetch, now = Date.now() } = {}) {
@@ -7,20 +8,16 @@ export async function loadSnapshot({ fetchImpl = fetch, now = Date.now() } = {})
   // A moving raw.githubusercontent.com branch can remain stale at an upstream
   // cache even with changing query strings. Read the versioned Contents API.
   const contentsUrl = `https://api.github.com/repos/${repository}/contents/${path}?ref=${encodeURIComponent(stateBranch)}`;
-  const response = await fetchImpl(contentsUrl, { headers: {
-    Accept: 'application/vnd.github+json',
-    'X-GitHub-Api-Version': '2022-11-28',
-    'User-Agent': 'math-commons-dashboard/1.0',
-    'Cache-Control': 'no-cache'
-  }, signal: AbortSignal.timeout(10000) });
-  if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
-  const contents = await response.json();
-  if (contents.type !== 'file' || contents.encoding !== 'base64' || typeof contents.content !== 'string' || !contents.sha || contents.size > 950000) {
-    throw new Error('Invalid coordination snapshot metadata');
+  async function readJson(url, accept = 'application/vnd.github+json') {
+    const response = await fetchImpl(url, { headers: {
+      Accept: accept, 'X-GitHub-Api-Version': '2022-11-28',
+      'User-Agent': 'math-commons-dashboard/1.0', 'Cache-Control': 'no-cache'
+    }, signal: AbortSignal.timeout(10000) });
+    if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
+    return response.json();
   }
-  const text = Buffer.from(contents.content, 'base64').toString('utf8');
-  if (Buffer.byteLength(text) > 950000) throw new Error('Coordination snapshot is too large');
-  const state = JSON.parse(text);
+  const contents = await readJson(contentsUrl, 'application/vnd.github.object+json');
+  const state = await decodeSnapshot(contents, sha => readJson(`https://api.github.com/repos/${repository}/git/blobs/${sha}`));
   if (state.schemaVersion !== 1 || !Number.isSafeInteger(state.revision) || !['objectives', 'tasks', 'agents', 'events'].every(key => Array.isArray(state[key]))) {
     throw new Error('Invalid coordination snapshot');
   }

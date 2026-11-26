@@ -1,0 +1,7 @@
+t = 1: 700 local minimisations, 697 reached f < 1e-10 ; min f -1.29e-16 ; largest local-min value 0.0000  [80s]
+at the zeros: max |g0| = 2.2e-11, max a = 6.2e-12, max b = 6.2e-12
+sum over blocks: block size 816, kernel span 636, complement 180
+   blocks of size 1: 144 ; kernel-dimension histogram {np.int64(1): np.int64(144)}
+   blocks of size 2: 144 ; kernel-dimension histogram {np.int64(1): np.int64(42), np.int64(2): np.int64(102)}
+   blocks of size 3: 96 ; kernel-dimension histogram {np.int64(1): np.int64(22), np.int64(2): np.int64(48), np.int64(3): np.int64(26)}
+   blocks of size 6: 16 ; kernel-dimension histogram {np.int64(1): np.int64(2), np.int64(3): np.int64(8), np.int64(4): np.int64(6)}

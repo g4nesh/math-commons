@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { GitHubStore, GitHubError, validateConfig } from '../lib/github.mjs';
+import { serializeSnapshot } from '../lib/snapshot.mjs';
 import { applyOperation } from '../lib/core.mjs';
 
 const now = '2026-11-25T00:00:00Z';
@@ -87,4 +88,13 @@ test('optional configured default objective must be a nonempty objective slug', 
   for (const defaultObjectiveId of ['', null, 12, '../other', 'Uppercase', 'a'.repeat(81)]) {
     assert.throws(() => validateConfig({ ...config, defaultObjectiveId }), /defaultObjectiveId/);
   }
+});
+
+
+test('ledger encoding retains every nested field and keeps individual records diffable', () => {
+  const state = initial();
+  const text = serializeSnapshot(state);
+  assert.deepEqual(JSON.parse(text), state);
+  assert.ok(text.length < JSON.stringify(state, null, 2).length);
+  for (const event of state.events) assert.ok(text.split('\n').some(line => line.trim().replace(/,$/, '') === JSON.stringify(event)));
 });

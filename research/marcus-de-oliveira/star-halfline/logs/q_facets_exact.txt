@@ -1,0 +1,3 @@
+14-subsets: 1961256 ; exact determinants computed ; max |det| = 64 ; largest intermediate 64 (< 2^31)  [35s]
+facets of Q: 82 ; equal to the union of 16 (B = 0) + 18 (D = 0) + 48 (exotic): True  [38s]
+THE FACET LIST OF Q IS EXACT
