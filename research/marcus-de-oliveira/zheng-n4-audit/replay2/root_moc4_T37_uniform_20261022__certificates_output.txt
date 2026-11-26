@@ -1,0 +1,45 @@
+PASS grad C vanishes at 5 random rational matching vectors (X in Sing C)
+PASS contact set of the document == paper T_38
+PASS generators vanish on T_38
+INFO common denominator of generator coordinates : 1  [0.0s]
+PASS C(den*g + h kappa) is affine in h
+INFO C0 terms / Q terms : (19, 14)  [0.0s]
+INFO det Hess C(den*g + h kappa): terms, h-degree : (19509, 3)  [25.5s]
+PASS det Hess is of degree <= 4 in h
+PASS Q^2 divides Q^4 det Hess(den g - (C/Q) kappa)
+PASS E / Q^2 = (negative constant) * (integer square) : constant = -4
+PASS G9 rebuilt: 1154 terms, d^9 coefficient +1, homogeneous of degree 9 : 1154 terms, d^9 coeff 1
+PASS rebuilt G9 equals the negative of the supplement's stored degree-9 factor
+INFO supplement degree-2 factor terms (expected to be +-Q up to coordinates) : 14  [25.9s]
+INFO G (d=1): terms, degrees in q p j c e b a : (1154, (2, 2, 2, 2, 2, 3, 2))  [25.9s]
+PASS chart both_small_u<1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 2 binomial squares; strict witness (0, 0, 2, 0, 0, 0, 0) (coeff 1) : 3186 terms (document: 3186), 2 negative coefficients (document: 2)
+INFO chart both_small_u<1 squares (center, L, middle, R) : [((0, 3, 2, 0, 2, 1, 2), '1/12', '-1', '3'), ((0, 2, 2, 0, 2, 1, 2), '1/12', '-1', '3')]  [26.0s]
+PASS chart both_small_u=1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 2 binomial squares; strict witness (0, 0, 0, 0, 0, 0, 0) (coeff 1) : 1309 terms (document: 1309), 2 negative coefficients (document: 2)
+INFO chart both_small_u=1 squares (center, L, middle, R) : [((0, 3, 0, 0, 2, 1, 2), '1/12', '-1', '3'), ((0, 2, 0, 0, 2, 1, 2), '1/12', '-1', '3')]  [26.0s]
+PASS chart both_small_u>1_b>=j: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (0, 3, 3, 0, 0, 0, 0) (coeff 1) : 12522 terms (document: 12522), 0 negative coefficients (document: 0)
+PASS chart j>1_u<1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (0, 0, 0, 2, 0, 0, 0) (coeff 3) : 12416 terms (document: 12416), 0 negative coefficients (document: 0)
+PASS chart j>1_u=1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (0, 0, 0, 2, 0, 0, 0) (coeff 6) : 2564 terms (document: 2564), 0 negative coefficients (document: 0)
+PASS chart j>1_u>1_simplex: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 20 binomial squares; strict witness (0, 1, 4, 2, 0, 0, 0) (coeff 3) : 31706 terms (document: 31706), 20 negative coefficients (document: 20)
+INFO chart j>1_u>1_simplex first squares : [((1, 3, 6, 0, 2, 2, 2), '3', '-6', '3'), ((1, 3, 6, 0, 2, 1, 2), '3', '-6', '3'), ((1, 3, 5, 0, 2, 2, 2), '3', '-6', '3')]  [26.2s]
+INFO coefficient of J U^4 A^2 in the remainder : 3  [26.2s]
+PASS chart p>1_u<1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (0, 2, 2, 0, 0, 0, 0) (coeff 2) : 6354 terms (document: 6354), 0 negative coefficients (document: 0)
+PASS chart p>1_u=1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (0, 2, 0, 0, 0, 0, 0) (coeff 2) : 2943 terms (document: 2943), 0 negative coefficients (document: 0)
+PASS chart p>1_u>1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (3, 2, 3, 0, 0, 0, 0) (coeff 2) : 23198 terms (document: 23198), 0 negative coefficients (document: 0)
+PASS chart p=1_u<1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (0, 0, 2, 0, 0, 0, 0) (coeff 2) : 1077 terms (document: 1077), 0 negative coefficients (document: 0)
+PASS chart p=1_u=1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (0, 0, 0, 0, 0, 0, 0) (coeff 2) : 450 terms (document: 450), 0 negative coefficients (document: 0)
+PASS chart p=1_u>1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (0, 3, 3, 0, 0, 0, 0) (coeff 2) : 2843 terms (document: 2843), 0 negative coefficients (document: 0)
+PASS chart j=1_u<1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (0, 0, 0, 0, 0, 0, 0) (coeff 2) : 833 terms (document: 833), 0 negative coefficients (document: 0)
+PASS chart j=1_u=1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (0, 0, 0, 0, 0, 0, 0) (coeff 10) : 296 terms (document: 296), 0 negative coefficients (document: 0)
+PASS chart j=1_u>1_b>=1: denominators > 0 on domain; cleared G9 has nonneg. coefficients after 0 binomial squares; strict witness (0, 0, 3, 0, 0, 0, 0) (coeff 36) : 1359 terms (document: 1359), 0 negative coefficients (document: 0)
+PASS lower-b chart: denominators > 0 on domain
+PASS lower-b chart Z: 7134 terms; A-part ZA has nonneg. coefficients; Z0 has 2330 terms : (7134, 2330, 57)
+INFO factorization of Z0 (total degree, multiplicity, terms) : (1, [(1, 1, 2), (5, 1, 40), (11, 1, 331)])  [26.4s]
+PASS Z = ZA + (J+1) P5 (R11 + U C Q (J+1)^2 (TJB+TB+T-J)^2) exactly
+PASS P5 (40 terms) and R11 (309 terms) have positive coefficients; P5 has 2J^2, R11 has 5J^4
+PASS deg_J Z = 7 and Z1 (direct substitution j=1, e=1+U, b=B/(1+B)) equals [J^7] Z : 906 terms
+PASS Z1 = Alead + Plead (Rlead + U C Q (TB-1)^2), factors nonneg., constants 2 and 5
+PASS P5 and R11 have J-degree exactly 2 and 4 (so the leading-coefficient extraction is the J^7 coefficient)
+PASS cover sanity: 3000 exact hard-region grid points (incl. layers p=1, j=1, u0=1, b=j) each lie in the image of the chart chosen by the covering argument, with chart parameters in its domain : per chart [('both_small_u<1', 669), ('both_small_u=1', 191), ('both_small_u>1_b>=j', 149), ('j=1_lower_b', 232), ('j=1_u<1', 439), ('j=1_u=1', 132), ('j=1_u>1_b>=1', 90), ('j>1_u<1', 52), ('j>1_u=1', 40), ('j>1_u>1_simplex', 19), ('lower_b', 85), ('p=1_u<1', 455), ('p=1_u=1', 125), ('p=1_u>1', 136), ('p>1_u<1', 139), ('p>1_u=1', 29), ('p>1_u>1', 18)]; failures []
+PASS G9 > 0 at all 3000 grid points (exact evaluation)
+INFO elapsed : 39.3s  [39.3s]
+SUMMARY: 0 failed checks

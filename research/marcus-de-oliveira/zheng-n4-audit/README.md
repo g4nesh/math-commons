@@ -1,5 +1,7 @@
 # MDO-ZHENG4 · Does the claimed proof for $n=4$ hold up?
 
+**Assembled proof.** [PROOF.md](PROOF.md) gives the whole argument in order, with a proof or a pointer for every step and the current status of each of the ninety cases.
+
 **Status.** The dimension-four proof remains under audit. No error has been found in any part examined, and the conjecture for $n=4$ is not yet established by this audit as a whole. [Findings so far](FINDINGS.md) · [pinned inputs](METHOD.md#pinned-inputs)
 
 **Current coverage.** The reduction to ninety contact inequalities, the finite classification (214 orbits, 124 reducing to squared minors, 90 requiring separate inequalities), Theorem 1.2 and Appendix B hold on the checks recorded here. A theorem that twelve case proofs cite has no public proof; the audit supplies one. Several universal inequalities on $\mathrm{SO}(4)$ that the cases rely on are proved here for the first time in public. Of the 208 proof documents, 110 have a first-pass report with replay scripts, 92 are with cloud workers and 6 are deferred. A separate numerical search found 246 configurations across 82 of the 90 contact sets; the reports and sampled configurations do not by themselves establish the ninety inequalities. [Document inventory](manifest.json) · [first-pass reports](docs/) · [second pass](docs2/) · [numerical coverage and tolerances](contact-configs.md)

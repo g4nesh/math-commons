@@ -1,0 +1,56 @@
+INFO supplement files with T38 in the name : ['blind_moc4_T38_uniform_20261022.pdf']
+PASS contact set is paper T_39 and its generators are {0,1,2,5,7,12,39,40,67,70}
+PASS g40: Q^4 detHess(C)|_{h=-C/Q} = -4 Q^2 G40^2 exactly (polynomial identity) : deg_h detHess = 3
+PASS g40: G40 has 1455 terms, total degree 9 : (1455, 9)
+PASS g70: Q^4 detHess(C)|_{h=-C/Q} = -4 Q^2 G70^2 exactly (polynomial identity) : deg_h detHess = 3
+PASS g70: G70 has 1113 terms, total degree 9 : (1113, 9)
+INFO time after G40, G70 : 5.6
+PASS Sturm self-test: E^2-3E+2 has 2 roots in (0,inf), E^2-2E+2 none, (E-1)^2 one, E^2+1 none
+PASS group-check self-test: x*(E^2-3E+3) passes, x*(E^2-3E+2) is caught
+PASS G40 is quadratic in j
+PASS C (g40) does not involve j; C has 21 positive coefficients incl. d^3 (constant 1 at d=1)
+PASS k0 = C * G6 exactly
+PASS G6 has 128 terms and is bilinear in e, p (degree <= 1 in each) : (128, (1, 1, 0, 2, 1, 2, 2))
+PASS G6 = g00 + gE e + gP p + gEP e p
+PASS g00 has positive coefficients and constant 1 : 45
+PASS k2|_{e=0} = 0 and k1|_{e=0} has nonnegative coefficients (doc: 234 terms) : 234
+INFO term counts k0, k1, k2 : (768, 543, 144)
+INFO strict-base table sizes (after removing positive content) ('ab<1', 'ac<1') : [87, 60, 53, 70]
+INFO strict-base table sizes (after removing positive content) ('ab<1', 'ac>1') : [87, 64, 72, 104]
+INFO strict-base table sizes (after removing positive content) ('ab>1', 'ac<1') : [72, 97, 50, 106]
+INFO strict-base table sizes (after removing positive content) ('ab>1', 'ac>1') : [72, 114, 93, 172]
+PASS 16 strict-base tables: g00, gE+Le g00, gP+Lp g00, gEP+Lp gE+Le gP+Le Lp g00 have only nonnegative coefficients in all four product chambers (denominators positive)
+PASS identity G6 - g00(1-Le e)(1-Lp p) = e x (1-Lp p) + p y (1-Le e) + e p z  (x,y,z the shifted functions)
+INFO time after 16 tables : 5.7
+PASS domain 8: p = delta(a+1)(c+delta)/(ac-delta) with delta = U/(1+U)
+PASS domain 8: e = E_r0 E/(1+E) and J = r0^2/e - r0^2/E_r0
+PASS domain 8: delta -> p is increasing on [0,1) from 0 to P_ac (ac>=1), so U>=0 covers p in [0,P_ac)
+PASS domain 7: 1/(Eab E) = 1/e - 1/Eab
+INFO interval tables (ab<1, a,b<=1), ac<1 : denominators positive: True; base 17336 terms (nonneg); middle 23174 terms (nonneg); endpoint 23174 terms (nonneg)
+INFO interval tables (ab<1, a,b<=1), ac>1 : denominators positive: True; base 46488 terms (nonneg); middle 62640 terms (nonneg); endpoint 62640 terms (nonneg)
+INFO interval tables (ab<1, a>=1), ac<1 : denominators positive: True; base 6722 terms (nonneg); middle 13776 terms (nonneg); endpoint 18895 terms (nonneg)
+INFO interval tables (ab<1, a>=1), ac>1 : denominators positive: True; base 9177 terms (nonneg); middle 19517 terms (308 negative coefficients; 308 E-groups need Sturm; 0 fail); endpoint 26634 terms (491 negative coefficients; 491 E-groups need Sturm; 0 fail)
+INFO interval tables (ab<1, b>=1), ac<1 : denominators positive: True; base 7143 terms (nonneg); middle 14455 terms (nonneg); endpoint 19835 terms (nonneg)
+INFO interval tables (ab<1, b>=1), ac>1 : denominators positive: True; base 24225 terms (nonneg); middle 42780 terms (nonneg); endpoint 53640 terms (nonneg)
+INFO interval tables ab>1, ac<1 : denominators positive: True; base 3022 terms (nonneg); middle 5126 terms (nonneg); endpoint 7341 terms (nonneg)
+INFO interval tables ab>=1, ac>=1 (allocation) : denominators positive: True; base 19910 terms (nonneg); middle 41864 terms (nonneg); endpoint 67816 terms (nonneg)
+INFO time after 24 tables : 5.9
+PASS 24 interval tables: nonnegative coefficients or exact Sturm positivity of every E-group on E>0 (799 groups Sturm-checked) : []
+PASS Bernstein identity G40 = (1-j/J)^2 k0 + (j/J)(1-j/J)(2k0+J k1) + (j/J)^2 G40(J)
+PASS G70 is quadratic in s
+PASS L0, L1, L2 are (at most) quadratic in a : [2, 2, 2]
+PASS L0|_{a=0} has nonnegative coefficients and constant 1 (doc: 231 terms) : 231
+PASS identity (1+aS)^2 G70(a, S/(1+aS)) = L0 + S B1 + S^2 B2
+PASS KKT chart HH: energy at the chart point equals J; the point is feasible; d/dbeta = 0 there : (True, [True, True, True, True], True)
+PASS KKT chart HC: energy at the chart point equals J; the point is feasible; d/dbeta = 0 there : (True, [True, True, True, True], True)
+PASS KKT chart CH: energy at the chart point equals J; the point is feasible; d/dbeta = 0 there : (True, [True, True, True, True], True)
+PASS KKT chart CC: energy at the chart point equals J; the point is feasible; d/dbeta = 0 there : (True, [True, True, True, True], True)
+PASS KKT chart CC': energy at the chart point equals J; the point is feasible; d/dbeta = 0 there : (True, [True, True, True, True], True)
+INFO SOC tables chart HH (denominators positive: True) : L0: nonneg; terms per Y-power [6372, 7776, 7757] | B1: nonneg; terms per Y-power [9408, 11466, 13524, 13502] | B2: nonneg; terms per Y-power [0, 15624, 18921, 21801, 21863]
+INFO SOC tables chart HC (denominators positive: True) : L0: nonneg; terms per Y-power [6084, 7380, 7379] | B1: nonneg; terms per Y-power [7728, 9366, 11004, 11003] | B2: nonneg; terms per Y-power [0, 11514, 13575, 15591, 15599]
+INFO SOC tables chart CH (denominators positive: True) : L0: nonneg; terms per Y-power [5628, 6738, 6737] | B1: nonneg; terms per Y-power [6601, 8694, 10094, 10093] | B2: nonneg; terms per Y-power [0, 9810, 12631, 14351, 14359]
+INFO SOC tables chart CC (denominators positive: True) : L0: nonneg; terms per Y-power [6559, 8176, 8071] | B1: nonneg; terms per Y-power [6831, 8760, 10557, 10557] | B2: nonneg; terms per Y-power [0, 8850, 10959, 12936, 12936]
+INFO SOC tables chart CC' (denominators positive: True) : L0: nonneg; terms per Y-power [6212, 7663, 7588] | B1: nonneg; terms per Y-power [6138, 8281, 9887, 9887] | B2: nonneg; terms per Y-power [0, 7929, 10363, 12124, 12124]
+PASS 60 SOC tables: cleared Y-coefficients of L0, B1, B2 nonnegative in all five KKT charts (a = J Y/(1+Y), r free)
+INFO total time : 6.4
+SUMMARY: 0 failed checks
