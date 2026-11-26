@@ -46,3 +46,32 @@ $$U_{(r,i),(s,j)}=3^{-1/2}\zeta^{rs}(W_r)_{ij},\qquad \zeta=e^{2\pi i/3},\quad W
 This is a block orthogonal matrix times $F_3\otimes I_2$, so is unitary. Translating $s$ multiplies each row by a phase. Reflecting $s$ conjugates every entry because the $W_r$ are real. These permutations generate all six color relabelings and preserve every squared minor under the corresponding column permutation. This proves the unaveraged result for every member of the family.
 
 The missing condition for general $U$ is one nonnegative joint law that keeps the three **individual** color labels and their correlations. A matching law alone loses that information.
+
+## 4. Keeping the labels when symmetry breaks
+
+There is a finite sufficient test for an arbitrary complex $U$. First compute one signed law $r$ giving its ordered histograms. A closed formula uses the same canonical weights as the [earlier local coupling](../three-color-coupling/README.md). For a coloring $\kappa$, concatenate its three sorted row pairs into a permutation $\pi$, in color order. Use the correspondingly ordered column pairs and put
+$$r_\kappa=\Re\!\left[\overline{\det U}\,\mathrm{sgn}(\pi)\prod_{j=1}^3\det U[\kappa^{-1}(j),J_j]\right].$$
+Independent column reordering is allowed provided the determinant and the ordering use the same convention. To see why this works, expand $\det(D_aU+UD_b)\overline{\det U}$ by the Leibniz formula and group terms by the color of the column used on each row. The real parts give the same polynomial because all grouped coefficients are real by Cauchy–Binet.
+
+Each uncolored matching $M$ has six labelings. Write $\bar r_M$ for their average and
+$$h_M=6(\bar r_M-\min_{\kappa\text{ labeling }M}r_\kappa),\quad t=1-\sum_Mh_M,\quad y_e=x_e-\sum_{M\ni e}h_M.$$
+Check $t\ge0$, $y_e\ge0$ for all 15 edges, and $y(E(S))\le t$ for each of the 20 triples. If these tests pass, take a residual matching measure of total mass $t$ with edge masses $y$. For $t>0$ its existence follows by applying Edmonds to $y/t$, whose degrees are one. For $t=0$ all residual edge masses vanish by their zero degrees and nonnegativity. Add $h_M$ to the residual measure to get a probability $m_M$ on matchings with edge marginals $x$. The coloring masses
+$$w_\kappa=m_M/6+r_\kappa-\bar r_M$$
+are nonnegative and sum to one. The uniformly labeled $m_M$ and the signed orbit averages $\bar r_M$ both give the color-averaged data by Section 3 and linearity. Adding their difference to $r$ therefore gives all the original ordered histograms. Conversely these same tests are necessary for a repair that keeps the six differences $r_\kappa-\bar r_M$ fixed on each matching. Other ways to change the weights may succeed when the tests fail.
+
+**Unrestricted neighborhoods.** Around *every* interior unitary with color-invariant histograms the unaveraged result persists for arbitrary sufficiently small complex unitary perturbations. To give a radius, at its base $V$ take
+$$\beta=\min\{1/2,\ 5\min_e x_e,\ (5/2)\min_{|S|=3}(1-x(E(S)))\}>0.$$
+Reserve $\beta$ times the uniform law on all 15 matchings. The remaining edge masses satisfy the scaled matching inequalities, since the uniform edge mass is $1/5$ and its triple slack is $2/5$. Give all matchings uniform labels to get a base coloring law $w^V$ of minimum mass $\beta/90$. For another unitary use $w^V+r(U)-r(V)$. It has the correct histograms by linearity. If the maximum complex entry change is $\eta$, a $k$-minor changes by at most $k\sqrt{k}\eta$, by telescoping columns in its determinant and Hadamard's inequality. Every unchanged restricted column has norm at most one. In the product defining $r$ the one six-minor and three two-minors all have modulus at most one, so each mass changes by at most $30\eta$. Thus $\eta\le\beta/5400$ leaves every mass at least $\beta/180$. This argument requires only histogram invariance at the center.
+
+## Exact replay
+
+Run `python3 -B research/marcus-de-oliveira/paired-matching-boundary/check.py` from the repository root. It needs only the Python standard library. Each of four fixtures checks 924 individual squared minors and every one of the 358 grouped coefficients on 64 row subsets.
+
+| Fixture | What the replay checks |
+| --- | --- |
+| Zero edge | A dense rational orthogonal matrix exposes its zero rectangle only after rotating within the colors. All triple inequalities are strict. |
+| Tight triple | Every edge is positive. The small factor acts on the opposite side from the zero-edge example, exercising the other conditional law. |
+| Symmetric interior | The Fourier family with rational rotations $(3,4)/5,(5,12)/13,(7,24)/25$ has minimum edge $432/105625$ and minimum triple slack $192757/609375$. The full coloring law therefore persists on the entrywise unitary ball of radius $2/528125$. |
+| Broken symmetry | Two rational row rotations mix distinct Fourier row groups. Twelve canonical masses are negative. The residual tests pass and the corrected masses reproduce the original, unsymmetrized coefficients exactly. |
+
+The checker builds the endpoint flow, decomposes matching marginals using the edge and triple inequalities, and computes complex Fourier minors in $\mathbb Q(\zeta_3)$ with their normalization kept explicit. [Exact replay](check.py)
