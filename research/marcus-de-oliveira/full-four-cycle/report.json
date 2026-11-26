@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "plane": {
+    "positiveSquareCoefficients": 58,
+    "supportedPermutations": 15,
+    "minimumSquareCoefficient": "2895468812/4308762109375",
+    "realCoefficientEquations": 90,
+    "denominator": "1+s^2+t^2",
+    "domain": "all real s,t; all complex x,y",
+    "strictMassClaim": false
+  },
+  "repeatedMiddle": {
+    "nonzeroQ": [
+      "-4919527/12500000",
+      "5276689/12500000"
+    ],
+    "positiveMasses": 18,
+    "domain": "a=(x,d,y,d), arbitrary complex x,y,d"
+  },
+  "archivedAllFourConstantLawSeparator": {
+    "positiveWeights": 12,
+    "complexVariables": 3,
+    "interpolationCorners": 8,
+    "separatorDiagonals": 7,
+    "pairingsChecked": 24,
+    "maximumPairingScore": "0",
+    "determinantScore": "11201152/15625",
+    "strictGap": "11201152/15625"
+  },
+  "directChecks": [
+    {
+      "s": "0",
+      "t": "0",
+      "determinant": [
+        "-5172852/546875",
+        "23905904/546875"
+      ],
+      "minimumMass": "0"
+    },
+    {
+      "s": "1",
+      "t": "0",
+      "determinant": [
+        "-48440052/2734375",
+        "154539564/2734375"
+      ],
+      "minimumMass": "0"
+    },
+    {
+      "s": "0",
+      "t": "1",
+      "determinant": [
+        "-60874304/2734375",
+        "96953728/2734375"
+      ],
+      "minimumMass": "0"
+    },
+    {
+      "s": "7/3",
+      "t": "-11/5",
+      "determinant": [
+        "-1085008/1953125",
+        "3763295476/41015625"
+      ],
+      "minimumMass": "0"
+    },
+    {
+      "s": "100",
+      "t": "-100",
+      "determinant": [
+        "243512188/546875",
+        "1175622624/546875"
+      ],
+      "minimumMass": "0"
+    },
+    {
+      "s": "-2",
+      "t": "-2",
+      "determinant": [
+        "89307412/2734375",
+        "94661016/2734375"
+      ],
+      "minimumMass": "0"
+    }
+  ]
+}
