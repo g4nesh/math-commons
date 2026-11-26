@@ -1,0 +1,5 @@
+[   0.0s] Phi terms 95
+[   0.0s] blocks 346 sizes [2, 5, 6, 13, 26, 42]
+[   0.1s] unknowns: Gram entries 66176 multipliers 8310 coefficient equations 6476
+[  32.0s] SDP status optimal c* = 1.1370207624324675
+[  32.1s] wrote certificate.json; c = 1137021/1000000 ; multiplier terms 8310

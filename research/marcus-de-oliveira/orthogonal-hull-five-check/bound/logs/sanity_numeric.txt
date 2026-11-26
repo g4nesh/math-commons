@@ -1,0 +1,5 @@
+|V V* - I|_max = 2.220446049250313e-16 ; Phi(V) = 1.4799999999999993 ; 37/25 = 1.48
+|S| = 60 ; identity in S: True ; (0 1) in S: True ; even perms in S: 30
+max |Phi(O) - (1 - 6 det(O) E_S(O))| over 200 Haar O in O(5): 7.105427357601002e-15
+max Phi over 20000 Haar orthogonal samples: 0.9917637128528054
+20 local maximisations over O(5): largest 0.9999999999999958 smallest 0.9999999999878243
