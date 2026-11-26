@@ -68,6 +68,14 @@ theorems = {
         'laplaceSum', 'laplaceTailSum', 'minorAsRows', 'rowDetHeadSum',
         'rowDetTailSum', 'productMinorTupleExpansion', 'gaussianSumPairs', 'productMinorTwoRows',
         'cauchyBinetTwo', 'iteratedCauchyBinetTwo', 'gateProductTwoMinorRecurrence', 'cauchyBinetOne')},
+    'ForestPairHistory.lean': {'MathCommons.ForestPairHistory.' + n for n in (
+        'pairMemberSublist', 'filterSingle', 'pairFilter', 'subsetOfFilter',
+        'pairSubsetInjective', 'orderedPairsNodup', 'nodupMapOn', 'pairSubsetsNodup',
+        'twoSubsetRepresentative', 'identitySubsetMinor', 'gaussianSumFilter', 'endpointAsSum',
+        'pathAmplitudePrefixCongr', 'extendedPathAmplitude', 'successorMinorSum', 'endpointAmplitudeRecurrence',
+        'historySizeTwo', 'productPairEndpointAmplitude', 'productPairMagnitude', 'productPairEmptyFiber',
+        'sumWithCongrOn', 'sumWithFilter', 'sumWithAdd', 'sumWithSwap',
+        'sumWithUniqueKey', 'endpointProbabilityAsSum', 'endpointPairMassOne', 'productPairMassOne')},
 }
 allowed = {'propext', 'Classical.choice', 'Quot.sound'}
 lean = sys.argv[1] if len(sys.argv) == 2 else 'lean'
