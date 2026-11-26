@@ -4,9 +4,9 @@
 - **Author agent / GitHub owner:** `ganesh-claude-minors` (Claude Code; model `claude-fable-5-2` for this pass) / `g4nesh`.
 - **Evidence level:**
   - **Theorem EQ (the equivalence):** computer-assisted proof. Written argument plus an exact enumeration by script. Not independently reviewed.
-  - **Inequality (★) itself:** **open.** Numerical evidence only (direct minimization and numerical sum-of-squares certificates).
-- **Exact artifact commit:** the commit adding this file on branch `claude/mdo-pmsh-4`.
-- **Status and known gaps:** PMSH(4) is **not proved**. It is now equivalent to (★). See "Conclusion and limits".
+  - **Inequality (★) itself:** **open in general.** Since this file was written, its t-form has been proved exactly for every t ≥ 1/9 ([`../star-halfline/`](../star-halfline/README.md)); that gives (★) wherever D[12,12] ≥ D[13,14]/81. The rest is open, with numerical evidence only.
+- **Exact artifact commit:** on main as 1b98a07 (PR 18). Revised on November 25, 2026: wording of Steps 1 and 6 (after an internal re-check), exact versions of two computational inputs, and the status lines. No step of the argument changed.
+- **Status and known gaps:** PMSH(4) is **not proved** in general. It is equivalent to (★). It is proved for spectra with cross-ratio in [1/10, 9/10] ([`../star-halfline/`](../star-halfline/README.md), Theorem OS). See "Conclusion and limits".
 
 ## Statement
 
@@ -43,17 +43,27 @@ The first equivalence uses the exact identity g0 = D[13,13] + D[14,14] + D[13,14
 | Lemma or external theorem | Exact statement / source | Required hypotheses | Why they hold here |
 | --- | --- | --- | --- |
 | R1 | x(U) ∈ aff(Q) for every unitary U | none | [README](README.md) R1; exact integer rank, `exact_rank.py` |
-| Facets of Q | Q has exactly 82 facets: 16 (B[s,j] ≥ 0), 18 (D[S,T] ≥ 0, with D[S,T] = D[Sᶜ,Tᶜ]), 48 exotic (the Γ-orbit of g0) | none | exact enumeration, `verify_rest.py` part (2); agrees with Kovačec–Ribeiro, arXiv:1604.06112 |
+| Facets of Q | Q has exactly 82 facets: 16 (B[s,j] ≥ 0), 18 (D[S,T] ≥ 0, with D[S,T] = D[Sᶜ,Tᶜ]), 48 exotic (the Γ-orbit of g0) | none | complete enumeration: `verify_rest.py` part (2) with floating-point determinants rounded to integers, and [`../star-halfline/q_facets_exact.py`](../star-halfline/q_facets_exact.py) in exact integer arithmetic; agrees with Kovačec–Ribeiro, arXiv:1604.06112 |
 | H3 | For distinct c, a PMSH certificate λ has P_λ(π(s)=j) = B[s,j] | c distinct | [`../minors/pmsh.md`](../minors/pmsh.md), Proposition H3 |
-| Minor formula | det H[S,S] = ½ (N_x p)_M + (a linear function of B) for H = U D_c U*, S ∈ M | none | Cauchy–Binet and D[S,T] ∓ D[S,Tᶜ] |
+| Minor formula | det H[S,S] = ½ (N_x p)_M + (an affine function of B) for H = U D_c U*, S ∈ M | none | derived in Step 1 |
 | LP duality | A functional that is ≥ 0 on a polytope with minimum 0 is a nonnegative combination of the facet functionals that vanish on its minimizers (plus equations) | complete facet list | standard; complementary slackness |
 | AM–GM | (α−1)·a + α′·b ≥ 2√(ab) when (α−1)α′ = 1, α > 1, a, b ≥ 0 | — | elementary |
 
 ## Proof
 
 **Step 1 (certificates are points of P_p).** Let H = U D_c U*.
-- If λ is a probability vector on S₄ with Σ λ_π π_p(x(P_π)) = π_p(x(U)), then λ matches B and N p. B gives all 1×1 and 3×3 principal minors. By the minor formula, B and N p give all 2×2 principal minors. So λ is a PMSH certificate.
-- Conversely, if c is distinct and λ is a PMSH certificate, then by H3 it matches B, and by the minor formula it matches N p.
+
+*Minor formulas, valid for every unitary U.*
+- 1×1: H_ss = Σ_j B[s,j]·c_j.
+- 3×3: det H[{s}ᶜ,{s}ᶜ] = Σ_j B[s,j]·∏_{k≠j} c_k. (Cauchy–Binet, and |det U[{s}ᶜ,{j}ᶜ]|² = B[s,j] by Jacobi's identity for unitary matrices.)
+- 2×2: det H[S,S] = Σ_T D[S,T]·c_T by Cauchy–Binet. Pair T with Tᶜ:
+  D[S,T]·c_T + D[S,Tᶜ]·c_{Tᶜ} = ½·(D[S,T] + D[S,Tᶜ])·(c_T + c_{Tᶜ}) + ½·(D[S,T] − D[S,Tᶜ])·(c_T − c_{Tᶜ}).
+  The first term is ½·N_x[M,N]·p_N. For the second, Σ_{T′∋j} D[S,T′] = B[s₁,j] + B[s₂,j] for S = {s₁,s₂} (the squared norm of column j of the 2×4 matrix U[S,·], whose rows are orthonormal). Adding this for the two elements of T gives D[S,T] − D[S,Tᶜ] = Σ_{s∈S, t∈T} B[s,t] − 1.
+- So det H[S,S] = ½·(N_x p)_M + (an affine function of B). Affine is enough below, because certificate weights sum to 1.
+
+*The two directions.*
+- If λ is a probability vector on S₄ with Σ λ_π π_p(x(P_π)) = π_p(x(U)), then λ matches B and N p. B gives all 1×1 and 3×3 principal minors. B and N p give all 2×2 principal minors. The 4×4 minor is ∏c for every π. So λ is a PMSH certificate.
+- Conversely, if c is distinct and λ is a PMSH certificate, then by H3 it matches B, and by the 2×2 formula it matches N p.
 
 **Step 2 (fiber).** π_p(x(U)) ∈ P_p ⟺ there is η with x(U) + shift(η, q) ∈ Q. Indeed, two points of aff(Q) have the same image under π_p iff they differ by a matrix Z in the N-coordinates with zero row and column sums and Z p = 0, i.e. Z = η qᵀ.
 
@@ -81,7 +91,7 @@ How this is established:
    by item 1 and AM–GM.
 4. **Conclusion.** π_p(x(U)) lies in aff(P_p) and satisfies every facet inequality, so it lies in P_p. By Step 1 a PMSH certificate exists.
 
-**Step 6 (remaining spectra).** The set of pairs (U, p) for which a certificate exists is closed, because the certificates live in a compact simplex and the conditions are continuous. Non-critical p with p₁ ≠ p₃ are dense among all real triples p. So certificates exist for the 41 critical ratios, for p₁ = p₃, and for spectra with repeated eigenvalues. ∎
+**Step 6 (remaining spectra).** The set of pairs (U, c) for which a certificate exists is closed, because the certificates live in a compact simplex and the conditions are continuous in (U, c). Every real spectrum c is a limit of spectra with distinct entries, p₁ ≠ p₃ and non-critical ratio: the ratio is a non-constant rational function of c, so each of its level sets is nowhere dense. So certificates exist for the 41 critical ratios, for p₁ = p₃, and for spectra with repeated eigenvalues. ∎
 
 ## Computational assistance
 
@@ -100,7 +110,7 @@ Python 3.9.6, numpy 2.0.2, scipy 1.13.1, sympy 1.14.0; cvxpy 1.7.5 with Clarabel
 | `forms_check.py` | the SO(6) and block reformulations of (★) | float | errors ≤ 3·10⁻¹⁵; smallest margin of (★) on 4,000 Haar unitaries is 0.046 |
 
 **Trusted components and limits.**
-- Orientation determinants are computed in float64 and rounded. All entries are small integers and every determinant is an integer of absolute value ≤ 64 (computed deviation ≤ 4.3·10⁻¹⁴), so the rounding is safe, but it is not exact integer arithmetic. A reviewer may want to recompute with a fraction-free method.
+- Orientation determinants are computed here in float64 and rounded. All entries are small integers and every determinant is an integer of absolute value ≤ 64 (computed deviation ≤ 4.3·10⁻¹⁴). **They have since been recomputed in exact integer arithmetic** (fraction-free elimination with overflow and divisibility checks): [`../star-degree4/chiro_exact.py`](../star-degree4/chiro_exact.py) for all 2,704,156 determinants at ρ = 0, 1, −1 (0 differences from the stored quadratics), and [`../star-halfline/q_facets_exact.py`](../star-halfline/q_facets_exact.py) for the 82 facets of Q.
 - `chiro.py` writes `chiro_coeffs.npy` (65 MB) and `facets_exact.py` writes `triples_seen.pkl`; both are regenerated in under a minute and are not committed.
 
 ## Evidence that (★) holds
@@ -142,14 +152,17 @@ These are reformulations, not progress on the proof. Both are checked numericall
 ## Conclusion and limits
 
 - **Established (computer-assisted, unreviewed):** PMSH(4) ⟺ (★). The spectrum has been eliminated completely: one inequality in six squared 2×2 minors of a 4×4 unitary.
-- **Not established:** (★). So PMSH(4), and the Hermitian case of MOC for n = 4, remain open.
+- **Not established:** (★) in general. So PMSH(4), and the Hermitian case of MOC for n = 4, remain open in general.
+- **Established since (exact, computer-assisted, unreviewed):** the t-form of (★) for every t ≥ 1/9, by certificates valid on whole intervals of t ([`../star-halfline/`](../star-halfline/README.md)). Consequences: (★) holds wherever D[12,12] ≥ D[13,14]/81 (take t = √(D[12,12]/D[13,14]) in the t-form); and PMSH(4) holds for every spectrum c₁ < c₂ < c₃ < c₄ with (c₂−c₁)(c₄−c₃)/((c₃−c₁)(c₄−c₂)) ∈ [1/10, 9/10], because such a spectrum only needs the t-form at t = ρ/(1−ρ) and its reciprocal (Step 4).
 - **By-product (numerical):** the degree-3 SOS bound for g0 equals Drury's constant, so the global optimality of the skew-conference family (see [`../minors/drury-constant.md`](../minors/drury-constant.md)) should be provable by an exact degree-3 certificate.
 
 **What would finish it.**
-1. An exact certificate for (★) on a half-line t ≥ t₀ > 1. Exact certificates exist at single values of t (see [`../star-exact/`](../star-exact/README.md)); what is missing is one certificate with Gram blocks rational in t. The value t = 1 itself needs degree 4 or another method. The identity must be verified on U(4) exactly; the numerical ranks 59, 261, 954 of the sampled function spaces for degrees 2, 3, 4 indicate the number of independent conditions.
-2. A proof in the regime D[12,12] < D[13,14]/100 (numerically, degree 4 covers the rest). Bounded-degree certificates of the t-form do not work uniformly as t → 0, and the discriminant form with (σ₀, σ₁) of degrees (4, 2) is not exact. Options: a certificate for the discriminant form 4·D[12,12]·D[13,14] ≥ (L − D[12,12] − D[13,14])² on the set where the right side's base is positive; or a direct argument.
-3. An independent recomputation of Step 4 in exact integer arithmetic.
+1. *(Done for t ≥ 1/9.)* An exact certificate for (★) on a half-line. [`../star-halfline/`](../star-halfline/README.md) has one degree-3 certificate for every t ≥ 51/49 and degree-4 certificates down to t = 1/9, with Gram blocks polynomial in s = t/(1+t).
+2. A proof in the regime D[12,12] < D[13,14]/81, i.e. t < 1/9. Degree 4 stops near t = 0.1. Bounded-degree certificates of the t-form do not work uniformly as t → 0, and the discriminant form with (σ₀, σ₁) of degrees (4, 2) is not exact. Options: a certificate for the discriminant form 4·D[12,12]·D[13,14] ≥ (L − D[12,12] − D[13,14])² on the set where the right side's base is positive; or a direct argument.
+3. *(Done for the determinants.)* An independent recomputation of Step 4 in exact integer arithmetic: see "Trusted components and limits". In addition, `../star-degree4/ratio_facets.py` reduces every facet exactly at 19 rational ratios, including one in each of the 14 intervals inside (0, 1).
 
 ## Independent review
 
-None yet. A reviewer under a different GitHub owner should check Steps 1–3 and 5–6 by hand and rerun `chiro.py`, `facets_exact.py` and `verify_rest.py`.
+None yet by another owner. A reviewer under a different GitHub owner should check Steps 1–3 and 5–6 by hand and rerun `chiro.py`, `facets_exact.py` and `verify_rest.py`.
+
+An internal re-check by a separate agent under the same owner (recorded in [`../star-halfline/README.md`](../star-halfline/README.md)) found no failing step. It asked for the derivation now given in Step 1, for "affine" in place of "linear", and for Step 6 to take limits over spectra; all three are done in this revision.
