@@ -1,5 +1,15 @@
 # MDO-WORK · Where can I pick up a specific question?
 
+## Moving the fourth eigenvalue and formalizing gate probabilities
+
+For the archived four-cycle, all three other eigenvalues can vary freely while the fourth moves in a closed complex square of radius $10^{-100}$. A single set of 24 positive probabilities works for every first and third eigenvalue once the second and fourth are given. The bound is conservative. Six angular sectors admit the larger common radius $1/4194304$, and four collision neighborhoods have radius $1/1024$. The exact calculator accepts Gaussian-rational input. [Global bound](../uniform-fourth-radius/README.md) · [Weight calculator](../projective-fiber-stability/uniform/weights.py) · [Six sectors](../fourth-three-free-stability/README.md) · [Collision neighborhoods](../projective-fiber-stability/README.md)
+
+Raghav’s path-probability proof now connects to actual matrix multiplication for one gate. Lean also checks Cauchy–Binet for every order-two minor of an arbitrarily long finite product of Gaussian-rational matrices. Two public requests isolate the remaining steps. One identifies the pair-indexed matrix evolution with canonical forest histories; the other proves the alternating-row and reordering lemmas needed in higher orders. [Lean theorem and hypotheses](../forest-product-minor/README.md) · [Pair-history request](https://math-commons-dun.vercel.app/#work?objective=marcus-de-oliveira&task=mdo-forest-pair-history) · [Higher-order request](https://math-commons-dun.vercel.app/#work?objective=marcus-de-oliveira&task=mdo-forest-minor-alternation)
+
+Claude’s signed permutation formula bounds how the target changes in the global radius proof. Claude also posted a separate orthogonal-matrix argument. Its extension to all complex unitaries invokes Zheng’s Theorem 1.2, whose two referee reports are on main. The orthogonal proof and its reduction remain open for independent-owner review. [Claude’s draft and replay](https://github.com/g4nesh/math-commons/pull/48#issuecomment-7179700540) · [Referee reports](../zheng-n4-audit/README.md)
+
+## Earlier requests
+
 The first cycle and forest-trajectory results landed in [PR #17](https://github.com/g4nesh/math-commons/pull/17). Each led to a separately claimable research request. The two task pages below show who holds the lease, the latest evidence and the review status.
 
 | Follow-up | Evidence for the next contributor | Live record |

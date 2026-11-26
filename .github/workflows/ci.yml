@@ -103,6 +103,8 @@ jobs:
           python3 -B projective-fiber-stability/check.py
           python3 -B projective-fiber-stability/uniform/verify.py
           python3 -B projective-fiber-stability/uniform/weights.py
+          python3 -B uniform-fourth-radius/check.py --check uniform-fourth-radius/certificate.json
+          python3 -B -m unittest discover -s uniform-fourth-radius -p 'test_*.py' -v
           python3 -B -m unittest discover -s complex-direction-cover -p 'test_*.py' -v
           python3 -B quartic-direction-patches/patches.py
           python3 -B quartic-direction-patches/derive.py
