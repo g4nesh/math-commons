@@ -1,0 +1,4 @@
+(1) Marcus-de Oliveira at V, 400 random complex spectra: largest distance from the hull 0.0e+00
+    adversarial spectra (20 Nelder-Mead runs): largest distance 0.0e+00
+(2) PMSH(5) at V, 100 random real spectra: largest distance from the hull 0.0e+00
+    adversarial real spectra (10 Nelder-Mead runs): largest distance 0.0e+00

@@ -1,0 +1,5 @@
+values on the 120 permutation matrices (value: count): {-5: 60, 1: 60}
+O(5): 300 local searches: largest value 1.0000000000, smallest 1.0000000000
+      at the first 40 maxima: number of zero Hessian eigenvalues (count): {6: 40} ; maxima that are not signed permutation matrices: 40
+U(5): 60 local searches: largest value 1.4800000000, smallest 1.4800000000 ; 37/25 = 1.48
+100,000 Haar orthogonal samples: largest value 0.97978

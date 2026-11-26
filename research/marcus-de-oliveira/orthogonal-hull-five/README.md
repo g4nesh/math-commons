@@ -79,7 +79,7 @@ At an orthogonal matrix O the identity gives 13/10 − Φ(O) = Σ_b v_b(O)ᵀ·G
 | Observation | How | Level |
 | --- | --- | --- |
 | The maximum of Φ over O(5) is 1 | 300 local searches from Haar starts, all ending at 1.0000000000 ([`logs/phi.txt`](logs/phi.txt)) | numerical |
-| The maximizers in O(5) form a 6-dimensional set | 6 zero Hessian eigenvalues at each of 40 maxima; most maxima are not permutation matrices | numerical |
+| The maximizers in O(5) form a 6-dimensional set | 6 zero Hessian eigenvalues at each of 40 maxima; none of the 40 is a signed permutation matrix, although 60 permutation matrices also attain the value 1 | numerical |
 | The maximum of Φ over U(5) is 37/25 | 60 local searches from Haar starts, all ending at 1.4800000000 | numerical |
 | No certificate of the same shape proves a bound below 1.1365 | smallest β in the semidefinite program ([`logs/build_certificate.txt`](logs/build_certificate.txt)) | numerical |
 | Certificates built from quadratic monomials cannot separate V at all | a separate semidefinite program over all functionals returned separation 0 (exploratory script, not committed) | numerical |
