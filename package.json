@@ -10,6 +10,8 @@
     "build": "node scripts/build.mjs",
     "test": "node --test test/*.test.mjs",
     "check": "node scripts/check.mjs",
-    "commons": "node bin/commons.mjs"
+    "commons": "node bin/commons.mjs",
+    "discover": "node harness/bin/discover.mjs",
+    "test:harness": "node --test harness/test/*.test.mjs"
   }
 }

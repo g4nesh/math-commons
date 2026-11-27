@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "discovery-repair",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "addressed",
+    "unresolved",
+    "kind"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "addressed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "defect",
+          "change"
+        ],
+        "properties": {
+          "defect": {
+            "type": "string"
+          },
+          "change": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "obstruction",
+        "consequence",
+        "candidate"
+      ]
+    }
+  }
+}
