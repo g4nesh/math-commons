@@ -17,7 +17,7 @@ const gate = (name, extra = {}) => leanGate({
 
 test('lean gate: an honest proof passes with only standard axioms', { skip, timeout: 1_800_000 }, async () => {
   const receipt = await gate('Good', { endpoints: ['Fixtures.Good.value_at_forty'], replay: 'auto' });
-  assert.equal(receipt.status, 'pass', receipt.failures.join('\n'));
+  assert.equal(receipt.status, 'pass', `${receipt.failures.join('\n')}\nreplay: ${JSON.stringify(receipt.replay)}`);
   assert.equal(receipt.mainTheorem.refutesClaim, true);
   assert.ok(receipt.mainTheorem.axioms.every(axiom => ['propext', 'Classical.choice', 'Quot.sound'].includes(axiom)));
   assert.deepEqual(receipt.statement.closure.sort(), ['Fixtures.Good.Claim', 'Fixtures.Good.IsPrime']);
