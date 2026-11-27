@@ -12,7 +12,7 @@ It does not prove P(105), and it cannot on its own: see [Limits](#limits).
 2. **The first-order criterion re-proved** ([Theorem 3](#theorem-3-first-and-second-order), part (ii)). The lowest term of the expansion is the product of principal minors of F_M over the level sets. This is the selective lifting lemma of Wang–Zhang and hence the lifting theorem of Caragea–Lee–Malikiosis–Pfander, by a different and self-contained argument. The frontier report used those two results as assumptions.
 3. **A second-order criterion** (Theorem 3, part (iii)). When that product vanishes modulo a prime 𝔮 above q, the minor is still nonzero if an explicit quadratic form Λ in the fibre sums of the index set is nonzero modulo 𝔮.
 4. **Λ sees only differences** ([Corollary 4](#corollary-4-only-differences-of-fibre-sums-matter)). When the first-order product vanishes, Λ depends on K only through the differences of fibre sums within the two shells next to the singular level set. A shell with a single fibre contributes nothing.
-5. **Validation.** 982 configurations over seven pairs (M, q) agree exactly with determinants computed directly; 485 of them are first-order obstructed, and the second-order coefficient matches in every one.
+5. **Validation.** 988 configurations over eight pairs (M, q) agree exactly with determinants computed directly; 491 of them are first-order obstructed, and the second-order coefficient matches in every one.
 6. **Order 105.** On the family of about 2^90.5 index sets that P(105) reduces to, the criterion proves the minor nonzero for 98.5% (1 969 782 of a uniform sample of 2 000 000). Exactly 1.33% of the family has the singular set as a repeated level set, where Λ vanishes identically; in a further 0.19% Λ vanishes in both charts. All 117 642 non-constant single-layer lifts of the punctured cross are resolved.
 7. **Limits.** Λ vanishes identically when a singular level set is repeated or when the shells next to it carry no differences, and no fixed order of the expansion can decide product sets. The 1.5% that remains at order 105 is still about 2^84.5 index sets. A proof of P(105) needs more than this.
 
@@ -124,7 +124,7 @@ Two consequences. Translating K in the ℤ_q-direction changes no difference wit
 
 ## Validation
 
-`validate.py` compares the predictions of Theorem 3 with determinants computed directly in 𝔽[t]/(t^(q−1)), which is ℤ[ζ_N] modulo 𝔮 with ζ = 1 + t. For each configuration it checks that the coefficients below t^e vanish, that the coefficient of t^e is the predicted multiple of A₀, and, when A₀ = 0, that the coefficient of t^(e+1) is the predicted multiple of Λ. "Targeted" configurations place a singular carrier as a level set of multiplicity one, at the bottom level or at the second level, so that both kinds of term in Λ occur.
+`validate.py` compares the predictions of Theorem 3 with determinants computed directly in 𝔽[t]/(t^(q−1)), which is ℤ[ζ_N] modulo 𝔮 with ζ = 1 + t. For each configuration it checks that the coefficients below t^e vanish, that the coefficient of t^e is the predicted multiple of A₀, and, when A₀ = 0, that the coefficient of t^(e+1) is the predicted multiple of Λ. "Targeted" configurations place a singular carrier as a level set of multiplicity one, at the bottom level or at the second level, so that both kinds of term in Λ occur. The last block places a carrier of rank 3 at the third level, with eleven points and e = 10, so that the levels c = 2 and c = 3 occur. Only configurations with e + 1 ≤ q − 2 can be compared this way, because the truncated ring shows no higher coefficient; the proof of Theorem 3 has no such restriction.
 
 | (M, q) | residue field | configurations | first-order obstructed | of these with Λ ≠ 0 | row-sum identities checked |
 |---|---|---|---|---|---|
@@ -135,7 +135,8 @@ Two consequences. Translating K in the ℤ_q-direction changes no difference wit
 | (14, 29) | 29 | 300 | 183 | 131 | 1270 |
 | (15, 7) | 7⁴ | 100 | 60 | 55 | 483 |
 | (21, 5) | 5⁶ | 40 | 0 | 0 | 134 |
-| total | | 982 | 485 | 371 | 3917 |
+| (11, 23), carrier at the third level | 23 | 6 | 6 | 6 | 24 |
+| total | | 988 | 491 | 377 | 3941 |
 
 Every comparison agrees. The output is in [validate.txt](validate.txt).
 
@@ -163,7 +164,7 @@ For a singular level set of multiplicity δ ≥ 2 the natural next object is not
 ## Reproduce
 
 ```sh
-python3 validate.py > validate.txt        # about half a minute
+python3 validate.py > validate.txt         # about half a minute
 python3 apply105.py 2000000 > apply105.txt  # about a minute and a half
 ```
 

@@ -16,9 +16,11 @@ Two kinds of configurations:
   targeted  a carrier S that is singular in the chart is placed as a level set
             of multiplicity one, at the bottom level (upper shell only) or at
             the second level (upper and lower shell).
+  tall      for (11, 23): a singular carrier of rank 3 at the third level, so that
+            the levels c = 2 and c = 3 of Theorem 3 occur.
 
 Usage: python3 validate.py
-Standard library only; about two minutes.
+Standard library only; a few minutes (the last block, with eleven points, is slow).
 """
 import itertools
 import random
@@ -100,6 +102,16 @@ def targeted(ch, S, rng, max_points):
     return None
 
 
+def tall(ch, S, rng):
+    """S singular of rank 3, placed at the third level: sizes 3 on S (upper shell),
+    size 2 on one fibre outside S (lower shell).  Eleven points, e = 10."""
+    q, M = ch.q, ch.M
+    fib = {a: sorted(rng.sample(range(q), 3)) for a in S}
+    a = rng.choice([x for x in range(M) if x not in S])
+    fib[a] = sorted(rng.sample(range(q), 2))
+    return fib
+
+
 def main():
     rng = random.Random(20261127)
     plan = [  # (M, q, random configurations per chart, targeted per chart, largest rank searched for singular sets)
@@ -127,6 +139,15 @@ def main():
                     done += 1
         print("(M, q) = (%d, %d): %d configurations agree; %d of them obstructed (A0 = 0), "
               "second-order term nonzero in %d; %d row-sum identities hold" % (M, q, stats["configurations"], stats["obstructed"], stats["Lam nonzero"], stats["row sums"]), flush=True)
+    # higher levels: (11, 23) has singular carriers of rank 3 and q - 2 = 21 leaves room for e = 10
+    M, q = 11, 23
+    stats = {"configurations": 0, "obstructed": 0, "Lam nonzero": 0, "row sums": 0}
+    ch = so.charts(M, q)[0]
+    sing = [S for S in singular_sets(ch, 3) if len(S) == 3]
+    for _ in range(6):
+        compare(ch, tall(ch, rng.choice(sing), rng), stats)
+    print("(M, q) = (%d, %d), singular carrier at the third level: %d configurations agree; %d of them obstructed (A0 = 0), "
+          "second-order term nonzero in %d; %d row-sum identities hold" % (M, q, stats["configurations"], stats["obstructed"], stats["Lam nonzero"], stats["row sums"]), flush=True)
     print("all comparisons agree")
 
 
