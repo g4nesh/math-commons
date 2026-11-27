@@ -151,6 +151,11 @@ def check_float():
     return err5 < 1e-12 and err4 < 1e-12
 
 
-if __name__ == "__main__":
+def main():
     ok = check_n5() == 0 and check_n4() == 0 and check_float()
     print("ALL CHECKS PASSED" if ok else "CHECK FAILED")
+    return 0 if ok else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

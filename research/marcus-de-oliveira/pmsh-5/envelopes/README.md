@@ -14,7 +14,7 @@ Task `mdo-pmsh-5-envelopes` · agent `ganesh-claude-pmsh` · owner g4nesh · 27 
 - **Numerical:**
   - Both inequalities hold on all 3×3 contractions, not only on blocks of U(5).
   - They have zeros at blocks of U(5) that are neither blocks of U(4) nor singular, for example with singular values (1, 0.892, 0.854).
-  - A hull property (H) that would prove both is supported by a support-function test.
+  - A hull property (H) that would prove both is proposed; support-function results are not archived in this PR.
 
 ## Setting
 
@@ -119,8 +119,8 @@ is ≥ 0 for every V ∈ U(4), where D[S,T] = |det V[S,T]|². This is the form p
   - (H) implies (E20) and (E21). Both are of the form ℓ₀ + 2√(ℓ₁ℓ₂), with ℓᵢ linear in v and ℓ₁, ℓ₂ ≥ 0 on F₂, so they are concave in v. They are ≥ 0 on F₂ by Corollaries S and S′.
   - The same argument would lift to U(5) any such inequality that depends on one 3×3 block and holds on U(4).
 - **Evidence for (H)** (`hull_support.py`): h₁(c) = max_{F₁} c·v must equal h₂(c) = max_{F₂} c·v for every direction c.
-  - In 60 directions (six seeds, half with a negative det coefficient) the two maxima agree; the largest gap is in `logs/hull_support_*.txt`.
-  - Local optimization can miss maxima, so this is evidence only.
+  - The proposed 60-direction run (six seeds, half with a negative det coefficient) has no archived `logs/hull_support_*.txt` output in this PR. No completed support-function result is claimed here.
+  - Even a completed local-optimization run could miss maxima; it would be numerical evidence only.
 - **Why (H) needs more than one disc.**
   - Along any admissible line, each coordinate of v is |α + zβ|², which is subharmonic. So v(W) lies below every average over a boundary circle, never on it.
   - Hence (H) needs the singular part of F₂, and points of F₂ with other singular vectors. For diagonal W, independent Bernoulli thinning (s_k ↦ 1 with probability s_k², else 0) gives v(W) exactly. For general W the same thinning gets the cross terms wrong, with s_k² in place of s_k.
@@ -129,9 +129,11 @@ is ≥ 0 for every V ∈ U(4), where D[S,T] = |det V[S,T]|². This is the form p
   - Some are interior, for example (E20) at singular values (1, 0.892, 0.854) with |det W| = 0.762. So any proof must be sharp at genuine blocks of U(5), not only on U(4).
   - On the zero set of Y₂₀, (E20) reduces to E(W) ≥ 0. Y₂₀ = 0 means f is a unit left singular vector of W: the unit singular pair (u, v) has u_a = 0 and v_γ = 0. A proof of E(W) ≥ 0 on that locus is a necessary first step.
 
-### Routes that fail (`failed_routes.py`)
+### Exploratory routes (`failed_routes.py`)
 
-- **Corners in a singular value.** With the singular vectors fixed, the minimum over s₂ ∈ [0, 1] is often interior. So the reduction to s₂ ∈ {0, 1} fails line by line. The count is in `logs/failed_routes.txt`.
+The observations below were reported by the author, but `logs/failed_routes.txt` was not archived in this PR. They are not certified obstructions or completed replay evidence.
+
+- **Corners in a singular value.** With the singular vectors fixed, the minimum over s₂ ∈ [0, 1] is often interior. So the reduction to s₂ ∈ {0, 1} fails line by line. The run count is not archived.
 - **A rank-one imaginary part.** This is the device of Theorem F.
   - Diagonal phases with rank Im(D₁WD₂) ≤ 1 exist numerically for every tested contraction: five phase parameters against four equations.
   - Each minor of R + zN (R, N real, N of rank one) is a + zb with real a, b. So v(W) = cos²θ·v(R + tan θ·N) + sin²θ·v(R − cot θ·N) for every θ.
@@ -155,11 +157,11 @@ is ≥ 0 for every V ∈ U(4), where D[S,T] = |det V[S,T]|². This is the form p
 | [`closure.py`](closure.py) | Proposition M: unitarity of the closure, the mean-value identity, coverage |
 | [`hull_support.py`](hull_support.py) | support-function test of (H) |
 | [`failed_routes.py`](failed_routes.py) | singular-value corners; rank-one imaginary part |
-| `logs/` | outputs of the commands below |
+| `logs/` | archived outputs: `reduce_check.txt`, `interior_zeros.txt` and `closure.txt` |
 
 ## Reproduce
 
-From this directory, with Python 3.9, numpy 2.0.2 and scipy 1.13.1:
+From this directory, with Python 3.9, numpy 2.0.2 and scipy 1.13.1. Only the three outputs listed above are archived; the other commands are optional reproductions whose output is not included in this PR. The reduction checker exits nonzero if any check fails.
 
 ```sh
 python3 reduce_check.py                 > logs/reduce_check.txt       # seconds
