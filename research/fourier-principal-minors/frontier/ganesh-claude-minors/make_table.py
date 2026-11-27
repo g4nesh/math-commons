@@ -50,6 +50,62 @@ def literature(n):
     return ""
 
 
+def divisors(n):
+    return [d for d in range(2, n + 1) if n % d == 0]
+
+
+def star_obstruction(p, M):
+    """Proposition 1 of README.md: pairwise coprime divisors d_1..d_k >= 2 of M with
+    p | c, c = (k-1) prod d_j - sum_j prod_{i != j} d_i.  Returns the divisors or None."""
+    primes = sorted(set(factorint(M)))
+    best = None
+
+    def go(i, blocks):
+        nonlocal best
+        if i == len(primes):
+            ds = [d for d in blocks if d > 1]
+            if len(ds) >= 2:
+                prod = 1
+                for d in ds:
+                    prod *= d
+                c = (len(ds) - 1) * prod - sum(prod // d for d in ds)
+                if c % p == 0 and (best is None or prod < best[0]):
+                    best = (prod, sorted(ds))
+            return
+        q = primes[i]
+        go(i + 1, blocks)  # prime unused
+        for j in range(len(blocks)):
+            if blocks[j] > 1:
+                go(i + 1, blocks[:j] + [blocks[j] * q] + blocks[j + 1:])
+        go(i + 1, blocks + [q])
+
+    go(0, [])
+    return best[1] if best else None
+
+
+def refine(p, M, outcome, pairs):
+    """Apply the propagation rule to a presentation that was not decided directly:
+    a vanishing minor of F_M0 modulo a prime above p gives one of F_M for M0 | M,
+    and a covering chain at (p, M0) gives a covering chain at (p, M)."""
+    if outcome.startswith("ordinary lifting holds") or outcome.startswith("selective lifting holds") or outcome == "ordinary and selective fail":
+        return outcome
+    own = pairs.get((M, p))
+    if own and own["selective"] is False:
+        return "ordinary and selective fail (run outside the scan, see special-runs.md)"
+    sel = [d for d in divisors(M) if d < M and (d, p) in pairs and pairs[(d, p)]["selective"] is False]
+    if sel:
+        return "ordinary and selective fail (covering chain propagated from base %d)" % sel[0]
+    star = star_obstruction(p, M)
+    if star:
+        return "ordinary and selective fail (Proposition 1 with subgroup orders %s)" % ", ".join(map(str, star))
+    if outcome.startswith("ordinary fails"):
+        return outcome
+    od = [d for d in divisors(M) if d < M and (d, p) in pairs and pairs[(d, p)]["ordinary"] is False]
+    if od:
+        return "ordinary fails (vanishing minor propagated from base %d); selective not decided" % od[0]
+    return outcome
+
+
 def main(path):
     data = json.load(open(path))
     status = {int(k): v for k, v in data["status"].items()}
@@ -58,6 +114,8 @@ def main(path):
     settled = [n for n in comp if status[n]["proved"]]
     open_ = [n for n in comp if not status[n]["proved"]]
     new = [n for n in settled if literature(n) in ("", "seed")]
+    missing = [n for n in open_ if literature(n) not in ("", "seed")]
+    assert not missing, "orders proved in the literature but not settled here: %s" % missing
     print("Bound %d. Composite square-free orders: %d. Settled: %d (%d by ordinary lifting, %d by selective lifting). Not settled: %d." % (
         data["bound"], len(comp), len(settled),
         sum(1 for n in settled if status[n]["how"] == "ordinary"),
@@ -70,13 +128,18 @@ def main(path):
     print()
     print("### Orders not settled")
     print()
-    print("| N | factors | presentations tested (p, base): outcome |")
-    print("|---|---|---|")
+    print("| N | factors | every presentation fails both tests? | presentations (p, base): outcome |")
+    print("|---|---|---|---|")
     for n in open_:
-        tried = "; ".join("(%d, %d): %s" % (t["p"], t["M"], t["outcome"]) for t in status[n]["tried"])
-        print("| %d | %s | %s |" % (n, " · ".join(map(str, factorint(n))), tried))
+        outs = [(t["p"], t["M"], refine(t["p"], t["M"], t["outcome"], pairs)) for t in status[n]["tried"]]
+        closed = all(o.startswith("ordinary and selective fail") for _, _, o in outs)
+        print("| %d | %s | %s | %s |" % (n, " · ".join(map(str, factorint(n))), "yes" if closed else "no",
+                                     "; ".join("(%d, %d): %s" % o for o in outs)))
     print()
-    print("### Presentations that fail the ordinary test")
+    print("### Pairs that fail the ordinary test (computed directly)")
+    print()
+    print("All pairs with base at most 22 and prime at most 31 were decided, plus the pairs the scan needed.")
+    print("Counts are per chart; \"not counted\" means the run stopped at the first vanishing minor or was a targeted search.")
     print()
     print("| base M | prime p | f | charts | vanishing minors per chart | selective test |")
     print("|---|---|---|---|---|---|")
@@ -84,7 +147,7 @@ def main(path):
         if r["ordinary"]:
             continue
         zeros = r.get("zeros_by_chart")
-        ztxt = ", ".join(map(str, zeros)) if zeros else "not counted (stopped at the first)"
+        ztxt = ", ".join(map(str, zeros)) if zeros else "not counted"
         sel = {True: "holds: no covering chain", False: "fails: covering chain exists", None: "not decided"}[r["selective"]]
         print("| %d | %d | %d | %d | %s | %s |" % (M, p, r["f"], r["n_factors"], ztxt, sel))
     print()

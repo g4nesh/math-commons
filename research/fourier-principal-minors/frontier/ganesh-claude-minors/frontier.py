@@ -415,7 +415,7 @@ def extra_pairs(max_base, max_prime, bin_dir, out_json, budget):
         if not is_squarefree(M):
             continue
         for q in range(2, max_prime + 1):
-            if len(factorint(q)) != 1 or factorint(q)[q] != 1 or M % q == 0:
+            if factorint(q) != {q: 1} or M % q == 0:
                 continue
             if (M, q) in cache or cost(M, q) > budget:
                 continue

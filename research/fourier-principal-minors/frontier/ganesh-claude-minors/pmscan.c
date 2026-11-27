@@ -14,15 +14,19 @@
  *
  * Build:  cc -O2 -o pmscan pmscan.c            (log/Zech tables, small fields)
  *         cc -O2 -DPOLY -o pmscan_poly pmscan.c (polynomial arithmetic, any field)
- * Run:    pmscan M p f h_0 ... h_{f-1} [list] [first]
+ * Run:    pmscan M p f h_0 ... h_{f-1} [list] [first] [lowrank R]
  *         with h(x) = x^f + h_{f-1} x^{f-1} + ... + h_0.
+ *         `lowrank R` replaces the full scan by a direct test (one Gaussian
+ *         elimination each) of every subset of size at most R that contains 0;
+ *         vanishing ones are printed as `Z mask`.  `check MASK` (hexadecimal)
+ *         tests the single subset MASK by direct elimination.
  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
 
-#define MAXM 44
+#define MAXM 60
 #define MAXF 32
 
 static int M, P, F;
@@ -174,12 +178,68 @@ static void rec(int depth, int n, int nund, int ndef, uint64_t mask) {
     }
 }
 
+/* Direct test of one subset given as a bit mask. */
+static int subset_is_singular(uint64_t mask) {
+    int idx[MAXM], n = 0;
+    for (int i = 0; i < M; i++) if (mask >> i & 1) idx[n++] = i;
+    elt *W = malloc(sizeof(elt) * (size_t)(n ? n * n : 1));
+    for (int i = 0; i < n; i++) for (int j = 0; j < n; j++) W[i * n + j] = BUF[0][idx[i] * M + idx[j]];
+    int singular = 0;
+    for (int col = 0; col < n && !singular; col++) {
+        int r = col;
+        while (r < n && EISZ(W[r * n + col])) r++;
+        if (r == n) { singular = 1; break; }
+        if (r != col) for (int j = 0; j < n; j++) { elt t = W[r * n + j]; W[r * n + j] = W[col * n + j]; W[col * n + j] = t; }
+        elt inv; e_inv(&inv, &W[col * n + col]);
+        for (int i = col + 1; i < n; i++) {
+            if (EISZ(W[i * n + col])) continue;
+            elt fac; e_mul(&fac, &W[i * n + col], &inv);
+            for (int j = col + 1; j < n; j++) e_mulsub(&W[i * n + j], &W[i * n + j], &fac, &W[col * n + j]);
+        }
+    }
+    free(W);
+    return singular;
+}
+
+/* Direct test of all subsets of size <= R containing index 0. */
+static void lowrank_scan(int R) {
+    int idx[16];
+    elt W[16 * 16];
+    if (R > 16) R = 16;
+    for (int r = 1; r <= R && r <= M; r++) {
+        idx[0] = 0;
+        for (int i = 1; i < r; i++) idx[i] = i;
+        for (;;) {
+            for (int i = 0; i < r; i++) for (int j = 0; j < r; j++) W[i * r + j] = BUF[0][idx[i] * M + idx[j]];
+            total_by_rank[r]++; nleaf++;
+            if (block_is_singular(W, r)) {
+                uint64_t mask = 0;
+                for (int i = 0; i < r; i++) mask |= 1ULL << idx[i];
+                zero_by_rank[r]++; nzero++;
+                if (list_mode) printf("Z %llx\n", (unsigned long long)mask);
+            }
+            int k = r - 1;
+            while (k >= 1 && idx[k] == M - r + k) k--;
+            if (k < 1) break;
+            idx[k]++;
+            for (int i = k + 1; i < r; i++) idx[i] = idx[i - 1] + 1;
+        }
+    }
+}
+
 int main(int argc, char **argv) {
     if (argc < 4) { fprintf(stderr, "usage: %s M p f h_0 ... h_{f-1} [list] [first]\n", argv[0]); return 2; }
     M = atoi(argv[1]); P = atoi(argv[2]); F = atoi(argv[3]);
     if (M < 1 || M > MAXM || F < 1 || F > MAXF || P < 2 || P > 65521 || argc < 4 + F) { fprintf(stderr, "bad arguments\n"); return 2; }
     for (int i = 0; i < F; i++) Hc[i] = ((atoi(argv[4 + i]) % P) + P) % P;
-    for (int i = 4 + F; i < argc; i++) { if (!strcmp(argv[i], "list")) list_mode = 1; if (!strcmp(argv[i], "first")) stop_first = 1; }
+    int lowrank = 0, check_mode = 0;
+    uint64_t check_mask = 0;
+    for (int i = 4 + F; i < argc; i++) {
+        if (!strcmp(argv[i], "list")) list_mode = 1;
+        if (!strcmp(argv[i], "first")) stop_first = 1;
+        if (!strcmp(argv[i], "lowrank") && i + 1 < argc) lowrank = atoi(argv[++i]);
+        if (!strcmp(argv[i], "check") && i + 1 < argc) { check_mode = 1; check_mask = strtoull(argv[++i], NULL, 16); }
+    }
     setup_reduction();
 
     /* zeta = x mod h and its powers */
@@ -232,9 +292,13 @@ int main(int argc, char **argv) {
     for (int i = 0; i < M; i++) for (int j = 0; j < M; j++) BUF[0][i * M + j] = (int32_t)((zlog * (int64_t)((i * j) % M)) % (int64_t)Q1);
 #endif
 
-    rec(0, M, M, 0, 0ULL);
+    if (check_mode) {
+        printf("CHECK %llx %s\n", (unsigned long long)check_mask, subset_is_singular(check_mask) ? "singular" : "nonsingular");
+        return 0;
+    }
+    if (lowrank > 0) lowrank_scan(lowrank); else rec(0, M, M, 0, 0ULL);
 
-    printf("RESULT M=%d p=%d f=%d h=", M, P, F);
+    printf("%s M=%d p=%d f=%d h=", lowrank > 0 ? "LOWRANK" : "RESULT", M, P, F);
     for (int i = 0; i < F; i++) printf("%d%s", Hc[i], i + 1 < F ? "," : "");
     printf(" subsets=%llu zeros=%llu byrank=", (unsigned long long)nleaf, (unsigned long long)nzero);
     for (int r = 0; r <= M; r++) printf("%llu%s", (unsigned long long)zero_by_rank[r], r < M ? "," : "");
