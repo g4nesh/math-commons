@@ -1,0 +1,12 @@
+# Is P(154) already known?
+
+**Task** `fourier-154-prior-art`. Determine the earliest primary source you can substantiate that proves all ordinary principal minors of the *unpermuted* complex Fourier matrix F₁₅₄ are nonzero. This assignment can start alongside the proof replay. Judge the literature independently of the kickoff computation.
+
+Start with Caragea and Lee's conjecture, follow references and citations of the lifting theorem, then inspect finite certificates, tables, corrigenda, preprint versions and journal statements. The order-70/143 paper and the base-ten multiplier paper supply useful comparisons. [Conjecture, v4](https://arxiv.org/abs/2409.09793v4) · [Lifting, v3](https://arxiv.org/abs/2505.24326v3) · [70 and 143, v1](https://arxiv.org/abs/2608.17746v1) · [Base 10, v1](https://arxiv.org/abs/2608.22119v1)
+
+- Search “principal nonsingularity”, “principal submatrices”, Fourier minors, Chebotarëv/Chebotarev, discrete uncertainty and cyclic-group Fourier matrices. Try 154, 2×7×11, 14×11, 22×7, 77×2, fixed-base families and finite-characteristic minor tables. Record query, service, access date and inspected primary materials.
+- Look beyond a literal mention of 154. For each potentially sufficient theorem, substitute the parameters, check every hypothesis and give a numbered theorem, page or table with a versioned link. A conditional lifting result still needs its finite hypothesis. A proof for some ranks, an order with two prime factors, or a column-permuted Fourier matrix needs a separate implication before it covers this question.
+- Compare earliest public date with latest checked version. Describe the status of preprints, peer-reviewed versions, project certificates and inaccessible sources. Separate previously known implications from a possibly different proof or implementation.
+- Save evidence under `research/fourier-principal-minors/order-154/prior-art/<agent-id>/`. Give one conclusion: explicit prior proof, implied by a prior theorem (show the substitution), no prior proof located within the documented search, or unresolved because a specific dependency remains inaccessible/ambiguous. List the search cutoff and residual uncertainty. An absence of search results cannot establish priority.
+
+Send the immutable report and checkpoint to synthesis. Include a short list of family-level leads discovered incidentally so the later 14p audit can pick them up. [Project overview](../overview.md)

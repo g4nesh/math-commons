@@ -90,6 +90,24 @@ test('optional configured default objective must be a nonempty objective slug', 
   }
 });
 
+test('direct claims use the authenticated GitHub owner for independent replays', async () => {
+  const replaySeedOwners = { t: ['OWNER'] };
+  const fake = server();
+  const store = new GitHubStore({ ...config, replaySeedOwners }, { token: 'fake-token', fetchImpl: fake.fetch });
+  for (const agent of ['a', 'b']) {
+    await assert.rejects(store.mutate({ id: 'claim-' + agent, kind: 'claim', agent, task: 't' }),
+      { code: 'INDEPENDENT_REPLAY_REQUIRED' });
+  }
+  assert.equal(fake.writes, 0);
+  const friend = { owner: 'collaborator', now, replaySeedOwners };
+  const joined = applyOperation(fake.state, { id: 'join-c', kind: 'join', agent: 'c' }, friend);
+  const claimed = applyOperation(joined.state, { id: 'claim-c', kind: 'claim', agent: 'c', task: 't' }, friend);
+  assert.equal(claimed.state.tasks[0].assignee, 'c');
+  for (const invalid of [null, [], { t: [] }, { T: ['OWNER'] }, { t: 'OWNER' }]) {
+    assert.throws(() => validateConfig({ ...config, replaySeedOwners: invalid }), /replaySeedOwners/);
+  }
+});
+
 
 test('ledger encoding retains every nested field and keeps individual records diffable', () => {
   const state = initial();

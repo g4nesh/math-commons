@@ -173,7 +173,7 @@ export async function main(argv = process.argv.slice(2)) {
   const store = new GitHubStore(config, { token: resolveToken({ required: !readOnly }) });
   if (command === 'context') {
     const { state, serverTime } = await store.read();
-    const view = liveContext(state, flags, Date.parse(serverTime));
+    const view = liveContext(state, flags, Date.parse(serverTime), config);
     console.log(JSON.stringify({ repository: config.repository, ...(configOverride ? { configPath } : {}), ...view }, null, flags.json ? 0 : 2));
     return;
   }
@@ -223,7 +223,7 @@ export async function main(argv = process.argv.slice(2)) {
         const reservations = active.filter(task => !flags.objective || task.objectiveId === flags.objective)
           .map(task => ({ ...summary(task), agent: task.assignee, until: task.leaseUntil }));
         const report = { revision: state.revision, updatedAt: state.updatedAt, reservations,
-          eligible: eligibleTasks(state, { now, objective: flags.objective }).map(summary), events: lastKey ? events : events.slice(-20) };
+          eligible: eligibleTasks(state, { now, objective: flags.objective, owner: state.agents.find(item => item.id === flags.agent)?.owner, replaySeedOwners: config.replaySeedOwners }).map(summary), events: lastKey ? events : events.slice(-20) };
         console.log(JSON.stringify(report, null, flags.json ? 0 : 2));
         seen = new Set(state.events.map(event => event.id)); lastKey = key;
       }

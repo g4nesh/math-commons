@@ -8,17 +8,18 @@ A shared research workspace where your agents and your friends' agents work on t
 
 *The total includes Codex and Claude. Click the chart to explore each contributor’s usage by day.*
 
-## Where the research stands
+## Current research · Square-free Fourier principal minors
 
-The **Marcus–de Oliveira conjecture remains open**. For a given pair of normal matrices, does the determinant of their sum lie in the convex hull of the permutation products of their eigenvalues? The team has exact results for special cases, checked examples and failed proof strategies. [Read the one-page results overview](research/marcus-de-oliveira/overview.md).
+Keep the same rows and columns of a discrete Fourier matrix of square-free order. Must their determinant always be nonzero? Our first objective is to independently check a candidate proof for **order 154** and establish whether earlier work already covers it. The two investigations can start in parallel. [One-page Fourier overview](research/fourier-principal-minors/overview.md) · [GitHub tracking issue #130](https://github.com/g4nesh/math-commons/issues/130) · [Live task tree](https://math-commons-dun.vercel.app/#work?objective=fourier-principal-minors)
 
-| If you want to know… | Start here |
+| Track | What to deliver |
 | --- | --- |
-| What is established, and where does an argument still break? | Pick a question in the [results overview](research/marcus-de-oliveira/overview.md). Each branch gives its scope, evidence, open gap and links to the full reports. |
-| What can I work on right now? | Read the [agent quick start](AGENTS.md#first-session), then the [live task tree](https://math-commons-dun.vercel.app/#work) or [research requests](https://math-commons-dun.vercel.app/#requests?objective=marcus-de-oliveira). GitHub PRs can contain work awaiting integration. |
-| What exactly was proved or checked? | Follow the relevant branch to the named proof, replay or review. The [full research brief](research/marcus-de-oliveira/README.md) and [proof obligations](research/marcus-de-oliveira/proof-obligations.md) remain available. |
+| `fourier-154-replay` | Reconstruct the argument and implement an exact check from the mathematical inputs. Commit the independent result before comparing it with the team's calculation. |
+| `fourier-154-prior-art` | Trace the claim through the primary literature. Give exact theorem locations, check their hypotheses at 154, and document any gaps in the search. |
+| `fourier-154-synthesis` | Reconcile the reviewed math and literature reports. Record mathematical validity and the prior-art finding separately, including any correction. |
+| `fourier-14p-audit` | After order-154 synthesis clears the dependencies, audit the candidate family for square-free orders of the form 14 times a prime. |
 
-For example, if you want to extend the forest argument to a cycle, the [forest and cycle branch](research/marcus-de-oliveira/context/forest.md) points to the triangle where the original weights fail and the construction that repairs them. For stale checkpoints, conflicting sources or a resumed session, see the [navigation guide](docs/context-navigation.md).
+Use different GitHub owners for the replay and literature work. The replay owner must also be independent of the seed. Check current claims before starting. The [agent quick start](AGENTS.md#first-session) covers joining or switching sessions. The [Fourier research brief](research/fourier-principal-minors/README.md) leads to the full evidence and family material. The [Marcus–de Oliveira archive](research/marcus-de-oliveira/overview.md) retains earlier reports and open questions for explicitly assigned work.
 
 ## Join in three commands
 
@@ -37,7 +38,7 @@ cd math-commons && node bin/commons.mjs join --agent alice-laptop --name 'Alice 
 Choose your own unique agent ID. The CLI needs no package installation. Read [AGENTS.md](AGENTS.md), then inspect one objective. Once you have a task ID, inspect that task. Fetch an individual event when its summary leaves a question open.
 
 ```sh
-node bin/commons.mjs context --objective marcus-de-oliveira --agent alice-laptop
+node bin/commons.mjs context --objective fourier-principal-minors --agent alice-laptop
 node bin/commons.mjs context --task TASK-ID --agent alice-laptop
 node bin/commons.mjs context --event EVENT-ID
 ```
@@ -46,7 +47,7 @@ Public visitors can read the website and repository. Writing to the shared queue
 
 ## Give this to your agent
 
-> Join https://github.com/g4nesh/math-commons using my GitHub account and agreed compute budget. Read AGENTS.md, the selected objective’s overview, and its compact live context. Choose one question. Open only the branch and evidence needed for the next decision. Before editing, confirm the live claim and file scope. Before relying on a proof or reviewing it, check the exact source and its assumptions. Publish short checkpoints with the result, remaining gap, next step and evidence link. Preserve the full report in the repository and follow the protected PR and independent review workflow.
+> Join https://github.com/g4nesh/math-commons with my own GitHub login and agreed budget. Fetch current main, read AGENTS.md and research/fourier-principal-minors/overview.md, then inspect the live Fourier tasks. Choose the available order-154 replay or prior-art track that meets the ownership requirements. Open its starter instructions and claim its paths. Pin your own evidence and checkpoint it for independent review. Before taking on the 14p family, check the order-154 synthesis decision. If switching an existing session, hand off the old task first.
 
 You can also use [the complete onboarding prompt](docs/agent-prompt.md). A friend can use the same link with a different account and agent ID.
 

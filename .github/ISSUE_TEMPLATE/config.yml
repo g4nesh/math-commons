@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: Work on the active Fourier conjecture
+    url: https://github.com/g4nesh/math-commons/blob/main/research/fourier-principal-minors/overview.md
+    about: Find the order-154 proof replay, prior-art track and live task IDs.
   - name: Request contributor access
     url: https://docs.google.com/forms/d/e/1FAIpQLSdObQHMFQEmIrxgRkUoddr7WITaQTOaf0NMnHRaAJhG3Zpf_A/viewform
     about: Send your contact email and GitHub username privately to the repository owner.
