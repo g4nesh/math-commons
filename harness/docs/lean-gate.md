@@ -15,7 +15,7 @@ The statement and every project definition it uses are fingerprinted and pinned 
 An unsound kernel is rarely the problem with AI-written Lean. The usual failure is a **correct proof of the wrong statement**: a dropped hypothesis, `ℕ` where the source means positive integers, a finite range, or a helper definition that makes the claim vacuous. solved-conjectures handled this with prose source audits. Here the statement is a separate, pinned artifact:
 
 1. **formalize-statement** writes `def Claim : Prop` and the definitions it needs in `formal/<Root>/Statement.lean`, and nothing else.
-2. The gate runs once to compute the statement **fingerprint**. This is the SHA-256 of the canonical JSON of three things: the toolchain, `Claim`'s type, and the kernel type and value of every constant under the campaign namespace that `Claim` reaches transitively (definitions, inductives and their constructors).
+2. The gate runs once to compute the statement **fingerprint**. This is the SHA-256 of the canonical JSON of three things: the toolchain, `Claim`'s type, and the kernel type and value of every project-local constant that `Claim` reaches transitively (definitions, opaque definitions, inductives and their constructors). Ownership comes from the declaration's source module, not its namespace, including helpers in imported local modules. The namespace limits only the separate hygiene inventory.
 3. **audit-statement** runs on the other runtime. It compares source and Lean row by row (`STATEMENT_REVIEW.md`) and checks vacuity, edge cases and polarity.
 4. **Pin.** A faithful audit, with the fingerprint recomputed and unchanged, stores it in `campaign.json` as `lean.claimFingerprint`.
 5. **formalize** proves `main`. Editing `Statement.lean`, or any definition `Claim` uses, changes the fingerprint and fails the gate. The fix is a new audit, not a new proof.
@@ -78,6 +78,7 @@ node harness/bin/discover.mjs lean-gate --project formal --module Root.Main \
 | `Native` | `native_decide` | source rule, `Lean.ofReduceBool` |
 | `Weakened` | proves only the n = 40 instance | exact-type check |
 | `tampered/Good` | restricts `Claim` to n ≤ 100 and proves that | fingerprint pin (the tampered proof itself is valid) |
+| generated cross-namespace project | changes an imported helper in a different namespace from `False` to `True` | fingerprint pin, despite a valid proof of the changed `Claim` |
 
 The `lean` job in `.github/workflows/harness.yml` installs elan and runs these. It then runs the end-to-end fixture campaign, whose formal stage builds a real Lean project, and uploads the generated campaign as an artifact.
 

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { cpSync, mkdtempSync } from 'node:fs';
+import { cpSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
@@ -64,4 +64,27 @@ test('lean gate: a silently weakened statement breaks the pinned fingerprint', {
   assert.equal(receipt.status, 'fail');
   assert.ok(receipt.failures.some(item => /fingerprint .* differs/.test(item)), receipt.failures.join('\n'));
   assert.equal(receipt.mainTheorem.refutesClaim, true, 'the tampered proof itself is fine; only the pin catches it');
+});
+
+test('lean gate: definitions outside the claim namespace cannot change under a pin', { skip, timeout: 1_800_000 }, async () => {
+  const root = mkdtempSync(join(tmpdir(), 'discover-cross-namespace-'));
+  writeFileSync(join(root, 'lean-toolchain'), 'leanprover/lean4:v4.24.0\n');
+  writeFileSync(join(root, 'lakefile.toml'), 'name="crossnamespace"\nversion="0.1.0"\n[[lean_lib]]\nname="Demo"\n[[lean_lib]]\nname="Helper"\n');
+  // The imported helper also deliberately has a different namespace from its module.
+  writeFileSync(join(root, 'Helper.lean'), 'namespace Outside\ndef P : Prop := False\nend Outside\n');
+  writeFileSync(join(root, 'Demo.lean'), 'import Std\nimport Helper\nnamespace Demo\ndef Claim : Prop := Outside.P\ntheorem main : True := True.intro\nend Demo\n');
+  const options = { project: root, modules: ['Demo'], claim: 'Demo.Claim', main: 'Demo.main', polarity: 'prove', namespace: 'Demo' };
+  const initial = await leanGate(options);
+  assert.equal(initial.status, 'fail');
+  assert.ok(initial.statement, initial.failures.join('\n'));
+  assert.ok(initial.statement.closure.includes('Outside.P'));
+  assert.ok(initial.sources['Helper.lean']);
+  const pinned = initial.statement.fingerprint;
+  writeFileSync(join(root, 'Helper.lean'), 'namespace Outside\ndef P : Prop := True\nend Outside\n');
+  writeFileSync(join(root, 'Demo.lean'), 'import Std\nimport Helper\nnamespace Demo\ndef Claim : Prop := Outside.P\ntheorem main : Claim := True.intro\nend Demo\n');
+  const receipt = await leanGate({ ...options, expectFingerprint: pinned, requirePinned: true });
+  assert.equal(receipt.mainTheorem.provesClaim, true);
+  assert.equal(receipt.status, 'fail', 'a valid proof of the weakened claim must still fail the pin');
+  assert.notEqual(receipt.statement.fingerprint, pinned);
+  assert.ok(receipt.failures.some(item => /fingerprint .* differs/.test(item)), receipt.failures.join('\n'));
 });

@@ -42,12 +42,14 @@ codex exec --sandbox workspace-write --color never --json --ephemeral
 ### After every run
 
 The orchestrator does four things:
-1. Diffs the campaign tree. Changes outside the role's `writes:` patterns (other than orchestrator-managed files) mark the run `scope-violation`, and the run is not ingested.
+1. Diffs the campaign tree. Changes outside the role's `writes:` patterns, including any changes to orchestrator-managed state, reviews or receipts, mark the run `scope-violation`. Trusted files are restored, the campaign is parked, and the answer is not ingested. Parallel exploration checks the whole batch before ingesting any answer.
 2. Ingests the answer. Facts it can establish itself, such as hashes, run IDs, identities and generator/verifier provenance, are never taken from the model.
 3. Appends to `runs.jsonl`.
 4. Rebuilds the capsule.
 
 Three consecutive failed runs stop `run`.
+
+These checks detect campaign write mistakes after a process exits; they are not an operating-system sandbox against hostile executables. Both drivers work from the repository root. Run trusted local tools, and use separate OS isolation if tools must be prevented from touching other repository files. The operator must inspect a parked scope violation before resuming.
 
 ### Permissions
 

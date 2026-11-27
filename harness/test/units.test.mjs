@@ -145,7 +145,10 @@ test('scope globs', () => {
   assert.ok(!globToRegExp('PROOF.md').test('PROOF.mdx'));
   assert.ok(!globToRegExp('attempts/D1/**').test('attempts/D2/001.md'));
   const result = scopeViolations({ 'a.md': '1' }, { 'a.md': '2', 'campaign.json': 'x', 'b.md': '3' }, ['a.md']);
-  assert.deepEqual(result.violations, ['b.md']);
+  assert.deepEqual(result.violations, ['campaign.json', 'b.md']);
+  for (const path of ['reviews/review-001.json', 'receipts/lean-latest.json', 'certificates/demo/provenance.json']) {
+    assert.deepEqual(scopeViolations({ [path]: 'original' }, { [path]: 'forged' }, ['**']).violations, [path]);
+  }
 });
 
 test('runtime files in .claude, .agents and .codex match harness/runtime', () => {

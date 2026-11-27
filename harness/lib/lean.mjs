@@ -70,7 +70,7 @@ export function moduleClosure(project, modules) {
     const path = modulePath(project, module);
     if (!existsSync(path)) { seen.set(module, null); return; }
     seen.set(module, path);
-    for (const match of readText(path).matchAll(/^\s*(?:public\s+)?import\s+(?:all\s+)?([A-Za-z0-9_.]+)/gm)) {
+    for (const match of stripComments(readText(path)).matchAll(/^\s*(?:public\s+)?import\s+(?:all\s+)?([A-Za-z0-9_.]+)/gm)) {
       if (existsSync(modulePath(project, match[1]))) visit(match[1]);
     }
   };
@@ -78,7 +78,7 @@ export function moduleClosure(project, modules) {
   return seen;
 }
 
-export function auditSource({ modules, claim, main, namespace, endpoints = [] }) {
+export function auditSource({ modules, projectModules = modules, claim, main, namespace, endpoints = [] }) {
   const ident = name => name.split('.').map(part => (/^[A-Za-z_][A-Za-z0-9_']*$/.test(part) ? part : `«${part}»`)).join('.');
   return `import Lean
 ${modules.map(module => `import ${module}`).join('\n')}
@@ -104,8 +104,16 @@ def kindOf : ConstantInfo → String
 def emit (fields : List (String × Json)) : CommandElabM Unit :=
   logInfo m!"${MARKER}{(Json.mkObj fields).compress}"
 
-/-- Project constants under \`root\` that \`start\` mentions, transitively. -/
-def closure (env : Environment) (root start : Name) : Array Name := Id.run do
+/-- Namespace spelling is not ownership: include every imported local module. -/
+def projectModules : Array Name := #[${projectModules.map(module => '`' + ident(module)).join(', ')}]
+
+def projectOwned (env : Environment) (n : Name) : Bool :=
+  match env.getModuleIdxFor? n with
+  | some idx => projectModules.contains env.header.moduleNames[idx.toNat]!
+  | none => false
+
+/-- Project constants that \`start\` mentions, transitively, across namespaces. -/
+def closure (env : Environment) (start : Name) : Array Name := Id.run do
   let mut seen : NameSet := {}
   let mut stack : Array Name := #[start]
   let mut out : Array Name := #[]
@@ -120,9 +128,10 @@ def closure (env : Environment) (root start : Name) : Array Name := Id.run do
     if let some ci := env.find? n then
       let mut refs := ci.type.getUsedConstants
       if let .defnInfo v := ci then refs := refs ++ v.value.getUsedConstants
+      if let .opaqueInfo v := ci then refs := refs ++ v.value.getUsedConstants
       if let .inductInfo v := ci then refs := refs ++ v.ctors.toArray
       for r in refs do
-        if root.isPrefixOf r && !seen.contains r then stack := stack.push r
+        if projectOwned env r && !seen.contains r then stack := stack.push r
   return out
 
 def describe (env : Environment) (n : Name) : Json :=
@@ -131,6 +140,7 @@ def describe (env : Environment) (n : Name) : Json :=
   | some ci =>
     let value := match ci with
       | .defnInfo v => toString v.value
+      | .opaqueInfo v => toString v.value
       | _ => ""
     Json.mkObj [("name", toJson n.toString), ("kind", toJson (kindOf ci)),
       ("type", toJson (toString ci.type)), ("value", toJson value)]
@@ -142,7 +152,7 @@ elab "#harness_audit_claim " c:ident " under " r:ident : command => do
   | none => emit [("role", toJson "claim"), ("name", toJson claim.toString), ("found", toJson false)]
   | some ci =>
     let axioms ← collectAxioms claim
-    let deps := (closure env r.getId claim).map (describe env)
+    let deps := (closure env claim).map (describe env)
     emit [("role", toJson "claim"), ("name", toJson claim.toString), ("found", toJson true),
       ("kind", toJson (kindOf ci)), ("type", toJson (toString ci.type)),
       ("isProp", toJson (ci.type == mkSort levelZero)),
@@ -304,7 +314,7 @@ export async function leanGate(options) {
   let audit = { records: [], errors: [] }, auditOutput = '';
   if (build.code === 0) {
     const file = join(root, '.harness', 'Audit.lean');
-    writeText(file, auditSource({ modules, claim, main, namespace, endpoints }));
+    writeText(file, auditSource({ modules, projectModules: [...closure.keys()], claim, main, namespace, endpoints }));
     let result = await run(lake, ['env', 'lean', '--json', file], { cwd: root, timeoutMs: buildTimeoutMs });
     if (result.code !== 0 && /unrecognized|unknown option|invalid option/i.test(result.output)) {
       result = await run(lake, ['env', 'lean', file], { cwd: root, timeoutMs: buildTimeoutMs });
@@ -369,7 +379,7 @@ export async function leanGate(options) {
       // elan puts a `leanchecker` proxy on PATH even when the pinned toolchain
       // lacks the binary, so probe by running it, not by `which`.
       const probe = await run(lake, ['env', 'leanchecker', '--help'], { cwd: root, timeoutMs: 60_000 });
-      const missing = probe.code === null || /does not have the binary|not found|No such file/i.test(probe.output);
+      const missing = probe.code === null || /does not have the binary|not found|No such file|could not execute external process 'leanchecker'/i.test(probe.output);
       command = missing ? null : [lake, 'env', 'leanchecker', ...modules];
       if (!command) replayResult = { command: null, exitCode: null, tail: `leanchecker is not available in ${toolchain}; kernel replay not run` };
     }

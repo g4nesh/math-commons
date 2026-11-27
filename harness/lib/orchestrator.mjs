@@ -1,5 +1,5 @@
 import { randomBytes } from 'node:crypto';
-import { copyFileSync, existsSync, mkdirSync, readdirSync, renameSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { proofHash, recordRun, saveCampaign, transition, usageTotals } from './campaign.mjs';
 import { writeCapsule } from './capsule.mjs';
@@ -8,7 +8,7 @@ import { evaluate, reviewSummary } from './gates.mjs';
 import { leanGate } from './lean.mjs';
 import { assemblePrompt, loadRole } from './prompt.mjs';
 import { pickRuntime, runRuntime } from './runtimes.mjs';
-import { HarnessError, appendJsonl, fileSha256, listFiles, now, readJson, readJsonl, rel, writeJson } from './util.mjs';
+import { HarnessError, appendJsonl, fileSha256, listFiles, now, readJson, readJsonl, readText, rel, writeJson } from './util.mjs';
 
 export const newRunId = role => `${now().replace(/[-:]/g, '').replace(/\..+/, '')}-${role}-${randomBytes(2).toString('hex')}`;
 
@@ -29,15 +29,34 @@ export function globToRegExp(pattern) {
   return new RegExp(`^${source}$`);
 }
 
-// Files the orchestrator itself maintains are never attributed to a model run.
+// Trusted evidence is maintained only outside the runtime observation window.
 const MANAGED = [/^campaign\.json$/, /^CAPSULE\.md$/, /^runs\.jsonl$/, /^ledger\.jsonl$/, /^outbox\.jsonl$/, /^screen\.json$/, /^directions\.json$/, /^receipts\//, /^reviews\/review-\d+\.(json|md)$/, /^certificates\/[^/]+\/(receipt\.json|output\.txt|provenance\.json)$/];
+const managed = path => MANAGED.some(pattern => pattern.test(path));
+
+export function protectedSnapshot(dir) {
+  return Object.fromEntries(listFiles(dir).filter(path => managed(rel(dir, path)))
+    .map(path => [rel(dir, path), readFileSync(path).toString('base64')]));
+}
+
+function restoreProtected(dir, before) {
+  for (const path of listFiles(dir).filter(path => managed(rel(dir, path)))) {
+    if (!(rel(dir, path) in before)) rmSync(path);
+  }
+  for (const [path, bytes] of Object.entries(before)) {
+    const target = join(dir, path);
+    mkdirSync(join(target, '..'), { recursive: true });
+    // Replace the entry itself rather than following a runtime-created symlink.
+    rmSync(target, { force: true });
+    writeFileSync(target, Buffer.from(bytes, 'base64'));
+  }
+}
 
 export function scopeViolations(before, after, writes) {
   const allowed = writes.map(globToRegExp);
   const changed = Object.keys({ ...before, ...after }).filter(path => before[path] !== after[path]);
   return {
     changed,
-    violations: changed.filter(path => !MANAGED.some(pattern => pattern.test(path)) && !allowed.some(pattern => pattern.test(path)))
+    violations: changed.filter(path => managed(path) || !allowed.some(pattern => pattern.test(path)))
   };
 }
 
@@ -169,32 +188,42 @@ function taskFor(campaign, role, base = {}) {
   return task;
 }
 
-async function runRole(campaign, role, task, { runtime, as, snapshotBefore = null } = {}) {
+async function runRole(campaign, role, task, { runtime, as, snapshotBefore = null, protectedBefore = null } = {}) {
   const runId = newRunId(role);
   const runDir = join(campaign.paths.runDir, runId);
   mkdirSync(runDir, { recursive: true });
-  const capsule = writeCapsule(campaign);
+  const capsule = snapshotBefore ? readText(campaign.paths.capsule) : writeCapsule(campaign);
   const prompt = assemblePrompt({ campaign, role, task, runId, capsule });
   const { schemaPath, meta } = loadRole(role);
   const before = snapshotBefore || snapshot(campaign.dir);
+  const protectedFiles = protectedBefore || protectedSnapshot(campaign.dir);
   writeJson(join(runDir, 'meta.json'), { runId, role, runtime, task: { ...task, direction: task.direction?.id }, writes: prompt.writes, promptTokens: prompt.tokens, pack: { used: prompt.pack.used, omitted: prompt.pack.omitted.map(item => item.locator) } });
   const result = await runRuntime({ config: campaign.config, runtime, prompt: prompt.text, schemaPath, role: meta, runDir, cwd: campaign.config.root });
   const identity = identityOf(runtime, campaign.config, as);
   if (result.status === 'pending') {
-    writeJson(join(runDir, 'before.json'), before);
     campaign.state.pending = { runId, role, runtime, identity, task: { ...task, direction: task.direction?.id }, writes: prompt.writes, at: now() };
     saveCampaign(campaign);
+    writeJson(join(runDir, 'before.json'), snapshot(campaign.dir));
+    writeJson(join(runDir, 'protected-before.json'), protectedSnapshot(campaign.dir));
     return { runId, status: 'pending', detail: result.detail, promptTokens: prompt.tokens };
   }
-  return finishRun(campaign, { runId, role, runtime, identity, task, writes: prompt.writes, before, result, promptTokens: prompt.tokens, checkScope: !snapshotBefore });
+  const completed = { runId, role, runtime, identity, task, writes: prompt.writes, before, protectedBefore: protectedFiles, result, promptTokens: prompt.tokens };
+  // A parallel batch must check every write before ingesting any answer.
+  return snapshotBefore ? completed : finishRun(campaign, completed);
 }
 
-export function finishRun(campaign, { runId, role, runtime, identity, task, writes, before, result, promptTokens, checkScope = true }) {
+export function finishRun(campaign, { runId, role, runtime, identity, task, writes, before, protectedBefore = null, result, promptTokens, checkedScope = null }) {
   const after = snapshot(campaign.dir);
-  const scope = checkScope ? scopeViolations(before, after, writes) : { changed: [], violations: [] };
+  const scope = checkedScope || scopeViolations(before, after, writes);
   let status = result.status;
   let detail = result.detail || null;
-  if (scope.violations.length) { status = 'scope-violation'; detail = `wrote outside its scope: ${scope.violations.join(', ')}`; }
+  if (scope.violations.length) {
+    status = 'scope-violation'; detail = `wrote outside its scope: ${scope.violations.join(', ')}`;
+    if (protectedBefore) restoreProtected(campaign.dir, protectedBefore);
+    campaign.state.stage = 'parked';
+    campaign.state.integrityFailure = { runId, paths: scope.violations, at: now() };
+    saveCampaign(campaign);
+  }
   let ingest = null;
   if (status === 'ok') {
     try { ingest = ingestAnswer(campaign, role, task, result.answer, { runId, runtime, identity }); }
@@ -335,13 +364,15 @@ export async function step(campaign, { runtime: override = null, as = null, dryR
         const runtime = pickRuntime(config, action.role, { index: hint.index ?? index, exclude: hint.exclude || generator, override });
         const task = taskFor(campaign, action.role, { ...base, note: action.note || null });
         results.push(await runRole(campaign, action.role, task, { runtime, as }));
-        if (results.at(-1).status === 'pending') break;
+        if (results.at(-1).status === 'pending' || state.stage === 'parked') break;
       }
       return { action, results };
     }
     case 'explore': {
       bump(action.counter);
+      writeCapsule(campaign);
       const before = snapshot(campaign.dir);
+      const protectedBefore = protectedSnapshot(campaign.dir);
       const runs = action.tasks.map(item => {
         const runtime = pickRuntime(config, 'explore', { index: item.index, override });
         const task = taskFor(campaign, item.role, { direction: item.direction });
@@ -350,10 +381,12 @@ export async function step(campaign, { runtime: override = null, as = null, dryR
       if (runs.some(run => run.runtime === 'manual')) {
         return { action, results: [await runRole(campaign, runs[0].item.role, runs[0].task, { runtime: 'manual', as })] };
       }
-      const results = await Promise.all(runs.map(run => runRole(campaign, run.item.role, run.task, { runtime: run.runtime, as, snapshotBefore: before })));
-      // Concurrent workers: check the union of their scopes once, after all finish.
+      const completed = await Promise.all(runs.map(run => runRole(campaign, run.item.role, run.task, { runtime: run.runtime, as, snapshotBefore: before, protectedBefore })));
+      // No trusted writes or ingestion occur until all workers have exited.
       const writes = runs.flatMap(run => loadRole(run.item.role).meta.writes.map(pattern => pattern.replaceAll('{{DIRECTION}}', run.task.direction.id)));
       const scope = scopeViolations(before, snapshot(campaign.dir), writes);
+      if (scope.violations.length) restoreProtected(campaign.dir, protectedBefore);
+      const results = completed.map(run => finishRun(campaign, { ...run, protectedBefore: null, checkedScope: scope }));
       if (scope.violations.length) appendJsonl(campaign.paths.runs, { at: now(), runId: 'explore-batch', status: 'scope-violation', detail: scope.violations.join(', ') });
       return { action, results, scope };
     }
@@ -462,10 +495,12 @@ export function recordManual(campaign, runId, answerPath = null) {
   const path = answerPath || join(runDir, 'answer.json');
   const answer = readJson(path);
   const before = readJson(join(runDir, 'before.json'));
+  const protectedBefore = readJson(join(runDir, 'protected-before.json'), null);
   const task = { ...pending.task };
   if (task.direction) task.direction = directions(campaign).find(direction => direction.id === task.direction);
+  const result = finishRun(campaign, { runId, role: pending.role, runtime: 'manual', identity: pending.identity, task, writes: pending.writes, before, protectedBefore, result: { status: 'ok', answer, usage: null } });
   delete campaign.state.pending;
   saveCampaign(campaign);
-  return finishRun(campaign, { runId, role: pending.role, runtime: 'manual', identity: pending.identity, task, writes: pending.writes, before, result: { status: 'ok', answer, usage: null } });
+  return result;
 }
 
