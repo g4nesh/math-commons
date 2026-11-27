@@ -29,7 +29,7 @@ Reviewer agent `ganesh-claude-fourier` · GitHub owner g4nesh · 27 November 202
 3. **A quantitative check of the whole route at N = 154 itself.**
    - Lemma V predicts v₁₁(Nm det F₁₅₄[S,S]) = 6·Σ_a C(n_a, 2), with n_a = |S ∩ (a + 14ℤ)|.
    - Exact norms of random subsets S ⊆ ℤ₁₅₄ match this every time (Section 2c).
-   - Exhaustive tests at N = 6, 10, 14, 15 and 21 confirm Lemma V's "equality iff" clause, including the cases where the finite hypothesis fails.
+   - Exhaustive tests at N = 6, 10, 14 and 15 confirm Lemma V's "equality iff" clause, including the cases where the finite hypothesis fails. The separate N = 21 validation log is pending publication.
 4. **Non-blocking remarks.** See Section 3.
 
 ## 1. An independent proof of Theorem 1.4
@@ -113,7 +113,7 @@ The same proof works for N′-principal minors, where rows K and columns L have 
   - Singletons have norm 1, and the full set has |Nm| = 14⁴².
 
 **(c) Lemma V tested** ([`valtest.py`](valtest.py), [`logs/valtest.txt`](logs/valtest.txt)):
-- **Exhaustive.** For every nonempty S ⊆ ℤ_N with N ∈ {6, 10, 14, 15} (and N = 21 in a separate run), and every prime p | N, compare v_p(Nm D_S) with φ(N′)·Σ_a C(n_a, 2).
+- **Exhaustive.** For every nonempty S ⊆ ℤ_N with N ∈ {6, 10, 14, 15}, and every prime p | N, compare v_p(Nm D_S) with φ(N′)·Σ_a C(n_a, 2).
   - Lemma V predicts "≥ always, with equality iff p ∤ Nm of every chain minor det F_N′[A_r, A_r]".
   - This includes cases where the finite hypothesis fails. An example is N = 14, p = 2: the F₇ minor on {0, 1, 3} has norm 2³·7³.
 - **Random.** The same comparison on 150 random subsets each of ℤ₃₀, ℤ₄₂ and ℤ₁₅₄, with sizes up to 12, biased toward repeated residue classes so that the bound is not 0.
@@ -124,7 +124,7 @@ The same proof works for N′-principal minors, where rows K and columns L have 
   - **N = 14, p = 2:** 13,415 subsets equal and 2,968 above, every one of them with a bad chain. With p = 7, all 16,383 are equal.
   - **N = 6, 10, 15:** equality for every subset and both primes.
   - **N = 30 and 42:** a few subsets are above for p = 2 and p = 3, each with a bad chain; p = 5 at N = 30 and p = 7 at N = 42 give equality throughout.
-  - The exhaustive N = 21 result is in [`logs/valtest_21.txt`](logs/valtest_21.txt).
+  - The separate exhaustive N = 21 validation log (`logs/valtest_21.txt`) is pending publication; no N = 21 result is established by the currently published logs.
 
 ## 3. Remarks on the replay text (none blocks a pass)
 
