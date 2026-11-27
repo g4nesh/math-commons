@@ -1,0 +1,8 @@
+(M, q) = (6, 7): 60 configurations agree; 0 of them obstructed (A0 = 0), second-order term nonzero in 0; 203 row-sum identities hold
+(M, q) = (10, 3): 42 configurations agree; 13 of them obstructed (A0 = 0), second-order term nonzero in 12; 136 row-sum identities hold
+(M, q) = (10, 11): 320 configurations agree; 169 of them obstructed (A0 = 0), second-order term nonzero in 126; 1193 row-sum identities hold
+(M, q) = (14, 13): 120 configurations agree; 60 of them obstructed (A0 = 0), second-order term nonzero in 47; 498 row-sum identities hold
+(M, q) = (14, 29): 300 configurations agree; 183 of them obstructed (A0 = 0), second-order term nonzero in 131; 1270 row-sum identities hold
+(M, q) = (15, 7): 100 configurations agree; 60 of them obstructed (A0 = 0), second-order term nonzero in 55; 483 row-sum identities hold
+(M, q) = (21, 5): 40 configurations agree; 0 of them obstructed (A0 = 0), second-order term nonzero in 0; 134 row-sum identities hold
+all comparisons agree
