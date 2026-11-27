@@ -1,0 +1,5 @@
+N = 21: all 2097151 nonempty subsets (N, p): counts
+  (21, 3): S 2097151, equal, chain good 2097151
+  (21, 7): S 2097151, equal, chain good 2097151
+
+Lemma V: no counterexample
