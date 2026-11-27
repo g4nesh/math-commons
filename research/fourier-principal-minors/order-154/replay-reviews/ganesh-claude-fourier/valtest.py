@@ -3,10 +3,10 @@
 For N = p N' square-free and S in Z_N, let n_a = |{s in S : s = a mod N'}| and A_r = {a : n_a >= r}. Lemma V says
   v_p(Nm D_S) >= phi(N') * sum_a C(n_a, 2),
 with equality iff p does not divide Nm(D'_{A_r}) for every r >= 1, where D'_A is the principal minor of F_{N'} on A.
-(Nm over Q(w_N), resp. Q(w_{N'}).) Checked exhaustively over all S for N in {6, 10, 14, 15, 21} and every p | N,
+(Nm over Q(w_N), resp. Q(w_{N'}).) Checked exhaustively over all S for small N and every p | N,
 and on random S for N in {30, 42, 154}.
 
-usage: valtest.py SEED NRANDOM
+usage: valtest.py SEED NRANDOM [N ...]   (N: orders to test exhaustively; default 6 10 14 15)
 """
 import collections
 import math
@@ -53,14 +53,26 @@ def check(N, subsets_by_size, stats):
                     stats[key]["above, chain bad" if not good else "ABOVE BUT CHAIN GOOD"] += 1
 
 
+def report(stats, keys):
+    bad = 0
+    for key in keys:
+        c = stats[key]
+        bad += c["below bound"] + c["EQUAL BUT CHAIN BAD"] + c["ABOVE BUT CHAIN GOOD"]
+        print(f"  {key}: " + ", ".join(f"{k} {v}" for k, v in sorted(c.items())), flush=True)
+    return bad
+
+
 def main():
     seed, nrand = int(sys.argv[1]), int(sys.argv[2])
+    exhaustive = [int(x) for x in sys.argv[3:]] or [6, 10, 14, 15]
     rng = random.Random(seed)
     stats = collections.defaultdict(collections.Counter)
-    for N in (6, 10, 14, 15, 21):
+    bad = 0
+    for N in exhaustive:
         check(N, {m: all_subsets(N, m) for m in range(1, N + 1)}, stats)
-        print(f"N = {N}: all {2 ** N - 1} nonempty subsets done", flush=True)
-    for N, maxm in ((30, 12), (42, 12), (154, 12)):
+        print(f"N = {N}: all {2 ** N - 1} nonempty subsets (N, p): counts", flush=True)
+        bad += report(stats, [k for k in sorted(stats) if k[0] == N])
+    for N, maxm in ((30, 12), (42, 12), (154, 12)) if nrand else ():
         by = collections.defaultdict(list)
         for _ in range(nrand):
             m = rng.randint(2, maxm)
@@ -69,16 +81,11 @@ def main():
             S = set(base)
             while len(S) < m:
                 b = rng.choice(base)
-                S.add((b + rng.choice([d for d in range(N) if N % d == 0 and d > 1]) * rng.randrange(N)) % N)
+                S.add((b + rng.choice([d for d in range(2, N) if N % d == 0]) * rng.randrange(N)) % N)
             by[m].append(sorted(S))
         check(N, dict(by), stats)
-        print(f"N = {N}: {nrand} random subsets done", flush=True)
-    print("\n(N, p): counts")
-    bad = 0
-    for key in sorted(stats):
-        c = stats[key]
-        bad += c["below bound"] + c["EQUAL BUT CHAIN BAD"] + c["ABOVE BUT CHAIN GOOD"]
-        print(f"  {key}: " + ", ".join(f"{k} {v}" for k, v in sorted(c.items())))
+        print(f"N = {N}: {nrand} random subsets (N, p): counts", flush=True)
+        bad += report(stats, [k for k in sorted(stats) if k[0] == N])
     print("\nLemma V: no counterexample" if bad == 0 else f"\nLemma V: {bad} COUNTEREXAMPLES")
 
 

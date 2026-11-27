@@ -113,11 +113,18 @@ The same proof works for N′-principal minors, where rows K and columns L have 
   - Singletons have norm 1, and the full set has |Nm| = 14⁴².
 
 **(c) Lemma V tested** ([`valtest.py`](valtest.py), [`logs/valtest.txt`](logs/valtest.txt)):
-- **Exhaustive.** For every nonempty S ⊆ ℤ_N with N ∈ {6, 10, 14, 15, 21}, and every prime p | N, compare v_p(Nm D_S) with φ(N′)·Σ_a C(n_a, 2).
+- **Exhaustive.** For every nonempty S ⊆ ℤ_N with N ∈ {6, 10, 14, 15} (and N = 21 in a separate run), and every prime p | N, compare v_p(Nm D_S) with φ(N′)·Σ_a C(n_a, 2).
   - Lemma V predicts "≥ always, with equality iff p ∤ Nm of every chain minor det F_N′[A_r, A_r]".
   - This includes cases where the finite hypothesis fails. An example is N = 14, p = 2: the F₇ minor on {0, 1, 3} has norm 2³·7³.
-- **Random.** The same comparison on random subsets of ℤ₃₀, ℤ₄₂ and ℤ₁₅₄, with sizes up to 12, biased toward repeated residue classes so that the bound is not 0.
-- **Results.** See the log.
+- **Random.** The same comparison on 150 random subsets each of ℤ₃₀, ℤ₄₂ and ℤ₁₅₄, with sizes up to 12, biased toward repeated residue classes so that the bound is not 0.
+- **Results: no counterexample.** Every (S, p) is either "equal, chain good" or "strictly above, chain bad".
+  - **N = 154, p = 11:** all 150 subsets have v₁₁(Nm D_S) = 6·Σ_a C(n_a, 2) exactly.
+  - **N = 154, p = 7 (N′ = 22):** all 150 are equal, chain good.
+  - **N = 154, p = 2 (N′ = 77):** 145 are equal and 5 are above. Each of the 5 has a chain minor of F₇₇ whose norm is even, as Lemma V requires.
+  - **N = 14, p = 2:** 13,415 subsets equal and 2,968 above, every one of them with a bad chain. With p = 7, all 16,383 are equal.
+  - **N = 6, 10, 15:** equality for every subset and both primes.
+  - **N = 30 and 42:** a few subsets are above for p = 2 and p = 3, each with a bad chain; p = 5 at N = 30 and p = 7 at N = 42 give equality throughout.
+  - The exhaustive N = 21 result is in [`logs/valtest_21.txt`](logs/valtest_21.txt).
 
 ## 3. Remarks on the replay text (none blocks a pass)
 
@@ -140,8 +147,9 @@ The same proof works for N′-principal minors, where rows K and columns L have 
 From this directory, with Python 3 and numpy:
 
 ```sh
-python3 hyp14.py               > logs/hyp14.txt     # about 2 s
-python3 valtest.py 1 150       > logs/valtest.txt   # about 30 min (N = 21 is exhaustive over 2^21 subsets)
+python3 hyp14.py               > logs/hyp14.txt        # about 2 s
+python3 valtest.py 1 150       > logs/valtest.txt      # a few minutes
+python3 valtest.py 1 0 21      > logs/valtest_21.txt   # about 30 min: all 2^21 subsets of Z_21
 ```
 
 The replay's checkers: copy `checker_a/check_f1331.py` and `checker_b/check_zech.py` from `6d15eca` to a scratch directory and run each with `python3`.

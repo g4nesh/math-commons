@@ -1,0 +1,26 @@
+N = 6: all 63 nonempty subsets (N, p): counts
+  (6, 2): S 63, equal, chain good 63
+  (6, 3): S 63, equal, chain good 63
+N = 10: all 1023 nonempty subsets (N, p): counts
+  (10, 2): S 1023, equal, chain good 1023
+  (10, 5): S 1023, equal, chain good 1023
+N = 14: all 16383 nonempty subsets (N, p): counts
+  (14, 2): S 16383, above, chain bad 2968, equal, chain good 13415
+  (14, 7): S 16383, equal, chain good 16383
+N = 15: all 32767 nonempty subsets (N, p): counts
+  (15, 3): S 32767, equal, chain good 32767
+  (15, 5): S 32767, equal, chain good 32767
+N = 30: 150 random subsets (N, p): counts
+  (30, 2): S 150, above, chain bad 4, equal, chain good 146
+  (30, 3): S 150, above, chain bad 1, equal, chain good 149
+  (30, 5): S 150, equal, chain good 150
+N = 42: 150 random subsets (N, p): counts
+  (42, 2): S 150, above, chain bad 13, equal, chain good 137
+  (42, 3): S 150, above, chain bad 2, equal, chain good 148
+  (42, 7): S 150, equal, chain good 150
+N = 154: 150 random subsets (N, p): counts
+  (154, 2): S 150, above, chain bad 5, equal, chain good 145
+  (154, 7): S 150, equal, chain good 150
+  (154, 11): S 150, equal, chain good 150
+
+Lemma V: no counterexample

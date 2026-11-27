@@ -107,7 +107,7 @@ def norms(N, subsets):
     """Exact Nm(D_S) for a list of subsets of Z_N, all of the same size m >= 1."""
     m = len(subsets[0])
     units = [c for c in range(1, N) if math.gcd(c, N) == 1]
-    bound = m ** (m * len(units) / 2)
+    bound = m ** ((m * len(units) + 1) // 2)  # integer upper bound for m^(m phi(N)/2)
     need, primes = 0, []
     while True:
         primes = split_primes(N, need)
