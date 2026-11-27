@@ -38,15 +38,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install elan; the pinned toolchain is fetched from each project's lean-toolchain
+      - name: Install elan and the toolchain pinned by the fixtures
         run: |
           curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
-          bash "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          bash "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain "$(cat harness/test/lean-fixtures/lean-toolchain)"
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Show the toolchain the tests will use
+        run: lake --version && lean --version
+      # DISCOVER_REQUIRE_LAKE turns a missing toolchain into a failure instead of skipped tests.
       - name: Negative controls (sorry, custom axiom, native_decide, weakened theorem, tampered statement)
+        env:
+          DISCOVER_REQUIRE_LAKE: '1'
         run: node --test harness/test/lean-gate.test.mjs
       - name: End-to-end campaign with the Lean stage on the real toolchain
         env:
+          DISCOVER_REQUIRE_LAKE: '1'
           DISCOVER_TEST_KEEP: ${{ runner.temp }}/campaigns
         run: node --test harness/test/pipeline.test.mjs
       - name: Keep the end-to-end campaign record for inspection

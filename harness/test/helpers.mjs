@@ -12,6 +12,7 @@ export const FAKE_LAKE = join(HERE, 'fixtures', 'fake-lake.mjs');
 
 // Real Lean when the toolchain is installed (CI), the fake otherwise.
 export const REAL_LAKE = !process.env.DISCOVER_FORCE_FAKE_LAKE && spawnSync('lake', ['--version'], { encoding: 'utf8' }).status === 0;
+if (process.env.DISCOVER_REQUIRE_LAKE && !REAL_LAKE) throw new Error('DISCOVER_REQUIRE_LAKE is set but `lake --version` fails: install a default Lean toolchain');
 
 export function tempConfig(overrides = {}) {
   // DISCOVER_TEST_KEEP keeps the generated campaigns (CI uploads them as an artifact).
