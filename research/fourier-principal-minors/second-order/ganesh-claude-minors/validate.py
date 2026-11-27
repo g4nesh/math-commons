@@ -20,7 +20,7 @@ Two kinds of configurations:
             the levels c = 2 and c = 3 of Theorem 3 occur.
 
 Usage: python3 validate.py
-Standard library only; a few minutes (the last block, with eleven points, is slow).
+Standard library only; about half a minute.
 """
 import itertools
 import random

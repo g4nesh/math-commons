@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Second-order lifting: shared code.
 
-Notation (see README.md).  M is square-free, q is an odd prime not dividing M.
+Notation (see README.md).  M is a positive integer, q is an odd prime not dividing M.
 A chart is an irreducible factor h of Phi_M mod q; the residue field is
 F = F_q[x]/(h) and eta = x mod h is a primitive M-th root of unity in F.
 An index set K in Z_M x Z_q is given by its fibres: fib[a] = sorted list of the
@@ -14,7 +14,7 @@ principal minor on K equals
         pre * t^e * (A0 + O(t))                 in general, and
         pre * t^(e+1) * (Lam + O(t))            when A0 = 0.
 A0 is the first-order product of principal minors of F_M over the level sets;
-Lam is the second-order term of README.md, Theorem 1.
+Lam is the second-order term of README.md, Theorem 3.
 
 Standard library only.  The cyclotomic factorisation is imported from the
 frontier folder of the same contributor.
