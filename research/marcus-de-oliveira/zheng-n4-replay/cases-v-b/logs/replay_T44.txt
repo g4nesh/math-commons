@@ -1,0 +1,133 @@
+====================================================================================================
+Case T_44 = {1,4,5,6,7,8} (document 'T43'): independent exact replay
+====================================================================================================
+[INFO] python 3.9.6, sympy 1.14.0, python-flint 0.6.0 (integer polynomials of the chart tables; integer determinants at test points), numpy 2.0.2 (int64 in det_linear_forms; floats in NUMERIC checks), scipy 1.13.1 (NUMERIC only)
+
+--- A. Provenance and foundations
+[PASS] [EXACT] file under MOC4_SUPP is the one that was read (sha256): independent_moc4_T43_uniform_20261022.pdf  ::  6c64d2905de0720936dc4f9c9c3cb2a6e82df32e93cd51b5336580ea0e65302c
+[PASS] [EXACT] file under MOC4_SUPP is the one that was read (sha256): independent_moc4_T43_full_radial_20261022.json  ::  19d676bcf16ded5704632d2f8e3bfca8dea9209bb99bd3746023a22d1177f13a
+[PASS] [EXACT] file under MOC4_SUPP is the one that was read (sha256): independent_moc4_T43_uniform_exact_20261022.json  ::  ddbb812bec5c8e2be507594e170b3e2e09d4b66d94ab693b5771aca3781cdc25
+
+--- Foundations rebuilt from the paper's definitions
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14
+[PASS] [EXACT] P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] kappa = Psi(v) at v_1..4 = (0,1), v_5..8 = (1,1), so kappa is in X
+[PASS] [EXACT] paper's pivot rows 0,1,2,3,4,6,7,8,9,10,12,13,16,18 of P are independent
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of C)
+[PASS] [EXACT] 82 vectors f_j: all lie in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps on the 24 permutation indices
+[PASS] [EXACT] G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+
+--- Radial necessity: the real part of a point of X lies on the cubic
+[PASS] [EXACT] grad C(u + t v) = grad C(u) + t Hess C(u) v + t^2 grad C(v) identically (t = i: real part grad C(u) - grad C(v), imaginary part Hess C(u) v)
+[PASS] [EXACT] Euler: u . grad C(u) = 3 C(u) identically
+[PASS] [EXACT] polarization: u . grad C(v) = (1/2) v^t Hess C(u) v identically
+[INFO] hence grad C(u+iv) = 0 gives grad C(u) = grad C(v) and Hess C(u) v = 0, and 3 C(u) = u.grad C(u) = u.grad C(v) = (1/2) v^t Hess C(u) v = 0
+[PASS] [EXACT] spot check on 12 random Gaussian-rational points x = alpha Psi(a,b) (seed 20261125): (P x)_sigma = alpha z_sigma and C(Re x) = 0
+[PASS] [EXACT] same points: Hess C(Re x) Im x = 0
+[PASS] [EXACT] supplement data (JSON, comparison only): its 24 x 14 matrix equals P, its cubic equals the paper's C with the same sign, and its 82 facet value vectors equal F_VALUES in the same order (the documents' f_j are the paper's f_j)
+
+--- Comparison with the audit library moc4lib (not used to build any object)
+[PASS] [EXACT] PERMS, P, kappa, the 82 value vectors, the minor flags, the coordinates of all f_j and the cubic C agree with moc4lib
+[PASS] [EXACT] the group has the same 1152 index maps as moc4lib; CONTACT_SETS and generators agree for the cases [44, 46, 25]
+
+--- B. Contact set (document p. 1)
+[PASS] [EXACT] the document's set {1,4,5,6,7,8} is the paper's T_44 (Appendix E) as a set of lexicographic indices: group element = identity; the document's number is the paper's minus one
+[PASS] [EXACT] orbit representative of T_44 under G is (0,1,2,7,8,13); T_46 and T_25 lie in other orbits; the stabiliser of T_44 in G is trivial (the document: 'no nontrivial stabilizer')  ::  T_44 -> (0, 1, 2, 7, 8, 13), T_46 -> (0, 1, 2, 7, 8, 17), T_25 -> (0, 1, 2, 6, 9, 18), stabiliser order 1
+
+--- C. The contact cone and the coordinates (1) (document Section 1)
+[PASS] [EXACT] the f_j of Appendix D vanishing on T are exactly f0..f6, f33, f34, f59 (ten vectors)  ::  computed [0, 1, 2, 3, 4, 5, 6, 33, 34, 59]
+[PASS] [EXACT] f34 = h_{4321,+} is the only non-minor generator; the nine others are minor vectors  ::  f0 = n_{1,4}, f1 = n_{12,34}, f2 = n_{13,34}, f3 = n_{14,34}, f4 = n_{1,3}, f5 = n_{12,24}, f6 = n_{4,1}, f33 = n_{12,13}, f34 = h_{4321,+}, f59 = n_{14,14}
+[PASS] [EXACT] the six contact equations have rank 6 on V_R; their solution space L has dimension 8
+[PASS] [EXACT] identity (1) on all of L: every c in L equals q f3 + p f33 + j f1 + c f59 + e f5 + d f34 + b f6 + a f0 with (q,p,j,c,e,d,b,a) = (g14, g13, g16, g0, g10, g3 - g13, g15, g19), g = Pc (checked on a basis of L; the eight vectors have rank 8)
+[PASS] [EXACT] gap identities: g3 = p + d, g9 = b + d, g18 = q + d + a, g22 = j + d + a (coordinates in the order q,p,j,c,e,d,b,a)
+[PASS] [EXACT] all 24 gaps are combinations of (q,p,j,c,e,d,b,a) with coefficients in {0,1,2}: for d >= 0 the cone condition Pc >= 0 is exactly q,p,j,c,e,b,a >= 0 (seven of the coordinates are gaps themselves)
+[PASS] [EXACT] direct enumeration of the extreme rays of N_T = {Pc >= 0, (Pc)_T = 0} (dimension 8; no use of the 82-facet list) gives exactly the ten vectors f0..f6, f33, f34, f59  ::  10 rays
+[PASS] [EXACT] f2 + f34 = f0 + f6 + f33 and f4 + f34 = f1 + f3 + f6 + f33 (all 24 values)
+[PASS] [EXACT] for d = -(x+y): q f3 + p f33 + j f1 + c f59 + e f5 + d f34 + b f6 + a f0 = (q-y) f3 + (p-m) f33 + (j-y) f1 + c f59 + e f5 + (b-m) f6 + (a-x) f0 + x f2 + y f4, m = x + y (identity in nine symbols, all 24 values)
+[PASS] [EXACT] the document's split for d <= 0 (m = -d, x = min(a,m), y = m - x), run on 4000 random rational points of N_T (random nonnegative combinations of the ten generators, seed 4401): in all 2893 cases with d <= 0 the nine new coefficients are >= 0 and reproduce the vector (1107 cases had d > 0)
+[INFO] PROOF-READ: g3, g9 >= 0 give p, b >= m; g18, g22 >= 0 give a + q, a + j >= m; with x = min(a, m), y = m - x: if a >= m then y = 0, else y = m - a <= q, j.  So every c in N_T with d <= 0 is a nonnegative combination of the nine minor generators.
+[PASS] [EXACT] Laplace and Jacobi identities for the 9 minor generators [0, 1, 2, 3, 4, 5, 6, 33, 59]: Phi_{f_j}(O) = (minor of O)^2 >= 0 on SO(4)
+
+--- D. The sufficient coefficient conditions (document Section 2, eqs. (2), (3))
+[PASS] [EXACT] SOC: (f1, f59, f34) is a member of the orbit of the representative (f1, f9, f22) with the same roles  ::  g = (rho=(0, 1, 2, 3), rho'=(1, 0, 3, 2), transpose=0) maps roles (1, 9, 22) to (1, 59, 34); 8 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] old-H: (f5, f59, f34) is a member of the orbit of the representative (f12, f2, f70) with the same roles  ::  g = (rho=(1, 2, 3, 0), rho'=(2, 1, 3, 0), transpose=0) maps roles (12, 2, 70) to (5, 59, 34); 4 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] four-coefficient: (f0, f6, f5, f34) is a member of the orbit of the representative (f0, f6, f10, f54) with the same roles  ::  g = (rho=(0, 1, 2, 3), rho'=(0, 2, 1, 3), transpose=0) maps roles (0, 6, 10, 54) to (0, 6, 5, 34); 4 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] Lemma 1 of the T_25 document (core f59; f53; f55, f67; f54): (f59, f5, f6, f0, f34) is a member of the orbit of the representative (f59, f53, f55, f67, f54) with the same roles  ::  g = (rho=(2, 3, 0, 1), rho'=(1, 3, 0, 2), transpose=0) maps roles (59, 53, 55, 67, 54) to (59, 5, 6, 0, 34); 4 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] chain: (f59, f5, f6, f34) is a member of the orbit of the representative (f2, f0, f12, f70) with the same roles  ::  g = (rho=(1, 2, 3, 0), rho'=(2, 1, 3, 0), transpose=0) maps roles (2, 12, 0, 70) to (59, 5, 6, 34); 2 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] chain: (f59, f5, f0, f34) is a member of the orbit of the representative (f2, f0, f12, f70) with the same roles  ::  g = (rho=(2, 1, 0, 3), rho'=(0, 3, 1, 2), transpose=0) maps roles (2, 12, 0, 70) to (59, 5, 0, 34); 2 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] the six-profile core of the T_25 document (f59, f53, f55, f67, f54 and the SOC endpoint f2) is mapped to (f59, f5, f6, f0, f34, f1) by a group element, and to (f59, f5, f0, f6, f34, f1) (leaves exchanged) by another one  ::  first: ((2, 3, 0, 1), (1, 3, 0, 2), 0); second: ((1, 0, 3, 2), (2, 0, 3, 1), 0)
+[PASS] [EXACT] the document's stated action (row (2,0,3,1), column (2,3,0,1), no transpose) does map the six profiles (59,53,55,67,54,2) to (59,5,6,0,34,1): f_new(sigma) = f_old(col o sigma o row) for all 24 sigma  ::  pull-back reading: True; push-forward reading: False
+[PASS] [EXACT] (2): SOC ab >= d^2 for j f1 + c f59 + f34 is cj >= 1; old-H t(c-d) >= d^2 with t = e (f5), c = c (f59) is e(c-1) >= 1, i.e. c >= 1 + 1/e; the four-coefficient condition for a f0 + b f6 + e f5 + f34 is K = (ab-1)e - (a+1)(b+1) >= 0, i.e. ab > 1 and e >= Emax = (a+1)(b+1)/(ab-1)
+[PASS] [EXACT] (3), first line: 1/e - 1/Emax = -K/(e (a+1)(b+1)) (the bound (5) of the T_25 document with d = 1: d^2/e - d(ab - d^2)/((a+d)(b+d)))
+[PASS] [EXACT] (3), second line: with a = w^2/b, b(1-w)^2/(b-w)^2 = (1-w)^2/(sqrt b - sqrt a)^2, symmetric in the two leaves: a(1-w)^2/(a-w)^2 has the same value; at w = 0 it is 1/b (chain endpoint 1/e + 1/b); at b = 1 it is 1 (old-H endpoint 1 + 1/e); and 1/b - b(1-w)^2/(b-w)^2 = w(b-1)(2b - w - bw)/(b(b-w)^2) >= 0 for b >= 1 > w
+[INFO] CITED statements (see the report): SOC, old-H, four-coefficient, chain as in PROOF.md 7.6; Lemma 1 of the T_25 document as verified in ../cases-v-a/T25.md, steps 14-16: for j f59 + e f53 + b f55 + a f67 + d f54 (d = 1): Phi >= 0 on SO(4) if (5) ab > 1, e > 0, j >= 1/e - (ab-1)/((a+1)(b+1)); or (6) a != b, e > 0, j >= 1/e + (1-w)^2/(sqrt b - sqrt a)^2, w = sqrt(ab) (a = 0 or b = 0 allowed); or ab >= 1 and ej >= 1
+
+--- E. Radial necessity in the coordinates (document Section 2, eqs. (4), (5))
+[PASS] [EXACT] C(g + h kappa) is of degree <= 1 in the height h: C = C0 + h Q
+[PASS] [EXACT] Q = (m0 m6 - m1 m5)(g) (= dC/dm13; it does not involve h)
+[PASS] [EXACT] det Hess C(g + h kappa) as a polynomial in nine variables: 20099 terms (subset Laplace expansion, int64 with l1 bound 2^38 < 2^62); equal to the integer determinant (python-flint fmpz_mat.det) at random integer points (seed 20261125)  ::  4.5 s
+[PASS] [EXACT] det Hess C(g + h kappa) has degree <= 4 in h (rank of Hess C(kappa) is 4)  ::  h-degrees present: [0, 1, 2, 3]
+[PASS] [EXACT] N := Q^4 det Hess C(g - (C0/Q) kappa) = sum_k D_k (-C0)^k Q^(4-k) has 205254 terms and N = -4 Q^2 G^2 with G of 1232 terms, homogeneous of degree 9 (own exact division and square root; the identity is re-verified by multiplying out)
+[INFO] C0 = +1*q*p*e +1*q*p*d +1*q*p*b +1*q*e*d +1*q*d^2 +1*q*d*b -1*p*c*e +1*p*e*d +1*p*d^2 +1*p*d*b +1*p*d*a +1*p*b*a +1*e*d^2 +1*d^3 +1*d^2*b +1*d^2*a +1*d*b*a
+[INFO] Q  = +1*q*p +1*q*e +1*q*d -1*p*c +1*p*d +1*j*c -1*c*e +1*e*d +1*d^2
+[PASS] [EXACT] (4): C0 = p (e(d - c) + d^2) + R, where R has 14 terms, all with coefficient +1, among them d^3 (the document's C is the paper's cubic restricted to g, same sign)
+[INFO] PROOF-READ: if e = 0 the brace is d^2; if e > 0 and old-H fails (c < d + d^2/e) then e(d-c) + d^2 > 0.  So C0 >= d^3 > 0 at every point with d > 0 at which old-H fails, and C0 + hQ = 0 forces Q != 0, h = -C0/Q.
+[PASS] [EXACT] G has 1232 terms (the document's count for G_9), is homogeneous of degree 9, and its d^9 coefficient is +1 (the document's sign normalisation)
+[PASS] [EXACT] supplement data independent_moc4_T43_full_radial_20261022.json (read as JSON, comparison only): its variable order has the same eight coefficient names, its C and Q equal C0 and Q, its quadratic factor is +-Q and its degree-nine factor is +-G  ::  stored G = -G
+[PASS] [EXACT] at d = 1: G_9 = k0 + k1 c + k2 c^2 (degree 2 in c; no cancellation of terms at d = 1)  ::  terms of k0, k1, k2: 489, 483, 260
+[PASS] [EXACT] G_9 is NOT invariant under the exchange of the two leaves a <-> b (so the document is right to certify both orientations of the ordered-leaf charts separately)  ::  449 of the 1232 monomials have a different coefficient after the exchange
+
+--- F. The strict constant coefficient (document Section 3, eqs. (6), (7)) and the layer e = j = 0 (10)
+[PASS] [EXACT] k0 = (b+1)(p+1)^2 P2 H4 with P2 = (a+1)(b+1) + q(b+e+1) + e (exact division, verified by multiplying out); H4 has 32 terms
+[PASS] [EXACT] (6): H4 = (a+q+1)(-K) + D, where D is the document's list of 16 monomials with positive coefficients
+[INFO] PROOF-READ: P2 >= 1 and D >= 0 on the closed orthant, so k0 >= (b+1)(p+1)^2 P2 (a+q+1)(-K) > 0 whenever K < 0, i.e. whenever the four-coefficient condition fails; this is (7), valid with any zero coefficients and at ab = 1.
+[PASS] [EXACT] (10): at e = j = 0, G_9 = (b+1)^2 (p+1) (a+q+1)^2 [(a+1)(b+1)(p+1) + (a+b+1)(p+1) c + p c^2], which is >= 1 on the closed orthant
+
+--- G. The seven charts and the 33 tables (document Section 4)
+[PASS] [EXACT] chart I-: a = A, b = T/(A(1+T)), e = V, j = V + U: 1 - ab = 1/(1+T) (so ab < 1), j - e = U >= 0, J = 1/j
+[PASS] [EXACT] chart I+: a = A, b = (1+T)/A: ab - 1 = T; e = Emax V/(1+V), so Emax - e = Emax/(1+V) and -K = T Emax/(1+V) > 0; j - e = U; J = 1/j
+[PASS] [EXACT] chart II: a, b, e as in I+; j = e U/(1+U), so e - j = e/(1+U) > 0; J = 1/e - 1/Emax = -K/(e (a+1)(b+1))
+[PASS] [EXACT] chart IIIa-: b = T/(1+T) < 1, a = b V/(1+V) (b - a = b/(1+V) >= 0), e = A; j = (e/(1+e)) U/(1+U) < e/(1+e); J = 1 + 1/e
+[PASS] [EXACT] chart IIIa+: b = T/(1+T) < 1, a = b V/(1+V) (b - a = b/(1+V) >= 0), e = A; j - e/(1+e) = (e^2/(1+e)) U/(1+U) >= 0, e - j = e^2/((1+e)(1+U)) > 0; J = 1/j
+[PASS] [EXACT] chart IIIb+: b = 1 + T >= 1, e = A; a = V/(b(1+V)) (ab = V/(1+V) < 1); j - eb/(e+b) = (e^2/(e+b)) U/(1+U) >= 0, e - j = e^2/((e+b)(1+U)) > 0; J = 1/j
+[PASS] [EXACT] chart IIIb-: b = 1 + T >= 1, e = A; a = V^2/(b(1+V)^2), i.e. sqrt(ab) = w = V/(1+V) < 1 <= b, b - w = (1+T+TV)/(1+V) > 0; j = (eb/(e+b)) U/(1+U) < eb/(e+b); J = 1/e + b(1-w)^2/(b-w)^2
+[PASS] [EXACT] inverse maps (rational identities): I-: A = a, T = ab/(1-ab), V = e, U = j - e; I+, II: A = a, T = ab - 1, V = e/(Emax - e), U = j - e resp. j/(e - j); IIIa: T = b/(1-b), V = a/(b-a), A = e, U = j(1+e)/(e - j(1+e)) resp. (j(1+e) - e)/((1+e)(e-j)); IIIb: T = b - 1, A = e, V = ab/(1-ab) and U = (j(e+b) - eb)/((e+b)(e-j)), resp. V = w/(1-w), a = w^2/b and U = j(e+b)/(eb - j(e+b)).  Each is >= 0 on the region of its chart, so the chart orthant maps ONTO that region
+[INFO] regions (PROOF-READ from the two checks above; q = Q, p = P free):  I-: a > 0, ab < 1, j >= e >= 0;  I+: ab > 1, 0 <= e < Emax, j >= e;  II: ab > 1, 0 <= j < e < Emax (or e = j = 0);  IIIa-: 0 <= a < b < 1 (or a = b = 0), 0 <= j < e/(1+e);  IIIa+: same leaves, e/(1+e) <= j < e;  IIIb+: b >= 1, ab < 1, eb/(e+b) <= j < e;  IIIb-: b >= 1, ab < 1, 0 <= j < eb/(e+b).  'Opposite orientation' = the same with a and b exchanged.
+[PASS] [EXACT] chart I-: the numerators of k0, of 2 D0 k0 + N k1 and of D0^2 k0 + N D0 k1 + N^2 k2 (common clearing multiplier prod den_v^deg_v, degrees (3,3,2,2,2,2) in (a,b,e,j,q,p)) have only nonnegative coefficients; term counts (1002, 1764, 2544) = the document's; sha256 digests equal the supplement's records  ::  terms [1002, 1764, 2544], smallest coefficients [1, 1, 1]
+[PASS] [EXACT] chart I+: the numerators of k0, of 2 D0 k0 + N k1 and of D0^2 k0 + N D0 k1 + N^2 k2 (common clearing multiplier prod den_v^deg_v, degrees (3,3,2,2,2,2) in (a,b,e,j,q,p)) have only nonnegative coefficients; term counts (2982, 6381, 11472) = the document's; sha256 digests equal the supplement's records  ::  terms [2982, 6381, 11472], smallest coefficients [1, 1, 1]
+[PASS] [EXACT] chart II: the numerators of k0, of 2 D0 k0 + N k1 and of D0^2 k0 + N D0 k1 + N^2 k2 (common clearing multiplier prod den_v^deg_v, degrees (3,3,2,2,2,2) in (a,b,e,j,q,p)) have only nonnegative coefficients; term counts (4632, 10089, 17442) = the document's; sha256 digests equal the supplement's records  ::  terms [4632, 10089, 17442], smallest coefficients [1, 1, 1]
+[PASS] [EXACT] chart IIIa-: the numerators of k0, of 2 D0 k0 + N k1 and of D0^2 k0 + N D0 k1 + N^2 k2 (common clearing multiplier prod den_v^deg_v, degrees (3,3,2,2,2,2) in (a,b,e,j,q,p)) have only nonnegative coefficients; term counts (3777, 4533, 4940) = the document's; sha256 digests equal the supplement's records  ::  terms [3777, 4533, 4940], smallest coefficients [1, 1, 1]
+[PASS] [EXACT] chart IIIa- (opposite orientation: a and b exchanged): the numerators of k0, of 2 D0 k0 + N k1 and of D0^2 k0 + N D0 k1 + N^2 k2 (common clearing multiplier prod den_v^deg_v, degrees (3,3,2,2,2,2) in (a,b,e,j,q,p)) have only nonnegative coefficients; term counts (3777, 4533, 4940) = the document's; sha256 digests equal the supplement's records  ::  terms [3777, 4533, 4940], smallest coefficients [1, 1, 1]
+[PASS] [EXACT] chart IIIa+: the numerators of k0, of 2 D0 k0 + N k1 and of D0^2 k0 + N D0 k1 + N^2 k2 (common clearing multiplier prod den_v^deg_v, degrees (3,3,2,2,2,2) in (a,b,e,j,q,p)) have only nonnegative coefficients; term counts (4284, 7308, 10564) = the document's; sha256 digests equal the supplement's records  ::  terms [4284, 7308, 10564], smallest coefficients [1, 1, 1]
+[PASS] [EXACT] chart IIIa+ (opposite orientation: a and b exchanged): the numerators of k0, of 2 D0 k0 + N k1 and of D0^2 k0 + N D0 k1 + N^2 k2 (common clearing multiplier prod den_v^deg_v, degrees (3,3,2,2,2,2) in (a,b,e,j,q,p)) have only nonnegative coefficients; term counts (4284, 7308, 10564) = the document's; sha256 digests equal the supplement's records  ::  terms [4284, 7308, 10564], smallest coefficients [1, 1, 1]
+[PASS] [EXACT] chart IIIb+: the numerators of k0, of 2 D0 k0 + N k1 and of D0^2 k0 + N D0 k1 + N^2 k2 (common clearing multiplier prod den_v^deg_v, degrees (3,3,2,2,2,2) in (a,b,e,j,q,p)) have only nonnegative coefficients; term counts (4572, 8784, 14012) = the document's; sha256 digests equal the supplement's records  ::  terms [4572, 8784, 14012], smallest coefficients [1, 1, 1]
+[PASS] [EXACT] chart IIIb+ (opposite orientation: a and b exchanged): the numerators of k0, of 2 D0 k0 + N k1 and of D0^2 k0 + N D0 k1 + N^2 k2 (common clearing multiplier prod den_v^deg_v, degrees (3,3,2,2,2,2) in (a,b,e,j,q,p)) have only nonnegative coefficients; term counts (4428, 8448, 13472) = the document's; sha256 digests equal the supplement's records  ::  terms [4428, 8448, 13472], smallest coefficients [1, 1, 1]
+[PASS] [EXACT] chart IIIb-: the numerators of k0, of 2 D0 k0 + N k1 and of D0^2 k0 + N D0 k1 + N^2 k2 (common clearing multiplier prod den_v^deg_v, degrees (3,3,2,2,2,2) in (a,b,e,j,q,p)) have only nonnegative coefficients; term counts (7098, 13743, 21347) = the document's; sha256 digests equal the supplement's records  ::  terms [7098, 13743, 21347], smallest coefficients [1, 1, 1]
+[PASS] [EXACT] chart IIIb- (opposite orientation: a and b exchanged): the numerators of k0, of 2 D0 k0 + N k1 and of D0^2 k0 + N D0 k1 + N^2 k2 (common clearing multiplier prod den_v^deg_v, degrees (3,3,2,2,2,2) in (a,b,e,j,q,p)) have only nonnegative coefficients; term counts (7020, 13398, 20834) = the document's; sha256 digests equal the supplement's records  ::  terms [7020, 13398, 20834], smallest coefficients [1, 1, 1]
+[PASS] [EXACT] 33 tables in all (9 + 12 + 12); 33 digests compared with the supplement's JSON (data, comparison only)
+[PASS] [EXACT] Bernstein identity: k0 + k1 c + k2 c^2 = k0 (1-s)^2 + (k0 + J k1/2) 2s(1-s) + (k0 + k1 J + k2 J^2) s^2 at c = sJ; with J = N/D0, D0 > 0: the middle and last coefficients are (2 D0 k0 + N k1)/(2 D0) and (D0^2 k0 + N D0 k1 + N^2 k2)/D0^2
+[INFO] PROOF-READ: at a point of a chart image with D0 > 0 and N > 0 the clearing multiplier is > 0, so the two numerators are >= 0 there and G_9(c) >= k0 (1 - c/J)^2 for 0 <= c <= J: this is (9); with (7) it is > 0 for c < J when K < 0.
+
+--- H. Closed layers and completeness of the cover (document Section 5)
+[INFO] PROOF-READ (details in the report).  Domain: d = 1, the other seven coefficients >= 0, K < 0.  (i) e = j = 0: (10).  (ii) j >= e, j > 0: J = 1/j (SOC); the two numerators 2 j k0 + k1 and j^2 k0 + j k1 + k2 are polynomials in the original coefficients, >= 0 on the images of I- and I+, hence on their closure {j >= e, K <= 0} (a = 0 and ab = 1 included).  (iii) 0 <= j < e, ab >= 1: J = -K/(e(a+1)(b+1)), again polynomial data; chart II gives ab > 1, its closure adds ab = 1, where J = 1/e and the capacity is the double-SOC bound.  (iv) 0 <= j < e, ab < 1, max(a,b) <= 1: J = 1 + 1/e or 1/j (polynomial data); the two orientations of IIIa give a < b < 1 and b < a < 1 and a = b = 0, their closure adds a = b and max(a,b) = 1.  (v) 0 <= j < e, ab < 1, max(a,b) >= 1: both orientations of IIIb are onto, zero smaller leaf included (V = 0), where the parallel endpoint is the chain endpoint.
+[PASS] [EXACT] own direct certificate on the layer a = 0, j >= e (which the document reaches by a limit in I-): at a = 0, e = V, j = V + U the polynomials 2 j k0 + k1 and j^2 k0 + j k1 + k2 in (b,V,U,q,p) have only nonnegative coefficients
+[PASS] [EXACT] own direct certificates on the layer ab = 1 (a = 1/b, b = B > 0; the document reaches it by limits): with e = V, j = V + U, J = 1/j, and with e = V, j = V U/(1+U), J = 1/e, the cleared middle and endpoint numerators have only nonnegative coefficients
+[PASS] [NUMERIC] exact evaluation at 6000 random rational points of the closed domain in the ORIGINAL coefficients (seed 4402; a = s^2, b = t^2; zeros, ab = 1, a = b, max(a,b) = 1, j = e, j = e/(1+e), j = e max(a,b)/(e + max(a,b)) all occur), with the region and endpoint J = N/D0 of the report's table: N > 0, D0 > 0, k0 > 0, both Bernstein numerators >= 0, and G_9(c) >= k0 (1 - c/J)^2 > 0 at three random c in [0, J) (13167 values of G_9; on the layer e = j = 0: G_9 > 0 at three random c >= 0): no failure  ::  points per region {'I': 1456, 'II': 1393, 'IIIa+': 199, 'IIIa-': 365, 'IIIb+': 174, 'IIIb-': 397, 'four': 1611, 'layer': 405}; min of G_9/(k0 (1 - c/J)^2) = 1.0000
+
+--- I. NUMERIC falsification attempts (evidence only)
+[PASS] [NUMERIC] capacity SOC cj = 1 at its threshold on this face (12 draws, coefficients exp(N(0,1)), q and p present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 7.481e-18
+[PASS] [NUMERIC] capacity old-H c = 1 + 1/e at its threshold on this face (12 draws, coefficients exp(N(0,1)), q and p present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 4.950e-18
+[PASS] [NUMERIC] capacity four-coefficient K = 0 at its threshold on this face (12 draws, coefficients exp(N(0,1)), q and p present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 7.921e-17
+[PASS] [NUMERIC] capacity coherent c = 1/e - 1/Emax (ab > 1) at its threshold on this face (12 draws, coefficients exp(N(0,1)), q and p present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 5.081e-17
+[PASS] [NUMERIC] capacity parallel c = 1/e + m(1-w)^2/(m-w)^2 (ab < 1) at its threshold on this face (12 draws, coefficients exp(N(0,1)), q and p present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 5.522e-17
+[PASS] [NUMERIC] capacity chain c = 1/e + 1/b (a = 0) at its threshold on this face (12 draws, coefficients exp(N(0,1)), q and p present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 3.916e-17
+[PASS] [NUMERIC] capacity chain c = 1/e + 1/a (b = 0) at its threshold on this face (12 draws, coefficients exp(N(0,1)), q and p present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 2.704e-17
+[PASS] [NUMERIC] capacity double SOC ab = 1, c = 1/e at its threshold on this face (12 draws, coefficients exp(N(0,1)), q and p present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 2.308e-17
+[INFO] controls (the search does detect negative values): min Phi found for f34 alone -0.0674; for f5 + 1.5 f59 + f34 (c = 1.5 < 1 + 1/e = 2) -0.0001; for 2 f0 + 2 f6 + f5 + c f59 + f34 with c = 0: -0.0026, with c = 0.3 < 1/e - 1/Emax = 2/3: 1.0e-16 (the coherent and parallel capacities are sufficient conditions; they are not sharp and the document does not claim that they are)
+[PASS] [NUMERIC] end-to-end test of the necessary equations on 80 generic points x of X with Re(F_sigma - F_pi*) = 0 on T (seed 44005; eight labels apart by > 0.05 in normalised distance; the other gaps have either sign, so the coordinates have mixed signs): relative |C0 + H Q| < 1e-9 and relative |G_9| < 1e-9  ::  fit 1.9e-13, cubic 7.9e-13, |QG| 1.4e-13, |G| 2.4e-13, smallest relative |Q| 2.6e-06
+[INFO] stratum (gaps >= 0, zero on T, sum 1): 1068 points from two-stage LM searches (seeds 44100..44103, 300 starts each, repulsion 0.02, 0.1, 0.3, 0.005; residual < 1e-10); 33 have d > 1e-4 (largest d = 2.62e-02), 1035 have d <= 1e-4; among the points with d > 1e-4 the smallest normalised distance of two labels is 3.87e-02 and the numbers of contacts (|gap| < 1e-7) are [6, 7, 8, 9]
+[PASS] [NUMERIC] at every stratum point found with d <= 1e-4 (1035 points) the document's split gives nonnegative minor coefficients (tolerance 1e-7)
+[PASS] [NUMERIC] at every stratum point found with d > 1e-4 (33 points): relative |G_9| < 1e-7 and at least one capacity of Section 2 holds  ::  max relative |G_9| 4.4e-11; number of points at which each capacity holds: {'SOC': 33, 'old-H': 18, 'four-coefficient': 1, 'coherent': 3, 'parallel': 12}
+
+FINAL: PASS  (91 checks, 188.8 s)

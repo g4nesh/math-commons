@@ -1,0 +1,100 @@
+====================================================================================================
+Replay of T_47 part A, documents 2 and 3: the six-ray and the five-ray Gram capacities
+====================================================================================================
+[INFO] python 3.9.6, sympy 1.14.0, python-flint 0.6.0, numpy 2.0.2, scipy 1.13.1 (NUMERIC parts only)
+
+--- Provenance   [t = 1 s]
+[PASS] [EXACT] sha256 of final_referee_T46_six_ray_coherent_capacity_20261023.pdf is the one of the file that was read  ::  f2adf23794db91ff...
+[PASS] [EXACT] sha256 of final_referee_T46_core_coherent_capacity_20261023.pdf is the one of the file that was read  ::  f6a1196fd31f8d2e...
+[PASS] [EXACT] sha256 of final_referee_T46_budget_PSD8_20261022.json is the one of the file that was read  ::  7d9f740d5707447e...
+[PASS] [EXACT] sha256 of final_referee_T46_cubic_reduction_20261022.json is the one of the file that was read  ::  649a96d9e9826f2e...
+[PASS] [EXACT] sha256 of final_referee_T46_core_T47_transports_20261023.json is the one of the file that was read  ::  3b1666e48870890c...
+[PASS] [EXACT] sha256 of independent_moc4_T47_budget_PSD8_20261022.json is the one of the file that was read  ::  1ad79a108e7b1406...
+[PASS] [EXACT] MOC4_SUPP is set and the six files are the ones that were read
+
+--- Foundations rebuilt from the paper's definitions   [t = 1 s]
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14; P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of the cubic C of (A.2))
+[PASS] [EXACT] 82 vectors f_j of Appendix D: all in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps of the 24 permutation indices; G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+[PASS] [EXACT] for all 1152 g and 3 random Gaussian-rational spectra: the products of the relabelled spectra g_spectra(g, a, b) are the g-image of the products of (a, b)  (G preserves X and kappa)
+[PASS] [EXACT] for all 1152 g, 3 random rational O in SO(4) and random integer value vectors c: Phi_{g.c}(O'') = Phi_c(O) with O'' = transfer_to_SO4(g, O) (a row/column permutation of O or O^t, one column negated if needed)
+
+--- The sum-of-squares representation on SO(4) (GramFace), rebuilt   [t = 6 s]
+[PASS] [EXACT] certificate data (JSON): source order (27,1,59,5,2,28,6,4), the same eight generators and names as the top-level note; the four signed coordinate maps permute p and q separately (they preserve |p|^2, |q|^2); quaternion model M(p,q) = matrix of x -> p x q: M^t M = |p|^2|q|^2 I, det M = (|p|^2|q|^2)^2
+[PASS] [EXACT] own linear algebra on (*): (|p|^2+|q|^2) Sigma(Gm) = 4 Phi_w(M(p,q)) mod (|p|^2-|q|^2)  (413 coefficient equations, rank 18) holds exactly when Gm satisfies 10 independent linear relations and w = (G00, G11, G22, G33, G44, G55 - G33, G66, G77) modulo them: the Gram diagonal is (q, p, j, c, e, c + d, b, a); the ten relations stored in the supplement span the same space
+[INFO] relations derived here (Gik = Gram entries of the vectors (Q,P,J,C,E,D,B,A)):
+[INFO]    +1*G01 +1*G06 +1*G16 +1*G17 -1*G34 -1*G35 +1*G45 -2*G46 -1*G47 +1*G55 +1*G67 = 0
+[INFO]    +1*G02 -1*G23 +1*G25 = 0
+[INFO]    +1*G03 -1*G05 -1*G34 +1*G37 +1*G45 -1*G47 -1*G57 = 0
+[INFO]    +1*G07 -1*G37 +1*G57 = 0
+[INFO]    +1*G12 +1*G26 -1*G35 -1*G46 +1*G55 = 0
+[INFO]    +1*G13 -1*G15 +1*G17 -1*G34 +1*G45 -1*G47 = 0
+[INFO]    +1*G24 +1*G25 +1*G26 -1*G45 -1*G46 = 0
+[INFO]    +1*G33 -1*G34 -1*G35 +1*G37 +1*G45 -1*G47 -1*G57 = 0
+[INFO]    +1*G36 -1*G46 +1*G67 = 0
+[INFO]    +1*G56 = 0
+[INFO] consequence (PROOF-READ + CITED surjectivity of unit (p,q) -> M(p,q) onto SO(4)): on unit quaternions (*) reads Sigma(Gm) = 2 Phi_w; if a PSD matrix Gm satisfies the ten relations, Phi of the cost with weights w is >= 0 on SO(4)
+
+--- Document 2 (six-ray note), Theorem 1  [pp. 1-2]   [t = 6 s]
+[PASS] [EXACT] leaf Schur complement: det of the 3 x 3 metric of (Q, B, J0) = ell (j - t^2) - (b t^2 - 2 beta t v + q v^2), ell = qb - beta^2; so the hypotheses q, b > 0, ell > 0, j - t^2 > (b t^2 - 2 beta t v + q v^2)/ell say exactly that the 4 x 4 metric of (Q, B, J0, Z) is positive definite; Delta = Gram determinant of (Q + B, J0) and b(j - t^2) - v^2 = Gram determinant of (B, J0) are then > 0
+[PASS] [EXACT] the eight vectors (Q, P, J, C, 0, D, B, 0) with P = lambda (Q+B) + mu J0, J = J0 + t Z, C = (t-v)/(j-t^2-v^2/b) (J0 - (v/b) B), D = C - Z have squared lengths (q, p*, j, c*, 0, c* + 1, b, 0) with the document's p* and c*; P.(Q+B) = -h, P.J0 = -1-v, C.B = C.Z = 0, C.J = t - v
+[PASS] [EXACT] p* = (-h, -1-v) Gram(Q+B, J0)^-1 (-h, -1-v)^t (least squared length with the two prescribed products) and c* = (t-v)^2 / |J0 - (v/b)B|^2
+[PASS] [EXACT] THEOREM 1 (sufficiency): this Gram matrix satisfies the ten relations identically in (q, b, j, beta, t, v) and its weights are (q, p*, j, c*, 0, 1, b, 0): (*) holds for the cost q f27 + p* f1 + j f59 + c* f5 + f28 + b f6
+[PASS] [EXACT] identity (*) multiplied out directly (no linear algebra) at two rational parameter points with positive definite metric: (q,b,beta,t,v,j) = (2,3,1/2,1/3,-1/2,5) and (1/3,5/2,-3/4,-2/5,1/4,3/2)
+[PASS] [EXACT] surplus: adding s1 to |P|^2 and one vector of squared length s2, orthogonal to everything, to both C and D keeps the ten relations and changes the weights to (q, p* + s1, j, c* + s2, 0, 1, b, 0)
+[INFO] PROOF-READ: Gm = V metric V^t is PSD when the metric is; so Phi >= 0 on SO(4) for p >= p*, c >= c*.  Further nonnegative multiples of the minor vectors f2, f4 (and of any minor vector) may be added.  The set of costs with Phi >= 0 on SO(4) is closed, so every finite limit of admissible (q, p, j, c, b) is admissible.
+[INFO] REMARK (EXACT): the identity is rational in the parameters, so it holds wherever Delta and b(j-t^2)-v^2 are nonzero; the Gram matrix is PSD whenever the 3 x 3 metric is PSD.  Corollary 2 uses this with ell = 0.
+
+--- Document 2, the classification (converse) part of Theorem 1  [p. 2]   [t = 7 s]
+[PASS] [EXACT] when e = a = 0 (rows and columns E, A of a PSD Gram matrix vanish) the ten relations restricted to the six vectors (Q, P, J, C, D, B) have rank 9 and the same row space as the nine equations displayed in the document (written with Z = C - D and d = |D|^2 - |C|^2)
+[PASS] [EXACT] the document's template (six explicit vectors) has a positive definite Gram matrix (leading minors ['1', '9/4', '5/4', '5/4', '5/4', '1']), satisfies the nine equations and has |D|^2 - |C|^2 = 1
+[INFO] PROOF-READ (not needed for any support inequality): for a positive definite completion, Z = C - D is a unit vector orthogonal to Q, P, B, C; with beta = Q.B, t = J.Z, v = J.B, J0 = J - tZ the equations give P.(Q+B) = -1-beta, P.J0 = -1-v, C.B = 0, C.J0 = t-v, so |P|^2 >= p* and |C|^2 >= c* by projection; mixing with the template gives density of positive definite completions.  That every degree-six certificate has this one-block form is a claim of the supplement's data ('proof' field of the cubic-reduction file) and was NOT checked here.
+
+--- Document 2, the transport to the cone of the paper's T_65 (document label T47)  [p. 2]   [t = 7 s]
+[PASS] [EXACT] the action with row (1,2,0,3), column (2,1,3,0) and transposition, in the supplement's convention (pullback by sigma -> row o sigma^-1 o column), sends the roles [27,1,59,5,2,28,6,4] to [0,45,5,9,29,35,7,36]  ::  computed [0, 45, 5, 9, 29, 35, 7, 36]
+[PASS] [EXACT] the six images f0, f45, f5, f9, f35, f7 of the core (q, p, j, c, d, b) are generators of T_65 = {0,4,5,6,9,12}, whose generators are f0, f1, f2, f5, f7, f9, f35, f45 (only f35 non-minor); the images f29, f36 of e, a are not: only the six-ray core is transported, f1 and f2 are added as minor vectors
+[INFO] roles: (q, b, j, p, c) of T46 = coefficients of (f27, f6, f59, f1, f5) correspond to the coefficients of (f0, f7, f5, f45, f9) on the T_65 cone, which the document calls (b, a, e, c, p)_47; d_47 is the coefficient of f35.
+[PASS] [EXACT] comparison with the supplement's data for its 'T47' cone: the coefficient names (q,p,j,c,e,d,b,a)_47 belong to (f2, f9, f1, f45, f5, f35, f0, f7); so (b, a, e, c, p)_47 are the coefficients of (f0, f7, f5, f45, f9), as the document says, and q_47, j_47 are those of f2, f1
+[PASS] [EXACT] comparison with the supplement's transport data (2 stored witnesses): each stored action, in the same convention, maps the eight roles as stored and the five-ray core [1,59,6,27,28] to [45,5,7,0,35]
+
+--- Document 2, Corollary 2 (singular leaf)  [p. 3]   [t = 7 s]
+[PASS] [EXACT] with q = b_47 = B, b = a_47 = r^2/B, beta = -r, v = -r t/B, j = e_47 = E the leaf block has determinant 0 and the Schur complement of the 3 x 3 metric with respect to the entry q = B is diag(0, E - kappa t^2), kappa = 1 + 1/B: the metric is PSD iff E >= kappa t^2; Delta = (B-r)^2 (E - kappa t^2)/B and b(j-t^2)-v^2 = r^2 (E - kappa t^2)/B, so the construction is defined for B != r, r > 0, E > kappa t^2
+[PASS] [EXACT] p* becomes k + (1 - eta t)^2/(E - kappa t^2) and c* becomes rho^2 t^2/(E - kappa t^2) with rho = 1 + r/B, eta = (1 - a)/(B - r), k = B(1-r)^2/(B-r)^2 (a = r^2/B)
+[PASS] [EXACT] COROLLARY 2, first statement: the substituted Gram matrix still satisfies the ten relations with weights (B, k + (1-eta t)^2/(E-kappa t^2), E, rho^2 t^2/(E-kappa t^2), 0, 1, r^2/B, 0); identity (*) multiplied out directly at (B, r, E, t) = (3, 1/2, 2, 1/2), i.e. b_47 = 3, a_47 = 1/12
+[PASS] [EXACT] stationary choice t = eta E/kappa: E - kappa t^2 = E (kappa - eta^2 E)/kappa; thresholds become c_47 >= 1/E + k - eta^2/kappa and p_47 >= rho^2 eta^2 E/(kappa(kappa - eta^2 E)); and P kappa (kappa - eta^2 E) - rho^2 eta^2 E = P kappa^2 - eta^2 E (P kappa + rho^2), so for eta^2 E < kappa the second is E <= P kappa^2/(eta^2 (P kappa + rho^2)); this bound is itself < kappa/eta^2
+
+--- Document 2, Corollaries 3 and 4 (rational sections)  [pp. 3-4]   [t = 8 s]
+[PASS] [EXACT] Corollary 3, t = eta e/M0: e - kappa t^2 = e N/M0^2; consumed c = k + D0^2/(e N); consumed p = rho^2 eta^2 e/N; N = D0^2 + eta^2 e (2 D0 - kappa + eta^2 e); N - rho^2 eta^2 e/p = D0^2 + D0 eta^2 e + eta^4 e^2; 2 D0 - kappa = kappa + 2 rho^2/p > 0, so N > D0^2 > 0 (eta != 0) and the consumed p is < p
+[PASS] [EXACT] Corollary 4, A = eta^2 e.  Branch A <= D0, t = eta e/D0: e - kappa t^2 = e N0/D0^2 with N0 = D0^2 - kappa A = D0 (D0 - kappa) + kappa (D0 - A) > 0; consumed c = k + (D0-A)^2/(e N0); unused p = p D0 (D0-A)/N0 >= 0.  Branch A >= D0, t = 1/eta: e - kappa t^2 = (A - kappa)/eta^2 > 0, consumed p = rho^2/(A - kappa) with p - rho^2/(A-kappa) = p (A - D0)/(A - kappa) >= 0, consumed c = k.  The branches agree at A = D0
+[PASS] [EXACT] comparison of the two sections for 0 < A <= D0: D0^2/(e N) - (D0-A)^2/(e N0) = A^2 {2 D0 (D0-kappa) + kappa A - A^2}/(e N0 N), N = (D0+A)^2 - kappa A; the brace equals 2 D0 (D0 - kappa) at A = 0 and D0 (D0 - kappa) at A = D0 and is concave in A, hence positive on [0, D0] (D0 > kappa)
+[INFO] PROOF-READ: in Corollaries 2-4 the hypotheses b_47 > 1, 0 < a_47 < 1/b_47 give 0 < r < 1 < B, so B != r, eta = (1-a)/(B-r) > 0, kappa > 1, D0 > kappa; every t used satisfies E > kappa t^2 strictly, so the Gram matrix of Corollary 2 is defined and PSD; the unused p and c are added as multiples of minor vectors.
+
+--- Document 3 (five-ray core note), Theorem 1  [pp. 1-2]   [t = 8 s]
+[PASS] [EXACT] det of the 3 x 3 metric of (Q, B, J0) = ell j - (ell + q + b - 2 beta) t^2, so the hypotheses q, b > 0, ell > 0, j > (1 + (q+b-2beta)/ell) t^2 say that the metric is positive definite; Delta = s j - (s+4) t^2 is the Gram determinant of (Q+B, J0); squared lengths (q, p0, j, 0, 0, 1, b, 0) with p0 the right side of (1)
+[PASS] [EXACT] THEOREM 1 (sufficiency): the Gram matrix of (Q, P, J, 0, 0, D, B, 0) satisfies the ten relations identically in (q, b, j, beta, t) with weights (q, p0, j, 0, 0, 1, b, 0): (*) holds for p0 f1 + j f59 + q f27 + b f6 + f28
+[PASS] [EXACT] identity (*) multiplied out directly at the document's example (q,b,j,beta,t) = (1/8,4,4,-1/2,1/4), where the metric is positive definite and p0 = 399/1543
+[PASS] [EXACT] it is the slice v = t of the six-ray family after t -> -t: p*(t -> -t, v -> -t) = p0 and c* = 0 there
+[PASS] [EXACT] remarks on p. 2: p0 at t = 0 is 1/j + (1+beta)^2/(q+b+2beta); d p0/dt at t = 0 is 2(2-q-b)/((q+b+2beta) j); and 399/1543 < 13/50 < 1/4 + (1 - 1/sqrt2)^2/(33/8 - sqrt2) [the last number is (25839 - 16800 sqrt2)/96100 + 13/50 and 25839^2 > 2*16800^2]
+
+--- Document 3, Theorem 2 (classification) and the optimisation in t  [pp. 2-4]   [t = 8 s]
+[PASS] [EXACT] when c = e = a = 0 the ten relations restricted to the five vectors (Q, P, J, D, B) have rank 7 and the same row space as the seven equations displayed in the document; its 5 x 5 template is positive definite (leading minors ['1', '7/4', '3/4', '3/4', '1/2']), has |D|^2 = 1 and satisfies the seven equations
+[PASS] [EXACT] p0 = (A t^2 + B t + C)/(D - E t^2) with the document's A..E; the numerator of its t-derivative is B E t^2 + 2 (A D + E C) t + B D; p0 = h^2/s + (s + k t)^2/(s (s j - (s+4) t^2)) with k = 2 - q - b; d p0/dt = 2 (s + k t)(k j + (s+4) t)/(s j - (s+4) t^2)^2; u - 4/s = (q-b)^2/(s ell) for u = (q+b-2beta)/ell; at t = -k j/(s+4) the value is 1/j + (s+2k)/4 + k^2/(4(s+4))
+[PASS] [EXACT] with beta = 1 - q - b (so s = k): 1/j + 3k/4 + k^2/(4(k+4)) = 1/j + k(k+3)/(k+4) < 1/j + k, and |t*| < T = sqrt(j/(1+u)) is j < (k+4)^2/(k^2 (1+u))
+[INFO] PROOF-READ (not needed for any support inequality): the projection argument of Theorem 2 and the choice of t_opt from the sign of the derivative are correct as written; they concern only the size of the certified region.
+
+--- Document 3, the transports  [p. 4]   [t = 8 s]
+[PASS] [EXACT] row (0,3,1,2), column (3,1,0,2), transposed: [59,53,55,67,54] -> [1,59,6,27,28]; row (0,2,3,1), column (3,1,0,2), not transposed: [1,59,6,27,28] -> [45,5,7,0,35] (supplement's convention); f59,f53,f55,f67,f54 are generators of the paper's T_25 (document label T24), f45,f5,f7,f0,f35 of the paper's T_65  ::  computed [1, 59, 6, 27, 28], [45, 5, 7, 0, 35]
+
+--- Document 3, Corollary 3 (interior leaf-product capacity)  [pp. 4-5]   [t = 8 s]
+[PASS] [EXACT] COROLLARY 3 at d = 1, t = 0, beta = 1 - q - b: the metric is diag-block [[q, 1-S],[1-S, b]] + (j) + (1), PSD iff q, b >= 0, j >= 0 and (S-1)^2 <= qb (S = q + b); s = h = 2 - S, Delta = (2-S) j; p0 = 1/j + 2 - S; the Gram matrix satisfies the ten relations with weights (q, 1/j + 2 - q - b, j, 0, 0, 1, b, 0) wherever S != 2, j != 0: the certificate is direct on the closed leaf condition, the point S = 2 excepted
+[PASS] [EXACT] the excepted point q = b = 1 (S = 2): the Gram matrix with B = -Q, |Q| = 1, J orthogonal to Q and D, |J|^2 = j, P = -J/j, |D| = 1 satisfies the ten relations with weights (1, 1/j, j, 0, 0, 1, 1, 0) and is PSD (pivots 1, j, 1, zero residual): p >= 1/j = 1/j + 2 - S there, without a limit
+[PASS] [EXACT] homogeneity: with (q, b, j, p) -> (q, b, j, p)/d the condition and the threshold become (q + b - d)^2 <= qb and p >= d^2/j + 2d - q - b; and (S-1)^2 <= qb <= S^2/4 forces 2/3 <= S <= 2
+[PASS] [EXACT] closing remarks: d/dbeta (1+beta)^2/(S+2beta) = 2(1+beta)(S+beta-1)/(S+2beta)^2; the quadratic (q+b-1)^2 - qb in q has discriminant b(4-3b)
+[INFO] STATEMENT (Corollary 3): d > 0, j > 0, q, b >= 0, (q + b - d)^2 <= qb, p >= d^2/j + 2d - q - b  =>  Phi >= 0 on SO(4) for p f1 + j f59 + q f27 + b f6 + d f28 (plus any minor vectors).  On the T_65 cone: (a + b - d)^2 <= ab, e > 0, c >= d^2/e + 2d - a - b  =>  Phi >= 0 for c f45 + e f5 + a f7 + b f0 + d f35.
+
+--- NUMERIC falsification attempts (floating point; evidence only)   [t = 9 s]
+[PASS] [NUMERIC] six-ray Theorem 1 at its thresholds (p = p*, c = c*) for 12 random admissible (q, b, beta, t, v, j) (seed 47400): smallest Phi found over SO(4) by multistart BFGS is 1.080e-17 (>= -1e-9); control: the same search finds -0.0674 for f28 alone
+[PASS] [NUMERIC] Corollary 3 of the core note at p = 1/j + 2 - q - b for 10 random (q, b, j) with (q+b-1)^2 <= qb (boundary included): smallest Phi found 2.640e-17 (>= -1e-9)
+
+FINAL: PASS  (49 checks, 14.4 s)
