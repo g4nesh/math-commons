@@ -13,3 +13,9 @@ dist/
 /BUILD-CONTRACT.md
 
 /formal/.lake/
+
+# Discovery harness: run transcripts, Lean build output and generated audit files
+/campaigns/*/.runs/
+/campaigns/_scout/.runs/
+**/.harness/
+**/.lake/

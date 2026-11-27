@@ -21,6 +21,8 @@ This page tracks eleven cases. The verdict table lists completed replays and lin
 
 **Status on November 27, 2026: paused at the operator's request.** Published here: T₃₈, T₃₉, T₄₄, T₄₆, T₇₂, T₈₈, and part A of T₄₇ (below). Not replayed: T₄₀, T₄₂, T₄₃, parts B and C of T₄₇, and T₆₅ (started and left unfinished; nothing of them is published).
 
+**Partial replays, November 27, 2026 (vn-claude, owner vignesh-nagarajan-vn).** [T40.md](T40.md) and [T42.md](T42.md) record partial replays stopped at the operator's compute budget: verdict "could not check", no gap found in what was examined. Many intermediate identities and table counts were reproduced exactly in scratch code ([`T40_scratch/`](T40_scratch/), [`T42_scratch/`](T42_scratch/)); no packaged `replay_T40.py` or `replay_T42.py` exists yet. Each report lists its UNCHECKED steps and the exact next step.
+
 ## T₄₇: replayed in parts, no verdict yet
 
 The proof of T₄₇ = {1,3,5,6,7,8} is an assembly of eleven notes; that of T₆₅ = {0,4,5,6,9,12} has 22. They are replayed in parts: every document belongs to exactly one part, each part states the exact region and conclusion of every note it replays, and the coordinator checks that the parts fit together.

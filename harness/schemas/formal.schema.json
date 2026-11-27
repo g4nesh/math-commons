@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "discovery-formal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "status",
+    "files",
+    "lean",
+    "gaps"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "done",
+        "blocked"
+      ]
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lean": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "modules",
+        "claim",
+        "main",
+        "namespace",
+        "endpoints"
+      ],
+      "properties": {
+        "modules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "claim": {
+          "type": "string"
+        },
+        "main": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "endpoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "campaignRoot": "campaigns",
+  "resultsRoot": "results",
+  "routing": {
+    "author": "codex",
+    "reviewer": "claude",
+    "roles": {
+      "scout": "claude",
+      "screen": "claude",
+      "map": "author",
+      "explore": ["codex", "claude"],
+      "adversary": "codex",
+      "draft": "author",
+      "review": ["reviewer", "author"],
+      "repair": "author",
+      "formalize-statement": "author",
+      "audit-statement": "reviewer",
+      "verify-certificate": "reviewer",
+      "formalize": "author"
+    }
+  },
+  "runtimes": {
+    "claude": {
+      "bin": "claude",
+      "model": null,
+      "effort": "high",
+      "maxTurns": 80,
+      "permissionMode": "default",
+      "allowedTools": ["Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch", "Bash(python3:*)", "Bash(node harness/bin/discover.mjs:*)", "Bash(lake:*)", "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)"],
+      "timeoutMinutes": 45
+    },
+    "codex": {
+      "bin": "codex",
+      "model": null,
+      "effort": "high",
+      "sandbox": "workspace-write",
+      "profile": null,
+      "extraArgs": [],
+      "timeoutMinutes": 45
+    },
+    "manual": {}
+  },
+  "screen": { "minQueries": 3, "minSources": 3 },
+  "explore": { "parallel": 2, "maxRounds": 3, "minDirections": 2 },
+  "review": { "passes": 2, "requireDifferentRuntime": true, "maxRepairRounds": 3 },
+  "formal": {
+    "required": false,
+    "allowedAxioms": ["propext", "Classical.choice", "Quot.sound"],
+    "buildTimeoutMinutes": 30,
+    "maxRounds": 4,
+    "replay": null
+  },
+  "budgets": { "campaignTokens": 20000000, "stepTimeoutMinutes": 60 },
+  "context": { "capsuleTokens": 1500, "maxArtifactBytes": 204800, "errorTailLines": 60 }
+}

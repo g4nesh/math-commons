@@ -1,0 +1,6 @@
+name = "fixtures"
+version = "0.1.0"
+defaultTargets = ["Fixtures"]
+
+[[lean_lib]]
+name = "Fixtures"

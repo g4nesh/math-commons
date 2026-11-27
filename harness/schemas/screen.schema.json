@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "discovery-screen",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "verdict",
+    "summary",
+    "exactStatement",
+    "source",
+    "priorResolutionSearch",
+    "significance",
+    "fullVsPartial",
+    "attacks",
+    "priorResolution"
+  ],
+  "properties": {
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "eligible",
+        "prior-resolution",
+        "low-impact",
+        "needs-clarification",
+        "fixture"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "exactStatement": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "citation",
+        "url",
+        "statementNumber"
+      ],
+      "properties": {
+        "citation": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "statementNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "priorResolutionSearch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "queries",
+        "sources",
+        "failures"
+      ],
+      "properties": {
+        "queries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "query",
+              "where",
+              "result"
+            ],
+            "properties": {
+              "query": {
+                "type": "string"
+              },
+              "where": {
+                "type": "string"
+              },
+              "result": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "title",
+              "finding"
+            ],
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "finding": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "failures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "significance": {
+      "type": "string"
+    },
+    "fullVsPartial": {
+      "type": "string"
+    },
+    "attacks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "idea",
+          "firstTest"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "idea": {
+            "type": "string"
+          },
+          "firstTest": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "priorResolution": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}
