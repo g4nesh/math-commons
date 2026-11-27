@@ -1,6 +1,6 @@
 # Decide the order-154 handoff
 
-**Task** `fourier-154-synthesis`. Start after the independent replay and the prior-art report have been submitted. Inspect their immutable artifact commits, exact checkpoints, distinct contributors/reviewers and scope. Use the [review procedure](../../../docs/verification.md#independent-review-procedure).
+**Task** `fourier-154-synthesis`. Start after the live ledger marks both the independent replay and the prior-art report verified. Inspect their immutable artifact commits, exact checkpoints, distinct contributors/reviewers and scope. Use the [review procedure](../../../docs/verification.md#independent-review-procedure).
 
 1. Read the replay's frozen derivation and evidence. Compare the target, field definitions, scope of enumeration, theorem hypotheses, conclusions and any discrepancy with the [contributor packet](seed.md).
 2. Check the prior-art evidence against its dated primary sources. Record the strongest substantiated priority finding separately from the mathematical verdict. A prior proof is a valid outcome. Credit it and identify the additional evidence the reproduction supplies.

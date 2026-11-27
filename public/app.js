@@ -1,6 +1,7 @@
 import { renderRequests } from './requests.js';
 import { isTreeView, renderTreeWorkspace, treeHref } from './tree-workspace.js';
-import { taskStatus } from './tree-model.js';
+import { taskStatus, pendingDependencies } from './tree-model.js';
+import { fourierObjective, objectiveGuides } from './research-guides.js';
 import { renderContributions } from './contributions.js';
 const $ = (selector) => document.querySelector(selector);
 const DEFAULT_CONFIG = { name: 'Math Commons', repository: 'g4nesh/math-commons', stateBranch: 'coordination', statePath: 'coordination/state.json', leaseMinutes: 20, checkpointMinutes: 5 };
@@ -71,7 +72,8 @@ async function copy(text, success = 'Copied to clipboard') {
 }
 function agentName(id) { return workspace?.agents.find((agent) => agent.id === id)?.name || id || 'Unassigned'; }
 function selectedObjective() {
-  return workspace?.objectives.find((objective) => objective.id === objectiveId)
+  const requested = new URLSearchParams(location.hash.split('?')[1]).get('objective') || objectiveId;
+  return workspace?.objectives.find((objective) => objective.id === requested)
     || workspace?.objectives.find((objective) => objective.id === config.defaultObjectiveId)
     || workspace?.objectives.find((objective) => !objective.example && objective.status === 'open')
     || workspace?.objectives[0] || null;
@@ -242,14 +244,15 @@ function render(background = false) {
     return;
   }
   treeRenderKey = null;
-  const views = { requests: () => renderRequests({state: workspace, objective: selectedObjective(), el, copy, repoUrl: repoUrl()}), tasks: renderWork, log: renderActivity, directory: renderAgents, contributions: renderUsageView, connect: renderConnect };
+  const views = { requests: () => renderRequests({state: workspace, objective: selectedObjective(), replaySeedOwners: config.replaySeedOwners, el, copy, repoUrl: repoUrl()}), tasks: renderWork, log: renderActivity, directory: renderAgents, contributions: renderUsageView, connect: renderConnect };
   content.replaceChildren(views[currentView]());
 }
 function renderUsageView() {
   return renderContributions({ state: workspace, el, button, externalLink, example: source === 'example', now: lastFetchedAt ? Date.parse(lastFetchedAt) : Date.now(), repoUrl: repoUrl(), onPreview: async () => { await loadExample(); go('contributions'); }, onLive: refresh });
 }
 function unavailable() {
-  return el('section', { class: 'no-data' }, [el('h1', {}, 'Workspace unavailable'), el('p', {}, lastError || 'Connecting to the shared workspace.'), el('div', { class: 'no-data-actions' }, [button('Try again', refresh), button('Explore an example', loadExample, 'button button-secondary'), externalLink('Open repository', repoUrl(), 'button button-plain')])]);
+  const overview = objectiveGuides(config.defaultObjectiveId, config).overview;
+  return el('section', { class: 'no-data' }, [el('h1', {}, 'Workspace unavailable'), el('p', {}, lastError || 'Connecting to the shared workspace.'), el('div', { class: 'no-data-actions' }, [button('Try again', refresh), button('Explore an example', loadExample, 'button button-secondary'), overview ? externalLink('Read the current research overview', repoUrl() + '/blob/main/' + overview, 'button button-plain') : externalLink('Open repository', repoUrl(), 'button button-plain')])]);
 }
 function navigateTree(href, action) {
   if (href !== location.hash) history.pushState(null, '', href);
@@ -276,14 +279,13 @@ function navigateTree(href, action) {
 function showObjective(id) {
   const objective = workspace.objectives.find(o => o.id === id);
   if (!objective) return;
+  const { overview, brief } = objectiveGuides(id, config);
   const dialog = $('#objective-dialog');
   const content = el('div', {class:'dialog-body'}, [
     el('p', {class:'statement'}, objective.statement),
     el('h3', {}, 'Success criteria'), el('p', {}, objective.successCriteria),
-    objective.id === config.defaultObjectiveId && config.defaultObjectiveOverview ?
-      externalLink('Read the results overview', repoUrl() + '/blob/main/' + config.defaultObjectiveOverview, 'quiet-link inline-link') : null,
-    objective.id === config.defaultObjectiveId && config.defaultObjectiveBrief ?
-      externalLink('Read the research brief', repoUrl() + '/blob/main/' + config.defaultObjectiveBrief, 'quiet-link inline-link') : null]);
+    overview ? externalLink('Read the research overview', repoUrl() + '/blob/main/' + overview, 'quiet-link inline-link') : null,
+    brief ? externalLink('Read the research brief', repoUrl() + '/blob/main/' + brief, 'quiet-link inline-link') : null]);
   $('#objective-dialog-content').replaceChildren(dialogHeader(objective.title, 'Research objective', dialog), content);
   if (!dialog.open) dialog.showModal();
 }
@@ -358,10 +360,11 @@ function renderAgents() {
 function onboardingPrompt() {
   const target = selectedObjective();
   const id = target?.id || config.defaultObjectiveId;
-  const overview = id && id === config.defaultObjectiveId && config.defaultObjectiveOverview;
+  const overview = objectiveGuides(id, config).overview;
   const firstRead = overview ? ` Read ${overview} and pick one question.` : '';
+  const order = id === fourierObjective ? ' Start with the independent order-154 replay or the prior-art search. Follow the synthesis decision before taking the 14p audit.' : '';
   const liveCommand = id ? `${cli} context --objective ${shell(id)}` : `${cli} status`;
-  return `Join ${repoUrl()} using my own GitHub account and agreed compute budget. Read AGENTS.md.${firstRead} Run ${liveCommand} for the live queue. Include --agent YOUR-ID after registration to see addressed messages.\n\nChoose one task and run ${cli} context --task TASK-ID. Open the branch or exact checkpoint needed for the next decision. Before relying on a mathematical claim, check its scope and original evidence.\n\nRegister a unique agent ID. Confirm the live claim and owned files before editing. A bounded worker acquires its own lease. Publish a concise checkpoint at each finding and every ${config.checkpointMinutes} active minutes, with the gap, next step and evidence link. Preserve full reports in GitHub. Follow the protected PR and independent review steps in AGENTS.md.`;
+  return `Join ${repoUrl()} using my own GitHub account and agreed compute budget. Read AGENTS.md.${firstRead}${order} Run ${liveCommand} for the live queue. Include --agent YOUR-ID after registration to see addressed messages.\n\nChoose one task and run ${cli} context --task TASK-ID. Open the branch or exact checkpoint needed for the next decision. Before relying on a mathematical claim, check its scope and original evidence.\n\nRegister a unique agent ID. Confirm the live claim and owned files before editing. A bounded worker acquires its own lease. Publish a concise checkpoint at each finding and every ${config.checkpointMinutes} active minutes, with the gap, next step and evidence link. Preserve full reports in GitHub. Follow the protected PR and independent review steps in AGENTS.md.`;
 }
 function setupCommands() {
   const id = selectedObjective()?.id || config.defaultObjectiveId || 'YOUR-OBJECTIVE';
@@ -417,7 +420,11 @@ function openTask(id) {
     body.append(el('section', { class: 'detail-section' }, [el('h3', {}, 'Review the submitted checkpoint'), el('p', { class: 'claim-note' }, 'Inspect the linked evidence independently. Replace the verdict with pass or changes, add your review and evidence URL, and use an agent owned by a different GitHub collaborator. Verified means independently reviewed by a collaborator; formal proof requires its own checkable artifact.'), el('pre', { class: 'code-block', tabindex: '0' }, reviewCommand), button('Copy review template', () => copy(reviewCommand, 'Review template copied — fill in the verdict and evidence'), 'button button-secondary button-small')]));
   }
   const command = `${cli} claim --task ${shell(task.id)} --agent 'YOUR-AGENT-ID'`;
-  const eligible = task.status === 'open' || expired(task);
+  const pending = pendingDependencies(task, workspace.tasks);
+  const eligible = objective?.status === 'open' && (task.status === 'open' || expired(task)) && !pending.length;
+  if (pending.length) body.append(el('p', { class: 'note' }, 'Available after independent verification of ' + pending.join(', ') + '.'));
+  const seeds = config.replaySeedOwners?.[task.id];
+  if (Array.isArray(seeds) && seeds.length) body.append(el('p', { class: 'note' }, 'Independent replay requires a GitHub owner different from the seed contributors (' + seeds.map(owner => '@' + owner).join(', ') + ').'));
   body.append(el('section', { class: 'detail-section' }, [el('h3', {}, eligible ? 'Take this direction' : 'Continue the conversation'), el('p', { class: 'claim-note' }, eligible ? 'After joining the repository, replace YOUR-AGENT-ID and run this command. The CLI checks dependencies and competing claims before reserving the task.' : 'Work with the current owner or publish a question using the CLI. Task changes are recorded in GitHub.'), el('pre', { class: 'code-block', tabindex: '0' }, eligible ? command : `${cli} message --agent 'YOUR-AGENT-ID' --to ${shell(task.assignee || 'all')} --task ${shell(task.id)} --summary 'Your question or finding'`), button('Copy command', () => copy(eligible ? command : `${cli} message --agent 'YOUR-AGENT-ID' --to ${shell(task.assignee || 'all')} --task ${shell(task.id)} --summary 'Your question or finding'`), 'button button-secondary button-small')]));
   const contextCommand = `${cli} context --task ${shell(task.id)}`;
   body.append(el('section', { class: 'detail-section' }, [
@@ -452,7 +459,13 @@ function openObjectiveDialog() {
   if (!dialog.open) dialog.showModal();
 }
 
-$('#share-button').addEventListener('click', () => { const url = new URL(location.href); url.hash = 'connect'; url.searchParams.delete('demo'); copy(url.href, 'Workspace invitation link copied'); });
+$('#share-button').addEventListener('click', () => {
+  const url = new URL(location.href);
+  const objective = selectedObjective();
+  url.hash = source !== 'example' && objective ? treeHref('connect', objective.id) : 'connect';
+  url.searchParams.delete('demo');
+  copy(url.href, 'Workspace invitation link copied');
+});
 $('#refresh-button').addEventListener('click', refresh);
 $('.skip-link').addEventListener('click', event => { event.preventDefault(); $('#main').focus(); });
 window.addEventListener('hashchange', () => {

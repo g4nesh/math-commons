@@ -1,3 +1,5 @@
+import { fourierObjective, objectiveGuides, taskGuide } from './research-guides.js';
+
 const list = (value) => Array.isArray(value) ? value.filter(Boolean) : [];
 const label = (value = '') => String(value).replace(/[_-]/g, ' ').replace(/^./, (character) => character.toUpperCase());
 const timestamp = (value) => value == null || value === '' ? NaN : new Date(value).getTime();
@@ -101,7 +103,9 @@ export function renderTreeInspector({ tree, selection, onSelect = () => {}, stat
   const panel = element('section', { class: 'tree-inspector', 'aria-labelledby': 'tree-inspector-heading' });
   const append = (...children) => children.filter((child) => child !== null && child !== undefined).forEach((child) => panel.append(child));
   const taskRow = (task) => element('li', { class: 'tree-inspector-task-row' }, [
-    select('task', task.id, task.title || task.id), badge(taskStatus(task))
+    select('task', task.id, task.title || task.id),
+    taskStatus(task) === 'open' && pendingDependencies(task, state?.tasks || tasks).length
+      ? badge('open', 'Awaiting prerequisites') : badge(taskStatus(task))
   ]);
   const taskList = (items, limit = 5) => element('div', {}, [
     element('ul', { class: 'tree-inspector-task-list' }, items.slice(0, limit).map(taskRow)),
@@ -141,6 +145,17 @@ export function renderTreeInspector({ tree, selection, onSelect = () => {}, stat
 
   if (objective && selected.type === 'objective' && selected.id === objective.id) {
     append(header('Objective', 'Research notes', badge(objective.status)), fullObjective());
+    if (objective.id === fourierObjective) {
+      const firstTasks = ['fourier-154-replay', 'fourier-154-prior-art', 'fourier-154-synthesis']
+        .map(id => taskMap.get(id)).filter(Boolean);
+      append(section('Order 154', [
+        note('Independently verify the proof and search earlier literature. Record both findings before the family audit.'),
+        external('Read the research overview ↗', repoUrl + '/blob/main/' + objectiveGuides(objective.id).overview),
+        firstTasks.length ? taskList(firstTasks) : null
+      ]));
+      const family = taskMap.get('fourier-14p-audit');
+      if (family) append(section('The 14p family', taskList([family])));
+    }
     if (objective.id === 'marcus-de-oliveira') append(section('The diagram', [
       note('Each black point is an eigenvalue pairing. The red point is the determinant, ⅔ + ²⁄₉ i. This example has dimension three.'),
       external('Read the checked calculation ↗', `${repoUrl}/blob/main/formal/README.md`)
@@ -169,6 +184,8 @@ export function renderTreeInspector({ tree, selection, onSelect = () => {}, stat
       const branch = branches.find((item) => item.tasks.some((itemTask) => itemTask.id === task.id));
       if (branch) append(select('branch', branch.id, `↳ ${branch.label || label(branch.id)}`, 'tree-inspector-context'));
       append(fullTask(task));
+      const guide = taskGuide(objective.id, task.id);
+      if (guide) append(external('Open the task brief ↗', repoUrl + '/blob/main/' + guide));
       if (task.description) append(note(short(task.description)));
       const origin = taskMap.get(task.request?.fromTaskId);
       if (origin) append(section('Requested from', taskList([origin])));
@@ -231,5 +248,5 @@ export function renderTreeInspector({ tree, selection, onSelect = () => {}, stat
   }
   return panel;
 }
-import { taskStatus as ledgerTaskStatus } from './tree-model.js';
+import { taskStatus as ledgerTaskStatus, pendingDependencies } from './tree-model.js';
 

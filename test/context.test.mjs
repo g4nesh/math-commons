@@ -19,6 +19,15 @@ const source = { id: 'source', objectiveId: 'o', status: 'verified', reviews: []
 const event = (id, kind, taskId, extra = {}) => ({ id, kind, taskId, objectiveId: 'o', summary: id, detail: 'full evidence', ...extra });
 const state = { revision: 10, objectives: [objective], agents: [agent], tasks: [task, source], events: [] };
 
+test('owner-aware context rows reflect independent replay eligibility', () => {
+  const config = { replaySeedOwners: { t: ['Alice'] } };
+  assert.equal(liveContext(state, { task: 't' }, now, config).claimable, true);
+  const view = liveContext(state, { task: 't', agent: 'a' }, now, config);
+  assert.deepEqual(view.replaySeedOwners, ['Alice']);
+  assert.equal(view.claimable, false);
+  assert.equal(liveContext(state, { objective: 'o', agent: 'a' }, now, config).claimableTotal, 0);
+});
+
 test('the objective card pages tasks, flags abridged contracts and retrieves the exact objective alone', () => {
   const tasks = Array.from({length: 19}, (_, i) => ({...source, id: 't' + i}));
   const s = {...state, tasks};
