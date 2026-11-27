@@ -1,0 +1,114 @@
+====================================================================================================
+Replay of T_47 part A, document 1: root_moc4_T46_whole_assembly_20261023.pdf  (T_47 = {1,3,5,6,7,8})
+====================================================================================================
+[INFO] python 3.9.6, sympy 1.14.0, python-flint 0.6.0, numpy 2.0.2, scipy 1.13.1 (NUMERIC parts only)
+
+--- Provenance   [t = 1 s]
+[PASS] [EXACT] sha256 of root_moc4_T46_whole_assembly_20261023.pdf is the one of the file that was read  ::  90f2b739c757eda6...
+[PASS] [EXACT] sha256 of root_moc4_T46_full_radial_20261022.json is the one of the file that was read  ::  4140ecfc03dfe684...
+[PASS] [EXACT] sha256 of final_referee_T46_closed_budget_faces_20261023.json is the one of the file that was read  ::  6abfc3a4f3e7b746...
+[PASS] [EXACT] sha256 of independent_moc4_T46_preclosure_allowlist_20261023.json is the one of the file that was read  ::  aff435ac310b2c24...
+[PASS] [EXACT] sha256 of final_referee_T46_budget_PSD8_20261022.json is the one of the file that was read  ::  7d9f740d5707447e...
+[PASS] [EXACT] sha256 of final_referee_T46_cubic_reduction_20261022.json is the one of the file that was read  ::  649a96d9e9826f2e...
+[PASS] [EXACT] MOC4_SUPP is set and the six files are the ones that were read
+
+--- Foundations rebuilt from the paper's definitions   [t = 1 s]
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14; P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of the cubic C of (A.2))
+[PASS] [EXACT] 82 vectors f_j of Appendix D: all in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps of the 24 permutation indices; G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+[PASS] [EXACT] for all 1152 g and 3 random Gaussian-rational spectra: the products of the relabelled spectra g_spectra(g, a, b) are the g-image of the products of (a, b)  (G preserves X and kappa)
+[PASS] [EXACT] for all 1152 g, 3 random rational O in SO(4) and random integer value vectors c: Phi_{g.c}(O'') = Phi_c(O) with O'' = transfer_to_SO4(g, O) (a row/column permutation of O or O^t, one column negated if needed)
+[PASS] [EXACT] supplement data (read as JSON): its stored 24 x 14 matrix equals P, its stored cubic equals the paper's C of (A.2) with the same sign, and its 82 facet value vectors equal mine in the same order
+[PASS] [EXACT] audit library moc4lib (imported only for this comparison): PERMS, P, kappa, the 82 value vectors, the minor flags, the coordinates of all f_j, the cubic C and the 1152 group maps agree with mine
+[PASS] [EXACT] audit library: CONTACT_SETS and generators agree for [1, 7, 29, 36, 39, 42, 47, 48, 65, 67, 77]
+
+--- Contact set and numbering   [t = 7 s]
+[PASS] [EXACT] the document's set [1, 3, 5, 6, 7, 8] (its label 'T46') equals the paper's T_47 of Appendix E as a set of lexicographic permutation indices (group element: identity)
+[PASS] [EXACT] orbit representative under G: (0, 1, 2, 7, 8, 18); T_65 (representative (0, 1, 2, 8, 9, 16)) lies in a different orbit
+[PASS] [EXACT] the six cited contact cases and T_65 lie in orbits different from the orbit of T_47 and from each other
+
+--- Generators of the contact cone   [t = 7 s]
+[PASS] [EXACT] F_T = {j : f_j = 0 on T} equals the document's list  ::  computed [0, 1, 2, 3, 4, 5, 6, 27, 28, 59]
+[PASS] [EXACT] non-minor generators equal the document's list  ::  computed [28] = ['h_{3421,-}']
+[PASS] [EXACT] direct enumeration of the extreme rays of N_T = {Pc >= 0, (Pc)_T = 0} (dimension 8, no use of the 82-facet list) gives exactly the 10 vectors f_j, j in F_T  ::  10 rays, 1.1 s
+[INFO] generators: f0 = n_{1,4}, f1 = n_{12,34}, f2 = n_{13,34}, f3 = n_{14,34}, f4 = n_{1,3}, f5 = n_{12,24}, f6 = n_{4,1}, f27 = n_{3,2}, f28 = h_{3421,-}, f59 = n_{14,14}
+[PASS] [EXACT] Laplace and Jacobi identities for the 9 minor generators [0, 1, 2, 3, 4, 5, 6, 27, 59]: Phi_{f_j}(O) = (minor of O)^2 >= 0 on SO(4)
+
+--- The two linear identities (2) and the absorption into the normal form (3)  [p. 1]   [t = 8 s]
+[PASS] [EXACT] f28 + f0 = f1 + f2 + f5 + f27 and f28 + f3 = f4 + f5 + f27 (all 24 values; P is injective, so these are identities in V_R)
+[PASS] [EXACT] the eight vectors f27, f1, f59, f5, f2, f28, f6, f4 are linearly independent and N_T spans a space of dimension 8: every vector of the span L of N_T has unique coordinates (q,p,j,c,e,d,b,a)
+[PASS] [EXACT] values of the eight vectors at the permutations (18,22,0,20,19,10,9,14): identity matrix except that the value at 10 is c + d; so q, p, j, c, e, b, a are the gaps at 18, 22, 0, 20, 19, 9, 14 (hence >= 0 on N_T) and d = gap(10) - gap(20)
+[PASS] [EXACT] absorption identity, for all real l_j, u, v: sum l_j f_j = the same sum with f0, f3, f28 reduced by u, v, u+v and q, c raised by u+v, p, e by u, a by v (24 linear identities; the whole cost is rewritten, nothing is discarded)
+[PASS] [EXACT] dichotomy on 4000 random nonnegative integer combinations of the ten rays (seed 4701): the coordinate d equals l28 - l0 - l3; if it is > 0 the eight coordinates are the nonnegative numbers of the absorption rule (653 samples); if it is <= 0 the cost equals an explicit nonnegative combination of the nine minor rays (3347 samples)
+[INFO] PROOF-READ: N_T is a pointed cone, hence the hull of its extreme rays, which are the ten vectors (direct enumeration above).  So every c in N_T is sum l_j f_j with l_j >= 0; with u <= l0, v <= l3, u + v = min(l28, l0 + l3) the identity gives either a combination of minor vectors (if l0 + l3 >= l28) or the form (3) with d = l28 - l0 - l3 > 0 and all coefficients >= 0.  Equivalently: for c in N_T, d := gap(10) - gap(20); if d > 0, c has the form (3).
+
+--- Closed faces where a coefficient vanishes (4)  [pp. 1-2]   [t = 10 s]
+[PASS] [EXACT] face q = 0 (all other coefficients arbitrary >= 0, a included): the cost vanishes on a seven-element set that contains a G-image of the paper's T_29 (document label T28); so c(x) lies in g.N_{T_29} and Case T_29 applies to g^-1.x  ::  zero set of the face = T + {18}; g = (rho=(0, 1, 3, 2), rho'=(0, 1, 2, 3), transpose=1) maps T_29 onto [1, 3, 5, 6, 7, 18]; 1 group elements; g^-1 maps the seven remaining generators to [1, 45, 3, 5, 34, 0, 6], all generators of T_29
+[PASS] [EXACT]    comparison with the supplement's data for this face: its stored index map is the map sigma -> row o sigma^(+-1) o column, it is one of the group elements found here, its family label T28 names the set [0, 4, 5, 6, 7, 8] = the paper's T_29, and its zero set equals mine
+[PASS] [EXACT] face p = 0 (all other coefficients arbitrary >= 0, a included): the cost vanishes on a seven-element set that contains a G-image of the paper's T_36 (document label T35); so c(x) lies in g.N_{T_36} and Case T_36 applies to g^-1.x  ::  zero set of the face = T + {22}; g = (rho=(0, 1, 3, 2), rho'=(0, 3, 1, 2), transpose=0) maps T_36 onto [1, 3, 5, 6, 8, 22]; 2 group elements; g^-1 maps the seven remaining generators to [67, 53, 9, 1, 68, 7, 0], all generators of T_36
+[PASS] [EXACT]    comparison with the supplement's data for this face: its stored index map is the map sigma -> row o sigma^(+-1) o column, it is one of the group elements found here, its family label T35 names the set [2, 3, 4, 6, 11, 12] = the paper's T_36, and its zero set equals mine
+[PASS] [EXACT] face j = 0 (all other coefficients arbitrary >= 0, a included): the cost vanishes on a seven-element set that contains a G-image of the paper's T_1 (document label T0); so c(x) lies in g.N_{T_1} and Case T_1 applies to g^-1.x  ::  zero set of the face = T + {0}; g = (rho=(0, 1, 2, 3), rho'=(0, 1, 3, 2), transpose=1) maps T_1 onto [0, 1, 3, 5, 6, 7]; 2 group elements; g^-1 maps the seven remaining generators to [16, 1, 2, 8, 18, 4, 7], all generators of T_1
+[PASS] [EXACT]    comparison with the supplement's data for this face: its stored index map is the map sigma -> row o sigma^(+-1) o column, it is one of the group elements found here, its family label T0 names the set [0, 1, 2, 3, 6, 7] = the paper's T_1, and its zero set equals mine
+[PASS] [EXACT] face c = 0 (all other coefficients arbitrary >= 0, a included): the cost vanishes on a seven-element set that contains a G-image of the paper's T_39 (document label T38); so c(x) lies in g.N_{T_39} and Case T_39 applies to g^-1.x  ::  zero set of the face = T + {20}; g = (rho=(2, 1, 3, 0), rho'=(2, 3, 1, 0), transpose=0) maps T_39 onto [1, 3, 5, 6, 7, 20]; 1 group elements; g^-1 maps the seven remaining generators to [67, 5, 2, 12, 40, 0, 7], all generators of T_39
+[PASS] [EXACT]    comparison with the supplement's data for this face: its stored index map is the map sigma -> row o sigma^(+-1) o column, it is one of the group elements found here, its family label T38 names the set [2, 3, 5, 7, 9, 12] = the paper's T_39, and its zero set equals mine
+[PASS] [EXACT] face e = 0 (all other coefficients arbitrary >= 0, a included): the cost vanishes on a seven-element set that contains a G-image of the paper's T_42 (document label T41); so c(x) lies in g.N_{T_42} and Case T_42 applies to g^-1.x  ::  zero set of the face = T + {19}; g = (rho=(2, 3, 1, 0), rho'=(3, 2, 0, 1), transpose=0) maps T_42 onto [1, 3, 5, 6, 7, 19]; 2 group elements; g^-1 maps the seven remaining generators to [4, 1, 53, 15, 17, 16, 6], all generators of T_42
+[PASS] [EXACT]    comparison with the supplement's data for this face: its stored index map is the map sigma -> row o sigma^(+-1) o column, it is one of the group elements found here, its family label T41 names the set [1, 2, 3, 6, 7, 8] = the paper's T_42, and its zero set equals mine
+[PASS] [EXACT] face b = 0 (all other coefficients arbitrary >= 0, a included): the cost vanishes on a seven-element set that contains a G-image of the paper's T_7 (document label T6); so c(x) lies in g.N_{T_7} and Case T_7 applies to g^-1.x  ::  zero set of the face = T + {9}; g = (rho=(3, 2, 0, 1), rho'=(3, 1, 0, 2), transpose=0) maps T_7 onto [1, 3, 5, 6, 7, 9]; 2 group elements; g^-1 maps the seven remaining generators to [0, 2, 5, 11, 23, 26, 21], all generators of T_7
+[PASS] [EXACT]    comparison with the supplement's data for this face: its stored index map is the map sigma -> row o sigma^(+-1) o column, it is one of the group elements found here, its family label T6 names the set [0, 1, 2, 4, 7, 8] = the paper's T_7, and its zero set equals mine
+[INFO] the six cited cases: T_29, T_36, T_1, T_39, T_42, T_7 (documents' labels T28, T35, T0, T38, T41, T6: the label is the paper's number minus one).  All six are in stage 1 of the paper's Table 6; T_47 is in stage 3.  T_1, T_7, T_29, T_36 were replayed by this owner earlier; T_39 and T_42 belong to the present batch.
+[PASS] [EXACT] face a = 0: the cost vanishes exactly on T + {14}; N_{T+{14}} has dimension 7 and its extreme rays (direct enumeration) are f0, f1, f2, f5, f6, f27, f28, f59; with the first identity (2) every element of it is a combination of minor vectors or has the form (3) with a = 0
+[PASS] [EXACT] the seven six-element subsets of T + {14} lie in the orbits of T_47 (two of them), T_48 (two), T_67 (two) and T_77 (one); none lies in the orbit of one of the six cited cases.  T_48, T_67, T_77 are in stages 8, 8, 9 of the paper's Table 6, after T_47 (stage 3): the face a = 0 cannot be reduced to an earlier six-contact case in this way; it is the seven-contact statement of part C  ::  [([1, 3, 5, 6, 7, 8], 47), ([1, 3, 5, 6, 7, 14], 48), ([1, 3, 5, 6, 8, 14], 77), ([1, 3, 5, 7, 8, 14], 67), ([1, 3, 6, 7, 8, 14], 47), ([1, 5, 6, 7, 8, 14], 48), ([3, 5, 6, 7, 8, 14], 67)]
+[INFO] CITED-INTERNAL (part C, final_referee_T46_a0_uniform): if x in X and c(x) = q f27 + p f1 + j f59 + c f5 + e f2 + d f28 + b f6 with d > 0 and q, p, j, c, e, b > 0 (a = 0), then Phi_{c(x)} >= 0 on SO(4).  (The document cites it for the whole cone N_{T+{14}}; the assembly needs only the positive part, the other zero faces being covered above.)
+[INFO] d = 0: the cost is a nonnegative combination of the minor vectors f27, f1, f59, f5, f2, f6, f4 (Lemma 6.2).
+
+--- Radial necessity (PROOF.md 7.3): the real part of a point of X   [t = 10 s]
+[PASS] [EXACT] grad C(u + t v) = grad C(u) + t Hess C(u) v + t^2 grad C(v) identically (t = i: real part grad C(u) - grad C(v), imaginary part Hess C(u) v)
+[PASS] [EXACT] Euler u.grad C(u) = 3 C(u) and polarisation u.grad C(v) = (1/2) v^t Hess C(u) v, identically
+[INFO] hence for x = u + iv with grad C(x) = 0: Hess C(u) v = 0 and 3 C(u) = u.grad C(v) = (1/2) v^t Hess C(u) v = 0; if v = 0 then Hess C(u) u = 2 grad C(u) = 0; so det Hess C(u) = 0 in every case (u = 0 included)
+[PASS] [EXACT] spot check on 10 random Gaussian-rational points x = alpha Psi(a,b) (seed 20261125): (P x)_sigma = alpha z_sigma, C(Re x) = 0 and Hess C(Re x) Im x = 0
+
+--- The cubic on the lift, C0 and Q  [p. 2]   [t = 10 s]
+[PASS] [EXACT] C(g + h kappa) = C0 + h Q (degree 1 in h) with C0 = -(q+d) L - j M, M = (c+d)(a+d+e), L = M + b(a+d), Q = j p - j(c+e+d) - (c+d)(e+d) = (m0 m6 - m1 m5)(g); at d = 1 these are the document's formulas
+[PASS] [EXACT] every coefficient of C0 is negative and C0 contains -d^3 (22 terms): C0 <= -d^3 < 0 on the closed orthant with d > 0; so C0 + h Q = 0 forces Q != 0 and h = -C0/Q
+
+--- The radial identity and the degree-nine polynomial G9  [p. 2]   [t = 10 s]
+[PASS] [EXACT] det Hess C(g + h kappa) as a polynomial in nine variables: 17182 terms (Laplace expansion in flint polynomials, 13202 minors); equal to the integer determinant (fmpz_mat) at 6 random integer points (seed 4702); degree 3 in h  ::  2.3 s
+[PASS] [EXACT] N := Q^4 det Hess C(g - (C0/Q) kappa) has 236435 terms and N = -4 Q^2 G^2 as a polynomial identity (exact division, G = gcd(S, dS/dj) with G^2 = S verified, and the product multiplied out again)
+[PASS] [EXACT] G has 1556 terms (the document's count), is homogeneous of degree 9, has degree 2 in j, and is primitive (integer content 1); at d = 1 it is the document's G9 (dehomogenisation keeps the number of terms)
+[PASS] [EXACT] supplement data root_moc4_T46_full_radial (JSON, comparison only): same coefficient names, its C and Q equal C0 and Q, its degree-nine factor equals G with the same sign
+[INFO] PROOF-READ: if x in X and c(x) = g with d > 0, then u = Re x = g + h kappa (h = Re F_pi*(x)), C(u) = 0 and det Hess C(u) = 0 (7.3); so Q(g) != 0, h = -C0/Q, N(g) = 0 and therefore G(g) = 0.  No converse is used.
+
+--- The second capacity (5): a b (e - 1) >= a + b + e + 1  [p. 2]   [t = 14 s]
+[PASS] [EXACT] four-coefficient: (a: f4, b: f6; c = e: f2; d: f28): the roles (4, 6, 2, 28) lie in the G-orbit of the representative (0, 6, 10, 54)  ::  g = (rho=(0, 3, 1, 2), rho'=(0, 1, 2, 3), transpose=0); 2 group elements; source roles (0, 6, 10, 54)
+[PASS] [EXACT] the coefficient condition a b (c - d) >= d^2 (a + b + c + d) of PROOF.md 7.6 with c = e, d = 1 is (5); (5) with a, b, e >= 0 forces e > 1, a, b > 0 and ab > 1: (5) <=> (e-1)(ab-1) >= a + b + 2
+[INFO] CITED (PROOF.md 7.6, four-coefficient inequality): a f0 + b f6 + c f10 + d f54 has Phi >= 0 on SO(4) if a,b,c,d >= 0 and ab(c-d) >= d^2(a+b+c+d), on its whole G-orbit.  The orbit member (f4, f6; f2; f28) gives (5).
+[PASS] [EXACT] certificate data (JSON): source order (27,1,59,5,2,28,6,4); the four signed coordinate maps permute p and q separately; quaternion model M(p,q): M^t M = |p|^2|q|^2 I and det M = (|p|^2|q|^2)^2
+[PASS] [EXACT] own linear algebra on the identity (*) of GramFace (413 coefficient equations, rank 18): the solutions (Gram matrix, weights) are: 10 independent linear relations on the Gram matrix, and weights (G00, G11, G22, G33, G44, G55 - G33, G66, G77) modulo the relations, i.e. Gram diagonal (q,p,j,c,e,c+d,b,a); the ten stored relations span the same space
+[PASS] [EXACT] direct certificate of (5) at d = 1 (no PDF contains it; the supplement has only a program): vectors (E, D, B, A) with |D|^2 = 1, |B|^2 = b, |A|^2 = a, B.A = 1, E.A = -1, E.B = 1, E.D = -1, |E|^2 = 1 + (a+b+2)/(ab-1) + s: the Gram matrix satisfies the ten relations; its weights are ['0', '0', '0', '0', 's + 1 + (a + b + 2)/(a*b - 1)', '1', 'b', 'a']; elimination in the order [5, 6, 7, 4] has pivots ['1', 'b', '(a*b - 1)/b', 's'] and zero residual; identity (*) holds directly at the rational instance {'a': '5/2', 'b': '2', 's': '1/7'}  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] e >= 1 + (a+b+2)/(ab-1) with ab > 1 is exactly (5)
+[INFO] PROOF-READ: for ab > 1, s >= 0 all pivots are >= 0, so the Gram matrix is PSD and (*) gives Phi_{a f4 + b f6 + e f2 + f28} >= 0 on SO(4) (surjectivity of (p,q) -> M(p,q) onto SO(4): CITED, classical); the other minor vectors are added with Phi >= 0.  This re-proves (5) on this face without the citation.
+
+--- Exhaustiveness of the three sectors (6)  [p. 2]   [t = 14 s]
+[PASS] [EXACT] on the grid of 5184 rational pairs (q, b) (boundaries qb = 1, q = b, q = 1, b = 1 included) every pair lies in exactly one of: [q,b <= 1 or q = b], [qb <= 1, max > 1], [qb > 1, q != b]  ::  counts per sector [((1,), 556), ((2,), 644), ((3,), 3984)]
+[INFO] PROOF-READ: for q, b > 0: if qb <= 1 then not both exceed 1, so either both are <= 1 (sector 1) or exactly one exceeds 1 (sector 2); if qb > 1 then q = b (sector 1) or q != b (sector 3).  The three sets are disjoint.
+[INFO] CITED-INTERNAL (part B), needed for each sector S: for all positive q, p, j, c, e, b, a with d = 1 and (q, b) in S: if x in X and c(x) = g, then Phi_g >= 0 on SO(4)  [in the notes: a sufficient capacity holds for g, or G9(g) != 0].
+
+--- NUMERIC falsification attempts (floating point; evidence only)   [t = 15 s]
+[PASS] [NUMERIC] 60 generic points x = alpha Psi(a,b) whose real parts satisfy the five contact equations (seed 47005; the other gaps have either sign): the gap vector is in the span of the eight generators (fit 1.3e-13), |C0 + h Q| <= 7.8e-13 (relative), |G| <= 4.4e-14 (relative to the sum of |monomials|), smallest relative |Q| = 3.6e-04
+[PASS] [NUMERIC] unsteered search for points with all gaps >= 0, zero on T, sum of gaps 1 (seed 47100, 250 starts): 220 points found; the coordinate d ranges over [-0.182, 9.36e-11]: none has d > 1e-6 (they are combinations of minor vectors)  ::  8 s
+[INFO]    d = 0.00202, contacts 6, label separation 0.458, |G| rel 8.9e-16, |C0+hQ| rel 1.5e-15, (5) margin 1.11e+04, sector [3], (q,p,j,c,e,b,a)/d = 5.28 12.9 6.86 0.758 35 25.2 13
+[INFO]    d = 0.002, contacts 6, label separation 0.425, |G| rel 4.3e-16, |C0+hQ| rel 1.5e-15, (5) margin 1.09e+04, sector [3], (q,p,j,c,e,b,a)/d = 6.83 11.8 6.99 0.578 36.3 24.8 12.5
+[INFO]    d = 0.002, contacts 6, label separation 0.399, |G| rel 6.1e-16, |C0+hQ| rel 2.1e-15, (5) margin 1.04e+04, sector [3], (q,p,j,c,e,b,a)/d = 4.71 6.82 9.54 7.5e-07 28.6 35.9 10.6
+[INFO]    d = 0.01, contacts 8, label separation 0.326, |G| rel 2.6e-15, |C0+hQ| rel 1.9e-15, (5) margin 49.3, sector [2], (q,p,j,c,e,b,a)/d = -9.09e-14 1.23 2.4 8.01e-14 10.3 2.28 3.12
+[INFO]    d = 0.01, contacts 6, label separation 0.261, |G| rel 2.5e-15, |C0+hQ| rel 3.0e-15, (5) margin 51.8, sector [2], (q,p,j,c,e,b,a)/d = 0.00888 1.34 0.609 0.0444 11.8 3.7 1.75
+[INFO]    d = 0.01, contacts 8, label separation 0.208, |G| rel 1.5e-12, |C0+hQ| rel 7.7e-12, (5) margin 47.3, sector [2], (q,p,j,c,e,b,a)/d = -1.02e-09 1.65 0.983 -9.26e-11 11.5 1.79 3.47
+[INFO]    d = 0.002, contacts 6, label separation 0.189, |G| rel 1.6e-15, |C0+hQ| rel 3.1e-15, (5) margin 8.82e+03, sector [2], (q,p,j,c,e,b,a)/d = 0.00444 23.9 6.82 0.00115 34.9 28.3 9.26
+[INFO]    d = 0.002, contacts 6, label separation 0.076, |G| rel 1.8e-15, |C0+hQ| rel 2.8e-15, (5) margin 1.2e+04, sector [2], (q,p,j,c,e,b,a)/d = 1.4e-06 19.2 1.79 5.86 44.5 19.4 14.3
+[INFO]    d = 0.002, contacts 6, label separation 0.070, |G| rel 4.8e-10, |C0+hQ| rel 4.7e-10, (5) margin 1.18e+04, sector [2], (q,p,j,c,e,b,a)/d = 0.00798 14.4 1.14 7.55 48.3 22.6 11.2
+[INFO]    d = 0.002, contacts 6, label separation 0.063, |G| rel 1.1e-16, |C0+hQ| rel 1.5e-15, (5) margin 1.22e+04, sector [3], (q,p,j,c,e,b,a)/d = 0.704 14.5 8.7 0.0257 18.9 24.5 28.1
+[INFO]    d = 0.002, contacts 7, label separation 0.049, |G| rel 6.2e-15, |C0+hQ| rel 7.2e-15, (5) margin 2.57e+03, sector [2], (q,p,j,c,e,b,a)/d = -5.1e-14 16.6 0.944 0.487 72.2 1.95 19.2
+[PASS] [NUMERIC] search steered to d >= 0.002 and d >= 0.01 (seeds 47200, 47201; 300 starts each): 11 stratum points with d > 0, of which 6 have exactly the six contacts, all seven other coefficients > 1e-3 d and separated labels; on all 11 points |G| <= 4.8e-10 and |C0 + hQ| <= 4.7e-10 (relative), and the capacity (5) holds at every one of them (so the case is not vacuous, and on the points found the conclusion comes through (5))  ::  68 s
+[PASS] [NUMERIC] capacity (5) at equality for 10 random (a, b) with ab > 1 (seed 47300): smallest Phi found over SO(4) by multistart BFGS is 1.988e-17 (>= -1e-9); control with e lowered by 30% of (e - 1): -1.11e-05 (< 0: the search detects a violation below the threshold)
+
+FINAL: PASS  (62 checks, 86.9 s)

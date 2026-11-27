@@ -1,0 +1,157 @@
+====================================================================================================
+Case T_46 = {3,4,5,9,10,12} (document 'T45'): independent exact replay
+====================================================================================================
+[INFO] python 3.9.6, sympy 1.14.0, python-flint 0.6.0 (integer polynomials of the chart tables and of the Gram certificates; integer determinants at test points), numpy 2.0.2 (int64 in det_linear_forms; floats in NUMERIC checks), scipy 1.13.1 (NUMERIC only)
+
+--- A. Provenance and foundations
+[PASS] [EXACT] file under MOC4_SUPP is the one that was read (sha256): independent_moc4_T45_uniform_20261022.pdf  ::  a1d4f501dc228423d268431fe06eb6086b63b25d44fef7136212016dfc8292f5
+[PASS] [EXACT] file under MOC4_SUPP is the one that was read (sha256): root_moc4_T45_full_radial_20261022.json  ::  2d75da111d7ff0771cc1bdd5c73ade1f8490e6185d5362b2a8c6fd13e838a90d
+[PASS] [EXACT] file under MOC4_SUPP is the one that was read (sha256): root_moc4_T45_budget_PSD8_20261022.json  ::  4f8f3a5100da49159cd338338438b634d492768b410cf1034f2d59b6bc23e36a
+[PASS] [EXACT] file under MOC4_SUPP is the one that was read (sha256): root_moc4_T45_cubic_reduction_20261022.json  ::  12189b86a0f359e313a6efc990b960909a8c6818875897492d3dc379b4f67dbd
+
+--- Foundations rebuilt from the paper's definitions
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14
+[PASS] [EXACT] P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] kappa = Psi(v) at v_1..4 = (0,1), v_5..8 = (1,1), so kappa is in X
+[PASS] [EXACT] paper's pivot rows 0,1,2,3,4,6,7,8,9,10,12,13,16,18 of P are independent
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of C)
+[PASS] [EXACT] 82 vectors f_j: all lie in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps on the 24 permutation indices
+[PASS] [EXACT] G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+
+--- Radial necessity: the real part of a point of X lies on the cubic
+[PASS] [EXACT] grad C(u + t v) = grad C(u) + t Hess C(u) v + t^2 grad C(v) identically (t = i: real part grad C(u) - grad C(v), imaginary part Hess C(u) v)
+[PASS] [EXACT] Euler: u . grad C(u) = 3 C(u) identically
+[PASS] [EXACT] polarization: u . grad C(v) = (1/2) v^t Hess C(u) v identically
+[INFO] hence grad C(u+iv) = 0 gives grad C(u) = grad C(v) and Hess C(u) v = 0, and 3 C(u) = u.grad C(u) = u.grad C(v) = (1/2) v^t Hess C(u) v = 0
+[PASS] [EXACT] spot check on 12 random Gaussian-rational points x = alpha Psi(a,b) (seed 20261125): (P x)_sigma = alpha z_sigma and C(Re x) = 0
+[PASS] [EXACT] same points: Hess C(Re x) Im x = 0
+[PASS] [EXACT] supplement data (JSON, comparison only): its 24 x 14 matrix equals P, its cubic equals the paper's C with the same sign, and its 82 facet value vectors equal F_VALUES in the same order (the documents' f_j are the paper's f_j)
+
+--- Comparison with the audit library moc4lib (not used to build any object)
+[PASS] [EXACT] PERMS, P, kappa, the 82 value vectors, the minor flags, the coordinates of all f_j and the cubic C agree with moc4lib
+[PASS] [EXACT] the group has the same 1152 index maps as moc4lib; CONTACT_SETS and generators agree for the cases [46, 44, 7, 15, 34]
+
+--- B. Contact set (document p. 1)
+[PASS] [EXACT] the document's set {3,4,5,9,10,12} is the paper's T_46 (Appendix E) as a set of lexicographic indices: group element = identity; the document's number is the paper's minus one
+[PASS] [EXACT] orbit representative of T_46 under G is (0,1,2,7,8,17); T_44, T_34, T_7, T_15 lie in other orbits  ::  T_46 -> (0, 1, 2, 7, 8, 17); stabiliser of T_46 in G has order 1
+
+--- C. The contact cone and the coordinates (1) (document Section 1)
+[PASS] [EXACT] the f_j of Appendix D vanishing on T are exactly f0, f1, f2, f12, f59, f67, f70, f72  ::  computed [0, 1, 2, 12, 59, 67, 70, 72]
+[PASS] [EXACT] f70 = h_{4231,+} is the only non-minor generator; the seven others are minor vectors  ::  f0 = n_{1,4}, f1 = n_{12,34}, f2 = n_{13,34}, f12 = n_{14,24}, f59 = n_{14,14}, f67 = n_{2,2}, f70 = h_{4231,+}, f72 = n_{12,12}
+[PASS] [EXACT] the six contact equations have rank 6 on V_R; their solution space has dimension 8
+[PASS] [EXACT] the values of the eight generators at the permutation indices (18,16,13,8,2,14,11,7) form the identity matrix: the eight generators are a basis of the solution space and (p,r,a,b,c,q,d,s) = (g18, g16, g13, g8, g2, g14, g11, g7), all gaps
+[PASS] [EXACT] direct enumeration of the extreme rays of N_T = {Pc >= 0, (Pc)_T = 0} (dimension 8; no use of the 82-facet list) gives exactly these eight vectors: N_T is the simplicial cone on them  ::  8 rays
+[PASS] [EXACT] Laplace and Jacobi identities for the 7 minor generators [0, 1, 2, 12, 59, 67, 72]: Phi_{f_j}(O) = (minor of O)^2 >= 0 on SO(4)
+[INFO] PROOF-READ: so c(x) = p f0 + r f1 + a f2 + b f12 + c f59 + q f67 + d f70 + s f72 with all eight coefficients >= 0; if d = 0 it is a nonnegative combination of minor vectors and Phi >= 0.
+
+--- D. The capacities (2)-(6) (document Section 1, p. 2)
+[PASS] [EXACT] SOC: (f2, f59, f70) is a member of the orbit of the representative (f1, f9, f22) with the same roles  ::  g = (rho=(0, 1, 2, 3), rho'=(1, 3, 0, 2), transpose=1) maps roles (1, 9, 22) to (2, 59, 70); 8 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] chain: (f2, f0, f12, f70) is a member of the orbit of the representative (f2, f0, f12, f70) with the same roles  ::  g = (rho=(0, 1, 2, 3), rho'=(0, 1, 2, 3), transpose=0) maps roles (2, 0, 12, 70) to (2, 0, 12, 70); 2 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] chain: (f59, f0, f1, f70) is a member of the orbit of the representative (f2, f0, f12, f70) with the same roles  ::  g = (rho=(1, 2, 0, 3), rho'=(0, 3, 1, 2), transpose=0) maps roles (2, 0, 12, 70) to (59, 0, 1, 70); 2 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] chain: (f59, f67, f72, f70) is a member of the orbit of the representative (f2, f0, f12, f70) with the same roles  ::  g = (rho=(3, 0, 2, 1), rho'=(3, 0, 2, 1), transpose=0) maps roles (2, 0, 12, 70) to (59, 67, 72, 70); 2 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] old-H: (f1, f59, f70) is a member of the orbit of the representative (f12, f2, f70) with the same roles  ::  g = (rho=(1, 2, 0, 3), rho'=(0, 3, 1, 2), transpose=0) maps roles (12, 2, 70) to (1, 59, 70); 4 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] old-H: (f72, f59, f70) is a member of the orbit of the representative (f12, f2, f70) with the same roles  ::  g = (rho=(0, 3, 1, 2), rho'=(1, 2, 0, 3), transpose=0) maps roles (12, 2, 70) to (72, 59, 70); 4 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] the document's two stated old-H actions (rows (0,3,1,2), (1,2,0,3); columns (3,1,0,2), (0,2,3,1); f_image(sigma) = f_base(col o sigma o row)) send ONE base triple (m_A, m_B, H) to (f1, f59, f70) and to (f72, f59, f70), and that base triple lies in the orbit of the representative (f12, f2; f70) of PROOF.md 7.6 with the same roles  ::  base triple (m_A, m_B, H) = (f53, f1, f17)
+[PASS] [EXACT] (6) from two old-H atoms: split d = d1 + d2 in the ratio r : s; r f1 + c1 f59 + d1 f70 and s f72 + c2 f59 + d2 f70 satisfy t(c - d) >= d^2 with equality for c1 = d1 + d1^2/r, c2 = d2 + d2^2/s, and c1 + c2 = d + d^2/(r+s); for s = 0 the first atom alone gives c >= d + d^2/r
+[PASS] [EXACT] certificate data (JSON): source order (0,1,2,12,59,67,70,72); the four signed coordinate maps permute p and q separately (so they preserve |p|^2, |q|^2); quaternion model M(p,q) = matrix of x -> p x q: M^t M = |p|^2 |q|^2 I and det M = (|p|^2 |q|^2)^2 as polynomial identities
+[PASS] [EXACT] own linear algebra on (*) (see GramFace; 419 coefficient equations, rank 18): the pairs (Gram matrix, weights) with (|p|^2+|q|^2) Sigma(Gram) = 4 Phi_w(M(p,q)) mod (|p|^2 - |q|^2) are exactly: ten independent linear relations on the Gram matrix, and weights = its diagonal (G00,...,G77) in the order (p,r,a,b,c,q,d,s); the ten relations stored in the supplement span the same space
+[INFO] relations derived here (Gik = Gram entries, vectors in the order (f0,f1,f2,f12,f59,f67,f70,f72)):
+[INFO]    +1*G01 -1*G04 +1*G06 -1*G14 -1*G46 = 0
+[INFO]    +1*G02 -1*G04 +1*G06 -1*G24 +1*G26 -1*G46 +1*G47 +1*G66 = 0
+[INFO]    +1*G03 -1*G04 +1*G23 -1*G24 -1*G37 -1*G46 +1*G47 +1*G66 +1*G67 = 0
+[INFO]    +1*G05 +1*G06 -1*G57 -1*G67 = 0
+[INFO]    +1*G13 -1*G14 -1*G23 +1*G24 -1*G47 -1*G66 = 0
+[INFO]    +1*G16 = 0
+[INFO]    +1*G25 +1*G26 -1*G57 -1*G67 = 0
+[INFO]    +1*G36 +1*G37 -1*G67 = 0
+[INFO]    +1*G45 +1*G46 +1*G47 = 0
+[INFO]    +1*G56 +1*G57 +1*G67 = 0
+[PASS] [EXACT] (2) SOC: Gram on (a, c, d) with G24 = d, c = d^2/a + t: the Gram matrix satisfies the re-derived relations; its weights are ['0', '0', 'a', '0', 't + d**2/a', '0', 'd', '0']; elimination in the order [2, 4, 6] has pivots ['a', 't', 'd'] and zero residual; identity (*) holds directly at the rational instance {'a': '3/2', 'd': '2', 't': '1/3'}  [PSD iff ac >= d^2]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] (3) PB chain: Gram on (p, a, b, d) with G02 = G23 = -d, a = d^2/p + d^2/b + t: the Gram matrix satisfies the re-derived relations; its weights are ['p', '0', 'd**2/p + t + d**2/b', 'b', '0', '0', 'd', '0']; elimination in the order [0, 3, 2, 6] has pivots ['p', 'b', 't', 'd'] and zero residual; identity (*) holds directly at the rational instance {'p': '3/2', 'b': '1/2', 'd': '2', 't': '1/3'}  [PSD iff a >= d^2/p + d^2/b]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] (4) PR chain: Gram on (p, r, c, d) with G04 = d, G14 = -d, c = d^2/p + d^2/r + t: the Gram matrix satisfies the re-derived relations; its weights are ['p', 'r', '0', '0', 'd**2/r + d**2/p + t', '0', 'd', '0']; elimination in the order [0, 1, 4, 6] has pivots ['p', 'r', 't', 'd'] and zero residual; identity (*) holds directly at the rational instance {'p': '3/2', 'r': '1/2', 'd': '2', 't': '1/3'}  [PSD iff c >= d^2/p + d^2/r]  ::  relations True, weights True, pivots True, direct True
+[PASS] [EXACT] (5) QS chain: Gram on (c, q, d, s) with G45 = d, G47 = -d, c = d^2/q + d^2/s + t: the Gram matrix satisfies the re-derived relations; its weights are ['0', '0', '0', '0', 'd**2/s + d**2/q + t', 'q', 'd', 's']; elimination in the order [5, 7, 4, 6] has pivots ['q', 's', 't', 'd'] and zero residual; identity (*) holds directly at the rational instance {'q': '3/2', 's': '1/2', 'd': '2', 't': '1/3'}  [PSD iff c >= d^2/q + d^2/s]  ::  relations True, weights True, pivots True, direct True
+[INFO] PROOF-READ + CITED (every element of SO(4) is x -> p x q for unit quaternions p, q): on unit quaternions (*) reads Sigma(Gram) = 2 Phi_w(M(p,q)); the pivots are >= 0 for t >= 0 and positive p, r, a, b, q, s, d, so each Gram matrix is positive semidefinite and Phi_w >= 0 on SO(4); the weights are homogeneous in (coefficients, d); adding the remaining minor terms keeps Phi >= 0.  So (2)-(5) hold on this face without citing PROOF.md 7.6.
+[INFO] CITED: old-H (PROOF.md 7.6): t f12 + c f2 + d f70 has Phi >= 0 on SO(4) if t(c - d) >= d^2, on the whole orbit; used for (f1, f59; f70) and (f72, f59; f70).  SOC and chain (PROOF.md 7.6) as stated in replay_T44_common.UNIVERSAL; here also certified by the Gram matrices.
+
+--- E. The three closed zero faces a = 0, c = 0, r = 0 (document p. 2)
+[PASS] [EXACT] a = g13, c = g2, r = g16; the document's three actions (sigma -> row o sigma o col, with sigma^-1 in the transposed case) map the paper's T_34, T_7, T_15 (the document's 'T33', 'T6', 'T14') into T u {13}, T u {2}, T u {16} with the stated images; covariance of Phi under each element (monomial identity for a generic matrix)  ::  a = g13 = 0: g = ((1, 3, 2, 0), (1, 3, 2, 0), 1) maps T_34 = (2, 3, 5, 9, 10, 12) to (3, 5, 9, 10, 12, 13) (2 group elements do); c = g2 = 0: g = ((0, 1, 2, 3), (0, 3, 2, 1), 0) maps T_7 = (0, 1, 2, 4, 7, 8) to (2, 3, 4, 5, 9, 10) (2 group elements do); r = g16 = 0: g = ((3, 2, 0, 1), (3, 0, 1, 2), 0) maps T_15 = (1, 2, 3, 4, 6, 7) to (3, 4, 5, 9, 10, 16) (2 group elements do)
+[INFO] PROOF-READ: if a = 0 then c(x) vanishes on g.T_34, so g^-1.x is a point of X with gap vector in N_{T_34} and Phi_{c(x)}(O) = Phi_{g^-1.c(x)}(O') >= 0 by Case T_34 (PROOF.md 6.6); likewise c = 0 by Case T_7 and r = 0 by Case T_15.  CITED cases: T_34, T_7, T_15.
+
+--- F. Radial necessity in the coordinates (document Section 2, eqs. (7)-(9))
+[PASS] [EXACT] C(g + h kappa) is of degree <= 1 in the height h: C = C0 + h Q
+[PASS] [EXACT] Q = (m0 m6 - m1 m5)(g) (= dC/dm13; it does not involve h)
+[PASS] [EXACT] det Hess C(g + h kappa) as a polynomial in nine variables: 18687 terms (subset Laplace expansion, int64 with l1 bound 2^41 < 2^62); equal to the integer determinant (python-flint fmpz_mat.det) at random integer points (seed 20261125)  ::  4.4 s
+[PASS] [EXACT] det Hess C(g + h kappa) has degree <= 4 in h (rank of Hess C(kappa) is 4)  ::  h-degrees present: [0, 1, 2, 3]
+[PASS] [EXACT] N := Q^4 det Hess C(g - (C0/Q) kappa) = sum_k D_k (-C0)^k Q^(4-k) has 205985 terms and N = -4 Q^2 G^2 with G of 1158 terms, homogeneous of degree 9 (own exact division and square root; the identity is re-verified by multiplying out)
+[PASS] [EXACT] (7): C(g + h kappa) = C0 + hQ with C0 = c r s - (d+q+s)[(b+d)(d+r) + dp] and Q = (b-c)a + c(r+s) - (b+d)(d+r+s) (the document's cubic is the paper's C, same sign)
+[PASS] [EXACT] (8): (r+s) C0 = (c(r+s) - d(r+s) - d^2) r s - Ppos, where Ppos = d^3 R + d^2 (r^2 + rs + s^2) + R(d+s)[b(d+r) + dp] + R q T0 (R = r + s) has only positive coefficients and contains d^3 r  ::  26 terms
+[INFO] PROOF-READ: for d, r > 0, Ppos >= d^3 r > 0; if (6) fails then c(r+s) - d(r+s) - d^2 < 0, so (r+s) C0 < 0 and C0 < 0; then C0 + hQ = 0 forces Q != 0 and h = -C0/Q.
+[PASS] [EXACT] G has 1158 terms (the document's count for G_9), is homogeneous of degree 9, and its d^9 coefficient is +1
+[PASS] [EXACT] supplement data root_moc4_T45_full_radial_20261022.json (read as JSON, comparison only): its variable order has the same eight coefficient names, its C and Q equal C0 and Q, its quadratic factor is +-Q and its degree-nine factor is +-G  ::  stored G = +G
+[PASS] [EXACT] observation (not used by the proof, which has r, d > 0 at this point): G_9 vanishes identically on {r = d = 0}  ::  terms left at d = 0: 15; at r = 0: 465
+[PASS] [EXACT] at d = 1, G_9 is a polynomial in (p,r,s,q,a,b,c) with 1158 terms, constant term 1 and degrees (3,2,2,3,2,2,2)
+
+--- G. The hard region (10) and the product charts (11)-(14) (document Section 3)
+[PASS] [EXACT] with x = ab, y = cr, z = cs (a, c, r > 0, d = 1): a p b < p + b <=> p (x-1) < b; c p r < p + r <=> p (y-1) < r; c q s < q + s <=> q (z-1) < s; and c(r+s) < r + s + 1 <=> c (y+z-1) < y + z (these are (13) and the bound before (14))
+[PASS] [EXACT] all 27 sign triples (28 charts: two for (+,+,-)): c = M, ac = T/(1+T), ab = x, cr = y, cs = z with x, y, z as in (11); p = (b/(x-1)) P/(1+P) if x > 1 (PB bound), else p = (r/(y-1)) P/(1+P) if y > 1 (PR bound), else p = P; q = (s/(z-1)) Q/(1+Q) if z > 1, else q = Q (identities between rational functions)
+[PASS] [EXACT] in all 28 charts every numerator has nonnegative coefficients and every denominator, and both polynomials (y+z) M and (y+z-1)(1+M) of (14) where it is used, has nonnegative coefficients and a monomial in the variables that are > 0 on the domain (M, T, V; U if x > 1; A if z > 1): all chart values are >= 0 and all clearing multipliers are > 0 on the domain
+[INFO] PROOF-READ: the charts are ONTO the hard region.  Given a hard point: T = ac/(1-ac) > 0; U = x/(1-x) >= 0 or x - 1 > 0; V = y/(1-y) > 0 or y - 1 > 0 (y > 0 because c, r > 0); A likewise from z >= 0; P = p/(cap - p) >= 0 with the cap of (13), or P = p; Q likewise; M = c > 0, resp. after (14) M = c (y+z-1)/((y+z) - c (y+z-1)) > 0.  Where a bound of (10) is not used by a chart (p for x > 1 and y > 1 in the direct domains, c unless y, z >= 1) the chart covers a larger region.
+
+--- H. Lemma 1: the 26 direct product domains (document pp. 4)
+[PASS] [EXACT] domain (---) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 7229 terms (document: 7229), and a monomial with positive coefficient free of P, Q, U, A  ::  smallest coefficient 1; strict monomial 1 * M^3*T^3*V^2
+[PASS] [EXACT] domain (--0) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 2719 terms (document: 2719), and a monomial with positive coefficient free of P, Q, U  ::  smallest coefficient 1; strict monomial 1 * M^1*T^3*V^2
+[PASS] [EXACT] domain (--+) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 13644 terms (document: 13644), and a monomial with positive coefficient free of P, Q, U  ::  smallest coefficient 1; strict monomial 1 * M^4*T^3*V^2*A^3
+[PASS] [EXACT] domain (-0-) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 2770 terms (document: 2770), and a monomial with positive coefficient free of P, Q, U, A  ::  smallest coefficient 1; strict monomial 1 * M^3*T^3
+[PASS] [EXACT] domain (-00) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 1258 terms (document: 1258), and a monomial with positive coefficient free of P, Q, U  ::  smallest coefficient 1; strict monomial 1 * T^3
+[PASS] [EXACT] domain (-0+) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 20955 terms (document: 20955), and a monomial with positive coefficient free of P, Q, U  ::  smallest coefficient 1; strict monomial 2 * M^1*T^3*A^3
+[PASS] [EXACT] domain (-+-) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 15211 terms (document: 15211), and a monomial with positive coefficient free of P, Q, U, A  ::  smallest coefficient 1; strict monomial 1 * M^6*T^3*V^3
+[PASS] [EXACT] domain (-+0) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 21216 terms (document: 21216), and a monomial with positive coefficient free of P, Q, U  ::  smallest coefficient 1; strict monomial 2 * M^1*T^3*V^3
+[PASS] [EXACT] domain (-++) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 289359 terms (document: 289359), and a monomial with positive coefficient free of P, Q, U  ::  smallest coefficient 1; strict monomial 4 * M^2*T^3*V^3*A^3
+[PASS] [EXACT] domain (0--) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 3052 terms (document: 3052), and a monomial with positive coefficient free of P, Q, A  ::  smallest coefficient 1; strict monomial 2 * M^3*T^3*V^2
+[PASS] [EXACT] domain (0-0) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 1139 terms (document: 1139), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 2 * M^1*T^3*V^2
+[PASS] [EXACT] domain (0-+) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 5596 terms (document: 5596), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 2 * M^4*T^3*V^2*A^3
+[PASS] [EXACT] domain (00-) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 1174 terms (document: 1174), and a monomial with positive coefficient free of P, Q, A  ::  smallest coefficient 1; strict monomial 2 * M^3*T^3
+[PASS] [EXACT] domain (000) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 487 terms (document: 487), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 2 * T^3
+[PASS] [EXACT] domain (00+) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 8205 terms (document: 8205), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 4 * M^1*T^3*A^3
+[PASS] [EXACT] domain (0+-) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 6756 terms (document: 6756), and a monomial with positive coefficient free of P, Q, A  ::  smallest coefficient 1; strict monomial 2 * M^6*T^3*V^3
+[PASS] [EXACT] domain (0+0) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 8458 terms (document: 8458), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 4 * M^1*T^3*V^3
+[PASS] [EXACT] domain (0++) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 116320 terms (document: 116320), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 8 * M^2*T^3*V^3*A^3
+[PASS] [EXACT] domain (+--) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 20860 terms (document: 20860), and a monomial with positive coefficient free of P, Q, A  ::  smallest coefficient 1; strict monomial 2 * M^3*T^6*U^3*V^2
+[PASS] [EXACT] domain (+-0) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 7651 terms (document: 7651), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 2 * M^1*T^6*U^3*V^2
+[PASS] [EXACT] domain (+-+) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 36870 terms (document: 36870), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 2 * M^4*T^6*U^3*V^2*A^3
+[PASS] [EXACT] domain (+0-) [signs of x-1, y-1, z-1]: the cleared polynomial has only nonnegative coefficients, 8170 terms (document: 8170), and a monomial with positive coefficient free of P, Q, A  ::  smallest coefficient 1; strict monomial 2 * M^3*T^6*U^3
+[PASS] [EXACT] domain (+00) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 3052 terms (document: 3052), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 2 * T^6*U^3
+[PASS] [EXACT] domain (+0+) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 54718 terms (document: 54718), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 4 * M^1*T^6*U^3*A^3
+[PASS] [EXACT] domain (++0) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 36336 terms (document: 36336), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 2 * T^6*U^3
+[PASS] [EXACT] domain (+++) [signs of x-1, y-1, z-1] with (14): the cleared polynomial has only nonnegative coefficients, 499377 terms (document: 499377), and a monomial with positive coefficient free of P, Q  ::  smallest coefficient 1; strict monomial 4 * M^1*T^6*U^3*A^3
+[PASS] [EXACT] 26 direct domains in all, each with a strict monomial
+[INFO] PROOF-READ: in each domain the variables that may vanish are P, Q (p, q = 0), U when x < 1 (b = 0) and A when z < 1 (s = 0); M, T, V are > 0, and U resp. A are > 0 when x > 1 resp. z > 1.  A polynomial with nonnegative coefficients and a positive monomial in the strictly positive variables is > 0 there; the clearing multipliers are > 0 (Section G).  So G_9 > 0 on the hard region for the 26 sign triples.
+
+--- I. The remaining domain x > 1, y > 1, z < 1: the square interval (document Section 3.1)
+[PASS] [EXACT] (15): r/V - b/U = (N - D M^2)/(M T U V) with N = T U (1+V), D = (1+T)(1+U) V; so the PB bound b/U is the smaller one iff M^2 <= L = N/D
+[PASS] [EXACT] (16): for A(Z) = sum a_i Z^i of degree n = 4, 5 and Z = t lambda: A(Z) = sum_k b_k C(n,k) t^k (1-t)^(n-k) with b_k = sum_{i<=k} a_i C(k,i)/C(n,i) lambda^i (symbolic identity); with lambda = N*/D* the document's B_k is m D*^n b_k, m = lcm of the binomial coefficients
+[PASS] [EXACT] P_PB(M): the polynomial obtained from (11)-(13) with the PB bound on p (without (14)) has degree 10 in M (document: 10), lowest power M^1, and it is NOT coefficientwise nonnegative (72 negative coefficients): this domain needs the interval argument  ::  20412 terms
+[PASS] [EXACT] PB bound, even part in M (degree 5 in the squared variable, interval [0, N/D], m = 10): all 6 Bernstein coefficients (16) have only nonnegative coefficients; term counts [0, 3736, 10783, 14484, 16612, 17692] = the document's; the last one contains 10 T^6 U^6 V^2, a positive monomial in T, U, V alone, as the document says
+[PASS] [EXACT] PB bound, odd part in M (degree 4 in the squared variable, interval [0, N/D], m = 12): all 5 Bernstein coefficients (16) have only nonnegative coefficients; term counts [792, 6108, 9995, 12397, 13756] = the document's; the last one contains 36 T^6 U^5 V^2, a positive monomial in T, U, V alone, as the document says
+[PASS] [EXACT] P_PR(M): the polynomial obtained from (11)-(13) with the PR bound on p (without (14)) has degree 12 in M (document: 12), lowest power M^3, and it is NOT coefficientwise nonnegative (38 negative coefficients): this domain needs the interval argument  ::  18394 terms
+[PASS] [EXACT] PR bound, even part in w = 1/M (degree 4 in the squared variable, interval [0, D/N], m = 12): all 5 Bernstein coefficients (16) have only nonnegative coefficients; term counts [4140, 7956, 11076, 13139, 13756] = the document's; the last one contains 36 T^3 U^2 V^5, a positive monomial in T, U, V alone, as the document says
+[PASS] [EXACT] PR bound, odd part in w = 1/M (degree 4 in the squared variable, interval [0, D/N], m = 12): all 5 Bernstein coefficients (16) have only nonnegative coefficients; term counts [5400, 8588, 11282, 12732, 12912] = the document's; the last one contains 12 T^3 U^3 V^4, a positive monomial in T, U, V alone, as the document says
+[INFO] PROOF-READ: for 0 < M^2 <= L put t = M^2/L in (0,1]: D^5 E(M^2) = sum_k (B_k/m) C(5,k) t^k (1-t)^(5-k) >= (B_5/m) t^5 > 0, since all B_k >= 0 and B_5 > 0 (T, U, V > 0); likewise O(M^2) > 0; so P_PB(M) = E(M^2) + M O(M^2) > 0.  For M^2 >= L the same with w = 1/M, w^2 in (0, D/N].  Both include M^2 = L.  With the positive clearing multipliers this gives G_9 > 0 on the hard region for (+,+,-).
+
+--- J. Exact evaluation tests (falsification attempts with exact arithmetic)
+[PASS] [NUMERIC] bookkeeping of the 28 cleared polynomials, by exact evaluation at 2 random rational chart points each (seed 4601; P, Q, and U resp. A in the low domains set to 0 at random): the table polynomial equals G_9(p,r,s,q,a,b,c) at the original coefficients given by the document's formulas times the explicit positive multiplier, G_9 > 0 there, and the bounds used by the chart hold  ::  56 points
+[PASS] [NUMERIC] G_9 > 0 on the hard region (10), by exact evaluation at 5400 random rational hard points in the ORIGINAL coefficients (seed 4602; all 27 sign triples of (x-1, y-1, z-1) incl. the exact layers x, y, z = 1; b, s, p, q = 0 occur; p, q and c up to 0.999 of their bounds): no failure; every sampled point satisfies (10)  ::  points per sign triple between 177 and 216; smallest value of G_9 found: 3.074e+00
+
+--- K. NUMERIC falsification attempts (floating point; evidence only)
+[PASS] [NUMERIC] capacity (2) SOC ac = 1 at its threshold on this face (12 draws, coefficients exp(N(0,1)), the unused coefficients present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 1.127e-17
+[PASS] [NUMERIC] capacity (3) PB chain a = 1/p + 1/b at its threshold on this face (12 draws, coefficients exp(N(0,1)), the unused coefficients present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 9.215e-18
+[PASS] [NUMERIC] capacity (4) PR chain c = 1/p + 1/r at its threshold on this face (12 draws, coefficients exp(N(0,1)), the unused coefficients present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 1.309e-17
+[PASS] [NUMERIC] capacity (5) QS chain c = 1/q + 1/s at its threshold on this face (12 draws, coefficients exp(N(0,1)), the unused coefficients present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 2.200e-17
+[PASS] [NUMERIC] capacity (6) old-H c = 1 + 1/(r+s) at its threshold on this face (12 draws, coefficients exp(N(0,1)), the unused coefficients present at random; 4000 random rotations + 6 BFGS descents each): min Phi found >= -1e-9  ::  min = 2.148e-17
+[INFO] controls (the search does detect negative values): min Phi found for f70 alone -0.0674; for f2 + 0.5 f59 + f70 (ac = 0.5 < 1) -0.0007; for f1 + 1.5 f59 + f70 (c = 1.5 < 1 + 1/r = 2) -0.0001
+[PASS] [NUMERIC] end-to-end test of the necessary equations on 80 generic points x of X with Re(F_sigma - F_pi*) = 0 on T (seed 46005; eight labels apart by > 0.05 in normalised distance; the other gaps have either sign, so the coordinates have mixed signs): relative |C0 + H Q| < 1e-9 and relative |G_9| < 1e-9  ::  fit 1.9e-13, cubic 5.4e-13, |QG| 9.8e-15, |G| 1.4e-14, smallest relative |Q| 4.9e-04
+[INFO] stratum (gaps >= 0, zero on T, sum 1): 1026 points from two-stage LM searches (seeds 46100..46103, 300 starts each, repulsion 0.02, 0.1, 0.3, 0.005; residual < 1e-10); 46 have d > 1e-4 (largest d = 3.05e-02); among these the smallest normalised distance of two labels is 1.04e-02 and the numbers of contacts (|gap| < 1e-7) are [6, 7, 8, 9]
+[PASS] [NUMERIC] at every stratum point found with d > 1e-4 (46 points): relative |G_9| < 1e-7 and a capacity (2)-(6) holds or the point lies on a zero face  ::  max relative |G_9| 4.6e-09; number of points at which each alternative holds: {'(2) SOC': 43, '(3) PB': 21, '(4) PR': 27, '(5) QS': 30, '(6) old-H': 39, 'zero face a, c or r': 1}
+
+FINAL: PASS  (101 checks, 175.5 s)

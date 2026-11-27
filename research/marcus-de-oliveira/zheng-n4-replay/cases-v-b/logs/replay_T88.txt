@@ -1,0 +1,128 @@
+====================================================================================================
+Case T_88 = {1,5,6,10,13,14} (document 'inventory 87'): independent exact replay
+====================================================================================================
+[INFO] python 3.9.6, sympy 1.14.0, python-flint 0.6.0 (exact integer polynomials for the chart tables and the fraction-free elimination; integer determinants at test points), numpy 2.0.2 (int64 in det_linear_forms; floats in NUMERIC checks), scipy 1.13.1 (NUMERIC only)
+
+--- A. Provenance and foundations
+[INFO] elapsed 0 s
+[PASS] [EXACT] file under MOC4_SUPP is the one that was read (sha256): final_referee_inventory87_uniform_20261023.pdf  ::  63542699a4d7e955768d597d9ab04d7bedaa273463e81e2e5bd104f9c1cbd0b8
+[PASS] [EXACT] file under MOC4_SUPP is the one that was read (sha256): final_referee_inventory87_uniform_exact_20261023.json  ::  1602e6b3745900572cfced9f7c6bcc292bfdf4e8a9844bd56ddb3234d6a2a3a6
+[PASS] [EXACT] file under MOC4_SUPP is the one that was read (sha256): fresh_T88_audit.py  ::  5aa37a0064868df5990d4638147673d549d7291ebcfd1339cec27271a63d606f
+
+--- Foundations rebuilt from the paper's definitions
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14
+[PASS] [EXACT] P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] kappa = Psi(v) at v_1..4 = (0,1), v_5..8 = (1,1), so kappa is in X
+[PASS] [EXACT] paper's pivot rows 0,1,2,3,4,6,7,8,9,10,12,13,16,18 of P are independent
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of C)
+[PASS] [EXACT] 82 vectors f_j: all lie in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps on the 24 permutation indices
+[PASS] [EXACT] G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+[INFO] [PC 1] is the first foundations check (every row of P is a polynomial identity; rank 14); [PC 11] is the check 'P kappa = (1,...,1)'; the vanishing of the fourteen partial derivatives of C on products (document p. 3) is the fifth foundations check
+[PASS] [EXACT] [PC 2] the rows 0,1,2,3,4,6,7,8,9,10,12,13,16,18 of P form a matrix of determinant 1 (so its inverse is an integer matrix of determinant 1)  ::  det = 1
+
+--- Radial necessity: the real part of a point of X lies on the cubic
+[PASS] [EXACT] grad C(u + t v) = grad C(u) + t Hess C(u) v + t^2 grad C(v) identically (t = i: real part grad C(u) - grad C(v), imaginary part Hess C(u) v)
+[PASS] [EXACT] Euler: u . grad C(u) = 3 C(u) identically
+[PASS] [EXACT] polarization: u . grad C(v) = (1/2) v^t Hess C(u) v identically
+[INFO] hence grad C(u+iv) = 0 gives grad C(u) = grad C(v) and Hess C(u) v = 0, and 3 C(u) = u.grad C(u) = u.grad C(v) = (1/2) v^t Hess C(u) v = 0
+[PASS] [EXACT] spot check on 12 random Gaussian-rational points x = alpha Psi(a,b) (seed 20261125): (P x)_sigma = alpha z_sigma and C(Re x) = 0
+[PASS] [EXACT] same points: Hess C(Re x) Im x = 0
+[PASS] [EXACT] supplement data (JSON, comparison only): its 24 x 14 matrix equals P, its cubic equals the paper's C with the same sign, and its 82 facet value vectors equal F_VALUES in the same order (the documents' f_j are the paper's f_j)
+
+--- Comparison with the audit library moc4lib (not used to build any object)
+[PASS] [EXACT] PERMS, P, kappa, the 82 value vectors, the minor flags, the coordinates of all f_j and the cubic C agree with moc4lib
+[PASS] [EXACT] the group has the same 1152 index maps as moc4lib; CONTACT_SETS and generators agree for the cases [72, 88]
+
+--- B. Contact set and the transpose (document pp. 1-2)
+[INFO] elapsed 2 s
+[PASS] [EXACT] the document's set {1,5,6,10,13,14} is the paper's T_88 (Appendix E) as a set of lexicographic indices: group element = identity
+[PASS] [EXACT] orbit representative of T_88 under G; T_72 lies in another orbit  ::  T_88 -> (0, 3, 7, 8, 19, 20)
+[PASS] [EXACT] [PC 10a] sigma -> sigma^-1 maps T onto itself  ::  index map [0, 1, 2, 4, 3, 5, 6, 7, 12, 18, 13, 19, 8, 10, 14, 20, 16, 22, 9, 11, 15, 21, 17, 23]
+[PASS] [EXACT] for each of the 1152 group elements g there is a permutation lam_g of the eight labels with p_sigma(v o lam_g) = p_{g.sigma}(v) identically in the sixteen variables (24 identities each); hence (P Psi(v o lam_h))_{g.sigma} = (P Psi(v))_sigma for h = g^-1, i.e. g maps the image of Psi, and so X, onto itself
+[PASS] [EXACT] the transpose = (rho=(0, 1, 2, 3), chi=(0, 1, 2, 3), transpose=1): its matrix M_g on V (defined by (P M_g x)_{g.sigma} = (P x)_sigma) is an integer matrix with integer inverse, M_g kappa = kappa, M_g f_j = f_{g(j)} for all 82 vectors, and Phi_{g.c}(g.M) = +-Phi_c(M) for a generic 4x4 matrix M with the sign of det(g.M)/det(M) (so Phi_{g.c}(O'') = Phi_c(O) with O -> O'' a bijection of SO(4))
+
+--- C. The contact kernel and its signed generator representation (document pp. 1-2, eq. (1)-(3))
+[INFO] elapsed 4 s
+[PASS] [EXACT] the f_j of Appendix D vanishing on T are exactly f0, f1, f6, f10, f27, f30, f34, f36, f59 (the document's nine profiles)  ::  f0 = n_{1,4}, f1 = n_{12,34}, f6 = n_{4,1}, f10 = n_{13,24}, f27 = n_{3,2}, f30 = h_{4321,-}, f34 = h_{4321,+}, f36 = n_{2,3}, f59 = n_{14,14}
+[PASS] [EXACT] [PC 3] these nine value vectors lie in the image of P with integer coordinates; f30 = h_{4321,-} and f34 = h_{4321,+} are the two that are not minor vectors
+[PASS] [EXACT] [PC 4] the six rows of P at T have rank 6 (solution space of dimension 8) and the eight vectors f0, f1, f6, f10, f27, f36, f59, f30 are linearly independent
+[PASS] [EXACT] [PC 5] the eight vectors vanish at the six indices of T
+[PASS] [EXACT] [PC 6] rows 20, 16, 11, 7, 12, 3, 0 of the value matrix are the unit vectors e_0..e_6: for g = q f0 + a f1 + v f6 + b f10 + w f27 + t f36 + c f59 + d f30 the coefficients q, a, v, b, w, t, c are the gaps g20, g16, g11, g7, g12, g3, g0
+[PASS] [EXACT] [PC 7] row 19 minus row 20 is e_7: d = g19 - g20 (so the form (1) is unique and d may have either sign)
+[PASS] [EXACT] [PC 8] (3): f30 + f34 = f0 + f6 + f27 + f36 on all 24 permutations; the nine vectors have rank 8, so this is their only linear relation up to a factor
+[PASS] [EXACT] [PC 9] rows 19, 15, 4, 8 are e_0 + e_7, e_2 + e_7, e_4 + e_7, e_5 + e_7: g19 = q + d, g15 = v + d, g4 = w + d, g8 = t + d
+[PASS] [EXACT] signed side: q f0 + a f1 + v f6 + b f10 + w f27 + t f36 + c f59 + d f30 = (q+d) f0 + a f1 + (v+d) f6 + b f10 + (w+d) f27 + (t+d) f36 + c f59 + (-d) f34 on all 24 permutations; for d < 0 the coefficients q+d, v+d, w+d, t+d are the gaps g19, g15, g4, g8, so all eight coefficients on the right are >= 0
+[PASS] [EXACT] [PC 10b] the transpose exchanges f30 and f34 and permutes the seven minor vectors: f0 <-> f6, f27 <-> f36, and f1, f10, f59 are fixed  ::  {0: 6, 1: 1, 6: 0, 10: 10, 27: 36, 30: 34, 34: 30, 36: 27, 59: 59}
+[PASS] [EXACT] for d < 0 the transposed gap vector is of the form (1) with coefficients (q', a', v', b', w', t', c', d') = (v+d, a, q+d, b, t+d, w+d, c, -d), all >= 0 and d' > 0: so the case d < 0 reduces to d > 0 (T is preserved, and by section B the transpose preserves X and the set of values of the Leibniz sum)
+[PASS] [EXACT] direct enumeration of the extreme rays of N_T = {Pc >= 0, (Pc)_T = 0} (dimension 8; no use of the 82-facet list) gives exactly the nine vectors above; the cone is not simplicial  ::  9 rays
+[PASS] [EXACT] Laplace and Jacobi identities for the 7 minor generators [0, 1, 6, 10, 27, 36, 59]: Phi_{f_j}(O) = (minor of O)^2 >= 0 on SO(4)
+
+--- D. The three SOC atoms and the capacity H3 (document p. 2, eq. (4)-(6))
+[INFO] elapsed 6 s
+[PASS] [EXACT] SOC: (f1, f10, f30) is a member of the orbit of the representative (f1, f9, f22) with the same roles  ::  g = (rho=(0, 1, 3, 2), rho'=(0, 1, 3, 2), transpose=0) maps roles (1, 9, 22) to (1, 10, 30); 8 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] SOC: (f1, f59, f30) is a member of the orbit of the representative (f1, f9, f22) with the same roles  ::  g = (rho=(0, 1, 2, 3), rho'=(1, 0, 3, 2), transpose=1) maps roles (1, 9, 22) to (1, 59, 30); 8 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] SOC: (f10, f59, f30) is a member of the orbit of the representative (f1, f9, f22) with the same roles  ::  g = (rho=(0, 2, 1, 3), rho'=(1, 3, 0, 2), transpose=0) maps roles (1, 9, 22) to (10, 59, 30); 8 group elements; covariance: monomial identity for a generic 4x4 matrix (all 24 permutations) and exact values on 4 random rational O
+[PASS] [EXACT] the document's reference tuple (f1, f9; f22) is the audit's SOC representative
+[PASS] [EXACT] H3, balanced case (2 max <= a+b+c): the atoms (f1, f10; f30), (f1, f59; f30), (f10, f59; f30) with both minor coefficients and the non-minor coefficient equal to (a+b-c)/2, (a+c-b)/2, (b+c-a)/2 (each >= 0 exactly in the balanced case, and x y = delta^2 for each atom) add up to a f1 + b f10 + c f59 + ((a+b+c)/2) f30
+[PASS] [EXACT] H3, dominant case (m >= S = l1 + l2 > 0, r := sqrt(m/S)): the atoms with minor coefficients (m l1/S, l1), (m l2/S, l2) and non-minor coefficients l1 r, l2 r satisfy x y = delta^2, use m l1/S + m l2/S = m, and their non-minor coefficients add up to S r with (S r)^2 = m S
+[PASS] [EXACT] H3: scaling the non-minor coefficient of an SOC atom by lambda in [0,1] keeps x y >= delta^2 (x y - (lambda delta)^2 = (x y - delta^2) + (1 - lambda^2) delta^2); the two formulas for H3 agree at 2m = s (both give m)
+
+--- SOC representative (f1, f9; f22): identities of the audit's proof (so4-atoms.md 3.1), own code
+[PASS] [EXACT] model x -> p x conj(q): M^t M = |p|^2|q|^2 I and det M = (|p|^2|q|^2)^2 (so M is in SO(4) for unit p, q)
+[PASS] [EXACT] Phi_{f1} = x1^2, Phi_{f9} = x9^2 with x1 = det M[12,34], x9 = det M[14,23]; x1 = v0 + v1 and x9 = v0 + v3 (homogenised)
+[PASS] [EXACT] Phi_{f22} = 2(a0A2 + a2A0 + a1A3 + a3A1) - 4 p0p1p2p3 - 4 q0q1q2q3 on S^3 x S^3 (homogenised)
+[PASS] [EXACT] scalar step: R = 2 delta^2 + 2 Delta^2 - 2(v0v2 + v1v3); st = v1v3 - v0v2 + v2 sum(v); (v0+v1)(v0+v3) = st + (v0-v2) sum(v)
+[PASS] [EXACT] increment lemma: (r^2+u^2)(s^2+w^2) - (rs + uw)^2 = (rw - us)^2
+[INFO] the inequality itself (Phi_22 + 2|x1 x9| >= 0, hence a f1 + b f9 + d f22 >= 0 for ab >= d^2) is CITED: audit, foundations/so4-atoms.md 3.1; its polynomial identities are replayed here and its scalar argument was read line by line (see the report)
+
+--- E. Radial necessity in the generators (document pp. 2-3, eq. (7)-(9))
+[INFO] elapsed 6 s
+[PASS] [EXACT] C(g + h kappa) is of degree <= 1 in the height h: C = C0 + h Q
+[PASS] [EXACT] Q = (m0 m6 - m1 m5)(g) (= dC/dm13; it does not involve h)
+[PASS] [EXACT] det Hess C(g + h kappa) as a polynomial in nine variables: 35335 terms (subset Laplace expansion, int64 with l1 bound 2^44 < 2^62); equal to the integer determinant (python-flint fmpz_mat.det) at random integer points (seed 20261125)  ::  5.2 s
+[PASS] [EXACT] det Hess C(g + h kappa) has degree <= 4 in h (rank of Hess C(kappa) is 4)  ::  h-degrees present: [0, 1, 2, 3]
+[PASS] [EXACT] N := Q^4 det Hess C(g - (C0/Q) kappa) = sum_k D_k (-C0)^k Q^(4-k) has 291607 terms and N = -4 Q^2 G^2 with G of 2285 terms, homogeneous of degree 9 (own exact division and square root; the identity is re-verified by multiplying out)
+[PASS] [EXACT] [PC 12] (7): C(g + h kappa) = C0 + h Q with C0 = abc + e3(q,v,w,t) + d e2(q,v,w,t) + d^2 e1(q,v,w,t) + d^3 and Q = ab + ac + bc + d^2 (same sign as the paper's cubic)
+[PASS] [EXACT] all 16 coefficients of C0 and all 4 coefficients of Q are +1; C0 contains d^3 and Q contains d^2: C0 >= d^3 > 0 and Q >= d^2 > 0 on the closed orthant with d > 0, so h = -C0/Q
+[PASS] [EXACT] (8), (11): G has 2285 terms, is homogeneous of degree 9, does not involve h, its d^9 coefficient is +1, and its degrees in (q, a, v, b, w, t, c, d) are (3, 2, 3, 2, 3, 3, 2, 9)  ::  degrees [3, 2, 3, 2, 3, 3, 2, 9]
+[INFO] G has 795 negative coefficients in the native variables, so its sign is not visible without the charts
+[PASS] [EXACT] G is invariant under q <-> v, w <-> t (the action of the transpose on the coefficients) and is NOT invariant under any transposition of a, b, c alone; this is why the document computes the dominant and solo charts for each of a, b, c separately  ::  a<->b False, a<->c False, b<->c False
+[PASS] [EXACT] second computation of det Hess C(g + h kappa): fraction-free (Bareiss) elimination of the 14 x 14 matrix of linear forms in nine variables with python-flint polynomials; 819 entry updates = sum_{k=1}^{13} k^2 = 819, every division exact (650 divisions by a pivot, the other 169 updates divide by 1); the result has 35335 terms and equals the Laplace-expansion determinant  ::  61.1 s
+[INFO] [PC 14] is answered by the two determinant computations above and the identity N = -4 Q^2 G^2, here as an identity of homogeneous polynomials in eight variables (the portable check works at d = 1)
+[PASS] [EXACT] [PC 13] supplement data (JSON, comparison only): its axes are q,a,v,b,w,t,c,d,height; its G list has 2285 distinct exponent vectors of length 9 with last entry 0 and sum 9, maximal exponents (3,2,3,2,3,3,2,9), d^9 coefficient 1; it EQUALS the G computed here; its C and Q equal C0 and Q
+[PASS] [EXACT] supplement data (JSON, comparison only): its 14 x 8 lift and its 24 x 8 value matrix equal the coordinates and values of the eight generators computed here; its transpose is the index map of sigma -> sigma^-1; its three recorded index maps are elements of G that carry (f1, f9; f22) to (f1, f10; f30), (f1, f59; f30), (f10, f59; f30) (pull-back convention of the certificate)
+
+--- F. Charts of the region H3 < 1 (document pp. 3-4, eq. (10), (12), (13))
+[INFO] elapsed 79 s
+[PASS] [EXACT] ten tables are set up: the balanced chart, six dominant charts (each of a, b, c dominant, both orders of the two leaves) and three solo charts
+[PASS] [EXACT] each of the 10 charts maps its parameter domain into the region it is meant to cover: a, b, c >= 0 and the defining margins (balanced: the three triangle inequalities and 2 - (a+b+c) > 0; dominant: M - S >= 0, 1 - M S > 0 and S > 0 for S = sum of the two leaves; solo: both leaves 0) are reduced fractions whose numerators have coefficients >= 0, with a surviving monomial where strictness is claimed, and whose denominators have positive coefficients and a surviving monomial (52 margins); the dominant charts need X > 0, the others no strict hypothesis
+[PASS] [EXACT] [PC 16a] inverse of the balanced chart (10): X, Y, Z = (x, y, z)/(1 - x - y - z) with x, y, z the triangle half-differences returns (a, b, c); 1 - x - y - z = 1 - (a+b+c)/2
+[PASS] [EXACT] [PC 16b] inverse of the dominant charts (12), (13): X = 1/S - 1, Y = (M S - S^2)/(1 - M S), Z = L1/L2 returns (M, L1, L2); the two leaves add up to 1/l with l = 1 + X; 1 - M/l = (1 - 1/l^2)/(1 + Y), which is 1 - M S
+
+--- G. The ten positive tables (document pp. 3-4)
+[INFO] elapsed 79 s
+[PASS] [EXACT] G at d = 1 still has 2285 terms and degrees (3,2,3,2,3,3,2) = the clearing degrees (11)
+[PASS] [EXACT] [PC 15] table balanced          :  20241 terms (document: 20241), every coefficient > 0 (min 1); marker 1 present with coefficient 1 and involving only variables that are > 0 on the chart [[]]; all denominators have positive coefficients and a positive constant term; table = G * prod D_i^m_i checked by exact evaluation at 3 integer parameter points; equals the supplement's stored table (sha256 of the canonical serialisation, comparison only)
+[PASS] [EXACT] [PC 15] table solo_a            :    450 terms (document: 450), every coefficient > 0 (min 1); marker 1 present with coefficient 1 and involving only variables that are > 0 on the chart [[]]; all denominators have positive coefficients and a positive constant term; table = G * prod D_i^m_i checked by exact evaluation at 3 integer parameter points; equals the supplement's stored table (sha256 of the canonical serialisation, comparison only)
+[PASS] [EXACT] [PC 15] table dominant_a        :  27372 terms (document: 27372), every coefficient > 0 (min 1); marker X^1 present with coefficient 8 and involving only variables that are > 0 on the chart [['X']]; all denominators have positive coefficients and a positive constant term; table = G * prod D_i^m_i checked by exact evaluation at 3 integer parameter points; equals the supplement's stored table (sha256 of the canonical serialisation, comparison only)
+[PASS] [EXACT] [PC 15] table dominant_a_reverse:  27372 terms (document: 27372), every coefficient > 0 (min 1); marker X^1 present with coefficient 8 and involving only variables that are > 0 on the chart [['X']]; all denominators have positive coefficients and a positive constant term; table = G * prod D_i^m_i checked by exact evaluation at 3 integer parameter points; equals the supplement's stored table (sha256 of the canonical serialisation, comparison only)
+[PASS] [EXACT] [PC 15] table solo_b            :    450 terms (document: 450), every coefficient > 0 (min 1); marker 1 present with coefficient 1 and involving only variables that are > 0 on the chart [[]]; all denominators have positive coefficients and a positive constant term; table = G * prod D_i^m_i checked by exact evaluation at 3 integer parameter points; equals the supplement's stored table (sha256 of the canonical serialisation, comparison only)
+[PASS] [EXACT] [PC 15] table dominant_b        :  27372 terms (document: 27372), every coefficient > 0 (min 1); marker X^1 present with coefficient 8 and involving only variables that are > 0 on the chart [['X']]; all denominators have positive coefficients and a positive constant term; table = G * prod D_i^m_i checked by exact evaluation at 3 integer parameter points; equals the supplement's stored table (sha256 of the canonical serialisation, comparison only)
+[PASS] [EXACT] [PC 15] table dominant_b_reverse:  27372 terms (document: 27372), every coefficient > 0 (min 1); marker X^1 present with coefficient 8 and involving only variables that are > 0 on the chart [['X']]; all denominators have positive coefficients and a positive constant term; table = G * prod D_i^m_i checked by exact evaluation at 3 integer parameter points; equals the supplement's stored table (sha256 of the canonical serialisation, comparison only)
+[PASS] [EXACT] [PC 15] table solo_c            :    450 terms (document: 450), every coefficient > 0 (min 1); marker 1 present with coefficient 1 and involving only variables that are > 0 on the chart [[]]; all denominators have positive coefficients and a positive constant term; table = G * prod D_i^m_i checked by exact evaluation at 3 integer parameter points; equals the supplement's stored table (sha256 of the canonical serialisation, comparison only)
+[PASS] [EXACT] [PC 15] table dominant_c        :  27372 terms (document: 27372), every coefficient > 0 (min 1); marker X^1 present with coefficient 8 and involving only variables that are > 0 on the chart [['X']]; all denominators have positive coefficients and a positive constant term; table = G * prod D_i^m_i checked by exact evaluation at 3 integer parameter points; equals the supplement's stored table (sha256 of the canonical serialisation, comparison only)
+[PASS] [EXACT] [PC 15] table dominant_c_reverse:  27372 terms (document: 27372), every coefficient > 0 (min 1); marker X^1 present with coefficient 8 and involving only variables that are > 0 on the chart [['X']]; all denominators have positive coefficients and a positive constant term; table = G * prod D_i^m_i checked by exact evaluation at 3 integer parameter points; equals the supplement's stored table (sha256 of the canonical serialisation, comparison only)
+[PASS] [EXACT] [PC 17] the ten tables have 185823 coefficients in total (document: 185823), all positive  ::  1.8 s for all tables
+[PASS] [EXACT] second implementation (pure Python integer arithmetic, own p_compose) reproduces the tables ['solo_a', 'solo_b', 'solo_c', 'balanced', 'dominant_b_reverse'] term by term  ::  0.5 s
+
+--- H. NUMERIC falsification attempts (evidence only)
+[INFO] elapsed 82 s
+[PASS] [NUMERIC] SOC sum at d = H3: smallest value of Phi found over SO(4) for a f1 + b f10 + c f59 + H3 f30 at 10 coefficient draws (20000 random rotations and 24 BFGS descents each, seeds 88000-88009) is >= -1e-9  ::  min 0.000e+00
+[PASS] [NUMERIC] controls with the same search budget (it does find negative values where the SOC condition fails for a single pair): Phi_{f30} alone, f1 + f10 + 2 f30, f10 + f59 + 2 f30  ::  min -0.0674, -0.0098, -0.0098
+[PASS] [NUMERIC] G > 0 at 4000 random rational points of the region {H3(a,b,c) < 1} with d = 1 and q, v, w, t >= 0, sampled in the native coefficients with zeros, the balanced/dominant interfaces, two vanishing mains and large dominant coefficients over-represented (exact evaluation, seed 88100)  ::  smallest value 26/49 = 0.5306
+[PASS] [NUMERIC] cover: each of these points is the image of an admissible parameter point of one of the 10 charts under the document's inverse formulas: parameters >= 0, X > 0 in the dominant charts, the chart returns the point exactly  ::  points per table: {'balanced': 1527, 'solo_a': 310, 'dominant_a': 296, 'dominant_a_reverse': 191, 'solo_b': 337, 'dominant_b': 299, 'dominant_b_reverse': 176, 'solo_c': 322, 'dominant_c': 359, 'dominant_c_reverse': 183}
+[PASS] [NUMERIC] 60 generic points x = alpha Psi(a,b) of X whose real parts satisfy the five contact equations of T (seed 88200; all eight labels apart): gap vector in the span of the eight generators, C0 + hQ = 0 and G = 0 up to rounding  ::  fit 1.9e-13, relative |C0 + hQ| <= 5.6e-13, relative |G| <= 2.7e-14, min relative |Q| 3.5e-03
+[PASS] [NUMERIC] stratum points (all gaps >= 0, zero on T, sum of gaps 1) from 400 Levenberg-Marquardt starts (seeds 88300-88303): 349 found, 319 with |d| <= 1e-6, 13 with d > 1e-6, 17 with d < -1e-6; at the points with d != 0 (for d < 0 after the transpose of section C) G = 0 up to rounding (relative size < 1e-6) and the SOC condition |d| <= H3 holds  ::  d=0.0158 relG=1.1e-16 H3/|d|=3.37 sep=0.59; d=0.0117 relG=6.0e-16 H3/|d|=4.44 sep=0.52; d=0.000284 relG=3.7e-15 H3/|d|=125 sep=0.27; d=3.06e-05 relG=5.7e-16 H3/|d|=1.63e+03 sep=0.27; d=1.26e-05 relG=2.5e-13 H3/|d|=208 sep=0.0088; d=1.24e-05 relG=3.4e-15 H3/|d|=3.18e+03 sep=0.3; d=9.66e-06 relG=3.2e-15 H3/|d|=3.7e+03 sep=0.27; d=8.81e-06 relG=8.6e-17 H3/|d|=6.18e+03 sep=0.38; d=8.36e-06 relG=5.7e-10 H3/|d|=523 sep=0.0043; d=5.69e-06 relG=1.2e-15 H3/|d|=6.55e+03 sep=0.3; d=5.28e-06 relG=6.1e-17 H3/|d|=5.92e+03 sep=0.24; d=4.54e-06 relG=8.4e-16 H3/|d|=8.61e+03 sep=0.35; d=1.02e-06 relG=3.0e-15 H3/|d|=5.34e+04 sep=0.33; d=-3.04e-06 relG=1.4e-16 H3/|d|=1.28e+04 sep=0.11; d=-3.18e-06 relG=8.7e-16 H3/|d|=1e+04 sep=0.22; d=-4.67e-06 relG=7.4e-16 H3/|d|=6.66e+03 sep=0.18; d=-2.45e-05 relG=5.3e-16 H3/|d|=1.34e+03 sep=0.27; d=-7.9e-05 relG=5.0e-15 H3/|d|=452 sep=0.27; d=-8.36e-05 relG=2.6e-15 H3/|d|=475 sep=0.35; d=-0.000134 relG=7.2e-09 H3/|d|=155 sep=0.078; d=-0.000186 relG=5.6e-16 H3/|d|=209 sep=0.28; d=-0.000223 relG=1.9e-16 H3/|d|=233 sep=0.28; d=-0.00108 relG=2.2e-15 H3/|d|=32.4 sep=0.24; d=-0.00263 relG=2.0e-15 H3/|d|=11.4 sep=0.13; d=-0.00301 relG=6.4e-17 H3/|d|=18.5 sep=0.37; d=-0.0158 relG=3.4e-17 H3/|d|=3.38 sep=0.59; d=-0.0158 relG=2.0e-16 H3/|d|=3.36 sep=0.59; d=-0.0159 relG=2.2e-16 H3/|d|=3.34 sep=0.59; d=-0.0161 relG=4.8e-16 H3/|d|=3.31 sep=0.55; d=-0.0161 relG=5.6e-17 H3/|d|=3.3 sep=0.58
+
+FINAL: PASS  (85 checks, 193.3 s)
