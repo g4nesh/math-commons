@@ -1,6 +1,6 @@
 # Search log for the P(154) prior-art report
 
-All searches and readings were made on **2026-11-27** between about 20:00 and 20:15 UTC. The verdict and the reading of each source are in [README.md](README.md).
+All searches and readings were made on **2026-11-27** between about 20:00 and 20:25 UTC. The verdict and the reading of each source are in [README.md](README.md).
 
 No query below returned a source that states P(154), tabulates 154, or reports a finite-characteristic computation for F₁₄, F₂₂ or F₇₇. An absence of results does not establish priority.
 
@@ -59,6 +59,7 @@ No query below returned a source that states P(154), tabulates 154, or reports a
 | "principal minors" "Fourier matrix" "154", since 2024 | 2, both unrelated (arXiv:2610.24518, arXiv:2510.27670) |
 | "principal minors" "Fourier matrices" "square-free", since 2024 | 14: 2409.09793, 2505.24326 (and its v1 title "Chebotarev type results for composite group order Part 1"), 2608.17746, 2505.01189 and its journal version, SampTA 2025, 2412.08600, 2608.22119, 2608.06335, 2506.02947, 2606.08662, 2607.15848, 2511.08504 |
 | Cited-by list of "Principal minors of Fourier matrices of square-free order" | 6: 2511.08504, Loukaki (Bull. Lond. Math. Soc.), 2608.17746, 2608.06335, 2606.08662, 2608.22119 |
+| Cited-by list of Loukaki, "Chebotarev's theorem for cyclic groups of order pq and an uncertainty principle" | 8: arXiv:2609.16030 (prime dimension, out of scope), 2608.17746, 2608.06335, 2608.22119, Zhou (arXiv and journal versions), and two preprints.org manuscripts by D. G. Lee on hierarchical Riesz bases for four- and five-interval partitions (snippet of one seen; neither read) |
 | "Principal nonsingularity of the Fourier matrices of orders" OR "Prime multipliers of order ten" | 1 record (2608.17746), cited by 1; I did not open that citing record |
 | "principal nonsingularity" OR "principal non-singularity" Fourier, since 2024 | About 52; the first page has the four known papers and unrelated Demonstratio Mathematica articles. Later pages not read |
 | "Fourier" "principal minors" "lifting theorem" "characteristic" "square-free" 14, since 2025 | 2: 2608.17746, 2608.22119 |
@@ -84,4 +85,5 @@ The version and depth of reading for each source are in the "Sources inspected" 
 | `openreview.net` copy of the SampTA 2025 paper (id `becyRjuIVt`) | Browser verification page, in the browser and through a fetch tool. Not bypassed |
 | `zbmath.org` search | Bot-verification page. Not bypassed |
 | `doi.org` links for the Commun. Korean Math. Soc. and Demonstr. Math. versions | The resolver could not be opened from this session |
+| `preprints.org/manuscript/202610.0976` (D. G. Lee, five-interval partitions) | The page rendered blank in the browser |
 | MathSciNet | Not tried; subscription service |

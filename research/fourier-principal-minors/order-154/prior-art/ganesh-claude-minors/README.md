@@ -1,6 +1,6 @@
 # Is P(154) already known? Prior-art report
 
-Task `fourier-154-prior-art` · agent `ganesh-claude-minors` (GitHub owner g4nesh) · search cutoff **2026-11-27, 20:15 UTC**
+Task `fourier-154-prior-art` · agent `ganesh-claude-minors` (GitHub owner g4nesh) · search cutoff **2026-11-27, 20:25 UTC**
 
 **P(154)** is the statement that every principal minor of the unpermuted complex Fourier matrix F₁₅₄ = (ζ^(ij)), 0 ≤ i, j ≤ 153, with ζ a primitive 154th root of unity, is nonzero.
 
@@ -86,7 +86,7 @@ All reading was done on 2026-11-27 through arXiv's HTML renderings unless noted.
 | Caragea, Pfander, Lee, Malikiosis, *Towards a conjecture concerning minors of Fourier matrices*, SampTA 2025, doi:10.1109/SampTA64769.2025.11133507 | IEEE Xplore abstract | | Abstract only | Permutation conjecture, false at N = 16; "partial results and numerics" |
 | Malavolta, Rosen, [arXiv:2606.08662](https://arxiv.org/abs/2606.08662v1); Narayanan, [arXiv:2607.15848](https://arxiv.org/abs/2607.15848v1) | v1 | | Abstract | Citers of CLMP; prime order only |
 
-Sources that searches surfaced and I judged out of scope from the title or abstract alone: arXiv:2511.08504 (OTFS channel estimation, a citer), arXiv:2310.09992, arXiv:1807.07648, arXiv:math/0611493, arXiv:1910.05652, arXiv:2610.20653, arXiv:2610.24518, arXiv:2510.27670, and the support-size uncertainty papers returned by web query 18.
+Sources that searches surfaced and I judged out of scope from the title or abstract alone: arXiv:2511.08504 (OTFS channel estimation, a citer), arXiv:2310.09992, arXiv:1807.07648, arXiv:math/0611493, arXiv:1910.05652, arXiv:2609.16030 (mutually unbiased bases in prime dimension, a citer of Loukaki), arXiv:2610.20653, arXiv:2610.24518, arXiv:2510.27670, and the support-size uncertainty papers returned by web query 18.
 
 ## Dates and status
 
@@ -103,7 +103,7 @@ Sources that searches surfaced and I judged out of scope from the title or abstr
 ## Not accessed and residual uncertainty
 
 - **Abstract only.** The SampTA 2025 paper: the OpenReview copy sits behind a browser verification page, and on IEEE Xplore I read the abstract only. Its abstract concerns the permutation conjecture. The same authors' later v3 (Dec 2025) lists only 2p, 3p, 5p, 6p, 7p and calls 70 unresolved, so I infer the conference paper does not prove P(154); I did not confirm that from its text.
-- **Not opened.** The journal versions named above; the body of the EPOCH paper outside Supplement K.5; the TeX-source bundles of Gu–Zhou–Wang and Wang–Zhang; Caragea's 2024 thesis and the Lee–Pfander–Walnut paper (both cited for conjectures only). CLMP announce a second manuscript on non-square-free orders as "in preparation"; I found no posted version.
+- **Not opened.** The journal versions named above; the body of the EPOCH paper outside Supplement K.5; the TeX-source bundles of Gu–Zhou–Wang and Wang–Zhang; Caragea's 2024 thesis and the Lee–Pfander–Walnut paper (both cited for conjectures only); two 2026 preprints by D. G. Lee on preprints.org about hierarchical exponential Riesz bases for four- and five-interval partitions, which cite Loukaki (manuscript 202610.0976 and a companion). For those two I saw one Google Scholar snippet, which describes a Riesz-basis existence theorem and no principal-minor result; the preprints.org page rendered blank. CLMP announce a second manuscript on non-square-free orders as "in preparation"; I found no posted version.
 - **Blocked services.** zbMATH Open returned a bot-verification page. MathSciNet was not tried (subscription). The doi.org resolver could not be opened from this session. Semantic Scholar rate-limited the citation list of arXiv:2608.17746.
 - **Index lag.** The EPOCH paper appears in neither citation index and surfaced only through web search. Recent or oddly worded papers can be missed the same way. arXiv's own search covers metadata, not full text.
 - **Outside any index.** Talks, theses, private computations, code repositories and unposted manuscripts. A web search for a public order-154 verifier or certificate found none.
