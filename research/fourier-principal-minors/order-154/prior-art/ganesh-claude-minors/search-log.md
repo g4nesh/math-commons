@@ -75,7 +75,7 @@ No query below returned a source that states P(154), tabulates 154, or reports a
 
 ## Direct reading (R)
 
-The version and depth of reading for each source are in the "Sources inspected" table of [README.md](README.md). Pages opened: arXiv abstract pages for every arXiv identifier listed there (version histories and dates come from those pages); arXiv HTML renderings of 2409.09793v4, 2505.24326v3, 2505.24326v1, 2608.17746v1, 2608.22119v1, 2610.06986v1, 2412.08600v5, 2505.01189v3, 2505.01189v1, 2506.02947v2 and 2608.06335v2; the ancillary-file pages of 2608.17746v1 and 2608.22119v1 (both report no ancillary files); the IEEE Xplore abstract page of document 11133507; the poster PDF on `megl.science.gmu.edu`.
+The version and depth of reading for each source are in the "Sources inspected" table of [README.md](README.md). Pages opened: arXiv abstract pages for every arXiv identifier listed there (version histories and dates come from those pages); arXiv HTML renderings of 2409.09793v4, 2505.24326v3, 2505.24326v2, 2505.24326v1, 2608.17746v1, 2608.22119v1, 2610.06986v1, 2412.08600v5, 2505.01189v3, 2505.01189v1, 2506.02947v2 and 2608.06335v2; the ancillary-file pages of 2608.17746v1 and 2608.22119v1 (both report no ancillary files); the IEEE Xplore abstract page of document 11133507; the poster PDF on `megl.science.gmu.edu`.
 
 ## Could not be opened
 

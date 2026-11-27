@@ -73,7 +73,7 @@ All reading was done on 2026-11-27 through arXiv's HTML renderings unless noted.
 | Source | Version read (date) | Earlier versions | Depth | Bearing on 154 |
 |---|---|---|---|---|
 | Caragea, Lee, *On the principal minors of Fourier matrices*, [arXiv:2409.09793](https://arxiv.org/abs/2409.09793v4) | v4 (20 Apr 2025) | v1 15 Sep 2024 | Full | Conjecture 1.3(b); ranks 2, 3 and complements |
-| Caragea, Lee, Malikiosis, Pfander, *Principal minors of Fourier matrices of square-free order*, [arXiv:2505.24326](https://arxiv.org/abs/2505.24326v3) | v3 (7 Dec 2025) | v1 30 May 2025 (statements read), v2 30 Jul 2025 (not read) | Full | Lifting theorem; families 2p, 3p, 5p, 6p, 7p; says 70 is the smallest unresolved three-prime order |
+| Caragea, Lee, Malikiosis, Pfander, *Principal minors of Fourier matrices of square-free order*, [arXiv:2505.24326](https://arxiv.org/abs/2505.24326v3) | v3 (7 Dec 2025) | v1 30 May 2025 and v2 30 Jul 2025 (statements read; neither mentions 154 or 14p) | Full | Lifting theorem; families 2p, 3p, 5p, 6p, 7p; says 70 is the smallest unresolved three-prime order |
 | Gu, Zhou, Wang, *Principal nonsingularity of the Fourier matrices of orders 70 and 143*, [arXiv:2608.17746](https://arxiv.org/abs/2608.17746v1) | v1 (18 Aug 2026) | none | Full | Orders 70 and 143 only |
 | Wang, Zhang, *Prime multipliers of order ten*, [arXiv:2608.22119](https://arxiv.org/abs/2608.22119v1) | v1 (22 Aug 2026) | none | Full | Base 10 only; P(110) left open |
 | Guo, Mo, Li, Deng, *EPOCH: Reliable Discovery through Evidence-Governed Search*, [arXiv:2610.06986](https://arxiv.org/abs/2610.06986v1) | v1 (4 Oct 2026) | none | Supplement K.5 only, the one passage a text search for Fourier, principal minor, Chebotarev or 154 finds | Bases 10 and 11 |
@@ -103,11 +103,11 @@ Sources that searches surfaced and I judged out of scope from the title or abstr
 ## Not accessed and residual uncertainty
 
 - **Abstract only.** The SampTA 2025 paper: the OpenReview copy sits behind a browser verification page and the IEEE full text was not available. Its abstract concerns the permutation conjecture. The same authors' later v3 (Dec 2025) lists only 2p, 3p, 5p, 6p, 7p and calls 70 unresolved, so I infer the conference paper does not prove P(154); I did not confirm that from its text.
-- **Not opened.** The journal versions named above; CLMP v2; the body of the EPOCH paper outside Supplement K.5; the TeX-source bundles of Gu–Zhou–Wang and Wang–Zhang; Caragea's 2024 thesis and the Lee–Pfander–Walnut paper (both cited for conjectures only). CLMP announce a second manuscript on non-square-free orders as "in preparation"; I found no posted version.
+- **Not opened.** The journal versions named above; the body of the EPOCH paper outside Supplement K.5; the TeX-source bundles of Gu–Zhou–Wang and Wang–Zhang; Caragea's 2024 thesis and the Lee–Pfander–Walnut paper (both cited for conjectures only). CLMP announce a second manuscript on non-square-free orders as "in preparation"; I found no posted version.
 - **Blocked services.** zbMATH Open returned a bot-verification page. MathSciNet was not tried (subscription). The doi.org resolver could not be opened from this session. Semantic Scholar rate-limited the citation list of arXiv:2608.17746.
 - **Index lag.** The EPOCH paper appears in neither citation index and surfaced only through web search. Recent or oddly worded papers can be missed the same way. arXiv's own search covers metadata, not full text.
 - **Outside any index.** Talks, theses, private computations, code repositories and unposted manuscripts. A web search for a public order-154 verifier or certificate found none.
-- **Depth of reading.** For Loukaki, Zhou and Emmrich–Kunis I read the statements, not the proofs. I relied on arXiv HTML renderings rather than the PDFs; where the rendering of the Theorem 1.5 bound was garbled I confirmed it from the proof and from v1.
+- **Depth of reading.** For Loukaki, Zhou and Emmrich–Kunis I read the statements, not the proofs. I relied on arXiv HTML renderings rather than the PDFs; where the text extraction of the Theorem 1.5 bound was garbled I confirmed it from the proof and from the LaTeX of v1 and v2.
 - **Soundness of the cited papers is not assessed here.** This report asks what the literature claims, not whether those claims are correct. The August 2026 preprints in particular are unreviewed.
 
 ## Leads for the 14p audit
