@@ -1,0 +1,9 @@
+PASS sum_sigma sgn(sigma) z_sigma(a, b) = 0 at 20 random Gaussian-integer spectra (n = 3)
+== rect: a = [(-2)+(2)i, (-2)+(3)i, (-48/17)+(-12/17)i], b = [(0)+(-1)i, (-3)+(0)i, (3)+(1)i], theta = (-7/6)+(1)i
+PASS rect: exactly 2n-2 = 4 permutations on the supporting line Re(theta w) = -80: [(0, 2, 1), (1, 2, 0), (2, 0, 1), (2, 1, 0)]
+PASS rect: spectra distinct, neither collinear
+PASS rect: rank dPhi = 4 = 2n-2 and the 4 Lambda-conditions have rank 4 on it (infinitesimally rigid)
+PASS rect: contact type rectangle {sigma(k) != l}
+PASS the two non-contacts (0, 1, 2), (1, 0, 2) (sigma(3) = 3) have equal real gaps
+PASS Re(theta d_U) = m + |U_33|^2 (Re(theta z_sigma') - m) exactly for 5 Cayley unitaries
+0 failures
