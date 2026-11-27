@@ -1,0 +1,4 @@
+n = 5, 120 vertices: E-facets, Y-terms and square-root partners agree with the block forms; failures 0
+n = 4, 24 vertices: (E20) and (E21) on 3x3 blocks of U(4) are (star) images; failures 0
+floating point, 2000 Haar U(5) and U(4): max |original - block form| 2.0e-15, max |block form - (star) image| 4.9e-14
+ALL CHECKS PASSED
