@@ -1,0 +1,12 @@
+L1 ok for q in 2,3,5,7,11,13 (all m up to q-1, incl. Gamma_(q-1) and q=2)
+P2 ok on 60 configurations
+T3/C4 ok (M,q)=(1,2): 4 configs
+T3/C4 ok (M,q)=(2,3): 40 configs
+T3/C4 ok (M,q)=(2,5): 40 configs
+T3/C4 ok (M,q)=(4,5): 80 configs
+T3/C4 ok (M,q)=(3,7): 40 configs
+T3/C4 ok (M,q)=(6,7): 80 configs
+T3/C4 ok (M,q)=(5,11): 60 configs
+T3/C4 ok (M,q)=(10,11): 120 configs
+T3/C4 ok (M,q)=(12,13): 60 configs
+T3 total 524, with A0 = 0 mod q: 27; max fibre size histogram [(1, 56), (2, 86), (3, 97), (4, 107), (5, 122), (6, 43), (7, 13)]

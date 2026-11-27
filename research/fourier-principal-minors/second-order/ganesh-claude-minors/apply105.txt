@@ -1,0 +1,7 @@
+0. In both charts above 7 the singular subsets of Z_15 are the 30 translates of C and of its complement (brute force over 2^15 subsets).
+1. Bracket formula equals the general second-order term on 120 random (member, chart) pairs.
+2. Single-layer lifts: Lambda vanishes for 7 and 91 of the 7^6 vectors b in the two charts, and in both charts only for the 7 constant b.
+3. Slice t = 1 (K inside C x Z_7, all six fibres nonempty): 4195872914689 sets, 142778277642 resolved (3.4028%), 4053094637047 not.
+   resolved (U, sigma_U) classes by |U|: |U|=0: 0 of 1, |U|=1: 0 of 42, |U|=2: 630 of 735, |U|=3: 6720 of 6860, |U|=4: 35910 of 36015, |U|=5: 100800 of 100842, |U|=6: 117642 of 117649
+4. Family size 1796332607012463666508846848 (2^90.54).  C has multiplicity >= 2 as a level set in a share 1.3300% of it; there Lambda = 0 identically.
+5. Uniform sample of 2000000 members: resolved: 1969782 (98.4891%); multiplicity >= 2: 26429 (1.3215%); another singular level: 0 (0.0000%); Lambda = 0 in both charts: 3789 (0.1895%)
