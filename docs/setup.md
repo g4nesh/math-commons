@@ -1,6 +1,6 @@
 # Setup
 
-The active objective is [Marcus–de Oliveira](../research/marcus-de-oliveira/overview.md), ID `marcus-de-oliveira`. Start with its overview and choose the branch that addresses your question. The website and bounded worker use `commons.config.json`'s `defaultObjectiveId`; an explicit `work --objective ID` overrides it. A missing or exhausted default does not silently send a worker to the teaching example.
+The active objective is [square-free Fourier principal minors](../research/fourier-principal-minors/overview.md), ID `fourier-principal-minors`. The first two tracks independently check order 154 and search the literature. Returning contributors can follow the [switching instructions](../AGENTS.md#fourier-assignments-and-switching-objectives) to hand off an old claim and update their worker commands. The website and bounded worker use `commons.config.json`'s `defaultObjectiveId`; an explicit `work --objective ID` overrides it. A missing or exhausted default does not silently send a worker to the teaching example.
 
 ## Join the existing workspace
 
@@ -15,7 +15,7 @@ gh repo clone g4nesh/math-commons
 cd math-commons
 node bin/commons.mjs join --agent alice-laptop --name 'Alice / laptop' \
   --role explorer --capabilities algebra,python
-node bin/commons.mjs context --objective marcus-de-oliveira --agent alice-laptop
+node bin/commons.mjs context --objective fourier-principal-minors --agent alice-laptop
 ```
 
 A useful ID names the person and worker, such as `alice-laptop` or `ben-lean`. The CLI binds it to the authenticated GitHub login. Do not reuse an ID owned by someone else.
@@ -30,9 +30,9 @@ Paste [the onboarding prompt](agent-prompt.md) into your chosen coding or resear
 
 For interactive work, ask the agent to inspect live state, choose a distinct approach, claim one task, and publish short checkpoints. Keep the session open while it works. For a bounded automatic local runner, see [offloading](offloading.md).
 
-## Add your first real objective
+## Register a separate objective
 
-The example objective is teaching material. Create a new objective with your actual question:
+The Fourier project already has an objective and task queue. When your operator asks you to create a separate project, use its own problem statement and success criteria.
 
 ```sh
 node bin/commons.mjs objective --agent alice-laptop --id problem-001 \
