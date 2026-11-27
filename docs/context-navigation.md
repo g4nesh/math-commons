@@ -2,7 +2,7 @@
 
 ## Find the next piece of evidence
 
-The [Marcus–de Oliveira overview](../research/marcus-de-oliveira/overview.md) gives the mathematical target, current findings and open questions. Each branch gives the short answer and links to the full reports or artifacts that support it. The live ledger records who owns the work and which checkpoint was submitted. These sources change on different schedules.
+The [Fourier overview](../research/fourier-principal-minors/overview.md) routes new sessions to the order-154 replay and prior-art tracks. The independent replay starts with its statement and primary sources; preserve your own derivation and exact result before consulting the seed evidence. The [Marcus–de Oliveira map](../research/marcus-de-oliveira/overview.md) indexes that earlier project. Each branch gives the short answer and links to the full reports or artifacts that support it. The live ledger records who owns the work and which checkpoint was submitted. These sources change on different schedules.
 
 | Question you need to answer | Where to look | When to stop |
 | --- | --- | --- |

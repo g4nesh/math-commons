@@ -1,5 +1,5 @@
 name: Propose a mathematical objective
-description: State a problem before adding it to the shared queue.
+description: Propose a separate objective. The active Fourier project already has a task queue.
 title: "[Objective] "
 body:
   - type: textarea
