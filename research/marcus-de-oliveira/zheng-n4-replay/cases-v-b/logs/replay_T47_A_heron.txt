@@ -1,0 +1,60 @@
+====================================================================================================
+Replay of T_47 part A, documents 4 and 5: the Heron-type necessary inequalities H6 >= 0, H8 >= 0
+====================================================================================================
+[INFO] python 3.9.6, sympy 1.14.0, python-flint 0.6.0, numpy 2.0.2, scipy 1.13.1 (NUMERIC parts only)
+
+--- Provenance   [t = 1 s]
+[PASS] [EXACT] sha256 of final_referee_T46_negative_j_Heron_uniform_20261023.pdf is the one of the file that was read  ::  ae3a4791889ae704...
+[PASS] [EXACT] sha256 of final_referee_T46_two_Heron_necessity_20261023.pdf is the one of the file that was read  ::  0a32065e9eae0f7e...
+[PASS] [EXACT] sha256 of root_moc4_T46_full_radial_20261022.json is the one of the file that was read  ::  4140ecfc03dfe684...
+[PASS] [EXACT] sha256 of final_referee_T46_j_squareclass_20261022.json is the one of the file that was read  ::  0d34ebe220ed8575...
+
+--- Foundations rebuilt from the paper's definitions   [t = 1 s]
+[PASS] [EXACT] P is a 24 x 14 integer matrix; every row is a polynomial identity in 16 variables (checked at construction); rank 14; P kappa = (1,...,1) for kappa = e_13
+[PASS] [EXACT] dC/dm_j (Psi(v)) = 0 identically in 16 variables for j = 0..13 (so X lies in the singular locus of the cubic C of (A.2))
+[PASS] [EXACT] 82 vectors f_j of Appendix D: all in the image of P; 34 minor vectors with 18 or 20 zeros, 48 vectors h with value profile 13/10/1; pairwise distinct
+[PASS] [EXACT] group G: 1152 distinct maps of the 24 permutation indices; G permutes the 82 vectors f_j and maps minor vectors to minor vectors
+[PASS] [EXACT] both notes use the tuple {1,3,5,6,7,8} = T_47 and the source q f27 + p f1 + j f59 + c f5 + e f2 + d f28 + b f6 + a f4: the eight generators and names of the top-level note (all vanish on T; only f28 is non-minor)
+
+--- C0, Q, the radial polynomial G and its discriminant in j  [document 5, p. 1]   [t = 2 s]
+[PASS] [EXACT] C(g + h kappa) = C0 + h Q with C0 = -(q+d) L - j M and Q = j p - j(c+e+d) - (c+d)(e+d) (D = a+d, M = (c+d)(a+d+e), L = M + bD); all coefficients of C0 are negative and -d^3 occurs, so C0 < 0 for nonnegative coefficients with d > 0, hence Q != 0 at a point of X
+[PASS] [EXACT] Q^4 det Hess C(g - (C0/Q) kappa) = -4 Q^2 G^2 as a polynomial identity (236435 terms on the left); G has 1556 terms, is homogeneous of degree 9 and has degree 2 in j  ::  2.9 s
+[PASS] [EXACT] (1): with G = A j^2 + B j + C, B^2 - 4AC = (q+d)^2 H6 H8 where H6 = [L(p+q) - bD(c+e)]^2 - 4pqML + 4cebDM (150 terms, degree 6) and H8 = W0^2 + 4dDb^2 L Xi, W0 = (q+d)Lp + b{(q-d)L - ae(c+d)}, Xi = q(c+e+d+b) - ce (279 terms, degree 8); (5): G_j^2 - 4AG = B^2 - 4AC
+[PASS] [EXACT] (4): gcd(A, B, C) = 1 and gcd(G, G_j) = 1 (flint multivariate gcd)
+[PASS] [EXACT] smooth wall of H8 (3): dH8/dp = 2 W0 (q+d) L and dH8/dq = 2 W0 dW0/dq + 4dDb^2 L (c+e+d+b) (L does not involve p, q)
+
+--- The principal minor deleting the coordinates 0, 1 and the norm identities  [document 5, p. 2]   [t = 5 s]
+[PASS] [EXACT] the 12 x 12 principal minor of Hess C(g + h kappa) with rows and columns 0, 1 deleted does not involve the height h, has 1411 terms (the supplement reports 1411) and equals -j^2 P10 with P10 of degree 2 in j and total degree 10; equal to integer determinants at 5 random points
+[PASS] [EXACT] A P10 - alpha G = u1 j + u0 with u1 = A beta - alpha B, u0 = A gamma - alpha C; and u0^2 - u1 (B gamma - beta C) (555255 terms) is the resultant of G and P10 in j
+[PASS] [EXACT] this resultant is a perfect square W^2 with W of 14532 terms, homogeneous of degree 17 and independent of j (own exact square root, verified by squaring)  ::  14.7 s
+[PASS] [EXACT] S+ := 2A u0 - B u1 + 2AW = -H8 R8^2 with a nonzero polynomial root of 621 terms that is independent of j; and P10 S+ - (u1 j + u0 + W)^2 is divisible by G (complete polynomial quotient, 93806 terms)  ::  31.9 s
+[PASS] [EXACT] S- := 2A u0 - B u1 - 2AW = -(q+d)^2 H6 T8^2 with a nonzero polynomial root of 332 terms that is independent of j; and P10 S- - (u1 j + u0 - W)^2 is divisible by G (complete polynomial quotient, 108074 terms)  ::  55.1 s
+[PASS] [EXACT] sizes agree with the supplement's report: R8 has 621 terms, T8 has 332 terms, the two quotients have 93806 and 108074 terms
+[PASS] [EXACT] supplement data (JSON, comparison only): the stored degree-nine factor equals G and the stored W equals W, both with the same sign
+[PASS] [EXACT] along any curve of coefficients through a point with G = 0, Q != 0: -4 G^2/Q^2 vanishes to first order there and its second derivative is -8 G_x^2/Q^2 (Taylor coefficients)
+
+--- Document 4: the second completion of H6 and the exceptional locus  [p. 1]   [t = 74 s]
+[PASS] [EXACT] (1) of document 4: H6 = T0^2 + 4bDM (q-c)(q-e), T0 = Lp + (bD - M) q - bD(c+e); dH6/dp = 2 L T0; dH6/dq = 2 T0 (bD - M) + 4bDM (2q - c - e)
+[PASS] [EXACT] on q = c = e: T0 = L (p - q); on the locus p = q = c = e = t: H8 = W0^2 + 4dDb^2 L t (t + d + b), and at t = 0, W0 = -b d (a+d)(b+d) = -b d L
+[INFO] PROOF-READ (document 4): for b, D, M > 0 the zero set of H6 is smooth except possibly on p = q = c = e, where H8 > 0; at a point of X with H8 < 0 one gets H6 = 0, G_j = 0, A != 0 and grad G != 0, and the mechanism of document 5 applies on the nearby part G_j != 0 of the radial hypersurface, where H6 < 0 and H8 < 0.
+
+--- The geometric inputs cited by both notes (paper, Appendix C)   [t = 74 s]
+[INFO] CITED 1 (paper (C.2) from Howard-Millson-Snowden-Vakil, and Corollary C.5): every real point u with C(u) = 0 and det Hess C(u) = 0 lies on the cone Sigma over the secant variety of X, and rank Hess C <= 12 on Sigma.
+[INFO] CITED 2 (paper, Proposition C.6; PROOF.md 7.4): for x in X, Hess C(Re x) has at most six positive and six negative eigenvalues; hence every 12 x 12 principal minor of it is >= 0, and one is > 0 if the rank is 12.
+[PASS] [EXACT] spot check of CITED 2 at two random Gaussian-rational points x of X (seed 4712): Hess C(Re x) has rank 12, inertia (6,6,2) (exact congruence diagonalisation) and all 91 principal 12 x 12 minors are >= 0  ::  rank 12, inertia (6, 6, 2), 91 of 91 minors > 0, 0 < 0; rank 12, inertia (6, 6, 2), 91 of 91 minors > 0, 0 < 0
+[PASS] [EXACT] at two random rational points of X the tangent spaces have dimension 6 and their sum has dimension 12: the cone over the secant variety has dimension exactly 12 (Terracini; it is at most 6 + 6)
+[INFO] PROOF-READ (own remark): CITED 1 can be replaced, where the notes use it, by Corollary C.5 on Sigma and dim Sigma = 12: at a point u0 of Re X on the slice span(f's, kappa) at which grad G != 0, the germ of Sigma on the slice has dimension >= 12 + 9 - 14 = 7 and lies in the smooth 7-dimensional germ {C0 + hQ = 0, G = 0}, so the two germs are equal and rank Hess C <= 12 at all radial points near u0.
+[INFO] PROOF-READ (linear algebra used by the notes): a real symmetric matrix of rank 12 has a nonzero principal 12-minor, and all its nonzero principal 12-minors have one sign, (-1)^(number of negative eigenvalues); a matrix curve whose value has corank >= 3 has a determinant vanishing to order >= 3.
+
+--- An elementary proof of both theorems (not in the documents)   [t = 75 s]
+[PASS] [EXACT] (q - c)(c+e+d+b) = Xi - c(c+d+b) and (q - e)(c+e+d+b) = Xi - e(e+d+b), hence (c+e+d+b)^2 H6 = (c+e+d+b)^2 T0^2 + 4bDM (Xi - c(c+d+b)) (Xi - e(e+d+b))
+[INFO] PROOF-READ: let all coefficients be >= 0 and b, d > 0 (so D, M, L, c+e+d+b > 0).  If Xi <= 0, both brackets are <= 0 and H6 >= 0; if moreover Xi < 0 both are < 0 and H6 > 0.  If Xi > 0 then H8 >= 4dDb^2 L Xi > 0.  Hence H8 < 0 forces Xi < 0 and H6 > 0, and H6 < 0 forces Xi > 0 and H8 > 0: whenever one of H6, H8 is negative, H6 H8 < 0.  At a point of X with d > 0 we have G = 0, so by (5) (q+d)^2 H6 H8 = G_j^2 >= 0.  Therefore H6 >= 0 and H8 >= 0.  This uses only (1), (5), the two square completions and the radial identity; it does not use the principal minor, the norm identities, j > 0, or any result of Appendix C.  In this orthant {H6 >= 0, H8 >= 0} is exactly the set where the quadratic G in j has nonnegative discriminant.
+[PASS] [EXACT] exact evaluation at 300000 random integer points (q,p,c,e,d,b,a) of the closed orthant with b, d > 0 (seed 4713; zero coefficients occur; the evaluator agrees with the polynomials at 200 rational points): H6 < 0 at 30969 points and H8 < 0 at 21656 points, never both, never one negative with the other <= 0
+
+--- NUMERIC falsification attempts (floating point; evidence only)   [t = 81 s]
+[PASS] [NUMERIC] CITED 1 on this slice: at 400 random real points with C0 + hQ = 0 and G = 0 (coefficients of either sign, seed 47500) the two smallest singular values of Hess C are <= 1.1e-11 and <= 4.2e-12 times the largest, the twelfth is >= 2.9e-06 times it: rank exactly 12 at every radial point found
+[PASS] [NUMERIC] points of X with contact set T, d > 0 and b, j > 0 from the steered search (seed 47200, 300 starts for d >= 0.002 and for d >= 0.01): 4 points; relative |G| <= 2.6e-15; H6 >= 3.55e-03 and H8 >= 2.40e-01 (relative to the sum of the absolute monomials): both are >= 0 up to rounding at every point
+[PASS] [NUMERIC] 400000 random points with b, d > 0 and exactly one of q, p, c, e, a negative (seed 47500): the number with H6 < 0 and H8 < 0 is {'q': 0, 'p': 0, 'c': 0, 'e': 0, 'a': 0}: the case 'both factors negative' of document 5 does not occur near the domain of its theorem
+[PASS] [NUMERIC] the mechanism itself, at 160 real radial points with H6 < 0 and H8 < 0 (d < 0 or b < 0, outside the domain of the theorem): P10 > 0 at all of them (smallest relative value 4.7e-08), so the principal minor -j^2 P10 is negative there, and the inertia is never (6,6): the pairs (n+, n-) found are [(5, 7), (7, 5)]
+
+FINAL: PASS  (32 checks, 151.2 s)

@@ -5,7 +5,10 @@
   "statePath": "coordination/state.json",
   "leaseMinutes": 20,
   "checkpointMinutes": 5,
-  "defaultObjectiveId": "marcus-de-oliveira",
-  "defaultObjectiveOverview": "research/marcus-de-oliveira/overview.md",
-  "defaultObjectiveBrief": "research/marcus-de-oliveira/README.md"
+  "defaultObjectiveId": "fourier-principal-minors",
+  "defaultObjectiveOverview": "research/fourier-principal-minors/overview.md",
+  "defaultObjectiveBrief": "research/fourier-principal-minors/README.md",
+  "replaySeedOwners": {
+    "fourier-154-replay": ["g4nesh"]
+  }
 }

@@ -16,7 +16,7 @@ function draftFor(id) {
 }
 
 /** Public read-only view. Drafts live only in this module, never in localStorage. */
-export function renderRequests({ state, objective, el, copy, repoUrl }) {
+export function renderRequests({ state, objective, replaySeedOwners, el, copy, repoUrl }) {
   const objectives = list(state?.objectives), tasks = list(state?.tasks), agents = list(state?.agents);
   const activeElement = document.activeElement;
   const oldFocus = activeElement?.closest('.requests-workspace') ? {
@@ -38,8 +38,11 @@ export function renderRequests({ state, objective, el, copy, repoUrl }) {
   const actorList = el('datalist', { id: 'requests-agent-suggestions' }, agents.map(agent => el('option', { value: agent.id }, `${agent.name || agent.id} · @${agent.owner || '?'}`)));
   let contents, selector;
 
-  function blockers(task) {
+  function blockers(task, actor) {
     const reasons = [];
+    if (actor && list(replaySeedOwners?.[task.id]).some(seed => seed.toLowerCase() === actor.owner.toLowerCase())) {
+      reasons.push(`@${actor.owner} contributed the seed. This replay requires an agent owned by a different GitHub collaborator.`);
+    }
     const ownerObjective = objectives.find(item => item.id === task.objectiveId);
     if (ownerObjective?.status !== 'open') reasons.push('Objective is not open.');
     for (const id of list(task.dependsOn)) {
@@ -57,8 +60,8 @@ export function renderRequests({ state, objective, el, copy, repoUrl }) {
   function requestRow(task) {
     const status = taskStatus(task), parent = tasks.find(item => item.id === task.request.fromTaskId);
     const invitations = task.request.to && task.request.to !== 'all' ? `Invited: ${name(task.request.to)}` : 'Open invitation';
-    const reasons = blockers(task), claimableState = status === 'open' || status === 'expired';
-    const knownActor = slug(ui.actor) && agents.some(agent => agent.id === ui.actor);
+    const knownActor = agents.find(agent => agent.id === ui.actor);
+    const reasons = blockers(task, knownActor), claimableState = status === 'open' || status === 'expired';
     const checkpoint = list(task.checkpoints).slice().reverse().sort((a, b) => (Date.parse(b.createdAt) || 0) - (Date.parse(a.createdAt) || 0))[0];
     const evidence = list(checkpoint?.evidence).flatMap(value => {
       try {

@@ -183,6 +183,17 @@ test('explicit objective overrides the configured worker default', async () => {
   assert.equal(store.state.tasks.find(task => task.id === 'mdo-direction').status, 'open');
 });
 
+test('a seed owner gets a different task automatically and a precise error on explicit replay', async () => {
+  const store = await mockStore();
+  store.config.defaultObjectiveId = 'p';
+  store.config.replaySeedOwners = { t: ['Alice'] };
+  await assert.rejects(work(store, { agent: 'worker', task: 't', command: 'fixture' }), /independent replay/);
+  assert.equal(store.state.tasks[0].status, 'open');
+  await store.mutate({ kind: 'task', agent: 'worker', taskId: 'prior-art', objectiveId: 'p', title: 'Priority', description: 'Check the literature' });
+  const result = await work(store, { agent: 'worker', command: 'fixture', run: async () => ({ status: 'release', summary: 'Priority checked' }) });
+  assert.equal(result[0].taskId, 'prior-art');
+});
+
 test('missing configured objective fails before running or claiming the example', async () => {
   const store = await mockStore();
   store.config.defaultObjectiveId = 'not-created';
