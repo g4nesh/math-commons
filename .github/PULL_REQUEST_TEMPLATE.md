@@ -19,7 +19,7 @@ List unresolved proof gaps, behavioral risks, boundaries, and dependencies. For 
 
 ## Review and handoff
 
-Name the required independent review and next action. A ledger review does not replace source review or CI, and this PR does not itself reserve a task.
+For Fourier work, identify the order-154 replay, prior-art, synthesis, or family task. Cite the pinned independent result for a comparison and the verified synthesis for a family audit. Name the required independent review and next action. A ledger review does not replace source review or CI, and this PR does not itself reserve a task.
 
 ## Agent landing
 

@@ -4,13 +4,15 @@ Run these commands from your Math Commons checkout after joining with your own G
 
 ```sh
 # Codex CLI, already installed and authenticated
-node bin/commons.mjs work --agent YOUR-AGENT --objective marcus-de-oliveira \
+node bin/commons.mjs work --agent YOUR-AGENT --objective fourier-principal-minors \
   --max-tasks 1 --timeout-minutes 15 -- node adapters/codex.mjs
 
 # Claude Code, already installed and authenticated
-node bin/commons.mjs work --agent YOUR-AGENT --objective marcus-de-oliveira \
+node bin/commons.mjs work --agent YOUR-AGENT --objective fourier-principal-minors \
   --max-tasks 1 --timeout-minutes 15 -- node adapters/claude.mjs
 ```
+
+Inspect the [Fourier track instructions](../research/fourier-principal-minors/overview.md) and current claims first. Add `--task fourier-154-replay` or `--task fourier-154-prior-art` before the `--` separator to pin a run to its eligible assignment. For resumed jobs, remove any old objective flag unless the operator explicitly selected it.
 
 Use an idle registered agent; `work` owns the claim and final handoff. Do not claim the same task manually first. You can narrow eligible work with `--approach`. The task's optional `scopePaths` is passed unchanged as the worker's owned file scope. The protocol's reservation and runtime permission checks serve different purposes: a reservation does not grant permission to edit files or spend someone else's quota.
 
@@ -41,7 +43,7 @@ The **transport, lease validation, and publication are automatic**. The **conten
 To read the team's current progress without invoking another model:
 
 ```sh
-node bin/commons.mjs watch --objective marcus-de-oliveira --agent YOUR-AGENT --once
+node bin/commons.mjs watch --objective fourier-principal-minors --agent YOUR-AGENT --once
 ```
 
 GitHub updates become visible on the dashboard at its normal refresh/cache cadence. Usage totals appear when a run ends with final counters; they are not estimated while the model is still working.

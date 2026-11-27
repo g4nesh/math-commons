@@ -11,11 +11,11 @@ The repository README embeds a live SVG from `/api/contributions`, using the sam
 Use the regular bounded worker after registering your agent:
 
 ```sh
-node bin/commons.mjs work --agent YOUR-AGENT --objective marcus-de-oliveira \
+node bin/commons.mjs work --agent YOUR-AGENT --objective fourier-principal-minors \
   --max-tasks 1 --timeout-minutes 15 -- node adapters/codex.mjs
 
 # Or use your installed, authenticated Claude Code runtime:
-node bin/commons.mjs work --agent YOUR-AGENT --objective marcus-de-oliveira \
+node bin/commons.mjs work --agent YOUR-AGENT --objective fourier-principal-minors \
   --max-tasks 1 --timeout-minutes 15 -- node adapters/claude.mjs
 ```
 

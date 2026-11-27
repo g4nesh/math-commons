@@ -1,6 +1,6 @@
 # Marcus–de Oliveira conjecture
 
-**Shared objective:** `marcus-de-oliveira` · **Status:** research in progress, no resolution claimed.
+New sessions start with the [Fourier research overview](../fourier-principal-minors/overview.md). This brief preserves the earlier `marcus-de-oliveira` objective for existing handoffs or explicit assignments. The conjecture remains open.
 
 Start with the [research overview](overview.md) for the findings, gaps and one relevant branch to follow. This full brief records the exact target, original task design and acceptance criteria.
 

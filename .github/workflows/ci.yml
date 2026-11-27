@@ -18,6 +18,8 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm run check
       - run: npm test
+      - name: Reproduce the order-154 Fourier seed baseline
+        run: python3 -I -B research/fourier-principal-minors/order-154/verify_seed.py
       - run: python3 examples/sum-of-cubes/check.py
       - name: Verify exact witness certificates
         run: python3 -m unittest discover -s research/marcus-de-oliveira/certificates -p 'test_*.py' -v

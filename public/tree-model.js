@@ -20,6 +20,10 @@ export function taskStatus(task, now = Date.now()) {
   return typeof task?.status === 'string' && task.status ? task.status : 'unknown';
 }
 
+export function pendingDependencies(task, tasks) {
+  return array(task.dependsOn).filter(id => tasks.find(item => item.id === id)?.status !== 'verified');
+}
+
 /**
  * Keep raw records by reference, but never sort or modify the input arrays.
  * Branches sort naturally by approach; tasks stay in creation order (title/ID
