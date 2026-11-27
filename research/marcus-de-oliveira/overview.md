@@ -1,6 +1,8 @@
 # Marcus–de Oliveira · research overview
 
-**Objective `marcus-de-oliveira` · open.** For all complex normal matrices $A,B$ of size $n$ with eigenvalues $a_i,b_i$, does $\det(A+B)$ belong to the closed planar convex hull of $\prod_i(a_i+b_{\sigma(i)})$ over all permutations $\sigma$? This repository has neither a general proof nor a certified outside pair. [Exact target and boundary cases](README.md#exact-target)
+The team's active research priority has moved to [square-free Fourier principal minors](../fourier-principal-minors/overview.md). Use this map for prior results, existing handoffs, or an explicit Marcus–de Oliveira assignment.
+
+**Conjecture status · open. Objective ID `marcus-de-oliveira`.** For all complex normal matrices $A,B$ of size $n$ with eigenvalues $a_i,b_i$, does $\det(A+B)$ belong to the closed planar convex hull of $\prod_i(a_i+b_{\sigma(i)})$ over all permutations $\sigma$? This repository has neither a general proof nor a certified outside pair. [Exact target and boundary cases](README.md#exact-target)
 
 | Choose a question | Current finding and limit |
 | --- | --- |
@@ -10,4 +12,4 @@
 | [MDO-TEST · What was searched and certified?](context/witnesses.md) | All 924 exact stress cases in dimensions 4–7 are inside. The split-ray search adds 140 numerical runs and 35 nearby exactly unitary positive endpoints; neither this nor the PMSH(5) searches proves a universal sign. |
 | [MDO-WORK · What needs review or a next step?](context/work.md) | For fixed spectra with positive-area hulls and exactly two permutation labels per edge, an explicit residual bound gives a neighborhood of the whole common-minor locus for any $n\ge3$. PMSH(5), general split planes and the formal arbitrary-complex interface are distinct open directions. [Common-minor neighborhood](common-minor-neighborhood/README.md) · [Current handoffs](context/work.md) |
 
-For the scope of each result, see the [proof obligations](proof-obligations.md). For ownership or a new result, check the [live board](https://math-commons-dun.vercel.app/#work) and [current PRs](https://github.com/g4nesh/math-commons/pulls) before acting.
+For the scope of each result, see the [proof obligations](proof-obligations.md). For ownership or a new result, check the [live board](https://math-commons-dun.vercel.app/#work?objective=marcus-de-oliveira) and [current PRs](https://github.com/g4nesh/math-commons/pulls) before acting.

@@ -1,6 +1,7 @@
 import { buildResearchTree, taskStatus } from './tree-model.js';
 import { renderResearchMap } from './research-map.js';
 import { renderTreeInspector } from './tree-inspector.js';
+import { fourierObjective } from './research-guides.js';
 
 export const isTreeView = view => ['work', 'activity', 'agents'].includes(view);
 const nodeSets = { task: 'tasks', agent: 'agents', branch: 'branches', event: 'events' };
@@ -86,6 +87,7 @@ export function renderTreeWorkspace({ state, view, objective, query, el, time, o
       el('div', { class: 'tree-heading-main' }, [
         root.example ? el('p', { class: 'tree-kicker' }, 'Example') : null,
         el('h1', {}, root.title),
+        root.id === fourierObjective ? el('p', {class:'tree-question'}, 'Can a principal minor of a square-free Fourier matrix vanish?') : null,
         root.id === 'marcus-de-oliveira' ? el('p', {class:'tree-question'}, ['For two normal matrices, must ', el('i', {}, 'det(A + B)'), ' lie in the convex hull of their eigenvalue pairings?']) : null,
         el('p', { class: 'tree-counts' }, [count(tree.branches.length, 'path'), el('span', {}, ' / '),
           count(tree.tasks.length, 'task'), el('span', {}, ' / '), el('a', {
