@@ -291,9 +291,14 @@ export async function leanGate(options) {
     failures.push(`source rule ${finding.rule} at ${finding.file}:${finding.line}: ${finding.text}`);
   }
 
-  const build = await run(lake, ['build'], { cwd: root, timeoutMs: buildTimeoutMs });
+  // Build exactly the audited modules (and, through Lake, their imports), so
+  // unrelated modules in the same package cannot pass or fail this gate.
+  const build = await run(lake, ['build', ...modules], { cwd: root, timeoutMs: buildTimeoutMs });
   if (build.code !== 0) failures.push(build.error ? `lake could not start: ${build.error}` : `lake build failed (exit ${build.code ?? build.signal})`);
-  if (/declaration uses 'sorry'/.test(build.output)) failures.push("the build reports a declaration that uses 'sorry'");
+  const audited = Object.keys(sources);
+  for (const line of build.output.split('\n').filter(text => /declaration uses 'sorry'/.test(text))) {
+    if (!/\.lean:\d+/.test(line) || audited.some(path => line.includes(path))) failures.push(`the build reports a declaration that uses 'sorry': ${line.trim().slice(0, 200)}`);
+  }
   const buildWarnings = (build.output.match(/warning:/g) || []).length;
 
   let audit = { records: [], errors: [] }, auditOutput = '';

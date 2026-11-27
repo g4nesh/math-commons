@@ -33,17 +33,34 @@ async function runClaude({ settings, prompt, schemaPath, cwd, role, timeoutMs })
     '-p', '--output-format', 'stream-json', '--verbose',
     '--json-schema', readText(schemaPath),
     '--session-id', sessionId, '--no-session-persistence',
-    '--max-turns', String(role.maxTurns || settings.maxTurns || 60),
+    '--max-turns', String(maxTurns(role, settings)),
     '--permission-mode', settings.permissionMode || 'default'
   ];
   if (settings.model) args.push('--model', settings.model);
-  const effort = role.effort || settings.effort;
+  const effort = settings.effort || role.effort;
   if (effort) args.push('--effort', effort);
   if (settings.allowedTools?.length) args.push('--allowedTools', settings.allowedTools.join(','));
   if (settings.maxBudgetUsd) args.push('--max-budget-usd', String(settings.maxBudgetUsd));
-  const exit = await spawnRun(settings.bin || 'claude', args, { cwd, input: prompt, timeoutMs, onStdout: chunk => collector.write(chunk) });
+  let tail = '';
+  const exit = await spawnRun(settings.bin || 'claude', args, { cwd, input: prompt, timeoutMs, onStdout: chunk => { collector.write(chunk); tail = (tail + chunk.toString('utf8')).slice(-65_536); } });
   const metering = collector.finish(new Date().toISOString(), new Date().toISOString());
-  return { exit, answer: metering.answer, usage: metering.usage || null, warning: metering.warning || null, failed: metering.failed };
+  return { exit, answer: metering.answer, usage: metering.usage || null, warning: metering.warning || null, failed: metering.failed, error: resultError(tail) };
+}
+
+// The operator's config caps a role's own defaults.
+const maxTurns = (role, settings) => Math.min(role.maxTurns || Infinity, settings.maxTurns || Infinity, 500);
+
+// Claude reports problems such as "Not logged in" in the terminal result event
+// on stdout, not on stderr; surface that text instead of a bare exit code.
+function resultError(tail) {
+  for (const line of tail.split('\n').reverse()) {
+    if (!line.includes('"type":"result"')) continue;
+    try {
+      const event = JSON.parse(line);
+      if (event.is_error && typeof event.result === 'string') return event.result.slice(0, 300);
+    } catch { /* a partial first line in the tail */ }
+  }
+  return null;
 }
 
 async function runCodex({ settings, prompt, schemaPath, cwd, role, timeoutMs, runDir }) {
@@ -53,7 +70,7 @@ async function runCodex({ settings, prompt, schemaPath, cwd, role, timeoutMs, ru
     '--output-schema', schemaPath, '--output-last-message', output];
   if (settings.model) args.push('-m', settings.model);
   if (settings.profile) args.push('-p', settings.profile);
-  const effort = role.effort || settings.effort;
+  const effort = settings.effort || role.effort;
   if (effort) args.push('-c', `model_reasoning_effort="${effort}"`);
   args.push(...(settings.extraArgs || []), '-');
   const exit = await spawnRun(settings.bin || 'codex', args, { cwd, input: prompt, timeoutMs, onStdout: chunk => collector.write(chunk) });
@@ -88,7 +105,10 @@ export async function runRuntime({ config, runtime, prompt, schemaPath, role, ru
   if (result.usage) Object.assign(result.usage, { startedAt, finishedAt });
   if (result.exit.startFailed) return { status: 'failed', detail: `${runtime} could not start (${result.exit.error}). Install and authenticate it, or set runtimes.${runtime}.bin.`, usage: null };
   if (result.exit.timedOut) return { status: 'failed', detail: `${runtime} timed out after ${timeoutMs / 60_000} minutes`, usage: result.usage, warning: result.warning };
-  if (result.exit.code !== 0 || result.failed) return { status: 'failed', detail: `${runtime} exited ${result.exit.code ?? result.exit.signal}${result.exit.stderr ? `: ${result.exit.stderr.trim().split('\n').slice(-3).join(' | ')}` : ''}`, usage: result.usage, warning: result.warning, answer: result.answer };
+  if (result.exit.code !== 0 || result.failed) {
+    const reason = result.error || result.exit.stderr?.trim().split('\n').slice(-3).join(' | ');
+    return { status: 'failed', detail: `${runtime} exited ${result.exit.code ?? result.exit.signal}${reason ? `: ${reason}` : ''}`, usage: result.usage, warning: result.warning, answer: result.answer };
+  }
   if (!result.answer || typeof result.answer !== 'object') return { status: 'failed', detail: `${runtime} returned no structured answer`, usage: result.usage, warning: result.warning };
   return { status: 'ok', answer: result.answer, usage: result.usage, warning: result.warning };
 }

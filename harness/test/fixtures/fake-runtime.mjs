@@ -22,6 +22,11 @@ if (process.env.FAKE_RUNTIME_LOG) appendFileSync(process.env.FAKE_RUNTIME_LOG, J
 
 let output;
 if (mode === 'fail') process.exit(3);
+if (mode === 'logged-out' && !codex) {
+  const session = argv[argv.indexOf('--session-id') + 1];
+  process.stdout.write(JSON.stringify({ type: 'result', subtype: 'success', is_error: true, session_id: session, result: 'Not logged in · Please run /login', modelUsage: {} }) + '\n');
+  process.exit(1);
+}
 output = roleOutput(role, { runId, direction, attempt, certificate, mode, reviewsSoFar });
 for (const [path, text] of Object.entries(output.files || {})) {
   mkdirSync(dirname(join(dir, path)), { recursive: true });

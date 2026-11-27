@@ -130,3 +130,14 @@ test('manual runs pause the loop and resume from a recorded answer', async () =>
   assert.equal(evaluate(resumed).ok, true);
   assert.equal(readJsonl(resumed.paths.runs)[0].identity, 'claude-interactive');
 });
+
+test('a runtime failure reports the message of the CLI and ingests nothing', async () => {
+  const config = tempConfig();
+  const campaign = eulerCampaign(config, { formal: false });
+  await withEnv({ FAKE_RUNTIME_MODE: 'logged-out' }, async () => {
+    const outcome = await step(campaign, { runtime: 'claude' });
+    assert.equal(outcome.results[0].status, 'failed');
+    assert.match(outcome.results[0].detail, /Not logged in/);
+  });
+  assert.equal(existsSync(reload(campaign).paths.screenJson), false);
+});
