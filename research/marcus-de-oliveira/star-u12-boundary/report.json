@@ -1,0 +1,38 @@
+{
+  "sympy": "1.14.0",
+  "checks": {
+    "reduction A": true,
+    "reduction k": true,
+    "reduction h": true,
+    "reduction d": true,
+    "reduction e": true,
+    "frame: x.a = 0": true,
+    "frame: |a|^2 = |alpha|^2+|beta|^2+|gamma|^2": true,
+    "q^4 F is quadratic in s": true,
+    "Bernstein identity": true,
+    "F0 = q^2 t^2 |uzB-wG|^2 (u^2 + t|zB-uwG|^2/q^2)": true,
+    "F1 free of (B, G)": true,
+    "Fc is a Hermitian form in (B, G)": true,
+    "F1/q^4 has nonnegative coefficients": true,
+    "T(s=1)/q^2 has nonnegative coefficients": true,
+    "T(s=0) = t(p + u^2 q^2) + t^2 n2 (both PSD forms)": true,
+    "M11/(t q^2) has nonnegative coefficients": true,
+    "M22/(t q^2) has nonnegative coefficients": true,
+    "det M/(t^2 q^8) has exactly the negative terms -U W^2 Z t^4, -U W Z^2 t^4": true,
+    "witness on the sphere": true,
+    "witness: Fc < 0": true,
+    "witness: det M < 0": true,
+    "witness: F1 > 0 and Fc^2 < 4 F0 F1, so F > 0 for all s": true
+  },
+  "witness": {
+    "u": "1/9",
+    "w": "8/9",
+    "z": "4/9",
+    "t": "20",
+    "B": "620/947",
+    "G": "353/467",
+    "Fc": "-890733852831794969600/8419244898740492601",
+    "detM": "-49629084024832000000/617673396283947",
+    "discriminant": "-23418078351196664051945235135521409597440000/70883684664967807510500328688135745201"
+  }
+}
