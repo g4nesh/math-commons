@@ -1,0 +1,10 @@
+====================================================================================================
+proto
+====================================================================================================
+[PASS] [EXACT] C(g + h kappa) is of degree <= 1 in the height h: C = C0 + h Q
+[PASS] [EXACT] Q = (m0 m6 - m1 m5)(g) (= dC/dm13; it does not involve h)
+[PASS] [EXACT] det Hess C(g + h kappa) as a polynomial in nine variables: 17962 terms (subset Laplace expansion, int64 with l1 bound 2^37 < 2^62); equal to the integer determinant (python-flint fmpz_mat.det) at random integer points (seed 20261125)  ::  26.1 s
+[PASS] [EXACT] det Hess C(g + h kappa) has degree <= 4 in h (rank of Hess C(kappa) is 4)  ::  h-degrees present: [0, 1, 2, 3]
+[PASS] [EXACT] N := Q^4 det Hess C(g - (C0/Q) kappa) = sum_k D_k (-C0)^k Q^(4-k) has 252067 terms and N = -4 Q^2 G^2 with G of 1651 terms, homogeneous of degree 9 (own exact division and square root; the identity is re-verified by multiplying out)
+70.32656931877136
+24 8 1651
