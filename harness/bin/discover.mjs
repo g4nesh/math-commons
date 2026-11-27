@@ -263,6 +263,15 @@ async function main(argv) {
         ['node', process.execPath, process.version]
       ];
       out(rows.map(([name, bin, version]) => `${version ? '✓' : '✗'} ${name.padEnd(8)} ${version || `not found (${bin})`}`).join('\n'));
+      // Desktop apps ship their CLIs inside the bundle; point the config at them.
+      const bundled = {
+        codex: ['/Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex', '/Applications/Codex.app/Contents/Resources/codex-cli/bin/codex'],
+        claude: listFiles(join(process.env.HOME || '', 'Library', 'Application Support', 'Claude', 'claude-code'), { ignore: [] }).filter(path => path.endsWith('/Contents/MacOS/claude')).sort().reverse()
+      };
+      for (const [name, , version] of rows.slice(0, 2)) {
+        const found = !version && bundled[name].find(path => existsSync(path));
+        if (found) out(`  hint: ${name} is bundled at ${JSON.stringify(found)}; set runtimes.${name}.bin in discovery.config.json or DISCOVER_${name.toUpperCase()}_BIN (check that it is logged in for CLI use)`);
+      }
       out(`routing: author=${config.routing.author}, reviewer=${config.routing.reviewer}; campaigns in ${rel(process.cwd(), campaignsRoot(config)) || '.'}/`);
       const drift = syncRuntime(config.root, { check: true });
       out(drift.length ? `✗ runtime files out of date (${drift.length}); run discover install-runtime` : '✓ runtime files in sync');

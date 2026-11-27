@@ -23,7 +23,9 @@ test('lean gate: an honest proof passes with only standard axioms', { skip, time
   assert.deepEqual(receipt.statement.closure.sort(), ['Fixtures.Good.Claim', 'Fixtures.Good.IsPrime']);
   assert.match(receipt.statement.fingerprint, /^[0-9a-f]{64}$/);
   assert.equal(receipt.owned.checked, true, JSON.stringify(receipt.owned));
-  console.log(`replay: ${JSON.stringify(receipt.replay)}`);
+  // Either the toolchain ships leanchecker and the replay passed, or the receipt says it was not run.
+  assert.ok(receipt.replay && (receipt.replay.exitCode === 0 || (receipt.replay.command === null && /not run/.test(receipt.replay.tail))), JSON.stringify(receipt.replay));
+  assert.ok(receipt.replay.command || receipt.scope.notClaimed.some(item => /kernel replay/i.test(item)));
 });
 
 test('lean gate: sorry is rejected', { skip, timeout: 1_800_000 }, async () => {

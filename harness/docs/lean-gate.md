@@ -30,7 +30,7 @@ An unsound kernel is rarely the problem with AI-written Lean. The usual failure 
 | 4 | Exact theorem type | Generated `.harness/Audit.lean` elaborates `#harness_audit_main`. The type of `main` must be structurally equal (`Expr ==`) to `Claim` or `Not Claim`. Defeq is not enough, because the theorem must name the audited constant. |
 | 5 | Axioms | `Lean.collectAxioms` for main, the statement and each required endpoint; all must be ⊆ the allowed set. This catches `sorryAx`, custom axioms and native computation, even if the scan missed them. |
 | 6 | Pin | Fingerprint equals `lean.claimFingerprint`. |
-| 7 | Replay (optional) | `formal.replay: "auto"` runs `leanchecker` in a fresh process when the toolchain ships it; otherwise the receipt says replay was not run. A custom command array also works. |
+| 7 | Replay (optional) | `formal.replay: "auto"` runs `leanchecker` in a fresh process when the toolchain ships it (v4.24.0, the template's pin, does not). Otherwise the receipt says replay was not run, and `scope.notClaimed` lists it. A custom command array, for example a pinned lean4checker build, also works. |
 | 8 | Freeze-and-recheck | Source hashes are taken before the build and compared after; drift fails the gate. |
 | — | Owned inventory (warnings) | A separate audit lists every declaration under the namespace with disallowed axioms, including unused ones. It is hygiene only and cannot fail the gate. |
 

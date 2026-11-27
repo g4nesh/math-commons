@@ -366,9 +366,12 @@ export async function leanGate(options) {
   if (replay && build.code === 0 && !failures.length) {
     let command = replay;
     if (replay === 'auto') {
-      const probe = await run(lake, ['env', 'which', 'leanchecker'], { cwd: root, timeoutMs: 60_000 });
-      command = probe.code === 0 && probe.output.trim() ? [lake, 'env', 'leanchecker', ...modules] : null;
-      if (!command) replayResult = { command: null, exitCode: null, tail: 'leanchecker is not in this toolchain; kernel replay not run' };
+      // elan puts a `leanchecker` proxy on PATH even when the pinned toolchain
+      // lacks the binary, so probe by running it, not by `which`.
+      const probe = await run(lake, ['env', 'leanchecker', '--help'], { cwd: root, timeoutMs: 60_000 });
+      const missing = probe.code === null || /does not have the binary|not found|No such file/i.test(probe.output);
+      command = missing ? null : [lake, 'env', 'leanchecker', ...modules];
+      if (!command) replayResult = { command: null, exitCode: null, tail: `leanchecker is not available in ${toolchain}; kernel replay not run` };
     }
     if (command) {
       const result = await run(command[0], command.slice(1), { cwd: root, timeoutMs: buildTimeoutMs });

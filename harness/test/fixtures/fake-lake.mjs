@@ -12,7 +12,7 @@ const sha = text => createHash('sha256').update(text).digest('hex');
 const sources = dir => readdirSync(dir, { withFileTypes: true }).flatMap(entry => entry.name.startsWith('.') ? [] : entry.isDirectory() ? sources(join(dir, entry.name)) : entry.name.endsWith('.lean') ? [join(dir, entry.name)] : []);
 if (argv[0] === '--version') { console.log('Lake (fake, harness tests)'); process.exit(0); }
 if (argv[0] === 'build') { console.log('Build completed successfully.'); process.exit(0); }
-if (argv[0] === 'env' && argv[1] === 'which') process.exit(1);
+if (argv[0] === 'env' && argv[1] === 'leanchecker') { console.error("error: toolchain does not have the binary leanchecker"); process.exit(1); }
 if (argv[0] === 'env' && argv[1] === 'lean') {
   const file = argv.at(-1);
   const audit = readFileSync(file, 'utf8');
