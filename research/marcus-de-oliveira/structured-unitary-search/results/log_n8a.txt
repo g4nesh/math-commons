@@ -1,0 +1,5 @@
+F8           n=8 R=  2 best_free=-8.46618626951595e-07 best_pen=-0.31474334568741963
+Dita2x4      n=8 R=  2 best_free=-3.7132859212489707e-06 best_pen=-0.2424681622890437
+Dita4x2      n=8 R=  2 best_free=-3.640904106109544e-05 best_pen=-0.367542612308522
+Ostar+Ostar  n=8 R=  2 best_free=-2.750112677579103e-05 best_pen=-0.02304755636365012
+Ostar+F4     n=8 R=  2 best_free=-2.6525262466681003e-06 best_pen=-0.1417903721280976
