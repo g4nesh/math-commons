@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "discovery-attempt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "attempt",
+    "certificates",
+    "file"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "attempt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim",
+        "method",
+        "outcome",
+        "status",
+        "result",
+        "failurePoint",
+        "evidence",
+        "next"
+      ],
+      "properties": {
+        "claim": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "proof-sketch",
+            "counterexample",
+            "reduction",
+            "partial",
+            "failed",
+            "inconclusive"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "promising",
+            "open",
+            "killed",
+            "resolved"
+          ]
+        },
+        "result": {
+          "type": "string"
+        },
+        "failurePoint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "next": {
+          "type": "string"
+        }
+      }
+    },
+    "certificates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "file": {
+      "type": "string"
+    }
+  }
+}

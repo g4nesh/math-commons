@@ -1,0 +1,26 @@
+det mod q agrees with exact rational determinant on 210 random matrices (incl. singular): True
+PASS N=4, S={0,2} (non-square-free, vanishes)
+PASS N=9, S={0,3,6} (vanishes)
+PASS N=7, S={0,1,3}: |Nm| = 2^3 7^3 (CLMP Prop 4.5)
+PASS N=6, S={0,1,3}: |Nm| = 12 (CLMP Prop 5.4)
+PASS N=14, singletons: Nm = 1
+PASS N=14, full set: |Nm| = 14^(14*6/2)
+
+size  subsets  Nm=0  11|Nm   smallest |Nm|   largest |Nm|
+   1       14     0      0                1  1.000e+00
+   2       91     0      0                1  6.400e+01
+   3      364     0      0                7  2.744e+03
+   4     1001     0      0               49  9.412e+05
+   5     2002     0      0             2401  2.825e+08
+   6     3003     0      0           117649  4.748e+12
+   7     3432     0      0         40353607  5.585e+17
+   8     3003     0      0     885842380864  3.575e+19
+   9     2002     0      0   136122083613085696  1.601e+22
+  10     1001     0      0   20917063856321200390144  4.018e+26
+  11      364     0      0   22499397902924186557257613312  8.820e+30
+  12       91     0      0   24201432355484595421941037243826176  1.549e+36
+  13       14     0      0   182225556172186058674940229804729969934336  1.822e+41
+  14        1     0      0   1372073885318497127491074758162987278899500548096  1.372e+48
+
+nonempty subsets 16383 (+ the empty set, D = 1); Nm = 0: 0; 11 | Nm: 0
+Hyp(14, 11) HOLDS at every prime above 11

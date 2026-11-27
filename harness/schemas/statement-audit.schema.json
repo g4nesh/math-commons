@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "discovery-statement-audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "verdict",
+    "summary",
+    "mapping",
+    "defects"
+  ],
+  "properties": {
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "faithful",
+        "needs-change",
+        "unfaithful"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "mapping": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source",
+          "lean",
+          "match",
+          "note"
+        ],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "lean": {
+            "type": "string"
+          },
+          "match": {
+            "type": "string",
+            "enum": [
+              "exact",
+              "stronger",
+              "weaker",
+              "different"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "defects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
