@@ -1,0 +1,59 @@
+name: Discovery harness
+on:
+  pull_request:
+    paths: ['harness/**', '.claude/**', '.agents/**', '.codex/**', 'adapters/*-usage.mjs', 'campaigns/**', '.github/workflows/harness.yml']
+  push:
+    branches: [main]
+    paths: ['harness/**', '.claude/**', '.agents/**', '.codex/**', 'adapters/*-usage.mjs', 'campaigns/**', '.github/workflows/harness.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: harness-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  offline:
+    name: Harness tests (no model, no Lean)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Unit and pipeline tests with fake runtimes and a fake lake
+        env:
+          DISCOVER_FORCE_FAKE_LAKE: '1'
+        run: node --test harness/test/*.test.mjs
+      - name: Runtime skills and agents match harness/runtime
+        run: node harness/bin/discover.mjs install-runtime --check
+      - name: Every campaign in the repository passes its current gate or names its blocker
+        run: node harness/bin/discover.mjs reconcile --strict
+  lean:
+    name: Lean gate on the real toolchain
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install elan; the pinned toolchain is fetched from each project's lean-toolchain
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          bash "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Negative controls (sorry, custom axiom, native_decide, weakened theorem, tampered statement)
+        run: node --test harness/test/lean-gate.test.mjs
+      - name: End-to-end campaign with the Lean stage on the real toolchain
+        env:
+          DISCOVER_TEST_KEEP: ${{ runner.temp }}/campaigns
+        run: node --test harness/test/pipeline.test.mjs
+      - name: Keep the end-to-end campaign record for inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: harness-e2e-campaigns
+          path: ${{ runner.temp }}/campaigns
+          if-no-files-found: warn
+          retention-days: 14

@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "discovery-scout",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "file",
+    "candidates"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "file": {
+      "type": "string"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "statement",
+          "source",
+          "url",
+          "significance",
+          "searchSummary",
+          "firstAttack",
+          "risk",
+          "rank"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "significance": {
+            "type": "string"
+          },
+          "searchSummary": {
+            "type": "string"
+          },
+          "firstAttack": {
+            "type": "string"
+          },
+          "risk": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

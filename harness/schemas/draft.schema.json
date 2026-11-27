@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "discovery-draft",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "kind",
+    "main",
+    "claims",
+    "files",
+    "polarity"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "obstruction",
+        "consequence",
+        "candidate"
+      ]
+    },
+    "main": {
+      "type": "string"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proved",
+              "cited",
+              "computed",
+              "assumed",
+              "open"
+            ]
+          }
+        }
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "polarity": {
+      "type": "string",
+      "enum": [
+        "prove",
+        "disprove",
+        "neither"
+      ]
+    }
+  }
+}

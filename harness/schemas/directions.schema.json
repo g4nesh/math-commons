@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "discovery-directions",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "directions"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "directions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "lens",
+          "kind",
+          "hypothesis",
+          "falsificationTest",
+          "milestone",
+          "budgetTokens"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "lens": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "constructive",
+              "adversarial",
+              "abstraction",
+              "computational",
+              "literature"
+            ]
+          },
+          "hypothesis": {
+            "type": "string"
+          },
+          "falsificationTest": {
+            "type": "string"
+          },
+          "milestone": {
+            "type": "string"
+          },
+          "budgetTokens": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}
