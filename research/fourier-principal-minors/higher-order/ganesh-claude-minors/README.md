@@ -14,7 +14,7 @@ It does not prove P(105). What is left is a thin, explicitly described kind of i
 4. **Validation.** 2 020 exact comparisons in finite-field arithmetic and 355 identities checked modulo a prime ℓ ≡ 1 (mod N); every one agrees. ⟨REFEREE⟩
 5. **Order 105.** Counting every index set once, the family that P(105) reduces to has 2^90.527 members. In uniform samples, Theorems A and C decide every sampled member of the classes that make up 99.9992% of the family: all 3 000 000 members with C of multiplicity one (5 848 of them only through the third coefficient) and all 60 000 with multiplicity two. Undecided sampled members occur only in classes of total share 5 · 10⁻⁷ %, where the block of C touches the top or bottom level or has multiplicity at least four.
 6. **Order 110.** For 1000 random maximal flags of base 10 above 11, where the second-order term always vanishes, the third coefficient is nonzero in some chart in every case, which proves those minors nonzero. Maximal flags with nested fibres are decided by Proposition F.
-7. **What remains.** Index sets on which every window coefficient vanishes exist; all that were found contain a product block S × B around the singular level, with few elements outside S. For those that are not nested up to the singular level no criterion of this report applies. 303 such sets in a trial run, and ⟨NUNDEC⟩ in the committed run, were evaluated modulo a prime, and none is a zero of the determinant.
+7. **What remains.** Index sets on which every window coefficient vanishes exist; all that were found contain a product block S × B around the singular level, with few elements outside S. For those that are not nested up to the singular level no criterion of this report applies. The 1 538 such sets met in the structured runs were evaluated modulo a prime, and none is a zero of the determinant.
 8. **A correction to the second-order report.** Its "family size" 2^90.54 counted an index set once for every level at which C occurs. The number of distinct index sets is 2^90.527, and C is a repeated level set in 0.669% of them, not 1.33%. Its other statements are unaffected; see [Correction](#correction-to-the-second-order-report).
 
 ## Setting
@@ -239,7 +239,7 @@ Check 2 is the test of Lemma 1′ and Theorem A(ii): it compares all coefficient
    | (0, 4), bottom | 3.8 · 10⁻¹⁵ % | 10 | 10..11 | 755 |
    | (0, 5), bottom | 3.3 · 10⁻¹⁷ % | 15 | 15 | 982 |
 
-   The classes (1, 6) and (0, 6) are outside Theorem C (m_max = q − 1) and were not sampled; (0, 7) is the single set C × ℤ₇.
+   The classes (1, 6) and (0, 6) are outside Theorem C (m_max = q − 1) and were not sampled; (0, 7) is the single set C × ℤ₇. An undecided member either has no nonzero window coefficient up to the order computed, or has its first one beyond the covered orders; the output does not separate the two.
 5. **Totals.** 3 075 000 members were sampled. The 3 060 000 from the classes with share above 0.001% are all decided. 3 681 members of the small classes are not. Weighted by class size, the undecided share seen in these samples is 1.9 · 10⁻⁸ % of the family, roughly 2^58 index sets.
 
 "Decided" means: some window coefficient in the range covered by Theorem A or Theorem C is nonzero in at least one of the two charts, so the minor is proved nonzero. "Undecided" means only that these theorems do not apply; it does not mean that the minor vanishes.
@@ -259,7 +259,21 @@ This bears on [Question 7.3 of Wang–Zhang](https://arxiv.org/abs/2608.22119v1)
 
 A proof of P(105) along these lines needs every member of the family to be reached by some criterion. The uniform samples above are reached without exception, but a uniform sample of 2^90.5 sets cannot see a subfamily of relative size 2^(−30). `blind105.py` therefore looks at structured members directly (output: [blind105.txt](blind105.txt)).
 
-⟨BLIND105⟩
+It draws 1500 members for each level s = 0, …, 6 from three families in which C is a level set of multiplicity one at level s:
+
+- **one**: a single fibre in each of the two shells next to C (one fibre of size s + 1 over C, one of size s outside C);
+- **const**: all fibres of size s + 1 over C are equal, and all fibres of size s outside C are equal;
+- **block**: K contains C × B for a random B of size s + 1, and is otherwise uniform.
+
+For every member it records the least order j ≤ 13 of a nonzero window coefficient over the two charts, whether the member is peelable, and whether it contains a **product block**: C × B ⊆ K with |B| = s + 1, or the same condition for the complement of K (the fibres outside C lie in a set of size s). Every peelable member has a product block.
+
+| family | members | all coefficients to order 13 zero | of these peelable | of these not peelable | of these without a product block | first nonzero order between 6 and 13 |
+|---|---|---|---|---|---|---|
+| one | 10 500 | 265 | 214 | 51 | 0 | 56 |
+| const | 10 500 | 2 990 | 1 660 | 1 330 | 0 | 82 |
+| block | 10 500 | 1 541 | 1 525 | 16 | 0 | 3 |
+
+All other members have a nonzero coefficient of order at most 5 and are decided by Theorem A. The peelable ones are decided by Theorem D. That leaves 1 538 members decided by nothing in this report: 1 397 that are window-blind and not peelable, and 141 whose first nonzero coefficient lies beyond the window (these occur only for s = 0 and s = 6, where Theorem C gives no range beyond the window).
 
 What I can and cannot say about the undecided members:
 

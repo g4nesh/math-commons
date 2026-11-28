@@ -1,0 +1,27 @@
+family one, 1500 members per level s; columns: least order <= 5 | least order 6..13 | all zero to order 13
+   s = 0: peelable: 0 | 0 | 156; product block, not peelable: 1305 | 39 | 0
+   s = 1: peelable: 0 | 0 | 13; product block, not peelable: 1446 | 0 | 41
+   s = 2: product block, not peelable: 82 | 0 | 1; no product block: 1417 | 0 | 0
+   s = 3: product block, not peelable: 59 | 0 | 0; no product block: 1441 | 0 | 0
+   s = 4: product block, not peelable: 174 | 0 | 1; no product block: 1325 | 0 | 0
+   s = 5: peelable: 0 | 0 | 4; product block, not peelable: 1488 | 0 | 8
+   s = 6: peelable: 0 | 0 | 41; product block, not peelable: 1442 | 17 | 0
+family const, 1500 members per level s; columns: least order <= 5 | least order 6..13 | all zero to order 13
+   s = 0: peelable: 0 | 0 | 761; product block, not peelable: 696 | 43 | 0
+   s = 1: peelable: 0 | 0 | 172; product block, not peelable: 910 | 0 | 418
+   s = 2: peelable: 0 | 0 | 35; product block, not peelable: 739 | 0 | 212; no product block: 514 | 0 | 0
+   s = 3: peelable: 0 | 0 | 26; product block, not peelable: 704 | 0 | 185; no product block: 585 | 0 | 0
+   s = 4: peelable: 0 | 0 | 24; product block, not peelable: 802 | 0 | 198; no product block: 476 | 0 | 0
+   s = 5: peelable: 0 | 0 | 109; product block, not peelable: 1074 | 0 | 317
+   s = 6: peelable: 0 | 0 | 533; product block, not peelable: 928 | 39 | 0
+family block, 1500 members per level s; columns: least order <= 5 | least order 6..13 | all zero to order 13
+   s = 0: peelable: 0 | 0 | 1500
+   s = 1: peelable: 0 | 0 | 6; product block, not peelable: 1483 | 0 | 11
+   s = 2: product block, not peelable: 1497 | 0 | 3
+   s = 3: product block, not peelable: 1499 | 0 | 1
+   s = 4: product block, not peelable: 1500 | 0 | 0
+   s = 5: peelable: 0 | 0 | 1; product block, not peelable: 1498 | 0 | 1
+   s = 6: peelable: 0 | 0 | 18; product block, not peelable: 1479 | 3 | 0
+members undecided by Theorems A and D (no nonzero coefficient of order <= 5, not peelable): 1538; of these, minor zero modulo 1000000891: 0
+members with all coefficients to order 13 zero and no product block: 0
+example of an undecided member (family one, s = 1): fibres {1: [3], 3: [2, 5], 5: [0, 1, 2, 3, 4, 5], 6: [0, 1, 2, 3, 4, 5, 6], 9: [0, 1, 2, 3, 4, 5, 6], 10: [0, 1, 2, 3, 4, 5], 12: [0, 1, 2, 3, 4, 5, 6]}
