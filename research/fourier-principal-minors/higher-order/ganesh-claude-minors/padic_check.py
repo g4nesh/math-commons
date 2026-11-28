@@ -14,6 +14,9 @@ with the prediction:
      v(D_K) = e + j0 when j0 <= w + q - 2 - m_max.  Bottom blocks with
      delta = 4 have w = 10 > q - 2 = 9, so they test the range beyond the window.
   F. Proposition F: for Ferrers sets, v(D_K) = e + (q - 1) sum_m v_q(d_(T_m)).
+  G. A measurement for the outlook of README.md: the valuation of D_K for sets
+     that contain a product block S x B, |B| = s + 1, and have a single fibre
+     outside S.  No theorem of the report covers the window-blind ones.
 
 The window coefficients come from window.c through ho_lib; the q-adic
 arithmetic below shares no code with it.
@@ -225,6 +228,32 @@ def main():
         singular += pred > e
         n += 1
     print("F. Proposition F: %d Ferrers sets (%d with a singular level set): v(D_K) = e + 10 * sum of v_11(d_T) in every case" % (n, singular))
+    # G: a measurement, not a test of a theorem
+    dist = {}
+    n = 0
+    while n < 48:
+        ch, eta, sing = rng.choice(data)
+        S = rng.choice(sing)
+        s = rng.choice([1, 1, 2])
+        B = rng.sample(range(Q), s + 1)
+        rest = [b for b in range(Q) if b not in B]
+        sizes = [s + 1] + [rng.randint(s + 2, s + 3) for _ in S[1:]]
+        rng.shuffle(sizes)
+        fib = {a: sorted(B + rng.sample(rest, c - s - 1)) for a, c in zip(S, sizes)}
+        fib[rng.choice([a for a in range(M) if a not in S])] = sorted(rng.sample(range(Q), s))
+        T = so.level_sets(fib, Q)
+        if [m for m in range(Q) if T[m] == sorted(S)] != [s] or level_minor_valuation(eta, S) != 1:
+            continue
+        e = ho.excess(fib)
+        j0 = first_order(ch, fib, 14)
+        v = minor_valuation(eta, fib)
+        assert v is not None
+        key = ("no nonzero window coefficient to order 13" if j0 is None else "least order %d" % j0, v - e)
+        assert j0 is None or (j0 <= Q - 2 and v - e == j0)
+        dist[key] = dist.get(key, 0) + 1
+        n += 1
+    print("G. Measurement (no theorem of the report applies to the blind cases): %d sets with S = T_s singular of multiplicity one, S x B inside K for |B| = s + 1, and one fibre outside S: %s" % (
+        n, "; ".join("%s, v(D_K) - e = %d: %d sets" % (k[0], k[1], c) for k, c in sorted(dist.items()))))
     print("all checks passed")
 
 

@@ -8,4 +8,5 @@ C. Theorem C: blocks of multiplicity delta
    bottom block, s = 0, delta = 4: w = 10, covered orders 10..15; 12 sets; v(D_K) >= e + w in all; v(D_K) = e + j0 in the 6 with j0 in the covered range (j0: 11: 2, 12: 3, 13: 1); 6 outside it
    total 72 sets; 7 of them with j0 beyond the window (j0 > 9)
 F. Proposition F: 30 Ferrers sets (30 with a singular level set): v(D_K) = e + 10 * sum of v_11(d_T) in every case
+G. Measurement (no theorem of the report applies to the blind cases): 48 sets with S = T_s singular of multiplicity one, S x B inside K for |B| = s + 1, and one fibre outside S: no nonzero window coefficient to order 13, v(D_K) - e = 10: 48 sets
 all checks passed
