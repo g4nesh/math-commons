@@ -11,7 +11,7 @@ It does not prove P(105). What is left is a thin, explicitly described kind of i
 1. **All orders at once** ([Theorem A](#theorem-a-graded-expansion-and-the-window-polynomial)). With the uniformizer ϖ, ϖ^(q−1) = −q, every principal minor of F_(qM) is a polynomial in ϖ with coefficients in the unramified ring. Modulo a prime above q these coefficients are the coefficients of one explicit polynomial determinant over the residue field, the **window polynomial**. If any of its q − 1 lowest possible coefficients is nonzero, the minor is nonzero. The first two are the first-order product and the second-order term Λ; no correction terms mix the orders.
 2. **Repeated level sets** ([Theorem B](#theorem-b-independent-single-raises), [Theorem C](#theorem-c-a-level-set-of-multiplicity-δ)). If a singular set S occupies δ consecutive levels, the first coefficient that can be nonzero has order w = ⌊(δ+1)²/4⌋ (order δ(δ+1)/2 if the block sits at the bottom or top level), and the minor has valuation exactly e + w when that coefficient is nonzero. For δ = 2 the coefficient is the product of the two quadratic forms of the second-order report, one for the shell below the block and one for the shell above it.
 3. **Exact factorisations** ([Proposition E](#proposition-e-product-block), [Proposition F](#proposition-f-ferrers-sets), [Theorem D](#theorem-d-peeling)). If the fibres of K are nested (a Ferrers shape), the minor is a product of principal minors of F_M and of F_q, with no error term. If K is nested only up to its singular level, the same elimination removes the singular level and the first-order criterion decides the rest. These are identities over ℤ[ζ_N] and need no valuation argument.
-4. **Validation.** 2 020 exact comparisons in finite-field arithmetic and 355 identities checked modulo a prime ℓ ≡ 1 (mod N); every one agrees. ⟨REFEREE⟩
+4. **Validation.** 2 020 exact comparisons in finite-field arithmetic, 355 identities checked modulo a prime ℓ ≡ 1 (mod N), and 162 valuations computed 11-adically; every one agrees. ⟨REFEREE⟩
 5. **Order 105.** Counting every index set once, the family that P(105) reduces to has 2^90.527 members. In uniform samples, Theorems A and C decide every sampled member of the classes that make up 99.9992% of the family: all 3 000 000 members with C of multiplicity one (5 848 of them only through the third coefficient) and all 60 000 with multiplicity two. Undecided sampled members occur only in classes of total share 5 · 10⁻⁷ %, where the block of C touches the top or bottom level or has multiplicity at least four.
 6. **Order 110.** For 1000 random maximal flags of base 10 above 11, where the second-order term always vanishes, the third coefficient is nonzero in some chart in every case, which proves those minors nonzero. Maximal flags with nested fibres are decided by Proposition F.
 7. **What remains.** Index sets on which every window coefficient vanishes exist; all that were found contain a product block S × B around the singular level, with few elements outside S. For those that are not nested up to the singular level no criterion of this report applies. The 1 538 such sets met in the structured runs were evaluated modulo a prime, and none is a zero of the determinant.
@@ -75,7 +75,7 @@ Then λ_0 = Ā₀ and λ_1 = Λ̄, the first-order product and the second-order 
 **Remarks.**
 
 1. Theorem 3 of the second-order report had to assume A₀ ∈ 𝔮 before reading Λ, because in the uniformizer π the first-order term contaminates the next coefficient. In ϖ it does not: λ_1 = Λ̄ whether or not A₀ ∈ 𝔮, and a third-order criterion needs no correction terms either. This is what makes "λ_0 = λ_1 = 0 and λ_2 ≠ 0" a valid criterion.
-2. Part (iii) is the decomposition of D_K into eigenvectors of Gal(ℚ_q(ζ)/ℚ_q): Y_r ϖ^r is the component on which τ_r acts by [r]^r. The minor vanishes if and only if all q − 1 components do.
+2. Part (iii) is the decomposition of D_K into eigenvectors of the Galois group of 𝒪 over W, which is again 𝔽_q^×: the automorphism ζ ↦ ζ^ρ multiplies Y_r ϖ^r by [ρ]^r. The minor vanishes if and only if all q − 1 components do.
 3. The window is the range that the residue field can see. A minor with v(D_K) ≥ e + q − 1 has λ_j = 0 for all j ≤ q − 2; I call such K **window-blind** in the chart. Deciding it needs the Λ̂_w modulo 𝔮², or an exact identity as in Propositions E and F.
 
 ### Computing the window polynomial
@@ -196,11 +196,11 @@ If d_(T_m) ∉ 𝔮 for m ≥ r, the first-order product of K̃ is a unit, so D_
 
 **The dual form.** By Jacobi's identity for complementary minors, D_K = det F_N · N^(−|K^c|) · conj(D_(K^c)) with K^c the complement of K in ℤ_M × ℤ_q. So D_K ≠ 0 if and only if D_(K^c) ≠ 0, and Theorem D can be applied to K^c. The slices of K^c are the complements of the slices of K and its level sets are the complements of T_(q−1), T_(q−2), …. So the hypothesis for K^c reads: the top level sets T_(q−1), …, T_(q−r) of K occur as slices.
 
-I call K **peelable** (for a given singular level set) if Theorem D, applied to K or to K^c, removes all singular levels. A Ferrers set is peelable to every depth.
+I call K **peelable** (for a given singular level set) if Theorem D, applied to K or to K^c, removes all singular levels. A Ferrers set is peelable to every depth. At order 105 the hypothesis d_T ≠ 0 for T ⊆ ℤ₁₅ is P(15), which is known ([Caragea–Lee–Malikiosis–Pfander, Theorem 1.3](https://arxiv.org/abs/2505.24326v3)); there K is peelable when the level sets T_0, …, T_(s+δ−1) up to the top of the block of C occur as slices, or T_6, …, T_s do.
 
 ## Validation
 
-`validate.py` checks the statements against exact computations. Items 1–5 are in finite-field arithmetic; items 6–7 are identities over ℤ[ζ_N] checked modulo a prime ℓ ≡ 1 (mod N) (ℓ = 1 000 000 891 for N = 105 and ℓ = 1 000 000 321 for N = 110). Output: [validate.txt](validate.txt).
+`validate.py` checks the statements against exact computations. Items 1–5 are in finite-field arithmetic; items 6–7 are identities over ℤ[ζ_N] checked modulo a prime ℓ ≡ 1 (mod N) (ℓ = 1 000 000 891 for N = 105 and ℓ = 1 000 000 321 for N = 110). Output: [validate.txt](validate.txt). Item 8 is a separate script.
 
 | check | what is compared | cases | result |
 |---|---|---|---|
@@ -211,8 +211,9 @@ I call K **peelable** (for a given singular level set) if Theorem D, applied to 
 | 5 | Theorem C(i): λ_j = 0 for j < w, for blocks of every multiplicity and position | 880 (configuration, chart) pairs on (15, 7) and (10, 11) | all vanish; λ_w ≠ 0 in most (per block in the output) |
 | 6 | Proposition F on random Ferrers sets in ℤ_15 × ℤ_7, ℤ_21 × ℤ_5, ℤ_35 × ℤ_3, ℤ_10 × ℤ_11, ℤ_7 × ℤ_15; the identity of Theorem D on random sets with r nested levels; nonvanishing for peelable members of the order-105 family | 150 + 90 + 40 sets | all hold |
 | 7 | Proposition E on random sets containing S × B | 75 sets | all hold |
+| 8 | `padic_check.py`: the exact valuation of D_K, computed in (ℤ/11¹²)[ζ₁₁] for base 10 above 11 by a division-free determinant, against Theorem A(iv) (60 sets, least orders 0, 1, 2), Theorem C(i)–(ii) (72 sets with blocks of multiplicity 2, 3, 4; 7 of them with j₀ beyond the window) and Proposition F (30 Ferrers sets with a singular level) | 162 sets | all agree |
 
-Check 2 is the test of Lemma 1′ and Theorem A(ii): it compares all coefficients below t^(q−1), not only the leading one, on configurations with e ≤ q − 2. Check 1 tests in particular that λ_1 = Λ̄ when A₀ ∉ 𝔮. The valuation statements of Theorem A(iv) and Theorem C(ii) for orders beyond what 𝔽[t]/(t^(q−1)) shows are proved above but not tested by `validate.py`. ⟨REFEREE2⟩
+Check 2 is the test of Lemma 1′ and Theorem A(ii): it compares all coefficients below t^(q−1), not only the leading one, on configurations with e ≤ q − 2. Check 1 tests in particular that λ_1 = Λ̄ when A₀ ∉ 𝔮. Checks 1–7 see only residues; check 8 computes the valuation of D_K itself, with e up to about 60, and is the test of the valuation statements, including the range of Theorem C(ii) beyond the window (bottom blocks with δ = 4, where w = 10 > q − 2 = 9). Its output is in [padic_check.txt](padic_check.txt). ⟨REFEREE2⟩
 
 ## Order 105
 
@@ -280,7 +281,7 @@ What I can and cannot say about the undecided members:
 - **No zero was found.** Every undecided member met in these runs has a nonzero minor modulo a prime ℓ ≡ 1 (mod 105), so none is a counterexample to P(105).
 - **They contain a product block.** In all three families, every member whose window coefficients vanish to order 13 in both charts contains C × B with |B| = s + 1, or satisfies the same condition for its complement. I have not proved that this is necessary in general. It is not sufficient: a member that contains such a block and has many fibres outside C is normally decided at order 1 or 2 (third family in the output).
 - **Why the window is blind there.** By Proposition E, D_K = d_C^(|B|) · Δ_B^6 · det(F ⊗ R_B + R_C ⊗ P_B). The factor d_C^(|B|) has valuation (q − 1)|B|. The matrix R_C has the pole 1/d_C on the fibres outside C and P_B has rank |B|, so the determinant can cancel at most as many factors d_C as the fibres outside C allow. With few elements outside C a factor d_C survives and v(D_K) ≥ e + q − 1. This is an explanation, not a proved statement.
-- **The next step** is a criterion at depth one in q for the determinant in Proposition E: the residue of its coefficient of d_C^(−ρ), with ρ the rank of the pole part. For Ferrers sets and peelable sets this recovers Proposition F and Theorem D. I have not carried it out.
+- **The next step** is a criterion at depth one in q for the determinant in Proposition E: the residue of its coefficient of d_C^(−ρ), with ρ the rank of the pole part. For Ferrers sets and peelable sets this recovers Proposition F and Theorem D. I have not carried it out. In the simplest case, a member with a single element outside C and C × B ⊆ K with |B| = 2, expanding the determinant of Proposition E along the one outside row gives two terms, and a hand computation of their valuations finds them different, which would give D_K ≠ 0 with v(D_K) = e + q − 1. That computation is not checked and is not claimed as a result.
 
 Two further limits:
 
@@ -305,6 +306,7 @@ python3 validate.py ./window > validate.txt                   # about 15 seconds
 python3 apply105.py ./window 3000000 20000 > apply105.txt     # about 11 minutes
 python3 blind105.py ./window 1500 > blind105.txt              # about 8 minutes
 python3 apply110.py ./window 1000 > apply110.txt              # about half a minute
+python3 padic_check.py ./window > padic_check.txt             # about 15 seconds
 ```
 
 Python 3.9, standard library only; a C compiler for `window.c`. `ho_lib.py` imports `so_lib.py` from the second-order folder, and `apply105.py` imports the tables of `apply105.py` there. Random seeds are fixed in the scripts. The compiled binary is not committed.
