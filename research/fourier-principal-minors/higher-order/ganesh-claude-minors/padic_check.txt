@@ -1,0 +1,12 @@
+A. Theorem A(iv), base 10 above 11: 60 index sets; v(D_K) = e + j0 in every case with j0 <= 9 (least orders: 0: 31, 1: 23, 2: 6); v(D_K) >= e + 10 in the 0 cases without one
+C. Theorem C: blocks of multiplicity delta
+   interior block, s = 1, delta = 2: w = 2, covered orders 2..10; 12 sets; v(D_K) >= e + w in all; v(D_K) = e + j0 in the 12 with j0 in the covered range (j0: 2: 8, 3: 1, 4: 2, 5: 1); 0 outside it
+   interior block, s = 2, delta = 2: w = 2, covered orders 2..10; 12 sets; v(D_K) >= e + w in all; v(D_K) = e + j0 in the 12 with j0 in the covered range (j0: 2: 9, 3: 1, 4: 1, 7: 1); 0 outside it
+   interior block, s = 1, delta = 3: w = 4, covered orders 4..11; 12 sets; v(D_K) >= e + w in all; v(D_K) = e + j0 in the 12 with j0 in the covered range (j0: 4: 8, 5: 1, 6: 1, 7: 1, 8: 1); 0 outside it
+   bottom block, s = 0, delta = 2: w = 3, covered orders 3..10; 12 sets; v(D_K) >= e + w in all; v(D_K) = e + j0 in the 10 with j0 in the covered range (j0: 3: 7, 4: 3); 2 outside it
+   bottom block, s = 0, delta = 3: w = 6, covered orders 6..12; 12 sets; v(D_K) >= e + w in all; v(D_K) = e + j0 in the 9 with j0 in the covered range (j0: 7: 1, 8: 6, 9: 1, 10: 1); 3 outside it
+   bottom block, s = 0, delta = 4: w = 10, covered orders 10..15; 12 sets; v(D_K) >= e + w in all; v(D_K) = e + j0 in the 6 with j0 in the covered range (j0: 11: 2, 12: 3, 13: 1); 6 outside it
+   total 72 sets; 7 of them with j0 beyond the window (j0 > 9)
+F. Proposition F: 30 Ferrers sets (30 with a singular level set): v(D_K) = e + 10 * sum of v_11(d_T) in every case
+G. Measurement (no theorem of the report applies to the blind cases): 48 sets with S = T_s singular of multiplicity one, S x B inside K for |B| = s + 1, and one fibre outside S: no nonzero window coefficient to order 13, v(D_K) - e = 10: 48 sets
+all checks passed

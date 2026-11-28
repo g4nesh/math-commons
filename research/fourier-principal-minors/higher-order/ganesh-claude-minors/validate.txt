@@ -1,0 +1,84 @@
+1. Window polynomial against the second-order report (coefficients of tau^e and tau^(e+1)); 3. C against Python
+   (6, 7): 60 configurations (60 with A_0 != 0); Lambda_0 = A_0 in 60, Lambda_1 = Lambda in 60; C = Python in 15 of 15 compared
+   (10, 3): 60 configurations (57 with A_0 != 0); Lambda_0 = A_0 in 60, Lambda_1 = Lambda in 60; C = Python in 15 of 15 compared
+   (10, 11): 60 configurations (53 with A_0 != 0); Lambda_0 = A_0 in 60, Lambda_1 = Lambda in 60; C = Python in 15 of 15 compared
+   (14, 13): 60 configurations (58 with A_0 != 0); Lambda_0 = A_0 in 60, Lambda_1 = Lambda in 60; C = Python in 15 of 15 compared
+   (14, 29): 60 configurations (59 with A_0 != 0); Lambda_0 = A_0 in 60, Lambda_1 = Lambda in 60; C = Python in 15 of 15 compared
+   (15, 7): 60 configurations (60 with A_0 != 0); Lambda_0 = A_0 in 60, Lambda_1 = Lambda in 60; C = Python in 15 of 15 compared
+   (21, 5): 60 configurations (60 with A_0 != 0); Lambda_0 = A_0 in 60, Lambda_1 = Lambda in 60; C = Python in 15 of 15 compared
+   total 420 configurations, 407 with A_0 != 0, 105 C/Python comparisons: all agree
+2. Window polynomial against direct determinants with zeta = 1 + t (all coefficients below t^(q-1))
+   (6, 7): 30 configurations agree in all 6 coefficients (28 with more than one nonzero coefficient)
+   (10, 11): 30 configurations agree in all 10 coefficients (29 with more than one nonzero coefficient)
+   (14, 13): 30 configurations agree in all 12 coefficients (29 with more than one nonzero coefficient)
+   (15, 7): 30 configurations agree in all 6 coefficients (30 with more than one nonzero coefficient)
+   (21, 5): 30 configurations agree in all 4 coefficients (22 with more than one nonzero coefficient)
+   (10, 3): 30 configurations agree in all 2 coefficients (4 with more than one nonzero coefficient)
+   total 180 configurations: all agree
+4. Theorem B on level sets of multiplicity two
+   (15, 7): 72 (configuration, chart) pairs: Lambda_0 = Lambda_1 = 0 and Lambda_2 equals the product formula in all; nonzero in 70
+   (10, 11): 144 (configuration, chart) pairs: Lambda_0 = Lambda_1 = 0 and Lambda_2 equals the product formula in all; nonzero in 110
+   (14, 13): 108 (configuration, chart) pairs: Lambda_0 = Lambda_1 = 0 and Lambda_2 equals the product formula in all; nonzero in 92
+   (14, 29): 216 (configuration, chart) pairs: Lambda_0 = Lambda_1 = 0 and Lambda_2 equals the product formula in all; nonzero in 168
+   total 540 pairs, product nonzero in 440
+5. Theorem C: order of vanishing for a block of multiplicity delta on base 15 above 7 (both charts), and base 10 above 11
+   (15, 7) block at levels 0..0: w = 1; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 15
+   (15, 7) block at levels 0..1: w = 3; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 9
+   (15, 7) block at levels 0..2: w = 6; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 10
+   (15, 7) block at levels 0..3: w = 10; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 7
+   (15, 7) block at levels 0..4: w = 15; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 0
+   (15, 7) block at levels 1..1: w = 1; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 1..2: w = 2; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 1..3: w = 4; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 1..4: w = 6; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 13
+   (15, 7) block at levels 1..5: w = 9; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 15
+   (15, 7) block at levels 2..2: w = 1; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 2..3: w = 2; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 2..4: w = 4; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 15
+   (15, 7) block at levels 2..5: w = 6; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 13
+   (15, 7) block at levels 2..6: w = 15; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 5
+   (15, 7) block at levels 3..3: w = 1; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 3..4: w = 2; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 3..5: w = 4; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 3..6: w = 10; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 10
+   (15, 7) block at levels 4..4: w = 1; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 4..5: w = 2; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 4..6: w = 6; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 15
+   (15, 7) block at levels 5..5: w = 1; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 5..6: w = 3; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (15, 7) block at levels 6..6: w = 1; 16 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 16
+   (10, 11) block at levels 0..0: w = 1; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 23
+   (10, 11) block at levels 0..1: w = 3; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 12
+   (10, 11) block at levels 0..2: w = 6; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 1
+   (10, 11) block at levels 1..1: w = 1; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 30
+   (10, 11) block at levels 1..2: w = 2; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 22
+   (10, 11) block at levels 1..3: w = 4; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 27
+   (10, 11) block at levels 2..2: w = 1; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 31
+   (10, 11) block at levels 2..3: w = 2; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 19
+   (10, 11) block at levels 2..4: w = 4; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 23
+   (10, 11) block at levels 3..3: w = 1; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 28
+   (10, 11) block at levels 3..4: w = 2; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 20
+   (10, 11) block at levels 3..5: w = 4; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 20
+   (10, 11) block at levels 4..4: w = 1; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 25
+   (10, 11) block at levels 4..5: w = 2; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 22
+   (10, 11) block at levels 4..6: w = 4; 32 (configuration, chart) pairs with Lambda_j = 0 for all j < w; Lambda_w != 0 in 23
+   total 880 pairs
+6. Proposition F and Theorem D modulo a prime l = 1 (mod N)
+   Ferrers sets in Z_15 x Z_7: product formula holds and is nonzero modulo 1000000891 in 30 of 30
+   Ferrers sets in Z_21 x Z_5: product formula holds and is nonzero modulo 1000000891 in 30 of 30
+   Ferrers sets in Z_35 x Z_3: product formula holds and is nonzero modulo 1000000891 in 30 of 30
+   Ferrers sets in Z_10 x Z_11: product formula holds and is nonzero modulo 1000000321 in 30 of 30
+   Ferrers sets in Z_7 x Z_15: product formula holds and is nonzero modulo 1000000891 in 30 of 30
+   Peeling identity of Theorem D in Z_15 x Z_7 holds modulo 1000000891 in 30 of 30 random sets with r Ferrers levels
+   Peeling identity of Theorem D in Z_10 x Z_11 holds modulo 1000000321 in 30 of 30 random sets with r Ferrers levels
+   Peeling identity of Theorem D in Z_21 x Z_5 holds modulo 1000000891 in 30 of 30 random sets with r Ferrers levels
+   Order 105: 40 of 40 random members with C = T_s and s + 1 Ferrers levels have a nonzero minor modulo 1000000891 (as Theorem D predicts)
+7. Proposition E modulo a prime l = 1 (mod N)
+   Z_15 x Z_7: product-block identity holds modulo 1000000891 in 25 of 25 random sets containing S x B
+   Z_10 x Z_11: product-block identity holds modulo 1000000321 in 25 of 25 random sets containing S x B
+   Z_21 x Z_5: product-block identity holds modulo 1000000891 in 25 of 25 random sets containing S x B
+9. Proposition G modulo a prime l = 1 (mod N)
+   Z_15 x Z_7: splitting identity holds modulo 1000000891 in 25 of 25 random sets
+   Z_10 x Z_11: splitting identity holds modulo 1000000321 in 25 of 25 random sets
+   Z_21 x Z_5: splitting identity holds modulo 1000000891 in 25 of 25 random sets
+all checks passed

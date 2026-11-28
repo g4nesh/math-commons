@@ -1,0 +1,7 @@
+1. 20000 random maximal flags.  Least order j <= 9 of a nonzero window coefficient:
+   chart 0: 2: 16576, 3: 3118, 4: 283, 5: 20, 6: 3
+   chart 1: 2: 16511, 3: 3192, 4: 276, 5: 21
+   chart 2: 2: 16554, 3: 3107, 4: 303, 5: 28, 6: 7, 8: 1
+   chart 3: 2: 16514, 3: 3146, 4: 311, 5: 28, 6: 1
+   over the four charts: 2: 19985, 3: 15.  Minor proved nonzero by Theorem A for 20000 of 20000.
+2. 100 nested maximal flags: all window coefficients of order <= 9 vanish in all four charts for 100; minor nonzero modulo 1000000321 for 100 (Proposition F).
