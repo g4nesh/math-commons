@@ -12,6 +12,8 @@
   6. Proposition F (Ferrers sets) and Theorem D (peeling), as identities modulo
      a prime l = 1 (mod N).
   7. Proposition E (product block), as an identity modulo a prime l = 1 (mod N).
+  9. Proposition G (splitting), as an identity modulo a prime l = 1 (mod N).
+     (Item 8 of the README is padic_check.py.)
 
 Usage: python3 validate.py PATH_TO_window_BINARY
 Standard library only; random seeds are fixed.
@@ -310,6 +312,28 @@ def main():
             assert lhs == rhs
             ok += 1
         print("   Z_%d x Z_%d: product-block identity holds modulo %d in %d of 25 random sets containing S x B" % (M, q, l, ok))
+    # 9
+    print("9. Proposition G modulo a prime l = 1 (mod N)")
+    for M, q in [(15, 7), (10, 11), (21, 5)]:
+        mod = ho.ModN(M, q)
+        l = mod.l
+        ok = 0
+        for _ in range(25):
+            S = sorted(rng.sample(range(M), rng.randint(1, M - 1)))
+            Bp = sorted(rng.sample(range(q), rng.randint(1, q - 1)))
+            rest = [b for b in range(q) if b not in Bp]
+            fib = {}
+            for a in range(M):
+                v = sorted(Bp + [b for b in rest if rng.random() < 0.4]) if a in S else sorted(b for b in Bp if rng.random() < 0.5)
+                if v:
+                    fib[a] = v
+            K = [(a, b) for a in sorted(fib) for b in fib[a]]
+            low = [(a, b) for (a, b) in K if b in Bp]
+            inn = [(a, b) for (a, b) in K if a in S]
+            lhs = mod.minor(K) * pow(mod.d(S), len(Bp), l) % l * pow(mod.delta(Bp), len(S), l) % l
+            assert lhs == mod.minor(low) * mod.minor(inn) % l
+            ok += 1
+        print("   Z_%d x Z_%d: splitting identity holds modulo %d in %d of 25 random sets" % (M, q, l, ok))
     print("all checks passed")
 
 

@@ -77,4 +77,8 @@
    Z_15 x Z_7: product-block identity holds modulo 1000000891 in 25 of 25 random sets containing S x B
    Z_10 x Z_11: product-block identity holds modulo 1000000321 in 25 of 25 random sets containing S x B
    Z_21 x Z_5: product-block identity holds modulo 1000000891 in 25 of 25 random sets containing S x B
+9. Proposition G modulo a prime l = 1 (mod N)
+   Z_15 x Z_7: splitting identity holds modulo 1000000891 in 25 of 25 random sets
+   Z_10 x Z_11: splitting identity holds modulo 1000000321 in 25 of 25 random sets
+   Z_21 x Z_5: splitting identity holds modulo 1000000891 in 25 of 25 random sets
 all checks passed
