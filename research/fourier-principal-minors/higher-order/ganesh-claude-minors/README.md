@@ -324,7 +324,7 @@ What this shows, and what it does not:
 Further limits:
 
 - **Top and bottom levels.** For s = 0 and s = 6, and in the small classes of the table in the previous section, there are members whose first nonzero window coefficient lies beyond the orders that Theorems A and C cover (141 of them in the table above). Their valuation depends on d_C modulo 𝔮², which the window does not see.
-- **Higher multiplicity.** Window-blind members with C of multiplicity two or more were not studied; the analogue of a double block there has |B| = s + δ.
+- **Higher multiplicity.** Window-blind members with C of multiplicity two or more were not studied. I expect the analogue of a double block there to have |B| = s + δ, but did not test it.
 - Theorem C does not cover a bottom or top block with δ ≥ q − 1 (m_max = q − 1). At order 105 these are the classes (s, δ) = (0, 6) and (1, 6), of total share 7.5 · 10⁻¹⁸ %.
 - For δ ≥ 3 and for the third-order coefficient at multiplicity one there is no closed formula here, only the window polynomial. A proof for a whole class of index sets needs the formula, or a different argument for nonvanishing.
 
