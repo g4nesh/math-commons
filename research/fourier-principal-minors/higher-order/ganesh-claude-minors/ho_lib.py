@@ -281,6 +281,22 @@ def det_mod(A, l):
     return d % l
 
 
+def inv_mod(A, l):
+    """Inverse of a square matrix over F_l."""
+    n = len(A)
+    B = [r[:] + [int(i == j) for j in range(n)] for i, r in enumerate(A)]
+    for c in range(n):
+        piv = next(r for r in range(c, n) if B[r][c] % l)
+        B[c], B[piv] = B[piv], B[c]
+        iv = pow(B[c][c], l - 2, l)
+        B[c] = [x * iv % l for x in B[c]]
+        for r in range(n):
+            if r != c and B[r][c]:
+                f = B[r][c]
+                B[r] = [(x - f * y) % l for x, y in zip(B[r], B[c])]
+    return [r[n:] for r in B]
+
+
 class ModN:
     """F_N = (omega^(kl)) over F_l with omega of order N = M * Mp, gcd(M, Mp) = 1, and
     the splitting omega^(kl) = eta^(a a') zeta^(b b') under Z_N = Z_M x Z_Mp."""

@@ -73,4 +73,8 @@
    Peeling identity of Theorem D in Z_10 x Z_11 holds modulo 1000000321 in 30 of 30 random sets with r Ferrers levels
    Peeling identity of Theorem D in Z_21 x Z_5 holds modulo 1000000891 in 30 of 30 random sets with r Ferrers levels
    Order 105: 40 of 40 random members with C = T_s and s + 1 Ferrers levels have a nonzero minor modulo 1000000891 (as Theorem D predicts)
+7. Proposition E modulo a prime l = 1 (mod N)
+   Z_15 x Z_7: product-block identity holds modulo 1000000891 in 25 of 25 random sets containing S x B
+   Z_10 x Z_11: product-block identity holds modulo 1000000321 in 25 of 25 random sets containing S x B
+   Z_21 x Z_5: product-block identity holds modulo 1000000891 in 25 of 25 random sets containing S x B
 all checks passed

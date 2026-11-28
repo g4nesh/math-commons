@@ -11,6 +11,7 @@
   5. Theorem C: for a block of multiplicity delta, Lambda_j = 0 for j < w.
   6. Proposition F (Ferrers sets) and Theorem D (peeling), as identities modulo
      a prime l = 1 (mod N).
+  7. Proposition E (product block), as an identity modulo a prime l = 1 (mod N).
 
 Usage: python3 validate.py PATH_TO_window_BINARY
 Standard library only; random seeds are fixed.
@@ -274,6 +275,41 @@ def main():
         assert mod.minor(K) != 0
         ok += 1
     print("   Order 105: %d of %d random members with C = T_s and s + 1 Ferrers levels have a nonzero minor modulo %d (as Theorem D predicts)" % (ok, 40, mod.l))
+    # 7
+    print("7. Proposition E modulo a prime l = 1 (mod N)")
+    for M, q in [(15, 7), (10, 11), (21, 5)]:
+        mod = ho.ModN(M, q)
+        l = mod.l
+        ok = 0
+        for _ in range(25):
+            S = sorted(rng.sample(range(M), rng.randint(1, M - 1)))
+            B = sorted(rng.sample(range(q), rng.randint(1, q - 1)))
+            fib = {}
+            for a in range(M):
+                v = sorted({b for b in range(q) if rng.random() < 0.4} | (set(B) if a in S else set()))
+                if v:
+                    fib[a] = v
+            K = [(a, b) for a in sorted(fib) for b in fib[a]]
+            rest = [(a, b) for (a, b) in K if not (a in S and b in B)]
+            FS = ho.inv_mod([[mod.ep[a * a2 % M] for a2 in S] for a in S], l)
+            ZB = ho.inv_mod([[mod.zp[b * b2 % q] for b2 in B] for b in B], l)
+            PS, PB = {}, {}
+            mat = []
+            for a, b in rest:
+                row = []
+                for a2, b2 in rest:
+                    if (a, a2) not in PS:
+                        PS[(a, a2)] = sum(mod.ep[a * S[i] % M] * FS[i][j] % l * mod.ep[S[j] * a2 % M] for i in range(len(S)) for j in range(len(S))) % l
+                    if (b, b2) not in PB:
+                        PB[(b, b2)] = sum(mod.zp[b * B[i] % q] * ZB[i][j] % l * mod.zp[B[j] * b2 % q] for i in range(len(B)) for j in range(len(B))) % l
+                    f, z = mod.ep[a * a2 % M], mod.zp[b * b2 % q]
+                    row.append((f * (z - PB[(b, b2)]) + (f - PS[(a, a2)]) * PB[(b, b2)]) % l)
+                mat.append(row)
+            lhs = mod.minor(K)
+            rhs = pow(mod.d(S), len(B), l) * pow(mod.delta(B), len(S), l) % l * ho.det_mod(mat, l) % l
+            assert lhs == rhs
+            ok += 1
+        print("   Z_%d x Z_%d: product-block identity holds modulo %d in %d of 25 random sets containing S x B" % (M, q, l, ok))
     print("all checks passed")
 
 
